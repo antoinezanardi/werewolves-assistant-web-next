@@ -1,0 +1,4 @@
+{
+  "pattern": "^(feat|fix|docs|style|refactor|test|perf|build|ci|chore|revert)\/.+$",
+  "errorMsg": "Your branch name doesn't respect the established convention. Please respect the following format : (feat|fix|docs|style|refactor|test|perf|build|ci|chore|revert)/[FEATURE_NAME]\nYou can change the name of your branch with the command `git branch -m NEW_NAME`"
+}
