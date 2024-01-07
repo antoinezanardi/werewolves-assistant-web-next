@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx --no-install validate-branch-name;
+#npm run lint:staged;
+#npm run test:staged;
