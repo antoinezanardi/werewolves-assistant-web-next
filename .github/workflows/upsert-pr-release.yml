@@ -1,0 +1,149 @@
+name: 🔃️ Upsert PR Release Workflow
+
+on:
+  push:
+    branches:
+      - "develop"
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  install:
+    name: Install ⚙️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Cache npm dependencies 🥡
+        uses: actions/cache@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install project dependencies 📦
+        run: pnpm install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+
+  get-next-release-version:
+    name: Get next release version 🏷️
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Merge main branch into develop branch 🤝
+        run: |
+          git config user.name "GitHub Actions"
+          git fetch --all
+          git checkout main
+          git pull origin main
+          git checkout develop
+          git merge main
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore npm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Get next release version and create release changelog 🏷️
+        id: release
+        run: |
+          npx semantic-release --dry-run --no-ci | awk '/^## / {if (found) exit; found=1} found {print}' > RELEASE.md
+          awk '/^## /{header=1} header{print; header=0; next} {sub(/^ */, ""); sub(/ \(.+?\)$/, ""); print}' RELEASE.md > temp.md && mv temp.md RELEASE.md
+          awk '/^\* / { sub(/^\* /, "* **"); sub(/: /, "**: ", $0) } 1' RELEASE.md > temp.md && mv temp.md RELEASE.md
+          sed -E 's/^## ([0-9]+\.[0-9]+\.[0-9]+) \(https:\/\/github\.com\/antoinezanardi\/werewolves-assistant-web-next\/compare\/v[0-9]+\.[0-9]+\.[0-9]+...v[0-9]+\.[0-9]+\.[0-9]+\) \(([0-9-]+)\)/## Release v\1/' RELEASE.md > temp.md && mv temp.md RELEASE.md
+
+      - name: Cache release changelog 🥡
+        uses: actions/cache@v3
+        id: cache-release-changelog
+        with:
+          path: RELEASE.md
+          key: ${{ runner.os }}-release-changelog-${{ hashFiles('RELEASE.md') }}
+
+    outputs:
+      new-release-published: ${{ steps.release.outputs.new-release-published }}
+      new-release-version: ${{ steps.release.outputs.new-release-version }}
+
+  upsert-pr-release:
+    name: Upsert Pull Request Release 🔃
+    runs-on: ubuntu-latest
+    needs:
+      - get-next-release-version
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Restore release changelog from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-release-changelog
+        with:
+          path: RELEASE.md
+          key: ${{ runner.os }}-release-changelog-
+          restore-keys: |
+            ${{ runner.os }}-release-changelog-
+
+      - name: List open PR into main 📋
+        run: | 
+          OPEN_PR_INTO_MAIN=$(gh pr list --state open -B main --search "Release in:title" --json number,title)
+          echo "OPEN_PR_INTO_MAIN=$OPEN_PR_INTO_MAIN" >> $GITHUB_ENV
+
+      - name: Set PR Title 🔤
+        run: |
+          PR_TITLE="Release v${{ needs.get-next-release-version.outputs.new-release-version }}"
+          echo "PR_TITLE=$PR_TITLE" >> $GITHUB_ENV
+
+      - name: Determine action to perform on PR 🚏
+        run: |
+          if [[ "$OPEN_PR_INTO_MAIN" != "[]" ]]; then
+            PR_NUMBER=$(echo "$OPEN_PR_INTO_MAIN" | jq -r '.[0].number')
+            if [[ -n "$PR_NUMBER" ]]; then
+              echo "PR_ACTION=update" >> $GITHUB_ENV
+              echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+            else
+              echo "PR_ACTION=create" >> $GITHUB_ENV
+            fi
+          else
+            echo "PR_ACTION=create" >> $GITHUB_ENV
+          fi
+
+      - name: Create Release PR if it doesn't exist 🔃
+        if: env.PR_ACTION == 'create'
+        run: gh pr create --repo "${{ github.repository }}" --title "${{ env.PR_TITLE }}" --body "$(cat RELEASE.md)" --assignee "antoinezanardi" --label "🏷️ release" --base main --head develop
+
+      - name: Update Release PR if it exists 🔃
+        if: env.PR_ACTION == 'update'
+        run: gh pr edit ${{ env.PR_NUMBER }} --repo "${{ github.repository }}" --title "${{ env.PR_TITLE }}" --body "$(cat RELEASE.md)"

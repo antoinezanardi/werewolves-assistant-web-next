@@ -1,0 +1,369 @@
+name: 🏷️ Release Creation Workflow
+
+on:
+  push:
+    branches:
+      - 'main'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+
+jobs:
+  code-ql:
+    name: CodeQL Scan ❇️
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL ⚙️
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: AutoBuild 🌡️
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis ❇️
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:javascript"
+
+  install:
+    name: Install ⚙️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Cache pnpm dependencies 🥡
+        uses: actions/cache@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install project dependencies 📦
+        run: pnpm install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+
+  mutant-tests:
+    name: Mutant Tests 👽
+    runs-on: ubuntu-latest
+    env:
+      STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+      VERSION: 'main'
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Start Docker containers 🐳
+        run: pnpm run docker:test:start
+
+      - name: Mutant tests 👽
+        run: pnpm run test:stryker:ci
+
+      - name: Save stryker report as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: stryker-html-report
+          path: tests/stryker/coverage/index.html
+
+      - name: Stop Docker containers 🐳
+        run: pnpm run docker:test:stop
+
+  release:
+    name: Release 🏷️
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Release 🏷️
+        id: release
+        run: npx semantic-release
+
+    outputs:
+      new-release-published: ${{ steps.release.outputs.new-release-published }}
+      new-release-version: ${{ steps.release.outputs.new-release-version }}
+
+  all-tests:
+    name: All Tests 🧬
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    outputs:
+      JEST_TESTS_COUNT: ${{ steps.outputs.outputs.JEST_TESTS_COUNT }}
+      JEST_STATEMENTS_COUNT: ${{ steps.outputs.outputs.JEST_STATEMENTS_COUNT }}
+      JEST_BRANCHES_COUNT: ${{ steps.outputs.outputs.JEST_BRANCHES_COUNT }}
+      JEST_FUNCTIONS_COUNT: ${{ steps.outputs.outputs.JEST_FUNCTIONS_COUNT }}
+      JEST_LINES_COUNT: ${{ steps.outputs.outputs.JEST_LINES_COUNT }}
+      JEST_STATEMENTS_PERCENT: ${{ steps.outputs.outputs.JEST_STATEMENTS_PERCENT }}
+      JEST_BRANCHES_PERCENT: ${{ steps.outputs.outputs.JEST_BRANCHES_PERCENT }}
+      JEST_FUNCTIONS_PERCENT: ${{ steps.outputs.outputs.JEST_FUNCTIONS_PERCENT }}
+      JEST_LINES_PERCENT: ${{ steps.outputs.outputs.JEST_LINES_PERCENT }}
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Start Docker containers 🐳
+        run: pnpm run docker:test:start
+
+      - name: All tests 🧬
+        run: pnpm run test:cov 2>&1 | ./scripts/transform-jest-results-as-env-variables.sh >> "$GITHUB_ENV"
+
+      - name: Set Jest Results As Outputs 📝
+        id: outputs
+        run: |
+          echo "JEST_TESTS_COUNT=${{ env.JEST_TESTS_COUNT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_STATEMENTS_COUNT=${{ env.JEST_STATEMENTS_COUNT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_BRANCHES_COUNT=${{ env.JEST_BRANCHES_COUNT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_FUNCTIONS_COUNT=${{ env.JEST_FUNCTIONS_COUNT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_LINES_COUNT=${{ env.JEST_LINES_COUNT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_STATEMENTS_PERCENT=${{ env.JEST_STATEMENTS_PERCENT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_BRANCHES_PERCENT=${{ env.JEST_BRANCHES_PERCENT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_FUNCTIONS_PERCENT=${{ env.JEST_FUNCTIONS_PERCENT }}" >> "$GITHUB_OUTPUT"
+          echo "JEST_LINES_PERCENT=${{ env.JEST_LINES_PERCENT }}" >> "$GITHUB_OUTPUT"
+
+      - name: Save tests coverage in cache 🥡
+        uses: actions/cache/save@v3
+        id: cache-tests-coverage
+        with:
+          path: tests/coverage
+          key: ${{ runner.os }}-tests-coverage-v3-${{hashFiles('tests/coverage/lcov.info')}}
+
+      - name: Save global tests coverage report as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-tests-coverage-report
+          path: tests/coverage
+
+      - name: Stop Docker containers 🐳
+        run: pnpm run docker:test:stop
+
+  acceptance-tests:
+    name: Acceptance Tests 🥒
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    env:
+      CUCUMBER_PUBLISH_TOKEN: ${{ secrets.CUCUMBER_PUBLISH_TOKEN }}
+    outputs:
+      CUCUMBER_SCENARIOS_COUNT: ${{ steps.outputs.outputs.CUCUMBER_SCENARIOS_COUNT }}
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Start Docker containers 🐳
+        run: pnpm run docker:test:start
+
+      - name: Acceptance Tests 🥒
+        run: pnpm run test:cucumber:publish
+
+      - name: Set Cucumber Results As Outputs 📝
+        id: outputs
+        run: ./scripts/transform-cucumber-report-as-env-variables.sh >> "$GITHUB_OUTPUT"
+
+      - name: Save cucumber report as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html-report
+          path: tests/acceptance/reports/cucumber-report.html
+
+      - name: Stop Docker containers 🐳
+        run: pnpm run docker:test:stop
+
+  badges:
+    name: Generate Badges 💠
+    runs-on: ubuntu-latest
+    needs:
+      - all-tests
+      - acceptance-tests
+    steps:
+      - name: Tests Count Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: tests-count
+          LABEL: Tests
+          STATUS: ${{ needs.all-tests.outputs.JEST_TESTS_COUNT }}
+          ICON: https://cdn.simpleicons.org/jest/white
+          COLOR: 109B08
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+      - name: Covered Statements Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: covered-statements
+          LABEL: Statements
+          STATUS: ${{ needs.all-tests.outputs.JEST_STATEMENTS_COUNT }} covered (${{needs.all-tests.outputs.JEST_STATEMENTS_PERCENT}})
+          ICON: https://cdn.simpleicons.org/codecov/white
+          COLOR: 109B08
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+      - name: Covered Branches Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: covered-branches
+          LABEL: Branches
+          STATUS: ${{ needs.all-tests.outputs.JEST_BRANCHES_COUNT }} covered (${{needs.all-tests.outputs.JEST_BRANCHES_PERCENT}})
+          ICON: https://cdn.simpleicons.org/codecov/white
+          COLOR: 109B08
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+      - name: Covered Functions Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: covered-functions
+          LABEL: Functions
+          STATUS: ${{ needs.all-tests.outputs.JEST_FUNCTIONS_COUNT }} covered (${{needs.all-tests.outputs.JEST_FUNCTIONS_PERCENT}})
+          ICON: https://cdn.simpleicons.org/codecov/white
+          COLOR: 109B08
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+      - name: Covered Lines Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: covered-lines
+          LABEL: Lines
+          STATUS: ${{ needs.all-tests.outputs.JEST_LINES_COUNT }} covered (${{needs.all-tests.outputs.JEST_LINES_PERCENT}})
+          ICON: https://cdn.simpleicons.org/codecov/white
+          COLOR: 109B08
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+      - name: Scenarios Badge 💠
+        uses: RubbaBoy/BYOB@v1.3.0
+        with:
+          NAME: scenarios
+          LABEL: Scenarios
+          STATUS: ${{ needs.acceptance-tests.outputs.CUCUMBER_SCENARIOS_COUNT }} scenarios
+          ICON: https://cdn.simpleicons.org/cucumber/white
+          COLOR: 169652
+          GITHUB_TOKEN: ${{ secrets.BYOB_TOKEN }}
+
+  sonarcloud:
+    name: SonarCloud Analysis 🌥️
+    runs-on: ubuntu-latest
+    needs:
+      - all-tests
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore tests coverage from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-tests-coverage
+        with:
+          path: tests/coverage
+          key: ${{ runner.os }}-tests-coverage-v3-
+          restore-keys: |
+            ${{ runner.os }}-tests-coverage-v3-
+      - name: SonarCloud Scan 🌥️
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
