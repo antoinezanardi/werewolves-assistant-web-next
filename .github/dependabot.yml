@@ -1,0 +1,47 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "06:00"
+      timezone: "Europe/Paris"
+    assignees:
+      - "antoinezanardi"
+    reviewers:
+      - "antoinezanardi"
+    commit-message:
+      prefix: "chore(github-actions)"
+    target-branch: "develop"
+    open-pull-requests-limit: 20
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "06:00"
+      timezone: "Europe/Paris"
+    assignees:
+      - "antoinezanardi"
+    reviewers:
+      - "antoinezanardi"
+    commit-message:
+      prefix: "chore(deps)"
+    target-branch: "develop"
+    open-pull-requests-limit: 20
+    groups:
+      types:
+        patterns:
+          - "@types*"
+      commitlint:
+        patterns:
+          - "@commitlint*"
+      stryker:
+        patterns:
+          - "@stryker-mutator*"
+      eslint:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint*"
+      semantic-release:
+        patterns:
+          - "@semantic-release*"
