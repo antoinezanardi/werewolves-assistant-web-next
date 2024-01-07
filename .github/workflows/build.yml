@@ -1,0 +1,98 @@
+name: ⚙️ Build Workflow
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+      - 'develop'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  code-ql:
+    name: CodeQL Scan ❇️
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL ⚙️
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+
+      - name: AutoBuild 🌡️
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis ❇️
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:javascript"
+
+  install:
+    name: Install ⚙️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Cache pnpm dependencies 🥡
+        uses: actions/cache@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install project dependencies 📦
+        run: pnpm install
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+
+  build:
+    name: Build ✨
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Build app ✨
+        run: pnpm run build
