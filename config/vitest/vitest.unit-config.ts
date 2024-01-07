@@ -1,4 +1,4 @@
-import { defineVitestConfig } from "@nuxt/test-utils/config"
+import { defineVitestConfig } from "@nuxt/test-utils/config";
 
 export default defineVitestConfig({
   test: {
@@ -27,11 +27,11 @@ export default defineVitestConfig({
         functions: 100,
         branches: 100,
         statements: 100,
-      }
+      },
     },
     globals: true,
     clearMocks: true,
     mockReset: true,
     restoreMocks: true,
-  }
+  },
 });
