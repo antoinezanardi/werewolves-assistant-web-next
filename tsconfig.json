@@ -1,6 +1,10 @@
 {
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["vitest/globals"]
-  }
+    "types": [
+      "vitest/globals"
+    ]
+  },
+  "module": "ESNext",
+  "moduleResolution": "Node"
 }
