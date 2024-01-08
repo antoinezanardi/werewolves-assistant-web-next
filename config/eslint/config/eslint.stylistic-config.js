@@ -1,4 +1,5 @@
 import StylisticPlugin from "@stylistic/eslint-plugin";
+
 import { ALWAYS, ERROR, INDENT_SPACE_COUNT, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.js";
 
 const ESLINT_STYLISTIC_CONFIG = {

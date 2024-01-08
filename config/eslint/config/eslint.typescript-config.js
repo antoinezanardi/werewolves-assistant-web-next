@@ -1,5 +1,6 @@
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
+
 import { ERROR, OFF, NAMING_CONVENTION_DEFAULT_CONFIG, ALWAYS, NEVER } from "../eslint.constants.js";
 
 const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({

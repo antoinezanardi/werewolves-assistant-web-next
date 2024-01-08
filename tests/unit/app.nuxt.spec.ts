@@ -1,4 +1,5 @@
 import { mountSuspended } from "@nuxt/test-utils/runtime";
+
 import App from "@/app.vue";
 
 describe("App Component", () => {
