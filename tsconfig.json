@@ -1,17 +1,10 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "strict": true,
-  "resolveJsonModule": true,
-  "esModuleInterop": true,
   "compilerOptions": {
     "types": [
       "vitest/globals"
     ]
   },
-  "module": "ES2022",
-  "moduleResolution": "node",
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  "module": "ESNext",
+  "moduleResolution": "Node"
 }

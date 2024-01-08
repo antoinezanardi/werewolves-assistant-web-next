@@ -12,6 +12,8 @@ const MAX_LENGTH_DEFAULT_CONFIG = {
   ignorePattern: "^import\\s.+\\sfrom\\s.+;$",
 };
 const READONLY = "readonly";
+const ALWAYS = "always";
+const NEVER = "never";
 const BOOLEAN_PREFIXES = ["is", "was", "are", "were", "should", "has", "can", "does", "do", "did", "must"];
 const NAMING_CONVENTION_DEFAULT_CONFIG = [
   {
@@ -54,6 +56,8 @@ export {
   WARNING,
   OFF,
   READONLY,
+  ALWAYS,
+  NEVER,
   MAX_LENGTH_DEFAULT_CONFIG,
   NAMING_CONVENTION_DEFAULT_CONFIG,
 };

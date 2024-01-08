@@ -1,4 +1,4 @@
-import {READONLY} from "../eslint.constants.js";
+import { READONLY } from "../eslint.constants.js";
 
 const ESLINT_TEST_CONFIG = {
   files: ["tests/**/*spec.ts"],
@@ -9,6 +9,6 @@ const ESLINT_TEST_CONFIG = {
       expect: READONLY,
     },
   },
-}
+};
 
 export { ESLINT_TEST_CONFIG };
