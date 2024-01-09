@@ -1,7 +1,31 @@
 {
   "name": "werewolves-assistant-web-next",
-  "private": false,
+  "version": "1.0.0",
+  "description": "Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.",
+  "readme": "README.md",
   "type": "module",
+  "keywords": [
+    "nuxt",
+    "werewolves",
+    "assistant",
+    "web",
+    "typescript"
+  ],
+  "homepage": "https://github.com/antoinezanardi/werewolves-assistant-web-next#readme",
+  "bugs": {
+    "url": "https://github.com/antoinezanardi/werewolves-assistant-web-next/issues",
+    "email": "antoine.zanardi@epitech.eu"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Antoine Zanardi",
+    "email": "antoine.zanardi@epitech.eu",
+    "url": "https://antoinezanardi.fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoinezanardi/werewolves-assistant-web-next.git"
+  },
   "scripts": {
     "prepare": "is-ci || husky install",
     "build": "nuxt build",
@@ -51,5 +75,12 @@
   },
   "dependencies": {
     "is-ci": "^3.0.1"
-  }
+  },
+  "engines": {
+    "node": ">=21.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ]
 }
