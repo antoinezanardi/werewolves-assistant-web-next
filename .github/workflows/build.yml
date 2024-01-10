@@ -212,6 +212,9 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
 
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
+
       - name: Mutant tests 👽
         run: pnpm run test:stryker:ci
 
