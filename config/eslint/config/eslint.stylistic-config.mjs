@@ -1,6 +1,6 @@
 import StylisticPlugin from "@stylistic/eslint-plugin";
 
-import { ALWAYS, ERROR, INDENT_SPACE_COUNT, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.js";
+import { ALWAYS, ERROR, INDENT_SPACE_COUNT, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_STYLISTIC_CONFIG = {
   plugins: { "@stylistic": StylisticPlugin },

@@ -1,12 +1,13 @@
-import { OFF } from "../eslint.constants.js";
+import { OFF } from "../eslint.constants.mjs";
 
 const ESLINT_CONFIG_FILES_CONFIG = {
   files: [
     ".releaserc.js",
-    "eslint.config.js",
+    "eslint.config.mjs",
     "nuxt.config.ts",
-    "config/**/*.{js,ts}",
+    "config/**/*.{js,mjs,ts}",
   ],
+  languageOptions: { globals: { process: true } },
   rules: {
     "import/no-default-export": OFF,
     "import/no-relative-parent-imports": OFF,

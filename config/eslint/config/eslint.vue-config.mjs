@@ -1,4 +1,4 @@
-import { ERROR, NEVER, OFF } from "../eslint.constants.js";
+import { ERROR, NEVER, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_VUE_CONFIG = {
   files: ["*.vue"],

@@ -1,4 +1,4 @@
-import { ERROR, OFF } from "../eslint.constants.js";
+import { ERROR, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_IMPORT_CONFIG = {
   languageOptions: {

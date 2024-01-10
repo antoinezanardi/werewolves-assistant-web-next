@@ -1,6 +1,6 @@
 import Vitest from "eslint-plugin-vitest";
 
-import { ERROR, OFF } from "../eslint.constants.js";
+import { ERROR, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_TESTS_CONFIG = {
   files: ["tests/**/*.spec.ts"],
