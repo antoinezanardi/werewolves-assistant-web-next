@@ -172,7 +172,7 @@ jobs:
         uses: actions/cache/save@v3
         id: cache-unit-tests-coverage
         with:
-          path: tests/coverage
+          path: tests/unit/coverage
           key: ${{ runner.os }}-tests-unit-coverage-v3-${{hashFiles('tests/unit/coverage/lcov.info')}}
 
       - name: Save unit tests coverage report as artifact 💎
@@ -197,7 +197,7 @@ jobs:
         uses: actions/cache/restore@v3
         id: cache-unit-tests-coverage
         with:
-          path: tests/coverage
+          path: tests/unit/coverage
           key: ${{ runner.os }}-tests-unit-coverage-v3-
           restore-keys: |
             ${{ runner.os }}-tests-unit-coverage-v3-
