@@ -1,0 +1,20 @@
+import { ERROR, OFF, READONLY } from "../eslint.constants.js";
+
+const ESLINT_CUCUMBER_CONFIG = {
+  files: ["tests/acceptance/**/*.ts"],
+  languageOptions: {
+    globals: {
+      describe: READONLY,
+      it: READONLY,
+      expect: READONLY,
+    },
+  },
+  rules: {
+    "new-cap": [ERROR, { capIsNewExceptions: ["BeforeAll", "AfterAll", "Before", "After", "Given", "When", "Then"] }],
+    "func-names": OFF,
+    "import/no-relative-parent-imports": OFF,
+    "import/no-internal-modules": OFF,
+  },
+};
+
+export { ESLINT_CUCUMBER_CONFIG };
