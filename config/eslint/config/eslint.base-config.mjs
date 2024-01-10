@@ -1,4 +1,4 @@
-import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER } from "../eslint.constants.js";
+import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER } from "../eslint.constants.mjs";
 
 const ESLINT_BASE_CONFIG = Object.freeze({
   rules: {

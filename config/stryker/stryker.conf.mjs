@@ -1,0 +1,30 @@
+export default {
+  cleanTempDir: "always",
+  incremental: true,
+  incrementalFile: "tests/stryker/incremental.json",
+  checkers: ["typescript"],
+  tsconfigFile: "tsconfig.json",
+  testRunner: "vitest",
+  ignoreStatic: true,
+  mutate: [
+    "app.vue",
+    "components/**/*.{ts,vue}",
+    "composables/**/*.ts",
+    "pages/**/*.ts",
+    "store/**/*.ts",
+  ],
+  plugins: [
+    "@stryker-mutator/vitest-runner",
+    "@stryker-mutator/typescript-checker",
+  ],
+  vitest: { configFile: "config/vitest/vitest.unit-config.ts" },
+  reporters: ["clear-text", "progress", "html", "json"],
+  htmlReporter: { fileName: "tests/stryker/coverage/index.html" },
+  jsonReporter: { fileName: "tests/stryker/coverage/mutation.json" },
+  thresholds: {
+    high: 100,
+    low: 100,
+    break: 100,
+  },
+  disableTypeChecks: "{tests,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+};

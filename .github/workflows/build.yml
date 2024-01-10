@@ -181,6 +181,49 @@ jobs:
           name: unit-tests-coverage-report
           path: tests/unit/coverage
 
+  mutant-tests:
+    name: Mutant Tests 👽
+    runs-on: ubuntu-latest
+    env:
+      STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+      VERSION: ${{ github.head_ref }}
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
+
+      - name: Mutant tests 👽
+        run: pnpm run test:stryker:ci
+
+      - name: Save stryker report as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: stryker-html-report
+          path: tests/stryker/coverage/index.html
+
   sonarcloud:
     name: SonarCloud Analysis 🌥️
     runs-on: ubuntu-latest

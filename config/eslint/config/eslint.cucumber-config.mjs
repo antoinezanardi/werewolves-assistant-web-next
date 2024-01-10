@@ -1,4 +1,4 @@
-import { ERROR, OFF, READONLY } from "../eslint.constants.js";
+import { ERROR, OFF, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_CUCUMBER_CONFIG = {
   files: ["tests/acceptance/**/*.ts"],
