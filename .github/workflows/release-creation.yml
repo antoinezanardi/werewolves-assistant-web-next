@@ -212,7 +212,7 @@ jobs:
         uses: actions/cache/restore@v3
         id: cache-tests-coverage
         with:
-          path: tests/coverage
+          path: tests/unit/coverage
           key: ${{ runner.os }}-unit-tests-coverage-v3-
           restore-keys: |
             ${{ runner.os }}-unit-tests-coverage-v3-
