@@ -3,7 +3,7 @@ import { OFF } from "../eslint.constants.mjs";
 const ESLINT_CONFIG_FILES_CONFIG = {
   files: [
     ".releaserc.js",
-    "eslint.config.mjs",
+    "eslint.config.js",
     "nuxt.config.ts",
     "config/**/*.{js,mjs,ts}",
   ],
