@@ -23,7 +23,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "no-dupe-else-if": ERROR,
     "no-dupe-keys": ERROR,
     "no-duplicate-case": ERROR,
-    "no-duplicate-imports": ERROR,
+    "no-duplicate-imports": OFF,
     "no-empty-character-class": ERROR,
     "no-empty-pattern": ERROR,
     "no-ex-assign": ERROR,

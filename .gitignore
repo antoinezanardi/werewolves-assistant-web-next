@@ -25,3 +25,4 @@ logs
 
 # Tests
 tests/unit/coverage
+tests/acceptance/reports

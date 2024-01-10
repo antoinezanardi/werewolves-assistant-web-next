@@ -3,8 +3,15 @@
   "compilerOptions": {
     "types": [
       "vitest/globals"
-    ]
+    ],
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
   },
-  "module": "ESNext",
-  "moduleResolution": "Node"
+  "ts-node": {
+    "esm": true
+  },
 }
