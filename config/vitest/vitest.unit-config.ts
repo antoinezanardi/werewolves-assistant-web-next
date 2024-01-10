@@ -21,6 +21,7 @@ export default defineVitestConfig({
         "composables/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",
+      reporter: ["clover", "json", "lcov", "text", "text-summary"],
       all: true,
       thresholds: {
         lines: 100,
