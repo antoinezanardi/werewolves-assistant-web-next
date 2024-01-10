@@ -10,6 +10,7 @@ import { ESLINT_STYLISTIC_CONFIG } from "./config/eslint/config/eslint.stylistic
 import { ESLINT_IMPORT_CONFIG } from "./config/eslint/config/eslint.import-config.js";
 import { ESLINT_CONFIG_FILES_CONFIG } from "./config/eslint/config/eslint.config-files-config.js";
 import { ESLINT_VUE_CONFIG } from "./config/eslint/config/eslint.vue-config.js";
+import { ESLINT_CUCUMBER_CONFIG } from "./config/eslint/config/eslint.cucumber-config.js";
 
 const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
 const flatCompat = new FlatCompat({ baseDirectory });
@@ -30,6 +31,7 @@ export default [
   ESLINT_IMPORT_CONFIG,
   ESLINT_VUE_CONFIG,
   ESLINT_TESTS_CONFIG,
+  ESLINT_CUCUMBER_CONFIG,
   ESLINT_STYLISTIC_CONFIG,
   ESLINT_CONFIG_FILES_CONFIG,
 ];
