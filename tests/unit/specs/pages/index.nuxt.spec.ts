@@ -1,4 +1,6 @@
 import type { mount } from "@vue/test-utils";
+import type { ButtonPassThroughOptions } from "primevue/button";
+import type { PassThrough } from "primevue/ts-helpers";
 
 import type { VuePrimeButton } from "#components";
 import Index from "@/pages/index.vue";
@@ -30,6 +32,16 @@ describe("Index Page Component", () => {
 
       expect(playButton.attributes("label")).toBe("Play");
     });
+
+    it("should display play button with pass through data when rendered.", async() => {
+      wrapper = await mountSuspendedComponent(Index, { shallow: false });
+      const playButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Play']");
+
+      expect(playButton.props("pt")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({
+        icon: "fa-2x",
+        label: "fs-3 fw-bold text-uppercase",
+      });
+    });
   });
 
   describe("About button", () => {
@@ -37,6 +49,16 @@ describe("Index Page Component", () => {
       const aboutButton = wrapper.findComponent<typeof VuePrimeButton>("[label='About']");
 
       expect(aboutButton.attributes("label")).toBe("About");
+    });
+
+    it("should display about button with pass through data when rendered.", async() => {
+      wrapper = await mountSuspendedComponent(Index, { shallow: false });
+      const aboutButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='About']");
+
+      expect(aboutButton.props("pt")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({
+        icon: "fa-2x",
+        label: "fs-3 fw-bold text-uppercase",
+      });
     });
   });
 });

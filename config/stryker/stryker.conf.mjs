@@ -10,7 +10,7 @@ export default {
     "app.vue",
     "components/**/*.{ts,vue}",
     "composables/**/*.ts",
-    "pages/**/*.ts",
+    "pages/**/*.{ts,vue}",
     "store/**/*.ts",
   ],
   plugins: [
