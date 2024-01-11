@@ -13,7 +13,6 @@ const ESLINT_CUCUMBER_CONFIG = {
     "new-cap": [ERROR, { capIsNewExceptions: ["BeforeAll", "AfterAll", "Before", "After", "Given", "When", "Then"] }],
     "func-names": OFF,
     "import/no-relative-parent-imports": OFF,
-    "import/no-internal-modules": OFF,
   },
 };
 

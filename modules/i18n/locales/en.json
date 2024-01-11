@@ -1,0 +1,11 @@
+{
+  "shared": {
+    "werewolvesAssistant": "Werewolves Assistant"
+  },
+  "pages": {
+    "index": {
+      "play": "Play",
+      "about": "About"
+    }
+  }
+}

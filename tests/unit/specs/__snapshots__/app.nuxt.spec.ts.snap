@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App Component > should render component and match snapshot when mounted. 1`] = `"<nuxt-page-stub class="h-100"></nuxt-page-stub>"`;

@@ -1,3 +1,3 @@
 <template>
-  <div />
+  <NuxtPage class="h-100"/>
 </template>

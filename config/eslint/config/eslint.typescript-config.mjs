@@ -47,7 +47,6 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
     "@typescript-eslint/ban-ts-comment": ERROR,
     "@typescript-eslint/ban-tslint-comment": ERROR,
     "@typescript-eslint/ban-types": ERROR,
-    // "@typescript-eslint/block-spacing": ERROR,
     "@typescript-eslint/class-literal-property-style": ERROR,
     "@typescript-eslint/class-methods-use-this": ERROR,
     "@typescript-eslint/consistent-generic-constructors": [ERROR, "type-annotation"],
@@ -68,7 +67,6 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
     "@typescript-eslint/explicit-module-boundary-types": ERROR,
     "@typescript-eslint/init-declarations": ERROR,
     "@typescript-eslint/max-params": ERROR,
-    // "@typescript-eslint/member-delimiter-style": ERROR,
     "@typescript-eslint/member-ordering": ERROR,
     "@typescript-eslint/method-signature-style": ERROR,
     "@typescript-eslint/naming-convention": [

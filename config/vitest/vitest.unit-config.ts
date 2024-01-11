@@ -17,7 +17,8 @@ export default defineVitestConfig({
       ],
       include: [
         "app.vue",
-        "components/**/*.[vue|ts]",
+        "pages/**/*.{vue,ts}",
+        "components/**/*.{vue,ts}",
         "composables/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",

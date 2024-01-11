@@ -1,4 +1,4 @@
-import { OFF } from "../eslint.constants.mjs";
+import { OFF, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_CONFIG_FILES_CONFIG = {
   files: [
@@ -6,8 +6,15 @@ const ESLINT_CONFIG_FILES_CONFIG = {
     "eslint.config.js",
     "nuxt.config.ts",
     "config/**/*.{js,mjs,ts}",
+    "modules/**/*.config.{js,mjs,ts}",
   ],
-  languageOptions: { globals: { process: true } },
+  languageOptions: {
+    globals: {
+      process: READONLY,
+      defineNuxtConfig: READONLY,
+      defineI18nConfig: READONLY,
+    },
+  },
   rules: {
     "import/no-default-export": OFF,
     "import/no-relative-parent-imports": OFF,

@@ -38,7 +38,16 @@ const ESLINT_IMPORT_CONFIG = {
     "import/no-absolute-path": ERROR,
     "import/no-cycle": ERROR,
     "import/no-dynamic-require": ERROR,
-    "import/no-internal-modules": [ERROR, { allow: ["@nuxt/**/*"] }],
+    "import/no-internal-modules": [
+      ERROR, {
+        allow: [
+          "~/**/*",
+          "@/**/*",
+          "@nuxt/**/*",
+          "primevue/*",
+        ],
+      },
+    ],
     "import/no-relative-packages": ERROR,
     "import/no-relative-parent-imports": ERROR,
     "import/no-restricted-paths": ERROR,

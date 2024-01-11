@@ -1,14 +1,30 @@
-import { ERROR, NEVER, OFF } from "../eslint.constants.mjs";
+import VueParser from "vue-eslint-parser";
+import TypescriptParser from "@typescript-eslint/parser";
+
+import { ERROR, MAX_LENGTH, NEVER, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_VUE_CONFIG = {
-  files: ["*.vue"],
+  files: [
+    "app.vue",
+    "pages/**/*.vue",
+    "components/**/*.vue",
+  ],
+  languageOptions: {
+    parser: VueParser,
+    parserOptions: {
+      parser: TypescriptParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      ecmaFeatures: { jsx: true },
+    },
+  },
   rules: {
     "import/unambiguous": OFF,
     "vue/comment-directive": ERROR,
     "vue/jsx-uses-vars": ERROR,
     // ---- Vue Rules -----
     // - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
-    "vue/multi-word-component-names": ERROR,
+    "vue/multi-word-component-names": [ERROR, { ignores: ["index"] }],
     "vue/no-arrow-functions-in-watch": ERROR,
     "vue/no-async-in-computed-properties": ERROR,
     "vue/no-child-content": ERROR,
@@ -98,7 +114,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/component-definition-name-casing": ERROR,
     "vue/first-attribute-linebreak": ERROR,
     "vue/html-closing-bracket-newline": ERROR,
-    "vue/html-closing-bracket-spacing": ERROR,
+    "vue/html-closing-bracket-spacing": [ERROR, { selfClosingTag: NEVER }],
     "vue/html-end-tags": ERROR,
     "vue/html-indent": ERROR,
     "vue/html-quotes": ERROR,
@@ -120,7 +136,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/v-on-style": ERROR,
     "vue/v-slot-style": ERROR,
     // - Priority C: Recommended (Potentially Dangerous Patterns) https://eslint.vuejs.org/rules/#priority-c-recommended-potentially-dangerous-patterns
-    "vue/attributes-order": ERROR,
+    "vue/attributes-order": [ERROR, { alphabetical: true }],
     "vue/no-lone-template": ERROR,
     "vue/no-multiple-slot-args": ERROR,
     "vue/no-v-html": ERROR,
@@ -172,7 +188,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-static-inline-styles": ERROR,
     "vue/no-template-target-blank": ERROR,
     "vue/no-this-in-before-route-enter": ERROR,
-    "vue/no-undef-components": ERROR,
+    "vue/no-undef-components": [ERROR, { ignorePatterns: ["Nuxt*", "VuePrime*"] }],
     "vue/no-undef-properties": ERROR,
     "vue/no-unsupported-features": ERROR,
     "vue/no-unused-emit-declarations": ERROR,
@@ -197,7 +213,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/require-typed-object-prop": ERROR,
     "vue/require-typed-ref": ERROR,
     "vue/script-indent": ERROR,
-    "vue/sort-keys": ERROR,
+    "vue/sort-keys": OFF,
     "vue/static-class-names-order": ERROR,
     "vue/v-for-delimiter-style": ERROR,
     "vue/v-if-else-key": ERROR,
@@ -220,7 +236,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/func-call-spacing": ERROR,
     "vue/key-spacing": ERROR,
     "vue/keyword-spacing": ERROR,
-    "vue/max-len": ERROR,
+    "vue/max-len": [ERROR, { code: MAX_LENGTH }],
     "vue/multiline-ternary": [ERROR, NEVER],
     "vue/no-console": ERROR,
     "vue/no-constant-condition": ERROR,
