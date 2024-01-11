@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Index Page Component > should render component and match snapshot when mounted. 1`] = `
+"<div class="container-fluid d-flex flex-column">
+  <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
+    <div class="col-12 text-center">
+      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="lg:200px"></nuxt-img-stub>
+    </div>
+    <div class="col-12 text-center">
+      <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
+    </div>
+    <div class="col-12 col-lg-3">
+      <button-stub class="w-100" icon="fa fa-play-circle" label="Play" pt="[object Object]" raised="" size="large"></button-stub>
+    </div>
+    <div class="col-12 col-lg-3 mt-4">
+      <button-stub class="w-100" icon="fas fa-question" icon-pos="right" label="About" pt="[object Object]" raised="" severity="secondary" size="large"></button-stub>
+    </div>
+  </div>
+  <hr class="w-100">
+  <index-footer-stub></index-footer-stub>
+</div>"
+`;

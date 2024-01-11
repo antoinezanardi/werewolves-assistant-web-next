@@ -1,0 +1,17 @@
+{
+  "shared": {
+    "werewolvesAssistant": "Assistant Loups-Garous"
+  },
+  "pages": {
+    "index": {
+      "about": "À quoi ça sert",
+      "play": "Jouer"
+    }
+  },
+  "components": {
+    "indexFooter": {
+      "contact": "Me contacter",
+      "thisProjectIsOpenSource": "Ce projet est open source"
+    }
+  }
+}

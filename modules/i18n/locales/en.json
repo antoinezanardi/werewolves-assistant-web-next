@@ -1,0 +1,17 @@
+{
+  "shared": {
+    "werewolvesAssistant": "Werewolves Assistant"
+  },
+  "pages": {
+    "index": {
+      "play": "Play",
+      "about": "About"
+    }
+  },
+  "components": {
+    "indexFooter": {
+      "contact": "Contact me",
+      "thisProjectIsOpenSource": "This project is open source"
+    }
+  }
+}

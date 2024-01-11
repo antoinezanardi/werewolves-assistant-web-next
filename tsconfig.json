@@ -12,6 +12,6 @@
     "resolveJsonModule": true,
   },
   "ts-node": {
-    "esm": true
+    "esm": true,
   },
 }
