@@ -17,7 +17,6 @@ const ESLINT_CONFIG_FILES_CONFIG = {
   },
   rules: {
     "import/no-default-export": OFF,
-    "import/no-relative-parent-imports": OFF,
     "import/no-internal-modules": OFF,
     "import/no-anonymous-default-export": OFF,
   },

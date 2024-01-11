@@ -10,11 +10,17 @@ export default defineNuxtConfig({
   primevue: {
     components: {
       prefix: "VuePrime",
-      include: ["Button"],
+      include: [
+        "Button",
+        "Divider",
+      ],
     },
     directives: {
       prefix: "p-",
-      include: ["Tooltip", "Ripple"],
+      include: [
+        "Tooltip",
+        "Ripple",
+      ],
     },
     composables: { include: [] },
     options: { ripple: true },

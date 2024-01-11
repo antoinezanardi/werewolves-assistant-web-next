@@ -9,7 +9,6 @@ const ESLINT_TESTS_CONFIG = {
   rules: {
     "max-lines-per-function": OFF,
     "@typescript-eslint/init-declarations": OFF,
-    "import/no-relative-parent-imports": OFF,
     "vitest/consistent-test-filename": [ERROR, { pattern: "^(.+\\.spec)\\.ts$" }],
     "vitest/consistent-test-it": [ERROR, { fn: "it" }],
     "vitest/expect-expect": ERROR,

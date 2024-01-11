@@ -49,7 +49,7 @@ const ESLINT_IMPORT_CONFIG = {
       },
     ],
     "import/no-relative-packages": ERROR,
-    "import/no-relative-parent-imports": ERROR,
+    "import/no-relative-parent-imports": OFF,
     "import/no-restricted-paths": ERROR,
     "import/no-self-import": ERROR,
     "import/no-unresolved": ERROR,
