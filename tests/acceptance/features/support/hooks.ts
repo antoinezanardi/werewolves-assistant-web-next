@@ -5,10 +5,11 @@ import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 const { beforeEach, afterEach, afterAll, setup } = createTest({ runner: "vitest", server: true });
 
-Before(async function(this: CustomWorld): Promise<void> {
-  // setup();
-  beforeEach();
+Before({ timeout: 60 * 1000 }, async function(this: CustomWorld): Promise<void> {
+  await setup();
+  // beforeEach();
 
+  console.log("here");
   this.page = await createPage("/");
 });
 
