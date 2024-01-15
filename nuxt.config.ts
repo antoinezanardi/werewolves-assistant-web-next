@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  modules: ["@nuxt/test-utils/module", "nuxt-primevue", "@nuxtjs/i18n", "@nuxt/image"],
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "bootstrap/dist/css/bootstrap-grid.css",
@@ -7,6 +6,16 @@ export default defineNuxtConfig({
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
   ],
+  devtools: { enabled: true },
+  i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
+  modules: [
+    "@nuxt/test-utils/module",
+    "nuxt-primevue",
+    "@nuxtjs/i18n",
+    "@nuxt/image",
+    "@pinia/nuxt",
+  ],
+  pinia: { storesDirs: ["./stores/**"] },
   primevue: {
     components: {
       prefix: "VuePrime",
@@ -25,6 +34,9 @@ export default defineNuxtConfig({
     composables: { include: [] },
     options: { ripple: true },
   },
-  i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
-  devtools: { enabled: true },
+  runtimeConfig: { public: { werewolvesAssistantApi: { baseUrl: "" } } },
+  typescript: {
+    strict: true,
+    typeCheck: true,
+  },
 });

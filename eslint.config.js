@@ -11,6 +11,8 @@ import { ESLINT_IMPORT_CONFIG } from "./config/eslint/config/eslint.import-confi
 import { ESLINT_CONFIG_FILES_CONFIG } from "./config/eslint/config/eslint.config-files-config.mjs";
 import { ESLINT_VUE_CONFIG } from "./config/eslint/config/eslint.vue-config.mjs";
 import { ESLINT_CUCUMBER_CONFIG } from "./config/eslint/config/eslint.cucumber-config.mjs";
+import { ESLINT_STORES_CONFIG } from "./config/eslint/config/eslint.stores-config.mjs";
+import { ESLINT_TESTS_FACTORIES_CONFIG } from "./config/eslint/config/eslint.tests-factories-config.mjs";
 
 const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
 const flatCompat = new FlatCompat({ baseDirectory });
@@ -31,7 +33,9 @@ export default [
   ESLINT_IMPORT_CONFIG,
   ESLINT_VUE_CONFIG,
   ESLINT_TESTS_CONFIG,
+  ESLINT_TESTS_FACTORIES_CONFIG,
   ESLINT_CUCUMBER_CONFIG,
   ESLINT_STYLISTIC_CONFIG,
   ESLINT_CONFIG_FILES_CONFIG,
+  ESLINT_STORES_CONFIG,
 ];
