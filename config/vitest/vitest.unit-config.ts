@@ -2,6 +2,8 @@ import { defineVitestConfig } from "@nuxt/test-utils/config";
 
 export default defineVitestConfig({
   test: {
+    environment: "nuxt",
+    setupFiles: ["./tests/unit/unit-setup.ts"],
     watch: false,
     include: ["./tests/unit/**/*.spec.ts"],
     exclude: [
@@ -14,11 +16,16 @@ export default defineVitestConfig({
         "tests/**/*",
         "node_modules/**/*",
         "config/**/*",
+        "**/*.enums.ts",
+        "**/*.constants.ts",
+        "**/*.types.ts",
       ],
       include: [
         "app.vue",
-        "components/**/*.[vue|ts]",
+        "pages/**/*.{vue,ts}",
+        "components/**/*.{vue,ts}",
         "composables/**/*.ts",
+        "stores/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",
       reporter: ["clover", "json", "lcov", "text", "text-summary"],

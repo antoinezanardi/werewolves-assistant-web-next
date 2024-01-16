@@ -1,6 +1,15 @@
-import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER } from "../eslint.constants.mjs";
+import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_BASE_CONFIG = Object.freeze({
+  languageOptions: {
+    globals: {
+      process: READONLY,
+      defineNuxtConfig: READONLY,
+      defineI18nConfig: READONLY,
+      useRuntimeConfig: READONLY,
+      useFetch: READONLY,
+    },
+  },
   rules: {
     // ---- ESLint Rules -----
     // - Possible Problems (https://eslint.org/docs/rules/#possible-problems)
@@ -46,7 +55,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "no-sparse-arrays": ERROR,
     "no-template-curly-in-string": ERROR,
     "no-this-before-super": ERROR,
-    "no-undef": ERROR,
+    "no-undef": [ERROR],
     "no-unexpected-multiline": ERROR,
     "no-unmodified-loop-condition": ERROR,
     "no-unreachable": ERROR,

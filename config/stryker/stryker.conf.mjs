@@ -10,8 +10,8 @@ export default {
     "app.vue",
     "components/**/*.{ts,vue}",
     "composables/**/*.ts",
-    "pages/**/*.ts",
-    "store/**/*.ts",
+    "pages/**/*.{ts,vue}",
+    "stores/**/*.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",
