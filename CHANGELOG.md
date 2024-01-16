@@ -1,5 +1,17 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.1.1](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.1.0...v1.1.1) (2024-1-16)
+
+
+### 📖 Docs
+
+* **readme:** correct project logo in readme file ([#31](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/31)) ([7f43d0b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/7f43d0b655c12833d4a21947d4b3b3c5c8942b14))
+
+
+### 🔁 CI
+
+* **sonarcloud:** correct sonarcloud pre commands ([#33](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/33)) ([904f727](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/904f7276b38c56e42573aa157bf2601fdd37453e))
+
 ## [1.1.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.0.0...v1.1.0) (2024-1-16)
 
 
