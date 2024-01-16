@@ -236,6 +236,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Restore tests coverage from cache 🥡
         uses: actions/cache/restore@v3
         id: cache-unit-tests-coverage
@@ -244,6 +251,9 @@ jobs:
           key: ${{ runner.os }}-tests-unit-coverage-v3-
           restore-keys: |
             ${{ runner.os }}-tests-unit-coverage-v3-
+
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
 
       - name: SonarCloud Scan 🌥️
         uses: SonarSource/sonarcloud-github-action@master
