@@ -11,7 +11,7 @@ export default {
     "components/**/*.{ts,vue}",
     "composables/**/*.ts",
     "pages/**/*.{ts,vue}",
-    "store/**/*.ts",
+    "stores/**/*.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",
