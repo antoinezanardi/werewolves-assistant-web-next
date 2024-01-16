@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/main/public/assets/images/logo/full/werewolves-logo.png?raw=true" width="400" alt="logo"/>
+  <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/logo/full/werewolves-logo.png?raw=true" width="400" alt="logo"/>
 </p>
 
 ---
