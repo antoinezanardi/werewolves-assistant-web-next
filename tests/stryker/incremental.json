@@ -63,6 +63,156 @@
       ],
       "source": "import type { UseFetchOptions } from \"#app\";\n\nconst DEFAULT_USE_FETCH_OPTIONS = { headers: { \"Content-Type\": \"application/json\" } } satisfies UseFetchOptions<unknown>;\n\nexport { DEFAULT_USE_FETCH_OPTIONS };"
     },
+    "composables/api/role/useFetchRoles.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "3",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useFetchRoles.ts(10,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 22
+            },
+            "start": {
+              "column": 41,
+              "line": 10
+            }
+          }
+        },
+        {
+          "id": "4",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useFetchRoles.ts(14,69): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 20
+            },
+            "start": {
+              "column": 121,
+              "line": 14
+            }
+          }
+        },
+        {
+          "id": "5",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "9"
+          ],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 47,
+              "line": 15
+            },
+            "start": {
+              "column": 29,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "6",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"http://127.0.0.1/roles\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "9"
+          ],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 19
+            },
+            "start": {
+              "column": 49,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "7",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "composables/api/role/useFetchRoles.ts(15,5): error TS2322: Type '_AsyncData<PickFrom<_ResT, KeysOf<DataT>> | null, FetchError<any> | null>' is not assignable to type '_AsyncData<Role[] | null, FetchError<any> | null>'.\n  Type 'PickFrom<_ResT, KeysOf<DataT>> | null' is not assignable to type 'Role[] | null'.\n    Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[] | null'.\n      Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[] | null'.\n        Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[] | null'.\n          Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[] | null'.\n            Type '_ResT' is not assignable to type 'Role[] | null'.\n              Type '_ResT' is not assignable to type 'Role[]'.\n                Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                  Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[]'.\n                    Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[]'.\n                      Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                        Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[]'.\n                          Type '_ResT' is not assignable to type 'Role[]'.\ncomposables/api/role/useFetchRoles.ts(16,7): error TS2769: No overload matches this call.\n  Overload 1 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, null, NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n  Overload 2 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, Role[], NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 20,
+              "line": 16
+            },
+            "start": {
+              "column": 15,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "8",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useFetchRoles.ts(21,3): error TS2741: Property 'fetchRoles' is missing in type '{}' but required in type 'UseFetchRoles'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 24,
+              "line": 21
+            },
+            "start": {
+              "column": 10,
+              "line": 21
+            }
+          }
+        }
+      ],
+      "source": "import type { UseFetchOptions } from \"#app\";\n\nimport { DEFAULT_USE_FETCH_OPTIONS } from \"~/composables/api/api.constants\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\n\ntype UseFetchRoles = {\n  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;\n};\n\nfunction useFetchRoles(): UseFetchRoles {\n  const config = useRuntimeConfig();\n  const { baseUrl } = config.public.werewolvesAssistantApi;\n\n  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {\n    return useFetch<Role[]>(`${baseUrl}/roles`, {\n      method: \"GET\",\n      ...DEFAULT_USE_FETCH_OPTIONS,\n      ...options,\n    });\n  }\n  return { fetchRoles };\n}\n\nexport { useFetchRoles };"
+    },
     "pages/index.vue": {
       "language": "html",
       "mutants": [
@@ -159,183 +309,14 @@
       ],
       "source": "<template>\n  <div class=\"container-fluid d-flex flex-column\">\n    <div class=\"align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center\">\n      <div class=\"col-12 text-center\">\n        <NuxtImg\n          sizes=\"lg:200px\"\n          src=\"/img/logo/square/werewolves-logo.png\"\n        />\n      </div>\n\n      <div class=\"col-12 text-center\">\n        <h1\n          id=\"title\"\n          :aria-label=\"$t('shared.werewolvesAssistant')\"\n          class=\"mt-0\"\n        >\n          {{ $t('shared.werewolvesAssistant') }}\n        </h1>\n      </div>\n\n      <div class=\"col-12 col-lg-3\">\n        <VuePrimeButton\n          class=\"w-100\"\n          icon=\"fa fa-play-circle\"\n          :label=\"$t('pages.index.play')\"\n          :pt=\"buttonsPassThroughProperties\"\n          raised\n          size=\"large\"\n        />\n      </div>\n\n      <div class=\"col-12 col-lg-3 mt-4\">\n        <VuePrimeButton\n          class=\"w-100\"\n          icon=\"fas fa-question\"\n          icon-pos=\"right\"\n          :label=\"$t('pages.index.about')\"\n          :pt=\"buttonsPassThroughProperties\"\n          raised\n          severity=\"secondary\"\n          size=\"large\"\n        />\n      </div>\n    </div>\n\n    <hr class=\"w-100\">\n\n    <IndexFooter/>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { ButtonPassThroughOptions } from \"primevue/button\";\nimport type { PassThrough } from \"primevue/ts-helpers\";\n\nimport IndexFooter from \"~/components/index/IndexFooter.vue\";\n\nconst buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {\n  label: \"fs-3 fw-bold text-uppercase\",\n  icon: \"fa-2x\",\n};\n</script>\n\n<style>\n#title {\n  font-size: 4rem;\n}\n</style>"
     },
-    "composables/api/role/useFetchRoles.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "4",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useFetchRoles.ts(14,69): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 20
-            },
-            "start": {
-              "column": 121,
-              "line": 14
-            }
-          }
-        },
-        {
-          "id": "3",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useFetchRoles.ts(10,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 22
-            },
-            "start": {
-              "column": 41,
-              "line": 10
-            }
-          }
-        },
-        {
-          "id": "7",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "composables/api/role/useFetchRoles.ts(15,5): error TS2322: Type '_AsyncData<PickFrom<_ResT, KeysOf<DataT>> | null, FetchError<any> | null>' is not assignable to type '_AsyncData<Role[] | null, FetchError<any> | null>'.\n  Type 'PickFrom<_ResT, KeysOf<DataT>> | null' is not assignable to type 'Role[] | null'.\n    Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[] | null'.\n      Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[] | null'.\n        Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[] | null'.\n          Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[] | null'.\n            Type '_ResT' is not assignable to type 'Role[] | null'.\n              Type '_ResT' is not assignable to type 'Role[]'.\n                Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                  Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[]'.\n                    Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[]'.\n                      Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                        Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[]'.\n                          Type '_ResT' is not assignable to type 'Role[]'.\ncomposables/api/role/useFetchRoles.ts(16,7): error TS2769: No overload matches this call.\n  Overload 1 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, null, NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n  Overload 2 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, Role[], NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 20,
-              "line": 16
-            },
-            "start": {
-              "column": 15,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "8",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useFetchRoles.ts(21,3): error TS2741: Property 'fetchRoles' is missing in type '{}' but required in type 'UseFetchRoles'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 24,
-              "line": 21
-            },
-            "start": {
-              "column": 10,
-              "line": 21
-            }
-          }
-        },
-        {
-          "id": "6",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"http://127.0.0.1/roles\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "9"
-          ],
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 19
-            },
-            "start": {
-              "column": 49,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "5",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "9"
-          ],
-          "coveredBy": [
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 47,
-              "line": 15
-            },
-            "start": {
-              "column": 29,
-              "line": 15
-            }
-          }
-        }
-      ],
-      "source": "import type { UseFetchOptions } from \"#app\";\n\nimport { DEFAULT_USE_FETCH_OPTIONS } from \"~/composables/api/api.constants\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\n\ntype UseFetchRoles = {\n  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;\n};\n\nfunction useFetchRoles(): UseFetchRoles {\n  const config = useRuntimeConfig();\n  const { baseUrl } = config.public.werewolvesAssistantApi;\n\n  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {\n    return useFetch<Role[]>(`${baseUrl}/roles`, {\n      method: \"GET\",\n      ...DEFAULT_USE_FETCH_OPTIONS,\n      ...options,\n    });\n  }\n  return { fetchRoles };\n}\n\nexport { useFetchRoles };"
-    },
     "stores/role/useRolesStore.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "13",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/role/useRolesStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "6",
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 64,
-              "line": 12
-            },
-            "start": {
-              "column": 58,
-              "line": 12
-            }
-          }
-        },
-        {
           "id": "12",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(24,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(31,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(44,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(46,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\n",
+          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\n",
           "status": "CompileError",
           "static": false,
           "coveredBy": [
@@ -377,6 +358,29 @@
           }
         },
         {
+          "id": "13",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/role/useRolesStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "coveredBy": [
+            "6",
+            "7",
+            "8"
+          ],
+          "location": {
+            "end": {
+              "column": 64,
+              "line": 12
+            },
+            "start": {
+              "column": 58,
+              "line": 12
+            }
+          }
+        },
+        {
           "id": "14",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -406,7 +410,7 @@
           "id": "16",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(24,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(31,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(44,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(46,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
+          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
           "status": "CompileError",
           "static": false,
           "coveredBy": [
@@ -480,7 +484,7 @@
           "name": "Roles Store fetchAndSetRoles should set roles when called."
         }
       ],
-      "source": "import { createPinia, setActivePinia } from \"pinia\";\nimport type { Mock } from \"vitest\";\nimport { ref } from \"vue\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\nimport * as UseFetchRolesComposable from \"~/composables/api/role/useFetchRoles\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/types/role.types.factory\";\n\ndescribe(\"Roles Store\", () => {\n  let mockedUseFetchRoles: {\n    fetchRoles: Mock;\n  };\n\n  beforeEach(() => {\n    mockedUseFetchRoles = { fetchRoles: vi.fn().mockResolvedValue({ data: ref([]), status: ref(\"success\") }) };\n    vi.spyOn(UseFetchRolesComposable, \"useFetchRoles\").mockImplementation(() => mockedUseFetchRoles);\n    setActivePinia(createPinia());\n  });\n\n  it(\"should have initial state when created.\", () => {\n    const rolesStore = useRolesStore();\n\n    expect(rolesStore.roles).toBeNull();\n    expect(rolesStore.fetchingRoleStatus).toBe(\"idle\");\n  });\n\n  describe(\"fetchAndSetRoles\", () => {\n    it(\"should fetch roles when called.\", async() => {\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(mockedUseFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();\n    });\n\n    it(\"should set roles when called.\", async() => {\n      const roles: Role[] = [\n        createFakeRole(),\n        createFakeRole(),\n        createFakeRole(),\n      ];\n      mockedUseFetchRoles.fetchRoles.mockResolvedValue({ data: ref(roles), status: ref(\"success\") });\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(rolesStore.roles).toStrictEqual<Role[]>(roles);\n    });\n  });\n});"
+      "source": "import { createPinia, setActivePinia } from \"pinia\";\nimport { expect } from \"vitest\";\nimport type { Mock } from \"vitest\";\nimport { ref } from \"vue\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\nimport * as UseFetchRolesComposable from \"~/composables/api/role/useFetchRoles\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/types/role.types.factory\";\n\ndescribe(\"Roles Store\", () => {\n  let mockedUseFetchRoles: {\n    fetchRoles: Mock;\n  };\n\n  beforeEach(() => {\n    mockedUseFetchRoles = { fetchRoles: vi.fn().mockResolvedValue({ data: ref([]), status: ref(\"success\") }) };\n    vi.spyOn(UseFetchRolesComposable, \"useFetchRoles\").mockImplementation(() => mockedUseFetchRoles);\n    setActivePinia(createPinia());\n  });\n\n  it(\"should have initial state when created.\", () => {\n    const rolesStore = useRolesStore();\n\n    expect(rolesStore.roles).toBeNull();\n    expect(rolesStore.fetchingRoleStatus).toBe(\"idle\");\n  });\n\n  describe(\"fetchAndSetRoles\", () => {\n    it(\"should fetch roles when called.\", async() => {\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(mockedUseFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();\n    });\n\n    it(\"should set roles when called.\", async() => {\n      const roles: Role[] = [\n        createFakeRole(),\n        createFakeRole(),\n        createFakeRole(),\n      ];\n      mockedUseFetchRoles.fetchRoles.mockResolvedValue({ data: ref(roles), status: ref(\"success\") });\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(rolesStore.roles).toStrictEqual<Role[]>(roles);\n    });\n  });\n});"
     },
     "tests/unit/specs/composables/api/role/useFetchRoles.spec.ts": {
       "tests": [

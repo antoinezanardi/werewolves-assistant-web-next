@@ -1,4 +1,5 @@
 import { createPinia, setActivePinia } from "pinia";
+import { expect } from "vitest";
 import type { Mock } from "vitest";
 import { ref } from "vue";
 

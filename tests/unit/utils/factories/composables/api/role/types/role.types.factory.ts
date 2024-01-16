@@ -11,7 +11,7 @@ function createFakeRole(role: Partial<Role> = {}, override: object = {}): Role {
     origin: role.origin ?? faker.helpers.arrayElement(Object.values(RoleOrigins)),
     minInGame: role.minInGame ?? undefined,
     maxInGame: role.maxInGame ?? faker.number.int({ min: 1, max: 10 }),
-    // additionalCardsEligibleRecipients: role.additionalCardsEligibleRecipients ?? undefined,
+    additionalCardsEligibleRecipients: role.additionalCardsEligibleRecipients ?? undefined,
     recommendedMinPlayers: role.recommendedMinPlayers ?? undefined,
     ...override,
   };
