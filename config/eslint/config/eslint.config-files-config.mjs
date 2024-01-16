@@ -7,14 +7,9 @@ const ESLINT_CONFIG_FILES_CONFIG = {
     "nuxt.config.ts",
     "config/**/*.{js,mjs,ts}",
     "modules/**/*.config.{js,mjs,ts}",
+    "tests/unit/unit-setup.ts",
   ],
-  languageOptions: {
-    globals: {
-      process: READONLY,
-      defineNuxtConfig: READONLY,
-      defineI18nConfig: READONLY,
-    },
-  },
+  languageOptions: { globals: { CustomMatchers: READONLY } },
   rules: {
     "import/no-default-export": OFF,
     "import/no-internal-modules": OFF,
