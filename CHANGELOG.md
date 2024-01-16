@@ -1,5 +1,30 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.1.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.0.0...v1.1.0) (2024-1-16)
+
+
+### 🚀 Features
+
+* **home:** home page ([#20](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/20)) ([a2ebe68](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a2ebe683a9c40af209720339530d3f1d4a881dd1))
+* **store:** role store ([#27](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/27)) ([d6f156c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d6f156c5684ec3aaec9110e58806700ab713f51b))
+
+
+### 🧹 Chore
+
+* **deps:** bump @cucumber/cucumber from 10.2.1 to 10.3.0 ([#29](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/29)) ([f43ff8b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f43ff8ba16c0deba1d37936771f2ffabe61922e8))
+* **deps:** bump @vitest/coverage-v8 from 1.1.3 to 1.2.0 ([#26](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/26)) ([20b0305](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/20b0305ac5a62fb14c845066adc52ea712fd3446))
+* **deps:** bump semantic-release from 22.0.12 to 23.0.0 ([#23](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/23)) ([992e352](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/992e3528fd4571c5f1b9a85ce6134641a8a47895))
+* **deps:** bump the eslint group with 1 update ([#19](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/19)) ([fd69eb5](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/fd69eb55a3993c4a55160fa4d0435412a1b2bccd))
+* **deps:** bump the eslint group with 1 update ([#22](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/22)) ([f52fa97](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f52fa976aeb7bcef51a8402aaf5a95a565feb1ec))
+* **deps:** bump the types group with 1 update ([#18](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/18)) ([9145788](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/91457880f42c9a911cdb0511413eb83a89c33c73))
+* **deps:** bump the types group with 3 updates ([#15](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/15)) ([b406c5a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/b406c5a693acc4fc6427c64a8c99bd4b6c792c40)), closes [#8185](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8185) [#8178](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8178) [#8169](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8169) [#8176](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8176) [#8202](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8202) [#8136](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8136) [#8146](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8146) [#8223](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8223) [#8145](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8145) [#8185](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8185) [#8178](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8178) [#8169](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8169) [#8176](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8176) [#8202](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8202) [#8136](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8136) [#8146](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8146) [#8145](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8145) [#8185](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8185) [#8178](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8178) [#8169](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8169) [#8176](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8176) [#8202](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8202) [#8136](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8136) [#8146](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/8146)
+* **deps:** bump the types group with 3 updates ([#28](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/28)) ([c01dae1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c01dae1a7c8cff8dd357ddb709183a095ad2b62f))
+* **deps:** bump vitest from 1.1.3 to 1.2.0 ([#24](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/24)) ([183d8d1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/183d8d136b48eecc05e6c326bb305af718315ce2))
+* **deps:** bump vue from 3.4.10 to 3.4.13 ([#25](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/25)) ([6949bba](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6949bbab6ba2b25756b8d0a08dcfb18249812715))
+* **deps:** bump vue from 3.4.13 to 3.4.14 ([#30](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/30)) ([f052c4e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f052c4e600df59c7100598ede9862317d0cdee7e))
+* **deps:** bump vue from 3.4.6 to 3.4.8 ([#16](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/16)) ([6063f23](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6063f234caa7d4fe7ffcd1c51e2095d409bb9a1b))
+* **deps:** bump vue from 3.4.8 to 3.4.10 ([#21](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/21)) ([5bbce8f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/5bbce8fb6eb2faebb064dc04903e277add322074))
+
 ## 1.0.0 (2024-1-10)
 
 
