@@ -9,9 +9,21 @@
     }
   },
   "components": {
-    "indexFooter": {
+    "IndexFooter": {
       "contact": "Contact me",
       "thisProjectIsOpenSource": "This project is open source"
+    },
+    "NavBar": {
+      "parameters": "Parameters",
+      "homePageLink": "Home page",
+      "homePage": "Home page",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo",
+      "parametersMenu": "Parameters menu"
+    },
+    "ParametersMenu": {
+      "backToHome": "Back to home",
+      "parameters": "Parameters",
+      "parametersMenu": "Parameters menu"
     }
   }
 }

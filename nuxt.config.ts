@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  app: { head: { link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }] } },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "bootstrap/dist/css/bootstrap-grid.css",
@@ -8,6 +9,7 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
+  image: { domains: ["antoinezanardi.fr", "appspot.com"] },
   modules: [
     "@nuxt/test-utils/module",
     "nuxt-primevue",
@@ -22,6 +24,7 @@ export default defineNuxtConfig({
       include: [
         "Button",
         "Divider",
+        "Menu",
       ],
     },
     directives: {

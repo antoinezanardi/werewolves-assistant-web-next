@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Index Footer Component > should render component and match snapshot when mounted. 1`] = `
+exports[`Index Page Footer Component > should render component and match snapshot when mounted. 1`] = `
 "<div class="row">
   <div class="col-6"><a aria-label="Contact me" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span> Contact me</a></div>
   <div class="col-6 d-flex justify-content-end text-right"><a aria-label="This project is open source" class="p-button p-button-help" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span> This project is open source</a></div>

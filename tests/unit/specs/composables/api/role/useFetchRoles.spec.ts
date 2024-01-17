@@ -3,18 +3,18 @@ import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
 import { createFakeUseRuntimeConfig } from "~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig";
 
-const { useFetchMock, useRuntimeConfig } = vi.hoisted(() => ({
+const { useFetchMock, useRuntimeConfigMock } = vi.hoisted(() => ({
   useFetchMock: vi.fn(),
-  useRuntimeConfig: vi.fn(),
+  useRuntimeConfigMock: vi.fn(),
 }));
 
 describe("Use Fetch Roles Composable", () => {
   beforeAll(() => {
-    mockNuxtImport("useRuntimeConfig", () => useRuntimeConfig);
+    mockNuxtImport("useRuntimeConfig", () => useRuntimeConfigMock);
     mockNuxtImport("useFetch", () => useFetchMock);
   });
   beforeEach(() => {
-    useRuntimeConfig.mockReturnValue(createFakeUseRuntimeConfig());
+    useRuntimeConfigMock.mockReturnValue(createFakeUseRuntimeConfig());
   });
 
   describe("fetchRoles", () => {

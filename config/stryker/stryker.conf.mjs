@@ -11,6 +11,7 @@ export default {
     "components/**/*.{ts,vue}",
     "composables/**/*.ts",
     "pages/**/*.{ts,vue}",
+    "layouts/**/*.{ts,vue}",
     "stores/**/*.ts",
   ],
   plugins: [
@@ -26,5 +27,5 @@ export default {
     low: 100,
     break: 100,
   },
-  disableTypeChecks: "{tests,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+  disableTypeChecks: true,
 };

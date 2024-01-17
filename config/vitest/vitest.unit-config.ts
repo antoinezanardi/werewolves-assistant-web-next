@@ -6,13 +6,9 @@ export default defineVitestConfig({
     setupFiles: ["./tests/unit/unit-setup.ts"],
     watch: false,
     include: ["./tests/unit/**/*.spec.ts"],
-    exclude: [
-      "nuxt.config.ts",
-      "node_modules/**",
-      "config/**/*.ts",
-    ],
     coverage: {
       exclude: [
+        "nuxt.config.ts",
         "tests/**/*",
         "node_modules/**/*",
         "config/**/*",
@@ -23,6 +19,7 @@ export default defineVitestConfig({
       include: [
         "app.vue",
         "pages/**/*.{vue,ts}",
+        "layouts/**/*.{vue,ts}",
         "components/**/*.{vue,ts}",
         "composables/**/*.ts",
         "stores/**/*.ts",

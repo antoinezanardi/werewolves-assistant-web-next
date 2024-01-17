@@ -9,9 +9,21 @@
     }
   },
   "components": {
-    "indexFooter": {
+    "IndexFooter": {
       "contact": "Me contacter",
       "thisProjectIsOpenSource": "Ce projet est open source"
+    },
+    "NavBar": {
+      "parameters": "Paramètres",
+      "homePageLink": "Lien vers l'accueil",
+      "homePage": "Accueil",
+      "werewolvesAssistantLogo": "Logo de l'assistant Loups-Garous",
+      "parametersMenu": "Menu des paramètres"
+    },
+    "ParametersMenu": {
+      "backToHome": "Retour à l'accueil",
+      "parameters": "Paramètres",
+      "parametersMenu": "Menu des paramètres"
     }
   }
 }

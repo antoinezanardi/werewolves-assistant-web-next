@@ -7,7 +7,10 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       defineNuxtConfig: READONLY,
       defineI18nConfig: READONLY,
       useRuntimeConfig: READONLY,
+      definePageMeta: READONLY,
       useFetch: READONLY,
+      useI18n: READONLY,
+      navigateTo: READONLY,
     },
   },
   rules: {
