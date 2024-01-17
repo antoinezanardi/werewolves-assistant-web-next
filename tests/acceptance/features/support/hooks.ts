@@ -1,16 +1,20 @@
-import { After, AfterAll, Before } from "@cucumber/cucumber";
+import { fileURLToPath } from "node:url";
+import { After, AfterAll, Before, BeforeAll } from "@cucumber/cucumber";
 import { createPage, createTest } from "@nuxt/test-utils/e2e";
 
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
-const { beforeEach, afterEach, afterAll, setup } = createTest({ runner: "vitest", server: true });
+const { beforeEach, afterEach, afterAll, setup } = createTest({
+  runner: "vitest",
+  server: true,
+  rootDir: fileURLToPath(new URL("../../../..", import.meta.url))
+})
 
-Before({ timeout: 60 * 1000 }, async function(this: CustomWorld): Promise<void> {
-  await setup();
-  // beforeEach();
+BeforeAll({ timeout: 60 * 1000 }, setup);
 
-  console.log("here");
-  this.page = await createPage("/");
+Before({}, async function (this: CustomWorld): Promise<void> {
+  beforeEach();
+  this.page = await createPage();
 });
 
 After((): void => {
