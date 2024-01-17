@@ -3,4 +3,4 @@
 
 npx --no-install validate-branch-name;
 npm run lint:staged:fix;
-#npm run test:staged;
+npm run test:unit:staged;
