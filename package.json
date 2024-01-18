@@ -54,7 +54,7 @@
     "@eslint/eslintrc": "^3.0.0",
     "@faker-js/faker": "^8.3.1",
     "@nuxt/image": "^1.2.0",
-    "@nuxt/test-utils": "^3.9.0",
+    "@nuxt/test-utils": "^3.10.0",
     "@nuxtjs/i18n": "^8.0.0",
     "@pinia/nuxt": "^0.5.1",
     "@pinia/testing": "^0.1.3",
