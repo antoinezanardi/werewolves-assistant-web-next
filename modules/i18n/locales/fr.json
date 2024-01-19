@@ -1,6 +1,40 @@
 {
   "shared": {
-    "werewolvesAssistant": "Assistant Loups-Garous"
+    "werewolvesAssistant": "Assistant Loups-Garous",
+    "role": {
+      "name": {
+        "werewolf": "Loup-Garou",
+        "big-bad-wolf": "Grand Méchant Loup",
+        "accursed-wolf-father": "Infect Père des Loups",
+        "white-werewolf": "Loup-Garou Blanc",
+        "villager": "Villageois",
+        "villager-villager": "Villageois-Villageois",
+        "seer": "Voyante",
+        "cupid": "Cupidon",
+        "witch": "Sorcière",
+        "hunter": "Chasseur",
+        "little-girl": "Petite Fille",
+        "defender": "Salvateur",
+        "elder": "Ancien",
+        "scapegoat": "Bouc-Émissaire",
+        "idiot": "Idiot du Village",
+        "two-sisters": "Deux Sœurs",
+        "three-brothers": "Trois Frères",
+        "fox": "Renard",
+        "bear-tamer": "Montreur d'Ours",
+        "stuttering-judge": "Juge Bègue",
+        "rusty-sword-knight": "Chevalier à l'Épée Rouillée",
+        "thief": "Voleur",
+        "wild-child": "Enfant Sauvage",
+        "wolf-hound": "Chien-Loup",
+        "angel": "Ange",
+        "pied-piper": "Joueur de Flûte",
+        "scandalmonger": "Corbeau",
+        "prejudiced-manipulator": "Abominable Sectaire",
+        "actor": "Acteur",
+        "devoted-servant": "Servante Dévouée"
+      }
+    }
   },
   "pages": {
     "index": {

@@ -1,19 +1,22 @@
-import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
-import type { Mock } from "vitest";
+import { StoreIds } from "~/stores/enums/store.enum";
+import type { useRolesStore } from "~/stores/role/useRolesStore";
 
-import type { Role } from "~/composables/api/role/types/role.types";
-
-type MockedUseRoleStore = {
-  roles: Role[] | null;
-  fetchAndSetRoles: Mock;
-  fetchingRoleStatus: AsyncDataRequestStatus;
-};
-
-function createFakeUseRoleStore(): MockedUseRoleStore {
+function createFakeUseRoleStore(): ReturnType<typeof useRolesStore> {
   return {
+    $state: {
+      roles: [],
+      fetchingRoleStatus: "idle",
+    },
+    $id: StoreIds.ROLES,
     roles: [],
     fetchAndSetRoles: vi.fn(),
     fetchingRoleStatus: "idle",
+    $onAction: vi.fn(),
+    _customProperties: new Set(),
+    $reset: vi.fn(),
+    $dispose: vi.fn(),
+    $subscribe: vi.fn(),
+    $patch: () => vi.fn(),
   };
 }
 

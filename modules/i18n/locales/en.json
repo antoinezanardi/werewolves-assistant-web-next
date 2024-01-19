@@ -1,6 +1,40 @@
 {
   "shared": {
-    "werewolvesAssistant": "Werewolves Assistant"
+    "werewolvesAssistant": "Werewolves Assistant",
+    "role": {
+      "name": {
+        "werewolf": "Werewolf",
+        "big-bad-wolf": "Big Bad Wolf",
+        "accursed-wolf-father": "Accursed Wolf-Father",
+        "white-werewolf": "White Werewolf",
+        "villager": "Villager",
+        "villager-villager": "Villager-Villager",
+        "seer": "Seer",
+        "cupid": "Cupid",
+        "witch": "Witch",
+        "hunter": "Hunter",
+        "little-girl": "Little Girl",
+        "defender": "Defender",
+        "elder": "Elder",
+        "scapegoat": "Scapegoat",
+        "idiot": "Idiot",
+        "two-sisters":"Two Sisters",
+        "three-brothers": "Three Brothers",
+        "fox": "Fox",
+        "bear-tamer": "Bear Tamer",
+        "stuttering-judge": "Stuttering Judge",
+        "rusty-sword-knight": "Rusty Sword Knight",
+        "thief": "Thief",
+        "wild-child": "Wild Child",
+        "wolf-hound": "Wolf-Hound",
+        "angel": "Angel",
+        "pied-piper": "Pied Piper",
+        "scandalmonger": "Scandalmonger",
+        "prejudiced-manipulator": "Prejudiced Manipulator",
+        "actor": "Actor",
+        "devoted-servant": "Devoted Servant"
+      }
+    }
   },
   "pages": {
     "index": {

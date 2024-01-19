@@ -50,10 +50,11 @@
 <script lang="ts" setup>
 import type { ButtonPassThroughOptions } from "primevue/button";
 import type { PassThrough } from "primevue/ts-helpers";
+import { setPageLayout } from "#app";
 
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
-definePageMeta({ layout: false });
+setPageLayout(false);
 
 const buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {
   label: "fs-3 fw-bold text-uppercase",

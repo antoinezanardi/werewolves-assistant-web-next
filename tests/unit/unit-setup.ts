@@ -1,5 +1,9 @@
-import { expect } from "vitest";
+import { mockNuxtImport } from "@nuxt/test-utils/runtime";
+import { beforeAll, expect } from "vitest";
 import matchers from "jest-extended";
+
+import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
+import { createFakeRuntimeConfig } from "~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
 
 expect.extend(matchers);
 
@@ -10,3 +14,29 @@ declare module "vitest" {
 
   type ExpectStatic<T = unknown> = CustomMatchers<T>;
 }
+beforeAll(() => {
+  mockNuxtImport<typeof setPageLayout>(
+    "setPageLayout",
+    () => vi.fn(),
+  );
+
+  mockNuxtImport<typeof useFetch>(
+    "useFetch",
+    () => vi.fn(),
+  );
+
+  mockNuxtImport<typeof navigateTo>(
+    "navigateTo",
+    () => vi.fn(),
+  );
+
+  mockNuxtImport<typeof useRuntimeConfig>(
+    "useRuntimeConfig",
+    () => vi.fn(() => createFakeRuntimeConfig()),
+  );
+
+  mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(
+    "useI18n",
+  () => vi.fn(() => createFakeI18n()),
+  );
+});

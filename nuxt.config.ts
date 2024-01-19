@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@pinia/nuxt",
   ],
-  pinia: { storesDirs: ["./stores/**"] },
+  pinia: { storesDirs: [] },
   primevue: {
     components: {
       prefix: "VuePrime",

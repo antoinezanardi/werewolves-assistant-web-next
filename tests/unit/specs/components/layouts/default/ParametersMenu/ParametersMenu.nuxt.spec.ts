@@ -1,19 +1,21 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
 import { MouseEvent } from "happy-dom";
-import type { Mock } from "vitest";
+import { beforeAll } from "vitest";
 
 import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
+import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
-
-const { tMock } = vi.hoisted(() => ({ tMock: vi.fn() }));
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;
 
   beforeAll(() => {
-    mockNuxtImport("useI18n", () => (): { t: Mock } => ({ t: tMock }));
+    mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(
+      "useI18n",
+    () => vi.fn(() => createFakeI18n()),
+    );
   });
 
   beforeEach(async() => {
@@ -42,6 +44,18 @@ describe("Parameters Menu Component", () => {
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));
+    });
+  });
+
+  describe("Parameters Menu", () => {
+    beforeEach(async() => {
+      wrapper = await mountSuspendedComponent(ParametersMenu, { shallow: false });
+    });
+
+    it("should navigate to home page when clicking on back to home button.", async() => {
+      console.log(wrapper.html());
+
+      expect(false).toBeTruthy();
     });
   });
 });

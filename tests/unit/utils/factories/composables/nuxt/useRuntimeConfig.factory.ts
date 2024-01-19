@@ -1,10 +1,13 @@
-import type { NitroRuntimeConfigApp } from "nitropack";
 import type { RuntimeConfig } from "nuxt/schema";
 
-function createFakeUseRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): RuntimeConfig {
+function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): RuntimeConfig {
   return {
     ...runtimeConfig,
-    app: {} as NitroRuntimeConfigApp,
+    app: {
+      baseURL: "",
+      buildAssetsDir: "",
+      cdnURL: "",
+    },
     public: {
       werewolvesAssistantApi: { baseUrl: "http://127.0.0.1" },
       i18n: {
@@ -30,4 +33,4 @@ function createFakeUseRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}):
   };
 }
 
-export { createFakeUseRuntimeConfig };
+export { createFakeRuntimeConfig };

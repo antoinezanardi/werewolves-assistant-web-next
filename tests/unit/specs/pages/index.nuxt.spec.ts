@@ -18,6 +18,10 @@ describe("Index Page Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should unset page layout when mounted.", () => {
+    expect(setPageLayout).toHaveBeenCalledExactlyOnceWith(false);
+  });
+
   describe("Title", () => {
     it("should display translated title when rendered.", () => {
       const title = wrapper.find("[aria-label='Werewolves Assistant']");

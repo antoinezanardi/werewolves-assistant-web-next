@@ -1,5 +1,6 @@
 <template>
   <NuxtImg
+    :aria-label="getRoleNameLabel(roleName)"
     :sizes="sizes"
     :src="roleImageSrc"
   />
@@ -9,11 +10,15 @@
 import { computed } from "vue";
 
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
+import { useRoleName } from "~/composables/api/role/useRoleName";
 
 const props = withDefaults(defineProps<RoleImageProps>(), {
   sizes: "50",
   definition: "normal",
 });
+
+const { getRoleNameLabel } = useRoleName();
+
 const runtimeConfig = useRuntimeConfig();
 
 const roleImageSrc = computed<string>(() => {
