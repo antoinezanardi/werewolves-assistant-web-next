@@ -56,7 +56,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Cache pnpm dependencies 🥡
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache-node-modules
         with:
           path: node_modules
@@ -88,7 +88,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Restore pnpm dependencies from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-node-modules
         with:
           path: node_modules
@@ -122,7 +122,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Restore pnpm dependencies from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-node-modules
         with:
           path: node_modules
@@ -156,7 +156,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Restore pnpm dependencies from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-node-modules
         with:
           path: node_modules
@@ -169,7 +169,7 @@ jobs:
         run: pnpm run test:unit:cov
 
       - name: Save tests coverage in cache 🥡
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         id: cache-unit-tests-coverage
         with:
           path: tests/unit/coverage
@@ -206,7 +206,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Restore pnpm dependencies from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-node-modules
         with:
           path: node_modules
@@ -243,14 +243,14 @@ jobs:
           run_install: false
 
       - name: Restore pnpm dependencies from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-node-modules
         with:
           path: node_modules
           key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Restore tests coverage from cache 🥡
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-unit-tests-coverage
         with:
           path: tests/unit/coverage
