@@ -110,11 +110,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 47
+              "line": 45
             },
             "start": {
               "column": 56,
-              "line": 42
+              "line": 40
             }
           }
         },
@@ -138,11 +138,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 43
+              "line": 41
             },
             "start": {
               "column": 7,
-              "line": 43
+              "line": 41
             }
           }
         },
@@ -166,11 +166,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 43
+              "line": 41
             },
             "start": {
               "column": 7,
-              "line": 43
+              "line": 41
             }
           }
         },
@@ -194,11 +194,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 43
+              "line": 41
             },
             "start": {
               "column": 7,
-              "line": 43
+              "line": 41
             }
           }
         },
@@ -219,11 +219,11 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 45
+              "line": 43
             },
             "start": {
               "column": 30,
-              "line": 43
+              "line": 41
             }
           }
         },
@@ -244,35 +244,39 @@
           "location": {
             "end": {
               "column": 59,
-              "line": 44
+              "line": 42
             },
             "start": {
               "column": 23,
-              "line": 44
+              "line": 42
             }
           }
         },
         {
           "id": "5",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
           "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
           "status": "Killed",
           "static": false,
-          "testsCompleted": 1,
+          "testsCompleted": 5,
           "killedBy": [
             "4"
           ],
           "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
             "4"
           ],
           "location": {
             "end": {
-              "column": 6,
-              "line": 36
+              "column": 35,
+              "line": 34
             },
             "start": {
-              "column": 25,
+              "column": 14,
               "line": 34
             }
           }
@@ -293,41 +297,12 @@
           ],
           "location": {
             "end": {
-              "column": 27,
-              "line": 35
+              "column": 34,
+              "line": 34
             },
             "start": {
-              "column": 24,
-              "line": 35
-            }
-          }
-        },
-        {
-          "id": "0",
-          "mutatorName": "ArrayDeclaration",
-          "replacement": "[]",
-          "statusReason": "Snapshot `Parameters Menu Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 38
-            },
-            "start": {
-              "column": 41,
-              "line": 29
+              "column": 31,
+              "line": 34
             }
           }
         },
@@ -352,16 +327,45 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 37
+              "line": 35
             },
             "start": {
               "column": 3,
               "line": 30
             }
           }
+        },
+        {
+          "id": "0",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "[]",
+          "statusReason": "Snapshot `Parameters Menu Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 36
+            },
+            "start": {
+              "column": 41,
+              "line": 29
+            }
+          }
         }
       ],
-      "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: async() => {\n      await navigateTo(\"/\");\n    },\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
+      "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: () => navigateTo(\"/\"),\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
     },
     "components/shared/role/RoleImage/RoleImage.vue": {
       "language": "html",
