@@ -30,6 +30,7 @@ const parametersMenuItems: MenuItem[] = [
   {
     label: t("components.ParametersMenu.backToHome"),
     icon: "fa fa-sign-out",
+    arialLabel: t("components.ParametersMenu.backToHome"),
     command: async() => await navigateTo("/"),
   },
 ];
@@ -37,6 +38,10 @@ const parametersMenuItems: MenuItem[] = [
 const parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);
 
 function toggleParametersMenu(event: MouseEvent): void {
-  parametersMenu.value?.toggle(event);
+  console.log(parametersMenu.value);
+  if (!parametersMenu.value) {
+    throw new Error("Parameters menu is not defined");
+  }
+  parametersMenu.value.toggle(event);
 }
 </script>

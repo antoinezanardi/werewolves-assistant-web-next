@@ -10,6 +10,7 @@ export default defineVitestConfig({
     watch: false,
     include: ["./tests/unit/**/*.spec.ts"],
     coverage: {
+      provider: "istanbul",
       exclude: [
         "nuxt.config.ts",
         "tests/**/*",
@@ -28,7 +29,7 @@ export default defineVitestConfig({
         "stores/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",
-      reporter: ["clover", "json", "lcov", "text", "text-summary"],
+      reporter: ["clover", "json", "lcov", "text", "text-summary", "html"],
       all: true,
       thresholds: {
         lines: 100,

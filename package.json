@@ -69,6 +69,7 @@
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "@typescript-eslint/types": "^6.19.0",
+    "@vitest/coverage-istanbul": "^1.2.1",
     "@vitest/coverage-v8": "^1.2.0",
     "@vue/test-utils": "^2.4.3",
     "cross-env": "^7.0.3",

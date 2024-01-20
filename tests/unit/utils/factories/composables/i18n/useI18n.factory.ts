@@ -10,7 +10,7 @@ type MockedI18n = {
 function createFakeI18n(i18n: Partial<MockedI18n> = {}): MockedI18n {
   return {
     locale: ref("en"),
-    t: vi.fn(),
+    t: vi.fn((key: string) => key),
     ...i18n,
   };
 }

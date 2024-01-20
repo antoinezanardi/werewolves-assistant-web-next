@@ -20,6 +20,13 @@ describe("App Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should render component without shallow and match snapshot when mounted.", async() => {
+    wrapper = await mountSuspendedComponent(App, { shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it("should fetch and set roles from store when mounted.", () => {
     expect(useRolesStoreMock.fetchAndSetRoles).toHaveBeenCalledWith();
   });

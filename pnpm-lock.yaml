@@ -82,6 +82,9 @@ devDependencies:
   '@typescript-eslint/types':
     specifier: ^6.19.0
     version: 6.19.0
+  '@vitest/coverage-istanbul':
+    specifier: ^1.2.1
+    version: 1.2.1(vitest@1.1.1)
   '@vitest/coverage-v8':
     specifier: ^1.2.0
     version: 1.2.0(vitest@1.1.1)
@@ -3322,6 +3325,25 @@ packages:
     dependencies:
       vite: 5.0.11(@types/node@20.11.0)(sass@1.69.7)
       vue: 3.4.14(typescript@5.3.3)
+    dev: true
+
+  /@vitest/coverage-istanbul@1.2.1(vitest@1.1.1):
+    resolution: {integrity: sha512-j8M4R3XbQ7cmLqJd7mfxCpEc0bQ7S6o5VIEt7c0Auri2lT1hkd89Sa/mOYDnuGasTNawamW+0d9vDRK/5uhVXw==, tarball: https://registry.npmjs.org/@vitest/coverage-istanbul/-/coverage-istanbul-1.2.1.tgz}
+    peerDependencies:
+      vitest: ^1.0.0
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+      istanbul-lib-coverage: 3.2.2
+      istanbul-lib-instrument: 6.0.1
+      istanbul-lib-report: 3.0.1
+      istanbul-lib-source-maps: 4.0.1
+      istanbul-reports: 3.1.6
+      magicast: 0.3.3
+      picocolors: 1.0.0
+      test-exclude: 6.0.0
+      vitest: 1.1.1(@types/node@20.11.0)(happy-dom@12.10.3)(sass@1.69.7)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@vitest/coverage-v8@1.2.0(vitest@1.1.1):
@@ -6987,6 +7009,19 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /istanbul-lib-instrument@6.0.1:
+    resolution: {integrity: sha512-EAMEJBsYuyyztxMxW3g7ugGPkrZsV57v0Hmv3mm1uQsmB+QnZuepg731CRaIgeUVSdmsTngOkSnauNF8p7FIhA==, tarball: https://registry.npmjs.org/istanbul-lib-instrument/-/istanbul-lib-instrument-6.0.1.tgz}
+    engines: {node: '>=10'}
+    dependencies:
+      '@babel/core': 7.23.7
+      '@babel/parser': 7.23.6
+      '@istanbuljs/schema': 0.1.3
+      istanbul-lib-coverage: 3.2.2
+      semver: 7.5.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /istanbul-lib-report@3.0.1:
     resolution: {integrity: sha512-GCfE1mtsHGOELCU8e/Z7YWzpmybrx/+dSTfLrvY8qRmaY6zXTKWn6WQIjaAFw069icm6GVMNkgu0NzI4iPZUNw==}
     engines: {node: '>=10'}
@@ -7517,6 +7552,14 @@ packages:
 
   /magicast@0.3.2:
     resolution: {integrity: sha512-Fjwkl6a0syt9TFN0JSYpOybxiMCkYNEeOTnOTNRbjphirLakznZXAqrXgj/7GG3D1dvETONNwrBfinvAbpunDg==}
+    dependencies:
+      '@babel/parser': 7.23.6
+      '@babel/types': 7.23.6
+      source-map-js: 1.0.2
+    dev: true
+
+  /magicast@0.3.3:
+    resolution: {integrity: sha512-ZbrP1Qxnpoes8sz47AM0z08U+jW6TyRgZzcWy3Ma3vDhJttwMwAFDMMQFobwdBxByBD46JYmxRzeF7w2+wJEuw==, tarball: https://registry.npmjs.org/magicast/-/magicast-0.3.3.tgz}
     dependencies:
       '@babel/parser': 7.23.6
       '@babel/types': 7.23.6

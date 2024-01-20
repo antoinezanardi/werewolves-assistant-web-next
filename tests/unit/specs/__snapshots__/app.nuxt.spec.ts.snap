@@ -1,3 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`App Component > should render component and match snapshot when mounted. 1`] = `"<nuxt-layout-stub data-v-938b83b0=""></nuxt-layout-stub>"`;
+
+exports[`App Component > should render component without shallow and match snapshot when mounted. 1`] = `
+"<div class="d-flex flex-column h-100">
+  <div data-v-4f13fdda="" id="navbar" class="align-items-center d-flex justify-content-between"><a data-v-4f13fdda="" href="/" aria-label="Home page" class="align-items-center d-flex"><img data-v-4f13fdda="" src="/_ipx/_/img/logo/square/werewolves-logo-small.png" data-nuxt-img="" srcset="/_ipx/_/img/logo/square/werewolves-logo-small.png 1x, /_ipx/_/img/logo/square/werewolves-logo-small.png 2x" id="werewolves-assistant-logo" aria-label="Werewolves Assistant logo">
+      <div data-v-4f13fdda="" aria-label="Werewolves Assistant" class="ms-2">Werewolves Assistant</div>
+    </a>
+    <div data-v-4f13fdda="" id="parameters-menu" aria-label="Parameters menu" data-pd-tooltip="true"><button class="p-button p-component p-button-icon-only p-button-secondary" type="button" aria-label="Parameters" data-pc-name="button" data-pc-section="root" data-pc-severity="secondary" data-pd-ripple="true"><span class="p-button-icon fa fa-cog" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
+        <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+      </button>
+      <!--teleport start-->
+      <!--teleport end-->
+    </div>
+  </div>
+  <div class="flex-grow-1 h-100">
+    <div class="container-fluid d-flex flex-column h-100 page-content">
+      <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
+        <div class="col-12 text-center"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
+        <div class="col-12 text-center">
+          <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
+        </div>
+        <div class="col-12 col-lg-3"><button class="p-button p-component p-button-raised p-button-lg w-100" type="button" aria-label="Play" data-pc-name="button" data-pc-section="root" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-play-circle fa-2x" data-pc-section="icon"></span><span class="p-button-label fs-3 fw-bold text-uppercase" data-pc-section="label">Play</span>
+            <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+          </button></div>
+        <div class="col-12 col-lg-3 mt-4"><a href="/about" aria-label="About" class="p-button p-button-secondary w-100"><span class="fa fa-question me-2"></span> About</a></div>
+      </div>
+      <hr class="w-100">
+      <div class="row">
+        <div class="col-6"><a aria-label="Contact me" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span> Contact me</a></div>
+        <div class="col-6 d-flex justify-content-end text-right"><a aria-label="This project is open source" class="p-button p-button-help" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span> This project is open source</a></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

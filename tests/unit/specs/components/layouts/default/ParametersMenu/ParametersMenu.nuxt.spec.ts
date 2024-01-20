@@ -1,7 +1,11 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
 import { MouseEvent } from "happy-dom";
-import { beforeAll } from "vitest";
+import Menu from "primevue/menu";
+import type { MenuItem } from "primevue/menuitem";
+import { beforeAll, expect } from "vitest";
+import type { Mock } from "vitest";
+import type { Ref } from "vue";
 
 import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
@@ -28,8 +32,10 @@ describe("Parameters Menu Component", () => {
   });
 
   describe("Parameters Menu Button", () => {
-    it("should open the parameters menu when clicked.", async() => {
-      const toggleMenuMock = vi.fn();
+    let toggleMenuMock: Mock;
+
+    beforeEach(async() => {
+      toggleMenuMock = vi.fn();
       wrapper = await mountSuspendedComponent(ParametersMenu, {
         global: {
           stubs: {
@@ -40,22 +46,62 @@ describe("Parameters Menu Component", () => {
           },
         },
       });
+    });
+
+    it("should open the parameters menu when clicked.", async() => {
       const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));
+    });
+
+    it("should not open the parameters menu when clicked if the menu is not found in refs.", async() => {
+      wrapper = await mountSuspendedComponent(ParametersMenu, {
+        global: {
+          stubs: {
+            Menu: {
+              template: "<div></div>",
+              methods: { toggle: toggleMenuMock },
+            },
+          },
+        },
+      });
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { parametersMenu: Ref }).parametersMenu.value = null;
+      try {
+        await (wrapper.vm.$root?.$refs.VTU_COMPONENT as { toggleParametersMenu: () => Promise<void> }).toggleParametersMenu();
+      } catch (err) {
+        expect(err).toBeInstanceOf(Error);
+        expect((err as any).message).toBe("Parameters menu is not defined");
+      }
+
+      expect(toggleMenuMock).not.toHaveBeenCalled();
     });
   });
 
   describe("Parameters Menu", () => {
     beforeEach(async() => {
       wrapper = await mountSuspendedComponent(ParametersMenu, { shallow: false });
+      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
+      await parametersMenuButton.trigger("click");
     });
 
-    it("should navigate to home page when clicking on back to home button.", async() => {
-      console.log(wrapper.html());
+    it("should pass the correct items to the menu when mounted.", () => {
+      const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
 
-      expect(false).toBeTruthy();
+      expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([
+        {
+          label: "components.ParametersMenu.backToHome",
+          icon: "fa fa-sign-out",
+          arialLabel: "components.ParametersMenu.backToHome",
+          command: expect.any(Function) as () => Promise<void>,
+        },
+      ]);
+    });
+
+    it("should navigate to home page when clicking on back to home button.", () => {
+      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.backToHome\"] .p-menuitem-link")?.click();
+
+      expect(navigateTo).toHaveBeenCalledExactlyOnceWith("/");
     });
   });
 });
