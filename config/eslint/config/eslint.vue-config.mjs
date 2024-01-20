@@ -7,6 +7,7 @@ const ESLINT_VUE_CONFIG = {
   files: [
     "app.vue",
     "pages/**/*.vue",
+    "layouts/**/*.vue",
     "components/**/*.vue",
   ],
   languageOptions: {
@@ -19,12 +20,13 @@ const ESLINT_VUE_CONFIG = {
     },
   },
   rules: {
+    "id-length": [ERROR, { exceptions: ["t"] }],
     "import/unambiguous": OFF,
     "vue/comment-directive": ERROR,
     "vue/jsx-uses-vars": ERROR,
     // ---- Vue Rules -----
     // - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
-    "vue/multi-word-component-names": [ERROR, { ignores: ["index"] }],
+    "vue/multi-word-component-names": ERROR,
     "vue/no-arrow-functions-in-watch": ERROR,
     "vue/no-async-in-computed-properties": ERROR,
     "vue/no-child-content": ERROR,

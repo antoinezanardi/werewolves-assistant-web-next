@@ -3,7 +3,7 @@
     <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
       <div class="col-12 text-center">
         <NuxtImg
-          sizes="lg:200px"
+          sizes="200px"
           src="/img/logo/square/werewolves-logo.png"
         />
       </div>
@@ -30,16 +30,14 @@
       </div>
 
       <div class="col-12 col-lg-3 mt-4">
-        <VuePrimeButton
-          class="w-100"
-          icon="fas fa-question"
-          icon-pos="right"
-          :label="$t('pages.index.about')"
-          :pt="buttonsPassThroughProperties"
-          raised
-          severity="secondary"
-          size="large"
-        />
+        <NuxtLink
+          :aria-label="$t('pages.index.about')"
+          class="p-button p-button-secondary w-100"
+          to="/about"
+        >
+          <span class="fa fa-question me-2"/>
+          {{ $t('pages.index.about') }}
+        </NuxtLink>
       </div>
     </div>
 
@@ -53,7 +51,9 @@
 import type { ButtonPassThroughOptions } from "primevue/button";
 import type { PassThrough } from "primevue/ts-helpers";
 
-import IndexFooter from "~/components/index/IndexFooter.vue";
+import IndexFooter from "~/components/pages/index/IndexFooter.vue";
+
+definePageMeta({ layout: false });
 
 const buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {
   label: "fs-3 fw-bold text-uppercase",
