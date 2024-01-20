@@ -9,6 +9,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       useRuntimeConfig: READONLY,
       definePageMeta: READONLY,
       setPageLayout: READONLY,
+      createError: READONLY,
       useFetch: READONLY,
       useI18n: READONLY,
       navigateTo: READONLY,

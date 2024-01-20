@@ -35,6 +35,11 @@ beforeAll(() => {
     () => vi.fn(() => createFakeRuntimeConfig()),
   );
 
+  mockNuxtImport<typeof createError>(
+    "createError",
+    <DataT>() => (vi.fn(() => new Error("Mocked error")) as DataT),
+  );
+
   mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(
     "useI18n",
   () => vi.fn(() => createFakeI18n()),

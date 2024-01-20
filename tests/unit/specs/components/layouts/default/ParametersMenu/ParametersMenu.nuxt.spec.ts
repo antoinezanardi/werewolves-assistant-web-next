@@ -55,7 +55,7 @@ describe("Parameters Menu Component", () => {
       expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));
     });
 
-    it("should not open the parameters menu when clicked if the menu is not found in refs.", async() => {
+    it("should not open the parameters menu and throw error when clicked if the menu is not found in refs.", async() => {
       wrapper = await mountSuspendedComponent(ParametersMenu, {
         global: {
           stubs: {
@@ -67,14 +67,11 @@ describe("Parameters Menu Component", () => {
         },
       });
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { parametersMenu: Ref }).parametersMenu.value = null;
-      try {
-        await (wrapper.vm.$root?.$refs.VTU_COMPONENT as { toggleParametersMenu: () => Promise<void> }).toggleParametersMenu();
-      } catch (err) {
-        expect(err).toBeInstanceOf(Error);
-        expect((err as any).message).toBe("Parameters menu is not defined");
-      }
+      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
+      await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).not.toHaveBeenCalled();
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Parameters Menu is not initialized");
     });
   });
 

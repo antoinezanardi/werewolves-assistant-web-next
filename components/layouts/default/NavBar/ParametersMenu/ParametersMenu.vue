@@ -38,9 +38,8 @@ const parametersMenuItems: MenuItem[] = [
 const parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);
 
 function toggleParametersMenu(event: MouseEvent): void {
-  console.log(parametersMenu.value);
   if (!parametersMenu.value) {
-    throw new Error("Parameters menu is not defined");
+    throw createError("Parameters Menu is not initialized");
   }
   parametersMenu.value.toggle(event);
 }
