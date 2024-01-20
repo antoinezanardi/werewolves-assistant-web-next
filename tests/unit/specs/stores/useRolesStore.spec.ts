@@ -6,7 +6,7 @@ import { ref } from "vue";
 import type { Role } from "~/composables/api/role/types/role.types";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import * as UseFetchRolesComposable from "~/composables/api/role/useFetchRoles";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/types/role.types.factory";
+import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Roles Store", () => {
   let mockedUseFetchRoles: {
@@ -35,7 +35,7 @@ describe("Roles Store", () => {
     });
 
     it("should set roles when called.", async() => {
-      const roles: Role[] = [
+      const roles = [
         createFakeRole(),
         createFakeRole(),
         createFakeRole(),

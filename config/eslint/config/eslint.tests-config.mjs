@@ -7,8 +7,9 @@ const ESLINT_TESTS_CONFIG = {
   plugins: { vitest: Vitest },
   languageOptions: { globals: { ...Vitest.environments.env.globals } },
   rules: {
-    "import/no-namespace": OFF,
     "max-lines-per-function": OFF,
+    "id-length": [ERROR, { exceptions: ["t"] }],
+    "import/no-namespace": OFF,
     "@typescript-eslint/init-declarations": OFF,
     "vitest/consistent-test-filename": [ERROR, { pattern: "^(.+\\.spec)\\.ts$" }],
     "vitest/consistent-test-it": [ERROR, { fn: "it" }],
