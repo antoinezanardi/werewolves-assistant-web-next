@@ -20,6 +20,11 @@ beforeAll(() => {
     () => vi.fn(),
   );
 
+  mockNuxtImport<typeof definePageMeta>(
+    "definePageMeta",
+    () => vi.fn(),
+  );
+
   mockNuxtImport<typeof useFetch>(
     "useFetch",
     () => vi.fn(),

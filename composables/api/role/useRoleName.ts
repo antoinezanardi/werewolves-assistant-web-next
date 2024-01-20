@@ -8,7 +8,7 @@ function useRoleName(): UseRoleName {
   const { t } = useI18n();
 
   function getRoleNameLabel(roleName: RoleNames): string {
-    return t(`shared.role.roleName.${roleName}`);
+    return t(`shared.role.name.${roleName}`);
   }
   return { getRoleNameLabel };
 }

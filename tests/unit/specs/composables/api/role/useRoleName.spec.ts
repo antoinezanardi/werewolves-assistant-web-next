@@ -18,7 +18,7 @@ describe("Use Role Name Composable", () => {
     it("should translate role when called with role name.", () => {
       useRoleName().getRoleNameLabel(RoleNames.WEREWOLF);
 
-      expect(tMock).toHaveBeenCalledExactlyOnceWith("shared.role.roleName.werewolf");
+      expect(tMock).toHaveBeenCalledExactlyOnceWith("shared.role.name.werewolf");
     });
   });
 });

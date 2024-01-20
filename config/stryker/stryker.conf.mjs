@@ -19,10 +19,12 @@ export default {
     "@stryker-mutator/typescript-checker",
     "./config/stryker/plugins/stryker-define-props-ignorer-plugin.mjs",
     "./config/stryker/plugins/stryker-define-emits-ignorer-plugin.mjs",
+    "./config/stryker/plugins/stryker-define-page-meta-ignorer-plugin.mjs",
   ],
   ignorers: [
     "defineProps",
     "defineEmits",
+    "definePageMeta",
   ],
   ignorePatterns: [
     ".github/",
