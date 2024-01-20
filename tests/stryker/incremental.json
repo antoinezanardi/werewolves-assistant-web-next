@@ -4,64 +4,6 @@
       "language": "html",
       "mutants": [
         {
-          "id": "0",
-          "mutatorName": "ArrayDeclaration",
-          "replacement": "[]",
-          "statusReason": "Snapshot `Parameters Menu Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "0"
-          ],
-          "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 36
-            },
-            "start": {
-              "column": 41,
-              "line": 29
-            }
-          }
-        },
-        {
-          "id": "1",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected [ {} ] to strictly equal [ { …(4) } ]",
-          "status": "Killed",
-          "testsCompleted": 4,
-          "static": false,
-          "killedBy": [
-            "3"
-          ],
-          "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 35
-            },
-            "start": {
-              "column": 3,
-              "line": 30
-            }
-          }
-        },
-        {
           "id": "2",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -149,60 +91,6 @@
           }
         },
         {
-          "id": "5",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "testsCompleted": 5,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 46,
-              "line": 34
-            },
-            "start": {
-              "column": 14,
-              "line": 34
-            }
-          }
-        },
-        {
-          "id": "6",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/\",\n], but it was called with \"\"",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "4"
-          ],
-          "coveredBy": [
-            "4"
-          ],
-          "location": {
-            "end": {
-              "column": 45,
-              "line": 34
-            },
-            "start": {
-              "column": 42,
-              "line": 34
-            }
-          }
-        },
-        {
           "id": "7",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -222,11 +110,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 45
+              "line": 47
             },
             "start": {
               "column": 56,
-              "line": 40
+              "line": 42
             }
           }
         },
@@ -250,11 +138,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 41
+              "line": 43
             },
             "start": {
               "column": 7,
-              "line": 41
+              "line": 43
             }
           }
         },
@@ -278,11 +166,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 41
+              "line": 43
             },
             "start": {
               "column": 7,
-              "line": 41
+              "line": 43
             }
           }
         },
@@ -306,11 +194,11 @@
           "location": {
             "end": {
               "column": 28,
-              "line": 41
+              "line": 43
             },
             "start": {
               "column": 7,
-              "line": 41
+              "line": 43
             }
           }
         },
@@ -331,11 +219,11 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 43
+              "line": 45
             },
             "start": {
               "column": 30,
-              "line": 41
+              "line": 43
             }
           }
         },
@@ -356,16 +244,124 @@
           "location": {
             "end": {
               "column": 59,
-              "line": 42
+              "line": 44
             },
             "start": {
               "column": 23,
-              "line": 42
+              "line": 44
+            }
+          }
+        },
+        {
+          "id": "5",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 36
+            },
+            "start": {
+              "column": 25,
+              "line": 34
+            }
+          }
+        },
+        {
+          "id": "6",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 27,
+              "line": 35
+            },
+            "start": {
+              "column": 24,
+              "line": 35
+            }
+          }
+        },
+        {
+          "id": "0",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "[]",
+          "statusReason": "Snapshot `Parameters Menu Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 38
+            },
+            "start": {
+              "column": 41,
+              "line": 29
+            }
+          }
+        },
+        {
+          "id": "1",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected [ {} ] to strictly equal [ { …(4) } ]",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 37
+            },
+            "start": {
+              "column": 3,
+              "line": 30
             }
           }
         }
       ],
-      "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: async() => await navigateTo(\"/\"),\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
+      "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: async() => {\n      await navigateTo(\"/\");\n    },\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
     },
     "components/shared/role/RoleImage/RoleImage.vue": {
       "language": "html",
@@ -861,6 +857,103 @@
       ],
       "source": "import type { UseFetchOptions } from \"#app\";\n\nimport { DEFAULT_USE_FETCH_OPTIONS } from \"~/composables/api/api.constants\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\n\ntype UseFetchRoles = {\n  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;\n};\n\nfunction useFetchRoles(): UseFetchRoles {\n  const config = useRuntimeConfig();\n  const { baseUrl } = config.public.werewolvesAssistantApi;\n\n  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {\n    return useFetch<Role[]>(`${baseUrl}/roles`, {\n      method: \"GET\",\n      ...DEFAULT_USE_FETCH_OPTIONS,\n      ...options,\n    });\n  }\n  return { fetchRoles };\n}\n\nexport { useFetchRoles };"
     },
+    "composables/api/role/useRoleName.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "33",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(7,25): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 14
+            },
+            "start": {
+              "column": 37,
+              "line": 7
+            }
+          }
+        },
+        {
+          "id": "34",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(10,51): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 12
+            },
+            "start": {
+              "column": 58,
+              "line": 10
+            }
+          }
+        },
+        {
+          "id": "35",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"shared.role.name.werewolf\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "27"
+          ],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 44,
+              "line": 11
+            },
+            "start": {
+              "column": 14,
+              "line": 11
+            }
+          }
+        },
+        {
+          "id": "36",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(13,3): error TS2741: Property 'getRoleNameLabel' is missing in type '{}' but required in type 'UseRoleName'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 13
+            },
+            "start": {
+              "column": 10,
+              "line": 13
+            }
+          }
+        }
+      ],
+      "source": "import type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\n\ntype UseRoleName = {\n  getRoleNameLabel: (roleName: RoleNames) => string;\n};\n\nfunction useRoleName(): UseRoleName {\n  const { t } = useI18n();\n\n  function getRoleNameLabel(roleName: RoleNames): string {\n    return t(`shared.role.name.${roleName}`);\n  }\n  return { getRoleNameLabel };\n}\n\nexport { useRoleName };"
+    },
     "pages/index.vue": {
       "language": "html",
       "mutants": [
@@ -1119,100 +1212,6 @@
         }
       ],
       "source": "import type { AsyncDataRequestStatus } from \"#app/composables/asyncData\";\nimport { ref } from \"vue\";\nimport { defineStore } from \"pinia\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useFetchRoles } from \"~/composables/api/role/useFetchRoles\";\nimport { StoreIds } from \"~/stores/enums/store.enum\";\n\nconst useRolesStore = defineStore(StoreIds.ROLES, () => {\n  const { fetchRoles } = useFetchRoles();\n\n  const fetchingRoleStatus = ref<AsyncDataRequestStatus>(\"idle\");\n  const roles = ref<Role[] | null>(null);\n\n  async function fetchAndSetRoles(): Promise<void> {\n    fetchingRoleStatus.value = \"pending\";\n    const { data, status } = await fetchRoles();\n    roles.value = data.value;\n    fetchingRoleStatus.value = status.value;\n  }\n  return {\n    roles,\n    fetchingRoleStatus,\n    fetchAndSetRoles,\n  };\n});\n\nexport { useRolesStore };"
-    },
-    "composables/api/role/useRoleName.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "33",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(7,25): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "27"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 14
-            },
-            "start": {
-              "column": 37,
-              "line": 7
-            }
-          }
-        },
-        {
-          "id": "34",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(10,51): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "27"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 12
-            },
-            "start": {
-              "column": 58,
-              "line": 10
-            }
-          }
-        },
-        {
-          "id": "36",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(13,3): error TS2741: Property 'getRoleNameLabel' is missing in type '{}' but required in type 'UseRoleName'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "27"
-          ],
-          "location": {
-            "end": {
-              "column": 30,
-              "line": 13
-            },
-            "start": {
-              "column": 10,
-              "line": 13
-            }
-          }
-        },
-        {
-          "id": "35",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"shared.role.name.werewolf\",\n], but it was called with \"\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "27"
-          ],
-          "coveredBy": [
-            "27"
-          ],
-          "location": {
-            "end": {
-              "column": 44,
-              "line": 11
-            },
-            "start": {
-              "column": 14,
-              "line": 11
-            }
-          }
-        }
-      ],
-      "source": "import type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\n\ntype UseRoleName = {\n  getRoleNameLabel: (roleName: RoleNames) => string;\n};\n\nfunction useRoleName(): UseRoleName {\n  const { t } = useI18n();\n\n  function getRoleNameLabel(roleName: RoleNames): string {\n    return t(`shared.role.name.${roleName}`);\n  }\n  return { getRoleNameLabel };\n}\n\nexport { useRoleName };"
     }
   },
   "schemaVersion": "1.0",
