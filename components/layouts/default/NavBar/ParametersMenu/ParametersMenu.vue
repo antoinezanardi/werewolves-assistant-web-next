@@ -31,8 +31,8 @@ const parametersMenuItems: MenuItem[] = [
     label: t("components.ParametersMenu.backToHome"),
     icon: "fa fa-sign-out",
     arialLabel: t("components.ParametersMenu.backToHome"),
-    command: async() => {
-      await navigateTo("/");
+    command: () => {
+      void navigateTo("/");
     },
   },
 ];
