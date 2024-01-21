@@ -40,6 +40,9 @@
     "index": {
       "about": "À quoi ça sert",
       "play": "Jouer"
+    },
+    "about": {
+      "whyAnAssistant": "Un assistant ? Pour quoi faire ?"
     }
   },
   "components": {
@@ -58,6 +61,27 @@
       "backToHome": "Retour à l'accueil",
       "parameters": "Paramètres",
       "parametersMenu": "Menu des paramètres"
+    },
+    "AboutWerewolvesGame": {
+      "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
+      "iDontKnowThisGame": "Je ne connais pas ce jeu",
+      "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
+      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
+      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
+    },
+    "AboutWerewolvesAssistant": {
+      "werewolvesAssistantInThePlace": "L'assistant Loups-Garous entre en scène !",
+      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au maître du jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
+      "assistantHasManyFeatures": "Cet Assistant propose une variété de fonctionnalités, dont :",
+      "gameLayout": "Un écran de composition de partie permettant de créer des sessions pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
+      "intuitiveUserInterface": "Une interface ludique de suivi de partie, offrant une expérience visuelle agréable.",
+      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels que la sélection de la cible des Loups-Garous ou l'élection du maire.",
+      "gamePlaysQueue": "L'Assistant prend en charge l'ordonnancement des tours de jeu, l'affichage des décès et autres événements, ainsi que la conservation de tous les choix effectués pendant la partie.",
+      "gameHistory": "À la fin de la partie, un récapitulatif est généré, indiquant le camp victorieux et fournissant un historique complet des actions passées.",
+      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de maître du jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
+      "pleaseBeAware": "Attention cependant",
+      "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
+      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
     }
   }
 }

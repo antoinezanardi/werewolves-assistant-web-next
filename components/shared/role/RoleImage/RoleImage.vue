@@ -1,8 +1,9 @@
 <template>
   <NuxtImg
     :aria-label="getRoleNameLabel(roleName)"
-    :sizes="sizes"
+    :height="sizes"
     :src="roleImageSrc"
+    :width="sizes"
   />
 </template>
 
@@ -13,7 +14,7 @@ import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-ima
 import { useRoleName } from "~/composables/api/role/useRoleName";
 
 const props = withDefaults(defineProps<RoleImageProps>(), {
-  sizes: "50",
+  sizes: "500",
   definition: "normal",
 });
 
