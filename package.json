@@ -27,12 +27,14 @@
     "url": "git+https://github.com/antoinezanardi/werewolves-assistant-web-next.git"
   },
   "scripts": {
+    "start": "npm run start:prod",
+    "start:prod": "node .output/server/index.mjs",
     "prepare": "is-ci || husky install",
     "build": "nuxt build",
     "dev": "nuxt dev --dotenv env/.env.development",
     "generate": "nuxt generate",
     "preview": "npm run build && nuxt preview --dotenv env/.env.production",
-    "postinstall": "nuxt prepare",
+    "postinstall": "! command -v nuxt &> /dev/null || nuxt prepare",
     "lint": "cross-env ESLINT_USE_FLAT_CONFIG=true npx eslint --config eslint.config.js .",
     "lint:fix": "cross-env ESLINT_USE_FLAT_CONFIG=true npx eslint --config eslint.config.js --fix .",
     "lint:staged:fix": "cross-env ESLINT_USE_FLAT_CONFIG=true lint-staged -c config/lint-staged/.lintstagedrc.eslint.json",

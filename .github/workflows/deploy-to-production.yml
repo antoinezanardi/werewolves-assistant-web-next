@@ -1,0 +1,63 @@
+name: 🚀 Deploy To Production Workflow
+
+on:
+  release:
+    types: [created]
+
+jobs:
+
+  deploy:
+    name: Deploy to production 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup GitHub repository 🔧
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v3
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
+
+      - name: Build app ✨
+        run: pnpm run build
+
+      - name: Auth to GCP ☁️
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: ${{ secrets.PRODUCTION_GCP_SA_KEY }}
+
+      - name: Transform and format version for GCP ♻️
+        id: format-version-for-gcp
+        run: |
+          version=${{ github.event.release.tag_name }}
+          version=${version//./-}
+          echo "FORMATTED_VERSION_FOR_GCP=${version}" >> $GITHUB_OUTPUT
+
+      - name: Deploy to production 🚀
+        uses: 'google-github-actions/deploy-appengine@v2'
+        with:
+          project_id: ${{ secrets.PRODUCTION_GCP_PROJECT_ID }}
+          env_vars: |-
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL="${{ secrets.PRODUCTION_WEREWOLVES_ASSISTANT_API_BASE_URL }}"
+          flags: "--version=${{ steps.format-version-for-gcp.outputs.FORMATTED_VERSION_FOR_GCP }}"

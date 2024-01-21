@@ -1,0 +1,4 @@
+runtime: nodejs20
+
+build_env_variables:
+  GOOGLE_NODE_RUN_SCRIPTS: ''
