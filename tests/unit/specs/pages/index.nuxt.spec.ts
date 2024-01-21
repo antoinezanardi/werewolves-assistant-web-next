@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 import type { ButtonPassThroughOptions } from "primevue/button";
 import type { PassThrough } from "primevue/ts-helpers";
 
-import type { VuePrimeButton } from "#components";
+import type { NuxtLink, VuePrimeButton } from "#components";
 import Index from "@/pages/index.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 
@@ -46,19 +46,9 @@ describe("Index Page Component", () => {
 
   describe("About button", () => {
     it("should display about button with translated label when rendered.", () => {
-      const aboutButton = wrapper.findComponent<typeof VuePrimeButton>("[label='About']");
+      const aboutButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='About']");
 
-      expect(aboutButton.attributes("label")).toBe("About");
-    });
-
-    it("should display about button with pass through data when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(Index, { shallow: false });
-      const aboutButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='About']");
-
-      expect(aboutButton.props("pt")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({
-        icon: "fa-2x",
-        label: "fs-3 fw-bold text-uppercase",
-      });
+      expect(aboutButton.html()).toContain("About");
     });
   });
 });

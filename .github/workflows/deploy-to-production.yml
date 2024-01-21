@@ -1,0 +1,38 @@
+name: 🚀 Deploy To Production Workflow
+
+on:
+  release:
+    types: [created]
+
+jobs:
+
+  deploy:
+    name: Deploy to production 🚀
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup GitHub repository 🔧
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Auth to GCP ☁️
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: ${{ secrets.PRODUCTION_GCP_SA_KEY }}
+
+      - name: Transform and format version for GCP ♻️
+        id: format-version-for-gcp
+        run: |
+          version=${{ github.event.release.tag_name }}
+          version=${version//./-}
+          echo "FORMATTED_VERSION_FOR_GCP=${version}" >> $GITHUB_OUTPUT
+
+      - name: Deploy to production 🚀
+        uses: 'google-github-actions/deploy-appengine@v2'
+        with:
+          project_id: ${{ secrets.PRODUCTION_GCP_PROJECT_ID }}
+          env_vars: |-
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL="${{ secrets.PRODUCTION_WEREWOLVES_ASSISTANT_API_BASE_URL }}"
+          flags: "--version=${{ steps.format-version-for-gcp.outputs.FORMATTED_VERSION_FOR_GCP }}"

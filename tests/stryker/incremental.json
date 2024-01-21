@@ -1,10 +1,658 @@
 {
   "files": {
+    "components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "2",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected [ { label: '', …(3) } ] to strictly equal [ { …(4) } ]",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 31
+            },
+            "start": {
+              "column": 14,
+              "line": 31
+            }
+          }
+        },
+        {
+          "id": "3",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected [ { …(4) } ] to strictly equal [ { …(4) } ]",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 27,
+              "line": 32
+            },
+            "start": {
+              "column": 11,
+              "line": 32
+            }
+          }
+        },
+        {
+          "id": "4",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected [ { …(4) } ] to strictly equal [ { …(4) } ]",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 57,
+              "line": 33
+            },
+            "start": {
+              "column": 19,
+              "line": 33
+            }
+          }
+        },
+        {
+          "id": "7",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 45
+            },
+            "start": {
+              "column": 56,
+              "line": 40
+            }
+          }
+        },
+        {
+          "id": "8",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "parametersMenu.value",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 28,
+              "line": 41
+            },
+            "start": {
+              "column": 7,
+              "line": 41
+            }
+          }
+        },
+        {
+          "id": "9",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "1"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 28,
+              "line": 41
+            },
+            "start": {
+              "column": 7,
+              "line": 41
+            }
+          }
+        },
+        {
+          "id": "10",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 28,
+              "line": 41
+            },
+            "start": {
+              "column": 7,
+              "line": 41
+            }
+          }
+        },
+        {
+          "id": "11",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 43
+            },
+            "start": {
+              "column": 30,
+              "line": 41
+            }
+          }
+        },
+        {
+          "id": "12",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"Parameters Menu is not initialized\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "2"
+          ],
+          "coveredBy": [
+            "2"
+          ],
+          "location": {
+            "end": {
+              "column": 59,
+              "line": 42
+            },
+            "start": {
+              "column": 23,
+              "line": 42
+            }
+          }
+        },
+        {
+          "id": "5",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 5,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 35,
+              "line": 34
+            },
+            "start": {
+              "column": 14,
+              "line": 34
+            }
+          }
+        },
+        {
+          "id": "6",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "4"
+          ],
+          "coveredBy": [
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 34,
+              "line": 34
+            },
+            "start": {
+              "column": 31,
+              "line": 34
+            }
+          }
+        },
+        {
+          "id": "1",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected [ {} ] to strictly equal [ { …(4) } ]",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "3"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 35
+            },
+            "start": {
+              "column": 3,
+              "line": 30
+            }
+          }
+        },
+        {
+          "id": "0",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "[]",
+          "statusReason": "Snapshot `Parameters Menu Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "0"
+          ],
+          "coveredBy": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 36
+            },
+            "start": {
+              "column": 41,
+              "line": 29
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: () => navigateTo(\"/\"),\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
+    },
+    "components/shared/role/RoleImage/RoleImage.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "13",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "We can't mutate defineProps macro as it is stated here: https://github.com/stryker-mutator/stryker-js/issues/3305.",
+          "status": "Ignored",
+          "static": false,
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 18
+            },
+            "start": {
+              "column": 59,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "14",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "We can't mutate defineProps macro as it is stated here: https://github.com/stryker-mutator/stryker-js/issues/3305.",
+          "status": "Ignored",
+          "static": false,
+          "location": {
+            "end": {
+              "column": 14,
+              "line": 16
+            },
+            "start": {
+              "column": 10,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "15",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "We can't mutate defineProps macro as it is stated here: https://github.com/stryker-mutator/stryker-js/issues/3305.",
+          "status": "Ignored",
+          "static": false,
+          "location": {
+            "end": {
+              "column": 23,
+              "line": 17
+            },
+            "start": {
+              "column": 15,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "16",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 28
+            },
+            "start": {
+              "column": 45,
+              "line": 24
+            }
+          }
+        },
+        {
+          "id": "17",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected 'http://127.0.0.1/public/assets/images…' to be 'http://127.0.0.1/public/assets/images…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "13"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 26
+            },
+            "start": {
+              "column": 23,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "18",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 26
+            },
+            "start": {
+              "column": 23,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "19",
+          "mutatorName": "EqualityOperator",
+          "replacement": "props.definition !== \"normal\"",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 26
+            },
+            "start": {
+              "column": 23,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "20",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 52,
+              "line": 26
+            },
+            "start": {
+              "column": 44,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "21",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"Stryker was here!\"",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 57,
+              "line": 26
+            },
+            "start": {
+              "column": 55,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "22",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expected 'http://127.0.0.1/public/assets/images…' to be 'http://127.0.0.1/public/assets/images…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "13"
+          ],
+          "coveredBy": [
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 82,
+              "line": 26
+            },
+            "start": {
+              "column": 60,
+              "line": 26
+            }
+          }
+        },
+        {
+          "id": "23",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "Snapshot `Role Image Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "10"
+          ],
+          "coveredBy": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "location": {
+            "end": {
+              "column": 107,
+              "line": 27
+            },
+            "start": {
+              "column": 10,
+              "line": 27
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <NuxtImg\n    :aria-label=\"getRoleNameLabel(roleName)\"\n    :sizes=\"sizes\"\n    :src=\"roleImageSrc\"\n  />\n</template>\n\n<script setup lang=\"ts\">\nimport { computed } from \"vue\";\n\nimport type { RoleImageProps } from \"~/components/shared/role/RoleImage/role-image.types\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\nconst props = withDefaults(defineProps<RoleImageProps>(), {\n  sizes: \"50\",\n  definition: \"normal\",\n});\n\nconst { getRoleNameLabel } = useRoleName();\n\nconst runtimeConfig = useRuntimeConfig();\n\nconst roleImageSrc = computed<string>(() => {\n  const apiBaseUrl = runtimeConfig.public.werewolvesAssistantApi.baseUrl;\n  const imageSuffix = props.definition === \"normal\" ? \"\" : `-${props.definition}`;\n  return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;\n});\n</script>"
+    },
     "composables/api/api.constants.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "0",
+          "id": "24",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -23,7 +671,7 @@
           }
         },
         {
-          "id": "1",
+          "id": "25",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -42,7 +690,7 @@
           }
         },
         {
-          "id": "2",
+          "id": "26",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "Static mutant (and \"ignoreStatic\" was enabled)",
@@ -67,7 +715,7 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "3",
+          "id": "27",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "composables/api/role/useFetchRoles.ts(10,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
@@ -75,8 +723,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -90,7 +738,7 @@
           }
         },
         {
-          "id": "4",
+          "id": "28",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "composables/api/role/useFetchRoles.ts(14,69): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
@@ -98,8 +746,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -113,7 +761,7 @@
           }
         },
         {
-          "id": "5",
+          "id": "29",
           "mutatorName": "StringLiteral",
           "replacement": "``",
           "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"\"",
@@ -121,11 +769,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "28"
           ],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -139,7 +787,7 @@
           }
         },
         {
-          "id": "6",
+          "id": "30",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"http://127.0.0.1/roles\",\n  Object {\n    \"headers\": Object {\n      \"Content-Type\": \"application/json\",\n    },\n    \"method\": \"GET\",\n  },\n  \"$dk08ZMi4Ri\",\n], but it was called with \"http://127.0.0.1/roles\"",
@@ -147,11 +795,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "9"
+            "28"
           ],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -165,7 +813,7 @@
           }
         },
         {
-          "id": "7",
+          "id": "31",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "composables/api/role/useFetchRoles.ts(15,5): error TS2322: Type '_AsyncData<PickFrom<_ResT, KeysOf<DataT>> | null, FetchError<any> | null>' is not assignable to type '_AsyncData<Role[] | null, FetchError<any> | null>'.\n  Type 'PickFrom<_ResT, KeysOf<DataT>> | null' is not assignable to type 'Role[] | null'.\n    Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[] | null'.\n      Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[] | null'.\n        Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[] | null'.\n          Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[] | null'.\n            Type '_ResT' is not assignable to type 'Role[] | null'.\n              Type '_ResT' is not assignable to type 'Role[]'.\n                Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                  Type 'PickFrom<_ResT, KeysOf<DataT>>' is not assignable to type 'Role[]'.\n                    Type '_ResT | (_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT)' is not assignable to type 'Role[]'.\n                      Type '_ResT extends Record<string, any> ? keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...> : _ResT' is not assignable to type 'Role[]'.\n                        Type '_ResT | (keyof _ResT extends (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) ? _ResT : (DataT extends DataT ? keyof DataT extends string ? string & keyof DataT : never : never) extends never ? _ResT : Pick<...>)' is not assignable to type 'Role[]'.\n                          Type '_ResT' is not assignable to type 'Role[]'.\ncomposables/api/role/useFetchRoles.ts(16,7): error TS2769: No overload matches this call.\n  Overload 1 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, null, NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n  Overload 2 of 2, '(request: NitroFetchRequest | Ref<NitroFetchRequest> | (() => NitroFetchRequest), opts?: UseFetchOptions<Role[], Role[], KeysOf<...>, Role[], NitroFetchRequest, AvailableRouterMethod<...>> | undefined): AsyncData<...>', gave the following error.\n    Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | Ref<...> | undefined'.\n",
@@ -173,8 +821,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -188,7 +836,7 @@
           }
         },
         {
-          "id": "8",
+          "id": "32",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "composables/api/role/useFetchRoles.ts(21,3): error TS2741: Property 'fetchRoles' is missing in type '{}' but required in type 'UseFetchRoles'.\n",
@@ -196,8 +844,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "9",
-            "10"
+            "28",
+            "29"
           ],
           "location": {
             "end": {
@@ -213,11 +861,144 @@
       ],
       "source": "import type { UseFetchOptions } from \"#app\";\n\nimport { DEFAULT_USE_FETCH_OPTIONS } from \"~/composables/api/api.constants\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\n\ntype UseFetchRoles = {\n  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;\n};\n\nfunction useFetchRoles(): UseFetchRoles {\n  const config = useRuntimeConfig();\n  const { baseUrl } = config.public.werewolvesAssistantApi;\n\n  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {\n    return useFetch<Role[]>(`${baseUrl}/roles`, {\n      method: \"GET\",\n      ...DEFAULT_USE_FETCH_OPTIONS,\n      ...options,\n    });\n  }\n  return { fetchRoles };\n}\n\nexport { useFetchRoles };"
     },
+    "composables/api/role/useRoleName.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "33",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(7,25): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 14
+            },
+            "start": {
+              "column": 37,
+              "line": 7
+            }
+          }
+        },
+        {
+          "id": "34",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(10,51): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 12
+            },
+            "start": {
+              "column": 58,
+              "line": 10
+            }
+          }
+        },
+        {
+          "id": "35",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"shared.role.name.werewolf\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "27"
+          ],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 44,
+              "line": 11
+            },
+            "start": {
+              "column": 14,
+              "line": 11
+            }
+          }
+        },
+        {
+          "id": "36",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(13,3): error TS2741: Property 'getRoleNameLabel' is missing in type '{}' but required in type 'UseRoleName'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "27"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 13
+            },
+            "start": {
+              "column": 10,
+              "line": 13
+            }
+          }
+        }
+      ],
+      "source": "import type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\n\ntype UseRoleName = {\n  getRoleNameLabel: (roleName: RoleNames) => string;\n};\n\nfunction useRoleName(): UseRoleName {\n  const { t } = useI18n();\n\n  function getRoleNameLabel(roleName: RoleNames): string {\n    return t(`shared.role.name.${roleName}`);\n  }\n  return { getRoleNameLabel };\n}\n\nexport { useRoleName };"
+    },
     "pages/index.vue": {
       "language": "html",
       "mutants": [
         {
-          "id": "9",
+          "id": "37",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "The macro definePageMeta from Nuxt is breaking Stryker, so we ignore it.",
+          "status": "Ignored",
+          "static": false,
+          "location": {
+            "end": {
+              "column": 33,
+              "line": 56
+            },
+            "start": {
+              "column": 16,
+              "line": 56
+            }
+          }
+        },
+        {
+          "id": "38",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "true",
+          "statusReason": "The macro definePageMeta from Nuxt is breaking Stryker, so we ignore it.",
+          "status": "Ignored",
+          "static": false,
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 56
+            },
+            "start": {
+              "column": 26,
+              "line": 56
+            }
+          }
+        },
+        {
+          "id": "39",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected {} to strictly equal { icon: 'fa-2x', …(1) }",
@@ -225,15 +1006,15 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "3"
+            "17"
           ],
           "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "23"
           ],
           "location": {
             "end": {
@@ -247,7 +1028,7 @@
           }
         },
         {
-          "id": "10",
+          "id": "40",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { label: '', icon: 'fa-2x' } to strictly equal { icon: 'fa-2x', …(1) }",
@@ -255,15 +1036,15 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "3"
+            "17"
           ],
           "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "23"
           ],
           "location": {
             "end": {
@@ -277,7 +1058,7 @@
           }
         },
         {
-          "id": "11",
+          "id": "41",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected { …(2) } to strictly equal { icon: 'fa-2x', …(1) }",
@@ -285,15 +1066,15 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "3"
+            "17"
           ],
           "coveredBy": [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "23"
           ],
           "location": {
             "end": {
@@ -307,22 +1088,23 @@
           }
         }
       ],
-      "source": "<template>\n  <div class=\"container-fluid d-flex flex-column\">\n    <div class=\"align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center\">\n      <div class=\"col-12 text-center\">\n        <NuxtImg\n          sizes=\"lg:200px\"\n          src=\"/img/logo/square/werewolves-logo.png\"\n        />\n      </div>\n\n      <div class=\"col-12 text-center\">\n        <h1\n          id=\"title\"\n          :aria-label=\"$t('shared.werewolvesAssistant')\"\n          class=\"mt-0\"\n        >\n          {{ $t('shared.werewolvesAssistant') }}\n        </h1>\n      </div>\n\n      <div class=\"col-12 col-lg-3\">\n        <VuePrimeButton\n          class=\"w-100\"\n          icon=\"fa fa-play-circle\"\n          :label=\"$t('pages.index.play')\"\n          :pt=\"buttonsPassThroughProperties\"\n          raised\n          size=\"large\"\n        />\n      </div>\n\n      <div class=\"col-12 col-lg-3 mt-4\">\n        <VuePrimeButton\n          class=\"w-100\"\n          icon=\"fas fa-question\"\n          icon-pos=\"right\"\n          :label=\"$t('pages.index.about')\"\n          :pt=\"buttonsPassThroughProperties\"\n          raised\n          severity=\"secondary\"\n          size=\"large\"\n        />\n      </div>\n    </div>\n\n    <hr class=\"w-100\">\n\n    <IndexFooter/>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { ButtonPassThroughOptions } from \"primevue/button\";\nimport type { PassThrough } from \"primevue/ts-helpers\";\n\nimport IndexFooter from \"~/components/index/IndexFooter.vue\";\n\nconst buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {\n  label: \"fs-3 fw-bold text-uppercase\",\n  icon: \"fa-2x\",\n};\n</script>\n\n<style>\n#title {\n  font-size: 4rem;\n}\n</style>"
+      "source": "<template>\n  <div class=\"container-fluid d-flex flex-column\">\n    <div class=\"align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center\">\n      <div class=\"col-12 text-center\">\n        <NuxtImg\n          sizes=\"200px\"\n          src=\"/img/logo/square/werewolves-logo.png\"\n        />\n      </div>\n\n      <div class=\"col-12 text-center\">\n        <h1\n          id=\"title\"\n          :aria-label=\"$t('shared.werewolvesAssistant')\"\n          class=\"mt-0\"\n        >\n          {{ $t('shared.werewolvesAssistant') }}\n        </h1>\n      </div>\n\n      <div class=\"col-12 col-lg-3\">\n        <VuePrimeButton\n          class=\"w-100\"\n          icon=\"fa fa-play-circle\"\n          :label=\"$t('pages.index.play')\"\n          :pt=\"buttonsPassThroughProperties\"\n          raised\n          size=\"large\"\n        />\n      </div>\n\n      <div class=\"col-12 col-lg-3 mt-4\">\n        <NuxtLink\n          :aria-label=\"$t('pages.index.about')\"\n          class=\"p-button p-button-secondary w-100\"\n          to=\"/about\"\n        >\n          <span class=\"fa fa-question me-2\"/>\n          {{ $t('pages.index.about') }}\n        </NuxtLink>\n      </div>\n    </div>\n\n    <hr class=\"w-100\">\n\n    <IndexFooter/>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { ButtonPassThroughOptions } from \"primevue/button\";\nimport type { PassThrough } from \"primevue/ts-helpers\";\n\nimport IndexFooter from \"~/components/pages/index/IndexFooter.vue\";\n\ndefinePageMeta({ layout: false });\n\nconst buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {\n  label: \"fs-3 fw-bold text-uppercase\",\n  icon: \"fa-2x\",\n};\n</script>\n\n<style>\n#title {\n  font-size: 4rem;\n}\n</style>"
     },
     "stores/role/useRolesStore.ts": {
       "language": "typescript",
       "mutants": [
         {
-          "id": "12",
+          "id": "42",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\n",
+          "statusReason": "tests/unit/utils/factories/stores/role/useRoleStore.factory.ts(11,5): error TS2353: Object literal may only specify known properties, and 'roles' does not exist in type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/app.nuxt.spec.ts(31,30): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, {}, {}, {}>'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
-            "6",
-            "7",
-            "8"
+            "19",
+            "20",
+            "21"
           ],
           "location": {
             "end": {
@@ -336,38 +1118,17 @@
           }
         },
         {
-          "id": "15",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/role/useRolesStore.ts(16,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "7",
-            "8"
-          ],
-          "location": {
-            "end": {
-              "column": 41,
-              "line": 16
-            },
-            "start": {
-              "column": 32,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "13",
+          "id": "43",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "stores/role/useRolesStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
-            "6",
-            "7",
-            "8"
+            "19",
+            "20",
+            "21"
           ],
           "location": {
             "end": {
@@ -381,19 +1142,19 @@
           }
         },
         {
-          "id": "14",
+          "id": "44",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 1,
+          "static": false,
           "killedBy": [
-            "7"
+            "20"
           ],
           "coveredBy": [
-            "7",
-            "8"
+            "20",
+            "21"
           ],
           "location": {
             "end": {
@@ -407,16 +1168,40 @@
           }
         },
         {
-          "id": "16",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
+          "id": "45",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/role/useRolesStore.ts(16,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
-            "6",
-            "7",
-            "8"
+            "20",
+            "21"
+          ],
+          "location": {
+            "end": {
+              "column": 41,
+              "line": 16
+            },
+            "start": {
+              "column": 32,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "46",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "tests/unit/utils/factories/stores/role/useRoleStore.factory.ts(11,5): error TS2353: Object literal may only specify known properties, and 'roles' does not exist in type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/app.nuxt.spec.ts(31,30): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(25,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(26,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(32,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(45,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/useRolesStore.spec.ts(47,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "19",
+            "20",
+            "21"
           ],
           "location": {
             "end": {
@@ -440,99 +1225,188 @@
     "break": 100
   },
   "testFiles": {
-    "tests/unit/specs/pages/index.nuxt.spec.ts": {
+    "tests/unit/specs/components/layouts/default/ParametersMenu/ParametersMenu.nuxt.spec.ts": {
       "tests": [
         {
           "id": "0",
-          "name": "Index Page Component should render component and match snapshot when mounted."
+          "name": "Parameters Menu Component should render component and match snapshot when mounted."
         },
         {
           "id": "1",
-          "name": "Index Page Component Title should display translated title when rendered."
+          "name": "Parameters Menu Component Parameters Menu Button should open the parameters menu when clicked."
         },
         {
           "id": "2",
-          "name": "Index Page Component Play button should display play button with translated label when rendered."
+          "name": "Parameters Menu Component Parameters Menu Button should not open the parameters menu and throw error when clicked if the menu is not found in refs."
         },
         {
           "id": "3",
-          "name": "Index Page Component Play button should display play button with pass through data when rendered."
+          "name": "Parameters Menu Component Parameters Menu should pass the correct items to the menu when mounted."
         },
         {
           "id": "4",
-          "name": "Index Page Component About button should display about button with translated label when rendered."
-        },
-        {
-          "id": "5",
-          "name": "Index Page Component About button should display about button with pass through data when rendered."
+          "name": "Parameters Menu Component Parameters Menu should navigate to home page when clicking on back to home button."
         }
       ],
-      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ButtonPassThroughOptions } from \"primevue/button\";\nimport type { PassThrough } from \"primevue/ts-helpers\";\n\nimport type { VuePrimeButton } from \"#components\";\nimport Index from \"@/pages/index.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Index Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Index>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Index);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find(\"[aria-label='Werewolves Assistant']\");\n\n      expect(title.text()).toBe(\"Werewolves Assistant\");\n    });\n  });\n\n  describe(\"Play button\", () => {\n    it(\"should display play button with translated label when rendered.\", () => {\n      const playButton = wrapper.findComponent<typeof VuePrimeButton>(\"[label='Play']\");\n\n      expect(playButton.attributes(\"label\")).toBe(\"Play\");\n    });\n\n    it(\"should display play button with pass through data when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(Index, { shallow: false });\n      const playButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='Play']\");\n\n      expect(playButton.props(\"pt\")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({\n        icon: \"fa-2x\",\n        label: \"fs-3 fw-bold text-uppercase\",\n      });\n    });\n  });\n\n  describe(\"About button\", () => {\n    it(\"should display about button with translated label when rendered.\", () => {\n      const aboutButton = wrapper.findComponent<typeof VuePrimeButton>(\"[label='About']\");\n\n      expect(aboutButton.attributes(\"label\")).toBe(\"About\");\n    });\n\n    it(\"should display about button with pass through data when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(Index, { shallow: false });\n      const aboutButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='About']\");\n\n      expect(aboutButton.props(\"pt\")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({\n        icon: \"fa-2x\",\n        label: \"fs-3 fw-bold text-uppercase\",\n      });\n    });\n  });\n});"
+      "source": "import { mockNuxtImport } from \"@nuxt/test-utils/runtime\";\nimport type { mount } from \"@vue/test-utils\";\nimport { MouseEvent } from \"happy-dom\";\nimport Menu from \"primevue/menu\";\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { beforeAll, expect } from \"vitest\";\nimport type { Mock } from \"vitest\";\nimport type { Ref } from \"vue\";\n\nimport type { VuePrimeButton } from \"#components\";\nimport ParametersMenu from \"~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue\";\nimport { createFakeI18n } from \"~/tests/unit/utils/factories/composables/i18n/useI18n.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Parameters Menu Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;\n\n  beforeAll(() => {\n    mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(\n      \"useI18n\",\n    () => vi.fn(() => createFakeI18n()),\n    );\n  });\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(ParametersMenu);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Parameters Menu Button\", () => {\n    let toggleMenuMock: Mock;\n\n    beforeEach(async() => {\n      toggleMenuMock = vi.fn();\n      wrapper = await mountSuspendedComponent(ParametersMenu, {\n        global: {\n          stubs: {\n            Menu: {\n              template: \"<div></div>\",\n              methods: { toggle: toggleMenuMock },\n            },\n          },\n        },\n      });\n    });\n\n    it(\"should open the parameters menu when clicked.\", async() => {\n      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='Parameters']\");\n      await parametersMenuButton.trigger(\"click\");\n\n      expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));\n    });\n\n    it(\"should not open the parameters menu and throw error when clicked if the menu is not found in refs.\", async() => {\n      wrapper = await mountSuspendedComponent(ParametersMenu, {\n        global: {\n          stubs: {\n            Menu: {\n              template: \"<div></div>\",\n              methods: { toggle: toggleMenuMock },\n            },\n          },\n        },\n      });\n      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { parametersMenu: Ref }).parametersMenu.value = null;\n      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='Parameters']\");\n      await parametersMenuButton.trigger(\"click\");\n\n      expect(toggleMenuMock).not.toHaveBeenCalled();\n      expect(createError).toHaveBeenCalledExactlyOnceWith(\"Parameters Menu is not initialized\");\n    });\n  });\n\n  describe(\"Parameters Menu\", () => {\n    beforeEach(async() => {\n      wrapper = await mountSuspendedComponent(ParametersMenu, { shallow: false });\n      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='Parameters']\");\n      await parametersMenuButton.trigger(\"click\");\n    });\n\n    it(\"should pass the correct items to the menu when mounted.\", () => {\n      const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);\n\n      expect(parametersMenu.props(\"model\")).toStrictEqual<MenuItem[]>([\n        {\n          label: \"components.ParametersMenu.backToHome\",\n          icon: \"fa fa-sign-out\",\n          arialLabel: \"components.ParametersMenu.backToHome\",\n          command: expect.any(Function) as () => Promise<void>,\n        },\n      ]);\n    });\n\n    it(\"should navigate to home page when clicking on back to home button.\", () => {\n      document.querySelector<HTMLElement>(\"[aria-label=\\\"components.ParametersMenu.backToHome\\\"] .p-menuitem-link\")?.click();\n\n      expect(navigateTo).toHaveBeenCalledExactlyOnceWith(\"/\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/components/layouts/default/NavBar.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "5",
+          "name": "NavBar Component should render component and match snapshot when mounted."
+        },
+        {
+          "id": "6",
+          "name": "NavBar Component Home Page Link should have the prop 'to' set to home page when mounted."
+        },
+        {
+          "id": "7",
+          "name": "NavBar Component Home Page Link Werewolves Assistant Logo should have the prop 'src' set to the small logo when mounted."
+        },
+        {
+          "id": "8",
+          "name": "NavBar Component Home Page Link Werewolves Assistant Logo Text should translate the logo text when mounted."
+        },
+        {
+          "id": "9",
+          "name": "NavBar Component Parameters Menu should have left tooltip when mounted."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { NuxtImg, NuxtLink } from \"#components\";\nimport NavBar from \"~/components/layouts/default/NavBar/NavBar.vue\";\nimport type ParametersMenu from \"~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"NavBar Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof NavBar>>;\n\n  async function mountNavBarComponent(options: ComponentMountingOptions<typeof NavBar> = {}): Promise<ReturnType<typeof mount<typeof NavBar>>> {\n    const defaultMountingOptions: ComponentMountingOptions<typeof NavBar> = { global: { stubs: { ParametersMenu: true } } };\n    return mountSuspendedComponent(NavBar, {\n      ...defaultMountingOptions,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    wrapper = await mountNavBarComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Home Page Link\", () => {\n    it(\"should have the prop 'to' set to home page when mounted.\", () => {\n      const homePageLink = wrapper.findComponent<typeof NuxtLink>(\"[aria-label='Home page']\");\n\n      expect(homePageLink.props(\"to\")).toBe(\"/\");\n    });\n\n    describe(\"Werewolves Assistant Logo\", () => {\n      it(\"should have the prop 'src' set to the small logo when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='Werewolves Assistant logo']\");\n\n        expect(werewolvesAssistantLogo.attributes(\"src\")).toBe(\"/_ipx/_/img/logo/square/werewolves-logo-small.png\");\n      });\n    });\n\n    describe(\"Werewolves Assistant Logo Text\", () => {\n      it(\"should translate the logo text when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogoText = wrapper.find(\"[aria-label='Werewolves Assistant']\");\n\n        expect(werewolvesAssistantLogoText.text()).toBe(\"Werewolves Assistant\");\n      });\n    });\n  });\n\n  describe(\"Parameters Menu\", () => {\n    it(\"should have left tooltip when mounted.\", async() => {\n      wrapper = await mountNavBarComponent({ shallow: false });\n      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>(\"[aria-label='Parameters menu']\");\n\n      expect(parametersMenu.attributes(\"data-pd-tooltip\")).toBe(\"true\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/components/shared/role/RoleImage/RoleImage.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "10",
+          "name": "Role Image Component should render component and match snapshot when mounted."
+        },
+        {
+          "id": "11",
+          "name": "Role Image Component Image should have default size from props when mounted."
+        },
+        {
+          "id": "12",
+          "name": "Role Image Component Image should have src based on role name from props when mounted."
+        },
+        {
+          "id": "13",
+          "name": "Role Image Component Image should have small suffix for src when definition from props is small."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { NuxtImg } from \"#components\";\nimport type { RoleImageProps } from \"~/components/shared/role/RoleImage/role-image.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\nimport * as UseRoleName from \"~/composables/api/role/useRoleName\";\n\ndescribe(\"Role Image Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof RoleImage>>;\n  const defaultProps: RoleImageProps = { roleName: RoleNames.WEREWOLF };\n\n  async function mountRoleImageComponent(options: ComponentMountingOptions<typeof RoleImage> = {}): Promise<ReturnType<typeof mount<typeof RoleImage>>> {\n    return mountSuspendedComponent(RoleImage, {\n      props: {\n        ...defaultProps,\n        ...options,\n      },\n    });\n  }\n\n  beforeEach(async() => {\n    vi.spyOn(UseRoleName, \"useRoleName\").mockReturnValue({ getRoleNameLabel: vi.fn().mockReturnValue(RoleNames.WEREWOLF) });\n    wrapper = await mountRoleImageComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Image\", () => {\n    it(\"should have default size from props when mounted.\", () => {\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"sizes\")).toBe(\"50\");\n    });\n\n    it(\"should have src based on role name from props when mounted.\", () => {\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"src\")).toBe(\"http://127.0.0.1/public/assets/images/roles/werewolf/werewolf.jpeg\");\n    });\n\n    it(\"should have small suffix for src when definition from props is small.\", async() => {\n      await wrapper.setProps({ definition: \"small\" });\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"src\")).toBe(\"http://127.0.0.1/public/assets/images/roles/werewolf/werewolf-small.jpeg\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/pages/index.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "14",
+          "name": "Index Page Component should render component and match snapshot when mounted."
+        },
+        {
+          "id": "15",
+          "name": "Index Page Component Title should display translated title when rendered."
+        },
+        {
+          "id": "16",
+          "name": "Index Page Component Play button should display play button with translated label when rendered."
+        },
+        {
+          "id": "17",
+          "name": "Index Page Component Play button should display play button with pass through data when rendered."
+        },
+        {
+          "id": "18",
+          "name": "Index Page Component About button should display about button with translated label when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ButtonPassThroughOptions } from \"primevue/button\";\nimport type { PassThrough } from \"primevue/ts-helpers\";\n\nimport type { NuxtLink, VuePrimeButton } from \"#components\";\nimport Index from \"@/pages/index.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Index Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Index>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Index);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find(\"[aria-label='Werewolves Assistant']\");\n\n      expect(title.text()).toBe(\"Werewolves Assistant\");\n    });\n  });\n\n  describe(\"Play button\", () => {\n    it(\"should display play button with translated label when rendered.\", () => {\n      const playButton = wrapper.findComponent<typeof VuePrimeButton>(\"[label='Play']\");\n\n      expect(playButton.attributes(\"label\")).toBe(\"Play\");\n    });\n\n    it(\"should display play button with pass through data when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(Index, { shallow: false });\n      const playButton = wrapper.findComponent<typeof VuePrimeButton>(\"[aria-label='Play']\");\n\n      expect(playButton.props(\"pt\")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({\n        icon: \"fa-2x\",\n        label: \"fs-3 fw-bold text-uppercase\",\n      });\n    });\n  });\n\n  describe(\"About button\", () => {\n    it(\"should display about button with translated label when rendered.\", () => {\n      const aboutButton = wrapper.findComponent<typeof NuxtLink>(\"[aria-label='About']\");\n\n      expect(aboutButton.html()).toContain(\"About\");\n    });\n  });\n});"
     },
     "tests/unit/specs/stores/useRolesStore.spec.ts": {
       "tests": [
         {
-          "id": "6",
+          "id": "19",
           "name": "Roles Store should have initial state when created."
         },
         {
-          "id": "7",
+          "id": "20",
           "name": "Roles Store fetchAndSetRoles should fetch roles when called."
         },
         {
-          "id": "8",
+          "id": "21",
           "name": "Roles Store fetchAndSetRoles should set roles when called."
         }
       ],
-      "source": "import { createPinia, setActivePinia } from \"pinia\";\nimport { expect } from \"vitest\";\nimport type { Mock } from \"vitest\";\nimport { ref } from \"vue\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\nimport * as UseFetchRolesComposable from \"~/composables/api/role/useFetchRoles\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/types/role.types.factory\";\n\ndescribe(\"Roles Store\", () => {\n  let mockedUseFetchRoles: {\n    fetchRoles: Mock;\n  };\n\n  beforeEach(() => {\n    mockedUseFetchRoles = { fetchRoles: vi.fn().mockResolvedValue({ data: ref([]), status: ref(\"success\") }) };\n    vi.spyOn(UseFetchRolesComposable, \"useFetchRoles\").mockImplementation(() => mockedUseFetchRoles);\n    setActivePinia(createPinia());\n  });\n\n  it(\"should have initial state when created.\", () => {\n    const rolesStore = useRolesStore();\n\n    expect(rolesStore.roles).toBeNull();\n    expect(rolesStore.fetchingRoleStatus).toBe(\"idle\");\n  });\n\n  describe(\"fetchAndSetRoles\", () => {\n    it(\"should fetch roles when called.\", async() => {\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(mockedUseFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();\n    });\n\n    it(\"should set roles when called.\", async() => {\n      const roles: Role[] = [\n        createFakeRole(),\n        createFakeRole(),\n        createFakeRole(),\n      ];\n      mockedUseFetchRoles.fetchRoles.mockResolvedValue({ data: ref(roles), status: ref(\"success\") });\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(rolesStore.roles).toStrictEqual<Role[]>(roles);\n    });\n  });\n});"
-    },
-    "tests/unit/specs/composables/api/role/useFetchRoles.spec.ts": {
-      "tests": [
-        {
-          "id": "9",
-          "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called without options."
-        },
-        {
-          "id": "10",
-          "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called with options."
-        }
-      ],
-      "source": "import { mockNuxtImport } from \"@nuxt/test-utils/runtime\";\n\nimport { useFetchRoles } from \"~/composables/api/role/useFetchRoles\";\nimport { createFakeUseRuntimeConfig } from \"~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig\";\n\nconst { useFetchMock, useRuntimeConfig } = vi.hoisted(() => ({\n  useFetchMock: vi.fn(),\n  useRuntimeConfig: vi.fn(),\n}));\n\ndescribe(\"Use Fetch Roles Composable\", () => {\n  beforeAll(() => {\n    mockNuxtImport(\"useRuntimeConfig\", () => useRuntimeConfig);\n    mockNuxtImport(\"useFetch\", () => useFetchMock);\n  });\n  beforeEach(() => {\n    useRuntimeConfig.mockReturnValue(createFakeUseRuntimeConfig());\n  });\n\n  describe(\"fetchRoles\", () => {\n    it(\"should fetch roles when called without options.\", async() => {\n      await useFetchRoles().fetchRoles();\n\n      expect(useFetchMock).toHaveBeenCalledExactlyOnceWith(\"http://127.0.0.1/roles\", {\n        method: \"GET\",\n        headers: { \"Content-Type\": \"application/json\" },\n      }, \"$dk08ZMi4Ri\");\n    });\n\n    it(\"should fetch roles when called with options.\", async() => {\n      await useFetchRoles().fetchRoles({ method: \"POST\" });\n\n      expect(useFetchMock).toHaveBeenCalledExactlyOnceWith(\"http://127.0.0.1/roles\", {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n      }, \"$dk08ZMi4Ri\");\n    });\n  });\n});"
+      "source": "import { createPinia, setActivePinia } from \"pinia\";\nimport { expect } from \"vitest\";\nimport type { Mock } from \"vitest\";\nimport { ref } from \"vue\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\nimport * as UseFetchRolesComposable from \"~/composables/api/role/useFetchRoles\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/role.factory\";\n\ndescribe(\"Roles Store\", () => {\n  let mockedUseFetchRoles: {\n    fetchRoles: Mock;\n  };\n\n  beforeEach(() => {\n    mockedUseFetchRoles = { fetchRoles: vi.fn().mockResolvedValue({ data: ref([]), status: ref(\"success\") }) };\n    vi.spyOn(UseFetchRolesComposable, \"useFetchRoles\").mockImplementation(() => mockedUseFetchRoles);\n    setActivePinia(createPinia());\n  });\n\n  it(\"should have initial state when created.\", () => {\n    const rolesStore = useRolesStore();\n\n    expect(rolesStore.roles).toBeNull();\n    expect(rolesStore.fetchingRoleStatus).toBe(\"idle\");\n  });\n\n  describe(\"fetchAndSetRoles\", () => {\n    it(\"should fetch roles when called.\", async() => {\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(mockedUseFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();\n    });\n\n    it(\"should set roles when called.\", async() => {\n      const roles = [\n        createFakeRole(),\n        createFakeRole(),\n        createFakeRole(),\n      ];\n      mockedUseFetchRoles.fetchRoles.mockResolvedValue({ data: ref(roles), status: ref(\"success\") });\n      const rolesStore = useRolesStore();\n      await rolesStore.fetchAndSetRoles();\n\n      expect(rolesStore.roles).toStrictEqual<Role[]>(roles);\n    });\n  });\n});"
     },
     "tests/unit/specs/app.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "11",
+          "id": "22",
           "name": "App Component should render component and match snapshot when mounted."
         },
         {
-          "id": "12",
+          "id": "23",
+          "name": "App Component should render component without shallow and match snapshot when mounted."
+        },
+        {
+          "id": "24",
           "name": "App Component should fetch and set roles from store when mounted."
         }
       ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport App from \"@/app.vue\";\nimport { createFakeUseRoleStore } from \"~/tests/unit/utils/factories/stores/role/useRoleStore.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\nconst useRolesStoreMock = createFakeUseRoleStore();\nvi.mock(\"~/stores/role/useRolesStore\", () => ({ useRolesStore: vi.fn(() => useRolesStoreMock) }));\n\ndescribe(\"App Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof App>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(App);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  it(\"should fetch and set roles from store when mounted.\", () => {\n    expect(useRolesStoreMock.fetchAndSetRoles).toHaveBeenCalledWith();\n  });\n});"
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport App from \"@/app.vue\";\nimport * as Store from \"~/stores/role/useRolesStore\";\nimport { createFakeUseRoleStore } from \"~/tests/unit/utils/factories/stores/role/useRoleStore.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\nconst useRolesStoreMock = createFakeUseRoleStore();\n\ndescribe(\"App Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof App>>;\n\n  beforeEach(async() => {\n    vi.spyOn(Store, \"useRolesStore\").mockImplementation(() => useRolesStoreMock);\n    wrapper = await mountSuspendedComponent(App);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  it(\"should render component without shallow and match snapshot when mounted.\", async() => {\n    wrapper = await mountSuspendedComponent(App, { shallow: false });\n\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  it(\"should fetch and set roles from store when mounted.\", () => {\n    expect(useRolesStoreMock.fetchAndSetRoles).toHaveBeenCalledWith();\n  });\n});"
     },
-    "tests/unit/specs/components/index/index-footer.nuxt.spec.ts": {
+    "tests/unit/specs/components/pages/index/index-footer.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "13",
-          "name": "Index Footer Component should render component and match snapshot when mounted."
+          "id": "25",
+          "name": "Index Page Footer Component should render component and match snapshot when mounted."
         },
         {
-          "id": "14",
-          "name": "Index Footer Component Contact Me Button should render contact me with translated text button when rendered."
+          "id": "26",
+          "name": "Index Page Footer Component Contact Me Button should render contact me with translated text button when rendered."
         }
       ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport { IndexFooter } from \"#components\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Index Footer Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof IndexFooter>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(IndexFooter);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Contact Me Button\", () => {\n    it(\"should render contact me with translated text button when rendered.\", () => {\n      const contactMeButton = wrapper.find(\"[aria-label='Contact me']\");\n\n      expect(contactMeButton.text()).toBe(\"Contact me\");\n    });\n  });\n});"
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport IndexFooter from \"~/components/pages/index/IndexFooter.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Index Page Footer Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof IndexFooter>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(IndexFooter);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Contact Me Button\", () => {\n    it(\"should render contact me with translated text button when rendered.\", () => {\n      const contactMeButton = wrapper.find(\"[aria-label='Contact me']\");\n\n      expect(contactMeButton.text()).toBe(\"Contact me\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/composables/api/role/useRoleName.spec.ts": {
+      "tests": [
+        {
+          "id": "27",
+          "name": "Use Role Name Composable getRoleLabel should translate role when called with role name."
+        }
+      ],
+      "source": "import { mockNuxtImport } from \"@nuxt/test-utils/runtime\";\n\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\nimport { createFakeI18n } from \"~/tests/unit/utils/factories/composables/i18n/useI18n.factory\";\n\nconst { tMock } = vi.hoisted(() => ({ tMock: vi.fn() }));\n\ndescribe(\"Use Role Name Composable\", () => {\n  beforeEach(() => {\n    mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(\n      \"useI18n\",\n    () => vi.fn(() => createFakeI18n({ t: tMock })),\n    );\n  });\n\n  describe(\"getRoleLabel\", () => {\n    it(\"should translate role when called with role name.\", () => {\n      useRoleName().getRoleNameLabel(RoleNames.WEREWOLF);\n\n      expect(tMock).toHaveBeenCalledExactlyOnceWith(\"shared.role.name.werewolf\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/composables/api/role/useFetchRoles.spec.ts": {
+      "tests": [
+        {
+          "id": "28",
+          "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called without options."
+        },
+        {
+          "id": "29",
+          "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called with options."
+        }
+      ],
+      "source": "import { useFetchRoles } from \"~/composables/api/role/useFetchRoles\";\n\ndescribe(\"Use Fetch Roles Composable\", () => {\n  describe(\"fetchRoles\", () => {\n    it(\"should fetch roles when called without options.\", async() => {\n      await useFetchRoles().fetchRoles();\n\n      expect(useFetch).toHaveBeenCalledExactlyOnceWith(\"http://127.0.0.1/roles\", {\n        method: \"GET\",\n        headers: { \"Content-Type\": \"application/json\" },\n      }, \"$dk08ZMi4Ri\");\n    });\n\n    it(\"should fetch roles when called with options.\", async() => {\n      await useFetchRoles().fetchRoles({ method: \"POST\" });\n\n      expect(useFetch).toHaveBeenCalledExactlyOnceWith(\"http://127.0.0.1/roles\", {\n        method: \"POST\",\n        headers: { \"Content-Type\": \"application/json\" },\n      }, \"$dk08ZMi4Ri\");\n    });\n  });\n});"
     },
     "tests/unit/specs/modules/i18n.spec.ts": {
       "tests": [
         {
-          "id": "15",
+          "id": "30",
           "name": "I18n module Locales should contain all keys set in fr locale when locale is en."
         }
       ],
       "source": "import { crush } from \"radash\";\n\nimport fr from \"~/modules/i18n/locales/fr.json\";\nimport en from \"~/modules/i18n/locales/en.json\";\n\ndescribe(\"I18n module\", () => {\n  describe(\"Locales\", () => {\n    const flatFrLocale = crush(fr);\n    const frKeys = Object.keys(flatFrLocale).toSorted();\n\n    it(\"should contain all keys set in fr locale when locale is en.\", () => {\n      const flatEnLocale = crush(en);\n      const enKeys = Object.keys(flatEnLocale).toSorted();\n\n      expect(frKeys).toStrictEqual<string[]>(enKeys);\n    });\n  });\n});"
+    },
+    "tests/unit/specs/layouts/default.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "31",
+          "name": "Default Layout should render component and match snapshot when mounted."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport Default from \"~/layouts/default.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Default Layout\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Default>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Default);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n});"
     }
   },
   "projectRoot": "/Users/antoinezanardi/WebstormProjects/werewolves-assistant-web-next",
@@ -551,12 +1425,47 @@
       "components/**/*.{ts,vue}",
       "composables/**/*.ts",
       "pages/**/*.{ts,vue}",
+      "layouts/**/*.{ts,vue}",
       "stores/**/*.ts"
     ],
     "plugins": [
       "@stryker-mutator/vitest-runner",
-      "@stryker-mutator/typescript-checker"
+      "@stryker-mutator/typescript-checker",
+      "./config/stryker/plugins/stryker-define-props-ignorer-plugin.mjs",
+      "./config/stryker/plugins/stryker-define-emits-ignorer-plugin.mjs",
+      "./config/stryker/plugins/stryker-define-page-meta-ignorer-plugin.mjs"
     ],
+    "ignorers": [
+      "defineProps",
+      "defineEmits",
+      "definePageMeta"
+    ],
+    "ignorePatterns": [
+      ".github/",
+      ".husky/",
+      ".output/",
+      ".run/",
+      ".idea/",
+      "config/commitlint",
+      "config/cucumber",
+      "config/eslint",
+      "config/lint-staged",
+      "config/stryker",
+      "scripts/",
+      "server/",
+      ".editorconfig",
+      ".npmrc",
+      ".nvmrc",
+      ".releaserc.js",
+      ".DS_Store",
+      ".validate-branch-namerc.json",
+      "CHANGELOG.md",
+      "LICENSE",
+      "pnpm-lock.yaml",
+      "sonar-project.properties",
+      "README.md"
+    ],
+    "symlinkNodeModules": false,
     "vitest": {
       "configFile": "config/vitest/vitest.unit-config.ts"
     },
@@ -577,7 +1486,7 @@
       "low": 100,
       "break": 100
     },
-    "disableTypeChecks": "{tests,src,lib}/**/*.{js,ts,jsx,tsx,html,vue}",
+    "disableTypeChecks": true,
     "configFile": "config/stryker/stryker.conf.mjs",
     "allowConsoleColors": true,
     "checkerNodeArgs": [],
@@ -602,7 +1511,6 @@
     "eventReporter": {
       "baseDir": "reports/mutation/events"
     },
-    "ignorePatterns": [],
     "force": false,
     "fileLogLevel": "off",
     "inPlace": false,
@@ -614,7 +1522,6 @@
       "excludedMutations": []
     },
     "appendPlugins": [],
-    "symlinkNodeModules": true,
     "tempDirName": ".stryker-tmp",
     "testRunnerNodeArgs": [],
     "timeoutFactor": 1.5,
@@ -623,7 +1530,6 @@
     "warnings": true,
     "disableBail": false,
     "allowEmpty": false,
-    "ignorers": [],
     "typescriptChecker": {
       "prioritizePerformanceOverAccuracy": true
     }

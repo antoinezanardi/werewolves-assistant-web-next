@@ -106,14 +106,11 @@ Before testing, you must follow the **[installation steps](#installation)**.
 Then, run one of the following commands :
 
 ```bash
-# Assure you started test Docker containers (4 databases are created to parallelize tests)
-pnpm run docker:test:start
-
 # Run unit tests with coverage
 pnpm run test:unit:cov
 
 # Run unit tests only on staged files (run on pre-commit)
-pnpm run test:staged # TODO: Fix this command
+pnpm run test:unit:staged
 
 # Run mutant tests with coverage
 pnpm run test:stryker
