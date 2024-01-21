@@ -34,7 +34,7 @@
     "dev": "nuxt dev --dotenv env/.env.development",
     "generate": "nuxt generate",
     "preview": "npm run build && nuxt preview --dotenv env/.env.production",
-    "postinstall": "!stat node_modules/.bin/nuxt || nuxt prepare",
+    "postinstall": "! ls -log -u node_modules/.bin/nuxt || nuxt prepare",
     "lint": "cross-env ESLINT_USE_FLAT_CONFIG=true npx eslint --config eslint.config.js .",
     "lint:fix": "cross-env ESLINT_USE_FLAT_CONFIG=true npx eslint --config eslint.config.js --fix .",
     "lint:staged:fix": "cross-env ESLINT_USE_FLAT_CONFIG=true lint-staged -c config/lint-staged/.lintstagedrc.eslint.json",
