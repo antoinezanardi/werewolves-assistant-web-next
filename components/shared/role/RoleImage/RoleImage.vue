@@ -8,8 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 

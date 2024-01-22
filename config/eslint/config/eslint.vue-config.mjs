@@ -1,7 +1,7 @@
 import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 
-import { ERROR, MAX_LENGTH, NEVER, OFF } from "../eslint.constants.mjs";
+import { ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_VUE_CONFIG = {
   files: [
@@ -17,6 +17,11 @@ const ESLINT_VUE_CONFIG = {
       ecmaVersion: "latest",
       sourceType: "module",
       ecmaFeatures: { jsx: true },
+    },
+    globals: {
+      computed: READONLY,
+      defineProps: READONLY,
+      defineEmits: READONLY,
     },
   },
   rules: {

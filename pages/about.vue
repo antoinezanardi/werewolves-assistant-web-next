@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container h-100">
     <div class="align-items-center d-flex justify-content-center">
       <RoleImage
         definition="small"
@@ -17,10 +17,13 @@
     <AboutWerewolvesGame/>
 
     <AboutWerewolvesAssistant class="mt-5"/>
+
+    <AboutAvailableRoles class="mt-5"/>
   </div>
 </template>
 
 <script setup lang="ts">
+import AboutAvailableRoles from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue";
 import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAssistant.vue";
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";

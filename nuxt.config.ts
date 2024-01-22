@@ -25,6 +25,9 @@ export default defineNuxtConfig({
         "Button",
         "Divider",
         "Menu",
+        "ProgressSpinner",
+        "Accordion",
+        "AccordionTab",
       ],
     },
     directives: {

@@ -1,7 +1,7 @@
 <template>
   <div
     id="navbar"
-    class="align-items-center d-flex justify-content-between"
+    class="align-items-center d-flex justify-content-between py-1"
   >
     <NuxtLink
       :aria-label="$t('components.NavBar.homePage')"

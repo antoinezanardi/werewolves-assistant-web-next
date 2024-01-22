@@ -82,6 +82,11 @@
       "pleaseBeAware": "Attention cependant",
       "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
       "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
+    },
+    "AboutAvailableRoles": {
+      "availableRoles": "Rôles disponibles",
+      "loadingRoles": "Chargement des rôles...",
+      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles:"
     }
   }
 }
