@@ -1,5 +1,30 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.2.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.1.1...v1.2.0) (2024-1-21)
+
+
+### 🚀 Features
+
+* **gcp:** deploy to gcp in production ([#52](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/52)) ([50148af](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/50148af935e4b755b7ce91a05e4ce8abcff28573))
+* **layout:** default layout on all page except home ([#41](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/41)) ([2ff284e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2ff284e213c97df43d7abd6b90f8a0bd24159428))
+
+
+### 🧹 Chore
+
+* **deps:** bump @nuxt/image from 1.2.0 to 1.3.0 ([#44](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/44)) ([26665cc](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/26665cc299dcdd39c14415e2468b93d3997b5f25))
+* **deps:** bump @nuxt/test-utils from 3.9.0 to 3.10.0 ([#45](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/45)) ([0a3cac1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0a3cac1e547a3c220e6166b03bfde6f053d0e1cf))
+* **deps:** bump @stylistic/eslint-plugin from 1.5.3 to 1.5.4 ([#46](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/46)) ([f86aa27](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f86aa2718de9dd7794b3c813251c2ca7d9200d3a))
+* **deps:** bump @vitest/coverage-v8 from 1.2.0 to 1.2.1 ([#48](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/48)) ([a4643b4](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a4643b4c8281baba8b4b51e41be1a8035217822c))
+* **deps:** bump happy-dom from 12.10.3 to 13.2.0 ([#51](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/51)) ([81ff01b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/81ff01b6f27a8908e1a5bb868b1cea2b3a48c7dd))
+* **deps:** bump nuxt from 3.9.1 to 3.9.2 ([#37](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/37)) ([0d0119a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0d0119a778c9b08517e5b59e26e38ccf3dd920bc))
+* **deps:** bump nuxt from 3.9.2 to 3.9.3 ([#42](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/42)) ([c7716ed](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c7716edfeed1e86eaa944e4a31cfe26462cc9ac9))
+* **deps:** bump playwright from 1.40.1 to 1.41.0 ([#36](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/36)) ([95e7d62](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/95e7d62393eeae59ddd8cdc4841bae429838ee56))
+* **deps:** bump playwright-core from 1.40.1 to 1.41.0 ([#35](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/35)) ([f52d06f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f52d06f078e425712de2a669656f6a8462620de7))
+* **deps:** bump sass from 1.69.7 to 1.70.0 ([#47](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/47)) ([b55c7db](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/b55c7db72f07fe469459d2f0958b5629e8e5829e))
+* **deps:** bump vue from 3.4.14 to 3.4.15 ([#50](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/50)) ([a7864ac](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a7864ac44d2624f8506f08abaacbc464f59b3d20))
+* **github-actions:** bump actions/cache from 3 to 4 ([#49](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/49)) ([f82af7f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f82af7f076c937cef73c30670a728adc4c57247e))
+* **vitest:** run staged unit tests on commit ([#39](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/39)) ([96c5f3e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/96c5f3eb2e55c91aae7517f2f045f9c4a76172ed))
+
 ## [1.1.1](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.1.0...v1.1.1) (2024-1-16)
 
 
