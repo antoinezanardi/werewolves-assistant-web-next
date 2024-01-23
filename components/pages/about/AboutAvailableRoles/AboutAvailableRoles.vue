@@ -28,7 +28,7 @@
         {{ availableRolesText }}
       </p>
 
-      <VuePrimeAccordion :active-index="0">
+      <VuePrimeAccordion>
         <VuePrimeAccordionTab
           v-for="role in roles"
           :key="role.name"

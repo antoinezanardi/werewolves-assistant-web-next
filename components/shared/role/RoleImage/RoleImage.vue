@@ -1,6 +1,7 @@
 <template>
   <NuxtImg
     :aria-label="getRoleNameLabel(roleName)"
+    class="role-image"
     :height="sizes"
     :src="roleImageSrc"
     :width="sizes"
@@ -26,3 +27,10 @@ const roleImageSrc = computed<string>(() => {
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
 </script>
+
+<style lang="scss" scoped>
+.role-image {
+  border-radius: 10%;
+  border: 3px solid #1c1c1c;
+}
+</style>

@@ -28,6 +28,7 @@ export default defineNuxtConfig({
         "ProgressSpinner",
         "Accordion",
         "AccordionTab",
+        "Badge",
       ],
     },
     directives: {
