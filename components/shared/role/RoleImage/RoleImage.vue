@@ -13,7 +13,7 @@ import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-ima
 import { useRoleName } from "~/composables/api/role/useRoleName";
 
 const props = withDefaults(defineProps<RoleImageProps>(), {
-  sizes: "500",
+  sizes: "50",
   definition: "normal",
 });
 

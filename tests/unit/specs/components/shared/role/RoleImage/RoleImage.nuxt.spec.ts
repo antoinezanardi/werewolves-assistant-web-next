@@ -14,10 +14,8 @@ describe("Role Image Component", () => {
 
   async function mountRoleImageComponent(options: ComponentMountingOptions<typeof RoleImage> = {}): Promise<ReturnType<typeof mount<typeof RoleImage>>> {
     return mountSuspendedComponent(RoleImage, {
-      props: {
-        ...defaultProps,
-        ...options,
-      },
+      props: defaultProps,
+      ...options,
     });
   }
 
@@ -32,10 +30,11 @@ describe("Role Image Component", () => {
   });
 
   describe("Image", () => {
-    it("should have default size from props when mounted.", () => {
+    it("should have default width and height from props sizes when mounted.", () => {
       const image = wrapper.findComponent<typeof NuxtImg>("[aria-label='werewolf']");
 
-      expect(image.attributes("sizes")).toBe("50");
+      expect(image.attributes("width")).toBe("50");
+      expect(image.attributes("height")).toBe("50");
     });
 
     it("should have src based on role name from props when mounted.", () => {

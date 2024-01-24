@@ -325,6 +325,7 @@
       }
     },
     "RoleTypeBadge": {
+      "roleType": "Type de rôle",
       "descriptions": {
         "werewolf": "Son but est d'éliminer tous les Villageois.",
         "villager": "Son but est d'éliminer tous les Loups-Garous.",
@@ -338,7 +339,7 @@
       "new-moon": "Extension Nouvelle Lune",
       "the-village": "Extension Le Village",
       "characters": "Extension Personnages",
-      "unconventional": "Rôle inventé"
+      "unconventional": "Rôle inventé par la communauté"
     }
   }
 }
