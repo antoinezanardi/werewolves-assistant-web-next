@@ -73,7 +73,7 @@
     "@typescript-eslint/types": "^6.19.1",
     "@vitest/coverage-istanbul": "^1.2.1",
     "@vitest/coverage-v8": "^1.2.1",
-    "@vue/test-utils": "^2.4.3",
+    "@vue/test-utils": "^2.4.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-import-resolver-typescript": "^3.6.1",
