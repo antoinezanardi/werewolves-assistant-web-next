@@ -45,6 +45,7 @@
     "test:stryker": "cross-env NODE_ENV=test rimraf tests/stryker/coverage && stryker run config/stryker/stryker.conf.mjs",
     "test:stryker:force": "cross-env NODE_ENV=test rimraf tests/stryker/incremental.json tests/stryker/coverage && stryker run config/stryker/stryker.conf.mjs --force",
     "test:stryker:ci": "cross-env NODE_ENV=test rimraf tests/stryker/coverage && stryker run config/stryker/stryker-ci.conf.mjs",
+    "test:cucumber:prepare": "pnpm exec playwright install",
     "test:cucumber": "cross-env NODE_OPTIONS='--loader ts-node/esm' cucumber-js --config config/cucumber/cucumber.json",
     "script:create-branch": "scripts/create-git-branch.sh",
     "script:create-pull-request": "scripts/create-pull-request.sh"

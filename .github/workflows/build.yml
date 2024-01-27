@@ -185,7 +185,7 @@ jobs:
     name: E2E Tests ⚗️
     runs-on: ubuntu-latest
     needs:
-      - install
+      - build
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -212,7 +212,10 @@ jobs:
       - name: Create Nuxt types ⛰️
         run: pnpm run postinstall
 
-      - name: E2E tests 🧪
+      - name: Prepare E2E tests 🧭
+        run: pnpm run test:cucumber:prepare
+
+      - name: E2E tests ⚗️
         run: pnpm run test:cucumber
 
   mutant-tests:
