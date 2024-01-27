@@ -1,5 +1,5 @@
 import { Given } from "@cucumber/cucumber";
-import { url } from "@nuxt/test-utils/e2e"
+import { url } from "@nuxt/test-utils/e2e";
 
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 

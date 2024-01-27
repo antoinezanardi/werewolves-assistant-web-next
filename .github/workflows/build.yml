@@ -181,6 +181,40 @@ jobs:
           name: unit-tests-coverage-report
           path: tests/unit/coverage
 
+  e2e-tests:
+    name: E2E Tests ⚗️
+    runs-on: ubuntu-latest
+    needs:
+      - install
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: Restore pnpm dependencies from cache 🥡
+        uses: actions/cache/restore@v4
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-v3-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
+
+      - name: E2E tests 🧪
+        run: pnpm run test:cucumber
+
   mutant-tests:
     name: Mutant Tests 👽
     runs-on: ubuntu-latest
