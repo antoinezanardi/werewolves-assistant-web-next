@@ -359,6 +359,9 @@
       "whyWerewolvesAssistant": "As a big fan of the game master role, I've always wanted to share the rewarding feeling of being the conductor during a game. So, I created this assistant so that anyone can take on this important role, in any game configuration.",
       "pleaseShareFeedback": "Your feedback on this assistant is welcome. It was created to serve all game masters, whether novice or expert, and make your games memorable. Have fun!",
       "myPortfolio": "My portfolio"
+    },
+    "RoleImage": {
+      "back": "Back of the card"
     }
   }
 }

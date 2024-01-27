@@ -37,6 +37,13 @@ describe("Role Image Component", () => {
       expect(image.attributes("height")).toBe("50");
     });
 
+    it("should have back src when prop role image is undefined.", async() => {
+      wrapper = await mountRoleImageComponent({ props: {} });
+      const image = wrapper.findComponent<typeof NuxtImg>("[aria-label='components.RoleImage.back']");
+
+      expect(image.attributes("src")).toBe("svg/infinite-spinner.svg");
+    });
+
     it("should have src based on role name from props when mounted.", () => {
       const image = wrapper.findComponent<typeof NuxtImg>("[aria-label='werewolf']");
 
