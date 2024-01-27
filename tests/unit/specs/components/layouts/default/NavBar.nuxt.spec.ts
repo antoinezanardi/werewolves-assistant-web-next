@@ -45,7 +45,7 @@ describe("NavBar Component", () => {
     describe("Werewolves Assistant Logo Text", () => {
       it("should translate the logo text when mounted.", async() => {
         wrapper = await mountNavBarComponent({ shallow: false });
-        const werewolvesAssistantLogoText = wrapper.find("[aria-label='Werewolves Assistant']");
+        const werewolvesAssistantLogoText = wrapper.find<HTMLHeadElement>("[aria-label='Werewolves Assistant']");
 
         expect(werewolvesAssistantLogoText.text()).toBe("Werewolves Assistant");
       });
