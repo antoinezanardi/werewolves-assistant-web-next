@@ -31,8 +31,14 @@
         "pied-piper": "Joueur de Flûte",
         "scandalmonger": "Corbeau",
         "prejudiced-manipulator": "Abominable Sectaire",
-        "actor": "Acteur",
+        "actor": "Comédien",
         "devoted-servant": "Servante Dévouée"
+      },
+      "type": {
+        "werewolf": "Loup-Garou",
+        "villager": "Villageois",
+        "lonely": "Solitaire",
+        "ambiguous": "Ambigü"
       }
     }
   },
@@ -40,12 +46,15 @@
     "index": {
       "about": "À quoi ça sert",
       "play": "Jouer"
+    },
+    "about": {
+      "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
+      "backToHome": "Retour à l'accueil"
     }
   },
   "components": {
     "IndexFooter": {
-      "contact": "Me contacter",
-      "thisProjectIsOpenSource": "Ce projet est open source"
+      "contact": "Me contacter"
     },
     "NavBar": {
       "parameters": "Paramètres",
@@ -58,6 +67,298 @@
       "backToHome": "Retour à l'accueil",
       "parameters": "Paramètres",
       "parametersMenu": "Menu des paramètres"
+    },
+    "AboutWerewolvesGame": {
+      "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
+      "iDontKnowWerewolvesGame": "Je ne connais pas ce jeu",
+      "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
+      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
+      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
+    },
+    "AboutWerewolvesAssistant": {
+      "werewolvesAssistantInThePlace": "L'assistant Loups-Garous entre en scène !",
+      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au maître du jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
+      "assistantHasManyFeatures": "Cet Assistant propose une variété de fonctionnalités, dont :",
+      "gameLayout": "Un écran de composition de partie permettant de créer des sessions pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
+      "intuitiveUserInterface": "Une interface ludique de suivi de partie, offrant une expérience visuelle agréable.",
+      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels que la sélection de la cible des Loups-Garous ou l'élection du maire.",
+      "gamePlaysQueue": "L'Assistant prend en charge l'ordonnancement des tours de jeu, l'affichage des décès et autres événements, ainsi que la conservation de tous les choix effectués pendant la partie.",
+      "gameHistory": "À la fin de la partie, un récapitulatif est généré, indiquant le camp victorieux et fournissant un historique complet des actions passées.",
+      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de maître du jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
+      "pleaseBeAware": "Attention cependant",
+      "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
+      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
+    },
+    "AboutAvailableRoles": {
+      "availableRoles": "Rôles disponibles",
+      "loadingRoles": "Chargement des rôles...",
+      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :"
+    },
+    "AboutAvailableRoleDescription": {
+      "descriptions": {
+        "werewolf": {
+          "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
+          "eachNightEatsVillager": "Chaque nuit, ils dévorent un Villageois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire.",
+          "numberOfWolvesVaries": "Leur nombre peut varier suivant le nombre de joueurs et les variantes appliquées.",
+          "werewolvesCantEatEachOther": "En aucun cas un simple Loup-Garou ne peut dévorer un autre Loup-Garou."
+        },
+        "big-bad-wolf": {
+          "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
+          "eatsALot": "À Thiercelieux, les petits cochons ne sont pas les seuls à redouter le Grand-Méchant-Loup. Il est énorme et son appétit est gigantesque. À cause de lui, des villages entiers furent rayés de la carte !",
+          "eachNightEatsAnotherVictimTwice": "Chaque nuit, il se réveille et dévore avec les autres Loups-Garous. Mais tant qu'aucun Loup-Garou, Chien-Loup devenu loup ou Enfant Sauvage ayant perdu son modèle n'est éliminé, il se réveille seul une deuxième fois et dévore une autre victime.",
+          "cannotEatAnotherWolf": "Il ne peut pas dévorer de Loup-Garou."
+        },
+        "accursed-wolf-father": {
+          "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
+          "spreadEngeanceAndSleep": "Le tout premier Loup-Garou de nos contrées, le père de tous leurs pères, avait deux pouvoirs : le premier était de propager son engeance par une morsure spéciale et le second de fuir ce monde en s'endormant pour quelques siècles.",
+          "awokenWithHunger": "Heureusement pour nos ancêtres récents, il s'était depuis longtemps assoupi. Les auteurs de cet ouvrage souhaitent bon courage aux Villageois d'aujourd'hui et signalent que l'Infect Père des Loups vient juste de se réveiller d'un long sommeil, et qu'il a très faim !",
+          "eachNightCanInfect": "Chaque nuit, il se réveille et dévore avec les autres Loups-Garous. Mais une fois dans la partie, s'il le désire, après que les Loups-Garous se sont endormis, il lève la main. Cela signifie que la victime n'est pas dévorée mais infectée.",
+          "infectOncePerGame": "L'Infect Père des Loups ne peut utiliser son pouvoir qu'une seule fois dans la partie. Le meneur touche alors cet habitant infecté qui devient immédiatement (et secrètement) Loup-Garou, il participera désormais au festin des Loups-Garous.",
+          "usePowerAndAwokenWithWolves": "S'il possédait un pouvoir nocturne, il sera réveillé par le meneur les tours suivants pour utiliser ce pouvoir, en plus d'être appelé avec les Loups-Garous."
+        },
+        "white-werewolf": {
+          "heMustRemainAlone": "Son but est d'être le seul survivant du village. Dans ce cas-là seulement il gagne la partie.",
+          "hatesBothWerewolvesAndVillagers": "Ce très malfaisant personnage déteste autant les Loups-Garous que les Villageois !",
+          "strangeMutationInPopulation": "Dans un ouvrage récent, intitulé \"Le Village\", on raconte qu'une étrange mutation serait survenue au sein même de la population lycanthropique.",
+          "eachNightCanEatAnotherWolf": "Chaque nuit, il se réveille et dévore avec les autres Loups-Garous. Mais une nuit sur deux, à l'appel du meneur, il se réveille seul et peut éliminer un Loup-Garou."
+        },
+        "villager": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "noSpecialSkills": "Il n'a aucune compétence particulière.",
+          "analyticalMind": "Ses seules armes sont la capacité d'analyse des comportements pour identifier les Loups-Garous."
+        },
+        "villager-villager": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "pureSoul": "Ce personnage possède une âme claire et transparente comme l'eau d'un ruisseau montagnard. Il méritera l'écoute attentive de ses pairs et rendra sa parole décisive dans les moments cruciaux.",
+          "inspiringTrust": "Quel pouvoir peut être aussi grand que d'inspirer aux honnêtes gens une confiance absolue ?",
+          "wolfHuntStrategy": "Les Loups-Garous se rueront-ils pour éliminer cet être sans pouvoir secret ? Préféreront-ils débusquer des Villageois aux pouvoirs plus menaçants ?",
+          "certaintyAsInnocent": "Sur ses 2 faces, cette carte possède l'illustration de Simple Villageois. À la distribution, le village aura donc la certitude absolue que son propriétaire est bel et bien un innocent Simple Villageois.",
+          "trustedAdvisor": "Conseil au meneur : ce personnage peut devenir un Capitaine ou un Garde Champêtre de confiance."
+        },
+        "seer": {
+          "herGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "nightlyVision": "Chaque nuit, elle voit la carte d'un joueur de son choix.",
+          "helpfulButDiscreet": "Elle doit aider les autres Villageois mais rester discrète pour ne pas être démasquée par les Loups-Garous."
+        },
+        "cupid": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "magicArrows": "En décochant ses célèbres flèches magiques, Cupidon a le pouvoir de rendre 2 personnes amoureuses à jamais.",
+          "firstNightPairing": "La première nuit, il désigne les 2 joueurs (ou joueuses) amoureux. Cupidon peut, s'il le veut, se désigner comme l'un des deux Amoureux.",
+          "tragicEnd": "Si l'un des Amoureux est éliminé, l'autre meurt de chagrin immédiatement. Un Amoureux ne doit jamais éliminer son aimé, ni lui porter aucun préjudice (même pour faire semblant !).",
+          "warningForMixedPairs": "Attention : si l'un des Amoureux est un Villageois et l'autre un Loup-Garou ou le Joueur de Flûte, le but de la partie change pour les Amoureux : En effet, afin de pouvoir vivre en paix leur amour et gagner la partie, ils doivent éliminer tous les autres joueurs, Loups-Garous et Villageois, en respectant les règles du jeu."
+        },
+        "witch": {
+          "herGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "potentPotions": "Elle sait concocter 2 potions extrêmement puissantes : une potion de guérison pour ressusciter le joueur dévoré par les Loups-Garous et une potion d'empoisonnement utilisée la nuit pour éliminer un joueur.",
+          "oneUsePerGame": "La Sorcière peut utiliser chaque potion une seule fois dans la partie.",
+          "doublePotionUse": "Elle peut se servir de ses deux potions la même nuit.",
+          "morningAfterEffect": "Le matin, suivant la ou les potions utilisées, il pourra y avoir 2 joueurs éliminés ou aucun !",
+          "selfHealingOption": "La Sorcière peut également utiliser la potion de guérison à son profit, et donc se guérir elle-même si elle vient d'être dévorée par les Loups-Garous."
+        },
+        "hunter": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "revengeUponDeath": "S'il se fait dévorer par les Loups-Garous ou éliminer malencontreusement par les Villageois, le Chasseur doit répliquer avant de rendre l'âme en éliminant immédiatement n'importe quel autre joueur de son choix.",
+          "loversFarewell": "Si le Chasseur est l'amoureux d'un joueur éliminé, avant de quitter la partie le Chasseur doit immédiatement éliminer un autre joueur de son choix.",
+          "potentialNoSurvivors": "Cela peut entraîner une partie où il ne reste aucun joueur survivant. Dans ce cas, la victoire n'appartient à aucun des deux camps."
+        },
+        "little-girl": {
+          "herGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "nightlyEspionage": "La Petite Fille peut, en entrouvrant les yeux, espionner les Loups-Garous pendant leur réveil.",
+          "riskOfDiscovery": "Si elle se fait surprendre par un des Loups-Garous, elle pourra être dévorée immédiatement (en silence), à la place de la victime désignée.",
+          "nightTimeObservation": "La Petite Fille ne peut espionner que la nuit, durant le tour d'éveil des Loups-Garous. Elle n'a pas le droit de se faire passer pour un Loup-Garou et d'ouvrir grand les yeux."
+        },
+        "defender": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "protectiveRole": "Ce personnage peut préserver les Villageois de la morsure des Loups-Garous… Chaque nuit, le Salvateur est appelé avant les Loups-Garous.",
+          "playerDesignation": "Le Salvateur désigne alors un joueur au meneur de jeu. (Il est de tradition que le Salvateur reproduise d'abord avec ses mains la figure dessinée sur la carte).",
+          "nightlyProtection": "Le joueur ainsi désigné sera protégé la nuit durant (et celle-ci seulement) contre les Loups-Garous. Même désigné par eux, il ne sera pas éliminé du jeu.",
+          "selfProtection": "Le Salvateur a le droit de s'auto-protéger. Il n'a pas le droit de protéger 2 nuits de suite le même joueur.",
+          "limitations": "La protection du Salvateur ne donne aucun résultat sur la Petite Fille. (Elle est en pleine crise de préadolescence et rien ne saurait lui éviter d'avoir des ennuis).",
+          "exclusions": "Le Salvateur ne protège ni du Joueur de Flûte ni de l'infection par l'Infect Père des Loups."
+        },
+        "elder": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "remarkableResilience": "Il a victorieusement traversé toutes les terribles épreuves de la vie, et a acquis une résistance hors du commun ! Les Loups-Garous devront s'y prendre à deux fois pour le dévorer.",
+          "survivalTrait": "La première fois que l'Ancien du village est dévoré par les Loups-Garous, il survit. Le meneur de jeu ne retourne pas sa carte. L'Ancien est éliminé seulement la deuxième fois qu'il est dévoré.",
+          "quickElimination": "Le vote du village, la potion d'empoisonnement de la Sorcière, le tir du Chasseur et le rasoir du Barbier éliminent l'Ancien du premier coup.",
+          "specialConsequence": "Mais désespérés d'avoir éliminé un tel puit de sciences, les Villageois perdent leurs pouvoirs spéciaux jusqu'à la fin de la partie. Il n'est pas affecté par l'Infect Père des Loups si c'est la première fois qu'il est mordu.",
+          "healingOption": "Attention : Si l'Ancien du village se fait soigner par la Sorcière, il récupère une seule vie."
+        },
+        "scapegoat": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "unfortunateRole": "C'est bien triste, mais à Thiercelieux, quand quelque chose ne va pas c'est toujours lui qui en subit injustement les conséquences…",
+          "tiebreakerElimination": "Si le vote du village amène une égalité, c'est le Bouc émissaire qui est éliminé à la place des ex æquo.",
+          "additionalRoleAfterElimination": "À lui de bien manœuvrer pour éviter cette triste conclusion. Si le Bouc émissaire est éliminé, il lui reste une prérogative à exercer. Il désigne qui votera ou ne votera pas durant la prochaine journée.",
+          "cautionaryNote": "Attention : désigner un seul joueur pour voter, c'est risquer de le faire dévorer par les Loups-Garous la nuit suivante. Il n'y aura alors pas de vote du village. (Sauf bien entendu si le joueur désigné est un Loup-Garou, ou que les Loups-Garous fassent exprès de ne pas l'éliminer…)"
+        },
+        "idiot": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "quirkyVillager": "Quel village n'a pas son Idiot ? Il fait un peu n'importe quoi, mais il est tellement attachant que personne ne lui voudrait du mal…",
+          "mistakenVote": "Si le village vote contre lui, l'Idiot du village retourne sa carte. À cet instant, les Villageois comprennent leur erreur et ils le gracient immédiatement. Dorénavant, il continue à jouer, mais il a perdu son droit de vote. Que vaudrait le vote d'un Idiot… Il n'y aura pas de pendaison à ce tour.",
+          "wolfElimination": "Attention : si les Loups-Garous le dévorent, l'Idiot du village est éliminé. Si l'Idiot est éliminé alors qu'il était le Capitaine du village, il ne transmet pas sa fonction. Si le Chasseur tire sur l'Idiot, ce dernier est éliminé."
+        },
+        "two-sisters": {
+          "theirGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "confusingTwins": "Certains locaterciens les confondent quand ils croisent l'une des Deux Sœurs au détour d'un chemin creux.",
+          "siblingBond": "En tout cas, les Deux Sœurs s'entendent comme les doigts de la main ou les cheveux d'une même mèche. C'est certes encourageant d'avoir un proche sur qui compter dans ces moments incertains !",
+          "nightlyConsultation": "La première nuit, à l'appel du meneur, elles se réveillent ensemble et se reconnaissent. Ensuite, au cours de la partie, une nuit sur deux, elles se réveillent à nouveau et se concertent rapidement et en silence sur les décisions à prendre pour sauver le village.",
+          "signLanguageTip": "Conseil au meneur : particulièrement puissant avec des pratiquants de la langue des signes."
+        },
+        "three-brothers": {
+          "theirGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "joyfulSiblings": "Tout le village résonne de leurs joyeux éclats verbaux quand ils regagnent la maison après le travail des champs.",
+          "nonverbalAgreement": "Pendant les débats, un simple coup d'œil entre eux leur permet de prendre une bonne décision quant à l'avenir du village.",
+          "nightlyRecognition": "La première nuit, à l'appel du meneur, ils se réveillent ensemble et se reconnaissent. Ensuite, au cours de la partie, une nuit sur deux, ils se réveillent à nouveau et se concertent rapidement et en silence sur les décisions à prendre pour sauver le village.",
+          "signLanguageTip": "Conseil au meneur : particulièrement puissant avec des pratiquants de la langue des signes. À n'utiliser que dans les grands villages. Si le village est très grand, vous pouvez même y associer les Deux Sœurs !"
+        },
+        "fox": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "appreciatedCharacter": "À Thiercelieux, tout le monde apprécie le flair de ce personnage vif et discret, sauf peut-être les poules et surtout les Loups-Garous.",
+          "nightlyDesignation": "La nuit, à l'appel du meneur, le Renard peut désigner un groupe de trois joueurs voisins, dont il montre du doigt le joueur central.",
+          "powerOutcome": "Si dans ce groupe se trouve au moins un Loup-Garou, alors le meneur fait un signe affirmatif au Renard. Dans ce cas, le Renard pourra utiliser à nouveau son pouvoir une nuit suivante.",
+          "powerLoss": "Si aucun Loup-Garou ne fait partie du groupe désigné, le Renard perd définitivement son pouvoir ; par contre, il bénéficie d'une information de taille innocentant trois joueurs d'un coup.",
+          "reminder": "Remarque : le meneur appelle le Renard toutes les nuits, mais celui-ci n'est en aucune mesure tenu d'utiliser son pouvoir chaque nuit.",
+          "meneurNote": "Conseil au meneur : le Renard ne voit pas les cartes ; le meneur lui indique simplement s'il y a ou s'il n'y a pas de Loups-Garous parmi ces trois joueurs."
+        },
+        "bear-tamer": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "nostalgicTale": "Ah ! Qu'il est doux à ma mémoire, ce bruit de chaîne qui ruisselle en glissant sur les pavés de \"la place des Trois Routes\", accompagné par le grognement d'Ursus.",
+          "goldenEra": "Ah ! Qu'il est loin ce temps où Titan, le Montreur d'Ours, dirigeait avec maestria son compagnon dans un ballet si gracieux qu'on en pleurait chaque été à Thiercelieux. Ursus avait en outre ce pouvoir si précieux de détecter les lycanthropes cachés près de lui.",
+          "powerActivation": "Chaque matin, juste après la révélation des éventuelles victimes nocturnes, si au moins un Loup-Garou est ou devient directement voisin du Montreur d'Ours, alors le meneur grogne pour signifier aux joueurs que l'ours du Montreur a senti le danger.",
+          "neighborCriteria": "Seuls les voisins toujours en jeu sont pris en compte.",
+          "meneurNote": "Conseil au meneur : pour faciliter les choses, les joueurs éliminés sortent de la partie, ou s'écartent de la table. Si le Montreur d'Ours est infecté, alors le meneur grognera tous les tours, tant que le Montreur d'Ours n'est pas éliminé."
+        },
+        "stuttering-judge": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "backgroundStory": "Le plus jeune fils du meunier était doué pour les études et rêvait d'être avocat. Comme son père avait bien réussi à rouler ses clients dans la farine, il l'envoya faire son droit dans la grande cité voisine.",
+          "speechImpediment": "Un léger défaut de prononciation interdit au jeune homme le prestige tant convoité d'être défendeur de la veuve et de l'orphelin. Toutefois, il regagna le village de Thiercelieux auréolé du titre guère moins prestigieux de juge itinérant.",
+          "doubleVoteDecision": "Une fois dans la partie, le Juge Bègue peut décider qu'il y aura deux votes consécutifs et deux éliminations de suspect.",
+          "uniqueSign": "Le Juge Bègue signifie au meneur sa décision par un signe particulier qu'il utilise pour désigner un habitant durant le vote du village. Le deuxième vote est aussitôt déclenché sans débat par le meneur, juste après l'élimination due au premier vote. Le \"Ju-juge-Bè-bègue\" aura montré ce signe particulier durant la première nuit, à l'appel du meneur.",
+          "meneurTip": "Conseil au meneur : soyez toujours attentif au comportement du Juge Bègue durant les votes, afin de ne pas manquer son signe particulier."
+        },
+        "rusty-sword-knight": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "veteranKnight": "\"Don Quitousse\" est un très vieux chevalier à la retraite. Il est assez épuisé par une vie de quêtes à travers le monde et n'entretient plus très bien son noble outil.",
+          "rustyBlade": "La rouille s'est peu à peu déposée sur le tranchant émoussé de sa fidèle lame protectrice mais jamais il ne la quittera pour une autre. Il dort encore tous les soirs avec elle ces temps-ci : gare aux importuns !",
+          "wolfContamination": "Si le Chevalier est dévoré, il est éliminé, mais un des Loups-Garous est contaminé par l'épée rouillée. Parmi les Loups-Garous coupables de cette élimination, le premier Loup-Garou situé à gauche du Chevalier sera éliminé la nuit suivante.",
+          "contaminationRevelation": "Cette élimination due à la maladie sera révélée par le meneur le matin après la disparition du Loup-Garou. Celui-ci aura donc survécu à sa blessure durant une journée.",
+          "caution": "Attention : les joueurs pourront en déduire que tous les habitants situés entre le défunt Chevalier à l'Épée Rouillée et le Loup-Garou malade sont d'innocents villageois."
+        },
+        "thief": {
+          "hisGoalIsToKillWerewolvesButCanSwitchSide": "Son but est d'éliminer les Loups-Garous mais son but peut changer suivant la carte choisie.",
+          "additionalCards": "Si on veut jouer le Voleur, deux cartes additionnelles doivent être ajoutées en plus de la composition de base. Les deux cartes sont disposées au centre de la table faces cachées.",
+          "nightlyExchange": "La première nuit, le Voleur pourra prendre connaissance de ces deux cartes, et échanger sa carte contre une des deux cartes. Si ces cartes sont deux Loups-Garous, il est obligé d'échanger sa carte contre un des deux Loups-Garous. Il jouera désormais ce personnage jusqu'à la fin de la partie."
+        },
+        "wild-child": {
+          "hisGoalIsToKillWerewolvesUntilModelDies": "Son but est d'éliminer les Loups-Garous tant que son modèle est vivant.",
+          "abandonedChildhood": "Abandonné dans la forêt par ses parents dans sa plus tendre enfance, il y fut élevé par des loups. Dès qu'il sut marcher à quatre pattes, l'Enfant Sauvage se mit à errer aux abords de Thiercelieux.",
+          "secretAdmiration": "Un beau jour, fasciné par un habitant du village qui marchait debout avec grâce et prestance, il en fit son modèle en secret.",
+          "integration": "Il décida alors d'intégrer la communauté de Thiercelieux et pénétra, inquiet, dans le village. La communauté fut émue par sa fragilité, l'adopta et l'accueillit en son sein.",
+          "innerStruggle": "Que deviendra-t-il : honnête Villageois ou terrible Loup-Garou ? Toute son existence, le cœur de l'Enfant Sauvage balancera entre ces deux alternatives. Puisse son modèle le confirmer dans son humanité nouvelle.",
+          "nightlyAction": "L'Enfant Sauvage est un Villageois. La première nuit, à l'appel du meneur, il désigne un joueur modèle. Si durant la partie le joueur désigné est éliminé, l'Enfant Sauvage devient Loup-Garou et se réveillera la nuit suivante avec ses congénères, dévorera avec eux toutes les nuits jusqu'à la fin de la partie.",
+          "villageInvolvement": "En revanche, tant que son modèle est vivant, l'Enfant Sauvage demeure un Villageois. Que son modèle s'avère être ou non un Loup-Garou ne change rien à l'affaire ! Rien n'empêche l'Enfant Sauvage de participer à l'élimination de son modèle s'il le désire.",
+          "winningConditions": "Si son modèle est vivant lorsque tous les Loups-Garous sont éliminés, il a gagné avec les Villageois. Si son modèle est éliminé et que seuls des Loups-Garous survivent avec lui, c'est aussi une victoire pour notre Enfant Sauvage.",
+          "meneurTip": "Conseil au meneur : ne pas révéler la véritable nature de l'Enfant Sauvage éliminé par le vote du village peut être amusant. Le doute à propos de sa véritable identité subsiste alors : était-il Villageois ou Loup-Garou avant d'être éliminé ?"
+        },
+        "wolf-hound": {
+          "hisGoalDependsOnChosenSide": "Son but est d'éliminer les Loups-Garous s'il reste chien ou d'éliminer les Villageois s'il décide de devenir un loup.",
+          "ancestralConnection": "Tous les chiens savent au tréfonds d'eux-mêmes que leurs ancêtres étaient loups et que c'est l'Homme qui les a maintenus dans cet état de compagnons enfantins et craintifs, mais fidèles et généreux.",
+          "freeWill": "En tout cas, seul le Chien-Loup peut décider s'il obéira à son maître humain et civilisé ou s'il écoutera l'appel de la nature sauvage enfouie dans ses entrailles.",
+          "initialChoice": "La première nuit, il choisit s'il désire être un Simple Villageois ou Loup-Garou.",
+          "nightlyParticipation": "S'il désire être Loup-Garou, il se réveillera avec eux toutes les nuits et participera désormais à la désignation de la victime dévorée. Sinon, il garde les yeux clos et gagnera avec les Villageois.",
+          "finalDecision": "Ce choix est définitif !",
+          "meneurTip": "Conseil au meneur : ne pas révéler la véritable nature du Chien-Loup éliminé par le vote du village peut-être amusant. Le doute à propos de sa véritable identité subsiste alors : était-il Villageois ou Loup-Garou avant d'être éliminé ?"
+        },
+        "angel": {
+          "hisGoalIsToDieFirst": "Son but est de mourir dès le premier tour, soit au premier vote, soit par les Loups-Garous durant la première nuit. Si une des conditions est remplie, il gagne seul la partie.",
+          "disgustWithVillage": "La vie fangeuse d'un village infesté de créatures malfaisantes le dégoûte ; il souhaite être victime du pire cauchemar, pour se réveiller enfin paisible dans son lit douillet.",
+          "gameStart": "Quand l'Ange est en jeu, la partie débute toujours par le débat du village suivi d'un vote éliminatoire, puis d'une première nuit.",
+          "winningConditions": "Si l'Ange réussit à attirer le vote discriminatoire des Villageois ou la vindicte dévorante des lycanthropes pour être éliminé au premier tour, il pourra sortir vainqueur du cauchemar et gagner la partie.",
+          "gameEnd": "Alors le jeu s'arrête : les joueurs peuvent commencer une nouvelle partie. S'il échoue, il deviendra Simple Villageois pour le reste de la partie.",
+          "meneurTip": "Conseil au meneur : n'hésitez pas à rappeler l'éventuelle présence de l'Ange lors de la première journée ! Les débats seront plus animés, les beaux parleurs étant protégés par cette angélique menace !"
+        },
+        "pied-piper": {
+          "hisGoalIsToCharm": "Son but est de charmer tous les joueurs vivants.",
+          "revengePlot": "Ignominieusement chassé du village, il est revenu des années plus tard sous le couvert d'une fausse identité pour exercer sa terrible vengeance.",
+          "nightlyAction": "Chaque nuit, à l'appel du meneur du jeu, le Joueur de Flûte charme deux nouveaux joueurs. Dès l'instant où il ne reste plus que des joueurs charmés, le Joueur de Flûte a gagné contre tous les autres. (Même si cela arrive suite à un vote du village ou grâce aux Loups-Garous).",
+          "wolfTransformation": "S'il est infecté par l'Infect Père des Loups, il devient un simple Loup-Garou. Son objectif initial, qui était vouloir charmer tous les joueurs, est donc abandonné. Il va collaborer avec les Loups-Garous pour leur victoire commune.",
+          "attentionNote": "Attention : le Joueur de Flûte ne peut s'auto-charmer. Le Salvateur ne protège pas du charme. La Sorcière ne guérit pas du charme. Les Loups-Garous ne sont pas immunisés contre le charme. Les joueurs charmés conservent tous leurs pouvoirs et caractéristiques. Le charme ne se transmet pas entre Amoureux."
+        },
+        "scandalmonger": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "uniqueCharacteristics": "Cet individu adore faire connaître ses suspicions de culpabilité en marquant, juste avant l'aube, le joueur de son choix. Son impact est certain malgré le manque de courage de notre oiseau !",
+          "nightlyDecision": "Chaque fin de nuit, après que les Loups-Garous se sont rendormis, à l'appel de son rôle le Corbeau peut désigner un joueur qu'il suspecte ou passer son tour.",
+          "voteInfluence": "Le meneur dépose alors le marqueur \"Malédiction du Corbeau\" devant le joueur désigné. Ce joueur aura automatiquement 2 voix de plus contre lui au prochain décompte des votes."
+        },
+        "prejudiced-manipulator": {
+          "hisGoalIsToKillEveryStrangers": "Son but est d'éliminer tous les joueurs qui ne sont pas dans son groupe.",
+          "troubledPast": "Depuis son enfance, et peut-être à cause d'un manque d'amour ou d'intérêt prodigué par ses proches, ce pauvre hère ne s'aimait pas du tout.",
+          "transferredHatred": "En grandissant, il a transféré cette haine sur tous ceux qui lui sont étrangers. C'est pourquoi on le désigne aujourd'hui sous le nom d' \"Abominable Sectaire\".",
+          "groupDivision": "Avant le début de la partie, le meneur divise le village en 2 groupes, selon un critère évident (sexe, lunettes, taille, âge, etc.) et l'annonce à voix haute au village. L'Abominable Sectaire fera fatalement partie de l'un ou l'autre des 2 groupes.",
+          "eliminationObjective": "Le but de ce personnage est l'élimination de tous les joueurs du groupe qu'il déteste, c'est-à-dire celui auquel il n'appartient pas.",
+          "victoryCondition": "Dans ce cas-là, et seulement dans ce cas, il gagne la partie. Il n'a pas de pouvoir particulier : son habileté à manipuler les habitants est sa seule arme. S'il est infecté par l'Infect Père des Loups, il devient Loup-Garou.",
+          "meneurTip": "Conseil au meneur : il n'est pas obligatoire de constituer 2 groupes de tailles identiques. N'hésitez pas si nécessaire à préciser devant tout le monde à quel groupe appartient chaque habitant"
+        },
+        "actor": {
+          "hisGoalIsToKillWerewolves": "Son but est d'éliminer les Loups-Garous.",
+          "entertainerBackground": "Bateleur infatigable, il s'est arrêté au village pour y donner quelques représentations avant de descendre passer l'hiver dans des contrées plus hospitalières. Aussi doué pour faire apprécier les farces et les comédies que pour interpréter les grands textes tragiques, il possède tous les talents pour restituer le répertoire du théâtre national.",
+          "cardSelection": "Avant la partie, le meneur choisit 3 cartes personnage ayant des capacités spéciales. Après la distribution des rôles, ces cartes sont placées faces visibles au centre de la table.",
+          "nightlyAction": "Chaque nuit, à l'appel du meneur, le Comédien peut désigner une de ces cartes et utiliser le pouvoir correspondant jusqu'à la nuit suivante. Si le Comédien utilise une carte personnage, le meneur ôte cette carte de la table. Elle ne pourra plus être utilisée.",
+          "restrictionNote": "Attention : les cartes proposées ne peuvent être des cartes de Loups-Garous.",
+          "meneurTips": "Conseil au meneur : dans le choix des cartes proposées au Comédien, vous pouvez introduire un peu de chaos dans le village ou au contraire contrer un clan de loups très puissants.",
+          "additionalNote": "Si le Voleur est également présent, vous devez tout d'abord disposer les 2 cartes du Voleur, puis ensuite seulement les 3 cartes du Comédien."
+        },
+        "devoted-servant": {
+          "herGoalIsToKillWerewolves": "Son but initial est d'éliminer les Loups-Garous ou de remplir l'objectif du rôle qu'elle a volé.",
+          "idealServant": "Qui pourrait rêver d'une meilleure servant que celle qui donne sa vie pour ses maîtres ? Ne vous réjouissez pas trop vite, car l'ambition dévorante qui la possède pourrait causer la fin du village !",
+          "revealBeforeCouncil": "Avant révélation de la carte du joueur éliminé par le conseil du village, elle peut se révéler en montrant sa carte. Dans ce cas, la Servante Dévouée perd sa carte, puis elle prend la carte du joueur éliminé sans la dévoiler aux autres et endosse le rôle de l'éliminé jusqu'à la fin de la partie.",
+          "loveRestriction": "Attention : si elle est amoureuse, la Servante Dévouée ne peut pas utiliser son pouvoir. Son amour est plus fort que sa volonté de changer de personnage.",
+          "servantTipTemporizeRevelation": "Conseil au meneur : temporisez la révélation de la carte du joueur éliminé par le village afin de laisser le temps à la Servante Dévouée de se révéler. Si elle endosse un rôle à pouvoir, le mener appellera l'ex-Servante Dévouée les nuits suivantes sous l'intitulé de ce nouveau rôle. Tout particulièrement la première nuit suivante, afin de \"réinitialiser\" ce nouveau rôle.",
+          "servantTipNewRoleRenewal": "En règle générale, ce nouveau rôle endossé par la Servante Dévouée voit sa capacité totalement renouvelée et doit être joué comme s'il s'agissait de la première nuit. En revanche, les éventuels effets précédemment appliqués sur le joueur éliminé sont annulés.",
+          "servantTipEliminatedPlayerConditions": "Précisions : si le joueur éliminé était infecté, amoureux, charmé, Capitaine, Garde Champêtre ou Cupidon, l'ex-Servante Dévouée ne l'est pas.",
+          "servantTipNoLongerCharmCaptainGuard": "Si l'ex-Servante Dévouée était charmée, Capitaine ou Garde Champêtre, elle ne l'est plus.",
+          "servantTipRemainsInfectedIfWas": "Si l'ex-Servante Dévouée était infectée, elle l'est toujours.",
+          "servantTipAfterTransformation": "Si l'ex-Servante Dévouée devient : ",
+          "servantTipFlutePlayerCharmIndication": "- Joueur de Flûte, le meneur indique à ce nouveau Joueur de Flûte quels sont les joueurs précédemment charmés.",
+          "servantTipActorGuardGypsyNoNewCards": "- Comédien, Garde Champêtre, Gitane (sans Philtre) : de nouvelles cartes ne sont pas distribuées ; ne restent que celles non utilisées."
+        }
+      }
+    },
+    "RoleTypeBadge": {
+      "roleType": "Type de rôle",
+      "descriptions": {
+        "werewolf": "Son but est d'éliminer tous les Villageois.",
+        "villager": "Son but est d'éliminer tous les Loups-Garous.",
+        "lonely": "Son but est de réaliser son objectif, indépendamment de son propre camp.",
+        "ambiguous": "Son but est de faire gagner son camp qui peut changer au cours de la partie."
+      }
+    },
+    "RoleOriginBadge": {
+      "roleOrigin": "Origine du rôle",
+      "classic": "Jeu de base",
+      "new-moon": "Extension Nouvelle Lune",
+      "the-village": "Extension Le Village",
+      "characters": "Extension Personnages",
+      "unconventional": "Rôle inventé par la communauté"
+    },
+    "AboutHowToContribute": {
+      "howToContribute": "Comment contribuer à ce projet ?",
+      "thereAreManyWaysToContribute": "Il existe plusieurs moyens de contribuer à ce projet :",
+      "openSourceProject": "L'Assistant Loups-Garous est un projet open-source ! Disponible sur GitHub, que vous soyez développeur, graphiste ou même testeur, votre aide est la bienvenue. D'ailleurs, si le projet vous plaît, n'hésitez pas à ajouter une étoile ou à suivre le créateur !",
+      "accessGitHubRepository": "Accéder au dépôt GitHub",
+      "thisProjectIsFree": "Ce projet a pour vocation de rester un service gratuit. Néanmoins, l'hébergement et l'infrastructure de l'outil sont tous deux payants. Si vous souhaitez participer ou si vous aimez le travail du créateur de ce projet, vous pouvez faire un don sur sa page Buy Me A Coffee.",
+      "talkAboutThisProject": "Parlez de ce projet autour de vous ! Le bouche à oreille permettra aux nombreux indécis du role-play de se lancer dans la grande aventure du maître du jeu grâce à l'Assistant Loups-Garous."
+    },
+    "GitHubRepositoryButton": {
+      "thisProjectIsOpenSource": "Ce projet est open-source !"
+    },
+    "AboutCreator": {
+      "wordFromCreator": "Un mot du créateur",
+      "creatorBackground": "Je suis Antoine ZANARDI, développeur Full-Stack Web et adepte de l'open-source en général. Si vous souhaitez en savoir plus sur moi, je vous invite à découvrir mon portfolio.",
+      "whyWerewolvesGameIsGreat": "Pour moi, Les Loups-Garous de Thiercelieux™ est un des meilleurs jeux entre amis ou en famille autour d'une table, où s'entremêlent alliances et trahisons, un peu comme un Mario Kart en fait… Au fur et à mesure d'une partie, la vraie nature de chaque joueur se révèle, les masques tombent, chacun se sent menacé… Chaque partie est une aventure unique, ponctuée de rebondissements inattendus.",
+      "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
+      "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous maîtres du jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
+      "myPortfolio": "Mon portfolio"
     }
   }
 }
