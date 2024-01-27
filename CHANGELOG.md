@@ -1,5 +1,31 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.3.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.2.0...v1.3.0) (2024-1-27)
+
+
+### 🚀 Features
+
+* **about:** about page with every role ([#53](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/53)) ([2233d28](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2233d281844f207fd3c572c3d3d7375d6deb9556))
+
+
+### 🧹 Chore
+
+* **deps:** bump @faker-js/faker from 8.3.1 to 8.4.0 ([#68](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/68)) ([a6633be](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a6633bec2b26999fcdc0a8c150d29d158575c44a))
+* **deps:** bump @vue/test-utils from 2.4.3 to 2.4.4 ([#69](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/69)) ([2bc7faf](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2bc7fafdbcb1e3c306aec541f64259244432f91a))
+* **deps:** bump happy-dom from 13.2.0 to 13.2.1 ([#54](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/54)) ([a2882de](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a2882deca014573f0430b55adc1efef1e6c0300f))
+* **deps:** bump happy-dom from 13.2.1 to 13.3.1 ([#61](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/61)) ([1f47fca](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1f47fca99d4d5aa1e35d0accf5b6bdde471605bc))
+* **deps:** bump husky from 8.0.3 to 9.0.1 ([#62](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/62)) ([d5dc87e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d5dc87e98970ac61f2c89fbd7cdaaa9d494be68b))
+* **deps:** bump husky from 9.0.1 to 9.0.6 ([#66](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/66)) ([41d34e0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/41d34e0d89d18e570e5d5d80088267cbd19a7c4c))
+* **deps:** bump primevue from 3.46.0 to 3.47.1 ([#64](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/64)) ([ee028ca](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ee028ca91dfa0cef6c7cc70f17ea553c57b7f036))
+* **deps:** bump primevue from 3.47.1 to 3.47.2 ([#67](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/67)) ([0c93a31](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0c93a31c5c7a9fa2a0b3dc104966e552e14d2f93))
+* **deps:** bump the commitlint group with 2 updates ([#58](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/58)) ([41637d3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/41637d391a3cb0a7412ec369c72b1784719edca8))
+* **deps:** bump the commitlint group with 2 updates ([#65](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/65)) ([99f9b90](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/99f9b901fb033c27ba473374d2e29f3291f14b85)), closes [conventional-changelog/commitlint#3871](https://github.com/conventional-changelog/commitlint/issues/3871) [#3865](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3865) [conventional-changelog/commitlint#3867](https://github.com/conventional-changelog/commitlint/issues/3867) [conventional-changelog/commitlint#3871](https://github.com/conventional-changelog/commitlint/issues/3871) [#3865](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3865) [conventional-changelog/commitlint#3867](https://github.com/conventional-changelog/commitlint/issues/3867) [#3199](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3199) [#3871](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3871) [#3199](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3199) [#3871](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/3871)
+* **deps:** bump the types group with 3 updates ([#57](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/57)) ([88e5989](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/88e59890882a8659e1e80246f195412e18359fc9))
+* **deps:** bump type-fest from 4.10.0 to 4.10.1 ([#63](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/63)) ([eb763ad](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/eb763ad2b030bbbfd8f346e84dce9503f2688e13))
+* **deps:** bump type-fest from 4.9.0 to 4.10.0 ([#60](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/60)) ([e56c906](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e56c9063a06cb36a31ae7a163e31f08f0d80f2e9))
+* **deps:** bump vue-eslint-parser from 9.4.0 to 9.4.2 ([#59](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/59)) ([0990171](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0990171a049e6496776502a9a8d64117cab07c66))
+* **nuxt-image:** downgrade nuxt image because prod problems ([#70](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/70)) ([bed26f0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bed26f09d8621b05a8ccac2d7100d0fb32eb0617))
+
 ## [1.2.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.1.1...v1.2.0) (2024-1-21)
 
 
