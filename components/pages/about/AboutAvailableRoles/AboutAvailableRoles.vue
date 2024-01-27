@@ -2,12 +2,13 @@
   <div id="about-available-roles">
     <div class="align-items-center d-flex">
       <RoleImage
+        id="about-available-roles-title-role-image"
         class="me-3"
         :role-name="RoleNames.ANGEL"
         sizes="50px"
       />
 
-      <h2>
+      <h2 id="about-available-roles-title">
         {{ $t('components.AboutAvailableRoles.availableRoles') }}
       </h2>
     </div>
@@ -16,6 +17,7 @@
 
     <div
       v-if="!roles"
+      id="loading-roles-container"
       class="align-items-center d-flex flex-column justify-content-center"
     >
       <VuePrimeProgressSpinner/>
@@ -24,7 +26,7 @@
     </div>
 
     <div v-else>
-      <p>
+      <p id="about-available-roles-first-section">
         {{ availableRolesText }}
       </p>
 
@@ -34,7 +36,7 @@
           :key="role.name"
         >
           <template #header>
-            <div class="align-items-center d-flex">
+            <div class="align-items-center available-role-image-header d-flex">
               <RoleImage
                 :role-name="role.name"
                 sizes="40px"
@@ -54,6 +56,8 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
+
 import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";

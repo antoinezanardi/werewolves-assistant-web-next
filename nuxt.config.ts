@@ -1,3 +1,12 @@
+const modules = [
+  "@nuxt/test-utils/module",
+  "nuxt-primevue",
+  "@nuxtjs/i18n",
+  "@nuxt/image",
+  "@nuxtjs/google-fonts",
+  process.env.NODE_ENV !== "test" && "@pinia/nuxt",
+];
+
 export default defineNuxtConfig({
   app: { head: { link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }] } },
   css: [
@@ -6,17 +15,12 @@ export default defineNuxtConfig({
     "bootstrap/dist/css/bootstrap-utilities.css",
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
+    "./assets/css/google-fonts.css",
   ],
   devtools: { enabled: true },
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
   image: { domains: ["antoinezanardi.fr", "appspot.com"] },
-  modules: [
-    "@nuxt/test-utils/module",
-    "nuxt-primevue",
-    "@nuxtjs/i18n",
-    "@nuxt/image",
-    "@pinia/nuxt",
-  ],
+  modules,
   pinia: { storesDirs: [] },
   primevue: {
     components: {
@@ -40,6 +44,16 @@ export default defineNuxtConfig({
     },
     composables: { include: [] },
     options: { ripple: true },
+  },
+  googleFonts: {
+    display: "swap",
+    families: { Quicksand: { wght: "300..700" } },
+    outputDir: "assets/fonts",
+    stylePath: "../css/google-fonts.css",
+    fontsDir: "./",
+    preload: true,
+    text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
+    overwriting: false,
   },
   runtimeConfig: { public: { werewolvesAssistantApi: { baseUrl: "" } } },
   typescript: {

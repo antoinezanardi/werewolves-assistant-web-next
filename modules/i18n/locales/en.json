@@ -48,13 +48,13 @@
       "about": "About"
     },
     "about": {
-      "whyAnAssistant": "Why an assistant ?"
+      "whyAnAssistant": "Why an assistant ?",
+      "backToHome": "Back to home"
     }
   },
   "components": {
     "IndexFooter": {
-      "contact": "Contact me",
-      "thisProjectIsOpenSource": "This project is open source"
+      "contact": "Contact me"
     },
     "NavBar": {
       "parameters": "Parameters",
@@ -70,7 +70,7 @@
     },
     "AboutWerewolvesGame": {
       "werewolvesAssistantGame": "The Werewolves of Thiercelieux™ game",
-      "iDontKnowThisGame": "I don't know this game",
+      "iDontKnowWerewolvesGame": "I don't know this game",
       "watchTutorialVideoOnYoutube": "Watch an explanatory video on YouTube",
       "whatIsWerewolvesGame": "The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.",
       "whyGameMasterIsImportant": "The success of a game relies on the shoulders of the game master, tasked with creating an enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, lacking experience, or being in a state of distraction make this task a significant challenge."
@@ -91,7 +91,7 @@
     },
     "AboutAvailableRoles": {
       "availableRoles": "Available roles",
-      "loadingRoles": "Loading roles...",
+      "loadingRoles": "Loading roles…",
       "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:"
     },
     "AboutAvailableRoleDescription": {
@@ -169,7 +169,7 @@
         },
         "defender": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
-          "protectiveRole": "This character can shield the Villagers from the bite of the Werewolves... Each night, the Defender is called before the Werewolves.",
+          "protectiveRole": "This character can shield the Villagers from the bite of the Werewolves… Each night, the Defender is called before the Werewolves.",
           "playerDesignation": "The Defender then designates a player to the game master. (It is customary for the Defender to first reproduce with his hands the figure drawn on the card).",
           "nightlyProtection": "The player thus designated will be protected during the night (and only that night) against the Werewolves. Even if chosen by them, they will not be eliminated from the game.",
           "selfProtection": "The Defender has the right to self-protect. They are not allowed to protect the same player for two consecutive nights.",
@@ -186,15 +186,15 @@
         },
         "scapegoat": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
-          "unfortunateRole": "It's quite sad, but in Thiercelieux, when something goes wrong, he always unjustly suffers the consequences...",
+          "unfortunateRole": "It's quite sad, but in Thiercelieux, when something goes wrong, he always unjustly suffers the consequences…",
           "tiebreakerElimination": "If the village vote results in a tie, the Scapegoat is eliminated instead of the tied players.",
           "additionalRoleAfterElimination": "It's up to him to maneuver well to avoid this sad conclusion. If the Scapegoat is eliminated, he still has one prerogative to exercise. He designates who will or will not vote during the next day.",
-          "cautionaryNote": "Caution: designating only one player to vote is risking that he will be devoured by the Werewolves the following night. There will then be no village vote. (Unless, of course, the designated player is a Werewolf, or the Werewolves deliberately choose not to eliminate him...)"
+          "cautionaryNote": "Caution: designating only one player to vote is risking that he will be devoured by the Werewolves the following night. There will then be no village vote. (Unless, of course, the designated player is a Werewolf, or the Werewolves deliberately choose not to eliminate him…)"
         },
         "idiot": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
-          "quirkyVillager": "What village doesn't have its Idiot? He does things a bit recklessly, but he's so endearing that no one would want to harm him...",
-          "mistakenVote": "If the village votes against him, the Village Idiot flips his card. At that moment, the Villagers realize their mistake and immediately pardon him. From now on, he continues to play, but he has lost his voting rights. What would be the worth of an Idiot's vote... There will be no hanging this round.",
+          "quirkyVillager": "What village doesn't have its Idiot? He does things a bit recklessly, but he's so endearing that no one would want to harm him…",
+          "mistakenVote": "If the village votes against him, the Village Idiot flips his card. At that moment, the Villagers realize their mistake and immediately pardon him. From now on, he continues to play, but he has lost his voting rights. What would be the worth of an Idiot's vote… There will be no hanging this round.",
           "wolfElimination": "Warning: if the Werewolves devour him, the Village Idiot is eliminated. If the Idiot is eliminated while he was the Captain of the village, he does not pass on his function. If the Hunter shoots the Idiot, he is eliminated."
         },
         "two-sisters": {
@@ -340,6 +340,25 @@
       "the-village": "The Village Expansion",
       "characters": "Characters Expansion",
       "unconventional": "Invented Role by the community"
+    },
+    "AboutHowToContribute": {
+      "howToContribute": "How to contribute to this project?",
+      "thereAreManyWaysToContribute": "There are several ways to contribute to this project:",
+      "openSourceProject": "The Werewolf Assistant is an open-source project! Available on GitHub, whether you are a developer, graphic designer, or even a tester, your help is welcome. If you like the project, feel free to star it or follow the creator!",
+      "accessGitHubRepository": "Access the project on GitHub",
+      "thisProjectIsFree": "This project is intended to remain a free service. However, both hosting and tool infrastructure are paid for. If you would like to contribute or appreciate the creator's work, you can make a donation on their Buy Me A Coffee page.",
+      "talkAboutThisProject": "Talk about this project around you! Word of mouth will encourage many role-play enthusiasts to embark on the grand adventure of the game master with the Werewolf Assistant."
+    },
+    "GitHubRepositoryButton": {
+      "thisProjectIsOpenSource": "This project is open-source!"
+    },
+    "AboutCreator": {
+      "wordFromCreator": "A word from the creator",
+      "creatorBackground": "I am Antoine ZANARDI, a Full-Stack Web developer and a fan of open source in general. If you want to learn more about me, I invite you to explore my portfolio.",
+      "whyWerewolvesGameIsGreat": "For me, Werewolves of Miller's Hollow™ game is one of the best games to play with friends or family around a table, where alliances and betrayals intertwine, much like in Mario Kart. As the game progresses, the true nature of each player is revealed, masks fall, and everyone feels threatened. Each game is a unique adventure, full of unexpected twists.",
+      "whyWerewolvesAssistant": "As a big fan of the game master role, I've always wanted to share the rewarding feeling of being the conductor during a game. So, I created this assistant so that anyone can take on this important role, in any game configuration.",
+      "pleaseShareFeedback": "Your feedback on this assistant is welcome. It was created to serve all game masters, whether novice or expert, and make your games memorable. Have fun!",
+      "myPortfolio": "My portfolio"
     }
   }
 }

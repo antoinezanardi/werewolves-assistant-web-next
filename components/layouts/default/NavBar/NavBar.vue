@@ -14,12 +14,12 @@
         src="/img/logo/square/werewolves-logo-small.png"
       />
 
-      <div
+      <h3
         :aria-label="$t('shared.werewolvesAssistant')"
         class="ms-2"
       >
         {{ $t("shared.werewolvesAssistant") }}
-      </div>
+      </h3>
     </NuxtLink>
 
     <ParametersMenu

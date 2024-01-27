@@ -5,32 +5,34 @@
       class="align-items-center d-flex flex-column justify-content-center"
     >
       <RoleImage
+        class="available-role-description-role-image"
         :role-name="role.name"
         sizes="150px"
       />
 
-      <div class="mt-3">
+      <h2 class="available-role-description-role-name mt-3">
         {{ getRoleNameLabel(role.name) }}
-      </div>
+      </h2>
 
       <RoleTypeBadge
-        class="mt-3"
+        class="available-role-description-role-type-badge  mt-3"
         :role-type="role.type"
       />
 
       <RoleOriginBadge
-        class="mt-3"
+        class="available-role-description-role-origin-badge mt-3"
         :role-origin="role.origin"
       />
     </div>
 
     <div
       id="role-right-description"
-      class="d-flex flex-column justify-content-center"
+      class="container-fluid d-flex flex-column justify-content-center"
     >
       <p
         v-for="line in roleDescriptionLines"
         :key="line"
+        class="available-role-description-role-description-line"
       >
         {{ line }}
       </p>

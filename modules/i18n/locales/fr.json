@@ -48,13 +48,13 @@
       "play": "Jouer"
     },
     "about": {
-      "whyAnAssistant": "Un assistant ? Pour quoi faire ?"
+      "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
+      "backToHome": "Retour à l'accueil"
     }
   },
   "components": {
     "IndexFooter": {
-      "contact": "Me contacter",
-      "thisProjectIsOpenSource": "Ce projet est open source"
+      "contact": "Me contacter"
     },
     "NavBar": {
       "parameters": "Paramètres",
@@ -70,7 +70,7 @@
     },
     "AboutWerewolvesGame": {
       "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
-      "iDontKnowThisGame": "Je ne connais pas ce jeu",
+      "iDontKnowWerewolvesGame": "Je ne connais pas ce jeu",
       "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
       "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
       "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
@@ -340,6 +340,25 @@
       "the-village": "Extension Le Village",
       "characters": "Extension Personnages",
       "unconventional": "Rôle inventé par la communauté"
+    },
+    "AboutHowToContribute": {
+      "howToContribute": "Comment contribuer à ce projet ?",
+      "thereAreManyWaysToContribute": "Il existe plusieurs moyens de contribuer à ce projet :",
+      "openSourceProject": "L'Assistant Loups-Garous est un projet open-source ! Disponible sur GitHub, que vous soyez développeur, graphiste ou même testeur, votre aide est la bienvenue. D'ailleurs, si le projet vous plaît, n'hésitez pas à ajouter une étoile ou à suivre le créateur !",
+      "accessGitHubRepository": "Accéder au dépôt GitHub",
+      "thisProjectIsFree": "Ce projet a pour vocation de rester un service gratuit. Néanmoins, l'hébergement et l'infrastructure de l'outil sont tous deux payants. Si vous souhaitez participer ou si vous aimez le travail du créateur de ce projet, vous pouvez faire un don sur sa page Buy Me A Coffee.",
+      "talkAboutThisProject": "Parlez de ce projet autour de vous ! Le bouche à oreille permettra aux nombreux indécis du role-play de se lancer dans la grande aventure du maître du jeu grâce à l'Assistant Loups-Garous."
+    },
+    "GitHubRepositoryButton": {
+      "thisProjectIsOpenSource": "Ce projet est open-source !"
+    },
+    "AboutCreator": {
+      "wordFromCreator": "Un mot du créateur",
+      "creatorBackground": "Je suis Antoine ZANARDI, développeur Full-Stack Web et adepte de l'open-source en général. Si vous souhaitez en savoir plus sur moi, je vous invite à découvrir mon portfolio.",
+      "whyWerewolvesGameIsGreat": "Pour moi, Les Loups-Garous de Thiercelieux™ est un des meilleurs jeux entre amis ou en famille autour d'une table, où s'entremêlent alliances et trahisons, un peu comme un Mario Kart en fait… Au fur et à mesure d'une partie, la vraie nature de chaque joueur se révèle, les masques tombent, chacun se sent menacé… Chaque partie est une aventure unique, ponctuée de rebondissements inattendus.",
+      "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
+      "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous maîtres du jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
+      "myPortfolio": "Mon portfolio"
     }
   }
 }
