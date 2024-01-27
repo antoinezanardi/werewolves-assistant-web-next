@@ -8,7 +8,11 @@ const modules = [
 ];
 
 export default defineNuxtConfig({
-  app: { head: { link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }] } },
+  app: {
+    head: { link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }] },
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "page", mode: "out-in" },
+  },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "bootstrap/dist/css/bootstrap-grid.css",
