@@ -1,14 +1,14 @@
 <template>
   <NuxtImg
     :aria-label="getRoleNameLabel(roleName)"
-    :sizes="sizes"
+    class="role-image"
+    :height="sizes"
     :src="roleImageSrc"
+    :width="sizes"
   />
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 
@@ -27,3 +27,10 @@ const roleImageSrc = computed<string>(() => {
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
 </script>
+
+<style lang="scss" scoped>
+.role-image {
+  border-radius: 10%;
+  border: 3px solid #1c1c1c;
+}
+</style>

@@ -4,7 +4,7 @@ exports[`Index Page Component > should render component and match snapshot when 
 "<div class="container-fluid d-flex flex-column">
   <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
     <div class="col-12 text-center">
-      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="200px"></nuxt-img-stub>
+      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="lg:200px"></nuxt-img-stub>
     </div>
     <div class="col-12 text-center">
       <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>

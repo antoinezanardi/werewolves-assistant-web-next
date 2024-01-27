@@ -13,6 +13,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       useFetch: READONLY,
       useI18n: READONLY,
       navigateTo: READONLY,
+      storeToRefs: READONLY,
     },
   },
   rules: {
