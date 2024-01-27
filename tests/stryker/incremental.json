@@ -363,248 +363,6 @@
       ],
       "source": "<template>\n  <div id=\"parameters-menu\">\n    <VuePrimeButton\n      :aria-label=\"$t('components.ParametersMenu.parameters')\"\n      icon=\"fa fa-cog\"\n      severity=\"secondary\"\n      type=\"button\"\n      @click=\"toggleParametersMenu\"\n    />\n\n    <VuePrimeMenu\n      id=\"overlay_menu\"\n      ref=\"parametersMenu\"\n      :aria-label=\"$t('components.ParametersMenu.parametersMenu')\"\n      :model=\"parametersMenuItems\"\n      popup\n    />\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { MenuItem } from \"primevue/menuitem\";\nimport { ref } from \"vue\";\n\nimport type { VuePrimeMenu } from \"#components\";\n\nconst { t } = useI18n();\n\nconst parametersMenuItems: MenuItem[] = [\n  {\n    label: t(\"components.ParametersMenu.backToHome\"),\n    icon: \"fa fa-sign-out\",\n    arialLabel: t(\"components.ParametersMenu.backToHome\"),\n    command: () => {\n      void navigateTo(\"/\");\n    },\n  },\n];\n\nconst parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);\n\nfunction toggleParametersMenu(event: MouseEvent): void {\n  if (!parametersMenu.value) {\n    throw createError(\"Parameters Menu is not initialized\");\n  }\n  parametersMenu.value.toggle(event);\n}\n</script>"
     },
-    "components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue": {
-      "language": "html",
-      "mutants": [
-        {
-          "id": "13",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 64
-            },
-            "start": {
-              "column": 55,
-              "line": 55
-            }
-          }
-        },
-        {
-          "id": "14",
-          "mutatorName": "BooleanLiteral",
-          "replacement": "roleDescriptionMessages",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 31,
-              "line": 60
-            },
-            "start": {
-              "column": 7,
-              "line": 60
-            }
-          }
-        },
-        {
-          "id": "15",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 31,
-              "line": 60
-            },
-            "start": {
-              "column": 7,
-              "line": 60
-            }
-          }
-        },
-        {
-          "id": "16",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
-          "status": "Killed",
-          "testsCompleted": 7,
-          "static": false,
-          "killedBy": [
-            "23"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 31,
-              "line": 60
-            },
-            "start": {
-              "column": 7,
-              "line": 60
-            }
-          }
-        },
-        {
-          "id": "17",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "23"
-          ],
-          "coveredBy": [
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 62
-            },
-            "start": {
-              "column": 33,
-              "line": 60
-            }
-          }
-        },
-        {
-          "id": "18",
-          "mutatorName": "ArrayDeclaration",
-          "replacement": "[\"Stryker was here\"]",
-          "statusReason": "expected [ DOMWrapper{ …(2) } ] to have a length of +0 but got 1",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "23"
-          ],
-          "coveredBy": [
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 14,
-              "line": 61
-            },
-            "start": {
-              "column": 12,
-              "line": 61
-            }
-          }
-        },
-        {
-          "id": "19",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 142,
-              "line": 63
-            },
-            "start": {
-              "column": 51,
-              "line": 63
-            }
-          }
-        },
-        {
-          "id": "20",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"
-          ],
-          "location": {
-            "end": {
-              "column": 141,
-              "line": 63
-            },
-            "start": {
-              "column": 60,
-              "line": 63
-            }
-          }
-        }
-      ],
-      "source": "<template>\n  <div class=\"d-flex\">\n    <div\n      id=\"role-left-description\"\n      class=\"align-items-center d-flex flex-column justify-content-center\"\n    >\n      <RoleImage\n        class=\"available-role-description-role-image\"\n        :role-name=\"role.name\"\n        sizes=\"150px\"\n      />\n\n      <div class=\"available-role-description-role-name mt-3\">\n        {{ getRoleNameLabel(role.name) }}\n      </div>\n\n      <RoleTypeBadge\n        class=\"available-role-description-role-type-badge  mt-3\"\n        :role-type=\"role.type\"\n      />\n\n      <RoleOriginBadge\n        class=\"available-role-description-role-origin-badge mt-3\"\n        :role-origin=\"role.origin\"\n      />\n    </div>\n\n    <div\n      id=\"role-right-description\"\n      class=\"d-flex flex-column justify-content-center\"\n    >\n      <p\n        v-for=\"line in roleDescriptionLines\"\n        :key=\"line\"\n        class=\"available-role-description-role-description-line\"\n      >\n        {{ line }}\n      </p>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\nconst props = defineProps<AboutAvailableRoleDescriptionProps>();\n\nconst { t, messages, locale } = useI18n();\n\nconst roleDescriptionLines = computed<string[]>(() => {\n  type ComponentsMessages = Record<\"AboutAvailableRoleDescription\", Record<\"descriptions\", Record<RoleNames, Record<string, string>>>>;\n\n  const componentsMessages = messages.value[locale.value].components as ComponentsMessages;\n  const roleDescriptionMessages = componentsMessages.AboutAvailableRoleDescription.descriptions[props.role.name] as Record<string, string> | undefined;\n  if (!roleDescriptionMessages) {\n    return [];\n  }\n  return Object.keys(roleDescriptionMessages).map(key => t(`components.AboutAvailableRoleDescription.descriptions.${props.role.name}.${key}`));\n});\n\nconst { getRoleNameLabel } = useRoleName();\n</script>\n\n<style lang=\"scss\">\n#role-left-description {\n  min-width: 200px;\n}\n</style>"
-    },
     "components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue": {
       "language": "html",
       "mutants": [
@@ -810,11 +568,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -836,11 +594,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -862,11 +620,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -888,11 +646,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -914,11 +672,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -940,11 +698,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -966,11 +724,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -992,11 +750,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -1018,11 +776,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -1044,11 +802,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "80"
+            "82"
           ],
           "coveredBy": [
-            "80",
-            "81"
+            "82",
+            "83"
           ],
           "location": {
             "end": {
@@ -1076,14 +834,14 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "83"
+            "85"
           ],
           "coveredBy": [
-            "66",
-            "74",
-            "75",
-            "76",
-            "83"
+            "71",
+            "79",
+            "80",
+            "81",
+            "85"
           ],
           "location": {
             "end": {
@@ -1105,14 +863,14 @@
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "83"
+            "85"
           ],
           "coveredBy": [
-            "66",
-            "74",
-            "75",
-            "76",
-            "83"
+            "71",
+            "79",
+            "80",
+            "81",
+            "85"
           ],
           "location": {
             "end": {
@@ -1126,29 +884,31 @@
           }
         },
         {
-          "id": "41",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "Snapshot `App Component > should render component without shallow and match snapshot when mounted. 1` mismatched",
+          "id": "39",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "Snapshot `GitHub Repository Button > should render component and match snapshot when mounted. 1` mismatched",
           "status": "Killed",
           "testsCompleted": 2,
           "static": false,
           "killedBy": [
-            "83"
+            "79"
           ],
           "coveredBy": [
-            "66",
-            "76",
-            "83"
+            "71",
+            "79",
+            "80",
+            "81",
+            "85"
           ],
           "location": {
             "end": {
-              "column": 71,
-              "line": 25
+              "column": 23,
+              "line": 22
             },
             "start": {
-              "column": 12,
-              "line": 25
+              "column": 7,
+              "line": 22
             }
           }
         },
@@ -1158,15 +918,15 @@
           "replacement": "{}",
           "statusReason": "Snapshot `GitHub Repository Button > should render component and match snapshot when mounted. 1` mismatched",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 1,
+          "static": false,
           "killedBy": [
-            "74"
+            "79"
           ],
           "coveredBy": [
-            "74",
-            "75",
-            "76"
+            "79",
+            "80",
+            "81"
           ],
           "location": {
             "end": {
@@ -1180,31 +940,29 @@
           }
         },
         {
-          "id": "39",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "Snapshot `GitHub Repository Button > should render component and match snapshot when mounted. 1` mismatched",
+          "id": "41",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "Snapshot `App Component > should render component without shallow and match snapshot when mounted. 1` mismatched",
           "status": "Killed",
-          "static": false,
           "testsCompleted": 2,
+          "static": false,
           "killedBy": [
-            "74"
+            "85"
           ],
           "coveredBy": [
-            "66",
-            "74",
-            "75",
-            "76",
-            "83"
+            "71",
+            "81",
+            "85"
           ],
           "location": {
             "end": {
-              "column": 23,
-              "line": 22
+              "column": 71,
+              "line": 25
             },
             "start": {
-              "column": 7,
-              "line": 22
+              "column": 12,
+              "line": 25
             }
           }
         }
@@ -1286,7 +1044,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1317,7 +1076,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1348,7 +1108,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1379,7 +1140,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1410,7 +1172,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1466,7 +1229,8 @@
             "62"
           ],
           "coveredBy": [
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1497,7 +1261,8 @@
             "59",
             "60",
             "61",
-            "62"
+            "62",
+            "67"
           ],
           "location": {
             "end": {
@@ -1579,68 +1344,6 @@
           }
         },
         {
-          "id": "55",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'success' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 5,
-          "static": false,
-          "killedBy": [
-            "45"
-          ],
-          "coveredBy": [
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47"
-          ],
-          "location": {
-            "end": {
-              "column": 50,
-              "line": 22
-            },
-            "start": {
-              "column": 27,
-              "line": 22
-            }
-          }
-        },
-        {
-          "id": "56",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to be 'success' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 5,
-          "static": false,
-          "killedBy": [
-            "45"
-          ],
-          "coveredBy": [
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47"
-          ],
-          "location": {
-            "end": {
-              "column": 48,
-              "line": 22
-            },
-            "start": {
-              "column": 39,
-              "line": 22
-            }
-          }
-        },
-        {
           "id": "57",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
@@ -1703,13 +1406,75 @@
           }
         },
         {
+          "id": "55",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'success' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 5,
+          "killedBy": [
+            "45"
+          ],
+          "coveredBy": [
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47"
+          ],
+          "location": {
+            "end": {
+              "column": 50,
+              "line": 22
+            },
+            "start": {
+              "column": 27,
+              "line": 22
+            }
+          }
+        },
+        {
+          "id": "56",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'success' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 5,
+          "killedBy": [
+            "45"
+          ],
+          "coveredBy": [
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47"
+          ],
+          "location": {
+            "end": {
+              "column": 48,
+              "line": 22
+            },
+            "start": {
+              "column": 39,
+              "line": 22
+            }
+          }
+        },
+        {
           "id": "59",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "expected undefined to be 'info' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 7,
           "static": false,
+          "testsCompleted": 7,
           "killedBy": [
             "47"
           ],
@@ -1734,13 +1499,44 @@
           }
         },
         {
+          "id": "62",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected '' to be 'warning' // Object.is equality",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 6,
+          "killedBy": [
+            "46"
+          ],
+          "coveredBy": [
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47"
+          ],
+          "location": {
+            "end": {
+              "column": 49,
+              "line": 25
+            },
+            "start": {
+              "column": 40,
+              "line": 25
+            }
+          }
+        },
+        {
           "id": "60",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
           "statusReason": "expected '' to be 'info' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 7,
           "static": false,
+          "testsCompleted": 7,
           "killedBy": [
             "47"
           ],
@@ -1770,8 +1566,8 @@
           "replacement": "{}",
           "statusReason": "expected undefined to be 'warning' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 6,
           "static": false,
+          "testsCompleted": 6,
           "killedBy": [
             "46"
           ],
@@ -1791,37 +1587,6 @@
             },
             "start": {
               "column": 28,
-              "line": 25
-            }
-          }
-        },
-        {
-          "id": "62",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected '' to be 'warning' // Object.is equality",
-          "status": "Killed",
-          "testsCompleted": 6,
-          "static": false,
-          "killedBy": [
-            "46"
-          ],
-          "coveredBy": [
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47"
-          ],
-          "location": {
-            "end": {
-              "column": 49,
-              "line": 25
-            },
-            "start": {
-              "column": 40,
               "line": 25
             }
           }
@@ -1912,11 +1677,11 @@
             "14",
             "15",
             "16",
-            "82",
-            "83",
             "84",
-            "88",
-            "89"
+            "85",
+            "86",
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -1938,8 +1703,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "88",
-            "89"
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -1961,11 +1726,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "88"
+            "90"
           ],
           "coveredBy": [
-            "88",
-            "89"
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -1987,11 +1752,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "88"
+            "90"
           ],
           "coveredBy": [
-            "88",
-            "89"
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -2013,8 +1778,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "88",
-            "89"
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -2044,11 +1809,11 @@
             "14",
             "15",
             "16",
-            "82",
-            "83",
             "84",
-            "88",
-            "89"
+            "85",
+            "86",
+            "90",
+            "91"
           ],
           "location": {
             "end": {
@@ -2063,153 +1828,6 @@
         }
       ],
       "source": "import type { UseFetchOptions } from \"#app\";\n\nimport { DEFAULT_USE_FETCH_OPTIONS } from \"~/composables/api/api.constants\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\n\ntype UseFetchRoles = {\n  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;\n};\n\nfunction useFetchRoles(): UseFetchRoles {\n  const config = useRuntimeConfig();\n  const { baseUrl } = config.public.werewolvesAssistantApi;\n\n  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {\n    return useFetch<Role[]>(`${baseUrl}/roles`, {\n      method: \"GET\",\n      ...DEFAULT_USE_FETCH_OPTIONS,\n      ...options,\n    });\n  }\n  return { fetchRoles };\n}\n\nexport { useFetchRoles };"
-    },
-    "composables/api/role/useRoleName.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "72",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(7,25): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "87"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 14
-            },
-            "start": {
-              "column": 37,
-              "line": 7
-            }
-          }
-        },
-        {
-          "id": "73",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(10,51): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "87"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 12
-            },
-            "start": {
-              "column": 58,
-              "line": 10
-            }
-          }
-        },
-        {
-          "id": "74",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
-          "status": "Killed",
-          "testsCompleted": 4,
-          "static": false,
-          "killedBy": [
-            "17"
-          ],
-          "coveredBy": [
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "87"
-          ],
-          "location": {
-            "end": {
-              "column": 44,
-              "line": 11
-            },
-            "start": {
-              "column": 14,
-              "line": 11
-            }
-          }
-        },
-        {
-          "id": "75",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useRoleName.ts(13,3): error TS2741: Property 'getRoleNameLabel' is missing in type '{}' but required in type 'UseRoleName'.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "87"
-          ],
-          "location": {
-            "end": {
-              "column": 30,
-              "line": 13
-            },
-            "start": {
-              "column": 10,
-              "line": 13
-            }
-          }
-        }
-      ],
-      "source": "import type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\n\ntype UseRoleName = {\n  getRoleNameLabel: (roleName: RoleNames) => string;\n};\n\nfunction useRoleName(): UseRoleName {\n  const { t } = useI18n();\n\n  function getRoleNameLabel(roleName: RoleNames): string {\n    return t(`shared.role.name.${roleName}`);\n  }\n  return { getRoleNameLabel };\n}\n\nexport { useRoleName };"
     },
     "pages/index.vue": {
       "language": "html",
@@ -2259,15 +1877,15 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "83"
+            "85"
           ],
           "coveredBy": [
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "83"
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "85"
           ],
           "location": {
             "end": {
@@ -2289,15 +1907,15 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "66"
+            "71"
           ],
           "coveredBy": [
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "83"
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "85"
           ],
           "location": {
             "end": {
@@ -2319,15 +1937,15 @@
           "testsCompleted": 4,
           "static": false,
           "killedBy": [
-            "66"
+            "71"
           ],
           "coveredBy": [
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "83"
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "85"
           ],
           "location": {
             "end": {
@@ -2363,12 +1981,12 @@
             "14",
             "15",
             "16",
-            "71",
-            "72",
-            "73",
-            "82",
-            "83",
-            "84"
+            "76",
+            "77",
+            "78",
+            "84",
+            "85",
+            "86"
           ],
           "location": {
             "end": {
@@ -2398,12 +2016,12 @@
             "14",
             "15",
             "16",
-            "71",
-            "72",
-            "73",
-            "82",
-            "83",
-            "84"
+            "76",
+            "77",
+            "78",
+            "84",
+            "85",
+            "86"
           ],
           "location": {
             "end": {
@@ -2425,11 +2043,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "72"
+            "77"
           ],
           "coveredBy": [
-            "72",
-            "73"
+            "77",
+            "78"
           ],
           "location": {
             "end": {
@@ -2451,8 +2069,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "72",
-            "73"
+            "77",
+            "78"
           ],
           "location": {
             "end": {
@@ -2482,12 +2100,12 @@
             "14",
             "15",
             "16",
-            "71",
-            "72",
-            "73",
-            "82",
-            "83",
-            "84"
+            "76",
+            "77",
+            "78",
+            "84",
+            "85",
+            "86"
           ],
           "location": {
             "end": {
@@ -2502,6 +2120,396 @@
         }
       ],
       "source": "import type { AsyncDataRequestStatus } from \"#app/composables/asyncData\";\nimport { ref } from \"vue\";\nimport { defineStore } from \"pinia\";\n\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { useFetchRoles } from \"~/composables/api/role/useFetchRoles\";\nimport { StoreIds } from \"~/stores/enums/store.enum\";\n\nconst useRolesStore = defineStore(StoreIds.ROLES, () => {\n  const { fetchRoles } = useFetchRoles();\n\n  const fetchingRoleStatus = ref<AsyncDataRequestStatus>(\"idle\");\n  const roles = ref<Role[] | null>(null);\n\n  async function fetchAndSetRoles(): Promise<void> {\n    fetchingRoleStatus.value = \"pending\";\n    const { data, status } = await fetchRoles();\n    roles.value = data.value;\n    fetchingRoleStatus.value = status.value;\n  }\n  return {\n    roles,\n    fetchingRoleStatus,\n    fetchAndSetRoles,\n  };\n});\n\nexport { useRolesStore };"
+    },
+    "components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "15",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 60
+            },
+            "start": {
+              "column": 7,
+              "line": 60
+            }
+          }
+        },
+        {
+          "id": "13",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 64
+            },
+            "start": {
+              "column": 55,
+              "line": 55
+            }
+          }
+        },
+        {
+          "id": "14",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "roleDescriptionMessages",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 60
+            },
+            "start": {
+              "column": 7,
+              "line": 60
+            }
+          }
+        },
+        {
+          "id": "18",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "[\"Stryker was here\"]",
+          "statusReason": "expected [ DOMWrapper{ …(2) } ] to have a length of +0 but got 1",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "23"
+          ],
+          "coveredBy": [
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 14,
+              "line": 61
+            },
+            "start": {
+              "column": 12,
+              "line": 61
+            }
+          }
+        },
+        {
+          "id": "19",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 142,
+              "line": 63
+            },
+            "start": {
+              "column": 51,
+              "line": 63
+            }
+          }
+        },
+        {
+          "id": "20",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 141,
+              "line": 63
+            },
+            "start": {
+              "column": 60,
+              "line": 63
+            }
+          }
+        },
+        {
+          "id": "16",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 7,
+          "killedBy": [
+            "23"
+          ],
+          "coveredBy": [
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 31,
+              "line": 60
+            },
+            "start": {
+              "column": 7,
+              "line": 60
+            }
+          }
+        },
+        {
+          "id": "17",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "23"
+          ],
+          "coveredBy": [
+            "23"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 62
+            },
+            "start": {
+              "column": 33,
+              "line": 60
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <div class=\"d-flex\">\n    <div\n      id=\"role-left-description\"\n      class=\"align-items-center d-flex flex-column justify-content-center\"\n    >\n      <RoleImage\n        class=\"available-role-description-role-image\"\n        :role-name=\"role.name\"\n        sizes=\"150px\"\n      />\n\n      <h2 class=\"available-role-description-role-name mt-3\">\n        {{ getRoleNameLabel(role.name) }}\n      </h2>\n\n      <RoleTypeBadge\n        class=\"available-role-description-role-type-badge  mt-3\"\n        :role-type=\"role.type\"\n      />\n\n      <RoleOriginBadge\n        class=\"available-role-description-role-origin-badge mt-3\"\n        :role-origin=\"role.origin\"\n      />\n    </div>\n\n    <div\n      id=\"role-right-description\"\n      class=\"container-fluid d-flex flex-column justify-content-center\"\n    >\n      <p\n        v-for=\"line in roleDescriptionLines\"\n        :key=\"line\"\n        class=\"available-role-description-role-description-line\"\n      >\n        {{ line }}\n      </p>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\nconst props = defineProps<AboutAvailableRoleDescriptionProps>();\n\nconst { t, messages, locale } = useI18n();\n\nconst roleDescriptionLines = computed<string[]>(() => {\n  type ComponentsMessages = Record<\"AboutAvailableRoleDescription\", Record<\"descriptions\", Record<RoleNames, Record<string, string>>>>;\n\n  const componentsMessages = messages.value[locale.value].components as ComponentsMessages;\n  const roleDescriptionMessages = componentsMessages.AboutAvailableRoleDescription.descriptions[props.role.name] as Record<string, string> | undefined;\n  if (!roleDescriptionMessages) {\n    return [];\n  }\n  return Object.keys(roleDescriptionMessages).map(key => t(`components.AboutAvailableRoleDescription.descriptions.${props.role.name}.${key}`));\n});\n\nconst { getRoleNameLabel } = useRoleName();\n</script>\n\n<style lang=\"scss\">\n#role-left-description {\n  min-width: 200px;\n}\n</style>"
+    },
+    "composables/api/role/useRoleName.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "73",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(10,51): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "coveredBy": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "67",
+            "89"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 12
+            },
+            "start": {
+              "column": 58,
+              "line": 10
+            }
+          }
+        },
+        {
+          "id": "72",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(7,25): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "coveredBy": [
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "67",
+            "89"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 14
+            },
+            "start": {
+              "column": 37,
+              "line": 7
+            }
+          }
+        },
+        {
+          "id": "75",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useRoleName.ts(13,3): error TS2741: Property 'getRoleNameLabel' is missing in type '{}' but required in type 'UseRoleName'.\n",
+          "status": "CompileError",
+          "static": false,
+          "coveredBy": [
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "67",
+            "89"
+          ],
+          "location": {
+            "end": {
+              "column": 30,
+              "line": 13
+            },
+            "start": {
+              "column": 10,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "74",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "Snapshot `About Available Role Description Component > should render component and match snapshot when mounted. 1` mismatched",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "17"
+          ],
+          "coveredBy": [
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "67",
+            "89"
+          ],
+          "location": {
+            "end": {
+              "column": 44,
+              "line": 11
+            },
+            "start": {
+              "column": 14,
+              "line": 11
+            }
+          }
+        }
+      ],
+      "source": "import type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\n\ntype UseRoleName = {\n  getRoleNameLabel: (roleName: RoleNames) => string;\n};\n\nfunction useRoleName(): UseRoleName {\n  const { t } = useI18n();\n\n  function getRoleNameLabel(roleName: RoleNames): string {\n    return t(`shared.role.name.${roleName}`);\n  }\n  return { getRoleNameLabel };\n}\n\nexport { useRoleName };"
     }
   },
   "schemaVersion": "1.0",
@@ -2620,7 +2628,7 @@
           "name": "About Available Role Description Component Role Image should not display role description lines when rendered if role description is not set in messages."
         }
       ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport AboutAvailableRoleDescription from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue\";\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport type RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport type RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport { RoleNames, RoleOrigins, RoleTypes } from \"~/composables/api/role/enums/role.enums\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/role.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"About Available Role Description Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoleDescription>>;\n  const defaultRole: Role = createFakeRole({ name: RoleNames.WEREWOLF, type: RoleTypes.WEREWOLF, origin: RoleOrigins.CLASSIC });\n  const defaultProps: AboutAvailableRoleDescriptionProps = { role: defaultRole };\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: defaultProps });\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Role Image\", () => {\n    it(\"should display role image when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\".available-role-description-role-image\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display role name when rendered.\", () => {\n      const roleName = wrapper.find<HTMLDivElement>(\".available-role-description-role-name\");\n\n      expect(roleName.text()).toBe(\"shared.role.name.werewolf\");\n    });\n\n    it(\"should display role type badge when rendered.\", () => {\n      const roleTypeBadge = wrapper.findComponent<typeof RoleTypeBadge>(\".available-role-description-role-type-badge\");\n\n      expect(roleTypeBadge.props(\"roleType\")).toBe(RoleTypes.WEREWOLF);\n    });\n\n    it(\"should display role origin badge when rendered.\", () => {\n      const roleOriginBadge = wrapper.findComponent<typeof RoleOriginBadge>(\".available-role-description-role-origin-badge\");\n\n      expect(roleOriginBadge.props(\"roleOrigin\")).toBe(RoleOrigins.CLASSIC);\n    });\n\n    it(\"should display role description lines when rendered.\", () => {\n      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(\".available-role-description-role-description-line\");\n\n      expect(roleDescriptionLines).toHaveLength(4);\n      expect(roleDescriptionLines[0].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.hisGoalIsToKillVillagers\");\n      expect(roleDescriptionLines[1].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.eachNightEatsVillager\");\n      expect(roleDescriptionLines[2].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.numberOfWolvesVaries\");\n      expect(roleDescriptionLines[3].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.werewolvesCantEatEachOther\");\n    });\n\n    it(\"should not display role description lines when rendered if role description is not set in messages.\", async() => {\n      const unknownRole = createFakeRole({ name: \"unknown\" as RoleNames });\n      wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: { role: unknownRole } });\n      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(\".available-role-description-role-description-line\");\n\n      expect(roleDescriptionLines).toHaveLength(0);\n    });\n  });\n});"
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport AboutAvailableRoleDescription from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue\";\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport type RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport type RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport { RoleNames, RoleOrigins, RoleTypes } from \"~/composables/api/role/enums/role.enums\";\nimport type { Role } from \"~/composables/api/role/types/role.types\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/role.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"About Available Role Description Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoleDescription>>;\n  const defaultRole: Role = createFakeRole({ name: RoleNames.WEREWOLF, type: RoleTypes.WEREWOLF, origin: RoleOrigins.CLASSIC });\n  const defaultProps: AboutAvailableRoleDescriptionProps = { role: defaultRole };\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: defaultProps });\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Role Image\", () => {\n    it(\"should display role image when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\".available-role-description-role-image\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display role name when rendered.\", () => {\n      const roleName = wrapper.find<HTMLHeadElement>(\".available-role-description-role-name\");\n\n      expect(roleName.text()).toBe(\"shared.role.name.werewolf\");\n    });\n\n    it(\"should display role type badge when rendered.\", () => {\n      const roleTypeBadge = wrapper.findComponent<typeof RoleTypeBadge>(\".available-role-description-role-type-badge\");\n\n      expect(roleTypeBadge.props(\"roleType\")).toBe(RoleTypes.WEREWOLF);\n    });\n\n    it(\"should display role origin badge when rendered.\", () => {\n      const roleOriginBadge = wrapper.findComponent<typeof RoleOriginBadge>(\".available-role-description-role-origin-badge\");\n\n      expect(roleOriginBadge.props(\"roleOrigin\")).toBe(RoleOrigins.CLASSIC);\n    });\n\n    it(\"should display role description lines when rendered.\", () => {\n      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(\".available-role-description-role-description-line\");\n\n      expect(roleDescriptionLines).toHaveLength(4);\n      expect(roleDescriptionLines[0].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.hisGoalIsToKillVillagers\");\n      expect(roleDescriptionLines[1].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.eachNightEatsVillager\");\n      expect(roleDescriptionLines[2].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.numberOfWolvesVaries\");\n      expect(roleDescriptionLines[3].text()).toBe(\"components.AboutAvailableRoleDescription.descriptions.werewolf.werewolvesCantEatEachOther\");\n    });\n\n    it(\"should not display role description lines when rendered if role description is not set in messages.\", async() => {\n      const unknownRole = createFakeRole({ name: \"unknown\" as RoleNames });\n      wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: { role: unknownRole } });\n      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(\".available-role-description-role-description-line\");\n\n      expect(roleDescriptionLines).toHaveLength(0);\n    });\n  });\n});"
     },
     "tests/unit/specs/components/layouts/default/ParametersMenu/ParametersMenu.nuxt.spec.ts": {
       "tests": [
@@ -2721,19 +2729,59 @@
         },
         {
           "id": "44",
-          "name": "Role Type Badge Component Badge 'should have severity of danger when role type is werewolf.'"
+          "name": "Role Type Badge Component Badge 'should have severity of danger when r…'"
         },
         {
           "id": "45",
-          "name": "Role Type Badge Component Badge 'should have severity of success when role type is villager.'"
+          "name": "Role Type Badge Component Badge 'should have severity of success when …'"
         },
         {
           "id": "46",
-          "name": "Role Type Badge Component Badge 'should have severity of warning when role type is ambiguous.'"
+          "name": "Role Type Badge Component Badge 'should have severity of warning when …'"
         },
         {
           "id": "47",
-          "name": "Role Type Badge Component Badge 'should have severity of info when role type is lonely.'"
+          "name": "Role Type Badge Component Badge 'should have severity of info when rol…'"
+        },
+        {
+          "id": "94",
+          "name": "Role Type Badge Component Badge 'should have severity of danger when role type is werewolf.'",
+          "location": {
+            "start": {
+              "column": 1,
+              "line": 1
+            }
+          }
+        },
+        {
+          "id": "95",
+          "name": "Role Type Badge Component Badge 'should have severity of success when role type is villager.'",
+          "location": {
+            "start": {
+              "column": 1,
+              "line": 1
+            }
+          }
+        },
+        {
+          "id": "96",
+          "name": "Role Type Badge Component Badge 'should have severity of warning when role type is ambiguous.'",
+          "location": {
+            "start": {
+              "column": 1,
+              "line": 1
+            }
+          }
+        },
+        {
+          "id": "97",
+          "name": "Role Type Badge Component Badge 'should have severity of info when role type is lonely.'",
+          "location": {
+            "start": {
+              "column": 1,
+              "line": 1
+            }
+          }
         }
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { RoleTypeBadgeProps } from \"~/components/shared/role/RoleTypeBadge/role-type-badge-types\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport { RoleTypes } from \"~/composables/api/role/enums/role.enums\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"Role Type Badge Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;\n  const defaultProps: RoleTypeBadgeProps = { roleType: RoleTypes.WEREWOLF };\n\n  async function mountRoleTypeBadgeComponent(options: ComponentMountingOptions<typeof RoleTypeBadge> = {}): Promise<ReturnType<typeof mount<typeof RoleTypeBadge>>> {\n    return mountSuspendedComponent(RoleTypeBadge, {\n      props: defaultProps,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    wrapper = await mountRoleTypeBadgeComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Badge\", () => {\n    it(\"should have tooltip when mounted.\", () => {\n      const badge = wrapper.findComponent(\"[aria-label='Role Type']\");\n\n      expect(badge.attributes(\"data-pd-tooltip\")).toBe(\"true\");\n    });\n\n    it(\"should translate role type when mounted.\", () => {\n      const badge = wrapper.findComponent(\"[aria-label='Role Type']\");\n\n      expect(badge.attributes(\"value\")).toBe(\"Werewolf\");\n    });\n\n    it.each< {\n      roleType: RoleTypes;\n      expectedSeverity: \"danger\" | \"info\" | \"success\" | \"warning\";\n      test: string;\n    }>([\n      {\n        roleType: RoleTypes.WEREWOLF,\n        expectedSeverity: \"danger\",\n        test: \"should have severity of danger when role type is werewolf.\",\n      },\n      {\n        roleType: RoleTypes.VILLAGER,\n        expectedSeverity: \"success\",\n        test: \"should have severity of success when role type is villager.\",\n      },\n      {\n        roleType: RoleTypes.AMBIGUOUS,\n        expectedSeverity: \"warning\",\n        test: \"should have severity of warning when role type is ambiguous.\",\n      },\n      {\n        roleType: RoleTypes.LONELY,\n        expectedSeverity: \"info\",\n        test: \"should have severity of info when role type is lonely.\",\n      },\n    ])(\"$test\", async({ roleType, expectedSeverity }) => {\n      await wrapper.setProps({ roleType });\n      const badge = wrapper.findComponent(\"[aria-label='Role Type']\");\n\n      expect(badge.attributes(\"severity\")).toBe(expectedSeverity);\n    });\n  });\n});"
@@ -2790,7 +2838,7 @@
           "name": "NavBar Component Parameters Menu should have left tooltip when mounted."
         }
       ],
-      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { NuxtImg, NuxtLink } from \"#components\";\nimport NavBar from \"~/components/layouts/default/NavBar/NavBar.vue\";\nimport type ParametersMenu from \"~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"NavBar Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof NavBar>>;\n\n  async function mountNavBarComponent(options: ComponentMountingOptions<typeof NavBar> = {}): Promise<ReturnType<typeof mount<typeof NavBar>>> {\n    const defaultMountingOptions: ComponentMountingOptions<typeof NavBar> = { global: { stubs: { ParametersMenu: true } } };\n    return mountSuspendedComponent(NavBar, {\n      ...defaultMountingOptions,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    wrapper = await mountNavBarComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Home Page Link\", () => {\n    it(\"should have the prop 'to' set to home page when mounted.\", () => {\n      const homePageLink = wrapper.findComponent<typeof NuxtLink>(\"[aria-label='Home page']\");\n\n      expect(homePageLink.props(\"to\")).toBe(\"/\");\n    });\n\n    describe(\"Werewolves Assistant Logo\", () => {\n      it(\"should have the prop 'src' set to the small logo when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='Werewolves Assistant logo']\");\n\n        expect(werewolvesAssistantLogo.attributes(\"src\")).toBe(\"/_ipx/_/img/logo/square/werewolves-logo-small.png\");\n      });\n    });\n\n    describe(\"Werewolves Assistant Logo Text\", () => {\n      it(\"should translate the logo text when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogoText = wrapper.find(\"[aria-label='Werewolves Assistant']\");\n\n        expect(werewolvesAssistantLogoText.text()).toBe(\"Werewolves Assistant\");\n      });\n    });\n  });\n\n  describe(\"Parameters Menu\", () => {\n    it(\"should have left tooltip when mounted.\", async() => {\n      wrapper = await mountNavBarComponent({ shallow: false });\n      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>(\"[aria-label='Parameters menu']\");\n\n      expect(parametersMenu.attributes(\"data-pd-tooltip\")).toBe(\"true\");\n    });\n  });\n});"
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { NuxtImg, NuxtLink } from \"#components\";\nimport NavBar from \"~/components/layouts/default/NavBar/NavBar.vue\";\nimport type ParametersMenu from \"~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"NavBar Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof NavBar>>;\n\n  async function mountNavBarComponent(options: ComponentMountingOptions<typeof NavBar> = {}): Promise<ReturnType<typeof mount<typeof NavBar>>> {\n    const defaultMountingOptions: ComponentMountingOptions<typeof NavBar> = { global: { stubs: { ParametersMenu: true } } };\n    return mountSuspendedComponent(NavBar, {\n      ...defaultMountingOptions,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    wrapper = await mountNavBarComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Home Page Link\", () => {\n    it(\"should have the prop 'to' set to home page when mounted.\", () => {\n      const homePageLink = wrapper.findComponent<typeof NuxtLink>(\"[aria-label='Home page']\");\n\n      expect(homePageLink.props(\"to\")).toBe(\"/\");\n    });\n\n    describe(\"Werewolves Assistant Logo\", () => {\n      it(\"should have the prop 'src' set to the small logo when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='Werewolves Assistant logo']\");\n\n        expect(werewolvesAssistantLogo.attributes(\"src\")).toBe(\"/_ipx/_/img/logo/square/werewolves-logo-small.png\");\n      });\n    });\n\n    describe(\"Werewolves Assistant Logo Text\", () => {\n      it(\"should translate the logo text when mounted.\", async() => {\n        wrapper = await mountNavBarComponent({ shallow: false });\n        const werewolvesAssistantLogoText = wrapper.find<HTMLHeadElement>(\"[aria-label='Werewolves Assistant']\");\n\n        expect(werewolvesAssistantLogoText.text()).toBe(\"Werewolves Assistant\");\n      });\n    });\n  });\n\n  describe(\"Parameters Menu\", () => {\n    it(\"should have left tooltip when mounted.\", async() => {\n      wrapper = await mountNavBarComponent({ shallow: false });\n      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>(\"[aria-label='Parameters menu']\");\n\n      expect(parametersMenu.attributes(\"data-pd-tooltip\")).toBe(\"true\");\n    });\n  });\n});"
     },
     "tests/unit/specs/components/shared/role/RoleImage/RoleImage.nuxt.spec.ts": {
       "tests": [
@@ -2813,26 +2861,51 @@
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { NuxtImg } from \"#components\";\nimport type { RoleImageProps } from \"~/components/shared/role/RoleImage/role-image.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\nimport * as UseRoleName from \"~/composables/api/role/useRoleName\";\n\ndescribe(\"Role Image Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof RoleImage>>;\n  const defaultProps: RoleImageProps = { roleName: RoleNames.WEREWOLF };\n\n  async function mountRoleImageComponent(options: ComponentMountingOptions<typeof RoleImage> = {}): Promise<ReturnType<typeof mount<typeof RoleImage>>> {\n    return mountSuspendedComponent(RoleImage, {\n      props: defaultProps,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    vi.spyOn(UseRoleName, \"useRoleName\").mockReturnValue({ getRoleNameLabel: vi.fn().mockReturnValue(RoleNames.WEREWOLF) });\n    wrapper = await mountRoleImageComponent();\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Image\", () => {\n    it(\"should have default width and height from props sizes when mounted.\", () => {\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"width\")).toBe(\"50\");\n      expect(image.attributes(\"height\")).toBe(\"50\");\n    });\n\n    it(\"should have src based on role name from props when mounted.\", () => {\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"src\")).toBe(\"http://127.0.0.1/public/assets/images/roles/werewolf/werewolf.jpeg\");\n    });\n\n    it(\"should have small suffix for src when definition from props is small.\", async() => {\n      await wrapper.setProps({ definition: \"small\" });\n      const image = wrapper.findComponent<typeof NuxtImg>(\"[aria-label='werewolf']\");\n\n      expect(image.attributes(\"src\")).toBe(\"http://127.0.0.1/public/assets/images/roles/werewolf/werewolf-small.jpeg\");\n    });\n  });\n});"
     },
-    "tests/unit/specs/pages/index/index.nuxt.spec.ts": {
+    "tests/unit/specs/pages/about/about.nuxt.spec.ts": {
       "tests": [
         {
           "id": "63",
-          "name": "Index Page Component should render component and match snapshot when mounted."
+          "name": "About Page Component should render component and match snapshot when mounted."
         },
         {
           "id": "64",
-          "name": "Index Page Component Title should display translated title when rendered."
+          "name": "About Page Component Title should display role image of werewolf when rendered."
         },
         {
           "id": "65",
-          "name": "Index Page Component Play button should display play button with translated label when rendered."
+          "name": "About Page Component Title should display translated title when rendered."
         },
         {
           "id": "66",
-          "name": "Index Page Component Play button should display play button with pass through data when rendered."
+          "name": "About Page Component Footer should have 'to' prop set to home for back to home button when rendered."
         },
         {
           "id": "67",
+          "name": "About Page Component Footer should translate back to home button when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport { expect } from \"vitest\";\n\nimport type { NuxtLink } from \"#components\";\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport About from \"~/pages/about.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"About Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof About>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(About);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display role image of werewolf when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\"#about-role-image-title\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find<HTMLHeadElement>(\"#about-title\");\n\n      expect(title.text()).toBe(\"Why an assistant ?\");\n    });\n  });\n\n  describe(\"Footer\", () => {\n    it(\"should have 'to' prop set to home for back to home button when rendered.\", () => {\n      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>(\"#about-back-to-home-button\");\n\n      expect(backToHomeButton.props(\"to\")).toBe(\"/\");\n    });\n\n    it(\"should translate back to home button when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(About, {\n        shallow: false,\n        global: {\n          stubs: {\n            AboutWerewolvesGame: true,\n            AboutWerewolvesAssistant: true,\n            AboutAvailableRoles: true,\n            AboutHowToContribute: true,\n            AboutCreator: true,\n          },\n        },\n      });\n\n      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>(\"#about-back-to-home-button\");\n\n      expect(backToHomeButton.text()).toBe(\"Back to home\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/pages/index/index.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "68",
+          "name": "Index Page Component should render component and match snapshot when mounted."
+        },
+        {
+          "id": "69",
+          "name": "Index Page Component Title should display translated title when rendered."
+        },
+        {
+          "id": "70",
+          "name": "Index Page Component Play button should display play button with translated label when rendered."
+        },
+        {
+          "id": "71",
+          "name": "Index Page Component Play button should display play button with pass through data when rendered."
+        },
+        {
+          "id": "72",
           "name": "Index Page Component About button should display about button with translated label when rendered."
         }
       ],
@@ -2841,15 +2914,15 @@
     "tests/unit/specs/components/shared/role/RoleOriginBadge/RoleOriginBadge.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "68",
+          "id": "73",
           "name": "Role Origin Badge Component should render component and match snapshot when mounted."
         },
         {
-          "id": "69",
+          "id": "74",
           "name": "Role Origin Badge Component Badge should have tooltip when mounted."
         },
         {
-          "id": "70",
+          "id": "75",
           "name": "Role Origin Badge Component Badge should translate role origin when mounted."
         }
       ],
@@ -2858,15 +2931,15 @@
     "tests/unit/specs/stores/useRolesStore.spec.ts": {
       "tests": [
         {
-          "id": "71",
+          "id": "76",
           "name": "Roles Store should have initial state when created."
         },
         {
-          "id": "72",
+          "id": "77",
           "name": "Roles Store fetchAndSetRoles should fetch roles when called."
         },
         {
-          "id": "73",
+          "id": "78",
           "name": "Roles Store fetchAndSetRoles should set roles when called."
         }
       ],
@@ -2875,45 +2948,28 @@
     "tests/unit/specs/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "74",
+          "id": "79",
           "name": "GitHub Repository Button should render component and match snapshot when mounted."
         },
         {
-          "id": "75",
+          "id": "80",
           "name": "GitHub Repository Button Button Text should render button text with other text when text is passed as prop."
         },
         {
-          "id": "76",
+          "id": "81",
           "name": "GitHub Repository Button Button Text should render button text with default text when text is not passed as prop."
         }
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type { GitHubRepositoryButtonProps } from \"~/components/shared/external/GitHubRepositoryButton/git-hub-repository-button.types\";\nimport GitHubRepositoryButton from \"~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"GitHub Repository Button\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GitHubRepositoryButton>>;\n  const defaultProps: GitHubRepositoryButtonProps = { textButton: \"GitHub\" };\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GitHubRepositoryButton, { props: defaultProps });\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Button Text\", () => {\n    it(\"should render button text with other text when text is passed as prop.\", async() => {\n      wrapper = await mountSuspendedComponent(GitHubRepositoryButton, { props: { textButton: \"Other text\" } });\n      const buttonText = wrapper.find<HTMLAnchorElement>(\"#github-repository-link\");\n\n      expect(buttonText.text()).toBe(\"Other text\");\n    });\n\n    it(\"should render button text with default text when text is not passed as prop.\", async() => {\n      wrapper = await mountSuspendedComponent(GitHubRepositoryButton);\n      const buttonText = wrapper.find<HTMLAnchorElement>(\"#github-repository-link\");\n\n      expect(buttonText.text()).toBe(\"components.GitHubRepositoryButton.thisProjectIsOpenSource\");\n    });\n  });\n});"
     },
-    "tests/unit/specs/pages/about/about.nuxt.spec.ts": {
-      "tests": [
-        {
-          "id": "77",
-          "name": "About Page Component should render component and match snapshot when mounted."
-        },
-        {
-          "id": "78",
-          "name": "About Page Component Title should display role image of werewolf when rendered."
-        },
-        {
-          "id": "79",
-          "name": "About Page Component Title should display translated title when rendered."
-        }
-      ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport About from \"~/pages/about.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/mount.utils\";\n\ndescribe(\"About Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof About>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(About);\n  });\n\n  it(\"should render component and match snapshot when mounted.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display role image of werewolf when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\"#about-role-image-title\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find<HTMLHeadElement>(\"#about-title\");\n\n      expect(title.text()).toBe(\"Why an assistant ?\");\n    });\n  });\n});"
-    },
     "tests/unit/specs/components/shared/external/BuyMeACoffeeButton/BuyMeACoffeeButton.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "80",
+          "id": "82",
           "name": "Buy Me A Coffee Button Component should render component and match snapshot when mounted."
         },
         {
-          "id": "81",
+          "id": "83",
           "name": "Buy Me A Coffee Button Component Link image should call link image with correct src when rendered."
         }
       ],
@@ -2922,15 +2978,15 @@
     "tests/unit/specs/app.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "82",
+          "id": "84",
           "name": "App Component should render component and match snapshot when mounted."
         },
         {
-          "id": "83",
+          "id": "85",
           "name": "App Component should render component without shallow and match snapshot when mounted."
         },
         {
-          "id": "84",
+          "id": "86",
           "name": "App Component should fetch and set roles from store when mounted."
         }
       ],
@@ -2939,11 +2995,11 @@
     "tests/unit/specs/components/pages/index/index-footer.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "85",
+          "id": "87",
           "name": "Index Page Footer Component should render component and match snapshot when mounted."
         },
         {
-          "id": "86",
+          "id": "88",
           "name": "Index Page Footer Component Contact Me Button should render contact me with translated text button when rendered."
         }
       ],
@@ -2952,7 +3008,7 @@
     "tests/unit/specs/composables/api/role/useRoleName.spec.ts": {
       "tests": [
         {
-          "id": "87",
+          "id": "89",
           "name": "Use Role Name Composable getRoleLabel should translate role when called with role name."
         }
       ],
@@ -2961,11 +3017,11 @@
     "tests/unit/specs/composables/api/role/useFetchRoles.spec.ts": {
       "tests": [
         {
-          "id": "88",
+          "id": "90",
           "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called without options."
         },
         {
-          "id": "89",
+          "id": "91",
           "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called with options."
         }
       ],
@@ -2974,7 +3030,7 @@
     "tests/unit/specs/modules/i18n.spec.ts": {
       "tests": [
         {
-          "id": "90",
+          "id": "92",
           "name": "I18n module Locales should contain all keys set in fr locale when locale is en."
         }
       ],
@@ -2983,7 +3039,7 @@
     "tests/unit/specs/layouts/default.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "91",
+          "id": "93",
           "name": "Default Layout should render component and match snapshot when mounted."
         }
       ],

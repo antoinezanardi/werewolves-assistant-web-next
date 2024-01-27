@@ -1,4 +1,5 @@
 import type { mount } from "@vue/test-utils";
+import { expect } from "vitest";
 
 import type { NuxtLink } from "#components";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
@@ -37,6 +38,25 @@ describe("About Page Component", () => {
       const backToHomeButton = wrapper.findComponent<typeof NuxtLink>("#about-back-to-home-button");
 
       expect(backToHomeButton.props("to")).toBe("/");
+    });
+
+    it("should translate back to home button when rendered.", async() => {
+      wrapper = await mountSuspendedComponent(About, {
+        shallow: false,
+        global: {
+          stubs: {
+            AboutWerewolvesGame: true,
+            AboutWerewolvesAssistant: true,
+            AboutAvailableRoles: true,
+            AboutHowToContribute: true,
+            AboutCreator: true,
+          },
+        },
+      });
+
+      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>("#about-back-to-home-button");
+
+      expect(backToHomeButton.text()).toBe("Back to home");
     });
   });
 });
