@@ -359,6 +359,9 @@
       "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
       "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous maîtres du jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
       "myPortfolio": "Mon portfolio"
+    },
+    "RoleImage": {
+      "back": "Dos de la carte"
     }
   }
 }
