@@ -19,6 +19,7 @@ Then(/^the (?<role>.+) with name "(?<name>.+)" should have the following attribu
   await Promise.all(promises);
 });
 
-Then(/^the user should be on (?<page>.+) page$/u, function(this: CustomWorld, page: string): void {
+Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWorld, page: string): Promise<void> {
+  await this.page.waitForURL(`**/${page}`);
   expect(this.page.url()).toBe(url(`/${page}`));
 });
