@@ -1,14 +1,25 @@
 import { fileURLToPath } from "node:url";
 
-import { After, AfterAll, Before, BeforeAll } from "@cucumber/cucumber";
+import format from "html-format";
+import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
+import type { ITestCaseHookParameter } from "@cucumber/cucumber";
 import { createPage, createTest } from "@nuxt/test-utils/e2e";
 
+import { I18N_TEST_LOCALE } from "~/modules/i18n/i18n.constants";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 const { beforeEach, afterEach, afterAll, setup } = createTest({
   runner: "cucumber",
   server: true,
   rootDir: fileURLToPath(new URL("../../../..", import.meta.url)),
+  nuxtConfig: {
+    runtimeConfig: {
+      public: {
+        defaultLocale: I18N_TEST_LOCALE,
+        werewolvesAssistantApi: { baseUrl: "http://127.0.0.1:9090/" },
+      },
+    },
+  },
 });
 
 const beforeAllTimeout = 60000;
@@ -22,8 +33,12 @@ Before({}, async function(this: CustomWorld): Promise<void> {
   this.page = await createPage();
 });
 
-After((): void => {
+After({}, async function(this: CustomWorld, scenario: ITestCaseHookParameter): Promise<void> {
   afterEach();
+  if (scenario.result?.status !== Status.PASSED) {
+    const pageContent = await this.page.innerHTML("#__nuxt");
+    console.error(format(pageContent));
+  }
 });
 
 AfterAll(async(): Promise<void> => {

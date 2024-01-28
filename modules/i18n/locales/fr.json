@@ -44,8 +44,9 @@
   },
   "pages": {
     "index": {
+      "play": "Jouer",
       "about": "À quoi ça sert",
-      "play": "Jouer"
+      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
     },
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",

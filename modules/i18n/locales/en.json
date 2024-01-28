@@ -45,7 +45,8 @@
   "pages": {
     "index": {
       "play": "Play",
-      "about": "About"
+      "about": "What is it ?",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo"
     },
     "about": {
       "whyAnAssistant": "Why an assistant ?",

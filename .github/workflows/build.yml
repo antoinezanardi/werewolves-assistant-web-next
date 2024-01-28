@@ -212,11 +212,17 @@ jobs:
       - name: Create Nuxt types ⛰️
         run: pnpm run postinstall
 
+      - name: Start Docker Sandbox API containers 🐳
+        run: pnpm run docker:sandbox-api:start
+
       - name: Prepare E2E tests 🧭
         run: pnpm run test:cucumber:prepare
 
       - name: E2E tests ⚗️
         run: pnpm run test:cucumber
+
+      - name: Stop Docker Sandbox API containers 🐳
+        run: pnpm run docker:sandbox-api:stop
 
   mutant-tests:
     name: Mutant Tests 👽

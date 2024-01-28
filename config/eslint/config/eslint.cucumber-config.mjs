@@ -10,8 +10,10 @@ const ESLINT_CUCUMBER_CONFIG = {
     },
   },
   rules: {
-    "new-cap": [ERROR, { capIsNewExceptions: ["BeforeAll", "AfterAll", "Before", "After", "Given", "When", "Then"] }],
     "func-names": OFF,
+    "new-cap": [ERROR, { capIsNewExceptions: ["BeforeAll", "AfterAll", "Before", "After", "Given", "When", "Then"] }],
+    "no-console": ["error", { allow: ["error"] }],
+    "@typescript-eslint/max-params": OFF,
   },
 };
 

@@ -46,9 +46,9 @@ describe("Index Page Component", () => {
 
   describe("About button", () => {
     it("should display about button with translated label when rendered.", () => {
-      const aboutButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='About']");
+      const aboutButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='What is it ?']");
 
-      expect(aboutButton.html()).toContain("About");
+      expect(aboutButton.html()).toContain("What is it ");
     });
   });
 });
