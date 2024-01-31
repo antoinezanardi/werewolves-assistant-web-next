@@ -5,7 +5,10 @@
       class="align-items-center d-flex"
     >
       <i class="fa fa-2x fa-star me-3 text-warning"/>
-      {{ $t('components.AboutWerewolvesAssistant.werewolvesAssistantInThePlace') }}
+
+      <span>
+        {{ $t('components.AboutWerewolvesAssistant.werewolvesAssistantInThePlace') }}
+      </span>
     </h2>
 
     <hr>
@@ -39,7 +42,10 @@
       class="align-items-center d-flex justify-content-center text-uppercase"
     >
       <i class="fa fa-2x fa-warning me-3 text-warning"/>
-      {{ $t('components.AboutWerewolvesAssistant.pleaseBeAware') }}
+
+      <span>
+        {{ $t('components.AboutWerewolvesAssistant.pleaseBeAware') }}
+      </span>
     </h3>
 
     <hr>

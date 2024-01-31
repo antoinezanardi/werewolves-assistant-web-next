@@ -50,7 +50,8 @@
     },
     "about": {
       "whyAnAssistant": "Why an assistant ?",
-      "backToHome": "Back to home"
+      "backToHome": "Back to home",
+      "imageTitle": "Werewolf illustration"
     }
   },
   "components": {
@@ -58,8 +59,9 @@
       "contact": "Contact me"
     },
     "NavBar": {
+      "navBar": "Navigation bar",
       "parameters": "Parameters",
-      "homePageLink": "Home page",
+      "homePageLink": "Home page link",
       "homePage": "Home page",
       "werewolvesAssistantLogo": "Werewolves Assistant logo",
       "parametersMenu": "Parameters menu"
@@ -92,10 +94,14 @@
     },
     "AboutAvailableRoles": {
       "availableRoles": "Available roles",
+      "availableRolesImage": "Illustration of the available roles title",
       "loadingRoles": "Loading roles…",
-      "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:"
+      "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:",
+      "clickToExpandRoleDescription": "Click to expand the description of the {role} role",
+      "availableRoleImage": "Illustration of the {role} role"
     },
     "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Illustration of the {role} role on the left description",
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Their goal is to eliminate the Villagers.",

@@ -6,7 +6,7 @@ exports[`App Component > should render component without shallow and match snaps
 "<transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
   <div class="container-fluid d-flex flex-column h-100 page-content">
     <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
-      <div class="col-12 text-center"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w" aria-label="Werewolves Assistant logo"></div>
+      <div class="col-12 text-center"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" alt="Werewolves Assistant logo" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
       <div class="col-12 text-center">
         <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
       </div>
@@ -18,7 +18,7 @@ exports[`App Component > should render component without shallow and match snaps
     <hr class="w-100">
     <div class="row">
       <div class="col-6"><a aria-label="Contact me" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span> Contact me</a></div>
-      <div class="col-6 d-flex justify-content-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span> components.GitHubRepositoryButton.thisProjectIsOpenSource</a></div>
+      <div class="col-6 d-flex justify-content-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
     </div>
   </div>
 </transition-stub>"

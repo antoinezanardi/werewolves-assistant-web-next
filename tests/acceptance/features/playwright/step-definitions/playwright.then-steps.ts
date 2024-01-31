@@ -6,11 +6,15 @@ import { expect } from "@playwright/test";
 import type { LocatorRole } from "~/tests/acceptance/shared/types/playwright.types";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
-Then(/^the (?<role>.+) with name "(?<name>.+)" should be visible$/u, async function(this: CustomWorld, role: LocatorRole, name: string): Promise<void> {
+Then(/^the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should be visible$/u, async function(this: CustomWorld, role: LocatorRole, name: string): Promise<void> {
   await expect(this.page.getByRole(role, { name })).toBeVisible();
 });
 
-Then(/^the (?<role>.+) with name "(?<name>.+)" should have the following attributes$/u, async function(this: CustomWorld, role: LocatorRole, name: string, attributesDatatable: DataTable): Promise<void> {
+Then(/^the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should be hidden$/u, async function(this: CustomWorld, role: LocatorRole, name: string): Promise<void> {
+  await expect(this.page.getByRole(role, { name })).toBeHidden();
+});
+
+Then(/^the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should have the following attributes$/u, async function(this: CustomWorld, role: LocatorRole, name: string, attributesDatatable: DataTable): Promise<void> {
   const element = this.page.getByRole(role, { name });
   const promises = [];
   for (const [attribute, value] of attributesDatatable.rows()) {
@@ -19,7 +23,16 @@ Then(/^the (?<role>.+) with name "(?<name>.+)" should have the following attribu
   await Promise.all(promises);
 });
 
+Then(/^the text "(?<text>.+?)" under the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should be visible$/u, async function(this: CustomWorld, text: string, role: LocatorRole, name: string): Promise<void> {
+  await expect(this.page.getByRole(role, { name }).getByText(text)).toBeVisible();
+});
+
+Then(/^the text "(?<text>.+?)" under the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should be hidden$/u, async function(this: CustomWorld, text: string, role: LocatorRole, name: string): Promise<void> {
+  await expect(this.page.getByRole(role, { name }).getByText(text, { exact: true })).toBeHidden();
+});
+
 Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWorld, page: string): Promise<void> {
-  await this.page.waitForURL(`**/${page}`);
-  expect(this.page.url()).toBe(url(`/${page}`));
+  const pageName = page === "home" ? "" : page;
+  await this.page.waitForURL(`**/${pageName}`);
+  expect(this.page.url()).toBe(url(`/${pageName}`));
 });

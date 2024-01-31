@@ -5,7 +5,10 @@
       class="align-items-center d-flex"
     >
       <i class="fa fa-2x fa-pen-fancy me-3 text-info"/>
-      {{ $t('components.AboutCreator.wordFromCreator') }}
+
+      <span>
+        {{ $t('components.AboutCreator.wordFromCreator') }}
+      </span>
     </h2>
 
     <hr>

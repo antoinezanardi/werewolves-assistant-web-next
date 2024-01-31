@@ -3,7 +3,7 @@
 exports[`About Available Role Description Component > should render component and match snapshot when mounted. 1`] = `
 "<div class="d-flex">
   <div id="role-left-description" class="align-items-center d-flex flex-column justify-content-center">
-    <role-image-stub rolename="werewolf" sizes="150px" definition="normal" class="available-role-description-role-image"></role-image-stub>
+    <role-image-stub alt="components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt" rolename="werewolf" sizes="150px" definition="normal" class="available-role-description-role-image"></role-image-stub>
     <h2 class="available-role-description-role-name mt-3">shared.role.name.werewolf</h2>
     <role-type-badge-stub roletype="werewolf" class="available-role-description-role-type-badge mt-3"></role-type-badge-stub>
     <role-origin-badge-stub roleorigin="classic" class="available-role-description-role-origin-badge mt-3"></role-origin-badge-stub>

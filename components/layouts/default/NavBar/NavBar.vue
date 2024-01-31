@@ -1,16 +1,18 @@
 <template>
   <div
     id="navbar"
+    :aria-label="$t('components.NavBar.navBar')"
     class="align-items-center d-flex justify-content-between py-1"
+    role="navigation"
   >
     <NuxtLink
-      :aria-label="$t('components.NavBar.homePage')"
+      :aria-label="$t('components.NavBar.homePageLink')"
       class="align-items-center d-flex"
       to="/"
     >
       <NuxtImg
         id="werewolves-assistant-logo"
-        :aria-label="$t('components.NavBar.werewolvesAssistantLogo')"
+        :alt="$t('components.NavBar.werewolvesAssistantLogo')"
         src="/img/logo/square/werewolves-logo-small.png"
       />
 

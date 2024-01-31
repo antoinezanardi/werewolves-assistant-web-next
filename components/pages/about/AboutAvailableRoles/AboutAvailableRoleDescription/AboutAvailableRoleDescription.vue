@@ -5,6 +5,7 @@
       class="align-items-center d-flex flex-column justify-content-center"
     >
       <RoleImage
+        :alt="getRoleDescriptionLeftImageAlt(role.name)"
         class="available-role-description-role-image"
         :role-name="role.name"
         sizes="150px"
@@ -15,7 +16,7 @@
       </h2>
 
       <RoleTypeBadge
-        class="available-role-description-role-type-badge  mt-3"
+        class="available-role-description-role-type-badge mt-3"
         :role-type="role.type"
       />
 
@@ -52,6 +53,8 @@ const props = defineProps<AboutAvailableRoleDescriptionProps>();
 
 const { t, messages, locale } = useI18n();
 
+const { getRoleNameLabel } = useRoleName();
+
 const roleDescriptionLines = computed<string[]>(() => {
   type ComponentsMessages = Record<"AboutAvailableRoleDescription", Record<"descriptions", Record<RoleNames, Record<string, string>>>>;
 
@@ -63,7 +66,9 @@ const roleDescriptionLines = computed<string[]>(() => {
   return Object.keys(roleDescriptionMessages).map(key => t(`components.AboutAvailableRoleDescription.descriptions.${props.role.name}.${key}`));
 });
 
-const { getRoleNameLabel } = useRoleName();
+function getRoleDescriptionLeftImageAlt(roleName: RoleNames): string {
+  return t("components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt", { role: getRoleNameLabel(roleName) });
+}
 </script>
 
 <style lang="scss">

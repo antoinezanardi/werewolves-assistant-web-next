@@ -3,7 +3,7 @@
 exports[`About Werewolves Game Component > should render component and match snapshot when mounted. 1`] = `
 "<div id="about-werewolves-game">
   <div class="align-items-center d-flex justify-content-between">
-    <h2 id="about-werewolves-game-title" class="align-items-center d-flex"><i class="fa fa-2x fa-dice me-3 text-primary"></i> The Werewolves of Thiercelieux™ game</h2><a id="about-werewolves-game-watch-tutorial-video-on-youtube" class="p-button p-button-primary" href="https://www.youtube.com/watch?v=3HUz8CAORro" rel="noopener noreferrer" target="_blank" data-pd-tooltip="true"><span class="fa fa-question-circle me-2"></span> I don't know this game</a>
+    <h2 id="about-werewolves-game-title" class="align-items-center d-flex"><i class="fa fa-2x fa-dice me-3 text-primary"></i><span>The Werewolves of Thiercelieux™ game</span></h2><a id="about-werewolves-game-watch-tutorial-video-on-youtube" class="p-button p-button-primary" href="https://www.youtube.com/watch?v=3HUz8CAORro" rel="noopener noreferrer" target="_blank" data-pd-tooltip="true"><span class="fa fa-question-circle me-2"></span> I don't know this game</a>
   </div>
   <hr>
   <p id="about-werewolves-game-first-section" class="text-">The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.</p>

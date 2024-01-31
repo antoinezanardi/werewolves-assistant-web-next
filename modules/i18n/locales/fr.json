@@ -50,7 +50,8 @@
     },
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
-      "backToHome": "Retour à l'accueil"
+      "backToHome": "Retour à l'accueil",
+      "imageTitle": "Image du titre de la page À quoi ça sert"
     }
   },
   "components": {
@@ -58,6 +59,7 @@
       "contact": "Me contacter"
     },
     "NavBar": {
+      "navBar": "Barre de navigation",
       "parameters": "Paramètres",
       "homePageLink": "Lien vers l'accueil",
       "homePage": "Accueil",
@@ -92,10 +94,14 @@
     },
     "AboutAvailableRoles": {
       "availableRoles": "Rôles disponibles",
+      "availableRolesImage": "Image des rôles disponibles",
       "loadingRoles": "Chargement des rôles...",
-      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :"
+      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :",
+      "clickToExpandRoleDescription": "Cliquez sur le rôle {role} pour afficher sa description.",
+      "availableRoleImage": "Image du rôle {role}"
     },
     "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Image à gauche de la description du rôle {role}",
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",

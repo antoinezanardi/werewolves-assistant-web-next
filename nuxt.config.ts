@@ -61,7 +61,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      defaultLocale: "fr",
+      defaultLocale: "en",
       werewolvesAssistantApi: { baseUrl: "" },
     },
   },
