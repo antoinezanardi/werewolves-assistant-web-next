@@ -17,12 +17,12 @@
 /node_modules/
 
 /.idea/
+/docker/
 /.github/
 /.husky/
 /.run/
 /config/
 /scripts/
-/utils/
 
 
 /.DS_Store

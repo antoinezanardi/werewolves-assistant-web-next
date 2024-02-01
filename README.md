@@ -91,6 +91,12 @@ pnpm run build
 
 ![Vitest](https://img.shields.io/badge/-Vitest-black?style=for-the-badge&logoColor=yellow&logo=vitest&color=30420a)
 
+### ⚗️ E2E / Acceptance tests
+
+![Playwright](https://img.shields.io/badge/-Playwright-black?style=for-the-badge&logoColor=white&logo=playwright&color=1D8D22)
+
+![Cucumber](https://img.shields.io/badge/-Cucumber-black?style=for-the-badge&logoColor=white&logo=cucumber&color=169652)
+
 ### 👽 Mutant testing
 
 ![Stryker](https://img.shields.io/badge/-Stryker-black?style=for-the-badge&logoColor=white&logo=stryker&color=7F1B10) 
@@ -106,11 +112,20 @@ Before testing, you must follow the **[installation steps](#installation)**.
 Then, run one of the following commands :
 
 ```bash
+# Assure you started Werewolves Assistant sandbox API docker containers before running tests
+pnpm run docker:sandbox-api:start
+
 # Run unit tests with coverage
 pnpm run test:unit:cov
 
 # Run unit tests only on staged files (run on pre-commit)
 pnpm run test:unit:staged
+
+# Before running e2e tests, you must prepare them
+pnpm run test:cucumber:prepare
+
+# Run e2e acceptance tests
+pnpm run test:cucumber
 
 # Run mutant tests with coverage
 pnpm run test:stryker
