@@ -5,7 +5,10 @@
       class="align-items-center d-flex"
     >
       <i class="fa fa-2x fa-handshake-angle me-3 text-success"/>
-      {{ $t('components.AboutHowToContribute.howToContribute') }}
+
+      <span>
+        {{ $t('components.AboutHowToContribute.howToContribute') }}
+      </span>
     </h2>
 
     <hr>

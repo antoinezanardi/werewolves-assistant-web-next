@@ -3,6 +3,7 @@
     <div class="align-items-center d-flex">
       <RoleImage
         id="about-available-roles-title-role-image"
+        :alt="$t('components.AboutAvailableRoles.availableRolesImage')"
         class="me-3"
         :role-name="RoleNames.ANGEL"
         sizes="50px"
@@ -20,7 +21,7 @@
       id="loading-roles-container"
       class="align-items-center d-flex flex-column justify-content-center"
     >
-      <VuePrimeProgressSpinner/>
+      <VuePrimeProgressSpinner :aria-label="$t('components.AboutAvailableRoles.loadingRoles')"/>
 
       <small>{{ $t("components.AboutAvailableRoles.loadingRoles") }}</small>
     </div>
@@ -34,10 +35,16 @@
         <VuePrimeAccordionTab
           v-for="role in roles"
           :key="role.name"
+          :pt="{
+            'headerAction': {
+              'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name)
+            }
+          }"
         >
           <template #header>
             <div class="align-items-center available-role-image-header d-flex">
               <RoleImage
+                :alt="getAvailableRoleHeaderImageAlt(role.name)"
                 :role-name="role.name"
                 sizes="40px"
               />
@@ -74,4 +81,12 @@ const availableRolesText = computed<string | undefined>(() => {
   }
   return t("components.AboutAvailableRoles.assistantHasManyRoles", roles.value.length);
 });
+
+function getAvailableRoleAccordionHeaderAriaLabel(roleName: RoleNames): string {
+  return t("components.AboutAvailableRoles.clickToExpandRoleDescription", { role: getRoleNameLabel(roleName) });
+}
+
+function getAvailableRoleHeaderImageAlt(roleName: RoleNames): string {
+  return t("components.AboutAvailableRoles.availableRoleImage", { role: getRoleNameLabel(roleName) });
+}
 </script>

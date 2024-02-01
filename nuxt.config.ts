@@ -59,7 +59,12 @@ export default defineNuxtConfig({
     text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
     overwriting: false,
   },
-  runtimeConfig: { public: { werewolvesAssistantApi: { baseUrl: "" } } },
+  runtimeConfig: {
+    public: {
+      defaultLocale: "en",
+      werewolvesAssistantApi: { baseUrl: "" },
+    },
+  },
   typescript: {
     strict: true,
     typeCheck: true,

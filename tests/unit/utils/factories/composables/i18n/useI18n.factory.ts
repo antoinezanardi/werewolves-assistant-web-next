@@ -21,7 +21,7 @@ function createFakeI18n(i18n: Partial<MockedI18n> = {}): MockedI18n {
       en,
       fr,
     }),
-    t: vi.fn((key: string) => key),
+    t: vi.fn((...args: unknown[]) => args.map(arg => (typeof arg === "object" ? JSON.stringify(arg) : arg)).join(", ")),
     ...i18n,
   };
 }

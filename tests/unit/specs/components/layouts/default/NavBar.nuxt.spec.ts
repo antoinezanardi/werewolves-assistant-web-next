@@ -28,7 +28,7 @@ describe("NavBar Component", () => {
 
   describe("Home Page Link", () => {
     it("should have the prop 'to' set to home page when mounted.", () => {
-      const homePageLink = wrapper.findComponent<typeof NuxtLink>("[aria-label='Home page']");
+      const homePageLink = wrapper.findComponent<typeof NuxtLink>("[aria-label='Home page link']");
 
       expect(homePageLink.props("to")).toBe("/");
     });
@@ -36,7 +36,7 @@ describe("NavBar Component", () => {
     describe("Werewolves Assistant Logo", () => {
       it("should have the prop 'src' set to the small logo when mounted.", async() => {
         wrapper = await mountNavBarComponent({ shallow: false });
-        const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>("[aria-label='Werewolves Assistant logo']");
+        const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>("[alt='Werewolves Assistant logo']");
 
         expect(werewolvesAssistantLogo.attributes("src")).toBe("/_ipx/_/img/logo/square/werewolves-logo-small.png");
       });

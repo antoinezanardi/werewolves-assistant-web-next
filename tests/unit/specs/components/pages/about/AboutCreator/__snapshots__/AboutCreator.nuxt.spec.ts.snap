@@ -2,7 +2,7 @@
 
 exports[`About Creator Component > should render component and match snapshot when mounted. 1`] = `
 "<div id="about-creator">
-  <h2 id="about-creator-title" class="align-items-center d-flex"><i class="fa fa-2x fa-pen-fancy me-3 text-info"></i> A word from the creator</h2>
+  <h2 id="about-creator-title" class="align-items-center d-flex"><i class="fa fa-2x fa-pen-fancy me-3 text-info"></i><span>A word from the creator</span></h2>
   <hr>
   <p id="about-creator-first-section">I am Antoine ZANARDI, a Full-Stack Web developer and a fan of open source in general. If you want to learn more about me, I invite you to explore my portfolio.</p>
   <div class="d-flex justify-content-center"><a id="about-creator-portfolio-button" class="p-button primary" href="https://antoinezanardi.fr" rel="noopener noreferrer" target="_blank"><span class="fa-palette fas me-2"></span> My portfolio</a></div>

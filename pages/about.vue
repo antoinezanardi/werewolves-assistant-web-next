@@ -3,6 +3,7 @@
     <div class="align-items-center d-flex justify-content-center">
       <RoleImage
         id="about-role-image-title"
+        :alt="$t('pages.about.imageTitle')"
         definition="small"
         :role-name="RoleNames.WEREWOLF"
         sizes="75px"

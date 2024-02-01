@@ -1,4 +1,4 @@
-const I18N_DEFAULT_LOCALE = "fr";
+const I18N_DEFAULT_LOCALE = "en";
 
 const I18N_TEST_LOCALE = "en";
 

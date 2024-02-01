@@ -12,7 +12,11 @@ import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 
 describe("About Available Role Description Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoleDescription>>;
-  const defaultRole: Role = createFakeRole({ name: RoleNames.WEREWOLF, type: RoleTypes.WEREWOLF, origin: RoleOrigins.CLASSIC });
+  const defaultRole: Role = createFakeRole({
+    name: RoleNames.WEREWOLF,
+    type: RoleTypes.WEREWOLF,
+    origin: RoleOrigins.CLASSIC,
+  });
   const defaultProps: AboutAvailableRoleDescriptionProps = { role: defaultRole };
 
   beforeEach(async() => {
@@ -24,11 +28,19 @@ describe("About Available Role Description Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Role Image", () => {
-    it("should display role image when rendered.", () => {
-      const roleImage = wrapper.findComponent<typeof RoleImage>(".available-role-description-role-image");
+  describe("Role Left Description", () => {
+    describe("Role Image", () => {
+      it("should display role image when rendered.", () => {
+        const roleImage = wrapper.findComponent<typeof RoleImage>(".available-role-description-role-image");
 
-      expect(roleImage.props("roleName")).toBe(RoleNames.WEREWOLF);
+        expect(roleImage.props("roleName")).toBe(RoleNames.WEREWOLF);
+      });
+
+      it("should display role image with correct alt when rendered.", () => {
+        const roleImage = wrapper.find<HTMLImageElement>(".available-role-description-role-image");
+
+        expect(roleImage.attributes("alt")).toBe("components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt, {\"role\":\"shared.role.name.werewolf\"}");
+      });
     });
 
     it("should display role name when rendered.", () => {
@@ -48,7 +60,9 @@ describe("About Available Role Description Component", () => {
 
       expect(roleOriginBadge.props("roleOrigin")).toBe(RoleOrigins.CLASSIC);
     });
+  });
 
+  describe("Role Right Description", () => {
     it("should display role description lines when rendered.", () => {
       const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(".available-role-description-role-description-line");
 
