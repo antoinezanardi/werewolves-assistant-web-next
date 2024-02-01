@@ -1,5 +1,17 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.4.1](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.4.0...v1.4.1) (2024-2-1)
+
+
+### 🐛 Bug Fixes
+
+* **gcp:** include utils and exclude docker ([#87](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/87)) ([cf1a780](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/cf1a7800de80b88ba87b4bc197af6cd8b04f03f7))
+
+
+### 📖 Docs
+
+* **readme:** e2e documentation on readme ([#89](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/89)) ([e7aee0e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e7aee0e534fb8cf53cea114ad04089f72edcbd77))
+
 ## [1.4.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.3.0...v1.4.0) (2024-2-1)
 
 
