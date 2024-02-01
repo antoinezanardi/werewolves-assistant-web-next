@@ -5,7 +5,7 @@ Feature: ❓ About Page
   Scenario: ❓ About Page is displayed with title and various sections
     Given the user is on about page
     Then the heading with name "Why an assistant ?" should be visible
-    And the heading with name "The Werewolves of Thiercelieux™ game" should be visible
+    And the heading with name "The Werewolves of Miller's Hollow™ game" should be visible
     And the heading with name "The Werewolves Assistant takes the stage !" should be visible
     And the heading with name "Available roles" should be visible
     And the heading with name "How to contribute to this project?" should be visible

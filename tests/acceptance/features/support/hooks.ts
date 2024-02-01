@@ -42,7 +42,7 @@ After({}, async function(this: CustomWorld, scenario: ITestCaseHookParameter): P
   }
   await Promise.all([
     this.page.close(),
-    // this.context.close(),
+    this.context.close(),
   ]);
 });
 

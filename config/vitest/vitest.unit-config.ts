@@ -39,6 +39,7 @@ export default defineVitestConfig({
         "components/**/*.{vue,ts}",
         "composables/**/*.ts",
         "stores/**/*.ts",
+        "utils/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",
       reporter: ["clover", "json", "lcov", "text", "text-summary", "html"],
