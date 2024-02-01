@@ -3,12 +3,12 @@
 exports[`About Available Roles Component > should render component and match snapshot when mounted. 1`] = `
 "<div id="about-available-roles">
   <div class="align-items-center d-flex">
-    <role-image-stub rolename="angel" sizes="50px" definition="normal" id="about-available-roles-title-role-image" class="me-3"></role-image-stub>
+    <role-image-stub alt="Illustration of the available roles title" rolename="angel" sizes="50px" definition="normal" id="about-available-roles-title-role-image" class="me-3"></role-image-stub>
     <h2 id="about-available-roles-title">Available roles</h2>
   </div>
   <hr>
   <div id="loading-roles-container" class="align-items-center d-flex flex-column justify-content-center">
-    <progress-spinner-stub></progress-spinner-stub><small>Loading roles…</small>
+    <progress-spinner-stub aria-label="Loading roles…"></progress-spinner-stub><small>Loading roles…</small>
   </div>
 </div>"
 `;

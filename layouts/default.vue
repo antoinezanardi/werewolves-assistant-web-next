@@ -1,5 +1,8 @@
 <template>
-  <div class="d-flex flex-column h-100">
+  <div
+    id="default-layout"
+    class="d-flex flex-column h-100"
+  >
     <NavBar/>
 
     <div class="flex-grow-1 h-100">

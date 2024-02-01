@@ -1,7 +1,7 @@
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
-import { ERROR, OFF, NAMING_CONVENTION_DEFAULT_CONFIG, ALWAYS, NEVER } from "../eslint.constants.mjs";
+import { ERROR, OFF, NAMING_CONVENTION_DEFAULT_CONFIG, NEVER } from "../eslint.constants.mjs";
 
 const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
   files: [
@@ -99,6 +99,7 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
         ignoreArrayIndexes: true,
         ignoreDefaultValues: true,
         ignoreEnums: true,
+        ignoreTypeIndexes: true,
         ignore: [0, -1, 1],
       },
     ],
@@ -135,14 +136,6 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
     ],
     "@typescript-eslint/no-this-alias": ERROR,
     "@typescript-eslint/no-throw-literal": ERROR,
-    "@typescript-eslint/no-type-alias": [
-      ERROR, {
-        allowLiterals: ALWAYS,
-        allowGenerics: ALWAYS,
-        allowTupleTypes: ALWAYS,
-        allowAliases: "in-unions",
-      },
-    ],
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": ERROR,
     "@typescript-eslint/no-unnecessary-condition": ERROR,
     "@typescript-eslint/no-unnecessary-qualifier": ERROR,

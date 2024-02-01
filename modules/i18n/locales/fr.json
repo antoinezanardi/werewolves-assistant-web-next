@@ -44,12 +44,14 @@
   },
   "pages": {
     "index": {
+      "play": "Jouer",
       "about": "À quoi ça sert",
-      "play": "Jouer"
+      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
     },
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
-      "backToHome": "Retour à l'accueil"
+      "backToHome": "Retour à l'accueil",
+      "imageTitle": "Image du titre de la page À quoi ça sert"
     }
   },
   "components": {
@@ -57,6 +59,7 @@
       "contact": "Me contacter"
     },
     "NavBar": {
+      "navBar": "Barre de navigation",
       "parameters": "Paramètres",
       "homePageLink": "Lien vers l'accueil",
       "homePage": "Accueil",
@@ -91,10 +94,14 @@
     },
     "AboutAvailableRoles": {
       "availableRoles": "Rôles disponibles",
+      "availableRolesImage": "Image des rôles disponibles",
       "loadingRoles": "Chargement des rôles...",
-      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :"
+      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :",
+      "clickToExpandRoleDescription": "Cliquez sur le rôle {role} pour afficher sa description.",
+      "availableRoleImage": "Image du rôle {role}"
     },
     "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Image à gauche de la description du rôle {role}",
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
@@ -359,6 +366,9 @@
       "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
       "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous maîtres du jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
       "myPortfolio": "Mon portfolio"
+    },
+    "RoleImage": {
+      "back": "Dos de la carte"
     }
   }
 }

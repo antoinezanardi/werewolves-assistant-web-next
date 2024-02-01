@@ -7,7 +7,10 @@
     target="_blank"
   >
     <span class="fa-github fab me-2"/>
-    {{ textButton }}
+
+    <span>
+      {{ textButton }}
+    </span>
   </a>
 </template>
 

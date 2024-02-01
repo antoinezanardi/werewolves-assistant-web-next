@@ -6,7 +6,10 @@
         class="align-items-center d-flex"
       >
         <i class="fa fa-2x fa-dice me-3 text-primary"/>
-        {{ $t('components.AboutWerewolvesGame.werewolvesAssistantGame') }}
+
+        <span>
+          {{ $t('components.AboutWerewolvesGame.werewolvesAssistantGame') }}
+        </span>
       </h2>
 
       <a

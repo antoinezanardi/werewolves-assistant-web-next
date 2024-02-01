@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout>
-    <NuxtPage class="h-100 page-content"/>
+    <NuxtPage
+      class="h-100 page-content"
+    />
   </NuxtLayout>
 </template>
 

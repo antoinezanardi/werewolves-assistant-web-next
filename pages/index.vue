@@ -3,6 +3,7 @@
     <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
       <div class="col-12 text-center">
         <NuxtImg
+          :alt="$t('pages.index.werewolvesAssistantLogo')"
           sizes="lg:200px"
           src="/img/logo/square/werewolves-logo.png"
         />

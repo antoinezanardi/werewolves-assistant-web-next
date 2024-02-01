@@ -1,8 +1,9 @@
 <template>
   <NuxtImg
-    :aria-label="getRoleNameLabel(roleName)"
+    :alt="alt"
     class="role-image"
     :height="sizes"
+    :placeholder="backImageSrc"
     :src="roleImageSrc"
     :width="sizes"
   />
@@ -10,19 +11,22 @@
 
 <script setup lang="ts">
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
-import { useRoleName } from "~/composables/api/role/useRoleName";
+import { removeTrailingSlashes } from "~/utils/url.utils";
 
 const props = withDefaults(defineProps<RoleImageProps>(), {
   sizes: "50",
   definition: "normal",
 });
 
-const { getRoleNameLabel } = useRoleName();
-
 const runtimeConfig = useRuntimeConfig();
 
+const backImageSrc = "svg/infinite-spinner.svg";
+
 const roleImageSrc = computed<string>(() => {
-  const apiBaseUrl = runtimeConfig.public.werewolvesAssistantApi.baseUrl;
+  if (!props.roleName) {
+    return backImageSrc;
+  }
+  const apiBaseUrl = removeTrailingSlashes(runtimeConfig.public.werewolvesAssistantApi.baseUrl);
   const imageSuffix = props.definition === "normal" ? "" : `-${props.definition}`;
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
