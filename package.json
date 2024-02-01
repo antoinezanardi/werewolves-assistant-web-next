@@ -85,7 +85,7 @@
     "happy-dom": "^13.3.8",
     "husky": "^9.0.7",
     "jest-extended": "^4.0.2",
-    "lint-staged": "^15.2.0",
+    "lint-staged": "^15.2.1",
     "nuxt": "^3.10.0",
     "nuxt-primevue": "^0.2.2",
     "pinia": "^2.1.7",
