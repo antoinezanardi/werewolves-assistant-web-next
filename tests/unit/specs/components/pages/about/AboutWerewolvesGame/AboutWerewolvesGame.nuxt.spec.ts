@@ -19,7 +19,7 @@ describe("About Werewolves Game Component", () => {
     it("should display translated title when rendered.", () => {
       const title = wrapper.find<HTMLHeadElement>("#about-werewolves-game-title");
 
-      expect(title.text()).toBe("The Werewolves of Thiercelieux™ game");
+      expect(title.text()).toBe("The Werewolves of Miller's Hollow™ game");
     });
   });
 

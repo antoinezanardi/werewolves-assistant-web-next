@@ -72,7 +72,7 @@
       "parametersMenu": "Parameters menu"
     },
     "AboutWerewolvesGame": {
-      "werewolvesAssistantGame": "The Werewolves of Thiercelieux™ game",
+      "werewolvesAssistantGame": "The Werewolves of Miller's Hollow™ game",
       "iDontKnowWerewolvesGame": "I don't know this game",
       "watchTutorialVideoOnYoutube": "Watch an explanatory video on YouTube",
       "whatIsWerewolvesGame": "The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.",
@@ -193,7 +193,7 @@
         },
         "scapegoat": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
-          "unfortunateRole": "It's quite sad, but in Thiercelieux, when something goes wrong, he always unjustly suffers the consequences…",
+          "unfortunateRole": "It's quite sad, but in Miller's Hollow, when something goes wrong, he always unjustly suffers the consequences…",
           "tiebreakerElimination": "If the village vote results in a tie, the Scapegoat is eliminated instead of the tied players.",
           "additionalRoleAfterElimination": "It's up to him to maneuver well to avoid this sad conclusion. If the Scapegoat is eliminated, he still has one prerogative to exercise. He designates who will or will not vote during the next day.",
           "cautionaryNote": "Caution: designating only one player to vote is risking that he will be devoured by the Werewolves the following night. There will then be no village vote. (Unless, of course, the designated player is a Werewolf, or the Werewolves deliberately choose not to eliminate him…)"
@@ -206,7 +206,7 @@
         },
         "two-sisters": {
           "theirGoalIsToKillWerewolves": "Their goal is to eliminate the Werewolves.",
-          "confusingTwins": "Some Thiercelieux residents confuse them when they encounter one of the Two Sisters around a bend in a hollow path.",
+          "confusingTwins": "Some Miller's Hollow residents confuse them when they encounter one of the Two Sisters around a bend in a hollow path.",
           "siblingBond": "In any case, the Two Sisters get along like fingers on a hand or hairs from the same strand. It's certainly encouraging to have a close one to rely on in these uncertain moments!",
           "nightlyConsultation": "On the first night, at the game master's call, they wake up together and recognize each other. Then, during the game, every other night, they wake up again and quickly and silently consult on the decisions to save the village.",
           "signLanguageTip": "Game master's advice: particularly powerful with users of sign language."
@@ -220,7 +220,7 @@
         },
         "fox": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
-          "appreciatedCharacter": "In Thiercelieux, everyone appreciates the keen and discreet character, except perhaps the hens and especially the Werewolves.",
+          "appreciatedCharacter": "In Miller's Hollow, everyone appreciates the keen and discreet character, except perhaps the hens and especially the Werewolves.",
           "nightlyDesignation": "At night, at the game master's call, the Fox can designate a group of three neighboring players, pointing to the central player.",
           "powerOutcome": "If there is at least one Werewolf in this group, then the game master signals affirmatively to the Fox. In this case, the Fox can use his power again on the following night.",
           "powerLoss": "If no Werewolf is in the designated group, the Fox permanently loses his power; however, he gains valuable information, exonerating three players at once.",
@@ -230,7 +230,7 @@
         "bear-tamer": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
           "nostalgicTale": "Ah! How sweet to my memory is the sound of chains trickling down the cobblestones of \"the place des Trois Routes,\" accompanied by Ursus's growl.",
-          "goldenEra": "Ah! How far away is that time when Titan, the Bear Showman, directed his companion with mastery in a ballet so graceful that we cried every summer in Thiercelieux. Ursus also had the precious power to detect lurking lycanthropes.",
+          "goldenEra": "Ah! How far away is that time when Titan, the Bear Showman, directed his companion with mastery in a ballet so graceful that we cried every summer in Miller's Hollow. Ursus also had the precious power to detect lurking lycanthropes.",
           "powerActivation": "Every morning, just after the revelation of any nocturnal victims, if at least one Werewolf is or becomes directly adjacent to the Bear Showman, then the game master growls to signal to the players that the bear has sensed the danger.",
           "neighborCriteria": "Only neighbors still in the game are taken into account.",
           "meneurNote": "Game master's advice: to simplify things, eliminated players leave the game or move away from the table. If the Bear Showman is infected, the game master will growl every round until the Bear Showman is eliminated."
@@ -238,7 +238,7 @@
         "stuttering-judge": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
           "backgroundStory": "The miller's youngest son was gifted for studies and dreamt of becoming a lawyer. As his father had succeeded in bamboozling his clients, he sent him to study law in the nearby grand city.",
-          "speechImpediment": "A slight pronunciation defect denied the young man the coveted prestige of being the defender of widows and orphans. However, he returned to the village of Thiercelieux adorned with the no less prestigious title of itinerant judge.",
+          "speechImpediment": "A slight pronunciation defect denied the young man the coveted prestige of being the defender of widows and orphans. However, he returned to the village of Miller's Hollow adorned with the no less prestigious title of itinerant judge.",
           "doubleVoteDecision": "Once in the game, the Stuttering Judge can decide that there will be two consecutive votes and two eliminations of suspects.",
           "uniqueSign": "The Stuttering Judge signals his decision to the game master with a particular sign that he uses to designate a resident during the village vote. The second vote is immediately triggered without debate by the game master, right after the elimination due to the first vote. The \"St-stuttering-Ju-judge\" will have shown this particular sign during the first night, at the game master's call.",
           "meneurTip": "Game master's advice: always pay attention to the Stuttering Judge's behavior during votes to not miss his particular sign."
@@ -258,9 +258,9 @@
         },
         "wild-child": {
           "hisGoalIsToKillWerewolvesUntilModelDies": "His goal is to eliminate the Werewolves as long as his model is alive.",
-          "abandonedChildhood": "Abandoned in the forest by his parents in his tender childhood, he was raised by wolves. As soon as he could walk on all fours, the Wild Child began to roam around the outskirts of Thiercelieux.",
+          "abandonedChildhood": "Abandoned in the forest by his parents in his tender childhood, he was raised by wolves. As soon as he could walk on all fours, the Wild Child began to roam around the outskirts of Miller's Hollow.",
           "secretAdmiration": "One day, fascinated by a villager who walked upright with grace and elegance, he made this person his secret model.",
-          "integration": "He then decided to join the Thiercelieux community and entered the village, anxious. The community was moved by his fragility, adopted him, and welcomed him into their midst.",
+          "integration": "He then decided to join the Miller's Hollow community and entered the village, anxious. The community was moved by his fragility, adopted him, and welcomed him into their midst.",
           "innerStruggle": "What will he become: an honest Villager or a terrible Werewolf? Throughout his existence, the Wild Child's heart will swing between these two alternatives. May his model confirm him in his newfound humanity.",
           "nightlyAction": "The Wild Child is a Villager. On the first night, at the game master's call, he designates a model player. If, during the game, the designated player is eliminated, the Wild Child becomes a Werewolf and will wake up the next night with his peers, devouring with them every night until the end of the game.",
           "villageInvolvement": "However, as long as his model is alive, the Wild Child remains a Villager. Whether his model turns out to be a Werewolf or not makes no difference! Nothing prevents the Wild Child from participating in the elimination of his model if he wishes.",
