@@ -22,3 +22,9 @@ Feature: 🏠 Home Page
     Given the user is on home page
     When the user clicks on the link with name "What is it ?"
     Then the user should be on about page
+
+  Scenario: 🏠 User goes on the GitHub repository page through the link
+    Given the user is on home page
+    And the user is about to open a page on new tab
+    When the user clicks on the link with name "This project is open-source!"
+    Then a new page should be opened with url "https://github.com/antoinezanardi/werewolves-assistant-web-next"

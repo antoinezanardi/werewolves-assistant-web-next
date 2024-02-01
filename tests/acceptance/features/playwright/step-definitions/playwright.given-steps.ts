@@ -10,3 +10,7 @@ Given(/^the user is on home page$/u, async function(this: CustomWorld): Promise<
 Given(/^the user is on about page$/u, async function(this: CustomWorld): Promise<void> {
   await this.page.goto(url("/about"));
 });
+
+Given(/^the user is about to open a page on new tab$/u, function(this: CustomWorld): void {
+  this.newPagePromise = this.context.waitForEvent("page");
+});

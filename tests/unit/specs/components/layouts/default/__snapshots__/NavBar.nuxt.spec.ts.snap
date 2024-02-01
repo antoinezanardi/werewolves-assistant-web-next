@@ -2,7 +2,7 @@
 
 exports[`NavBar Component > should render component and match snapshot when mounted. 1`] = `
 "<div data-v-4f13fdda="" id="navbar" aria-label="Navigation bar" class="align-items-center d-flex justify-content-between py-1" role="navigation">
-  <nuxt-link-stub data-v-4f13fdda="" to="/" aria-label="Home page" class="align-items-center d-flex"></nuxt-link-stub>
+  <nuxt-link-stub data-v-4f13fdda="" to="/" aria-label="Home page link" class="align-items-center d-flex"></nuxt-link-stub>
   <parameters-menu-stub data-v-4f13fdda="" aria-label="Parameters menu" data-pd-tooltip="true"></parameters-menu-stub>
 </div>"
 `;

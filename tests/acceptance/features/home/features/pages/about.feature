@@ -10,10 +10,7 @@ Feature: ❓ About Page
     And the heading with name "Available roles" should be visible
     And the heading with name "How to contribute to this project?" should be visible
     And the heading with name "A word from the creator" should be visible
-
-  Scenario: ❓ About Page has navigation bar
-    Given the user is on about page
-    Then the navigation with name "Navigation bar" should be visible
+    And the link with name "Back to home" should be visible
 
   Scenario: ❓ About Page loads roles and display them in accordions with descriptions and illustrations
     Given the user is on about page
@@ -49,6 +46,11 @@ Feature: ❓ About Page
 
   Scenario: ❓ User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on about page
-    When the user clicks on the button with name "Parameters"
+    When the user clicks on the child button with name "Parameters" under the navigation with name "Navigation bar"
     And the user clicks on the element with text "Back to home" under the menu with name "Parameters menu"
-#    Then the user should be on home page
+    Then the user should be on home page
+
+  Scenario: ❓ User goes back on home page by clicking on back to home page button at the bottom of the page
+    Given the user is on about page
+    When the user clicks on the link with name "Back to home"
+    Then the user should be on home page

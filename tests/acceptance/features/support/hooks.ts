@@ -31,6 +31,7 @@ BeforeAll({ timeout: beforeAllTimeout }, async(): Promise<void> => {
 Before({}, async function(this: CustomWorld): Promise<void> {
   beforeEach();
   this.page = await createPage();
+  this.context = this.page.context();
 });
 
 After({}, async function(this: CustomWorld, scenario: ITestCaseHookParameter): Promise<void> {
@@ -39,6 +40,10 @@ After({}, async function(this: CustomWorld, scenario: ITestCaseHookParameter): P
     const pageContent = await this.page.innerHTML("#__nuxt");
     console.error(format(pageContent));
   }
+  await Promise.all([
+    this.page.close(),
+    // this.context.close(),
+  ]);
 });
 
 AfterAll(async(): Promise<void> => {
