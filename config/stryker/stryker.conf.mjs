@@ -27,6 +27,7 @@ export default {
     "definePageMeta",
   ],
   ignorePatterns: [
+    "!.nuxt/",
     ".github/",
     ".husky/",
     ".output/",
