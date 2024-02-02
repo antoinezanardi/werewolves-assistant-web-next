@@ -1,6 +1,9 @@
 {
   "shared": {
     "werewolvesAssistant": "Assistant Loups-Garous",
+    "actions": {
+      "add": "Ajouter"
+    },
     "role": {
       "name": {
         "werewolf": "Loup-Garou",
@@ -369,6 +372,9 @@
     },
     "RoleImage": {
       "back": "Dos de la carte"
+    },
+    "GameLobbyPlayerInput": {
+      "playerName": "Nom du joueur"
     }
   }
 }

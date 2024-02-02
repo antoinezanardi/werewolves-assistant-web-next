@@ -11,6 +11,7 @@ describe("NavBar Component", () => {
 
   async function mountNavBarComponent(options: ComponentMountingOptions<typeof NavBar> = {}): Promise<ReturnType<typeof mount<typeof NavBar>>> {
     const defaultMountingOptions: ComponentMountingOptions<typeof NavBar> = { global: { stubs: { ParametersMenu: true } } };
+
     return mountSuspendedComponent(NavBar, {
       ...defaultMountingOptions,
       ...options,

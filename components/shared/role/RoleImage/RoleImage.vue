@@ -28,6 +28,7 @@ const roleImageSrc = computed<string>(() => {
   }
   const apiBaseUrl = removeTrailingSlashes(runtimeConfig.public.werewolvesAssistantApi.baseUrl);
   const imageSuffix = props.definition === "normal" ? "" : `-${props.definition}`;
+
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
 </script>

@@ -1,6 +1,9 @@
 {
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
+    "actions": {
+      "add": "Add"
+    },
     "role": {
       "name": {
         "werewolf": "Werewolf",
@@ -369,6 +372,9 @@
     },
     "RoleImage": {
       "back": "Back of the card"
+    },
+    "GameLobbyPlayerInput": {
+      "playerName": "Player name"
     }
   }
 }

@@ -1,10 +1,10 @@
 import { Expose } from "class-transformer";
 
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleNames } from "~/composables/api/role/enums/role.enums";
 
 class CreateGamePlayerRoleDto {
   @Expose()
-  public name: RoleNames;
+  public name: RoleNames | undefined;
 }
 
 export { CreateGamePlayerRoleDto };

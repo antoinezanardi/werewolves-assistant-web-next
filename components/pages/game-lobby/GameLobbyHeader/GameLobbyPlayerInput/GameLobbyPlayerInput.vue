@@ -5,22 +5,25 @@
   >
     <span class="p-float-label">
       <VuePrimeInputText
-        id="player-name"
+        id="player-name-input"
         v-model="inputValue"
-        :placeholder="$t('components.GameLobbyPlayerInput.placeholder')"
         size="large"
         type="text"
       />
 
-      <label for="player-name">
-        {{ $t("components.GameLobbyPlayerInput.addPlayer") }}
+      <label for="player-name-input">
+        {{ $t("components.GameLobbyPlayerInput.playerName") }}
       </label>
     </span>
 
     <VuePrimeButton
       severity="primary"
     >
-      {{ $t("components.GameLobbyPlayerInput.add") }}
+      <i class="fa fa-plus me-2"/>
+
+      <span>
+        {{ $t("shared.actions.add") }}
+      </span>
     </VuePrimeButton>
   </VuePrimeInputGroup>
 </template>
