@@ -7,6 +7,8 @@
 </template>
 
 <script lang="ts" setup>
+import "reflect-metadata";
+
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const rolesStore = useRolesStore();

@@ -16,6 +16,7 @@ import { ESLINT_TESTS_FACTORIES_CONFIG } from "./config/eslint/config/eslint.tes
 import { ESLINT_LAYOUTS_CONFIG } from "./config/eslint/config/eslint.layouts-config.mjs";
 import { ESLINT_PAGES_CONFIG } from "./config/eslint/config/eslint.pages-config.mjs";
 import { ESLINT_TESTS_SETUP_CONFIG } from "./config/eslint/config/eslint.tests-setup-config.mjs";
+import { ESLINT_CLASSES_CONFIG } from "./config/eslint/config/eslint.classes-config.mjs";
 
 const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
 const flatCompat = new FlatCompat({ baseDirectory });
@@ -44,4 +45,5 @@ export default [
   ESLINT_STYLISTIC_CONFIG,
   ESLINT_CONFIG_FILES_CONFIG,
   ESLINT_STORES_CONFIG,
+  ESLINT_CLASSES_CONFIG,
 ];

@@ -22,6 +22,8 @@ const ESLINT_VUE_CONFIG = {
       computed: READONLY,
       defineProps: READONLY,
       defineEmits: READONLY,
+      ref: READONLY,
+      reactive: READONLY,
     },
   },
   rules: {

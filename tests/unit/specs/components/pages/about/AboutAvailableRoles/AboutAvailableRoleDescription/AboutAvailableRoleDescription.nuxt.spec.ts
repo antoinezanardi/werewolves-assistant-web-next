@@ -6,7 +6,7 @@ import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import type RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import { RoleNames, RoleOrigins, RoleTypes } from "~/composables/api/role/enums/role.enums";
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 

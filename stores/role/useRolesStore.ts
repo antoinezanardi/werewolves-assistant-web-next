@@ -2,7 +2,7 @@ import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
 import { ref } from "vue";
 import { defineStore } from "pinia";
 
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
 import { StoreIds } from "~/stores/enums/store.enum";
 

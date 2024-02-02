@@ -3,7 +3,7 @@ import { expect } from "vitest";
 import type { Mock } from "vitest";
 import { ref } from "vue";
 
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import * as UseFetchRolesComposable from "~/composables/api/role/useFetchRoles";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";

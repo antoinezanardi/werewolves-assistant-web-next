@@ -1,4 +1,4 @@
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 
 type AboutAvailableRoleDescriptionProps = {
   role: Role;

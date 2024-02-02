@@ -1,7 +1,7 @@
 import type { UseFetchOptions } from "#app";
 
 import { DEFAULT_USE_FETCH_OPTIONS } from "~/composables/api/api.constants";
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 import { removeTrailingSlashes } from "~/utils/url.utils";
 
 type UseFetchRoles = {

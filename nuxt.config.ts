@@ -37,6 +37,8 @@ export default defineNuxtConfig({
         "Accordion",
         "AccordionTab",
         "Badge",
+        "InputGroup",
+        "InputText",
       ],
     },
     directives: {
@@ -69,4 +71,5 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });
