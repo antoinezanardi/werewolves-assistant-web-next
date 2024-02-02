@@ -29,19 +29,42 @@ updates:
     target-branch: "develop"
     open-pull-requests-limit: 20
     groups:
-      types:
-        patterns:
-          - "@types*"
       commitlint:
         patterns:
           - "@commitlint*"
+      nuxt:
+        patterns:
+          - "nuxt"
+          - "@nuxt*"
+      pinia:
+        patterns:
+          - "pinia*"
+          - "@pinia*"
+      playwright:
+        patterns:
+          - "playwright*"
+          - "@playwright*"
+      vitest:
+        patterns:
+          - "vitest*"
+          - "@vitest*"
       stryker:
         patterns:
           - "@stryker-mutator*"
       eslint:
         patterns:
           - "eslint*"
+          - "@eslint*"
           - "@typescript-eslint*"
+          - "@stylistic/eslint-plugin"
+          - "vue-eslint*"
       semantic-release:
         patterns:
           - "@semantic-release*"
+      vue:
+        patterns:
+          - "vue*"
+          - "@vue*"
+      types:
+        patterns:
+          - "@types*"
