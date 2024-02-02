@@ -95,7 +95,7 @@
     "nuxt": "^3.10.0",
     "nuxt-primevue": "^0.2.2",
     "pinia": "^2.1.7",
-    "playwright": "^1.41.0",
+    "playwright": "^1.41.2",
     "playwright-core": "^1.41.0",
     "qs": "^6.11.2",
     "radash": "^11.0.0",

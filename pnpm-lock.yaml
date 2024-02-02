@@ -143,8 +143,8 @@ devDependencies:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.15)
   playwright:
-    specifier: ^1.41.0
-    version: 1.41.1
+    specifier: ^1.41.2
+    version: 1.41.2
   playwright-core:
     specifier: ^1.41.0
     version: 1.41.1
@@ -9113,12 +9113,28 @@ packages:
     hasBin: true
     dev: true
 
+  /playwright-core@1.41.2:
+    resolution: {integrity: sha512-VaTvwCA4Y8kxEe+kfm2+uUUw5Lubf38RxF7FpBxLPmGe5sdNkSg5e3ChEigaGrX7qdqT3pt2m/98LiyvU2x6CA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
   /playwright@1.41.1:
     resolution: {integrity: sha512-gdZAWG97oUnbBdRL3GuBvX3nDDmUOuqzV/D24dytqlKt+eI5KbwusluZRGljx1YoJKZ2NRPaeWiFTeGZO7SosQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
       playwright-core: 1.41.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /playwright@1.41.2:
+    resolution: {integrity: sha512-v0bOa6H2GJChDL8pAeLa/LZC4feoAMbSQm1/jF/ySsWWoaNItvrMP7GEkvEEFyCTUYKMxjQKaTSg5up7nR6/8A==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.41.2
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
