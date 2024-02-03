@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "page", mode: "out-in" },
   },
+  experimental: { renderJsonPayloads: false },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "bootstrap/dist/css/bootstrap-grid.css",

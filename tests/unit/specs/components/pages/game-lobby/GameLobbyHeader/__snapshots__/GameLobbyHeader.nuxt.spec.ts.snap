@@ -2,6 +2,6 @@
 
 exports[`Game Lobby Header Component > should render component and match snapshot when mounted. 1`] = `
 "<div id="game-lobby-header">
-  <game-lobby-player-input-stub></game-lobby-player-input-stub>
+  <game-lobby-player-input-stub modelvalue="" id="game-lobby-player-input"></game-lobby-player-input-stub>
 </div>"
 `;
