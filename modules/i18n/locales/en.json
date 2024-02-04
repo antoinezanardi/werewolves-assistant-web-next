@@ -374,7 +374,14 @@
       "back": "Back of the card"
     },
     "GameLobbyPlayerInput": {
-      "playerName": "Player name"
+      "playerName": "Player name",
+      "maxPlayersReached": "Maximum number of players reached",
+      "pleaseEnterPlayerName": "Please enter a player name",
+      "playerNameIsAlreadyTaken": "This player name is already taken",
+      "playerNameMaxLengthReached": "The player name must not exceed 30 characters"
+    },
+    "GameLobbyHeader": {
+      "gameLobby": "Game Lobby"
     }
   }
 }

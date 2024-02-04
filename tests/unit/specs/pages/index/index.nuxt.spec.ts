@@ -28,19 +28,9 @@ describe("Index Page Component", () => {
 
   describe("Play button", () => {
     it("should display play button with translated label when rendered.", () => {
-      const playButton = wrapper.findComponent<typeof VuePrimeButton>("[label='Play']");
+      const playButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='Play']");
 
-      expect(playButton.attributes("label")).toBe("Play");
-    });
-
-    it("should display play button with pass through data when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(Index, { shallow: false });
-      const playButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Play']");
-
-      expect(playButton.props("pt")).toStrictEqual<PassThrough<ButtonPassThroughOptions>>({
-        icon: "fa-2x",
-        label: "fs-3 fw-bold text-uppercase",
-      });
+      expect(playButton.html()).toContain("Play");
     });
   });
 

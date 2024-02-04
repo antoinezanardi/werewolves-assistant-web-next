@@ -2,7 +2,11 @@
   <div class="container-fluid d-flex flex-column">
     <GameLobbyHeader/>
 
+    <hr class="w-100">
+
     <GameLobbyPlayersParty class="d-flex flex-grow-1"/>
+
+    <hr class="w-100">
 
     <GameLobbyFooter/>
   </div>

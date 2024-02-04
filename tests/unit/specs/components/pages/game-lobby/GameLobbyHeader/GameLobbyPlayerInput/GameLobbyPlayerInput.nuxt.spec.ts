@@ -45,6 +45,19 @@ describe("Game Lobby Player Input Component", () => {
       expect(input.attributes("disabled")).toBe("true");
     });
 
+    it("should have invalid class when player name exists in game.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.players = [
+        createFakeCreateGamePlayerDto({ name: "Player 1" }),
+        createFakeCreateGamePlayerDto({ name: "Player 2" }),
+        createFakeCreateGamePlayerDto({ name: "Player 3" }),
+      ];
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      await input.setValue(" Player 2 ");
+
+      expect(input.classes("p-invalid")).toBeTrue();
+    });
+
     it("should not be disabled when create game dto has not reached max players.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.players = Array.from({ length: 39 }, createFakeCreateGamePlayerDto);
@@ -122,6 +135,47 @@ describe("Game Lobby Player Input Component", () => {
       const button = wrapper.find<HTMLButtonElement>("#add-player-button");
 
       expect(button.text()).toBe("Add");
+    });
+  });
+
+  describe("Help Text", () => {
+    it("should translate max players reached help message when max players are reached in game.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.players = Array.from({ length: 40 }, createFakeCreateGamePlayerDto);
+      await nextTick();
+      const helpText = wrapper.find<HTMLLabelElement>("#player-name-input-help");
+
+      expect(helpText.text()).toBe("components.GameLobbyPlayerInput.maxPlayersReached");
+    });
+
+    it("should translate player name exists help message when player name exists in game.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.players = [
+        createFakeCreateGamePlayerDto({ name: "Player 1" }),
+        createFakeCreateGamePlayerDto({ name: "Player 2" }),
+        createFakeCreateGamePlayerDto({ name: "Player 3" }),
+      ];
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      await input.setValue("Player 2");
+      const helpText = wrapper.find<HTMLLabelElement>("#player-name-input-help");
+
+      expect(helpText.text()).toBe("components.GameLobbyPlayerInput.playerNameIsAlreadyTaken");
+    });
+
+    it("should translate player name max length help message when player name is too long.", async() => {
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      await input.setValue("  FrontLine incremental password  ");
+      const helpText = wrapper.find<HTMLLabelElement>("#player-name-input-help");
+
+      expect(helpText.text()).toBe("components.GameLobbyPlayerInput.playerNameMaxLengthReached");
+    });
+
+    it("should translate basic help message when rendered.", async() => {
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      await input.setValue("  Antoine                       ");
+      const helpText = wrapper.find<HTMLLabelElement>("#player-name-input-help");
+
+      expect(helpText.text()).toBe("components.GameLobbyPlayerInput.pleaseEnterPlayerName");
     });
   });
 });

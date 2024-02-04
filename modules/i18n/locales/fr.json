@@ -374,7 +374,14 @@
       "back": "Dos de la carte"
     },
     "GameLobbyPlayerInput": {
-      "playerName": "Nom du joueur"
+      "playerName": "Nom du joueur",
+      "maxPlayersReached": "Nombre maximum de joueurs atteint",
+      "pleaseEnterPlayerName": "Veuillez entrer un nom de joueur",
+      "playerNameIsAlreadyTaken": "Ce nom de joueur est déjà pris",
+      "playerNameMaxLengthReached": "Le nom du joueur ne peut pas dépasser 30 caractères"
+    },
+    "GameLobbyHeader": {
+      "gameLobby": "Création de la partie"
     }
   }
 }

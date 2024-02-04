@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Player Input Component > should render component and match snapshot when mounted. 1`] = `
-"<div class="p-inputgroup mt-3" data-pc-name="inputgroup" data-pc-section="root" id="game-lobby-player-input-group"><span class="p-float-label"><input-text-stub id="player-name-input" modelvalue="" disabled="false" size="large" type="text"></input-text-stub><label for="player-name-input">Player name</label></span>
-  <button-stub id="add-player-button" disabled="false" role="submit" severity="primary"></button-stub>
+"<div id="game-lobby-player-input">
+  <div class="p-inputgroup mt-3" data-pc-name="inputgroup" data-pc-section="root" id="game-lobby-player-input-group"><span class="p-float-label"><input-text-stub id="player-name-input" modelvalue="" aria-labelledby="player-name-input-help" class="" disabled="false" maxlength="30" size="large" type="text"></input-text-stub><label for="player-name-input">Player name</label></span>
+    <button-stub id="add-player-button" disabled="false" severity="primary" type="submit"></button-stub>
+  </div>
+  <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true"><small id="player-name-input-help">components.GameLobbyPlayerInput.pleaseEnterPlayerName</small></transition-stub>
 </div>"
 `;

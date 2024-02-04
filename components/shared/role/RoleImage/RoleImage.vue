@@ -3,7 +3,7 @@
     :alt="alt"
     class="role-image"
     :height="sizes"
-    :placeholder="backImageSrc"
+    placeholder="svg/infinite-spinner.svg"
     :src="roleImageSrc"
     :width="sizes"
   />
@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<RoleImageProps>(), {
 
 const runtimeConfig = useRuntimeConfig();
 
-const backImageSrc = "svg/infinite-spinner.svg";
+const backImageSrc = "/img/role/back.jpeg";
 
 const roleImageSrc = computed<string>(() => {
   if (!props.roleName) {

@@ -22,12 +22,14 @@ export default {
     "./config/stryker/plugins/stryker-define-emits-ignorer-plugin.mjs",
     "./config/stryker/plugins/stryker-define-page-meta-ignorer-plugin.mjs",
     "./config/stryker/plugins/stryker-define-model-ignorer-plugin.mjs",
+    "./config/stryker/plugins/stryker-define-expose-ignorer-plugin.mjs",
   ],
   ignorers: [
     "defineProps",
     "defineEmits",
     "definePageMeta",
     "defineModel",
+    "defineExpose",
   ],
   ignorePatterns: [
     "!.nuxt/",
