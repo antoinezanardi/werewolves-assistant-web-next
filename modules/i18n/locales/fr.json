@@ -382,6 +382,9 @@
     },
     "GameLobbyHeader": {
       "gameLobby": "Création de la partie"
+    },
+    "PlayerCard": {
+      "playerCardRoleImageAlt": "Image du rôle du joueur {playerName}"
     }
   }
 }

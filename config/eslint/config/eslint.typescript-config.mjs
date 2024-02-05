@@ -15,7 +15,7 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
       ecmaVersion: "latest",
       sourceType: "module",
       ecmaFeatures: { jsx: true },
-      project: "./config/eslint/tsconfig.json",
+      project: "./tsconfig.json",
     },
   },
   rules: {

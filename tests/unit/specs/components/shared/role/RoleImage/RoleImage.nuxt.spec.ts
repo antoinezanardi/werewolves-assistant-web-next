@@ -44,7 +44,7 @@ describe("Role Image Component", () => {
       wrapper = await mountRoleImageComponent({ props: { alt: "back image" } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='back image']");
 
-      expect(image.attributes("src")).toBe("svg/infinite-spinner.svg");
+      expect(image.attributes("src")).toBe("/img/role/back.jpeg");
     });
 
     it("should have src based on role name from props when mounted.", () => {

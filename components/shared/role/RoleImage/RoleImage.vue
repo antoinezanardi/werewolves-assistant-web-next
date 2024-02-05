@@ -23,9 +23,10 @@ const runtimeConfig = useRuntimeConfig();
 const backImageSrc = "/img/role/back.jpeg";
 
 const roleImageSrc = computed<string>(() => {
-  if (!props.roleName) {
+  if (props.roleName === undefined) {
     return backImageSrc;
   }
+
   const apiBaseUrl = removeTrailingSlashes(runtimeConfig.public.werewolvesAssistantApi.baseUrl);
   const imageSuffix = props.definition === "normal" ? "" : `-${props.definition}`;
 

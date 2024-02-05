@@ -35,11 +35,11 @@ const playerInputValue = ref<string>("");
 
 const gameLobbyPlayerInput = ref<InstanceType<typeof GameLobbyPlayerInput> | null>(null);
 
-function addPlayerToCreateGameDto() {
-  if (!gameLobbyPlayerInput.value) {
+function addPlayerToCreateGameDto(): void {
+  if (gameLobbyPlayerInput.value === null) {
     throw createError("Game Lobby Player Input is not initialized");
   }
-  if (gameLobbyPlayerInput.value.isAddButtonDisabled) {
+  if (gameLobbyPlayerInput.value.isAddButtonDisabled === true) {
     return;
   }
   const trimmedPlayerInputValue = playerInputValue.value.trim();

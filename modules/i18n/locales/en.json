@@ -382,6 +382,9 @@
     },
     "GameLobbyHeader": {
       "gameLobby": "Game Lobby"
+    },
+    "PlayerCard": {
+      "playerCardRoleImageAlt": "Role image of the player {playerName}"
     }
   }
 }

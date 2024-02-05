@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Lobby Players Party Component > should render component and match snapshot when mounted. 1`] = `"<div id="game-lobby-players-party"> CONTENT </div>"`;
+exports[`Game Lobby Players Party Component > should render component and match snapshot when mounted. 1`] = `
+"<div id="game-lobby-players-party">
+  <player-card-stub playername="toto"></player-card-stub>
+</div>"
+`;

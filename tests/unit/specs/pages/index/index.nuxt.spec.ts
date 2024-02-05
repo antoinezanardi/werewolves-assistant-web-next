@@ -1,8 +1,6 @@
 import type { mount } from "@vue/test-utils";
-import type { ButtonPassThroughOptions } from "primevue/button";
-import type { PassThrough } from "primevue/ts-helpers";
 
-import type { NuxtLink, VuePrimeButton } from "#components";
+import type { NuxtLink } from "#components";
 import Index from "@/pages/index.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 

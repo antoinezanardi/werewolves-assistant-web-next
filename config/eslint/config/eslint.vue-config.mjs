@@ -1,7 +1,10 @@
 import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
+import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
 import { ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
+
+import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
 const ESLINT_VUE_CONFIG = {
   files: [
@@ -10,6 +13,7 @@ const ESLINT_VUE_CONFIG = {
     "layouts/**/*.vue",
     "components/**/*.vue",
   ],
+  plugins: { "@typescript-eslint": TypeScriptPlugin },
   languageOptions: {
     parser: VueParser,
     parserOptions: {
@@ -17,6 +21,8 @@ const ESLINT_VUE_CONFIG = {
       ecmaVersion: "latest",
       sourceType: "module",
       ecmaFeatures: { jsx: true },
+      extraFileExtensions: [".vue"],
+      project: "./tsconfig.json",
     },
     globals: {
       computed: READONLY,
@@ -27,6 +33,7 @@ const ESLINT_VUE_CONFIG = {
     },
   },
   rules: {
+    ...ESLINT_TYPESCRIPT_CONFIG.rules,
     "id-length": [ERROR, { exceptions: ["t"] }],
     "import/unambiguous": OFF,
     "vue/comment-directive": ERROR,

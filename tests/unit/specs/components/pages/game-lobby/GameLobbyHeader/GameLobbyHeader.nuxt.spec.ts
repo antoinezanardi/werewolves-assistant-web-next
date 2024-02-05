@@ -52,7 +52,7 @@ describe("Game Lobby Header Component", () => {
       it("should not empty input when game lobby player input ref is not set.", async() => {
         const gameLobbyPlayerInput = wrapper.findComponent<typeof GameLobbyPlayerInput>("#game-lobby-player-input");
         (gameLobbyPlayerInput.vm as VueVm).$emit("update:modelValue", "Player 1");
-        (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyPlayerInput: Ref<typeof GameLobbyPlayerInput | null> }).gameLobbyPlayerInput.value = null;
+        (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyPlayerInput: Ref }).gameLobbyPlayerInput.value = null;
         const form = wrapper.find<HTMLFormElement>("#game-lobby-header-form");
         await form.trigger("submit");
 
