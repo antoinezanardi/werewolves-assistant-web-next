@@ -117,7 +117,7 @@
     "@fortawesome/fontawesome-free": "^6.5.1",
     "bootstrap": "^5.3.2",
     "is-ci": "^3.0.1",
-    "primevue": "^3.47.2"
+    "primevue": "^3.48.0"
   },
   "engines": {
     "node": ">=21.0.0"

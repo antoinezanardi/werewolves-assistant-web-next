@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1
   primevue:
-    specifier: ^3.47.2
-    version: 3.47.2(vue@3.4.15)
+    specifier: ^3.48.0
+    version: 3.48.0(vue@3.4.15)
 
 devDependencies:
   '@commitlint/cli':
@@ -8559,7 +8559,7 @@ packages:
     resolution: {integrity: sha512-OfXDe5V0WovXt9b2GOjYV1kyVXmcFfj+6DqVs1pbeP4EyF2H0SbIMoUTT8Ax+sXT/tQ+mXr3qTFD9Y6IL+Y9og==}
     dependencies:
       '@nuxt/kit': 3.9.3(rollup@4.9.6)
-      primevue: 3.47.2(vue@3.4.15)
+      primevue: 3.48.0(vue@3.4.15)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -9533,8 +9533,8 @@ packages:
       react-is: 18.2.0
     dev: true
 
-  /primevue@3.47.2(vue@3.4.15):
-    resolution: {integrity: sha512-/vgIhc2vxNW8amBGBJX/NMBgWi/THOwT0DIPgy/aswJ86x+uwLwGtjNz22c/uSE5UkHu4E5rpktWOJtFvTbRPg==}
+  /primevue@3.48.0(vue@3.4.15):
+    resolution: {integrity: sha512-aTXOfqEXQ1N/UarVA6S0KvxN/0AL+8NcI3UBlwKECcj7fvsVzvht6f6B6s/RFhZLcx9WnCLJv3eu/DI7BlU0sw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
