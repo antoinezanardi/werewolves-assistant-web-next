@@ -8,7 +8,7 @@ import type RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeB
 import { RoleNames, RoleOrigins, RoleTypes } from "~/composables/api/role/enums/role.enums";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Available Role Description Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoleDescription>>;

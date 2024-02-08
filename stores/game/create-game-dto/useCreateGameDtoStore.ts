@@ -12,8 +12,16 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
   }
 
+  function resetCreateGameDto(): void {
+    createGameDto.value = CreateGameDto.create({ players: [] });
+  }
+
   function addPlayerToCreateGameDto(player: CreateGamePlayerDto): void {
     createGameDto.value.players.push(CreateGamePlayerDto.create(player));
+  }
+
+  function setPlayersToCreateGameDto(players: CreateGamePlayerDto[]): void {
+    createGameDto.value.players = players.map(player => CreateGamePlayerDto.create(player));
   }
 
   function removePlayerFromCreateGameDto(playerName: string): void {
@@ -25,7 +33,9 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   return {
     createGameDto,
     setCreateGameDto,
+    resetCreateGameDto,
     addPlayerToCreateGameDto,
+    setPlayersToCreateGameDto,
     removePlayerFromCreateGameDto,
   };
 });

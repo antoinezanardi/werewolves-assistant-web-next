@@ -2,7 +2,7 @@ import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
-import { ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
+import { ALWAYS, ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
 
 import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
@@ -18,9 +18,8 @@ const ESLINT_VUE_CONFIG = {
     parser: VueParser,
     parserOptions: {
       parser: TypescriptParser,
-      ecmaVersion: "latest",
+      tsconfigRootDir: "./",
       sourceType: "module",
-      ecmaFeatures: { jsx: true },
       extraFileExtensions: [".vue"],
       project: "./tsconfig.json",
     },
@@ -263,9 +262,9 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-restricted-syntax": ERROR,
     "vue/no-sparse-arrays": ERROR,
     "vue/no-useless-concat": ERROR,
-    "vue/object-curly-newline": ERROR,
-    "vue/object-curly-spacing": ERROR,
-    "vue/object-property-newline": ERROR,
+    "vue/object-curly-newline": [ERROR, { multiline: true }],
+    "vue/object-curly-spacing": [ERROR, ALWAYS],
+    "vue/object-property-newline": [ERROR, { allowAllPropertiesOnSameLine: true }],
     "vue/object-shorthand": ERROR,
     "vue/operator-linebreak": ERROR,
     "vue/prefer-template": ERROR,

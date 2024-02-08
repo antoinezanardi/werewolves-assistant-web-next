@@ -16,4 +16,10 @@
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
+import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+
+const createGameDtoStore = useCreateGameDtoStore();
+const { resetCreateGameDto } = createGameDtoStore;
+
+resetCreateGameDto();
 </script>

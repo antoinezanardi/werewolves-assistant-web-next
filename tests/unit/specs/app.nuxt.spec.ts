@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import App from "@/app.vue";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("App Component", () => {
   let wrapper: ReturnType<typeof mount<typeof App>>;

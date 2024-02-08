@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import type { NuxtLink } from "#components";
 import Index from "@/pages/index.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Index Page Component", () => {
   let wrapper: ReturnType<typeof mount<typeof Index>>;

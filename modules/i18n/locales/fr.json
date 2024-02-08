@@ -385,6 +385,18 @@
     },
     "PlayerCard": {
       "playerCardRoleImageAlt": "Image du rôle du joueur {playerName}"
+    },
+    "GameLobbyPlayerCard": {
+      "removePlayer": "Supprimer le joueur {playerName}",
+      "roleNotSelected": "Rôle non sélectionné"
+    },
+    "GameLobbyRandomCompositionButton": {
+      "randomComposition": "Composition aléatoire",
+      "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
+    },
+    "GameLobbyStartGameButton": {
+      "startGame": "Commencer la partie",
+      "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
     }
   }
 }

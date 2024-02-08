@@ -4,7 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { NuxtImg, NuxtLink } from "#components";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
 import type ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("NavBar Component", () => {
   let wrapper: ReturnType<typeof mount<typeof NavBar>>;

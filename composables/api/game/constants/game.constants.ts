@@ -1,3 +1,8 @@
+const MIN_PLAYERS_IN_GAME = 4;
+
 const MAX_PLAYERS_IN_GAME = 40;
 
-export { MAX_PLAYERS_IN_GAME };
+export {
+  MIN_PLAYERS_IN_GAME,
+  MAX_PLAYERS_IN_GAME,
+};

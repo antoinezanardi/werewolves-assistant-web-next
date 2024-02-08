@@ -1,5 +1,6 @@
 import { createPinia, setActivePinia } from "pinia";
 
+import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -34,6 +35,23 @@ describe("Create Game Dto Store", () => {
     });
   });
 
+  describe("resetCreateGameDto", () => {
+    it("should reset create game dto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [
+          createFakeCreateGamePlayerDto(),
+          createFakeCreateGamePlayerDto(),
+          createFakeCreateGamePlayerDto(),
+        ],
+      });
+      const expectedCreateGameDto = createFakeCreateGameDto({ players: [] });
+      createGameDtoStore.resetCreateGameDto();
+
+      expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
+    });
+  });
+
   describe("addPlayerToCreateGameDto", () => {
     it("should add player to createGameDto when called.", () => {
       const createGameDtoStore = useCreateGameDtoStore();
@@ -43,6 +61,20 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.addPlayerToCreateGameDto(player);
 
       expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
+    });
+  });
+
+  describe("setPlayersToCreateGameDto", () => {
+    it("should set players to createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto(),
+        createFakeCreateGamePlayerDto(),
+        createFakeCreateGamePlayerDto(),
+      ];
+      createGameDtoStore.setPlayersToCreateGameDto(players);
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(players);
     });
   });
 

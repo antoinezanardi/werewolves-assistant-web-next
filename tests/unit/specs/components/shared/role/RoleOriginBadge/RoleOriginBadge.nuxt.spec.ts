@@ -6,7 +6,7 @@ import type { VuePrimeBadge } from "#components";
 import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBadge/role-origin-badge.types";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import { RoleOrigins } from "~/composables/api/role/enums/role.enums";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Origin Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleOriginBadge>>;

@@ -4,8 +4,11 @@ import matchers from "jest-extended";
 
 import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { createFakeRuntimeConfig } from "~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
+import { setupMswServer } from "~/tests/unit/utils/helpers/msw.helpers";
 
 expect.extend(matchers);
+
+const server = setupMswServer();
 
 declare module "vitest" {
   type Assertion<T = unknown> = CustomMatchers<T>;
@@ -14,7 +17,10 @@ declare module "vitest" {
 
   type ExpectStatic<T = unknown> = CustomMatchers<T>;
 }
+
 beforeAll(() => {
+  server.listen();
+
   mockNuxtImport<typeof setPageLayout>(
     "setPageLayout",
     () => vi.fn(),
@@ -50,3 +56,6 @@ beforeAll(() => {
   () => vi.fn(() => createFakeI18n()),
   );
 });
+
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());

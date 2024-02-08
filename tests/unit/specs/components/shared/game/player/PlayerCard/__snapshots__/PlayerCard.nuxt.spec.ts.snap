@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Player Card Component > should render component and match snapshot when mounted. 1`] = `
-"<div data-v-3d002e09="" class="align-items-center d-flex flex-column player-card"><button data-v-3d002e09="" class="d-flex player-card-selector" type="button">
+"<div data-v-3d002e09="" class="align-items-center d-flex flex-column player-card position-relative"><button data-v-3d002e09="" aria-label="Select Player" class="d-flex player-card-selector" type="button">
     <role-image-stub data-v-3d002e09="" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Player"}" rolename="werewolf" sizes="50" definition="normal" class="player-card-role-image"></role-image-stub>
-  </button><span data-v-3d002e09="" class="player-card-name">Player</span></div>"
+  </button><span data-v-3d002e09="" class="player-card-name text-truncate">Player</span></div>"
 `;

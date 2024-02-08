@@ -1,7 +1,6 @@
 import { createPinia, setActivePinia } from "pinia";
 import { expect } from "vitest";
 import type { Mock } from "vitest";
-import { ref } from "vue";
 
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
@@ -9,13 +8,17 @@ import * as UseFetchRolesComposable from "~/composables/api/role/useFetchRoles";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Roles Store", () => {
-  let mockedUseFetchRoles: {
-    fetchRoles: Mock;
+  let mocks: {
+    composables: {
+      useFetchRoles: {
+        fetchRoles: Mock;
+      }
+    }
   };
 
   beforeEach(() => {
-    mockedUseFetchRoles = { fetchRoles: vi.fn().mockResolvedValue({ data: ref([]), status: ref("success") }) };
-    vi.spyOn(UseFetchRolesComposable, "useFetchRoles").mockImplementation(() => mockedUseFetchRoles);
+    mocks = { composables: { useFetchRoles: { fetchRoles: vi.fn() } } };
+    vi.spyOn(UseFetchRolesComposable, "useFetchRoles").mockImplementation(() => mocks.composables.useFetchRoles);
     setActivePinia(createPinia());
   });
 
@@ -31,7 +34,7 @@ describe("Roles Store", () => {
       const rolesStore = useRolesStore();
       await rolesStore.fetchAndSetRoles();
 
-      expect(mockedUseFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();
+      expect(mocks.composables.useFetchRoles.fetchRoles).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should set roles when called.", async() => {
@@ -40,7 +43,7 @@ describe("Roles Store", () => {
         createFakeRole(),
         createFakeRole(),
       ];
-      mockedUseFetchRoles.fetchRoles.mockResolvedValue({ data: ref(roles), status: ref("success") });
+      mocks.composables.useFetchRoles.fetchRoles.mockResolvedValue(roles);
       const rolesStore = useRolesStore();
       await rolesStore.fetchAndSetRoles();
 

@@ -45,6 +45,8 @@ const ESLINT_IMPORT_CONFIG = {
           "@/**/*",
           "@nuxt/**/*",
           "nuxt/*",
+          "msw/*",
+          "msw/**/*",
           "primevue/*",
           "\\#app/composables/*",
         ],

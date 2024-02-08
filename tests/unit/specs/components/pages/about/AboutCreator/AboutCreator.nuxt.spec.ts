@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import AboutCreator from "~/components/pages/about/AboutCreator.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Creator Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutCreator>>;

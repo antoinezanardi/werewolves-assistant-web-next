@@ -2,4 +2,11 @@ type GameLobbyPlayerInputProps = {
   modelValue: string;
 };
 
-export type { GameLobbyPlayerInputProps };
+type GameLobbyPlayerInputExposed = {
+  isAddButtonDisabled: boolean;
+};
+
+export type {
+  GameLobbyPlayerInputProps,
+  GameLobbyPlayerInputExposed,
+};

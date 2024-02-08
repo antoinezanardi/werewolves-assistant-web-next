@@ -1,8 +1,8 @@
 <template>
-  <div class="align-items-center d-flex flex-column player-card">
-    <slot name="header"/>
-
+  <div class="align-items-center d-flex flex-column player-card position-relative">
     <button
+      v-p-tooltip="tooltipContent"
+      :aria-label="selectorAriaLabel"
       class="d-flex player-card-selector"
       type="button"
       @click.prevent="emitPlayerCardSelectorClickEvent"
@@ -14,21 +14,23 @@
       />
     </button>
 
-    <span class="player-card-name">{{ playerName }}</span>
-
-    <slot name="footer"/>
+    <span class="player-card-name text-truncate">
+      {{ playerName }}
+    </span>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
+import type { PlayerCardEmits, PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
-const props = defineProps<PlayerCardProps>();
+const props = withDefaults(defineProps<PlayerCardProps>(), { doesShowSelectorTooltip: false });
 
-const emit = defineEmits<(e: "playerCardSelectorClick") => void>();
+const emit = defineEmits<PlayerCardEmits>();
 
 const { t } = useI18n();
+
+const tooltipContent = computed<string | undefined>(() => (props.doesShowSelectorTooltip ? props.selectorAriaLabel : undefined));
 
 function getPlayerCardRoleImageAlt(): string {
   return t("components.PlayerCard.playerCardRoleImageAlt", { playerName: props.playerName });
@@ -51,5 +53,9 @@ function emitPlayerCardSelectorClickEvent(): void {
   &:hover {
     border-color: #747474;
   }
+}
+
+.player-card-name {
+  max-width: 100%;
 }
 </style>

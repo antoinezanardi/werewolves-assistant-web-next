@@ -2,7 +2,16 @@ import type { RoleNames } from "~/composables/api/role/enums/role.enums";
 
 type PlayerCardProps = {
   playerName: string;
-  playerRole: RoleNames | undefined;
+  playerRole?: RoleNames;
+  selectorAriaLabel?: string;
+  doesShowSelectorTooltip?: boolean;
 };
 
-export type { PlayerCardProps };
+type PlayerCardEmits = {
+  playerCardSelectorClick: [];
+};
+
+export type {
+  PlayerCardProps,
+  PlayerCardEmits,
+};

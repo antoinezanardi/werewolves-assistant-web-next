@@ -1,6 +1,6 @@
 import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
-import { ref } from "vue";
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
@@ -14,9 +14,8 @@ const useRolesStore = defineStore(StoreIds.ROLES, () => {
 
   async function fetchAndSetRoles(): Promise<void> {
     fetchingRoleStatus.value = "pending";
-    const { data, status } = await fetchRoles();
-    roles.value = data.value;
-    fetchingRoleStatus.value = status.value;
+    roles.value = await fetchRoles();
+    fetchingRoleStatus.value = "success";
   }
   return {
     roles,

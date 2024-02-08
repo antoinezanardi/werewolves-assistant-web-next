@@ -1,23 +1,27 @@
+import type { $Fetch } from "nitropack";
+
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
+import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
 
 describe("Use Fetch Roles Composable", () => {
+  let mocks: {
+    composables: {
+      useWerewolvesAssistantApi: {
+        fetchWerewolvesAssistantApi: $Fetch;
+      }
+    }
+  };
+
+  beforeEach(() => {
+    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() as unknown as $Fetch } } };
+    vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(mocks.composables.useWerewolvesAssistantApi);
+  });
+
   describe("fetchRoles", () => {
-    it("should fetch roles when called without options.", async() => {
+    it("should fetch roles when called.", async() => {
       await useFetchRoles().fetchRoles();
 
-      expect(useFetch).toHaveBeenCalledExactlyOnceWith("http://127.0.0.1/roles", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      }, "$dk08ZMi4Ri");
-    });
-
-    it("should fetch roles when called with options.", async() => {
-      await useFetchRoles().fetchRoles({ method: "POST" });
-
-      expect(useFetch).toHaveBeenCalledExactlyOnceWith("http://127.0.0.1/roles", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      }, "$dk08ZMi4Ri");
+      expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/roles`, { method: "GET" });
     });
   });
 });

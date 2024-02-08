@@ -9,7 +9,7 @@
           id="player-name-input"
           v-model="inputValue"
           aria-labelledby="player-name-input-help"
-          :class="{'p-invalid': doesPlayerNameExistInGame}"
+          :class="{ 'p-invalid': doesPlayerNameExistInGame }"
           :disabled="isInputDisabled"
           :maxlength="MAX_PLAYER_NAME_LENGTH"
           size="large"
