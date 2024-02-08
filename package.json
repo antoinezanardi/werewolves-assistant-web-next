@@ -100,7 +100,7 @@
     "qs": "^6.11.2",
     "radash": "^11.0.0",
     "sass": "^1.70.0",
-    "semantic-release": "^23.0.1",
+    "semantic-release": "^23.0.2",
     "semantic-release-export-data": "^1.0.1",
     "ts-case-convert": "^2.0.7",
     "tsx": "^4.7.0",
