@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -76,7 +76,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -110,7 +110,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -144,7 +144,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -191,7 +191,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -237,7 +237,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -280,7 +280,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false

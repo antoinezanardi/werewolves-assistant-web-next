@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
@@ -61,7 +61,7 @@ jobs:
           git merge main
 
       - name: Install pnpm 🏗️
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8
           run_install: false
