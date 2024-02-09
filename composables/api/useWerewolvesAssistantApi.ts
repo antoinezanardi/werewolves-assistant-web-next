@@ -13,6 +13,14 @@ function useWerewolvesAssistantApi(): UseWerewolvesAssistantApi {
   const fetchWerewolvesAssistantApi = createFetch().create({
     baseURL: removeTrailingSlashes(baseUrl),
     headers: { "Content-Type": "application/json" },
+    onResponseError({ request, response }) {
+      console.log(
+        "[fetch response error]",
+        request,
+        response.status,
+        response.body,
+      );
+    },
   });
 
   return { fetchWerewolvesAssistantApi };

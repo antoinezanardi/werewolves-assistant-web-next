@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Start Game Button Component > should render component and match snapshot when mounted. 1`] = `
+"<div id="game-lobby-start-game-button-container" data-pd-tooltip="true">
+  <button-stub class="start-game-button" disabled="true" icon="fa-play fa" label="Start game" loading="false" raised="" size="large" type="button"></button-stub>
+</div>"
+`;
