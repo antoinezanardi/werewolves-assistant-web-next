@@ -23,5 +23,12 @@ describe("Use Fetch Roles Composable", () => {
 
       expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/roles`, { method: "GET" });
     });
+
+    it("should return null when fetch roles throws.", async() => {
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(new Error("error"));
+      const result = await useFetchRoles().fetchRoles();
+
+      expect(result).toBeNull();
+    });
   });
 });

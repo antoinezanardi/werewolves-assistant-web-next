@@ -19,5 +19,7 @@ exports[`App Component > should render component without shallow and match snaps
       <div class="col-6 d-flex justify-content-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
     </div>
   </div>
-</transition-stub>"
+</transition-stub>
+<!--teleport start-->
+<!--teleport end-->"
 `;

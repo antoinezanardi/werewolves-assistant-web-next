@@ -57,6 +57,18 @@
       "imageTitle": "Image du titre de la page À quoi ça sert"
     }
   },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Mauvaise requête serveur",
+        "401": "Non autorisé",
+        "403": "Interdit",
+        "404": "Ressource non trouvée",
+        "500": "Erreur interne du serveur"
+      },
+      "checkConsoleForMoreDetails": "Veuillez consulter la console pour plus de détails."
+    }
+  },
   "components": {
     "IndexFooter": {
       "contact": "Me contacter"

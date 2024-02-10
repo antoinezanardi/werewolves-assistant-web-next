@@ -22,9 +22,17 @@ describe("Use Fetch Game Composable", () => {
     it("should create game when called.", async() => {
       const createGameDto = createFakeCreateGameDto();
       await useFetchGames().createGame(createGameDto);
-      const expectedOptions = { method: "POST", body: createGameDto };
+      const expectedOptions = { method: "POST", body: JSON.stringify(createGameDto) };
 
       expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/games`, expectedOptions);
+    });
+
+    it("should return null when create game throws.", async() => {
+      // eslint-disable-next-line
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockImplementation(() => Promise.reject());
+      const result = await useFetchGames().createGame(createFakeCreateGameDto());
+
+      expect(result).toBeNull();
     });
   });
 
@@ -34,6 +42,13 @@ describe("Use Fetch Game Composable", () => {
       await useFetchGames().getGame(gameId);
 
       expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/games/${gameId}`, { method: "GET" });
+    });
+
+    it("should return null when get game throws.", async() => {
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(new Error("error"));
+      const result = await useFetchGames().getGame("game-id");
+
+      expect(result).toBeNull();
     });
   });
 });

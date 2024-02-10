@@ -11,6 +11,7 @@ describe("Use Werewolves Assistant Api Composable", () => {
       expect(createMock).toHaveBeenCalledExactlyOnceWith({
         baseURL: "http://127.0.0.1",
         headers: { "Content-Type": "application/json" },
+        onResponseError: expect.any(Function) as () => void,
       });
     });
   });

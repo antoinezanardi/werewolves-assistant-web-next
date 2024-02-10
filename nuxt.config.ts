@@ -40,6 +40,7 @@ export default defineNuxtConfig({
         "Badge",
         "InputGroup",
         "InputText",
+        "Toast",
       ],
     },
     directives: {
@@ -49,7 +50,7 @@ export default defineNuxtConfig({
         "Ripple",
       ],
     },
-    composables: { include: [] },
+    composables: { include: ["useToast"] },
     options: { ripple: true },
   },
   googleFonts: {

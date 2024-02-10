@@ -3,6 +3,8 @@
     <NuxtPage
       class="h-100 page-content"
     />
+
+    <VuePrimeToast position="bottom-right"/>
   </NuxtLayout>
 </template>
 
