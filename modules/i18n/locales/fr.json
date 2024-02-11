@@ -416,7 +416,8 @@
       "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
     },
     "GameLobbyStartGameButton": {
-      "startGame": "Commencer la partie"
+      "startGame": "Commencer la partie",
+      "gameCreated": "Partie créée"
     }
   }
 }

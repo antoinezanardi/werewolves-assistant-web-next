@@ -416,7 +416,8 @@
       "minPlayersNotReached": "Minimum number of players not reached"
     },
     "GameLobbyStartGameButton": {
-      "startGame": "Start game"
+      "startGame": "Start game",
+      "gameCreated": "Game created"
     }
   }
 }

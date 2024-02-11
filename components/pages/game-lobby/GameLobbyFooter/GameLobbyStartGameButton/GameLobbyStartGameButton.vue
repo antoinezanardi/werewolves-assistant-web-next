@@ -22,7 +22,12 @@ import { storeToRefs } from "pinia";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
+import { useVuePrimeToasts } from "~/composables/vue-prime/useVuePrimeToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+
+const { t } = useI18n();
+
+const { addSuccessToast } = useVuePrimeToasts();
 
 const { createGame } = useFetchGames();
 
@@ -36,7 +41,10 @@ const containerTooltip = computed<string | undefined>(() => gameCreationValidati
 
 async function handleStartGameButtonClick(): Promise<void> {
   isLoadingCreateGame.value = true;
-  await createGame(createGameDto.value);
+  const createdGame = await createGame(createGameDto.value);
+  if (createdGame) {
+    addSuccessToast({ summary: t("components.GameLobbyStartGameButton.gameCreated") });
+  }
   isLoadingCreateGame.value = false;
 }
 </script>

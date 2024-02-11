@@ -193,7 +193,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "no-throw-literal": ERROR,
     "no-undef-init": ERROR,
     "no-undefined": OFF,
-    "no-underscore-dangle": ERROR,
+    "no-underscore-dangle": [ERROR, { allow: ["_id"] }],
     "no-unneeded-ternary": ERROR,
     "no-unused-expressions": ERROR,
     "no-unused-labels": ERROR,
