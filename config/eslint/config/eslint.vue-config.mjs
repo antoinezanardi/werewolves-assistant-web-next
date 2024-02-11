@@ -23,13 +23,6 @@ const ESLINT_VUE_CONFIG = {
       extraFileExtensions: [".vue"],
       project: "./tsconfig.json",
     },
-    globals: {
-      computed: READONLY,
-      defineProps: READONLY,
-      defineEmits: READONLY,
-      ref: READONLY,
-      reactive: READONLY,
-    },
   },
   rules: {
     ...ESLINT_TYPESCRIPT_CONFIG.rules,

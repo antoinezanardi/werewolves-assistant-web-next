@@ -5,7 +5,7 @@
   >
     <VuePrimeButton
       class="start-game-button"
-      :disabled="isButtonDisabled"
+      :disabled="!canCreateGame"
       icon="fa-play fa"
       :label="$t('components.GameLobbyStartGameButton.startGame')"
       :loading="isLoadingCreateGame"
@@ -20,8 +20,8 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 
-import { MIN_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
+import { useCreateGameDtoValidation } from "~/composables/game/create-game-dto/useCreateGameDtoValidation";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { t } = useI18n();
@@ -30,13 +30,12 @@ const { createGame } = useFetchGames();
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
+const { canCreateGame } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingCreateGame = ref<boolean>(false);
 
-const isButtonDisabled = computed<boolean>(() => createGameDto.value.players.length < MIN_PLAYERS_IN_GAME);
-
 const containerTooltip = computed<string | undefined>(() => {
-  if (isButtonDisabled.value) {
+  if (!canCreateGame.value) {
     return t("components.GameLobbyStartGameButton.minPlayersNotReached");
   }
   return undefined;
