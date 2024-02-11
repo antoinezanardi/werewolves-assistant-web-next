@@ -5,6 +5,7 @@ import type { Ref } from "vue";
 
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
+import { RoleNames, RoleSides } from "~/composables/api/role/enums/role.enums";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -12,6 +13,31 @@ import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.he
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Start Game Button Component", () => {
+  const validCreateGameDto = createFakeCreateGameDto({
+    players: [
+      createFakeCreateGamePlayerDto({
+        name: "Player 1",
+        role: { name: RoleNames.VILLAGER },
+        side: { current: RoleSides.VILLAGERS },
+      }),
+      createFakeCreateGamePlayerDto({
+        name: "Player 2",
+        role: { name: RoleNames.WEREWOLF },
+        side: { current: RoleSides.WEREWOLVES },
+      }),
+      createFakeCreateGamePlayerDto({
+        name: "Player 3",
+        role: { name: RoleNames.WEREWOLF },
+        side: { current: RoleSides.WEREWOLVES },
+      }),
+      createFakeCreateGamePlayerDto({
+        name: "Player 4",
+        role: { name: RoleNames.WEREWOLF },
+        side: { current: RoleSides.WEREWOLVES },
+      }),
+    ],
+  });
+
   let wrapper: ReturnType<typeof mount<typeof GameLobbyStartGameButton>>;
   let mocks: {
     composables: {
@@ -49,7 +75,7 @@ describe("Game Lobby Start Game Button Component", () => {
       createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });
       await nextTick();
 
-      expect(tooltip.value).toBe("components.GameLobbyStartGameButton.minPlayersNotReached");
+      expect(tooltip.value).toBe("composables.useCreateGameDtoValidation.minimumOfPlayersNotReached");
     });
 
     it("should not assign tooltip when button is enabled.", async() => {
@@ -57,14 +83,7 @@ describe("Game Lobby Start Game Button Component", () => {
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-start-game-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyStartGameButton, { global: { directives } });
       const createGameDtoStore = useCreateGameDtoStore();
-      createGameDtoStore.createGameDto = createFakeCreateGameDto({
-        players: [
-          createFakeCreateGamePlayerDto({ name: "Player 1" }),
-          createFakeCreateGamePlayerDto({ name: "Player 2" }),
-          createFakeCreateGamePlayerDto({ name: "Player 3" }),
-          createFakeCreateGamePlayerDto({ name: "Player 4" }),
-        ],
-      });
+      createGameDtoStore.createGameDto = validCreateGameDto;
       await nextTick();
 
       expect(tooltip.value).toBeUndefined();
@@ -81,16 +100,9 @@ describe("Game Lobby Start Game Button Component", () => {
       expect(button.attributes("disabled")).toBe("true");
     });
 
-    it("should be enabled when minimum players are reached.", async() => {
+    it("should be enabled when game can be created.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
-      createGameDtoStore.createGameDto = createFakeCreateGameDto({
-        players: [
-          createFakeCreateGamePlayerDto({ name: "Player 1" }),
-          createFakeCreateGamePlayerDto({ name: "Player 2" }),
-          createFakeCreateGamePlayerDto({ name: "Player 3" }),
-          createFakeCreateGamePlayerDto({ name: "Player 4" }),
-        ],
-      });
+      createGameDtoStore.createGameDto = validCreateGameDto;
       await nextTick();
 
       const button = wrapper.find(".start-game-button");

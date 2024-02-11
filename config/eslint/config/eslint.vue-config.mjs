@@ -2,7 +2,7 @@ import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
-import { ALWAYS, ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
+import { ALWAYS, ERROR, MAX_LENGTH, NEVER, OFF } from "../eslint.constants.mjs";
 
 import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 

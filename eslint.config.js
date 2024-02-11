@@ -17,6 +17,7 @@ import { ESLINT_LAYOUTS_CONFIG } from "./config/eslint/config/eslint.layouts-con
 import { ESLINT_PAGES_CONFIG } from "./config/eslint/config/eslint.pages-config.mjs";
 import { ESLINT_TESTS_SETUP_CONFIG } from "./config/eslint/config/eslint.tests-setup-config.mjs";
 import { ESLINT_CLASSES_CONFIG } from "./config/eslint/config/eslint.classes-config.mjs";
+import { ESLINT_COMPOSABLES_CONFIG } from "./config/eslint/config/eslint.composables-config.mjs";
 
 const baseDirectory = path.dirname(fileURLToPath(import.meta.url));
 const flatCompat = new FlatCompat({ baseDirectory });
@@ -36,6 +37,7 @@ export default [
   ESLINT_TYPESCRIPT_CONFIG,
   ESLINT_IMPORT_CONFIG,
   ESLINT_VUE_CONFIG,
+  ESLINT_COMPOSABLES_CONFIG,
   ESLINT_PAGES_CONFIG,
   ESLINT_LAYOUTS_CONFIG,
   ESLINT_TESTS_CONFIG,

@@ -20,26 +20,19 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 
+import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
-import { useCreateGameDtoValidation } from "~/composables/game/create-game-dto/useCreateGameDtoValidation";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-
-const { t } = useI18n();
 
 const { createGame } = useFetchGames();
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
-const { canCreateGame } = useCreateGameDtoValidation(createGameDto);
+const { canCreateGame, gameCreationValidationErrors } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingCreateGame = ref<boolean>(false);
 
-const containerTooltip = computed<string | undefined>(() => {
-  if (!canCreateGame.value) {
-    return t("components.GameLobbyStartGameButton.minPlayersNotReached");
-  }
-  return undefined;
-});
+const containerTooltip = computed<string | undefined>(() => gameCreationValidationErrors.value[0]);
 
 async function handleStartGameButtonClick(): Promise<void> {
   isLoadingCreateGame.value = true;

@@ -1,5 +1,5 @@
 <template>
-  <div class="align-items-center d-flex flex-column game-lobby-player-card p-1">
+  <div class="align-items-center d-flex flex-column game-lobby-player-card mb-4 p-1">
     <VuePrimeButton
       v-p-tooltip="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"
       :aria-label="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"

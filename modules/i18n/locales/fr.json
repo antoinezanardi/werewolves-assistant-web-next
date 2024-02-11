@@ -67,6 +67,15 @@
         "500": "Erreur interne du serveur"
       },
       "checkConsoleForMoreDetails": "Veuillez consulter la console pour plus de détails."
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint",
+      "notAllRolesAreSet": "Tous les rôles ne sont pas définis",
+      "noVillagerSidedRole": "Au moins un rôle du côté des Villageois doit être attribué",
+      "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
+      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
+      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
+      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
     }
   },
   "components": {
@@ -407,8 +416,7 @@
       "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
     },
     "GameLobbyStartGameButton": {
-      "startGame": "Commencer la partie",
-      "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
+      "startGame": "Commencer la partie"
     }
   }
 }

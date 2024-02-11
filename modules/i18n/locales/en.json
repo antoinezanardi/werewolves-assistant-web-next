@@ -67,6 +67,15 @@
         "500": "Internal server error"
       },
       "checkConsoleForMoreDetails": "Check the console for more details"
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "The minimum number of players is not reached",
+      "notAllRolesAreSet": "Not all roles are set among players",
+      "noVillagerSidedRole": "At least one villager sided role is needed",
+      "noWerewolfSidedRole": "At least one werewolf sided role is needed",
+      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
+      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
+      "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
     }
   },
   "components": {
@@ -407,8 +416,7 @@
       "minPlayersNotReached": "Minimum number of players not reached"
     },
     "GameLobbyStartGameButton": {
-      "startGame": "Start game",
-      "minPlayersNotReached": "Minimum number of players not reached"
+      "startGame": "Start game"
     }
   }
 }

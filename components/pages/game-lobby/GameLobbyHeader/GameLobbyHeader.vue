@@ -51,6 +51,7 @@ function addPlayerToCreateGameDto(): void {
   const playerToAdd: CreateGamePlayerDto = CreateGamePlayerDto.create({
     name: trimmedPlayerInputValue,
     role: {},
+    side: {},
   });
   createGameDtoStore.addPlayerToCreateGameDto(playerToAdd);
 }

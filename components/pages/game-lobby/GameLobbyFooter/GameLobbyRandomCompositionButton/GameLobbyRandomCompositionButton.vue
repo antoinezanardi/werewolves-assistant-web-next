@@ -21,8 +21,8 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
+import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
-import { useCreateGameDtoValidation } from "~/composables/game/create-game-dto/useCreateGameDtoValidation";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { fetchRandomGameComposition } = useFetchRandomGameComposition();
