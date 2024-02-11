@@ -1,4 +1,4 @@
-import type { $Fetch } from "nitropack";
+import type { Mock } from "vitest";
 
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
@@ -8,14 +8,15 @@ describe("Use Fetch Game Composable", () => {
   let mocks: {
     composables: {
       useWerewolvesAssistantApi: {
-        fetchWerewolvesAssistantApi: $Fetch;
+        fetchWerewolvesAssistantApi: Mock;
       }
     }
   };
 
   beforeEach(() => {
-    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() as unknown as $Fetch } } };
-    vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(mocks.composables.useWerewolvesAssistantApi);
+    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() } } };
+    const useWerewolvesAssistantApiMock = mocks.composables.useWerewolvesAssistantApi as unknown as ReturnType<typeof UseWerewolvesAssistantApi.useWerewolvesAssistantApi>;
+    vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(useWerewolvesAssistantApiMock);
   });
 
   describe("createGame", () => {
@@ -28,8 +29,7 @@ describe("Use Fetch Game Composable", () => {
     });
 
     it("should return null when create game throws.", async() => {
-      // eslint-disable-next-line
-      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockImplementation(() => Promise.reject());
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(undefined);
       const result = await useFetchGames().createGame(createFakeCreateGameDto());
 
       expect(result).toBeNull();

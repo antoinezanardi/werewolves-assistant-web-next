@@ -1,3 +1,5 @@
+import Vitest from "eslint-plugin-vitest";
+
 import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_BASE_CONFIG = Object.freeze({
@@ -15,6 +17,8 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       useI18n: READONLY,
       navigateTo: READONLY,
       storeToRefs: READONLY,
+      ...Vitest.environments.env.globals,
+      nextTick: READONLY,
     },
   },
   rules: {

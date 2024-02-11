@@ -68,5 +68,4 @@ export default {
     break: 100,
   },
   disableTypeChecks: true,
-  logLevel: "trace",
 };

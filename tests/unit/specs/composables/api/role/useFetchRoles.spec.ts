@@ -1,4 +1,4 @@
-import type { $Fetch } from "nitropack";
+import type { Mock } from "vitest";
 
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
@@ -7,14 +7,15 @@ describe("Use Fetch Roles Composable", () => {
   let mocks: {
     composables: {
       useWerewolvesAssistantApi: {
-        fetchWerewolvesAssistantApi: $Fetch;
+        fetchWerewolvesAssistantApi: Mock;
       }
     }
   };
 
   beforeEach(() => {
-    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() as unknown as $Fetch } } };
-    vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(mocks.composables.useWerewolvesAssistantApi);
+    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() } } };
+    const useWerewolvesAssistantApiMock = mocks.composables.useWerewolvesAssistantApi as unknown as ReturnType<typeof UseWerewolvesAssistantApi.useWerewolvesAssistantApi>;
+    vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(useWerewolvesAssistantApiMock);
   });
 
   describe("fetchRoles", () => {
