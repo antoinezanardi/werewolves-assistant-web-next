@@ -4,7 +4,7 @@
 
     <hr class="w-100">
 
-    <GameLobbyPlayersParty class="d-flex flex-grow-1"/>
+    <GameLobbyPlayersParty class="d-flex flex-grow-1 overflow-y-auto"/>
 
     <hr class="w-100">
 

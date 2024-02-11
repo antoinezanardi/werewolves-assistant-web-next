@@ -4,7 +4,7 @@ exports[`Game Lobby Page > should render component and match snapshot when mount
 "<div class="container-fluid d-flex flex-column">
   <game-lobby-header-stub></game-lobby-header-stub>
   <hr class="w-100">
-  <game-lobby-players-party-stub class="d-flex flex-grow-1"></game-lobby-players-party-stub>
+  <game-lobby-players-party-stub class="d-flex flex-grow-1 overflow-y-auto"></game-lobby-players-party-stub>
   <hr class="w-100">
   <game-lobby-footer-stub></game-lobby-footer-stub>
 </div>"
