@@ -93,7 +93,7 @@
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.2",
     "nuxt": "^3.10.1",
-    "nuxt-primevue": "^0.2.2",
+    "nuxt-primevue": "^0.3.0",
     "pinia": "^2.1.7",
     "playwright": "^1.41.2",
     "playwright-core": "^1.41.0",
