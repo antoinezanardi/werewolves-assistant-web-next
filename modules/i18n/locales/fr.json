@@ -418,6 +418,9 @@
     "GameLobbyStartGameButton": {
       "startGame": "Commencer la partie",
       "gameCreated": "Partie créée"
+    },
+    "GameLobbyPlayersParty": {
+      "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
     }
   }
 }

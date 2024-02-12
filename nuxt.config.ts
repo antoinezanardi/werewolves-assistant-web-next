@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
   image: { domains: ["antoinezanardi.fr", "appspot.com"] },
   modules,
+  nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
   primevue: {
     components: {

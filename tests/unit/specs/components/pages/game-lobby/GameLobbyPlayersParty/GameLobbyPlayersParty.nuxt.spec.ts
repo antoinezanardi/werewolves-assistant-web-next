@@ -19,6 +19,18 @@ describe("Game Lobby Players Party Component", () => {
   });
 
   describe("Player Cards", () => {
+    it("should render add player with input message when there are no players in the create game dto.", () => {
+      const addPlayerWithInputMessage = wrapper.find<HTMLHeadingElement>("#no-players-in-lobby-message");
+
+      expect(addPlayerWithInputMessage.exists()).toBeTruthy();
+    });
+
+    it("should render no players in lobby when there are no players in the create game dto.", () => {
+      const playerCards = wrapper.findAllComponents<typeof GameLobbyPlayerCard>(GameLobbyPlayerCard);
+
+      expect(playerCards).toHaveLength(0);
+    });
+
     it("should render 4 players cards when there are 4 players in the create game dto.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.players = [

@@ -1,4 +1,4 @@
-@tag-about-page
+@about-page
 
 Feature: ❓ About Page
 

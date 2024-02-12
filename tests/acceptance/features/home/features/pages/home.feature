@@ -1,4 +1,4 @@
-@tag-home-page
+@home-page
 
 Feature: 🏠 Home Page
 
