@@ -78,7 +78,7 @@ describe("Game Lobby Start Game Button Component", () => {
     wrapper = await mountSuspendedComponent(GameLobbyStartGameButton);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

@@ -19,7 +19,7 @@ describe("Player Card Component", () => {
     wrapper = await mountSuspendedComponent(PlayerCard, { props: defaultProps });
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

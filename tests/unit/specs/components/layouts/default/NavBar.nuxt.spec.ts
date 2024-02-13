@@ -22,20 +22,20 @@ describe("NavBar Component", () => {
     wrapper = await mountNavBarComponent();
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   describe("Home Page Link", () => {
-    it("should have the prop 'to' set to home page when mounted.", () => {
+    it("should have the prop 'to' set to home page when rendered.", () => {
       const homePageLink = wrapper.findComponent<typeof NuxtLink>("[aria-label='Home page link']");
 
       expect(homePageLink.props("to")).toBe("/");
     });
 
     describe("Werewolves Assistant Logo", () => {
-      it("should have the prop 'src' set to the small logo when mounted.", async() => {
+      it("should have the prop 'src' set to the small logo when rendered.", async() => {
         wrapper = await mountNavBarComponent({ shallow: false });
         const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>("[alt='Werewolves Assistant logo']");
 
@@ -44,7 +44,7 @@ describe("NavBar Component", () => {
     });
 
     describe("Werewolves Assistant Logo Text", () => {
-      it("should translate the logo text when mounted.", async() => {
+      it("should translate the logo text when rendered.", async() => {
         wrapper = await mountNavBarComponent({ shallow: false });
         const werewolvesAssistantLogoText = wrapper.find<HTMLHeadElement>("[aria-label='Werewolves Assistant']");
 
@@ -54,7 +54,7 @@ describe("NavBar Component", () => {
   });
 
   describe("Parameters Menu", () => {
-    it("should have left tooltip when mounted.", async() => {
+    it("should have left tooltip when rendered.", async() => {
       wrapper = await mountNavBarComponent({ shallow: false });
       const parametersMenu = wrapper.findComponent<typeof ParametersMenu>("[aria-label='Parameters menu']");
 

@@ -11,7 +11,7 @@ describe("About Werewolves Assistant Component", () => {
     wrapper = await mountSuspendedComponent(AboutWerewolvesAssistant);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

@@ -13,7 +13,7 @@ describe("Game Lobby Players Party Component", () => {
     wrapper = await mountSuspendedComponent(GameLobbyPlayersParty);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

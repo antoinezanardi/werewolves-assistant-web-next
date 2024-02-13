@@ -21,19 +21,19 @@ describe("Role Type Badge Component", () => {
     wrapper = await mountRoleTypeBadgeComponent();
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   describe("Badge", () => {
-    it("should have tooltip when mounted.", () => {
+    it("should have tooltip when rendered.", () => {
       const badge = wrapper.findComponent("[aria-label='Role Type']");
 
       expect(badge.attributes("data-pd-tooltip")).toBe("true");
     });
 
-    it("should translate role type when mounted.", () => {
+    it("should translate role type when rendered.", () => {
       const badge = wrapper.findComponent("[aria-label='Role Type']");
 
       expect(badge.attributes("value")).toBe("Werewolf");

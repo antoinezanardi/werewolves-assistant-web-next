@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`About Werewolves Assistant Component > should render component and match snapshot when mounted. 1`] = `
+exports[`About Werewolves Assistant Component > should match snapshot when rendered. 1`] = `
 "<div id="about-werewolves-assistant">
   <h2 id="about-werewolves-assistant-title" class="align-items-center d-flex"><i class="fa fa-2x fa-star me-3 text-warning"></i><span>The Werewolves Assistant takes the stage !</span></h2>
   <hr>

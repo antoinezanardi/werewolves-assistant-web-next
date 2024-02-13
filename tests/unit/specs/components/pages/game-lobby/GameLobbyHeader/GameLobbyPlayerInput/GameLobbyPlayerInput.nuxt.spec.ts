@@ -20,7 +20,7 @@ describe("Game Lobby Player Input Component", () => {
     wrapper = await mountSuspendedComponent(GameLobbyPlayerInput, defaultMountingOptions);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

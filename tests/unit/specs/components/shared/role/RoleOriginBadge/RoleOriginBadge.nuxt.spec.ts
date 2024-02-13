@@ -23,19 +23,19 @@ describe("Role Origin Badge Component", () => {
     wrapper = await mountRoleOriginBadgeComponent();
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   describe("Badge", () => {
-    it("should have tooltip when mounted.", () => {
+    it("should have tooltip when rendered.", () => {
       const badge = wrapper.findComponent<typeof VuePrimeBadge>("[aria-label='Role Origin']");
 
       expect(badge.attributes("data-pd-tooltip")).toBe("true");
     });
 
-    it("should translate role origin when mounted.", () => {
+    it("should translate role origin when rendered.", () => {
       const badge = wrapper.findComponent<typeof VuePrimeBadge>("[aria-label='Role Origin']");
 
       expect(badge.attributes("value")).toBe("Base Game");

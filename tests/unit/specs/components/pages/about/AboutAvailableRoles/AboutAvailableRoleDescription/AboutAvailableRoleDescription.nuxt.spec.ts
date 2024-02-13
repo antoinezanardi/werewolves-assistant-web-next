@@ -23,7 +23,7 @@ describe("About Available Role Description Component", () => {
     wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: defaultProps });
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
