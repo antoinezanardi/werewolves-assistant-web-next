@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`App Component > should render component and match snapshot when mounted. 1`] = `"<nuxt-layout-stub data-v-938b83b0=""></nuxt-layout-stub>"`;
+exports[`App Component > should match snapshot when rendered. 1`] = `"<nuxt-layout-stub data-v-938b83b0=""></nuxt-layout-stub>"`;
 
-exports[`App Component > should render component without shallow and match snapshot when mounted. 1`] = `
+exports[`App Component > should render component without shallow and match snapshot when rendered. 1`] = `
 "<transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
   <div class="container-fluid d-flex flex-column h-100 page-content">
     <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">

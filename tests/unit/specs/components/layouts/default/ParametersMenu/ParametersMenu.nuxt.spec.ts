@@ -26,7 +26,7 @@ describe("Parameters Menu Component", () => {
     wrapper = await mountSuspendedComponent(ParametersMenu);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -82,7 +82,7 @@ describe("Parameters Menu Component", () => {
       await parametersMenuButton.trigger("click");
     });
 
-    it("should pass the correct items to the menu when mounted.", () => {
+    it("should pass the correct items to the menu when rendered.", () => {
       const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
 
       expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([

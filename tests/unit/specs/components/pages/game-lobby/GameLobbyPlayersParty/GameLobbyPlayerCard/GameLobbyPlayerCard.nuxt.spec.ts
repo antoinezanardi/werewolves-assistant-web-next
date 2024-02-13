@@ -33,7 +33,7 @@ describe("Game Lobby Player Card Component", () => {
     wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps });
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

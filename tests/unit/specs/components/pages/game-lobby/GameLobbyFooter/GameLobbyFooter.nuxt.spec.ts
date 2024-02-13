@@ -10,7 +10,7 @@ describe("Game Lobby Footer Component", () => {
     wrapper = await mountSuspendedComponent(GameLobbyFooter);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Index Page Component > should render component and match snapshot when mounted. 1`] = `
+exports[`Index Page Component > should match snapshot when rendered. 1`] = `
 "<div class="container-fluid d-flex flex-column">
   <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
     <div class="col-12 text-center">

@@ -14,7 +14,7 @@ describe("About Page Component", () => {
     wrapper = await mountSuspendedComponent(About);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

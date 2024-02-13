@@ -11,7 +11,7 @@ describe("Game Lobby Page", () => {
     wrapper = await mountSuspendedComponent(GameLobby);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

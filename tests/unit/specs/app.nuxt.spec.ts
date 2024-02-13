@@ -11,19 +11,19 @@ describe("App Component", () => {
     wrapper = await mountSuspendedComponent(App);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("should render component without shallow and match snapshot when mounted.", async() => {
+  it("should render component without shallow and match snapshot when rendered.", async() => {
     wrapper = await mountSuspendedComponent(App, { shallow: false });
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("should fetch and set roles from store when mounted.", () => {
+  it("should fetch and set roles from store when rendered.", () => {
     const rolesStore = useRolesStore();
     expect(rolesStore.fetchAndSetRoles).toHaveBeenCalledWith();
   });

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Lobby Footer Component > should render component and match snapshot when mounted. 1`] = `
+exports[`Game Lobby Footer Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-footer" class="row">
   <div class="col-3 d-flex">
     <game-lobby-random-composition-button-stub></game-lobby-random-composition-button-stub>

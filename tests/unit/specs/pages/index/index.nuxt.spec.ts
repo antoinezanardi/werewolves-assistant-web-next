@@ -11,7 +11,7 @@ describe("Index Page Component", () => {
     wrapper = await mountSuspendedComponent(Index);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

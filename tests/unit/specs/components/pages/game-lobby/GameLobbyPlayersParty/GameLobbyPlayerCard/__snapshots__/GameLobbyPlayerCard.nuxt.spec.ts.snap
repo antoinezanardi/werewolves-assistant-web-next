@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Lobby Player Card Component > should render component and match snapshot when mounted. 1`] = `
+exports[`Game Lobby Player Card Component > should match snapshot when rendered. 1`] = `
 "<div data-v-ed2a42b3="" class="align-items-center d-flex flex-column game-lobby-player-card mb-4 p-1" data-testid="game-lobby-player-card-Toto">
   <button-stub data-v-ed2a42b3="" aria-label="Remove player Toto" class="mb-1 player-card-delete-button" icon="fa-minus fa fa-2x" raised="" severity="danger" size="small" type="button" data-pd-tooltip="true"></button-stub>
   <player-card-stub data-v-ed2a42b3="" playername="Toto" playerrole="werewolf" doesshowselectortooltip="false"></player-card-stub><small data-v-ed2a42b3="" class="player-card-role text-truncate"></small>
