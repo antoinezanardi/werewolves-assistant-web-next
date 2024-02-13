@@ -5,8 +5,8 @@ import type { NuxtImg } from "#components";
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Image Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleImage>>;
@@ -44,7 +44,7 @@ describe("Role Image Component", () => {
       wrapper = await mountRoleImageComponent({ props: { alt: "back image" } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='back image']");
 
-      expect(image.attributes("src")).toBe("svg/infinite-spinner.svg");
+      expect(image.attributes("src")).toBe("/img/role/back.jpeg");
     });
 
     it("should have src based on role name from props when mounted.", () => {

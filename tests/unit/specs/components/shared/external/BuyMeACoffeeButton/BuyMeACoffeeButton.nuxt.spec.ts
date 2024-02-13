@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import BuyMeACoffeeButton from "~/components/shared/external/BuyMeACoffeeButton/BuyMeACoffeeButton.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Buy Me A Coffee Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof BuyMeACoffeeButton>>;

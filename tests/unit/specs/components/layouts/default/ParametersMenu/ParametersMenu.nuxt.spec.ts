@@ -10,7 +10,7 @@ import type { Ref } from "vue";
 import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
 import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;

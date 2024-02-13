@@ -45,6 +45,8 @@ const ESLINT_IMPORT_CONFIG = {
           "@/**/*",
           "@nuxt/**/*",
           "nuxt/*",
+          "msw/*",
+          "msw/**/*",
           "primevue/*",
           "\\#app/composables/*",
         ],
@@ -77,7 +79,7 @@ const ESLINT_IMPORT_CONFIG = {
     "import/no-named-default": ERROR,
     "import/no-named-export": OFF,
     "import/no-namespace": ERROR,
-    "import/no-unassigned-import": ERROR,
+    "import/no-unassigned-import": [ERROR, { allow: ["reflect-metadata"] }],
     "import/prefer-default-export": OFF,
     "import/order": [
       ERROR, {

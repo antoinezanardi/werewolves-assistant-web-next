@@ -20,14 +20,17 @@
       </div>
 
       <div class="col-12 col-lg-3">
-        <VuePrimeButton
-          class="w-100"
-          icon="fa fa-play-circle"
-          :label="$t('pages.index.play')"
-          :pt="buttonsPassThroughProperties"
-          raised
-          size="large"
-        />
+        <NuxtLink
+          :aria-label="$t('pages.index.play')"
+          class="p-button p-button-primary p-button-raised w-100"
+          to="/game-lobby"
+        >
+          <span class="fa fa-2x fa-play-circle me-2"/>
+
+          <span class="fs-3 fw-bold text-uppercase">
+            {{ $t('pages.index.play') }}
+          </span>
+        </NuxtLink>
       </div>
 
       <div class="col-12 col-lg-3 mt-4">
@@ -37,7 +40,10 @@
           to="/about"
         >
           <span class="fa fa-question me-2"/>
-          {{ $t('pages.index.about') }}
+
+          <span>
+            {{ $t('pages.index.about') }}
+          </span>
         </NuxtLink>
       </div>
     </div>
@@ -49,17 +55,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonPassThroughOptions } from "primevue/button";
-import type { PassThrough } from "primevue/ts-helpers";
-
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
 definePageMeta({ layout: false });
-
-const buttonsPassThroughProperties: PassThrough<ButtonPassThroughOptions> = {
-  label: "fs-3 fw-bold text-uppercase",
-  icon: "fa-2x",
-};
 </script>
 
 <style>

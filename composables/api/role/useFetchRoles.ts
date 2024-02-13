@@ -1,23 +1,19 @@
-import type { UseFetchOptions } from "#app";
-
-import { DEFAULT_USE_FETCH_OPTIONS } from "~/composables/api/api.constants";
-import type { Role } from "~/composables/api/role/types/role.types";
-import { removeTrailingSlashes } from "~/utils/url.utils";
+import type { Role } from "~/composables/api/role/types/role.class";
+import { useWerewolvesAssistantApi } from "~/composables/api/useWerewolvesAssistantApi";
 
 type UseFetchRoles = {
-  fetchRoles: (options?: UseFetchOptions<Role[]>) => Promise<ReturnType<typeof useFetch<Role[] | null>>>;
+  fetchRoles: () => Promise<ReturnType<typeof $fetch<Role[]>> | null>;
 };
 
 function useFetchRoles(): UseFetchRoles {
-  const config = useRuntimeConfig();
-  const baseUrl = removeTrailingSlashes(config.public.werewolvesAssistantApi.baseUrl);
+  const { fetchWerewolvesAssistantApi } = useWerewolvesAssistantApi();
 
-  async function fetchRoles(options: UseFetchOptions<Role[]> = {}): Promise<ReturnType<typeof useFetch<Role[] | null>>> {
-    return useFetch<Role[]>(`${baseUrl}/roles`, {
-      method: "GET",
-      ...DEFAULT_USE_FETCH_OPTIONS,
-      ...options,
-    });
+  async function fetchRoles(): Promise<ReturnType<typeof $fetch<Role[]>> | null> {
+    try {
+      return await fetchWerewolvesAssistantApi<Role[]>(`/roles`, { method: "GET" });
+    } catch (error) {
+      return null;
+    }
   }
   return { fetchRoles };
 }

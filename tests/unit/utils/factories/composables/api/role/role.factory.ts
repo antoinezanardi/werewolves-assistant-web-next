@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 import { RoleNames, RoleOrigins, RoleSides, RoleTypes } from "~/composables/api/role/enums/role.enums";
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 
 function createFakeRole(role: Partial<Role> = {}, override: object = {}): Role {
   return {

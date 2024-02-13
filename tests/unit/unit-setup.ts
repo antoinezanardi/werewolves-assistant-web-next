@@ -1,11 +1,12 @@
-import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { beforeAll, expect } from "vitest";
 import matchers from "jest-extended";
 
-import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
-import { createFakeRuntimeConfig } from "~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
+import { setupMswServer } from "~/tests/unit/utils/helpers/msw.helpers";
+import { mockNuxtImports, mockPrimeVueComposables } from "~/tests/unit/utils/helpers/mock.helpers";
 
 expect.extend(matchers);
+
+const server = setupMswServer();
 
 declare module "vitest" {
   type Assertion<T = unknown> = CustomMatchers<T>;
@@ -14,39 +15,14 @@ declare module "vitest" {
 
   type ExpectStatic<T = unknown> = CustomMatchers<T>;
 }
+
 beforeAll(() => {
-  mockNuxtImport<typeof setPageLayout>(
-    "setPageLayout",
-    () => vi.fn(),
-  );
+  server.listen();
 
-  mockNuxtImport<typeof definePageMeta>(
-    "definePageMeta",
-    () => vi.fn(),
-  );
+  mockNuxtImports();
 
-  mockNuxtImport<typeof useFetch>(
-    "useFetch",
-    () => vi.fn(),
-  );
-
-  mockNuxtImport<typeof navigateTo>(
-    "navigateTo",
-    () => vi.fn(),
-  );
-
-  mockNuxtImport<typeof useRuntimeConfig>(
-    "useRuntimeConfig",
-    () => vi.fn(() => createFakeRuntimeConfig()),
-  );
-
-  mockNuxtImport<typeof createError>(
-    "createError",
-    <DataT>() => (vi.fn(() => new Error("Mocked error")) as DataT),
-  );
-
-  mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(
-    "useI18n",
-  () => vi.fn(() => createFakeI18n()),
-  );
+  mockPrimeVueComposables();
 });
+
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());

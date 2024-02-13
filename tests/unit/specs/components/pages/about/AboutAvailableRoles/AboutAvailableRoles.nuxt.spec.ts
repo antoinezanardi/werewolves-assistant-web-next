@@ -8,11 +8,11 @@ import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailab
 import AboutAvailableRoles from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
-import type { Role } from "~/composables/api/role/types/role.types";
+import type { Role } from "~/composables/api/role/types/role.class";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Available Roles Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoles>>;

@@ -10,10 +10,8 @@ exports[`App Component > should render component without shallow and match snaps
       <div class="col-12 text-center">
         <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
       </div>
-      <div class="col-12 col-lg-3"><button class="p-button p-component p-button-raised p-button-lg w-100" type="button" aria-label="Play" data-pc-name="button" data-pc-section="root" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-play-circle fa-2x" data-pc-section="icon"></span><span class="p-button-label fs-3 fw-bold text-uppercase" data-pc-section="label">Play</span>
-          <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-        </button></div>
-      <div class="col-12 col-lg-3 mt-4"><a href="/about" aria-label="What is it ?" class="p-button p-button-secondary w-100"><span class="fa fa-question me-2"></span> What is it ?</a></div>
+      <div class="col-12 col-lg-3"><a href="/game-lobby" aria-label="Play" class="p-button p-button-primary p-button-raised w-100"><span class="fa fa-2x fa-play-circle me-2"></span><span class="fs-3 fw-bold text-uppercase">Play</span></a></div>
+      <div class="col-12 col-lg-3 mt-4"><a href="/about" aria-label="What is it ?" class="p-button p-button-secondary w-100"><span class="fa fa-question me-2"></span><span>What is it ?</span></a></div>
     </div>
     <hr class="w-100">
     <div class="row">
@@ -21,5 +19,7 @@ exports[`App Component > should render component without shallow and match snaps
       <div class="col-6 d-flex justify-content-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
     </div>
   </div>
-</transition-stub>"
+</transition-stub>
+<!--teleport start-->
+<!--teleport end-->"
 `;

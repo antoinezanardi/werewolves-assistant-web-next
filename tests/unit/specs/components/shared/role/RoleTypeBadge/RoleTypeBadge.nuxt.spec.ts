@@ -4,7 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import { RoleTypes } from "~/composables/api/role/enums/role.enums";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Type Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;

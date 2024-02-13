@@ -1,3 +1,5 @@
+import Vitest from "eslint-plugin-vitest";
+
 import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_BASE_CONFIG = Object.freeze({
@@ -11,9 +13,17 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       setPageLayout: READONLY,
       createError: READONLY,
       useFetch: READONLY,
+      $fetch: READONLY,
       useI18n: READONLY,
       navigateTo: READONLY,
       storeToRefs: READONLY,
+      ...Vitest.environments.env.globals,
+      computed: READONLY,
+      defineProps: READONLY,
+      defineEmits: READONLY,
+      ref: READONLY,
+      reactive: READONLY,
+      nextTick: READONLY,
     },
   },
   rules: {
@@ -183,7 +193,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "no-throw-literal": ERROR,
     "no-undef-init": ERROR,
     "no-undefined": OFF,
-    "no-underscore-dangle": ERROR,
+    "no-underscore-dangle": [ERROR, { allow: ["_id"] }],
     "no-unneeded-ternary": ERROR,
     "no-unused-expressions": ERROR,
     "no-unused-labels": ERROR,

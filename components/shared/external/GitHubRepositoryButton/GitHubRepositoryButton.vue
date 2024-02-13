@@ -22,7 +22,7 @@ const props = defineProps<GitHubRepositoryButtonProps>();
 const { t } = useI18n();
 
 const textButton = computed<string>(() => {
-  if (props.textButton) {
+  if (props.textButton !== undefined) {
     return props.textButton;
   }
   return t("components.GitHubRepositoryButton.thisProjectIsOpenSource");

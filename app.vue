@@ -3,14 +3,18 @@
     <NuxtPage
       class="h-100 page-content"
     />
+
+    <VuePrimeToast position="bottom-right"/>
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
+import "reflect-metadata";
+
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const rolesStore = useRolesStore();
-rolesStore.fetchAndSetRoles();
+void rolesStore.fetchAndSetRoles();
 </script>
 
 <style lang="scss" scoped>

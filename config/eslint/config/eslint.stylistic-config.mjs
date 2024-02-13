@@ -117,8 +117,12 @@ const ESLINT_STYLISTIC_CONFIG = {
         prev: "*",
         next: ["interface", "type", "class", "export", "function"],
       }, {
-        blankLine: NEVER,
+        blankLine: ALWAYS,
         prev: "*",
+        next: ["return"],
+      }, {
+        blankLine: NEVER,
+        prev: ["block-like"],
         next: ["return"],
       },
     ],

@@ -5,7 +5,7 @@ import type { NuxtLink } from "#components";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import About from "~/pages/about.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Page Component", () => {
   let wrapper: ReturnType<typeof mount<typeof About>>;

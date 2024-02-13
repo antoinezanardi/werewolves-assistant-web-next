@@ -1,6 +1,9 @@
 {
   "shared": {
     "werewolvesAssistant": "Assistant Loups-Garous",
+    "actions": {
+      "add": "Ajouter"
+    },
     "role": {
       "name": {
         "werewolf": "Loup-Garou",
@@ -52,6 +55,27 @@
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
       "backToHome": "Retour à l'accueil",
       "imageTitle": "Image du titre de la page À quoi ça sert"
+    }
+  },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Mauvaise requête serveur",
+        "401": "Non autorisé",
+        "403": "Interdit",
+        "404": "Ressource non trouvée",
+        "500": "Erreur interne du serveur"
+      },
+      "checkConsoleForMoreDetails": "Veuillez consulter la console pour plus de détails."
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint",
+      "notAllRolesAreSet": "Tous les rôles ne sont pas définis",
+      "noVillagerSidedRole": "Au moins un rôle du côté des Villageois doit être attribué",
+      "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
+      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
+      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
+      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
     }
   },
   "components": {
@@ -369,6 +393,34 @@
     },
     "RoleImage": {
       "back": "Dos de la carte"
+    },
+    "GameLobbyPlayerInput": {
+      "playerName": "Nom du joueur",
+      "maxPlayersReached": "Nombre maximum de joueurs atteint",
+      "pleaseEnterPlayerName": "Veuillez entrer un nom de joueur",
+      "playerNameIsAlreadyTaken": "Ce nom de joueur est déjà pris",
+      "playerNameMaxLengthReached": "Le nom du joueur ne peut pas dépasser 30 caractères"
+    },
+    "GameLobbyHeader": {
+      "gameLobby": "Création de la partie"
+    },
+    "PlayerCard": {
+      "playerCardRoleImageAlt": "Image du rôle du joueur {playerName}"
+    },
+    "GameLobbyPlayerCard": {
+      "removePlayer": "Supprimer le joueur {playerName}",
+      "roleNotSelected": "Rôle non sélectionné"
+    },
+    "GameLobbyRandomCompositionButton": {
+      "randomComposition": "Composition aléatoire",
+      "minPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint"
+    },
+    "GameLobbyStartGameButton": {
+      "startGame": "Commencer la partie",
+      "gameCreated": "Partie créée"
+    },
+    "GameLobbyPlayersParty": {
+      "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
     }
   }
 }

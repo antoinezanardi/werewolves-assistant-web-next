@@ -24,6 +24,7 @@ const roleTypeBadgeAttributes = computed<BadgeProps>(() => {
     [RoleTypes.LONELY]: { severity: "info" },
     [RoleTypes.AMBIGUOUS]: { severity: "warning" },
   };
+
   return roleTypesBadgeAttributes[props.roleType];
 });
 </script>
