@@ -18,6 +18,7 @@
     <div
       v-else
       id="game-lobby-players-party"
+      class="align-items-center d-flex justify-content-center row"
     >
       <GameLobbyPlayerCard
         v-for="player in createGameDto.players"

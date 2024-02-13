@@ -13,7 +13,6 @@ Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWor
 
 Then(/^a new page should be opened with url "(?<url>.+)"$/u, async function(this: CustomWorld, fullUrl: string): Promise<void> {
   const newPage = await this.newPagePromise;
-  await newPage.waitForLoadState();
 
   expect(newPage.url()).toBe(fullUrl);
 });

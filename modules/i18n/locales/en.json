@@ -413,7 +413,7 @@
     },
     "GameLobbyRandomCompositionButton": {
       "randomComposition": "Random composition",
-      "minPlayersNotReached": "Minimum number of players not reached"
+      "minPlayersNotReached": "The minimum number of players is not reached"
     },
     "GameLobbyStartGameButton": {
       "startGame": "Start game",

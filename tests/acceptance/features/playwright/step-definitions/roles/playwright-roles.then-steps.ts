@@ -17,6 +17,10 @@ Then(/^the (?<role>button) with name "(?<name>.+)" should be disabled$/u, async 
   await expect(this.page.getByRole(role, { name })).toBeDisabled();
 });
 
+Then(/^the (?<role>button) with name "(?<name>.+)" should be enabled$/u, async function(this: CustomWorld, role: LocatorRole, name: string): Promise<void> {
+  await expect(this.page.getByRole(role, { name })).toBeEnabled();
+});
+
 Then(/^the (?<role>button|img|heading|navigation|link|region) with name "(?<name>.+)" should have the following attributes$/u, async function(this: CustomWorld, role: LocatorRole, name: string, attributesDatatable: DataTable): Promise<void> {
   const element = this.page.getByRole(role, { name });
   const promises = [];

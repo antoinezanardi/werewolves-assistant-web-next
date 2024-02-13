@@ -39,6 +39,32 @@ Feature: ❓ About Page
     When the user clicks on the button with name "Click to expand the description of the Pied Piper role"
     Then the img with name "Illustration of the Pied Piper role on the left description" should be hidden
 
+  Scenario: ❓ User goes on YouTube to watch a tutorial by clicking on the link
+    Given the user is on about page
+    And the user is about to open a page on new tab
+    When the user hovers the link with name "I don't know this game"
+    Then the tooltip with text "Watch an explanatory video on YouTube" should be visible
+    When the user clicks on the link with name "I don't know this game"
+    Then a new page should be opened with url "https://www.youtube.com/watch?v=3HUz8CAORro"
+
+  Scenario: ❓ User goes on GitHub to contribute to the project by clicking on the link
+    Given the user is on about page
+    And the user is about to open a page on new tab
+    When the user clicks on the link with name "Access the project on GitHub"
+    Then a new page should be opened with url "https://github.com/antoinezanardi/werewolves-assistant-web-next"
+
+  Scenario: ❓ User goes on BuyMeACoffee to donate by clicking on the link
+    Given the user is on about page
+    And the user is about to open a page on new tab
+    When the user clicks on the link with name "Buy me a coffee"
+    Then a new page should be opened with url "https://www.buymeacoffee.com/antoinezanardi"
+
+  Scenario: ❓ User goes on creator's portfolio by clicking on the link
+    Given the user is on about page
+    And the user is about to open a page on new tab
+    When the user clicks on the link with name "My portfolio"
+    Then a new page should be opened with url "https://antoinezanardi.fr/"
+
   Scenario: ❓ User goes back on home page by clicking on werewolves assistant logo in navigation bar
     Given the user is on about page
     When the user clicks on the child link with name "Home page link" under the navigation with name "Navigation bar"
