@@ -5,7 +5,6 @@ import { ERROR, OFF } from "../eslint.constants.mjs";
 const ESLINT_TESTS_CONFIG = {
   files: ["tests/**/*.spec.ts"],
   plugins: { vitest: Vitest },
-  languageOptions: { globals: { ...Vitest.environments.env.globals } },
   rules: {
     "id-length": [ERROR, { exceptions: ["t"] }],
     "max-lines-per-function": OFF,

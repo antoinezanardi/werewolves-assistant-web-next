@@ -13,6 +13,7 @@ export default {
     "pages/**/*.{ts,vue}",
     "layouts/**/*.{ts,vue}",
     "stores/**/*.ts",
+    "utils/**/*.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",
@@ -20,11 +21,15 @@ export default {
     "./config/stryker/plugins/stryker-define-props-ignorer-plugin.mjs",
     "./config/stryker/plugins/stryker-define-emits-ignorer-plugin.mjs",
     "./config/stryker/plugins/stryker-define-page-meta-ignorer-plugin.mjs",
+    "./config/stryker/plugins/stryker-define-model-ignorer-plugin.mjs",
+    "./config/stryker/plugins/stryker-define-expose-ignorer-plugin.mjs",
   ],
   ignorers: [
     "defineProps",
     "defineEmits",
     "definePageMeta",
+    "defineModel",
+    "defineExpose",
   ],
   ignorePatterns: [
     "!.nuxt/",

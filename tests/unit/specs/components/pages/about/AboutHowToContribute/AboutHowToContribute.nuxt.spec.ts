@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import AboutHowToContribute from "~/components/pages/about/AboutHowToContribute.vue";
 import type GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About How To Contribute Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutHowToContribute>>;
@@ -11,7 +11,7 @@ describe("About How To Contribute Component", () => {
     wrapper = await mountSuspendedComponent(AboutHowToContribute);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

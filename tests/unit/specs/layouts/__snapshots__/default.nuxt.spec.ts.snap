@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Default Layout > should render component and match snapshot when mounted. 1`] = `
-"<div id="default-layout" class="d-flex flex-column h-100">
-  <nav-bar-stub></nav-bar-stub>
-  <div class="flex-grow-1 h-100"></div>
+exports[`Default Layout > should match snapshot when rendered. 1`] = `
+"<div data-v-433a9abd="" id="default-layout" class="d-flex flex-column h-100">
+  <nav-bar-stub data-v-433a9abd=""></nav-bar-stub>
+  <div data-v-433a9abd="" class="content-with-navbar flex-grow-1 h-100"></div>
 </div>"
 `;

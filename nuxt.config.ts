@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: "page", mode: "out-in" },
   },
+  experimental: { renderJsonPayloads: false },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "bootstrap/dist/css/bootstrap-grid.css",
@@ -25,6 +26,7 @@ export default defineNuxtConfig({
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
   image: { domains: ["antoinezanardi.fr", "appspot.com"] },
   modules,
+  nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
   primevue: {
     components: {
@@ -37,6 +39,9 @@ export default defineNuxtConfig({
         "Accordion",
         "AccordionTab",
         "Badge",
+        "InputGroup",
+        "InputText",
+        "Toast",
       ],
     },
     directives: {
@@ -46,7 +51,7 @@ export default defineNuxtConfig({
         "Ripple",
       ],
     },
-    composables: { include: [] },
+    composables: { include: ["useToast"] },
     options: { ripple: true },
   },
   googleFonts: {
@@ -69,4 +74,5 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });

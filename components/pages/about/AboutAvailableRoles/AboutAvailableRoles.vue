@@ -35,11 +35,7 @@
         <VuePrimeAccordionTab
           v-for="role in roles"
           :key="role.name"
-          :pt="{
-            'headerAction': {
-              'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name)
-            }
-          }"
+          :pt="{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }"
         >
           <template #header>
             <div class="align-items-center available-role-image-header d-flex">

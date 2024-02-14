@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 import { expect } from "vitest";
 
 import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAssistant.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Werewolves Assistant Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutWerewolvesAssistant>>;
@@ -11,7 +11,7 @@ describe("About Werewolves Assistant Component", () => {
     wrapper = await mountSuspendedComponent(AboutWerewolvesAssistant);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

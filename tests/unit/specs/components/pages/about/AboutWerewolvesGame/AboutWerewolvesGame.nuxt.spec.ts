@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Werewolves Game Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutWerewolvesGame>>;
@@ -10,7 +10,7 @@ describe("About Werewolves Game Component", () => {
     wrapper = await mountSuspendedComponent(AboutWerewolvesGame);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

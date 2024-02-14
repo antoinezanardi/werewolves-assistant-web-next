@@ -1,19 +1,19 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Index Page Component > should render component and match snapshot when mounted. 1`] = `
+exports[`Index Page Component > should match snapshot when rendered. 1`] = `
 "<div class="container-fluid d-flex flex-column">
   <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
     <div class="col-12 text-center">
       <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="lg:200px" alt="Werewolves Assistant logo"></nuxt-img-stub>
     </div>
     <div class="col-12 text-center">
-      <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
+      <h1 id="title" class="mt-0">Werewolves Assistant</h1>
     </div>
     <div class="col-12 col-lg-3">
-      <button-stub class="w-100" icon="fa fa-play-circle" label="Play" pt="[object Object]" raised="" size="large"></button-stub>
+      <nuxt-link-stub to="/game-lobby" id="play-button" class="p-button p-button-primary p-button-raised w-100"></nuxt-link-stub>
     </div>
     <div class="col-12 col-lg-3 mt-4">
-      <nuxt-link-stub to="/about" aria-label="What is it ?" class="p-button p-button-secondary w-100"></nuxt-link-stub>
+      <nuxt-link-stub to="/about" id="about-button" class="p-button p-button-secondary w-100"></nuxt-link-stub>
     </div>
   </div>
   <hr class="w-100">

@@ -10,7 +10,7 @@ import type { Ref } from "vue";
 import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
 import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;
@@ -26,7 +26,7 @@ describe("Parameters Menu Component", () => {
     wrapper = await mountSuspendedComponent(ParametersMenu);
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -82,7 +82,7 @@ describe("Parameters Menu Component", () => {
       await parametersMenuButton.trigger("click");
     });
 
-    it("should pass the correct items to the menu when mounted.", () => {
+    it("should pass the correct items to the menu when rendered.", () => {
       const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
 
       expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([

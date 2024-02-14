@@ -1,10 +1,11 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Badge from "primevue/badge";
 
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import { RoleTypes } from "~/composables/api/role/enums/role.enums";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Type Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;
@@ -21,20 +22,20 @@ describe("Role Type Badge Component", () => {
     wrapper = await mountRoleTypeBadgeComponent();
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   describe("Badge", () => {
-    it("should have tooltip when mounted.", () => {
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+    it("should have tooltip when rendered.", () => {
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("data-pd-tooltip")).toBe("true");
     });
 
-    it("should translate role type when mounted.", () => {
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+    it("should translate role type when rendered.", () => {
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("value")).toBe("Werewolf");
     });
@@ -66,7 +67,7 @@ describe("Role Type Badge Component", () => {
       },
     ])("$test", async({ roleType, expectedSeverity }) => {
       await wrapper.setProps({ roleType });
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("severity")).toBe(expectedSeverity);
     });

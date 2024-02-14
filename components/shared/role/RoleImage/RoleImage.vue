@@ -3,7 +3,7 @@
     :alt="alt"
     class="role-image"
     :height="sizes"
-    :placeholder="backImageSrc"
+    placeholder="svg/infinite-spinner.svg"
     :src="roleImageSrc"
     :width="sizes"
   />
@@ -20,14 +20,16 @@ const props = withDefaults(defineProps<RoleImageProps>(), {
 
 const runtimeConfig = useRuntimeConfig();
 
-const backImageSrc = "svg/infinite-spinner.svg";
+const backImageSrc = "/img/role/back.jpeg";
 
 const roleImageSrc = computed<string>(() => {
-  if (!props.roleName) {
+  if (props.roleName === undefined) {
     return backImageSrc;
   }
+
   const apiBaseUrl = removeTrailingSlashes(runtimeConfig.public.werewolvesAssistantApi.baseUrl);
   const imageSuffix = props.definition === "normal" ? "" : `-${props.definition}`;
+
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
 </script>

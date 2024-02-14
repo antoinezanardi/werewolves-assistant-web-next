@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Page > should match snapshot when rendered. 1`] = `
+"<div class="container-fluid d-flex flex-column">
+  <game-lobby-header-stub></game-lobby-header-stub>
+  <hr class="w-100">
+  <game-lobby-players-party-stub class="d-flex flex-grow-1 overflow-y-auto"></game-lobby-players-party-stub>
+  <hr class="w-100">
+  <game-lobby-footer-stub></game-lobby-footer-stub>
+</div>"
+`;

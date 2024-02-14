@@ -1,7 +1,10 @@
 import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
+import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
-import { ERROR, MAX_LENGTH, NEVER, OFF, READONLY } from "../eslint.constants.mjs";
+import { ALWAYS, ERROR, MAX_LENGTH, NEVER, OFF } from "../eslint.constants.mjs";
+
+import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
 const ESLINT_VUE_CONFIG = {
   files: [
@@ -10,21 +13,19 @@ const ESLINT_VUE_CONFIG = {
     "layouts/**/*.vue",
     "components/**/*.vue",
   ],
+  plugins: { "@typescript-eslint": TypeScriptPlugin },
   languageOptions: {
     parser: VueParser,
     parserOptions: {
       parser: TypescriptParser,
-      ecmaVersion: "latest",
+      tsconfigRootDir: "./",
       sourceType: "module",
-      ecmaFeatures: { jsx: true },
-    },
-    globals: {
-      computed: READONLY,
-      defineProps: READONLY,
-      defineEmits: READONLY,
+      extraFileExtensions: [".vue"],
+      project: "./tsconfig.json",
     },
   },
   rules: {
+    ...ESLINT_TYPESCRIPT_CONFIG.rules,
     "id-length": [ERROR, { exceptions: ["t"] }],
     "import/unambiguous": OFF,
     "vue/comment-directive": ERROR,
@@ -254,9 +255,9 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-restricted-syntax": ERROR,
     "vue/no-sparse-arrays": ERROR,
     "vue/no-useless-concat": ERROR,
-    "vue/object-curly-newline": ERROR,
-    "vue/object-curly-spacing": ERROR,
-    "vue/object-property-newline": ERROR,
+    "vue/object-curly-newline": [ERROR, { multiline: true }],
+    "vue/object-curly-spacing": [ERROR, ALWAYS],
+    "vue/object-property-newline": [ERROR, { allowAllPropertiesOnSameLine: true }],
     "vue/object-shorthand": ERROR,
     "vue/operator-linebreak": ERROR,
     "vue/prefer-template": ERROR,

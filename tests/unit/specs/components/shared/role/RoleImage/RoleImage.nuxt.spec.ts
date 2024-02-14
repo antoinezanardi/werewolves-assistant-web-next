@@ -5,8 +5,8 @@ import type { NuxtImg } from "#components";
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
-import { mountSuspendedComponent } from "~/tests/unit/utils/mount.utils";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Image Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleImage>>;
@@ -27,13 +27,13 @@ describe("Role Image Component", () => {
     wrapper = await mountRoleImageComponent();
   });
 
-  it("should render component and match snapshot when mounted.", () => {
+  it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   describe("Image", () => {
-    it("should have default width and height from props sizes when mounted.", () => {
+    it("should have default width and height from props sizes when rendered.", () => {
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='werewolf img']");
 
       expect(image.attributes("width")).toBe("50");
@@ -44,10 +44,10 @@ describe("Role Image Component", () => {
       wrapper = await mountRoleImageComponent({ props: { alt: "back image" } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='back image']");
 
-      expect(image.attributes("src")).toBe("svg/infinite-spinner.svg");
+      expect(image.attributes("src")).toBe("/img/role/back.jpeg");
     });
 
-    it("should have src based on role name from props when mounted.", () => {
+    it("should have src based on role name from props when rendered.", () => {
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='werewolf img']");
 
       expect(image.attributes("src")).toBe("http://127.0.0.1/public/assets/images/roles/werewolf/werewolf.jpeg");

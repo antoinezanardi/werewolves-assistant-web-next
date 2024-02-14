@@ -28,3 +28,6 @@ logs
 tests/unit/coverage
 tests/acceptance/reports
 tests/stryker/coverage
+
+# Stryker
+.stryker-tmp

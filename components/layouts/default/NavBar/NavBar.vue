@@ -6,18 +6,19 @@
     role="navigation"
   >
     <NuxtLink
-      :aria-label="$t('components.NavBar.homePageLink')"
+      id="navbar-logo-link"
+      aria-labelledby="navbar-werewolves-assistant-logo-text"
       class="align-items-center d-flex"
       to="/"
     >
       <NuxtImg
-        id="werewolves-assistant-logo"
+        id="navbar-werewolves-assistant-logo"
         :alt="$t('components.NavBar.werewolvesAssistantLogo')"
         src="/img/logo/square/werewolves-logo-small.png"
       />
 
       <h3
-        :aria-label="$t('shared.werewolvesAssistant')"
+        id="navbar-werewolves-assistant-logo-text"
         class="ms-2"
       >
         {{ $t("shared.werewolvesAssistant") }}
@@ -25,8 +26,8 @@
     </NuxtLink>
 
     <ParametersMenu
+      id="navbar-parameters-menu"
       v-p-tooltip.left="$t('components.NavBar.parameters')"
-      :aria-label="$t('components.NavBar.parametersMenu')"
     />
   </div>
 </template>
@@ -42,7 +43,7 @@ import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/P
   background-color: #343A3F;
   padding: 0 1rem;
 
-  #werewolves-assistant-logo {
+  #navbar-werewolves-assistant-logo {
     height: 2.5rem;
   }
 }

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`About Creator Component > should render component and match snapshot when mounted. 1`] = `
+exports[`About Creator Component > should match snapshot when rendered. 1`] = `
 "<div id="about-creator">
   <h2 id="about-creator-title" class="align-items-center d-flex"><i class="fa fa-2x fa-pen-fancy me-3 text-info"></i><span>A word from the creator</span></h2>
   <hr>

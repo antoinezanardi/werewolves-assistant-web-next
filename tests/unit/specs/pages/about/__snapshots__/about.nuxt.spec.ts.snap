@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`About Page Component > should render component and match snapshot when mounted. 1`] = `
+exports[`About Page Component > should match snapshot when rendered. 1`] = `
 "<div class="container h-100">
   <div class="align-items-center d-flex justify-content-center">
     <role-image-stub alt="Werewolf illustration" rolename="werewolf" sizes="75px" definition="small" id="about-role-image-title"></role-image-stub>

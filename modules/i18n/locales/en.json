@@ -1,6 +1,9 @@
 {
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
+    "actions": {
+      "add": "Add"
+    },
     "role": {
       "name": {
         "werewolf": "Werewolf",
@@ -52,6 +55,27 @@
       "whyAnAssistant": "Why an assistant ?",
       "backToHome": "Back to home",
       "imageTitle": "Werewolf illustration"
+    }
+  },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Bad request",
+        "401": "Unauthorized",
+        "403": "Forbidden",
+        "404": "Not found",
+        "500": "Internal server error"
+      },
+      "checkConsoleForMoreDetails": "Check the console for more details"
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "The minimum number of players is not reached",
+      "notAllRolesAreSet": "Not all roles are set among players",
+      "noVillagerSidedRole": "At least one villager sided role is needed",
+      "noWerewolfSidedRole": "At least one werewolf sided role is needed",
+      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
+      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
+      "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
     }
   },
   "components": {
@@ -369,6 +393,34 @@
     },
     "RoleImage": {
       "back": "Back of the card"
+    },
+    "GameLobbyPlayerInput": {
+      "playerName": "Player name",
+      "maxPlayersReached": "Maximum number of players reached",
+      "pleaseEnterPlayerName": "Please enter a player name",
+      "playerNameIsAlreadyTaken": "This player name is already taken",
+      "playerNameMaxLengthReached": "The player name must not exceed 30 characters"
+    },
+    "GameLobbyHeader": {
+      "gameLobby": "Game Lobby"
+    },
+    "PlayerCard": {
+      "playerCardRoleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameLobbyPlayerCard": {
+      "removePlayer": "Remove player {playerName}",
+      "roleNotSelected": "Role not selected"
+    },
+    "GameLobbyRandomCompositionButton": {
+      "randomComposition": "Random composition",
+      "minPlayersNotReached": "The minimum number of players is not reached"
+    },
+    "GameLobbyStartGameButton": {
+      "startGame": "Start game",
+      "gameCreated": "Game created"
+    },
+    "GameLobbyPlayersParty": {
+      "addPlayersWithInputAbove": "Add player names with the input above"
     }
   }
 }

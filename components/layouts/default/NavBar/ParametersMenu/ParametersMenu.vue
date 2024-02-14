@@ -9,7 +9,7 @@
     />
 
     <VuePrimeMenu
-      id="overlay_menu"
+      id="overlay-menu"
       ref="parametersMenu"
       :aria-label="$t('components.ParametersMenu.parametersMenu')"
       :model="parametersMenuItems"
@@ -22,7 +22,7 @@
 import type { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";
 
-import type { VuePrimeMenu } from "#components";
+import { VuePrimeMenu } from "#components";
 
 const { t } = useI18n();
 
@@ -31,7 +31,7 @@ const parametersMenuItems: MenuItem[] = [
     label: t("components.ParametersMenu.backToHome"),
     icon: "fa fa-sign-out",
     arialLabel: t("components.ParametersMenu.backToHome"),
-    command: () => {
+    command: (): void => {
       void navigateTo("/");
     },
   },
