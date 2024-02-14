@@ -55,8 +55,8 @@
     "script:create-pull-request": "scripts/create-pull-request.sh"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.0",
-    "@commitlint/config-conventional": "^18.6.0",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.1",
     "@cucumber/cucumber": "^10.3.0",
     "@eslint/eslintrc": "^3.0.1",
     "@faker-js/faker": "^8.4.1",
