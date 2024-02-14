@@ -1,11 +1,12 @@
 import { fileURLToPath } from "node:url";
 
-import format from "html-format";
 import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
 import type { ITestCaseHookParameter } from "@cucumber/cucumber";
 import { createPage, createTest } from "@nuxt/test-utils/e2e";
 
 import { I18N_TEST_LOCALE } from "~/modules/i18n/i18n.constants";
+import { generateScreenshotOnScenarioFailure, printPageContentOnScenarioFailure, removeAcceptanceTestsReportsScreenshotsDirectory } from "~/tests/acceptance/features/support/helpers/hooks.helpers";
+import { WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL } from "~/tests/acceptance/shared/constants/werewolves-assistant-sandbox-api.constants";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 const { beforeEach, afterEach, afterAll, setup } = createTest({
@@ -16,7 +17,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
     runtimeConfig: {
       public: {
         defaultLocale: I18N_TEST_LOCALE,
-        werewolvesAssistantApi: { baseUrl: "http://127.0.0.1:9090/" },
+        werewolvesAssistantApi: { baseUrl: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL },
       },
     },
   },
@@ -25,6 +26,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
 const beforeAllTimeout = 60000;
 
 BeforeAll({ timeout: beforeAllTimeout }, async(): Promise<void> => {
+  removeAcceptanceTestsReportsScreenshotsDirectory();
   await setup();
 });
 
@@ -36,9 +38,9 @@ Before({}, async function(this: CustomWorld): Promise<void> {
 
 After({}, async function(this: CustomWorld, scenario: ITestCaseHookParameter): Promise<void> {
   afterEach();
-  if (scenario.result?.status !== Status.PASSED) {
-    const pageContent = await this.page.innerHTML("#__nuxt");
-    console.error(format(pageContent));
+  if (scenario.result?.status === Status.FAILED) {
+    await printPageContentOnScenarioFailure(this);
+    await generateScreenshotOnScenarioFailure(this, scenario);
   }
   await Promise.all([
     this.page.close(),

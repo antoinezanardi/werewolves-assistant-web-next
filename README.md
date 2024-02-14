@@ -128,7 +128,7 @@ pnpm run test:cucumber:prepare
 pnpm run test:cucumber
 
 # Generate a HTML report from the last e2e tests run (implied by the previous command)
-pnpm run test:cucumber:report
+pnpm run test:cucumber:html-report
 
 # Run mutant tests with coverage
 pnpm run test:stryker
