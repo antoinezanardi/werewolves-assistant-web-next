@@ -30,13 +30,13 @@ describe("Role Origin Badge Component", () => {
 
   describe("Badge", () => {
     it("should have tooltip when rendered.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("[aria-label='Role Origin']");
+      const badge = wrapper.findComponent<typeof VuePrimeBadge>(".role-origin-badge");
 
       expect(badge.attributes("data-pd-tooltip")).toBe("true");
     });
 
     it("should translate role origin when rendered.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("[aria-label='Role Origin']");
+      const badge = wrapper.findComponent<typeof VuePrimeBadge>(".role-origin-badge");
 
       expect(badge.attributes("value")).toBe("Base Game");
     });

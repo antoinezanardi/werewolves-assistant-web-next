@@ -1,7 +1,6 @@
 <template>
   <VuePrimeBadge
     v-p-tooltip="$t(`components.RoleTypeBadge.descriptions.${roleType}`)"
-    :aria-label="$t(`components.RoleTypeBadge.roleType`)"
     class="role-type-badge"
     :severity="roleTypeBadgeAttributes.severity"
     size="large"

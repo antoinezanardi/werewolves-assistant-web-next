@@ -1,5 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Badge from "primevue/badge";
 
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
@@ -28,13 +29,13 @@ describe("Role Type Badge Component", () => {
 
   describe("Badge", () => {
     it("should have tooltip when rendered.", () => {
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("data-pd-tooltip")).toBe("true");
     });
 
     it("should translate role type when rendered.", () => {
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("value")).toBe("Werewolf");
     });
@@ -66,7 +67,7 @@ describe("Role Type Badge Component", () => {
       },
     ])("$test", async({ roleType, expectedSeverity }) => {
       await wrapper.setProps({ roleType });
-      const badge = wrapper.findComponent("[aria-label='Role Type']");
+      const badge = wrapper.findComponent<Badge>(".role-type-badge");
 
       expect(badge.attributes("severity")).toBe(expectedSeverity);
     });

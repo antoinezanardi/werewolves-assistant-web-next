@@ -7,13 +7,13 @@ exports[`Index Page Component > should match snapshot when rendered. 1`] = `
       <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="lg:200px" alt="Werewolves Assistant logo"></nuxt-img-stub>
     </div>
     <div class="col-12 text-center">
-      <h1 id="title" aria-label="Werewolves Assistant" class="mt-0">Werewolves Assistant</h1>
+      <h1 id="title" class="mt-0">Werewolves Assistant</h1>
     </div>
     <div class="col-12 col-lg-3">
-      <nuxt-link-stub to="/game-lobby" aria-label="Play" class="p-button p-button-primary p-button-raised w-100"></nuxt-link-stub>
+      <nuxt-link-stub to="/game-lobby" id="play-button" class="p-button p-button-primary p-button-raised w-100"></nuxt-link-stub>
     </div>
     <div class="col-12 col-lg-3 mt-4">
-      <nuxt-link-stub to="/about" aria-label="What is it ?" class="p-button p-button-secondary w-100"></nuxt-link-stub>
+      <nuxt-link-stub to="/about" id="about-button" class="p-button p-button-secondary w-100"></nuxt-link-stub>
     </div>
   </div>
   <hr class="w-100">

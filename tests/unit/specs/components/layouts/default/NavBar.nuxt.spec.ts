@@ -29,7 +29,7 @@ describe("NavBar Component", () => {
 
   describe("Home Page Link", () => {
     it("should have the prop 'to' set to home page when rendered.", () => {
-      const homePageLink = wrapper.findComponent<typeof NuxtLink>("[aria-label='Home page link']");
+      const homePageLink = wrapper.findComponent<typeof NuxtLink>("#navbar-logo-link");
 
       expect(homePageLink.props("to")).toBe("/");
     });
@@ -46,7 +46,7 @@ describe("NavBar Component", () => {
     describe("Werewolves Assistant Logo Text", () => {
       it("should translate the logo text when rendered.", async() => {
         wrapper = await mountNavBarComponent({ shallow: false });
-        const werewolvesAssistantLogoText = wrapper.find<HTMLHeadElement>("[aria-label='Werewolves Assistant']");
+        const werewolvesAssistantLogoText = wrapper.find<HTMLHeadElement>("#navbar-werewolves-assistant-logo-text");
 
         expect(werewolvesAssistantLogoText.text()).toBe("Werewolves Assistant");
       });
@@ -56,7 +56,7 @@ describe("NavBar Component", () => {
   describe("Parameters Menu", () => {
     it("should have left tooltip when rendered.", async() => {
       wrapper = await mountNavBarComponent({ shallow: false });
-      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>("[aria-label='Parameters menu']");
+      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>("#navbar-parameters-menu");
 
       expect(parametersMenu.attributes("data-pd-tooltip")).toBe("true");
     });

@@ -16,8 +16,8 @@ describe("Index Page Footer Component", () => {
   });
 
   describe("Contact Me Button", () => {
-    it("should render contact me with translated text button when rendered.", () => {
-      const contactMeButton = wrapper.find("[aria-label='Contact me']");
+    it("should display contact me with translated text button when rendered.", () => {
+      const contactMeButton = wrapper.find("#contact-button");
 
       expect(contactMeButton.text()).toBe("Contact me");
     });

@@ -7,7 +7,7 @@ import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 function removeAcceptanceTestsReportsScreenshotsDirectory(): void {
   const acceptanceTestsReportsDirectoryFilesPath = `${process.cwd()}/${ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH}`;
-  console.info(`Removing reports directory content: "${acceptanceTestsReportsDirectoryFilesPath}"`);
+  console.info(`Removing reports screenshots directory: "${acceptanceTestsReportsDirectoryFilesPath}"`);
   rimraf.sync(acceptanceTestsReportsDirectoryFilesPath);
 }
 

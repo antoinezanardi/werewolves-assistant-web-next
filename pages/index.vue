@@ -12,7 +12,6 @@
       <div class="col-12 text-center">
         <h1
           id="title"
-          :aria-label="$t('shared.werewolvesAssistant')"
           class="mt-0"
         >
           {{ $t('shared.werewolvesAssistant') }}
@@ -21,7 +20,7 @@
 
       <div class="col-12 col-lg-3">
         <NuxtLink
-          :aria-label="$t('pages.index.play')"
+          id="play-button"
           class="p-button p-button-primary p-button-raised w-100"
           to="/game-lobby"
         >
@@ -35,7 +34,7 @@
 
       <div class="col-12 col-lg-3 mt-4">
         <NuxtLink
-          :aria-label="$t('pages.index.about')"
+          id="about-button"
           class="p-button p-button-secondary w-100"
           to="/about"
         >
