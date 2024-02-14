@@ -5,7 +5,7 @@ const ESLINT_CUCUMBER_CONFIG = {
   rules: {
     "func-names": OFF,
     "new-cap": [ERROR, { capIsNewExceptions: ["BeforeAll", "AfterAll", "Before", "After", "Given", "When", "Then"] }],
-    "no-console": ["error", { allow: ["error"] }],
+    "no-console": ["error", { allow: ["error", "info"] }],
     "@typescript-eslint/max-params": OFF,
   },
 };

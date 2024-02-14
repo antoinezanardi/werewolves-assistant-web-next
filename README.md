@@ -124,8 +124,11 @@ pnpm run test:unit:staged
 # Before running e2e tests, you must prepare them
 pnpm run test:cucumber:prepare
 
-# Run e2e acceptance tests
+# Run e2e acceptance tests and generate a HTML report
 pnpm run test:cucumber
+
+# Generate a HTML report from the last e2e tests run (implied by the previous command)
+pnpm run test:cucumber:html-report
 
 # Run mutant tests with coverage
 pnpm run test:stryker

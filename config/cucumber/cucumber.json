@@ -4,15 +4,12 @@
       "tests/acceptance/features/**/*.feature"
     ],
     "import": [
-      "tests/acceptance/**/*.ts"
+      "tests/acceptance/features/**/*.ts"
     ],
     "publish": false,
     "format": [
       "summary",
-      "html:tests/acceptance/reports/cucumber-report.html",
-      "junit:tests/acceptance/reports/junit.xml",
-      "json:tests/acceptance/reports/report.json",
-      "message:tests/acceptance/reports/message.json"
+      "json:tests/acceptance/reports/report.json"
     ]
   }
 }

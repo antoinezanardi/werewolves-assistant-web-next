@@ -221,6 +221,12 @@ jobs:
       - name: E2E tests ⚗️
         run: pnpm run test:cucumber
 
+      - name: Save E2E tests reports as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-tests-reports
+          path: tests/acceptance/reports
+
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
 
