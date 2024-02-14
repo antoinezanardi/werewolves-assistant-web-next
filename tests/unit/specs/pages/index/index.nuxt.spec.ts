@@ -18,25 +18,33 @@ describe("Index Page Component", () => {
 
   describe("Title", () => {
     it("should display translated title when rendered.", () => {
-      const title = wrapper.find("[aria-label='Werewolves Assistant']");
+      const title = wrapper.find("#title");
 
       expect(title.text()).toBe("Werewolves Assistant");
     });
   });
 
   describe("Play button", () => {
-    it("should display play button with translated label when rendered.", () => {
-      const playButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='Play']");
+    it("should display play button with translated label when rendered.", async() => {
+      wrapper = await mountSuspendedComponent(Index, {
+        shallow: false,
+        stubs: { IndexFooter: true },
+      });
+      const playButton = wrapper.findComponent<typeof NuxtLink>("#play-button");
 
-      expect(playButton.html()).toContain("Play");
+      expect(playButton.text()).toBe("Play");
     });
   });
 
   describe("About button", () => {
-    it("should display about button with translated label when rendered.", () => {
-      const aboutButton = wrapper.findComponent<typeof NuxtLink>("[aria-label='What is it ?']");
+    it("should display about button with translated label when rendered.", async() => {
+      wrapper = await mountSuspendedComponent(Index, {
+        shallow: false,
+        stubs: { IndexFooter: true },
+      });
+      const aboutButton = wrapper.findComponent<typeof NuxtLink>("#about-button");
 
-      expect(aboutButton.html()).toContain("What is it ");
+      expect(aboutButton.text()).toBe("What is it ?");
     });
   });
 });

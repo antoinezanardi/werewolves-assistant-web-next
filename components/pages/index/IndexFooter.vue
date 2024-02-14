@@ -2,12 +2,15 @@
   <div class="row">
     <div class="col-6">
       <a
-        :aria-label="$t('components.IndexFooter.contact')"
+        id="contact-button"
         class="p-button p-button-secondary"
         href="mailto: antoine.zanardi@epitech.eu"
       >
         <span class="fa fa-envelope me-2"/>
-        {{ $t('components.IndexFooter.contact') }}
+
+        <span>
+          {{ $t('components.IndexFooter.contact') }}
+        </span>
       </a>
     </div>
 

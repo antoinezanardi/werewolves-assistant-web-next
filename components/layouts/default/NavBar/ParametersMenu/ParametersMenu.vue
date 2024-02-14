@@ -9,7 +9,7 @@
     />
 
     <VuePrimeMenu
-      id="overlay_menu"
+      id="overlay-menu"
       ref="parametersMenu"
       :aria-label="$t('components.ParametersMenu.parametersMenu')"
       :model="parametersMenuItems"

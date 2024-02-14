@@ -1,7 +1,6 @@
 <template>
   <VuePrimeBadge
     v-p-tooltip="$t('components.RoleOriginBadge.roleOrigin')"
-    :aria-label="$t('components.RoleOriginBadge.roleOrigin')"
     class="role-origin-badge"
     :value="$t(`components.RoleOriginBadge.${roleOrigin}`)"
   />
