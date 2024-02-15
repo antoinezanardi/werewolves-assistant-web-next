@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Page > should match snapshot when rendered. 1`] = `
+"<div id="game-page" class="container-fluid">
+  <div>
+    <!---->
+  </div>
+</div>"
+`;
