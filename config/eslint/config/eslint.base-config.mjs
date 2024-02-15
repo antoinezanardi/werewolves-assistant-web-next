@@ -9,6 +9,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       defineNuxtConfig: READONLY,
       defineI18nConfig: READONLY,
       useRuntimeConfig: READONLY,
+      useRoute: READONLY,
       definePageMeta: READONLY,
       setPageLayout: READONLY,
       createError: READONLY,

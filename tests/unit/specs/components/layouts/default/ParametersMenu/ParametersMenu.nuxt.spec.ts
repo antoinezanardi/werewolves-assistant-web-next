@@ -1,26 +1,17 @@
-import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
 import { MouseEvent } from "happy-dom";
 import Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
-import { beforeAll, expect } from "vitest";
 import type { Mock } from "vitest";
+import { expect } from "vitest";
 import type { Ref } from "vue";
 
 import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
-import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;
-
-  beforeAll(() => {
-    mockNuxtImport<() => ReturnType<typeof createFakeI18n>>(
-      "useI18n",
-    () => vi.fn(() => createFakeI18n()),
-    );
-  });
 
   beforeEach(async() => {
     wrapper = await mountSuspendedComponent(ParametersMenu);
