@@ -43,6 +43,7 @@ async function handleStartGameButtonClick(): Promise<void> {
   isLoadingCreateGame.value = true;
   const createdGame = await createGame(createGameDto.value);
   if (createdGame) {
+    await navigateTo(`/game/${createdGame._id}`);
     addSuccessToast({ summary: t("components.GameLobbyStartGameButton.gameCreated") });
   }
   isLoadingCreateGame.value = false;

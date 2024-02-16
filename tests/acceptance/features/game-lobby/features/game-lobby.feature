@@ -172,6 +172,21 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The minimum number of players is not reached" should be visible
 
+  Scenario: 🃏 User starts a game with random composition
+    Given the user is on game-lobby page
+    When the user types "Antoine" in the input with label "Player name"
+    And the user clicks on the button with name "Add"
+    And the user types "Benoit" in the input with label "Player name"
+    And the user clicks on the button with name "Add"
+    And the user types "Clement" in the input with label "Player name"
+    And the user clicks on the button with name "Add"
+    And the user types "David" in the input with label "Player name"
+    And the user clicks on the button with name "Add"
+    And the user clicks on the button with name "Random composition"
+    And the user clicks on the button with name "Start game"
+    Then the user should be on game page with any id
+    And the toast with text "Game created" should be visible
+
   Scenario: 🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar
     Given the user is on game-lobby page
     When the user clicks on the child link with name "Werewolves Assistant" under the navigation with name "Navigation bar"

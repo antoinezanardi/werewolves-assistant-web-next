@@ -32,7 +32,7 @@ describe("Game Page", () => {
   it("should fetch and set game in store when rendered with valid game id as string.", () => {
     const gameStore = useGameStore();
 
-    expect(gameStore.fetchAndSetGame).toHaveBeenCalledWith("1");
+    expect(gameStore.fetchAndSetGame).toHaveBeenCalledExactlyOnceWith("1");
   });
 
   it("should fetch and set game in store when rendered with valid game id as array of strings.", async() => {
@@ -40,7 +40,7 @@ describe("Game Page", () => {
     wrapper = await mountSuspendedComponent(GamePage);
     const gameStore = useGameStore();
 
-    expect(gameStore.fetchAndSetGame).toHaveBeenCalledWith("4");
+    expect(gameStore.fetchAndSetGame).toHaveBeenCalledExactlyOnceWith("4");
   });
 
   describe("Game Status Containers", () => {

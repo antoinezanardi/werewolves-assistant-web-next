@@ -26,6 +26,6 @@ describe("App Component", () => {
   it("should fetch and set roles from store when rendered.", () => {
     const rolesStore = useRolesStore();
 
-    expect(rolesStore.fetchAndSetRoles).toHaveBeenCalledWith();
+    expect(rolesStore.fetchAndSetRoles).toHaveBeenCalledExactlyOnceWith();
   });
 });
