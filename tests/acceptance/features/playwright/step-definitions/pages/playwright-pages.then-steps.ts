@@ -7,8 +7,6 @@ import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWorld, page: string): Promise<void> {
   const pageName = page === "home" ? "" : page;
   await this.page.waitForURL(url(`/${pageName}`));
-
-  expect(this.page.url()).toBe(url(`/${pageName}`));
 });
 
 Then(/^a new page should be opened with url "(?<url>.+)"$/u, async function(this: CustomWorld, fullUrl: string): Promise<void> {

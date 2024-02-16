@@ -1,3 +1,4 @@
+import { flushPromises } from "@vue/test-utils";
 import type { mount } from "@vue/test-utils";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
@@ -147,10 +148,21 @@ describe("Game Lobby Start Game Button Component", () => {
         expect(mocks.composables.useFetchGames.createGame).toHaveBeenCalledExactlyOnceWith(createGameDtoStore.createGameDto);
       });
 
+      it("should navigate to game with id in params when game is created.", async() => {
+        const createdGame = createFakeGame();
+        mocks.composables.useFetchGames.createGame.mockResolvedValue(createdGame);
+        const button = wrapper.find(".start-game-button");
+        await button.trigger("click");
+        await flushPromises();
+
+        expect(navigateTo).toHaveBeenCalledExactlyOnceWith(`/game/${createdGame._id}`);
+      });
+
       it("should add success toast when game is created.", async() => {
         mocks.composables.useFetchGames.createGame.mockResolvedValue(createFakeGame());
         const button = wrapper.find(".start-game-button");
         await button.trigger("click");
+        await flushPromises();
 
         expect(mocks.composables.useVuePrimeToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.GameLobbyStartGameButton.gameCreated" });
       });

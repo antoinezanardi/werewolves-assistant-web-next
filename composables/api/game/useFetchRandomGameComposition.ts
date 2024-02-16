@@ -1,10 +1,12 @@
 import { stringify } from "qs";
 
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import type { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useWerewolvesAssistantApi } from "~/composables/api/useWerewolvesAssistantApi";
 
 type GetRandomGameCompositionQuery = {
   players: { name: string }[];
+  excludedRoles?: RoleNames[];
 };
 
 type UseFetchRandomGameComposition = {
