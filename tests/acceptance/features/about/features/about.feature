@@ -11,6 +11,7 @@ Feature: ❓ About Page
     And the heading with name "How to contribute to this project?" should be visible
     And the heading with name "A word from the creator" should be visible
     And the link with name "Back to home" should be visible
+    And the page should match the snapshot with name "About Page"
 
   Scenario: ❓ About Page loads roles and display them in accordions with descriptions and illustrations
     Given the user is on about page
