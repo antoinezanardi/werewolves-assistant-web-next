@@ -6,6 +6,7 @@ import type { VuePrimeBadge } from "#components";
 import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBadge/role-origin-badge.types";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import { RoleOrigins } from "~/composables/api/role/enums/role.enums";
+import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Origin Badge Component", () => {
@@ -29,10 +30,12 @@ describe("Role Origin Badge Component", () => {
   });
 
   describe("Badge", () => {
-    it("should have tooltip when rendered.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>(".role-origin-badge");
+    it("should have tooltip when rendered.", async() => {
+      const tooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, ".role-origin-badge") };
+      wrapper = await mountRoleOriginBadgeComponent({ global: { directives } });
 
-      expect(badge.attributes("data-pd-tooltip")).toBe("true");
+      expect(tooltip.value).toBe("Role Origin");
     });
 
     it("should translate role origin when rendered.", () => {

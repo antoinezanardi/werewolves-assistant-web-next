@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { NuxtImg, NuxtLink } from "#components";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
-import type ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
+import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("NavBar Component", () => {
@@ -55,10 +55,11 @@ describe("NavBar Component", () => {
 
   describe("Parameters Menu", () => {
     it("should have left tooltip when rendered.", async() => {
-      wrapper = await mountNavBarComponent({ shallow: false });
-      const parametersMenu = wrapper.findComponent<typeof ParametersMenu>("#navbar-parameters-menu");
+      const tooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, "#navbar-parameters-menu") };
+      wrapper = await mountNavBarComponent({ shallow: false, global: { directives } });
 
-      expect(parametersMenu.attributes("data-pd-tooltip")).toBe("true");
+      expect(tooltip.value).toBe("Parameters");
     });
   });
 });

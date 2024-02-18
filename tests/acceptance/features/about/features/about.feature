@@ -67,13 +67,13 @@ Feature: ❓ About Page
 
   Scenario: ❓ User goes back on home page by clicking on werewolves assistant logo in navigation bar
     Given the user is on about page
-    When the user clicks on the child link with name "Werewolves Assistant" under the navigation with name "Navigation bar"
+    When the user clicks on werewolves assistant logo in navigation bar
     Then the user should be on home page
 
   Scenario: ❓ User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on about page
-    When the user clicks on the child button with name "Parameters" under the navigation with name "Navigation bar"
-    And the user clicks on the element with text "Back to home" under the menu with name "Parameters menu"
+    When the user clicks on parameters button in navigation bar
+    And the user clicks on the back to home button in parameters in navigation bar
     Then the user should be on home page
 
   Scenario: ❓ User goes back on home page by clicking on back to home page button at the bottom of the page
