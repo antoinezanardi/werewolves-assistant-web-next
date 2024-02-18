@@ -38,6 +38,11 @@ Feature: 🃏 Game Lobby Page
     Then the input with label "Player name" should be empty
     And the heading with name "Add player names with the input above" should be visible
 
+  Scenario: 🃏 User can't add a player with a name longer than 30 characters
+    Given the user is on game-lobby page
+    When the user types "AntoineAntoineAntoineAntoineAn" in the input with label "Player name"
+    Then the input with label "The player name must not exceed 30 characters" should be enabled
+
   Scenario: 🃏 User can't add a player if game has reached 40 players
     Given the user is on game-lobby page
     When the user types "Antoine" in the input with label "Player name"
@@ -189,11 +194,11 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar
     Given the user is on game-lobby page
-    When the user clicks on the child link with name "Werewolves Assistant" under the navigation with name "Navigation bar"
+    When the user clicks on werewolves assistant logo in navigation bar
     Then the user should be on home page
 
   Scenario: 🃏 User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on game-lobby page
-    When the user clicks on the child button with name "Parameters" under the navigation with name "Navigation bar"
-    And the user clicks on the element with text "Back to home" under the menu with name "Parameters menu"
+    When the user clicks on parameters button in navigation bar
+    And the user clicks on the back to home button in parameters in navigation bar
     Then the user should be on home page

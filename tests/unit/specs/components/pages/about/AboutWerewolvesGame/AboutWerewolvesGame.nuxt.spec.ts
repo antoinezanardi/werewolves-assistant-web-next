@@ -1,6 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
+import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("About Werewolves Game Component", () => {
@@ -24,10 +25,12 @@ describe("About Werewolves Game Component", () => {
   });
 
   describe("Watch tutorial on Youtube Anchor", () => {
-    it("should have tooltip when rendered.", () => {
-      const watchTutorialOnYoutubeAnchor = wrapper.find<HTMLAnchorElement>("#about-werewolves-game-watch-tutorial-video-on-youtube");
+    it("should have tooltip when rendered.", async() => {
+      const tooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, "#about-werewolves-game-watch-tutorial-video-on-youtube") };
+      wrapper = await mountSuspendedComponent(AboutWerewolvesGame, { global: { directives } });
 
-      expect(watchTutorialOnYoutubeAnchor.attributes("data-pd-tooltip")).toBeTruthy();
+      expect(tooltip.value).toBe("Watch an explanatory video on YouTube");
     });
 
     it("should have translated button when rendered.", () => {

@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Navigation Bar" type="cucumber.js" factoryName="Cucumber.js" folderName="Tags">
+    <option name="myFilePath" value="$PROJECT_DIR$/tests/acceptance" />
+    <option name="myNameFilter" value="" />
+    <option name="cucumberJsArguments" value="--config config/cucumber/cucumber.json  --parallel 1 --tags @navbar" />
+    <option name="workingDirectory" value="$PROJECT_DIR$" />
+    <envs>
+      <env name="NODE_OPTIONS" value="--import tsx/esm" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
