@@ -13,6 +13,7 @@ Feature: 🏠 Home Page
       | name | value                              |
       | href | mailto: antoine.zanardi@epitech.eu |
     And the link with name "This project is open-source!" should be visible
+    And the page should match the snapshot with name "Home Page"
 
   Scenario: 🏠 Home Page doesn't have navigation bar
     Given the user is on home page

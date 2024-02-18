@@ -10,6 +10,7 @@ Feature: 🃏 Game Lobby Page
     And the heading with name "Add player names with the input above" should be visible
     And the button with name "Random composition" should be visible
     And the button with name "Start game" should be visible
+    And the page should match the snapshot with name "Game Lobby Page without players"
 
   Scenario: 🃏 User adds a player
     Given the user is on game-lobby page
@@ -128,6 +129,7 @@ Feature: 🃏 Game Lobby Page
     Then the input with label "Player name" should be disabled
     And the input with label "Maximum number of players reached" should be disabled
     And the button with name "Add" should be disabled
+    And the page should match the snapshot with name "Game Lobby Page with 40 players"
 
   Scenario: 🃏 User deletes a player
     Given the user is on game-lobby page

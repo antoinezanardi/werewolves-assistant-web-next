@@ -79,6 +79,9 @@ devDependencies:
   '@types/eslint':
     specifier: ^8.56.2
     version: 8.56.2
+  '@types/pixelmatch':
+    specifier: ^5.2.6
+    version: 5.2.6
   '@types/qs':
     specifier: ^6.9.11
     version: 6.9.11
@@ -133,6 +136,9 @@ devDependencies:
   jest-extended:
     specifier: ^4.0.2
     version: 4.0.2
+  jpeg-js:
+    specifier: ^0.4.4
+    version: 0.4.4
   lint-staged:
     specifier: ^15.2.2
     version: 15.2.2
@@ -151,6 +157,9 @@ devDependencies:
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.19)
+  pixelmatch:
+    specifier: ^5.3.0
+    version: 5.3.0
   playwright:
     specifier: ^1.41.2
     version: 1.41.2
@@ -3569,6 +3578,12 @@ packages:
 
   /@types/parse-json@4.0.2:
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
+    dev: true
+
+  /@types/pixelmatch@5.2.6:
+    resolution: {integrity: sha512-wC83uexE5KGuUODn6zkm9gMzTwdY5L0chiK+VrKcDfEjzxh1uadlWTvOmAbCpnM9zx/Ww3f8uKlYQVnO/TrqVg==, tarball: https://registry.npmjs.org/@types/pixelmatch/-/pixelmatch-5.2.6.tgz}
+    dependencies:
+      '@types/node': 20.11.19
     dev: true
 
   /@types/qs@6.9.11:
@@ -7811,6 +7826,10 @@ packages:
     hasBin: true
     dev: true
 
+  /jpeg-js@0.4.4:
+    resolution: {integrity: sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==, tarball: https://registry.npmjs.org/jpeg-js/-/jpeg-js-0.4.4.tgz}
+    dev: true
+
   /js-base64@2.6.4:
     resolution: {integrity: sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==}
     dev: true
@@ -9745,6 +9764,13 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
+  /pixelmatch@5.3.0:
+    resolution: {integrity: sha512-o8mkY4E/+LNUf6LzX96ht6k6CEDi65k9G2rjMtBe9Oo+VPKSvl+0GKHuH/AlG+GA5LPG/i5hrekkxUc3s2HU+Q==, tarball: https://registry.npmjs.org/pixelmatch/-/pixelmatch-5.3.0.tgz}
+    hasBin: true
+    dependencies:
+      pngjs: 6.0.0
+    dev: true
+
   /pkg-conf@2.1.0:
     resolution: {integrity: sha512-C+VUP+8jis7EsQZIhDYmS5qlNtjv2yP4SNtjXK9AP1ZcTRlnSfuumaTnRfYZnYgUUYVIKqL0fRvmUGDV2fmp6g==}
     engines: {node: '>=4'}
@@ -9775,6 +9801,11 @@ packages:
       playwright-core: 1.41.2
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /pngjs@6.0.0:
+    resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==, tarball: https://registry.npmjs.org/pngjs/-/pngjs-6.0.0.tgz}
+    engines: {node: '>=12.13.0'}
     dev: true
 
   /postcss-calc@9.0.1(postcss@8.4.33):
