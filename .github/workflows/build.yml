@@ -219,6 +219,7 @@ jobs:
         run: pnpm run test:cucumber:prepare
 
       - name: E2E tests ⚗️
+        continue-on-error: true
         run: pnpm run test:cucumber
 
       - name: Save E2E tests reports as artifact 💎
@@ -229,6 +230,9 @@ jobs:
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
+
+      - name: Exit with error if E2E tests failed 🚨
+        run: exit $EXIT_CODE_CUCUMBER;
 
   mutant-tests:
     name: Mutant Tests 👽
