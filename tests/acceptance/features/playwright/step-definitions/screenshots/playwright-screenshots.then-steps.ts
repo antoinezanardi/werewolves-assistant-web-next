@@ -1,32 +1,29 @@
 import { existsSync, readFileSync } from "fs";
 
 import { Then } from "@cucumber/cucumber";
-import { decode as decodeJpeg } from "jpeg-js";
+import { PNG } from "pngjs";
 import pixelMatch from "pixelmatch";
 
 import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
-import { attachDiffScreenshotAndThrowError, saveFullPageScreenshot } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.helpers";
+import { throwErrorIfBrokenThreshold, saveFullPageScreenshot } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.helpers";
 import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
-  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${name}.jpeg`;
+  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${name}.png`;
   if (!existsSync(screenshotPath)) {
     await saveFullPageScreenshot(this.page, name);
 
     return;
   }
-  const baseScreenshot = decodeJpeg(readFileSync(screenshotPath));
-  const diffScreenshot: typeof baseScreenshot = {
+  const baseScreenshot = PNG.sync.read(readFileSync(screenshotPath));
+  const diffScreenshot = new PNG({
     width: baseScreenshot.width,
     height: baseScreenshot.height,
-    data: new Buffer(baseScreenshot.data.length),
-  };
-  const screenshot = decodeJpeg(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
+  });
+  const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
   const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height);
 
-  const maxPixelDiff = 200;
-  if (pixelDiff > maxPixelDiff) {
-    attachDiffScreenshotAndThrowError(this, diffScreenshot, name);
-  }
+  this.attach(diffScreenshot.data, "image/png");
+  throwErrorIfBrokenThreshold(this, pixelDiff, name);
 });

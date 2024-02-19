@@ -1,4 +1,3 @@
-import { encode as encodeJpeg } from "jpeg-js";
 import type { Page } from "playwright-core";
 
 import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
@@ -6,7 +5,7 @@ import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/share
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 async function saveFullPageScreenshot(page: Page, screenshotName: string): Promise<void> {
-  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${screenshotName}.jpeg`;
+  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${screenshotName}.png`;
   console.info(`The snapshot with name "${screenshotName}" does not exist. Creating a new snapshot.`);
   await page.screenshot({
     path: screenshotPath,
@@ -14,13 +13,15 @@ async function saveFullPageScreenshot(page: Page, screenshotName: string): Promi
   });
 }
 
-function attachDiffScreenshotAndThrowError(world: CustomWorld, diffScreenshot: { width: number; height: number; data: Buffer }, name: string): void {
-  const diffJpeg = encodeJpeg(diffScreenshot);
-  world.attach(diffJpeg.data, "image/png");
-  throw new Error(`The snapshot with name "${name}" does not match the expected screenshot.`);
+function throwErrorIfBrokenThreshold(world: CustomWorld, pixelDiff: number, name: string): void {
+  const maxPixelDiff = 200;
+  console.info(`The pixel diff for snapshot with name "${name}" is ${pixelDiff} px`);
+  if (pixelDiff > maxPixelDiff) {
+    throw new Error(`The snapshot with name "${name}" does not match the expected screenshot because the pixel diff is ${pixelDiff} which is greater than the allowed ${maxPixelDiff} pixel diff threshold`);
+  }
 }
 
 export {
   saveFullPageScreenshot,
-  attachDiffScreenshotAndThrowError,
+  throwErrorIfBrokenThreshold,
 };
