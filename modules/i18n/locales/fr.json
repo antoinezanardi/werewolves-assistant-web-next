@@ -424,6 +424,11 @@
     },
     "GameLobbyPlayersParty": {
       "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
+    },
+    "GameNotFound": {
+      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?",
+      "createAnotherGame": "Créer une autre partie",
+      "goToHome": "Retour à l'accueil"
     }
   }
 }

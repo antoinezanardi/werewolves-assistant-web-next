@@ -424,6 +424,11 @@
     },
     "GameLobbyPlayersParty": {
       "addPlayersWithInputAbove": "Add player names with the input above"
+    },
+    "GameNotFound": {
+      "gameNotFound": "Game not found… Did you get lost ?",
+      "createAnotherGame": "Create another game",
+      "goToHome": "Go to home"
     }
   }
 }
