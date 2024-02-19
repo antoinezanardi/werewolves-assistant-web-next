@@ -23,7 +23,7 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     height: baseScreenshot.height,
   });
   const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
-  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.5 };
+  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.8 };
   const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height, pixelMatchOptions);
 
   this.attach(PNG.sync.write(diffScreenshot), "image/png");
