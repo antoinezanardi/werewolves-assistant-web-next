@@ -55,6 +55,9 @@
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
       "backToHome": "Retour à l'accueil",
       "imageTitle": "Image du titre de la page À quoi ça sert"
+    },
+    "game": {
+      "loadingGame": "Chargement de la partie…"
     }
   },
   "composables": {
@@ -421,6 +424,11 @@
     },
     "GameLobbyPlayersParty": {
       "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
+    },
+    "GameNotFound": {
+      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?",
+      "createAnotherGame": "Créer une autre partie",
+      "goToHome": "Retour à l'accueil"
     }
   }
 }

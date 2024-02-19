@@ -8,7 +8,7 @@ exports[`About Available Roles Component > should match snapshot when rendered. 
   </div>
   <hr>
   <div id="loading-roles-container" class="align-items-center d-flex flex-column justify-content-center">
-    <progress-spinner-stub aria-label="Loading roles…"></progress-spinner-stub><small>Loading roles…</small>
+    <text-progress-spinner-stub text="Loading roles…" id="loading-roles-spinner"></text-progress-spinner-stub>
   </div>
 </div>"
 `;

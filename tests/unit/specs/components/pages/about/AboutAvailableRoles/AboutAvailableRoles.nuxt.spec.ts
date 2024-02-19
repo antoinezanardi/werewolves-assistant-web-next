@@ -6,6 +6,7 @@ import { nextTick } from "vue";
 
 import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue";
 import AboutAvailableRoles from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue";
+import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import type { Role } from "~/composables/api/role/types/role.class";
@@ -56,9 +57,9 @@ describe("About Available Roles Component", () => {
       });
 
       it("should translate loading roles text when roles are not set yet.", () => {
-        const loadingRolesText = wrapper.find<HTMLDivElement>("#loading-roles-container");
+        const loadingRolesSpinner = wrapper.findComponent<typeof TextProgressSpinner>("#loading-roles-spinner");
 
-        expect(loadingRolesText.text()).toBe("Loading roles…");
+        expect(loadingRolesSpinner.props("text")).toBe("Loading roles…");
       });
     });
 

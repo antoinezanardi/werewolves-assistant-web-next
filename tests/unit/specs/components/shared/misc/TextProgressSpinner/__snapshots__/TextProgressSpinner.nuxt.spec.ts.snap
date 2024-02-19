@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Text Progress Spinner Component > should match snapshot when rendered. 1`] = `
+"<div id="progress-spinner" class="align-items-center d-flex flex-column justify-content-center">
+  <progress-spinner-stub aria-label="Loading…"></progress-spinner-stub><small class="text-progress-spinner-text">Loading…</small>
+</div>"
+`;
