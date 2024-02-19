@@ -14,10 +14,7 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
   const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${process.platform}/${name}.png`;
   const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
   if (!existsSync(screenshotPath)) {
-    this.attach(PNG.sync.write(screenshot), {
-      mediaType: "image/png",
-      fileName: `[NEW] - ${name}.png`,
-    });
+    this.attach(PNG.sync.write(screenshot), "image/png");
     await saveFullPageScreenshot(this.page, screenshotPath);
 
     return;
@@ -27,7 +24,7 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     width: baseScreenshot.width,
     height: baseScreenshot.height,
   });
-  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.8 };
+  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.5 };
   const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height, pixelMatchOptions);
 
   this.attach(PNG.sync.write(diffScreenshot), "image/png");
