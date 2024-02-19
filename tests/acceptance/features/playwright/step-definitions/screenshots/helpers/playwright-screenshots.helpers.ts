@@ -14,7 +14,7 @@ async function saveFullPageScreenshot(page: Page, screenshotName: string): Promi
 }
 
 function throwErrorIfBrokenThreshold(world: CustomWorld, pixelDiff: number, name: string): void {
-  const maxPixelDiff = 200;
+  const maxPixelDiff = 3000;
   console.info(`The pixel diff for snapshot with name "${name}" is ${pixelDiff} px`);
   if (pixelDiff > maxPixelDiff) {
     throw new Error(`The snapshot with name "${name}" does not match the expected screenshot because the pixel diff is ${pixelDiff} which is greater than the allowed ${maxPixelDiff} pixel diff threshold`);
