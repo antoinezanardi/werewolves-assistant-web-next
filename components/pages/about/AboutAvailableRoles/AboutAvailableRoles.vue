@@ -21,9 +21,10 @@
       id="loading-roles-container"
       class="align-items-center d-flex flex-column justify-content-center"
     >
-      <VuePrimeProgressSpinner :aria-label="$t('components.AboutAvailableRoles.loadingRoles')"/>
-
-      <small>{{ $t("components.AboutAvailableRoles.loadingRoles") }}</small>
+      <TextProgressSpinner
+        id="loading-roles-spinner"
+        :text="$t('components.AboutAvailableRoles.loadingRoles')"
+      />
     </div>
 
     <div v-else>
@@ -62,6 +63,7 @@
 import { storeToRefs } from "pinia";
 
 import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue";
+import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useRoleName } from "~/composables/api/role/useRoleName";

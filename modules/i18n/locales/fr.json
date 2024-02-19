@@ -55,6 +55,9 @@
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
       "backToHome": "Retour à l'accueil",
       "imageTitle": "Image du titre de la page À quoi ça sert"
+    },
+    "game": {
+      "loadingGame": "Chargement de la partie…"
     }
   },
   "composables": {

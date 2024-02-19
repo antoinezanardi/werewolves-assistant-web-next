@@ -5,6 +5,7 @@ import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue"
 import type GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound.vue";
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
+import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeUseRoute } from "~/tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -22,6 +23,9 @@ describe("Game Page", () => {
   beforeEach(async() => {
     hoistedMocks.useRoute.params = { id: "1" };
     wrapper = await mountSuspendedComponent(GamePage);
+    const gameStore = useGameStore();
+    gameStore.fetchingGameStatus = "pending";
+    await nextTick();
   });
 
   it("should match snapshot when rendered.", () => {
@@ -44,12 +48,14 @@ describe("Game Page", () => {
   });
 
   describe("Game Status Containers", () => {
-    it("should render game is loading container when game fetching status is pending.", async() => {
-      const gameStore = useGameStore();
-      gameStore.fetchingGameStatus = "pending";
-      await nextTick();
-
+    it("should render game is loading container when game fetching status is pending.", () => {
       expect(wrapper.find<HTMLDivElement>("#loading-game-container").exists()).toBeTruthy();
+    });
+
+    it("should render loading game spinner with text when game fetching status is pending.", () => {
+      const loadingGameSpinner = wrapper.findComponent<typeof TextProgressSpinner>("#loading-game-spinner");
+
+      expect(loadingGameSpinner.props("text")).toBe("Loading game…");
     });
 
     it("should render game not found when game fetching status is error.", async() => {

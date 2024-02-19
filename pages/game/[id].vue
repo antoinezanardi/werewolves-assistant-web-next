@@ -6,17 +6,25 @@
     <div
       v-if="fetchingGameStatus === 'pending'"
       id="loading-game-container"
+      class="align-items-center d-flex flex-column h-100 justify-content-center"
     >
-      LOADING
+      <TextProgressSpinner
+        id="loading-game-spinner"
+        :text="$t('pages.game.loadingGame')"
+      />
     </div>
 
-    <div v-else-if="fetchingGameStatus === 'error'">
-      <GameNotFound id="game-not-found"/>
-    </div>
+    <GameNotFound
+      v-else-if="fetchingGameStatus === 'error'"
+      id="game-not-found"
+      class="h-100"
+    />
 
-    <div v-else>
-      <Component :is="gameStatusComponentToRender"/>
-    </div>
+    <Component
+      :is="gameStatusComponentToRender"
+      v-else
+      class="h-100"
+    />
   </div>
 </template>
 
@@ -27,6 +35,7 @@ import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue"
 import GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound.vue";
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
+import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 

@@ -55,6 +55,9 @@
       "whyAnAssistant": "Why an assistant ?",
       "backToHome": "Back to home",
       "imageTitle": "Werewolf illustration"
+    },
+    "game": {
+      "loadingGame": "Loading game…"
     }
   },
   "composables": {
