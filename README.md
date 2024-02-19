@@ -97,6 +97,10 @@ pnpm run build
 
 ![Cucumber](https://img.shields.io/badge/-Cucumber-black?style=for-the-badge&logoColor=white&logo=cucumber&color=169652)
 
+E2E tests are written in Gherkin language around Playwright functions and are available in the **[features directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/features)**.
+
+🏞️ Screenshots for visual regression tests for each platform (`linux` / `darwin`) are available in the **[screenshots directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/screenshots)**.
+
 ### 👽 Mutant testing
 
 ![Stryker](https://img.shields.io/badge/-Stryker-black?style=for-the-badge&logoColor=white&logo=stryker&color=7F1B10) 
