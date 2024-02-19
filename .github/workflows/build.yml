@@ -219,6 +219,7 @@ jobs:
         run: pnpm run test:cucumber:prepare
 
       - name: E2E tests ⚗️
+        id: e2e-tests
         continue-on-error: true
         run: pnpm run test:cucumber
 
@@ -232,7 +233,8 @@ jobs:
         run: pnpm run docker:sandbox-api:stop
 
       - name: Exit with error if E2E tests failed 🚨
-        run: exit $EXIT_CODE_CUCUMBER;
+        if: steps.e2e-tests.outcome != 'success'
+        run: exit 1;
 
   mutant-tests:
     name: Mutant Tests 👽
