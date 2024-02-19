@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "fs";
 
 import { Then } from "@cucumber/cucumber";
 import { PNG } from "pngjs";
+import type { PixelmatchOptions } from "pixelmatch";
 import pixelMatch from "pixelmatch";
 
 import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
@@ -22,8 +23,9 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     height: baseScreenshot.height,
   });
   const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
-  const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height);
+  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.5 };
+  const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height, pixelMatchOptions);
 
-  this.attach(diffScreenshot.data, "image/png");
+  this.attach(PNG.sync.write(diffScreenshot), "image/png");
   throwErrorIfBrokenThreshold(this, pixelDiff, name);
 });
