@@ -143,8 +143,8 @@ devDependencies:
     specifier: ^15.2.2
     version: 15.2.2
   msw:
-    specifier: ^2.2.0
-    version: 2.2.0(typescript@5.3.3)
+    specifier: ^2.2.1
+    version: 2.2.1(typescript@5.3.3)
   nuxt:
     specifier: ^3.10.1
     version: 3.10.1(@types/node@20.11.19)(eslint@8.56.0)(rollup@4.12.0)(sass@1.71.0)(typescript@5.3.3)(vite@5.1.3)(vue-tsc@1.8.27)
@@ -1602,7 +1602,7 @@ packages:
     dependencies:
       '@inquirer/type': 1.2.0
       '@types/mute-stream': 0.0.4
-      '@types/node': 20.11.16
+      '@types/node': 20.11.19
       '@types/wrap-ansi': 3.0.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
@@ -3398,7 +3398,7 @@ packages:
   /@types/http-proxy@1.17.14:
     resolution: {integrity: sha512-SSrD0c1OQzlFX7pGu1eXxSEjemej64aaNPRhhVYUGqXh0BtldAAx37MG8btcumvpgKyZp1F5Gn3JkktdxiFv6w==}
     dependencies:
-      '@types/node': 20.11.16
+      '@types/node': 20.11.19
     dev: true
 
   /@types/istanbul-lib-coverage@2.0.6:
@@ -3424,13 +3424,7 @@ packages:
   /@types/mute-stream@0.0.4:
     resolution: {integrity: sha512-CPM9nzrCPPJHQNA9keH9CVkVI+WR5kMa+7XEs5jcGQ0VoAGnLv242w8lIVgwAEfmE4oufJRaTc9PNLQl0ioAow==}
     dependencies:
-      '@types/node': 20.11.16
-    dev: true
-
-  /@types/node@20.11.16:
-    resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
-    dependencies:
-      undici-types: 5.26.5
+      '@types/node': 20.11.19
     dev: true
 
   /@types/node@20.11.19:
@@ -8487,8 +8481,8 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw@2.2.0(typescript@5.3.3):
-    resolution: {integrity: sha512-98cUGcIphhdf3KDbmSxji7XFqLxeSFAmPUNV00N/U76GOkuUKEwp6MHqM6KW70rlpgeJP8qIWueppdnVThzG1g==}
+  /msw@2.2.1(typescript@5.3.3):
+    resolution: {integrity: sha512-DCsZAQwan+2onEcpD86fiEnCKW4IvYzqcwDq/2TIoeNrmBqNp/mJW4wHQyxcoYrRPwgujin7wDFflqiSO1iT/w==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
