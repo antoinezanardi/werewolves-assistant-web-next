@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from "fs";
+import { platform } from "os";
 
 import { Then } from "@cucumber/cucumber";
 import { PNG } from "pngjs";
@@ -11,7 +12,7 @@ import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/share
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
-  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${process.platform}/${name}.png`;
+  const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${platform()}/${name}.png`;
   const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
   if (!existsSync(screenshotPath)) {
     this.attach(PNG.sync.write(screenshot), "image/png");
@@ -24,7 +25,7 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     width: baseScreenshot.width,
     height: baseScreenshot.height,
   });
-  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.5 };
+  const pixelMatchOptions: PixelmatchOptions = { threshold: 0.1 };
   const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height, pixelMatchOptions);
 
   this.attach(PNG.sync.write(diffScreenshot), "image/png");
