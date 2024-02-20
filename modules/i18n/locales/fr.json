@@ -426,9 +426,16 @@
       "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
     },
     "GameNotFound": {
-      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?",
-      "createAnotherGame": "Créer une autre partie",
-      "goToHome": "Retour à l'accueil"
+      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?"
+    },
+    "GameCanceled": {
+      "gameCanceled": "Partie annulée…"
+    },
+    "BackToHomeButton": {
+      "backToHome": "Retour à l'accueil"
+    },
+    "CreateAnotherGameButton": {
+      "createAnotherGame": "Créer une autre partie"
     }
   }
 }

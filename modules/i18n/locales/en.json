@@ -426,9 +426,16 @@
       "addPlayersWithInputAbove": "Add player names with the input above"
     },
     "GameNotFound": {
-      "gameNotFound": "Game not found… Did you get lost ?",
-      "createAnotherGame": "Create another game",
-      "goToHome": "Go to home"
+      "gameNotFound": "Game not found… Did you get lost ?"
+    },
+    "GameCanceled": {
+      "gameCanceled": "Game canceled"
+    },
+    "BackToHomeButton": {
+      "backToHome": "Back to home"
+    },
+    "CreateAnotherGameButton": {
+      "createAnotherGame": "Create another game"
     }
   }
 }

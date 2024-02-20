@@ -5,8 +5,8 @@ exports[`Game Not Found Component > should match snapshot when rendered. 1`] = `
   <h1 id="game-not-found-text" class="align-items-center d-flex flex-column justify-content-center"><i class="fa fa-2x fa-question-circle mb-3 text-warning"></i><span>Game not found… Did you get lost ?</span></h1>
   <div>
     <divider-stub class="mb-4"></divider-stub>
-    <nuxt-link-stub to="/game-lobby" id="create-another-game-button" class="me-2 p-button p-button-primary"></nuxt-link-stub>
-    <nuxt-link-stub to="/" id="go-to-home-button" class="p-button p-button-secondary"></nuxt-link-stub>
+    <create-another-game-button-stub class="me-2"></create-another-game-button-stub>
+    <back-to-home-button-stub></back-to-home-button-stub>
   </div>
 </div>"
 `;

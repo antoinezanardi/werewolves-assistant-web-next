@@ -32,14 +32,7 @@
     <hr class="my-3">
 
     <div class="d-flex justify-content-center pb-3">
-      <NuxtLink
-        id="about-back-to-home-button"
-        class="p-button p-button-secondary"
-        to="/"
-      >
-        <i class="fa fa-sign-out me-2"/>
-        {{ $t("pages.about.backToHome") }}
-      </NuxtLink>
+      <BackToHomeButton/>
     </div>
   </div>
 </template>
@@ -50,6 +43,7 @@ import AboutCreator from "~/components/pages/about/AboutCreator.vue";
 import AboutHowToContribute from "~/components/pages/about/AboutHowToContribute.vue";
 import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAssistant.vue";
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
+import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
 </script>

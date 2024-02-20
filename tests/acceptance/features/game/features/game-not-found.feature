@@ -6,7 +6,7 @@ Feature: 🎲❓Game Not Found
     Given the user goes on an unknown game
     Then the heading with name "Game not found… Did you get lost ?" should be visible
     And the link with name "Create another game" should be visible
-    And the link with name "Go to home" should be visible
+    And the link with name "Back to home" should be visible
     And the page should match the snapshot with name "Game not found Page"
 
   Scenario: 🎲❓User creates a new game from the game not found page
@@ -16,7 +16,7 @@ Feature: 🎲❓Game Not Found
 
   Scenario: 🎲❓User goes to home from the game not found page
     Given the user goes on an unknown game
-    When the user clicks on the link with name "Go to home"
+    When the user clicks on the link with name "Back to home"
     Then the user should be on home page
 
   Scenario: 🎲❓User goes back on home page by clicking on werewolves assistant logo in navigation bar

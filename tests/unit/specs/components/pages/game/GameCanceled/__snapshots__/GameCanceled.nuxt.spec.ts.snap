@@ -1,3 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Canceled Component > should match snapshot when rendered. 1`] = `"<div id="game-canceled"> GAME CANCELED </div>"`;
+exports[`Game Canceled Component > should match snapshot when rendered. 1`] = `
+"<div id="game-canceled" class="align-items-center d-flex flex-column justify-content-center">
+  <h1 id="game-canceled-text" class="align-items-center d-flex flex-column justify-content-center"><i class="fa fa-2x fa-ban mb-3 text-danger"></i><span>Game canceled</span></h1>
+  <div>
+    <divider-stub class="mb-4"></divider-stub>
+    <create-another-game-button-stub></create-another-game-button-stub>
+    <back-to-home-button-stub></back-to-home-button-stub>
+  </div>
+</div>"
+`;

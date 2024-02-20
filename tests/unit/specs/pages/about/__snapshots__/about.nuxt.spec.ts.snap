@@ -14,7 +14,7 @@ exports[`About Page Component > should match snapshot when rendered. 1`] = `
   <about-creator-stub class="mt-5"></about-creator-stub>
   <hr class="my-3">
   <div class="d-flex justify-content-center pb-3">
-    <nuxt-link-stub to="/" id="about-back-to-home-button" class="p-button p-button-secondary"></nuxt-link-stub>
+    <back-to-home-button-stub></back-to-home-button-stub>
   </div>
 </div>"
 `;

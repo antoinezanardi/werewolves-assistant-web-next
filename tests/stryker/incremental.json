@@ -717,6 +717,385 @@
       ],
       "source": "<template>\n  <div class=\"d-flex\">\n    <div\n      id=\"role-left-description\"\n      class=\"align-items-center d-flex flex-column justify-content-center\"\n    >\n      <RoleImage\n        :alt=\"getRoleDescriptionLeftImageAlt(role.name)\"\n        class=\"available-role-description-role-image\"\n        :role-name=\"role.name\"\n        sizes=\"150px\"\n      />\n\n      <h2 class=\"available-role-description-role-name mt-3\">\n        {{ getRoleNameLabel(role.name) }}\n      </h2>\n\n      <RoleTypeBadge\n        class=\"available-role-description-role-type-badge mt-3\"\n        :role-type=\"role.type\"\n      />\n\n      <RoleOriginBadge\n        class=\"available-role-description-role-origin-badge mt-3\"\n        :role-origin=\"role.origin\"\n      />\n    </div>\n\n    <div\n      id=\"role-right-description\"\n      class=\"container-fluid d-flex flex-column justify-content-center\"\n    >\n      <p\n        v-for=\"line in roleDescriptionLines\"\n        :key=\"line\"\n        class=\"available-role-description-role-description-line\"\n      >\n        {{ line }}\n      </p>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport type { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\nconst props = defineProps<AboutAvailableRoleDescriptionProps>();\n\nconst { t, messages, locale } = useI18n();\n\nconst { getRoleNameLabel } = useRoleName();\n\nconst roleDescriptionLines = computed<string[]>(() => {\n  type ComponentsMessages = Record<\"AboutAvailableRoleDescription\", Record<\"descriptions\", Record<RoleNames, Record<string, string>>>>;\n\n  const componentsMessages = messages.value[locale.value].components as ComponentsMessages;\n  const roleDescriptionMessages = componentsMessages.AboutAvailableRoleDescription.descriptions[props.role.name] as Record<string, string> | undefined;\n  if (!roleDescriptionMessages) {\n    return [];\n  }\n  return Object.keys(roleDescriptionMessages).map(key => t(`components.AboutAvailableRoleDescription.descriptions.${props.role.name}.${key}`));\n});\n\nfunction getRoleDescriptionLeftImageAlt(roleName: RoleNames): string {\n  return t(\"components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt\", { role: getRoleNameLabel(roleName) });\n}\n</script>\n\n<style lang=\"scss\">\n#role-left-description {\n  min-width: 200px;\n}\n</style>"
     },
+    "components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "24",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected '' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 6,
+          "static": false,
+          "killedBy": [
+            "64"
+          ],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 81
+            },
+            "start": {
+              "column": 63,
+              "line": 76
+            }
+          }
+        },
+        {
+          "id": "25",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "roles.value",
+          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "59"
+          ],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 19,
+              "line": 77
+            },
+            "start": {
+              "column": 7,
+              "line": 77
+            }
+          }
+        },
+        {
+          "id": "26",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected '' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 6,
+          "static": false,
+          "killedBy": [
+            "64"
+          ],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 19,
+              "line": 77
+            },
+            "start": {
+              "column": 7,
+              "line": 77
+            }
+          }
+        },
+        {
+          "id": "27",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "59"
+          ],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 19,
+              "line": 77
+            },
+            "start": {
+              "column": 7,
+              "line": 77
+            }
+          }
+        },
+        {
+          "id": "28",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "59"
+          ],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 79
+            },
+            "start": {
+              "column": 21,
+              "line": 77
+            }
+          }
+        },
+        {
+          "id": "29",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected ', 3' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "64"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 66,
+              "line": 80
+            },
+            "start": {
+              "column": 12,
+              "line": 80
+            }
+          }
+        },
+        {
+          "id": "30",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected { headerAction: { …(1) } } to strictly equal { Object (headerAction) }",
+          "status": "Killed",
+          "testsCompleted": 3,
+          "static": false,
+          "killedBy": [
+            "66"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 85
+            },
+            "start": {
+              "column": 80,
+              "line": 83
+            }
+          }
+        },
+        {
+          "id": "31",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected { Object (headerAction) } to strictly equal { Object (headerAction) }",
+          "status": "Killed",
+          "testsCompleted": 3,
+          "static": false,
+          "killedBy": [
+            "66"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 73,
+              "line": 84
+            },
+            "start": {
+              "column": 12,
+              "line": 84
+            }
+          }
+        },
+        {
+          "id": "32",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected { Object (headerAction) } to strictly equal { Object (headerAction) }",
+          "status": "Killed",
+          "testsCompleted": 3,
+          "static": false,
+          "killedBy": [
+            "66"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 111,
+              "line": 84
+            },
+            "start": {
+              "column": 75,
+              "line": 84
+            }
+          }
+        },
+        {
+          "id": "33",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected undefined to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "67"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 89
+            },
+            "start": {
+              "column": 70,
+              "line": 87
+            }
+          }
+        },
+        {
+          "id": "34",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected ', {\"role\":\"werewolf\"}' to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "67"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 63,
+              "line": 88
+            },
+            "start": {
+              "column": 12,
+              "line": 88
+            }
+          }
+        },
+        {
+          "id": "35",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected 'components.AboutAvailableRoles.availa…' to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 4,
+          "static": false,
+          "killedBy": [
+            "67"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68"
+          ],
+          "location": {
+            "end": {
+              "column": 101,
+              "line": 88
+            },
+            "start": {
+              "column": 65,
+              "line": 88
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <div id=\"about-available-roles\">\n    <div class=\"align-items-center d-flex\">\n      <RoleImage\n        id=\"about-available-roles-title-role-image\"\n        :alt=\"$t('components.AboutAvailableRoles.availableRolesImage')\"\n        class=\"me-3\"\n        :role-name=\"RoleNames.ANGEL\"\n        sizes=\"50px\"\n      />\n\n      <h2 id=\"about-available-roles-title\">\n        {{ $t('components.AboutAvailableRoles.availableRoles') }}\n      </h2>\n    </div>\n\n    <hr>\n\n    <div\n      v-if=\"!roles\"\n      id=\"loading-roles-container\"\n      class=\"align-items-center d-flex flex-column justify-content-center\"\n    >\n      <TextProgressSpinner\n        id=\"loading-roles-spinner\"\n        :text=\"$t('components.AboutAvailableRoles.loadingRoles')\"\n      />\n    </div>\n\n    <div v-else>\n      <p id=\"about-available-roles-first-section\">\n        {{ availableRolesText }}\n      </p>\n\n      <VuePrimeAccordion>\n        <VuePrimeAccordionTab\n          v-for=\"role in roles\"\n          :key=\"role.name\"\n          :pt=\"{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }\"\n        >\n          <template #header>\n            <div class=\"align-items-center available-role-image-header d-flex\">\n              <RoleImage\n                :alt=\"getAvailableRoleHeaderImageAlt(role.name)\"\n                :role-name=\"role.name\"\n                sizes=\"40px\"\n              />\n\n              <div class=\"ms-2\">\n                {{ getRoleNameLabel(role.name) }}\n              </div>\n            </div>\n          </template>\n\n          <AboutAvailableRoleDescription :role=\"role\"/>\n        </VuePrimeAccordionTab>\n      </VuePrimeAccordion>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { storeToRefs } from \"pinia\";\n\nimport AboutAvailableRoleDescription from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue\";\nimport TextProgressSpinner from \"~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\n\nconst { t } = useI18n();\nconst { getRoleNameLabel } = useRoleName();\nconst { roles } = storeToRefs(useRolesStore());\n\nconst availableRolesText = computed<string | undefined>(() => {\n  if (!roles.value) {\n    return undefined;\n  }\n  return t(\"components.AboutAvailableRoles.assistantHasManyRoles\", roles.value.length);\n});\n\nfunction getAvailableRoleAccordionHeaderAriaLabel(roleName: RoleNames): string {\n  return t(\"components.AboutAvailableRoles.clickToExpandRoleDescription\", { role: getRoleNameLabel(roleName) });\n}\n\nfunction getAvailableRoleHeaderImageAlt(roleName: RoleNames): string {\n  return t(\"components.AboutAvailableRoles.availableRoleImage\", { role: getRoleNameLabel(roleName) });\n}\n</script>"
+    },
     "components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue": {
       "language": "html",
       "mutants": [
@@ -3911,14 +4290,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "192"
+            "187"
           ],
           "coveredBy": [
+            "187",
+            "188",
+            "189",
             "192",
             "193",
-            "194",
-            "197",
-            "198",
             "213"
           ],
           "location": {
@@ -3941,14 +4320,14 @@
           "testsCompleted": 5,
           "static": false,
           "killedBy": [
-            "194"
+            "189"
           ],
           "coveredBy": [
+            "187",
+            "188",
+            "189",
             "192",
             "193",
-            "194",
-            "197",
-            "198",
             "213"
           ],
           "location": {
@@ -3971,14 +4350,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "192"
+            "187"
           ],
           "coveredBy": [
+            "187",
+            "188",
+            "189",
             "192",
             "193",
-            "194",
-            "197",
-            "198",
             "213"
           ],
           "location": {
@@ -4001,14 +4380,14 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "192"
+            "187"
           ],
           "coveredBy": [
+            "187",
+            "188",
+            "189",
             "192",
             "193",
-            "194",
-            "197",
-            "198",
             "213"
           ],
           "location": {
@@ -4031,12 +4410,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "192"
+            "187"
           ],
           "coveredBy": [
-            "192",
-            "193",
-            "194"
+            "187",
+            "188",
+            "189"
           ],
           "location": {
             "end": {
@@ -4058,12 +4437,12 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "194"
+            "189"
           ],
           "coveredBy": [
-            "194",
-            "197",
-            "198",
+            "189",
+            "192",
+            "193",
             "213"
           ],
           "location": {
@@ -4370,8 +4749,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4381,6 +4759,40 @@
             "start": {
               "column": 22,
               "line": 23
+            }
+          }
+        },
+        {
+          "id": "155",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "64"
+          ],
+          "coveredBy": [
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 34
+            },
+            "start": {
+              "column": 45,
+              "line": 25
             }
           }
         },
@@ -4405,8 +4817,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4440,8 +4851,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4475,8 +4885,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4535,8 +4944,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4570,8 +4978,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4605,8 +5012,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4640,8 +5046,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4700,8 +5105,7 @@
             "162"
           ],
           "coveredBy": [
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4735,8 +5139,7 @@
             "159",
             "160",
             "161",
-            "162",
-            "182"
+            "162"
           ],
           "location": {
             "end": {
@@ -4746,41 +5149,6 @@
             "start": {
               "column": 10,
               "line": 33
-            }
-          }
-        },
-        {
-          "id": "155",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "64"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162",
-            "182"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 34
-            },
-            "start": {
-              "column": 45,
-              "line": 25
             }
           }
         }
@@ -5107,6 +5475,52 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "177",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/error/useWerewolvesAssistantApiError.ts(10,44): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "176",
+            "177",
+            "212",
+            "213",
+            "214",
+            "225"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 24
+            },
+            "start": {
+              "column": 75,
+              "line": 10
+            }
+          }
+        },
+        {
           "id": "178",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -5217,6 +5631,7 @@
           "statusReason": "composables/api/error/useWerewolvesAssistantApiError.ts(23,3): error TS2741: Property 'handleWerewolvesAssistantApiError' is missing in type '{}' but required in type 'UseWerewolvesAssistantApiError'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -5242,7 +5657,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -5252,51 +5667,6 @@
             "start": {
               "column": 10,
               "line": 23
-            }
-          }
-        },
-        {
-          "id": "177",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/error/useWerewolvesAssistantApiError.ts(10,44): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "176",
-            "177",
-            "212",
-            "213",
-            "214",
-            "223"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 24
-            },
-            "start": {
-              "column": 75,
-              "line": 10
             }
           }
         }
@@ -5347,7 +5717,7 @@
             "78",
             "91",
             "92",
-            "204"
+            "195"
           ],
           "location": {
             "end": {
@@ -5584,7 +5954,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "229"
+            "231"
           ],
           "location": {
             "end": {
@@ -9975,6 +10345,40 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "298",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/useFetchGames.ts(10,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "168",
+            "169",
+            "170",
+            "171"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 35
+            },
+            "start": {
+              "column": 41,
+              "line": 10
+            }
+          }
+        },
+        {
           "id": "299",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -10261,45 +10665,13 @@
           }
         },
         {
-          "id": "298",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/useFetchGames.ts(10,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "168",
-            "169",
-            "170",
-            "171"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 35
-            },
-            "start": {
-              "column": 41,
-              "line": 10
-            }
-          }
-        },
-        {
           "id": "311",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "composables/api/game/useFetchGames.ts(31,3): error TS2739: Type '{}' is missing the following properties from type 'UseFetchGames': createGame, getGame\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "103",
             "104",
@@ -10341,7 +10713,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10363,7 +10735,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10385,10 +10757,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "203"
+            "194"
           ],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10410,10 +10782,10 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "203"
+            "194"
           ],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10435,7 +10807,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10457,7 +10829,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "203"
+            "194"
           ],
           "location": {
             "end": {
@@ -10477,6 +10849,42 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "318",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/useFetchRoles.ts(8,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "199",
+            "200",
+            "212",
+            "213",
+            "214"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 19
+            },
+            "start": {
+              "column": 41,
+              "line": 8
+            }
+          }
+        },
+        {
           "id": "319",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -10485,8 +10893,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "208",
-            "209"
+            "199",
+            "200"
           ],
           "location": {
             "end": {
@@ -10508,8 +10916,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "208",
-            "209"
+            "199",
+            "200"
           ],
           "location": {
             "end": {
@@ -10531,11 +10939,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "208"
+            "199"
           ],
           "coveredBy": [
-            "208",
-            "209"
+            "199",
+            "200"
           ],
           "location": {
             "end": {
@@ -10557,11 +10965,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "208"
+            "199"
           ],
           "coveredBy": [
-            "208",
-            "209"
+            "199",
+            "200"
           ],
           "location": {
             "end": {
@@ -10583,8 +10991,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "208",
-            "209"
+            "199",
+            "200"
           ],
           "location": {
             "end": {
@@ -10606,7 +11014,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "209"
+            "200"
           ],
           "location": {
             "end": {
@@ -10620,47 +11028,13 @@
           }
         },
         {
-          "id": "318",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/useFetchRoles.ts(8,27): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "208",
-            "209",
-            "212",
-            "213",
-            "214"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 19
-            },
-            "start": {
-              "column": 41,
-              "line": 8
-            }
-          }
-        },
-        {
           "id": "325",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "composables/api/role/useFetchRoles.ts(18,3): error TS2741: Property 'fetchRoles' is missing in type '{}' but required in type 'UseFetchRoles'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -10672,8 +11046,8 @@
             "66",
             "67",
             "68",
-            "208",
-            "209",
+            "199",
+            "200",
             "212",
             "213",
             "214"
@@ -10712,7 +11086,7 @@
             "100",
             "101",
             "102",
-            "220"
+            "222"
           ],
           "location": {
             "end": {
@@ -10742,7 +11116,7 @@
             "100",
             "101",
             "102",
-            "220"
+            "222"
           ],
           "location": {
             "end": {
@@ -10775,7 +11149,7 @@
             "100",
             "101",
             "102",
-            "220"
+            "222"
           ],
           "location": {
             "end": {
@@ -10805,7 +11179,7 @@
             "100",
             "101",
             "102",
-            "220"
+            "222"
           ],
           "location": {
             "end": {
@@ -10825,6 +11199,50 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "330",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/useWerewolvesAssistantApi.ts(10,39): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "212",
+            "213",
+            "214",
+            "225"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 22
+            },
+            "start": {
+              "column": 65,
+              "line": 10
+            }
+          }
+        },
+        {
           "id": "331",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
@@ -10833,7 +11251,7 @@
           "testsCompleted": 9,
           "static": false,
           "killedBy": [
-            "223"
+            "225"
           ],
           "coveredBy": [
             "59",
@@ -10858,7 +11276,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -10880,7 +11298,7 @@
           "testsCompleted": 22,
           "static": false,
           "killedBy": [
-            "223"
+            "225"
           ],
           "coveredBy": [
             "59",
@@ -10905,7 +11323,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -10927,7 +11345,7 @@
           "testsCompleted": 22,
           "static": false,
           "killedBy": [
-            "223"
+            "225"
           ],
           "coveredBy": [
             "59",
@@ -10952,7 +11370,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -10966,55 +11384,13 @@
           }
         },
         {
-          "id": "330",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/useWerewolvesAssistantApi.ts(10,39): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "212",
-            "213",
-            "214",
-            "223"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 22
-            },
-            "start": {
-              "column": 65,
-              "line": 10
-            }
-          }
-        },
-        {
           "id": "334",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "composables/api/useWerewolvesAssistantApi.ts(21,3): error TS2741: Property 'fetchWerewolvesAssistantApi' is missing in type '{}' but required in type 'UseWerewolvesAssistantApi'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -11038,7 +11414,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -11101,6 +11477,55 @@
     "composables/vue-prime/useVuePrimeToasts.ts": {
       "language": "typescript",
       "mutants": [
+        {
+          "id": "337",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/vue-prime/useVuePrimeToasts.ts(14,31): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "122",
+            "123",
+            "124",
+            "125",
+            "126",
+            "212",
+            "213",
+            "214",
+            "225"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 46
+            },
+            "start": {
+              "column": 49,
+              "line": 14
+            }
+          }
+        },
         {
           "id": "338",
           "mutatorName": "BlockStatement",
@@ -11454,6 +11879,7 @@
           "statusReason": "composables/vue-prime/useVuePrimeToasts.ts(39,3): error TS2739: Type '{}' is missing the following properties from type 'UseVuePrimeToasts': addToast, addSuccessToast, addInfoToast, addWarnToast, addErrorToast\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -11482,7 +11908,7 @@
             "212",
             "213",
             "214",
-            "223"
+            "225"
           ],
           "location": {
             "end": {
@@ -11494,25 +11920,25 @@
               "line": 39
             }
           }
-        },
+        }
+      ],
+      "source": "import type { ToastMessageOptions } from \"primevue/toast\";\nimport { useToast } from \"primevue/usetoast\";\n\nimport { DEFAULT_VUE_PRIME_TOAST_OPTIONS } from \"~/composables/vue-prime/constants/vue-prime.constants\";\n\ntype UseVuePrimeToasts = {\n  addToast: (options: ToastMessageOptions) => void;\n  addSuccessToast: (options: ToastMessageOptions) => void;\n  addInfoToast: (options: ToastMessageOptions) => void;\n  addWarnToast: (options: ToastMessageOptions) => void;\n  addErrorToast: (options: ToastMessageOptions) => void;\n};\n\nfunction useVuePrimeToasts(): UseVuePrimeToasts {\n  const toast = useToast();\n\n  function addToast(options: ToastMessageOptions): void {\n    toast.add({\n      ...DEFAULT_VUE_PRIME_TOAST_OPTIONS,\n      ...options,\n    });\n  }\n\n  function addSuccessToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"success\", ...options });\n  }\n\n  function addInfoToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"info\", ...options });\n  }\n\n  function addWarnToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"warn\", ...options });\n  }\n\n  function addErrorToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"error\", ...options });\n  }\n  return {\n    addToast,\n    addSuccessToast,\n    addInfoToast,\n    addWarnToast,\n    addErrorToast,\n  };\n}\n\nexport { useVuePrimeToasts };"
+    },
+    "pages/game/[id].vue": {
+      "language": "html",
+      "mutants": [
         {
-          "id": "337",
+          "id": "353",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
-          "statusReason": "composables/vue-prime/useVuePrimeToasts.ts(14,31): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
+          "statusReason": "expected false to be truthy",
+          "status": "Killed",
+          "testsCompleted": 7,
           "static": false,
+          "killedBy": [
+            "109"
+          ],
           "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
             "103",
             "104",
             "105",
@@ -11521,30 +11947,54 @@
             "108",
             "109",
             "110",
-            "111",
-            "122",
-            "123",
-            "124",
-            "125",
-            "126",
-            "212",
-            "213",
-            "214",
-            "223"
+            "111"
           ],
           "location": {
             "end": {
               "column": 2,
-              "line": 46
+              "line": 62
             },
             "start": {
-              "column": 49,
-              "line": 14
+              "column": 73,
+              "line": 54
+            }
+          }
+        },
+        {
+          "id": "354",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expected false to be truthy",
+          "status": "Killed",
+          "testsCompleted": 7,
+          "static": false,
+          "killedBy": [
+            "109"
+          ],
+          "coveredBy": [
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 59
+            },
+            "start": {
+              "column": 73,
+              "line": 55
             }
           }
         }
       ],
-      "source": "import type { ToastMessageOptions } from \"primevue/toast\";\nimport { useToast } from \"primevue/usetoast\";\n\nimport { DEFAULT_VUE_PRIME_TOAST_OPTIONS } from \"~/composables/vue-prime/constants/vue-prime.constants\";\n\ntype UseVuePrimeToasts = {\n  addToast: (options: ToastMessageOptions) => void;\n  addSuccessToast: (options: ToastMessageOptions) => void;\n  addInfoToast: (options: ToastMessageOptions) => void;\n  addWarnToast: (options: ToastMessageOptions) => void;\n  addErrorToast: (options: ToastMessageOptions) => void;\n};\n\nfunction useVuePrimeToasts(): UseVuePrimeToasts {\n  const toast = useToast();\n\n  function addToast(options: ToastMessageOptions): void {\n    toast.add({\n      ...DEFAULT_VUE_PRIME_TOAST_OPTIONS,\n      ...options,\n    });\n  }\n\n  function addSuccessToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"success\", ...options });\n  }\n\n  function addInfoToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"info\", ...options });\n  }\n\n  function addWarnToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"warn\", ...options });\n  }\n\n  function addErrorToast(options: ToastMessageOptions): void {\n    addToast({ severity: \"error\", ...options });\n  }\n  return {\n    addToast,\n    addSuccessToast,\n    addInfoToast,\n    addWarnToast,\n    addErrorToast,\n  };\n}\n\nexport { useVuePrimeToasts };"
+      "source": "<template>\n  <div\n    id=\"game-page\"\n    class=\"container-fluid\"\n  >\n    <div\n      v-if=\"fetchingGameStatus === 'pending'\"\n      id=\"loading-game-container\"\n      class=\"align-items-center d-flex flex-column h-100 justify-content-center\"\n    >\n      <TextProgressSpinner\n        id=\"loading-game-spinner\"\n        :text=\"$t('pages.game.loadingGame')\"\n      />\n    </div>\n\n    <GameNotFound\n      v-else-if=\"fetchingGameStatus === 'error'\"\n      id=\"game-not-found\"\n      class=\"h-100\"\n    />\n\n    <Component\n      :is=\"gameStatusComponentToRender\"\n      v-else\n      class=\"h-100\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { storeToRefs } from \"pinia\";\n\nimport GameCanceled from \"~/components/pages/game/GameCanceled/GameCanceled.vue\";\nimport GameNotFound from \"~/components/pages/game/GameNotFound/GameNotFound.vue\";\nimport GameOver from \"~/components/pages/game/GameOver/GameOver.vue\";\nimport GamePlaying from \"~/components/pages/game/GamePlaying/GamePlaying.vue\";\nimport TextProgressSpinner from \"~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue\";\nimport type { GameStatus } from \"~/composables/api/game/types/game.types\";\nimport { useGameStore } from \"~/stores/game/useGameStore\";\n\ntype GameStatusComponent = typeof GameCanceled | typeof GameOver | typeof GamePlaying;\n\nconst route = useRoute();\nconst gameStore = useGameStore();\nconst { fetchAndSetGame } = gameStore;\nconst { game, fetchingGameStatus } = storeToRefs(gameStore);\n\nconst { id } = route.params;\n\nconst gameId = Array.isArray(id) ? id[0] : id;\nvoid fetchAndSetGame(gameId);\n\nconst gameStatusComponentToRender = computed<GameStatusComponent>(() => {\n  const gameStatusComponents: Record<GameStatus, GameStatusComponent> = {\n    playing: GamePlaying,\n    over: GameOver,\n    canceled: GameCanceled,\n  };\n\n  return gameStatusComponents[game.value.status];\n});\n</script>"
     },
     "pages/index.vue": {
       "language": "html",
@@ -12363,6 +12813,72 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "378",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "tests/unit/specs/pages/game/game-page.nuxt.spec.ts(27,15): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(39,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(47,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(63,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(71,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(72,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(80,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(81,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(89,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(90,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(36,22): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(37,22): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(43,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(52,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(54,24): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "181",
+            "182",
+            "183"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 30
+            },
+            "start": {
+              "column": 55,
+              "line": 8
+            }
+          }
+        },
+        {
+          "id": "379",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/game/useGameStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "181",
+            "182",
+            "183"
+          ],
+          "location": {
+            "end": {
+              "column": 64,
+              "line": 12
+            },
+            "start": {
+              "column": 58,
+              "line": 12
+            }
+          }
+        },
+        {
           "id": "380",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -12371,11 +12887,11 @@
           "testsCompleted": 1,
           "static": false,
           "killedBy": [
-            "187"
+            "182"
           ],
           "coveredBy": [
-            "187",
-            "188"
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12397,8 +12913,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187",
-            "188"
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12420,8 +12936,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187",
-            "188"
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12443,8 +12959,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187",
-            "188"
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12466,8 +12982,8 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187",
-            "188"
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12489,7 +13005,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187"
+            "182"
           ],
           "location": {
             "end": {
@@ -12511,7 +13027,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "187"
+            "182"
           ],
           "location": {
             "end": {
@@ -12533,7 +13049,7 @@
           "static": false,
           "killedBy": [],
           "coveredBy": [
-            "188"
+            "183"
           ],
           "location": {
             "end": {
@@ -12547,76 +13063,13 @@
           }
         },
         {
-          "id": "378",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "tests/unit/specs/pages/game/game-page.nuxt.spec.ts(27,15): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(39,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(47,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(63,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(71,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(72,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(80,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(81,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(89,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(90,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(36,22): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(37,22): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(43,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(52,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(54,24): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, {}, {}, {}>'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "186",
-            "187",
-            "188"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 30
-            },
-            "start": {
-              "column": 55,
-              "line": 8
-            }
-          }
-        },
-        {
-          "id": "379",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/game/useGameStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "186",
-            "187",
-            "188"
-          ],
-          "location": {
-            "end": {
-              "column": 64,
-              "line": 12
-            },
-            "start": {
-              "column": 58,
-              "line": 12
-            }
-          }
-        },
-        {
           "id": "388",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "tests/unit/specs/pages/game/game-page.nuxt.spec.ts(27,15): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(39,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(47,22): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(63,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(71,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(72,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(80,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(81,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(89,17): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/pages/game/game-page.nuxt.spec.ts(90,17): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(36,22): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(37,22): error TS2339: Property 'fetchingGameStatus' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(43,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(52,23): error TS2339: Property 'fetchAndSetGame' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/useGameStore.spec.ts(54,24): error TS2339: Property 'game' does not exist on type 'Store<StoreIds.GAME, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "103",
             "104",
@@ -12627,9 +13080,9 @@
             "109",
             "110",
             "111",
-            "186",
-            "187",
-            "188"
+            "181",
+            "182",
+            "183"
           ],
           "location": {
             "end": {
@@ -12649,84 +13102,13 @@
       "language": "typescript",
       "mutants": [
         {
-          "id": "391",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "testsCompleted": 1,
-          "static": false,
-          "killedBy": [
-            "190"
-          ],
-          "coveredBy": [
-            "190",
-            "191"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 19
-            },
-            "start": {
-              "column": 52,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "392",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/role/useRolesStore.ts(16,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "190",
-            "191"
-          ],
-          "location": {
-            "end": {
-              "column": 41,
-              "line": 16
-            },
-            "start": {
-              "column": 32,
-              "line": 16
-            }
-          }
-        },
-        {
-          "id": "393",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/role/useRolesStore.ts(18,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "190",
-            "191"
-          ],
-          "location": {
-            "end": {
-              "column": 41,
-              "line": 18
-            },
-            "start": {
-              "column": 32,
-              "line": 18
-            }
-          }
-        },
-        {
           "id": "389",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
           "statusReason": "tests/unit/specs/app.nuxt.spec.ts(29,23): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.nuxt.spec.ts(49,20): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.nuxt.spec.ts(79,20): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(28,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(29,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(35,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(48,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(50,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, {}, {}, {}>'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -12738,9 +13120,9 @@
             "66",
             "67",
             "68",
-            "189",
-            "190",
-            "191",
+            "184",
+            "185",
+            "186",
             "212",
             "213",
             "214"
@@ -12763,6 +13145,7 @@
           "statusReason": "stores/role/useRolesStore.ts(12,58): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -12774,9 +13157,9 @@
             "66",
             "67",
             "68",
-            "189",
-            "190",
-            "191",
+            "184",
+            "185",
+            "186",
             "212",
             "213",
             "214"
@@ -12793,12 +13176,85 @@
           }
         },
         {
+          "id": "391",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "185"
+          ],
+          "coveredBy": [
+            "185",
+            "186"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 19
+            },
+            "start": {
+              "column": 52,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "392",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/role/useRolesStore.ts(16,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "185",
+            "186"
+          ],
+          "location": {
+            "end": {
+              "column": 41,
+              "line": 16
+            },
+            "start": {
+              "column": 32,
+              "line": 16
+            }
+          }
+        },
+        {
+          "id": "393",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/role/useRolesStore.ts(18,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "185",
+            "186"
+          ],
+          "location": {
+            "end": {
+              "column": 41,
+              "line": 18
+            },
+            "start": {
+              "column": 32,
+              "line": 18
+            }
+          }
+        },
+        {
           "id": "394",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
           "statusReason": "tests/unit/specs/app.nuxt.spec.ts(29,23): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.nuxt.spec.ts(49,20): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.nuxt.spec.ts(79,20): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(28,23): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(29,23): error TS2339: Property 'fetchingRoleStatus' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(35,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(48,24): error TS2339: Property 'fetchAndSetRoles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/role/useRolesStore.spec.ts(50,25): error TS2339: Property 'roles' does not exist on type 'Store<StoreIds.ROLES, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
           "status": "CompileError",
           "static": false,
+          "killedBy": [],
           "coveredBy": [
             "59",
             "60",
@@ -12810,9 +13266,9 @@
             "66",
             "67",
             "68",
-            "189",
-            "190",
-            "191",
+            "184",
+            "185",
+            "186",
             "212",
             "213",
             "214"
@@ -12898,6 +13354,56 @@
       "language": "typescript",
       "mutants": [
         {
+          "id": "398",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "utils/url.utils.ts(1,46): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "103",
+            "104",
+            "105",
+            "106",
+            "107",
+            "108",
+            "109",
+            "110",
+            "111",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162",
+            "212",
+            "213",
+            "214",
+            "225",
+            "233"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 3
+            },
+            "start": {
+              "column": 53,
+              "line": 1
+            }
+          }
+        },
+        {
           "id": "399",
           "mutatorName": "Regex",
           "replacement": "/\\/+/u",
@@ -12933,12 +13439,11 @@
             "160",
             "161",
             "162",
-            "182",
             "212",
             "213",
             "214",
-            "223",
-            "231"
+            "225",
+            "233"
           ],
           "location": {
             "end": {
@@ -12960,7 +13465,7 @@
           "testsCompleted": 29,
           "static": false,
           "killedBy": [
-            "231"
+            "233"
           ],
           "coveredBy": [
             "59",
@@ -12987,12 +13492,11 @@
             "160",
             "161",
             "162",
-            "182",
             "212",
             "213",
             "214",
-            "223",
-            "231"
+            "225",
+            "233"
           ],
           "location": {
             "end": {
@@ -13014,7 +13518,7 @@
           "testsCompleted": 29,
           "static": false,
           "killedBy": [
-            "231"
+            "233"
           ],
           "coveredBy": [
             "59",
@@ -13041,12 +13545,11 @@
             "160",
             "161",
             "162",
-            "182",
             "212",
             "213",
             "214",
-            "223",
-            "231"
+            "225",
+            "233"
           ],
           "location": {
             "end": {
@@ -13058,510 +13561,9 @@
               "line": 2
             }
           }
-        },
-        {
-          "id": "398",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "utils/url.utils.ts(1,46): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68",
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162",
-            "182",
-            "212",
-            "213",
-            "214",
-            "223",
-            "231"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 3
-            },
-            "start": {
-              "column": 53,
-              "line": 1
-            }
-          }
         }
       ],
       "source": "function removeTrailingSlashes(url: string): string {\n  return url.replace(/\\/+$/u, \"\");\n}\n\nexport { removeTrailingSlashes };"
-    },
-    "components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue": {
-      "language": "html",
-      "mutants": [
-        {
-          "id": "26",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "expected '' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 6,
-          "killedBy": [
-            "64"
-          ],
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 19,
-              "line": 77
-            },
-            "start": {
-              "column": 7,
-              "line": 77
-            }
-          }
-        },
-        {
-          "id": "24",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected '' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 6,
-          "killedBy": [
-            "64"
-          ],
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 81
-            },
-            "start": {
-              "column": 63,
-              "line": 76
-            }
-          }
-        },
-        {
-          "id": "27",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "59"
-          ],
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 19,
-              "line": 77
-            },
-            "start": {
-              "column": 7,
-              "line": 77
-            }
-          }
-        },
-        {
-          "id": "25",
-          "mutatorName": "BooleanLiteral",
-          "replacement": "roles.value",
-          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "59"
-          ],
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 19,
-              "line": 77
-            },
-            "start": {
-              "column": 7,
-              "line": 77
-            }
-          }
-        },
-        {
-          "id": "29",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected ', 3' to be 'components.AboutAvailableRoles.assist…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "64"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 66,
-              "line": 80
-            },
-            "start": {
-              "column": 12,
-              "line": 80
-            }
-          }
-        },
-        {
-          "id": "30",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected { headerAction: { …(1) } } to strictly equal { Object (headerAction) }",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 3,
-          "killedBy": [
-            "66"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 85
-            },
-            "start": {
-              "column": 80,
-              "line": 83
-            }
-          }
-        },
-        {
-          "id": "31",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected { Object (headerAction) } to strictly equal { Object (headerAction) }",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 3,
-          "killedBy": [
-            "66"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 73,
-              "line": 84
-            },
-            "start": {
-              "column": 12,
-              "line": 84
-            }
-          }
-        },
-        {
-          "id": "32",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected { Object (headerAction) } to strictly equal { Object (headerAction) }",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 3,
-          "killedBy": [
-            "66"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 111,
-              "line": 84
-            },
-            "start": {
-              "column": 75,
-              "line": 84
-            }
-          }
-        },
-        {
-          "id": "33",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected undefined to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "67"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 89
-            },
-            "start": {
-              "column": 70,
-              "line": 87
-            }
-          }
-        },
-        {
-          "id": "34",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected ', {\"role\":\"werewolf\"}' to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "67"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 63,
-              "line": 88
-            },
-            "start": {
-              "column": 12,
-              "line": 88
-            }
-          }
-        },
-        {
-          "id": "35",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected 'components.AboutAvailableRoles.availa…' to be 'components.AboutAvailableRoles.availa…' // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "67"
-          ],
-          "coveredBy": [
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 101,
-              "line": 88
-            },
-            "start": {
-              "column": 65,
-              "line": 88
-            }
-          }
-        },
-        {
-          "id": "28",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "Hook timed out in 10000ms.\nIf this is a long-running hook, pass a timeout value as the last argument or configure it globally with \"hookTimeout\".",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "59"
-          ],
-          "coveredBy": [
-            "59",
-            "60",
-            "61",
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67",
-            "68"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 79
-            },
-            "start": {
-              "column": 21,
-              "line": 77
-            }
-          }
-        }
-      ],
-      "source": "<template>\n  <div id=\"about-available-roles\">\n    <div class=\"align-items-center d-flex\">\n      <RoleImage\n        id=\"about-available-roles-title-role-image\"\n        :alt=\"$t('components.AboutAvailableRoles.availableRolesImage')\"\n        class=\"me-3\"\n        :role-name=\"RoleNames.ANGEL\"\n        sizes=\"50px\"\n      />\n\n      <h2 id=\"about-available-roles-title\">\n        {{ $t('components.AboutAvailableRoles.availableRoles') }}\n      </h2>\n    </div>\n\n    <hr>\n\n    <div\n      v-if=\"!roles\"\n      id=\"loading-roles-container\"\n      class=\"align-items-center d-flex flex-column justify-content-center\"\n    >\n      <TextProgressSpinner\n        id=\"loading-roles-spinner\"\n        :text=\"$t('components.AboutAvailableRoles.loadingRoles')\"\n      />\n    </div>\n\n    <div v-else>\n      <p id=\"about-available-roles-first-section\">\n        {{ availableRolesText }}\n      </p>\n\n      <VuePrimeAccordion>\n        <VuePrimeAccordionTab\n          v-for=\"role in roles\"\n          :key=\"role.name\"\n          :pt=\"{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }\"\n        >\n          <template #header>\n            <div class=\"align-items-center available-role-image-header d-flex\">\n              <RoleImage\n                :alt=\"getAvailableRoleHeaderImageAlt(role.name)\"\n                :role-name=\"role.name\"\n                sizes=\"40px\"\n              />\n\n              <div class=\"ms-2\">\n                {{ getRoleNameLabel(role.name) }}\n              </div>\n            </div>\n          </template>\n\n          <AboutAvailableRoleDescription :role=\"role\"/>\n        </VuePrimeAccordionTab>\n      </VuePrimeAccordion>\n    </div>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { storeToRefs } from \"pinia\";\n\nimport AboutAvailableRoleDescription from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue\";\nimport TextProgressSpinner from \"~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\n\nconst { t } = useI18n();\nconst { getRoleNameLabel } = useRoleName();\nconst { roles } = storeToRefs(useRolesStore());\n\nconst availableRolesText = computed<string | undefined>(() => {\n  if (!roles.value) {\n    return undefined;\n  }\n  return t(\"components.AboutAvailableRoles.assistantHasManyRoles\", roles.value.length);\n});\n\nfunction getAvailableRoleAccordionHeaderAriaLabel(roleName: RoleNames): string {\n  return t(\"components.AboutAvailableRoles.clickToExpandRoleDescription\", { role: getRoleNameLabel(roleName) });\n}\n\nfunction getAvailableRoleHeaderImageAlt(roleName: RoleNames): string {\n  return t(\"components.AboutAvailableRoles.availableRoleImage\", { role: getRoleNameLabel(roleName) });\n}\n</script>"
-    },
-    "pages/game/[id].vue": {
-      "language": "html",
-      "mutants": [
-        {
-          "id": "354",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expected false to be truthy",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 7,
-          "killedBy": [
-            "109"
-          ],
-          "coveredBy": [
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 59
-            },
-            "start": {
-              "column": 73,
-              "line": 55
-            }
-          }
-        },
-        {
-          "id": "353",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected false to be truthy",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 7,
-          "killedBy": [
-            "109"
-          ],
-          "coveredBy": [
-            "103",
-            "104",
-            "105",
-            "106",
-            "107",
-            "108",
-            "109",
-            "110",
-            "111"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 62
-            },
-            "start": {
-              "column": 73,
-              "line": 54
-            }
-          }
-        }
-      ],
-      "source": "<template>\n  <div\n    id=\"game-page\"\n    class=\"container-fluid\"\n  >\n    <div\n      v-if=\"fetchingGameStatus === 'pending'\"\n      id=\"loading-game-container\"\n      class=\"align-items-center d-flex flex-column h-100 justify-content-center\"\n    >\n      <TextProgressSpinner\n        id=\"loading-game-spinner\"\n        :text=\"$t('pages.game.loadingGame')\"\n      />\n    </div>\n\n    <GameNotFound\n      v-else-if=\"fetchingGameStatus === 'error'\"\n      id=\"game-not-found\"\n      class=\"h-100\"\n    />\n\n    <Component\n      :is=\"gameStatusComponentToRender\"\n      v-else\n      class=\"h-100\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport { storeToRefs } from \"pinia\";\n\nimport GameCanceled from \"~/components/pages/game/GameCanceled/GameCanceled.vue\";\nimport GameNotFound from \"~/components/pages/game/GameNotFound/GameNotFound.vue\";\nimport GameOver from \"~/components/pages/game/GameOver/GameOver.vue\";\nimport GamePlaying from \"~/components/pages/game/GamePlaying/GamePlaying.vue\";\nimport TextProgressSpinner from \"~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue\";\nimport type { GameStatus } from \"~/composables/api/game/types/game.types\";\nimport { useGameStore } from \"~/stores/game/useGameStore\";\n\ntype GameStatusComponent = typeof GameCanceled | typeof GameOver | typeof GamePlaying;\n\nconst route = useRoute();\nconst gameStore = useGameStore();\nconst { fetchAndSetGame } = gameStore;\nconst { game, fetchingGameStatus } = storeToRefs(gameStore);\n\nconst { id } = route.params;\n\nconst gameId = Array.isArray(id) ? id[0] : id;\nvoid fetchAndSetGame(gameId);\n\nconst gameStatusComponentToRender = computed<GameStatusComponent>(() => {\n  const gameStatusComponents: Record<GameStatus, GameStatusComponent> = {\n    playing: GamePlaying,\n    over: GameOver,\n    canceled: GameCanceled,\n  };\n\n  return gameStatusComponents[game.value.status];\n});\n</script>"
     }
   },
   "schemaVersion": "1.0",
@@ -14398,43 +14400,18 @@
       ],
       "source": "import type { FetchResponse } from \"ofetch\";\nimport type { Mock, MockInstance } from \"vitest\";\n\nimport type { WerewolvesAssistantApiError } from \"~/composables/api/error/types/api-error.types\";\nimport { useWerewolvesAssistantApiError } from \"~/composables/api/error/useWerewolvesAssistantApiError\";\nimport * as UseVuePrimeToasts from \"~/composables/vue-prime/useVuePrimeToasts\";\n\ndescribe(\"Use Werewolves Assistant Api Error Composable\", () => {\n  let mocks: {\n    console: {\n      error: MockInstance;\n    };\n    composables: {\n      useVuePrimeToasts: {\n        addToast: Mock;\n        addSuccessToast: Mock;\n        addInfoToast: Mock;\n        addWarnToast: Mock;\n        addErrorToast: Mock;\n      }\n    }\n  };\n\n  beforeEach(() => {\n    mocks = {\n      console: { error: vi.spyOn(console, \"error\").mockImplementation(vi.fn()) },\n      composables: {\n        useVuePrimeToasts: {\n          addToast: vi.fn(),\n          addErrorToast: vi.fn(),\n          addInfoToast: vi.fn(),\n          addSuccessToast: vi.fn(),\n          addWarnToast: vi.fn(),\n        },\n      },\n    };\n    vi.spyOn(UseVuePrimeToasts, \"useVuePrimeToasts\").mockReturnValue(mocks.composables.useVuePrimeToasts);\n  });\n\n  describe(\"handleWerewolvesAssistantApiError\", () => {\n    it(\"should log error in console when called.\", () => {\n      const response = { _data: \"error-data\" } as unknown as FetchResponse<WerewolvesAssistantApiError>;\n      useWerewolvesAssistantApiError().handleWerewolvesAssistantApiError({ response });\n      const { _data: expectedData } = response;\n\n      expect(mocks.console.error).toHaveBeenCalledExactlyOnceWith(expectedData);\n    });\n\n    it(\"should add error toast when called.\", () => {\n      const response = { status: 404 } as unknown as FetchResponse<WerewolvesAssistantApiError>;\n      useWerewolvesAssistantApiError().handleWerewolvesAssistantApiError({ response });\n\n      expect(mocks.composables.useVuePrimeToasts.addErrorToast).toHaveBeenCalledExactlyOnceWith({\n        summary: \"composables.useWerewolvesAssistantApiError.statusCode.404\",\n        detail: \"composables.useWerewolvesAssistantApiError.checkConsoleForMoreDetails\",\n      });\n    });\n  });\n});"
     },
-    "tests/unit/specs/pages/about/about.nuxt.spec.ts": {
-      "tests": [
-        {
-          "id": "178",
-          "name": "About Page Component should match snapshot when rendered."
-        },
-        {
-          "id": "179",
-          "name": "About Page Component Title should display role image of werewolf when rendered."
-        },
-        {
-          "id": "180",
-          "name": "About Page Component Title should display translated title when rendered."
-        },
-        {
-          "id": "181",
-          "name": "About Page Component Footer should have 'to' prop set to home for back to home button when rendered."
-        },
-        {
-          "id": "182",
-          "name": "About Page Component Footer should translate back to home button when rendered."
-        }
-      ],
-      "source": "import type { mount } from \"@vue/test-utils\";\nimport { expect } from \"vitest\";\n\nimport type { NuxtLink } from \"#components\";\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport About from \"~/pages/about.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"About Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof About>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(About);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display role image of werewolf when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\"#about-role-image-title\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find<HTMLHeadElement>(\"#about-title\");\n\n      expect(title.text()).toBe(\"Why an assistant ?\");\n    });\n  });\n\n  describe(\"Footer\", () => {\n    it(\"should have 'to' prop set to home for back to home button when rendered.\", () => {\n      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>(\"#about-back-to-home-button\");\n\n      expect(backToHomeButton.props(\"to\")).toBe(\"/\");\n    });\n\n    it(\"should translate back to home button when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(About, {\n        shallow: false,\n        global: {\n          stubs: {\n            AboutWerewolvesGame: true,\n            AboutWerewolvesAssistant: true,\n            AboutAvailableRoles: true,\n            AboutHowToContribute: true,\n            AboutCreator: true,\n          },\n        },\n      });\n\n      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>(\"#about-back-to-home-button\");\n\n      expect(backToHomeButton.text()).toBe(\"Back to home\");\n    });\n  });\n});"
-    },
     "tests/unit/specs/components/shared/role/RoleOriginBadge/RoleOriginBadge.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "183",
+          "id": "178",
           "name": "Role Origin Badge Component should match snapshot when rendered."
         },
         {
-          "id": "184",
+          "id": "179",
           "name": "Role Origin Badge Component Badge should have tooltip when rendered."
         },
         {
-          "id": "185",
+          "id": "180",
           "name": "Role Origin Badge Component Badge should translate role origin when rendered."
         }
       ],
@@ -14443,15 +14420,15 @@
     "tests/unit/specs/stores/game/useGameStore.spec.ts": {
       "tests": [
         {
-          "id": "186",
+          "id": "181",
           "name": "Game Store should have initial state when created."
         },
         {
-          "id": "187",
+          "id": "182",
           "name": "Game Store fetchAndSetGame should fetch game when called."
         },
         {
-          "id": "188",
+          "id": "183",
           "name": "Game Store fetchAndSetGame should set game when called."
         }
       ],
@@ -14460,15 +14437,15 @@
     "tests/unit/specs/stores/role/useRolesStore.spec.ts": {
       "tests": [
         {
-          "id": "189",
+          "id": "184",
           "name": "Roles Store should have initial state when created."
         },
         {
-          "id": "190",
+          "id": "185",
           "name": "Roles Store fetchAndSetRoles should fetch roles when called."
         },
         {
-          "id": "191",
+          "id": "186",
           "name": "Roles Store fetchAndSetRoles should set roles when called."
         }
       ],
@@ -14477,15 +14454,15 @@
     "tests/unit/specs/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "192",
+          "id": "187",
           "name": "GitHub Repository Button should match snapshot when rendered."
         },
         {
-          "id": "193",
+          "id": "188",
           "name": "GitHub Repository Button Button Text should render button text with other text when text is passed as prop."
         },
         {
-          "id": "194",
+          "id": "189",
           "name": "GitHub Repository Button Button Text should render button text with default text when text is not passed as prop."
         }
       ],
@@ -14494,49 +14471,28 @@
     "tests/unit/specs/pages/index/index.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "195",
+          "id": "190",
           "name": "Index Page Component should match snapshot when rendered."
         },
         {
-          "id": "196",
+          "id": "191",
           "name": "Index Page Component Title should display translated title when rendered."
         },
         {
-          "id": "197",
+          "id": "192",
           "name": "Index Page Component Play button should display play button with translated label when rendered."
         },
         {
-          "id": "198",
+          "id": "193",
           "name": "Index Page Component About button should display about button with translated label when rendered."
         }
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type { NuxtLink } from \"#components\";\nimport Index from \"@/pages/index.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Index Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Index>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Index);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find(\"#title\");\n\n      expect(title.text()).toBe(\"Werewolves Assistant\");\n    });\n  });\n\n  describe(\"Play button\", () => {\n    it(\"should display play button with translated label when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n      const playButton = wrapper.findComponent<typeof NuxtLink>(\"#play-button\");\n\n      expect(playButton.text()).toBe(\"Play\");\n    });\n  });\n\n  describe(\"About button\", () => {\n    it(\"should display about button with translated label when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n      const aboutButton = wrapper.findComponent<typeof NuxtLink>(\"#about-button\");\n\n      expect(aboutButton.text()).toBe(\"What is it ?\");\n    });\n  });\n});"
     },
-    "tests/unit/specs/components/pages/game/GameNotFound/GameNotFound.nuxt.spec.ts": {
-      "tests": [
-        {
-          "id": "199",
-          "name": "Game Not Found Component should match snapshot when rendered."
-        },
-        {
-          "id": "200",
-          "name": "Game Not Found Component Game not found text should translate game not found text when rendered."
-        },
-        {
-          "id": "201",
-          "name": "Game Not Found Component Action buttons should render create another game button when rendered."
-        },
-        {
-          "id": "202",
-          "name": "Game Not Found Component Action buttons should render go to home button when rendered."
-        }
-      ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GameNotFound from \"~/components/pages/game/GameNotFound/GameNotFound.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Not Found Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GameNotFound>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GameNotFound);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Game not found text\", () => {\n    it(\"should translate game not found text when rendered.\", () => {\n      const gameNotFoundText = wrapper.find<HTMLHeadElement>(\"#game-not-found-text\");\n\n      expect(gameNotFoundText.text()).toBe(\"Game not found… Did you get lost ?\");\n    });\n  });\n\n  describe(\"Action buttons\", () => {\n    it(\"should render create another game button when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(GameNotFound, { shallow: false });\n      const createAnotherGameButton = wrapper.find<HTMLButtonElement>(\"#create-another-game-button\");\n\n      expect(createAnotherGameButton.text()).toBe(\"Create another game\");\n    });\n\n    it(\"should render go to home button when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(GameNotFound, { shallow: false });\n      const goToHomeButton = wrapper.find<HTMLButtonElement>(\"#go-to-home-button\");\n\n      expect(goToHomeButton.text()).toBe(\"Go to home\");\n    });\n  });\n});"
-    },
     "tests/unit/specs/composables/api/game/useFetchRandomGameComposition.spec.ts": {
       "tests": [
         {
-          "id": "203",
+          "id": "194",
           "name": "Use Fetch Random Game Composition fetchRandomGameComposition should fetch random game composition when called."
         }
       ],
@@ -14545,7 +14501,7 @@
     "tests/unit/specs/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.spec.ts": {
       "tests": [
         {
-          "id": "204",
+          "id": "195",
           "name": "Create Game Player Dto create should create a game player dto when called."
         }
       ],
@@ -14554,15 +14510,15 @@
     "tests/unit/specs/components/shared/misc/TextProgressSpinner/TextProgressSpinner.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "205",
+          "id": "196",
           "name": "Text Progress Spinner Component should match snapshot when rendered."
         },
         {
-          "id": "206",
+          "id": "197",
           "name": "Text Progress Spinner Component Spinner should render spinner with aria label as text prop when rendered."
         },
         {
-          "id": "207",
+          "id": "198",
           "name": "Text Progress Spinner Component Text should render text with value as text prop when rendered."
         }
       ],
@@ -14571,15 +14527,66 @@
     "tests/unit/specs/composables/api/role/useFetchRoles.spec.ts": {
       "tests": [
         {
-          "id": "208",
+          "id": "199",
           "name": "Use Fetch Roles Composable fetchRoles should fetch roles when called."
         },
         {
-          "id": "209",
+          "id": "200",
           "name": "Use Fetch Roles Composable fetchRoles should return null when fetch roles throws."
         }
       ],
       "source": "import type { Mock } from \"vitest\";\n\nimport { useFetchRoles } from \"~/composables/api/role/useFetchRoles\";\nimport * as UseWerewolvesAssistantApi from \"~/composables/api/useWerewolvesAssistantApi\";\n\ndescribe(\"Use Fetch Roles Composable\", () => {\n  let mocks: {\n    composables: {\n      useWerewolvesAssistantApi: {\n        fetchWerewolvesAssistantApi: Mock;\n      }\n    }\n  };\n\n  beforeEach(() => {\n    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() } } };\n    const useWerewolvesAssistantApiMock = mocks.composables.useWerewolvesAssistantApi as unknown as ReturnType<typeof UseWerewolvesAssistantApi.useWerewolvesAssistantApi>;\n    vi.spyOn(UseWerewolvesAssistantApi, \"useWerewolvesAssistantApi\").mockReturnValue(useWerewolvesAssistantApiMock);\n  });\n\n  describe(\"fetchRoles\", () => {\n    it(\"should fetch roles when called.\", async() => {\n      await useFetchRoles().fetchRoles();\n\n      expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/roles`, { method: \"GET\" });\n    });\n\n    it(\"should return null when fetch roles throws.\", async() => {\n      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, \"fetchWerewolvesAssistantApi\").mockRejectedValue(new Error(\"error\"));\n      const result = await useFetchRoles().fetchRoles();\n\n      expect(result).toBeNull();\n    });\n  });\n});"
+    },
+    "tests/unit/specs/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "201",
+          "name": "Create Another Game Button should match snapshot when rendered."
+        },
+        {
+          "id": "202",
+          "name": "Create Another Game Button Button Navigation should have 'to' prop set to game lobby when rendered."
+        },
+        {
+          "id": "203",
+          "name": "Create Another Game Button Button Text should translate button text when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport CreateAnotherGameButton from \"~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Create Another Game Button\", () => {\n  let wrapper: ReturnType<typeof mount<typeof CreateAnotherGameButton>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(CreateAnotherGameButton);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Button Navigation\", () => {\n    it(\"should have 'to' prop set to game lobby when rendered.\", () => {\n      const createAnotherGameButton = wrapper.findComponent(\"#create-another-game-button\");\n\n      expect(createAnotherGameButton.attributes(\"to\")).toBe(\"/game-lobby\");\n    });\n  });\n\n  describe(\"Button Text\", () => {\n    it(\"should translate button text when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(CreateAnotherGameButton, { shallow: false });\n      const buttonText = wrapper.find<HTMLButtonElement>(\"#create-another-game-button\");\n\n      expect(buttonText.text()).toBe(\"Create another game\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/components/shared/buttons/BackToHomeButton/BackToHomeButton.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "204",
+          "name": "Back To Home Button should match snapshot when rendered."
+        },
+        {
+          "id": "205",
+          "name": "Back To Home Button Button Navigation should have 'to' prop set to home when rendered."
+        },
+        {
+          "id": "206",
+          "name": "Back To Home Button Button Text should translate button text when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport type { NuxtLink } from \"#components\";\nimport BackToHomeButton from \"~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Back To Home Button\", () => {\n  let wrapper: ReturnType<typeof mount<typeof BackToHomeButton>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(BackToHomeButton);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Button Navigation\", () => {\n    it(\"should have 'to' prop set to home when rendered.\", () => {\n      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>(\"#back-to-home-button\");\n\n      expect(backToHomeButton.attributes(\"to\")).toBe(\"/\");\n    });\n  });\n\n  describe(\"Button Text\", () => {\n    it(\"should translate button text when rendered.\", async() => {\n      wrapper = await mountSuspendedComponent(BackToHomeButton, { shallow: false });\n      const buttonText = wrapper.find<HTMLButtonElement>(\"#back-to-home-button\");\n\n      expect(buttonText.text()).toBe(\"Back to home\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/pages/about/about.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "207",
+          "name": "About Page Component should match snapshot when rendered."
+        },
+        {
+          "id": "208",
+          "name": "About Page Component Title should display role image of werewolf when rendered."
+        },
+        {
+          "id": "209",
+          "name": "About Page Component Title should display translated title when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\nimport { expect } from \"vitest\";\n\nimport type { NuxtLink } from \"#components\";\nimport type RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleNames } from \"~/composables/api/role/enums/role.enums\";\nimport About from \"~/pages/about.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"About Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof About>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(About);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display role image of werewolf when rendered.\", () => {\n      const roleImage = wrapper.findComponent<typeof RoleImage>(\"#about-role-image-title\");\n\n      expect(roleImage.props(\"roleName\")).toBe(RoleNames.WEREWOLF);\n    });\n\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find<HTMLHeadElement>(\"#about-title\");\n\n      expect(title.text()).toBe(\"Why an assistant ?\");\n    });\n  });\n});"
     },
     "tests/unit/specs/components/shared/external/BuyMeACoffeeButton/BuyMeACoffeeButton.nuxt.spec.ts": {
       "tests": [
@@ -14651,10 +14658,23 @@
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GameLobby from \"~/pages/game-lobby.vue\";\nimport { useCreateGameDtoStore } from \"~/stores/game/create-game-dto/useCreateGameDtoStore\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Lobby Page\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GameLobby>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GameLobby);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Game Lobby Players Party\", () => {\n    it(\"should reset create game dto when rendered.\", () => {\n      const createGameDtoStore = useCreateGameDtoStore();\n\n      expect(createGameDtoStore.resetCreateGameDto).toHaveBeenCalledExactlyOnceWith();\n    });\n  });\n});"
     },
-    "tests/unit/specs/composables/api/role/useRoleName.spec.ts": {
+    "tests/unit/specs/components/pages/game/GameNotFound/GameNotFound.nuxt.spec.ts": {
       "tests": [
         {
           "id": "220",
+          "name": "Game Not Found Component should match snapshot when rendered."
+        },
+        {
+          "id": "221",
+          "name": "Game Not Found Component Game not found text should translate game not found text when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GameNotFound from \"~/components/pages/game/GameNotFound/GameNotFound.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Not Found Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GameNotFound>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GameNotFound);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Game not found text\", () => {\n    it(\"should translate game not found text when rendered.\", () => {\n      const gameNotFoundText = wrapper.find<HTMLHeadElement>(\"#game-not-found-text\");\n\n      expect(gameNotFoundText.text()).toBe(\"Game not found… Did you get lost ?\");\n    });\n  });\n});"
+    },
+    "tests/unit/specs/composables/api/role/useRoleName.spec.ts": {
+      "tests": [
+        {
+          "id": "222",
           "name": "Use Role Name Composable getRoleLabel should translate role when called with role name."
         }
       ],
@@ -14663,11 +14683,11 @@
     "tests/unit/specs/components/pages/index/IndexFooter.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "221",
+          "id": "223",
           "name": "Index Page Footer Component should match snapshot when rendered."
         },
         {
-          "id": "222",
+          "id": "224",
           "name": "Index Page Footer Component Contact Me Button should display contact me with translated text button when rendered."
         }
       ],
@@ -14676,7 +14696,7 @@
     "tests/unit/specs/composables/api/useWerewolvesAssistantApi.spec.ts": {
       "tests": [
         {
-          "id": "223",
+          "id": "225",
           "name": "Use Werewolves Assistant Api Composable fetchWerewolvesAssistantApi should create a fetch instance for Werewolves Assistant API when called."
         }
       ],
@@ -14685,7 +14705,7 @@
     "tests/unit/specs/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "224",
+          "id": "226",
           "name": "Game Lobby Footer Component should match snapshot when rendered."
         }
       ],
@@ -14694,7 +14714,7 @@
     "tests/unit/specs/components/pages/game/GameCanceled/GameCanceled.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "225",
+          "id": "227",
           "name": "Game Canceled Component should match snapshot when rendered."
         }
       ],
@@ -14703,7 +14723,7 @@
     "tests/unit/specs/components/pages/game/GamePlaying/GamePlaying.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "226",
+          "id": "228",
           "name": "Game Playing Component should match snapshot when rendered."
         }
       ],
@@ -14712,7 +14732,7 @@
     "tests/unit/specs/modules/i18n.spec.ts": {
       "tests": [
         {
-          "id": "227",
+          "id": "229",
           "name": "I18n module Locales should contain all keys set in fr locale when locale is en."
         }
       ],
@@ -14721,7 +14741,7 @@
     "tests/unit/specs/components/pages/game/GameOver/GameOver.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "228",
+          "id": "230",
           "name": "Game Over Component should match snapshot when rendered."
         }
       ],
@@ -14730,7 +14750,7 @@
     "tests/unit/specs/composables/api/game/player/player.class.spec.ts": {
       "tests": [
         {
-          "id": "229",
+          "id": "231",
           "name": "Player Class create should create a player when called."
         }
       ],
@@ -14739,7 +14759,7 @@
     "tests/unit/specs/layouts/default.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "230",
+          "id": "232",
           "name": "Default Layout should match snapshot when rendered."
         }
       ],
@@ -14748,7 +14768,7 @@
     "tests/unit/specs/utils/url.utils.spec.ts": {
       "tests": [
         {
-          "id": "231",
+          "id": "233",
           "name": "URL Utils removeTrailingSlashes should remove trailing slashes when called."
         }
       ],

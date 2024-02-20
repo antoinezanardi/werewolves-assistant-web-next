@@ -22,20 +22,4 @@ describe("Game Not Found Component", () => {
       expect(gameNotFoundText.text()).toBe("Game not found… Did you get lost ?");
     });
   });
-
-  describe("Action buttons", () => {
-    it("should render create another game button when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(GameNotFound, { shallow: false });
-      const createAnotherGameButton = wrapper.find<HTMLButtonElement>("#create-another-game-button");
-
-      expect(createAnotherGameButton.text()).toBe("Create another game");
-    });
-
-    it("should render go to home button when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(GameNotFound, { shallow: false });
-      const goToHomeButton = wrapper.find<HTMLButtonElement>("#go-to-home-button");
-
-      expect(goToHomeButton.text()).toBe("Go to home");
-    });
-  });
 });
