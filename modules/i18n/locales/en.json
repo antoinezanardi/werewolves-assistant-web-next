@@ -96,7 +96,10 @@
     "ParametersMenu": {
       "backToHome": "Back to home",
       "parameters": "Parameters",
-      "parametersMenu": "Parameters menu"
+      "parametersMenu": "Parameters menu",
+      "game": "Game",
+      "cancelGame": "Cancel game",
+      "gameCanceled": "Game canceled"
     },
     "AboutWerewolvesGame": {
       "werewolvesAssistantGame": "The Werewolves of Miller's Hollow™ game",

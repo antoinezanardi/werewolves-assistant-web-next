@@ -96,7 +96,10 @@
     "ParametersMenu": {
       "backToHome": "Retour à l'accueil",
       "parameters": "Paramètres",
-      "parametersMenu": "Menu des paramètres"
+      "parametersMenu": "Menu des paramètres",
+      "game": "Partie",
+      "cancelGame": "Annuler la partie",
+      "gameCanceled": "Partie annulée"
     },
     "AboutWerewolvesGame": {
       "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",

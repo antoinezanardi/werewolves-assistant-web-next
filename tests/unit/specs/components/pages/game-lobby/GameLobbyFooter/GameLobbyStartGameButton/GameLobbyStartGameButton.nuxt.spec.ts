@@ -12,6 +12,7 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -47,14 +48,9 @@ describe("Game Lobby Start Game Button Component", () => {
       useFetchGames: {
         createGame: Mock;
         getGame: Mock;
+        cancelGame: Mock;
       };
-      useVuePrimeToasts: {
-        addToast: Mock;
-        addSuccessToast: Mock;
-        addInfoToast: Mock;
-        addWarnToast: Mock;
-        addErrorToast: Mock;
-      };
+      useVuePrimeToasts: ReturnType<typeof createFakeUseVuePrimeToasts>;
     }
   };
 
@@ -64,14 +60,9 @@ describe("Game Lobby Start Game Button Component", () => {
         useFetchGames: {
           createGame: vi.fn(),
           getGame: vi.fn(),
+          cancelGame: vi.fn(),
         },
-        useVuePrimeToasts: {
-          addToast: vi.fn(),
-          addSuccessToast: vi.fn(),
-          addInfoToast: vi.fn(),
-          addWarnToast: vi.fn(),
-          addErrorToast: vi.fn(),
-        },
+        useVuePrimeToasts: createFakeUseVuePrimeToasts(),
       },
     };
     vi.spyOn(UseFetchGames, "useFetchGames").mockReturnValue(mocks.composables.useFetchGames);

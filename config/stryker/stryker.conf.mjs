@@ -14,6 +14,7 @@ export default {
     "layouts/**/*.{ts,vue}",
     "stores/**/*.ts",
     "utils/**/*.ts",
+    "!**/*.constants.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",

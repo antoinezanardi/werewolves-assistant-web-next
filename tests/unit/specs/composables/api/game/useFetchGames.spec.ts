@@ -51,4 +51,20 @@ describe("Use Fetch Game Composable", () => {
       expect(result).toBeNull();
     });
   });
+
+  describe("cancelGame", () => {
+    it("should cancel game when called.", async() => {
+      const gameId = "game-id";
+      await useFetchGames().cancelGame(gameId);
+
+      expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/games/${gameId}`, { method: "DELETE" });
+    });
+
+    it("should return null when cancel game throws.", async() => {
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(new Error("error"));
+      const result = await useFetchGames().cancelGame("game-id");
+
+      expect(result).toBeNull();
+    });
+  });
 });

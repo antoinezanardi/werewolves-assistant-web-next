@@ -2,6 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import GameLobby from "~/pages/game-lobby.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import { useGameStore } from "~/stores/game/useGameStore";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Page", () => {
@@ -21,6 +22,12 @@ describe("Game Lobby Page", () => {
       const createGameDtoStore = useCreateGameDtoStore();
 
       expect(createGameDtoStore.resetCreateGameDto).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should reset game when rendered.", () => {
+      const gameStore = useGameStore();
+
+      expect(gameStore.resetGame).toHaveBeenCalledExactlyOnceWith();
     });
   });
 });

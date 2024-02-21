@@ -12,6 +12,10 @@ import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/share
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await Promise.all([
+    this.page.waitForLoadState("load"),
+    this.page.waitForLoadState("networkidle"),
+  ]);
   const screenshotPath = `${ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH}/${platform()}/${name}.png`;
   const screenshot = PNG.sync.read(await this.page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
   if (!existsSync(screenshotPath)) {
@@ -25,6 +29,9 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     width: baseScreenshot.width,
     height: baseScreenshot.height,
   });
+  if (screenshot.width !== baseScreenshot.width || screenshot.height !== baseScreenshot.height) {
+    throw new Error(`The screenshots have different dimensions. Expected: ${baseScreenshot.width}x${baseScreenshot.height}, but got: ${screenshot.width}x${screenshot.height}`);
+  }
   const pixelMatchOptions: PixelmatchOptions = { threshold: 0.1 };
   const pixelDiff = pixelMatch(screenshot.data, baseScreenshot.data, diffScreenshot.data, screenshot.width, screenshot.height, pixelMatchOptions);
 
