@@ -5,6 +5,7 @@ import { useWerewolvesAssistantApi } from "~/composables/api/useWerewolvesAssist
 type UseFetchGames = {
   createGame: (createGameDto: CreateGameDto) => Promise<ReturnType<typeof $fetch<Game>> | null>;
   getGame: (gameId: string) => Promise<ReturnType<typeof $fetch<Game>> | null>;
+  cancelGame: (gameId: string) => Promise<ReturnType<typeof $fetch<Game>> | null>;
 };
 
 function useFetchGames(): UseFetchGames {
@@ -28,9 +29,18 @@ function useFetchGames(): UseFetchGames {
       return null;
     }
   }
+
+  async function cancelGame(gameId: string): Promise<ReturnType<typeof $fetch<Game>> | null> {
+    try {
+      return await fetchWerewolvesAssistantApi<Game>(`/games/${gameId}`, { method: "DELETE" });
+    } catch (error) {
+      return null;
+    }
+  }
   return {
     createGame,
     getGame,
+    cancelGame,
   };
 }
 

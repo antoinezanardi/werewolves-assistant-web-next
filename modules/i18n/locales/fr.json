@@ -96,7 +96,10 @@
     "ParametersMenu": {
       "backToHome": "Retour à l'accueil",
       "parameters": "Paramètres",
-      "parametersMenu": "Menu des paramètres"
+      "parametersMenu": "Menu des paramètres",
+      "game": "Partie",
+      "cancelGame": "Annuler la partie",
+      "gameCanceled": "Partie annulée"
     },
     "AboutWerewolvesGame": {
       "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
@@ -426,9 +429,16 @@
       "addPlayersWithInputAbove": "Ajoutez le nom des joueurs ci-dessus"
     },
     "GameNotFound": {
-      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?",
-      "createAnotherGame": "Créer une autre partie",
-      "goToHome": "Retour à l'accueil"
+      "gameNotFound": "Partie non trouvée… Vous vous êtes perdu ?"
+    },
+    "GameCanceled": {
+      "gameCanceled": "Partie annulée…"
+    },
+    "BackToHomeButton": {
+      "backToHome": "Retour à l'accueil"
+    },
+    "CreateAnotherGameButton": {
+      "createAnotherGame": "Créer une autre partie"
     }
   }
 }

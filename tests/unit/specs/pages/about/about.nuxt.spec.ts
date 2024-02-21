@@ -1,7 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import { expect } from "vitest";
 
-import type { NuxtLink } from "#components";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import About from "~/pages/about.vue";
@@ -30,33 +29,6 @@ describe("About Page Component", () => {
       const title = wrapper.find<HTMLHeadElement>("#about-title");
 
       expect(title.text()).toBe("Why an assistant ?");
-    });
-  });
-
-  describe("Footer", () => {
-    it("should have 'to' prop set to home for back to home button when rendered.", () => {
-      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>("#about-back-to-home-button");
-
-      expect(backToHomeButton.props("to")).toBe("/");
-    });
-
-    it("should translate back to home button when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(About, {
-        shallow: false,
-        global: {
-          stubs: {
-            AboutWerewolvesGame: true,
-            AboutWerewolvesAssistant: true,
-            AboutAvailableRoles: true,
-            AboutHowToContribute: true,
-            AboutCreator: true,
-          },
-        },
-      });
-
-      const backToHomeButton = wrapper.findComponent<typeof NuxtLink>("#about-back-to-home-button");
-
-      expect(backToHomeButton.text()).toBe("Back to home");
     });
   });
 });

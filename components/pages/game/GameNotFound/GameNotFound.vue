@@ -17,29 +17,14 @@
     <div>
       <VuePrimeDivider class="mb-4"/>
 
-      <NuxtLink
-        id="create-another-game-button"
-        class="me-2 p-button p-button-primary"
-        to="/game-lobby"
-      >
-        <i class="fa-gamepad fas me-2"/>
+      <CreateAnotherGameButton class="me-2"/>
 
-        <span>
-          {{ $t("components.GameNotFound.createAnotherGame") }}
-        </span>
-      </NuxtLink>
-
-      <NuxtLink
-        id="go-to-home-button"
-        class="p-button p-button-secondary"
-        to="/"
-      >
-        <i class="fa-sign-out fas me-2"/>
-
-        <span>
-          {{ $t("components.GameNotFound.goToHome") }}
-        </span>
-      </NuxtLink>
+      <BackToHomeButton/>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
+import CreateAnotherGameButton from "~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue";
+</script>
