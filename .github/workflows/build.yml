@@ -189,8 +189,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
-          workflow_name: ${{ github.event_name }}
-          env: ${{ github.head_ref || github.ref_name }}
+          workflow_name: ${{ github.event_name}}
+          env: ${{ github.head_ref.replace('/', '_') || github.ref_name.replace('/', '_') }}
 
   e2e-tests:
     name: E2E Tests ⚗️
@@ -249,7 +249,7 @@ jobs:
           subfolder: reports
           tool_name: cucumber
           workflow_name: ${{ github.event_name }}
-          env: ${{ github.head_ref || github.ref_name }}
+          env: ${{ (github.head_ref || github.ref_name).replace('/', '_')}}
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
@@ -301,7 +301,7 @@ jobs:
           name: stryker-html-report
           path: tests/stryker/coverage/index.html
 
-      - name: Save unit tests reports in GitHub Pages 📑
+      - name: Save stryker report in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
         with:
           test_results: tests/stryker/coverage
@@ -310,7 +310,7 @@ jobs:
           subfolder: reports
           tool_name: stryker
           workflow_name: ${{ github.event_name }}
-          env: ${{ github.head_ref || github.ref_name }}
+          env: ${{ (github.head_ref || github.ref_name).replace('/', '_') }}
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
