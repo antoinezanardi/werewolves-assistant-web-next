@@ -197,7 +197,7 @@ jobs:
           report_url: ${{ env.REPORTS_URL }}
           keep_reports: 20
           gh_pages: gh_pages
-          subfolder: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          subfolder: reports
           tool_name: vitest
           workflow_name: ${{ github.event_name }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
