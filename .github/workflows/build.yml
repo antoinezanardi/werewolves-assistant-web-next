@@ -181,6 +181,17 @@ jobs:
           name: unit-tests-coverage-report
           path: tests/unit/coverage
 
+      - name: Save unit tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        with:
+          test_results: tests/unit/coverage
+          keep_reports: 20
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: vitest
+          workflow_name: ${{ github.event_name }}
+          env: ${{ github.head_ref || github.ref_name }}
+
   e2e-tests:
     name: E2E Tests ⚗️
     runs-on: ubuntu-latest
@@ -237,7 +248,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: cucumber
-          workflow_name: ${{ github.workflow }}
+          workflow_name: ${{ github.event_name }}
+          env: ${{ github.head_ref || github.ref_name }}
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
@@ -288,6 +300,17 @@ jobs:
         with:
           name: stryker-html-report
           path: tests/stryker/coverage/index.html
+
+      - name: Save unit tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        with:
+          test_results: tests/stryker/coverage
+          keep_reports: 20
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: stryker
+          workflow_name: ${{ github.event_name }}
+          env: ${{ github.head_ref || github.ref_name }}
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
