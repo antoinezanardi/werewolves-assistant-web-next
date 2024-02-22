@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708596971460" clover="3.2.0">
-  <project timestamp="1708596971461" name="All files">
+<coverage generated="1708597600284" clover="3.2.0">
+  <project timestamp="1708597600284" name="All files">
     <metrics statements="409" coveredstatements="409" conditionals="69" coveredconditionals="69" methods="110" coveredmethods="110" elements="588" coveredelements="588" complexity="0" loc="409" ncloc="409" packages="43" files="53" classes="53"/>
     <package name="werewolves-assistant-web-next">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
