@@ -16,8 +16,7 @@ Feature: 🃏 Game Lobby Page
     Given the user is on game-lobby page
     Then the input with label "Player name" should be empty
     And the input with label "Please enter a player name" should be visible
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
     Then the input with label "Player name" should be empty
     And the heading with name "Add player names with the input above" should be hidden
     And the player with name "Antoine" should be in the lobby
@@ -25,8 +24,7 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User can't add twice the same player
     Given the user is on game-lobby page
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
     Then the input with label "Player name" should be empty
     When the user types "Antoine" in the input with label "Player name"
     Then the button with name "Add" should be disabled
@@ -46,86 +44,46 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User can't add a player if game has reached 40 players
     Given the user is on game-lobby page
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Benoit" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Clement" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "David" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Eliott" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Fabien" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Gael" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Hugo" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Isaac" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Julien" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Kevin" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Louis" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Maxime" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Nathan" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Olivier" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Paul" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Quentin" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Romain" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Sylvain" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Theo" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Ulysse" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Valentin" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "William" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Xavier" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Yann" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Zacharie" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Aurelien" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Bastien" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Cedric" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Dorian" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Emmanuel" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Florian" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Guillaume" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Herve" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Ibrahim" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Jerome" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Kamel" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Lionel" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Mathieu" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Nabil" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
+    And the user enters the player with name "Benoit" in game lobby
+    And the user enters the player with name "Clement" in game lobby
+    And the user enters the player with name "David" in game lobby
+    And the user enters the player with name "Eliott" in game lobby
+    And the user enters the player with name "Fabien" in game lobby
+    And the user enters the player with name "Gael" in game lobby
+    And the user enters the player with name "Hugo" in game lobby
+    And the user enters the player with name "Isaac" in game lobby
+    And the user enters the player with name "Julien" in game lobby
+    And the user enters the player with name "Kevin" in game lobby
+    And the user enters the player with name "Louis" in game lobby
+    And the user enters the player with name "Maxime" in game lobby
+    And the user enters the player with name "Nathan" in game lobby
+    And the user enters the player with name "Olivier" in game lobby
+    And the user enters the player with name "Paul" in game lobby
+    And the user enters the player with name "Quentin" in game lobby
+    And the user enters the player with name "Romain" in game lobby
+    And the user enters the player with name "Sylvain" in game lobby
+    And the user enters the player with name "Theo" in game lobby
+    And the user enters the player with name "Ulysse" in game lobby
+    And the user enters the player with name "Valentin" in game lobby
+    And the user enters the player with name "William" in game lobby
+    And the user enters the player with name "Xavier" in game lobby
+    And the user enters the player with name "Yann" in game lobby
+    And the user enters the player with name "Zacharie" in game lobby
+    And the user enters the player with name "Aurelien" in game lobby
+    And the user enters the player with name "Bastien" in game lobby
+    And the user enters the player with name "Cedric" in game lobby
+    And the user enters the player with name "Dorian" in game lobby
+    And the user enters the player with name "Emmanuel" in game lobby
+    And the user enters the player with name "Florian" in game lobby
+    And the user enters the player with name "Guillaume" in game lobby
+    And the user enters the player with name "Herve" in game lobby
+    And the user enters the player with name "Ibrahim" in game lobby
+    And the user enters the player with name "Jerome" in game lobby
+    And the user enters the player with name "Kamel" in game lobby
+    And the user enters the player with name "Lionel" in game lobby
+    And the user enters the player with name "Mathieu" in game lobby
+    And the user enters the player with name "Nabil" in game lobby
     Then the input with label "Player name" should be disabled
     And the input with label "Maximum number of players reached" should be disabled
     And the button with name "Add" should be disabled
@@ -133,8 +91,7 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User deletes a player
     Given the user is on game-lobby page
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
     Then the player with name "Antoine" should be in the lobby
     When the user clicks on the button with name "Remove player Antoine"
     Then the heading with name "Add player names with the input above" should be visible
@@ -142,14 +99,10 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User generates a random composition for 4 players
     Given the user is on game-lobby page
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Benoit" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Clement" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "David" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
+    And the user enters the player with name "Benoit" in game lobby
+    And the user enters the player with name "Clement" in game lobby
+    And the user enters the player with name "David" in game lobby
     And the user clicks on the button with name "Random composition"
     Then the player with name "Antoine" should have a role
     And the player with name "Benoit" should have a role
@@ -161,14 +114,10 @@ Feature: 🃏 Game Lobby Page
     Then the button with name "Random composition" should be disabled
     When the user hovers the button with name "Random composition"
     Then the tooltip with text "The minimum number of players is not reached" should be visible
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Benoit" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Clement" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "David" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
+    And the user enters the player with name "Benoit" in game lobby
+    And the user enters the player with name "Clement" in game lobby
+    And the user enters the player with name "David" in game lobby
     Then the button with name "Random composition" should be enabled
     When the user hovers the button with name "Random composition"
     Then the tooltip with text "The minimum number of players is not reached" should be hidden
@@ -181,14 +130,10 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User starts a game with random composition
     Given the user is on game-lobby page
-    When the user types "Antoine" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Benoit" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "Clement" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
-    And the user types "David" in the input with label "Player name"
-    And the user clicks on the button with name "Add"
+    When the user enters the player with name "Antoine" in game lobby
+    And the user enters the player with name "Benoit" in game lobby
+    And the user enters the player with name "Clement" in game lobby
+    And the user enters the player with name "David" in game lobby
     And the user clicks on the button with name "Random composition"
     And the user clicks on the button with name "Start game"
     Then the user should be on game page with any id
