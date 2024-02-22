@@ -1,0 +1,444 @@
+{
+  "shared": {
+    "werewolvesAssistant": "Werewolves Assistant",
+    "actions": {
+      "add": "Add"
+    },
+    "role": {
+      "name": {
+        "werewolf": "Werewolf",
+        "big-bad-wolf": "Big Bad Wolf",
+        "accursed-wolf-father": "Accursed Wolf-Father",
+        "white-werewolf": "White Werewolf",
+        "villager": "Villager",
+        "villager-villager": "Villager-Villager",
+        "seer": "Seer",
+        "cupid": "Cupid",
+        "witch": "Witch",
+        "hunter": "Hunter",
+        "little-girl": "Little Girl",
+        "defender": "Defender",
+        "elder": "Elder",
+        "scapegoat": "Scapegoat",
+        "idiot": "Idiot",
+        "two-sisters": "Two Sisters",
+        "three-brothers": "Three Brothers",
+        "fox": "Fox",
+        "bear-tamer": "Bear Tamer",
+        "stuttering-judge": "Stuttering Judge",
+        "rusty-sword-knight": "Rusty Sword Knight",
+        "thief": "Thief",
+        "wild-child": "Wild Child",
+        "wolf-hound": "Wolf-Hound",
+        "angel": "Angel",
+        "pied-piper": "Pied Piper",
+        "scandalmonger": "Scandalmonger",
+        "prejudiced-manipulator": "Prejudiced Manipulator",
+        "actor": "Actor",
+        "devoted-servant": "Devoted Servant"
+      },
+      "type": {
+        "werewolf": "Werewolf",
+        "villager": "Villager",
+        "lonely": "Lonely",
+        "ambiguous": "Ambiguous"
+      }
+    }
+  },
+  "pages": {
+    "index": {
+      "play": "Play",
+      "about": "What is it ?",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo"
+    },
+    "about": {
+      "whyAnAssistant": "Why an assistant ?",
+      "backToHome": "Back to home",
+      "imageTitle": "Werewolf illustration"
+    },
+    "game": {
+      "loadingGame": "Loading game…"
+    }
+  },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Bad request",
+        "401": "Unauthorized",
+        "403": "Forbidden",
+        "404": "Not found",
+        "500": "Internal server error"
+      },
+      "checkConsoleForMoreDetails": "Check the console for more details"
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "The minimum number of players is not reached",
+      "notAllRolesAreSet": "Not all roles are set among players",
+      "noVillagerSidedRole": "At least one villager sided role is needed",
+      "noWerewolfSidedRole": "At least one werewolf sided role is needed",
+      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
+      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
+      "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
+    }
+  },
+  "components": {
+    "IndexFooter": {
+      "contact": "Contact me"
+    },
+    "NavBar": {
+      "navBar": "Navigation bar",
+      "parameters": "Parameters",
+      "homePageLink": "Home page link",
+      "homePage": "Home page",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo",
+      "parametersMenu": "Parameters menu"
+    },
+    "ParametersMenu": {
+      "backToHome": "Back to home",
+      "parameters": "Parameters",
+      "parametersMenu": "Parameters menu",
+      "game": "Game",
+      "cancelGame": "Cancel game",
+      "gameCanceled": "Game canceled"
+    },
+    "AboutWerewolvesGame": {
+      "werewolvesAssistantGame": "The Werewolves of Miller's Hollow™ game",
+      "iDontKnowWerewolvesGame": "I don't know this game",
+      "watchTutorialVideoOnYoutube": "Watch an explanatory video on YouTube",
+      "whatIsWerewolvesGame": "The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.",
+      "whyGameMasterIsImportant": "The success of a game relies on the shoulders of the game master, tasked with creating an enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, lacking experience, or being in a state of distraction make this task a significant challenge."
+    },
+    "AboutWerewolvesAssistant": {
+      "werewolvesAssistantInThePlace": "The Werewolves Assistant takes the stage !",
+      "toHelpGameMaster": "To ease the heavy task that falls on the game master when hosting a Werewolves game, the Werewolves Assistant proves to be the ideal tool !",
+      "assistantHasManyFeatures": "This Assistant offers a variety of features, including:",
+      "gameLayout": "A game composition screen allowing the creation of sessions for 4 to 40 players, with the option to randomly assign roles.",
+      "intuitiveUserInterface": "A playful game tracking interface, providing a pleasant visual experience.",
+      "inputForEachEvent": "For each key event, the ability to input players' choices, such as the selection of the Werewolves' target or the election of the mayor.",
+      "gamePlaysQueue": "The Assistant handles the scheduling of game turns, displaying deaths and other events, as well as retaining all choices made during the game.",
+      "gameHistory": "At the end of the game, a summary is generated, indicating the victorious camp and providing a complete history of past actions.",
+      "assistantGoodForYouAndFreeToPlay": "In summary, the Werewolves Assistant invites you to (re)discover the joy of taking on the role of the game master in a Werewolves game. Accessible from any device with an internet browser, this tool is and will remain entirely FREE.",
+      "pleaseBeAware": "However, please be aware",
+      "physicalGameIsNeeded": "The Werewolves Assistant has no intention of replacing the original Werewolves of Miller's Hollow™ game. Its use requires prior possession of a game with its cards.",
+      "assistantIsABonus": "It is important to emphasize that the Assistant positions itself as an exclusive aid to the game master, facilitating game management without altering the essence and experience unique to the original board game. Thus, it complements and enhances the game's dynamics while preserving its authentic character."
+    },
+    "AboutAvailableRoles": {
+      "availableRoles": "Available roles",
+      "availableRolesImage": "Illustration of the available roles title",
+      "loadingRoles": "Loading roles…",
+      "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:",
+      "clickToExpandRoleDescription": "Click to expand the description of the {role} role",
+      "availableRoleImage": "Illustration of the {role} role"
+    },
+    "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Illustration of the {role} role on the left description",
+      "descriptions": {
+        "werewolf": {
+          "hisGoalIsToKillVillagers": "Their goal is to eliminate the Villagers.",
+          "eachNightEatsVillager": "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance.",
+          "numberOfWolvesVaries": "Their number may vary depending on the number of players and applied variants.",
+          "werewolvesCantEatEachOther": "Under no circumstances can a lone Werewolf devour another Werewolf."
+        },
+        "big-bad-wolf": {
+          "hisGoalIsToKillVillagers": "His goal is to eliminate the Villagers.",
+          "eatsALot": "In the village of Miller's Hollow, little pigs aren't the only ones to fear the Big Bad Wolf. It is enormous, and its appetite is gigantic. Because of it, entire villages were wiped off the map!",
+          "eachNightEatsAnotherVictimTwice": "Each night, it wakes up and feasts with the other Werewolves. But as long as no Werewolf, Wolf-Hound turned wolf, or Wild Child who lost his model is eliminated, it wakes up alone a second time and devours another victim.",
+          "cannotEatAnotherWolf": "It cannot devour another Werewolf."
+        },
+        "accursed-wolf-father": {
+          "hisGoalIsToKillVillagers": "His goal is to eliminate the Villagers.",
+          "spreadEngeanceAndSleep": "The very first Werewolf in our lands, the father of all their fathers, had two powers: the first was to spread its progeny through a special bite, and the second was to escape this world by sleeping for a few centuries.",
+          "awokenWithHunger": "Fortunately for our recent ancestors, it had long since dozed off. The authors of this work wish good luck to today's Villagers and note that the Infect Father of Wolves has just awakened from a long sleep and is very hungry!",
+          "eachNightCanInfect": "Each night, it wakes up and feasts with the other Werewolves. But once in the game, if it desires, after the Werewolves have fallen asleep, it raises its hand. This means the victim is not devoured but infected.",
+          "infectOncePerGame": "The Infect Father of Wolves can use its power only once in the game. The game master then touches the infected inhabitant, who immediately (and secretly) becomes a Werewolf and will now participate in the Werewolves' feast.",
+          "usePowerAndAwokenWithWolves": "If it possessed a nighttime power, it will be awakened by the game master in the following turns to use this power, in addition to being called with the Werewolves."
+        },
+        "white-werewolf": {
+          "heMustRemainAlone": "His goal is to be the sole survivor of the village. Only in that case do they win the game.",
+          "hatesBothWerewolvesAndVillagers": "This very malevolent character hates both Werewolves and Villagers equally!",
+          "strangeMutationInPopulation": "In a recent work titled 'The Village,' it is said that a strange mutation occurred within the lycanthropic population itself.",
+          "eachNightCanEatAnotherWolf": "Each night, it wakes up and feasts with the other Werewolves. But every other night, at the game master's call, it wakes up alone and can eliminate a Werewolf."
+        },
+        "villager": {
+          "hisGoalIsToKillWerewolves": "Their goal is to eliminate the Werewolves.",
+          "noSpecialSkills": "They have no special skills.",
+          "analyticalMind": "Their only weapons are the ability to analyze behaviors to identify the Werewolves."
+        },
+        "villager-villager": {
+          "hisGoalIsToKillWerewolves": "Their goal is to eliminate the Werewolves.",
+          "pureSoul": "This character possesses a clear and transparent soul like the water of a mountain stream. It will deserve the attentive listening of its peers and make its word decisive in crucial moments.",
+          "inspiringTrust": "What power can be as great as inspiring absolute trust in honest people?",
+          "wolfHuntStrategy": "Will the Werewolves rush to eliminate this powerless being? Will they prefer to uncover Villagers with more threatening powers?",
+          "certaintyAsInnocent": "On both faces, this card has the illustration of a Simple Villager. During distribution, the village will have absolute certainty that its owner is indeed an innocent Simple Villager.",
+          "trustedAdvisor": "Game master's advice: This character can become a trusted Captain or Constable."
+        },
+        "seer": {
+          "herGoalIsToKillWerewolves": "Her goal is to eliminate the Werewolves.",
+          "nightlyVision": "Each night, she sees the card of a player of her choice.",
+          "helpfulButDiscreet": "She must assist the other Villagers but remain discreet to avoid being unmasked by the Werewolves."
+        },
+        "cupid": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "magicArrows": "By shooting his famous magic arrows, Cupid has the power to make 2 people fall in love forever.",
+          "firstNightPairing": "On the first night, he designates the 2 players (or players) in love. Cupid can, if he wants, designate himself as one of the two Lovers.",
+          "tragicEnd": "If one of the Lovers is eliminated, the other dies of sorrow immediately. A Lover must never eliminate their beloved, nor cause them any harm (even pretending!).",
+          "warningForMixedPairs": "Warning: if one of the Lovers is a Villager and the other a Werewolf or the Piper, the goal of the game changes for the Lovers: indeed, to live their love peacefully and win the game, they must eliminate all other players, Werewolves, and Villagers, following the rules of the game."
+        },
+        "witch": {
+          "herGoalIsToKillWerewolves": "Her goal is to eliminate the Werewolves.",
+          "potentPotions": "She knows how to concoct 2 extremely powerful potions: a healing potion to resurrect the player devoured by the Werewolves and a poisoning potion used at night to eliminate a player.",
+          "oneUsePerGame": "The Witch can use each potion only once in the game.",
+          "doublePotionUse": "She can use both potions on the same night.",
+          "morningAfterEffect": "In the morning, depending on the potions used, there may be 2 eliminated players or none!",
+          "selfHealingOption": "The Witch can also use the healing potion for herself, thus healing herself if she has just been devoured by the Werewolves."
+        },
+        "hunter": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "revengeUponDeath": "If devoured by the Werewolves or accidentally eliminated by the Villagers, the Hunter must retaliate before passing away by immediately eliminating any other player of his choice.",
+          "loversFarewell": "If the Hunter is the lover of an eliminated player, before leaving the game, the Hunter must immediately eliminate another player of his choice.",
+          "potentialNoSurvivors": "This can lead to a game where no players survive. In this case, victory belongs to neither of the two factions."
+        },
+        "little-girl": {
+          "herGoalIsToKillWerewolves": "Her goal is to eliminate the Werewolves.",
+          "nightlyEspionage": "The Little Girl can, by slightly opening her eyes, spy on the Werewolves during their wake-up.",
+          "riskOfDiscovery": "If she is caught by one of the Werewolves, she can be devoured immediately (silently), in place of the designated victim.",
+          "nightTimeObservation": "The Little Girl can only spy at night during the Werewolves' wake-up turn. She is not allowed to pretend to be a Werewolf and open her eyes wide."
+        },
+        "defender": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "protectiveRole": "This character can shield the Villagers from the bite of the Werewolves… Each night, the Defender is called before the Werewolves.",
+          "playerDesignation": "The Defender then designates a player to the game master. (It is customary for the Defender to first reproduce with his hands the figure drawn on the card).",
+          "nightlyProtection": "The player thus designated will be protected during the night (and only that night) against the Werewolves. Even if chosen by them, they will not be eliminated from the game.",
+          "selfProtection": "The Defender has the right to self-protect. They are not allowed to protect the same player for two consecutive nights.",
+          "limitations": "The protection of the Defender has no effect on the Little Girl. (She is in the midst of preadolescent crisis, and nothing can save her from getting into trouble).",
+          "exclusions": "The Defender does not protect against the Piper or infection by the Infect Father of Wolves."
+        },
+        "elder": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "remarkableResilience": "He has victoriously traversed all the terrible trials of life and acquired an extraordinary resistance! The Werewolves will have to try twice to devour him.",
+          "survivalTrait": "The first time the Elder of the village is devoured by the Werewolves, he survives. The game master does not flip his card. The Elder is eliminated only the second time he is devoured.",
+          "quickElimination": "The village vote, the Witch's poisoning potion, the Hunter's shot, and the Barber's razor eliminate the Elder on the first attempt.",
+          "specialConsequence": "But despairing at having eliminated such a well of knowledge, the Villagers lose their special powers until the end of the game. He is not affected by the Infect Father of Wolves if it is the first time he is bitten.",
+          "healingOption": "Warning: If the Elder of the village is healed by the Witch, he recovers only one life."
+        },
+        "scapegoat": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "unfortunateRole": "It's quite sad, but in Miller's Hollow, when something goes wrong, he always unjustly suffers the consequences…",
+          "tiebreakerElimination": "If the village vote results in a tie, the Scapegoat is eliminated instead of the tied players.",
+          "additionalRoleAfterElimination": "It's up to him to maneuver well to avoid this sad conclusion. If the Scapegoat is eliminated, he still has one prerogative to exercise. He designates who will or will not vote during the next day.",
+          "cautionaryNote": "Caution: designating only one player to vote is risking that he will be devoured by the Werewolves the following night. There will then be no village vote. (Unless, of course, the designated player is a Werewolf, or the Werewolves deliberately choose not to eliminate him…)"
+        },
+        "idiot": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "quirkyVillager": "What village doesn't have its Idiot? He does things a bit recklessly, but he's so endearing that no one would want to harm him…",
+          "mistakenVote": "If the village votes against him, the Village Idiot flips his card. At that moment, the Villagers realize their mistake and immediately pardon him. From now on, he continues to play, but he has lost his voting rights. What would be the worth of an Idiot's vote… There will be no hanging this round.",
+          "wolfElimination": "Warning: if the Werewolves devour him, the Village Idiot is eliminated. If the Idiot is eliminated while he was the Captain of the village, he does not pass on his function. If the Hunter shoots the Idiot, he is eliminated."
+        },
+        "two-sisters": {
+          "theirGoalIsToKillWerewolves": "Their goal is to eliminate the Werewolves.",
+          "confusingTwins": "Some Miller's Hollow residents confuse them when they encounter one of the Two Sisters around a bend in a hollow path.",
+          "siblingBond": "In any case, the Two Sisters get along like fingers on a hand or hairs from the same strand. It's certainly encouraging to have a close one to rely on in these uncertain moments!",
+          "nightlyConsultation": "On the first night, at the game master's call, they wake up together and recognize each other. Then, during the game, every other night, they wake up again and quickly and silently consult on the decisions to save the village.",
+          "signLanguageTip": "Game master's advice: particularly powerful with users of sign language."
+        },
+        "three-brothers": {
+          "theirGoalIsToKillWerewolves": "Their goal is to eliminate the Werewolves.",
+          "joyfulSiblings": "The whole village resonates with their joyful verbal bursts when they return home after fieldwork.",
+          "nonverbalAgreement": "During debates, a simple glance between them allows them to make a good decision about the village's future.",
+          "nightlyRecognition": "On the first night, at the game master's call, they wake up together and recognize each other. Then, during the game, every other night, they wake up again and quickly and silently consult on the decisions to save the village.",
+          "signLanguageTip": "Game master's advice: particularly powerful with users of sign language. Only to be used in large villages. If the village is very large, you can even associate the Two Sisters with them!"
+        },
+        "fox": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "appreciatedCharacter": "In Miller's Hollow, everyone appreciates the keen and discreet character, except perhaps the hens and especially the Werewolves.",
+          "nightlyDesignation": "At night, at the game master's call, the Fox can designate a group of three neighboring players, pointing to the central player.",
+          "powerOutcome": "If there is at least one Werewolf in this group, then the game master signals affirmatively to the Fox. In this case, the Fox can use his power again on the following night.",
+          "powerLoss": "If no Werewolf is in the designated group, the Fox permanently loses his power; however, he gains valuable information, exonerating three players at once.",
+          "reminder": "Note: the game master calls the Fox every night, but he is by no means obliged to use his power every night.",
+          "meneurNote": "Game master's advice: The Fox does not see the cards; the game master simply indicates whether there are Werewolves among these three players."
+        },
+        "bear-tamer": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "nostalgicTale": "Ah! How sweet to my memory is the sound of chains trickling down the cobblestones of \"the place des Trois Routes,\" accompanied by Ursus's growl.",
+          "goldenEra": "Ah! How far away is that time when Titan, the Bear Showman, directed his companion with mastery in a ballet so graceful that we cried every summer in Miller's Hollow. Ursus also had the precious power to detect lurking lycanthropes.",
+          "powerActivation": "Every morning, just after the revelation of any nocturnal victims, if at least one Werewolf is or becomes directly adjacent to the Bear Showman, then the game master growls to signal to the players that the bear has sensed the danger.",
+          "neighborCriteria": "Only neighbors still in the game are taken into account.",
+          "meneurNote": "Game master's advice: to simplify things, eliminated players leave the game or move away from the table. If the Bear Showman is infected, the game master will growl every round until the Bear Showman is eliminated."
+        },
+        "stuttering-judge": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "backgroundStory": "The miller's youngest son was gifted for studies and dreamt of becoming a lawyer. As his father had succeeded in bamboozling his clients, he sent him to study law in the nearby grand city.",
+          "speechImpediment": "A slight pronunciation defect denied the young man the coveted prestige of being the defender of widows and orphans. However, he returned to the village of Miller's Hollow adorned with the no less prestigious title of itinerant judge.",
+          "doubleVoteDecision": "Once in the game, the Stuttering Judge can decide that there will be two consecutive votes and two eliminations of suspects.",
+          "uniqueSign": "The Stuttering Judge signals his decision to the game master with a particular sign that he uses to designate a resident during the village vote. The second vote is immediately triggered without debate by the game master, right after the elimination due to the first vote. The \"St-stuttering-Ju-judge\" will have shown this particular sign during the first night, at the game master's call.",
+          "meneurTip": "Game master's advice: always pay attention to the Stuttering Judge's behavior during votes to not miss his particular sign."
+        },
+        "rusty-sword-knight": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "veteranKnight": "\"Don Quitousse\" is a very old retired knight. He is quite exhausted from a life of quests around the world and no longer takes good care of his noble tool.",
+          "rustyBlade": "Rust has gradually settled on the dull edge of his faithful protective blade, but he will never exchange it for another. He still sleeps with it every night these days: beware of intruders!",
+          "wolfContamination": "If the Knight is devoured, he is eliminated, but one of the Werewolves is contaminated by the rusty sword. Among the Werewolves guilty of this elimination, the first Werewolf to the left of the Knight will be eliminated the following night.",
+          "contaminationRevelation": "The game master will reveal this elimination due to illness the morning after the disappearance of the Werewolf. He will have survived his injury for a day.",
+          "caution": "Caution: players can deduce that all residents between the deceased Rusty Sword Knight and the sick Werewolf are innocent villagers."
+        },
+        "thief": {
+          "hisGoalIsToKillWerewolvesButCanSwitchSide": "His goal is to eliminate the Werewolves, but his goal can change depending on the chosen card.",
+          "additionalCards": "To play the Thief, two additional cards must be added in addition to the basic composition. The two cards are placed face down in the center of the table.",
+          "nightlyExchange": "On the first night, the Thief can familiarize himself with these two cards and exchange his card for one of the two cards. If these cards are two Werewolves, he is obliged to exchange his card for one of the two Werewolves. He will now play this character until the end of the game."
+        },
+        "wild-child": {
+          "hisGoalIsToKillWerewolvesUntilModelDies": "His goal is to eliminate the Werewolves as long as his model is alive.",
+          "abandonedChildhood": "Abandoned in the forest by his parents in his tender childhood, he was raised by wolves. As soon as he could walk on all fours, the Wild Child began to roam around the outskirts of Miller's Hollow.",
+          "secretAdmiration": "One day, fascinated by a villager who walked upright with grace and elegance, he made this person his secret model.",
+          "integration": "He then decided to join the Miller's Hollow community and entered the village, anxious. The community was moved by his fragility, adopted him, and welcomed him into their midst.",
+          "innerStruggle": "What will he become: an honest Villager or a terrible Werewolf? Throughout his existence, the Wild Child's heart will swing between these two alternatives. May his model confirm him in his newfound humanity.",
+          "nightlyAction": "The Wild Child is a Villager. On the first night, at the game master's call, he designates a model player. If, during the game, the designated player is eliminated, the Wild Child becomes a Werewolf and will wake up the next night with his peers, devouring with them every night until the end of the game.",
+          "villageInvolvement": "However, as long as his model is alive, the Wild Child remains a Villager. Whether his model turns out to be a Werewolf or not makes no difference! Nothing prevents the Wild Child from participating in the elimination of his model if he wishes.",
+          "winningConditions": "If his model is alive when all the Werewolves are eliminated, he wins with the Villagers. If his model is eliminated, and only Werewolves survive with him, it is also a victory for our Wild Child.",
+          "meneurTip": "Game master's advice: not revealing the true nature of the Wild Child eliminated by the village vote can be amusing. Doubt about his true identity then persists: was he a Villager or a Werewolf before being eliminated?"
+        },
+        "wolf-hound": {
+          "hisGoalDependsOnChosenSide": "His goal is to eliminate the Werewolves if he remains a dog or to eliminate the Villagers if he decides to become a wolf.",
+          "ancestralConnection": "All dogs know deep down that their ancestors were wolves and that it is Man who has kept them in this state of childish and fearful, but loyal and generous companions.",
+          "freeWill": "In any case, only the Wolf-Hound can decide whether he will obey his human and civilized master or listen to the call of the wild nature buried within him.",
+          "initialChoice": "On the first night, he chooses whether he wants to be a Simple Villager or a Werewolf.",
+          "nightlyParticipation": "If he wants to be a Werewolf, he will wake up with them every night and will now participate in designating the devoured victim. Otherwise, he keeps his eyes closed and wins with the Villagers.",
+          "finalDecision": "This choice is final!",
+          "meneurTip": "Game master's advice: not revealing the true nature of the Wolf-Hound eliminated by the village vote can be amusing. Doubt about his true identity then persists: was he a Villager or a Werewolf before being eliminated?"
+        },
+        "angel": {
+          "hisGoalIsToDieFirst": "His goal is to die in the first round, either by the first vote or by the Werewolves during the first night. If one of the conditions is fulfilled, he wins the game alone.",
+          "disgustWithVillage": "The muddy life of a village infested with malevolent creatures disgusts him; he wishes to be a victim of the worst nightmare to finally wake up peacefully in his cozy bed.",
+          "gameStart": "When the Angel is in the game, the game always begins with the village debate followed by an eliminatory vote and then the first night.",
+          "winningConditions": "If the Angel manages to attract the discriminatory vote of the Villagers or the devouring vindictiveness of the lycanthropes to be eliminated in the first round, he can emerge victorious from the nightmare and win the game.",
+          "gameEnd": "Then the game ends: players can start a new game. If he fails, he becomes a Simple Villager for the rest of the game.",
+          "meneurTip": "Game master's advice: do not hesitate to remind the possible presence of the Angel on the first day! The debates will be more animated, with eloquent speakers being protected by this angelic threat!"
+        },
+        "pied-piper": {
+          "hisGoalIsToCharm": "His goal is to charm all living players.",
+          "revengePlot": "Ignominiously chased from the village, he returned years later under the guise of a false identity to exact his terrible revenge.",
+          "nightlyAction": "Every night, at the game master's call, the Piper charms two new players. As soon as only charmed players remain, the Piper wins against all others. (Even if this happens through a village vote or thanks to the Werewolves).",
+          "wolfTransformation": "If he is infected by the Infected Father of the Werewolves, he becomes a simple Werewolf. His initial goal of charming all players is thus abandoned. He will collaborate with the Werewolves for their common victory.",
+          "attentionNote": "Caution: the Pied Piper cannot self-charm. The Savior does not protect against charm. The Witch does not heal from charm. Werewolves are not immune to charm. Charmed players retain all their powers and characteristics. Charm is not transmitted between Lovers."
+        },
+        "scandalmonger": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "uniqueCharacteristics": "This individual loves to make his guilt suspicions known, marking, just before dawn, the player of his choice. His impact is certain despite our bird's lack of courage!",
+          "nightlyDecision": "Every end of the night, after the Werewolves have gone back to sleep, at the call of his role, the Raven can designate a player he suspects or skip his turn.",
+          "voteInfluence": "The game master then places the \"Curse of the Scandalmonger\" marker in front of the designated player. This player will automatically have 2 more votes against him in the next vote count."
+        },
+        "prejudiced-manipulator": {
+          "hisGoalIsToKillEveryStrangers": "His goal is to eliminate all players who are not in his group.",
+          "troubledPast": "Since his childhood, and perhaps due to a lack of love or interest from his close ones, this poor wretch did not like himself at all.",
+          "transferredHatred": "Growing up, he transferred this hatred to everyone who is a stranger to him. That's why he is now called the \"Prejudiced Manipulator\".",
+          "groupDivision": "Before the start of the game, the game master divides the village into 2 groups, according to an obvious criterion (gender, glasses, height, age, etc.) and announces it aloud to the village. The Abominable Sectarian will inevitably be part of one or the other of the 2 groups.",
+          "eliminationObjective": "The goal of this character is the elimination of all players from the group he hates, which is the one he does not belong to.",
+          "victoryCondition": "In this case, and only in this case, he wins the game. He has no special power: his ability to manipulate the villagers is his only weapon. If he is infected by the Infected Father of the Werewolves, he becomes a Werewolf.",
+          "meneurTip": "Game master's advice: it is not mandatory to form 2 groups of equal sizes. Do not hesitate, if necessary, to announce to everyone to which group each villager belongs."
+        },
+        "actor": {
+          "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
+          "entertainerBackground": "An indefatigable performer, he stopped by the village to give a few performances before descending to spend the winter in more hospitable lands. As skilled at appreciating jokes and comedies as he is at interpreting the great tragic texts, he has all the talents to perform the repertoire of national theater.",
+          "cardSelection": "Before the game, the game master chooses 3 character cards with special abilities. After the roles are distributed, these cards are placed face up in the center of the table.",
+          "nightlyAction": "Every night, at the game master's call, the Actor can designate one of these cards and use the corresponding power until the next night. If the Actor uses a character card, the game master removes that card from the table. It can no longer be used.",
+          "restrictionNote": "Caution: the proposed cards cannot be Werewolf cards.",
+          "meneurTips": "Game master's advice: in choosing the cards proposed to the Actor, you can introduce a bit of chaos into the village or, on the contrary, counter a very powerful clan of wolves.",
+          "additionalNote": "If the Thief is also present, you must first place the 2 Thief cards, and only then the 3 Actor cards."
+        },
+        "devoted-servant": {
+          "herGoalIsToKillWerewolves": "Her initial goal is to eliminate the Werewolves or fulfill the objective of the role she has stolen.",
+          "idealServant": "Who could dream of a better servant than one who gives her life for her masters? Do not rejoice too soon, because the devouring ambition that possesses her could cause the end of the village!",
+          "revealBeforeCouncil": "Before revealing the card of the player eliminated by the village council, she can reveal herself by showing her card. In this case, the Devoted Servant loses her card, then she takes the card of the eliminated player without revealing it to others and assumes the role of the eliminated player until the end of the game.",
+          "loveRestriction": "Caution: if she is in love, the Devoted Servant cannot use her power. Her love is stronger than her desire to change characters.",
+          "servantTipTemporizeRevelation": "Game master's advice: delay the revelation of the card of the player eliminated by the village to give the Devoted Servant time to reveal herself. If she takes on a role with a power, the game master will call the former Devoted Servant on the following nights under the name of this new role. Especially the first night after, to \"reset\" this new role.",
+          "servantTipNewRoleRenewal": "In general, this new role taken on by the Devoted Servant has its ability completely renewed and must be played as if it were the first night. On the other hand, any previous effects applied to the eliminated player are canceled.",
+          "servantTipEliminatedPlayerConditions": "Clarifications: if the eliminated player was infected, in love, charmed, Captain, Rural Guard, or Cupid, the former Devoted Servant is not.",
+          "servantTipNoLongerCharmCaptainGuard": "If the former Devoted Servant was charmed, Captain, or Rural Guard, she is no longer.",
+          "servantTipRemainsInfectedIfWas": "If the former Devoted Servant was infected, she still is.",
+          "servantTipAfterTransformation": "If the former Devoted Servant becomes: ",
+          "servantTipFlutePlayerCharmIndication": "- Flute Player, the game master informs this new Flute Player who the previously charmed players are.",
+          "servantTipActorGuardGypsyNoNewCards": "- Actor, Rural Guard, Gypsy (without Potion): new cards are not distributed; only those unused remain."
+        }
+      }
+    },
+    "RoleTypeBadge": {
+      "roleType": "Role Type",
+      "descriptions": {
+        "werewolf": "His goal is to eliminate all Villagers.",
+        "villager": "His goal is to eliminate all Werewolves.",
+        "lonely": "His goal is to achieve his objective independently of his own side.",
+        "ambiguous": "His goal is to make his side win, which can change during the game."
+      }
+    },
+    "RoleOriginBadge": {
+      "roleOrigin": "Role Origin",
+      "classic": "Base Game",
+      "new-moon": "New Moon Expansion",
+      "the-village": "The Village Expansion",
+      "characters": "Characters Expansion",
+      "unconventional": "Invented Role by the community"
+    },
+    "AboutHowToContribute": {
+      "howToContribute": "How to contribute to this project?",
+      "thereAreManyWaysToContribute": "There are several ways to contribute to this project:",
+      "openSourceProject": "The Werewolf Assistant is an open-source project! Available on GitHub, whether you are a developer, graphic designer, or even a tester, your help is welcome. If you like the project, feel free to star it or follow the creator!",
+      "accessGitHubRepository": "Access the project on GitHub",
+      "thisProjectIsFree": "This project is intended to remain a free service. However, both hosting and tool infrastructure are paid for. If you would like to contribute or appreciate the creator's work, you can make a donation on their Buy Me A Coffee page.",
+      "talkAboutThisProject": "Talk about this project around you! Word of mouth will encourage many role-play enthusiasts to embark on the grand adventure of the game master with the Werewolf Assistant."
+    },
+    "GitHubRepositoryButton": {
+      "thisProjectIsOpenSource": "This project is open-source!"
+    },
+    "AboutCreator": {
+      "wordFromCreator": "A word from the creator",
+      "creatorBackground": "I am Antoine ZANARDI, a Full-Stack Web developer and a fan of open source in general. If you want to learn more about me, I invite you to explore my portfolio.",
+      "whyWerewolvesGameIsGreat": "For me, Werewolves of Miller's Hollow™ game is one of the best games to play with friends or family around a table, where alliances and betrayals intertwine, much like in Mario Kart. As the game progresses, the true nature of each player is revealed, masks fall, and everyone feels threatened. Each game is a unique adventure, full of unexpected twists.",
+      "whyWerewolvesAssistant": "As a big fan of the game master role, I've always wanted to share the rewarding feeling of being the conductor during a game. So, I created this assistant so that anyone can take on this important role, in any game configuration.",
+      "pleaseShareFeedback": "Your feedback on this assistant is welcome. It was created to serve all game masters, whether novice or expert, and make your games memorable. Have fun!",
+      "myPortfolio": "My portfolio"
+    },
+    "RoleImage": {
+      "back": "Back of the card"
+    },
+    "GameLobbyPlayerInput": {
+      "playerName": "Player name",
+      "maxPlayersReached": "Maximum number of players reached",
+      "pleaseEnterPlayerName": "Please enter a player name",
+      "playerNameIsAlreadyTaken": "This player name is already taken",
+      "playerNameMaxLengthReached": "The player name must not exceed 30 characters"
+    },
+    "GameLobbyHeader": {
+      "gameLobby": "Game Lobby"
+    },
+    "PlayerCard": {
+      "playerCardRoleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameLobbyPlayerCard": {
+      "removePlayer": "Remove player {playerName}",
+      "roleNotSelected": "Role not selected"
+    },
+    "GameLobbyRandomCompositionButton": {
+      "randomComposition": "Random composition",
+      "minPlayersNotReached": "The minimum number of players is not reached"
+    },
+    "GameLobbyStartGameButton": {
+      "startGame": "Start game",
+      "gameCreated": "Game created"
+    },
+    "GameLobbyPlayersParty": {
+      "addPlayersWithInputAbove": "Add player names with the input above"
+    },
+    "GameNotFound": {
+      "gameNotFound": "Game not found… Did you get lost ?"
+    },
+    "GameCanceled": {
+      "gameCanceled": "Game canceled"
+    },
+    "BackToHomeButton": {
+      "backToHome": "Back to home"
+    },
+    "CreateAnotherGameButton": {
+      "createAnotherGame": "Create another game"
+    }
+  }
+}

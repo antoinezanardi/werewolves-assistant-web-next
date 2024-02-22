@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Random Composition Button Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-random-composition-button-container" data-pd-tooltip="true">
+  <button-stub class="random-composition-button" disabled="true" icon="fa-random fa" label="Random composition" loading="false" raised="" severity="secondary" size="large" type="button"></button-stub>
+</div>"
+`;

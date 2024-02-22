@@ -1,0 +1,26 @@
+name: 🔃 Lint PR Name Into Develop Workflow
+
+on:
+  pull_request:
+    branches:
+      - 'develop'
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+jobs:
+  develop-pr-lint:
+    name: Lint Pull Request Name 🔃
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint Pull Request Name 🔃
+        uses: morrisoncole/pr-lint-action@v1.7.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          title-regex: ^(?<type>build|tech|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?<scope>\(\w+(-\w+)*\)?((?=:\s)|(?=!:\s)))(?<breaking>!)?(?<subject>:\s.+)$
+          on-failed-regex-fail-action: true
+          on-failed-regex-create-review: true
+          on-failed-regex-request-changes: false
+          on-failed-regex-comment: "[Auto-generated comment] Your Pull Request name is not compliant to conventional commits : ```%regex%```!"

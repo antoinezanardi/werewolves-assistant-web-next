@@ -1,0 +1,15 @@
+{
+  "default": {
+    "paths": [
+      "tests/acceptance/features/**/*.feature"
+    ],
+    "import": [
+      "tests/acceptance/features/**/*.ts"
+    ],
+    "publish": false,
+    "format": [
+      "summary",
+      "json:tests/acceptance/reports/report.json"
+    ]
+  }
+}

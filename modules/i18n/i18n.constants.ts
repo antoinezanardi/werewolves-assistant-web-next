@@ -1,0 +1,8 @@
+const I18N_DEFAULT_LOCALE = "en";
+
+const I18N_TEST_LOCALE = "en";
+
+export {
+  I18N_DEFAULT_LOCALE,
+  I18N_TEST_LOCALE,
+};
