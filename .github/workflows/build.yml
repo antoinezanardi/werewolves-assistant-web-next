@@ -229,6 +229,16 @@ jobs:
           name: e2e-tests-reports
           path: tests/acceptance/reports
 
+      - name: Save E2E tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        with:
+          test_results: tests/acceptance/reports
+          keep_reports: 20
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: cucumber
+          workflow_name: ${{ github.workflow }}
+
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
 
