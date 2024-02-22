@@ -1,3 +1,0 @@
-const MAX_PLAYER_NAME_LENGTH = 30;
-
-export { MAX_PLAYER_NAME_LENGTH };

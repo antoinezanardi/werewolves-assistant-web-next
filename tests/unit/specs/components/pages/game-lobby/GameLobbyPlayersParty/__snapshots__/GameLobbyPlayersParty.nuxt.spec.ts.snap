@@ -1,7 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Game Lobby Players Party Component > should match snapshot when rendered. 1`] = `
-"<div id="game-lobby-players-party-container" class="align-items-center h-100 justify-content-center row">
-  <h2 id="no-players-in-lobby-message" class="align-items-center d-flex justify-content-center"><i class="fa fa-plus me-2"></i><span>Add player names with the input above</span></h2>
-</div>"
-`;

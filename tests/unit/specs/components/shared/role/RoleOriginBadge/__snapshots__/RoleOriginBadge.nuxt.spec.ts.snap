@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Role Origin Badge Component > should match snapshot when rendered. 1`] = `"<badge-stub data-v-01dc4eab="" class="role-origin-badge" value="Base Game" data-pd-tooltip="true"></badge-stub>"`;

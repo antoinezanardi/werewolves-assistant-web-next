@@ -1,3 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`GitHub Repository Button > should match snapshot when rendered. 1`] = `"<a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>GitHub</span></a>"`;
