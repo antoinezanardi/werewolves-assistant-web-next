@@ -6,6 +6,10 @@ on:
       - 'main'
       - 'develop'
 
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+  BRANCH_NAME_FORMATTED_FOR_REPORTS: ${BRANCH_NAME//\//_}
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
@@ -189,8 +193,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
-          workflow_name: ${{ github.event_name}}
-          env: ${{ github.head_ref.replace('/', '_') || github.ref_name.replace('/', '_') }}
+          workflow_name: ${{ github.event_name }}
+          env: ${BRANCH_NAME_FORMATTED_FOR_REPORTS}
 
   e2e-tests:
     name: E2E Tests ⚗️
@@ -249,7 +253,7 @@ jobs:
           subfolder: reports
           tool_name: cucumber
           workflow_name: ${{ github.event_name }}
-          env: ${{ (github.head_ref || github.ref_name).replace('/', '_')}}
+          env: ${BRANCH_NAME_FORMATTED_FOR_REPORTS}
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
@@ -310,7 +314,7 @@ jobs:
           subfolder: reports
           tool_name: stryker
           workflow_name: ${{ github.event_name }}
-          env: ${{ (github.head_ref || github.ref_name).replace('/', '_') }}
+          env: ${BRANCH_NAME_FORMATTED_FOR_REPORTS}
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
