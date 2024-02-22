@@ -23,6 +23,7 @@ import { storeToRefs } from "pinia";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
+import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { fetchRandomGameComposition } = useFetchRandomGameComposition();
@@ -45,7 +46,14 @@ const containerTooltip = computed<string | undefined>(() => {
 
 async function handleRandomCompositionButtonClick(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
-  const randomGameComposition = await fetchRandomGameComposition({ players: createGameDto.value.players });
+  const randomGameComposition = await fetchRandomGameComposition({
+    players: createGameDto.value.players,
+    excludedRoles: [
+      RoleNames.THIEF,
+      RoleNames.ACTOR,
+      RoleNames.PREJUDICED_MANIPULATOR,
+    ],
+  });
   if (randomGameComposition !== null) {
     setPlayersToCreateGameDto(randomGameComposition);
   }

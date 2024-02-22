@@ -91,11 +91,19 @@ pnpm run build
 
 ![Vitest](https://img.shields.io/badge/-Vitest-black?style=for-the-badge&logoColor=yellow&logo=vitest&color=30420a)
 
+📊 Coverage reports for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/vitest)**.
+
 ### ⚗️ E2E / Acceptance tests
 
 ![Playwright](https://img.shields.io/badge/-Playwright-black?style=for-the-badge&logoColor=white&logo=playwright&color=1D8D22)
 
 ![Cucumber](https://img.shields.io/badge/-Cucumber-black?style=for-the-badge&logoColor=white&logo=cucumber&color=169652)
+
+E2E tests are written in Gherkin language around Playwright functions and are available in the **[features directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/features)**.
+
+🏞️ Screenshots for visual regression tests for each platform (`linux` / `darwin`) are available in the **[screenshots directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/screenshots)**.
+
+📊 All scenarios results with screenshots for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/cucumber)**.
 
 ### 👽 Mutant testing
 
@@ -103,7 +111,7 @@ pnpm run build
 
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantoinezanardi%2Fwerewolves-assistant-web-next%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main)
 
-You can also check the **[mutation testing report](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main#mutant)**.
+📊 Mutation testing reports for `main` and `develop` branches and pull requests are available **[here](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main#mutant)**.
 
 ### ▶️ Commands
 

@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Lint Pull Request Name 🔃
-        uses: morrisoncole/pr-lint-action@v1.7.0
+        uses: morrisoncole/pr-lint-action@v1.7.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           title-regex: ^(?<type>build|tech|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?<scope>\(\w+(-\w+)*\)?((?=:\s)|(?=!:\s)))(?<breaking>!)?(?<subject>:\s.+)$

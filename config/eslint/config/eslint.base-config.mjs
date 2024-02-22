@@ -6,9 +6,11 @@ const ESLINT_BASE_CONFIG = Object.freeze({
   languageOptions: {
     globals: {
       process: READONLY,
+      Buffer: READONLY,
       defineNuxtConfig: READONLY,
       defineI18nConfig: READONLY,
       useRuntimeConfig: READONLY,
+      useRoute: READONLY,
       definePageMeta: READONLY,
       setPageLayout: READONLY,
       createError: READONLY,

@@ -14,6 +14,7 @@ export default {
     "layouts/**/*.{ts,vue}",
     "stores/**/*.ts",
     "utils/**/*.ts",
+    "!**/*.constants.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",
@@ -43,6 +44,9 @@ export default {
     "config/eslint",
     "config/lint-staged",
     "config/stryker",
+    "tests/acceptance",
+    "tests/stryker",
+    "tests/unit/coverage",
     "scripts/",
     "server/",
     ".editorconfig",

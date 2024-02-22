@@ -5,6 +5,7 @@ import type { Ref } from "vue";
 
 import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
 import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
+import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -107,7 +108,14 @@ describe("Game Lobby Random Composition Button Component", () => {
           await button.trigger("click");
           await nextTick();
 
-          expect(mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition).toHaveBeenCalledWith({ players: createGameDtoStore.createGameDto.players });
+          expect(mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition).toHaveBeenCalledExactlyOnceWith({
+            players: createGameDtoStore.createGameDto.players,
+            excludedRoles: [
+              RoleNames.THIEF,
+              RoleNames.ACTOR,
+              RoleNames.PREJUDICED_MANIPULATOR,
+            ],
+          });
         });
 
         it("should set fetched random game composition to create game dto when fetched.", async() => {

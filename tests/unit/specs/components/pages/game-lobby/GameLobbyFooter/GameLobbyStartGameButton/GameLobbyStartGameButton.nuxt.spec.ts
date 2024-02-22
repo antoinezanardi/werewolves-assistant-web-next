@@ -1,3 +1,4 @@
+import { flushPromises } from "@vue/test-utils";
 import type { mount } from "@vue/test-utils";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
@@ -11,6 +12,7 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -46,14 +48,9 @@ describe("Game Lobby Start Game Button Component", () => {
       useFetchGames: {
         createGame: Mock;
         getGame: Mock;
+        cancelGame: Mock;
       };
-      useVuePrimeToasts: {
-        addToast: Mock;
-        addSuccessToast: Mock;
-        addInfoToast: Mock;
-        addWarnToast: Mock;
-        addErrorToast: Mock;
-      };
+      useVuePrimeToasts: ReturnType<typeof createFakeUseVuePrimeToasts>;
     }
   };
 
@@ -63,14 +60,9 @@ describe("Game Lobby Start Game Button Component", () => {
         useFetchGames: {
           createGame: vi.fn(),
           getGame: vi.fn(),
+          cancelGame: vi.fn(),
         },
-        useVuePrimeToasts: {
-          addToast: vi.fn(),
-          addSuccessToast: vi.fn(),
-          addInfoToast: vi.fn(),
-          addWarnToast: vi.fn(),
-          addErrorToast: vi.fn(),
-        },
+        useVuePrimeToasts: createFakeUseVuePrimeToasts(),
       },
     };
     vi.spyOn(UseFetchGames, "useFetchGames").mockReturnValue(mocks.composables.useFetchGames);
@@ -147,10 +139,21 @@ describe("Game Lobby Start Game Button Component", () => {
         expect(mocks.composables.useFetchGames.createGame).toHaveBeenCalledExactlyOnceWith(createGameDtoStore.createGameDto);
       });
 
+      it("should navigate to game with id in params when game is created.", async() => {
+        const createdGame = createFakeGame();
+        mocks.composables.useFetchGames.createGame.mockResolvedValue(createdGame);
+        const button = wrapper.find(".start-game-button");
+        await button.trigger("click");
+        await flushPromises();
+
+        expect(navigateTo).toHaveBeenCalledExactlyOnceWith(`/game/${createdGame._id}`);
+      });
+
       it("should add success toast when game is created.", async() => {
         mocks.composables.useFetchGames.createGame.mockResolvedValue(createFakeGame());
         const button = wrapper.find(".start-game-button");
         await button.trigger("click");
+        await flushPromises();
 
         expect(mocks.composables.useVuePrimeToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.GameLobbyStartGameButton.gameCreated" });
       });
