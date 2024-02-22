@@ -30,6 +30,7 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async func
     height: baseScreenshot.height,
   });
   if (screenshot.width !== baseScreenshot.width || screenshot.height !== baseScreenshot.height) {
+    this.attach(PNG.sync.write(screenshot), "image/png");
     throw new Error(`The screenshots have different dimensions. Expected: ${baseScreenshot.width}x${baseScreenshot.height}, but got: ${screenshot.width}x${screenshot.height}`);
   }
   const pixelMatchOptions: PixelmatchOptions = { threshold: 0.1 };
