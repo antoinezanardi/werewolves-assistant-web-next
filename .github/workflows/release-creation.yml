@@ -74,6 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+      STRYKER_REPORT_PATH: tests/stryker/coverage
       VERSION: 'main'
     needs:
       - install
@@ -104,13 +105,31 @@ jobs:
         run: pnpm run postinstall
 
       - name: Mutant tests 👽
+        id: mutant-tests
+        continue-on-error: true
         run: pnpm run test:stryker:ci
 
       - name: Save stryker report as artifact 💎
         uses: actions/upload-artifact@v4
         with:
           name: stryker-html-report
-          path: tests/stryker/coverage/index.html
+          path: ${{ env.STRYKER_REPORT_PATH }}/index.html
+
+      - name: Save stryker report in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        with:
+          test_results: ${{ env.STRYKER_REPORT_PATH }}
+          report_url: ${{ env.REPORTS_URL }}
+          keep_reports: 20
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: stryker
+          workflow_name: ${{ github.event_name }}
+          env: main
+
+      - name: Exit with error if mutant tests failed 🚨
+        if: steps.mutant-tests.outcome != 'success'
+        run: exit 1;
 
   release:
     name: Release 🏷️
@@ -153,6 +172,8 @@ jobs:
   unit-tests:
     name: Unit Tests 🧪
     runs-on: ubuntu-latest
+    env:
+      UNIT_TESTS_COVERAGE_REPORTS_PATH: tests/unit/coverage
     needs:
       - install
     steps:
@@ -182,6 +203,8 @@ jobs:
         run: pnpm run postinstall
 
       - name: Unit tests 🧪
+        id: unit-tests
+        continue-on-error: true
         run: pnpm run test:unit:cov
 
       - name: Save tests coverage in cache 🥡
@@ -195,7 +218,23 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: unit-tests-coverage-report
-          path: tests/unit/coverage
+          path: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
+
+      - name: Save unit tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        with:
+          test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
+          report_url: ${{ env.REPORTS_URL }}
+          keep_reports: 20
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: vitest
+          workflow_name: ${{ github.event_name }}
+          env: main
+
+      - name: Exit with error if unit tests failed 🚨
+        if: steps.unit-tests.outcome != 'success'
+        run: exit 1;
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️

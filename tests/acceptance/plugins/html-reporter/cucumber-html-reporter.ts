@@ -5,7 +5,7 @@ import { ACCEPTANCE_TESTS_REPORTS_PATH, ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PAT
 reporter.generate({
   theme: "bootstrap",
   jsonFile: `${ACCEPTANCE_TESTS_REPORTS_PATH}/report.json`,
-  output: `${ACCEPTANCE_TESTS_REPORTS_PATH}/report.html`,
+  output: `${ACCEPTANCE_TESTS_REPORTS_PATH}/index.html`,
   reportSuiteAsScenarios: true,
   launchReport: false,
   name: "Werewolves Assistant Web App",
