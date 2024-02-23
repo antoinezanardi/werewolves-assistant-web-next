@@ -126,6 +126,7 @@ jobs:
           tool_name: stryker
           workflow_name: ${{ github.event_name }}
           env: main
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Exit with error if mutant tests failed 🚨
         if: steps.mutant-tests.outcome != 'success'
@@ -231,6 +232,7 @@ jobs:
           tool_name: vitest
           workflow_name: ${{ github.event_name }}
           env: main
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Exit with error if unit tests failed 🚨
         if: steps.unit-tests.outcome != 'success'
