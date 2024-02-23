@@ -1,32 +1,20 @@
 import { createPinia, setActivePinia } from "pinia";
-import type { Mock } from "vitest";
 
-import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import { Game } from "~/composables/api/game/types/game.class";
+import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
 
 describe("Game Store", () => {
   let mocks: {
     composables: {
-      useFetchGames: {
-        getGame: Mock;
-        createGame: Mock;
-        cancelGame: Mock;
-      }
+      useFetchGames: ReturnType<typeof createFakeUseFetchGames>
     }
   };
 
   beforeEach(() => {
-    mocks = {
-      composables: {
-        useFetchGames: {
-          createGame: vi.fn(),
-          getGame: vi.fn(),
-          cancelGame: vi.fn(),
-        },
-      },
-    };
+    mocks = { composables: { useFetchGames: createFakeUseFetchGames() } };
     vi.spyOn(UseFetchGames, "useFetchGames").mockImplementation(() => mocks.composables.useFetchGames);
     setActivePinia(createPinia());
   });
