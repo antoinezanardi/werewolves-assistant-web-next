@@ -201,6 +201,7 @@ jobs:
           tool_name: vitest
           workflow_name: ${{ github.event_name }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Exit with error if unit tests failed 🚨
         if: steps.unit-tests.outcome != 'success'
@@ -267,6 +268,7 @@ jobs:
           tool_name: cucumber
           workflow_name: ${{ github.event_name }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
@@ -332,6 +334,7 @@ jobs:
           tool_name: stryker
           workflow_name: ${{ github.event_name }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Exit with error if mutant tests failed 🚨
         if: steps.mutant-tests.outcome != 'success'
