@@ -1,5 +1,47 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.6.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.5.0...v1.6.0) (2024-2-22)
+
+
+### 🚀 Features
+
+* **game:** cancel game ([#154](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/154)) ([f8f0c02](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f8f0c02f53278c6b51ca0b975933eaeefe7c2208))
+* **game:** game page structure and game store ([#138](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/138)) ([52667e2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/52667e24866e9438a8bed4063d043b424f47c086))
+* **game:** loading and not found game parts ([#152](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/152)) ([e192fa0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e192fa0a559a8f4037de369bca495fb45ff77931))
+* **game:** redirection between lobby and game ([#142](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/142)) ([c040e1a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c040e1a9ebbbf4a2d5b469296cb3863a7e106d1b))
+* **reports:** store reports in github pages ([#163](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/163)) ([e477986](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e477986beb8ffec3e82441c89bd7a8b078020279)), closes [#133](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/133)
+
+
+### 🐛 Bug Fixes
+
+* **e2e:** store screenshots by platforms ([#149](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/149)) ([a8e6fd9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a8e6fd9741c8c3041274b2e3772df46f42db3bb4))
+
+
+### ✅ Tests
+
+* **e2e:** make screenshots in e2e tests for every significative screen state ([#146](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/146)) ([54fbf54](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/54fbf54a5141b9810e1fcc0c56c63bbc4ed39ae2)), closes [#132](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/132)
+* **game-lobby:** simplify add player action ([#165](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/165)) ([987574c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/987574cdcb7b696480bb64cccf35b02319ff3bf1))
+* **html:** better printed format for html in errored e2e ([#145](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/145)) ([8cbc713](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8cbc71395628db0d067267ad931ab19121407634)), closes [#131](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/131)
+* **screenshots:** better screenshots error handling ([#164](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/164)) ([bcd0b70](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bcd0b70d7e33189213386d29fe6a8552c7450e02))
+* **tooltips:** correct way of test tooltips in unit and e2e ([#144](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/144)) ([e33ff02](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e33ff0224682fbfb229cd8ccc66dda568ae4b1b3)), closes [#130](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/130)
+
+
+### 🧹 Chore
+
+* **deps:** bump bootstrap from 5.3.2 to 5.3.3 ([#160](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/160)) ([2448574](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/24485746ffde68ee0aea792b2ba6d51fc2dd25eb))
+* **deps:** bump happy-dom from 13.3.8 to 13.4.1 ([#162](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/162)) ([22c0701](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/22c070110977440ace95078ec91b4070944723fb))
+* **deps:** bump msw from 2.2.0 to 2.2.1 ([#148](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/148)) ([fe84b26](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/fe84b265ecdf2366ce0c8bc4044d4823218663fe))
+* **deps:** bump radash from 11.0.0 to 12.0.0 ([#159](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/159)) ([1ebc078](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1ebc0784fbfb92d6064b957407c9560bd5144f74))
+* **deps:** bump sass from 1.70.0 to 1.71.0 ([#141](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/141)) ([0fdc2ae](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0fdc2ae0ba624582ddb85078f7e484d1211146cd))
+* **deps:** bump sass from 1.71.0 to 1.71.1 ([#158](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/158)) ([284decf](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/284decff4b2d888e7729ff20cd88f33516b32bb7))
+* **deps:** bump the eslint group with 1 update ([#140](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/140)) ([253a4c9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/253a4c93232e20e9831a6c9554b0ffbcd4122dff))
+* **deps:** bump the stryker group with 4 updates ([#156](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/156)) ([3dc25e2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3dc25e26fbb9e478424946876dacc5c65d445f32))
+* **deps:** bump the vitest group with 3 updates ([#147](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/147)) ([207e82b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/207e82bf8d647cd6d52007dc4c65a9e1e7149f3e))
+* **deps:** bump the vitest group with 3 updates ([#157](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/157)) ([0f7af23](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0f7af23dcceaa8842dee6cdd154301a38300f8d2))
+* **deps:** bump the vue group with 1 update ([#161](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/161)) ([bdbb3fe](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bdbb3fe19fb24daf246032e4dbe209b2e96ddcc8))
+* **deps:** update nuxt to latest version ([#150](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/150)) ([1928c2f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1928c2fc6efda8d9dc2a36fc66dcd8f274e985e3))
+* **github-actions:** bump morrisoncole/pr-lint-action from 1.7.0 to 1.7.1 ([#153](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/153)) ([881c61c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/881c61c26ec01aa5afcf273095de6bd218f11e8f))
+
 ## [1.5.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.4.1...v1.5.0) (2024-2-14)
 
 
