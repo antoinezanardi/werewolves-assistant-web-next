@@ -11,6 +11,12 @@ const MAX_LENGTH_DEFAULT_CONFIG = {
   ignoreRegExpLiterals: true,
   ignorePattern: "^import\\s.+\\sfrom\\s.+;$",
 };
+const MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG = {
+  max: 30,
+  IIFEs: false,
+  skipComments: true,
+  skipBlankLines: true,
+};
 const READONLY = "readonly";
 const ALWAYS = "always";
 const NEVER = "never";
@@ -59,5 +65,6 @@ export {
   ALWAYS,
   NEVER,
   MAX_LENGTH_DEFAULT_CONFIG,
+  MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG,
   NAMING_CONVENTION_DEFAULT_CONFIG,
 };

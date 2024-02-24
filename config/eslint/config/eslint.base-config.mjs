@@ -1,6 +1,6 @@
 import Vitest from "eslint-plugin-vitest";
 
-import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY } from "../eslint.constants.mjs";
+import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY, MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG } from "../eslint.constants.mjs";
 
 const ESLINT_BASE_CONFIG = Object.freeze({
   languageOptions: {
@@ -118,12 +118,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "max-classes-per-file": ERROR,
     "max-depth": OFF,
     "max-lines": OFF,
-    "max-lines-per-function": [
-      ERROR, {
-        max: 30,
-        skipComments: true,
-      },
-    ],
+    "max-lines-per-function": [ERROR, MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG],
     "max-nested-callbacks": [ERROR, MAX_NESTED_CALLBACK],
     "max-params": [ERROR, MAX_PARAMS],
     "max-statements": OFF,

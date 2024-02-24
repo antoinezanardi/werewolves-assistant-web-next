@@ -120,12 +120,13 @@ jobs:
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}
           report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 20
+          keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
           tool_name: stryker
           workflow_name: ${{ github.event_name }}
           env: main
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Exit with error if mutant tests failed 🚨
         if: steps.mutant-tests.outcome != 'success'
@@ -225,12 +226,13 @@ jobs:
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 20
+          keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
           workflow_name: ${{ github.event_name }}
           env: main
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Exit with error if unit tests failed 🚨
         if: steps.unit-tests.outcome != 'success'

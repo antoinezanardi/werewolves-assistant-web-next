@@ -1,17 +1,17 @@
-import { flushPromises } from "@vue/test-utils";
 import type { mount } from "@vue/test-utils";
+import { flushPromises } from "@vue/test-utils";
 import type Button from "primevue/button";
-import type { Mock } from "vitest";
 import type { Ref } from "vue";
 
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
-import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { RoleNames, RoleSides } from "~/composables/api/role/enums/role.enums";
+import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
 import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -45,11 +45,7 @@ describe("Game Lobby Start Game Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyStartGameButton>>;
   let mocks: {
     composables: {
-      useFetchGames: {
-        createGame: Mock;
-        getGame: Mock;
-        cancelGame: Mock;
-      };
+      useFetchGames: ReturnType<typeof createFakeUseFetchGames>;
       useVuePrimeToasts: ReturnType<typeof createFakeUseVuePrimeToasts>;
     }
   };
@@ -57,11 +53,7 @@ describe("Game Lobby Start Game Button Component", () => {
   beforeEach(async() => {
     mocks = {
       composables: {
-        useFetchGames: {
-          createGame: vi.fn(),
-          getGame: vi.fn(),
-          cancelGame: vi.fn(),
-        },
+        useFetchGames: createFakeUseFetchGames(),
         useVuePrimeToasts: createFakeUseVuePrimeToasts(),
       },
     };
