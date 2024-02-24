@@ -41,4 +41,4 @@ jobs:
           rm -rf "reports/cucumber/pull_request/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
           git add .
           git commit -m "chore(reports): delete reports folder for branch $BRANCH_NAME_FORMATTED_FOR_REPORTS"
-          git push origin github_pages
+          git push origin gh_pages
