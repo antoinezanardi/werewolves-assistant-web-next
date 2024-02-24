@@ -1,7 +1,7 @@
 #!/bin/bash
 output=$(cat)
 
-tests_count=$(echo "$output" | grep 'Tests' | awk '{gsub(/[()]/, "", $2); print $2}' | grep -o '[0-9]*')
+tests_count=$(echo "$output" | grep 'Tests' | awk -F'[()]' '{print $2}')
 
 statements_count=$(echo "$output" | awk '/Statements/{print $(NF-1)}')
 branches_count=$(echo "$output" | awk '/Branches/{print $(NF-1)}')
