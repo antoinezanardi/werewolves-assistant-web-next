@@ -1,5 +1,13 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.7.1](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.7.0...v1.7.1) (2024-2-24)
+
+
+### 🔁 CI
+
+* **badges:** generate badges on release creation ([#177](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/177)) ([4af228d](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/4af228df939c097d322d526be115011a22b0d748)), closes [#134](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/134)
+* **reports:** checkout directly to github pages branch ([#175](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/175)) ([3111da5](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3111da588cb2b5745b52606fab698264ffd996a8))
+
 ## [1.7.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.6.0...v1.7.0) (2024-2-24)
 
 
