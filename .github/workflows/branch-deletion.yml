@@ -1,0 +1,44 @@
+name: 🍃 Branch Deletion Workflow
+
+on:
+  delete:
+    branches:
+      - '*'
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  BRANCH_NAME: ""
+  BRANCH_NAME_FORMATTED_FOR_REPORTS: ""
+
+jobs:
+  delete-reports-folder:
+    name: Delete Reports Folder on GitHub Pages 🗑
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Git 🛠️
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+
+      - name: Extract branch name without prefix and format it 🌲
+        run: |
+          BRANCH_NAME=$(echo "${{ github.event.ref }}" | sed 's/refs\/heads\///')
+          BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo "${BRANCH_NAME//\//_}")
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$BRANCH_NAME_FORMATTED_FOR_REPORTS" >> $GITHUB_ENV
+
+      - name: Delete Reports Folder 🗑
+        run: |
+          git checkout github_pages
+          rm -rf "reports/vitest/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
+          rm -rf "reports/stryker/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
+          rm -rf "reports/cucumber/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
+          git add .
+          git commit -m "chore(reports): delete reports folder for branch $BRANCH_NAME_FORMATTED_FOR_REPORTS"
+          git push origin github_pages
