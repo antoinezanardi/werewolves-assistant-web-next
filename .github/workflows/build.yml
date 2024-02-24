@@ -175,7 +175,7 @@ jobs:
       - name: Unit tests 🧪
         id: unit-tests
         continue-on-error: true
-        run: pnpm run test:unit:cov
+        run: pnpm run test:unit:cov 2>&1 | ./scripts/transform-vitest-results-as-env-variables.sh
 
       - name: Save tests coverage in cache 🥡
         uses: actions/cache/save@v4
