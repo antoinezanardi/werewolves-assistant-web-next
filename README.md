@@ -15,6 +15,10 @@
 [![GitHub license](https://img.shields.io/github/license/antoinezanardi/werewolves-assistant-web-next.svg)](https://github.com/antoinezanardi/https://img.shields.io/github/license/werewolves-assistant-web-next.svg/blob/main/LICENSE)
 ![Dependencies](https://img.shields.io/badge/-dependencies-black?style=flat-square&logoColor=white&logo=pnpm&color=B76507)[![Known Vulnerabilities](https://snyk.io/test/github/antoinezanardi/werewolves-assistant-web-next/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/antoinezanardi/werewolves-assistant-web-next?targetFile=package.json)
 
+[![Tests count](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)
+[![Scenarios](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantoinezanardi%2Fwerewolves-assistant-web-next%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main)
+
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=antoinezanardi_werewolves-assistant-web-next&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=antoinezanardi_werewolves-assistant-web-next&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=antoinezanardi_werewolves-assistant-web-next&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)
@@ -43,7 +47,7 @@ This is the **next** version of the current **[Werewolves Assistant Web](https:/
 
 ## <a name="available-roles">🃏 Available roles</a>
 
-|                <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/werewolf/werewolf-small.jpeg?raw=true" width="40"/><br/>**Werewolf**                |     <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/big-bad-wolf/big-bad-wolf-small.jpeg?raw=true" width="40"/><br/>**Big Bad Wolf**      | <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/accursed-wolf-father/accursed-wolf-father-small.jpeg?raw=true" width="40"/><br/>**Accursed Wolf-Father** |             <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/white-werewolf/white-werewolf-small.jpeg?raw=true" width="40"/><br/>**White Werewolf**             |
+|                <img src="https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/main/public/assets/images/roles/werewolf/werewolf-small.jpeg?raw=true" width="40"/><br/>**Werewolf**                |     <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/big-bad-wolf/big-bad-wolf-small.jpeg?raw=true" width="40"/><br/>**Big Bad Wolf**      | <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/accursed-wolf-father/accursed-wolf-father-small.jpeg?raw=true" width="40"/><br/>**Accursed Wolf-Father** |             <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/white-werewolf/white-werewolf-small.jpeg?raw=true" width="40"/><br/>**White Werewolf**             |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |                <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/villager/villager-small.jpeg?raw=true" width="40"/><br/>**Villager**                |      <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/villager/villager-small.jpeg?raw=true" width="40"/><br/> **Villager-Villager**       |                         <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/seer/seer-small.jpeg?raw=true" width="40"/><br/>**Seer**                         |                          <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/cupid/cupid-small.jpeg?raw=true" width="40"/><br/>**Cupid**                           |
 |                    <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/witch/witch-small.jpeg?raw=true" width="40"/><br/>**Witch**                     |              <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/hunter/hunter-small.jpeg?raw=true" width="40"/><br/>**Hunter**               |              <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/little-girl/little-girl-small.jpeg?raw=true" width="40"/><br/>**Little Girl**               |                      <img src="https://github.com/antoinezanardi/werewolves-assistant-api-next/blob/main/public/assets/images/roles/defender/defender-small.jpeg?raw=true" width="40"/><br/>**Defender**                      |
@@ -91,6 +95,16 @@ pnpm run build
 
 ![Vitest](https://img.shields.io/badge/-Vitest-black?style=for-the-badge&logoColor=yellow&logo=vitest&color=30420a)
 
+[![Tests count](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)
+
+[![Covered Statements](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-statements)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-statements)
+
+[![Covered Branches](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-branches)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-branches)
+
+[![Covered Functions](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-functions)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-functions)
+
+[![Covered Lines](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)
+
 📊 Coverage reports for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/vitest)**.
 
 ### ⚗️ E2E / Acceptance tests
@@ -98,6 +112,8 @@ pnpm run build
 ![Playwright](https://img.shields.io/badge/-Playwright-black?style=for-the-badge&logoColor=white&logo=playwright&color=1D8D22)
 
 ![Cucumber](https://img.shields.io/badge/-Cucumber-black?style=for-the-badge&logoColor=white&logo=cucumber&color=169652)
+
+[![Scenarios](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)
 
 E2E tests are written in Gherkin language around Playwright functions and are available in the **[features directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/features)**.
 
