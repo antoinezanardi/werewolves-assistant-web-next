@@ -195,7 +195,7 @@ jobs:
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 20
+          keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
@@ -262,7 +262,7 @@ jobs:
         with:
           test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 20
+          keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
           tool_name: cucumber
@@ -328,7 +328,7 @@ jobs:
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}
           report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 20
+          keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
           tool_name: stryker
