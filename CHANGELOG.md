@@ -1,5 +1,26 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.7.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.6.0...v1.7.0) (2024-2-24)
+
+
+### 🚀 Features
+
+* **make-game-play:** models and store ([#172](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/172)) ([6103aef](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6103aefcd8ab052ef3c76602052e9ac2a19bc029))
+
+
+### 🔁 CI
+
+* **github-pages:** specific token for deploying on github pages ([#171](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/171)) ([108c6c4](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/108c6c4b6aaa83a4d5551fcc69eaaebeec7c52c2))
+* **reports:** keep only one report at a time ([#173](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/173)) ([c6dab73](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c6dab7350ca2643701ae9810606a5fadd96fa225))
+* **reports:** remove reports of deleted branch ([#174](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/174)) ([a58cee7](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a58cee76f5765074567ac8b89203f309d0b0abe4))
+
+
+### 🧹 Chore
+
+* **deps:** bump the eslint group with 1 update ([#168](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/168)) ([a31a1b2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a31a1b2cb1565981a7734670c748d1420261ecef))
+* **deps:** bump the types group with 1 update ([#167](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/167)) ([c172fa4](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c172fa481ed3fafada7619e0c68b9c2ccff0d993))
+* **deps:** bump type-fest from 4.10.2 to 4.10.3 ([#169](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/169)) ([ab4d675](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ab4d6759e3758b71de306a4c13fcb68dd4d12ab8)), closes [#764](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/764)
+
 ## [1.6.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.5.0...v1.6.0) (2024-2-22)
 
 
