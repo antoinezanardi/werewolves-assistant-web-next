@@ -42,7 +42,14 @@ export default defineVitestConfig({
         "utils/**/*.ts",
       ],
       reportsDirectory: "./tests/unit/coverage",
-      reporter: ["clover", "json", "lcov", "text", "text-summary", "html"],
+      reporter: [
+        "clover",
+        "json",
+        "lcov",
+        "text",
+        "text-summary",
+        "html",
+      ],
       all: true,
       thresholds: {
         lines: 100,

@@ -20,6 +20,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          ref: gh_pages
 
       - name: Set up Git 🛠️
         run: |
@@ -35,7 +36,6 @@ jobs:
 
       - name: Delete Reports Folder 🗑
         run: |
-          git checkout github_pages
           rm -rf "reports/vitest/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
           rm -rf "reports/stryker/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
           rm -rf "reports/cucumber/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
