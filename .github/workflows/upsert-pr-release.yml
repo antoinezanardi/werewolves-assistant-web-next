@@ -53,6 +53,7 @@ jobs:
 
       - name: Merge main branch into develop branch 🤝
         run: |
+          git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
           git fetch --all
           git checkout main
