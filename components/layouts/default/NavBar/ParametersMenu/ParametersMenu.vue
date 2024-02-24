@@ -70,7 +70,7 @@ function toggleParametersMenu(event: MouseEvent): void {
 }
 
 function cancelGame(): void {
-  void cancelGameFromStore(game.value._id);
+  void cancelGameFromStore();
   addSuccessToast({ summary: t("components.ParametersMenu.gameCanceled") });
 }
 </script>
