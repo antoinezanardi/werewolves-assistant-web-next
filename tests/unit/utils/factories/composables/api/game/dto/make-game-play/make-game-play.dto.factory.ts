@@ -2,8 +2,8 @@ import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-
 
 function createFakeMakeGamePlayDto(makeGamePlayDto: Partial<MakeGamePlayDto> = {}): MakeGamePlayDto {
   return MakeGamePlayDto.create({
-    targets: makeGamePlayDto.targets ?? [],
-    votes: makeGamePlayDto.votes ?? [],
+    targets: makeGamePlayDto.targets ?? undefined,
+    votes: makeGamePlayDto.votes ?? undefined,
     doesJudgeRequestAnotherVote: makeGamePlayDto.doesJudgeRequestAnotherVote ?? undefined,
     chosenCardId: makeGamePlayDto.chosenCardId ?? undefined,
     chosenSide: makeGamePlayDto.chosenSide ?? undefined,

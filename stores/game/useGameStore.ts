@@ -1,16 +1,22 @@
 import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
 import { defineStore } from "pinia";
 
+import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
 import { Game } from "~/composables/api/game/types/game.class";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import { StoreIds } from "~/stores/enums/store.enum";
 
 const useGameStore = defineStore(StoreIds.GAME, () => {
-  const { getGame: fetchGameFromApi, cancelGame: cancelGameFromApi } = useFetchGames();
+  const {
+    getGame: fetchGameFromApi,
+    cancelGame: cancelGameFromApi,
+    makeGamePlay: makeGamePlayFromApi,
+  } = useFetchGames();
 
   const game = ref<Game>(new Game());
   const fetchingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const cancelingGameStatus = ref<AsyncDataRequestStatus>("idle");
+  const makingGamePlayStatus = ref<AsyncDataRequestStatus>("idle");
 
   function resetGame(): void {
     game.value = new Game();
@@ -28,9 +34,9 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     fetchingGameStatus.value = "success";
   }
 
-  async function cancelGame(gameId: string): Promise<void> {
+  async function cancelGame(): Promise<void> {
     cancelingGameStatus.value = "pending";
-    const canceledGame = await cancelGameFromApi(gameId);
+    const canceledGame = await cancelGameFromApi(game.value._id);
     if (!canceledGame) {
       fetchingGameStatus.value = "error";
 
@@ -39,13 +45,27 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     game.value = canceledGame;
     cancelingGameStatus.value = "success";
   }
+
+  async function makeGamePlay(makeGamePlayDto: MakeGamePlayDto): Promise<void> {
+    makingGamePlayStatus.value = "pending";
+    const playedGame = await makeGamePlayFromApi(game.value._id, makeGamePlayDto);
+    if (!playedGame) {
+      fetchingGameStatus.value = "error";
+
+      return;
+    }
+    game.value = playedGame;
+    makingGamePlayStatus.value = "success";
+  }
   return {
     game,
     fetchingGameStatus,
     cancelingGameStatus,
+    makingGamePlayStatus,
     resetGame,
     fetchAndSetGame,
     cancelGame,
+    makeGamePlay,
   };
 });
 

@@ -1,7 +1,8 @@
-import { Expose } from "class-transformer";
+import { Expose, plainToInstance } from "class-transformer";
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
+import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
 class MakeGamePlayTargetDto {
   @Expose()
@@ -9,6 +10,10 @@ class MakeGamePlayTargetDto {
 
   @Expose()
   public drankPotion?: WitchPotion;
+
+  public static create(makeGamePlayTargetDto: MakeGamePlayTargetDto): MakeGamePlayTargetDto {
+    return plainToInstance(MakeGamePlayTargetDto, makeGamePlayTargetDto, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
+  }
 }
 
 export { MakeGamePlayTargetDto };

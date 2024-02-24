@@ -192,7 +192,7 @@ describe("Parameters Menu Component", () => {
       await nextTick();
       document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menuitem-link")?.click();
 
-      expect(gameStore.cancelGame).toHaveBeenCalledExactlyOnceWith(gameStore.game._id);
+      expect(gameStore.cancelGame).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should navigate to home page when clicking on back to home button.", () => {
