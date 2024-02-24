@@ -269,7 +269,7 @@ jobs:
     outputs:
       CUCUMBER_SCENARIOS_COUNT: ${{ steps.outputs.outputs.CUCUMBER_SCENARIOS_COUNT }}
     needs:
-      - build
+      - install
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
