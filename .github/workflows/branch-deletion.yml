@@ -9,6 +9,9 @@ env:
   BRANCH_NAME: ""
   BRANCH_NAME_FORMATTED_FOR_REPORTS: ""
 
+permissions:                   
+  contents: write
+
 jobs:
   delete-reports-folder:
     name: Delete Reports Folder on GitHub Pages 🗑
@@ -41,4 +44,9 @@ jobs:
           rm -rf "reports/cucumber/pull_request/$BRANCH_NAME_FORMATTED_FOR_REPORTS"
           git add .
           git commit -m "chore(reports): delete reports folder for branch $BRANCH_NAME_FORMATTED_FOR_REPORTS"
-          git push origin gh_pages
+
+      - name: Push changes to GitHub Pages 🚀
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh_pages
