@@ -42,6 +42,10 @@
         "villager": "Villager",
         "lonely": "Lonely",
         "ambiguous": "Ambiguous"
+      },
+      "side": {
+        "villagers": "Villagers",
+        "werewolves": "Werewolves"
       }
     }
   },
@@ -439,6 +443,16 @@
     },
     "CreateAnotherGameButton": {
       "createAnotherGame": "Create another game"
+    },
+    "GameTeamSide": {
+      "aliveTeamPlayers": "{alivePlayers} / {totalPlayers} alive",
+      "sideAltText": {
+        "villagers": "Villagers side",
+        "werewolves": "Werewolves side"
+      }
+    },
+    "GameTeamSidePlayer": {
+      "roleImageAlt": "Role image of the player {playerName}"
     }
   }
 }

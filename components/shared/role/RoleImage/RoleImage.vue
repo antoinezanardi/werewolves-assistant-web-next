@@ -3,7 +3,7 @@
     :alt="alt"
     class="role-image"
     :height="sizes"
-    placeholder="svg/infinite-spinner.svg"
+    placeholder="/svg/infinite-spinner.svg"
     :src="roleImageSrc"
     :width="sizes"
   />
