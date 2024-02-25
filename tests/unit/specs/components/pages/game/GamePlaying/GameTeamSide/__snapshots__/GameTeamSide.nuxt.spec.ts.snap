@@ -1,3 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Team Side Component > should match snapshot when rendered. 1`] = `"<div id="game-playground-team-side"></div>"`;
+exports[`Game Team Side Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-team-side" class="d-flex flex-column h-100">
+  <div class="align-items-center d-flex justify-content-evenly">
+    <nuxt-img-stub src="/svg/role/villager.svg" width="50" height="50" alt="Villagers side"></nuxt-img-stub>
+    <div>
+      <h2 id="side-title" class="my-1 text-center">Villagers</h2>
+      <h4 id="alive-team-players" class="my-1 text-center">components.GameTeamSide.aliveTeamPlayers, {"alivePlayers":0,"totalPlayers":0}</h4>
+    </div>
+    <div></div>
+  </div>
+  <divider-stub class="my-3"></divider-stub>
+  <div id="team-players" class="d-flex flex-column flex-grow-1 overflow-y-auto"></div>
+</div>"
+`;
