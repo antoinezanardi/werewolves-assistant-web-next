@@ -1,11 +1,11 @@
 <template>
   <div
     id="default-layout"
-    class="d-flex flex-column h-100"
+    class="flex flex-col h-full"
   >
     <NavBar/>
 
-    <div class="content-with-navbar flex-grow-1 h-100">
+    <div class="content-with-navbar grow h-full">
       <slot/>
     </div>
   </div>

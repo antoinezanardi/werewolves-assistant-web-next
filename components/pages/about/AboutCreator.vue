@@ -2,22 +2,22 @@
   <div id="about-creator">
     <h2
       id="about-creator-title"
-      class="align-items-center d-flex"
+      class="flex items-center"
     >
-      <i class="fa fa-2x fa-pen-fancy me-3 text-info"/>
+      <i class="fa fa-2x fa-pen-fancy me-3 text-purple-500"/>
 
       <span>
         {{ $t('components.AboutCreator.wordFromCreator') }}
       </span>
     </h2>
 
-    <hr>
+    <hr class="my-3">
 
     <p id="about-creator-first-section">
       {{ $t("components.AboutCreator.creatorBackground") }}
     </p>
 
-    <div class="d-flex justify-content-center">
+    <div class="flex justify-center">
       <a
         id="about-creator-portfolio-button"
         class="p-button primary"

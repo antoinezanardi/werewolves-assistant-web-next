@@ -1,11 +1,11 @@
 <template>
   <div
     id="game-canceled"
-    class="align-items-center d-flex flex-column justify-content-center"
+    class="flex flex-col items-center justify-center"
   >
     <h1
       id="game-canceled-text"
-      class="align-items-center d-flex flex-column justify-content-center"
+      class="flex flex-col items-center justify-center"
     >
       <i class="fa fa-2x fa-ban mb-3 text-danger"/>
 
@@ -15,7 +15,7 @@
     </h1>
 
     <div>
-      <VuePrimeDivider class="mb-4"/>
+      <hr class="mb-4">
 
       <CreateAnotherGameButton/>
 

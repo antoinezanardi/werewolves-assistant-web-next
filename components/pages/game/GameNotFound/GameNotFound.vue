@@ -1,11 +1,11 @@
 <template>
   <div
     id="game-not-found"
-    class="align-items-center d-flex flex-column justify-content-center"
+    class="flex flex-col items-center justify-center"
   >
     <h1
       id="game-not-found-text"
-      class="align-items-center d-flex flex-column justify-content-center"
+      class="flex flex-col items-center justify-center"
     >
       <i class="fa fa-2x fa-question-circle mb-3 text-warning"/>
 
@@ -15,7 +15,7 @@
     </h1>
 
     <div>
-      <VuePrimeDivider class="mb-4"/>
+      <hr class="mb-4">
 
       <CreateAnotherGameButton class="me-2"/>
 

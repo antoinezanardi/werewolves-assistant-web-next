@@ -1,9 +1,9 @@
 <template>
   <div
     id="game-playground-team-side"
-    class="d-flex flex-column h-100"
+    class="flex flex-col h-full"
   >
-    <div class="align-items-center d-flex justify-content-evenly">
+    <div class="flex items-center justify-content-evenly">
       <NuxtImg
         :alt="$t(`components.GameTeamSide.sideAltText.${props.side}`)"
         height="50"
@@ -30,11 +30,11 @@
       <div/>
     </div>
 
-    <VuePrimeDivider class="my-3"/>
+    <hr class="my-3">
 
     <div
       id="team-players"
-      class="d-flex flex-column flex-grow-1 overflow-y-auto"
+      class="flex flex-col grow overflow-y-auto"
     >
       <GameTeamSidePlayer
         v-for="player in aliveFirstTeamPlayers"

@@ -1,7 +1,7 @@
 <template>
   <div
     id="progress-spinner"
-    class="align-items-center d-flex flex-column justify-content-center"
+    class="flex flex-col items-center justify-center"
   >
     <VuePrimeProgressSpinner :aria-label="text"/>
 

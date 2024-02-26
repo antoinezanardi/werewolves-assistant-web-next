@@ -1,4 +1,5 @@
 const modules = [
+  "@nuxtjs/tailwindcss",
   "@nuxt/test-utils/module",
   "nuxt-primevue",
   "@nuxtjs/i18n",
@@ -16,8 +17,6 @@ export default defineNuxtConfig({
   experimental: { renderJsonPayloads: false },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
-    "bootstrap/dist/css/bootstrap-grid.css",
-    "bootstrap/dist/css/bootstrap-utilities.css",
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
     "./assets/css/google-fonts.css",
@@ -29,6 +28,7 @@ export default defineNuxtConfig({
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
   primevue: {
+    cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {
       prefix: "VuePrime",
       include: [
@@ -74,5 +74,6 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  tailwindcss: { cssPath: "~/assets/scss/tailwind.scss" },
   vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });

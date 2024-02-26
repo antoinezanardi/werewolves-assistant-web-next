@@ -1,6 +1,6 @@
 <template>
   <div id="about-available-roles">
-    <div class="align-items-center d-flex">
+    <div class="flex items-center">
       <RoleImage
         id="about-available-roles-title-role-image"
         :alt="$t('components.AboutAvailableRoles.availableRolesImage')"
@@ -14,12 +14,12 @@
       </h2>
     </div>
 
-    <hr>
+    <hr class="my-3">
 
     <div
       v-if="!roles"
       id="loading-roles-container"
-      class="align-items-center d-flex flex-column justify-content-center"
+      class="flex flex-col items-center justify-center"
     >
       <TextProgressSpinner
         id="loading-roles-spinner"
@@ -32,14 +32,14 @@
         {{ availableRolesText }}
       </p>
 
-      <VuePrimeAccordion class="w-100">
+      <VuePrimeAccordion class="w-full">
         <VuePrimeAccordionTab
           v-for="role in roles"
           :key="role.name"
           :pt="{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }"
         >
           <template #header>
-            <div class="align-items-center available-role-image-header d-flex">
+            <div class="available-role-image-header flex items-center">
               <RoleImage
                 :alt="getAvailableRoleHeaderImageAlt(role.name)"
                 :role-name="role.name"

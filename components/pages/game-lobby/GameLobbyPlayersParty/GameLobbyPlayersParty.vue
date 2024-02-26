@@ -1,12 +1,12 @@
 <template>
   <div
     id="game-lobby-players-party-container"
-    class="align-items-center h-100 justify-content-center row"
+    class="flex h-full items-center justify-center"
   >
     <h2
       v-if="!createGameDto.players.length"
       id="no-players-in-lobby-message"
-      class="align-items-center d-flex justify-content-center"
+      class="flex items-center justify-center"
     >
       <i class="fa fa-plus me-2"/>
 
@@ -18,12 +18,11 @@
     <div
       v-else
       id="game-lobby-players-party"
-      class="align-items-center d-flex justify-content-center row"
+      class="flex grid grid-cols-4 items-center justify-center w-full"
     >
       <GameLobbyPlayerCard
         v-for="player in createGameDto.players"
         :key="player.name"
-        class="col-lg-2"
         :player="player"
       />
     </div>

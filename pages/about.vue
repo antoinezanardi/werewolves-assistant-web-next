@@ -1,6 +1,6 @@
 <template>
-  <div class="container h-100">
-    <div class="align-items-center d-flex justify-content-center">
+  <div class="container h-full mx-auto">
+    <div class="flex items-center justify-center">
       <RoleImage
         id="about-role-image-title"
         :alt="$t('pages.about.imageTitle')"
@@ -31,7 +31,7 @@
 
     <hr class="my-3">
 
-    <div class="d-flex justify-content-center pb-3">
+    <div class="flex justify-center pb-3">
       <BackToHomeButton/>
     </div>
   </div>

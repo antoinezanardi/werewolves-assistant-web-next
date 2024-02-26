@@ -1,12 +1,12 @@
 <template>
-  <div class="container-fluid d-flex flex-column">
+  <div class="flex flex-col">
     <GameLobbyHeader/>
 
-    <hr class="w-100">
+    <hr class="my-3">
 
-    <GameLobbyPlayersParty class="d-flex flex-grow-1 overflow-y-auto"/>
+    <GameLobbyPlayersParty class="flex-auto overflow-y-auto"/>
 
-    <hr class="w-100">
+    <hr class="my-3">
 
     <GameLobbyFooter/>
   </div>

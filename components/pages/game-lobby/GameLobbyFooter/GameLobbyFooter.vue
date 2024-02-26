@@ -1,17 +1,17 @@
 <template>
   <div
     id="game-lobby-footer"
-    class="row"
+    class="flex flex-auto"
   >
-    <div class="col-3 d-flex">
+    <div class="flex-1">
       <GameLobbyRandomCompositionButton/>
     </div>
 
-    <div class="col-6 d-flex justify-content-center">
+    <div class="flex flex-1 justify-center">
       <GameLobbyStartGameButton/>
     </div>
 
-    <div class="col-3"/>
+    <div class="flex-1"/>
   </div>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <div
     id="game-playground"
-    class="d-flex flex-column h-100"
+    class="flex flex-col h-full"
   >
     <GamePlaygroundHeader/>
 
-    <GamePlaygroundContent class="d-flex flex-grow-1 h-100"/>
+    <GamePlaygroundContent class="flex grow h-full"/>
 
     <GamePlaygroundFooter/>
   </div>

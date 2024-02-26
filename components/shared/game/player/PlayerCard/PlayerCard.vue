@@ -1,9 +1,9 @@
 <template>
-  <div class="align-items-center d-flex flex-column player-card position-relative">
+  <div class="flex flex-col items-center player-card position-relative">
     <button
       v-p-tooltip="tooltipContent"
       :aria-label="selectorAriaLabel"
-      class="d-flex player-card-selector"
+      class="flex player-card-selector"
       type="button"
       @click.prevent="emitPlayerCardSelectorClickEvent"
     >

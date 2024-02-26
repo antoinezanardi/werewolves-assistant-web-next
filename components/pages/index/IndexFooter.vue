@@ -1,6 +1,9 @@
 <template>
-  <div class="row">
-    <div class="col-6">
+  <div
+    id="index-footer"
+    class="flex"
+  >
+    <div class="flex flex-auto">
       <a
         id="contact-button"
         class="p-button p-button-secondary"
@@ -14,7 +17,7 @@
       </a>
     </div>
 
-    <div class="col-6 d-flex justify-content-end">
+    <div class="flex flex-auto justify-end">
       <GitHubRepositoryButton/>
     </div>
   </div>

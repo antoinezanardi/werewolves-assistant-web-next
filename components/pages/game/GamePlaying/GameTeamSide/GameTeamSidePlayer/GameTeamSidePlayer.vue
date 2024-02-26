@@ -7,16 +7,16 @@
       {{ player.name }}
     </div>
 
-    <VuePrimeDivider class="my-1"/>
+    <hr class="my-1">
 
     <small
       id="player-role-name"
-      class="d-flex justify-content-center"
+      class="flex justify-center"
     >
       {{ $t(`shared.role.name.${player.role.current}`) }}
     </small>
 
-    <div class="d-flex mt-1">
+    <div class="flex mt-1">
       <RoleImage
         v-if="player.side.current === RoleSides.WEREWOLVES"
         id="player-werewolf-role-image"
@@ -29,7 +29,7 @@
 
       <div
         id="player-attributes"
-        class="d-flex flex-grow-1"
+        class="flex grow"
       />
 
       <RoleImage
