@@ -10,6 +10,9 @@ env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
   BRANCH_NAME_FORMATTED_FOR_REPORTS: ${BRANCH_NAME//\//_}
   REPORTS_URL: https://antoinezanardi.github.io/werewolves-assistant-web-next/reports
+  UNIT_TESTS_COVERAGE_REPORTS_PATH: tests/unit/coverage
+  ACCEPTANCE_TESTS_REPORTS_PATH: tests/acceptance/reports
+  STRYKER_REPORT_PATH: tests/stryker/coverage
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -142,8 +145,6 @@ jobs:
   unit-tests:
     name: Unit Tests 🧪
     runs-on: ubuntu-latest
-    env:
-      UNIT_TESTS_COVERAGE_REPORTS_PATH: tests/unit/coverage
     needs:
       - install
     steps:
@@ -190,19 +191,6 @@ jobs:
           name: unit-tests-coverage-report
           path: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
 
-      - name: Save unit tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@v1.2
-        with:
-          test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
-          report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 1
-          gh_pages: gh_pages
-          subfolder: reports
-          tool_name: vitest
-          workflow_name: ${{ github.event_name }}
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
-
       - name: Exit with error if unit tests failed 🚨
         if: steps.unit-tests.outcome != 'success'
         run: exit 1;
@@ -210,8 +198,6 @@ jobs:
   e2e-tests:
     name: E2E Tests ⚗️
     runs-on: ubuntu-latest
-    env:
-      ACCEPTANCE_TESTS_REPORTS_PATH: tests/acceptance/reports
     needs:
       - build
     steps:
@@ -251,24 +237,18 @@ jobs:
         continue-on-error: true
         run: pnpm run test:cucumber
 
+      - name: Save E2E tests reports in cache 🥡
+        uses: actions/cache/save@v4
+        id: cache-e2e-tests-reports
+        with:
+          path: tests/acceptance/reports
+          key: ${{ runner.os }}-tests-acceptance-reports-v3-${{hashFiles('tests/acceptance/reports/junit.xml')}}
+
       - name: Save E2E tests reports as artifact 💎
         uses: actions/upload-artifact@v4
         with:
           name: e2e-tests-reports
           path: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
-
-      - name: Save E2E tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@v1.2
-        with:
-          test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
-          report_url: ${{ env.REPORTS_URL }}
-          keep_reports: 1
-          gh_pages: gh_pages
-          subfolder: reports
-          tool_name: cucumber
-          workflow_name: ${{ github.event_name }}
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
@@ -282,7 +262,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
-      STRYKER_REPORT_PATH: tests/stryker/coverage
       VERSION: ${{ github.head_ref }}
     needs:
       - install
@@ -317,14 +296,95 @@ jobs:
         continue-on-error: true
         run: pnpm run test:stryker:ci
 
+      - name: Save stryker report in cache 🥡
+        uses: actions/cache/save@v4
+        id: cache-stryker-reports
+        with:
+          path: tests/stryker/coverage
+          key: ${{ runner.os }}-tests-stryker-coverage-v3-${{hashFiles('tests/stryker/coverage/mutation.json')}}
+
       - name: Save stryker report as artifact 💎
         uses: actions/upload-artifact@v4
         with:
           name: stryker-html-report
           path: ${{ env.STRYKER_REPORT_PATH }}/index.html
 
+      - name: Exit with error if mutant tests failed 🚨
+        if: steps.mutant-tests.outcome != 'success'
+        run: exit 1;
+
+  deploy-reports:
+    name: Push reports on GitHub Pages 📑
+    runs-on: ubuntu-latest
+    needs:
+      - unit-tests
+      - e2e-tests
+      - mutant-tests
+    if: always()
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore tests coverage from cache 🥡
+        uses: actions/cache/restore@v4
+        id: cache-unit-tests-coverage
+        with:
+          path: tests/unit/coverage
+          key: ${{ runner.os }}-tests-unit-coverage-v3-
+          restore-keys: |
+            ${{ runner.os }}-tests-unit-coverage-v3-
+
+      - name: Restore E2E tests reports from cache 🥡
+        uses: actions/cache/restore@v4
+        id: cache-e2e-tests-reports
+        with:
+          path: tests/acceptance/reports
+          key: ${{ runner.os }}-tests-acceptance-reports-v3-
+          restore-keys: |
+            ${{ runner.os }}-tests-acceptance-reports-v3-
+
+      - name: Restore stryker report from cache 🥡
+        uses: actions/cache/restore@v4
+        id: cache-stryker-reports
+        with:
+          path: tests/stryker/coverage
+          key: ${{ runner.os }}-tests-stryker-coverage-v3-
+          restore-keys: |
+            ${{ runner.os }}-tests-stryker-coverage-v3-
+
+      - name: Save unit tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.cache-unit-tests-coverage.outcome == 'success'
+        with:
+          test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
+          report_url: ${{ env.REPORTS_URL }}
+          keep_reports: 1
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: vitest
+          workflow_name: ${{ github.event_name }}
+          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+
+      - name: Save E2E tests reports in GitHub Pages 📑
+        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.cache-e2e-tests-reports.outcome == 'success'
+        with:
+          test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
+          report_url: ${{ env.REPORTS_URL }}
+          keep_reports: 1
+          gh_pages: gh_pages
+          subfolder: reports
+          tool_name: cucumber
+          workflow_name: ${{ github.event_name }}
+          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+
       - name: Save stryker report in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.cache-stryker-reports.outcome == 'success'
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}
           report_url: ${{ env.REPORTS_URL }}
@@ -335,10 +395,6 @@ jobs:
           workflow_name: ${{ github.event_name }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
-
-      - name: Exit with error if mutant tests failed 🚨
-        if: steps.mutant-tests.outcome != 'success'
-        run: exit 1;
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
