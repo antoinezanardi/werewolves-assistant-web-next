@@ -93,7 +93,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-vitest": "^0.3.22",
     "eslint-plugin-vue": "^9.22.0",
-    "happy-dom": "^13.6.0",
+    "happy-dom": "^13.6.2",
     "husky": "^9.0.11",
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.2",
