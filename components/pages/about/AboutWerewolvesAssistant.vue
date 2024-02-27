@@ -2,16 +2,16 @@
   <div id="about-werewolves-assistant">
     <h2
       id="about-werewolves-assistant-title"
-      class="align-items-center d-flex"
+      class="flex items-center"
     >
-      <i class="fa fa-2x fa-star me-3 text-warning"/>
+      <i class="fa fa-2x fa-star me-3 text-yellow-500"/>
 
       <span>
         {{ $t('components.AboutWerewolvesAssistant.werewolvesAssistantInThePlace') }}
       </span>
     </h2>
 
-    <hr>
+    <VuePrimeDivider/>
 
     <p id="about-werewolves-assistant-first-section">
       {{ $t("components.AboutWerewolvesAssistant.toHelpGameMaster") }}
@@ -39,16 +39,16 @@
 
     <h3
       id="about-werewolves-assistant-disclaimer-title"
-      class="align-items-center d-flex justify-content-center text-uppercase"
+      class="flex items-center justify-center text-uppercase"
     >
-      <i class="fa fa-2x fa-warning me-3 text-warning"/>
+      <i class="fa fa-2x fa-warning me-3 text-yellow-500"/>
 
       <span>
         {{ $t('components.AboutWerewolvesAssistant.pleaseBeAware') }}
       </span>
     </h3>
 
-    <hr>
+    <VuePrimeDivider/>
 
     <p id="about-werewolves-assistant-disclaimer-first-section">
       {{ $t('components.AboutWerewolvesAssistant.physicalGameIsNeeded') }}

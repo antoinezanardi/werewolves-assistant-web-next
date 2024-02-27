@@ -11,6 +11,7 @@ const ESLINT_CONFIG_FILES_CONFIG = {
   ],
   languageOptions: { globals: { CustomMatchers: READONLY } },
   rules: {
+    "@typescript-eslint/no-restricted-imports": OFF,
     "import/no-default-export": OFF,
     "import/no-internal-modules": OFF,
     "import/no-anonymous-default-export": OFF,

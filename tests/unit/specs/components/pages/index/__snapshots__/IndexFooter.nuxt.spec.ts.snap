@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Index Page Footer Component > should match snapshot when rendered. 1`] = `
-"<div class="row">
-  <div class="col-6"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span><span>Contact me</span></a></div>
-  <div class="col-6 d-flex justify-content-end">
+"<div id="index-footer" class="flex">
+  <div class="flex flex-auto"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span><span>Contact me</span></a></div>
+  <div class="flex flex-auto justify-end">
     <git-hub-repository-button-stub></git-hub-repository-button-stub>
   </div>
 </div>"

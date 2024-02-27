@@ -1,8 +1,8 @@
 <template>
-  <div class="d-flex">
+  <div class="flex">
     <div
       id="role-left-description"
-      class="align-items-center d-flex flex-column justify-content-center"
+      class="flex flex-col items-center justify-center"
     >
       <RoleImage
         :alt="getRoleDescriptionLeftImageAlt(role.name)"
@@ -28,7 +28,7 @@
 
     <div
       id="role-right-description"
-      class="container-fluid d-flex flex-column justify-content-center"
+      class="container-fluid flex flex-col justify-center"
     >
       <p
         v-for="line in roleDescriptionLines"

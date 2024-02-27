@@ -2,13 +2,13 @@
   <div
     id="navbar"
     :aria-label="$t('components.NavBar.navBar')"
-    class="align-items-center d-flex justify-content-between py-1"
+    class="flex items-center justify-between py-1"
     role="navigation"
   >
     <NuxtLink
       id="navbar-logo-link"
       aria-labelledby="navbar-werewolves-assistant-logo-text"
-      class="align-items-center d-flex"
+      class="flex items-center"
       to="/"
     >
       <NuxtImg

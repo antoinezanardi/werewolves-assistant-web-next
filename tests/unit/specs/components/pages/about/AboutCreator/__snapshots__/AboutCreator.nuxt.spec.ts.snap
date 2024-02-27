@@ -2,10 +2,10 @@
 
 exports[`About Creator Component > should match snapshot when rendered. 1`] = `
 "<div id="about-creator">
-  <h2 id="about-creator-title" class="align-items-center d-flex"><i class="fa fa-2x fa-pen-fancy me-3 text-info"></i><span>A word from the creator</span></h2>
-  <hr>
+  <h2 id="about-creator-title" class="flex items-center"><i class="fa fa-2x fa-pen-fancy me-3 text-purple-500"></i><span>A word from the creator</span></h2>
+  <divider-stub></divider-stub>
   <p id="about-creator-first-section">I am Antoine ZANARDI, a Full-Stack Web developer and a fan of open source in general. If you want to learn more about me, I invite you to explore my portfolio.</p>
-  <div class="d-flex justify-content-center"><a id="about-creator-portfolio-button" class="p-button primary" href="https://antoinezanardi.fr" rel="noopener noreferrer" target="_blank"><span class="fa-palette fas me-2"></span> My portfolio</a></div>
+  <div class="flex justify-center"><a id="about-creator-portfolio-button" class="p-button primary" href="https://antoinezanardi.fr" rel="noopener noreferrer" target="_blank"><span class="fa-palette fas me-2"></span> My portfolio</a></div>
   <p id="about-creator-second-section">For me, Werewolves of Miller's Hollow™ game is one of the best games to play with friends or family around a table, where alliances and betrayals intertwine, much like in Mario Kart. As the game progresses, the true nature of each player is revealed, masks fall, and everyone feels threatened. Each game is a unique adventure, full of unexpected twists.</p>
   <p id="about-creator-third-section">As a big fan of the game master role, I've always wanted to share the rewarding feeling of being the conductor during a game. So, I created this assistant so that anyone can take on this important role, in any game configuration.</p>
   <p id="about-creator-forth-section">Your feedback on this assistant is welcome. It was created to serve all game masters, whether novice or expert, and make your games memorable. Have fun!</p>
