@@ -10,11 +10,24 @@ const modules = [
 
 export default defineNuxtConfig({
   app: {
-    head: { link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }] },
-    pageTransition: { name: "page", mode: "out-in" },
-    layoutTransition: { name: "page", mode: "out-in" },
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+      ],
+    },
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+    layoutTransition: {
+      name: "page",
+      mode: "out-in",
+    },
   },
-  experimental: { renderJsonPayloads: false },
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "@fortawesome/fontawesome-free/css/all.css",
@@ -22,8 +35,24 @@ export default defineNuxtConfig({
     "./assets/css/google-fonts.css",
   ],
   devtools: { enabled: true },
+  experimental: { renderJsonPayloads: false },
+  googleFonts: {
+    display: "swap",
+    families: { Quicksand: { wght: "300..700" } },
+    outputDir: "assets/fonts",
+    stylePath: "../css/google-fonts.css",
+    fontsDir: "./",
+    preload: true,
+    text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
+    overwriting: false,
+  },
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
-  image: { domains: ["antoinezanardi.fr", "appspot.com"] },
+  image: {
+    domains: [
+      "antoinezanardi.fr",
+      "appspot.com",
+    ],
+  },
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
@@ -54,26 +83,20 @@ export default defineNuxtConfig({
     composables: { include: ["useToast"] },
     options: { ripple: true },
   },
-  googleFonts: {
-    display: "swap",
-    families: { Quicksand: { wght: "300..700" } },
-    outputDir: "assets/fonts",
-    stylePath: "../css/google-fonts.css",
-    fontsDir: "./",
-    preload: true,
-    text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
-    overwriting: false,
-  },
   runtimeConfig: {
     public: {
       defaultLocale: "en",
       werewolvesAssistantApi: { baseUrl: "" },
     },
   },
+  tailwindcss: {
+    quiet: true,
+    cssPath: "~/assets/scss/tailwind.scss",
+    configPath: "~/config/tailwind/tailwind.config.ts",
+  },
   typescript: {
     strict: true,
     typeCheck: true,
   },
-  tailwindcss: { cssPath: "~/assets/scss/tailwind.scss" },
   vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });

@@ -4,8 +4,8 @@ exports[`App Component > should match snapshot when rendered. 1`] = `"<nuxt-layo
 
 exports[`App Component > should render component without shallow and match snapshot when rendered. 1`] = `
 "<transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
-  <div data-v-433a9abd="" id="default-layout" class="d-flex flex-column h-100">
-    <div data-v-4f13fdda="" data-v-433a9abd="" id="navbar" aria-label="Navigation bar" class="align-items-center d-flex justify-content-between py-1" role="navigation"><a data-v-4f13fdda="" href="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="align-items-center d-flex"><img data-v-4f13fdda="" src="/_ipx/_/img/logo/square/werewolves-logo-small.png" alt="Werewolves Assistant logo" data-nuxt-img="" srcset="/_ipx/_/img/logo/square/werewolves-logo-small.png 1x, /_ipx/_/img/logo/square/werewolves-logo-small.png 2x" id="navbar-werewolves-assistant-logo">
+  <div data-v-433a9abd="" id="default-layout" class="flex flex-col h-full">
+    <div data-v-4f13fdda="" data-v-433a9abd="" id="navbar" aria-label="Navigation bar" class="flex items-center justify-between py-1" role="navigation"><a data-v-4f13fdda="" href="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"><img data-v-4f13fdda="" src="/_ipx/_/img/logo/square/werewolves-logo-small.png" alt="Werewolves Assistant logo" data-nuxt-img="" srcset="/_ipx/_/img/logo/square/werewolves-logo-small.png 1x, /_ipx/_/img/logo/square/werewolves-logo-small.png 2x" id="navbar-werewolves-assistant-logo">
         <h3 data-v-4f13fdda="" id="navbar-werewolves-assistant-logo-text" class="ms-2">Werewolves Assistant</h3>
       </a>
       <div data-v-4f13fdda="" id="navbar-parameters-menu" data-pd-tooltip="true"><button class="p-button p-component p-button-icon-only p-button-secondary" type="button" aria-label="Parameters" data-pc-name="button" data-pc-section="root" data-pc-severity="secondary" data-pd-ripple="true"><span class="p-button-icon fa fa-cog" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
@@ -15,21 +15,21 @@ exports[`App Component > should render component without shallow and match snaps
         <!--teleport end-->
       </div>
     </div>
-    <div data-v-433a9abd="" class="content-with-navbar flex-grow-1 h-100">
+    <div data-v-433a9abd="" class="content-with-navbar grow h-full">
       <transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
-        <div class="container-fluid d-flex flex-column h-100 page-content">
-          <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
-            <div class="col-12 text-center"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" alt="Werewolves Assistant logo" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
-            <div class="col-12 text-center">
+        <div class="flex flex-col h-full page-content">
+          <div class="flex flex-col grow items-center justify-center">
+            <div class="flex justify-center w-full"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" alt="Werewolves Assistant logo" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
+            <div class="my-6 text-center w-full">
               <h1 id="title" class="mt-0">Werewolves Assistant</h1>
-            </div>
-            <div class="col-12 col-lg-3"><a href="/game-lobby" id="play-button" class="p-button p-button-primary p-button-raised w-100"><span class="fa fa-2x fa-play-circle me-2"></span><span class="fs-3 fw-bold text-uppercase">Play</span></a></div>
-            <div class="col-12 col-lg-3 mt-4"><a href="/about" id="about-button" class="p-button p-button-secondary w-100"><span class="fa fa-question me-2"></span><span>What is it ?</span></a></div>
+            </div><a href="/game-lobby" id="play-button" class="p-button p-button-raised w-3/12"><span class="fa fa-2x fa-play-circle me-2"></span><span class="bold fs-3 fw-bold text-2xl uppercase">Play</span></a><a href="/about" id="about-button" class="mt-4 p-button p-button-secondary w-3/12"><span class="fa fa-question me-2"></span><span>What is it ?</span></a>
           </div>
-          <hr class="w-100">
-          <div class="row">
-            <div class="col-6"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span><span>Contact me</span></a></div>
-            <div class="col-6 d-flex justify-content-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
+            <!---->
+          </div>
+          <div id="index-footer" class="flex mt-1">
+            <div class="flex flex-auto"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span><span>Contact me</span></a></div>
+            <div class="flex flex-auto justify-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
           </div>
         </div>
       </transition-stub>

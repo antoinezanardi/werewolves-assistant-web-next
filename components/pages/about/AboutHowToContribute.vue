@@ -11,7 +11,7 @@
       </span>
     </h2>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <p id="about-how-to-contribute-first-section">
       {{ $t("components.AboutHowToContribute.thereAreManyWaysToContribute") }}

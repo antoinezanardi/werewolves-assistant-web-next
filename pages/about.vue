@@ -1,5 +1,5 @@
 <template>
-  <div class="container h-full mx-auto">
+  <div class="container h-full">
     <div class="flex items-center justify-center">
       <RoleImage
         id="about-role-image-title"
@@ -17,7 +17,7 @@
       </h1>
     </div>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <AboutWerewolvesGame/>
 
@@ -29,7 +29,7 @@
 
     <AboutCreator class="mt-5"/>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <div class="flex justify-center pb-3">
       <BackToHomeButton/>

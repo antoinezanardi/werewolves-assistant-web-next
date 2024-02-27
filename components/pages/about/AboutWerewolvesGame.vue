@@ -25,7 +25,7 @@
       </a>
     </div>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <p
       id="about-werewolves-game-first-section"

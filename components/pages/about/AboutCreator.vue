@@ -11,7 +11,7 @@
       </span>
     </h2>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <p id="about-creator-first-section">
       {{ $t("components.AboutCreator.creatorBackground") }}

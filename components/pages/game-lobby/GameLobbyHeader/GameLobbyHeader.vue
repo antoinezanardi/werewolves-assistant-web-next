@@ -8,7 +8,7 @@
     </h1>
 
     <div class="flex justify-center row">
-      <div class="col-lg-6">
+      <div class="w-6/12">
         <form
           id="game-lobby-header-form"
           @submit.prevent="addPlayerToCreateGameDto"

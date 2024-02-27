@@ -2,11 +2,11 @@
   <div class="flex flex-col">
     <GameLobbyHeader/>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <GameLobbyPlayersParty class="flex-auto overflow-y-auto"/>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <GameLobbyFooter/>
   </div>

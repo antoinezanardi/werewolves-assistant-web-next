@@ -7,7 +7,7 @@
       id="game-canceled-text"
       class="flex flex-col items-center justify-center"
     >
-      <i class="fa fa-2x fa-ban mb-3 text-danger"/>
+      <i class="fa fa-2x fa-ban mb-3 text-error"/>
 
       <span>
         {{ $t("components.GameCanceled.gameCanceled") }}
@@ -15,7 +15,7 @@
     </h1>
 
     <div>
-      <hr class="mb-4">
+      <VuePrimeDivider class="mb-4"/>
 
       <CreateAnotherGameButton/>
 

@@ -4,8 +4,9 @@
 
 ---
 
-![TypeScript](https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=white&logo=typescript&color=2F73BF)
+![TypeScript](https://img.shields.io/badge/-TypeScript-black?style=for-the-badge&logoColor=809FFF&logo=typescript&color=2a2c54)
 ![Nuxt](https://img.shields.io/badge/-Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=00DC81&color=2a2c54)
+![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-black?style=for-the-badge&logo=tailwindcss&logoColor=37BCF8&color=2a2c54)
 
 [![⚙️ Build Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/build.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/build.yml)
 [![🚀 Deploy To Production Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-to-production.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-to-production.yml)

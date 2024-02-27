@@ -15,7 +15,7 @@
     </h1>
 
     <div>
-      <hr class="mb-4">
+      <VuePrimeDivider class="mb-4"/>
 
       <CreateAnotherGameButton class="me-2"/>
 

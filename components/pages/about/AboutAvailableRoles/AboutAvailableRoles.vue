@@ -14,7 +14,7 @@
       </h2>
     </div>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <div
       v-if="!roles"

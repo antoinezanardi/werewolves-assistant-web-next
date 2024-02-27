@@ -3,7 +3,7 @@
     id="game-playground-team-side"
     class="flex flex-col h-full"
   >
-    <div class="flex items-center justify-content-evenly">
+    <div class="flex items-center justify-evenly">
       <NuxtImg
         :alt="$t(`components.GameTeamSide.sideAltText.${props.side}`)"
         height="50"
@@ -30,7 +30,7 @@
       <div/>
     </div>
 
-    <hr class="my-3">
+    <VuePrimeDivider/>
 
     <div
       id="team-players"

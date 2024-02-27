@@ -1,5 +1,8 @@
 <template>
-  <div id="game-team-side-player">
+  <div
+    id="game-team-side-player"
+    class="border-2 border-gray-700 rounded-md"
+  >
     <div
       id="player-name"
       class="text-center text-truncate"
@@ -7,7 +10,7 @@
       {{ player.name }}
     </div>
 
-    <hr class="my-1">
+    <VuePrimeDivider class="!my-1"/>
 
     <small
       id="player-role-name"
@@ -59,8 +62,6 @@ const roleImageAlt = computed<string>(() => t("components.GameTeamSidePlayer.rol
 
 <style lang="scss" scoped>
 #game-team-side-player {
-  border: 1px solid #4d4d4d;
-  border-radius: 10px;
   padding: 5px;
   width: 100%;
 }

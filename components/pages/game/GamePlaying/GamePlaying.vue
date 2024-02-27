@@ -1,17 +1,17 @@
 <template>
   <div
     id="game-playing"
-    class="row"
+    class="flex"
   >
     <GameTeamSide
-      class="col-2"
+      class="w-2/12"
       :side="RoleSides.VILLAGERS"
     />
 
-    <GamePlayground class="col-8"/>
+    <GamePlayground class="w-10/12"/>
 
     <GameTeamSide
-      class="col-2"
+      class="w-2/12"
       :side="RoleSides.WEREWOLVES"
     />
   </div>

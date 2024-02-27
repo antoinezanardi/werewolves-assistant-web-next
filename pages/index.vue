@@ -9,7 +9,7 @@
         />
       </div>
 
-      <div class="text-center w-full">
+      <div class="my-6 text-center w-full">
         <h1
           id="title"
           class="mt-0"
@@ -20,19 +20,19 @@
 
       <NuxtLink
         id="play-button"
-        class="p-button p-button-primary p-button-raised w-3/12"
+        class="p-button p-button-raised w-3/12"
         to="/game-lobby"
       >
         <span class="fa fa-2x fa-play-circle me-2"/>
 
-        <span class="fs-3 fw-bold text-uppercase">
+        <span class="bold fs-3 fw-bold text-2xl uppercase">
           {{ $t('pages.index.play') }}
         </span>
       </NuxtLink>
 
       <NuxtLink
         id="about-button"
-        class="mt-2 p-button p-button-secondary w-3/12"
+        class="mt-4 p-button p-button-secondary w-3/12"
         to="/about"
       >
         <span class="fa fa-question me-2"/>
@@ -43,7 +43,7 @@
       </NuxtLink>
     </div>
 
-    <hr class="w-full">
+    <VuePrimeDivider/>
 
     <IndexFooter class="mt-1"/>
   </div>
