@@ -30,6 +30,8 @@ jobs:
     name: Deploy Unit Tests Reports
     runs-on: ubuntu-latest
     needs: format-branch-name
+    env:
+      BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -64,6 +66,8 @@ jobs:
     name: Deploy Acceptance Tests Reports
     runs-on: ubuntu-latest
     needs: deploy-unit-tests-reports
+    env:
+      BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -97,6 +101,8 @@ jobs:
     name: Deploy Stryker Reports
     runs-on: ubuntu-latest
     needs: deploy-acceptance-tests-reports
+    env:
+      BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
