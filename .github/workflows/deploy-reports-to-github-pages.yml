@@ -1,4 +1,4 @@
-name: Deploy Reports to GitHub Pages
+name: Deploy Reports to GitHub Pages 📑
 
 on:
   workflow_dispatch:
@@ -15,9 +15,17 @@ env:
   STRYKER_REPORT_PATH: tests/stryker/coverage
 
 jobs:
+  format-branch-name:
+    name: Format Branch Name for Reports 🍃
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set branch name for reports in env 🍃
+        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//-/g')" >> $GITHUB_ENV
+
   deploy-unit-tests-reports:
     name: Deploy Unit Tests Reports
     runs-on: ubuntu-latest
+    needs: format-branch-name
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
