@@ -366,4 +366,4 @@ jobs:
           fetch-depth: 0
 
       - name: Call reports to GitHub Pages Workflow 📑
-        uses: ./.github/workflows/deploy-reports-to-github-pages.yml
+        uses: ./.github/actions/deploy-reports-to-github-pages
