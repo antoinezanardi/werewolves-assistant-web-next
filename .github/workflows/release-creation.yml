@@ -406,7 +406,7 @@ jobs:
           path: tests/unit/coverage
           key: ${{ runner.os }}-tests-unit-coverage-v3-
           restore-keys: |
-            ${{ runner.os }}-tests-unit-coverage-v3-
+            ${{ runner.os }}-tests-unit-coverage-v3-main-
 
       - name: Create Nuxt types ⛰️
         run: pnpm run postinstall

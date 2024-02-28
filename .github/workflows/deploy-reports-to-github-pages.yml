@@ -46,7 +46,7 @@ jobs:
           path: tests/unit/coverage
           key: ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}
           restore-keys: |
-            ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}
+            ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}-
 
       - name: Save unit tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
@@ -84,7 +84,7 @@ jobs:
           path: tests/acceptance/reports
           key: ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}
           restore-keys: |
-            ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}
+            ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}-
 
       - name: Save acceptance tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
@@ -121,7 +121,7 @@ jobs:
           path: tests/stryker/coverage
           key: ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}
           restore-keys: |
-            ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}
+            ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}-
 
       - name: Save stryker reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
