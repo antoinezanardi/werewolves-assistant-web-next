@@ -65,7 +65,9 @@ jobs:
   deploy-acceptance-tests-reports:
     name: Deploy Acceptance Tests Reports
     runs-on: ubuntu-latest
-    needs: deploy-unit-tests-reports
+    needs:
+      - format-branch-name
+      - deploy-unit-tests-reports
     env:
       BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
@@ -100,7 +102,9 @@ jobs:
   deploy-stryker-reports:
     name: Deploy Stryker Reports
     runs-on: ubuntu-latest
-    needs: deploy-acceptance-tests-reports
+    needs:
+      - format-branch-name
+      - deploy-acceptance-tests-reports
     env:
       BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
