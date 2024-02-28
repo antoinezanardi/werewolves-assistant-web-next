@@ -1,51 +1,56 @@
 <template>
-  <div
-    id="game-team-side-player"
-    class="border-2 border-gray-700 rounded-md"
-  >
-    <div
-      id="player-name"
-      class="text-center text-truncate"
-    >
-      {{ player.name }}
-    </div>
-
-    <VuePrimeDivider class="!my-1"/>
-
-    <small
-      id="player-role-name"
-      class="flex justify-center"
-    >
-      {{ $t(`shared.role.name.${player.role.current}`) }}
-    </small>
-
-    <div class="flex mt-1">
-      <RoleImage
-        v-if="player.side.current === RoleSides.WEREWOLVES"
-        id="player-werewolf-role-image"
-        :alt="roleImageAlt"
-        definition="small"
-        height="50"
-        :role-name="player.role.current"
-        width="50"
-      />
-
+  <GlowCapture>
+    <GlowElement color="red">
       <div
-        id="player-attributes"
-        class="flex grow"
-      />
+        id="game-team-side-player"
+        class="border-2 border-gray-700 p-2 rounded-md w-full"
+        :class="teamSidePlayerClasses"
+      >
+        <div
+          id="player-name"
+          class="text-center text-truncate"
+        >
+          {{ player.name }}
+        </div>
 
-      <RoleImage
-        v-if="player.side.current === RoleSides.VILLAGERS"
-        id="player-villager-role-image"
-        :alt="roleImageAlt"
-        definition="small"
-        height="50"
-        :role-name="player.role.current"
-        width="50"
-      />
-    </div>
-  </div>
+        <VuePrimeDivider class="!my-1"/>
+
+        <small
+          id="player-role-name"
+          class="flex justify-center"
+        >
+          {{ $t(`shared.role.name.${player.role.current}`) }}
+        </small>
+
+        <div class="flex mt-1">
+          <RoleImage
+            v-if="player.side.current === RoleSides.WEREWOLVES"
+            id="player-werewolf-role-image"
+            :alt="roleImageAlt"
+            definition="small"
+            height="50"
+            :role-name="player.role.current"
+            width="50"
+          />
+
+          <div
+            id="player-attributes"
+            class="flex grow"
+          />
+
+          <RoleImage
+            v-if="player.side.current === RoleSides.VILLAGERS"
+            id="player-villager-role-image"
+            :alt="roleImageAlt"
+            definition="small"
+            height="50"
+            :role-name="player.role.current"
+            width="50"
+          />
+        </div>
+      </div>
+    </GlowElement>
+  </GlowCapture>
 </template>
 
 <script lang="ts" setup>
@@ -58,11 +63,8 @@ const props = defineProps<GameTeamSidePlayerProps>();
 const { t } = useI18n();
 
 const roleImageAlt = computed<string>(() => t("components.GameTeamSidePlayer.roleImageAlt", { playerName: props.player.name }));
-</script>
 
-<style lang="scss" scoped>
-#game-team-side-player {
-  padding: 5px;
-  width: 100%;
-}
-</style>
+const playerSideColor = computed<string>(() => (props.player.side.current === RoleSides.WEREWOLVES ? "red-500" : "green-500"));
+
+const teamSidePlayerClasses = computed<string>(() => `glow:border-${playerSideColor.value}`);
+</script>

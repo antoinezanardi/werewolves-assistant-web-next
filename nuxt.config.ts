@@ -5,6 +5,7 @@ const modules = [
   "@nuxtjs/i18n",
   "@nuxt/image",
   "@nuxtjs/google-fonts",
+  "@aksharahegde/nuxt-glow",
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
 ];
 
