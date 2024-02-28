@@ -196,7 +196,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-static-inline-styles": ERROR,
     "vue/no-template-target-blank": ERROR,
     "vue/no-this-in-before-route-enter": ERROR,
-    "vue/no-undef-components": [ERROR, { ignorePatterns: ["Nuxt*", "VuePrime*"] }],
+    "vue/no-undef-components": [ERROR, { ignorePatterns: ["Nuxt*", "VuePrime*", "Glow*"] }],
     "vue/no-undef-properties": ERROR,
     "vue/no-unsupported-features": ERROR,
     "vue/no-unused-emit-declarations": ERROR,
