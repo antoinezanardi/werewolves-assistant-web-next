@@ -44,9 +44,9 @@ jobs:
         id: cache-unit-tests-coverage
         with:
           path: tests/unit/coverage
-          key: ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}-
+          key: Linux-tests-unit-coverage-v3-ci/deploy-reports-on-dedicated-job-9f25cecb7b68a45bd1f4d89900f328c59599c1f4bac198e6564f1a2d6b836cad
           restore-keys: |
-            ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}-
+           Linux-tests-unit-coverage-v3-ci/deploy-reports-on-dedicated-job-9f25cecb7b68a45bd1f4d89900f328c59599c1f4bac198e6564f1a2d6b836cad
 
       - name: Save unit tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
