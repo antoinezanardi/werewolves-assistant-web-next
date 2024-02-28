@@ -1,10 +1,12 @@
-name: Deploy Reports to GitHub Pages 📑
+name: 📑 Deploy Reports to GitHub Pages
 
 on:
-  pull_request:
-    branches:
-      - 'main'
-      - 'develop'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch reports to deploy'
+        required: true
+        default: 'main'
 
 env:
   REPORTS_URL: https://antoinezanardi.github.io/werewolves-assistant-web-next/reports
@@ -50,8 +52,7 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
-          workflow_name: ${{ github.event_name }}
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-acceptance-tests-reports:
@@ -83,7 +84,7 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: cypress
-          workflow_name: ${{ github.event_name }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
@@ -116,6 +117,6 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: stryker
-          workflow_name: ${{ github.event_name }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
