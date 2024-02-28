@@ -43,15 +43,16 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0
 
-      - uses: actions/download-artifact@v4
+      - name: Download unit tests coverage from artifacts 💎
+        uses: actions/download-artifact@v4
         with:
           name: unit-tests-coverage-report
           run-id: ${{ github.event.inputs.caller-run-id }}
           github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+          path: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
 
       - name: Save unit tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
-        if: steps.cache-unit-tests-coverage.outcome == 'success'
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
@@ -78,14 +79,13 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0
 
-      - name: Restore E2E tests reports from cache 🥡
-        uses: actions/cache/restore@v4
-        id: cache-e2e-tests-reports
+      - name: Download acceptance tests reports from artifacts 💎
+        uses: actions/download-artifact@v4
         with:
-          path: tests/acceptance/reports
-          key: ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}-
-          restore-keys: |
-            ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}-
+          name: e2e-tests-reports
+          run-id: ${{ github.event.inputs.caller-run-id }}
+          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+          path: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
 
       - name: Save acceptance tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
@@ -115,14 +115,13 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0
 
-      - name: Restore stryker report from cache 🥡
-        uses: actions/cache/restore@v4
-        id: cache-stryker-reports
+      - name: Download stryker tests reports coverage from artifacts 💎
+        uses: actions/download-artifact@v4
         with:
-          path: tests/stryker/coverage
-          key: ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}-
-          restore-keys: |
-            ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}-
+          name: stryker-html-report
+          run-id: ${{ github.event.inputs.caller-run-id }}
+          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+          path: ${{ env.STRYKER_REPORT_PATH }}
 
       - name: Save stryker reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
