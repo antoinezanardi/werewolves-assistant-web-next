@@ -44,6 +44,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download unit tests coverage from artifacts 💎
+        id: download-unit-tests-coverage
         uses: actions/download-artifact@v4
         with:
           name: unit-tests-coverage-report
@@ -53,6 +54,7 @@ jobs:
 
       - name: Save unit tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.download-unit-tests-coverage.outcome == 'success'
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
@@ -60,8 +62,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
-          workflow_name: coverage
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ""
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-acceptance-tests-reports:
@@ -80,6 +82,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download acceptance tests reports from artifacts 💎
+        id: download-acceptance-tests-reports
         uses: actions/download-artifact@v4
         with:
           name: e2e-tests-reports
@@ -89,6 +92,7 @@ jobs:
 
       - name: Save acceptance tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.download-acceptance-tests-reports.outcome == 'success'
         with:
           test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
           report_url: ${{ env.REPORTS_URL }}
@@ -96,8 +100,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: cucumber
-          workflow_name: report
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ""
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-stryker-reports:
@@ -116,6 +120,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download stryker tests reports coverage from artifacts 💎
+        id: download-stryker-reports
         uses: actions/download-artifact@v4
         with:
           name: stryker-html-report
@@ -125,6 +130,7 @@ jobs:
 
       - name: Save stryker reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        if: steps.download-stryker-reports.outcome == 'success'
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}
           report_url: ${{ env.REPORTS_URL }}
@@ -132,6 +138,6 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: stryker
-          workflow_name: coverage
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ""
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
