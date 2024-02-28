@@ -238,12 +238,6 @@ jobs:
           path: tests/acceptance/reports
           key: ${{ runner.os }}-tests-acceptance-reports-v3-main-${{hashFiles('tests/acceptance/reports/junit.xml')}}
 
-      - name: Save E2E tests reports as artifact 💎
-        uses: actions/upload-artifact@v4
-        with:
-          name: e2e-tests-reports
-          path: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
-
       - name: Stop Docker Sandbox API containers 🐳
         run: pnpm run docker:sandbox-api:stop
 
@@ -290,13 +284,6 @@ jobs:
         id: mutant-tests
         continue-on-error: true
         run: pnpm run test:stryker:ci
-
-      - name: Save stryker report in cache 🥡
-        uses: actions/cache/save@v4
-        id: cache-stryker-reports
-        with:
-          path: tests/stryker/coverage
-          key: ${{ runner.os }}-tests-stryker-coverage-v3-main-${{hashFiles('tests/stryker/coverage/mutation.json')}}
 
       - name: Save stryker report as artifact 💎
         uses: actions/upload-artifact@v4

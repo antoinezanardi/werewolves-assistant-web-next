@@ -35,6 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: format-branch-name
     steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+
       - name: Wait for concurrent jobs to finish 🕒
         run: ./scripts/wait-for-other-reports-to-be-deployed.sh
 

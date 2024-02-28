@@ -238,13 +238,6 @@ jobs:
         continue-on-error: true
         run: pnpm run test:cucumber
 
-      - name: Save E2E tests reports in cache 🥡
-        uses: actions/cache/save@v4
-        id: cache-e2e-tests-reports
-        with:
-          path: tests/acceptance/reports
-          key: ${{ runner.os }}-tests-acceptance-reports-v3-${{ env.BRANCH_NAME }}-${{hashFiles('tests/acceptance/reports/junit.xml')}}
-
       - name: Save E2E tests reports as artifact 💎
         uses: actions/upload-artifact@v4
         with:
@@ -296,13 +289,6 @@ jobs:
         id: mutant-tests
         continue-on-error: true
         run: pnpm run test:stryker:ci
-
-      - name: Save stryker report in cache 🥡
-        uses: actions/cache/save@v4
-        id: cache-stryker-reports
-        with:
-          path: tests/stryker/coverage
-          key: ${{ runner.os }}-tests-stryker-coverage-v3-${{ env.BRANCH_NAME }}-${{hashFiles('tests/stryker/coverage/mutation.json')}}
 
       - name: Save stryker report as artifact 💎
         uses: actions/upload-artifact@v4
