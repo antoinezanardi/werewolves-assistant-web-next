@@ -48,7 +48,9 @@ jobs:
   deploy-unit-tests-reports:
     name: Deploy Unit Tests Reports
     runs-on: ubuntu-latest
-    needs: wait-for-concurrent-jobs
+    needs:
+      - format-branch-name
+      - wait-for-concurrent-jobs
     env:
       BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
     steps:
