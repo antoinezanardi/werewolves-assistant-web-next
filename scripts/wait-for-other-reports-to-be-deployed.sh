@@ -2,8 +2,8 @@
 
 repo="antoinezanardi/werewolves-assistant-web-next"
 workflow_name="📑 Deploy Reports to GitHub Pages"
-attempts=15
-interval_seconds=15
+attempts=30
+interval_seconds=20
 
 for ((i = 1; i <= attempts; i++)); do
   in_progress_runs=$(gh run list -R "$repo" -w "$workflow_name" --json status -s "in_progress" --limit 2 | jq ". | length")
