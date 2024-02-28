@@ -1,12 +1,11 @@
 name: Deploy Reports to GitHub Pages 📑
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       branch:
-        description: 'Branch reports to deploy'
         required: true
-        default: 'main'
+        type: 'string'
 
 env:
   REPORTS_URL: https://antoinezanardi.github.io/werewolves-assistant-web-next/reports
