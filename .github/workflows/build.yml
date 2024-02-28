@@ -344,7 +344,7 @@ jobs:
         id: cache-unit-tests-coverage
         with:
           path: tests/unit/coverage
-          key: ${{ runner.os }}-tests-unit-coverage-v3-${{ env.BRANCH_NAME }}
+          key: ${{ runner.os }}-tests-unit-coverage-v3-${{ env.BRANCH_NAME }}-
           restore-keys: |
             ${{ runner.os }}-tests-unit-coverage-v3-${{ env.BRANCH_NAME }}-
 

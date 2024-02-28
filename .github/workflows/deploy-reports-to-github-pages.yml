@@ -44,7 +44,7 @@ jobs:
         id: cache-unit-tests-coverage
         with:
           path: tests/unit/coverage
-          key: ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}
+          key: ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}-
           restore-keys: |
             ${{ runner.os }}-tests-unit-coverage-v3-${{ github.event.inputs.branch }}-
 
@@ -82,7 +82,7 @@ jobs:
         id: cache-e2e-tests-reports
         with:
           path: tests/acceptance/reports
-          key: ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}
+          key: ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}-
           restore-keys: |
             ${{ runner.os }}-tests-acceptance-reports-v3-${{ github.event.inputs.branch }}-
 
@@ -119,7 +119,7 @@ jobs:
         id: cache-stryker-reports
         with:
           path: tests/stryker/coverage
-          key: ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}
+          key: ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}-
           restore-keys: |
             ${{ runner.os }}-tests-stryker-coverage-v3-${{ github.event.inputs.branch }}-
 
