@@ -8,6 +8,10 @@ on:
         required: true
         default: 'main'
 
+      caller-run-id:
+        description: 'ID of the workflow that called this one'
+        required: true
+
 env:
   REPORTS_URL: https://antoinezanardi.github.io/werewolves-assistant-web-next/reports
   UNIT_TESTS_COVERAGE_REPORTS_PATH: tests/unit/coverage
@@ -39,14 +43,11 @@ jobs:
           ref: ${{ github.event.inputs.branch }}
           fetch-depth: 0
 
-      - name: Restore tests coverage from cache 🥡
-        uses: actions/cache/restore@v4
-        id: cache-unit-tests-coverage
+      - uses: actions/download-artifact@v4
         with:
-          path: tests/unit/coverage
-          key: Linux-tests-unit-coverage-v3-ci/deploy-reports-on-dedicated-job-9f25cecb7b68a45bd1f4d89900f328c59599c1f4bac198e6564f1a2d6b836cad
-          restore-keys: |
-           Linux-tests-unit-coverage-v3-ci/deploy-reports-on-dedicated-job-9f25cecb7b68a45bd1f4d89900f328c59599c1f4bac198e6564f1a2d6b836cad
+          name: unit-tests-coverage-report
+          run-id: ${{ github.event.inputs.caller-run-id }}
+          path: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
 
       - name: Save unit tests reports in GitHub Pages 📑
         uses: PavanMudigonda/html-reporter-github-pages@v1.2
