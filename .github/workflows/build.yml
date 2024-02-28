@@ -361,7 +361,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Invoke reports to GitHub Pages Workflow 📑
-        uses: benc-uk/workflow-dispatch@v1
-        with:
-          workflow: deploy-to-production.yml
-          inputs: '{ "branch": "${{ env.BRANCH_NAME }}" }'
+        run: gh workflow run deploy-reports-to-github-pages.yml --ref ${{ github.head_ref || github.ref_name }} -f branch=${{ github.head_ref || github.ref_name }}
