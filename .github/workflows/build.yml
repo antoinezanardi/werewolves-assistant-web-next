@@ -360,5 +360,10 @@ jobs:
     name: Deploy Tests Reports 📑
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Call reports to GitHub Pages Workflow 📑
         uses: ./.github/workflows/deploy-reports-to-github-pages.yml
