@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid d-flex flex-column">
-    <div class="align-items-center container-fluid d-flex flex-column flex-grow-1 justify-content-center">
-      <div class="col-12 text-center">
+  <div class="flex flex-col">
+    <div class="flex flex-col grow items-center justify-center">
+      <div class="flex justify-center w-full">
         <NuxtImg
           :alt="$t('pages.index.werewolvesAssistantLogo')"
           sizes="lg:200px"
@@ -9,7 +9,7 @@
         />
       </div>
 
-      <div class="col-12 text-center">
+      <div class="my-6 text-center w-full">
         <h1
           id="title"
           class="mt-0"
@@ -18,38 +18,34 @@
         </h1>
       </div>
 
-      <div class="col-12 col-lg-3">
-        <NuxtLink
-          id="play-button"
-          class="p-button p-button-primary p-button-raised w-100"
-          to="/game-lobby"
-        >
-          <span class="fa fa-2x fa-play-circle me-2"/>
+      <NuxtLink
+        id="play-button"
+        class="p-button p-button-raised w-3/12"
+        to="/game-lobby"
+      >
+        <span class="fa fa-2x fa-play-circle me-2"/>
 
-          <span class="fs-3 fw-bold text-uppercase">
-            {{ $t('pages.index.play') }}
-          </span>
-        </NuxtLink>
-      </div>
+        <span class="bold fs-3 fw-bold text-2xl uppercase">
+          {{ $t('pages.index.play') }}
+        </span>
+      </NuxtLink>
 
-      <div class="col-12 col-lg-3 mt-4">
-        <NuxtLink
-          id="about-button"
-          class="p-button p-button-secondary w-100"
-          to="/about"
-        >
-          <span class="fa fa-question me-2"/>
+      <NuxtLink
+        id="about-button"
+        class="mt-4 p-button p-button-secondary w-3/12"
+        to="/about"
+      >
+        <span class="fa fa-question me-2"/>
 
-          <span>
-            {{ $t('pages.index.about') }}
-          </span>
-        </NuxtLink>
-      </div>
+        <span>
+          {{ $t('pages.index.about') }}
+        </span>
+      </NuxtLink>
     </div>
 
-    <hr class="w-100">
+    <VuePrimeDivider/>
 
-    <IndexFooter/>
+    <IndexFooter class="mt-1"/>
   </div>
 </template>
 

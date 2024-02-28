@@ -2,7 +2,7 @@
 
 exports[`Game Page > should match snapshot when rendered. 1`] = `
 "<div id="game-page" class="container-fluid">
-  <div id="loading-game-container" class="align-items-center d-flex flex-column h-100 justify-content-center">
+  <div id="loading-game-container" class="flex flex-col h-full items-center justify-center">
     <text-progress-spinner-stub text="Loading game…" id="loading-game-spinner"></text-progress-spinner-stub>
   </div>
 </div>"

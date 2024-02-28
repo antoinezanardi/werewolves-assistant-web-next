@@ -1,0 +1,18 @@
+<template>
+  <div
+    id="game-playground"
+    class="flex flex-col h-full"
+  >
+    <GamePlaygroundHeader/>
+
+    <GamePlaygroundContent class="flex grow h-full"/>
+
+    <GamePlaygroundFooter/>
+  </div>
+</template>
+
+<script setup lang="ts">
+import GamePlaygroundContent from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundContent.vue";
+import GamePlaygroundFooter from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooter.vue";
+import GamePlaygroundHeader from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeader.vue";
+</script>

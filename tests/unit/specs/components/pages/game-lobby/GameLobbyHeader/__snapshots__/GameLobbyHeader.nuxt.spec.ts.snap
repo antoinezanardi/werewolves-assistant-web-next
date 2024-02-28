@@ -2,9 +2,9 @@
 
 exports[`Game Lobby Header Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-header">
-  <h1 id="game-lobby-header-title" class="d-flex justify-content-center my-1">Game Lobby</h1>
-  <div class="d-flex justify-content-center row">
-    <div class="col-lg-6">
+  <h1 id="game-lobby-header-title" class="flex justify-center my-1">Game Lobby</h1>
+  <div class="flex justify-center row">
+    <div class="w-6/12">
       <form id="game-lobby-header-form">
         <game-lobby-player-input-stub modelvalue="" id="game-lobby-player-input"></game-lobby-player-input-stub>
       </form>

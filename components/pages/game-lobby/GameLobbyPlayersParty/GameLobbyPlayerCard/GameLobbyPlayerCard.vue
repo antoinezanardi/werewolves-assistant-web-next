@@ -1,6 +1,6 @@
 <template>
   <div
-    class="align-items-center d-flex flex-column game-lobby-player-card mb-4 p-1"
+    class="flex flex-col game-lobby-player-card items-center mb-4 p-1"
     :data-testid="`game-lobby-player-card-${props.player.name}`"
   >
     <VuePrimeButton

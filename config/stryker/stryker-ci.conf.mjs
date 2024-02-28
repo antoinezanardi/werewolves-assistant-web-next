@@ -1,6 +1,10 @@
 import defaultConfig from "./stryker.conf.mjs";
 
-const reporters = ["progress-append-only", "html"];
+const reporters = [
+  "progress-append-only",
+  "html",
+  "json",
+];
 
 const dashboard = {
   project: "github.com/antoinezanardi/werewolves-assistant-web-next",

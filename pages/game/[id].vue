@@ -6,7 +6,7 @@
     <div
       v-if="fetchingGameStatus === 'pending'"
       id="loading-game-container"
-      class="align-items-center d-flex flex-column h-100 justify-content-center"
+      class="flex flex-col h-full items-center justify-center"
     >
       <TextProgressSpinner
         id="loading-game-spinner"
@@ -17,13 +17,13 @@
     <GameNotFound
       v-else-if="fetchingGameStatus === 'error'"
       id="game-not-found"
-      class="h-100"
+      class="h-full"
     />
 
     <Component
       :is="gameStatusComponentToRender"
       v-else
-      class="h-100"
+      class="h-full"
     />
   </div>
 </template>

@@ -2,13 +2,13 @@
   <div id="game-lobby-header">
     <h1
       id="game-lobby-header-title"
-      class="d-flex justify-content-center my-1"
+      class="flex justify-center my-1"
     >
       {{ $t("components.GameLobbyHeader.gameLobby") }}
     </h1>
 
-    <div class="d-flex justify-content-center row">
-      <div class="col-lg-6">
+    <div class="flex justify-center row">
+      <div class="w-6/12">
         <form
           id="game-lobby-header-form"
           @submit.prevent="addPlayerToCreateGameDto"

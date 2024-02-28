@@ -2,12 +2,12 @@
 
 exports[`About Available Roles Component > should match snapshot when rendered. 1`] = `
 "<div id="about-available-roles">
-  <div class="align-items-center d-flex">
+  <div class="flex items-center">
     <role-image-stub alt="Illustration of the available roles title" rolename="angel" sizes="50px" definition="normal" id="about-available-roles-title-role-image" class="me-3"></role-image-stub>
     <h2 id="about-available-roles-title">Available roles</h2>
   </div>
-  <hr>
-  <div id="loading-roles-container" class="align-items-center d-flex flex-column justify-content-center">
+  <divider-stub></divider-stub>
+  <div id="loading-roles-container" class="flex flex-col items-center justify-center">
     <text-progress-spinner-stub text="Loading roles…" id="loading-roles-spinner"></text-progress-spinner-stub>
   </div>
 </div>"

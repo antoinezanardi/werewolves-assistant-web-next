@@ -1,11 +1,11 @@
 <template>
   <div id="about-werewolves-game">
-    <div class="align-items-center d-flex justify-content-between">
+    <div class="flex items-center justify-between">
       <h2
         id="about-werewolves-game-title"
-        class="align-items-center d-flex"
+        class="flex items-center"
       >
-        <i class="fa fa-2x fa-dice me-3 text-primary"/>
+        <i class="fa fa-2x fa-dice me-3 text-blue-500"/>
 
         <span>
           {{ $t('components.AboutWerewolvesGame.werewolvesAssistantGame') }}
@@ -25,7 +25,7 @@
       </a>
     </div>
 
-    <hr>
+    <VuePrimeDivider/>
 
     <p
       id="about-werewolves-game-first-section"

@@ -42,6 +42,10 @@
         "villager": "Villageois",
         "lonely": "Solitaire",
         "ambiguous": "Ambigü"
+      },
+      "side": {
+        "villagers": "Villageois",
+        "werewolves": "Loups-Garous"
       }
     }
   },
@@ -439,6 +443,16 @@
     },
     "CreateAnotherGameButton": {
       "createAnotherGame": "Créer une autre partie"
+    },
+    "GameTeamSide": {
+      "aliveTeamPlayers": "{alivePlayers} / {totalPlayers} en vie",
+      "sideAltText": {
+        "villagers": "Camp des Villageois",
+        "werewolves": "Camp des Loups-Garous"
+      }
+    },
+    "GameTeamSidePlayer": {
+      "roleImageAlt": "Image du rôle du joueur {playerName}"
     }
   }
 }

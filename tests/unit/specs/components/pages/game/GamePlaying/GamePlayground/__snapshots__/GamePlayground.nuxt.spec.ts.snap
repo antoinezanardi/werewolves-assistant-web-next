@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground" class="flex flex-col h-full">
+  <game-playground-header-stub></game-playground-header-stub>
+  <game-playground-content-stub class="flex grow h-full"></game-playground-content-stub>
+  <game-playground-footer-stub></game-playground-footer-stub>
+</div>"
+`;
