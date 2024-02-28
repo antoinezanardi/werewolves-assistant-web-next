@@ -20,7 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set branch name for reports in env 🍃
-        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//-/g')" >> $GITHUB_ENV
+        id: format-branch-name
+        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//-/g')" >> "$GITHUB_OUTPUT"
+
+    outputs:
+      formatted-branch-for-reports: ${{ steps.format-branch-name.outputs.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
 
   deploy-unit-tests-reports:
     name: Deploy Unit Tests Reports
@@ -53,6 +57,7 @@ jobs:
           subfolder: reports
           tool_name: vitest
           workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ''
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-acceptance-tests-reports:
@@ -83,9 +88,9 @@ jobs:
           keep_reports: 1
           gh_pages: gh_pages
           subfolder: reports
-          tool_name: cypress
+          tool_name: cucumber
           workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ''
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-stryker-reports:
@@ -118,5 +123,5 @@ jobs:
           subfolder: reports
           tool_name: stryker
           workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
+          env: ''
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
