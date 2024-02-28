@@ -58,8 +58,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: vitest
-          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          env: ''
+          workflow_name: ${{ github.workflow }}
+          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-acceptance-tests-reports:
@@ -95,8 +95,8 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: cucumber
-          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          env: ''
+          workflow_name: ${{ github.workflow }}
+          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
   deploy-stryker-reports:
@@ -132,6 +132,6 @@ jobs:
           gh_pages: gh_pages
           subfolder: reports
           tool_name: stryker
-          workflow_name: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
-          env: ''
+          workflow_name: ${{ github.workflow }}
+          env: ${{ env.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
