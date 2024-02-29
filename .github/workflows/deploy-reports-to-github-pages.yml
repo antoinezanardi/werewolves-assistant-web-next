@@ -43,7 +43,7 @@ jobs:
           fetch-depth: 0
 
       - name: Wait for concurrent jobs to finish 🕒
-        run: ./scripts/wait-for-other-reports-to-be-deployed.sh
+        run: ./scripts/wait-for-other-reports-to-be-deployed.sh ${{ github.run_number }}
 
   deploy-unit-tests-reports:
     name: Deploy Unit Tests Reports
