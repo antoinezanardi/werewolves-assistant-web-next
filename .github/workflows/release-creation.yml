@@ -411,6 +411,8 @@ jobs:
       - unit-tests
       - e2e-tests
       - mutant-tests
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
     if: always()
     steps:
       - name: Checkout GitHub repository 📡
