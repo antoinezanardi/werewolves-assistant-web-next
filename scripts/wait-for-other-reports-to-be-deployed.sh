@@ -14,7 +14,7 @@ for ((i = 1; i <= attempts; i++)); do
     echo "🕘 Found queued run. Waiting for $interval_seconds seconds before the next attempt ($i/$attempts)."
     sleep $interval_seconds
   else
-    least_recent_in_progress_run_number=$(gh run list -R "$repo" -w "$workflow_name" --json number -s "in_progress" --limit 2 | jq ". | last | .number")
+    least_recent_in_progress_run_number=$(gh run list -R "$repo" -w "$workflow_name" --json number -s "in_progress" | jq "min_by(.number).number")
 
     if [ "$least_recent_in_progress_run_number" = "null" ]; then
       echo "✅ No active runs found. Exiting with code 0."
