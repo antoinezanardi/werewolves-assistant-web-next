@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Set branch name for reports in env 🍃
         id: format-branch-name
-        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//-/g')" >> "$GITHUB_OUTPUT"
+        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//_/g')" >> "$GITHUB_OUTPUT"
 
     outputs:
       formatted-branch-for-reports: ${{ steps.format-branch-name.outputs.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
@@ -139,6 +139,7 @@ jobs:
       - name: Download stryker tests reports coverage from artifacts 💎
         id: download-stryker-reports
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: stryker-html-report
           run-id: ${{ github.event.inputs.caller-run-id }}
