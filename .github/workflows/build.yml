@@ -351,6 +351,8 @@ jobs:
       - e2e-tests
       - mutant-tests
     if: always()
+    env:
+      GH_TOKEN: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
