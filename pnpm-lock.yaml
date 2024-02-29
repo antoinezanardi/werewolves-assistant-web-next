@@ -80,8 +80,8 @@ devDependencies:
     specifier: ^1.6.2
     version: 1.6.2(eslint@8.57.0)(typescript@5.3.3)
   '@types/eslint':
-    specifier: ^8.56.4
-    version: 8.56.4
+    specifier: ^8.56.5
+    version: 8.56.5
   '@types/pixelmatch':
     specifier: ^5.2.6
     version: 5.2.6
@@ -3343,7 +3343,7 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
     dependencies:
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       acorn: 8.11.3
       escape-string-regexp: 4.0.0
       eslint: 8.57.0
@@ -3358,7 +3358,7 @@ packages:
       eslint: '>=8.40.0'
     dependencies:
       '@stylistic/eslint-plugin-js': 1.6.2(eslint@8.57.0)
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       eslint: 8.57.0
       estraverse: 5.3.0
       picomatch: 4.0.1
@@ -3369,7 +3369,7 @@ packages:
     peerDependencies:
       eslint: '*'
     dependencies:
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.3.3)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -3384,7 +3384,7 @@ packages:
       eslint: '>=8.40.0'
     dependencies:
       '@stylistic/eslint-plugin-js': 1.6.2(eslint@8.57.0)
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.3.3)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -3402,7 +3402,7 @@ packages:
       '@stylistic/eslint-plugin-jsx': 1.6.2(eslint@8.57.0)
       '@stylistic/eslint-plugin-plus': 1.6.2(eslint@8.57.0)(typescript@5.3.3)
       '@stylistic/eslint-plugin-ts': 1.6.2(eslint@8.57.0)(typescript@5.3.3)
-      '@types/eslint': 8.56.4
+      '@types/eslint': 8.56.5
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -3448,8 +3448,8 @@ packages:
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: true
 
-  /@types/eslint@8.56.4:
-    resolution: {integrity: sha512-lG1GLUnL5vuRBGb3MgWUWLdGMH2Hps+pERuyQXCfWozuGKdnhf9Pbg4pkcrVUHjKrU7Rl+GCZ/299ObBXZFAxg==}
+  /@types/eslint@8.56.5:
+    resolution: {integrity: sha512-u5/YPJHo1tvkSF2CE0USEkxon82Z5DBy2xR+qfyYNszpX9qcs4sT6uq2kBbj4BXY1+DBGDPnrhMZV3pKWGNukw==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
