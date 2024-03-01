@@ -14,4 +14,12 @@ describe("Game Canceled Component", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  describe("Text", () => {
+    it("should display translated text when rendered.", () => {
+      const textDiv = wrapper.find<HTMLDivElement>("#game-canceled-text");
+
+      expect(textDiv.text()).toBe("Game canceled");
+    });
+  });
 });

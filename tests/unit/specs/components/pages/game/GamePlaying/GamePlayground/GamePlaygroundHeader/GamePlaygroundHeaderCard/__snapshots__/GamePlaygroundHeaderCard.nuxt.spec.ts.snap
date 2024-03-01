@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Playground Header Card Component > should match snapshot when rendered. 1`] = `
+"<div id="game-current-play-expected-player-role-image" class="flex justify-end">
+  <role-image-stub alt="Role image of the current play" rolename="villager" sizes="50" definition="small"></role-image-stub>
+</div>"
+`;

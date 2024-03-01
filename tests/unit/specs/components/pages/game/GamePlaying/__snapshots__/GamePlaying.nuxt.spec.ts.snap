@@ -3,7 +3,7 @@
 exports[`Game Playing Component > should match snapshot when rendered. 1`] = `
 "<div id="game-playing" class="flex">
   <game-team-side-stub side="villagers" class="w-2/12"></game-team-side-stub>
-  <game-playground-stub class="w-10/12"></game-playground-stub>
+  <game-playground-stub class="px-2 w-10/12"></game-playground-stub>
   <game-team-side-stub side="werewolves" class="w-2/12"></game-team-side-stub>
 </div>"
 `;

@@ -26,7 +26,7 @@ const GAME_PLAY_CAUSES = [
   "stuttering-judge-request",
   "previous-votes-were-in-ties",
   "angel-presence",
-];
+] as const;
 
 const GAME_PLAY_OCCURRENCES = [
   "one-night-only",
@@ -34,12 +34,12 @@ const GAME_PLAY_OCCURRENCES = [
   "on-days",
   "anytime",
   "consequential",
-];
+] as const;
 
 const WITCH_POTIONS = [
   "life",
   "death",
-];
+] as const;
 
 export {
   GAME_PLAY_ACTIONS,

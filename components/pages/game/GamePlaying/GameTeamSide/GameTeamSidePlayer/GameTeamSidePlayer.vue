@@ -1,10 +1,10 @@
 <template>
   <GlowCapture>
-    <GlowElement color="red">
+    <GlowElement>
       <div
         id="game-team-side-player"
         class="border-2 border-gray-700 p-2 rounded-md w-full"
-        :class="teamSidePlayerClasses"
+        :class="playerSideGlowClass"
       >
         <div
           id="player-name"
@@ -64,7 +64,5 @@ const { t } = useI18n();
 
 const roleImageAlt = computed<string>(() => t("components.GameTeamSidePlayer.roleImageAlt", { playerName: props.player.name }));
 
-const playerSideColor = computed<string>(() => (props.player.side.current === RoleSides.WEREWOLVES ? "red-500" : "green-500"));
-
-const teamSidePlayerClasses = computed<string>(() => `glow:border-${playerSideColor.value}`);
+const playerSideGlowClass = computed<string>(() => (props.player.side.current === RoleSides.WEREWOLVES ? "glow:border-red-500" : "glow:border-green-500"));
 </script>
