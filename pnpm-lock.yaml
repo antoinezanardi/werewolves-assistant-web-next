@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1
   primevue:
-    specifier: ^3.48.1
-    version: 3.48.1(vue@3.4.21)
+    specifier: ^3.49.1
+    version: 3.49.1(vue@3.4.21)
 
 devDependencies:
   '@aksharahegde/nuxt-glow':
@@ -10478,21 +10478,12 @@ packages:
       react-is: 18.2.0
     dev: true
 
-  /primevue@3.48.1(vue@3.4.21):
-    resolution: {integrity: sha512-lyJ+E0ZCv2pR9jIpdPLBysU8zB2hOKrN7q78orloWelPx05zSYoMVKAWaqKTHNpunD52xffjaqovt1y6B/9XoQ==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.4.21(typescript@5.3.3)
-    dev: false
-
   /primevue@3.49.1(vue@3.4.21):
     resolution: {integrity: sha512-OmUTqbKbPB63Zqf7uA49cipDi+Qh+/13AYJPwgvsVsI4QmAKIkeibBwkOgj1CNIFlopfF79YmyBshFUAPqlw9A==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
       vue: 3.4.21(typescript@5.3.3)
-    dev: true
 
   /proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}
