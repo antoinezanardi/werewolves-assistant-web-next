@@ -491,6 +491,9 @@
       "wildChildChoosesModel": "L'Enfant Sauvage choisit un modèle",
       "witchUsesPotions": "La Sorcière utilise ses potions",
       "wolfHoundChoosesSide": "Le Chien-Loup choisit son camp"
+    },
+    "gamePlaygroundHeaderCard": {
+      "roleImageAlt": "Image du rôle du game play en cours"
     }
   }
 }

@@ -13,7 +13,7 @@
       id="game-phase-text"
       class="text-2xl"
     >
-      {{ phaseText }}
+      {{ phaseWithTurnText }}
     </span>
   </div>
 </template>
@@ -29,10 +29,11 @@ const { game } = storeToRefs(gameStore);
 
 const { t } = useI18n();
 
-const phaseText = computed<string>(() => {
+const phaseWithTurnText = computed<string>(() => {
   const { phase, turn } = game.value;
+  const phaseText = t(`shared.game.phase.${phase}`);
 
-  return `${t(`shared.game.phase.${phase}`)} ${turn}`;
+  return `${phaseText} ${turn}`;
 });
 
 const phaseIcon = computed<string>(() => {

@@ -7,12 +7,7 @@
 
       <GamePlaygroundHeaderCurrentPlay class="w-6/12"/>
 
-      <div
-        id="game-current-play-expected-player-role-image"
-        class="flex justify-end w-3/12"
-      >
-        CARTE
-      </div>
+      <GamePlaygroundHeaderCard class="w-3/12"/>
     </div>
 
     <VuePrimeDivider class="!my-3"/>
@@ -20,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import GamePlaygroundHeaderCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderCard/GamePlaygroundHeaderCard.vue";
 import GamePlaygroundHeaderCurrentPlay
   from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderCurrentPlay/GamePlaygroundHeaderCurrentPlay.vue";
 import GamePlaygroundHeaderPhase from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderPhase/GamePlaygroundHeaderPhase.vue";

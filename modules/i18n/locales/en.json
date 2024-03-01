@@ -491,6 +491,9 @@
       "wildChildChoosesModel": "Wild Child chooses a model",
       "witchUsesPotions": "Witch uses potions",
       "wolfHoundChoosesSide": "Wolf-Hound chooses side"
+    },
+    "gamePlaygroundHeaderCard": {
+      "roleImageAlt": "Role image of the current play"
     }
   }
 }
