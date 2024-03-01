@@ -41,7 +41,7 @@ describe("Game Team Side Component", () => {
       wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.WEREWOLVES } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='Werewolves side']");
 
-      expect(image.attributes("src")).toBe("/svg/game/game-play/attribute/eaten.svg");
+      expect(image.attributes("src")).toBe("/svg/role/werewolf.svg");
     });
 
     it("should render the villagers image when the side is villagers.", async() => {
