@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Playground Header Current Play Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-header-current-play" class="flex items-center justify-center">
+  <nuxt-img-stub src="/svg/game/player/player-attribute/sheriff.svg" width="50" height="50" alt="Current play icon" class="me-3"></nuxt-img-stub>
+  <h2 id="current-play-text">components.GamePlaygroundHeaderCurrentPlay.sheriffDelegates</h2>
+</div>"
+`;

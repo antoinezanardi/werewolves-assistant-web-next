@@ -1,3 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Playground Header Component > should match snapshot when rendered. 1`] = `"<div id="game-playground-header"> GAME PLAYGROUND HEADER </div>"`;
+exports[`Game Playground Header Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-header">
+  <div class="flex items-center">
+    <game-playground-header-phase-stub class="w-3/12"></game-playground-header-phase-stub>
+    <game-playground-header-current-play-stub class="w-6/12"></game-playground-header-current-play-stub>
+    <game-playground-header-card-stub class="w-3/12"></game-playground-header-card-stub>
+  </div>
+  <divider-stub class="!my-3"></divider-stub>
+</div>"
+`;

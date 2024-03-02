@@ -1,6 +1,13 @@
-const GAME_PHASES = ["day", "night"] as const;
+const GAME_PHASES = [
+  "day",
+  "night",
+] as const;
 
-const GAME_STATUSES = ["playing", "over", "canceled"] as const;
+const GAME_STATUSES = [
+  "playing",
+  "over",
+  "canceled",
+] as const;
 
 const MIN_PLAYERS_IN_GAME = 4;
 

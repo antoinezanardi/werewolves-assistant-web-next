@@ -84,6 +84,6 @@ const sideSvgIconPath = computed<string>(() => {
   if (props.side === RoleSides.VILLAGERS) {
     return "/svg/role/villager.svg";
   }
-  return "/svg/game/game-play/attribute/eaten.svg";
+  return "/svg/role/werewolf.svg";
 });
 </script>

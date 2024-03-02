@@ -1,5 +1,6 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
+import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { GamePhase, GameStatus } from "~/composables/api/game/types/game.types";
 import { Player } from "~/composables/api/game/types/players/player.class";
@@ -24,6 +25,14 @@ class Game {
   @Type(() => Player)
   @Expose()
   public players: Player[];
+
+  @Type(() => GamePlay)
+  @Expose()
+  public currentPlay: GamePlay | null;
+
+  @Type(() => GamePlay)
+  @Expose()
+  public upcomingPlays: GamePlay[];
 
   @Expose()
   public createdAt: Date;

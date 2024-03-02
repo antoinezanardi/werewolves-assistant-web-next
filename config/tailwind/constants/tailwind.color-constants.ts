@@ -12,6 +12,10 @@ const WARNING_COLOR = colors.yellow[500];
 
 const INFO_COLOR = colors.cyan[500];
 
+const DAY_COLOR = colors.yellow[500];
+
+const NIGHT_COLOR = colors.blue[300];
+
 export {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
@@ -19,4 +23,6 @@ export {
   ERROR_COLOR,
   WARNING_COLOR,
   INFO_COLOR,
+  DAY_COLOR,
+  NIGHT_COLOR,
 };

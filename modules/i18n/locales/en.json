@@ -47,6 +47,12 @@
         "villagers": "Villagers",
         "werewolves": "Werewolves"
       }
+    },
+    "game": {
+      "phase": {
+        "night": "Night",
+        "day": "Day"
+      }
     }
   },
   "pages": {
@@ -453,6 +459,41 @@
     },
     "GameTeamSidePlayer": {
       "roleImageAlt": "Role image of the player {playerName}"
+    },
+    "GamePlaygroundHeaderCurrentPlay": {
+      "currentPlayAltText": "Current play icon",
+      "unknownGamePlay": "Unknown game play",
+      "accursedWolfFatherInfects": "Accursed Father of Wolves infects",
+      "actorChoosesCard": "Actor chooses a card",
+      "bearTamerGrowls": "Bear Tamer growls",
+      "bigBadWolfEats": "Big Bad Wolf eats",
+      "charmedPeopleMeetEachOther": "Charmed people meet each other",
+      "cupidCharms": "Cupid charms",
+      "defenderProtects": "Defender protects",
+      "foxSniffs": "Fox sniffs",
+      "hunterShoots": "Hunter shoots",
+      "loversMeetEachOther": "Lovers meet each other",
+      "piedPiperCharms": "Pied Piper charms",
+      "scandalmongerMarks": "Scandalmonger marks",
+      "scapegoatBansVoting": "Scapegoat bans voting",
+      "seerLooks": "Seer looks",
+      "sheriffDelegates": "Sheriff delegates",
+      "sheriffSettlesVotes": "Sheriff settles votes",
+      "stutteringJudgeRequestsAnotherVote": "Stuttering Judge requests another vote",
+      "survivorsBuryDeadBodies": "Survivors bury dead bodies",
+      "survivorsElectSheriff": "Survivors elect the Sheriff",
+      "survivorsVote": "Survivors vote",
+      "thiefChoosesCard": "Thief chooses a card",
+      "threeBrothersMeetEachOther": "Three Brothers meet each other",
+      "twoSistersMeetEachOther": "Two Sisters meet each other",
+      "werewolvesEat": "Werewolves eat",
+      "whiteWerewolfEats": "White Werewolf eats",
+      "wildChildChoosesModel": "Wild Child chooses a model",
+      "witchUsesPotions": "Witch uses potions",
+      "wolfHoundChoosesSide": "Wolf-Hound chooses side"
+    },
+    "gamePlaygroundHeaderCard": {
+      "roleImageAlt": "Role image of the current play"
     }
   }
 }
