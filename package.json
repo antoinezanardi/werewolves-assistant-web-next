@@ -131,7 +131,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "is-ci": "^3.0.1",
-    "primevue": "^3.48.1"
+    "primevue": "^3.49.1"
   },
   "engines": {
     "node": ">=21.0.0"
