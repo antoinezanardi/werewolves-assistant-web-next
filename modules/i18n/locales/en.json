@@ -494,6 +494,9 @@
     },
     "gamePlaygroundHeaderCard": {
       "roleImageAlt": "Role image of the current play"
+    },
+    "GamePlaygroundFooterMakePlayButton": {
+      "makePlay": "Make play"
     }
   }
 }

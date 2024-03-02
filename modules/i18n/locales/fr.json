@@ -494,6 +494,9 @@
     },
     "gamePlaygroundHeaderCard": {
       "roleImageAlt": "Image du rôle du game play en cours"
+    },
+    "GamePlaygroundFooterMakePlayButton": {
+      "makePlay": "Valider"
     }
   }
 }
