@@ -2533,6 +2533,348 @@
       ],
       "source": "<template>\n  <div\n    id=\"game-playground-team-side\"\n    class=\"flex flex-col h-full\"\n  >\n    <div class=\"flex items-center justify-evenly\">\n      <NuxtImg\n        :alt=\"$t(`components.GameTeamSide.sideAltText.${props.side}`)\"\n        height=\"50\"\n        :src=\"sideSvgIconPath\"\n        width=\"50\"\n      />\n\n      <div>\n        <h2\n          id=\"side-title\"\n          class=\"my-1 text-center\"\n        >\n          {{ $t(`shared.role.side.${side}`) }}\n        </h2>\n\n        <h4\n          id=\"alive-team-players\"\n          class=\"my-1 text-center\"\n        >\n          {{ alivePlayersText }}\n        </h4>\n      </div>\n\n      <div/>\n    </div>\n\n    <VuePrimeDivider/>\n\n    <div\n      id=\"team-players\"\n      class=\"flex flex-col grow overflow-y-auto\"\n    >\n      <GameTeamSidePlayer\n        v-for=\"player in aliveFirstTeamPlayers\"\n        :key=\"player._id\"\n        class=\"my-1\"\n        :player=\"player\"\n      />\n    </div>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport { storeToRefs } from \"pinia\";\n\nimport type { GameTeamSideProps } from \"~/components/pages/game/GamePlaying/GameTeamSide/game-team-side.types\";\nimport GameTeamSidePlayer from \"~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue\";\nimport type { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { RoleSides } from \"~/composables/api/role/enums/role.enums\";\nimport { useGameStore } from \"~/stores/game/useGameStore\";\n\nconst props = defineProps<GameTeamSideProps>();\n\nconst { t } = useI18n();\n\nconst gameStore = useGameStore();\nconst { game } = storeToRefs(gameStore);\n\nconst teamPlayers = computed<Player[]>(() => game.value.players.filter(player => player.side.current === props.side));\n\nconst aliveFirstTeamPlayers = computed<Player[]>(() => teamPlayers.value.toSorted((playerA, playerB) => {\n  if (playerA.isAlive && !playerB.isAlive) {\n    return -1;\n  }\n  return 1;\n}));\n\nconst alivePlayersText = computed<string>(() => {\n  const alivePlayers = teamPlayers.value.filter(player => player.isAlive);\n\n  return t(`components.GameTeamSide.aliveTeamPlayers`, {\n    alivePlayers: alivePlayers.length,\n    totalPlayers: teamPlayers.value.length,\n  });\n});\n\nconst sideSvgIconPath = computed<string>(() => {\n  if (props.side === RoleSides.VILLAGERS) {\n    return \"/svg/role/villager.svg\";\n  }\n  return \"/svg/game/game-play/attribute/eaten.svg\";\n});\n</script>"
     },
+    "components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "80",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 127,
+              "line": 65
+            },
+            "start": {
+              "column": 39,
+              "line": 65
+            }
+          }
+        },
+        {
+          "id": "81",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 91,
+              "line": 65
+            },
+            "start": {
+              "column": 47,
+              "line": 65
+            }
+          }
+        },
+        {
+          "id": "82",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 126,
+              "line": 65
+            },
+            "start": {
+              "column": 93,
+              "line": 65
+            }
+          }
+        },
+        {
+          "id": "83",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 126,
+              "line": 67
+            },
+            "start": {
+              "column": 42,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "84",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "expected false to be truthy",
+          "status": "Killed",
+          "testsCompleted": 2,
+          "static": false,
+          "killedBy": [
+            "157"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 99,
+              "line": 67
+            },
+            "start": {
+              "column": 49,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "85",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 99,
+              "line": 67
+            },
+            "start": {
+              "column": 49,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "86",
+          "mutatorName": "EqualityOperator",
+          "replacement": "props.player.side.current !== RoleSides.WEREWOLVES",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 99,
+              "line": 67
+            },
+            "start": {
+              "column": 49,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "87",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 111,
+              "line": 67
+            },
+            "start": {
+              "column": 102,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "88",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expected false to be truthy",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "157"
+          ],
+          "coveredBy": [
+            "157",
+            "161"
+          ],
+          "location": {
+            "end": {
+              "column": 125,
+              "line": 67
+            },
+            "start": {
+              "column": 114,
+              "line": 67
+            }
+          }
+        },
+        {
+          "id": "89",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 92,
+              "line": 69
+            },
+            "start": {
+              "column": 48,
+              "line": 69
+            }
+          }
+        },
+        {
+          "id": "90",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "156"
+          ],
+          "coveredBy": [
+            "156",
+            "157",
+            "158",
+            "159",
+            "160",
+            "161",
+            "162"
+          ],
+          "location": {
+            "end": {
+              "column": 92,
+              "line": 69
+            },
+            "start": {
+              "column": 54,
+              "line": 69
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <GlowCapture>\n    <GlowElement color=\"red\">\n      <div\n        id=\"game-team-side-player\"\n        class=\"border-2 border-gray-700 p-2 rounded-md w-full\"\n        :class=\"teamSidePlayerClasses\"\n      >\n        <div\n          id=\"player-name\"\n          class=\"text-center text-truncate\"\n        >\n          {{ player.name }}\n        </div>\n\n        <VuePrimeDivider class=\"!my-1\"/>\n\n        <small\n          id=\"player-role-name\"\n          class=\"flex justify-center\"\n        >\n          {{ $t(`shared.role.name.${player.role.current}`) }}\n        </small>\n\n        <div class=\"flex mt-1\">\n          <RoleImage\n            v-if=\"player.side.current === RoleSides.WEREWOLVES\"\n            id=\"player-werewolf-role-image\"\n            :alt=\"roleImageAlt\"\n            definition=\"small\"\n            height=\"50\"\n            :role-name=\"player.role.current\"\n            width=\"50\"\n          />\n\n          <div\n            id=\"player-attributes\"\n            class=\"flex grow\"\n          />\n\n          <RoleImage\n            v-if=\"player.side.current === RoleSides.VILLAGERS\"\n            id=\"player-villager-role-image\"\n            :alt=\"roleImageAlt\"\n            definition=\"small\"\n            height=\"50\"\n            :role-name=\"player.role.current\"\n            width=\"50\"\n          />\n        </div>\n      </div>\n    </GlowElement>\n  </GlowCapture>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { GameTeamSidePlayerProps } from \"~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleSides } from \"~/composables/api/role/enums/role.enums\";\n\nconst props = defineProps<GameTeamSidePlayerProps>();\n\nconst { t } = useI18n();\n\nconst roleImageAlt = computed<string>(() => t(\"components.GameTeamSidePlayer.roleImageAlt\", { playerName: props.player.name }));\n\nconst playerSideColor = computed<string>(() => (props.player.side.current === RoleSides.WEREWOLVES ? \"red-500\" : \"green-500\"));\n\nconst teamSidePlayerClasses = computed<string>(() => `glow:border-${playerSideColor.value}`);\n</script>"
+    },
     "components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue": {
       "language": "html",
       "mutants": [
@@ -7761,6 +8103,42 @@
         }
       ],
       "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport { RoleSides } from \"~/composables/api/role/enums/role.enums\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerSide {\n  @Expose()\n  public original: RoleSides;\n\n  @Expose()\n  public current: RoleSides;\n\n  public static create(side: Partial<PlayerSide>): PlayerSide {\n    return plainToInstance(PlayerSide, side, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerSide };"
+    },
+    "composables/api/game/types/players/player.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "250",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/players/player.class.ts(25,41): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": true,
+          "killedBy": [],
+          "coveredBy": [
+            "91",
+            "92",
+            "93",
+            "94",
+            "157",
+            "158",
+            "161",
+            "162",
+            "262"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 27
+            },
+            "start": {
+              "column": 48,
+              "line": 25
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { PlayerRole } from \"~/composables/api/game/types/players/player-role/player-role.class\";\nimport { PlayerSide } from \"~/composables/api/game/types/players/player-role/player-side.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Player {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public name: string;\n\n  @Expose()\n  @Type(() => PlayerRole)\n  public role: PlayerRole;\n\n  @Expose()\n  @Type(() => PlayerSide)\n  public side: PlayerSide;\n\n  @Expose()\n  public isAlive: boolean;\n\n  public static create(player: Player): Player {\n    return plainToInstance(Player, player, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Player };"
     },
     "composables/api/game/useCreateGameDtoValidation.ts": {
       "language": "typescript",
@@ -17849,383 +18227,6 @@
         }
       ],
       "source": "function removeTrailingSlashes(url: string): string {\n  return url.replace(/\\/+$/u, \"\");\n}\n\nexport { removeTrailingSlashes };"
-    },
-    "components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue": {
-      "language": "html",
-      "mutants": [
-        {
-          "id": "82",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 126,
-              "line": 65
-            },
-            "start": {
-              "column": 93,
-              "line": 65
-            }
-          }
-        },
-        {
-          "id": "83",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 126,
-              "line": 67
-            },
-            "start": {
-              "column": 42,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "80",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 127,
-              "line": 65
-            },
-            "start": {
-              "column": 39,
-              "line": 65
-            }
-          }
-        },
-        {
-          "id": "81",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 91,
-              "line": 65
-            },
-            "start": {
-              "column": 47,
-              "line": 65
-            }
-          }
-        },
-        {
-          "id": "84",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "expected false to be truthy",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "157"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 99,
-              "line": 67
-            },
-            "start": {
-              "column": 49,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "86",
-          "mutatorName": "EqualityOperator",
-          "replacement": "props.player.side.current !== RoleSides.WEREWOLVES",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 99,
-              "line": 67
-            },
-            "start": {
-              "column": 49,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "85",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 99,
-              "line": 67
-            },
-            "start": {
-              "column": 49,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "87",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 111,
-              "line": 67
-            },
-            "start": {
-              "column": 102,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "88",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expected false to be truthy",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "157"
-          ],
-          "coveredBy": [
-            "157",
-            "161"
-          ],
-          "location": {
-            "end": {
-              "column": 125,
-              "line": 67
-            },
-            "start": {
-              "column": 114,
-              "line": 67
-            }
-          }
-        },
-        {
-          "id": "89",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 92,
-              "line": 69
-            },
-            "start": {
-              "column": 48,
-              "line": 69
-            }
-          }
-        },
-        {
-          "id": "90",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "Snapshot `Game Team Side Player Component > should match snapshot when rendered. 1` mismatched",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "156"
-          ],
-          "coveredBy": [
-            "156",
-            "157",
-            "158",
-            "159",
-            "160",
-            "161",
-            "162"
-          ],
-          "location": {
-            "end": {
-              "column": 92,
-              "line": 69
-            },
-            "start": {
-              "column": 54,
-              "line": 69
-            }
-          }
-        }
-      ],
-      "source": "<template>\n  <GlowCapture>\n    <GlowElement color=\"red\">\n      <div\n        id=\"game-team-side-player\"\n        class=\"border-2 border-gray-700 p-2 rounded-md w-full\"\n        :class=\"teamSidePlayerClasses\"\n      >\n        <div\n          id=\"player-name\"\n          class=\"text-center text-truncate\"\n        >\n          {{ player.name }}\n        </div>\n\n        <VuePrimeDivider class=\"!my-1\"/>\n\n        <small\n          id=\"player-role-name\"\n          class=\"flex justify-center\"\n        >\n          {{ $t(`shared.role.name.${player.role.current}`) }}\n        </small>\n\n        <div class=\"flex mt-1\">\n          <RoleImage\n            v-if=\"player.side.current === RoleSides.WEREWOLVES\"\n            id=\"player-werewolf-role-image\"\n            :alt=\"roleImageAlt\"\n            definition=\"small\"\n            height=\"50\"\n            :role-name=\"player.role.current\"\n            width=\"50\"\n          />\n\n          <div\n            id=\"player-attributes\"\n            class=\"flex grow\"\n          />\n\n          <RoleImage\n            v-if=\"player.side.current === RoleSides.VILLAGERS\"\n            id=\"player-villager-role-image\"\n            :alt=\"roleImageAlt\"\n            definition=\"small\"\n            height=\"50\"\n            :role-name=\"player.role.current\"\n            width=\"50\"\n          />\n        </div>\n      </div>\n    </GlowElement>\n  </GlowCapture>\n</template>\n\n<script lang=\"ts\" setup>\nimport type { GameTeamSidePlayerProps } from \"~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport { RoleSides } from \"~/composables/api/role/enums/role.enums\";\n\nconst props = defineProps<GameTeamSidePlayerProps>();\n\nconst { t } = useI18n();\n\nconst roleImageAlt = computed<string>(() => t(\"components.GameTeamSidePlayer.roleImageAlt\", { playerName: props.player.name }));\n\nconst playerSideColor = computed<string>(() => (props.player.side.current === RoleSides.WEREWOLVES ? \"red-500\" : \"green-500\"));\n\nconst teamSidePlayerClasses = computed<string>(() => `glow:border-${playerSideColor.value}`);\n</script>"
-    },
-    "composables/api/game/types/players/player.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "250",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/players/player.class.ts(25,41): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": true,
-          "coveredBy": [
-            "91",
-            "92",
-            "93",
-            "94",
-            "157",
-            "158",
-            "161",
-            "162",
-            "262"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 27
-            },
-            "start": {
-              "column": 48,
-              "line": 25
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { PlayerRole } from \"~/composables/api/game/types/players/player-role/player-role.class\";\nimport { PlayerSide } from \"~/composables/api/game/types/players/player-role/player-side.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Player {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public name: string;\n\n  @Expose()\n  @Type(() => PlayerRole)\n  public role: PlayerRole;\n\n  @Expose()\n  @Type(() => PlayerSide)\n  public side: PlayerSide;\n\n  @Expose()\n  public isAlive: boolean;\n\n  public static create(player: Player): Player {\n    return plainToInstance(Player, player, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Player };"
     }
   },
   "schemaVersion": "1.0",
