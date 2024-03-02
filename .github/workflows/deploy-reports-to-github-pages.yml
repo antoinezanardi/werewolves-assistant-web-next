@@ -89,7 +89,7 @@ jobs:
           path: ${{ env.STRYKER_REPORT_PATH }}
 
       - name: Save unit tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@vmaster
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-unit-tests-coverage.outcome == 'success'
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
@@ -103,7 +103,7 @@ jobs:
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Save acceptance tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@vmaster
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-acceptance-tests-reports.outcome == 'success'
         with:
           test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
@@ -117,7 +117,7 @@ jobs:
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
       - name: Save stryker reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@vmaster
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-stryker-reports.outcome == 'success'
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}
