@@ -5,7 +5,7 @@
   >
     <VuePrimeButton
       id="make-play-button"
-      class="w-full"
+      class="uppercase w-full"
       :disabled="!canMakeGamePlay"
       icon="fa fa-play"
       :label="$t('components.GamePlaygroundFooterMakePlayButton.makePlay')"
