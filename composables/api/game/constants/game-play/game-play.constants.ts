@@ -1,3 +1,12 @@
+const GAME_PLAY_TYPES = [
+  "no-action",
+  "vote",
+  "target",
+  "choose-card",
+  "choose-side",
+  "request-another-vote",
+];
+
 const GAME_PLAY_ACTIONS = [
   "eat",
   "look",
@@ -42,6 +51,7 @@ const WITCH_POTIONS = [
 ] as const;
 
 export {
+  GAME_PLAY_TYPES,
   GAME_PLAY_ACTIONS,
   GAME_PLAY_CAUSES,
   GAME_PLAY_OCCURRENCES,

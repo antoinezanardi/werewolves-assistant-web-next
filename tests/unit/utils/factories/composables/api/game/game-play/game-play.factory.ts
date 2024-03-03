@@ -268,6 +268,7 @@ function createFakeGamePlay(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return GamePlay.create({
     action: gamePlay.action ?? faker.helpers.arrayElement(GAME_PLAY_ACTIONS),
     source: createFakeGamePlaySource(gamePlay.source),
+    eligibleTargets: gamePlay.eligibleTargets ?? undefined,
     canBeSkipped: gamePlay.canBeSkipped ?? undefined,
     cause: gamePlay.cause ?? faker.helpers.arrayElement(GAME_PLAY_CAUSES),
     occurrence: gamePlay.occurrence ?? faker.helpers.arrayElement(GAME_PLAY_OCCURRENCES),
