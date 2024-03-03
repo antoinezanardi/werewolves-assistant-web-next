@@ -500,6 +500,10 @@
     },
     "GameVotePlaygroundVoters": {
       "nobodyCanVote": "Nobody can vote…"
+    },
+    "GamePlaygroundPlayerCardVoteInput": {
+      "voteFor": "Vote for",
+      "noAvailableOptions": "No available options"
     }
   }
 }
