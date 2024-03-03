@@ -3,6 +3,7 @@
     <Component
       :is="gamePlaygroundTypeComponentToRender"
       id="game-playground-type"
+      class="w-full"
     />
   </div>
 </template>

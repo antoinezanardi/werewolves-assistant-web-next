@@ -1,5 +1,10 @@
 <template>
   <div id="game-vote-playground">
-    GAME PLAYGROUND VOTE
+    <GameVotePlaygroundVoters/>
   </div>
 </template>
+
+<script lang="ts" setup>
+import GameVotePlaygroundVoters
+  from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameVotePlayground/GameVotePlaygroundVoters/GameVotePlaygroundVoters.vue";
+</script>

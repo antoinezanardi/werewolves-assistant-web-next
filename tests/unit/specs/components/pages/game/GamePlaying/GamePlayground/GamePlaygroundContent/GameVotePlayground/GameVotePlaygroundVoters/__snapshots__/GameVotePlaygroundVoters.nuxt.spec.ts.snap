@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Vote Playground Voter Component > should match snapshot when rendered. 1`] = `
+"<div id="game-vote-playground-voters">
+  <div id="no-voters" class="flex flex-col h-full items-center justify-center"><i class="fa fa-3x fa-comment-slash mb-4 text-error"></i>
+    <h2>Nobody can vote…</h2>
+  </div>
+</div>"
+`;
