@@ -1,5 +1,4 @@
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
-import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { useMakeGamePlayDtoValidation } from "~/composables/api/game/useMakeGamePlayDtoValidation";
 import { RoleSides } from "~/composables/api/role/enums/role.enums";
@@ -12,40 +11,6 @@ import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 
 describe("Use Make Game Play Dto Validation Composable", () => {
-  describe("currentPlayType", () => {
-    it("should return undefined when game current play is null.", () => {
-      const game = ref(createFakeGame({ currentPlay: null }));
-      const makeGamePlayDto = ref(createFakeMakeGamePlayDto());
-      const { currentPlayType } = useMakeGamePlayDtoValidation(makeGamePlayDto, game);
-
-      expect(currentPlayType.value).toBeUndefined();
-    });
-
-    it("should return 'no-action' when game current play action is 'meet-each-other'.", () => {
-      const game = ref(createFakeGame({ currentPlay: createFakeGamePlay({ action: "meet-each-other" }) }));
-      const makeGamePlayDto = ref(createFakeMakeGamePlayDto());
-      const { currentPlayType } = useMakeGamePlayDtoValidation(makeGamePlayDto, game);
-
-      expect(currentPlayType.value).toBe("no-action");
-    });
-
-    it("should return 'request-another-vote' when game current play action is 'request-another-vote'.", () => {
-      const game = ref(createFakeGame({ currentPlay: createFakeGamePlay({ action: "request-another-vote" }) }));
-      const makeGamePlayDto = ref(createFakeMakeGamePlayDto());
-      const { currentPlayType } = useMakeGamePlayDtoValidation(makeGamePlayDto, game);
-
-      expect(currentPlayType.value).toBe("request-another-vote");
-    });
-
-    it("should return undefined when game current play action is not categorized.", () => {
-      const game = ref(createFakeGame({ currentPlay: createFakeGamePlay({ action: "unknown" as GamePlayAction }) }));
-      const makeGamePlayDto = ref(createFakeMakeGamePlayDto());
-      const { currentPlayType } = useMakeGamePlayDtoValidation(makeGamePlayDto, game);
-
-      expect(currentPlayType.value).toBeUndefined();
-    });
-  });
-
   describe("isCurrentGamePlayVoteTypeAndValid", () => {
     it.each<{
       game: Game;

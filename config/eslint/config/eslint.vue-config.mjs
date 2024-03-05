@@ -2,7 +2,7 @@ import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 
-import { ALWAYS, ERROR, MAX_LENGTH, NEVER, OFF } from "../eslint.constants.mjs";
+import { ALWAYS, ERROR, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.mjs";
 
 import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
@@ -244,7 +244,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/func-call-spacing": ERROR,
     "vue/key-spacing": ERROR,
     "vue/keyword-spacing": ERROR,
-    "vue/max-len": [ERROR, { code: MAX_LENGTH }],
+    "vue/max-len": [ERROR, MAX_LENGTH_DEFAULT_CONFIG],
     "vue/multiline-ternary": [ERROR, NEVER],
     "vue/no-console": ERROR,
     "vue/no-constant-condition": ERROR,

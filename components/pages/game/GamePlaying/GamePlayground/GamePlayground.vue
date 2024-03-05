@@ -5,7 +5,7 @@
   >
     <GamePlaygroundHeader/>
 
-    <GamePlaygroundContent class="flex grow h-full"/>
+    <GamePlaygroundContent class="flex grow overflow-y-auto"/>
 
     <GamePlaygroundFooter/>
   </div>
