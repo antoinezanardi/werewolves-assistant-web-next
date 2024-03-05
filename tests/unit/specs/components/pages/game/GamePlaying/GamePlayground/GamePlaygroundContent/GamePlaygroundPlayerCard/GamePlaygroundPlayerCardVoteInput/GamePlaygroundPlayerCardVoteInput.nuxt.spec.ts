@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import Fuse from "fuse.js";
+import type { AutoCompleteChangeEvent } from "primevue/autocomplete";
 
 import { VuePrimeAutoComplete } from "#components";
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
@@ -154,7 +155,8 @@ describe("Game Playground Player Card Vote Input Component", () => {
     it("should do nothing when v-model change event is emitted but value is string.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
-      autocomplete.vm.$emit("change", "Antoine");
+      const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: "Antoine" };
+      autocomplete.vm.$emit("change", event);
       await nextTick();
 
       expect(makeGamePlayDtoStore.removeMakeGamePlayVoteDto).not.toHaveBeenCalled();
@@ -164,7 +166,8 @@ describe("Game Playground Player Card Vote Input Component", () => {
     it("should remove make game play vote from dto when item select event is emitted and player is null.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
-      autocomplete.vm.$emit("change", null);
+      const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: null };
+      autocomplete.vm.$emit("change", event);
       await nextTick();
 
       expect(makeGamePlayDtoStore.removeMakeGamePlayVoteDto).toHaveBeenCalledExactlyOnceWith(defaultPlayer._id);
@@ -173,7 +176,8 @@ describe("Game Playground Player Card Vote Input Component", () => {
     it("should remove make game play vote from dto when v-model change event is emitted and player is voted.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
-      autocomplete.vm.$emit("change", players[0]);
+      const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
+      autocomplete.vm.$emit("change", event);
       await nextTick();
 
       expect(makeGamePlayDtoStore.removeMakeGamePlayVoteDto).toHaveBeenCalledExactlyOnceWith(defaultPlayer._id);
@@ -182,7 +186,8 @@ describe("Game Playground Player Card Vote Input Component", () => {
     it("should add make game play vote from dto when item select event is emitted and player is voted.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
-      autocomplete.vm.$emit("change", players[0]);
+      const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
+      autocomplete.vm.$emit("change", event);
       await nextTick();
 
       expect(makeGamePlayDtoStore.addMakeGamePlayVoteDto).toHaveBeenCalledExactlyOnceWith({ sourceId: defaultPlayer._id, targetId: players[0]._id });

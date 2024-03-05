@@ -53,7 +53,7 @@
 <script setup lang="ts">
 import Fuse from "fuse.js";
 import { storeToRefs } from "pinia";
-import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
+import type { AutoCompleteChangeEvent, AutoCompleteCompleteEvent } from "primevue/autocomplete";
 
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
@@ -96,11 +96,12 @@ function handleHideEvent(): void {
   filteredVoteOptions.value = [];
 }
 
-function handleUpdateModelValueEvent(value: Player | string | null): void {
-  if (typeof value === "string") {
+function handleUpdateModelValueEvent({ value }: AutoCompleteChangeEvent): void {
+  const targetedPlayer = value as Player | string | null;
+  if (typeof targetedPlayer === "string") {
     return;
   }
-  if (value === null) {
+  if (targetedPlayer === null) {
     removeMakeGamePlayVoteDto(props.player._id);
 
     return;
@@ -108,7 +109,7 @@ function handleUpdateModelValueEvent(value: Player | string | null): void {
   removeMakeGamePlayVoteDto(props.player._id);
   addMakeGamePlayVoteDto({
     sourceId: props.player._id,
-    targetId: value._id,
+    targetId: targetedPlayer._id,
   });
 }
 </script>
