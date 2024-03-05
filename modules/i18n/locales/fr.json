@@ -47,6 +47,12 @@
         "villagers": "Villageois",
         "werewolves": "Loups-Garous"
       }
+    },
+    "game": {
+      "phase": {
+        "night": "Nuit",
+        "day": "Jour"
+      }
     }
   },
   "pages": {
@@ -453,6 +459,51 @@
     },
     "GameTeamSidePlayer": {
       "roleImageAlt": "Image du rôle du joueur {playerName}"
+    },
+    "GamePlaygroundHeaderCurrentPlay": {
+      "currentPlayAltText": "Image du game play en cours",
+      "unknownGamePlay": "Game play inconnu",
+      "accursedWolfFatherInfects": "L'Infect Père des Loups infecte",
+      "actorChoosesCard": "Le Comédien choisit une carte",
+      "bearTamerGrowls": "L'ours grogne",
+      "bigBadWolfEats": "Le Grand Méchant Loup dévore",
+      "charmedPeopleMeetEachOther": "Les charmés se rencontrent",
+      "cupidCharms": "Cupidon tire ses flèches",
+      "defenderProtects": "Le Salvateur protège",
+      "foxSniffs": "Le Renard renifle",
+      "hunterShoots": "Le Chasseur tire",
+      "loversMeetEachOther": "Les Amoureux se rencontrent",
+      "piedPiperCharms": "Le Joueur de Flûte charme",
+      "scandalmongerMarks": "Le Corbeau marque",
+      "scapegoatBansVoting": "Le Bouc Émissaire bannit des votes",
+      "seerLooks": "La Voyante regarde",
+      "sheriffDelegates": "Le Maire délègue son rôle",
+      "sheriffSettlesVotes": "Le Maire tranche les votes",
+      "stutteringJudgeRequestsAnotherVote": "Le Juge Bègue demande un autre vote",
+      "survivorsBuryDeadBodies": "Les Survivants enterrent les corps",
+      "survivorsElectSheriff": "Les Survivants élisent le Maire",
+      "survivorsVote": "Les Survivants votent",
+      "thiefChoosesCard": "Le Voleur choisit une carte",
+      "threeBrothersMeetEachOther": "Les Trois Frères se rencontrent",
+      "twoSistersMeetEachOther": "Les Deux Sœurs se rencontrent",
+      "werewolvesEat": "Les Loups-Garous dévorent",
+      "whiteWerewolfEats": "Le Loup-Garou Blanc dévore",
+      "wildChildChoosesModel": "L'Enfant Sauvage choisit un modèle",
+      "witchUsesPotions": "La Sorcière utilise ses potions",
+      "wolfHoundChoosesSide": "Le Chien-Loup choisit son camp"
+    },
+    "gamePlaygroundHeaderCard": {
+      "roleImageAlt": "Image du rôle du game play en cours"
+    },
+    "GamePlaygroundFooterMakePlayButton": {
+      "makePlay": "Valider"
+    },
+    "GameVotePlaygroundVoters": {
+      "nobodyCanVote": "Personne ne peut voter…"
+    },
+    "GamePlaygroundPlayerCardVoteInput": {
+      "voteFor": "Vote pour",
+      "noAvailableOptions": "Aucune option disponible"
     }
   }
 }

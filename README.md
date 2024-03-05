@@ -42,7 +42,8 @@
 ## <a name="what-is-this-app">🐺 What is this app ?</a>
 Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.
 
-This is the **next** version of the current **[Werewolves Assistant Web](https://github.com/antoinezanardi/werewolves-assistant-web)**. It is still under development.
+> [!NOTE]
+> This is the **next** version of the current **[Werewolves Assistant Web](https://github.com/antoinezanardi/werewolves-assistant-web)**. It is still under development.
 
 #### 🤔 Want to know more about this awesome project ? <a href="https://werewolves-assistant.antoinezanardi.fr/about" target="_blank">**Check out the dedicated about page**</a>.
 
@@ -67,7 +68,8 @@ To install this project, you will need to have on your machine :
 
 We recommend to use the node version specified in the `.nvmrc` file.
 
-**If you don't have `pnpm` installed, you can still use `npm` for all commands below, but we recommend to use `pnpm` for faster and more reliable installs.**
+> [!TIP]
+> If you don't have `pnpm` installed, you can still use `npm` for all commands below, but we recommend to use `pnpm` for faster and more reliable installs.
 
 Then, run the following commands :
 
@@ -106,7 +108,8 @@ pnpm run build
 
 [![Covered Lines](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)
 
-📊 Coverage reports for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/vitest)**.
+> [!NOTE]
+> 📊 Coverage reports for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/vitest)**.
 
 ### ⚗️ E2E / Acceptance tests
 
@@ -118,9 +121,11 @@ pnpm run build
 
 E2E tests are written in Gherkin language around Playwright functions and are available in the **[features directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/features)**.
 
-🏞️ Screenshots for visual regression tests for each platform (`linux` / `darwin`) are available in the **[screenshots directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/screenshots)**.
+> [!NOTE]
+> 🏞️ Screenshots for visual regression tests for each platform (`linux` / `darwin`) are available in the **[screenshots directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/screenshots)**.
 
-📊 All scenarios results with screenshots for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/cucumber)**.
+> [!NOTE]
+> 📊 All scenarios results with screenshots for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/cucumber)**.
 
 ### 👽 Mutant testing
 
@@ -128,11 +133,13 @@ E2E tests are written in Gherkin language around Playwright functions and are av
 
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantoinezanardi%2Fwerewolves-assistant-web-next%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main)
 
-📊 Mutation testing reports for `main` and `develop` branches and pull requests are available **[here](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main#mutant)**.
+> [!NOTE]
+> 📊 Mutation testing reports for `main` and `develop` branches and pull requests are available **[here](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main#mutant)**.
 
 ### ▶️ Commands
 
-Before testing, you must follow the **[installation steps](#installation)**.
+> [!IMPORTANT]
+> Before testing, you must follow the **[installation steps](#installation)**.
 
 Then, run one of the following commands :
 
@@ -166,13 +173,15 @@ pnpm run test:stryker:force
 
 Environnement files are available in the **[env directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/env)**.
 
-You can create a `.env` file in this directory to override the default values when starting the API locally with `pnpm run dev` command.
+> [!TIP]
+> You can create a `.env` file in this directory to override the default values when starting the API locally with `pnpm run dev` command.
 
 Environment variables are :
 
-|                      Name                       |             Description             | Required | Default value |     Limitations     |
-|:-----------------------------------------------:|:-----------------------------------:|:--------:|:-------------:|:-------------------:|
-| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` | URL of the Werewolves Assistant API |    ✅     |       ❌       | Must be a valid URL |
+|                      Name                       |             Description             | Required | Default value |         Limitations         |
+|:-----------------------------------------------:|:-----------------------------------:|:--------:|:-------------:|:---------------------------:|
+| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` | URL of the Werewolves Assistant API |    ✅     |       ❌       |     Must be a valid URL     |
+|          `NUXT_PUBLIC_DEFAULT_LOCALE`           |  Locale used when starting the app  |    ❌     |     `en`      | Must be either `en` or `fr` |
 
 ## <a name="code-analysis-and-consistency">☑️ Code analysis and consistency</a>
 
@@ -182,11 +191,13 @@ Environment variables are :
 
 In order to keep the code clean, consistent and free of bad TS practices, more than **300 ESLint rules are activated** !
 
-Complete list of all enabled rules is available in the **[eslintrc.config.js file](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/eslintrc.config.js)**.
+> [!NOTE]
+> Complete list of all enabled rules is available in the **[eslintrc.config.js file](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/eslintrc.config.js)**.
 
 ### ▶️ Commands
 
-Before linting, you must follow the [installation steps](#installation).
+> [!IMPORTANT]
+> Before linting, you must follow the [installation steps](#installation).
 
 Then, run one of the following commands :
 
@@ -207,11 +218,13 @@ Multiple tools are set up to maintain the best code quality and to prevent vulne
 
 ![CodeQL](https://img.shields.io/badge/-CodeQL-black?style=for-the-badge&logoColor=white&logo=github&color=2781FE)
 
-You can check the **[CodeQL analysis report here](https://github.com/antoinezanardi/werewolves-assistant-web-next/security/code-scanning)**.
+> [!NOTE]
+> You can check the **[CodeQL analysis report here](https://github.com/antoinezanardi/werewolves-assistant-web-next/security/code-scanning)**.
 
 ![SonarCloud](https://img.shields.io/badge/-SonarCloud-black?style=for-the-badge&logoColor=white&logo=sonarcloud&color=F37A3A)
 
-SonarCloud summary is available **[here](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)**.
+> [!NOTE] 
+> SonarCloud summary is available **[here](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)**.
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=antoinezanardi_werewolves-assistant-web-next&metric=coverage)](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=antoinezanardi_werewolves-assistant-web-next&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=antoinezanardi_werewolves-assistant-web-next)
@@ -235,13 +248,15 @@ It uses the **[conventional commit](https://www.conventionalcommits.org/en/v1.0.
 
 Each change when a new release comes up is listed in the **<a href="https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/CHANGELOG.md" target="_blank">CHANGELOG.md file</a>**.
 
-Also, you can keep up with changes by watching releases via the **Watch GitHub button** at the top of this page.
+> [!TIP]
+> Also, you can keep up with changes by watching releases via the **Watch GitHub button** at the top of this page.
 
 ## <a name="github-actions">🐙 GitHub Actions</a>
 
 This project uses **GitHub Actions** to automate some boring tasks.
 
-You can find all the workflows in the **[.github/workflows directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/.github/workflows).**
+> [!NOTE]
+> You can find all the workflows in the **[.github/workflows directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/.github/workflows).**
 
 ### 🎢 Workflows
 
@@ -271,14 +286,28 @@ pnpm run script:create-pull-request
 
 All the above commands are available in the **.run directory** at the root of the project. 
 
-You can add them as **run configurations** in your IDE.
+> [!TIP]
+> You can add them as **run configurations** in your IDE.
 
 ## <a name="license">©️ License</a>
 
 This project is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-## <a name="contributors">❤️ Contributors</a>
+## <a name="contributors">❤️ Contributors</a
+> [!WARNING]
+> If you want to contribute to this project, please read the [**contribution guide**](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/CONTRIBUTING.md).
 
-There is no contributor yet. Want to be the first ?
+Thank you to all the contributors:
 
-If you want to contribute to this project, please read the [**contribution guide**](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/CONTRIBUTING.md).
+<table>
+    <tbody>
+        <tr>
+            <td align="center" valign="top">
+                <a href="https://github.com/danielroe">
+                    <img src="https://github.com/danielroe.png?s=75" width="75" height="75"><br/>
+                    Daniel Roe
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

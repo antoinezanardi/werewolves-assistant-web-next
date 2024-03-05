@@ -35,4 +35,5 @@ jobs:
           project_id: ${{ secrets.PRODUCTION_GCP_PROJECT_ID }}
           env_vars: |-
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL="${{ secrets.PRODUCTION_WEREWOLVES_ASSISTANT_API_BASE_URL }}"
+            NUXT_PUBLIC_DEFAULT_LOCALE="${{ secrets.PRODUCTION_DEFAULT_LOCALE }}"
           flags: "--version=${{ steps.format-version-for-gcp.outputs.FORMATTED_VERSION_FOR_GCP }}"

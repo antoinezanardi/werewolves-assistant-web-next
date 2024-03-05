@@ -8,7 +8,7 @@
       :side="RoleSides.VILLAGERS"
     />
 
-    <GamePlayground class="w-10/12"/>
+    <GamePlayground class="px-2 w-10/12"/>
 
     <GameTeamSide
       class="w-2/12"

@@ -1,7 +1,7 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { PlayerRole } from "~/composables/api/game/types/players/player-role/player-role.class";
-import { PlayerSide } from "~/composables/api/game/types/players/player-role/player-side.class";
+import { PlayerSide } from "~/composables/api/game/types/players/player-side/player-side.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
 class Player {

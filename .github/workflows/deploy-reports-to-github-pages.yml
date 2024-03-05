@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Set branch name for reports in env 🍃
         id: format-branch-name
-        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//-/g')" >> "$GITHUB_OUTPUT"
+        run: echo "BRANCH_NAME_FORMATTED_FOR_REPORTS=$(echo ${{ github.event.inputs.branch }} | sed 's/\//_/g')" >> "$GITHUB_OUTPUT"
 
     outputs:
       formatted-branch-for-reports: ${{ steps.format-branch-name.outputs.BRANCH_NAME_FORMATTED_FOR_REPORTS }}
@@ -43,10 +43,10 @@ jobs:
           fetch-depth: 0
 
       - name: Wait for concurrent jobs to finish 🕒
-        run: ./scripts/wait-for-other-reports-to-be-deployed.sh
+        run: ./scripts/wait-for-other-reports-to-be-deployed.sh ${{ github.run_number }}
 
-  deploy-unit-tests-reports:
-    name: Deploy Unit Tests Reports
+  deploy-reports:
+    name: Deploy Reports
     runs-on: ubuntu-latest
     needs:
       - format-branch-name
@@ -63,14 +63,35 @@ jobs:
       - name: Download unit tests coverage from artifacts 💎
         id: download-unit-tests-coverage
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: unit-tests-coverage-report
           run-id: ${{ github.event.inputs.caller-run-id }}
           github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
           path: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
 
+      - name: Download acceptance tests reports from artifacts 💎
+        id: download-acceptance-tests-reports
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: e2e-tests-reports
+          run-id: ${{ github.event.inputs.caller-run-id }}
+          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+          path: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
+
+      - name: Download stryker tests reports coverage from artifacts 💎
+        id: download-stryker-reports
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: stryker-html-report
+          run-id: ${{ github.event.inputs.caller-run-id }}
+          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
+          path: ${{ env.STRYKER_REPORT_PATH }}
+
       - name: Save unit tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-unit-tests-coverage.outcome == 'success'
         with:
           test_results: ${{ env.UNIT_TESTS_COVERAGE_REPORTS_PATH }}
@@ -83,32 +104,8 @@ jobs:
           env: ""
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
-  deploy-acceptance-tests-reports:
-    name: Deploy Acceptance Tests Reports
-    runs-on: ubuntu-latest
-    needs:
-      - format-branch-name
-      - deploy-unit-tests-reports
-    env:
-      BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
-    steps:
-      - name: Checkout GitHub repository 📡
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}
-          fetch-depth: 0
-
-      - name: Download acceptance tests reports from artifacts 💎
-        id: download-acceptance-tests-reports
-        uses: actions/download-artifact@v4
-        with:
-          name: e2e-tests-reports
-          run-id: ${{ github.event.inputs.caller-run-id }}
-          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
-          path: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
-
       - name: Save acceptance tests reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-acceptance-tests-reports.outcome == 'success'
         with:
           test_results: ${{ env.ACCEPTANCE_TESTS_REPORTS_PATH }}
@@ -121,32 +118,8 @@ jobs:
           env: ""
           token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
 
-  deploy-stryker-reports:
-    name: Deploy Stryker Reports
-    runs-on: ubuntu-latest
-    needs:
-      - format-branch-name
-      - deploy-acceptance-tests-reports
-    env:
-      BRANCH_NAME_FORMATTED_FOR_REPORTS: ${{ needs.format-branch-name.outputs.formatted-branch-for-reports }}
-    steps:
-      - name: Checkout GitHub repository 📡
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}
-          fetch-depth: 0
-
-      - name: Download stryker tests reports coverage from artifacts 💎
-        id: download-stryker-reports
-        uses: actions/download-artifact@v4
-        with:
-          name: stryker-html-report
-          run-id: ${{ github.event.inputs.caller-run-id }}
-          github-token: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
-          path: ${{ env.STRYKER_REPORT_PATH }}
-
       - name: Save stryker reports in GitHub Pages 📑
-        uses: PavanMudigonda/html-reporter-github-pages@v1.2
+        uses: PavanMudigonda/html-reporter-github-pages@main
         if: steps.download-stryker-reports.outcome == 'success'
         with:
           test_results: ${{ env.STRYKER_REPORT_PATH }}

@@ -5,12 +5,18 @@ import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 Given(/^the user goes on an unknown game$/u, async function(this: CustomWorld): Promise<void> {
   await this.page.goto(url(`/game/unknown-game`));
-  await this.page.waitForLoadState();
+  await Promise.all([
+    this.page.waitForLoadState("load"),
+    this.page.waitForLoadState("networkidle"),
+  ]);
 });
 
 Given(/^the user creates a game with 4 random role players$/u, async function(this: CustomWorld): Promise<void> {
   await this.page.goto(url("/game-lobby"));
-  await this.page.waitForLoadState();
+  await Promise.all([
+    this.page.waitForLoadState("load"),
+    this.page.waitForLoadState("networkidle"),
+  ]);
   const players = ["Player 1", "Player 2", "Player 3", "Player 4"];
   for (const player of players) {
     const input = this.page.getByLabel("Player name");
@@ -27,5 +33,8 @@ Given(/^the user creates a game with 4 random role players$/u, async function(th
   await startGameButton.waitFor({ state: "visible" });
   await startGameButton.click();
   await this.page.waitForURL(url(`/game/*`));
-  await this.page.waitForLoadState();
+  await Promise.all([
+    this.page.waitForLoadState("load"),
+    this.page.waitForLoadState("networkidle"),
+  ]);
 });

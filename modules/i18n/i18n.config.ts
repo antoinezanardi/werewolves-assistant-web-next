@@ -1,4 +1,3 @@
-import { I18N_DEFAULT_LOCALE } from "~/modules/i18n/i18n.constants";
 import fr from "~/modules/i18n/locales/fr.json";
 import en from "~/modules/i18n/locales/en.json";
 
@@ -7,7 +6,7 @@ export default defineI18nConfig(() => {
 
   return {
     legacy: false,
-    locale: runtimeConfig.public.defaultLocale || I18N_DEFAULT_LOCALE,
+    locale: runtimeConfig.public.defaultLocale,
     messages: {
       fr,
       en,

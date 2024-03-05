@@ -1,3 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Playground Footer Component > should match snapshot when rendered. 1`] = `"<div id="game-playground-footer"> GAME PLAYGROUND FOOTER </div>"`;
+exports[`Game Playground Footer Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-footer">
+  <divider-stub class="!my-2"></divider-stub>
+  <div class="flex justify-center">
+    <div class="w-4/12">
+      <game-playground-footer-make-play-button-stub></game-playground-footer-make-play-button-stub>
+    </div>
+  </div>
+</div>"
+`;

@@ -25,6 +25,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       defineEmits: READONLY,
       ref: READONLY,
       reactive: READONLY,
+      watch: READONLY,
       nextTick: READONLY,
     },
   },

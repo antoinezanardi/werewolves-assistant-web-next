@@ -71,6 +71,8 @@ export default defineNuxtConfig({
         "Badge",
         "InputGroup",
         "InputText",
+        "FloatLabel",
+        "AutoComplete",
         "Toast",
       ],
     },

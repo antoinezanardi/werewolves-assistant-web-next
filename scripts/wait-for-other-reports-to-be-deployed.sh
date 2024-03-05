@@ -5,21 +5,27 @@ workflow_name="📑 Deploy Reports to GitHub Pages"
 attempts=30
 interval_seconds=20
 
+in_progress_run_number_to_check="$1"
+
 for ((i = 1; i <= attempts; i++)); do
-  in_progress_runs=$(gh run list -R "$repo" -w "$workflow_name" --json status -s "in_progress" --limit 2 | jq ". | length")
-  queued_runs=$(gh run list -R "$repo" -w "$workflow_name" --json status -s "queued" --limit 2 | jq ". | length")
+  queued_runs=$(gh run list -R "$repo" -w "$workflow_name" --json status -s "queued" --limit 1 | jq ". | length")
 
-  total_runs=$((in_progress_runs + queued_runs))
-
-  if [ "$total_runs" -eq 1 ]; then
-    echo "✅ Found one active run (this run itself). Exiting with code 0."
-    exit 0
-  elif [ "$total_runs" -eq 0 ]; then
-    echo "✅ No active runs found. Exiting with code 0."
-    exit 0
-  else
-    echo "🕘 Found $total_runs active runs. Waiting for $interval_seconds seconds before the next attempt ($i/$attempts)."
+  if [ "$queued_runs" -eq 1 ]; then
+    echo "🕘 Found queued run. Waiting for $interval_seconds seconds before the next attempt ($i/$attempts)."
     sleep $interval_seconds
+  else
+    least_recent_in_progress_run_number=$(gh run list -R "$repo" -w "$workflow_name" --json number -s "in_progress" | jq "min_by(.number).number")
+
+    if [ "$least_recent_in_progress_run_number" = "null" ]; then
+      echo "✅ No active runs found. Exiting with code 0."
+      exit 0
+    elif [ "$least_recent_in_progress_run_number" -eq "$in_progress_run_number_to_check" ]; then
+      echo "✅ This run is first in queue. Exiting with code 0."
+      exit 0
+    else
+      echo "🕘 Found in progress run with a different ID (Current: $in_progress_run_number_to_check !== Actual: $least_recent_in_progress_run_number). Waiting for $interval_seconds seconds before the next attempt ($i/$attempts)."
+      sleep $interval_seconds
+    fi
   fi
 done
 

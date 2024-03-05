@@ -1,4 +1,4 @@
-import { PlayerSide } from "~/composables/api/game/types/players/player-role/player-side.class";
+import { PlayerSide } from "~/composables/api/game/types/players/player-side/player-side.class";
 import { RoleSides } from "~/composables/api/role/enums/role.enums";
 
 describe("Player Side Class", () => {

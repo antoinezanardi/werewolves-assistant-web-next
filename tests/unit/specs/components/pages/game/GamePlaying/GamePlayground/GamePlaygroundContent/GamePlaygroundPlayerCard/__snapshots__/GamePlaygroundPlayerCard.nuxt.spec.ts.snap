@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Playground Player Card Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-player-card" class="m-3">
+  <player-card-stub playername="Antoine" playerrole="seer" doesshowselectortooltip="false"></player-card-stub>
+  <!--v-if-->
+</div>"
+`;
