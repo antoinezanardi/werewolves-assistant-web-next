@@ -11,9 +11,9 @@
         input-id="player-vote-input"
         option-label="name"
         :suggestions="filteredVoteOptions"
+        @change="handleUpdateModelValueEvent"
         @complete="searchVoteOptions"
         @hide="handleHideEvent"
-        @item-select="handleItemSelectEvent"
       >
         <template #option="slotProps">
           <div class="align-options-center flex">
@@ -53,7 +53,7 @@
 <script setup lang="ts">
 import Fuse from "fuse.js";
 import { storeToRefs } from "pinia";
-import type { AutoCompleteCompleteEvent, AutoCompleteItemSelectEvent } from "primevue/autocomplete";
+import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
 
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
@@ -72,9 +72,9 @@ const votedPlayer = ref<Player | null>(null);
 
 const filteredVoteOptions = ref<Player[]>([]);
 
-const voteOptions = computed<Player[]>(() => {
-  if (game.value.currentPlay?.eligibleTargets?.interactablePlayers?.length === undefined) {
-    return [];
+const voteOptions = computed<Player[] | undefined>(() => {
+  if (game.value.currentPlay?.eligibleTargets?.interactablePlayers === undefined) {
+    return undefined;
   }
   const interactablePlayersWithoutSelf = game.value.currentPlay.eligibleTargets.interactablePlayers.filter(({ player }) => player._id !== props.player._id);
 
@@ -82,13 +82,13 @@ const voteOptions = computed<Player[]>(() => {
 });
 
 function searchVoteOptions({ query }: AutoCompleteCompleteEvent): void {
-  filteredVoteOptions.value = [];
+  const options: Player[] = voteOptions.value ?? [];
   if (!query.trim()) {
-    filteredVoteOptions.value = voteOptions.value;
+    filteredVoteOptions.value = options;
 
     return;
   }
-  const fuse = new Fuse(voteOptions.value, { keys: ["name"] });
+  const fuse: Fuse<Player> = new Fuse(options, { keys: ["name"] });
   filteredVoteOptions.value = fuse.search(query).map(({ item }) => item);
 }
 
@@ -96,17 +96,19 @@ function handleHideEvent(): void {
   filteredVoteOptions.value = [];
 }
 
-function handleItemSelectEvent({ value }: AutoCompleteItemSelectEvent): void {
-  const selectedPlayer = value as Player;
+function handleUpdateModelValueEvent(value: Player | string | null): void {
+  if (typeof value === "string") {
+    return;
+  }
+  if (value === null) {
+    removeMakeGamePlayVoteDto(props.player._id);
+
+    return;
+  }
+  removeMakeGamePlayVoteDto(props.player._id);
   addMakeGamePlayVoteDto({
     sourceId: props.player._id,
-    targetId: selectedPlayer._id,
+    targetId: value._id,
   });
 }
-
-watch(() => votedPlayer.value, (newValue: Player | null) => {
-  if (newValue === null) {
-    removeMakeGamePlayVoteDto(props.player._id);
-  }
-});
 </script>
