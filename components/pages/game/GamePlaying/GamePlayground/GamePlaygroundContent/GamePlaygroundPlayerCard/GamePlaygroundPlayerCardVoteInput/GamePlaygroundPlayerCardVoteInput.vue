@@ -2,13 +2,13 @@
   <div id="game-playground-player-card-vote-input">
     <VuePrimeFloatLabel class="mt-5">
       <VuePrimeAutoComplete
-        v-model="votedPlayer"
         complete-on-focus
         data-key="name"
         :delay="100"
         dropdown
         force-selection
         input-id="player-vote-input"
+        :model-value="votedPlayer"
         option-label="name"
         :suggestions="filteredVoteOptions"
         @change="handleUpdateModelValueEvent"
@@ -68,9 +68,9 @@ const { game } = storeToRefs(gameStore);
 
 const { addMakeGamePlayVoteDto, removeMakeGamePlayVoteDto } = useMakeGamePlayDtoStore();
 
-const votedPlayer = ref<Player | null>(null);
-
 const filteredVoteOptions = ref<Player[]>([]);
+
+const votedPlayer = ref<Player | string | null>(null);
 
 const voteOptions = computed<Player[] | undefined>(() => {
   if (game.value.currentPlay?.eligibleTargets?.interactablePlayers === undefined) {
@@ -97,11 +97,11 @@ function handleHideEvent(): void {
 }
 
 function handleUpdateModelValueEvent({ value }: AutoCompleteChangeEvent): void {
-  const targetedPlayer = value as Player | string | null;
-  if (typeof targetedPlayer === "string") {
+  votedPlayer.value = value as Player | string | null;
+  if (typeof votedPlayer.value === "string") {
     return;
   }
-  if (targetedPlayer === null) {
+  if (votedPlayer.value === null) {
     removeMakeGamePlayVoteDto(props.player._id);
 
     return;
@@ -109,7 +109,7 @@ function handleUpdateModelValueEvent({ value }: AutoCompleteChangeEvent): void {
   removeMakeGamePlayVoteDto(props.player._id);
   addMakeGamePlayVoteDto({
     sourceId: props.player._id,
-    targetId: targetedPlayer._id,
+    targetId: votedPlayer.value._id,
   });
 }
 </script>

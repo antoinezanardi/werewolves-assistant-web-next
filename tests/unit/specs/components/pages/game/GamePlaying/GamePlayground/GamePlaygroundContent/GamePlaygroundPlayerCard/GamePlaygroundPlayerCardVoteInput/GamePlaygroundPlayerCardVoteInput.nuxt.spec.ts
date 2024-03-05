@@ -1,5 +1,6 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Fuse from "fuse.js";
 import type { AutoCompleteChangeEvent } from "primevue/autocomplete";
 
@@ -44,7 +45,8 @@ describe("Game Playground Player Card Vote Input Component", () => {
   };
   const defaultProps: GamePlaygroundPlayerCardVoteInputProps = { player: defaultPlayer };
 
-  async function mountGamePlaygroundPlayerCardVoteInputComponent(): Promise<ReturnType<typeof mount<typeof GamePlaygroundPlayerCardVoteInput>>> {
+  async function mountGamePlaygroundPlayerCardVoteInputComponent(options: ComponentMountingOptions<typeof GamePlaygroundPlayerCardVoteInput> = {}):
+  Promise<ReturnType<typeof mount<typeof GamePlaygroundPlayerCardVoteInput>>> {
     return mountSuspendedComponent(GamePlaygroundPlayerCardVoteInput, {
       shallow: false,
       global: {
@@ -52,6 +54,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
         plugins: [createTestingPinia(pinia)],
       },
       props: defaultProps,
+      ...options,
     });
   }
 
@@ -73,6 +76,18 @@ describe("Game Playground Player Card Vote Input Component", () => {
   });
 
   describe("Autocomplete", () => {
+    it("should have null as model value when render.", async() => {
+      wrapper = await mountGamePlaygroundPlayerCardVoteInputComponent({
+        global: {
+          stubs: { RoleImage: true, VuePrimeAutoComplete: true },
+          plugins: [createTestingPinia(pinia)],
+        },
+      });
+      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+
+      expect(autocomplete.props("modelValue")).toBeNull();
+    });
+
     it("should pass empty array as suggestions when render.", () => {
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
 
@@ -191,6 +206,15 @@ describe("Game Playground Player Card Vote Input Component", () => {
       await nextTick();
 
       expect(makeGamePlayDtoStore.addMakeGamePlayVoteDto).toHaveBeenCalledExactlyOnceWith({ sourceId: defaultPlayer._id, targetId: players[0]._id });
+    });
+
+    it("should have the same value as the player in props when v-model change event is emitted and player is voted.", async() => {
+      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
+      autocomplete.vm.$emit("change", event);
+      await nextTick();
+
+      expect(autocomplete.props("modelValue")).toStrictEqual<Player>(players[0]);
     });
   });
 });
