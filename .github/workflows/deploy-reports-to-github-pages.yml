@@ -63,6 +63,7 @@ jobs:
       - name: Download unit tests coverage from artifacts 💎
         id: download-unit-tests-coverage
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: unit-tests-coverage-report
           run-id: ${{ github.event.inputs.caller-run-id }}
@@ -72,6 +73,7 @@ jobs:
       - name: Download acceptance tests reports from artifacts 💎
         id: download-acceptance-tests-reports
         uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
           name: e2e-tests-reports
           run-id: ${{ github.event.inputs.caller-run-id }}
