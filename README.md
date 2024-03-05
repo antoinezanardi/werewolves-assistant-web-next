@@ -293,7 +293,7 @@ All the above commands are available in the **.run directory** at the root of th
 
 This project is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-## <a name="contributors">❤️ Contributors</a
+## <a name="contributors">❤️ Contributors</a>
 > [!WARNING]
 > If you want to contribute to this project, please read the [**contribution guide**](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/CONTRIBUTING.md).
 
