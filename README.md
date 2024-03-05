@@ -170,9 +170,10 @@ You can create a `.env` file in this directory to override the default values wh
 
 Environment variables are :
 
-|                      Name                       |             Description             | Required | Default value |     Limitations     |
-|:-----------------------------------------------:|:-----------------------------------:|:--------:|:-------------:|:-------------------:|
-| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` | URL of the Werewolves Assistant API |    ✅     |       ❌       | Must be a valid URL |
+|                      Name                       |             Description             | Required | Default value |         Limitations         |
+|:-----------------------------------------------:|:-----------------------------------:|:--------:|:-------------:|:---------------------------:|
+| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` | URL of the Werewolves Assistant API |    ✅     |       ❌       |     Must be a valid URL     |
+|          `NUXT_PUBLIC_DEFAULT_LOCALE`           |  Locale used when starting the app  |    ❌     |     `en`      | Must be either `en` or `fr` |
 
 ## <a name="code-analysis-and-consistency">☑️ Code analysis and consistency</a>
 
