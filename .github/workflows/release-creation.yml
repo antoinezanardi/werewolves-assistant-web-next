@@ -419,4 +419,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Invoke reports to GitHub Pages Workflow 📑
-        run: gh workflow run deploy-reports-to-github-pages.yml --ref main -f branch=main
+        run: gh workflow run deploy-reports-to-github-pages.yml --ref main -f branch=main -f caller-run-id=${{ github.run_id }}
