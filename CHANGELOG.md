@@ -1,5 +1,47 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.9.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.8.0...v1.9.0) (2024-3-5)
+
+
+### 🚀 Features
+
+* **default-locale:** default locale to `en` ([#217](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/217)) ([f4a997e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f4a997ef8af4e2285ce31b138494f7a622c8fe87))
+* **game-playground-footer:** button to make a play with validation ([#211](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/211)) ([3c3bf76](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3c3bf76e058ad40a999a0a98292f0c437f20eaa2))
+* **game-playground-header:** game current play icon and texts ([#209](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/209)) ([6660cf9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6660cf9ca5e3f97dad459b5f379da1b2b2bce37c))
+* **game-playground:** game vote playground ([#212](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/212)) ([0c0d2f0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0c0d2f0275306237c6eba5c55a0591ab9c43fee0))
+
+
+### 📖 Docs
+
+* **readme:** add some blockquotes for clarifications ([#218](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/218)) ([d5878f8](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d5878f80997fc512792f5318a4ffdaec5de30011))
+
+
+### ✅ Tests
+
+* **page:** wait for load and networkidle state ([#207](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/207)) ([fcbbdc1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/fcbbdc1ac3e07f79743da104f705986f4624bc64))
+
+
+### 🔁 CI
+
+* **reports:** experimental waiting queue ([#204](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/204)) ([e128bb1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e128bb1609134755910ecfb2f909145653c2a15d))
+* **reports:** find minimum run number in waiting queue for process ([#206](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/206)) ([da8e661](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/da8e6615eb44c7c4ac442580cb8ae53927b377ea))
+* **reports:** launch reports in the same job ([#210](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/210)) ([f4eb1fb](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f4eb1fb13fa943846ba2b691461155319d5c8ea8))
+* **reports:** push reports only if they could be downloaded ([#219](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/219)) ([af8c0c9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/af8c0c9b8ae52990e60137fd7ab6c5313261b9ec))
+* **stryker:** dont deploy stryker report if absent ([#205](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/205)) ([2fdf9bb](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2fdf9bbc1eaf98b8dd2db2c54fe8749afed9a875))
+
+
+### 🧹 Chore
+
+* **deps:** bump primevue from 3.48.1 to 3.49.1 ([#188](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/188)) ([94b38b5](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/94b38b56738e17989aaa024bd6c642f8a2918979))
+* **deps:** bump the commitlint group with 2 updates ([#201](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/201)) ([a0503f2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a0503f2383ad119cc321a18bc54b4c199832454a))
+* **deps:** bump the eslint group with 1 update ([#208](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/208)) ([7b21399](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/7b213995f0f0d6cb9b42afaa3439a43c5e59d038))
+* **deps:** bump the playwright group with 3 updates ([#196](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/196)) ([6f7612d](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6f7612de5c3b3078736bef681780769cb2155d6a))
+* **deps:** bump the playwright group with 3 updates ([#213](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/213)) ([a77382b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a77382b04f64c4979113d912331b64acb2f6131e))
+* **deps:** bump the types group with 1 update ([#200](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/200)) ([c6c3a9f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c6c3a9f965316d76208a7784b03d1be4f94a9101))
+* **deps:** bump the types group with 3 updates ([#215](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/215)) ([e02f172](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e02f172eaace76fd9ab5c3a304fc76656aa9ee1f))
+* **deps:** bump the vue group with 1 update ([#202](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/202)) ([d7680e4](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d7680e40003aa295ebec5da76dd35ff91dba5c25))
+* **deps:** bump type-fest from 4.10.3 to 4.11.0 ([#216](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/216)) ([4d8ae3f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/4d8ae3f21acf940e45a0c97644ca543e08096654))
+
 ## [1.8.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.7.2...v1.8.0) (2024-2-28)
 
 
