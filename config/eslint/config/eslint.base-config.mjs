@@ -112,7 +112,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "grouped-accessor-pairs": ERROR,
     "guard-for-in": ERROR,
     "id-denylist": OFF,
-    "id-length": [ERROR, { exceptions: ["t"] }],
+    "id-length": [ERROR, { exceptions: ["t", "i"] }],
     "id-match": OFF,
     "init-declarations": OFF,
     "logical-assignment-operators": ERROR,
