@@ -1,7 +1,7 @@
 import type { Page } from "playwright-core";
+import { PNG } from "pngjs";
 
 import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 async function saveFullPageScreenshot(page: Page, screenshotPath: string): Promise<void> {
   console.info(`The snapshot with path "${screenshotPath}" does not exist. Creating a new snapshot.`);
@@ -11,7 +11,22 @@ async function saveFullPageScreenshot(page: Page, screenshotPath: string): Promi
   });
 }
 
-function throwErrorIfBrokenThreshold(world: CustomWorld, pixelDiff: number, name: string): void {
+async function tryScreenshotWithCorrectDimensions(page: Page, baseScreenshot: PNG): Promise<PNG> {
+  const maxRetries = 5;
+  const screenshots: PNG[] = [];
+  for (let i = 0; i < maxRetries; i++) {
+    const screenshot = PNG.sync.read(await page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
+    screenshots.push(screenshot);
+    if (screenshot.width === baseScreenshot.width && screenshot.height === baseScreenshot.height) {
+      console.info(`The screenshot has the correct dimensions after ${i} retries`);
+
+      return screenshot;
+    }
+  }
+  return screenshots[screenshots.length - 1];
+}
+
+function throwErrorIfBrokenThreshold(pixelDiff: number, name: string): void {
   const maxPixelDiff = 200;
   console.info(`The pixel diff for snapshot with name "${name}" is ${pixelDiff} px`);
   if (pixelDiff > maxPixelDiff) {
@@ -22,4 +37,5 @@ function throwErrorIfBrokenThreshold(world: CustomWorld, pixelDiff: number, name
 export {
   saveFullPageScreenshot,
   throwErrorIfBrokenThreshold,
+  tryScreenshotWithCorrectDimensions,
 };
