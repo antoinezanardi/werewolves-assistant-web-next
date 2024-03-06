@@ -504,6 +504,32 @@
     "GamePlaygroundPlayerCardVoteInput": {
       "voteFor": "Vote pour",
       "noAvailableOptions": "Aucune option disponible"
+    },
+    "GameTeamSidePlayerAttribute": {
+      "unknownPlayerAttribute": "Attribut inconnu.",
+      "actingByActor": "Le joueur joue un autre rôle pour le tour en cours.",
+      "cantVoteBySurvivors": "Les survivants ont décidé que ce joueur ne peut pas voter.",
+      "cantVoteByScapegoat": "Le bouc émissaire a décidé que ce joueur ne peut pas voter.",
+      "charmedByPiedPiper": "Le joueur a été charmé par le Joueur de flûte.",
+      "contaminatedByRustySwordKnight": "Le Chevalier à l'Épée Rouillée a contaminé ce joueur, il sera éliminé la nuit suivante.",
+      "drankDeathPotionByWitch": "La Sorcière a donné sa potion de mort à ce joueur, il mourra au petit matin.",
+      "drankLifePotionByWitch": "La Sorcière a donné sa potion de vie à ce joueur, il sera sauvé des Loups-Garous.",
+      "eatenByWerewolves": "Les Loups-Garous ont mangé ce joueur, il mourra au petit matin.",
+      "eatenByWhiteWerewolf": "Le Loup-garou blanc a mangé ce joueur, il mourra au petit matin.",
+      "eatenByBigBadWolf": "Le Grand-Méchant-Loup a mangé ce joueur, il mourra au petit matin.",
+      "inLoveByCupid": "Cupidon a fait tomber amoureux ce joueur d'un autre.",
+      "powerlessByActor": "Le joueur ne peut plus jouer un autre rôle en tant qu'Acteur, il n'a plus de pouvoirs.",
+      "powerlessByWerewolves": "Le joueur n'a plus de pouvoir car il est devenu un loup-garou.",
+      "powerlessByAccursedWolfFather": "Le joueur n'a plus de pouvoir car il a été infecté par l'Infect Père des Loups.",
+      "powerlessByFox": "Le joueur n'a plus de pouvoirs car il n'a pas sniffé de loup-garou lors de son dernier tour.",
+      "powerlessByElder": "Le joueur n'a plus de pouvoirs car un ou plusieurs villageois ont éliminé l'Ancien.",
+      "protectedByDefender": "Le Salvateur protège ce joueur des Loups-Garous pour la nuit en cours.",
+      "scandalmongerMarkedByScandalmonger": "Le Corbeau a marqué ce joueur, il aura 2 votes de plus contre lui au petit matin.",
+      "seenBySeer": "La Voyante a vu ce joueur et connaît donc son rôle.",
+      "sheriffBySheriff": "Le joueur est devenu le Maire car le Maire précédent lui a délégué son rôle.",
+      "sheriffBySurvivors": "Les survivants ont élu ce joueur comme Maire.",
+      "stolenRoleByDevotedServant": "La Servante Dévouée a volé le rôle de ce joueur.",
+      "worshipedByWildChild": "L'Enfant Sauvage a choisi ce joueur comme modèle."
     }
   }
 }

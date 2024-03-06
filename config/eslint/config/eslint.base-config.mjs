@@ -15,6 +15,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       setPageLayout: READONLY,
       createError: READONLY,
       useFetch: READONLY,
+      useImage: READONLY,
       $fetch: READONLY,
       useI18n: READONLY,
       navigateTo: READONLY,

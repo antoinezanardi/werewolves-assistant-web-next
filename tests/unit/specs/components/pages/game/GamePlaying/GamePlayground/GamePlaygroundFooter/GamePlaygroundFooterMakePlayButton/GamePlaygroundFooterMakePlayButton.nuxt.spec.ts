@@ -83,6 +83,16 @@ describe("Game Playground Footer Make Play Button Component", () => {
         expect(gameStore.makeGamePlay).toHaveBeenCalledExactlyOnceWith(makeGamePlayDto);
       });
 
+      it("should reset make game play dto when clicked.", async() => {
+        const makeGamePlayDto = createFakeMakeGamePlayDto();
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        makeGamePlayDtoStore.makeGamePlayDto = makeGamePlayDto;
+        const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+        await makeGamePlayButton.trigger("click");
+
+        expect(makeGamePlayDtoStore.resetMakeGamePlayDto).toHaveBeenCalledExactlyOnceWith();
+      });
+
       it("should be loading when fetch is in progress.", () => {
         const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
         void makeGamePlayButton.trigger("click");
