@@ -29,6 +29,8 @@ const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 const { makeGamePlay } = gameStore;
 
+const { resetMakeGamePlayDto } = useMakeGamePlayDtoStore();
+
 const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
 const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
 
@@ -39,6 +41,7 @@ const isLoadingMakePlay = ref<boolean>(false);
 async function handleMakePlayButtonClick(): Promise<void> {
   isLoadingMakePlay.value = true;
   await makeGamePlay(makeGamePlayDto.value);
+  resetMakeGamePlayDto();
   isLoadingMakePlay.value = false;
 }
 </script>

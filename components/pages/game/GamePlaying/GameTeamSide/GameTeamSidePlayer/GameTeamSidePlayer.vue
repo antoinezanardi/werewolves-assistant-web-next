@@ -36,7 +36,13 @@
           <div
             id="player-attributes"
             class="flex grow"
-          />
+          >
+            <GameTeamSidePlayerAttribute
+              v-for="attribute in player.attributes"
+              :key="attribute.name"
+              :attribute="attribute"
+            />
+          </div>
 
           <RoleImage
             v-if="player.side.current === RoleSides.VILLAGERS"
@@ -55,6 +61,7 @@
 
 <script lang="ts" setup>
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
+import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { RoleSides } from "~/composables/api/role/enums/role.enums";
 

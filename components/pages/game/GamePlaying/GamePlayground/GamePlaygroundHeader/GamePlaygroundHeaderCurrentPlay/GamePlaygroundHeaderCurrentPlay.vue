@@ -25,11 +25,13 @@ import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/
 import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
+type CurrentPlaySvgAndText = { svgPath: string; text: string };
+
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 const { t } = useI18n();
 
-const currentPlaysSvgAndText: Record<GamePlaySourceName, Partial<Record<GamePlayAction, { svgPath: string; text: string }>>> = {
+const currentPlaysSvgAndText: Record<GamePlaySourceName, Partial<Record<GamePlayAction, CurrentPlaySvgAndText>>> = {
   "accursed-wolf-father": {
     infect: {
       svgPath: "/svg/role/accursed-wolf-father.svg",
@@ -194,7 +196,7 @@ const currentPlaysSvgAndText: Record<GamePlaySourceName, Partial<Record<GamePlay
   },
 };
 
-const currentPlaySvgAndText = computed<{ svgPath: string; text: string } | undefined>(() => {
+const currentPlaySvgAndText = computed<CurrentPlaySvgAndText | undefined>(() => {
   const { currentPlay } = game.value;
   if (!currentPlay) {
     return undefined;
