@@ -504,6 +504,32 @@
     "GamePlaygroundPlayerCardVoteInput": {
       "voteFor": "Vote for",
       "noAvailableOptions": "No available options"
+    },
+    "GameTeamSidePlayerAttribute": {
+      "unknownPlayerAttribute": "Unknown player attribute.",
+      "actingByActor": "The player is acting, he's playing another role for the current turn.",
+      "cantVoteBySurvivors": "The survivors decided that this player can't vote.",
+      "cantVoteByScapegoat": "The scapegoat decided that this player can't vote.",
+      "charmedByPiedPiper": "The Pied Piper charmed this player.",
+      "contaminatedByRustySwordKnight": "The Rusty Sword Knight contaminated this player, he'll be eliminated the next night.",
+      "drankDeathPotionByWitch": "The Witch gave a death potion to this player, he'll die the next morning.",
+      "drankLifePotionByWitch": "The Witch gave a life potion to this player, he'll be saved from werewolves.",
+      "eatenByWerewolves": "The Werewolves ate this player, he'll die the next morning.",
+      "eatenByWhiteWerewolf": "The White Werewolf ate this player, he'll die the next morning.",
+      "eatenByBigBadWolf": "The Big Bad Wolf ate this player, he'll die the next morning.",
+      "inLoveByCupid": "Cupid made this player fall in love with another one.",
+      "powerlessByActor": "The player can't act anymore, he's powerless.",
+      "powerlessByWerewolves": "The player became powerless because he became a werewolf.",
+      "powerlessByAccursedWolfFather": "The player became powerless because he was infected by the Accursed Father of Wolves.",
+      "powerlessByFox": "The player became powerless because he didn't sniff a werewolf in his last turn.",
+      "powerlessByElder": "The player became powerless because one or more villagers eliminated the Elder.",
+      "protectedByDefender": "The Defender protects this player from the werewolves for the current night.",
+      "scandalmongerMarkedByScandalmonger": "The Scandalmonger marked this player, he'll have 2 more votes against him the next morning.",
+      "seenBySeer": "The Seer saw this player and thus knows his role.",
+      "sheriffBySheriff": "The player became the Sheriff because the previous Sheriff delegated his role to him.",
+      "sheriffBySurvivors": "The survivors elected this player as the Sheriff.",
+      "stolenRoleByDevotedServant": "The Devoted Servant stole the role of this player.",
+      "worshipedByWildChild": "The Wild Child chose this player as his model."
     }
   }
 }

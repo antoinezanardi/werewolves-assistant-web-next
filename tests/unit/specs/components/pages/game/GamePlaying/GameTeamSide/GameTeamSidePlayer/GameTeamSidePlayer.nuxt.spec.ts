@@ -3,20 +3,35 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
 import GameTeamSidePlayer from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue";
+import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
 import { RoleNames } from "~/composables/api/role/enums/role.enums";
+import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Team Side Player Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameTeamSidePlayer>>;
-  const defaultProps: GameTeamSidePlayerProps = { player: createFakeWerewolfAlivePlayer({ name: "Antoine" }) };
+  const defaultPlayer = createFakeWerewolfAlivePlayer({
+    name: "Antoine",
+    attributes: [
+      createFakeActingByActorPlayerAttribute(),
+      createFakeSeenBySeerPlayerAttribute(),
+    ],
+  });
+  const defaultProps: GameTeamSidePlayerProps = { player: defaultPlayer };
 
   async function mountGameTeamSidePlayerComponent(options: ComponentMountingOptions<typeof GameTeamSidePlayer> = {}): Promise<ReturnType<typeof mount<typeof GameTeamSidePlayer>>> {
     return mountSuspendedComponent(GameTeamSidePlayer, {
       props: defaultProps,
       shallow: false,
-      global: { stubs: { RoleImage: true } },
+      global: {
+        stubs: {
+          RoleImage: true,
+          GameTeamSidePlayerAttribute: true,
+        },
+      },
       ...options,
     });
   }
@@ -78,6 +93,15 @@ describe("Game Team Side Player Component", () => {
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-werewolf-role-image");
 
         expect(playerRoleImage.props("roleName")).toBe(RoleNames.ACCURSED_WOLF_FATHER);
+      });
+    });
+
+    describe("Player attributes", () => {
+      it("should display player attributes when rendered.", () => {
+        const playerAttributes = wrapper.findAllComponents<typeof GameTeamSidePlayerAttribute>(GameTeamSidePlayerAttribute);
+
+        expect(playerAttributes[0].props("attribute")).toStrictEqual<PlayerAttribute>(defaultPlayer.attributes[0]);
+        expect(playerAttributes[1].props("attribute")).toStrictEqual<PlayerAttribute>(defaultPlayer.attributes[1]);
       });
     });
   });

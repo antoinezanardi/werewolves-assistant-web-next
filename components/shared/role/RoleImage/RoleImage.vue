@@ -2,8 +2,9 @@
   <NuxtImg
     :alt="alt"
     class="role-image"
+    :class="imageClasses"
     :height="sizes"
-    placeholder="/svg/infinite-spinner.svg"
+    placeholder="/svg/misc/infinite-spinner.svg"
     :src="roleImageSrc"
     :width="sizes"
   />
@@ -32,6 +33,8 @@ const roleImageSrc = computed<string>(() => {
 
   return `${apiBaseUrl}/public/assets/images/roles/${props.roleName}/${props.roleName}${imageSuffix}.jpeg`;
 });
+
+const imageClasses = computed<string>(() => `h-[${props.sizes}px] w-[${props.sizes}px]`);
 </script>
 
 <style lang="scss" scoped>

@@ -22,7 +22,7 @@
           {{ $t(`shared.role.name.${player.role.current}`) }}
         </small>
 
-        <div class="flex mt-1">
+        <div class="flex mt-2">
           <RoleImage
             v-if="player.side.current === RoleSides.WEREWOLVES"
             id="player-werewolf-role-image"
@@ -35,12 +35,13 @@
 
           <div
             id="player-attributes"
-            class="flex grow"
+            class="grid grid-cols-3 grow mx-2"
           >
             <GameTeamSidePlayerAttribute
               v-for="attribute in player.attributes"
               :key="attribute.name"
               :attribute="attribute"
+              class="p-1"
             />
           </div>
 
