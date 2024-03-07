@@ -11,6 +11,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 
+import GameBuryDeadBodiesPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameBuryDeadBodiesPlayground.vue";
 import GameChooseCardPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlayground.vue";
 import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseSidePlayground/GameChooseSidePlayground.vue";
 import GameNoActionPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameNoActionPlayground/GameNoActionPlayground.vue";
@@ -24,6 +25,7 @@ import type { GamePlayType } from "~/composables/api/game/types/game-play/game-p
 import { useGameStore } from "~/stores/game/useGameStore";
 
 type GamePlaygroundTypeComponent =
+  | typeof GameBuryDeadBodiesPlayground
   | typeof GameChooseCardPlayground
   | typeof GameChooseSidePlayground
   | typeof GameNoActionPlayground
@@ -43,6 +45,7 @@ const gamePlaygroundTypeComponentToRender = computed<GamePlaygroundTypeComponent
     return GameUsePotionsPlayground;
   }
   const currentGamePlayTypeComponents: Record<GamePlayType, GamePlaygroundTypeComponent> = {
+    "bury-dead-bodies": GameBuryDeadBodiesPlayground,
     "choose-card": GameChooseCardPlayground,
     "choose-side": GameChooseSidePlayground,
     "no-action": GameNoActionPlayground,

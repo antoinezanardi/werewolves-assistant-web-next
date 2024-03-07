@@ -12,7 +12,8 @@ async function saveFullPageScreenshot(page: Page, screenshotPath: string): Promi
 }
 
 async function tryScreenshotWithCorrectDimensions(page: Page, baseScreenshot: PNG): Promise<PNG> {
-  const maxRetries = 5;
+  const maxRetries = 10;
+  const timeoutMs = 500;
   const screenshots: PNG[] = [];
   for (let i = 0; i < maxRetries; i++) {
     const screenshot = PNG.sync.read(await page.screenshot(DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS));
@@ -22,7 +23,13 @@ async function tryScreenshotWithCorrectDimensions(page: Page, baseScreenshot: PN
 
       return screenshot;
     }
+    console.info(`The screenshot does not have the correct dimensions (${screenshot.width}x${screenshot.height}). Retrying in ${timeoutMs}ms...`);
+    await new Promise(resolve => {
+      setTimeout(resolve, timeoutMs);
+    });
   }
+  console.error(`The screenshot does not have the correct dimensions after ${maxRetries} retries`);
+
   return screenshots[screenshots.length - 1];
 }
 

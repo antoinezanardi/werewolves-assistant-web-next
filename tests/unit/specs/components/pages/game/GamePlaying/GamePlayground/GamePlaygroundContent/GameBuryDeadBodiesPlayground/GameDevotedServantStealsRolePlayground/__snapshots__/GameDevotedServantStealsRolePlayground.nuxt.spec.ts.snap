@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Devoted Servant Steals Role Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-devoted-servant-steal-role-playground" class="flex flex-col items-center">
+  <anonymous-stub class="" size="400" rest="[object Object]"></anonymous-stub>
+  <h3 id="devoted-servant-steals-role-question" class="my-4">components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole, {"playerName":"Antoine"}</h3>
+  <toggle-button-stub id="does-devoted-servant-steal-role-button" modelvalue="false" class="w-9rem" off-icon="fa fa-thumbs-down me-4" off-label="She doesn't steal the role"></toggle-button-stub>
+</div>"
+`;

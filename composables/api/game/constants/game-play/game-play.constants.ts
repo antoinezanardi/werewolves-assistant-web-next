@@ -5,6 +5,7 @@ const GAME_PLAY_TYPES = [
   "choose-card",
   "choose-side",
   "request-another-vote",
+  "bury-dead-bodies",
 ] as const;
 
 const GAME_PLAY_ACTIONS = [
