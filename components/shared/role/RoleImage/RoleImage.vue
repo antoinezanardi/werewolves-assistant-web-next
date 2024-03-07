@@ -1,7 +1,7 @@
 <template>
   <NuxtImg
-    :alt="alt"
-    class="role-image"
+    :alt="imageAlt"
+    class="border-4 border-gray-800 role-image rounded-lg"
     :class="imageClasses"
     :height="sizes"
     placeholder="/svg/misc/infinite-spinner.svg"
@@ -19,6 +19,8 @@ const props = withDefaults(defineProps<RoleImageProps>(), {
   definition: "normal",
 });
 
+const { t } = useI18n();
+
 const runtimeConfig = useRuntimeConfig();
 
 const backImageSrc = "/img/role/back.jpeg";
@@ -35,11 +37,14 @@ const roleImageSrc = computed<string>(() => {
 });
 
 const imageClasses = computed<string>(() => `h-[${props.sizes}px] w-[${props.sizes}px]`);
-</script>
 
-<style lang="scss" scoped>
-.role-image {
-  border-radius: 10%;
-  border: 3px solid #1c1c1c;
-}
-</style>
+const imageAlt = computed<string>(() => {
+  if (props.alt !== undefined) {
+    return props.alt;
+  }
+  if (props.roleName !== undefined) {
+    return t(`shared.role.name.${props.roleName}`);
+  }
+  return t("components.RoleImage.back");
+});
+</script>

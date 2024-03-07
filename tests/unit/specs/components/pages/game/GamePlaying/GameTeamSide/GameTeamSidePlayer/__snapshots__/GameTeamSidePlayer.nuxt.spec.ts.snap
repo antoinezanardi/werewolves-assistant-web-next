@@ -10,7 +10,7 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
           <!---->
         </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
         <div class="flex mt-2">
-          <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" height="50" width="50"></role-image-stub>
+          <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500" height="50" width="50"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">
             <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
             <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
@@ -27,7 +27,7 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
           <!---->
         </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
         <div class="flex mt-2">
-          <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" height="50" width="50"></role-image-stub>
+          <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500" height="50" width="50"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">
             <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
             <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>

@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 
+import GameBuryDeadBodiesPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameBuryDeadBodiesPlayground.vue";
 import GameChooseCardPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlayground.vue";
 import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseSidePlayground/GameChooseSidePlayground.vue";
 import GameNoActionPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameNoActionPlayground/GameNoActionPlayground.vue";
@@ -11,7 +12,7 @@ import GameUsePotionsPlayground from "~/components/pages/game/GamePlaying/GamePl
 import GameVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameVotePlayground/GameVotePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlayCupidCharms, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlayThiefChoosesCard, createFakeGamePlayWerewolvesEat, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlayCupidCharms, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlayThiefChoosesCard, createFakeGamePlayWerewolvesEat, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -94,6 +95,15 @@ describe("Game Playground Content Component", () => {
       const gamePlaygroundVote = wrapper.findComponent<typeof GameVotePlayground>(GameVotePlayground);
 
       expect(gamePlaygroundVote.exists()).toBeTruthy();
+    });
+
+    it("should render game bury dead bodies playground component when current game play is bury dead bodies type.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = createFakeGamePlaySurvivorsBuryDeadBodies();
+      await nextTick();
+      const gamePlaygroundBuryDeadBodies = wrapper.findComponent<typeof GameBuryDeadBodiesPlayground>(GameBuryDeadBodiesPlayground);
+
+      expect(gamePlaygroundBuryDeadBodies.exists()).toBeTruthy();
     });
 
     it("should not render any game playground component when current game play type is not defined.", async() => {

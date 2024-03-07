@@ -530,6 +530,14 @@
       "sheriffBySurvivors": "The survivors elected this player as the Sheriff.",
       "stolenRoleByDevotedServant": "The Devoted Servant stole the role of this player.",
       "worshipedByWildChild": "The Wild Child chose this player as his model."
+    },
+    "NoActionNeeded": {
+      "noActionNeeded": "No action needed, the game can proceed"
+    },
+    "GameDevotedServantStealsRolePlayground": {
+      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player {playerName} ?",
+      "sheStealsRole": "She steals the role",
+      "sheDoesntStealRole": "She doesn't steal the role"
     }
   }
 }

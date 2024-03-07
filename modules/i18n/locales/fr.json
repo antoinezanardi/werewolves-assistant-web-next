@@ -530,6 +530,14 @@
       "sheriffBySurvivors": "Les survivants ont élu ce joueur comme Maire.",
       "stolenRoleByDevotedServant": "La Servante Dévouée a volé le rôle de ce joueur.",
       "worshipedByWildChild": "L'Enfant Sauvage a choisi ce joueur comme modèle."
+    },
+    "NoActionNeeded": {
+      "noActionNeeded": "Aucune action nécessaire, la partie peut continuer"
+    },
+    "GameDevotedServantStealsRolePlayground": {
+      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé {playerName} ?",
+      "sheStealsRole": "Elle vole le rôle",
+      "sheDoesntStealRole": "Elle ne vole pas le rôle"
     }
   }
 }

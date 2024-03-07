@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Bury Dead Bodies Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-bury-dead-bodies-playground" class="flex items-center justify-center">
+  <no-action-needed-stub id="no-action-needed"></no-action-needed-stub>
+</div>"
+`;
