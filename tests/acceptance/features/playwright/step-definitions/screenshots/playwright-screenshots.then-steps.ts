@@ -11,7 +11,9 @@ import { saveFullPageScreenshot, throwErrorIfBrokenThreshold, tryScreenshotWithC
 import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
-Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+const screenshotStepTimeout = 30000;
+
+Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, { timeout: screenshotStepTimeout }, async function(this: CustomWorld, name: string): Promise<void> {
   await Promise.all([
     this.page.waitForLoadState("load"),
     this.page.waitForLoadState("networkidle"),

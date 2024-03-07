@@ -23,6 +23,7 @@ async function tryScreenshotWithCorrectDimensions(page: Page, baseScreenshot: PN
 
       return screenshot;
     }
+    console.info(`The screenshot does not have the correct dimensions (${screenshot.width}x${screenshot.height}). Retrying in ${timeoutMs}ms...`);
     await new Promise(resolve => {
       setTimeout(resolve, timeoutMs);
     });
