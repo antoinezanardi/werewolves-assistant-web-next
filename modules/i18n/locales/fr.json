@@ -539,6 +539,11 @@
       "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé {playerName} ?",
       "sheStealsRole": "Elle vole le rôle",
       "sheDoesntStealRole": "Elle ne vole pas le rôle"
+    },
+     "GameRequestAnotherVotePlayground": {
+      "doesJudgeRequestAnotherVote": "Est-ce que le Juge Bègue souhaite demander un autre vote ?",
+      "heRequestsAnotherVote": "Il demande un autre vote",
+      "heDoesntRequestAnotherVote": "Il ne demande pas un autre vote"
     }
   }
 }
