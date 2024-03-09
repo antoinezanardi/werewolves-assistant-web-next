@@ -458,7 +458,8 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Image du rôle du joueur {playerName}"
+      "roleImageAlt": "Image du rôle du joueur {playerName}",
+      "thisPlayerIsDead": "Ce joueur est mort"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
