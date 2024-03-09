@@ -97,7 +97,7 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
     it("should set the eliminated player as target when toggle emits true change event.", async() => {
       wrapper = await mountGameDevotedServantStealsRolePlaygroundComponent({ shallow: false });
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const toggleButtonCheckbox = wrapper.find("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
       await toggleButtonCheckbox.setValue(true);
       const expectedMakeGamePlayTargetDto = createFakeMakeGamePlayTargetDto({ playerId: eliminatePlayer._id });
 
@@ -108,7 +108,7 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
     it("should remove the eliminated player as target when toggle emits first true and false change event.", async() => {
       wrapper = await mountGameDevotedServantStealsRolePlaygroundComponent({ shallow: false });
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const toggleButtonCheckbox = wrapper.find("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
       await toggleButtonCheckbox.setValue(true);
       await toggleButtonCheckbox.setValue(false);
 
@@ -121,7 +121,7 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
       gameStore.game.currentPlay = null;
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       await nextTick();
-      const toggleButtonCheckbox = wrapper.find("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-devoted-servant-steal-role-button > .p-togglebutton-input");
       await toggleButtonCheckbox.setValue(true);
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Eliminated player is not found.");

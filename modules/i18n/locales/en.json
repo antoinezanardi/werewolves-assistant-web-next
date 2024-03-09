@@ -539,6 +539,11 @@
       "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player {playerName} ?",
       "sheStealsRole": "She steals the role",
       "sheDoesntStealRole": "She doesn't steal the role"
+    },
+    "GameRequestAnotherVotePlayground": {
+      "doesJudgeRequestAnotherVote": "Does the Stuttering Judge wants to request another vote ?",
+      "heRequestsAnotherVote": "He requests another vote",
+      "heDoesntRequestAnotherVote": "He doesn't request another vote"
     }
   }
 }
