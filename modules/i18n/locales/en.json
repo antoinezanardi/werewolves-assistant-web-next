@@ -541,9 +541,44 @@
       "sheDoesntStealRole": "She doesn't steal the role"
     },
     "GameRequestAnotherVotePlayground": {
-      "doesJudgeRequestAnotherVote": "Does the Stuttering Judge wants to request another vote ?",
       "heRequestsAnotherVote": "He requests another vote",
       "heDoesntRequestAnotherVote": "He doesn't request another vote"
+    },
+    "GameChooseSidePlayground": {
+      "villagersSide": "Villagers side",
+      "werewolvesSide": "Werewolves side"
+    },
+    "CurrentPlayQuestion": {
+      "unknownQuestionForCurrentPlay": "??",
+      "doesAccursedWolfFatherWantToInfect": "Does the Accursed Father of Wolves want to infect the player eaten by the Werewolves ?",
+      "doesActorWantToChooseCard": "Does the Actor want to choose a card and act the role ?",
+      "whichPlayerDoesBigBadWolfEat": "Which player does the Big Bad Wolf want to eat ?",
+      "whichPlayersDoesCupidCharm": "Which players does Cupid want to charm ?",
+      "whichPlayerDoesDefenderProtect": "Which player does the Defender want to protect ?",
+      "doesFoxWantToSniff": "Does the Fox want to sniff a group of players ?",
+      "whichPlayerDoesHunterShoot": "Which player does the Hunter want to shoot ?",
+      "whichPlayersDoesPiedPiperCharm": "Which players does the Pied Piper want to charm ?",
+      "doesScandalmongerWantToMark": "Does the Scandalmonger want to mark a player ?",
+      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban a player from voting ?",
+      "whichPlayerDoesSeerLook": "Which player does the Seer want to look at ?",
+      "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to ?",
+      "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with?",
+      "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote ?",
+      "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff ?",
+      "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for ?",
+      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Which player do the survivors want to vote for on the Stuttering Judge's request ?",
+      "whichPlayerDoesSurvivorsVoteForOnTie": "Which player do the survivors want to vote for to break the tie ?",
+      "doesThiefWantToChooseCard": "Does the Thief want to choose a card and take the role ?",
+      "whichPlayerDoesWerewolvesEat": "Which player do the Werewolves want to eat ?",
+      "doesWhiteWerewolfWantToEat": "Does the White Werewolf want to eat another Werewolf ?",
+      "whichPlayerDoesWildChildChoose": "Which player does the Wild Child want to choose as his model ?",
+      "doesWitchWantToUsePotions": "Does the Witch want to use her potions ?",
+      "whichSideDoesWolfHoundChoose": "Which side does the Wolf-Hound want to choose ?",
+      "bearGrowled": "The Bear growled, some Werewolves are next to him…",
+      "charmedPeopleMeetEachOther": "The charmed people meet each other, watch out for the Pied Piper last victims !",
+      "loversMeetEachOther": "The lovers meet each other, it's a love at first sight !",
+      "threeBrothersMeetEachOther": "The Three Brothers meet each other, they consult each other.",
+      "twoSistersMeetEachOther": "The Two Sisters meet each other, they consult each other."
     }
   }
 }

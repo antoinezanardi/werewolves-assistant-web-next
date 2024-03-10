@@ -20,7 +20,7 @@
       :player-role="player.role.name"
     />
 
-    <small class="player-card-role text-truncate">
+    <small class="player-card-role truncate">
       {{ playerCardRoleText }}
     </small>
   </div>

@@ -31,14 +31,6 @@ describe("Game Request Another Vote Playground Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Judge Request Question", () => {
-    it("should translate the question if judge requests another vote when rendered.", () => {
-      const question = wrapper.find<HTMLHeadingElement>("#stuttering-judge-request-question");
-
-      expect(question.text()).toBe("Does the Stuttering Judge wants to request another vote ?");
-    });
-  });
-
   describe("Toggle Button", () => {
     it("should translate off button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });

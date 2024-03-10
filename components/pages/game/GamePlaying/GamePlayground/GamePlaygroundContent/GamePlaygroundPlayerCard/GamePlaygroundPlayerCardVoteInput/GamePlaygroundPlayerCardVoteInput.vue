@@ -22,7 +22,7 @@
               class="me-2"
               :role-name="slotProps.option.role.current"
               size="small"
-              sizes="30px"
+              sizes="30"
             />
 
             <div>{{ slotProps.option.name }}</div>

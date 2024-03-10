@@ -540,10 +540,45 @@
       "sheStealsRole": "Elle vole le rôle",
       "sheDoesntStealRole": "Elle ne vole pas le rôle"
     },
-     "GameRequestAnotherVotePlayground": {
-      "doesJudgeRequestAnotherVote": "Est-ce que le Juge Bègue souhaite demander un autre vote ?",
+    "GameRequestAnotherVotePlayground": {
       "heRequestsAnotherVote": "Il demande un autre vote",
       "heDoesntRequestAnotherVote": "Il ne demande pas un autre vote"
+    },
+    "GameChooseSidePlayground": {
+      "villagersSide": "Camp des Villageois",
+      "werewolvesSide": "Camp des Loups-Garous"
+    },
+    "CurrentPlayQuestion": {
+      "unknownQuestionForCurrentPlay": "??",
+      "doesAccursedWolfFatherWantToInfect": "L'Infect Père des Loups veut-il infecter le joueur dévoré par les Loups-Garous ?",
+      "doesActorWantToChooseCard": "Le Comédien veut-il choisir une carte et prendre ce rôle ?",
+      "whichPlayerDoesBigBadWolfEat": "Quel joueur le Grand-Méchant-Loup veut-il manger ?",
+      "whichPlayersDoesCupidCharm": "Quels joueurs Cupidon veut-il rendre inséparables ?",
+      "whichPlayerDoesDefenderProtect": "Quel joueur le Salvateur veut-il protéger ?",
+      "doesFoxWantToSniff": "Le Renard veut-il renifler un groupe de joueurs ?",
+      "whichPlayerDoesHunterShoot": "Quel joueur le Chasseur veut-il tirer ?",
+      "whichPlayersDoesPiedPiperCharm": "Quels joueurs le Joueur de Flûte veut-il charmer ?",
+      "doesScandalmongerWantToMark": "Le Corbeau veut-il marquer un joueur de sa plume ?",
+      "doesScapegoatWantToBanVoting": "Le Bouc Émissaire veut-il interdire à un ou plusieurs joueurs de voter ?",
+      "whichPlayerDoesSeerLook": "Quel joueur la Voyante veut-elle regarder ?",
+      "whichPlayerDoesSheriffDelegate": "À quel joueur le Maire veut-il déléguer son rôle ?",
+      "whichPlayerDoesSheriffSettleVotes": "Avec quel joueur le Maire veut-il trancher les votes ?",
+      "doesJudgeRequestAnotherVote": "Le Juge Bègue veut-il demander un autre vote ?",
+      "whichPlayerDoesSurvivorsElectAsSheriff": "Quel joueur les survivants veulent-ils élire comme Maire ?",
+      "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux urnes !",
+      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Quel joueur va être pendu par les survivants à la demande du Juge Bègue? Aux urnes !",
+      "whichPlayerDoesSurvivorsVoteForOnTie": "Quel joueur parmi les ex-æquo va être pendu par les survivants ? Aux urnes !",
+      "doesThiefWantToChooseCard": "Le Voleur veut-il choisir une carte et prendre ce role ?",
+      "whichPlayerDoesWerewolvesEat": "Quel joueur les Loups-Garous veulent-ils manger ?",
+      "doesWhiteWerewolfWantToEat": "Le Loup-Garou Blanc veut-il manger un autre Loup-Garou ?",
+      "whichPlayerDoesWildChildChoose": "Quel joueur l'Enfant Sauvage veut-il choisir comme modèle ?",
+      "doesWitchWantToUsePotions": "La Sorcière veut-elle utiliser ses potions ?",
+      "whichSideDoesWolfHoundChoose": "Quel camp le Chien-Loup veut-il choisir ?",
+      "bearGrowled": "L'Ours grogne, un ou des Loups-Garous sont à côté de lui…",
+      "charmedPeopleMeetEachOther": "Les personnes charmées se rencontrent, attention aux dernières victimes du Joueur de Flûte !",
+      "loversMeetEachOther": "Les amoureux se rencontrent, c'est un coup de foudre !",
+      "threeBrothersMeetEachOther": "Les Trois Frères se rencontrent, ils se consultent.",
+      "twoSistersMeetEachOther": "Les Deux Sœurs se rencontrent, elles se consultent."
     }
   }
 }

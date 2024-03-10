@@ -19,7 +19,7 @@
 
           <div
             id="player-name"
-            class="text-center text-truncate"
+            class="text-center truncate"
             :class="{ 'line-through decoration-1': !player.isAlive }"
           >
             {{ player.name }}
@@ -43,9 +43,8 @@
             class="!border-2"
             :class="roleImageClasses"
             definition="small"
-            height="50"
             :role-name="player.role.current"
-            width="50"
+            sizes="50"
           />
 
           <div
@@ -67,9 +66,7 @@
             class="!border-2"
             :class="roleImageClasses"
             definition="small"
-            height="50"
             :role-name="player.role.current"
-            width="50"
           />
         </div>
       </div>

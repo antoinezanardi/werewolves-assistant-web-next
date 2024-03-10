@@ -1,3 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Choose Side Playground Component > should match snapshot when rendered. 1`] = `"<div id="game-choose-side-playground"> GAME PLAYGROUND CHOOSE SIDE </div>"`;
+exports[`Game Choose Side Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-choose-side-playground" class="flex flex-col items-center justify-center">
+  <div>
+    <anonymous-stub size="400" rest="[object Object]" class="flex"></anonymous-stub>
+  </div>
+</div>"
+`;

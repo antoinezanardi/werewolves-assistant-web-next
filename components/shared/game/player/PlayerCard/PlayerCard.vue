@@ -14,7 +14,7 @@
       />
     </button>
 
-    <span class="player-card-name text-truncate">
+    <span class="player-card-name truncate">
       {{ playerName }}
     </span>
   </div>

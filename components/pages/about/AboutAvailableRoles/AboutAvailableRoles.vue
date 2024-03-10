@@ -6,7 +6,7 @@
         :alt="$t('components.AboutAvailableRoles.availableRolesImage')"
         class="me-3"
         :role-name="RoleNames.ANGEL"
-        sizes="50px"
+        sizes="50"
       />
 
       <h2 id="about-available-roles-title">
@@ -43,7 +43,7 @@
               <RoleImage
                 :alt="getAvailableRoleHeaderImageAlt(role.name)"
                 :role-name="role.name"
-                sizes="40px"
+                sizes="40"
               />
 
               <div class="ms-2">
