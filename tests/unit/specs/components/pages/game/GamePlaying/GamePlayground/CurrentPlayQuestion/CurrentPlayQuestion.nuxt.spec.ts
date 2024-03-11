@@ -48,7 +48,7 @@ describe("Current Play Question Component", () => {
     },
     {
       currentPlay: createFakeGamePlayBearTamerGrowls(),
-      expectedQuestion: "components.CurrentPlayQuestion.bearTamerGrowled",
+      expectedQuestion: "components.CurrentPlayQuestion.bearGrowled",
       test: "should render the question for bear tamer growls when current play is bear tamer who growls.",
     },
     {

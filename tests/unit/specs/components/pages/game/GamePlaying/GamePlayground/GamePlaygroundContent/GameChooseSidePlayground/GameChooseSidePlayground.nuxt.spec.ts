@@ -47,7 +47,7 @@ describe("Game Choose Side Playground Component", () => {
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
 
-      expect(button.classes("border-green-500")).toBeTruthy();
+      expect(button.classes("!border-green-500")).toBeTruthy();
     });
 
     describe("Villagers Button Image", () => {
@@ -89,7 +89,7 @@ describe("Game Choose Side Playground Component", () => {
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
 
-      expect(button.classes("border-red-500")).toBeTruthy();
+      expect(button.classes("!border-red-500")).toBeTruthy();
     });
 
     describe("Werewolves Button Image", () => {

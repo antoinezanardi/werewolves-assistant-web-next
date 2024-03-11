@@ -26,7 +26,7 @@ const { t } = useI18n();
 const gamePlaysQuestions: Record<GamePlaySourceName, Partial<Record<GamePlayAction, CurrentPlayCausesQuestion>>> = {
   "accursed-wolf-father": { infect: { default: t("components.CurrentPlayQuestion.doesAccursedWolfFatherWantToInfect") } },
   "actor": { "choose-card": { default: t("components.CurrentPlayQuestion.doesActorWantToChooseCard") } },
-  "bear-tamer": { growl: { default: t("components.CurrentPlayQuestion.bearTamerGrowled") } },
+  "bear-tamer": { growl: { default: t("components.CurrentPlayQuestion.bearGrowled") } },
   "big-bad-wolf": { eat: { default: t("components.CurrentPlayQuestion.whichPlayerDoesBigBadWolfEat") } },
   "charmed": { "meet-each-other": { default: t("components.CurrentPlayQuestion.charmedPeopleMeetEachOther") } },
   "cupid": { charm: { default: t("components.CurrentPlayQuestion.whichPlayersDoesCupidCharm") } },

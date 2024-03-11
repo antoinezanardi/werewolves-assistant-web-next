@@ -9,7 +9,7 @@
           <button
             id="choose-villagers-side-button"
             class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg"
-            :class="{ 'border-green-500': makeGamePlayDto.chosenSide === RoleSides.VILLAGERS }"
+            :class="{ '!border-green-500': makeGamePlayDto.chosenSide === RoleSides.VILLAGERS }"
             type="button"
             @click.prevent="handleChooseVillagersSideButtonClick"
           >
@@ -32,7 +32,7 @@
           <button
             id="choose-werewolves-side-button"
             class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"
-            :class="{ 'border-red-500': makeGamePlayDto.chosenSide === RoleSides.WEREWOLVES }"
+            :class="{ '!border-red-500': makeGamePlayDto.chosenSide === RoleSides.WEREWOLVES }"
             type="button"
             @click="handleChooseWerewolvesSideButtonClick"
           >
