@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@aksharahegde/nuxt-glow':
-    specifier: ^1.1.1
-    version: 1.1.1(rollup@4.12.0)
+    specifier: ^1.1.2
+    version: 1.1.2(rollup@4.12.0)
   '@commitlint/cli':
     specifier: ^19.0.3
     version: 19.0.3(@types/node@20.11.24)(typescript@5.3.3)
@@ -254,10 +254,11 @@ packages:
       undici: 5.28.3
     dev: true
 
-  /@aksharahegde/nuxt-glow@1.1.1(rollup@4.12.0):
-    resolution: {integrity: sha512-Pca3dcxva8PeNPbuc4lws3Mbvb5fCXe65DfZu9OXTB+DItczhIPLO89wS8/2uz86p6EfxZwSjvngF7u5PRklOQ==}
+  /@aksharahegde/nuxt-glow@1.1.2(rollup@4.12.0):
+    resolution: {integrity: sha512-3cHjzAiQ0KpfBflCV/qaxVuAHPOsxYAKZ5oD+1E3ohgp1Pb5hE/13kmRzZyBlbY5L1wjF0KrxfbkcrpKPxpM+Q==}
+    engines: {node: '>=16.0.0'}
     dependencies:
-      '@nuxt/kit': 3.10.2(rollup@4.12.0)
+      '@nuxt/kit': 3.10.3(rollup@4.12.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
