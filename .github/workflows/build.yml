@@ -182,6 +182,7 @@ jobs:
       - name: Save unit tests coverage in cache 🥡
         uses: actions/cache/save@v4
         id: cache-unit-tests-coverage
+        if: ${{ hashFiles('tests/unit/coverage/lcov.info') }}
         with:
           path: tests/unit/coverage
           key: ${{ runner.os }}-tests-unit-coverage-v3-${{ env.BRANCH_NAME }}-${{hashFiles('tests/unit/coverage/lcov.info')}}
