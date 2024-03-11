@@ -1,234 +1,234 @@
 import type { PlayerRole } from "~/composables/api/game/types/players/player-role/player-role.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleNames, RoleSides } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import { createFakePlayerSide } from "~/tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
 import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 const werewolfSide = createFakePlayerSide({
-  original: RoleSides.WEREWOLVES,
-  current: RoleSides.WEREWOLVES,
+  original: "werewolves",
+  current: "werewolves",
 });
 
 const villagersSide = createFakePlayerSide({
-  original: RoleSides.VILLAGERS,
-  current: RoleSides.VILLAGERS,
+  original: "villagers",
+  current: "villagers",
 });
 
 function createFakeWerewolfAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.WEREWOLF, {
+  return createFakeAlivePlayerWithRole("werewolf", {
     side: player.side ?? werewolfSide,
     ...player,
   });
 }
 
 function createFakeBigBadWolfAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.BIG_BAD_WOLF, {
+  return createFakeAlivePlayerWithRole("big-bad-wolf", {
     side: player.side ?? werewolfSide,
     ...player,
   });
 }
 
 function createFakeAccursedWolfFatherAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.ACCURSED_WOLF_FATHER, {
+  return createFakeAlivePlayerWithRole("accursed-wolf-father", {
     side: player.side ?? werewolfSide,
     ...player,
   });
 }
 
 function createFakeWhiteWerewolfAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.WHITE_WEREWOLF, {
+  return createFakeAlivePlayerWithRole("white-werewolf", {
     side: player.side ?? werewolfSide,
     ...player,
   });
 }
 
 function createFakeVillagerAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.VILLAGER, {
+  return createFakeAlivePlayerWithRole("villager", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeVillagerVillagerAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.VILLAGER_VILLAGER, {
+  return createFakeAlivePlayerWithRole("villager-villager", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeSeerAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.SEER, {
+  return createFakeAlivePlayerWithRole("seer", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeCupidAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.CUPID, {
+  return createFakeAlivePlayerWithRole("cupid", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeWitchAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.WITCH, {
+  return createFakeAlivePlayerWithRole("witch", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeHunterAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.HUNTER, {
+  return createFakeAlivePlayerWithRole("hunter", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeLittleGirlAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.LITTLE_GIRL, {
+  return createFakeAlivePlayerWithRole("little-girl", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeDefenderAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.DEFENDER, {
+  return createFakeAlivePlayerWithRole("defender", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeElderAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.ELDER, {
+  return createFakeAlivePlayerWithRole("elder", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeScapegoatAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.SCAPEGOAT, {
+  return createFakeAlivePlayerWithRole("scapegoat", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeIdiotAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.IDIOT, {
+  return createFakeAlivePlayerWithRole("idiot", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeTwoSistersAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.TWO_SISTERS, {
+  return createFakeAlivePlayerWithRole("two-sisters", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeThreeBrothersAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.THREE_BROTHERS, {
+  return createFakeAlivePlayerWithRole("three-brothers", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeFoxAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.FOX, {
+  return createFakeAlivePlayerWithRole("fox", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeBearTamerAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.BEAR_TAMER, {
+  return createFakeAlivePlayerWithRole("bear-tamer", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeStutteringJudgeAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.STUTTERING_JUDGE, {
+  return createFakeAlivePlayerWithRole("stuttering-judge", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeRustySwordKnightAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.RUSTY_SWORD_KNIGHT, {
+  return createFakeAlivePlayerWithRole("rusty-sword-knight", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeWildChildAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.WILD_CHILD, {
+  return createFakeAlivePlayerWithRole("wild-child", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeWolfHoundAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.WOLF_HOUND, {
+  return createFakeAlivePlayerWithRole("wolf-hound", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeThiefAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.THIEF, {
+  return createFakeAlivePlayerWithRole("thief", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeAngelAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.ANGEL, {
+  return createFakeAlivePlayerWithRole("angel", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakePiedPiperAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.PIED_PIPER, {
+  return createFakeAlivePlayerWithRole("pied-piper", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeScandalmongerAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.SCANDALMONGER, {
+  return createFakeAlivePlayerWithRole("scandalmonger", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakePrejudicedManipulatorAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.PREJUDICED_MANIPULATOR, {
+  return createFakeAlivePlayerWithRole("prejudiced-manipulator", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeActorAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.ACTOR, {
+  return createFakeAlivePlayerWithRole("actor", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
 function createFakeDevotedServantAlivePlayer(player: Partial<Player> = {}): Player {
-  return createFakeAlivePlayerWithRole(RoleNames.DEVOTED_SERVANT, {
+  return createFakeAlivePlayerWithRole("devoted-servant", {
     side: player.side ?? villagersSide,
     ...player,
   });
 }
 
-function createFakeAlivePlayerWithRole(role: RoleNames, player: Partial<Player> = {}): Player {
+function createFakeAlivePlayerWithRole(role: RoleName, player: Partial<Player> = {}): Player {
   const playerRole: PlayerRole = {
     current: role,
     original: role,
-    isRevealed: role === RoleNames.VILLAGER_VILLAGER,
+    isRevealed: role === "villager-villager",
   };
 
   return createFakePlayer({

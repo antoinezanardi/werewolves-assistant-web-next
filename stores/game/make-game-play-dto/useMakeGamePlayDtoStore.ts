@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import { MakeGamePlayTargetDto } from "~/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto";
 import { MakeGamePlayVoteDto } from "~/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto";
 import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
-import type { RoleSides } from "~/composables/api/role/enums/role.enums";
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 
 const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
@@ -65,7 +65,7 @@ const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
     makeGamePlayDto.value.chosenCardId = chosenCardId;
   }
 
-  function setChosenSide(chosenSide: RoleSides | undefined): void {
+  function setChosenSide(chosenSide: RoleSide | undefined): void {
     makeGamePlayDto.value.chosenSide = chosenSide;
   }
   return {

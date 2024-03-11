@@ -2,7 +2,8 @@ import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { MakeGamePlayTargetDto } from "~/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto";
 import { MakeGamePlayVoteDto } from "~/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
 class MakeGamePlayDto {
@@ -21,7 +22,7 @@ class MakeGamePlayDto {
   public chosenCardId?: string;
 
   @Expose()
-  public chosenSide?: RoleSides;
+  public chosenSide?: RoleSide;
 
   public static create(makeGamePlayDto: MakeGamePlayDto): MakeGamePlayDto {
     return plainToInstance(MakeGamePlayDto, makeGamePlayDto, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);

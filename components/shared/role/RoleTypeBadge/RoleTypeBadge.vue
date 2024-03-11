@@ -12,16 +12,16 @@
 import type { BadgeProps } from "primevue/badge";
 
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
-import { RoleTypes } from "~/composables/api/role/enums/role.enums";
+import type { RoleType } from "~/composables/api/role/types/role.types";
 
 const props = defineProps<RoleTypeBadgeProps>();
 
 const roleTypeBadgeAttributes = computed<BadgeProps>(() => {
-  const roleTypesBadgeAttributes: Record<RoleTypes, BadgeProps> = {
-    [RoleTypes.VILLAGER]: { severity: "success" },
-    [RoleTypes.WEREWOLF]: { severity: "danger" },
-    [RoleTypes.LONELY]: { severity: "info" },
-    [RoleTypes.AMBIGUOUS]: { severity: "warning" },
+  const roleTypesBadgeAttributes: Record<RoleType, BadgeProps> = {
+    villager: { severity: "success" },
+    werewolf: { severity: "danger" },
+    lonely: { severity: "info" },
+    ambiguous: { severity: "warning" },
   };
 
   return roleTypesBadgeAttributes[props.roleType];

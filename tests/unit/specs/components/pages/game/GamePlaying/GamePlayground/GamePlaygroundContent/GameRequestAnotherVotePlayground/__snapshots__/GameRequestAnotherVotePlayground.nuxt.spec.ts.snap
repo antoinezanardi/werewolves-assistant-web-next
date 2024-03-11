@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Request Another Vote Playground Component > should match snapshot when rendered. 1`] = `"<div id="game-request-another-vote-playground"> GAME PLAYGROUND REQUEST ANOTHER VOTE </div>"`;
+exports[`Game Request Another Vote Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-request-another-vote-playground" class="flex flex-col items-center justify-center">
+  <toggle-button-stub id="does-judge-request-another-vote-button" modelvalue="false" class="w-9rem" off-icon="fa fa-thumbs-down me-4" off-label="He doesn't request another vote"></toggle-button-stub>
+</div>"
+`;

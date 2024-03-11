@@ -1,8 +1,8 @@
-import type { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 
 type PlayerCardProps = {
   playerName: string;
-  playerRole?: RoleNames;
+  playerRole?: RoleName;
   selectorAriaLabel?: string;
   doesShowSelectorTooltip?: boolean;
 };

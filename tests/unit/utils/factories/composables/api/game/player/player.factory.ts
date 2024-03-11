@@ -10,6 +10,7 @@ function createFakePlayer(player: Partial<Player> = {}): Player {
     name: player.name ?? faker.person.firstName(),
     role: player.role ?? createFakePlayerRole(),
     side: player.side ?? createFakePlayerSide(),
+    attributes: player.attributes ?? [],
     isAlive: player.isAlive ?? faker.datatype.boolean(),
   });
 }

@@ -1,22 +1,38 @@
+import { Expose, plainToInstance } from "class-transformer";
+
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/types/game-additional-card.types";
-import type { RoleOrigins, RoleSides, RoleTypes, RoleNames } from "~/composables/api/role/enums/role.enums";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { RoleName, RoleOrigin, RoleSide, RoleType } from "~/composables/api/role/types/role.types";
+import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
-type Role = {
-  name: RoleNames;
+class Role {
+  @Expose()
+  public name: RoleName;
 
-  side: RoleSides;
+  @Expose()
+  public side: RoleSide;
 
-  type: RoleTypes;
+  @Expose()
+  public type: RoleType;
 
-  origin: RoleOrigins;
+  @Expose()
+  public origin: RoleOrigin;
 
-  additionalCardsEligibleRecipients?: GameAdditionalCardRecipientRoleName[];
+  @Expose()
+  public additionalCardsEligibleRecipients?: GameAdditionalCardRecipientRoleName[];
 
-  minInGame?: number;
+  @Expose()
+  public minInGame?: number;
 
-  maxInGame: number;
+  @Expose()
+  public maxInGame: number;
 
-  recommendedMinPlayers?: number;
-};
+  @Expose()
+  public recommendedMinPlayers?: number;
 
-export type { Role };
+  public static create(role: Role): Role {
+    return plainToInstance(Role, role, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
+  }
+}
+
+export { Role };

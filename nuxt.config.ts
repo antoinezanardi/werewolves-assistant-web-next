@@ -74,6 +74,7 @@ export default defineNuxtConfig({
         "FloatLabel",
         "AutoComplete",
         "Toast",
+        "ToggleButton",
       ],
     },
     directives: {

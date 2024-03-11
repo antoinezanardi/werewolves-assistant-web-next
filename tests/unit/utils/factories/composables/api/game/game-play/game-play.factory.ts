@@ -1,15 +1,14 @@
 import { faker } from "@faker-js/faker";
 
-import { GAME_PLAY_ACTIONS, GAME_PLAY_CAUSES, GAME_PLAY_OCCURRENCES } from "~/composables/api/game/constants/game-play/game-play.constants";
+import { GAME_PLAY_ACTIONS, GAME_PLAY_OCCURRENCES } from "~/composables/api/game/constants/game-play/game-play.constants";
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import type { GamePlayCause, GamePlayOccurrence } from "~/composables/api/game/types/game-play/game-play.types";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 
 function createFakeGamePlayStutteringJudgeRequestsAnotherVote(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "request-another-vote",
-    source: createFakeGamePlaySource({ name: RoleNames.STUTTERING_JUDGE }),
+    source: createFakeGamePlaySource({ name: "stuttering-judge" }),
     occurrence: "consequential",
     ...gamePlay,
   });
@@ -18,7 +17,7 @@ function createFakeGamePlayStutteringJudgeRequestsAnotherVote(gamePlay: Partial<
 function createFakeGamePlayAccursedWolfFatherInfects(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "infect",
-    source: createFakeGamePlaySource({ name: RoleNames.ACCURSED_WOLF_FATHER }),
+    source: createFakeGamePlaySource({ name: "accursed-wolf-father" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -27,7 +26,7 @@ function createFakeGamePlayAccursedWolfFatherInfects(gamePlay: Partial<GamePlay>
 function createFakeGamePlayBearTamerGrowls(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "growl",
-    source: createFakeGamePlaySource({ name: RoleNames.BEAR_TAMER }),
+    source: createFakeGamePlaySource({ name: "bear-tamer" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -36,7 +35,7 @@ function createFakeGamePlayBearTamerGrowls(gamePlay: Partial<GamePlay> = {}): Ga
 function createFakeGamePlayActorChoosesCard(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "choose-card",
-    source: createFakeGamePlaySource({ name: RoleNames.ACTOR }),
+    source: createFakeGamePlaySource({ name: "actor" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -96,7 +95,7 @@ function createFakeGamePlaySurvivorsElectSheriff(gamePlay: Partial<GamePlay> = {
 function createFakeGamePlayThiefChoosesCard(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "choose-card",
-    source: createFakeGamePlaySource({ name: RoleNames.THIEF }),
+    source: createFakeGamePlaySource({ name: "thief" }),
     occurrence: "one-night-only",
     ...gamePlay,
   });
@@ -105,7 +104,7 @@ function createFakeGamePlayThiefChoosesCard(gamePlay: Partial<GamePlay> = {}): G
 function createFakeGamePlayScapegoatBansVoting(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "ban-voting",
-    source: createFakeGamePlaySource({ name: RoleNames.SCAPEGOAT }),
+    source: createFakeGamePlaySource({ name: "scapegoat" }),
     occurrence: "consequential",
     ...gamePlay,
   });
@@ -114,7 +113,7 @@ function createFakeGamePlayScapegoatBansVoting(gamePlay: Partial<GamePlay> = {})
 function createFakeGamePlayWolfHoundChoosesSide(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "choose-side",
-    source: createFakeGamePlaySource({ name: RoleNames.WOLF_HOUND }),
+    source: createFakeGamePlaySource({ name: "wolf-hound" }),
     occurrence: "one-night-only",
     ...gamePlay,
   });
@@ -123,7 +122,7 @@ function createFakeGamePlayWolfHoundChoosesSide(gamePlay: Partial<GamePlay> = {}
 function createFakeGamePlayWildChildChoosesModel(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "choose-model",
-    source: createFakeGamePlaySource({ name: RoleNames.WILD_CHILD }),
+    source: createFakeGamePlaySource({ name: "wild-child" }),
     occurrence: "one-night-only",
     ...gamePlay,
   });
@@ -132,7 +131,7 @@ function createFakeGamePlayWildChildChoosesModel(gamePlay: Partial<GamePlay> = {
 function createFakeGamePlayFoxSniffs(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "sniff",
-    source: createFakeGamePlaySource({ name: RoleNames.FOX }),
+    source: createFakeGamePlaySource({ name: "fox" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -159,7 +158,7 @@ function createFakeGamePlayLoversMeetEachOther(gamePlay: Partial<GamePlay> = {})
 function createFakeGamePlayThreeBrothersMeetEachOther(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "meet-each-other",
-    source: createFakeGamePlaySource({ name: RoleNames.THREE_BROTHERS }),
+    source: createFakeGamePlaySource({ name: "three-brothers" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -168,7 +167,7 @@ function createFakeGamePlayThreeBrothersMeetEachOther(gamePlay: Partial<GamePlay
 function createFakeGamePlayTwoSistersMeetEachOther(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "meet-each-other",
-    source: createFakeGamePlaySource({ name: RoleNames.TWO_SISTERS }),
+    source: createFakeGamePlaySource({ name: "two-sisters" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -177,7 +176,7 @@ function createFakeGamePlayTwoSistersMeetEachOther(gamePlay: Partial<GamePlay> =
 function createFakeGamePlayScandalmongerMarks(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "mark",
-    source: createFakeGamePlaySource({ name: RoleNames.SCANDALMONGER }),
+    source: createFakeGamePlaySource({ name: "scandalmonger" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -186,7 +185,7 @@ function createFakeGamePlayScandalmongerMarks(gamePlay: Partial<GamePlay> = {}):
 function createFakeGamePlayDefenderProtects(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "protect",
-    source: createFakeGamePlaySource({ name: RoleNames.DEFENDER }),
+    source: createFakeGamePlaySource({ name: "defender" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -195,7 +194,7 @@ function createFakeGamePlayDefenderProtects(gamePlay: Partial<GamePlay> = {}): G
 function createFakeGamePlayHunterShoots(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "shoot",
-    source: createFakeGamePlaySource({ name: RoleNames.HUNTER }),
+    source: createFakeGamePlaySource({ name: "hunter" }),
     occurrence: "consequential",
     ...gamePlay,
   });
@@ -204,7 +203,7 @@ function createFakeGamePlayHunterShoots(gamePlay: Partial<GamePlay> = {}): GameP
 function createFakeGamePlayWitchUsesPotions(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "use-potions",
-    source: createFakeGamePlaySource({ name: RoleNames.WITCH }),
+    source: createFakeGamePlaySource({ name: "witch" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -213,7 +212,7 @@ function createFakeGamePlayWitchUsesPotions(gamePlay: Partial<GamePlay> = {}): G
 function createFakeGamePlayPiedPiperCharms(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "charm",
-    source: createFakeGamePlaySource({ name: RoleNames.PIED_PIPER }),
+    source: createFakeGamePlaySource({ name: "pied-piper" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -222,7 +221,7 @@ function createFakeGamePlayPiedPiperCharms(gamePlay: Partial<GamePlay> = {}): Ga
 function createFakeGamePlayCupidCharms(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "charm",
-    source: createFakeGamePlaySource({ name: RoleNames.CUPID }),
+    source: createFakeGamePlaySource({ name: "cupid" }),
     occurrence: "one-night-only",
     ...gamePlay,
   });
@@ -231,7 +230,7 @@ function createFakeGamePlayCupidCharms(gamePlay: Partial<GamePlay> = {}): GamePl
 function createFakeGamePlaySeerLooks(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "look",
-    source: createFakeGamePlaySource({ name: RoleNames.SEER }),
+    source: createFakeGamePlaySource({ name: "seer" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -240,7 +239,7 @@ function createFakeGamePlaySeerLooks(gamePlay: Partial<GamePlay> = {}): GamePlay
 function createFakeGamePlayWhiteWerewolfEats(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "eat",
-    source: createFakeGamePlaySource({ name: RoleNames.WHITE_WEREWOLF }),
+    source: createFakeGamePlaySource({ name: "white-werewolf" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -249,7 +248,7 @@ function createFakeGamePlayWhiteWerewolfEats(gamePlay: Partial<GamePlay> = {}): 
 function createFakeGamePlayBigBadWolfEats(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     action: "eat",
-    source: createFakeGamePlaySource({ name: RoleNames.BIG_BAD_WOLF }),
+    source: createFakeGamePlaySource({ name: "big-bad-wolf" }),
     occurrence: "on-nights",
     ...gamePlay,
   });
@@ -270,7 +269,7 @@ function createFakeGamePlay(gamePlay: Partial<GamePlay> = {}): GamePlay {
     source: createFakeGamePlaySource(gamePlay.source),
     eligibleTargets: gamePlay.eligibleTargets ?? undefined,
     canBeSkipped: gamePlay.canBeSkipped ?? undefined,
-    cause: gamePlay.cause ?? faker.helpers.arrayElement(GAME_PLAY_CAUSES),
+    cause: gamePlay.cause ?? undefined,
     occurrence: gamePlay.occurrence ?? faker.helpers.arrayElement(GAME_PLAY_OCCURRENCES),
   });
 }

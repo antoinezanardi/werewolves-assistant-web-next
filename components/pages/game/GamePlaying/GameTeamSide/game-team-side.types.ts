@@ -1,7 +1,7 @@
-import type { RoleSides } from "~/composables/api/role/enums/role.enums";
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 
 type GameTeamSideProps = {
-  side: RoleSides;
+  side: RoleSide;
 };
 
 export type { GameTeamSideProps };

@@ -1,8 +1,8 @@
-import type { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 
 type RoleImageProps = {
-  alt: string,
-  roleName?: RoleNames,
+  alt?: string,
+  roleName?: RoleName,
   sizes?: string,
   definition?: "normal" | "small";
 };

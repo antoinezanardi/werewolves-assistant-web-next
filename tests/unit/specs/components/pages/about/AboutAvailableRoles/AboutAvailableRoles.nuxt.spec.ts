@@ -8,8 +8,8 @@ import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailab
 import AboutAvailableRoles from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue";
 import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import type { Role } from "~/composables/api/role/types/role.class";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
@@ -19,7 +19,7 @@ describe("About Available Roles Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoles>>;
 
   beforeEach(async() => {
-    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn((roleName: RoleNames) => roleName) });
+    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn((roleName: RoleName) => roleName) });
     wrapper = await mountSuspendedComponent(AboutAvailableRoles);
   });
 
@@ -32,7 +32,7 @@ describe("About Available Roles Component", () => {
     it("should display role image with angel when rendered.", () => {
       const roleImage = wrapper.findComponent<typeof RoleImage>("#about-available-roles-title-role-image");
 
-      expect(roleImage.props("roleName")).toBe(RoleNames.ANGEL);
+      expect(roleImage.props("roleName")).toBe("angel");
     });
 
     it("should translate title when rendered.", () => {
@@ -65,9 +65,9 @@ describe("About Available Roles Component", () => {
 
     describe("Roles are set", () => {
       const roles = [
-        createFakeRole({ name: RoleNames.WEREWOLF }),
-        createFakeRole({ name: RoleNames.ANGEL }),
-        createFakeRole({ name: RoleNames.ACCURSED_WOLF_FATHER }),
+        createFakeRole({ name: "werewolf" }),
+        createFakeRole({ name: "angel" }),
+        createFakeRole({ name: "accursed-wolf-father" }),
       ];
 
       beforeEach(async() => {
@@ -112,11 +112,11 @@ describe("About Available Roles Component", () => {
 
         expect(roleImages).toHaveLength(3);
         expect(roleImages[0].props("alt")).toBe("components.AboutAvailableRoles.availableRoleImage, {\"role\":\"werewolf\"}");
-        expect(roleImages[0].props("roleName")).toBe(RoleNames.WEREWOLF);
+        expect(roleImages[0].props("roleName")).toBe("werewolf");
         expect(roleImages[1].props("alt")).toBe("components.AboutAvailableRoles.availableRoleImage, {\"role\":\"angel\"}");
-        expect(roleImages[1].props("roleName")).toBe(RoleNames.ANGEL);
+        expect(roleImages[1].props("roleName")).toBe("angel");
         expect(roleImages[2].props("alt")).toBe("components.AboutAvailableRoles.availableRoleImage, {\"role\":\"accursed-wolf-father\"}");
-        expect(roleImages[2].props("roleName")).toBe(RoleNames.ACCURSED_WOLF_FATHER);
+        expect(roleImages[2].props("roleName")).toBe("accursed-wolf-father");
       });
 
       it("should display werewolf role description for first accordion tab when first accordion tab is for werewolf role.", () => {

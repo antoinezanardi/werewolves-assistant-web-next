@@ -1,7 +1,6 @@
 import { createPinia, setActivePinia } from "pinia";
 
 import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
 import { createFakeMakeGamePlayVoteDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
@@ -27,7 +26,7 @@ describe("Make Game Play Dto Store", () => {
         votes: [],
         doesJudgeRequestAnotherVote: true,
         chosenCardId: "cardId",
-        chosenSide: RoleSides.WEREWOLVES,
+        chosenSide: "werewolves",
       });
       makeGamePlayDtoStore.setMakeGamePlayDto(expectedMakeGamePlayDto);
 
@@ -43,7 +42,7 @@ describe("Make Game Play Dto Store", () => {
         votes: [],
         doesJudgeRequestAnotherVote: true,
         chosenCardId: "cardId",
-        chosenSide: RoleSides.WEREWOLVES,
+        chosenSide: "werewolves",
       });
       const expectedMakeGamePlayDto = MakeGamePlayDto.create({});
       makeGamePlayDtoStore.resetMakeGamePlayDto();
@@ -206,9 +205,9 @@ describe("Make Game Play Dto Store", () => {
     it("should set chosenSide when called.", () => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({});
-      makeGamePlayDtoStore.setChosenSide(RoleSides.WEREWOLVES);
+      makeGamePlayDtoStore.setChosenSide("werewolves");
 
-      expect(makeGamePlayDtoStore.makeGamePlayDto.chosenSide).toBe(RoleSides.WEREWOLVES);
+      expect(makeGamePlayDtoStore.makeGamePlayDto.chosenSide).toBe("werewolves");
     });
   });
 });

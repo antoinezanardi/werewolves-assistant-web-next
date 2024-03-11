@@ -458,7 +458,8 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Image du rôle du joueur {playerName}"
+      "roleImageAlt": "Image du rôle du joueur {playerName}",
+      "thisPlayerIsDead": "Ce joueur est mort"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
@@ -504,6 +505,80 @@
     "GamePlaygroundPlayerCardVoteInput": {
       "voteFor": "Vote pour",
       "noAvailableOptions": "Aucune option disponible"
+    },
+    "GameTeamSidePlayerAttribute": {
+      "unknownPlayerAttribute": "Attribut inconnu.",
+      "actingByActor": "Le joueur joue un autre rôle pour le tour en cours.",
+      "cantVoteBySurvivors": "Les survivants ont décidé que ce joueur ne peut pas voter.",
+      "cantVoteByScapegoat": "Le bouc émissaire a décidé que ce joueur ne peut pas voter.",
+      "charmedByPiedPiper": "Le joueur a été charmé par le Joueur de flûte.",
+      "contaminatedByRustySwordKnight": "Le Chevalier à l'Épée Rouillée a contaminé ce joueur, il sera éliminé la nuit suivante.",
+      "drankDeathPotionByWitch": "La Sorcière a donné sa potion de mort à ce joueur, il mourra au petit matin.",
+      "drankLifePotionByWitch": "La Sorcière a donné sa potion de vie à ce joueur, il sera sauvé des Loups-Garous.",
+      "eatenByWerewolves": "Les Loups-Garous ont mangé ce joueur, il mourra au petit matin.",
+      "eatenByWhiteWerewolf": "Le Loup-garou blanc a mangé ce joueur, il mourra au petit matin.",
+      "eatenByBigBadWolf": "Le Grand-Méchant-Loup a mangé ce joueur, il mourra au petit matin.",
+      "inLoveByCupid": "Cupidon a fait tomber amoureux ce joueur d'un autre.",
+      "powerlessByActor": "Le joueur ne peut plus jouer un autre rôle en tant qu'Acteur, il n'a plus de pouvoirs.",
+      "powerlessByWerewolves": "Le joueur n'a plus de pouvoir car il est devenu un loup-garou.",
+      "powerlessByAccursedWolfFather": "Le joueur n'a plus de pouvoir car il a été infecté par l'Infect Père des Loups.",
+      "powerlessByFox": "Le joueur n'a plus de pouvoirs car il n'a pas sniffé de loup-garou lors de son dernier tour.",
+      "powerlessByElder": "Le joueur n'a plus de pouvoirs car un ou plusieurs villageois ont éliminé l'Ancien.",
+      "protectedByDefender": "Le Salvateur protège ce joueur des Loups-Garous pour la nuit en cours.",
+      "scandalmongerMarkedByScandalmonger": "Le Corbeau a marqué ce joueur, il aura 2 votes de plus contre lui au petit matin.",
+      "seenBySeer": "La Voyante a vu ce joueur et connaît donc son rôle.",
+      "sheriffBySheriff": "Le joueur est devenu le Maire car le Maire précédent lui a délégué son rôle.",
+      "sheriffBySurvivors": "Les survivants ont élu ce joueur comme Maire.",
+      "stolenRoleByDevotedServant": "La Servante Dévouée a volé le rôle de ce joueur.",
+      "worshipedByWildChild": "L'Enfant Sauvage a choisi ce joueur comme modèle."
+    },
+    "NoActionNeeded": {
+      "noActionNeeded": "Aucune action nécessaire, la partie peut continuer"
+    },
+    "GameDevotedServantStealsRolePlayground": {
+      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé {playerName} ?",
+      "sheStealsRole": "Elle vole le rôle",
+      "sheDoesntStealRole": "Elle ne vole pas le rôle"
+    },
+    "GameRequestAnotherVotePlayground": {
+      "heRequestsAnotherVote": "Il demande un autre vote",
+      "heDoesntRequestAnotherVote": "Il ne demande pas un autre vote"
+    },
+    "GameChooseSidePlayground": {
+      "villagersSide": "Camp des Villageois",
+      "werewolvesSide": "Camp des Loups-Garous"
+    },
+    "CurrentPlayQuestion": {
+      "unknownQuestionForCurrentPlay": "??",
+      "doesAccursedWolfFatherWantToInfect": "L'Infect Père des Loups veut-il infecter le joueur dévoré par les Loups-Garous ?",
+      "doesActorWantToChooseCard": "Le Comédien veut-il choisir une carte et prendre ce rôle ?",
+      "whichPlayerDoesBigBadWolfEat": "Quel joueur le Grand-Méchant-Loup veut-il manger ?",
+      "whichPlayersDoesCupidCharm": "Quels joueurs Cupidon veut-il rendre inséparables ?",
+      "whichPlayerDoesDefenderProtect": "Quel joueur le Salvateur veut-il protéger ?",
+      "doesFoxWantToSniff": "Le Renard veut-il renifler un groupe de joueurs ?",
+      "whichPlayerDoesHunterShoot": "Quel joueur le Chasseur veut-il tirer ?",
+      "whichPlayersDoesPiedPiperCharm": "Quels joueurs le Joueur de Flûte veut-il charmer ?",
+      "doesScandalmongerWantToMark": "Le Corbeau veut-il marquer un joueur de sa plume ?",
+      "doesScapegoatWantToBanVoting": "Le Bouc Émissaire veut-il interdire à un ou plusieurs joueurs de voter ?",
+      "whichPlayerDoesSeerLook": "Quel joueur la Voyante veut-elle regarder ?",
+      "whichPlayerDoesSheriffDelegate": "À quel joueur le Maire veut-il déléguer son rôle ?",
+      "whichPlayerDoesSheriffSettleVotes": "Avec quel joueur le Maire veut-il trancher les votes ?",
+      "doesJudgeRequestAnotherVote": "Le Juge Bègue veut-il demander un autre vote ?",
+      "whichPlayerDoesSurvivorsElectAsSheriff": "Quel joueur les survivants veulent-ils élire comme Maire ?",
+      "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux urnes !",
+      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Quel joueur va être pendu par les survivants à la demande du Juge Bègue? Aux urnes !",
+      "whichPlayerDoesSurvivorsVoteForOnTie": "Quel joueur parmi les ex-æquo va être pendu par les survivants ? Aux urnes !",
+      "doesThiefWantToChooseCard": "Le Voleur veut-il choisir une carte et prendre ce role ?",
+      "whichPlayerDoesWerewolvesEat": "Quel joueur les Loups-Garous veulent-ils manger ?",
+      "doesWhiteWerewolfWantToEat": "Le Loup-Garou Blanc veut-il manger un autre Loup-Garou ?",
+      "whichPlayerDoesWildChildChoose": "Quel joueur l'Enfant Sauvage veut-il choisir comme modèle ?",
+      "doesWitchWantToUsePotions": "La Sorcière veut-elle utiliser ses potions ?",
+      "whichSideDoesWolfHoundChoose": "Quel camp le Chien-Loup veut-il choisir ?",
+      "bearGrowled": "L'Ours grogne, un ou des Loups-Garous sont à côté de lui…",
+      "charmedPeopleMeetEachOther": "Les personnes charmées se rencontrent, attention aux dernières victimes du Joueur de Flûte !",
+      "loversMeetEachOther": "Les amoureux se rencontrent, c'est un coup de foudre !",
+      "threeBrothersMeetEachOther": "Les Trois Frères se rencontrent, ils se consultent.",
+      "twoSistersMeetEachOther": "Les Deux Sœurs se rencontrent, elles se consultent."
     }
   }
 }

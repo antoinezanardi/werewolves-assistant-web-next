@@ -7,7 +7,6 @@ import type { GameTeamSideProps } from "~/components/pages/game/GamePlaying/Game
 import GameTeamSide from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSide.vue";
 import GameTeamSidePlayer from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
@@ -16,7 +15,7 @@ import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helper
 
 describe("Game Team Side Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameTeamSide>>;
-  const defaultProps: GameTeamSideProps = { side: RoleSides.VILLAGERS };
+  const defaultProps: GameTeamSideProps = { side: "villagers" };
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: createFakeGame() } } };
 
   async function mountGameTeamSideComponent(options: ComponentMountingOptions<typeof GameTeamSide> = {}): Promise<ReturnType<typeof mount<typeof GameTeamSide>>> {
@@ -38,14 +37,14 @@ describe("Game Team Side Component", () => {
 
   describe("Team Side Image", () => {
     it("should render the werewolves image when the side is werewolves.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.WEREWOLVES } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "werewolves" } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='Werewolves side']");
 
       expect(image.attributes("src")).toBe("/svg/role/werewolf.svg");
     });
 
     it("should render the villagers image when the side is villagers.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.VILLAGERS } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "villagers" } });
       const image = wrapper.findComponent<typeof NuxtImg>("[alt='Villagers side']");
 
       expect(image.attributes("src")).toBe("/svg/role/villager.svg");
@@ -54,14 +53,14 @@ describe("Game Team Side Component", () => {
 
   describe("Title", () => {
     it("should render the werewolves title when the side is werewolves.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.WEREWOLVES } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "werewolves" } });
       const title = wrapper.find<HTMLHeadingElement>("#side-title");
 
       expect(title.text()).toBe("Werewolves");
     });
 
     it("should render the villagers title when the side is villagers.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.VILLAGERS } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "villagers" } });
       const title = wrapper.find<HTMLHeadingElement>("#side-title");
 
       expect(title.text()).toBe("Villagers");
@@ -70,7 +69,7 @@ describe("Game Team Side Component", () => {
 
   describe("Alive text", () => {
     it("should render the number of alive werewolves when the side is werewolves.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.WEREWOLVES } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "werewolves" } });
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({
         players: [
@@ -88,7 +87,7 @@ describe("Game Team Side Component", () => {
     });
 
     it("should render the number of alive villagers when the side is villagers.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.VILLAGERS } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "villagers" } });
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({
         players: [
@@ -108,7 +107,7 @@ describe("Game Team Side Component", () => {
 
   describe("Game Team Side Players", () => {
     it("should render the werewolves players with alive players first when the side is werewolves.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.WEREWOLVES } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "werewolves" } });
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({
         players: [
@@ -130,7 +129,7 @@ describe("Game Team Side Component", () => {
     });
 
     it("should render the villagers players with alive players first when the side is villagers.", async() => {
-      wrapper = await mountGameTeamSideComponent({ props: { side: RoleSides.VILLAGERS } });
+      wrapper = await mountGameTeamSideComponent({ props: { side: "villagers" } });
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({
         players: [

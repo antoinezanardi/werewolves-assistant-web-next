@@ -1,10 +1,13 @@
 import type { ComputedRef, Ref } from "vue";
 
+import type { PlayerInteraction } from "~/composables/api/game/types/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.class";
 import type { GamePlayAction, GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
+import type { Player } from "~/composables/api/game/types/players/player.class";
 
 type UseGamePlay = {
   currentPlayType: ComputedRef<GamePlayType | undefined>;
+  getPlayerWithInteractionInCurrentGamePlay: (interaction: PlayerInteraction) => Player | undefined;
 };
 
 function useGamePlay(game: Ref<Game>): UseGamePlay {
@@ -39,6 +42,7 @@ function useGamePlay(game: Ref<Game>): UseGamePlay {
       "choose-card": ["choose-card"],
       "choose-side": ["choose-side"],
       "request-another-vote": ["request-another-vote"],
+      "bury-dead-bodies": ["bury-dead-bodies"],
     };
     for (const key of Object.keys(gamePlayTypesActions)) {
       const gamePlayType = key as GamePlayType;
@@ -49,7 +53,24 @@ function useGamePlay(game: Ref<Game>): UseGamePlay {
     return undefined;
   });
 
-  return { currentPlayType };
+  function getPlayerWithInteractionInCurrentGamePlay(interaction: PlayerInteraction): Player | undefined {
+    if (!game.value.currentPlay?.eligibleTargets?.interactablePlayers) {
+      return undefined;
+    }
+    const { interactablePlayers } = game.value.currentPlay.eligibleTargets;
+    for (const interactablePlayer of interactablePlayers) {
+      const { interactions, player } = interactablePlayer;
+      const playerInteraction = interactions.find(({ type, source }) => type === interaction.type && source === interaction.source);
+      if (playerInteraction) {
+        return player;
+      }
+    }
+    return undefined;
+  }
+  return {
+    currentPlayType,
+    getPlayerWithInteractionInCurrentGamePlay,
+  };
 }
 
 export { useGamePlay };

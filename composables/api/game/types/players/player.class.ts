@@ -1,5 +1,6 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
+import { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
 import { PlayerRole } from "~/composables/api/game/types/players/player-role/player-role.class";
 import { PlayerSide } from "~/composables/api/game/types/players/player-side/player-side.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
@@ -18,6 +19,10 @@ class Player {
   @Expose()
   @Type(() => PlayerSide)
   public side: PlayerSide;
+
+  @Type(() => PlayerAttribute)
+  @Expose()
+  public attributes: PlayerAttribute[];
 
   @Expose()
   public isAlive: boolean;

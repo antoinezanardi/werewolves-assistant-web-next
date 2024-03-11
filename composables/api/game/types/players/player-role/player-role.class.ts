@@ -1,14 +1,15 @@
 import { Expose, plainToInstance } from "class-transformer";
 
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
 class PlayerRole {
   @Expose()
-  public original: RoleNames;
+  public original: RoleName;
 
   @Expose()
-  public current: RoleNames;
+  public current: RoleName;
 
   @Expose()
   public isRevealed: boolean;

@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Playing Component > should match snapshot when rendered. 1`] = `
-"<div id="game-playing" class="flex">
-  <game-team-side-stub side="villagers" class="w-2/12"></game-team-side-stub>
-  <game-playground-stub class="px-2 w-10/12"></game-playground-stub>
-  <game-team-side-stub side="werewolves" class="w-2/12"></game-team-side-stub>
+"<div data-v-4473cdbb="" id="game-playing" class="flex">
+  <game-team-side-stub data-v-4473cdbb="" side="villagers" class="flex-none w-2/12"></game-team-side-stub>
+  <game-playground-stub data-v-4473cdbb="" class="game-playground px-2 w-8/12"></game-playground-stub>
+  <game-team-side-stub data-v-4473cdbb="" side="werewolves" class="flex-none w-2/12"></game-team-side-stub>
 </div>"
 `;
