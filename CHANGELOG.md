@@ -1,5 +1,46 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.10.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.9.0...v1.10.0) (2024-03-11)
+
+
+### 🚀 Features
+
+* **game-playground:** bury dead bodies playground ([#230](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/230)) ([4dce309](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/4dce309fa1c9a434749355241dfd3a91e46f5f58))
+* **game-playground:** choose side playground ([#235](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/235)) ([8b451f6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8b451f6b448a26ebcf40432d56d3150588d9a374))
+* **game-playground:** does request another vote playground ([#234](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/234)) ([b9ef462](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/b9ef46276bae29f86fc0b8911f1739c2529637ae))
+* **game-team-side-player:** change style of player if dead ([#231](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/231)) ([bf67a78](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bf67a788c34af57df4327f3f3746a686bc28cd8f))
+* **player-attribute:** player attributes in team sides ([#227](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/227)) ([c8c304a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c8c304a1b06348daf5e4f1023200302ebc9601f9))
+
+
+### 🔩 Refactor
+
+* **roles:** change role to class ([#241](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/241)) ([c348005](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c348005dc61566faceb6c1d6c28fc1f4d54d698d))
+
+
+### ✅ Tests
+
+* **screenshots:** retry screenshots for correct dimensions ([#225](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/225)) ([0f720e6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0f720e6e1dba59874fb117a7fff0e1c552d02622))
+
+
+### 🔁 CI
+
+* **production:** add config folder to google deploy ([#224](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/224)) ([f140c9f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f140c9fdd36eab78e6fd445d3549da0584560783))
+* **reports:** run caller id when main reports deployed ([#222](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/222)) ([15b8efb](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/15b8efbaa6316ad2d7f9eb2786b442fcdb02ee5f))
+
+
+### 🧹 Chore
+
+* **deps:** bump @aksharahegde/nuxt-glow from 1.1.1 to 1.1.2 ([#240](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/240)) ([7b83a89](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/7b83a899e6d6848a1d326396fea232a995f275d3))
+* **deps:** bump happy-dom from 13.6.2 to 13.7.3 ([#237](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/237)) ([914781d](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/914781d877c51442b6e21883803aba2fa46f5a63))
+* **deps:** bump msw from 2.2.2 to 2.2.3 ([#232](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/232)) ([8224321](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8224321bafed92f7be6ab7f13c6c703ca1202e7b))
+* **deps:** bump qs from 6.11.2 to 6.12.0 ([#228](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/228)) ([fbe47b1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/fbe47b1ccbcc29b2e75881c463173c57ca554baf))
+* **deps:** bump radash from 12.0.0 to 12.1.0 ([#233](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/233)) ([a16541a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a16541aa50069950da8597bc1db0a41d3acf696a))
+* **deps:** bump the eslint group with 1 update ([#236](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/236)) ([ad52b79](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ad52b79860360005fcd3a092e386e2f9076f1a6d))
+* **deps:** bump the nuxt group with 2 updates ([#220](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/220)) ([cf1b8fb](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/cf1b8fbcb440e3788ed202a328fd7677dfc99355))
+* **deps:** bump type-fest from 4.11.1 to 4.12.0 ([#239](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/239)) ([0de7cd2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0de7cd22202a9c785ba4c9187ca18b123d9d4687))
+* **deps:** bump typescript from 5.3.3 to 5.4.2 ([#238](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/238)) ([3aac7cc](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3aac7cc97bcd581a3fd318bb72606a97eacedbd7))
+* **readme:** add missing closing angle bracket ([#223](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/223)) ([93a5008](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/93a500828a63b96f579e051e869fe75d49f4f81a))
+
 ## [1.9.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.8.0...v1.9.0) (2024-3-5)
 
 
