@@ -4,7 +4,6 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { NuxtImg } from "#components";
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -12,7 +11,7 @@ describe("Role Image Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleImage>>;
   const defaultProps: RoleImageProps = {
     alt: "werewolf img",
-    roleName: RoleNames.WEREWOLF,
+    roleName: "werewolf",
   };
 
   async function mountRoleImageComponent(options: ComponentMountingOptions<typeof RoleImage> = {}): Promise<ReturnType<typeof mount<typeof RoleImage>>> {
@@ -23,7 +22,7 @@ describe("Role Image Component", () => {
   }
 
   beforeEach(async() => {
-    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn().mockReturnValue(RoleNames.WEREWOLF) });
+    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn().mockReturnValue("werewolf") });
     wrapper = await mountRoleImageComponent();
   });
 
@@ -72,7 +71,7 @@ describe("Role Image Component", () => {
       });
 
       it("should have alt from role name when alt from props is undefined but role name is defined.", async() => {
-        wrapper = await mountRoleImageComponent({ props: { alt: undefined, roleName: RoleNames.WEREWOLF } });
+        wrapper = await mountRoleImageComponent({ props: { alt: undefined, roleName: "werewolf" } });
         const image = wrapper.findComponent<typeof NuxtImg>(NuxtImg);
 
         expect(image.attributes("alt")).toBe("shared.role.name.werewolf");

@@ -1,7 +1,8 @@
 import { PLAYER_GROUPS } from "~/composables/api/game/constants/player/player.constants";
 import type { PlayerAttributeName } from "~/composables/api/game/types/players/player-attribute/player-attribute.types";
 import type { PlayerGroup } from "~/composables/api/game/types/players/player.types";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
+import { ROLE_NAMES } from "~/composables/api/role/constants/role.constants";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 
 const GAME_PHASES = [
   "day",
@@ -16,9 +17,9 @@ const GAME_STATUSES = [
 
 const GAME_SOURCES = [
   ...PLAYER_GROUPS,
-  ...Object.values(RoleNames),
+  ...Object.values(ROLE_NAMES),
   "sheriff",
-] as const satisfies Readonly<(PlayerAttributeName | PlayerGroup | RoleNames)[]>;
+] as const satisfies Readonly<(PlayerAttributeName | PlayerGroup | RoleName)[]>;
 
 const MIN_PLAYERS_IN_GAME = 4;
 

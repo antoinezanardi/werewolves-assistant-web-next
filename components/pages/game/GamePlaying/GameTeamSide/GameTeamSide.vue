@@ -52,7 +52,6 @@ import { storeToRefs } from "pinia";
 import type { GameTeamSideProps } from "~/components/pages/game/GamePlaying/GameTeamSide/game-team-side.types";
 import GameTeamSidePlayer from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const props = defineProps<GameTeamSideProps>();
@@ -81,7 +80,7 @@ const alivePlayersText = computed<string>(() => {
 });
 
 const sideSvgIconPath = computed<string>(() => {
-  if (props.side === RoleSides.VILLAGERS) {
+  if (props.side === "villagers") {
     return "/svg/role/villager.svg";
   }
   return "/svg/role/werewolf.svg";

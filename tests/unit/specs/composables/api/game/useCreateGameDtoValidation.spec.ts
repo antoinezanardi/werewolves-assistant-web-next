@@ -2,7 +2,6 @@ import type { Ref } from "vue";
 
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
-import { RoleNames, RoleSides } from "~/composables/api/role/enums/role.enums";
 import { createFakeCreateGameAdditionalCardDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -12,23 +11,23 @@ describe("Use Create Game Dto Validation Composable", () => {
     players: [
       createFakeCreateGamePlayerDto({
         name: "Player 1",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 2",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 3",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 4",
-        role: { name: RoleNames.VILLAGER },
-        side: { current: RoleSides.VILLAGERS },
+        role: { name: "villager" },
+        side: { current: "villagers" },
       }),
     ],
   });
@@ -78,8 +77,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when all roles among players are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: true,
@@ -88,7 +87,7 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when not all roles among players are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
             createFakeCreateGamePlayerDto(),
           ],
         })),
@@ -111,8 +110,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when at least one player has a villager sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
           ],
         })),
         expected: true,
@@ -121,8 +120,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when no player has a villager sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
           ],
         })),
         expected: false,
@@ -144,8 +143,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when at least one player has a werewolf sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
           ],
         })),
         expected: true,
@@ -154,8 +153,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when no player has a werewolf sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
           ],
         })),
         expected: false,
@@ -177,8 +176,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when the thief is not present.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: true,
@@ -187,12 +186,12 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when the thief is present and additional cards are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.THIEF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
           additionalCards: [
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.THIEF }),
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.ACTOR }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "actor" }),
           ],
         })),
         expected: true,
@@ -201,8 +200,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the thief is present and additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.THIEF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: false,
@@ -211,12 +210,12 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the thief is present but additional cards are for the actor.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.THIEF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
           additionalCards: [
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.ACTOR }),
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.ACTOR }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "actor" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "actor" }),
           ],
         })),
         expected: false,
@@ -238,8 +237,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when the actor is not present.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: true,
@@ -248,12 +247,12 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return true when the actor is present and additional cards are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.ACTOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
           additionalCards: [
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.THIEF }),
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.ACTOR }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "actor" }),
           ],
         })),
         expected: true,
@@ -262,8 +261,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the actor is present and additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.ACTOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: false,
@@ -272,12 +271,12 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the actor is present but additional cards are for the thief.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.ACTOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
           additionalCards: [
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.THIEF }),
-            createFakeCreateGameAdditionalCardDto({ recipient: RoleNames.THIEF }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
           ],
         })),
         expected: false,
@@ -300,11 +299,11 @@ describe("Use Create Game Dto Validation Composable", () => {
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
+              role: { name: "villager" },
               group: "group 1",
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.WEREWOLF },
+              role: { name: "werewolf" },
               group: "group 2",
             }),
           ],
@@ -316,11 +315,11 @@ describe("Use Create Game Dto Validation Composable", () => {
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.PREJUDICED_MANIPULATOR },
+              role: { name: "prejudiced-manipulator" },
               group: "group 1",
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.WEREWOLF },
+              role: { name: "werewolf" },
               group: "group 2",
             }),
           ],
@@ -331,9 +330,9 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the prejudiced manipulator is present and player groups are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.PREJUDICED_MANIPULATOR } }),
+            createFakeCreateGamePlayerDto({ role: { name: "prejudiced-manipulator" } }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.WEREWOLF },
+              role: { name: "werewolf" },
               group: "group 2",
             }),
           ],
@@ -357,9 +356,9 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the minimum of players are not set in game.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
           ],
         })),
         expected: false,
@@ -368,9 +367,9 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when not all roles among players are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
             createFakeCreateGamePlayerDto(),
           ],
         })),
@@ -380,10 +379,10 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when no player has a villager sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
           ],
         })),
         expected: false,
@@ -393,20 +392,20 @@ describe("Use Create Game Dto Validation Composable", () => {
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
           ],
         })),
@@ -416,8 +415,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the thief is present but additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.THIEF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: false,
@@ -426,8 +425,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the actor is present but additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.ACTOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: false,
@@ -436,8 +435,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should return false when the prejudiced manipulator is present and player groups are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.PREJUDICED_MANIPULATOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "prejudiced-manipulator" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expected: false,
@@ -464,8 +463,8 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when the minimum of players are not set in game.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.VILLAGER }, side: { current: RoleSides.VILLAGERS } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "villager" }, side: { current: "villagers" } }),
           ],
         })),
         expectedItem: "composables.useCreateGameDtoValidation.minimumOfPlayersNotReached",
@@ -474,9 +473,9 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when not all roles among players are set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
             createFakeCreateGamePlayerDto(),
           ],
         })),
@@ -486,10 +485,10 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when no player has a villager sided role.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF }, side: { current: RoleSides.WEREWOLVES } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" }, side: { current: "werewolves" } }),
           ],
         })),
         expectedItem: "composables.useCreateGameDtoValidation.noVillagerSidedRole",
@@ -499,20 +498,20 @@ describe("Use Create Game Dto Validation Composable", () => {
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
             createFakeCreateGamePlayerDto({
-              role: { name: RoleNames.VILLAGER },
-              side: { current: RoleSides.VILLAGERS },
+              role: { name: "villager" },
+              side: { current: "villagers" },
             }),
           ],
         })),
@@ -522,10 +521,10 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when the thief is present but additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.THIEF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expectedItem: "composables.useCreateGameDtoValidation.thiefAdditionalCardsNotSet",
@@ -534,10 +533,10 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when the actor is present but additional cards are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.ACTOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expectedItem: "composables.useCreateGameDtoValidation.actorAdditionalCardsNotSet",
@@ -546,10 +545,10 @@ describe("Use Create Game Dto Validation Composable", () => {
         test: "should contain specific error message when the prejudiced manipulator is present and player groups are not set.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.PREJUDICED_MANIPULATOR } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
-            createFakeCreateGamePlayerDto({ role: { name: RoleNames.WEREWOLF } }),
+            createFakeCreateGamePlayerDto({ role: { name: "prejudiced-manipulator" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
           ],
         })),
         expectedItem: "composables.useCreateGameDtoValidation.prejudicedManipulatorGroupsNotSet",

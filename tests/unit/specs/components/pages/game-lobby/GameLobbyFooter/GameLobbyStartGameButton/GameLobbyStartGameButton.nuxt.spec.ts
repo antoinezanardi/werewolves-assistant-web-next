@@ -5,7 +5,6 @@ import type { Ref } from "vue";
 
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
-import { RoleNames, RoleSides } from "~/composables/api/role/enums/role.enums";
 import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -21,23 +20,23 @@ describe("Game Lobby Start Game Button Component", () => {
     players: [
       createFakeCreateGamePlayerDto({
         name: "Player 1",
-        role: { name: RoleNames.VILLAGER },
-        side: { current: RoleSides.VILLAGERS },
+        role: { name: "villager" },
+        side: { current: "villagers" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 2",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 3",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
       createFakeCreateGamePlayerDto({
         name: "Player 4",
-        role: { name: RoleNames.WEREWOLF },
-        side: { current: RoleSides.WEREWOLVES },
+        role: { name: "werewolf" },
+        side: { current: "werewolves" },
       }),
     ],
   });

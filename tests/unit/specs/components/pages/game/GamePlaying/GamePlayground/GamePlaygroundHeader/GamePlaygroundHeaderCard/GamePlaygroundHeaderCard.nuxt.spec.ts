@@ -4,7 +4,7 @@ import type { mount } from "@vue/test-utils";
 import GamePlaygroundHeaderCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderCard/GamePlaygroundHeaderCard.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/game-play-source/game-play-source.types";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
@@ -43,47 +43,47 @@ describe("Game Playground Header Card Component", () => {
   describe("Role Image", () => {
     it.each<{
       sourceName: GamePlaySourceName;
-      expectedRoleImageRoleName: RoleNames;
+      expectedRoleImageRoleName: RoleName;
       test: string;
     }>([
       {
         sourceName: "sheriff",
-        expectedRoleImageRoleName: RoleNames.VILLAGER,
+        expectedRoleImageRoleName: "villager",
         test: "should pass the villager role name to the role image component when the current play source name is sheriff.",
       },
       {
         sourceName: "survivors",
-        expectedRoleImageRoleName: RoleNames.VILLAGER,
+        expectedRoleImageRoleName: "villager",
         test: "should pass the villager role name to the role image component when the current play source name is survivors.",
       },
       {
         sourceName: "charmed",
-        expectedRoleImageRoleName: RoleNames.VILLAGER,
+        expectedRoleImageRoleName: "villager",
         test: "should pass the villager role name to the role image component when the current play source name is charmed.",
       },
       {
         sourceName: "lovers",
-        expectedRoleImageRoleName: RoleNames.VILLAGER,
+        expectedRoleImageRoleName: "villager",
         test: "should pass the villager role name to the role image component when the current play source name is lovers.",
       },
       {
         sourceName: "werewolves",
-        expectedRoleImageRoleName: RoleNames.WEREWOLF,
+        expectedRoleImageRoleName: "werewolf",
         test: "should pass the werewolf role name to the role image component when the current play source name is werewolf.",
       },
       {
-        sourceName: RoleNames.WITCH,
-        expectedRoleImageRoleName: RoleNames.WITCH,
+        sourceName: "witch",
+        expectedRoleImageRoleName: "witch",
         test: "should pass the witch role name to the role image component when the current play source name is witch.",
       },
       {
-        sourceName: RoleNames.SEER,
-        expectedRoleImageRoleName: RoleNames.SEER,
+        sourceName: "seer",
+        expectedRoleImageRoleName: "seer",
         test: "should pass the seer role name to the role image component when the current play source name is seer.",
       },
       {
-        sourceName: RoleNames.HUNTER,
-        expectedRoleImageRoleName: RoleNames.HUNTER,
+        sourceName: "hunter",
+        expectedRoleImageRoleName: "hunter",
         test: "should pass the hunter role name to the role image component when the current play source name is hunter.",
       },
     ])("$test", async({ sourceName, expectedRoleImageRoleName }) => {

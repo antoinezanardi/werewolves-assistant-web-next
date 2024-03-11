@@ -3,7 +3,6 @@ import type { mount } from "@vue/test-utils";
 import type { PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -11,7 +10,7 @@ describe("Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof PlayerCard>>;
   const defaultProps: PlayerCardProps = {
     playerName: "Player",
-    playerRole: RoleNames.WEREWOLF,
+    playerRole: "werewolf",
     selectorAriaLabel: "Select Player",
   };
 

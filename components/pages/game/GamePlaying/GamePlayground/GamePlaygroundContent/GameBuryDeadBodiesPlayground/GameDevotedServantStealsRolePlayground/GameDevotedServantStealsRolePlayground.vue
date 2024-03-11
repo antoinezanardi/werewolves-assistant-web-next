@@ -8,7 +8,7 @@
         <RoleImage
           class="glow:border-gray-400"
           definition="normal"
-          :role-name="RoleNames.DEVOTED_SERVANT"
+          role-name="devoted-servant"
           sizes="175"
         />
       </GlowElement>
@@ -41,7 +41,6 @@ import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
 import { PlayerInteraction } from "~/composables/api/game/types/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -61,7 +60,7 @@ const { getPlayerWithInteractionInCurrentGamePlay } = useGamePlay(game);
 const doesDevotedServantStealRole = ref<boolean>(false);
 
 const eliminatedPlayer = computed<Player | undefined>(() => getPlayerWithInteractionInCurrentGamePlay(PlayerInteraction.create({
-  source: RoleNames.DEVOTED_SERVANT,
+  source: "devoted-servant",
   type: "steal-role",
 })));
 

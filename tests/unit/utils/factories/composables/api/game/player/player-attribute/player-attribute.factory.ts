@@ -4,12 +4,11 @@ import { GAME_SOURCES } from "~/composables/api/game/constants/game.constants";
 import { PLAYER_ATTRIBUTE_NAMES } from "~/composables/api/game/constants/player/player-attribute/player-attribute.constants";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 
 function createFakeActingByActorPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "acting",
-    source: RoleNames.ACTOR,
+    source: "actor",
     ...attribute,
   });
 }
@@ -17,7 +16,7 @@ function createFakeActingByActorPlayerAttribute(attribute: Partial<PlayerAttribu
 function createFakeStolenRoleByDevotedServantPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "stolen-role",
-    source: RoleNames.DEVOTED_SERVANT,
+    source: "devoted-servant",
     doesRemainAfterDeath: true,
     ...attribute,
   });
@@ -44,7 +43,7 @@ function createFakeSheriffBySurvivorsPlayerAttribute(attribute: Partial<PlayerAt
 function createFakeSeenBySeerPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "seen",
-    source: RoleNames.SEER,
+    source: "seer",
     remainingPhases: 1,
     ...attribute,
   });
@@ -62,7 +61,7 @@ function createFakeEatenByWerewolvesPlayerAttribute(attribute: Partial<PlayerAtt
 function createFakeEatenByWhiteWerewolfPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "eaten",
-    source: RoleNames.WHITE_WEREWOLF,
+    source: "white-werewolf",
     remainingPhases: 1,
     ...attribute,
   });
@@ -71,7 +70,7 @@ function createFakeEatenByWhiteWerewolfPlayerAttribute(attribute: Partial<Player
 function createFakeEatenByBigBadWolfPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "eaten",
-    source: RoleNames.BIG_BAD_WOLF,
+    source: "big-bad-wolf",
     remainingPhases: 1,
     ...attribute,
   });
@@ -80,7 +79,7 @@ function createFakeEatenByBigBadWolfPlayerAttribute(attribute: Partial<PlayerAtt
 function createFakeDrankLifePotionByWitchPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "drank-life-potion",
-    source: RoleNames.WITCH,
+    source: "witch",
     remainingPhases: 1,
     ...attribute,
   });
@@ -89,7 +88,7 @@ function createFakeDrankLifePotionByWitchPlayerAttribute(attribute: Partial<Play
 function createFakeDrankDeathPotionByWitchPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "drank-death-potion",
-    source: RoleNames.WITCH,
+    source: "witch",
     remainingPhases: 1,
     ...attribute,
   });
@@ -98,7 +97,7 @@ function createFakeDrankDeathPotionByWitchPlayerAttribute(attribute: Partial<Pla
 function createFakeProtectedByDefenderPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "protected",
-    source: RoleNames.DEFENDER,
+    source: "defender",
     remainingPhases: 1,
     ...attribute,
   });
@@ -107,7 +106,7 @@ function createFakeProtectedByDefenderPlayerAttribute(attribute: Partial<PlayerA
 function createFakeScandalmongerMarkedByScandalmongerPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "scandalmonger-marked",
-    source: RoleNames.SCANDALMONGER,
+    source: "scandalmonger",
     remainingPhases: 2,
     ...attribute,
   });
@@ -116,7 +115,7 @@ function createFakeScandalmongerMarkedByScandalmongerPlayerAttribute(attribute: 
 function createFakeInLoveByCupidPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "in-love",
-    source: RoleNames.CUPID,
+    source: "cupid",
     ...attribute,
   });
 }
@@ -124,7 +123,7 @@ function createFakeInLoveByCupidPlayerAttribute(attribute: Partial<PlayerAttribu
 function createFakeWorshipedByWildChildPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "worshiped",
-    source: RoleNames.WILD_CHILD,
+    source: "wild-child",
     ...attribute,
   });
 }
@@ -132,7 +131,7 @@ function createFakeWorshipedByWildChildPlayerAttribute(attribute: Partial<Player
 function createFakePowerlessByActorPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "powerless",
-    source: RoleNames.ACTOR,
+    source: "actor",
     doesRemainAfterDeath: true,
     ...attribute,
   });
@@ -150,7 +149,7 @@ function createFakePowerlessByWerewolvesPlayerAttribute(attribute: Partial<Playe
 function createFakePowerlessByAccursedWolfFatherPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "powerless",
-    source: RoleNames.ACCURSED_WOLF_FATHER,
+    source: "accursed-wolf-father",
     doesRemainAfterDeath: true,
     ...attribute,
   });
@@ -159,7 +158,7 @@ function createFakePowerlessByAccursedWolfFatherPlayerAttribute(attribute: Parti
 function createFakePowerlessByFoxPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "powerless",
-    source: RoleNames.FOX,
+    source: "fox",
     doesRemainAfterDeath: true,
     ...attribute,
   });
@@ -168,7 +167,7 @@ function createFakePowerlessByFoxPlayerAttribute(attribute: Partial<PlayerAttrib
 function createFakePowerlessByElderPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "powerless",
-    source: RoleNames.ELDER,
+    source: "elder",
     doesRemainAfterDeath: true,
     ...attribute,
   });
@@ -185,7 +184,7 @@ function createFakeCantVoteBySurvivorsPlayerAttribute(attribute: Partial<PlayerA
 function createFakeCantVoteByScapegoatPlayerAttribute(game: Game, attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "cant-vote",
-    source: RoleNames.SCAPEGOAT,
+    source: "scapegoat",
     remainingPhases: 1,
     activeAt: {
       turn: game.phase === "day" ? game.turn + 1 : game.turn,
@@ -198,7 +197,7 @@ function createFakeCantVoteByScapegoatPlayerAttribute(game: Game, attribute: Par
 function createFakeCharmedByPiedPiperPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "charmed",
-    source: RoleNames.PIED_PIPER,
+    source: "pied-piper",
     ...attribute,
   });
 }
@@ -206,7 +205,7 @@ function createFakeCharmedByPiedPiperPlayerAttribute(attribute: Partial<PlayerAt
 function createFakeContaminatedByRustySwordKnightPlayerAttribute(attribute: Partial<PlayerAttribute> = {}): PlayerAttribute {
   return createFakePlayerAttribute({
     name: "contaminated",
-    source: RoleNames.RUSTY_SWORD_KNIGHT,
+    source: "rusty-sword-knight",
     remainingPhases: 2,
     ...attribute,
   });

@@ -23,7 +23,6 @@ import NoActionNeeded from "~/components/shared/game/game-play/NoNeededAction/No
 import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
 import { PlayerInteraction } from "~/composables/api/game/types/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
@@ -33,7 +32,7 @@ const { getPlayerWithInteractionInCurrentGamePlay } = useGamePlay(game);
 
 const eligibleStolenRoleByDevotedServantPlayer = computed<Player | undefined>(() => {
   const stolenRoleByDevotedServantInteraction = PlayerInteraction.create({
-    source: RoleNames.DEVOTED_SERVANT,
+    source: "devoted-servant",
     type: "steal-role",
   });
 

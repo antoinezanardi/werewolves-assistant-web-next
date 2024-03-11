@@ -3,7 +3,6 @@ import type { mount } from "@vue/test-utils";
 
 import GamePlaygroundHeaderCurrentPlay from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderCurrentPlay/GamePlaygroundHeaderCurrentPlay.vue";
 import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
@@ -43,7 +42,7 @@ describe("Game Playground Header Current Play Component", () => {
     it("should not render the current play SVG icon when the current play is unknown.", async() => {
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlay({
-        source: createFakeGamePlaySource({ name: RoleNames.HUNTER }),
+        source: createFakeGamePlaySource({ name: "hunter" }),
         action: "delegate",
       });
       await nextTick();
@@ -220,7 +219,7 @@ describe("Game Playground Header Current Play Component", () => {
       },
       {
         currentGamePlay: createFakeGamePlay({
-          source: createFakeGamePlaySource({ name: RoleNames.HUNTER }),
+          source: createFakeGamePlaySource({ name: "hunter" }),
           action: "delegate",
         }),
         expectedText: "components.GamePlaygroundHeaderCurrentPlay.unknownGamePlay",

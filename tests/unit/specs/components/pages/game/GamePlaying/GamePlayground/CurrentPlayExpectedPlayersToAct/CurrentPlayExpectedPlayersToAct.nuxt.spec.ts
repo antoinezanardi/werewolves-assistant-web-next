@@ -2,7 +2,6 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 
 import CurrentPlayExpectedPlayersToAct from "~/components/pages/game/GamePlaying/GamePlayground/CurrentPlayExpectedPlayersToAct/CurrentPlayExpectedPlayersToAct.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
@@ -25,7 +24,7 @@ describe("Current Play Expected Players To Act Component", () => {
           currentPlay: createFakeGamePlayCupidCharms({
             source: createFakeGamePlaySource({
               players: expectedPlayersToAct,
-              name: RoleNames.CUPID,
+              name: "cupid",
             }),
           }),
         }),

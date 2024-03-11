@@ -1,5 +1,4 @@
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 
 describe("Create Game Dto", () => {
@@ -8,7 +7,7 @@ describe("Create Game Dto", () => {
       const players = [
         createFakeCreateGamePlayerDto({
           name: "Player 1",
-          role: { name: RoleNames.WEREWOLF },
+          role: { name: "werewolf" },
         }),
       ];
       const createGameDto = CreateGameDto.create({

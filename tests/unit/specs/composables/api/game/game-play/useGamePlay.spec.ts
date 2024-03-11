@@ -3,7 +3,6 @@ import type { PlayerInteraction } from "~/composables/api/game/types/game-play/g
 import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
 import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
 import { createFakePlayerInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.factory";
@@ -53,19 +52,19 @@ describe("Use Game Play Composable", () => {
     }>([
       {
         game: createFakeGame(),
-        interaction: createFakePlayerInteraction({ source: RoleNames.DEVOTED_SERVANT, type: "steal-role" }),
+        interaction: createFakePlayerInteraction({ source: "devoted-servant", type: "steal-role" }),
         expectedPlayer: undefined,
         test: "should return undefined when game current play is null.",
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlay() }),
-        interaction: createFakePlayerInteraction({ source: RoleNames.DEVOTED_SERVANT, type: "steal-role" }),
+        interaction: createFakePlayerInteraction({ source: "devoted-servant", type: "steal-role" }),
         expectedPlayer: undefined,
         test: "should return undefined when game current play eligible targets are undefined.",
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets() }) }),
-        interaction: createFakePlayerInteraction({ source: RoleNames.DEVOTED_SERVANT, type: "steal-role" }),
+        interaction: createFakePlayerInteraction({ source: "devoted-servant", type: "steal-role" }),
         expectedPlayer: undefined,
         test: "should return undefined when game current play interactable players are undefined.",
       },
@@ -78,11 +77,11 @@ describe("Use Game Play Composable", () => {
                   player: createFakePlayer(),
                   interactions: [
                     createFakePlayerInteraction({
-                      source: RoleNames.DEVOTED_SERVANT,
+                      source: "devoted-servant",
                       type: "eat",
                     }),
                     createFakePlayerInteraction({
-                      source: RoleNames.HUNTER,
+                      source: "hunter",
                       type: "steal-role",
                     }),
                   ],
@@ -92,7 +91,7 @@ describe("Use Game Play Composable", () => {
             }),
           }),
         }),
-        interaction: createFakePlayerInteraction({ source: RoleNames.DEVOTED_SERVANT, type: "steal-role" }),
+        interaction: createFakePlayerInteraction({ source: "devoted-servant", type: "steal-role" }),
         expectedPlayer: undefined,
         test: "should return undefined when game current play interaction is not found among interactable players.",
       },
@@ -105,7 +104,7 @@ describe("Use Game Play Composable", () => {
                   player: foundPlayerWithInteraction,
                   interactions: [
                     createFakePlayerInteraction({
-                      source: RoleNames.DEVOTED_SERVANT,
+                      source: "devoted-servant",
                       type: "steal-role",
                     }),
                   ],
@@ -114,7 +113,7 @@ describe("Use Game Play Composable", () => {
             }),
           }),
         }),
-        interaction: createFakePlayerInteraction({ source: RoleNames.DEVOTED_SERVANT, type: "steal-role" }),
+        interaction: createFakePlayerInteraction({ source: "devoted-servant", type: "steal-role" }),
         expectedPlayer: foundPlayerWithInteraction,
         test: "should return player when game current play interaction is found among interactable players.",
       },
