@@ -37,7 +37,7 @@
 
         <div class="flex items-center mt-2">
           <RoleImage
-            v-if="player.side.current === RoleSides.WEREWOLVES"
+            v-if="player.side.current === 'werewolves'"
             id="player-werewolf-role-image"
             :alt="roleImageAlt"
             class="!border-2"
@@ -60,7 +60,7 @@
           </div>
 
           <RoleImage
-            v-if="player.side.current === RoleSides.VILLAGERS"
+            v-if="player.side.current === 'villagers'"
             id="player-villager-role-image"
             :alt="roleImageAlt"
             class="!border-2"
@@ -78,7 +78,6 @@
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 
 const props = defineProps<GameTeamSidePlayerProps>();
 
@@ -91,7 +90,7 @@ const playerSideGlowClass = computed<string>(() => {
   if (!player.isAlive) {
     return "";
   }
-  return player.side.current === RoleSides.WEREWOLVES ? "glow:border-red-500" : "glow:border-green-500";
+  return player.side.current === "werewolves" ? "glow:border-red-500" : "glow:border-green-500";
 });
 
 const roleImageClasses = computed<string>(() => {

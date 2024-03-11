@@ -23,7 +23,6 @@ import { storeToRefs } from "pinia";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { fetchRandomGameComposition } = useFetchRandomGameComposition();
@@ -49,9 +48,9 @@ async function handleRandomCompositionButtonClick(): Promise<void> {
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,
     excludedRoles: [
-      RoleNames.THIEF,
-      RoleNames.ACTOR,
-      RoleNames.PREJUDICED_MANIPULATOR,
+      "thief",
+      "actor",
+      "prejudiced-manipulator",
     ],
   });
   if (randomGameComposition !== null) {

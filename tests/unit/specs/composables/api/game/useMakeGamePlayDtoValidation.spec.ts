@@ -1,7 +1,6 @@
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { useMakeGamePlayDtoValidation } from "~/composables/api/game/useMakeGamePlayDtoValidation";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
 import { createFakeMakeGamePlayVoteDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
 import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
@@ -302,13 +301,13 @@ describe("Use Make Game Play Dto Validation Composable", () => {
     }>([
       {
         game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "vote" }) }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: RoleSides.VILLAGERS }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: false,
         test: "should return false when current play type is 'vote'.",
       },
       {
         game: createFakeGame({ currentPlay: null }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: RoleSides.VILLAGERS }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: false,
         test: "should return false when current play is null.",
       },
@@ -320,7 +319,7 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: RoleSides.VILLAGERS }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: true,
         test: "should return true when chosen side is defined.",
       },
@@ -412,7 +411,7 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: RoleSides.VILLAGERS }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: true,
         test: "should return true when current game play type is choose side and chosen side is defined.",
       },

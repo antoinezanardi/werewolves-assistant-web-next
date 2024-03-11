@@ -4,7 +4,6 @@ import type { Mock } from "vitest";
 
 import type { GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
 import GameLobbyPlayerCard from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/GameLobbyPlayerCard.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -16,7 +15,7 @@ describe("Game Lobby Player Card Component", () => {
   const defaultProps: GameLobbyPlayerCardProps = {
     player: createFakeCreateGamePlayerDto({
       name: "Toto",
-      role: { name: RoleNames.WEREWOLF },
+      role: { name: "werewolf" },
     }),
   };
   let mocks: {

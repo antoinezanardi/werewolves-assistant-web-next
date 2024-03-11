@@ -1,7 +1,7 @@
-import type { RoleOrigins } from "~/composables/api/role/enums/role.enums";
+import type { RoleOrigin } from "~/composables/api/role/types/role.types";
 
 type RoleOriginBadgeProps = {
-  roleOrigin: RoleOrigins;
+  roleOrigin: RoleOrigin;
 };
 
 export type { RoleOriginBadgeProps };

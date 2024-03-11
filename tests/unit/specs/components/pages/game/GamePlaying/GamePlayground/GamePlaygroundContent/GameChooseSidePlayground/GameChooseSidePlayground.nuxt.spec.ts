@@ -3,7 +3,6 @@ import type { mount } from "@vue/test-utils";
 
 import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseSidePlayground/GameChooseSidePlayground.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
@@ -38,12 +37,12 @@ describe("Game Choose Side Playground Component", () => {
       const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
       await button.trigger("click");
 
-      expect(makeGamePlayDtoStore.setChosenSide).toHaveBeenCalledExactlyOnceWith(RoleSides.VILLAGERS);
+      expect(makeGamePlayDtoStore.setChosenSide).toHaveBeenCalledExactlyOnceWith("villagers");
     });
 
     it("should have green border when side is villagers.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.VILLAGERS;
+      makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "villagers";
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
 
@@ -53,7 +52,7 @@ describe("Game Choose Side Playground Component", () => {
     describe("Villagers Button Image", () => {
       it("should have green border when side is villagers.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.VILLAGERS;
+        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "villagers";
         await nextTick();
         const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
         const image = button.findComponent<typeof RoleImage>("#villagers-side-image");
@@ -65,7 +64,7 @@ describe("Game Choose Side Playground Component", () => {
     describe("Villagers Button Text", () => {
       it("should have translated text when rendered.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.VILLAGERS;
+        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "villagers";
         await nextTick();
         const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
 
@@ -80,12 +79,12 @@ describe("Game Choose Side Playground Component", () => {
       const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
       await button.trigger("click");
 
-      expect(makeGamePlayDtoStore.setChosenSide).toHaveBeenCalledExactlyOnceWith(RoleSides.WEREWOLVES);
+      expect(makeGamePlayDtoStore.setChosenSide).toHaveBeenCalledExactlyOnceWith("werewolves");
     });
 
     it("should have red border when side is werewolves.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.WEREWOLVES;
+      makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "werewolves";
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
 
@@ -95,7 +94,7 @@ describe("Game Choose Side Playground Component", () => {
     describe("Werewolves Button Image", () => {
       it("should have red border when side is werewolves.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.WEREWOLVES;
+        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "werewolves";
         await nextTick();
         const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
         const image = button.findComponent<typeof RoleImage>("#werewolves-side-image");
@@ -107,7 +106,7 @@ describe("Game Choose Side Playground Component", () => {
     describe("Werewolves Button Text", () => {
       it("should have translated text when rendered.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = RoleSides.WEREWOLVES;
+        makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "werewolves";
         await nextTick();
         const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
 

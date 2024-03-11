@@ -46,7 +46,7 @@ import type { AboutAvailableRoleDescriptionProps } from "~/components/pages/abou
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
-import type { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 
 const props = defineProps<AboutAvailableRoleDescriptionProps>();
@@ -56,7 +56,7 @@ const { t, messages, locale } = useI18n();
 const { getRoleNameLabel } = useRoleName();
 
 const roleDescriptionLines = computed<string[]>(() => {
-  type ComponentsMessages = Record<"AboutAvailableRoleDescription", Record<"descriptions", Record<RoleNames, Record<string, string>>>>;
+  type ComponentsMessages = Record<"AboutAvailableRoleDescription", Record<"descriptions", Record<RoleName, Record<string, string>>>>;
 
   const componentsMessages = messages.value[locale.value].components as ComponentsMessages;
   const roleDescriptionMessages = componentsMessages.AboutAvailableRoleDescription.descriptions[props.role.name] as Record<string, string> | undefined;
@@ -66,7 +66,7 @@ const roleDescriptionLines = computed<string[]>(() => {
   return Object.keys(roleDescriptionMessages).map(key => t(`components.AboutAvailableRoleDescription.descriptions.${props.role.name}.${key}`));
 });
 
-function getRoleDescriptionLeftImageAlt(roleName: RoleNames): string {
+function getRoleDescriptionLeftImageAlt(roleName: RoleName): string {
   return t("components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt", { role: getRoleNameLabel(roleName) });
 }
 </script>

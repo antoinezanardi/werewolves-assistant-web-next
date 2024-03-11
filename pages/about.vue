@@ -5,7 +5,7 @@
         id="about-role-image-title"
         :alt="$t('pages.about.imageTitle')"
         definition="small"
-        :role-name="RoleNames.WEREWOLF"
+        role-name="werewolf"
         sizes="75"
       />
 
@@ -45,5 +45,4 @@ import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAs
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 </script>

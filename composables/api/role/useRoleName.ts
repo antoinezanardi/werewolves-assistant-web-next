@@ -1,13 +1,13 @@
-import type { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 
 type UseRoleName = {
-  getRoleNameLabel: (roleName: RoleNames) => string;
+  getRoleNameLabel: (roleName: RoleName) => string;
 };
 
 function useRoleName(): UseRoleName {
   const { t } = useI18n();
 
-  function getRoleNameLabel(roleName: RoleNames): string {
+  function getRoleNameLabel(roleName: RoleName): string {
     return t(`shared.role.name.${roleName}`);
   }
   return { getRoleNameLabel };

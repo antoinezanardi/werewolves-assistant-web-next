@@ -7,7 +7,6 @@ import GameTeamSidePlayer from "~/components/pages/game/GamePlaying/GameTeamSide
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
@@ -127,7 +126,7 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
 
-        expect(playerRoleImage.props("roleName")).toBe(RoleNames.SEER);
+        expect(playerRoleImage.props("roleName")).toBe("seer");
       });
 
       it("should display player role image on the right when side is werewolves.", async() => {
@@ -135,7 +134,7 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-werewolf-role-image");
 
-        expect(playerRoleImage.props("roleName")).toBe(RoleNames.ACCURSED_WOLF_FATHER);
+        expect(playerRoleImage.props("roleName")).toBe("accursed-wolf-father");
       });
 
       it("should have a green border glow class when side is villagers.", async() => {

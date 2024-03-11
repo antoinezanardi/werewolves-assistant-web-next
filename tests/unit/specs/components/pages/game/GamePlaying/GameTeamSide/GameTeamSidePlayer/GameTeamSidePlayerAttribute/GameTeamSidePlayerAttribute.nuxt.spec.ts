@@ -6,7 +6,6 @@ import type { NuxtImg } from "#components";
 import type { GameTeamSidePlayerAttributeProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/game-team-side-player-attribute.types";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeActingByActorPlayerAttribute, createFakeCantVoteByScapegoatPlayerAttribute, createFakeCantVoteBySurvivorsPlayerAttribute, createFakeCharmedByPiedPiperPlayerAttribute, createFakeContaminatedByRustySwordKnightPlayerAttribute, createFakeDrankDeathPotionByWitchPlayerAttribute, createFakeDrankLifePotionByWitchPlayerAttribute, createFakeEatenByBigBadWolfPlayerAttribute, createFakeEatenByWerewolvesPlayerAttribute, createFakeEatenByWhiteWerewolfPlayerAttribute, createFakeInLoveByCupidPlayerAttribute, createFakePlayerAttribute, createFakePowerlessByAccursedWolfFatherPlayerAttribute, createFakePowerlessByActorPlayerAttribute, createFakePowerlessByElderPlayerAttribute, createFakePowerlessByFoxPlayerAttribute, createFakePowerlessByWerewolvesPlayerAttribute, createFakeProtectedByDefenderPlayerAttribute, createFakeScandalmongerMarkedByScandalmongerPlayerAttribute, createFakeSeenBySeerPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute, createFakeSheriffBySurvivorsPlayerAttribute, createFakeStolenRoleByDevotedServantPlayerAttribute, createFakeWorshipedByWildChildPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
@@ -181,7 +180,7 @@ describe("Game Team Side Player Attribute Component", () => {
       },
       {
         attribute: createFakePlayerAttribute({
-          source: RoleNames.HUNTER,
+          source: "hunter",
           name: "eaten",
         }),
         expectedAlt: "components.GameTeamSidePlayerAttribute.unknownPlayerAttribute",

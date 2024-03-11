@@ -4,7 +4,6 @@ import type { mount } from "@vue/test-utils";
 import GameBuryDeadBodiesPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameBuryDeadBodiesPlayground.vue";
 import type GameDevotedServantStealsRolePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameDevotedServantStealsRolePlayground/GameDevotedServantStealsRolePlayground.vue";
 import type NoActionNeeded from "~/components/shared/game/game-play/NoNeededAction/NoActionNeeded.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
@@ -42,7 +41,7 @@ describe("Game Bury Dead Bodies Playground Component", () => {
               player: createFakeSeerAlivePlayer(),
               interactions: [
                 createFakePlayerInteraction({
-                  source: RoleNames.DEVOTED_SERVANT,
+                  source: "devoted-servant",
                   type: "steal-role",
                 }),
               ],
@@ -85,7 +84,7 @@ describe("Game Bury Dead Bodies Playground Component", () => {
               player: createFakeSeerAlivePlayer(),
               interactions: [
                 createFakePlayerInteraction({
-                  source: RoleNames.DEVOTED_SERVANT,
+                  source: "devoted-servant",
                   type: "steal-role",
                 }),
               ],

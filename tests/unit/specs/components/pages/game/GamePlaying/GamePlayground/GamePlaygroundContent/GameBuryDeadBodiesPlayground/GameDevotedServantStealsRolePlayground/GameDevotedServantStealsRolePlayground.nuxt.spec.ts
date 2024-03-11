@@ -5,7 +5,6 @@ import { expect } from "vitest";
 
 import type { VuePrimeToggleButton } from "#components";
 import GameDevotedServantStealsRolePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameDevotedServantStealsRolePlayground/GameDevotedServantStealsRolePlayground.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
@@ -32,7 +31,7 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
                   player: eliminatePlayer,
                   interactions: [
                     createFakePlayerInteraction({
-                      source: RoleNames.DEVOTED_SERVANT,
+                      source: "devoted-servant",
                       type: "steal-role",
                     }),
                   ],

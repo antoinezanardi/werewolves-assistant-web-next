@@ -1,14 +1,15 @@
 import { Expose, plainToInstance } from "class-transformer";
 
-import { RoleSides } from "~/composables/api/role/enums/role.enums";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
 class PlayerSide {
   @Expose()
-  public original: RoleSides;
+  public original: RoleSide;
 
   @Expose()
-  public current: RoleSides;
+  public current: RoleSide;
 
   public static create(side: Partial<PlayerSide>): PlayerSide {
     return plainToInstance(PlayerSide, side, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);

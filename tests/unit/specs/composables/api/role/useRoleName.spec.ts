@@ -1,6 +1,5 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
 
@@ -16,7 +15,7 @@ describe("Use Role Name Composable", () => {
 
   describe("getRoleLabel", () => {
     it("should translate role when called with role name.", () => {
-      useRoleName().getRoleNameLabel(RoleNames.WEREWOLF);
+      useRoleName().getRoleNameLabel("werewolf");
 
       expect(tMock).toHaveBeenCalledExactlyOnceWith("shared.role.name.werewolf");
     });

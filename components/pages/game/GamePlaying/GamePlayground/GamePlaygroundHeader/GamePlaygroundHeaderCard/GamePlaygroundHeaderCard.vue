@@ -15,14 +15,14 @@
 import { storeToRefs } from "pinia";
 
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { RoleNames } from "~/composables/api/role/enums/role.enums";
+import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/game-play-source/game-play-source.types";
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const currentPlayRoleImageName = computed<RoleNames | undefined>(() => {
+const currentPlayRoleImageName = computed<RoleName | undefined>(() => {
   const { currentPlay } = game.value;
   if (!currentPlay) {
     return undefined;
@@ -35,11 +35,11 @@ const currentPlayRoleImageName = computed<RoleNames | undefined>(() => {
     "lovers",
   ];
   if (villagerImageSpecificGamePlaySourceNames.includes(sourceName)) {
-    return RoleNames.VILLAGER;
+    return "villager";
   }
   if (sourceName === "werewolves") {
-    return RoleNames.WEREWOLF;
+    return "werewolf";
   }
-  return sourceName as RoleNames;
+  return sourceName as RoleName;
 });
 </script>

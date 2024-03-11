@@ -4,13 +4,13 @@ import type Badge from "primevue/badge";
 
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
-import { RoleTypes } from "~/composables/api/role/enums/role.enums";
+import type { RoleType } from "~/composables/api/role/types/role.types";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Type Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;
-  const defaultProps: RoleTypeBadgeProps = { roleType: RoleTypes.WEREWOLF };
+  const defaultProps: RoleTypeBadgeProps = { roleType: "werewolf" };
 
   async function mountRoleTypeBadgeComponent(options: ComponentMountingOptions<typeof RoleTypeBadge> = {}): Promise<ReturnType<typeof mount<typeof RoleTypeBadge>>> {
     return mountSuspendedComponent(RoleTypeBadge, {
@@ -44,27 +44,27 @@ describe("Role Type Badge Component", () => {
     });
 
     it.each< {
-      roleType: RoleTypes;
+      roleType: RoleType;
       expectedSeverity: "danger" | "info" | "success" | "warning";
       test: string;
     }>([
       {
-        roleType: RoleTypes.WEREWOLF,
+        roleType: "werewolf",
         expectedSeverity: "danger",
         test: "should have severity of danger when role type is werewolf.",
       },
       {
-        roleType: RoleTypes.VILLAGER,
+        roleType: "villager",
         expectedSeverity: "success",
         test: "should have severity of success when role type is villager.",
       },
       {
-        roleType: RoleTypes.AMBIGUOUS,
+        roleType: "ambiguous",
         expectedSeverity: "warning",
         test: "should have severity of warning when role type is ambiguous.",
       },
       {
-        roleType: RoleTypes.LONELY,
+        roleType: "lonely",
         expectedSeverity: "info",
         test: "should have severity of info when role type is lonely.",
       },
