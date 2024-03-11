@@ -35,7 +35,7 @@
           {{ $t(`shared.role.name.${player.role.current}`) }}
         </small>
 
-        <div class="flex mt-2">
+        <div class="flex items-center mt-2">
           <RoleImage
             v-if="player.side.current === RoleSides.WEREWOLVES"
             id="player-werewolf-role-image"
