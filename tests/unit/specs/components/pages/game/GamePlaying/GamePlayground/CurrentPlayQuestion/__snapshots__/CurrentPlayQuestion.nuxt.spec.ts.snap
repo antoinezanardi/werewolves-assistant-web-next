@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Current Play Question Component > should match snapshot when rendered. 1`] = `"<h3 id="current-play-question" class="text-center">components.CurrentPlayQuestion.whichPlayersDoesCupidCharm</h3>"`;

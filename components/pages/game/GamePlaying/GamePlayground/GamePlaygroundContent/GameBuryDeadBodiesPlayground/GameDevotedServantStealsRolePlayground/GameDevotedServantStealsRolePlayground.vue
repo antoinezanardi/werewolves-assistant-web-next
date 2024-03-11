@@ -9,7 +9,7 @@
           class="glow:border-gray-400"
           definition="normal"
           :role-name="RoleNames.DEVOTED_SERVANT"
-          sizes="175px"
+          sizes="175"
         />
       </GlowElement>
     </GlowCapture>

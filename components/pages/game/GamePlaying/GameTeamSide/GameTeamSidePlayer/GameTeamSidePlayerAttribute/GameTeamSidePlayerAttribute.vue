@@ -4,7 +4,9 @@
       id="game-team-side-player-attribute-icon"
       v-p-tooltip="playerAttributeTooltipOptions"
       :alt="playerAttributeDescription"
+      height="50"
       :src="playerAttributeSvgPath"
+      width="50"
     />
   </div>
 </template>

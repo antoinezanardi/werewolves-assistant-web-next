@@ -6,7 +6,7 @@
         :alt="$t('pages.about.imageTitle')"
         definition="small"
         :role-name="RoleNames.WEREWOLF"
-        sizes="75px"
+        sizes="75"
       />
 
       <h1

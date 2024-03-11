@@ -8,7 +8,7 @@
         :alt="getRoleDescriptionLeftImageAlt(role.name)"
         class="available-role-description-role-image"
         :role-name="role.name"
-        sizes="150px"
+        sizes="150"
       />
 
       <h2 class="available-role-description-role-name mt-3">
