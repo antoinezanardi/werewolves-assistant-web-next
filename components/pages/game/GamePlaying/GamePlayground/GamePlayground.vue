@@ -11,7 +11,7 @@
 
     <GamePlaygroundContent class="grow overflow-y-auto py-2"/>
 
-    <GamePlaygroundFooter class=""/>
+    <GamePlaygroundFooter/>
   </div>
 </template>
 
