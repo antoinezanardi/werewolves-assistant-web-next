@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game No Action Playground Component > should match snapshot when rendered. 1`] = `"<div id="game-no-action-playground"> GAME PLAYGROUND NO ACTION </div>"`;
+exports[`Game No Action Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-no-action-playground" class="flex items-center justify-center">
+  <no-action-needed-stub></no-action-needed-stub>
+</div>"
+`;
