@@ -7,11 +7,11 @@
 
     <CurrentPlayExpectedPlayersToAct class="flex-none"/>
 
-    <CurrentPlayQuestion class="mb-4"/>
+    <CurrentPlayQuestion/>
 
-    <GamePlaygroundContent class="grow overflow-y-auto"/>
+    <GamePlaygroundContent class="grow overflow-y-auto py-2"/>
 
-    <GamePlaygroundFooter/>
+    <GamePlaygroundFooter class=""/>
   </div>
 </template>
 
