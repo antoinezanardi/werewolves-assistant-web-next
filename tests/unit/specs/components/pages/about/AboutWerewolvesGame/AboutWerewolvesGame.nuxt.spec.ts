@@ -3,6 +3,7 @@ import type { mount } from "@vue/test-utils";
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("About Werewolves Game Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutWerewolvesGame>>;
@@ -26,7 +27,7 @@ describe("About Werewolves Game Component", () => {
 
   describe("Watch tutorial on Youtube Anchor", () => {
     it("should have tooltip when rendered.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#about-werewolves-game-watch-tutorial-video-on-youtube") };
       wrapper = await mountSuspendedComponent(AboutWerewolvesGame, { global: { directives } });
 

@@ -15,8 +15,8 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
         <div class="flex items-center mt-2">
           <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">
-            <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
-            <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
+            <game-team-side-player-attribute-stub attribute="[object Object]" player="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
+            <game-team-side-player-attribute-stub attribute="[object Object]" player="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
           </div>
           <!--v-if-->
         </div>
@@ -35,8 +35,8 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
         <div class="flex items-center mt-2">
           <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">
-            <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
-            <game-team-side-player-attribute-stub attribute="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
+            <game-team-side-player-attribute-stub attribute="[object Object]" player="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
+            <game-team-side-player-attribute-stub attribute="[object Object]" player="[object Object]" class="p-1"></game-team-side-player-attribute-stub>
           </div>
           <!--v-if-->
         </div>

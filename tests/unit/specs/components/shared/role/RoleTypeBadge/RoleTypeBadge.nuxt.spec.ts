@@ -7,6 +7,7 @@ import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.
 import type { RoleType } from "~/composables/api/role/types/role.types";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Role Type Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;
@@ -30,7 +31,7 @@ describe("Role Type Badge Component", () => {
 
   describe("Badge", () => {
     it("should have tooltip when rendered.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, ".role-type-badge") };
       wrapper = await mountRoleTypeBadgeComponent({ global: { directives } });
 

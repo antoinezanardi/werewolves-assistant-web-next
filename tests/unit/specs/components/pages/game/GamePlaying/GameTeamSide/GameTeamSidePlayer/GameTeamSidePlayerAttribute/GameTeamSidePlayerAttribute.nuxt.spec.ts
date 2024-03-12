@@ -8,13 +8,19 @@ import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/Gam
 import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeActingByActorPlayerAttribute, createFakeCantVoteByScapegoatPlayerAttribute, createFakeCantVoteBySurvivorsPlayerAttribute, createFakeCharmedByPiedPiperPlayerAttribute, createFakeContaminatedByRustySwordKnightPlayerAttribute, createFakeDrankDeathPotionByWitchPlayerAttribute, createFakeDrankLifePotionByWitchPlayerAttribute, createFakeEatenByBigBadWolfPlayerAttribute, createFakeEatenByWerewolvesPlayerAttribute, createFakeEatenByWhiteWerewolfPlayerAttribute, createFakeInLoveByCupidPlayerAttribute, createFakePlayerAttribute, createFakePowerlessByAccursedWolfFatherPlayerAttribute, createFakePowerlessByActorPlayerAttribute, createFakePowerlessByElderPlayerAttribute, createFakePowerlessByFoxPlayerAttribute, createFakePowerlessByWerewolvesPlayerAttribute, createFakeProtectedByDefenderPlayerAttribute, createFakeScandalmongerMarkedByScandalmongerPlayerAttribute, createFakeSeenBySeerPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute, createFakeSheriffBySurvivorsPlayerAttribute, createFakeStolenRoleByDevotedServantPlayerAttribute, createFakeWorshipedByWildChildPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
+import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Team Side Player Attribute Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameTeamSidePlayerAttribute>>;
+  const defaultPlayer = createFakeSeerAlivePlayer();
   const defaultPlayerAttribute = createFakeSeenBySeerPlayerAttribute();
-  const defaultProps: GameTeamSidePlayerAttributeProps = { attribute: defaultPlayerAttribute };
+  const defaultProps: GameTeamSidePlayerAttributeProps = {
+    player: defaultPlayer,
+    attribute: defaultPlayerAttribute,
+  };
 
   async function mountGameTeamSidePlayerAttributeComponent(options: ComponentMountingOptions<typeof GameTeamSidePlayerAttribute> = {}):
   Promise<ReturnType<typeof mount<typeof GameTeamSidePlayerAttribute>>> {
@@ -188,15 +194,15 @@ describe("Game Team Side Player Attribute Component", () => {
         test: "should render unknown icon when player attribute is unknown.",
       },
     ])("$test", async({ attribute, expectedAlt, expectedIconSrc }) => {
-      wrapper = await mountGameTeamSidePlayerAttributeComponent({ props: { attribute } });
+      wrapper = await mountGameTeamSidePlayerAttributeComponent({ props: { ...defaultProps, attribute } });
       const icon = wrapper.findComponent<typeof NuxtImg>(`#game-team-side-player-attribute-icon`);
 
       expect(icon.attributes("src")).toBe(expectedIconSrc);
       expect(icon.attributes("alt")).toBe(expectedAlt);
     });
 
-    it("should have tooltip when rendered.", async() => {
-      const tooltip = { value: undefined };
+    it("should have tooltip on right position when player is from villagers side.", async() => {
+      const tooltip: BoundTooltip = { value: undefined, arg: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-team-side-player-attribute-icon") };
       wrapper = await mountGameTeamSidePlayerAttributeComponent({ global: { directives } });
       const expectedTooltipOptions: TooltipOptions = {
@@ -209,6 +215,30 @@ describe("Game Team Side Player Attribute Component", () => {
       };
 
       expect(tooltip.value).toStrictEqual<TooltipOptions>(expectedTooltipOptions);
+      expect(tooltip.arg).toStrictEqual({ position: "right" });
+    });
+
+    it("should have tooltip on left position when player is from werewolves side.", async() => {
+      const tooltip: BoundTooltip = { value: undefined, arg: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-team-side-player-attribute-icon") };
+      wrapper = await mountGameTeamSidePlayerAttributeComponent({
+        props: {
+          ...defaultProps,
+          player: createFakeWerewolfAlivePlayer(),
+        },
+        global: { directives },
+      });
+      const expectedTooltipOptions: TooltipOptions = {
+        value: `<div class="flex flex-col items-center">
+                <img width="75" src="/_ipx/_/svg/game/player/player-attribute/seen.svg" alt="components.GameTeamSidePlayerAttribute.seenBySeer" class="mb-3"/>
+                <div class="text-center">components.GameTeamSidePlayerAttribute.seenBySeer</div>
+            </div>`,
+        fitContent: false,
+        escape: false,
+      };
+
+      expect(tooltip.value).toStrictEqual<TooltipOptions>(expectedTooltipOptions);
+      expect(tooltip.arg).toStrictEqual({ position: "left" });
     });
   });
 });

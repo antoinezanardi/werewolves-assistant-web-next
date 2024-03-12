@@ -2,7 +2,7 @@
   <div id="game-team-side-player-attribute">
     <NuxtImg
       id="game-team-side-player-attribute-icon"
-      v-p-tooltip="playerAttributeTooltipOptions"
+      v-p-tooltip:[{position:tooltipPosition}]="playerAttributeTooltipOptions"
       :alt="playerAttributeDescription"
       height="50"
       :src="playerAttributeSvgPath"
@@ -171,6 +171,12 @@ const playerAttributeSvgPath = computed<string>(() => {
     return "svg/misc/question-mark.svg";
   }
   return playerAttributeSourceSvgAndDescription.value.svgPath;
+});
+
+const tooltipPosition = computed<"left" | "right">(() => {
+  const { side } = props.player;
+
+  return side.current === "werewolves" ? "left" : "right";
 });
 
 const playerAttributeTooltipOptions = computed<TooltipOptions>(() => {

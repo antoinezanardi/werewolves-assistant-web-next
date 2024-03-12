@@ -5,6 +5,7 @@ import type { NuxtImg, NuxtLink } from "#components";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("NavBar Component", () => {
   let wrapper: ReturnType<typeof mount<typeof NavBar>>;
@@ -55,7 +56,7 @@ describe("NavBar Component", () => {
 
   describe("Parameters Menu", () => {
     it("should have left tooltip when rendered.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#navbar-parameters-menu") };
       wrapper = await mountNavBarComponent({ shallow: false, global: { directives } });
 
