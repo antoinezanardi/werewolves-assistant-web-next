@@ -3,7 +3,8 @@
     <button
       v-p-tooltip="tooltipContent"
       :aria-label="selectorAriaLabel"
-      class="flex player-card-selector"
+      class="border-4 border-gray-600 flex player-card-selector rounded-lg"
+      :class="{ '!border-gray-100': isSelected }"
       type="button"
       @click.prevent="emitPlayerCardSelectorClickEvent"
     >
@@ -14,7 +15,7 @@
       />
     </button>
 
-    <span class="player-card-name truncate">
+    <span class="max-w-full player-card-name truncate">
       {{ playerName }}
     </span>
   </div>
@@ -24,7 +25,10 @@
 import type { PlayerCardEmits, PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
-const props = withDefaults(defineProps<PlayerCardProps>(), { doesShowSelectorTooltip: false });
+const props = withDefaults(defineProps<PlayerCardProps>(), {
+  doesShowSelectorTooltip: false,
+  isSelected: false,
+});
 
 const emit = defineEmits<PlayerCardEmits>();
 
@@ -43,19 +47,10 @@ function emitPlayerCardSelectorClickEvent(): void {
 
 <style lang="scss" scoped>
 .player-card-selector {
-  border: 3px solid #232323;
-  border-radius: 10%;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 0;
   transition: border-color 0.2s;
 
   &:hover {
     border-color: #747474;
   }
-}
-
-.player-card-name {
-  max-width: 100%;
 }
 </style>

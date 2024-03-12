@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Target Playground Component > should match snapshot when rendered. 1`] = `"<div id="game-target-playground"> GAME PLAYGROUND TARGET </div>"`;
+exports[`Game Target Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-target-playground">
+  <game-target-playground-targets-stub class="h-full"></game-target-playground-targets-stub>
+</div>"
+`;

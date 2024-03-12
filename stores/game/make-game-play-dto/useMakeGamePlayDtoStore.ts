@@ -37,6 +37,14 @@ const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
     }
   }
 
+  function removeFirstMakeGamePlayTargetDto(): void {
+    if (!makeGamePlayDto.value.targets || makeGamePlayDto.value.targets.length === 0) {
+      return;
+    }
+    const firstTarget = makeGamePlayDto.value.targets[0];
+    removeMakeGamePlayTargetDto(firstTarget.playerId);
+  }
+
   function addMakeGamePlayVoteDto(vote: MakeGamePlayVoteDto): void {
     if (!makeGamePlayDto.value.votes) {
       makeGamePlayDto.value.votes = [];
@@ -74,6 +82,7 @@ const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
     resetMakeGamePlayDto,
     addMakeGamePlayTargetDto,
     removeMakeGamePlayTargetDto,
+    removeFirstMakeGamePlayTargetDto,
     addMakeGamePlayVoteDto,
     removeMakeGamePlayVoteDto,
     setDoesJudgeRequestAnotherVote,

@@ -8,7 +8,7 @@
       <i class="fa fa-3x fa-comment-slash mb-4 text-error"/>
 
       <h2>
-        {{ $t('components.GameVotePlaygroundTargets.nobodyCanBeTargeted') }}
+        {{ $t('components.GameTargetPlaygroundTargets.nobodyCanBeTargeted') }}
       </h2>
     </div>
 
