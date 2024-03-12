@@ -14,6 +14,7 @@ import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composable
 import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Start Game Button Component", () => {
   const validCreateGameDto = createFakeCreateGameDto({
@@ -68,7 +69,7 @@ describe("Game Lobby Start Game Button Component", () => {
 
   describe("Button container", () => {
     it("should assign tooltip when button is disabled.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-start-game-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyStartGameButton, { global: { directives } });
       const createGameDtoStore = useCreateGameDtoStore();
@@ -79,7 +80,7 @@ describe("Game Lobby Start Game Button Component", () => {
     });
 
     it("should not assign tooltip when button is enabled.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-start-game-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyStartGameButton, { global: { directives } });
       const createGameDtoStore = useCreateGameDtoStore();

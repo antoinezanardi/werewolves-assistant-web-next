@@ -9,6 +9,7 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyPlayerCard>>;
@@ -39,7 +40,7 @@ describe("Game Lobby Player Card Component", () => {
 
   describe("Delete button", () => {
     it("should have translated tooltip with player name when rendered.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "[aria-label='Remove player Toto']") };
       wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps, global: { directives } });
 

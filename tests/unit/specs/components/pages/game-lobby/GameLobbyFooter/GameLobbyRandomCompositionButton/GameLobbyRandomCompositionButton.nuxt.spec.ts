@@ -10,6 +10,7 @@ import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/comp
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Random Composition Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRandomCompositionButton>>;
@@ -34,7 +35,7 @@ describe("Game Lobby Random Composition Button Component", () => {
 
   describe("Button container", () => {
     it("should assign tooltip when button is disabled.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-random-composition-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, { global: { directives } });
       const createGameDtoStore = useCreateGameDtoStore();
@@ -45,7 +46,7 @@ describe("Game Lobby Random Composition Button Component", () => {
     });
 
     it("should not assign tooltip when button is enabled.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-random-composition-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, { global: { directives } });
       const createGameDtoStore = useCreateGameDtoStore();

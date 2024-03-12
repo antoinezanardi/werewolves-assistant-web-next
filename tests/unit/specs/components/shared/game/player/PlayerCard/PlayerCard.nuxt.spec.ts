@@ -5,6 +5,7 @@ import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vu
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof PlayerCard>>;
@@ -40,7 +41,7 @@ describe("Player Card Component", () => {
     });
 
     it("should have tooltip with aria label as value when doesShowSelectorTooltip prop is true.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, ".player-card-selector") };
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, doesShowSelectorTooltip: true }, global: { directives } });
 
@@ -48,7 +49,7 @@ describe("Player Card Component", () => {
     });
 
     it("should not have tooltip when doesShowSelectorTooltip prop is false.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, ".player-card-selector") };
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, doesShowSelectorTooltip: false }, global: { directives } });
 
