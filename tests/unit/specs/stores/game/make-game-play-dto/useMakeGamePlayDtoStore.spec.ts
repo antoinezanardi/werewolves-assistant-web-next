@@ -1,6 +1,7 @@
 import { createPinia, setActivePinia } from "pinia";
 
 import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
+import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
 import { createFakeMakeGamePlayVoteDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
@@ -113,6 +114,38 @@ describe("Make Game Play Dto Store", () => {
       makeGamePlayDtoStore.removeMakeGamePlayTargetDto(target.playerId);
 
       expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toBeUndefined();
+    });
+  });
+
+  describe("removeFirstMakeGamePlayTargetDto", () => {
+    it("should not remove first target from makeGamePlayDto when targets are undefined.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({});
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto();
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toBeUndefined();
+    });
+
+    it("should not remove first target from makeGamePlayDto when there is no targets.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({ targets: [] });
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto();
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toStrictEqual<Player[]>([]);
+    });
+
+    it("should remove first target from makeGamePlayDto when there is targets.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      const targets = [
+        createFakeMakeGamePlayTargetDto(),
+        createFakeMakeGamePlayTargetDto(),
+        createFakeMakeGamePlayTargetDto(),
+      ];
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({ targets });
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto();
+      const expectedTargets = [targets[1], targets[2]];
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toStrictEqual<MakeGamePlayDto["targets"]>(expectedTargets);
     });
   });
 

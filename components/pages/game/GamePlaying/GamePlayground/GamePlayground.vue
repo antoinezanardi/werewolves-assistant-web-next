@@ -7,7 +7,7 @@
 
     <CurrentPlayExpectedPlayersToAct class="flex-none"/>
 
-    <CurrentPlayQuestion/>
+    <CurrentPlayQuestion class="mb-4"/>
 
     <GamePlaygroundContent class="grow overflow-y-auto"/>
 
