@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<testsuite failures="0" skipped="0" name="cucumber-js" time="58.465606429999994" tests="42">
-  <testcase classname="❓ About Page" name="❓ About Page is displayed with title and various sections" time="4.884697594">
+<testsuite failures="0" skipped="0" name="cucumber-js" time="58.914240687999985" tests="42">
+  <testcase classname="❓ About Page" name="❓ About Page is displayed with title and various sections" time="3.2177864989999994">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 Then the heading with name "Why an assistant ?" should be visible.........passed
 And the heading with name "The Werewolves of Miller's Hollow™ game" sho...passed
@@ -11,7 +11,7 @@ And the heading with name "A word from the creator" should be visible.....passed
 And the link with name "Back to home" should be visible...................passed
 And the page should match the snapshot with name "About Page".............passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ About Page loads roles and display them in accordions with descriptions and illustrations" time="3.501254705000001">
+  <testcase classname="❓ About Page" name="❓ About Page loads roles and display them in accordions with descriptions and illustrations" time="3.4426638819999997">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 When the progressbar with name "Loading roles…" is hidden.................passed
 Then the button with name "Click to expand the description of the Werew...passed
@@ -35,7 +35,7 @@ And the text "New Moon Expansion" under the region with name "Click to ...passed
 When the user clicks on the button with name "Click to expand the descr...passed
 Then the img with name "Illustration of the Pied Piper role on the left...passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes on YouTube to watch a tutorial by clicking on the link" time="1.3650732950000002">
+  <testcase classname="❓ About Page" name="❓ User goes on YouTube to watch a tutorial by clicking on the link" time="1.39833057">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 And the user is about to open a page on new tab...........................passed
 When the user hovers the link with name "I don't know this game"..........passed
@@ -43,41 +43,41 @@ Then the tooltip with text "Watch an explanatory video on YouTube" shou...passed
 When the user clicks on the link with name "I don't know this game".......passed
 Then a new page should be opened with url "https://www.youtube.com/watc...passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes on GitHub to contribute to the project by clicking on the link" time="1.6958620300000005">
+  <testcase classname="❓ About Page" name="❓ User goes on GitHub to contribute to the project by clicking on the link" time="1.690895257">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 And the user is about to open a page on new tab...........................passed
 When the user clicks on the link with name "Access the project on GitHu...passed
 Then a new page should be opened with url "https://github.com/antoineza...passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes on BuyMeACoffee to donate by clicking on the link" time="1.3318181150000001">
+  <testcase classname="❓ About Page" name="❓ User goes on BuyMeACoffee to donate by clicking on the link" time="1.8003579749999998">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 And the user is about to open a page on new tab...........................passed
 When the user clicks on the link with name "Buy me a coffee"..............passed
 Then a new page should be opened with url "https://www.buymeacoffee.com...passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes on creator's portfolio by clicking on the link" time="1.522932301">
+  <testcase classname="❓ About Page" name="❓ User goes on creator's portfolio by clicking on the link" time="1.625121206">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 And the user is about to open a page on new tab...........................passed
 When the user clicks on the link with name "My portfolio".................passed
 Then a new page should be opened with url "https://antoinezanardi.fr/"....passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.1423706690000002">
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.2363260609999998">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 When the user clicks on werewolves assistant logo in navigation bar.......passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.400023594">
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.436962579">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the back to home button in parameters in navigat...passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button at the bottom of the page" time="1.2182421840000002">
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button at the bottom of the page" time="1.2111109199999999">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 When the user clicks on the link with name "Back to home".................passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 Game Lobby page is displayed with title, inputs and buttons" time="1.151139345">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 Game Lobby page is displayed with title, inputs and buttons" time="1.198401759">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 Then the heading with name "Game Lobby" should be visible.................passed
 And the input with label "Player name" should be visible..................passed
@@ -87,7 +87,7 @@ And the button with name "Random composition" should be visible...........passed
 And the button with name "Start game" should be visible...................passed
 And the page should match the snapshot with name "Game Lobby Page witho...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User adds a player" time="0.891802458">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User adds a player" time="0.881477439">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 Then the input with label "Player name" should be empty...................passed
 And the input with label "Please enter a player name" should be visible...passed
@@ -97,7 +97,7 @@ And the heading with name "Add player names with the input above" shoul...passed
 And the player with name "Antoine" should be in the lobby.................passed
 And the player with name "Antoine" should not have a role.................passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add twice the same player" time="1.232608898">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add twice the same player" time="1.2643065059999998">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user enters the player with name "Antoine" in game lobby.........passed
 Then the input with label "Player name" should be empty...................passed
@@ -105,19 +105,19 @@ When the user types "Antoine" in the input with label "Player name".......passed
 Then the button with name "Add" should be disabled........................passed
 And the input with label "This player name is already taken" should be ...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with an empty name but input is emptied" time="0.8469626760000001">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with an empty name but input is emptied" time="0.8823562690000001">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user types "          " in the input with label "Player name"....passed
 And the user clicks on the button with name "Add".........................passed
 Then the input with label "Player name" should be empty...................passed
 And the heading with name "Add player names with the input above" shoul...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with a name longer than 30 characters" time="1.175477447">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with a name longer than 30 characters" time="1.177417223">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user types "AntoineAntoineAntoineAntoineAn" in the input with ...passed
 Then the input with label "The player name must not exceed 30 character...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player if game has reached 40 players" time="3.693850351999999">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player if game has reached 40 players" time="4.021787259">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user enters the player with name "Antoine" in game lobby.........passed
 And the user enters the player with name "Benoit" in game lobby...........passed
@@ -164,7 +164,7 @@ And the input with label "Maximum number of players reached" should be ...passed
 And the button with name "Add" should be disabled.........................passed
 And the page should match the snapshot with name "Game Lobby Page with ...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User deletes a player" time="0.9042657230000001">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User deletes a player" time="0.9592808970000001">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user enters the player with name "Antoine" in game lobby.........passed
 Then the player with name "Antoine" should be in the lobby................passed
@@ -172,7 +172,7 @@ When the user clicks on the button with name "Remove player Antoine"......passed
 Then the heading with name "Add player names with the input above" shou...passed
 And the player with name "Antoine" should not be in the lobby.............passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User generates a random composition for 4 players" time="1.1331586260000002">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User generates a random composition for 4 players" time="1.14952284">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user enters the player with name "Antoine" in game lobby.........passed
 And the user enters the player with name "Benoit" in game lobby...........passed
@@ -184,7 +184,7 @@ And the player with name "Benoit" should have a role......................passed
 And the player with name "Clement" should have a role.....................passed
 And the player with name "David" should have a role.......................passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't generate random composition if there is less than 4 players" time="1.0884357070000004">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't generate random composition if there is less than 4 players" time="1.1029591650000001">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 Then the button with name "Random composition" should be disabled.........passed
 When the user hovers the button with name "Random composition"............passed
@@ -197,13 +197,13 @@ Then the button with name "Random composition" should be enabled..........passed
 When the user hovers the button with name "Random composition"............passed
 Then the tooltip with text "The minimum number of players is not reache...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is less than 4 players" time="0.837034949">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is less than 4 players" time="0.8373765280000001">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 Then the button with name "Start game" should be disabled.................passed
 When the user hovers the button with name "Start game"....................passed
 Then the tooltip with text "The minimum number of players is not reache...passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User starts a game with random composition" time="1.3071567169999998">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User starts a game with random composition" time="1.308378585">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user enters the player with name "Antoine" in game lobby.........passed
 And the user enters the player with name "Benoit" in game lobby...........passed
@@ -214,18 +214,18 @@ And the user clicks on the button with name "Start game"..................passed
 Then the user should be on game page with any id..........................passed
 And the toast with text "Game created" should be visible..................passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.8782811390000002">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.894559967">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user clicks on werewolves assistant logo in navigation bar.......passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.153155">
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.133961868">
     <system-out><![CDATA[Given the user is on game-lobby page......................................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the back to home button in parameters in navigat...passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User cancels a game when it is playing" time="2.130157739">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User cancels a game when it is playing" time="2.165455316">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
@@ -235,35 +235,35 @@ And the link with name "Back to home" should be visible...................passed
 And the toast with text "Game canceled" should be visible.................passed
 And the page should match the snapshot with name "Game canceled"..........passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User can't cancel a game when it is already canceled" time="1.469293954">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User can't cancel a game when it is already canceled" time="1.6851286720000003">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
 When the user clicks on parameters button in navigation bar...............passed
 Then the cancel game button in parameters in navigation bar should be d...passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User creates a new game after canceling a game" time="1.6792165629999998">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User creates a new game after canceling a game" time="1.72514203">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
 And the user clicks on the link with name "Create another game"...........passed
 Then the user should be on game-lobby page................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User goes back to home after canceling a game" time="1.6295570629999998">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User goes back to home after canceling a game" time="1.713981704">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
 And the user clicks on the link with name "Back to home"..................passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.477238978">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.484641681">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
 And the user clicks on werewolves assistant logo in navigation bar........passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.551670069">
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.9596780320000002">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the cancel game button in parameters in navigati...passed
@@ -271,7 +271,7 @@ And the user clicks on parameters button in navigation bar................passed
 And the user clicks on the back to home button in parameters in navigat...passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲❓Game Not Found" name="🎲❓Game not found page is displayed when game is not found" time="1.1442945210000002">
+  <testcase classname="🎲❓Game Not Found" name="🎲❓Game not found page is displayed when game is not found" time="1.128626632">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 Then the heading with name "Game not found… Did you get lost ?" should ...passed
 And the link with name "Create another game" should be visible............passed
@@ -279,28 +279,28 @@ And the link with name "Back to home" should be visible...................passed
 And the toast with text "Bad request" should be visible...................passed
 And the page should match the snapshot with name "Game not found".........passed]]></system-out>
   </testcase>
-  <testcase classname="🎲❓Game Not Found" name="🎲❓User creates a new game from the game not found page" time="0.888532223">
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User creates a new game from the game not found page" time="0.8732017750000001">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 When the user clicks on the link with name "Create another game"..........passed
 Then the user should be on game-lobby page................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes to home from the game not found page" time="0.848981077">
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes to home from the game not found page" time="0.870958712">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 When the user clicks on the link with name "Back to home".................passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.8472556430000001">
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.846032144">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 When the user clicks on werewolves assistant logo in navigation bar.......passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.119446722">
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.13735208">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 When the user clicks on parameters button in navigation bar...............passed
 And the user clicks on the back to home button in parameters in navigat...passed
 Then the user should be on home page......................................passed]]></system-out>
   </testcase>
-  <testcase classname="🏠 Home Page" name="🏠 Home Page is displayed with logo, title and many links" time="1.0538190330000001">
+  <testcase classname="🏠 Home Page" name="🏠 Home Page is displayed with logo, title and many links" time="1.1570510889999999">
     <system-out><![CDATA[Given the user is on home page............................................passed
 Then the img with name "Werewolves Assistant logo" should be visible......passed
 And the heading with name "Werewolves Assistant" should be visible........passed
@@ -311,27 +311,27 @@ And the link with name "Contact me" should have the following attribute...passed
 And the link with name "This project is open-source!" should be visible...passed
 And the page should match the snapshot with name "Home Page"..............passed]]></system-out>
   </testcase>
-  <testcase classname="🏠 Home Page" name="🏠 Home Page doesn't have navigation bar" time="0.7967874300000001">
+  <testcase classname="🏠 Home Page" name="🏠 Home Page doesn't have navigation bar" time="0.810094481">
     <system-out><![CDATA[Given the user is on home page............................................passed
 Then the navigation with name "Navigation bar" should be hidden...........passed]]></system-out>
   </testcase>
-  <testcase classname="🏠 Home Page" name="🏠 User goes on the game lobby page" time="0.832888878">
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the game lobby page" time="0.8325068269999999">
     <system-out><![CDATA[Given the user is on home page............................................passed
 When the user clicks on the link with name "Play".........................passed
 Then the user should be on game-lobby page................................passed]]></system-out>
   </testcase>
-  <testcase classname="🏠 Home Page" name="🏠 User goes on the about page" time="0.7998213789999999">
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the about page" time="0.8127925850000001">
     <system-out><![CDATA[Given the user is on home page............................................passed
 When the user clicks on the link with name "What is it ?".................passed
 Then the user should be on about page.....................................passed]]></system-out>
   </testcase>
-  <testcase classname="🏠 Home Page" name="🏠 User goes on the GitHub repository page through the link" time="1.353290879">
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the GitHub repository page through the link" time="1.344788225">
     <system-out><![CDATA[Given the user is on home page............................................passed
 And the user is about to open a page on new tab...........................passed
 When the user clicks on the link with name "This project is open-source...passed
 Then a new page should be opened with url "https://github.com/antoineza...passed]]></system-out>
   </testcase>
-  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar is displayed with logo and many buttons" time="1.170713168">
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar is displayed with logo and many buttons" time="1.1330515270000001">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 Then the link with name "Werewolves Assistant" in navigation bar should...passed
 And the img with name "Werewolves Assistant" in navigation bar should b...passed
@@ -339,17 +339,17 @@ And the button with name "Parameters" in navigation bar should be visib...passed
 When the user hovers the button with name "Parameters" in navigation ba...passed
 Then the tooltip with text "Parameters" should be visible.................passed]]></system-out>
   </testcase>
-  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is not on the game page" time="1.1463937770000003">
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is not on the game page" time="1.160203823">
     <system-out><![CDATA[Given the user is on about page...........................................passed
 When the user clicks on parameters button in navigation bar...............passed
 Then the game section in parameters in navigation bar should be hidden....passed]]></system-out>
   </testcase>
-  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is on unknown game page" time="0.8302266739999999">
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is on unknown game page" time="0.847849204">
     <system-out><![CDATA[Given the user goes on an unknown game....................................passed
 When the user clicks on parameters button in navigation bar...............passed
 Then the game section in parameters in navigation bar should be hidden....passed]]></system-out>
   </testcase>
-  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar displays the game section in parameters when the user is on the game page" time="1.3404171360000003">
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar displays the game section in parameters when the user is on the game page" time="1.354362895">
     <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
 When the user clicks on parameters button in navigation bar...............passed
 Then the game section in parameters in navigation bar should be visible...passed]]></system-out>
