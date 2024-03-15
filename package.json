@@ -76,7 +76,7 @@
     "@stryker-mutator/core": "^8.2.6",
     "@stryker-mutator/typescript-checker": "^8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
-    "@stylistic/eslint-plugin": "^1.6.3",
+    "@stylistic/eslint-plugin": "^1.7.0",
     "@types/eslint": "^8.56.5",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.4",
