@@ -101,6 +101,7 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
     typeCheck: true,
+    shim: true,
   },
   vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });
