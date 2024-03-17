@@ -1,14 +1,15 @@
 import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
-import type { PlayerInteraction } from "~/composables/api/game/types/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.class";
 import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
-import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
-import { createFakePlayerInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.factory";
 import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+
+import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
+import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
+import { createFakePlayerInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.factory";
+import type { PlayerInteraction } from "~/composables/api/game/types/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.class";
 
 describe("Use Game Play Composable", () => {
   describe("currentPlayType", () => {
@@ -41,7 +42,7 @@ describe("Use Game Play Composable", () => {
     });
   });
 
-  describe("getPlayerWithInteractionInCurrentGamePlay", () => {
+  describe("getEligibleTargetsWithInteractionInCurrentGamePlay", () => {
     const foundPlayerWithInteraction = createFakePlayer();
 
     it.each<{
@@ -118,9 +119,9 @@ describe("Use Game Play Composable", () => {
         test: "should return player when game current play interaction is found among interactable players.",
       },
     ])("$test", ({ game, interaction, expectedPlayer }) => {
-      const { getPlayerWithInteractionInCurrentGamePlay } = useGamePlay(ref(game));
+      const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useGamePlay(ref(game));
 
-      expect(getPlayerWithInteractionInCurrentGamePlay(interaction)).toStrictEqual<Player | undefined>(expectedPlayer);
+      expect(getEligibleTargetsWithInteractionInCurrentGamePlay(interaction)).toStrictEqual<Player | undefined>(expectedPlayer);
     });
   });
 });

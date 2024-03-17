@@ -12,7 +12,7 @@
     />
 
     <GamePlaygroundPlayerCardVoteInput
-      v-if="currentPlayType === 'vote'"
+      v-if="game.currentPlay?.type === 'vote'"
       id="game-playground-player-card-vote-input"
       :player="player"
     />
@@ -25,8 +25,6 @@ import { storeToRefs } from "pinia";
 import type { GamePlaygroundPlayerCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/game-playground-player-card.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
-import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -39,9 +37,7 @@ const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
 const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
 const { addMakeGamePlayTargetDto, removeMakeGamePlayTargetDto, removeFirstMakeGamePlayTargetDto } = makeGamePlayDtoStore;
 
-const { currentPlayType } = useGamePlay(game);
-
-const canPlayerBeTargeted = computed<boolean>(() => currentPlayType.value === "target");
+const canPlayerBeTargeted = computed<boolean>(() => game.value.currentPlay?.type === "target");
 
 const isPlayerTargeted = computed<boolean>(() => {
   if (!makeGamePlayDto.value.targets) {
@@ -51,16 +47,16 @@ const isPlayerTargeted = computed<boolean>(() => {
 });
 
 function handlePlayerCardSelectorClick(): void {
-  if (!canPlayerBeTargeted.value) {
+  const currentPlayInteraction = game.value.currentPlay?.source.interactions?.find(({ type }) => type === props.interaction);
+  if (!canPlayerBeTargeted.value || !currentPlayInteraction) {
     return;
   }
-  const currentPlay = game.value.currentPlay as GamePlay;
   if (isPlayerTargeted.value) {
     removeMakeGamePlayTargetDto(props.player._id);
 
     return;
   }
-  if (currentPlay.eligibleTargets?.boundaries && makeGamePlayDto.value.targets?.length === currentPlay.eligibleTargets.boundaries.max) {
+  if (makeGamePlayDto.value.targets?.length === currentPlayInteraction.boundaries.max) {
     removeFirstMakeGamePlayTargetDto();
   }
   addMakeGamePlayTargetDto({ playerId: props.player._id });
