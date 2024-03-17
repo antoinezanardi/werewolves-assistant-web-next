@@ -3,7 +3,10 @@
 exports[`Game Devoted Servant Steals Role Playground Component > should match snapshot when rendered. 1`] = `
 "<div id="game-devoted-servant-steal-role-playground" class="flex flex-col items-center">
   <anonymous-stub class="" size="400" rest="[object Object]"></anonymous-stub>
-  <h3 id="devoted-servant-steals-role-question" class="my-4">components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole, {"playerName":"Antoine"}</h3>
-  <toggle-button-stub id="does-devoted-servant-steal-role-button" modelvalue="false" class="w-9rem" off-icon="fa fa-thumbs-down me-4" off-label="She doesn't steal the role"></toggle-button-stub>
+  <h3 id="devoted-servant-steals-role-question" class="my-4">components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole, 2</h3>
+  <div id="targets" class="flex items-center justify-center">
+    <game-playground-player-card-stub interaction="steal-role" player="[object Object]" class="target"></game-playground-player-card-stub>
+    <game-playground-player-card-stub interaction="steal-role" player="[object Object]" class="target"></game-playground-player-card-stub>
+  </div>
 </div>"
 `;

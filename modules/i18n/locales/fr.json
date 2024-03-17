@@ -536,7 +536,7 @@
       "noActionNeeded": "Aucune action nécessaire, la partie peut continuer"
     },
     "GameDevotedServantStealsRolePlayground": {
-      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé {playerName} ?",
+      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé ? | Est-ce que la Servante Dévouée souhaite voler le rôle d'un des joueurs éliminés ?",
       "sheStealsRole": "Elle vole le rôle",
       "sheDoesntStealRole": "Elle ne vole pas le rôle"
     },
@@ -563,6 +563,7 @@
       "whichPlayerDoesSeerLook": "Quel joueur la Voyante veut-elle regarder ?",
       "whichPlayerDoesSheriffDelegate": "À quel joueur le Maire veut-il déléguer son rôle ?",
       "whichPlayerDoesSheriffSettleVotes": "Avec quel joueur le Maire veut-il trancher les votes ?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Quel joueur les survivants veulent-ils élire comme Maire parmi les ex-æquo ?",
       "doesJudgeRequestAnotherVote": "Le Juge Bègue veut-il demander un autre vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Quel joueur les survivants veulent-ils élire comme Maire ?",
       "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux urnes !",

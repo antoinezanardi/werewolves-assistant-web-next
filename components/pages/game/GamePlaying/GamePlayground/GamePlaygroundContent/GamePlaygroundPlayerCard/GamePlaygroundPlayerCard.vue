@@ -25,6 +25,7 @@ import { storeToRefs } from "pinia";
 import type { GamePlaygroundPlayerCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/game-playground-player-card.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -37,7 +38,13 @@ const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
 const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
 const { addMakeGamePlayTargetDto, removeMakeGamePlayTargetDto, removeFirstMakeGamePlayTargetDto } = makeGamePlayDtoStore;
 
-const canPlayerBeTargeted = computed<boolean>(() => game.value.currentPlay?.type === "target");
+const canPlayerBeTargeted = computed<boolean>(() => {
+  const gamePlayTargetTypes: GamePlayType[] = ["target", "bury-dead-bodies"];
+  if (!game.value.currentPlay) {
+    return false;
+  }
+  return gamePlayTargetTypes.includes(game.value.currentPlay.type);
+});
 
 const isPlayerTargeted = computed<boolean>(() => {
   if (!makeGamePlayDto.value.targets) {

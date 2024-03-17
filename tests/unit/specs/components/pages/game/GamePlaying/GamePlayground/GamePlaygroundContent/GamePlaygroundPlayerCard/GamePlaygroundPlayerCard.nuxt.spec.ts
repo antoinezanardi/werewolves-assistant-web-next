@@ -9,20 +9,23 @@ import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
+import { createFakeGamePlaySourceInteractionBoundaries } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction-boundaries/game-play-source-interaction-boundaries.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 import { createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlayWerewolvesEat } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
 
-import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
-import { createFakeGamePlayEligibleTargetsBoundaries } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets-boundaries/game-play-eligible-targets-boundaries.factory";
-
 describe("Game Playground Player Card Component", () => {
   const player = createFakeSeerAlivePlayer({ name: "Antoine" });
   let wrapper: ReturnType<typeof mount<typeof GamePlaygroundPlayerCard>>;
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: createFakeGame() } } };
-  const defaultProps: GamePlaygroundPlayerCardProps = { player };
+  const defaultProps: GamePlaygroundPlayerCardProps = {
+    player,
+    interaction: "eat",
+  };
 
   async function mountGamePlaygroundPlayerCardComponent(): Promise<ReturnType<typeof mount<typeof GamePlaygroundPlayerCard>>> {
     return mountSuspendedComponent(GamePlaygroundPlayerCard, {
@@ -81,7 +84,7 @@ describe("Game Playground Player Card Component", () => {
     });
 
     describe("Click on Player Card", () => {
-      it("should do nothing when player can't be targeted.", async() => {
+      it("should do nothing when player can't be targeted because game play type is not target.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
         gameStore.game.currentPlay = createFakeGamePlaySurvivorsElectSheriff();
@@ -92,11 +95,40 @@ describe("Game Playground Player Card Component", () => {
         expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).not.toHaveBeenCalled();
       });
 
+      it("should do nothing when player can't be targeted because interaction is not found.", async() => {
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "charm",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).not.toHaveBeenCalled();
+      });
+
       it("should add player to make game play dto targets when player can be targeted and is not already.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
-        const boundaries = createFakeGamePlayEligibleTargetsBoundaries();
-        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({ eligibleTargets: createFakeGamePlayEligibleTargets({ boundaries }) });
+        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({
+          type: "bury-dead-bodies",
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "eat",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
         await nextTick();
         const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
         (playerCard.vm as VueVm).$emit("player-card-selector-click");
@@ -127,21 +159,19 @@ describe("Game Playground Player Card Component", () => {
         expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto).not.toHaveBeenCalled();
       });
 
-      it("should not call remove first make game play target dto when player is targeted but there are no boundaries.", async() => {
-        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        const gameStore = useGameStore();
-        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({ eligibleTargets: createFakeGamePlayEligibleTargets() });
-        await nextTick();
-        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
-        (playerCard.vm as VueVm).$emit("player-card-selector-click");
-
-        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto).not.toHaveBeenCalled();
-      });
-
       it("should remove player from make game play dto targets when player can be targeted and is already.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
-        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({ eligibleTargets: createFakeGamePlayEligibleTargets() });
+        gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "eat",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
         const players = [
           player,
           createFakeSeerAlivePlayer({ name: "Benoit" }),
@@ -165,11 +195,17 @@ describe("Game Playground Player Card Component", () => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
         gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({
-          eligibleTargets: createFakeGamePlayEligibleTargets({
-            boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-              min: 1,
-              max: 1,
-            }),
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "eat",
+                eligibleTargets: [player],
+                boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                  min: 1,
+                  max: 1,
+                }),
+              }),
+            ],
           }),
         });
         const players = [

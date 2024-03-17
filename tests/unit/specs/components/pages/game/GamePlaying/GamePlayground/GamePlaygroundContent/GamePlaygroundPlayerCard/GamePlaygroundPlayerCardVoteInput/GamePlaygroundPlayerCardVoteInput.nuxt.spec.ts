@@ -11,13 +11,12 @@ import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay, createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-
-import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
-import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
 
 describe("Game Playground Player Card Vote Input Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlaygroundPlayerCardVoteInput>>;
@@ -28,18 +27,21 @@ describe("Game Playground Player Card Vote Input Component", () => {
     defaultPlayer,
     createFakeSeerAlivePlayer({ name: "Antony" }),
   ];
-  const interactablePlayers = [
-    createFakeInteractablePlayer({ player: players[0] }),
-    createFakeInteractablePlayer({ player: players[1] }),
-    createFakeInteractablePlayer({ player: players[2] }),
-    createFakeInteractablePlayer({ player: players[3] }),
-  ];
   const pinia = {
     initialState: {
       [StoreIds.GAME]: {
         game: createFakeGame({
           players,
-          currentPlay: createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets({ interactablePlayers }) }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "vote",
+                  eligibleTargets: players,
+                }),
+              ],
+            }),
+          }),
         }),
       },
     },
@@ -115,9 +117,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
     });
 
-    it("should pass empty array as suggestions when there is no current play eligible targets interactable players on complete event.", async() => {
+    it("should pass empty array as suggestions when there is no current play source interactions on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets() });
+      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource() });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
@@ -127,14 +129,16 @@ describe("Game Playground Player Card Vote Input Component", () => {
       expect(setCollectionSpy).toHaveBeenCalledExactlyOnceWith([], undefined);
     });
 
-    it("should pass empty array as suggestions when query has nothing to do with interactable players on complete event.", async() => {
+    it("should pass empty array as suggestions when there is no current play source interactions (empty array) on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets() });
+      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource({ interactions: [] }) });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
-      autocomplete.vm.$emit("complete", { query: "ImAReallyBadQueryAndCantMatchAnything" });
+      const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
+      autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
 
       expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(setCollectionSpy).toHaveBeenCalledExactlyOnceWith([], undefined);
     });
 
     it("should pass all players without the player in props himself as suggestions when query is empty on complete event.", async() => {

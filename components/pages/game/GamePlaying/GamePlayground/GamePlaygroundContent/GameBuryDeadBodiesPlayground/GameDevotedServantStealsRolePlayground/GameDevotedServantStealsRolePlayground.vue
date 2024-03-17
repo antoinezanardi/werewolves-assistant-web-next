@@ -18,12 +18,12 @@
       id="devoted-servant-steals-role-question"
       class="my-4"
     >
-      {{ $t("components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole") }}
+      {{ doesDevotedServantStealRoleQuestion }}
     </h3>
 
     <div
       id="targets"
-      class="grid grid-cols-4 items-center justify-center"
+      class="flex items-center justify-center"
     >
       <GamePlaygroundPlayerCard
         v-for="target in eliminatedPlayers"
@@ -48,7 +48,15 @@ import { useGameStore } from "~/stores/game/useGameStore";
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
+const { t } = useI18n();
+
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useGamePlay(game);
 
 const eliminatedPlayers = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
+
+const doesDevotedServantStealRoleQuestion = computed<string>(() => {
+  const eliminatedPlayersCount = eliminatedPlayers.value?.length ?? 0;
+
+  return t("components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole", eliminatedPlayersCount);
+});
 </script>

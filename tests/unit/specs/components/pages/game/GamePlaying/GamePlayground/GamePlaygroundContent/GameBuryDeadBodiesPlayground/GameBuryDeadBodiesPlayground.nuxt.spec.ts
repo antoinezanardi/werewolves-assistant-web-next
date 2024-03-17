@@ -6,14 +6,12 @@ import type GameDevotedServantStealsRolePlayground from "~/components/pages/game
 import type NoActionNeeded from "~/components/shared/game/game-play/NoNeededAction/NoActionNeeded.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 import { createFakeGamePlay, createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-
-import { createFakePlayerInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/player-interaction/player-interaction.factory";
-import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
-import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
 
 describe("Game Bury Dead Bodies Playground Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameBuryDeadBodiesPlayground>>;
@@ -35,16 +33,15 @@ describe("Game Bury Dead Bodies Playground Component", () => {
   describe("Devoted Servant Playground", () => {
     it("should render devoted servant playground when one interaction for her is available.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({
-        eligibleTargets: createFakeGamePlayEligibleTargets({
-          interactablePlayers: [
-            createFakeInteractablePlayer({
-              player: createFakeSeerAlivePlayer(),
-              interactions: [
-                createFakePlayerInteraction({
-                  source: "devoted-servant",
-                  type: "steal-role",
-                }),
+      gameStore.game.currentPlay = createFakeGamePlaySurvivorsBuryDeadBodies({
+        source: createFakeGamePlaySource({
+          interactions: [
+            createFakeGamePlaySourceInteraction({
+              source: "devoted-servant",
+              type: "steal-role",
+              eligibleTargets: [
+                createFakePlayer(),
+                createFakePlayer(),
               ],
             }),
           ],
@@ -79,15 +76,14 @@ describe("Game Bury Dead Bodies Playground Component", () => {
     it("should not render no action needed when one interaction for her is available.", async() => {
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlay({
-        eligibleTargets: createFakeGamePlayEligibleTargets({
-          interactablePlayers: [
-            createFakeInteractablePlayer({
-              player: createFakeSeerAlivePlayer(),
-              interactions: [
-                createFakePlayerInteraction({
-                  source: "devoted-servant",
-                  type: "steal-role",
-                }),
+        source: createFakeGamePlaySource({
+          interactions: [
+            createFakeGamePlaySourceInteraction({
+              source: "devoted-servant",
+              type: "steal-role",
+              eligibleTargets: [
+                createFakePlayer(),
+                createFakePlayer(),
               ],
             }),
           ],

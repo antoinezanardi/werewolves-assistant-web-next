@@ -4,7 +4,10 @@ import { useMakeGamePlayDtoValidation } from "~/composables/api/game/useMakeGame
 import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
 import { createFakeMakeGamePlayVoteDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
 import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
-import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySourceInteractionBoundaries } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction-boundaries/game-play-source-interaction-boundaries.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay, createFakeGamePlayActorChoosesCard, createFakeGamePlaySurvivorsVote, createFakeGamePlayThiefChoosesCard, createFakeGamePlayWerewolvesEat, createFakeGamePlayWolfHoundChoosesSide } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 
 describe("Use Make Game Play Dto Validation Composable", () => {
@@ -16,53 +19,35 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       test: string;
     }>([
       {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
-            }),
-          }),
-        }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ votes: [createFakeMakeGamePlayVoteDto()] }),
-        expected: false,
-        test: "should return false when current play type is 'target'.",
-      },
-      {
         game: createFakeGame({ currentPlay: null }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ votes: [createFakeMakeGamePlayVoteDto()] }),
         expected: false,
         test: "should return false when current play is null.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "vote" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWerewolvesEat() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ votes: [createFakeMakeGamePlayVoteDto()] }),
         expected: false,
-        test: "should return false when eligible targets are undefined.",
+        test: "should return false when current play type is 'target'.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ source: createFakeGamePlaySource({ interactions: [] }) }) }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ votes: [] }),
+        expected: false,
+        test: "should return false when interactions are empty.",
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets(),
-          }),
-        }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ votes: [createFakeMakeGamePlayVoteDto()] }),
-        expected: false,
-        test: "should return false when eligible targets boundaries are undefined.",
-      },
-      {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -72,13 +57,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -88,13 +76,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -104,13 +95,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -138,14 +132,23 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       test: string;
     }>([
       {
+        game: createFakeGame({ currentPlay: null }),
+        makeGamePlayDto: createFakeMakeGamePlayDto({ targets: [createFakeMakeGamePlayTargetDto()] }),
+        expected: false,
+        test: "should return false when current play is null.",
+      },
+      {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -154,37 +157,23 @@ describe("Use Make Game Play Dto Validation Composable", () => {
         test: "should return false when current play type is 'vote'.",
       },
       {
-        game: createFakeGame({ currentPlay: null }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ targets: [createFakeMakeGamePlayTargetDto()] }),
-        expected: false,
-        test: "should return false when current play is null.",
-      },
-      {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "eat" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWerewolvesEat() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ targets: [createFakeMakeGamePlayTargetDto()] }),
         expected: false,
         test: "should return false when eligible targets are undefined.",
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets(),
-          }),
-        }),
-        makeGamePlayDto: createFakeMakeGamePlayDto({ targets: [createFakeMakeGamePlayTargetDto()] }),
-        expected: false,
-        test: "should return false when eligible targets boundaries are undefined.",
-      },
-      {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlayWerewolvesEat({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -194,13 +183,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlayWerewolvesEat({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -210,13 +202,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlayWerewolvesEat({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -226,13 +221,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlayWerewolvesEat({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -260,7 +258,7 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       test: string;
     }>([
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "vote" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenCardId: "1" }),
         expected: false,
         test: "should return false when current play type is 'vote'.",
@@ -272,13 +270,13 @@ describe("Use Make Game Play Dto Validation Composable", () => {
         test: "should return false when current play is null.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-card" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayThiefChoosesCard() }),
         makeGamePlayDto: createFakeMakeGamePlayDto(),
         expected: false,
         test: "should return false when chosen card id is undefined.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-card" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayThiefChoosesCard() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenCardId: "1" }),
         expected: true,
         test: "should return true when chosen card id is defined.",
@@ -298,7 +296,7 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       test: string;
     }>([
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "vote" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: false,
         test: "should return false when current play type is 'vote'.",
@@ -310,13 +308,13 @@ describe("Use Make Game Play Dto Validation Composable", () => {
         test: "should return false when current play is null.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWolfHoundChoosesSide() }),
         makeGamePlayDto: createFakeMakeGamePlayDto(),
         expected: false,
         test: "should return false when chosen side is undefined.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWolfHoundChoosesSide() }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: true,
         test: "should return true when chosen side is defined.",
@@ -361,13 +359,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "vote",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -382,13 +383,16 @@ describe("Use Make Game Play Dto Validation Composable", () => {
       },
       {
         game: createFakeGame({
-          currentPlay: createFakeGamePlay({
-            action: "eat",
-            eligibleTargets: createFakeGamePlayEligibleTargets({
-              boundaries: createFakeGamePlayEligibleTargetsBoundaries({
-                min: 1,
-                max: 2,
-              }),
+          currentPlay: createFakeGamePlayWerewolvesEat({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                    min: 1,
+                    max: 2,
+                  }),
+                }),
+              ],
             }),
           }),
         }),
@@ -402,19 +406,19 @@ describe("Use Make Game Play Dto Validation Composable", () => {
         test: "should return true when current game play type is target and targets are greater than eligible targets boundaries min.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-card" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayActorChoosesCard({ action: "choose-card" }) }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenCardId: "1" }),
         expected: true,
         test: "should return true when current game play type is choose card and chosen card id is defined.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWolfHoundChoosesSide({ action: "choose-side" }) }),
         makeGamePlayDto: createFakeMakeGamePlayDto({ chosenSide: "villagers" }),
         expected: true,
         test: "should return true when current game play type is choose side and chosen side is defined.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlay({ action: "choose-side" }) }),
+        game: createFakeGame({ currentPlay: createFakeGamePlayWolfHoundChoosesSide({ action: "choose-side" }) }),
         makeGamePlayDto: createFakeMakeGamePlayDto(),
         expected: false,
         test: "should return false when make game play dto is not valid in any case.",
