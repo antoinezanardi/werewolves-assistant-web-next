@@ -149,6 +149,51 @@ describe("Make Game Play Dto Store", () => {
     });
   });
 
+  describe("removeFirstMakeGamePlayTargetDtoWithPotion", () => {
+    it("should not remove first target from makeGamePlayDto when targets are undefined.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({});
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion("life");
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toBeUndefined();
+    });
+
+    it("should not remove first target from makeGamePlayDto when there is no targets.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({ targets: [] });
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion("life");
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toStrictEqual<Player[]>([]);
+    });
+
+    it("should not remove first target from makeGamePlayDto when there is no target with potion.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      const targets = [
+        createFakeMakeGamePlayTargetDto(),
+        createFakeMakeGamePlayTargetDto(),
+        createFakeMakeGamePlayTargetDto(),
+      ];
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({ targets });
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion("life");
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toStrictEqual<MakeGamePlayDto["targets"]>(targets);
+    });
+
+    it("should remove first target from makeGamePlayDto when there is target with potion.", () => {
+      const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+      const targets = [
+        createFakeMakeGamePlayTargetDto({ drankPotion: "life" }),
+        createFakeMakeGamePlayTargetDto(),
+        createFakeMakeGamePlayTargetDto({ drankPotion: "life" }),
+      ];
+      makeGamePlayDtoStore.makeGamePlayDto = createFakeMakeGamePlayDto({ targets });
+      makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion("life");
+      const expectedTargets = [targets[1], targets[2]];
+
+      expect(makeGamePlayDtoStore.makeGamePlayDto.targets).toStrictEqual<MakeGamePlayDto["targets"]>(expectedTargets);
+    });
+  });
+
   describe("addMakeGamePlayVoteDto", () => {
     it("should add vote to makeGamePlayDto when votes are undefined.", () => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();

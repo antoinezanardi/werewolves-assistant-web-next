@@ -583,6 +583,13 @@
     },
     "GameTargetPlaygroundTargets": {
       "nobodyCanBeTargeted": "Nobody can be targeted…"
+    },
+    "GameUsePotionsPlayground": {
+      "witchHasUsedBothPotions": "The Witch has used both potions, the game can proceed"
+    },
+    "WitchUsePotionsTabView": {
+      "giveLifePotion": "Give life potion to save the player…",
+      "giveDeathPotion": "Give death potion to kill the player…"
     }
   }
 }

@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 import { MakeGamePlayTargetDto } from "~/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto";
 import { MakeGamePlayVoteDto } from "~/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto";
 import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
+import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
 import type { RoleSide } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 
@@ -45,6 +46,13 @@ const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
     removeMakeGamePlayTargetDto(firstTarget.playerId);
   }
 
+  function removeFirstMakeGamePlayTargetDtoWithPotion(drankPotion: WitchPotion): void {
+    const firstDrankPotionTarget = makeGamePlayDto.value.targets?.find(target => target.drankPotion === drankPotion);
+    if (firstDrankPotionTarget) {
+      removeMakeGamePlayTargetDto(firstDrankPotionTarget.playerId);
+    }
+  }
+
   function addMakeGamePlayVoteDto(vote: MakeGamePlayVoteDto): void {
     if (!makeGamePlayDto.value.votes) {
       makeGamePlayDto.value.votes = [];
@@ -83,6 +91,7 @@ const useMakeGamePlayDtoStore = defineStore(StoreIds.MAKE_GAME_PLAY_DTO, () => {
     addMakeGamePlayTargetDto,
     removeMakeGamePlayTargetDto,
     removeFirstMakeGamePlayTargetDto,
+    removeFirstMakeGamePlayTargetDtoWithPotion,
     addMakeGamePlayVoteDto,
     removeMakeGamePlayVoteDto,
     setDoesJudgeRequestAnotherVote,

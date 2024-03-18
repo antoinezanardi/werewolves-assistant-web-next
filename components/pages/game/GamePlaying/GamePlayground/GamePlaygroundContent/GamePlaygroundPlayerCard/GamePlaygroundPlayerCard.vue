@@ -25,6 +25,7 @@ import { storeToRefs } from "pinia";
 import type { GamePlaygroundPlayerCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/game-playground-player-card.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -35,7 +36,12 @@ const { game } = storeToRefs(gameStore);
 
 const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
 const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
-const { addMakeGamePlayTargetDto, removeMakeGamePlayTargetDto, removeFirstMakeGamePlayTargetDto } = makeGamePlayDtoStore;
+const {
+  addMakeGamePlayTargetDto,
+  removeMakeGamePlayTargetDto,
+  removeFirstMakeGamePlayTargetDto,
+  removeFirstMakeGamePlayTargetDtoWithPotion,
+} = makeGamePlayDtoStore;
 
 const canPlayerBeTargeted = computed<boolean>(() => {
   const { type } = game.value.currentPlay ?? {};
@@ -50,6 +56,20 @@ const isPlayerTargeted = computed<boolean>(() => {
   return makeGamePlayDto.value.targets.some(({ playerId }) => playerId === props.player._id);
 });
 
+function handleWitchGivesPotionClick(): void {
+  const givenLifePotionTargets = makeGamePlayDto.value.targets?.filter(({ drankPotion }) => drankPotion === "life");
+  const givenDeathPotionTargets = makeGamePlayDto.value.targets?.filter(({ drankPotion }) => drankPotion === "death");
+  const drankPotion: WitchPotion = props.interaction === "give-life-potion" ? "life" : "death";
+  if (props.interaction === "give-life-potion" && givenLifePotionTargets?.length === 1 ||
+    props.interaction === "give-death-potion" && givenDeathPotionTargets?.length === 1) {
+    removeFirstMakeGamePlayTargetDtoWithPotion(drankPotion);
+  }
+  addMakeGamePlayTargetDto({
+    playerId: props.player._id,
+    drankPotion,
+  });
+}
+
 function handlePlayerCardSelectorClick(): void {
   const currentPlayInteraction = game.value.currentPlay?.source.interactions?.find(({ type }) => type === props.interaction);
   if (!currentPlayInteraction || !canPlayerBeTargeted.value) {
@@ -57,6 +77,11 @@ function handlePlayerCardSelectorClick(): void {
   }
   if (isPlayerTargeted.value) {
     removeMakeGamePlayTargetDto(props.player._id);
+
+    return;
+  }
+  if (currentPlayInteraction.type === "give-life-potion" || currentPlayInteraction.type === "give-death-potion") {
+    handleWitchGivesPotionClick();
 
     return;
   }

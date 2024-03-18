@@ -75,6 +75,8 @@ export default defineNuxtConfig({
         "AutoComplete",
         "Toast",
         "ToggleButton",
+        "TabPanel",
+        "TabView",
       ],
     },
     directives: {
