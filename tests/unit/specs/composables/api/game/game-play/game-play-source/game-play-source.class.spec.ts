@@ -12,11 +12,13 @@ describe("Game Play Source Class", () => {
       const createdGamePlaySource = GamePlaySource.create({
         name: "sheriff",
         players,
+        interactions: [],
         extra: "Extra",
       } as GamePlaySource);
       const expectedGamePlaySource = new GamePlaySource();
       expectedGamePlaySource.name = "sheriff";
       expectedGamePlaySource.players = players;
+      expectedGamePlaySource.interactions = [];
 
       expect(createdGamePlaySource).toStrictEqual<GamePlaySource>(expectedGamePlaySource);
     });

@@ -7,6 +7,7 @@ function createFakeGamePlaySource(gamePlaySource: Partial<GamePlaySource> = {}):
   return GamePlaySource.create({
     name: gamePlaySource.name ?? faker.helpers.arrayElement(GAME_PLAY_SOURCE_NAMES),
     players: gamePlaySource.players ?? [],
+    interactions: gamePlaySource.interactions ?? undefined,
   });
 }
 

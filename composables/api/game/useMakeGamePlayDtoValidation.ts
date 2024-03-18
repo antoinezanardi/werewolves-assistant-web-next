@@ -1,7 +1,6 @@
 import type { ComputedRef, Ref } from "vue";
 
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
 import type { Game } from "~/composables/api/game/types/game.class";
 
 type UseMakeGamePlayDtoValidation = {
@@ -14,31 +13,36 @@ type UseMakeGamePlayDtoValidation = {
 };
 
 function useMakeGamePlayDtoValidation(makeGamePlayDto: Ref<MakeGamePlayDto>, game: Ref<Game>): UseMakeGamePlayDtoValidation {
-  const { currentPlayType } = useGamePlay(game);
-
   const isCurrentGamePlayVoteTypeAndValid = computed<boolean>(() => {
-    if (currentPlayType.value !== "vote" || game.value.currentPlay?.eligibleTargets?.boundaries === undefined || makeGamePlayDto.value.votes === undefined) {
+    if (game.value.currentPlay?.type !== "vote" || makeGamePlayDto.value.votes === undefined) {
       return false;
     }
-    const { boundaries } = game.value.currentPlay.eligibleTargets;
+    const voteInteraction = game.value.currentPlay.source.interactions?.[0];
+    if (voteInteraction === undefined) {
+      return false;
+    }
     const { votes } = makeGamePlayDto.value;
 
-    return votes.length >= boundaries.min;
+    return votes.length >= voteInteraction.boundaries.min;
   });
 
   const isCurrentGamePlayTargetTypeAndValid = computed<boolean>(() => {
-    if (currentPlayType.value !== "target" || game.value.currentPlay?.eligibleTargets?.boundaries === undefined || makeGamePlayDto.value.targets === undefined) {
+    if (game.value.currentPlay?.type !== "target" || makeGamePlayDto.value.targets === undefined) {
       return false;
     }
-    const { boundaries } = game.value.currentPlay.eligibleTargets;
+
+    const targetInteraction = game.value.currentPlay.source.interactions?.[0];
+    if (targetInteraction === undefined) {
+      return false;
+    }
     const { targets } = makeGamePlayDto.value;
 
-    return targets.length >= boundaries.min;
+    return targets.length >= targetInteraction.boundaries.min;
   });
 
-  const isCurrentGamePlayChooseCardTypeAndValid = computed<boolean>(() => currentPlayType.value === "choose-card" && makeGamePlayDto.value.chosenCardId !== undefined);
+  const isCurrentGamePlayChooseCardTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === "choose-card" && makeGamePlayDto.value.chosenCardId !== undefined);
 
-  const isCurrentGamePlayChooseSideTypeAndValid = computed<boolean>(() => currentPlayType.value === "choose-side" && makeGamePlayDto.value.chosenSide !== undefined);
+  const isCurrentGamePlayChooseSideTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === "choose-side" && makeGamePlayDto.value.chosenSide !== undefined);
 
   const canCurrentPlayBeSkipped = computed<boolean>(() => game.value.currentPlay?.canBeSkipped === true);
 
