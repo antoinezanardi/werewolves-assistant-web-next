@@ -536,7 +536,7 @@
       "noActionNeeded": "No action needed, the game can proceed"
     },
     "GameDevotedServantStealsRolePlayground": {
-      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player {playerName} ?",
+      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player ? | Does the Devoted Servant wants to steal the role of one of the eliminated players ?",
       "sheStealsRole": "She steals the role",
       "sheDoesntStealRole": "She doesn't steal the role"
     },
@@ -559,10 +559,11 @@
       "whichPlayerDoesHunterShoot": "Which player does the Hunter want to shoot ?",
       "whichPlayersDoesPiedPiperCharm": "Which players does the Pied Piper want to charm ?",
       "doesScandalmongerWantToMark": "Does the Scandalmonger want to mark a player ?",
-      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban a player from voting ?",
+      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban one or more players from voting ?",
       "whichPlayerDoesSeerLook": "Which player does the Seer want to look at ?",
       "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to ?",
       "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff for to break the tie ?",
       "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff ?",
       "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for ?",

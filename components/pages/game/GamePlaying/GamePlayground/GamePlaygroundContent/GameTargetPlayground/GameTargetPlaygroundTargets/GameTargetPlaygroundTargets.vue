@@ -1,7 +1,7 @@
 <template>
   <div id="game-target-playground-targets">
     <div
-      v-if="!targets.length"
+      v-if="!targets?.length"
       id="no-targets"
       class="flex flex-col h-full items-center justify-center"
     >
@@ -21,6 +21,7 @@
         v-for="target in targets"
         :key="target._id"
         class="target"
+        :interaction="game.currentPlay?.source.interactions?.[0].type"
         :player="target"
       />
     </div>
@@ -37,10 +38,5 @@ import { useGameStore } from "~/stores/game/useGameStore";
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const targets = computed<Player[]>(() => {
-  if (game.value.currentPlay?.eligibleTargets?.interactablePlayers === undefined) {
-    return [];
-  }
-  return game.value.currentPlay.eligibleTargets.interactablePlayers.map(({ player }) => player);
-});
+const targets = computed<Player[] | undefined>(() => game.value.currentPlay?.source.interactions?.[0]?.eligibleTargets);
 </script>

@@ -45,7 +45,10 @@ const gamePlaysQuestions: Record<GamePlaySourceName, Partial<Record<GamePlayActi
   "stuttering-judge": { "request-another-vote": { default: t("components.CurrentPlayQuestion.doesJudgeRequestAnotherVote") } },
   "survivors": {
     "bury-dead-bodies": { default: "" },
-    "elect-sheriff": { default: t("components.CurrentPlayQuestion.whichPlayerDoesSurvivorsElectAsSheriff") },
+    "elect-sheriff": {
+      "default": t("components.CurrentPlayQuestion.whichPlayerDoesSurvivorsElectAsSheriff"),
+      "previous-votes-were-in-ties": t("components.CurrentPlayQuestion.whichPlayerDoesSurvivorsElectSheriffOnTie"),
+    },
     "vote": {
       "default": t("components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteFor"),
       "angel-presence": t("components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteFor"),

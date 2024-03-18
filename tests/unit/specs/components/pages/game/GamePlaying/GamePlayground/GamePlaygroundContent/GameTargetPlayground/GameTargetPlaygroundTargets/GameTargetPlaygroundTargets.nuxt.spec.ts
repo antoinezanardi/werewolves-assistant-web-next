@@ -6,9 +6,9 @@ import GameTargetPlaygroundTargets from "~/components/pages/game/GamePlaying/Gam
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlayEligibleTargets } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/game-play-eligible-targets.factory";
-import { createFakeInteractablePlayer } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-eligible-targets/interactable-player/interactable-player.factory";
-import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay, createFakeGamePlayWerewolvesEat } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -49,9 +49,18 @@ describe("Game Target Playground Targets Component", () => {
       expect(noTargetsContainer.exists()).toBeTruthy();
     });
 
-    it("should render no targets message when current play is defined but there are no eligible targets interactable players.", async() => {
+    it("should render no targets message when current play is defined but interactions are undefined.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets() });
+      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource() });
+      await nextTick();
+      const noTargetsContainer = wrapper.find<HTMLDivElement>("#no-targets");
+
+      expect(noTargetsContainer.exists()).toBeTruthy();
+    });
+
+    it("should render no targets message when current play is defined but interactions are empty.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource({ interactions: [] }) });
       await nextTick();
       const noTargetsContainer = wrapper.find<HTMLDivElement>("#no-targets");
 
@@ -69,19 +78,30 @@ describe("Game Target Playground Targets Component", () => {
   });
 
   describe("Targets", () => {
-    it("should render targets when current play is defined and there are eligible targets interactable players.", async() => {
+    it("should render targets when current play is defined and there are eligible targets in first interaction.", async() => {
       const expectedTargets = [
         createFakeSeerAlivePlayer(),
         createFakeSeerAlivePlayer(),
         createFakeSeerAlivePlayer(),
       ];
-      const expectedInteractablePlayers = [
-        createFakeInteractablePlayer({ player: expectedTargets[0] }),
-        createFakeInteractablePlayer({ player: expectedTargets[1] }),
-        createFakeInteractablePlayer({ player: expectedTargets[2] }),
-      ];
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ eligibleTargets: createFakeGamePlayEligibleTargets({ interactablePlayers: expectedInteractablePlayers }) });
+      gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat({
+        source: createFakeGamePlaySource({
+          interactions: [
+            createFakeGamePlaySourceInteraction({
+              type: "eat",
+              eligibleTargets: expectedTargets,
+            }),
+            createFakeGamePlaySourceInteraction({
+              type: "charm",
+              eligibleTargets: [
+                createFakeSeerAlivePlayer(),
+                createFakeSeerAlivePlayer(),
+              ],
+            }),
+          ],
+        }),
+      });
       await nextTick();
       const targets = wrapper.findAllComponents<typeof GamePlaygroundPlayerCard>(".target");
 
