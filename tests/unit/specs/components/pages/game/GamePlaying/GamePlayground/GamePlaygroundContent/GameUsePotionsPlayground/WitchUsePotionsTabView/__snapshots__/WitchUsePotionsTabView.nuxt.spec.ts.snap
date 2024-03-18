@@ -1,0 +1,40 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Witch Use Potions Tab View Component > should match snapshot when rendered. 1`] = `
+"<div class="p-tabview p-component tabview-custom" role="tablist" id="witch-use-potions-tab-view" data-pc-name="tabview" data-pc-section="root">
+  <div class="p-tabview-nav-container" data-pc-section="navcontainer">
+    <!---->
+    <div class="p-tabview-nav-content" data-pc-section="navcontent">
+      <ul class="p-tabview-nav gap-2" data-pc-section="nav">
+        <li class="p-tabview-header p-highlight grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="true" data-p-disabled="false" data-pc-index="0" data-p-active="true"><a id="witch-use-potions-tab-view_0_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="0" role="tab" aria-disabled="false" aria-selected="true" aria-controls="witch-use-potions-tab-view_0_content" data-pc-section="headeraction" data-pd-ripple="true">
+            <!---->
+            <div class="flex gap-2 items-center">
+              <nuxt-img-stub src="svg/game/player/player-attribute/drank-life-potion.svg" width="40" height="40" alt="Death potion"></nuxt-img-stub>
+              <h4>Give life potion to save the player…</h4>
+            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+          </a></li>
+        <li class="p-tabview-header p-disabled grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-p-disabled="true" data-pc-index="1" data-p-active="false"><a id="witch-use-potions-tab-view_1_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-disabled="true" aria-selected="false" aria-controls="witch-use-potions-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true">
+            <!---->
+            <div class="flex gap-2 items-center">
+              <nuxt-img-stub src="svg/game/player/player-attribute/drank-death-potion.svg" width="40" height="40" alt="Death potion"></nuxt-img-stub>
+              <h4>Give death potion to kill the player…</h4>
+            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+          </a></li>
+        <li class="p-tabview-ink-bar" role="presentation" aria-hidden="true" data-pc-section="inkbar" style="left: 0px;"></li>
+      </ul>
+    </div>
+    <!---->
+  </div>
+  <div class="p-tabview-panels" data-pc-section="panelcontainer">
+    <div id="witch-use-potions-tab-view_0_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_0_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="0" data-p-active="true">
+      <div id="give-life-potion-panel" class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center">
+        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target"></game-playground-player-card-stub>
+        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target"></game-playground-player-card-stub>
+      </div>
+    </div>
+    <div id="witch-use-potions-tab-view_1_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_1_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="1" data-p-active="false" style="display: none;">
+      <div id="give-death-potion-panel" class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center"></div>
+    </div>
+  </div>
+</div>"
+`;

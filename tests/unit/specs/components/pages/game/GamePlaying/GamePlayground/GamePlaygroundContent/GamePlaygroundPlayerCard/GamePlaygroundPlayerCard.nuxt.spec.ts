@@ -1,5 +1,6 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { GamePlaygroundPlayerCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/game-playground-player-card.types";
 import GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
@@ -12,9 +13,10 @@ import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/co
 import { createFakeGamePlaySourceInteractionBoundaries } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction-boundaries/game-play-source-interaction-boundaries.factory";
 import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlayWerewolvesEat } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlayWerewolvesEat, createFakeGamePlayWitchUsesPotions } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
 
@@ -27,10 +29,12 @@ describe("Game Playground Player Card Component", () => {
     interaction: "eat",
   };
 
-  async function mountGamePlaygroundPlayerCardComponent(): Promise<ReturnType<typeof mount<typeof GamePlaygroundPlayerCard>>> {
+  async function mountGamePlaygroundPlayerCardComponent(options: ComponentMountingOptions<typeof GamePlaygroundPlayerCard> = {}):
+  Promise<ReturnType<typeof mount<typeof GamePlaygroundPlayerCard>>> {
     return mountSuspendedComponent(GamePlaygroundPlayerCard, {
       props: defaultProps,
       global: { plugins: [createTestingPinia(testingPinia)] },
+      ...options,
     });
   }
 
@@ -135,6 +139,201 @@ describe("Game Playground Player Card Component", () => {
         expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).not.toHaveBeenCalled();
       });
 
+      it("should not call remove first make game play target dto when player is targeted but there are no current play.", async() => {
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = null;
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto).not.toHaveBeenCalled();
+      });
+
+      it("should remove first make game play target dto when interaction is life potion and there is already one target for life potion.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-life-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-life-potion",
+                eligibleTargets: [player],
+                boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                  min: 1,
+                  max: 1,
+                }),
+              }),
+            ],
+          }),
+        });
+        const players = [
+          player,
+          createFakeSeerAlivePlayer({ name: "Benoit" }),
+          createFakeSeerAlivePlayer({ name: "Alex" }),
+        ];
+        makeGamePlayDtoStore.makeGamePlayDto.targets = [createFakeMakeGamePlayTargetDto({ playerId: players[2]._id, drankPotion: "life" })];
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).toHaveBeenCalledExactlyOnceWith("life");
+      });
+
+      it("should add player to make game play dto targets with drank life potion when player can be targeted and is not already with death targets.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-life-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-life-potion",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
+        makeGamePlayDtoStore.makeGamePlayDto.targets = [createFakeMakeGamePlayTargetDto({ playerId: createFakePlayer()._id, drankPotion: "death" })];
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).toHaveBeenCalledExactlyOnceWith({ playerId: player._id, drankPotion: "life" });
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).not.toHaveBeenCalled();
+      });
+
+      it("should add player to make game play dto targets with drank life potion when player can be targeted and is not already without death targets.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-life-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-life-potion",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
+        makeGamePlayDtoStore.makeGamePlayDto.targets = undefined;
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).toHaveBeenCalledExactlyOnceWith({ playerId: player._id, drankPotion: "life" });
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).not.toHaveBeenCalled();
+      });
+
+      it("should remove first make game play target dto when interaction is death potion and there is already one target for death potion.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-death-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-death-potion",
+                eligibleTargets: [player],
+                boundaries: createFakeGamePlaySourceInteractionBoundaries({
+                  min: 1,
+                  max: 1,
+                }),
+              }),
+            ],
+          }),
+        });
+        const players = [
+          player,
+          createFakeSeerAlivePlayer({ name: "Benoit" }),
+          createFakeSeerAlivePlayer({ name: "Alex" }),
+        ];
+        makeGamePlayDtoStore.makeGamePlayDto.targets = [createFakeMakeGamePlayTargetDto({ playerId: players[2]._id, drankPotion: "death" })];
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).toHaveBeenCalledExactlyOnceWith("death");
+      });
+
+      it("should add player to make game play dto targets with drank death potion when player can be targeted and is not already with life targets.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-death-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-death-potion",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
+        makeGamePlayDtoStore.makeGamePlayDto.targets = [createFakeMakeGamePlayTargetDto({ playerId: createFakePlayer()._id, drankPotion: "life" })];
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).toHaveBeenCalledExactlyOnceWith({ playerId: player._id, drankPotion: "death" });
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).not.toHaveBeenCalled();
+      });
+
+      it("should add player to make game play dto targets with drank death potion when player can be targeted and is not already without life targets.", async() => {
+        wrapper = await mountGamePlaygroundPlayerCardComponent({
+          props: {
+            ...defaultProps,
+            interaction: "give-death-potion",
+          },
+        });
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "give-death-potion",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
+        makeGamePlayDtoStore.makeGamePlayDto.targets = undefined;
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).toHaveBeenCalledExactlyOnceWith({ playerId: player._id, drankPotion: "death" });
+        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDtoWithPotion).not.toHaveBeenCalled();
+      });
+
       it("should add player to make game play dto targets when player can be targeted and is not already.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
@@ -154,17 +353,6 @@ describe("Game Playground Player Card Component", () => {
         (playerCard.vm as VueVm).$emit("player-card-selector-click");
 
         expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).toHaveBeenCalledExactlyOnceWith({ playerId: player._id });
-        expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto).not.toHaveBeenCalled();
-      });
-
-      it("should not call remove first make game play target dto when player is targeted but there are no current play.", async() => {
-        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-        const gameStore = useGameStore();
-        gameStore.game.currentPlay = null;
-        await nextTick();
-        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
-        (playerCard.vm as VueVm).$emit("player-card-selector-click");
-
         expect(makeGamePlayDtoStore.removeFirstMakeGamePlayTargetDto).not.toHaveBeenCalled();
       });
 

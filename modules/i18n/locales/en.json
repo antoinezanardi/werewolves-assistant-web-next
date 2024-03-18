@@ -578,11 +578,18 @@
       "bearGrowled": "The Bear growled, some Werewolves are next to him…",
       "charmedPeopleMeetEachOther": "The charmed people meet each other, watch out for the Pied Piper last victims !",
       "loversMeetEachOther": "The lovers meet each other, it's a love at first sight !",
-      "threeBrothersMeetEachOther": "The Three Brothers meet each other, they consult each other.",
-      "twoSistersMeetEachOther": "The Two Sisters meet each other, they consult each other."
+      "threeBrothersMeetEachOther": "The Three Brothers convene and consult with each other.",
+      "twoSistersMeetEachOther": "The Two Sisters meet and consult one another."
     },
     "GameTargetPlaygroundTargets": {
       "nobodyCanBeTargeted": "Nobody can be targeted…"
+    },
+    "GameUsePotionsPlayground": {
+      "witchHasUsedBothPotions": "The Witch has used both potions, the game can proceed"
+    },
+    "WitchUsePotionsTabView": {
+      "giveLifePotion": "Give life potion to save the player…",
+      "giveDeathPotion": "Give death potion to kill the player…"
     }
   }
 }

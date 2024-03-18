@@ -15,7 +15,7 @@
     <div
       v-else
       id="targets"
-      class="grid grid-cols-4 items-center justify-center"
+      class="grid grid-cols-4 h-full items-center justify-center place-content-center place-items-center"
     >
       <GamePlaygroundPlayerCard
         v-for="target in targets"
