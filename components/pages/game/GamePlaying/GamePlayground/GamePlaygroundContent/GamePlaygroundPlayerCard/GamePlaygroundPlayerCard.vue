@@ -25,7 +25,6 @@ import { storeToRefs } from "pinia";
 import type { GamePlaygroundPlayerCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/game-playground-player-card.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
-import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -39,11 +38,9 @@ const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
 const { addMakeGamePlayTargetDto, removeMakeGamePlayTargetDto, removeFirstMakeGamePlayTargetDto } = makeGamePlayDtoStore;
 
 const canPlayerBeTargeted = computed<boolean>(() => {
-  const gamePlayTargetTypes: GamePlayType[] = ["target", "bury-dead-bodies"];
-  if (!game.value.currentPlay) {
-    return false;
-  }
-  return gamePlayTargetTypes.includes(game.value.currentPlay.type);
+  const { type } = game.value.currentPlay ?? {};
+
+  return type === "target" || type === "bury-dead-bodies";
 });
 
 const isPlayerTargeted = computed<boolean>(() => {
@@ -55,7 +52,7 @@ const isPlayerTargeted = computed<boolean>(() => {
 
 function handlePlayerCardSelectorClick(): void {
   const currentPlayInteraction = game.value.currentPlay?.source.interactions?.find(({ type }) => type === props.interaction);
-  if (!canPlayerBeTargeted.value || !currentPlayInteraction) {
+  if (!currentPlayInteraction || !canPlayerBeTargeted.value) {
     return;
   }
   if (isPlayerTargeted.value) {

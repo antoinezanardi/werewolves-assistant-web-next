@@ -84,10 +84,30 @@ describe("Game Playground Player Card Component", () => {
     });
 
     describe("Click on Player Card", () => {
+      it("should do nothing when player can't be targeted because game play is null.", async() => {
+        const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
+        const gameStore = useGameStore();
+        gameStore.game.currentPlay = null;
+        await nextTick();
+        const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+        (playerCard.vm as VueVm).$emit("player-card-selector-click");
+
+        expect(makeGamePlayDtoStore.addMakeGamePlayTargetDto).not.toHaveBeenCalled();
+      });
+
       it("should do nothing when player can't be targeted because game play type is not target.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         const gameStore = useGameStore();
-        gameStore.game.currentPlay = createFakeGamePlaySurvivorsElectSheriff();
+        gameStore.game.currentPlay = createFakeGamePlaySurvivorsElectSheriff({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                type: "eat",
+                eligibleTargets: [player],
+              }),
+            ],
+          }),
+        });
         await nextTick();
         const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
         (playerCard.vm as VueVm).$emit("player-card-selector-click");

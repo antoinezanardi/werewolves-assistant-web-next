@@ -132,6 +132,11 @@ describe("Current Play Question Component", () => {
       test: "should render the question for survivors elect sheriff when current play is survivors who elect sheriff.",
     },
     {
+      currentPlay: createFakeGamePlaySurvivorsElectSheriff({ cause: "previous-votes-were-in-ties" }),
+      expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsElectSheriffOnTie",
+      test: "should render the question for survivors elect sheriff when current play is survivors who elect sheriff and previous votes were in tie.",
+    },
+    {
       currentPlay: createFakeGamePlaySurvivorsVote(),
       expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteFor",
       test: "should render the question for survivors vote when current play is survivors who vote and there is no cause.",
