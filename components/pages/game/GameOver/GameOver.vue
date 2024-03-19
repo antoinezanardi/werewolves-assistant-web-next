@@ -3,10 +3,10 @@
     id="game-over"
     class="flex flex-col h-full items-center justify-center"
   >
-    <GameOverWinnersText/>
+    <GameOverVictoryText/>
   </div>
 </template>
 
 <script setup lang="ts">
-import GameOverWinnersText from "~/components/pages/game/GameOver/GameOverWinnersText/GameOverWinnersText.vue";
+import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 </script>
