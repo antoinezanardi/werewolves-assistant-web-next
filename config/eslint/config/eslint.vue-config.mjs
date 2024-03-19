@@ -22,6 +22,7 @@ const ESLINT_VUE_CONFIG = {
       sourceType: "module",
       extraFileExtensions: [".vue"],
       project: "./tsconfig.json",
+      emitDecoratorMetadata: true,
     },
   },
   rules: {
