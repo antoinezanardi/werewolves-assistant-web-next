@@ -9,7 +9,7 @@
 
     <CurrentPlayQuestion/>
 
-    <GamePlaygroundContent class="grow overflow-y-auto"/>
+    <GamePlaygroundContent class="grow overflow-y-auto py-2"/>
 
     <GamePlaygroundFooter/>
   </div>

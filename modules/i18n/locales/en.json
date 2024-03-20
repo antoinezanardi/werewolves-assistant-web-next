@@ -536,7 +536,7 @@
       "noActionNeeded": "No action needed, the game can proceed"
     },
     "GameDevotedServantStealsRolePlayground": {
-      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player {playerName} ?",
+      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player ? | Does the Devoted Servant wants to steal the role of one of the eliminated players ?",
       "sheStealsRole": "She steals the role",
       "sheDoesntStealRole": "She doesn't steal the role"
     },
@@ -559,10 +559,11 @@
       "whichPlayerDoesHunterShoot": "Which player does the Hunter want to shoot ?",
       "whichPlayersDoesPiedPiperCharm": "Which players does the Pied Piper want to charm ?",
       "doesScandalmongerWantToMark": "Does the Scandalmonger want to mark a player ?",
-      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban a player from voting ?",
+      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban one or more players from voting ?",
       "whichPlayerDoesSeerLook": "Which player does the Seer want to look at ?",
       "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to ?",
       "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff for to break the tie ?",
       "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff ?",
       "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for ?",
@@ -577,8 +578,46 @@
       "bearGrowled": "The Bear growled, some Werewolves are next to him…",
       "charmedPeopleMeetEachOther": "The charmed people meet each other, watch out for the Pied Piper last victims !",
       "loversMeetEachOther": "The lovers meet each other, it's a love at first sight !",
-      "threeBrothersMeetEachOther": "The Three Brothers meet each other, they consult each other.",
-      "twoSistersMeetEachOther": "The Two Sisters meet each other, they consult each other."
+      "threeBrothersMeetEachOther": "The Three Brothers convene and consult with each other.",
+      "twoSistersMeetEachOther": "The Two Sisters meet and consult one another."
+    },
+    "GameTargetPlaygroundTargets": {
+      "nobodyCanBeTargeted": "Nobody can be targeted…"
+    },
+    "GameUsePotionsPlayground": {
+      "witchHasUsedBothPotions": "The Witch has used both potions, the game can proceed"
+    },
+    "WitchUsePotionsTabView": {
+      "giveLifePotion": "Give life potion to save the player…",
+      "giveDeathPotion": "Give death potion to kill the player…",
+      "lifePotionImageAlt": "Image of the life potion",
+      "deathPotionImageAlt": "Image of the death potion"
+    },
+    "GameOverVictoryText": {
+      "trophyImageAlt": "Trophy icon",
+      "victoryTypeImageAlt": "Victory type icon",
+      "angelWins": "The Angel wins by himself !",
+      "angelComesBackToParadise": "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place.",
+      "loversWin": "The Lovers win together !",
+      "loversAreTogetherForever": "The two people in love from Cupid's arrow are the only survivors. They win together and will be together forever.",
+      "nobodyWins": "Draw ! Everyone is dead in the village…",
+      "everybodyMurderedEachOther": "Everybody murdered each other. A deadly silence reigns in the village…",
+      "piedPiperWins": "The Pied Piper wins by himself !",
+      "piedPiperHasControl": "The Pied Piper managed to charm all the living players. He wins alone and has control over the village.",
+      "prejudicedManipulatorWins": "The Prejudiced Manipulator wins with his group !",
+      "prejudicedManipulatorGroupRemainsAlive": "All of the players from the group The Prejudiced Manipulator hates are dead. He wins with his own group while laughing.",
+      "villagersWin": "The Villagers win !",
+      "villagersHaveSurvivedWerewolves": "All of the Werewolves are dead. The village is safe at last.",
+      "werewolvesWin": "The Werewolves win !",
+      "werewolvesHaveEatenALot": "All of the Villagers are dead. The Werewolves have eaten a lot and are now full, eventually.",
+      "whiteWerewolfWins": "The White Werewolf wins by himself !",
+      "whiteWerewolfWinsAlone": "The White Werewolf is the only survivor. He wins alone and can be proud of his victory."
+    },
+    "BuyMeACoffeeButton": {
+      "alt": "Buy me a coffee"
+    },
+    "GameOverActions": {
+      "createAnotherGame": "Create another game"
     }
   }
 }

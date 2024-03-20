@@ -7,6 +7,7 @@ import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBa
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Role Origin Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleOriginBadge>>;
@@ -30,7 +31,7 @@ describe("Role Origin Badge Component", () => {
 
   describe("Badge", () => {
     it("should have tooltip when rendered.", async() => {
-      const tooltip = { value: undefined };
+      const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, ".role-origin-badge") };
       wrapper = await mountRoleOriginBadgeComponent({ global: { directives } });
 

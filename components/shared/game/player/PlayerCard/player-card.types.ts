@@ -5,6 +5,7 @@ type PlayerCardProps = {
   playerRole?: RoleName;
   selectorAriaLabel?: string;
   doesShowSelectorTooltip?: boolean;
+  isSelected?: boolean;
 };
 
 type PlayerCardEmits = {

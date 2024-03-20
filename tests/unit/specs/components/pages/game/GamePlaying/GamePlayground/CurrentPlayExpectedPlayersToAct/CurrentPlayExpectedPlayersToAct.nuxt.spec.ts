@@ -2,6 +2,8 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 
 import CurrentPlayExpectedPlayersToAct from "~/components/pages/game/GamePlaying/GamePlayground/CurrentPlayExpectedPlayersToAct/CurrentPlayExpectedPlayersToAct.vue";
+import type PlayersHorizontalList from "~/components/shared/game/player/PlayersHorizontalList/PlayersHorizontalList.vue";
+import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
@@ -33,13 +35,7 @@ describe("Current Play Expected Players To Act Component", () => {
   };
 
   async function mountCurrentPlayExpectedPlayersToActComponent(): Promise<ReturnType<typeof mount<typeof CurrentPlayExpectedPlayersToAct>>> {
-    return mountSuspendedComponent(CurrentPlayExpectedPlayersToAct, {
-      shallow: false,
-      global: {
-        plugins: [createTestingPinia(testingPinia)],
-        stubs: { RoleImage: true },
-      },
-    });
+    return mountSuspendedComponent(CurrentPlayExpectedPlayersToAct, { global: { plugins: [createTestingPinia(testingPinia)] } });
   }
 
   beforeEach(async() => {
@@ -51,30 +47,27 @@ describe("Current Play Expected Players To Act Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("should render the expected players to act when rendered.", () => {
-    const expectedPlayersToActElements = wrapper.findAll<HTMLDivElement>(".expected-player-to-act");
-
-    expect(expectedPlayersToActElements).toHaveLength(expectedPlayersToAct.length);
-    expect(expectedPlayersToActElements[0].text()).toBe(expectedPlayersToAct[0].name);
-    expect(expectedPlayersToActElements[1].text()).toBe(expectedPlayersToAct[1].name);
-    expect(expectedPlayersToActElements[2].text()).toBe(expectedPlayersToAct[2].name);
-  });
-
   it("should not render the expected players to act when there is no current play.", async() => {
     const gameStore = useGameStore();
     gameStore.game.currentPlay = null;
     await nextTick();
-    const expectedPlayersToActElements = wrapper.findAll<HTMLDivElement>(".expected-player-to-act");
+    const playersHorizontalList = wrapper.findComponent<typeof PlayersHorizontalList>("#player-horizontal-list");
 
-    expect(expectedPlayersToActElements).toHaveLength(0);
+    expect(playersHorizontalList.props("players")).toStrictEqual<Player[]>([]);
   });
 
   it("should not render the expected players to act when there is no source players in current play.", async() => {
     const gameStore = useGameStore();
     gameStore.game.currentPlay = createFakeGamePlayCupidCharms({ source: createFakeGamePlaySource({ players: undefined }) });
     await nextTick();
-    const expectedPlayersToActElements = wrapper.findAll<HTMLDivElement>(".expected-player-to-act");
+    const playersHorizontalList = wrapper.findComponent<typeof PlayersHorizontalList>("#player-horizontal-list");
 
-    expect(expectedPlayersToActElements).toHaveLength(0);
+    expect(playersHorizontalList.props("players")).toStrictEqual<Player[]>([]);
+  });
+
+  it("should render the expected players to act when there is a current play.", () => {
+    const playersHorizontalList = wrapper.findComponent<typeof PlayersHorizontalList>("#player-horizontal-list");
+
+    expect(playersHorizontalList.props("players")).toStrictEqual<Player[]>(expectedPlayersToAct);
   });
 });

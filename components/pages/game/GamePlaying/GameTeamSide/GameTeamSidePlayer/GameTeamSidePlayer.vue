@@ -56,6 +56,7 @@
               :key="attribute.name"
               :attribute="attribute"
               class="p-1"
+              :player="player"
             />
           </div>
 

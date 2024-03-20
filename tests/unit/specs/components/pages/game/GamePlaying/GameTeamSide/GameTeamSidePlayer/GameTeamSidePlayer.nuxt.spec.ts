@@ -11,6 +11,7 @@ import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttri
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Team Side Player Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameTeamSidePlayer>>;
@@ -87,7 +88,7 @@ describe("Game Team Side Player Component", () => {
       });
 
       it("should attach tooltip to player death logo when player is dead.", async() => {
-        const tooltip = { value: undefined };
+        const tooltip: BoundTooltip = { value: undefined };
         const directives = { ...pTooltipDirectiveBinder(tooltip, "[alt='This player is dead']") };
         const player = createFakeSeerAlivePlayer({ isAlive: false });
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player }, global: { directives } });

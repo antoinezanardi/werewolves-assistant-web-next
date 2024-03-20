@@ -2,6 +2,6 @@
 
 exports[`Game Vote Playground Component > should match snapshot when rendered. 1`] = `
 "<div id="game-vote-playground">
-  <game-vote-playground-voters-stub></game-vote-playground-voters-stub>
+  <game-vote-playground-voters-stub class="h-full"></game-vote-playground-voters-stub>
 </div>"
 `;

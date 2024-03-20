@@ -536,7 +536,7 @@
       "noActionNeeded": "Aucune action nécessaire, la partie peut continuer"
     },
     "GameDevotedServantStealsRolePlayground": {
-      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé {playerName} ?",
+      "doesDevotedServantStealRole": "Est-ce que la Servante Dévouée souhaite voler le rôle du joueur éliminé ? | Est-ce que la Servante Dévouée souhaite voler le rôle d'un des joueurs éliminés ?",
       "sheStealsRole": "Elle vole le rôle",
       "sheDoesntStealRole": "Elle ne vole pas le rôle"
     },
@@ -563,6 +563,7 @@
       "whichPlayerDoesSeerLook": "Quel joueur la Voyante veut-elle regarder ?",
       "whichPlayerDoesSheriffDelegate": "À quel joueur le Maire veut-il déléguer son rôle ?",
       "whichPlayerDoesSheriffSettleVotes": "Avec quel joueur le Maire veut-il trancher les votes ?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Quel joueur les survivants veulent-ils élire comme Maire parmi les ex-æquo ?",
       "doesJudgeRequestAnotherVote": "Le Juge Bègue veut-il demander un autre vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Quel joueur les survivants veulent-ils élire comme Maire ?",
       "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux urnes !",
@@ -579,6 +580,44 @@
       "loversMeetEachOther": "Les amoureux se rencontrent, c'est un coup de foudre !",
       "threeBrothersMeetEachOther": "Les Trois Frères se rencontrent, ils se consultent.",
       "twoSistersMeetEachOther": "Les Deux Sœurs se rencontrent, elles se consultent."
+    },
+    "GameTargetPlaygroundTargets": {
+      "nobodyCanBeTargeted": "Personne ne peut être ciblé…"
+    },
+    "GameUsePotionsPlayground": {
+      "witchHasUsedBothPotions": "La Sorcière a utilisé ses deux potions, la partie peut continuer."
+    },
+    "WitchUsePotionsTabView": {
+      "giveLifePotion": "Donner la potion de vie pour sauver le joueur…",
+      "giveDeathPotion": "Donner la potion de mort pour éliminer le joueur…",
+      "lifePotionImageAlt": "Image de la potion de vie",
+      "deathPotionImageAlt": "Image de la potion de mort"
+    },
+    "GameOverVictoryText": {
+      "trophyImageAlt": "Icône de trophée",
+      "victoryTypeImageAlt": "Icône de type de victoire",
+      "angelWins": "L'Ange gagne seul !",
+      "angelComesBackToParadise": "L'Ange a été éliminé lors du premier vote ou de la première nuit par les Loups-Garous. Il gagne seul et retourne au Bon Endroit.",
+      "loversWin": "Les Amoureux gagnent ensemble !",
+      "loversAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon sont les seuls survivants. Ils gagnent ensemble et seront ensemble pour toujours.",
+      "nobodyWins": "Match nul ! Tout le monde est mort dans le village…",
+      "everybodyMurderedEachOther": "Tout le monde s'est entretué. Un silence mortel règne dans le village…",
+      "piedPiperWins": "Le Joueur de Flûte gagne seul !",
+      "piedPiperHasControl": "Le Joueur de Flûte a réussi à charmer tous les joueurs vivants. Il gagne seul et a le contrôle sur tout le village.",
+      "prejudicedManipulatorWins": "L'Abominable Sectaire gagne avec son groupe !",
+      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne avec son propre groupe tout en riant.",
+      "villagersWin": "Les Villageois gagnent !",
+      "villagersHaveSurvivedWerewolves": "Tous les Loups-Garous sont morts. Le village est enfin en sécurité.",
+      "werewolvesWin": "Les Loups-Garous gagnent !",
+      "werewolvesHaveEatenALot": "Tous les Villageois sont morts. Les Loups-Garous ont beaucoup mangé et sont maintenant repus, pour de bon.",
+      "whiteWerewolfWins": "Le Loup-Garou Blanc gagne seul !",
+      "whiteWerewolfWinsAlone": "Le Loup-Garou Blanc est le seul survivant. Il gagne seul et peut être fier de sa victoire."
+    },
+    "BuyMeACoffeeButton": {
+      "alt": "Offrez-moi un café"
+    },
+    "GameOverActions": {
+      "createAnotherGame": "Lancer une nouvelle partie"
     }
   }
 }

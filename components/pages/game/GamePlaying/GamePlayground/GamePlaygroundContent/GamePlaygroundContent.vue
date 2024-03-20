@@ -19,7 +19,6 @@ import GameRequestAnotherVotePlayground from "~/components/pages/game/GamePlayin
 import GameTargetPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameTargetPlayground/GameTargetPlayground.vue";
 import GameUsePotionsPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameUsePotionsPlayground/GameUsePotionsPlayground.vue";
 import GameVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameVotePlayground/GameVotePlayground.vue";
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
 import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -36,8 +35,6 @@ type GamePlaygroundTypeComponent =
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const { currentPlayType } = useGamePlay(game);
-
 const gamePlaygroundTypeComponentToRender = computed<GamePlaygroundTypeComponent | undefined>(() => {
   const { currentPlay } = game.value;
   if (currentPlay?.action === "use-potions") {
@@ -53,6 +50,6 @@ const gamePlaygroundTypeComponentToRender = computed<GamePlaygroundTypeComponent
     "vote": GameVotePlayground,
   };
 
-  return currentPlayType.value ? currentGamePlayTypeComponents[currentPlayType.value] : undefined;
+  return currentPlay?.type ? currentGamePlayTypeComponents[currentPlay.type] : undefined;
 });
 </script>

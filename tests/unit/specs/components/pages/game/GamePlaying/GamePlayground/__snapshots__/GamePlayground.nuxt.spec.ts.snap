@@ -5,7 +5,7 @@ exports[`Game Playground Component > should match snapshot when rendered. 1`] = 
   <game-playground-header-stub></game-playground-header-stub>
   <current-play-expected-players-to-act-stub class="flex-none"></current-play-expected-players-to-act-stub>
   <current-play-question-stub></current-play-question-stub>
-  <game-playground-content-stub class="grow overflow-y-auto"></game-playground-content-stub>
+  <game-playground-content-stub class="grow overflow-y-auto py-2"></game-playground-content-stub>
   <game-playground-footer-stub></game-playground-footer-stub>
 </div>"
 `;

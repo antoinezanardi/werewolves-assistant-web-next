@@ -1,6 +1,6 @@
 <template>
   <div id="game-vote-playground">
-    <GameVotePlaygroundVoters/>
+    <GameVotePlaygroundVoters class="h-full"/>
   </div>
 </template>
 

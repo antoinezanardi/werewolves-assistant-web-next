@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Use Potions Playground Component > should match snapshot when rendered. 1`] = `"<div id="game-use-potions-playground"> GAME PLAYGROUND USE POTIONS </div>"`;
+exports[`Game Use Potions Playground Component > should match snapshot when rendered. 1`] = `
+"<div id="game-use-potions-playground">
+  <witch-use-potions-tab-view-stub id="witch-use-potions-tab-view"></witch-use-potions-tab-view-stub>
+</div>"
+`;

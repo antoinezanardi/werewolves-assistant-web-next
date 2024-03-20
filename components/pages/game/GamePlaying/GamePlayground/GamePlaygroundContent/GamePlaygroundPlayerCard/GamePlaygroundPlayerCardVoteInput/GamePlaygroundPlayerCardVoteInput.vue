@@ -18,7 +18,6 @@
         <template #option="slotProps">
           <div class="align-options-center flex">
             <RoleImage
-              alt="Player role"
               class="me-2"
               :role-name="slotProps.option.role.current"
               size="small"
@@ -73,12 +72,11 @@ const filteredVoteOptions = ref<Player[]>([]);
 const votedPlayer = ref<Player | string | null>(null);
 
 const voteOptions = computed<Player[] | undefined>(() => {
-  if (game.value.currentPlay?.eligibleTargets?.interactablePlayers === undefined) {
+  const eligibleTargets = game.value.currentPlay?.source.interactions?.[0]?.eligibleTargets;
+  if (eligibleTargets === undefined) {
     return undefined;
   }
-  const interactablePlayersWithoutSelf = game.value.currentPlay.eligibleTargets.interactablePlayers.filter(({ player }) => player._id !== props.player._id);
-
-  return interactablePlayersWithoutSelf.map(({ player }) => player);
+  return eligibleTargets.filter(({ _id }) => _id !== props.player._id);
 });
 
 function searchVoteOptions({ query }: AutoCompleteCompleteEvent): void {
