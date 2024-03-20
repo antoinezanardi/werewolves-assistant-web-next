@@ -589,7 +589,9 @@
     },
     "WitchUsePotionsTabView": {
       "giveLifePotion": "Give life potion to save the player…",
-      "giveDeathPotion": "Give death potion to kill the player…"
+      "giveDeathPotion": "Give death potion to kill the player…",
+      "lifePotionImageAlt": "Image of the life potion",
+      "deathPotionImageAlt": "Image of the death potion"
     },
     "GameOverVictoryText": {
       "trophyImageAlt": "Trophy icon",
@@ -610,6 +612,12 @@
       "werewolvesHaveEatenALot": "All of the Villagers are dead. The Werewolves have eaten a lot and are now full, eventually.",
       "whiteWerewolfWins": "The White Werewolf wins by himself !",
       "whiteWerewolfWinsAlone": "The White Werewolf is the only survivor. He wins alone and can be proud of his victory."
+    },
+    "BuyMeACoffeeButton": {
+      "alt": "Buy me a coffee"
+    },
+    "GameOverActions": {
+      "createAnotherGame": "Create another game"
     }
   }
 }

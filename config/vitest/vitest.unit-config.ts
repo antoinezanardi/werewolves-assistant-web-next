@@ -28,8 +28,6 @@ export default defineVitestConfig({
         "tests/**/*",
         "node_modules/**/*",
         "config/**/*",
-        "**/*.enums.ts",
-        "**/*.constants.ts",
         "**/*.types.ts",
       ],
       include: [

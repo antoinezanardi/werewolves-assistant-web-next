@@ -589,7 +589,9 @@
     },
     "WitchUsePotionsTabView": {
       "giveLifePotion": "Donner la potion de vie pour sauver le joueur…",
-      "giveDeathPotion": "Donner la potion de mort pour éliminer le joueur…"
+      "giveDeathPotion": "Donner la potion de mort pour éliminer le joueur…",
+      "lifePotionImageAlt": "Image de la potion de vie",
+      "deathPotionImageAlt": "Image de la potion de mort"
     },
     "GameOverVictoryText": {
       "trophyImageAlt": "Icône de trophée",
@@ -610,6 +612,12 @@
       "werewolvesHaveEatenALot": "Tous les Villageois sont morts. Les Loups-Garous ont beaucoup mangé et sont maintenant repus, pour de bon.",
       "whiteWerewolfWins": "Le Loup-Garou Blanc gagne seul !",
       "whiteWerewolfWinsAlone": "Le Loup-Garou Blanc est le seul survivant. Il gagne seul et peut être fier de sa victoire."
+    },
+    "BuyMeACoffeeButton": {
+      "alt": "Offrez-moi un café"
+    },
+    "GameOverActions": {
+      "createAnotherGame": "Lancer une nouvelle partie"
     }
   }
 }

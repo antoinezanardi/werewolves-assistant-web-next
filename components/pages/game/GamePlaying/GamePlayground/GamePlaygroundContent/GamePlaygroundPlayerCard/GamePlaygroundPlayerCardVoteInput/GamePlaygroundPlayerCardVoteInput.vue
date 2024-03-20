@@ -18,7 +18,6 @@
         <template #option="slotProps">
           <div class="align-options-center flex">
             <RoleImage
-              alt="Player role"
               class="me-2"
               :role-name="slotProps.option.role.current"
               size="small"
