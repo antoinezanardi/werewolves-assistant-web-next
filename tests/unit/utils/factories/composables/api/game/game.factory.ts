@@ -13,6 +13,7 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     players: game.players ?? [],
     currentPlay: game.currentPlay ?? null,
     upcomingPlays: game.upcomingPlays ?? [],
+    victory: game.victory ?? undefined,
     createdAt: game.createdAt ?? faker.date.recent(),
     updatedAt: game.updatedAt ?? faker.date.recent(),
   });

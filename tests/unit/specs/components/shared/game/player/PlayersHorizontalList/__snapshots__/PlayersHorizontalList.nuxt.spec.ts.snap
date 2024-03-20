@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Players Horizontal List Component > should match snapshot when rendered. 1`] = `
+"<div id="players-horizontal-list" class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap">
+  <div class="glow-capture" style="position: relative; --glow-size: 400px;">
+    <div class="inline-block player-in-list text-center w-44">
+      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
+        <div class="" style="grid-area: 1/1/1/1;">
+          <role-image-stub rolename="fox" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
+        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
+          <role-image-stub rolename="fox" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+      </div>
+      <div class="truncate w-full">Antoine</div>
+    </div>
+    <div class="inline-block player-in-list text-center w-44">
+      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
+        <div class="" style="grid-area: 1/1/1/1;">
+          <role-image-stub rolename="seer" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
+        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
+          <role-image-stub rolename="seer" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+      </div>
+      <div class="truncate w-full">Benoit</div>
+    </div>
+    <div class="inline-block player-in-list text-center w-44">
+      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
+        <div class="" style="grid-area: 1/1/1/1;">
+          <role-image-stub rolename="werewolf" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
+        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
+          <role-image-stub rolename="werewolf" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+        </div>
+      </div>
+      <div class="truncate w-full">Alice</div>
+    </div>
+  </div>
+</div>"
+`;

@@ -12,7 +12,7 @@
       <template #header>
         <div class="flex gap-2 items-center">
           <NuxtImg
-            alt="Death potion"
+            :alt="$t('components.WitchUsePotionsTabView.lifePotionImageAlt')"
             height="40"
             src="svg/game/player/player-attribute/drank-life-potion.svg"
             width="40"
@@ -45,7 +45,7 @@
       <template #header>
         <div class="flex gap-2 items-center">
           <NuxtImg
-            alt="Death potion"
+            :alt="$t('components.WitchUsePotionsTabView.deathPotionImageAlt')"
             height="40"
             src="svg/game/player/player-attribute/drank-death-potion.svg"
             width="40"

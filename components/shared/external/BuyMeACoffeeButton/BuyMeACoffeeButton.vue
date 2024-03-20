@@ -5,7 +5,7 @@
     target="_blank"
   >
     <img
-      alt="Buy me a coffee"
+      :alt="$t('components.BuyMeACoffeeButton.alt')"
       :src="src"
     >
   </a>

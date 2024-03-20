@@ -4,6 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import TabPanel from "primevue/tabpanel";
 import type TabView from "primevue/tabview";
 
+import type { NuxtImg } from "#components";
 import type GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
 import WitchUsePotionsTabView from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameUsePotionsPlayground/WitchUsePotionsTabView/WitchUsePotionsTabView.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
@@ -175,6 +176,12 @@ describe("Witch Use Potions Tab View Component", () => {
       expect(giveLifePotionPanel.attributes("disabled")).toBe("false");
     });
 
+    it("should display life potion image when rendered.", () => {
+      const lifePotionImage = wrapper.findComponent<typeof NuxtImg>("[alt='Image of the life potion']");
+
+      expect(lifePotionImage.attributes("src")).toBe("svg/game/player/player-attribute/drank-life-potion.svg");
+    });
+
     it("should translate give life potion panel title when rendered.", () => {
       const giveLifePotionPanel = wrapper.find<HTMLAnchorElement>("#witch-use-potions-tab-view_0_header_action");
 
@@ -269,6 +276,12 @@ describe("Witch Use Potions Tab View Component", () => {
       const giveDeathPotionPanel = tabPanels[1];
 
       expect(giveDeathPotionPanel.attributes("disabled")).toBe("false");
+    });
+
+    it("should display death potion image when rendered.", () => {
+      const deathPotionImage = wrapper.findComponent<typeof NuxtImg>("[alt='Image of the death potion']");
+
+      expect(deathPotionImage.attributes("src")).toBe("svg/game/player/player-attribute/drank-death-potion.svg");
     });
 
     it("should translate give death potion panel title when rendered.", () => {
