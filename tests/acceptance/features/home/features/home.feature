@@ -15,6 +15,18 @@ Feature: 🏠 Home Page
     And the link with name "This project is open-source!" should be visible
     And the page should match the snapshot with name "Home Page"
 
+  Scenario: 🏠 Home Page has valid head title and SEO tags
+    Given the user is on home page
+    Then the page should have head title "Werewolves Assistant" and meta tags
+      | name             | content                                                                                                        |
+      | description      | The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games. |
+      | application-name | Werewolves Assistant                                                                                           |
+      | creator          | Antoine ZANARDI                                                                                                |
+      | viewport         | width=device-width, initial-scale=1                                                                            |
+      | charset          | utf-8                                                                                                          |
+      | generator        | nuxt                                                                                                           |
+      | color-scheme     | dark                                                                                                           |
+
   Scenario: 🏠 Home Page doesn't have navigation bar
     Given the user is on home page
     Then the navigation with name "Navigation bar" should be hidden

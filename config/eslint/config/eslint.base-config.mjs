@@ -18,6 +18,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       useImage: READONLY,
       $fetch: READONLY,
       useI18n: READONLY,
+      useHead: READONLY,
       navigateTo: READONLY,
       storeToRefs: READONLY,
       ...Vitest.environments.env.globals,

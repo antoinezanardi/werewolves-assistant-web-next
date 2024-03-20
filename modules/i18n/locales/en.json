@@ -64,10 +64,16 @@
     "about": {
       "whyAnAssistant": "Why an assistant ?",
       "backToHome": "Back to home",
-      "imageTitle": "Werewolf illustration"
+      "imageTitle": "Werewolf illustration",
+      "seoDescription": "What is the Werewolves Assistant and why is it useful for game masters ?"
+    },
+    "gameLobby": {
+      "startGame": "Start a game",
+      "seoDescription": "Create a new game right now with the Werewolves Assistant."
     },
     "game": {
-      "loadingGame": "Loading game…"
+      "loadingGame": "Loading game…",
+      "playingGame": "Playing game"
     }
   },
   "composables": {
@@ -92,6 +98,9 @@
     }
   },
   "components": {
+    "App": {
+      "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
+    },
     "IndexFooter": {
       "contact": "Contact me"
     },
@@ -618,6 +627,9 @@
     },
     "GameOverActions": {
       "createAnotherGame": "Create another game"
+    },
+    "GameOver": {
+      "gameOver": "Game over"
     }
   }
 }

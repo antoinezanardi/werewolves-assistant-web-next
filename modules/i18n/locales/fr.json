@@ -64,10 +64,16 @@
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
       "backToHome": "Retour à l'accueil",
-      "imageTitle": "Image du titre de la page À quoi ça sert"
+      "imageTitle": "Image du titre de la page À quoi ça sert",
+      "seoDescription": "Qu'est-ce que l'Assistant Loups-Garous et pourquoi est-il utile aux Maîtres du jeu ?"
+    },
+    "gameLobby": {
+      "startGame": "Lancer une partie",
+      "seoDescription": "Créer une nouvelle partie avec l'Assistant Loups-Garous"
     },
     "game": {
-      "loadingGame": "Chargement de la partie…"
+      "loadingGame": "Chargement de la partie…",
+      "playingGame": "Partie en cours"
     }
   },
   "composables": {
@@ -92,6 +98,9 @@
     }
   },
   "components": {
+    "App": {
+      "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
+    },
     "IndexFooter": {
       "contact": "Me contacter"
     },
@@ -618,6 +627,9 @@
     },
     "GameOverActions": {
       "createAnotherGame": "Lancer une nouvelle partie"
+    },
+    "GameOver": {
+      "gameOver": "Partie terminée"
     }
   }
 }

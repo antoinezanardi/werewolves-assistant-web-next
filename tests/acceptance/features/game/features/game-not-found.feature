@@ -10,6 +10,18 @@ Feature: 🎲❓Game Not Found
     And the toast with text "Bad request" should be visible
     And the page should match the snapshot with name "Game not found"
 
+  Scenario: 🎲❓Game not found page has valid head title and SEO tags
+    Given the user goes on an unknown game
+    Then the page should have head title "Game not found… Did you get lost ?" and meta tags
+      | name             | content                                                                  |
+      | application-name | Werewolves Assistant                                                     |
+      | creator          | Antoine ZANARDI                                                          |
+      | viewport         | width=device-width, initial-scale=1                                      |
+      | charset          | utf-8                                                                    |
+      | generator        | nuxt                                                                     |
+      | color-scheme     | dark                                                                     |
+      | robots           | noindex, nofollow                                                        |
+
   Scenario: 🎲❓User creates a new game from the game not found page
     Given the user goes on an unknown game
     When the user clicks on the link with name "Create another game"
