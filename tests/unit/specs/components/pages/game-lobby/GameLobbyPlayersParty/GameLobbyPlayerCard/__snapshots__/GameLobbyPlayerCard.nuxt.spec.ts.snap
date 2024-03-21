@@ -3,6 +3,6 @@
 exports[`Game Lobby Player Card Component > should match snapshot when rendered. 1`] = `
 "<div data-v-ed2a42b3="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto">
   <button-stub data-v-ed2a42b3="" aria-label="Remove player Toto" class="mb-1 player-card-delete-button" icon="fa-minus fa fa-2x" raised="" severity="danger" size="small" type="button" data-pd-tooltip="true"></button-stub>
-  <player-card-stub data-v-ed2a42b3="" playername="Toto" playerrole="werewolf" doesshowselectortooltip="false" isselected="false"></player-card-stub><small data-v-ed2a42b3="" class="player-card-role truncate"></small>
+  <player-card-stub data-v-ed2a42b3="" playername="Toto" playerrole="werewolf" doesshowselectortooltip="false" isselected="false" class="player-card"></player-card-stub><small data-v-ed2a42b3="" class="player-card-role truncate"></small>
 </div>"
 `;

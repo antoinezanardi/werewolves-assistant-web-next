@@ -16,8 +16,10 @@
     />
 
     <PlayerCard
+      class="player-card"
       :player-name="player.name"
       :player-role="player.role.name"
+      @player-card-selector-click="pickRoleForPlayer"
     />
 
     <small class="player-card-role truncate">
@@ -27,12 +29,14 @@
 </template>
 
 <script setup lang="ts">
-import type { GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
+import type { GameLobbyPlayerCardEmits, GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const props = defineProps<GameLobbyPlayerCardProps>();
+
+const emit = defineEmits<GameLobbyPlayerCardEmits>();
 
 const { getRoleNameLabel } = useRoleName();
 
@@ -49,6 +53,10 @@ const playerCardRoleText = computed<string>(() => {
 
 function removePlayerFromCreateGameDto(): void {
   createGameDtoStore.removePlayerFromCreateGameDto(props.player.name);
+}
+
+function pickRoleForPlayer(): void {
+  emit("pickRoleForPlayer", props.player);
 }
 </script>
 

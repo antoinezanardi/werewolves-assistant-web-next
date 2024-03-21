@@ -4,4 +4,11 @@ type GameLobbyPlayerCardProps = {
   player: CreateGamePlayerDto;
 };
 
-export type { GameLobbyPlayerCardProps };
+type GameLobbyPlayerCardEmits = {
+  pickRoleForPlayer: [CreateGamePlayerDto];
+};
+
+export type {
+  GameLobbyPlayerCardProps,
+  GameLobbyPlayerCardEmits,
+};
