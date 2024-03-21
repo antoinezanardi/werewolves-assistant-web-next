@@ -630,6 +630,14 @@
     },
     "GameOver": {
       "gameOver": "Game over"
+    },
+    "GameLobbyRolePickerHeader": {
+      "pickRoleForPlayer": "Pick a role for the player {playerName}",
+      "currentRole": "Current role",
+      "noRole": "None"
+    },
+    "GameLobbyRolePickerFooter": {
+      "pickRole": "Pick role for the player"
     }
   }
 }

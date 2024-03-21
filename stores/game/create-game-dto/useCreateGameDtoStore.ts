@@ -20,6 +20,13 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     createGameDto.value.players.push(CreateGamePlayerDto.create(player));
   }
 
+  function updatePlayerInCreateGameDto(player: CreateGamePlayerDto): void {
+    const playerIndex = createGameDto.value.players.findIndex(({ name }) => name === player.name);
+    if (playerIndex !== -1) {
+      createGameDto.value.players.splice(playerIndex, 1, CreateGamePlayerDto.create(player));
+    }
+  }
+
   function setPlayersToCreateGameDto(players: CreateGamePlayerDto[]): void {
     createGameDto.value.players = players.map(player => CreateGamePlayerDto.create(player));
   }
@@ -35,6 +42,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     setCreateGameDto,
     resetCreateGameDto,
     addPlayerToCreateGameDto,
+    updatePlayerInCreateGameDto,
     setPlayersToCreateGameDto,
     removePlayerFromCreateGameDto,
   };

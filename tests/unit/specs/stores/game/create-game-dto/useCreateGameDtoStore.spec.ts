@@ -64,6 +64,46 @@ describe("Create Game Dto Store", () => {
     });
   });
 
+  describe("updatePlayerInCreateGameDto", () => {
+    it("should update player in createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ name: "player1" }),
+        createFakeCreateGamePlayerDto({ name: "player2" }),
+        createFakeCreateGamePlayerDto({ name: "player3" }),
+      ];
+      createGameDtoStore.createGameDto.players = players;
+      const player = createFakeCreateGamePlayerDto({ name: "player2", role: { name: "seer" } });
+      const expectedCreateGameDto = createFakeCreateGameDto({
+        players: [
+          players[0],
+          player,
+          players[2],
+        ],
+      });
+
+      createGameDtoStore.updatePlayerInCreateGameDto(player);
+
+      expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
+    });
+
+    it("should not update player in createGameDto when player not found.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ name: "player1" }),
+        createFakeCreateGamePlayerDto({ name: "player2" }),
+        createFakeCreateGamePlayerDto({ name: "player3" }),
+      ];
+      createGameDtoStore.createGameDto.players = players;
+      const player = createFakeCreateGamePlayerDto({ name: "player4", role: { name: "seer" } });
+      const expectedCreateGameDto = createFakeCreateGameDto({ players });
+
+      createGameDtoStore.updatePlayerInCreateGameDto(player);
+
+      expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
+    });
+  });
+
   describe("setPlayersToCreateGameDto", () => {
     it("should set players to createGameDto when called.", () => {
       const createGameDtoStore = useCreateGameDtoStore();

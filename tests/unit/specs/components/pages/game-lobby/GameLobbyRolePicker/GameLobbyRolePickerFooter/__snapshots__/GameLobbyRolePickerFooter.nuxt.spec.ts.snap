@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Role Picker Footer Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-role-picker-footer" class="text-center w-full">
+  <divider-stub></divider-stub>
+  <button-stub id="game-lobby-role-picker-footer-button" disabled="false" label="Pick role for the player"></button-stub>
+</div>"
+`;
