@@ -24,6 +24,13 @@ const { resetCreateGameDto } = createGameDtoStore;
 const gameStore = useGameStore();
 const { resetGame } = gameStore;
 
+const { t } = useI18n();
+
+useHead({
+  title: t("pages.gameLobby.startGame"),
+  meta: [{ name: "description", content: t("pages.gameLobby.seoDescription") }],
+});
+
 resetCreateGameDto();
 resetGame();
 </script>

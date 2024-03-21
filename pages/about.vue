@@ -45,4 +45,11 @@ import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAs
 import AboutWerewolvesGame from "~/components/pages/about/AboutWerewolvesGame.vue";
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+
+const { t } = useI18n();
+
+useHead({
+  title: t("pages.about.whyAnAssistant"),
+  meta: [{ name: "description", content: t("pages.about.seoDescription") }],
+});
 </script>

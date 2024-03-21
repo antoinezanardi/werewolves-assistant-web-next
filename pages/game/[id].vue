@@ -46,10 +46,14 @@ const gameStore = useGameStore();
 const { fetchAndSetGame } = gameStore;
 const { game, fetchingGameStatus } = storeToRefs(gameStore);
 
-const { id } = route.params;
+const { t } = useI18n();
 
-const gameId = Array.isArray(id) ? id[0] : id;
-void fetchAndSetGame(gameId);
+useHead({
+  title: t("pages.game.playingGame"),
+  meta: [{ name: "robots", content: "noindex, nofollow" }],
+});
+
+const { id } = route.params;
 
 const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
   const gameStatusComponents: Record<GameStatus, GameStatusComponent> = {
@@ -60,4 +64,7 @@ const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
 
   return gameStatusComponents[game.value.status];
 });
+
+const gameId = Array.isArray(id) ? id[0] : id;
+void fetchAndSetGame(gameId);
 </script>

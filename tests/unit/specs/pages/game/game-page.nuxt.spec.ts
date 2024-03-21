@@ -1,5 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
+import type { UseHeadInput } from "unhead";
+import { expect } from "vitest";
 
 import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue";
 import type GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound.vue";
@@ -31,6 +33,15 @@ describe("Game Page", () => {
   it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should set head title and meta tags when rendered.", () => {
+    const expectedUseHeadInput: UseHeadInput<object> = {
+      title: "pages.game.playingGame",
+      meta: [{ name: "robots", content: "noindex, nofollow" }],
+    };
+
+    expect(useHead).toHaveBeenCalledExactlyOnceWith(expectedUseHeadInput);
   });
 
   it("should fetch and set game in store when rendered with valid game id as string.", () => {

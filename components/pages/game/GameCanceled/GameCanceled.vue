@@ -27,4 +27,8 @@
 <script setup lang="ts">
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import CreateAnotherGameButton from "~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue";
+
+const { t } = useI18n();
+
+useHead({ title: t("components.GameCanceled.gameCanceled") });
 </script>

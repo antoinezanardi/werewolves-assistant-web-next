@@ -12,6 +12,18 @@ Feature: 🃏 Game Lobby Page
     And the button with name "Start game" should be visible
     And the page should match the snapshot with name "Game Lobby Page without players"
 
+  Scenario: 🃏 Game Lobby page has valid head title and SEO tags
+    Given the user is on game-lobby page
+    Then the page should have head title "Start a game" and meta tags
+      | name             | content                                                    |
+      | description      | Create a new game right now with the Werewolves Assistant. |
+      | application-name | Werewolves Assistant                                       |
+      | creator          | Antoine ZANARDI                                            |
+      | viewport         | width=device-width, initial-scale=1                        |
+      | charset          | utf-8                                                      |
+      | generator        | nuxt                                                       |
+      | color-scheme     | dark                                                       |
+
   Scenario: 🃏 User adds a player
     Given the user is on game-lobby page
     Then the input with label "Player name" should be empty
