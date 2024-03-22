@@ -638,6 +638,9 @@
     },
     "GameLobbyRolePickerFooter": {
       "pickRole": "Pick role for the player"
+    },
+    "GameLobbyRolePickerGridElement": {
+      "random": "Random"
     }
   }
 }

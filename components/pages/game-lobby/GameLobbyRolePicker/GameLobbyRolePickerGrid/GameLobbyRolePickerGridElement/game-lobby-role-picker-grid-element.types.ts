@@ -1,8 +1,8 @@
 import type { Role } from "~/composables/api/role/types/role.class";
 
 type GameLobbyRolePickerGridElementProps = {
-  role: Role;
-  isPicked?: boolean;
+  role?: Role;
+  pickedRole?: Role;
 };
 
 type GameLobbyRolePickerGridElementEmits = {

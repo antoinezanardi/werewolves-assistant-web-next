@@ -37,22 +37,14 @@ describe("Game Lobby Role Picker Grid Component", () => {
   });
 
   describe("Available roles", () => {
-    it("should render available roles when rendered.", () => {
+    it("should render available roles plus random role when rendered.", () => {
       const roleCards = wrapper.findAllComponents<typeof GameLobbyRolePickerGridElement>(".available-role");
 
-      expect(roleCards).toHaveLength(roles.length);
-      expect(roleCards[0].props("role")).toStrictEqual<Role>(roles[0]);
-      expect(roleCards[1].props("role")).toStrictEqual<Role>(roles[1]);
-      expect(roleCards[2].props("role")).toStrictEqual<Role>(roles[2]);
-    });
-
-    it("should set picked role when one of the available roles is picked.", async() => {
-      wrapper = await mountGameLobbyRolePickerGridComponent({ props: { pickedRole: roles[1] } });
-      const roleCards = wrapper.findAllComponents<typeof GameLobbyRolePickerGridElement>(".available-role");
-
-      expect(roleCards[0].attributes("ispicked")).toBe("false");
-      expect(roleCards[1].attributes("ispicked")).toBe("true");
-      expect(roleCards[2].attributes("ispicked")).toBe("false");
+      expect(roleCards).toHaveLength(roles.length + 1);
+      expect(roleCards[0].props("role")).toBeUndefined();
+      expect(roleCards[1].props("role")).toStrictEqual<Role>(roles[0]);
+      expect(roleCards[2].props("role")).toStrictEqual<Role>(roles[1]);
+      expect(roleCards[3].props("role")).toStrictEqual<Role>(roles[2]);
     });
   });
 

@@ -4,6 +4,11 @@
     class="gap-4 grid grid-cols-5"
   >
     <GameLobbyRolePickerGridElement
+      class="available-role"
+      @pick-role="pickRole"
+    />
+
+    <GameLobbyRolePickerGridElement
       v-for="role in roles"
       :key="role.name"
       class="available-role"
