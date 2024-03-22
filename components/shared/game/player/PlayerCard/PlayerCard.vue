@@ -47,7 +47,7 @@ function emitPlayerCardSelectorClickEvent(): void {
 
 <style lang="scss" scoped>
 .player-card-selector {
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease;
 
   &:hover {
     border-color: #747474;

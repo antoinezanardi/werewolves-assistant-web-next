@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Role Picker Grid Element Component > should match snapshot when rendered. 1`] = `
+"<div data-v-54c5e19c="" id="game-lobby-role-picker-grid-element" class="flex flex-col items-center justify-center"><button data-v-54c5e19c="" id="game-lobby-role-picker-grid-element-button" class="border-4 border-gray-600 hover:border-gray-400 rounded-lg" type="button">
+    <role-image-stub data-v-54c5e19c="" rolename="seer" sizes="100px" definition="normal" id="game-lobby-role-picker-grid-element-role-image"></role-image-stub>
+  </button>
+  <div data-v-54c5e19c="" id="game-lobby-role-picker-grid-element-role-name" class="cursor-pointer text-center">shared.role.name.seer</div>
+</div>"
+`;

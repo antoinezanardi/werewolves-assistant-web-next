@@ -5,8 +5,9 @@
   >
     <GameLobbyRolePickerGridElement
       v-for="role in roles"
-      id="available-role"
       :key="role.name"
+      class="available-role"
+      :is-picked="pickedRole?.name === role.name"
       :role="role"
       @pick-role="pickRole"
     />
@@ -16,10 +17,12 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import type { GameLobbyRolePickerGridEmits } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/game-lobby-role-picker-grid.types";
+import type { GameLobbyRolePickerGridEmits, GameLobbyRolePickerGridProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/game-lobby-role-picker-grid.types";
 import GameLobbyRolePickerGridElement from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/GameLobbyRolePickerGridElement.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+
+defineProps<GameLobbyRolePickerGridProps>();
 
 const emit = defineEmits<GameLobbyRolePickerGridEmits>();
 

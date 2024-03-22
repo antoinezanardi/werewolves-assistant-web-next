@@ -3,7 +3,7 @@
     id="game-lobby-role-picker-footer"
     class="text-center w-full"
   >
-    <VuePrimeDivider/>
+    <VuePrimeDivider class="!my-2"/>
 
     <VuePrimeButton
       id="game-lobby-role-picker-footer-button"
@@ -26,12 +26,12 @@ const emit = defineEmits<GameLobbyRolePickerFooterEmits>();
 const createGameDtoStore = useCreateGameDtoStore();
 const { updatePlayerInCreateGameDto } = createGameDtoStore;
 
-const isPlayerRoleChanged = computed<boolean>(() => props.player.role.name !== props.pickedRole?.name);
+const isPlayerRoleChanged = computed<boolean>(() => props.player?.role.name !== props.pickedRole?.name);
 
-const canRoleBePicked = computed<boolean>(() => !!props.pickedRole && isPlayerRoleChanged.value);
+const canRoleBePicked = computed<boolean>(() => !!props.player && !!props.pickedRole && isPlayerRoleChanged.value);
 
 function pickRoleForPlayer(): void {
-  if (!props.pickedRole) {
+  if (!props.pickedRole || !props.player) {
     return;
   }
   const updatedPlayer = CreateGamePlayerDto.create({

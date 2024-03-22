@@ -8,6 +8,7 @@ import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerRoleDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Role Picker Footer Component", () => {
@@ -17,7 +18,10 @@ describe("Game Lobby Role Picker Footer Component", () => {
       name: "Antoine",
       role: createFakeCreateGamePlayerRoleDto({ name: "seer" }),
     }),
-    pickedRole: "werewolf",
+    pickedRole: createFakeRole({
+      name: "werewolf",
+      side: "werewolves",
+    }),
   };
 
   async function mountGameLobbyRolePickerFooterComponent(options: ComponentMountingOptions<typeof GameLobbyRolePickerFooter> = {}):
@@ -44,11 +48,38 @@ describe("Game Lobby Role Picker Footer Component", () => {
       expect(button.attributes("disabled")).toBe("false");
     });
 
+    it("should be disabled when player is not defined.", async() => {
+      wrapper = await mountGameLobbyRolePickerFooterComponent({
+        props: {
+          ...defaultProps,
+          player: undefined,
+        },
+      });
+      const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+
+      expect(button.attributes("disabled")).toBe("true");
+    });
+
+    it("should be disabled when picked role is not defined.", async() => {
+      wrapper = await mountGameLobbyRolePickerFooterComponent({
+        props: {
+          ...defaultProps,
+          pickedRole: undefined,
+        },
+      });
+      const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+
+      expect(button.attributes("disabled")).toBe("true");
+    });
+
     it("should be disabled when role selected is the one of the player.", async() => {
       wrapper = await mountGameLobbyRolePickerFooterComponent({
         props: {
           ...defaultProps,
-          pickedRole: "seer",
+          pickedRole: createFakeRole({
+            name: "seer",
+            side: "villagers",
+          }),
         },
       });
       const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
@@ -72,7 +103,11 @@ describe("Game Lobby Role Picker Footer Component", () => {
         const createGameDtoStore = useCreateGameDtoStore();
         const expectedPlayer = createFakeCreateGamePlayerDto({
           ...defaultProps.player,
-          role: createFakeCreateGamePlayerRoleDto({ name: defaultProps.pickedRole }),
+          role: createFakeCreateGamePlayerRoleDto({ name: defaultProps.pickedRole?.name }),
+          side: {
+            current: defaultProps.pickedRole?.side,
+            original: defaultProps.pickedRole?.side,
+          },
         });
 
         expect(createGameDtoStore.updatePlayerInCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedPlayer);
@@ -82,11 +117,29 @@ describe("Game Lobby Role Picker Footer Component", () => {
         const emittedEvents = wrapper.emitted("playerUpdate");
         const expectedPlayer = createFakeCreateGamePlayerDto({
           ...defaultProps.player,
-          role: createFakeCreateGamePlayerRoleDto({ name: defaultProps.pickedRole }),
+          role: createFakeCreateGamePlayerRoleDto({ name: defaultProps.pickedRole?.name }),
+          side: {
+            current: defaultProps.pickedRole?.side,
+            original: defaultProps.pickedRole?.side,
+          },
         });
 
         expect(emittedEvents).toHaveLength(1);
         expect(emittedEvents?.[0]).toStrictEqual<[CreateGamePlayerDto]>([expectedPlayer]);
+      });
+
+      it("should not emit player update with updated player event when picked role is not defined.", async() => {
+        wrapper = await mountGameLobbyRolePickerFooterComponent({
+          props: {
+            ...defaultProps,
+            pickedRole: undefined,
+          },
+        });
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        const emittedEvents = wrapper.emitted("playerUpdate");
+
+        expect(emittedEvents).toBeUndefined();
       });
     });
   });

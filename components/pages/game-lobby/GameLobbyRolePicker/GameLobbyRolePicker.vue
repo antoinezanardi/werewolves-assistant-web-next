@@ -1,26 +1,39 @@
 <template>
   <VuePrimeDialog
     id="game-lobby-role-picker"
-    v-model:visible="isVisible"
     block-scroll
     dismissable-mask
     modal
+    :pt="{
+      'icons': 'pb-2',
+      'header': '!py-2',
+      'footer': '!py-2'
+    }"
+    :visible="isVisible"
+    @update:visible="close"
   >
-    <template #header>
+    <template
+      #header
+    >
       <GameLobbyRolePickerHeader
-        v-if="localPlayer"
+        id="game-lobby-role-picker-header"
         :player="localPlayer"
       />
     </template>
 
     <div
-      v-if="localPlayer"
       id="game-lobby-role-picker-content"
       class="flex gap-2"
     >
-      <GameLobbyRolePickerDescription :picked-role="pickedRole"/>
+      <GameLobbyRolePickerDescription
+        id="game-lobby-role-picker-description"
+        class="w-2/12"
+        :picked-role="pickedRole"
+      />
 
       <GameLobbyRolePickerGrid
+        id="game-lobby-role-picker-grid"
+        class="w-10/12"
         :picked-role="pickedRole"
         @pick-role="pickRole"
       />
@@ -28,7 +41,7 @@
 
     <template #footer>
       <GameLobbyRolePickerFooter
-        v-if="localPlayer"
+        id="game-lobby-role-picker-footer"
         :picked-role="pickedRole"
         :player="localPlayer"
         @player-update="close"
@@ -51,6 +64,7 @@ const pickedRole = ref<Role>();
 
 function openToPickRoleForPlayer(player: CreateGamePlayerDto): void {
   localPlayer.value = CreateGamePlayerDto.create(player);
+  pickedRole.value = undefined;
   isVisible.value = true;
 }
 

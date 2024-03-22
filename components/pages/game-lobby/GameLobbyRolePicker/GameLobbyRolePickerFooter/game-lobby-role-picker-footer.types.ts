@@ -2,7 +2,7 @@ import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game
 import type { Role } from "~/composables/api/role/types/role.class";
 
 type GameLobbyRolePickerFooterProps = {
-  player: CreateGamePlayerDto;
+  player?: CreateGamePlayerDto;
   pickedRole?: Role;
 };
 

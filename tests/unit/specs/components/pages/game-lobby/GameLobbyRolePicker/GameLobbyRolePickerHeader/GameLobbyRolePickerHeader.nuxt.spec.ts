@@ -45,6 +45,13 @@ describe("Game Lobby Role Picker Header Component", () => {
       expect(currentRole.text()).toBe("shared.role.name.werewolf");
     });
 
+    it("should translate no role text when player is not defined.", async() => {
+      wrapper = await mountGameLobbyRolePickerHeaderComponent({ props: {} });
+      const currentRole = wrapper.find<HTMLSpanElement>("#current-role-text");
+
+      expect(currentRole.text()).toBe("components.GameLobbyRolePickerHeader.noRole");
+    });
+
     it("should translate no role text when player doesn't have any role yet.", async() => {
       wrapper = await mountGameLobbyRolePickerHeaderComponent({ props: { player: createFakeCreateGamePlayerDto({ name: "Toto" }) } });
       const currentRole = wrapper.find<HTMLSpanElement>("#current-role-text");
@@ -58,6 +65,13 @@ describe("Game Lobby Role Picker Header Component", () => {
       const title = wrapper.find<HTMLHeadingElement>("#role-picker-header-title");
 
       expect(title.text()).toBe("components.GameLobbyRolePickerHeader.pickRoleForPlayer, {\"playerName\":\"Toto\"}");
+    });
+
+    it("should translate title without player name when player is not defined.", async() => {
+      wrapper = await mountGameLobbyRolePickerHeaderComponent({ props: {} });
+      const title = wrapper.find<HTMLHeadingElement>("#role-picker-header-title");
+
+      expect(title.text()).toBe("components.GameLobbyRolePickerHeader.pickRoleForPlayer, {}");
     });
   });
 });
