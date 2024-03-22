@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Role Picker Grid Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-role-picker-grid" class="gap-4 grid grid-cols-5">
+  <game-lobby-role-picker-grid-element-stub class="available-role"></game-lobby-role-picker-grid-element-stub>
+  <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
+  <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
+  <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
+</div>"
+`;

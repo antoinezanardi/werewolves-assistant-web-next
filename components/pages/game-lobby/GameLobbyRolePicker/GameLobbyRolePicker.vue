@@ -2,7 +2,9 @@
   <VuePrimeDialog
     id="game-lobby-role-picker"
     block-scroll
+    content-class="w-x-screen-9/10 max-w-x-screen-9/10"
     dismissable-mask
+    :draggable="false"
     modal
     :pt="{
       'icons': 'pb-2',
@@ -27,13 +29,13 @@
     >
       <GameLobbyRolePickerDescription
         id="game-lobby-role-picker-description"
-        class="w-2/12"
+        class="w-4/12"
         :picked-role="pickedRole"
       />
 
       <GameLobbyRolePickerGrid
         id="game-lobby-role-picker-grid"
-        class="w-10/12"
+        class="w-8/12"
         :picked-role="pickedRole"
         @pick-role="pickRole"
       />

@@ -5,6 +5,7 @@
   >
     <GameLobbyRolePickerGridElement
       class="available-role"
+      :picked-role="pickedRole"
       @pick-role="pickRole"
     />
 
@@ -12,7 +13,7 @@
       v-for="role in roles"
       :key="role.name"
       class="available-role"
-      :is-picked="pickedRole?.name === role.name"
+      :picked-role="pickedRole"
       :role="role"
       @pick-role="pickRole"
     />

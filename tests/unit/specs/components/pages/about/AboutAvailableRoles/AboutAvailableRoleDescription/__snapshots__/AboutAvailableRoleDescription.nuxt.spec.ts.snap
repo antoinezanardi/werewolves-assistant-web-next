@@ -8,11 +8,6 @@ exports[`About Available Role Description Component > should match snapshot when
     <role-type-badge-stub roletype="werewolf" class="available-role-description-role-type-badge mt-3"></role-type-badge-stub>
     <role-origin-badge-stub roleorigin="classic" class="available-role-description-role-origin-badge mt-3"></role-origin-badge-stub>
   </div>
-  <div id="role-right-description" class="container-fluid flex flex-col justify-center">
-    <p class="available-role-description-role-description-line">components.AboutAvailableRoleDescription.descriptions.werewolf.hisGoalIsToKillVillagers</p>
-    <p class="available-role-description-role-description-line">components.AboutAvailableRoleDescription.descriptions.werewolf.eachNightEatsVillager</p>
-    <p class="available-role-description-role-description-line">components.AboutAvailableRoleDescription.descriptions.werewolf.numberOfWolvesVaries</p>
-    <p class="available-role-description-role-description-line">components.AboutAvailableRoleDescription.descriptions.werewolf.werewolvesCantEatEachOther</p>
-  </div>
+  <role-description-lines-stub role="[object Object]"></role-description-lines-stub>
 </div>"
 `;

@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Role Side Badge Component > should match snapshot when rendered. 1`] = `"<badge-stub id="role-side-badge" severity="success" value="components.RoleSideBadge.villagersSide"></badge-stub>"`;
