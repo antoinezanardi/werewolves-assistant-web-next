@@ -1,3 +1,4 @@
+import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
@@ -7,8 +8,10 @@ import GameLobbyRolePickerFooter from "~/components/pages/game-lobby/GameLobbyRo
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerRoleDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
+import { createFakeCreateGamePlayerSideDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-side/create-game-player-side.dto.factory";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
+import { mockPiniaStore } from "~/tests/unit/utils/helpers/mock.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Role Picker Footer Component", () => {
@@ -94,7 +97,12 @@ describe("Game Lobby Role Picker Footer Component", () => {
     });
 
     describe("On click", () => {
-      beforeEach(() => {
+      beforeEach(async() => {
+        const pinia = createTestingPinia();
+        const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+        createGameDtoStore.isRoleMaxReachedInCreateGameDto.mockReturnValue(false);
+        createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
+        wrapper = await mountGameLobbyRolePickerFooterComponent({ global: { plugins: [pinia] } });
         const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
         button.vm.$emit("click");
       });
@@ -111,6 +119,83 @@ describe("Game Lobby Role Picker Footer Component", () => {
         });
 
         expect(createGameDtoStore.updatePlayerInCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedPlayer);
+      });
+
+      it("should swap player role and side when clicked and max is reached for this role.", async() => {
+        const otherPlayer = createFakeCreateGamePlayerDto({
+          name: "Bob",
+          role: createFakeCreateGamePlayerRoleDto({ name: "seer" }),
+        });
+        const sourcePlayer = createFakeCreateGamePlayerDto({
+          name: "Antoine",
+          role: createFakeCreateGamePlayerRoleDto({ name: "werewolf" }),
+          side: createFakeCreateGamePlayerSideDto({ current: "werewolves", original: "werewolves" }),
+        });
+        const pinia = createTestingPinia();
+        const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+        createGameDtoStore.isRoleMaxReachedInCreateGameDto.mockReturnValue(true);
+        createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([otherPlayer]);
+        wrapper = await mountGameLobbyRolePickerFooterComponent({
+          global: { plugins: [pinia] },
+          props: {
+            player: sourcePlayer,
+            pickedRole: createFakeRole({
+              name: "seer",
+              side: "villagers",
+            }),
+          },
+        });
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        const expectedOtherPlayer = createFakeCreateGamePlayerDto({
+          ...otherPlayer,
+          role: sourcePlayer.role,
+          side: sourcePlayer.side,
+        });
+        const expectedSourcePlayer = createFakeCreateGamePlayerDto({
+          ...sourcePlayer,
+          role: { name: "seer" },
+          side: {
+            current: "villagers",
+            original: "villagers",
+          },
+        });
+
+        expect(createGameDtoStore.updatePlayerInCreateGameDto).toHaveBeenNthCalledWith(1, expectedOtherPlayer);
+        expect(createGameDtoStore.updatePlayerInCreateGameDto).toHaveBeenNthCalledWith(2, expectedSourcePlayer);
+      });
+
+      it("should not swap player role and side when clicked and max is reached for this role but no other player has this role.", async() => {
+        const sourcePlayer = createFakeCreateGamePlayerDto({
+          name: "Antoine",
+          role: createFakeCreateGamePlayerRoleDto({ name: "werewolf" }),
+        });
+        const pinia = createTestingPinia();
+        const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+        createGameDtoStore.isRoleMaxReachedInCreateGameDto.mockReturnValue(true);
+        createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
+        wrapper = await mountGameLobbyRolePickerFooterComponent({
+          global: { plugins: [pinia] },
+          props: {
+            player: sourcePlayer,
+            pickedRole: createFakeRole({
+              name: "seer",
+              side: "villagers",
+            }),
+          },
+        });
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        const expectedSourcePlayer = createFakeCreateGamePlayerDto({
+          ...sourcePlayer,
+          role: { name: "seer" },
+          side: {
+            current: "villagers",
+            original: "villagers",
+          },
+        });
+
+        expect(createGameDtoStore.updatePlayerInCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedSourcePlayer);
       });
 
       it("should emit player update with updated player event when clicked.", () => {
