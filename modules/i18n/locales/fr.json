@@ -648,6 +648,12 @@
     "RoleSideBadge": {
       "werewolvesSide": "Camp des Loups-Garous",
       "villagersSide": "Camp des Villageois"
+    },
+    "GameLobbyRolePickerDescriptionBoundaries": {
+      "roleCountInParty": "Aucun dans la partie | 1 dans la partie | {count} dans la partie",
+      "roleCountMaxReached": "Nombre maximum atteint",
+      "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
     }
   }
 }

@@ -6,8 +6,9 @@ exports[`Game Lobby Role Picker Description Content Component > should match sna
   <role-side-badge-stub roleside="villagers" size="large" id="role-side-badge"></role-side-badge-stub>
   <div class="flex gap-2 items-center justify-between w-full">
     <role-origin-badge-stub roleorigin="classic" id="role-origin-badge"></role-origin-badge-stub>
-    <role-type-badge-stub roletype="villager" id="role-type-badge" class="available-role-description-role-type-badge"></role-type-badge-stub>
+    <role-type-badge-stub roletype="villager" id="role-type-badge" class="role-type-badge"></role-type-badge-stub>
   </div>
+  <game-lobby-role-picker-description-boundaries-stub pickedrole="[object Object]" id="game-lobby-role-picker-description-boundaries" class="w-full"></game-lobby-role-picker-description-boundaries-stub>
   <divider-stub class="!my-2"></divider-stub>
   <role-description-lines-stub role="[object Object]" id="role-description-lines"></role-description-lines-stub>
 </div>"

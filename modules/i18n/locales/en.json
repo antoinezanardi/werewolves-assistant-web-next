@@ -648,6 +648,12 @@
     "RoleSideBadge": {
       "werewolvesSide": "Werewolves side",
       "villagersSide": "Villagers side"
+    },
+    "GameLobbyRolePickerDescriptionBoundaries": {
+      "roleCountInParty": "None in the party | 1 in the party | {count} in the party",
+      "roleCountMaxReached": "Maximum reached",
+      "recommendedMinPlayers": "Recommended for {count} players minimum",
+      "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
     }
   }
 }

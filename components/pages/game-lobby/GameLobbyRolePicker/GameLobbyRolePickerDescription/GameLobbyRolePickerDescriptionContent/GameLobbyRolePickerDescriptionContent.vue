@@ -21,10 +21,16 @@
 
       <RoleTypeBadge
         id="role-type-badge"
-        class="available-role-description-role-type-badge"
+        class="role-type-badge"
         :role-type="pickedRole.type"
       />
     </div>
+
+    <GameLobbyRolePickerDescriptionBoundaries
+      id="game-lobby-role-picker-description-boundaries"
+      class="w-full"
+      :picked-role="pickedRole"
+    />
 
     <VuePrimeDivider class="!my-2"/>
 
@@ -37,6 +43,7 @@
 
 <script setup lang="ts">
 import type { GameLobbyRolePickerDescriptionContentProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/game-lobby-role-picker-description-content.types";
+import GameLobbyRolePickerDescriptionBoundaries from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionBoundaries/GameLobbyRolePickerDescriptionBoundaries.vue";
 import RoleDescriptionLines from "~/components/shared/role/RoleDescriptionLines/RoleDescriptionLines.vue";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import RoleSideBadge from "~/components/shared/role/RoleSideBadge/RoleSideBadge.vue";
