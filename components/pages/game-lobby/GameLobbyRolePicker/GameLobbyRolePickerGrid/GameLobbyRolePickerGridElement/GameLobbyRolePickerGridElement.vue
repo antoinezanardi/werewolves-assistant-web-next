@@ -5,7 +5,7 @@
   >
     <button
       id="game-lobby-role-picker-grid-element-button"
-      class="border-4 border-gray-600 hover:border-gray-400 rounded-lg"
+      class="border-4 border-gray-600 hover:border-gray-400 relative rounded-lg"
       :class="{ '!border-gray-100': isPicked }"
       type="button"
       @click.prevent="pickRole"
@@ -16,6 +16,8 @@
         :role-name="role?.name"
         sizes="100px"
       />
+
+      <GameLobbyRolePickerGridElementBadges :role="role"/>
     </button>
 
     <div
@@ -42,6 +44,7 @@ import { storeToRefs } from "pinia";
 import { draw } from "radash";
 
 import type { GameLobbyRolePickerGridElementEmits, GameLobbyRolePickerGridElementProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/game-lobby-role-picker-grid-element.types";
+import GameLobbyRolePickerGridElementBadges from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/GameLobbyRolePickerGridElementBadges/GameLobbyRolePickerGridElementBadges.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRoleName } from "~/composables/api/role/useRoleName";

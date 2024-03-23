@@ -642,6 +642,10 @@
     "GameLobbyRolePickerGridElement": {
       "random": "Aléatoire"
     },
+    "GameLobbyRolePickerGridElementBadges": {
+      "totalInParty": "Total dans la partie",
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+    },
     "GameLobbyRolePickerDescription": {
       "pickARole": "Choisissez un rôle"
     },

@@ -7,8 +7,10 @@
     :draggable="false"
     modal
     :pt="{
+      'root': 'h-9/10',
       'icons': 'pb-2',
       'header': '!py-2',
+      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',
       'footer': '!py-2'
     }"
     :visible="isVisible"
@@ -25,17 +27,17 @@
 
     <div
       id="game-lobby-role-picker-content"
-      class="flex gap-2"
+      class="flex gap-2 h-full"
     >
       <GameLobbyRolePickerDescription
         id="game-lobby-role-picker-description"
-        class="w-4/12"
+        class="overflow-y-scroll w-4/12"
         :picked-role="pickedRole"
       />
 
       <GameLobbyRolePickerGrid
         id="game-lobby-role-picker-grid"
-        class="w-8/12"
+        class="overflow-y-scroll w-8/12"
         :picked-role="pickedRole"
         @pick-role="pickRole"
       />

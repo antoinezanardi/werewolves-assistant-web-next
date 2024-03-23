@@ -16,7 +16,11 @@ export default {
         day: DAY_COLOR,
         night: NIGHT_COLOR,
       },
-      spacing: { "x-screen-9/10": "90vw" },
+      spacing: {
+        "1/10": "10%",
+        "9/10": "90%",
+        "x-screen-9/10": "90vw",
+      },
     },
     container: { center: true },
     fontFamily: { sans: ["Quicksand", "Arial", "sans-serif"] },
