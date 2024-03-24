@@ -1,9 +1,9 @@
 <template>
   <VuePrimeBadge
     v-p-tooltip="$t(`components.RoleTypeBadge.descriptions.${roleType}`)"
-    class="role-type-badge"
+    class="cursor-help role-type-badge"
     :severity="roleTypeBadgeAttributes.severity"
-    size="large"
+    :size="size"
     :value="$t(`shared.role.type.${roleType}`)"
   />
 </template>
@@ -27,9 +27,3 @@ const roleTypeBadgeAttributes = computed<BadgeProps>(() => {
   return roleTypesBadgeAttributes[props.roleType];
 });
 </script>
-
-<style lang="scss" scoped>
-  .role-type-badge {
-    cursor: help;
-  }
-</style>

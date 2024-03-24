@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Role Picker Header Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-role-picker-header" class="w-full">
+  <div id="game-lobby-role-picker-header" class="flex items-center w-full">
+    <div id="current-player-role-container" class="flex w-3/12">
+      <div id="current-player-role" class="border-2 border-gray-600 me-2 px-2 py-1 rounded-lg text-center" data-testid="game-lobby-role-picker-header-current-role"><span id="current-role-title" class="italic text-gray-400 text-sm">components.GameLobbyRolePickerHeader.currentRole</span>
+        <role-image-stub rolename="werewolf" sizes="35px" definition="small" class="mx-auto"></role-image-stub><span id="current-role-text">shared.role.name.werewolf</span>
+      </div>
+    </div>
+    <h2 id="role-picker-header-title" class="grow text-center">components.GameLobbyRolePickerHeader.pickRoleForPlayer, {"playerName":"Toto"}</h2>
+    <div class="w-3/12"></div>
+  </div>
+  <divider-stub class="!my-2"></divider-stub>
+</div>"
+`;

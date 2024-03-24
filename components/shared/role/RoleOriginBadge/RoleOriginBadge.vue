@@ -1,7 +1,8 @@
 <template>
   <VuePrimeBadge
     v-p-tooltip="$t('components.RoleOriginBadge.roleOrigin')"
-    class="role-origin-badge"
+    class="cursor-help role-origin-badge"
+    :size="size"
     :value="$t(`components.RoleOriginBadge.${roleOrigin}`)"
   />
 </template>
@@ -11,9 +12,3 @@ import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBa
 
 defineProps<RoleOriginBadgeProps>();
 </script>
-
-<style lang="scss" scoped>
-  .role-origin-badge {
-    cursor: help;
-  }
-</style>

@@ -16,10 +16,15 @@ export default {
         day: DAY_COLOR,
         night: NIGHT_COLOR,
       },
+      spacing: {
+        "1/10": "10%",
+        "9/10": "90%",
+        "x-screen-9/10": "90vw",
+      },
     },
     container: { center: true },
     fontFamily: { sans: ["Quicksand", "Arial", "sans-serif"] },
   },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports, import/no-commonjs,no-undef
+  // eslint-disable-next-line @typescript-eslint/no-require-imports, import/no-commonjs, no-undef
   plugins: [require("@aksharahegde/nuxt-glow/tailwind")],
 } satisfies Config;

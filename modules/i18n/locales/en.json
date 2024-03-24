@@ -37,120 +37,6 @@
         "actor": "Actor",
         "devoted-servant": "Devoted Servant"
       },
-      "type": {
-        "werewolf": "Werewolf",
-        "villager": "Villager",
-        "lonely": "Lonely",
-        "ambiguous": "Ambiguous"
-      },
-      "side": {
-        "villagers": "Villagers",
-        "werewolves": "Werewolves"
-      }
-    },
-    "game": {
-      "phase": {
-        "night": "Night",
-        "day": "Day"
-      }
-    }
-  },
-  "pages": {
-    "index": {
-      "play": "Play",
-      "about": "What is it ?",
-      "werewolvesAssistantLogo": "Werewolves Assistant logo"
-    },
-    "about": {
-      "whyAnAssistant": "Why an assistant ?",
-      "backToHome": "Back to home",
-      "imageTitle": "Werewolf illustration",
-      "seoDescription": "What is the Werewolves Assistant and why is it useful for game masters ?"
-    },
-    "gameLobby": {
-      "startGame": "Start a game",
-      "seoDescription": "Create a new game right now with the Werewolves Assistant."
-    },
-    "game": {
-      "loadingGame": "Loading game…",
-      "playingGame": "Playing game"
-    }
-  },
-  "composables": {
-    "useWerewolvesAssistantApiError": {
-      "statusCode": {
-        "400": "Bad request",
-        "401": "Unauthorized",
-        "403": "Forbidden",
-        "404": "Not found",
-        "500": "Internal server error"
-      },
-      "checkConsoleForMoreDetails": "Check the console for more details"
-    },
-    "useCreateGameDtoValidation": {
-      "minimumOfPlayersNotReached": "The minimum number of players is not reached",
-      "notAllRolesAreSet": "Not all roles are set among players",
-      "noVillagerSidedRole": "At least one villager sided role is needed",
-      "noWerewolfSidedRole": "At least one werewolf sided role is needed",
-      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
-      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
-      "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
-    }
-  },
-  "components": {
-    "App": {
-      "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
-    },
-    "IndexFooter": {
-      "contact": "Contact me"
-    },
-    "NavBar": {
-      "navBar": "Navigation bar",
-      "parameters": "Parameters",
-      "homePageLink": "Home page link",
-      "homePage": "Home page",
-      "werewolvesAssistantLogo": "Werewolves Assistant logo",
-      "parametersMenu": "Parameters menu"
-    },
-    "ParametersMenu": {
-      "backToHome": "Back to home",
-      "parameters": "Parameters",
-      "parametersMenu": "Parameters menu",
-      "game": "Game",
-      "cancelGame": "Cancel game",
-      "gameCanceled": "Game canceled"
-    },
-    "AboutWerewolvesGame": {
-      "werewolvesAssistantGame": "The Werewolves of Miller's Hollow™ game",
-      "iDontKnowWerewolvesGame": "I don't know this game",
-      "watchTutorialVideoOnYoutube": "Watch an explanatory video on YouTube",
-      "whatIsWerewolvesGame": "The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.",
-      "whyGameMasterIsImportant": "The success of a game relies on the shoulders of the game master, tasked with creating an enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, lacking experience, or being in a state of distraction make this task a significant challenge."
-    },
-    "AboutWerewolvesAssistant": {
-      "werewolvesAssistantInThePlace": "The Werewolves Assistant takes the stage !",
-      "toHelpGameMaster": "To ease the heavy task that falls on the game master when hosting a Werewolves game, the Werewolves Assistant proves to be the ideal tool !",
-      "assistantHasManyFeatures": "This Assistant offers a variety of features, including:",
-      "gameLayout": "A game composition screen allowing the creation of sessions for 4 to 40 players, with the option to randomly assign roles.",
-      "intuitiveUserInterface": "A playful game tracking interface, providing a pleasant visual experience.",
-      "inputForEachEvent": "For each key event, the ability to input players' choices, such as the selection of the Werewolves' target or the election of the mayor.",
-      "gamePlaysQueue": "The Assistant handles the scheduling of game turns, displaying deaths and other events, as well as retaining all choices made during the game.",
-      "gameHistory": "At the end of the game, a summary is generated, indicating the victorious camp and providing a complete history of past actions.",
-      "assistantGoodForYouAndFreeToPlay": "In summary, the Werewolves Assistant invites you to (re)discover the joy of taking on the role of the game master in a Werewolves game. Accessible from any device with an internet browser, this tool is and will remain entirely FREE.",
-      "pleaseBeAware": "However, please be aware",
-      "physicalGameIsNeeded": "The Werewolves Assistant has no intention of replacing the original Werewolves of Miller's Hollow™ game. Its use requires prior possession of a game with its cards.",
-      "assistantIsABonus": "It is important to emphasize that the Assistant positions itself as an exclusive aid to the game master, facilitating game management without altering the essence and experience unique to the original board game. Thus, it complements and enhances the game's dynamics while preserving its authentic character."
-    },
-    "AboutAvailableRoles": {
-      "availableRoles": "Available roles",
-      "availableRolesImage": "Illustration of the available roles title",
-      "loadingRoles": "Loading roles…",
-      "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:",
-      "clickToExpandRoleDescription": "Click to expand the description of the {role} role",
-      "availableRoleImage": "Illustration of the {role} role"
-    },
-    "AboutAvailableRoleDescription": {
-      "roleDescriptionLeftImageAlt": "Illustration of the {role} role on the left description",
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Their goal is to eliminate the Villagers.",
@@ -378,7 +264,121 @@
           "servantTipFlutePlayerCharmIndication": "- Flute Player, the game master informs this new Flute Player who the previously charmed players are.",
           "servantTipActorGuardGypsyNoNewCards": "- Actor, Rural Guard, Gypsy (without Potion): new cards are not distributed; only those unused remain."
         }
+      },
+      "type": {
+        "werewolf": "Werewolf",
+        "villager": "Villager",
+        "lonely": "Lonely",
+        "ambiguous": "Ambiguous"
+      },
+      "side": {
+        "villagers": "Villagers",
+        "werewolves": "Werewolves"
       }
+    },
+    "game": {
+      "phase": {
+        "night": "Night",
+        "day": "Day"
+      }
+    }
+  },
+  "pages": {
+    "index": {
+      "play": "Play",
+      "about": "What is it ?",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo"
+    },
+    "about": {
+      "whyAnAssistant": "Why an assistant ?",
+      "backToHome": "Back to home",
+      "imageTitle": "Werewolf illustration",
+      "seoDescription": "What is the Werewolves Assistant and why is it useful for game masters ?"
+    },
+    "gameLobby": {
+      "startGame": "Start a game",
+      "seoDescription": "Create a new game right now with the Werewolves Assistant."
+    },
+    "game": {
+      "loadingGame": "Loading game…",
+      "playingGame": "Playing game"
+    }
+  },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Bad request",
+        "401": "Unauthorized",
+        "403": "Forbidden",
+        "404": "Not found",
+        "500": "Internal server error"
+      },
+      "checkConsoleForMoreDetails": "Check the console for more details"
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "The minimum number of players is not reached",
+      "notAllRolesAreSet": "Not all roles are set among players",
+      "noVillagerSidedRole": "At least one villager sided role is needed",
+      "noWerewolfSidedRole": "At least one werewolf sided role is needed",
+      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
+      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
+      "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
+    }
+  },
+  "components": {
+    "App": {
+      "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
+    },
+    "IndexFooter": {
+      "contact": "Contact me"
+    },
+    "NavBar": {
+      "navBar": "Navigation bar",
+      "parameters": "Parameters",
+      "homePageLink": "Home page link",
+      "homePage": "Home page",
+      "werewolvesAssistantLogo": "Werewolves Assistant logo",
+      "parametersMenu": "Parameters menu"
+    },
+    "ParametersMenu": {
+      "backToHome": "Back to home",
+      "parameters": "Parameters",
+      "parametersMenu": "Parameters menu",
+      "game": "Game",
+      "cancelGame": "Cancel game",
+      "gameCanceled": "Game canceled"
+    },
+    "AboutWerewolvesGame": {
+      "werewolvesAssistantGame": "The Werewolves of Miller's Hollow™ game",
+      "iDontKnowWerewolvesGame": "I don't know this game",
+      "watchTutorialVideoOnYoutube": "Watch an explanatory video on YouTube",
+      "whatIsWerewolvesGame": "The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.",
+      "whyGameMasterIsImportant": "The success of a game relies on the shoulders of the game master, tasked with creating an enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, lacking experience, or being in a state of distraction make this task a significant challenge."
+    },
+    "AboutWerewolvesAssistant": {
+      "werewolvesAssistantInThePlace": "The Werewolves Assistant takes the stage !",
+      "toHelpGameMaster": "To ease the heavy task that falls on the game master when hosting a Werewolves game, the Werewolves Assistant proves to be the ideal tool !",
+      "assistantHasManyFeatures": "This Assistant offers a variety of features, including:",
+      "gameLayout": "A game composition screen allowing the creation of sessions for 4 to 40 players, with the option to randomly assign roles.",
+      "intuitiveUserInterface": "A playful game tracking interface, providing a pleasant visual experience.",
+      "inputForEachEvent": "For each key event, the ability to input players' choices, such as the selection of the Werewolves' target or the election of the mayor.",
+      "gamePlaysQueue": "The Assistant handles the scheduling of game turns, displaying deaths and other events, as well as retaining all choices made during the game.",
+      "gameHistory": "At the end of the game, a summary is generated, indicating the victorious camp and providing a complete history of past actions.",
+      "assistantGoodForYouAndFreeToPlay": "In summary, the Werewolves Assistant invites you to (re)discover the joy of taking on the role of the game master in a Werewolves game. Accessible from any device with an internet browser, this tool is and will remain entirely FREE.",
+      "pleaseBeAware": "However, please be aware",
+      "physicalGameIsNeeded": "The Werewolves Assistant has no intention of replacing the original Werewolves of Miller's Hollow™ game. Its use requires prior possession of a game with its cards.",
+      "assistantIsABonus": "It is important to emphasize that the Assistant positions itself as an exclusive aid to the game master, facilitating game management without altering the essence and experience unique to the original board game. Thus, it complements and enhances the game's dynamics while preserving its authentic character."
+    },
+    "AboutAvailableRoles": {
+      "availableRoles": "Available roles",
+      "availableRolesImage": "Illustration of the available roles title",
+      "loadingRoles": "Loading roles…",
+      "assistantHasManyRoles": "In this version of the Werewolves Assistant, {n} roles are available:",
+      "clickToExpandRoleDescription": "Click to expand the description of the {role} role",
+      "availableRoleImage": "Illustration of the {role} role"
+    },
+    "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Illustration of the {role} role on the left description"
     },
     "RoleTypeBadge": {
       "roleType": "Role Type",
@@ -630,6 +630,34 @@
     },
     "GameOver": {
       "gameOver": "Game over"
+    },
+    "GameLobbyRolePickerHeader": {
+      "pickRoleForPlayer": "Pick a role for the player {playerName}",
+      "currentRole": "Current role",
+      "noRole": "None"
+    },
+    "GameLobbyRolePickerFooter": {
+      "pickRole": "Pick role for the player"
+    },
+    "GameLobbyRolePickerGridElement": {
+      "random": "Random"
+    },
+    "GameLobbyRolePickerGridElementBadges": {
+      "totalInParty": "Total in the party",
+      "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
+    },
+    "GameLobbyRolePickerDescription": {
+      "pickARole": "Pick a role"
+    },
+    "RoleSideBadge": {
+      "werewolvesSide": "Werewolves side",
+      "villagersSide": "Villagers side"
+    },
+    "GameLobbyRolePickerDescriptionBoundaries": {
+      "roleCountInParty": "None in the party | 1 in the party | {count} in the party",
+      "roleCountMaxReached": "Maximum reached",
+      "recommendedMinPlayers": "Recommended for {count} players minimum",
+      "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
     }
   }
 }

@@ -63,6 +63,7 @@ export default defineNuxtConfig({
       prefix: "VuePrime",
       include: [
         "Button",
+        "Dialog",
         "Divider",
         "Menu",
         "ProgressSpinner",
