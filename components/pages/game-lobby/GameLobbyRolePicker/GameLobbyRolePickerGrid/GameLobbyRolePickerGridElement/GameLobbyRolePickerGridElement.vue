@@ -12,12 +12,16 @@
     >
       <RoleImage
         id="game-lobby-role-picker-grid-element-role-image"
+        :alt="roleLabel"
         definition="normal"
         :role-name="role?.name"
         sizes="100px"
       />
 
-      <GameLobbyRolePickerGridElementBadges :role="role"/>
+      <GameLobbyRolePickerGridElementBadges
+        aria-hidden="true"
+        :role="role"
+      />
     </button>
 
     <div

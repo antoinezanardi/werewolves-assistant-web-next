@@ -7,6 +7,7 @@
       id="role-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInParty')"
       class="-right-4 absolute top-1"
+      data-testid="game-lobby-role-picker-role-count-in-game-badge"
     >
       <i class="fa fa-chess-pawn me-2"/>
 
@@ -20,6 +21,7 @@
       id="role-min-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.minInGameNotReached', { 'count': leftCountToReachMinInCreateGameDto })"
       class="-right-4 absolute top-8"
+      data-testid="game-lobby-role-picker-role-min-count-in-game-badge"
       severity="danger"
     >
       <i class="fa fa-exclamation-circle"/>

@@ -14,6 +14,7 @@
         <div
           id="current-player-role"
           class="border-2 border-gray-600 me-2 px-2 py-1 rounded-lg text-center"
+          data-testid="game-lobby-role-picker-header-current-role"
         >
           <span
             id="current-role-title"
