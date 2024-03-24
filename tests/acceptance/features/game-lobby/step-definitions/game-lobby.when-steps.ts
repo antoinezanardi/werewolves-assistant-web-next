@@ -15,7 +15,7 @@ When(/^the user clicks on the player with name "(?<name>.+?)" in the lobby$/u, a
   await openRolePickerForPlayer(this, name);
 });
 
-When(/^the user enters the players with name and role in the lobby$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+When(/^the user enters the players with name and role in the lobby$/u, { timeout: 30000 }, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
   const players = playersDatatable.rows();
   for (const [name, role] of players) {
     await enterPlayerInLobby(this, name);

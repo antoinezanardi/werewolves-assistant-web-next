@@ -15,7 +15,7 @@ import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-ima
 import { removeTrailingSlashes } from "~/utils/url.utils";
 
 const props = withDefaults(defineProps<RoleImageProps>(), {
-  sizes: "50",
+  sizes: "50px",
   definition: "normal",
 });
 

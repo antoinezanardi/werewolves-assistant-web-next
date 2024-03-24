@@ -226,6 +226,9 @@ devDependencies:
   vue-eslint-parser:
     specifier: ^9.4.2
     version: 9.4.2(eslint@8.57.0)
+  vue-flip:
+    specifier: ^3.0.2
+    version: 3.0.2(typescript@5.4.3)
   vue-router:
     specifier: ^4.3.0
     version: 4.3.0(vue@3.4.21)
@@ -13276,6 +13279,14 @@ packages:
       semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue-flip@3.0.2(typescript@5.4.3):
+    resolution: {integrity: sha512-caHfyboV2ctdEg+sKVlcuGvja8yq2Cq11TKFhPj/EJEd43q+c6QE2qfoznjprGwYNf+HWfB21PFJFXXDrIgJtg==, tarball: https://registry.npmjs.org/vue-flip/-/vue-flip-3.0.2.tgz}
+    dependencies:
+      vue: 3.4.21(typescript@5.4.3)
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /vue-i18n@9.10.2(vue@3.4.21):
