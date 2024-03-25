@@ -36,8 +36,8 @@ describe("Role Image Component", () => {
       it("should have default width and height from props sizes when rendered.", () => {
         const image = wrapper.findComponent<typeof NuxtImg>("[alt='werewolf img']");
 
-        expect(image.attributes("width")).toBe("50");
-        expect(image.attributes("height")).toBe("50");
+        expect(image.attributes("width")).toBe("50px");
+        expect(image.attributes("height")).toBe("50px");
       });
     });
 

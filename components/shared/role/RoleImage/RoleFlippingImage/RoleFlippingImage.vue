@@ -1,12 +1,14 @@
 <template>
   <VueFlip
-    v-model="isFlipped"
+    id="role-flipping-image"
     class="flex-none"
     :height="sizes"
+    :model-value="isFlipped"
     :width="sizes"
   >
     <template #front>
       <RoleImage
+        id="front-role-image"
         :alt="alt"
         :class="imageClasses"
         :definition="definition"
@@ -17,6 +19,7 @@
 
     <template #back>
       <RoleImage
+        id="back-role-image"
         :alt="alt"
         :class="imageClasses"
         :definition="definition"

@@ -7,6 +7,7 @@ const modules = [
   "@nuxtjs/google-fonts",
   "@aksharahegde/nuxt-glow",
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
+  "./modules/register-components/register-components.module.ts",
 ];
 
 export default defineNuxtConfig({
@@ -57,7 +58,6 @@ export default defineNuxtConfig({
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
-  plugins: ["~/plugins/vue-flip/vue-flip.plugin.ts"],
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {

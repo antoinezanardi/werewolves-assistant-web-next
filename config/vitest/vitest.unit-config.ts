@@ -14,6 +14,7 @@ export default defineVitestConfig({
             "nuxt-primevue",
             "@nuxtjs/i18n",
             "@nuxt/image",
+            "./modules/register-components/register-components.module.ts",
           ],
         },
       },
