@@ -320,6 +320,8 @@
       "notAllRolesAreSet": "Not all roles are set among players",
       "noVillagerSidedRole": "At least one villager sided role is needed",
       "noWerewolfSidedRole": "At least one werewolf sided role is needed",
+      "twoSistersMinimumPlayersNotReached": "The Two Sisters role requires at least 2 players with this role",
+      "threeBrothersMinimumPlayersNotReached": "The Three Brothers role requires at least 3 players with this role",
       "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
       "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
       "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
