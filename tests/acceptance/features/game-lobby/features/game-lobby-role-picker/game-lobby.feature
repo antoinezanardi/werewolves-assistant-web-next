@@ -141,6 +141,67 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The minimum number of players is not reached" should be visible
 
+  Scenario: 🃏 User can't start the game if there some players doesn't have a role
+    Given the user is on game-lobby page
+    When the user enters the players with name and role in the lobby
+      | name     | role                 |
+      | Ulysse   | Villager             |
+      | Valentin | Accursed Wolf-Father |
+      | William  | White Werewolf       |
+    And the user enters the player with name "Xavier" in the lobby
+    Then the button with name "Start game" should be disabled
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "Not all roles are set among players" should be visible
+
+  Scenario: 🃏 User can't start the game if there is no villagers sided among players
+    Given the user is on game-lobby page
+    When the user enters the players with name and role in the lobby
+      | name     | role                 |
+      | Ulysse   | Werewolf             |
+      | Valentin | Accursed Wolf-Father |
+      | William  | White Werewolf       |
+      | Xavier   | Big Bad Wolf         |
+    Then the button with name "Start game" should be disabled
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "At least one villager sided role is needed" should be visible
+
+  Scenario: 🃏 User can't start the game if there is no werewolves sided among players
+    Given the user is on game-lobby page
+    When the user enters the players with name and role in the lobby
+      | name     | role  |
+      | Ulysse   | Angel |
+      | Valentin | Seer  |
+      | William  | Witch |
+      | Xavier   | Fox   |
+    Then the button with name "Start game" should be disabled
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "At least one werewolf sided role is needed" should be visible
+
+  Scenario: 🃏 User can't start the game if there is only one sister among players
+    Given the user is on game-lobby page
+    When the user enters the players with name and role in the lobby
+      | name     | role        |
+      | Ulysse   | Two Sisters |
+      | Valentin | Werewolf    |
+      | William  | Witch       |
+      | Xavier   | Fox         |
+    Then the button with name "Start game" should be disabled
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Two Sisters role requires at least 2 players with this role" should be visible
+
+  Scenario: 🃏 User can't start the game if there is only two brothers among players
+    Given the user is on game-lobby page
+    When the user enters the players with name and role in the lobby
+      | name     | role         |
+      | Ulysse   | Three Brothers |
+      | Antoine  | Three Brothers |
+      | Valentin | Werewolf     |
+      | William  | Witch        |
+      | Xavier   | Fox          |
+    Then the button with name "Start game" should be disabled
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Three Brothers role requires at least 3 players with this role" should be visible
+
   Scenario: 🃏 User starts a game with random composition
     Given the user is on game-lobby page
     When the user enters the player with name "Antoine" in the lobby

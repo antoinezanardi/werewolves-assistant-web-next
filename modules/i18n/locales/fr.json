@@ -320,6 +320,8 @@
       "notAllRolesAreSet": "Tous les rôles ne sont pas définis",
       "noVillagerSidedRole": "Au moins un rôle du côté des Villageois doit être attribué",
       "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
+      "twoSistersMinimumPlayersNotReached": "Le rôle des Deux Sœurs nécessite au moins 2 joueurs avec ce rôle",
+      "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
       "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
       "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
       "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"

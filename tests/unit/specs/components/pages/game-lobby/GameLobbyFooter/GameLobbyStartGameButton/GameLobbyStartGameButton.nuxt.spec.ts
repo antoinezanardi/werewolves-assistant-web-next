@@ -7,10 +7,12 @@ import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFoo
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
+import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -83,6 +85,11 @@ describe("Game Lobby Start Game Button Component", () => {
       const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-start-game-button-container") };
       wrapper = await mountSuspendedComponent(GameLobbyStartGameButton, { global: { directives } });
+      const rolesStore = useRolesStore();
+      rolesStore.roles = [
+        createFakeRole({ name: "two-sisters", minInGame: 2 }),
+        createFakeRole({ name: "three-brothers", minInGame: 3 }),
+      ];
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = validCreateGameDto;
       await nextTick();
@@ -92,6 +99,14 @@ describe("Game Lobby Start Game Button Component", () => {
   });
 
   describe("Button", () => {
+    beforeEach(() => {
+      const rolesStore = useRolesStore();
+      rolesStore.roles = [
+        createFakeRole({ name: "two-sisters", minInGame: 2 }),
+        createFakeRole({ name: "three-brothers", minInGame: 3 }),
+      ];
+    });
+
     it("should be disabled when minimum players are not reached.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });
