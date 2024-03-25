@@ -56,48 +56,49 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 User can't add a player if game has reached 40 players
     Given the user is on game-lobby page
-    When the user enters the player with name "Antoine" in the lobby
-    And the user enters the player with name "Benoit" in the lobby
-    And the user enters the player with name "Clement" in the lobby
-    And the user enters the player with name "David" in the lobby
-    And the user enters the player with name "Eliott" in the lobby
-    And the user enters the player with name "Fabien" in the lobby
-    And the user enters the player with name "Gael" in the lobby
-    And the user enters the player with name "Hugo" in the lobby
-    And the user enters the player with name "Isaac" in the lobby
-    And the user enters the player with name "Julien" in the lobby
-    And the user enters the player with name "Kevin" in the lobby
-    And the user enters the player with name "Louis" in the lobby
-    And the user enters the player with name "Maxime" in the lobby
-    And the user enters the player with name "Nathan" in the lobby
-    And the user enters the player with name "Olivier" in the lobby
-    And the user enters the player with name "Paul" in the lobby
-    And the user enters the player with name "Quentin" in the lobby
-    And the user enters the player with name "Romain" in the lobby
-    And the user enters the player with name "Sylvain" in the lobby
-    And the user enters the player with name "Theo" in the lobby
-    And the user enters the player with name "Ulysse" in the lobby
-    And the user enters the player with name "Valentin" in the lobby
-    And the user enters the player with name "William" in the lobby
-    And the user enters the player with name "Xavier" in the lobby
-    And the user enters the player with name "Yann" in the lobby
-    And the user enters the player with name "Zacharie" in the lobby
-    And the user enters the player with name "Aurelien" in the lobby
-    And the user enters the player with name "Bastien" in the lobby
-    And the user enters the player with name "Cedric" in the lobby
-    And the user enters the player with name "Dorian" in the lobby
-    And the user enters the player with name "Emmanuel" in the lobby
-    And the user enters the player with name "Florian" in the lobby
-    And the user enters the player with name "Guillaume" in the lobby
-    And the user enters the player with name "Herve" in the lobby
-    And the user enters the player with name "Ibrahim" in the lobby
-    And the user enters the player with name "Jerome" in the lobby
-    And the user enters the player with name "Kamel" in the lobby
-    And the user enters the player with name "Lionel" in the lobby
-    And the user enters the player with name "Mathieu" in the lobby
-    And the user enters the player with name "Nabil" in the lobby
-    Then the input with label "Player name" should be disabled
-    And the input with label "Maximum number of players reached" should be disabled
+    When the user enters the players with name and role in the lobby
+      | name      | role                 |
+      | Ulysse    | Villager             |
+      | Valentin  | Villager             |
+      | William   | Villager             |
+      | Xavier    | Villager             |
+      | Yann      | Villager             |
+      | Zacharie  | Villager             |
+      | Aurelien  | Villager             |
+      | Bastien   | Villager             |
+      | Cedric    | Villager             |
+      | Dorian    | Villager             |
+      | Emmanuel  | Villager             |
+      | Florian   | Villager             |
+      | Guillaume | Villager             |
+      | Herve     | Villager             |
+      | Ibrahim   | Villager             |
+      | Jerome    | Villager             |
+      | Kamel     | Villager             |
+      | Lionel    | Villager             |
+      | Mathieu   | Villager             |
+      | Nabil     | Villager             |
+      | Benoit    | Hunter               |
+      | David     | Little Girl          |
+      | Eliott    | Defender             |
+      | Quentin   | Villager             |
+      | Sylvain   | Villager-Villager    |
+      | Gael      | Accursed Wolf-Father |
+      | Isaac     | Witch                |
+      | Julien    | Elder                |
+      | Kevin     | White Werewolf       |
+      | Louis     | Fox                  |
+      | Maxime    | Bear Tamer           |
+      | Hugo      | Cupid                |
+      | Nathan    | Wild Child           |
+      | Olivier   | Angel                |
+      | Paul      | Scandalmonger        |
+      | Fabien    | Pied Piper           |
+      | Clement   | Werewolf             |
+      | Romain    | Idiot                |
+      | Theo      | Big Bad Wolf         |
+      | Antoine   | Seer                 |
+    Then the input with label "Maximum number of players reached" should be disabled
     And the button with name "Add" should be disabled
     And the page should match the snapshot with name "Game Lobby Page with 40 players"
 

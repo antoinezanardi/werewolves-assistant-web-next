@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import type { PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
-import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
@@ -56,9 +56,9 @@ describe("Player Card Component", () => {
       expect(tooltip.value).toBeUndefined();
     });
 
-    describe("Role Image", () => {
+    describe("Flipping Role Image", () => {
       it("should render role image of player with correct alt when rendered.", () => {
-        const roleImage = wrapper.findComponent<typeof RoleImage>(RoleImage);
+        const roleImage = wrapper.findComponent<typeof RoleFlippingImage>(RoleFlippingImage);
 
         expect(roleImage.attributes("alt")).toBe("components.PlayerCard.playerCardRoleImageAlt, {\"playerName\":\"Player\"}");
       });

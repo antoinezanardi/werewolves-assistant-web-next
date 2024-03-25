@@ -2,13 +2,14 @@
   <div class="flex flex-col items-center player-card position-relative">
     <button
       v-p-tooltip="tooltipContent"
+      :alt="getPlayerCardRoleImageAlt()"
       :aria-label="selectorAriaLabel"
       class="border-4 border-gray-600 flex player-card-selector rounded-lg"
       :class="{ '!border-gray-100': isSelected }"
       type="button"
       @click.prevent="emitPlayerCardSelectorClickEvent"
     >
-      <RoleImage
+      <RoleFlippingImage
         :alt="getPlayerCardRoleImageAlt()"
         class="player-card-role-image"
         :role-name="playerRole"
@@ -23,7 +24,7 @@
 
 <script setup lang="ts">
 import type { PlayerCardEmits, PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
-import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 
 const props = withDefaults(defineProps<PlayerCardProps>(), {
   doesShowSelectorTooltip: false,

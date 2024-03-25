@@ -11,7 +11,7 @@ async function enterPlayerInLobby(world: CustomWorld, name: string): Promise<voi
 
 async function openRolePickerForPlayer(world: CustomWorld, name: string): Promise<void> {
   const buttonName = `Role image of the player ${name}`;
-  const player = world.page.getByRole("button", { name: buttonName, exact: true });
+  const player = world.page.getByRole("button", { name: buttonName });
   await player.waitFor({ state: "visible" });
   await player.click();
 }

@@ -40,6 +40,12 @@ describe("Game Lobby Player Card Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should match snapshot when rendered without shallow.", async() => {
+    wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps, shallow: false });
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   describe("Delete button", () => {
     it("should have translated tooltip with player name when rendered.", async() => {
       const tooltip: BoundTooltip = { value: undefined };
