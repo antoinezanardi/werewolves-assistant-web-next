@@ -5,20 +5,7 @@ import { defineVitestConfig } from "@nuxt/test-utils/config";
 export default defineVitestConfig({
   test: {
     environment: "nuxt",
-    environmentOptions: {
-      nuxt: {
-        rootDir: fileURLToPath(new URL("../../", import.meta.url)),
-        overrides: {
-          modules: [
-            "@nuxt/test-utils/module",
-            "nuxt-primevue",
-            "@nuxtjs/i18n",
-            "@nuxt/image",
-            "./modules/register-components/register-components.module.ts",
-          ],
-        },
-      },
-    },
+    environmentOptions: { nuxt: { rootDir: fileURLToPath(new URL("../../", import.meta.url)) } },
     setupFiles: ["./tests/unit/unit-setup.ts"],
     watch: false,
     include: ["./tests/unit/**/*.spec.ts"],
