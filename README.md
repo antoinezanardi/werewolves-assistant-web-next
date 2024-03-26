@@ -118,6 +118,33 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 
 </details>
 
+<details>
+  <summary>🏆🪽 Game won by Angel</summary>
+
+  ![Game won by Angel](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Angel.png)
+
+</details>
+
+<details>
+  <summary>🏆💞 Game won by Lovers</summary>
+
+  ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
+
+</details>
+
+<details>
+  <summary>🏆🧑🏻‍🌾 Game won by Villagers</summary>
+
+  ![Game won by Villagers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Villagers.png)
+
+</details>
+
+<details>
+  <summary>🏆🐺 Game won by Werewolves</summary>
+
+  ![Game won by Werewolves](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Werewolves.png)
+</details>
+
 ## <a name="installation">🔨 Installation</a>
 
 To install this project, you will need to have on your machine :

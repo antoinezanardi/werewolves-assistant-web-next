@@ -2,12 +2,14 @@
   <div
     id="players-horizontal-list"
     class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap"
+    role="list"
   >
     <GlowCapture>
       <div
         v-for="player in players"
         :key="player._id"
         class="inline-block player-in-list text-center w-44"
+        role="listitem"
       >
         <GlowElement>
           <RoleImage

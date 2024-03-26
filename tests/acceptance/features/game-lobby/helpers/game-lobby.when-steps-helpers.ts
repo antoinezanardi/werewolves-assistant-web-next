@@ -1,3 +1,6 @@
+import type { RoleName } from "~/composables/api/role/types/role.types";
+import { chooseRoleInLobbyRolePicker } from "~/tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
+import { clickOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 async function enterPlayerInLobby(world: CustomWorld, name: string): Promise<void> {
@@ -16,4 +19,29 @@ async function openRolePickerForPlayer(world: CustomWorld, name: string): Promis
   await player.click();
 }
 
-export { enterPlayerInLobby, openRolePickerForPlayer };
+async function enterPlayerWithRoleInLobby(world: CustomWorld, name: string, roleName: RoleName): Promise<void> {
+  await enterPlayerInLobby(world, name);
+  await openRolePickerForPlayer(world, name);
+  await chooseRoleInLobbyRolePicker(world, roleName);
+  await clickOnRoleWithText(world, "button", "Pick role for the player", true);
+}
+
+async function generateRandomCompositionInLobby(world: CustomWorld): Promise<void> {
+  const randomCompositionButton = world.page.getByRole("button", { name: "Random composition" });
+  await randomCompositionButton.waitFor({ state: "visible" });
+  await randomCompositionButton.click();
+}
+
+async function createGameInLobby(world: CustomWorld): Promise<void> {
+  const startGameButton = world.page.getByRole("button", { name: "Start game" });
+  await startGameButton.waitFor({ state: "visible" });
+  await startGameButton.click();
+}
+
+export {
+  enterPlayerInLobby,
+  openRolePickerForPlayer,
+  enterPlayerWithRoleInLobby,
+  generateRandomCompositionInLobby,
+  createGameInLobby,
+};

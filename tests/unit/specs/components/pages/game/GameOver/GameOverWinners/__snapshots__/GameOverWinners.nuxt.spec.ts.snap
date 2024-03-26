@@ -2,6 +2,6 @@
 
 exports[`Game Over Winners Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-winners" class="w-full">
-  <players-horizontal-list-stub players="[object Object],[object Object]" id="players-horizontal-list"></players-horizontal-list-stub>
+  <players-horizontal-list-stub players="[object Object],[object Object]" id="players-horizontal-list" data-testid="game-over-winners"></players-horizontal-list-stub>
 </div>"
 `;
