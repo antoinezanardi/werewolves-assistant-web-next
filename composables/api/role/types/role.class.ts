@@ -1,7 +1,6 @@
 import { Expose, plainToInstance } from "class-transformer";
 
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/types/game-additional-card.types";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { RoleName, RoleOrigin, RoleSide, RoleType } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
