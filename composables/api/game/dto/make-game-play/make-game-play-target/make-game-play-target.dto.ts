@@ -1,6 +1,5 @@
 import { Expose, plainToInstance } from "class-transformer";
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
