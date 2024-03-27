@@ -7,6 +7,7 @@ const modules = [
   "@nuxtjs/google-fonts",
   "@aksharahegde/nuxt-glow",
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
+  "./modules/register-components/register-components.module.ts",
 ];
 
 export default defineNuxtConfig({
@@ -63,6 +64,7 @@ export default defineNuxtConfig({
       prefix: "VuePrime",
       include: [
         "Button",
+        "Dialog",
         "Divider",
         "Menu",
         "ProgressSpinner",

@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Role Description Lines Component > should match snapshot when rendered. 1`] = `
+"<div id="role-description-lines" class="container-fluid flex flex-col justify-center">
+  <p class="role-description-line">shared.role.descriptions.werewolf.hisGoalIsToKillVillagers</p>
+  <p class="role-description-line">shared.role.descriptions.werewolf.eachNightEatsVillager</p>
+  <p class="role-description-line">shared.role.descriptions.werewolf.numberOfWolvesVaries</p>
+  <p class="role-description-line">shared.role.descriptions.werewolf.werewolvesCantEatEachOther</p>
+</div>"
+`;

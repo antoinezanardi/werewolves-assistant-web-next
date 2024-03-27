@@ -1,4 +1,6 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
+import type { Mock } from "vitest";
+import type { Store, StoreDefinition } from "pinia";
 
 import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { createFakeUseRoute } from "~/tests/unit/utils/factories/composables/nuxt/useRoute.factory";
@@ -13,9 +15,25 @@ function mockNuxtImports(): void {
 
   mockNuxtImport<typeof useRuntimeConfig>("useRuntimeConfig", () => vi.fn(() => createFakeRuntimeConfig()));
 
+  mockNuxtImport<typeof useHead>("useHead", () => vi.fn());
+
   mockNuxtImport<typeof createError>("createError", <DataT>() => (vi.fn(() => new Error("Mocked error")) as DataT));
 
   mockNuxtImport<() => ReturnType<typeof createFakeI18n>>("useI18n", () => vi.fn(() => createFakeI18n()));
+}
+
+function mockPiniaStore<TStoreDef extends () => unknown>(useStore: TStoreDef): TStoreDef extends StoreDefinition<
+  infer Id,
+  infer State,
+  infer Getters,
+  infer Actions
+>
+  ? Store<Id, State, Getters, {
+    [K in keyof Actions]: Actions[K] extends (...args: infer Args) =>
+    infer ReturnT ? Mock<Args, ReturnT> : Actions[K]
+  }>
+  : ReturnType<TStoreDef> {
+  return useStore() as never;
 }
 
 function mockPrimeVueComposables(): void {
@@ -24,5 +42,6 @@ function mockPrimeVueComposables(): void {
 
 export {
   mockNuxtImports,
+  mockPiniaStore,
   mockPrimeVueComposables,
 };

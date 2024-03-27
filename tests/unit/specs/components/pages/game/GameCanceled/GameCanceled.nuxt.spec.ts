@@ -1,4 +1,6 @@
 import type { mount } from "@vue/test-utils";
+import type { UseHeadInput } from "unhead";
+import { expect } from "vitest";
 
 import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -13,6 +15,12 @@ describe("Game Canceled Component", () => {
   it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should set head title and meta tags when rendered.", () => {
+    const expectedUseHeadInput: UseHeadInput<object> = { title: "components.GameCanceled.gameCanceled" };
+
+    expect(useHead).toHaveBeenCalledExactlyOnceWith(expectedUseHeadInput);
   });
 
   describe("Text", () => {

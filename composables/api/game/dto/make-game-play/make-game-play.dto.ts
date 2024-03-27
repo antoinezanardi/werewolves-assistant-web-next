@@ -2,7 +2,6 @@ import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { MakeGamePlayTargetDto } from "~/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto";
 import { MakeGamePlayVoteDto } from "~/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { RoleSide } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 

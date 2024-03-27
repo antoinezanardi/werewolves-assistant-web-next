@@ -28,5 +28,9 @@ import { useGameStore } from "~/stores/game/useGameStore";
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
+const { t } = useI18n();
+
+useHead({ title: t("components.GameOver.gameOver") });
+
 const winners = computed<Player[] | undefined>(() => game.value.victory?.winners);
 </script>

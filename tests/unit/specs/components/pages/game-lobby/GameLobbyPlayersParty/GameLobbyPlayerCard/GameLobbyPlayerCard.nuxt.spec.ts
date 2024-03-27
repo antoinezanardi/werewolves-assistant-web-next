@@ -4,12 +4,14 @@ import type { Mock } from "vitest";
 
 import type { GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
 import GameLobbyPlayerCard from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/GameLobbyPlayerCard.vue";
+import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyPlayerCard>>;
@@ -34,6 +36,12 @@ describe("Game Lobby Player Card Component", () => {
   });
 
   it("should match snapshot when rendered.", () => {
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should match snapshot when rendered without shallow.", async() => {
+    wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps, shallow: false });
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -70,6 +78,17 @@ describe("Game Lobby Player Card Component", () => {
       const role = wrapper.find<HTMLSpanElement>(".player-card-role");
 
       expect(role.text()).toBe("Translated Role");
+    });
+  });
+
+  describe("Emits", () => {
+    it("should emit pickRoleForPlayer event when player card is selected.", () => {
+      const playerCard = wrapper.findComponent<typeof GameLobbyPlayerCard>(".player-card");
+      (playerCard.vm as VueVm).$emit("player-card-selector-click", defaultProps.player);
+      const emittedEvents = wrapper.emitted("pickRoleForPlayer");
+
+      expect(emittedEvents).toHaveLength(1);
+      expect(emittedEvents?.[0]).toStrictEqual<CreateGamePlayerDto[]>([defaultProps.player]);
     });
   });
 });

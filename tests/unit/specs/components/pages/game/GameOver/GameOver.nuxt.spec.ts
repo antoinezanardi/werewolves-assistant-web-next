@@ -1,5 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { UseHeadInput } from "unhead";
+import { expect } from "vitest";
 
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import type GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
@@ -35,6 +37,12 @@ describe("Game Over Component", () => {
   it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should set head title and meta tags when rendered.", () => {
+    const expectedUseHeadInput: UseHeadInput<object> = { title: "components.GameOver.gameOver" };
+
+    expect(useHead).toHaveBeenCalledExactlyOnceWith(expectedUseHeadInput);
   });
 
   describe("Game Over Winners", () => {

@@ -13,6 +13,18 @@ Feature: ❓ About Page
     And the link with name "Back to home" should be visible
     And the page should match the snapshot with name "About Page"
 
+  Scenario: ❓ About Page has valid head title and SEO tags
+    Given the user is on about page
+    Then the page should have head title "Why an assistant ?" and meta tags
+      | name             | content                                                                  |
+      | description      | What is the Werewolves Assistant and why is it useful for game masters ? |
+      | application-name | Werewolves Assistant                                                     |
+      | creator          | Antoine ZANARDI                                                          |
+      | viewport         | width=device-width, initial-scale=1                                      |
+      | charset          | utf-8                                                                    |
+      | generator        | nuxt                                                                     |
+      | color-scheme     | dark                                                                     |
+
   Scenario: ❓ About Page loads roles and display them in accordions with descriptions and illustrations
     Given the user is on about page
     When the progressbar with name "Loading roles…" is hidden

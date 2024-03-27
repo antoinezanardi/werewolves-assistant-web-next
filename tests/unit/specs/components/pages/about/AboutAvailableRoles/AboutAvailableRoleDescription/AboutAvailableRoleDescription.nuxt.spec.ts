@@ -6,7 +6,6 @@ import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import type RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
-import type { RoleName } from "~/composables/api/role/types/role.types";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -59,26 +58,6 @@ describe("About Available Role Description Component", () => {
       const roleOriginBadge = wrapper.findComponent<typeof RoleOriginBadge>(".available-role-description-role-origin-badge");
 
       expect(roleOriginBadge.props("roleOrigin")).toBe("classic");
-    });
-  });
-
-  describe("Role Right Description", () => {
-    it("should display role description lines when rendered.", () => {
-      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(".available-role-description-role-description-line");
-
-      expect(roleDescriptionLines).toHaveLength(4);
-      expect(roleDescriptionLines[0].text()).toBe("components.AboutAvailableRoleDescription.descriptions.werewolf.hisGoalIsToKillVillagers");
-      expect(roleDescriptionLines[1].text()).toBe("components.AboutAvailableRoleDescription.descriptions.werewolf.eachNightEatsVillager");
-      expect(roleDescriptionLines[2].text()).toBe("components.AboutAvailableRoleDescription.descriptions.werewolf.numberOfWolvesVaries");
-      expect(roleDescriptionLines[3].text()).toBe("components.AboutAvailableRoleDescription.descriptions.werewolf.werewolvesCantEatEachOther");
-    });
-
-    it("should not display role description lines when rendered if role description is not set in messages.", async() => {
-      const unknownRole = createFakeRole({ name: "unknown" as RoleName });
-      wrapper = await mountSuspendedComponent(AboutAvailableRoleDescription, { props: { role: unknownRole } });
-      const roleDescriptionLines = wrapper.findAll<HTMLParagraphElement>(".available-role-description-role-description-line");
-
-      expect(roleDescriptionLines).toHaveLength(0);
     });
   });
 });

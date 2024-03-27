@@ -37,112 +37,7 @@
         "actor": "Comédien",
         "devoted-servant": "Servante Dévouée"
       },
-      "type": {
-        "werewolf": "Loup-Garou",
-        "villager": "Villageois",
-        "lonely": "Solitaire",
-        "ambiguous": "Ambigü"
-      },
-      "side": {
-        "villagers": "Villageois",
-        "werewolves": "Loups-Garous"
-      }
-    },
-    "game": {
-      "phase": {
-        "night": "Nuit",
-        "day": "Jour"
-      }
-    }
-  },
-  "pages": {
-    "index": {
-      "play": "Jouer",
-      "about": "À quoi ça sert",
-      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
-    },
-    "about": {
-      "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
-      "backToHome": "Retour à l'accueil",
-      "imageTitle": "Image du titre de la page À quoi ça sert"
-    },
-    "game": {
-      "loadingGame": "Chargement de la partie…"
-    }
-  },
-  "composables": {
-    "useWerewolvesAssistantApiError": {
-      "statusCode": {
-        "400": "Mauvaise requête serveur",
-        "401": "Non autorisé",
-        "403": "Interdit",
-        "404": "Ressource non trouvée",
-        "500": "Erreur interne du serveur"
-      },
-      "checkConsoleForMoreDetails": "Veuillez consulter la console pour plus de détails."
-    },
-    "useCreateGameDtoValidation": {
-      "minimumOfPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint",
-      "notAllRolesAreSet": "Tous les rôles ne sont pas définis",
-      "noVillagerSidedRole": "Au moins un rôle du côté des Villageois doit être attribué",
-      "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
-      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
-      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
-      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
-    }
-  },
-  "components": {
-    "IndexFooter": {
-      "contact": "Me contacter"
-    },
-    "NavBar": {
-      "navBar": "Barre de navigation",
-      "parameters": "Paramètres",
-      "homePageLink": "Lien vers l'accueil",
-      "homePage": "Accueil",
-      "werewolvesAssistantLogo": "Logo de l'assistant Loups-Garous",
-      "parametersMenu": "Menu des paramètres"
-    },
-    "ParametersMenu": {
-      "backToHome": "Retour à l'accueil",
-      "parameters": "Paramètres",
-      "parametersMenu": "Menu des paramètres",
-      "game": "Partie",
-      "cancelGame": "Annuler la partie",
-      "gameCanceled": "Partie annulée"
-    },
-    "AboutWerewolvesGame": {
-      "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
-      "iDontKnowWerewolvesGame": "Je ne connais pas ce jeu",
-      "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
-      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
-      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
-    },
-    "AboutWerewolvesAssistant": {
-      "werewolvesAssistantInThePlace": "L'assistant Loups-Garous entre en scène !",
-      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au maître du jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
-      "assistantHasManyFeatures": "Cet Assistant propose une variété de fonctionnalités, dont :",
-      "gameLayout": "Un écran de composition de partie permettant de créer des sessions pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
-      "intuitiveUserInterface": "Une interface ludique de suivi de partie, offrant une expérience visuelle agréable.",
-      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels que la sélection de la cible des Loups-Garous ou l'élection du maire.",
-      "gamePlaysQueue": "L'Assistant prend en charge l'ordonnancement des tours de jeu, l'affichage des décès et autres événements, ainsi que la conservation de tous les choix effectués pendant la partie.",
-      "gameHistory": "À la fin de la partie, un récapitulatif est généré, indiquant le camp victorieux et fournissant un historique complet des actions passées.",
-      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de maître du jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
-      "pleaseBeAware": "Attention cependant",
-      "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
-      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
-    },
-    "AboutAvailableRoles": {
-      "availableRoles": "Rôles disponibles",
-      "availableRolesImage": "Image des rôles disponibles",
-      "loadingRoles": "Chargement des rôles...",
-      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :",
-      "clickToExpandRoleDescription": "Cliquez sur le rôle {role} pour afficher sa description.",
-      "availableRoleImage": "Image du rôle {role}"
-    },
-    "AboutAvailableRoleDescription": {
-      "roleDescriptionLeftImageAlt": "Image à gauche de la description du rôle {role}",
-      "descriptions": {
+            "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
           "eachNightEatsVillager": "Chaque nuit, ils dévorent un Villageois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire.",
@@ -369,7 +264,123 @@
           "servantTipFlutePlayerCharmIndication": "- Joueur de Flûte, le meneur indique à ce nouveau Joueur de Flûte quels sont les joueurs précédemment charmés.",
           "servantTipActorGuardGypsyNoNewCards": "- Comédien, Garde Champêtre, Gitane (sans Philtre) : de nouvelles cartes ne sont pas distribuées ; ne restent que celles non utilisées."
         }
+      },
+      "type": {
+        "werewolf": "Loup-Garou",
+        "villager": "Villageois",
+        "lonely": "Solitaire",
+        "ambiguous": "Ambigü"
+      },
+      "side": {
+        "villagers": "Villageois",
+        "werewolves": "Loups-Garous"
       }
+    },
+    "game": {
+      "phase": {
+        "night": "Nuit",
+        "day": "Jour"
+      }
+    }
+  },
+  "pages": {
+    "index": {
+      "play": "Jouer",
+      "about": "À quoi ça sert",
+      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
+    },
+    "about": {
+      "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
+      "backToHome": "Retour à l'accueil",
+      "imageTitle": "Image du titre de la page À quoi ça sert",
+      "seoDescription": "Qu'est-ce que l'Assistant Loups-Garous et pourquoi est-il utile aux Maîtres du jeu ?"
+    },
+    "gameLobby": {
+      "startGame": "Lancer une partie",
+      "seoDescription": "Créer une nouvelle partie avec l'Assistant Loups-Garous"
+    },
+    "game": {
+      "loadingGame": "Chargement de la partie…",
+      "playingGame": "Partie en cours"
+    }
+  },
+  "composables": {
+    "useWerewolvesAssistantApiError": {
+      "statusCode": {
+        "400": "Mauvaise requête serveur",
+        "401": "Non autorisé",
+        "403": "Interdit",
+        "404": "Ressource non trouvée",
+        "500": "Erreur interne du serveur"
+      },
+      "checkConsoleForMoreDetails": "Veuillez consulter la console pour plus de détails."
+    },
+    "useCreateGameDtoValidation": {
+      "minimumOfPlayersNotReached": "Le nombre minimum de joueurs n'est pas atteint",
+      "notAllRolesAreSet": "Tous les rôles ne sont pas définis",
+      "noVillagerSidedRole": "Au moins un rôle du côté des Villageois doit être attribué",
+      "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
+      "twoSistersMinimumPlayersNotReached": "Le rôle des Deux Sœurs nécessite au moins 2 joueurs avec ce rôle",
+      "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
+      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
+      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
+      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
+    }
+  },
+  "components": {
+    "App": {
+      "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
+    },
+    "IndexFooter": {
+      "contact": "Me contacter"
+    },
+    "NavBar": {
+      "navBar": "Barre de navigation",
+      "parameters": "Paramètres",
+      "homePageLink": "Lien vers l'accueil",
+      "homePage": "Accueil",
+      "werewolvesAssistantLogo": "Logo de l'assistant Loups-Garous",
+      "parametersMenu": "Menu des paramètres"
+    },
+    "ParametersMenu": {
+      "backToHome": "Retour à l'accueil",
+      "parameters": "Paramètres",
+      "parametersMenu": "Menu des paramètres",
+      "game": "Partie",
+      "cancelGame": "Annuler la partie",
+      "gameCanceled": "Partie annulée"
+    },
+    "AboutWerewolvesGame": {
+      "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
+      "iDontKnowWerewolvesGame": "Je ne connais pas ce jeu",
+      "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
+      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
+      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
+    },
+    "AboutWerewolvesAssistant": {
+      "werewolvesAssistantInThePlace": "L'assistant Loups-Garous entre en scène !",
+      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au maître du jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
+      "assistantHasManyFeatures": "Cet Assistant propose une variété de fonctionnalités, dont :",
+      "gameLayout": "Un écran de composition de partie permettant de créer des sessions pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
+      "intuitiveUserInterface": "Une interface ludique de suivi de partie, offrant une expérience visuelle agréable.",
+      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels que la sélection de la cible des Loups-Garous ou l'élection du maire.",
+      "gamePlaysQueue": "L'Assistant prend en charge l'ordonnancement des tours de jeu, l'affichage des décès et autres événements, ainsi que la conservation de tous les choix effectués pendant la partie.",
+      "gameHistory": "À la fin de la partie, un récapitulatif est généré, indiquant le camp victorieux et fournissant un historique complet des actions passées.",
+      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de maître du jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
+      "pleaseBeAware": "Attention cependant",
+      "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
+      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
+    },
+    "AboutAvailableRoles": {
+      "availableRoles": "Rôles disponibles",
+      "availableRolesImage": "Image des rôles disponibles",
+      "loadingRoles": "Chargement des rôles...",
+      "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :",
+      "clickToExpandRoleDescription": "Cliquez sur le rôle {role} pour afficher sa description.",
+      "availableRoleImage": "Image du rôle {role}"
+    },
+    "AboutAvailableRoleDescription": {
+      "roleDescriptionLeftImageAlt": "Image à gauche de la description du rôle {role}"
     },
     "RoleTypeBadge": {
       "roleType": "Type de rôle",
@@ -618,6 +629,37 @@
     },
     "GameOverActions": {
       "createAnotherGame": "Lancer une nouvelle partie"
+    },
+    "GameOver": {
+      "gameOver": "Partie terminée"
+    },
+    "GameLobbyRolePickerHeader": {
+      "pickRoleForPlayer": "Choisissez un rôle pour le joueur {playerName}",
+      "currentRole": "Rôle actuel",
+      "noRole": "Aucun"
+    },
+    "GameLobbyRolePickerFooter": {
+      "pickRole": "Assigner ce rôle pour le joueur"
+    },
+    "GameLobbyRolePickerGridElement": {
+      "random": "Aléatoire"
+    },
+    "GameLobbyRolePickerGridElementBadges": {
+      "totalInParty": "Total dans la partie",
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+    },
+    "GameLobbyRolePickerDescription": {
+      "pickARole": "Choisissez un rôle"
+    },
+    "RoleSideBadge": {
+      "werewolvesSide": "Camp des Loups-Garous",
+      "villagersSide": "Camp des Villageois"
+    },
+    "GameLobbyRolePickerDescriptionBoundaries": {
+      "roleCountInParty": "Aucun dans la partie | 1 dans la partie | {count} dans la partie",
+      "roleCountMaxReached": "Nombre maximum atteint",
+      "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
     }
   }
 }
