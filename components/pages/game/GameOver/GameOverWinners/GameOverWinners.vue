@@ -6,6 +6,7 @@
     <PlayersHorizontalList
       v-if="!!winners"
       id="players-horizontal-list"
+      data-testid="game-over-winners"
       :players="winners"
     />
   </div>

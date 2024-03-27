@@ -1,40 +1,21 @@
+import type { DataTable } from "@cucumber/cucumber";
 import { Given } from "@cucumber/cucumber";
-import { url } from "@nuxt/test-utils/e2e";
 
+import type { RoleName } from "~/composables/api/role/types/role.types";
+import { createGame, createGameWithRandomComposition } from "~/tests/acceptance/features/game/helpers/game.given-steps-helpers";
+import { goOnPage } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 Given(/^the user goes on an unknown game$/u, async function(this: CustomWorld): Promise<void> {
-  await this.page.goto(url(`/game/unknown-game`));
-  await Promise.all([
-    this.page.waitForLoadState("load"),
-    this.page.waitForLoadState("networkidle"),
-  ]);
+  await goOnPage(this, "/game/unknown-game");
 });
 
 Given(/^the user creates a game with 4 random role players$/u, async function(this: CustomWorld): Promise<void> {
-  await this.page.goto(url("/game-lobby"));
-  await Promise.all([
-    this.page.waitForLoadState("load"),
-    this.page.waitForLoadState("networkidle"),
-  ]);
   const players = ["Player 1", "Player 2", "Player 3", "Player 4"];
-  for (const player of players) {
-    const input = this.page.getByLabel("Player name");
-    await input.waitFor({ state: "visible" });
-    await input.fill(player);
-    const addButton = this.page.getByRole("button", { name: "Add" });
-    await addButton.waitFor({ state: "visible" });
-    await addButton.click();
-  }
-  const randomCompositionButton = this.page.getByRole("button", { name: "Random composition" });
-  await randomCompositionButton.waitFor({ state: "visible" });
-  await randomCompositionButton.click();
-  const startGameButton = this.page.getByRole("button", { name: "Start game" });
-  await startGameButton.waitFor({ state: "visible" });
-  await startGameButton.click();
-  await this.page.waitForURL(url(`/game/*`));
-  await Promise.all([
-    this.page.waitForLoadState("load"),
-    this.page.waitForLoadState("networkidle"),
-  ]);
+  await createGameWithRandomComposition(this, players);
+});
+
+Given(/^the user creates a game with the players with name and role$/u, { timeout: 30000 }, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+  const players = playersDatatable.rows() as [playerName: string, role: RoleName][];
+  await createGame(this, players);
 });

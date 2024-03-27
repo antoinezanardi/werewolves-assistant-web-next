@@ -4,6 +4,7 @@ Feature: 🎲🚫 Game Canceled
 
   Scenario: 🎲🚫 User cancels a game when it is playing
     Given the user creates a game with 4 random role players
+    And the user closes the toast
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
     Then the heading with name "Game canceled" should be visible
