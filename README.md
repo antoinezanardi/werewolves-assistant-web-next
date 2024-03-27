@@ -105,44 +105,62 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 </details>
 
 <details>
-  <summary>🎲❓ Game not found</summary>
+  <summary>🎲 ❓ Game not found</summary>
 
   ![Game not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20not%20found.png)
 
 </details>
 
 <details>
-  <summary>🎲❌ Game canceled</summary>
+  <summary>🎲 ❌ Game canceled</summary>
 
   ![Game canceled](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20canceled.png)
 
 </details>
 
 <details>
-  <summary>🏆🪽 Game won by Angel</summary>
+  <summary>🏆 🪽 Game won by Angel</summary>
 
   ![Game won by Angel](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Angel.png)
 
 </details>
 
 <details>
-  <summary>🏆💞 Game won by Lovers</summary>
+  <summary>🏆 💞 Game won by Lovers</summary>
 
   ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
 
 </details>
 
 <details>
-  <summary>🏆🧑🏻‍🌾 Game won by Villagers</summary>
+  <summary>🏆 🧑🏻‍🌾 Game won by Villagers</summary>
 
   ![Game won by Villagers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Villagers.png)
 
 </details>
 
 <details>
-  <summary>🏆🐺 Game won by Werewolves</summary>
+  <summary>🏆 🐺 Game won by Werewolves</summary>
 
   ![Game won by Werewolves](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Werewolves.png)
+</details>
+
+<details>
+  <summary>🏆 ☠️ Game won by nobody</summary>
+
+  ![Game won by nobody](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20nobody.png)
+</details>
+
+<details>
+  <summary>🏆 🪈 Game won by Pied Piper</summary>
+
+  ![Game won by Pied Piper](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Pied%20Piper.png)
+</details>
+
+<details>
+  <summary>🏆 🐺 🦴 Game won by White Werewolf</summary>
+
+  ![Game won by White Werewolf](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20White%20Werewolf.png)
 </details>
 
 ## <a name="installation">🔨 Installation</a>

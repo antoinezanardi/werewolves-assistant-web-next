@@ -18,3 +18,7 @@ Then(/^the game winners should be the players$/u, async function(this: CustomWor
     await expect(winnersList.getByText(name, { exact: true })).toBeVisible();
   }
 });
+
+Then(/^the game winners should have no winners$/u, async function(this: CustomWorld): Promise<void> {
+  await expect(this.page.getByTestId("game-over-no-winners")).toBeHidden();
+});
