@@ -71,3 +71,23 @@ Then(/^the role "(?<role>.+?)" warning minimum players not reached badge should 
 
   await expectTooltipWithTextToBeVisible(this, tooltipText, true);
 });
+
+Then(/^the role's description image with name "(?<name>.+)" should be visible in the lobby role picker$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const roleDescription = this.page.getByTestId("game-lobby-role-picker-description");
+  const roleDescriptionImage = roleDescription.getByRole("img", { name, exact: true });
+
+  await expect(roleDescriptionImage).toBeVisible();
+});
+
+Then(/^the role's description image with name "(?<name>.+)" should be in viewport in the lobby role picker$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const roleDescription = this.page.getByTestId("game-lobby-role-picker-description");
+  const roleDescriptionImage = roleDescription.getByRole("img", { name, exact: true });
+
+  await expect(roleDescriptionImage).toBeInViewport();
+});
+
+Then(/^the role's description should have text "(?<text>.+)" in the lobby role picker$/u, async function(this: CustomWorld, text: string): Promise<void> {
+  const roleDescription = this.page.getByTestId("game-lobby-role-picker-description");
+
+  await expect(roleDescription.getByText(text, { exact: true })).toBeVisible();
+});
