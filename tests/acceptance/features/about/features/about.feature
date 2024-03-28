@@ -41,9 +41,9 @@ Feature: ❓ About Page
     And the img with name "Illustration of the Werewolf role on the left description" should be visible
 
     When the user clicks on the button with name "Click to expand the description of the Pied Piper role"
-    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Click to expand the description of the Werewolf role" should be hidden
-    And the img with name "Illustration of the Werewolf role on the left description" should be hidden
-    And the text "Base Game" under the region with name "Click to expand the description of the Werewolf role" should be hidden
+    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Click to expand the description of the Werewolf role" should be visible
+    And the img with name "Illustration of the Werewolf role on the left description" should be visible
+    And the text "Base Game" under the region with name "Click to expand the description of the Werewolf role" should be visible
     And the text "Ignominiously chased from the village, he returned years later under the guise of a false identity to exact his terrible revenge." under the region with name "Click to expand the description of the Pied Piper role" should be visible
     And the img with name "Illustration of the Pied Piper role on the left description" should be visible
     And the text "Lonely" under the region with name "Click to expand the description of the Pied Piper role" should be visible
@@ -82,6 +82,12 @@ Feature: ❓ About Page
     Given the user is on about page
     When the user clicks on werewolves assistant logo in navigation bar
     Then the user should be on home page
+
+  Scenario: ❓ User goes back to the top of the page by clicking on back to top button in navigation bar
+    Given the user is on about page
+    When the user scrolls to the link with name "Buy me a coffee"
+    And the user clicks on the button with exact name "Scroll Top"
+    Then the heading with name "Why an assistant ?" should be in viewport
 
   Scenario: ❓ User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on about page

@@ -31,6 +31,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       onMounted: READONLY,
       watch: READONLY,
       nextTick: READONLY,
+      useScroll: READONLY,
     },
   },
   rules: {
@@ -116,7 +117,7 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "grouped-accessor-pairs": ERROR,
     "guard-for-in": ERROR,
     "id-denylist": OFF,
-    "id-length": [ERROR, { exceptions: ["t", "i"] }],
+    "id-length": [ERROR, { exceptions: ["t", "i", "x", "y"] }],
     "id-match": OFF,
     "init-declarations": OFF,
     "logical-assignment-operators": ERROR,

@@ -27,7 +27,6 @@ const ESLINT_VUE_CONFIG = {
   },
   rules: {
     ...ESLINT_TYPESCRIPT_CONFIG.rules,
-    "id-length": [ERROR, { exceptions: ["t", "i"] }],
     "import/unambiguous": OFF,
     "vue/comment-directive": ERROR,
     "vue/jsx-uses-vars": ERROR,
