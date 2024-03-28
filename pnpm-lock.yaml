@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^19.1.0
     version: 19.1.0
   '@cucumber/cucumber':
-    specifier: ^10.3.0
-    version: 10.3.1
+    specifier: ^10.3.2
+    version: 10.3.2
   '@eslint/eslintrc':
     specifier: ^3.0.2
     version: 3.0.2
@@ -42,7 +42,7 @@ devDependencies:
     version: 3.11.1(rollup@4.13.0)
   '@nuxt/test-utils':
     specifier: ^3.12.0
-    version: 3.12.0(@cucumber/cucumber@10.3.1)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
+    version: 3.12.0(@cucumber/cucumber@10.3.2)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
   '@nuxtjs/google-fonts':
     specifier: ^3.2.0
     version: 3.2.0(rollup@4.13.0)
@@ -1036,8 +1036,8 @@ packages:
       regexp-match-indices: 1.0.2
     dev: true
 
-  /@cucumber/cucumber@10.3.1:
-    resolution: {integrity: sha512-0H0NkOXcYTCG1qCh3o0p1HPSMODGJmlHi1rm5yfoiMx5tJbBjxVNI2VVD2xtPWA+D6ehHQD9asewuzjMXrbPIw==}
+  /@cucumber/cucumber@10.3.2:
+    resolution: {integrity: sha512-b5VILjhlrMqceRcQKtO1y6fGMUavJzzzkLKr2l/txM0MALN8HTxe39CE3pE67DG4huhqpQNhYfc2ICvqE72BcQ==}
     engines: {node: 18 || >=20}
     hasBin: true
     dependencies:
@@ -2410,7 +2410,7 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/test-utils@3.12.0(@cucumber/cucumber@10.3.1)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21):
+  /@nuxt/test-utils@3.12.0(@cucumber/cucumber@10.3.2)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-Q3HP53TDIYeqHT65r31HZhK/gRwVBmchSdVj1tfiYECyqstckvsQ4Cyt/GX/XmD7cLdD3d5aHow8LaMfP+BSqQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
@@ -2450,7 +2450,7 @@ packages:
       vitest:
         optional: true
     dependencies:
-      '@cucumber/cucumber': 10.3.1
+      '@cucumber/cucumber': 10.3.2
       '@nuxt/kit': 3.11.1(rollup@4.13.0)
       '@nuxt/schema': 3.11.0(rollup@4.13.0)
       '@playwright/test': 1.42.1
@@ -2480,7 +2480,7 @@ packages:
       unplugin: 1.10.0
       vite: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
       vitest: 1.4.0(@types/node@20.11.30)(happy-dom@13.10.1)(sass@1.72.0)
-      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.3.1)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
+      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.3.2)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
       vue: 3.4.21(typescript@5.4.3)
       vue-router: 4.3.0(vue@3.4.21)
     transitivePeerDependencies:
@@ -12992,10 +12992,10 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.3.1)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21):
+  /vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.3.2)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-AWMO9h4HdbaFdPWZw34gALFI8gbBiOpvfbyeZwHIPfh4kWg/TwElYHvYMQ61WPUlCGaS5LebfHkaI0WPyb//Iw==}
     dependencies:
-      '@nuxt/test-utils': 3.12.0(@cucumber/cucumber@10.3.1)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
+      '@nuxt/test-utils': 3.12.0(@cucumber/cucumber@10.3.2)(@playwright/test@1.42.1)(@vue/test-utils@2.4.5)(h3@1.11.1)(happy-dom@13.10.1)(playwright-core@1.42.1)(rollup@4.13.0)(vite@5.2.6)(vitest@1.4.0)(vue-router@4.3.0)(vue@3.4.21)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
