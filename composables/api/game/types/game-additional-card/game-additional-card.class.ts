@@ -4,16 +4,22 @@ import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
-class CreateGameAdditionalCardDto {
+class GameAdditionalCard {
+  @Expose()
+  public _id: string;
+
   @Expose()
   public roleName: RoleName;
 
   @Expose()
   public recipient: GameAdditionalCardRecipientRoleName;
 
-  public static create(createGameAdditionalCardDto: CreateGameAdditionalCardDto): CreateGameAdditionalCardDto {
-    return plainToInstance(CreateGameAdditionalCardDto, createGameAdditionalCardDto, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
+  @Expose()
+  public isUsed: boolean;
+
+  public static create(gameAdditionalCard: GameAdditionalCard): GameAdditionalCard {
+    return plainToInstance(GameAdditionalCard, gameAdditionalCard, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }
 }
 
-export { CreateGameAdditionalCardDto };
+export { GameAdditionalCard };

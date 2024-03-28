@@ -6,8 +6,8 @@ import { ROLE_NAMES } from "~/composables/api/role/constants/role.constants";
 
 function createFakeCreateGameAdditionalCardDto(createGameAdditionalCardDto: Partial<CreateGameAdditionalCardDto> = {}): CreateGameAdditionalCardDto {
   return CreateGameAdditionalCardDto.create({
-    roleName: createGameAdditionalCardDto.roleName ?? faker.helpers.arrayElement(Object.values(ROLE_NAMES)),
-    recipient: createGameAdditionalCardDto.recipient ?? faker.helpers.arrayElement(Object.values(GAME_ADDITIONAL_CARDS_RECIPIENTS)),
+    roleName: createGameAdditionalCardDto.roleName ?? faker.helpers.arrayElement(ROLE_NAMES),
+    recipient: createGameAdditionalCardDto.recipient ?? faker.helpers.arrayElement(GAME_ADDITIONAL_CARDS_RECIPIENTS),
   });
 }
 
