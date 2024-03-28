@@ -34,6 +34,8 @@
     <div class="flex justify-center pb-3">
       <BackToHomeButton/>
     </div>
+
+    <VuePrimeScrollTop/>
   </div>
 </template>
 

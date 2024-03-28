@@ -32,7 +32,10 @@
         {{ availableRolesText }}
       </p>
 
-      <VuePrimeAccordion class="w-full">
+      <VuePrimeAccordion
+        class="w-full"
+        multiple
+      >
         <VuePrimeAccordionTab
           v-for="role in roles"
           :key="role.name"

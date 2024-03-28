@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Role Picker Description Component > should match snapshot when rendered. 1`] = `
-"<div id="game-lobby-role-picker-description" class="border-gray-600 border-r flex flex-col gap-2 items-center pe-4">
+"<div id="game-lobby-role-picker-description" class="border-gray-600 border-r flex flex-col gap-2 items-center pe-4" data-testid="game-lobby-role-picker-description">
   <role-flipping-image-stub rolename="seer" sizes="200px" definition="normal" class="rounded-2xl"></role-flipping-image-stub>
   <game-lobby-role-picker-description-content-stub pickedrole="[object Object]" id="game-lobby-role-picker-description-content"></game-lobby-role-picker-description-content-stub>
 </div>"

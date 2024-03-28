@@ -16,5 +16,6 @@ exports[`About Page Component > should match snapshot when rendered. 1`] = `
   <div class="flex justify-center pb-3">
     <back-to-home-button-stub></back-to-home-button-stub>
   </div>
+  <scroll-top-stub></scroll-top-stub>
 </div>"
 `;
