@@ -114,7 +114,7 @@
     "prettier": "^3.2.5",
     "qs": "^6.12.0",
     "radash": "^12.1.0",
-    "reflect-metadata": "^0.2.1",
+    "reflect-metadata": "^0.2.2",
     "rimraf": "^5.0.5",
     "sass": "^1.72.0",
     "semantic-release": "^23.0.6",
