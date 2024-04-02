@@ -170,10 +170,10 @@ To install this project, you will need to have on your machine :
 ![Node](https://img.shields.io/badge/-nodejs-black?style=for-the-badge&logoColor=white&logo=node.js&color=366A31)
 ![PNPM](https://img.shields.io/badge/-pnpm-black?style=for-the-badge&logoColor=white&logo=pnpm&color=B76507)
 
-We recommend to use the node version specified in the `.nvmrc` file.
+We recommend to use the node version specified in the `.nvmrc` file. At least, you'll need to have version `20` installed as mentioned in `package.json` file.
 
 > [!TIP]
-> If you don't have `pnpm` installed, you can still use `npm` for all commands below, but we recommend to use `pnpm` for faster and more reliable installs.
+> If you don't have `pnpm` installed, you can still use `npm` for all commands below, but we recommend to use `pnpm` for faster and more reliable installations.
 
 Then, run the following commands :
 
