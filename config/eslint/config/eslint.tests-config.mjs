@@ -6,7 +6,6 @@ const ESLINT_TESTS_CONFIG = {
   files: ["tests/**/*.spec.ts"],
   plugins: { vitest: Vitest },
   rules: {
-    "id-length": [ERROR, { exceptions: ["t", "i"] }],
     "max-lines-per-function": OFF,
     "no-magic-numbers": OFF,
     "import/no-namespace": OFF,

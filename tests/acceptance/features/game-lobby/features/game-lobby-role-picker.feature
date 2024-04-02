@@ -113,6 +113,19 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the role "Two Sisters" warning minimum players not reached badge should have tooltip with text "Minimum in the party not reached (1 left to pick)" in the lobby role picker
     And the role "Three Brothers" warning minimum players not reached badge should have tooltip with text "Minimum in the party not reached (2 left to pick)" in the lobby role picker
 
+  Scenario: 🃏👆 Role Picker displays description of selected roles and scrolls to top if necessary when selecting another one
+
+    Given the user is on game-lobby page
+    When the user enters the player with name "Antoine" in the lobby
+    And the user clicks on the player with name "Antoine" in the lobby
+    And the user chooses the role with name "Wild Child" in the lobby role picker
+    Then the role's description image with name "Wild Child" should be visible in the lobby role picker
+    And the role's description should have text "His goal is to eliminate the Werewolves as long as his model is alive." in the lobby role picker
+
+    When the user scrolls to the text "Game master's advice: not revealing the true nature of the Wild Child eliminated by the village vote can be amusing. Doubt about his true identity then persists: was he a Villager or a Werewolf before being eliminated?"
+    And the user chooses the role with name "Werewolf" in the lobby role picker
+    Then the role's description image with name "Werewolf" should be in viewport in the lobby role picker
+
   Scenario: 🃏👆 User closes the role picker with escape, close button or outside click
 
     Given the user is on game-lobby page

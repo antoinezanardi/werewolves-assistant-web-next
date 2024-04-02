@@ -29,3 +29,14 @@ When(/^the (?<role>.+) with(?<isExact> exact)? name "(?<name>.+)" is hidden$/u, 
   const element = this.page.getByRole(role, { name, exact: isExact });
   await element.waitFor({ state: "hidden" });
 });
+
+When(/^the user scrolls to the (?<role>button|img|heading|navigation|link|region) with(?<isExact> exact)? name "(?<name>.+)"$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
+  const isExact = exact !== null;
+  const element = this.page.getByRole(role, { name, exact: isExact });
+  await element.scrollIntoViewIfNeeded();
+});
+
+When(/^the user scrolls to the text "(?<text>.+)"$/u, async function(this: CustomWorld, text: string): Promise<void> {
+  const element = this.page.getByText(text);
+  await element.scrollIntoViewIfNeeded();
+});

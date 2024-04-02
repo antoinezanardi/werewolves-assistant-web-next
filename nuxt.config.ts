@@ -8,6 +8,7 @@ const modules = [
   "@aksharahegde/nuxt-glow",
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
   "./modules/register-components/register-components.module.ts",
+  "@vueuse/nuxt",
 ];
 
 export default defineNuxtConfig({
@@ -75,6 +76,7 @@ export default defineNuxtConfig({
         "InputText",
         "FloatLabel",
         "AutoComplete",
+        "ScrollTop",
         "Toast",
         "ToggleButton",
         "TabPanel",
