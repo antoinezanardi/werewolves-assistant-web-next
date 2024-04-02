@@ -48,8 +48,8 @@
     "test:cucumber:prepare": "playwright install",
     "test:cucumber": "cross-env NODE_OPTIONS='--import tsx/esm' cucumber-js --config config/cucumber/cucumber.json; EXIT_CODE_CUCUMBER=$?; npm run test:cucumber:html-report; exit $EXIT_CODE_CUCUMBER",
     "test:cucumber:html-report": "tsx tests/acceptance/plugins/html-reporter/cucumber-html-reporter.ts",
-    "docker:sandbox-api:start": "docker-compose -f docker/werewolves-assistant-sandbox-api/docker-compose.yml up -d",
-    "docker:sandbox-api:stop": "docker-compose -f docker/werewolves-assistant-sandbox-api/docker-compose.yml down",
+    "docker:sandbox-api:start": "docker compose -f docker/werewolves-assistant-sandbox-api/docker-compose.yml up -d",
+    "docker:sandbox-api:stop": "docker compose -f docker/werewolves-assistant-sandbox-api/docker-compose.yml down",
     "docker:sandbox-api:reset": "npm run docker:sandbox-api:stop && npm run docker:sandbox-api:start",
     "playwright:codegen": "npx playwright codegen http://localhost:3000",
     "script:create-branch": "scripts/create-git-branch.sh",
@@ -138,7 +138,7 @@
     "primevue": "^3.49.1"
   },
   "engines": {
-    "node": ">=21.0.0"
+    "node": ">=20.0.0"
   },
   "os": [
     "darwin",
