@@ -2,7 +2,8 @@
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
     "actions": {
-      "add": "Add"
+      "add": "Add",
+      "close": "Fermer"
     },
     "role": {
       "name": {
@@ -628,7 +629,9 @@
       "alt": "Buy me a coffee"
     },
     "GameOverActions": {
-      "createAnotherGame": "Create another game"
+      "createAnotherGame": "Create another game",
+      "showGameHistory": "Show game history",
+      "loadingGameHistory": "Loading game history…"
     },
     "GameOver": {
       "gameOver": "Game over"
@@ -660,6 +663,9 @@
       "roleCountMaxReached": "Maximum reached",
       "recommendedMinPlayers": "Recommended for {count} players minimum",
       "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
+    },
+    "GameOverHistory": {
+      "gameHistory": "Game history"
     }
   }
 }

@@ -2,7 +2,8 @@
   "shared": {
     "werewolvesAssistant": "Assistant Loups-Garous",
     "actions": {
-      "add": "Ajouter"
+      "add": "Ajouter",
+      "close": "Close"
     },
     "role": {
       "name": {
@@ -37,7 +38,7 @@
         "actor": "Comédien",
         "devoted-servant": "Servante Dévouée"
       },
-            "descriptions": {
+      "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
           "eachNightEatsVillager": "Chaque nuit, ils dévorent un Villageois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire.",
@@ -628,7 +629,9 @@
       "alt": "Offrez-moi un café"
     },
     "GameOverActions": {
-      "createAnotherGame": "Lancer une nouvelle partie"
+      "createAnotherGame": "Lancer une nouvelle partie",
+      "showGameHistory": "Voir l'historique de la partie",
+      "loadingGameHistory": "Chargement de l'historique de la partie…"
     },
     "GameOver": {
       "gameOver": "Partie terminée"
@@ -660,6 +663,9 @@
       "roleCountMaxReached": "Nombre maximum atteint",
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
       "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+    },
+    "GameOverHistory": {
+      "gameHistory": "Historique de la partie"
     }
   }
 }

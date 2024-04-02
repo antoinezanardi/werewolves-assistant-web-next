@@ -81,6 +81,7 @@ export default defineNuxtConfig({
         "ToggleButton",
         "TabPanel",
         "TabView",
+        "Timeline",
       ],
     },
     directives: {

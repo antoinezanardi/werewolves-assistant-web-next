@@ -23155,6 +23155,127 @@
       ],
       "source": "<template>\n  <VuePrimeDialog\n    id=\"game-lobby-role-picker\"\n    block-scroll\n    content-class=\"w-x-screen-9/10 max-w-x-screen-9/10\"\n    dismissable-mask\n    :draggable=\"false\"\n    modal\n    :pt=\"{\n      'root': 'h-9/10',\n      'icons': 'pb-2',\n      'header': '!py-2',\n      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',\n      'footer': '!py-2'\n    }\"\n    :visible=\"isVisible\"\n    @update:visible=\"close\"\n  >\n    <template\n      #header\n    >\n      <GameLobbyRolePickerHeader\n        id=\"game-lobby-role-picker-header\"\n        :player=\"localPlayer\"\n      />\n    </template>\n\n    <div\n      id=\"game-lobby-role-picker-content\"\n      class=\"flex gap-2 h-full\"\n    >\n      <GameLobbyRolePickerDescription\n        id=\"game-lobby-role-picker-description\"\n        class=\"overflow-y-scroll w-4/12\"\n        :picked-role=\"pickedRole\"\n      />\n\n      <GameLobbyRolePickerGrid\n        id=\"game-lobby-role-picker-grid\"\n        class=\"overflow-y-scroll w-8/12\"\n        :picked-role=\"pickedRole\"\n        @pick-role=\"pickRole\"\n      />\n    </div>\n\n    <template #footer>\n      <GameLobbyRolePickerFooter\n        id=\"game-lobby-role-picker-footer\"\n        :picked-role=\"pickedRole\"\n        :player=\"localPlayer\"\n        @player-update=\"close\"\n      />\n    </template>\n  </VuePrimeDialog>\n</template>\n\n<script setup lang=\"ts\">\nimport GameLobbyRolePickerDescription from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue\";\nimport GameLobbyRolePickerFooter from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerFooter/GameLobbyRolePickerFooter.vue\";\nimport GameLobbyRolePickerGrid from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGrid.vue\";\nimport GameLobbyRolePickerHeader from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/GameLobbyRolePickerHeader.vue\";\nimport { CreateGamePlayerDto } from \"~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto\";\nimport type { Role } from \"~/composables/api/role/types/role.class\";\n\nconst isVisible = ref<boolean>(false);\nconst localPlayer = ref<CreateGamePlayerDto>();\nconst pickedRole = ref<Role>();\n\nfunction openToPickRoleForPlayer(player: CreateGamePlayerDto): void {\n  localPlayer.value = CreateGamePlayerDto.create(player);\n  pickedRole.value = undefined;\n  isVisible.value = true;\n}\n\nfunction pickRole(role: Role): void {\n  pickedRole.value = role;\n}\n\nfunction close(): void {\n  isVisible.value = false;\n}\n\ndefineExpose({ openToPickRoleForPlayer });\n</script>"
     },
+    "components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue": {
+      "language": "html",
+      "mutants": [
+        {
+          "id": "815",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
+          "status": "Killed",
+          "testsCompleted": 5,
+          "static": false,
+          "killedBy": [
+            "529"
+          ],
+          "coveredBy": [
+            "525",
+            "526",
+            "527",
+            "528",
+            "529",
+            "530"
+          ],
+          "location": {
+            "end": {
+              "column": 88,
+              "line": 42
+            },
+            "start": {
+              "column": 66,
+              "line": 42
+            }
+          }
+        },
+        {
+          "id": "816",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
+          "status": "Killed",
+          "testsCompleted": 5,
+          "static": false,
+          "killedBy": [
+            "529"
+          ],
+          "coveredBy": [
+            "525",
+            "526",
+            "527",
+            "528",
+            "529",
+            "530"
+          ],
+          "location": {
+            "end": {
+              "column": 86,
+              "line": 42
+            },
+            "start": {
+              "column": 78,
+              "line": 42
+            }
+          }
+        },
+        {
+          "id": "817",
+          "mutatorName": "ArrowFunction",
+          "replacement": "() => undefined",
+          "statusReason": "expected 20 to be +0 // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 6,
+          "static": false,
+          "killedBy": [
+            "530"
+          ],
+          "coveredBy": [
+            "525",
+            "526",
+            "527",
+            "528",
+            "529",
+            "530"
+          ],
+          "location": {
+            "end": {
+              "column": 29,
+              "line": 44
+            },
+            "start": {
+              "column": 7,
+              "line": 44
+            }
+          }
+        },
+        {
+          "id": "818",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expected 20 to be +0 // Object.is equality",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "530"
+          ],
+          "coveredBy": [
+            "530"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 46
+            },
+            "start": {
+              "column": 37,
+              "line": 44
+            }
+          }
+        }
+      ],
+      "source": "<template>\n  <div\n    id=\"game-lobby-role-picker-description\"\n    ref=\"gameLobbyRolePickerDescription\"\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n  >\n    <RoleFlippingImage\n      class=\"rounded-2xl\"\n      :role-name=\"pickedRole?.name\"\n      sizes=\"200px\"\n    />\n\n    <div\n      v-if=\"!pickedRole\"\n      id=\"no-picked-role-container\"\n      class=\"flex flex-col gap-4 items-center justify-center\"\n    >\n      <h3>\n        {{ $t(\"components.GameLobbyRolePickerDescription.pickARole\") }}\n      </h3>\n\n      <i class=\"fa-3x fa-circle-chevron-right fas\"/>\n    </div>\n\n    <GameLobbyRolePickerDescriptionContent\n      v-else\n      id=\"game-lobby-role-picker-description-content\"\n      :picked-role=\"pickedRole\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport RoleFlippingImage from \"~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue\";\n\nconst props = defineProps<GameLobbyRolePickerDescriptionProps>();\n\nconst gameLobbyRolePickerDescription = ref<HTMLElement | null>(null);\nconst { y: yScroll } = useScroll(gameLobbyRolePickerDescription, { behavior: \"smooth\" });\n\nwatch(() => props.pickedRole, () => {\n  yScroll.value = 0;\n});\n</script>"
+    },
     "components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionBoundaries/GameLobbyRolePickerDescriptionBoundaries.vue": {
       "language": "html",
       "mutants": [
@@ -30946,6 +31067,201 @@
       ],
       "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { MakeGamePlayTargetDto } from \"~/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto\";\nimport { MakeGamePlayVoteDto } from \"~/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto\";\nimport type { RoleSide } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass MakeGamePlayDto {\n  @Type(() => MakeGamePlayTargetDto)\n  @Expose()\n  public targets?: MakeGamePlayTargetDto[];\n\n  @Type(() => MakeGamePlayVoteDto)\n  @Expose()\n  public votes?: MakeGamePlayVoteDto[];\n\n  @Expose()\n  public doesJudgeRequestAnotherVote?: boolean;\n\n  @Expose()\n  public chosenCardId?: string;\n\n  @Expose()\n  public chosenSide?: RoleSide;\n\n  public static create(makeGamePlayDto: MakeGamePlayDto): MakeGamePlayDto {\n    return plainToInstance(MakeGamePlayDto, makeGamePlayDto, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { MakeGamePlayDto };"
     },
+    "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1032",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(8,40): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 19
+            },
+            "start": {
+              "column": 60,
+              "line": 8
+            }
+          }
+        },
+        {
+          "id": "1033",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 17
+            },
+            "start": {
+              "column": 120,
+              "line": 11
+            }
+          }
+        },
+        {
+          "id": "1034",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 14
+            },
+            "start": {
+              "column": 9,
+              "line": 12
+            }
+          }
+        },
+        {
+          "id": "1035",
+          "mutatorName": "StringLiteral",
+          "replacement": "``",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/games/gameId/history\",\n  Object {\n    \"method\": \"GET\",\n  },\n], but it was called with \"\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "648"
+          ],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 95,
+              "line": 13
+            },
+            "start": {
+              "column": 69,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "1036",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/games/gameId/history\",\n  Object {\n    \"method\": \"GET\",\n  },\n], but it was called with \"/games/gameId/history\"",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "648"
+          ],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 114,
+              "line": 13
+            },
+            "start": {
+              "column": 97,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "1037",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(13,99): error TS2322: Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 112,
+              "line": 13
+            },
+            "start": {
+              "column": 107,
+              "line": 13
+            }
+          }
+        },
+        {
+          "id": "1038",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 16
+            },
+            "start": {
+              "column": 21,
+              "line": 14
+            }
+          }
+        },
+        {
+          "id": "1039",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(18,3): error TS2741: Property 'getGameHistoryRecords' is missing in type '{}' but required in type 'UseFetchGameHistory'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "648",
+            "649"
+          ],
+          "location": {
+            "end": {
+              "column": 35,
+              "line": 18
+            },
+            "start": {
+              "column": 10,
+              "line": 18
+            }
+          }
+        }
+      ],
+      "source": "import type { GameHistoryRecord } from \"~/composables/api/game/types/game-history-record/game-history-record.class\";\nimport { useWerewolvesAssistantApi } from \"~/composables/api/useWerewolvesAssistantApi\";\n\ntype UseFetchGameHistory = {\n  getGameHistoryRecords: (gameId: string) => Promise<ReturnType<typeof $fetch<GameHistoryRecord[]>> | null>;\n};\n\nfunction useFetchGameHistoryRecords(): UseFetchGameHistory {\n  const { fetchWerewolvesAssistantApi } = useWerewolvesAssistantApi();\n\n  async function getGameHistoryRecords(gameId: string): Promise<ReturnType<typeof $fetch<GameHistoryRecord[]>> | null> {\n    try {\n      return await fetchWerewolvesAssistantApi<GameHistoryRecord[]>(`/games/${gameId}/history`, { method: \"GET\" });\n    } catch (error) {\n      return null;\n    }\n  }\n  return { getGameHistoryRecords };\n}\n\nexport { useFetchGameHistoryRecords };"
+    },
     "composables/api/game/game-play/useGamePlay.ts": {
       "language": "typescript",
       "mutants": [
@@ -31741,6 +32057,214 @@
       ],
       "source": "import type { Ref } from \"vue\";\n\nimport type { Game } from \"~/composables/api/game/types/game.class\";\nimport type { PlayerInteractionType } from \"~/composables/api/game/types/players/player-interaction/player-interaction.types\";\nimport type { Player } from \"~/composables/api/game/types/players/player.class\";\n\ntype UseGamePlay = {\n  getEligibleTargetsWithInteractionInCurrentGamePlay: (interaction: PlayerInteractionType) => Player[] | undefined;\n};\n\nfunction useGamePlay(game: Ref<Game>): UseGamePlay {\n  function getEligibleTargetsWithInteractionInCurrentGamePlay(interactionType: PlayerInteractionType): Player[] | undefined {\n    if (game.value.currentPlay?.source.interactions === undefined) {\n      return undefined;\n    }\n    const interaction = game.value.currentPlay.source.interactions.find(({ type }) => type === interactionType);\n    if (interaction === undefined) {\n      return undefined;\n    }\n    return interaction.eligibleTargets;\n  }\n  return { getEligibleTargetsWithInteractionInCurrentGamePlay };\n}\n\nexport { useGamePlay };"
     },
+    "composables/api/game/types/game-additional-card/game-additional-card.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1056",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-additional-card/game-additional-card.class.ts(20,65): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "701"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 22
+            },
+            "start": {
+              "column": 84,
+              "line": 20
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GameAdditionalCardRecipientRoleName } from \"~/composables/api/game/types/game-additional-card/game-additional-card.types\";\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameAdditionalCard {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public roleName: RoleName;\n\n  @Expose()\n  public recipient: GameAdditionalCardRecipientRoleName;\n\n  @Expose()\n  public isUsed: boolean;\n\n  public static create(gameAdditionalCard: GameAdditionalCard): GameAdditionalCard {\n    return plainToInstance(GameAdditionalCard, gameAdditionalCard, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameAdditionalCard };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1057",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "625",
+            "644",
+            "690"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 17
+            },
+            "start": {
+              "column": 111,
+              "line": 15
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { GamePlaySourceName } from \"~/composables/api/game/types/game-play/game-play-source/game-play-source.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlaySource {\n  @Expose()\n  public name: GamePlaySourceName;\n\n  @Expose()\n  @Type(() => Player)\n  public players: Player[];\n\n  public static create(gameHistoryRecordPlaySource: GameHistoryRecordPlaySource): GameHistoryRecordPlaySource {\n    return plainToInstance(GameHistoryRecordPlaySource, gameHistoryRecordPlaySource, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlaySource };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1058",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "692"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 17
+            },
+            "start": {
+              "column": 111,
+              "line": 15
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { WitchPotion } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayTarget {\n  @Expose()\n  @Type(() => Player)\n  public target: Player;\n\n  @Expose()\n  public drankPotion?: WitchPotion;\n\n  public static create(gameHistoryRecordPlayTarget: GameHistoryRecordPlayTarget): GameHistoryRecordPlayTarget {\n    return plainToInstance(GameHistoryRecordPlayTarget, gameHistoryRecordPlayTarget, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayTarget };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1059",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class.ts(15,79): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "693"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 17
+            },
+            "start": {
+              "column": 105,
+              "line": 15
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayVote {\n  @Expose()\n  @Type(() => Player)\n  public source: Player;\n\n  @Expose()\n  @Type(() => Player)\n  public target: Player;\n\n  public static create(gameHistoryRecordPlayVote: GameHistoryRecordPlayVote): GameHistoryRecordPlayVote {\n    return plainToInstance(GameHistoryRecordPlayVote, gameHistoryRecordPlayVote, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayVote };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1060",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "625",
+            "644",
+            "682"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 17
+            },
+            "start": {
+              "column": 111,
+              "line": 15
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { GameHistoryRecordPlayVotingResult } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayVoting {\n  @Expose()\n  public result: GameHistoryRecordPlayVotingResult;\n\n  @Expose()\n  @Type(() => Player)\n  public nominatedPlayers?: Player[];\n\n  public static create(gameHistoryRecordPlayVoting: GameHistoryRecordPlayVoting): GameHistoryRecordPlayVoting {\n    return plainToInstance(GameHistoryRecordPlayVoting, gameHistoryRecordPlayVoting, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayVoting };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1061",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class.ts(48,71): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "622",
+            "625",
+            "644"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 50
+            },
+            "start": {
+              "column": 93,
+              "line": 48
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GameAdditionalCard } from \"~/composables/api/game/types/game-additional-card/game-additional-card.class\";\nimport { GameHistoryRecordPlaySource } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class\";\nimport { GameHistoryRecordPlayTarget } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class\";\nimport { GameHistoryRecordPlayVote } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class\";\nimport { GameHistoryRecordPlayVoting } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class\";\nimport type { GamePlayAction, GamePlayCause, GamePlayType } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport type { RoleSide } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlay {\n  @Expose()\n  public type: GamePlayType;\n\n  @Expose()\n  public action: GamePlayAction;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlaySource)\n  public source: GameHistoryRecordPlaySource;\n\n  @Expose()\n  public cause?: GamePlayCause;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayTarget)\n  public targets?: GameHistoryRecordPlayTarget[];\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayVote)\n  public votes?: GameHistoryRecordPlayVote[];\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayVoting)\n  public voting?: GameHistoryRecordPlayVoting;\n\n  @Expose()\n  public didJudgeRequestAnotherVote?: boolean;\n\n  @Expose()\n  @Type(() => GameAdditionalCard)\n  public chosenCard?: GameAdditionalCard;\n\n  @Expose()\n  public chosenSide?: RoleSide;\n\n  public static create(gameHistoryRecordPlay: GameHistoryRecordPlay): GameHistoryRecordPlay {\n    return plainToInstance(GameHistoryRecordPlay, gameHistoryRecordPlay, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlay };"
+    },
+    "composables/api/game/types/game-history-record/game-history-record.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1062",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/game-history-record/game-history-record.class.ts(39,63): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "625",
+            "644"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 41
+            },
+            "start": {
+              "column": 81,
+              "line": 39
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GameHistoryRecordPlay } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class\";\nimport type { GamePhase } from \"~/composables/api/game/types/game.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecord {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public gameId: string;\n\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  @Expose()\n  public tick: number;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlay)\n  public play: GameHistoryRecordPlay;\n\n  @Expose()\n  @Type(() => Player)\n  public revealedPlayers?: Player[];\n\n  @Expose()\n  @Type(() => Player)\n  public deadPlayers?: Player[];\n\n  @Expose()\n  public createdAt: Date;\n\n  public static create(gameHistoryRecord: GameHistoryRecord): GameHistoryRecord {\n    return plainToInstance(GameHistoryRecord, gameHistoryRecord, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecord };"
+    },
     "composables/api/game/types/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction-boundaries/game-play-source-interaction-boundaries.class.ts": {
       "language": "typescript",
       "mutants": [
@@ -32113,6 +32637,185 @@
         }
       ],
       "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { GameSource } from \"~/composables/api/game/types/game.types\";\nimport { PlayerAttributeActivation } from \"~/composables/api/game/types/players/player-attribute/player-attribute-activation/player-attribute-activation.class\";\nimport type { PlayerAttributeName } from \"~/composables/api/game/types/players/player-attribute/player-attribute.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerAttribute {\n  @Expose()\n  public name: PlayerAttributeName;\n\n  @Expose()\n  public source: GameSource;\n\n  @Expose()\n  public remainingPhases?: number;\n\n  @Type(() => PlayerAttributeActivation)\n  @Expose()\n  public activeAt?: PlayerAttributeActivation;\n\n  @Expose()\n  public doesRemainAfterDeath?: boolean;\n\n  public static create(playerAttribute: PlayerAttribute): PlayerAttribute {\n    return plainToInstance(PlayerAttribute, playerAttribute, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerAttribute };"
+    },
+    "composables/api/game/types/players/player-role/player-role.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1071",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/players/player-role/player-role.class.ts(16,52): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": true,
+          "killedBy": [],
+          "coveredBy": [
+            "46",
+            "49",
+            "186",
+            "187",
+            "188",
+            "189",
+            "192",
+            "193",
+            "194",
+            "197",
+            "435",
+            "436",
+            "438",
+            "441",
+            "622",
+            "644",
+            "664",
+            "665",
+            "682",
+            "690",
+            "692",
+            "693",
+            "698",
+            "704",
+            "709"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 18
+            },
+            "start": {
+              "column": 63,
+              "line": 16
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerRole {\n  @Expose()\n  public original: RoleName;\n\n  @Expose()\n  public current: RoleName;\n\n  @Expose()\n  public isRevealed: boolean;\n\n  public static create(role: Partial<PlayerRole>): PlayerRole {\n    return plainToInstance(PlayerRole, role, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerRole };"
+    },
+    "composables/api/game/types/players/player-side/player-side.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1072",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/players/player-side/player-side.class.ts(13,52): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": true,
+          "killedBy": [],
+          "coveredBy": [
+            "46",
+            "49",
+            "186",
+            "187",
+            "188",
+            "189",
+            "192",
+            "193",
+            "194",
+            "197",
+            "435",
+            "436",
+            "438",
+            "441",
+            "622",
+            "644",
+            "664",
+            "665",
+            "682",
+            "690",
+            "692",
+            "693",
+            "698",
+            "704",
+            "710"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 15
+            },
+            "start": {
+              "column": 63,
+              "line": 13
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { RoleSide } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerSide {\n  @Expose()\n  public original: RoleSide;\n\n  @Expose()\n  public current: RoleSide;\n\n  public static create(side: Partial<PlayerSide>): PlayerSide {\n    return plainToInstance(PlayerSide, side, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerSide };"
+    },
+    "composables/api/game/types/players/player.class.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1073",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/game/types/players/player.class.ts(30,41): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
+          "status": "CompileError",
+          "static": true,
+          "killedBy": [],
+          "coveredBy": [
+            "40",
+            "45",
+            "46",
+            "48",
+            "49",
+            "53",
+            "54",
+            "110",
+            "186",
+            "187",
+            "188",
+            "189",
+            "192",
+            "193",
+            "194",
+            "197",
+            "226",
+            "227",
+            "228",
+            "229",
+            "231",
+            "233",
+            "235",
+            "236",
+            "237",
+            "238",
+            "239",
+            "240",
+            "368",
+            "369",
+            "370",
+            "371",
+            "414",
+            "435",
+            "436",
+            "438",
+            "441",
+            "469",
+            "622",
+            "644",
+            "664",
+            "665",
+            "682",
+            "690",
+            "692",
+            "693",
+            "698",
+            "704"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 32
+            },
+            "start": {
+              "column": 48,
+              "line": 30
+            }
+          }
+        }
+      ],
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { PlayerAttribute } from \"~/composables/api/game/types/players/player-attribute/player-attribute.class\";\nimport { PlayerRole } from \"~/composables/api/game/types/players/player-role/player-role.class\";\nimport { PlayerSide } from \"~/composables/api/game/types/players/player-side/player-side.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Player {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public name: string;\n\n  @Expose()\n  @Type(() => PlayerRole)\n  public role: PlayerRole;\n\n  @Expose()\n  @Type(() => PlayerSide)\n  public side: PlayerSide;\n\n  @Type(() => PlayerAttribute)\n  @Expose()\n  public attributes: PlayerAttribute[];\n\n  @Expose()\n  public isAlive: boolean;\n\n  public static create(player: Player): Player {\n    return plainToInstance(Player, player, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Player };"
     },
     "composables/api/game/useCreateGameDtoValidation.ts": {
       "language": "typescript",
@@ -40684,6 +41387,62 @@
           }
         },
         {
+          "id": "1298",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "82",
+            "416"
+          ],
+          "location": {
+            "end": {
+              "column": 97,
+              "line": 30
+            },
+            "start": {
+              "column": 54,
+              "line": 30
+            }
+          }
+        },
+        {
+          "id": "1299",
+          "mutatorName": "EqualityOperator",
+          "replacement": "makeGamePlayDto.value.targets !== undefined",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "82",
+            "416"
+          ],
+          "location": {
+            "end": {
+              "column": 97,
+              "line": 30
+            },
+            "start": {
+              "column": 54,
+              "line": 30
+            }
+          }
+        },
+        {
           "id": "1300",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -41694,8 +42453,7 @@
             "77",
             "78",
             "82",
-            "83",
-            "416"
+            "83"
           ],
           "location": {
             "end": {
@@ -41723,8 +42481,7 @@
             "77",
             "78",
             "82",
-            "83",
-            "416"
+            "83"
           ],
           "location": {
             "end": {
@@ -42389,77 +43146,67 @@
               "line": 55
             }
           }
-        },
+        }
+      ],
+      "source": "import type { ComputedRef, Ref } from \"vue\";\n\nimport type { MakeGamePlayDto } from \"~/composables/api/game/dto/make-game-play/make-game-play.dto\";\nimport type { Game } from \"~/composables/api/game/types/game.class\";\n\ntype UseMakeGamePlayDtoValidation = {\n  isCurrentGamePlayVoteTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayTargetTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayChooseCardTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayChooseSideTypeAndValid: ComputedRef<boolean>;\n  canCurrentPlayBeSkipped: ComputedRef<boolean>;\n  canMakeGamePlay: ComputedRef<boolean>;\n};\n\nfunction useMakeGamePlayDtoValidation(makeGamePlayDto: Ref<MakeGamePlayDto>, game: Ref<Game>): UseMakeGamePlayDtoValidation {\n  const isCurrentGamePlayVoteTypeAndValid = computed<boolean>(() => {\n    if (game.value.currentPlay?.type !== \"vote\" || makeGamePlayDto.value.votes === undefined) {\n      return false;\n    }\n    const voteInteraction = game.value.currentPlay.source.interactions?.[0];\n    if (voteInteraction === undefined) {\n      return false;\n    }\n    const { votes } = makeGamePlayDto.value;\n\n    return votes.length >= voteInteraction.boundaries.min;\n  });\n\n  const isCurrentGamePlayTargetTypeAndValid = computed<boolean>(() => {\n    if (game.value.currentPlay?.type !== \"target\" || makeGamePlayDto.value.targets === undefined) {\n      return false;\n    }\n\n    const targetInteraction = game.value.currentPlay.source.interactions?.[0];\n    if (targetInteraction === undefined) {\n      return false;\n    }\n    const { targets } = makeGamePlayDto.value;\n\n    return targets.length >= targetInteraction.boundaries.min;\n  });\n\n  const isCurrentGamePlayChooseCardTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === \"choose-card\" && makeGamePlayDto.value.chosenCardId !== undefined);\n\n  const isCurrentGamePlayChooseSideTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === \"choose-side\" && makeGamePlayDto.value.chosenSide !== undefined);\n\n  const canCurrentPlayBeSkipped = computed<boolean>(() => game.value.currentPlay?.canBeSkipped === true);\n\n  const canMakeGamePlay = computed<boolean>(() => canCurrentPlayBeSkipped.value ||\n    isCurrentGamePlayVoteTypeAndValid.value ||\n    isCurrentGamePlayTargetTypeAndValid.value ||\n    isCurrentGamePlayChooseCardTypeAndValid.value ||\n    isCurrentGamePlayChooseSideTypeAndValid.value);\n\n  return {\n    isCurrentGamePlayVoteTypeAndValid,\n    isCurrentGamePlayTargetTypeAndValid,\n    isCurrentGamePlayChooseCardTypeAndValid,\n    isCurrentGamePlayChooseSideTypeAndValid,\n    canCurrentPlayBeSkipped,\n    canMakeGamePlay,\n  };\n}\n\nexport { useMakeGamePlayDtoValidation };"
+    },
+    "composables/api/role/types/role.class.ts": {
+      "language": "typescript",
+      "mutants": [
         {
-          "id": "1298",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
+          "id": "1349",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "composables/api/role/types/role.class.ts(32,37): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
           "status": "CompileError",
-          "static": false,
+          "static": true,
+          "killedBy": [],
           "coveredBy": [
-            "68",
-            "69",
-            "70",
-            "71",
-            "72",
-            "82",
-            "415",
-            "416",
-            "417",
-            "418",
-            "419",
-            "420",
-            "421",
-            "422"
+            "121",
+            "122",
+            "123",
+            "124",
+            "125",
+            "126",
+            "127",
+            "128",
+            "129",
+            "130",
+            "218",
+            "221",
+            "222",
+            "281",
+            "284",
+            "312",
+            "313",
+            "314",
+            "315",
+            "316",
+            "317",
+            "318",
+            "319",
+            "320",
+            "359",
+            "530",
+            "616",
+            "619",
+            "620",
+            "621",
+            "699"
           ],
           "location": {
             "end": {
-              "column": 97,
-              "line": 30
+              "column": 4,
+              "line": 34
             },
             "start": {
-              "column": 54,
-              "line": 30
-            }
-          }
-        },
-        {
-          "id": "1299",
-          "mutatorName": "EqualityOperator",
-          "replacement": "makeGamePlayDto.value.targets !== undefined",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "68",
-            "69",
-            "70",
-            "71",
-            "72",
-            "82",
-            "415",
-            "416",
-            "417",
-            "418",
-            "419",
-            "420",
-            "421",
-            "422"
-          ],
-          "location": {
-            "end": {
-              "column": 97,
-              "line": 30
-            },
-            "start": {
-              "column": 54,
-              "line": 30
+              "column": 42,
+              "line": 32
             }
           }
         }
       ],
-      "source": "import type { ComputedRef, Ref } from \"vue\";\n\nimport type { MakeGamePlayDto } from \"~/composables/api/game/dto/make-game-play/make-game-play.dto\";\nimport type { Game } from \"~/composables/api/game/types/game.class\";\n\ntype UseMakeGamePlayDtoValidation = {\n  isCurrentGamePlayVoteTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayTargetTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayChooseCardTypeAndValid: ComputedRef<boolean>;\n  isCurrentGamePlayChooseSideTypeAndValid: ComputedRef<boolean>;\n  canCurrentPlayBeSkipped: ComputedRef<boolean>;\n  canMakeGamePlay: ComputedRef<boolean>;\n};\n\nfunction useMakeGamePlayDtoValidation(makeGamePlayDto: Ref<MakeGamePlayDto>, game: Ref<Game>): UseMakeGamePlayDtoValidation {\n  const isCurrentGamePlayVoteTypeAndValid = computed<boolean>(() => {\n    if (game.value.currentPlay?.type !== \"vote\" || makeGamePlayDto.value.votes === undefined) {\n      return false;\n    }\n    const voteInteraction = game.value.currentPlay.source.interactions?.[0];\n    if (voteInteraction === undefined) {\n      return false;\n    }\n    const { votes } = makeGamePlayDto.value;\n\n    return votes.length >= voteInteraction.boundaries.min;\n  });\n\n  const isCurrentGamePlayTargetTypeAndValid = computed<boolean>(() => {\n    if (game.value.currentPlay?.type !== \"target\" || makeGamePlayDto.value.targets === undefined) {\n      return false;\n    }\n\n    const targetInteraction = game.value.currentPlay.source.interactions?.[0];\n    if (targetInteraction === undefined) {\n      return false;\n    }\n    const { targets } = makeGamePlayDto.value;\n\n    return targets.length >= targetInteraction.boundaries.min;\n  });\n\n  const isCurrentGamePlayChooseCardTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === \"choose-card\" && makeGamePlayDto.value.chosenCardId !== undefined);\n\n  const isCurrentGamePlayChooseSideTypeAndValid = computed<boolean>(() => game.value.currentPlay?.type === \"choose-side\" && makeGamePlayDto.value.chosenSide !== undefined);\n\n  const canCurrentPlayBeSkipped = computed<boolean>(() => game.value.currentPlay?.canBeSkipped === true);\n\n  const canMakeGamePlay = computed<boolean>(() => canCurrentPlayBeSkipped.value ||\n    isCurrentGamePlayVoteTypeAndValid.value ||\n    isCurrentGamePlayTargetTypeAndValid.value ||\n    isCurrentGamePlayChooseCardTypeAndValid.value ||\n    isCurrentGamePlayChooseSideTypeAndValid.value);\n\n  return {\n    isCurrentGamePlayVoteTypeAndValid,\n    isCurrentGamePlayTargetTypeAndValid,\n    isCurrentGamePlayChooseCardTypeAndValid,\n    isCurrentGamePlayChooseSideTypeAndValid,\n    canCurrentPlayBeSkipped,\n    canMakeGamePlay,\n  };\n}\n\nexport { useMakeGamePlayDtoValidation };"
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GameAdditionalCardRecipientRoleName } from \"~/composables/api/game/types/game-additional-card/game-additional-card.types\";\nimport type { RoleName, RoleOrigin, RoleSide, RoleType } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Role {\n  @Expose()\n  public name: RoleName;\n\n  @Expose()\n  public side: RoleSide;\n\n  @Expose()\n  public type: RoleType;\n\n  @Expose()\n  public origin: RoleOrigin;\n\n  @Expose()\n  public additionalCardsEligibleRecipients?: GameAdditionalCardRecipientRoleName[];\n\n  @Expose()\n  public minInGame?: number;\n\n  @Expose()\n  public maxInGame: number;\n\n  @Expose()\n  public recommendedMinPlayers?: number;\n\n  public static create(role: Role): Role {\n    return plainToInstance(Role, role, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Role };"
     },
     "composables/api/role/useFetchRoles.ts": {
       "language": "typescript",
@@ -49793,6 +50540,292 @@
       ],
       "source": "import { defineStore } from \"pinia\";\nimport { ref } from \"vue\";\n\nimport { CreateGamePlayerDto } from \"~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto\";\nimport { CreateGameDto } from \"~/composables/api/game/dto/create-game/create-game.dto\";\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { StoreIds } from \"~/stores/enums/store.enum\";\nimport { useRolesStore } from \"~/stores/role/useRolesStore\";\n\nconst useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {\n  const rolesStore = useRolesStore();\n  const { getRoleWithNameInRoles } = rolesStore;\n\n  const createGameDto = ref<CreateGameDto>(CreateGameDto.create({ players: [] }));\n\n  function setCreateGameDto(createGameDtoValue: CreateGameDto): void {\n    createGameDto.value = CreateGameDto.create(createGameDtoValue);\n  }\n\n  function resetCreateGameDto(): void {\n    createGameDto.value = CreateGameDto.create({ players: [] });\n  }\n\n  function addPlayerToCreateGameDto(player: CreateGamePlayerDto): void {\n    createGameDto.value.players.push(CreateGamePlayerDto.create(player));\n  }\n\n  function updatePlayerInCreateGameDto(player: CreateGamePlayerDto): void {\n    const playerIndex = createGameDto.value.players.findIndex(({ name }) => name === player.name);\n    if (playerIndex !== -1) {\n      createGameDto.value.players.splice(playerIndex, 1, CreateGamePlayerDto.create(player));\n    }\n  }\n\n  function setPlayersToCreateGameDto(players: CreateGamePlayerDto[]): void {\n    createGameDto.value.players = players.map(player => CreateGamePlayerDto.create(player));\n  }\n\n  function removePlayerFromCreateGameDto(playerName: string): void {\n    const playerIndex = createGameDto.value.players.findIndex(player => player.name === playerName);\n    if (playerIndex !== -1) {\n      createGameDto.value.players = createGameDto.value.players.toSpliced(playerIndex, 1);\n    }\n  }\n\n  function getPlayersWithRoleNameInCreateGameDto(roleName: RoleName): CreateGamePlayerDto[] {\n    return createGameDto.value.players.filter(player => player.role.name === roleName);\n  }\n\n  function isRoleMinReachedInCreateGameDto(roleName: RoleName): boolean {\n    const playersWithRoleName = getPlayersWithRoleNameInCreateGameDto(roleName);\n    const role = getRoleWithNameInRoles(roleName);\n\n    return !!role && (role.minInGame === undefined || playersWithRoleName.length >= role.minInGame);\n  }\n\n  function isRoleMaxReachedInCreateGameDto(roleName: RoleName): boolean {\n    const playersWithRoleName = getPlayersWithRoleNameInCreateGameDto(roleName);\n    const role = getRoleWithNameInRoles(roleName);\n\n    return !!role && playersWithRoleName.length >= role.maxInGame;\n  }\n\n  function getRoleLeftCountToReachMinInCreateGameDto(roleName: RoleName): number {\n    const playersWithRoleName = getPlayersWithRoleNameInCreateGameDto(roleName);\n    const role = getRoleWithNameInRoles(roleName);\n    if (role?.minInGame === undefined) {\n      return 0;\n    }\n    const leftCount = role.minInGame - playersWithRoleName.length;\n\n    return leftCount <= -1 ? 0 : leftCount;\n  }\n  return {\n    createGameDto,\n    setCreateGameDto,\n    resetCreateGameDto,\n    addPlayerToCreateGameDto,\n    updatePlayerInCreateGameDto,\n    setPlayersToCreateGameDto,\n    removePlayerFromCreateGameDto,\n    getPlayersWithRoleNameInCreateGameDto,\n    isRoleMinReachedInCreateGameDto,\n    isRoleMaxReachedInCreateGameDto,\n    getRoleLeftCountToReachMinInCreateGameDto,\n  };\n});\n\nexport { useCreateGameDtoStore };"
     },
+    "stores/game/game-history-record/useGameHistoryRecordsStore.ts": {
+      "language": "typescript",
+      "mutants": [
+        {
+          "id": "1488",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "tests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(25,36): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(26,36): error TS2339: Property 'fetchingGameHistoryRecordsStatus' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(32,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(45,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(47,38): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "623",
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 30
+            },
+            "start": {
+              "column": 85,
+              "line": 8
+            }
+          }
+        },
+        {
+          "id": "1489",
+          "mutatorName": "ArrayDeclaration",
+          "replacement": "[\"Stryker was here\"]",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(11,56): error TS2322: Type 'string' is not assignable to type 'GameHistoryRecord'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "623",
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 57,
+              "line": 11
+            },
+            "start": {
+              "column": 55,
+              "line": 11
+            }
+          }
+        },
+        {
+          "id": "1490",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(12,72): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "623",
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 78,
+              "line": 12
+            },
+            "start": {
+              "column": 72,
+              "line": 12
+            }
+          }
+        },
+        {
+          "id": "1491",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "testsCompleted": 1,
+          "static": false,
+          "killedBy": [
+            "624"
+          ],
+          "coveredBy": [
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 24
+            },
+            "start": {
+              "column": 79,
+              "line": 14
+            }
+          }
+        },
+        {
+          "id": "1492",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(15,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 55,
+              "line": 15
+            },
+            "start": {
+              "column": 46,
+              "line": 15
+            }
+          }
+        },
+        {
+          "id": "1493",
+          "mutatorName": "BooleanLiteral",
+          "replacement": "fetchedGameHistoryRecords",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 35,
+              "line": 17
+            },
+            "start": {
+              "column": 9,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "1494",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "true",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 35,
+              "line": 17
+            },
+            "start": {
+              "column": 9,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "1495",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 35,
+              "line": 17
+            },
+            "start": {
+              "column": 9,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "1496",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(18,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624"
+          ],
+          "location": {
+            "end": {
+              "column": 6,
+              "line": 21
+            },
+            "start": {
+              "column": 37,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "1497",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(18,7): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "624"
+          ],
+          "location": {
+            "end": {
+              "column": 55,
+              "line": 18
+            },
+            "start": {
+              "column": 48,
+              "line": 18
+            }
+          }
+        },
+        {
+          "id": "1498",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(23,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 55,
+              "line": 23
+            },
+            "start": {
+              "column": 46,
+              "line": 23
+            }
+          }
+        },
+        {
+          "id": "1499",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "tests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(25,36): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(26,36): error TS2339: Property 'fetchingGameHistoryRecordsStatus' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(32,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(45,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(47,38): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "623",
+            "624",
+            "625"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 29
+            },
+            "start": {
+              "column": 10,
+              "line": 25
+            }
+          }
+        }
+      ],
+      "source": "import type { AsyncDataRequestStatus } from \"#app/composables/asyncData\";\nimport { defineStore } from \"pinia\";\n\nimport { useFetchGameHistoryRecords } from \"~/composables/api/game/game-history-record/useFetchGameHistoryRecords\";\nimport type { GameHistoryRecord } from \"~/composables/api/game/types/game-history-record/game-history-record.class\";\nimport { StoreIds } from \"~/stores/enums/store.enum\";\n\nconst useGameHistoryRecordsStore = defineStore(StoreIds.GAME_HISTORY_RECORDS, () => {\n  const { getGameHistoryRecords } = useFetchGameHistoryRecords();\n\n  const gameHistoryRecords = ref<GameHistoryRecord[]>([]);\n  const fetchingGameHistoryRecordsStatus = ref<AsyncDataRequestStatus>(\"idle\");\n\n  async function fetchAndSetGameHistoryRecords(gameId: string): Promise<void> {\n    fetchingGameHistoryRecordsStatus.value = \"pending\";\n    const fetchedGameHistoryRecords = await getGameHistoryRecords(gameId);\n    if (!fetchedGameHistoryRecords) {\n      fetchingGameHistoryRecordsStatus.value = \"error\";\n\n      return;\n    }\n    gameHistoryRecords.value = fetchedGameHistoryRecords;\n    fetchingGameHistoryRecordsStatus.value = \"success\";\n  }\n  return {\n    gameHistoryRecords,\n    fetchingGameHistoryRecordsStatus,\n    fetchAndSetGameHistoryRecords,\n  };\n});\n\nexport { useGameHistoryRecordsStore };"
+    },
     "stores/game/make-game-play-dto/useMakeGamePlayDtoStore.ts": {
       "language": "typescript",
       "mutants": [
@@ -56286,1025 +57319,6 @@
         }
       ],
       "source": "function removeTrailingSlashes(url: string): string {\n  return url.replace(/\\/+$/u, \"\");\n}\n\nexport { removeTrailingSlashes };"
-    },
-    "components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue": {
-      "language": "html",
-      "mutants": [
-        {
-          "id": "817",
-          "mutatorName": "ArrowFunction",
-          "replacement": "() => undefined",
-          "statusReason": "expected 20 to be +0 // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 6,
-          "killedBy": [
-            "530"
-          ],
-          "coveredBy": [
-            "525",
-            "526",
-            "527",
-            "528",
-            "529",
-            "530"
-          ],
-          "location": {
-            "end": {
-              "column": 29,
-              "line": 44
-            },
-            "start": {
-              "column": 7,
-              "line": 44
-            }
-          }
-        },
-        {
-          "id": "818",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expected 20 to be +0 // Object.is equality",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "530"
-          ],
-          "coveredBy": [
-            "530"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 46
-            },
-            "start": {
-              "column": 37,
-              "line": 44
-            }
-          }
-        },
-        {
-          "id": "815",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 5,
-          "killedBy": [
-            "529"
-          ],
-          "coveredBy": [
-            "525",
-            "526",
-            "527",
-            "528",
-            "529",
-            "530"
-          ],
-          "location": {
-            "end": {
-              "column": 88,
-              "line": 42
-            },
-            "start": {
-              "column": 66,
-              "line": 42
-            }
-          }
-        },
-        {
-          "id": "816",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 5,
-          "killedBy": [
-            "529"
-          ],
-          "coveredBy": [
-            "525",
-            "526",
-            "527",
-            "528",
-            "529",
-            "530"
-          ],
-          "location": {
-            "end": {
-              "column": 86,
-              "line": 42
-            },
-            "start": {
-              "column": 78,
-              "line": 42
-            }
-          }
-        }
-      ],
-      "source": "<template>\n  <div\n    id=\"game-lobby-role-picker-description\"\n    ref=\"gameLobbyRolePickerDescription\"\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n  >\n    <RoleFlippingImage\n      class=\"rounded-2xl\"\n      :role-name=\"pickedRole?.name\"\n      sizes=\"200px\"\n    />\n\n    <div\n      v-if=\"!pickedRole\"\n      id=\"no-picked-role-container\"\n      class=\"flex flex-col gap-4 items-center justify-center\"\n    >\n      <h3>\n        {{ $t(\"components.GameLobbyRolePickerDescription.pickARole\") }}\n      </h3>\n\n      <i class=\"fa-3x fa-circle-chevron-right fas\"/>\n    </div>\n\n    <GameLobbyRolePickerDescriptionContent\n      v-else\n      id=\"game-lobby-role-picker-description-content\"\n      :picked-role=\"pickedRole\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport RoleFlippingImage from \"~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue\";\n\nconst props = defineProps<GameLobbyRolePickerDescriptionProps>();\n\nconst gameLobbyRolePickerDescription = ref<HTMLElement | null>(null);\nconst { y: yScroll } = useScroll(gameLobbyRolePickerDescription, { behavior: \"smooth\" });\n\nwatch(() => props.pickedRole, () => {\n  yScroll.value = 0;\n});\n</script>"
-    },
-    "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1034",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 14
-            },
-            "start": {
-              "column": 9,
-              "line": 12
-            }
-          }
-        },
-        {
-          "id": "1032",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(8,40): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 19
-            },
-            "start": {
-              "column": 60,
-              "line": 8
-            }
-          }
-        },
-        {
-          "id": "1033",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 17
-            },
-            "start": {
-              "column": 120,
-              "line": 11
-            }
-          }
-        },
-        {
-          "id": "1035",
-          "mutatorName": "StringLiteral",
-          "replacement": "``",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/games/gameId/history\",\n  Object {\n    \"method\": \"GET\",\n  },\n], but it was called with \"\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "648"
-          ],
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 95,
-              "line": 13
-            },
-            "start": {
-              "column": 69,
-              "line": 13
-            }
-          }
-        },
-        {
-          "id": "1036",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"/games/gameId/history\",\n  Object {\n    \"method\": \"GET\",\n  },\n], but it was called with \"/games/gameId/history\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "648"
-          ],
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 114,
-              "line": 13
-            },
-            "start": {
-              "column": 97,
-              "line": 13
-            }
-          }
-        },
-        {
-          "id": "1038",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(11,57): error TS2366: Function lacks ending return statement and return type does not include 'undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 16
-            },
-            "start": {
-              "column": 21,
-              "line": 14
-            }
-          }
-        },
-        {
-          "id": "1037",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(13,99): error TS2322: Type '\"\"' is not assignable to type '\"GET\" | \"HEAD\" | \"PATCH\" | \"POST\" | \"PUT\" | \"DELETE\" | \"CONNECT\" | \"OPTIONS\" | \"TRACE\" | \"get\" | \"head\" | \"patch\" | \"post\" | \"put\" | \"delete\" | \"connect\" | \"options\" | \"trace\" | undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 112,
-              "line": 13
-            },
-            "start": {
-              "column": 107,
-              "line": 13
-            }
-          }
-        },
-        {
-          "id": "1039",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/game-history-record/useFetchGameHistoryRecords.ts(18,3): error TS2741: Property 'getGameHistoryRecords' is missing in type '{}' but required in type 'UseFetchGameHistory'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "648",
-            "649"
-          ],
-          "location": {
-            "end": {
-              "column": 35,
-              "line": 18
-            },
-            "start": {
-              "column": 10,
-              "line": 18
-            }
-          }
-        }
-      ],
-      "source": "import type { GameHistoryRecord } from \"~/composables/api/game/types/game-history-record/game-history-record.class\";\nimport { useWerewolvesAssistantApi } from \"~/composables/api/useWerewolvesAssistantApi\";\n\ntype UseFetchGameHistory = {\n  getGameHistoryRecords: (gameId: string) => Promise<ReturnType<typeof $fetch<GameHistoryRecord[]>> | null>;\n};\n\nfunction useFetchGameHistoryRecords(): UseFetchGameHistory {\n  const { fetchWerewolvesAssistantApi } = useWerewolvesAssistantApi();\n\n  async function getGameHistoryRecords(gameId: string): Promise<ReturnType<typeof $fetch<GameHistoryRecord[]>> | null> {\n    try {\n      return await fetchWerewolvesAssistantApi<GameHistoryRecord[]>(`/games/${gameId}/history`, { method: \"GET\" });\n    } catch (error) {\n      return null;\n    }\n  }\n  return { getGameHistoryRecords };\n}\n\nexport { useFetchGameHistoryRecords };"
-    },
-    "composables/api/game/types/game-additional-card/game-additional-card.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1056",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-additional-card/game-additional-card.class.ts(20,65): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "701"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 22
-            },
-            "start": {
-              "column": 84,
-              "line": 20
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GameAdditionalCardRecipientRoleName } from \"~/composables/api/game/types/game-additional-card/game-additional-card.types\";\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameAdditionalCard {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public roleName: RoleName;\n\n  @Expose()\n  public recipient: GameAdditionalCardRecipientRoleName;\n\n  @Expose()\n  public isUsed: boolean;\n\n  public static create(gameAdditionalCard: GameAdditionalCard): GameAdditionalCard {\n    return plainToInstance(GameAdditionalCard, gameAdditionalCard, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameAdditionalCard };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1057",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "625",
-            "644",
-            "690"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 17
-            },
-            "start": {
-              "column": 111,
-              "line": 15
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { GamePlaySourceName } from \"~/composables/api/game/types/game-play/game-play-source/game-play-source.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlaySource {\n  @Expose()\n  public name: GamePlaySourceName;\n\n  @Expose()\n  @Type(() => Player)\n  public players: Player[];\n\n  public static create(gameHistoryRecordPlaySource: GameHistoryRecordPlaySource): GameHistoryRecordPlaySource {\n    return plainToInstance(GameHistoryRecordPlaySource, gameHistoryRecordPlaySource, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlaySource };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1058",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "692"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 17
-            },
-            "start": {
-              "column": 111,
-              "line": 15
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { WitchPotion } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayTarget {\n  @Expose()\n  @Type(() => Player)\n  public target: Player;\n\n  @Expose()\n  public drankPotion?: WitchPotion;\n\n  public static create(gameHistoryRecordPlayTarget: GameHistoryRecordPlayTarget): GameHistoryRecordPlayTarget {\n    return plainToInstance(GameHistoryRecordPlayTarget, gameHistoryRecordPlayTarget, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayTarget };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1059",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class.ts(15,79): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "693"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 17
-            },
-            "start": {
-              "column": 105,
-              "line": 15
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayVote {\n  @Expose()\n  @Type(() => Player)\n  public source: Player;\n\n  @Expose()\n  @Type(() => Player)\n  public target: Player;\n\n  public static create(gameHistoryRecordPlayVote: GameHistoryRecordPlayVote): GameHistoryRecordPlayVote {\n    return plainToInstance(GameHistoryRecordPlayVote, gameHistoryRecordPlayVote, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayVote };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1060",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class.ts(15,83): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "625",
-            "644",
-            "682"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 17
-            },
-            "start": {
-              "column": 111,
-              "line": 15
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport type { GameHistoryRecordPlayVotingResult } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlayVoting {\n  @Expose()\n  public result: GameHistoryRecordPlayVotingResult;\n\n  @Expose()\n  @Type(() => Player)\n  public nominatedPlayers?: Player[];\n\n  public static create(gameHistoryRecordPlayVoting: GameHistoryRecordPlayVoting): GameHistoryRecordPlayVoting {\n    return plainToInstance(GameHistoryRecordPlayVoting, gameHistoryRecordPlayVoting, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlayVoting };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1061",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class.ts(48,71): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "622",
-            "625",
-            "644"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 50
-            },
-            "start": {
-              "column": 93,
-              "line": 48
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GameAdditionalCard } from \"~/composables/api/game/types/game-additional-card/game-additional-card.class\";\nimport { GameHistoryRecordPlaySource } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class\";\nimport { GameHistoryRecordPlayTarget } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.class\";\nimport { GameHistoryRecordPlayVote } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-vote/game-history-record-play-vote.class\";\nimport { GameHistoryRecordPlayVoting } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.class\";\nimport type { GamePlayAction, GamePlayCause, GamePlayType } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport type { RoleSide } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecordPlay {\n  @Expose()\n  public type: GamePlayType;\n\n  @Expose()\n  public action: GamePlayAction;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlaySource)\n  public source: GameHistoryRecordPlaySource;\n\n  @Expose()\n  public cause?: GamePlayCause;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayTarget)\n  public targets?: GameHistoryRecordPlayTarget[];\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayVote)\n  public votes?: GameHistoryRecordPlayVote[];\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlayVoting)\n  public voting?: GameHistoryRecordPlayVoting;\n\n  @Expose()\n  public didJudgeRequestAnotherVote?: boolean;\n\n  @Expose()\n  @Type(() => GameAdditionalCard)\n  public chosenCard?: GameAdditionalCard;\n\n  @Expose()\n  public chosenSide?: RoleSide;\n\n  public static create(gameHistoryRecordPlay: GameHistoryRecordPlay): GameHistoryRecordPlay {\n    return plainToInstance(GameHistoryRecordPlay, gameHistoryRecordPlay, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecordPlay };"
-    },
-    "composables/api/game/types/game-history-record/game-history-record.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1062",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/game-history-record/game-history-record.class.ts(39,63): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "625",
-            "644"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 41
-            },
-            "start": {
-              "column": 81,
-              "line": 39
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GameHistoryRecordPlay } from \"~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class\";\nimport type { GamePhase } from \"~/composables/api/game/types/game.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameHistoryRecord {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public gameId: string;\n\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  @Expose()\n  public tick: number;\n\n  @Expose()\n  @Type(() => GameHistoryRecordPlay)\n  public play: GameHistoryRecordPlay;\n\n  @Expose()\n  @Type(() => Player)\n  public revealedPlayers?: Player[];\n\n  @Expose()\n  @Type(() => Player)\n  public deadPlayers?: Player[];\n\n  @Expose()\n  public createdAt: Date;\n\n  public static create(gameHistoryRecord: GameHistoryRecord): GameHistoryRecord {\n    return plainToInstance(GameHistoryRecord, gameHistoryRecord, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameHistoryRecord };"
-    },
-    "composables/api/game/types/players/player-role/player-role.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1071",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/players/player-role/player-role.class.ts(16,52): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": true,
-          "coveredBy": [
-            "46",
-            "49",
-            "186",
-            "187",
-            "188",
-            "189",
-            "192",
-            "193",
-            "194",
-            "197",
-            "435",
-            "436",
-            "438",
-            "441",
-            "622",
-            "644",
-            "664",
-            "665",
-            "682",
-            "690",
-            "692",
-            "693",
-            "698",
-            "704",
-            "709"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 18
-            },
-            "start": {
-              "column": 63,
-              "line": 16
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerRole {\n  @Expose()\n  public original: RoleName;\n\n  @Expose()\n  public current: RoleName;\n\n  @Expose()\n  public isRevealed: boolean;\n\n  public static create(role: Partial<PlayerRole>): PlayerRole {\n    return plainToInstance(PlayerRole, role, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerRole };"
-    },
-    "stores/game/game-history-record/useGameHistoryRecordsStore.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1488",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(25,36): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(26,36): error TS2339: Property 'fetchingGameHistoryRecordsStatus' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(32,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(45,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(47,38): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, {}, {}, {}>'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "623",
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 30
-            },
-            "start": {
-              "column": 85,
-              "line": 8
-            }
-          }
-        },
-        {
-          "id": "1489",
-          "mutatorName": "ArrayDeclaration",
-          "replacement": "[\"Stryker was here\"]",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(11,56): error TS2322: Type 'string' is not assignable to type 'GameHistoryRecord'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "623",
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 57,
-              "line": 11
-            },
-            "start": {
-              "column": 55,
-              "line": 11
-            }
-          }
-        },
-        {
-          "id": "1490",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(12,72): error TS2345: Argument of type '\"\"' is not assignable to parameter of type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "623",
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 78,
-              "line": 12
-            },
-            "start": {
-              "column": 72,
-              "line": 12
-            }
-          }
-        },
-        {
-          "id": "1493",
-          "mutatorName": "BooleanLiteral",
-          "replacement": "fetchedGameHistoryRecords",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 35,
-              "line": 17
-            },
-            "start": {
-              "column": 9,
-              "line": 17
-            }
-          }
-        },
-        {
-          "id": "1492",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(15,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 55,
-              "line": 15
-            },
-            "start": {
-              "column": 46,
-              "line": 15
-            }
-          }
-        },
-        {
-          "id": "1491",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "624"
-          ],
-          "coveredBy": [
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 24
-            },
-            "start": {
-              "column": 79,
-              "line": 14
-            }
-          }
-        },
-        {
-          "id": "1494",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "true",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 35,
-              "line": 17
-            },
-            "start": {
-              "column": 9,
-              "line": 17
-            }
-          }
-        },
-        {
-          "id": "1496",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(18,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624"
-          ],
-          "location": {
-            "end": {
-              "column": 6,
-              "line": 21
-            },
-            "start": {
-              "column": 37,
-              "line": 17
-            }
-          }
-        },
-        {
-          "id": "1495",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(22,5): error TS2322: Type 'GameHistoryRecord[] | null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n  Type 'null' is not assignable to type '{ _id: string; gameId: string; turn: number; phase: \"day\" | \"night\"; tick: number; play: { type: \"no-action\" | \"vote\" | \"target\" | \"choose-card\" | \"choose-side\" | \"request-another-vote\" | \"bury-dead-bodies\"; ... 8 more ...; chosenSide?: \"villagers\" | ... 1 more ... | undefined; }; revealedPlayers?: { ...; }[] | unde...'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 35,
-              "line": 17
-            },
-            "start": {
-              "column": 9,
-              "line": 17
-            }
-          }
-        },
-        {
-          "id": "1497",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(18,7): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "624"
-          ],
-          "location": {
-            "end": {
-              "column": 55,
-              "line": 18
-            },
-            "start": {
-              "column": 48,
-              "line": 18
-            }
-          }
-        },
-        {
-          "id": "1498",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "stores/game/game-history-record/useGameHistoryRecordsStore.ts(23,5): error TS2322: Type '\"\"' is not assignable to type 'AsyncDataRequestStatus'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 55,
-              "line": 23
-            },
-            "start": {
-              "column": 46,
-              "line": 23
-            }
-          }
-        },
-        {
-          "id": "1499",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "tests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(25,36): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(26,36): error TS2339: Property 'fetchingGameHistoryRecordsStatus' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(32,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(45,37): error TS2339: Property 'fetchAndSetGameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\ntests/unit/specs/stores/game/game-history-record/useGameHistoryRecordsStore.spec.ts(47,38): error TS2339: Property 'gameHistoryRecords' does not exist on type 'Store<StoreIds.GAME_HISTORY_RECORDS, _UnwrapAll<Pick<{}, never>>, Pick<{}, never>, Pick<{}, never>>'.\n",
-          "status": "CompileError",
-          "static": false,
-          "coveredBy": [
-            "623",
-            "624",
-            "625"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 29
-            },
-            "start": {
-              "column": 10,
-              "line": 25
-            }
-          }
-        }
-      ],
-      "source": "import type { AsyncDataRequestStatus } from \"#app/composables/asyncData\";\nimport { defineStore } from \"pinia\";\n\nimport { useFetchGameHistoryRecords } from \"~/composables/api/game/game-history-record/useFetchGameHistoryRecords\";\nimport type { GameHistoryRecord } from \"~/composables/api/game/types/game-history-record/game-history-record.class\";\nimport { StoreIds } from \"~/stores/enums/store.enum\";\n\nconst useGameHistoryRecordsStore = defineStore(StoreIds.GAME_HISTORY_RECORDS, () => {\n  const { getGameHistoryRecords } = useFetchGameHistoryRecords();\n\n  const gameHistoryRecords = ref<GameHistoryRecord[]>([]);\n  const fetchingGameHistoryRecordsStatus = ref<AsyncDataRequestStatus>(\"idle\");\n\n  async function fetchAndSetGameHistoryRecords(gameId: string): Promise<void> {\n    fetchingGameHistoryRecordsStatus.value = \"pending\";\n    const fetchedGameHistoryRecords = await getGameHistoryRecords(gameId);\n    if (!fetchedGameHistoryRecords) {\n      fetchingGameHistoryRecordsStatus.value = \"error\";\n\n      return;\n    }\n    gameHistoryRecords.value = fetchedGameHistoryRecords;\n    fetchingGameHistoryRecordsStatus.value = \"success\";\n  }\n  return {\n    gameHistoryRecords,\n    fetchingGameHistoryRecordsStatus,\n    fetchAndSetGameHistoryRecords,\n  };\n});\n\nexport { useGameHistoryRecordsStore };"
-    },
-    "composables/api/game/types/players/player-side/player-side.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1072",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/players/player-side/player-side.class.ts(13,52): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": true,
-          "coveredBy": [
-            "46",
-            "49",
-            "186",
-            "187",
-            "188",
-            "189",
-            "192",
-            "193",
-            "194",
-            "197",
-            "435",
-            "436",
-            "438",
-            "441",
-            "622",
-            "644",
-            "664",
-            "665",
-            "682",
-            "690",
-            "692",
-            "693",
-            "698",
-            "704",
-            "710"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 15
-            },
-            "start": {
-              "column": 63,
-              "line": 13
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { RoleSide } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerSide {\n  @Expose()\n  public original: RoleSide;\n\n  @Expose()\n  public current: RoleSide;\n\n  public static create(side: Partial<PlayerSide>): PlayerSide {\n    return plainToInstance(PlayerSide, side, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerSide };"
-    },
-    "composables/api/game/types/players/player.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1073",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/game/types/players/player.class.ts(30,41): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": true,
-          "coveredBy": [
-            "40",
-            "45",
-            "46",
-            "48",
-            "49",
-            "53",
-            "54",
-            "110",
-            "186",
-            "187",
-            "188",
-            "189",
-            "192",
-            "193",
-            "194",
-            "197",
-            "226",
-            "227",
-            "228",
-            "229",
-            "231",
-            "233",
-            "235",
-            "236",
-            "237",
-            "238",
-            "239",
-            "240",
-            "368",
-            "369",
-            "370",
-            "371",
-            "414",
-            "435",
-            "436",
-            "438",
-            "441",
-            "469",
-            "622",
-            "644",
-            "664",
-            "665",
-            "682",
-            "690",
-            "692",
-            "693",
-            "698",
-            "704"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 32
-            },
-            "start": {
-              "column": 48,
-              "line": 30
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { PlayerAttribute } from \"~/composables/api/game/types/players/player-attribute/player-attribute.class\";\nimport { PlayerRole } from \"~/composables/api/game/types/players/player-role/player-role.class\";\nimport { PlayerSide } from \"~/composables/api/game/types/players/player-side/player-side.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Player {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public name: string;\n\n  @Expose()\n  @Type(() => PlayerRole)\n  public role: PlayerRole;\n\n  @Expose()\n  @Type(() => PlayerSide)\n  public side: PlayerSide;\n\n  @Type(() => PlayerAttribute)\n  @Expose()\n  public attributes: PlayerAttribute[];\n\n  @Expose()\n  public isAlive: boolean;\n\n  public static create(player: Player): Player {\n    return plainToInstance(Player, player, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Player };"
-    },
-    "composables/api/role/types/role.class.ts": {
-      "language": "typescript",
-      "mutants": [
-        {
-          "id": "1349",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "composables/api/role/types/role.class.ts(32,37): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
-          "status": "CompileError",
-          "static": true,
-          "coveredBy": [
-            "121",
-            "122",
-            "123",
-            "124",
-            "125",
-            "126",
-            "127",
-            "128",
-            "129",
-            "130",
-            "218",
-            "221",
-            "222",
-            "281",
-            "284",
-            "312",
-            "313",
-            "314",
-            "315",
-            "316",
-            "317",
-            "318",
-            "319",
-            "320",
-            "359",
-            "530",
-            "616",
-            "619",
-            "620",
-            "621",
-            "699"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 34
-            },
-            "start": {
-              "column": 42,
-              "line": 32
-            }
-          }
-        }
-      ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GameAdditionalCardRecipientRoleName } from \"~/composables/api/game/types/game-additional-card/game-additional-card.types\";\nimport type { RoleName, RoleOrigin, RoleSide, RoleType } from \"~/composables/api/role/types/role.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Role {\n  @Expose()\n  public name: RoleName;\n\n  @Expose()\n  public side: RoleSide;\n\n  @Expose()\n  public type: RoleType;\n\n  @Expose()\n  public origin: RoleOrigin;\n\n  @Expose()\n  public additionalCardsEligibleRecipients?: GameAdditionalCardRecipientRoleName[];\n\n  @Expose()\n  public minInGame?: number;\n\n  @Expose()\n  public maxInGame: number;\n\n  @Expose()\n  public recommendedMinPlayers?: number;\n\n  public static create(role: Role): Role {\n    return plainToInstance(Role, role, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Role };"
     }
   },
   "schemaVersion": "1.0",

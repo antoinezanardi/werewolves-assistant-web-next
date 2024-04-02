@@ -3,17 +3,16 @@
     id="game-playground-header-phase"
     class="flex items-center"
   >
-    <i
-      id="game-phase-icon"
+    <GamePhaseIcon
       class="fa-2x me-3"
-      :class="phaseIcon"
+      :phase="game.phase"
     />
 
     <span
       id="game-phase-text"
       class="text-2xl"
     >
-      {{ phaseWithTurnText }}
+      {{ getGamePhaseWithTurnText(game.phase, game.turn) }}
     </span>
   </div>
 </template>
@@ -21,28 +20,12 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import type { GamePhase } from "~/composables/api/game/types/game.types";
+import GamePhaseIcon from "~/components/shared/game/game-phase/GamePhaseIcon/GamePhaseIcon.vue";
+import { useGamePhase } from "~/composables/api/game/game-phase/useGamePhase";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const { t } = useI18n();
-
-const phaseWithTurnText = computed<string>(() => {
-  const { phase, turn } = game.value;
-  const phaseText = t(`shared.game.phase.${phase}`);
-
-  return `${phaseText} ${turn}`;
-});
-
-const phaseIcon = computed<string>(() => {
-  const { phase } = game.value;
-  const phasesIcon: Record<GamePhase, string> = {
-    night: "fa fa-moon text-night",
-    day: "fa fa-sun text-day",
-  };
-
-  return phasesIcon[phase];
-});
+const { getGamePhaseWithTurnText } = useGamePhase();
 </script>
