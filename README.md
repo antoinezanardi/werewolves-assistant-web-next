@@ -263,6 +263,9 @@ pnpm run test:cucumber:prepare
 # Run e2e acceptance tests and generate a HTML report
 pnpm run test:cucumber
 
+# Run e2e acceptance tests without screenshots comparison and generate a HTML report
+pnpm run test:cucumber:skip-screenshots-comparison
+
 # Generate a HTML report from the last e2e tests run (implied by the previous command)
 pnpm run test:cucumber:html-report
 
@@ -282,10 +285,11 @@ Environnement files are available in the **[env directory](https://github.com/an
 
 Environment variables are :
 
-|                      Name                       |             Description             | Required | Default value |         Limitations         |
-|:-----------------------------------------------:|:-----------------------------------:|:--------:|:-------------:|:---------------------------:|
-| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` | URL of the Werewolves Assistant API |    ✅     |       ❌       |     Must be a valid URL     |
-|          `NUXT_PUBLIC_DEFAULT_LOCALE`           |  Locale used when starting the app  |    ❌     |     `en`      | Must be either `en` or `fr` |
+|                      Name                       |                              Description                               | Required | Default value |           Limitations            |
+|:-----------------------------------------------:|:----------------------------------------------------------------------:|:--------:|:-------------:|:--------------------------------:|
+| `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` |                  URL of the Werewolves Assistant API                   |    ✅     |       ❌       |       Must be a valid URL        |
+|          `NUXT_PUBLIC_DEFAULT_LOCALE`           |                   Locale used when starting the app                    |    ❌     |     `en`      |   Must be either `en` or `fr`    |
+|       `SKIP_SCREENSHOTS_COMPARISON_TESTS`       | In E2E tests, skip all screenshots comparisons, not used in production |    ❌     |    `false`    | Must be either `true` or `false` |
 
 ## <a name="code-analysis-and-consistency">☑️ Code analysis and consistency</a>
 
