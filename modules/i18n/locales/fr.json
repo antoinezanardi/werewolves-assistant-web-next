@@ -664,7 +664,7 @@
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
       "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
     },
-    "GameOverHistory": {
+    "GameOverHistoryHeader": {
       "gameHistory": "Historique de la partie"
     }
   }

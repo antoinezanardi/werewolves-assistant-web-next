@@ -19,7 +19,7 @@
       id="show-game-history-button"
       :loading="!gameHistoryRecords.length"
       severity="help"
-      @click.prevent="showGameHistory"
+      @click="showGameHistory"
     >
       <i class="fa fa-clock me-2"/>
 
@@ -31,6 +31,8 @@
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from "pinia";
+
 import type { GameOverActionsEmits } from "~/components/pages/game/GameOver/GameOverActions/game-over-actions.types";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 

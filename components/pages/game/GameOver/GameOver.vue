@@ -12,7 +12,10 @@
 
     <VuePrimeDivider/>
 
-    <GameOverActions @show-game-history="showGameHistory"/>
+    <GameOverActions
+      id="game-over-actions"
+      @show-game-history="showGameHistory"
+    />
 
     <GameOverHistory ref="gameOverHistory"/>
   </div>

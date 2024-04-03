@@ -16,38 +16,25 @@
     @update:visible="close"
   >
     <template #header>
-      <div class="w-full">
-        <h2>
-          {{ $t('components.GameOverHistory.gameHistory') }}
-        </h2>
-
-        <VuePrimeDivider class="!my-2"/>
-      </div>
+      <GameOverHistoryHeader id="game-over-history-header"/>
     </template>
 
     <template #default>
-      <GameOverHistoryRecords/>
+      <GameOverHistoryRecords id="game-over-history-records"/>
     </template>
 
     <template #footer>
-      <div class="w-full">
-        <VuePrimeDivider class="!my-2"/>
-
-        <div class="flex justify-end w-full">
-          <button
-            class="p-button p-button-raised p-button-secondary p-button-sm"
-            type="button"
-            @click="close"
-          >
-            {{ $t('shared.actions.close') }}
-          </button>
-        </div>
-      </div>
+      <GameOverHistoryFooter
+        id="game-over-history-footer"
+        @close-game-history="close"
+      />
     </template>
   </VuePrimeDialog>
 </template>
 
 <script setup lang="ts">
+import GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
+import GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
 import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
 
 const isVisible = ref<boolean>(false);

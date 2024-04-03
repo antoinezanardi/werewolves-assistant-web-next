@@ -33,26 +33,6 @@ describe("Game Playground Header Phase", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Phase icon", () => {
-    it("should display the night icon when the phase is night.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game.phase = "night";
-      await nextTick();
-      const phaseIcon = wrapper.find("#game-phase-icon");
-
-      expect(phaseIcon.classes()).toContainValues(["fa-moon", "text-night"]);
-    });
-
-    it("should display the sun icon when the phase is day.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game.phase = "day";
-      await nextTick();
-      const phaseIcon = wrapper.find("#game-phase-icon");
-
-      expect(phaseIcon.classes()).toContainValues(["fa-sun", "text-day"]);
-    });
-  });
-
   describe("Phase text", () => {
     it("should display night phase text with the turn number when the phase is night.", async() => {
       const gameStore = useGameStore();

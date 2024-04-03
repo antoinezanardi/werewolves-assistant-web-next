@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Phase Icon Component > should match snapshot when rendered. 1`] = `"<i id="game-phase-icon" class="fa fa-sun text-day"></i>"`;

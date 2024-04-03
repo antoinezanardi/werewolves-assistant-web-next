@@ -3,7 +3,7 @@
     "werewolvesAssistant": "Werewolves Assistant",
     "actions": {
       "add": "Add",
-      "close": "Fermer"
+      "close": "Close"
     },
     "role": {
       "name": {
@@ -664,7 +664,7 @@
       "recommendedMinPlayers": "Recommended for {count} players minimum",
       "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
     },
-    "GameOverHistory": {
+    "GameOverHistoryHeader": {
       "gameHistory": "Game history"
     }
   }
