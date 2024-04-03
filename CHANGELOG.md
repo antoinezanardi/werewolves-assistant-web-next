@@ -1,5 +1,17 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.13.1](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.13.0...v1.13.1) (2024-04-03)
+
+
+### ✅ Tests
+
+* **screenshots:** env variable to skip screenshots comparisons ([#313](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/313)) ([f8a6076](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f8a6076a1ff8d2ea0b99f1342a5948978f8d50b3))
+
+
+### 🧹 Chore
+
+* **deps:** bump @fortawesome/fontawesome-free from 6.5.1 to 6.5.2 ([#311](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/311)) ([26a1221](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/26a12218b791e7fbd3e8808ac58f67cd3f9edbdf))
+
 ## [1.13.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.12.0...v1.13.0) (2024-04-02)
 
 
