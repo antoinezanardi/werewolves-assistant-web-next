@@ -44,12 +44,13 @@ describe("Game Over Actions Component", () => {
       expect(showGameHistoryButton.text()).toBe("components.GameOverActions.loadingGameHistory");
     });
 
-    it("should translate show game history button text when the game history records have been fetched.", () => {
+    it("should translate show game history button text when the game history records have been fetched.", async() => {
       const gameHistoryRecordsStore = useGameHistoryRecordsStore();
       gameHistoryRecordsStore.gameHistoryRecords = [createFakeGameHistoryRecord()];
+      await nextTick();
       const showGameHistoryButton = wrapper.findComponent<Button>("#show-game-history-button");
 
-      expect(showGameHistoryButton.text()).toBe("components.GameOverActions.loadingGameHistory");
+      expect(showGameHistoryButton.text()).toBe("components.GameOverActions.showGameHistory");
     });
   });
 
