@@ -1,5 +1,33 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.13.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.12.0...v1.13.0) (2024-04-02)
+
+
+### 🚀 Features
+
+* **scrolls:** adding smooth scrolls on various tall elements ([#301](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/301)) ([2797ad5](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2797ad5f66268a921db0c60d4b601d645d5279d8))
+
+
+### 📖 Docs
+
+* **funding:** funding file ([#302](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/302)) ([d1221e1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d1221e14d833d9130dfe0e1437e43a060fe65b20))
+
+
+### 🔁 CI
+
+* **build:** pre-launch e2e tests to save some time ([#300](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/300)) ([022f696](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/022f696bdf4bbc09e3fc412bf8889d4af0eff495))
+
+
+### 🧹 Chore
+
+* **deps:** bump @cucumber/cucumber from 10.3.1 to 10.3.2 ([#296](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/296)) ([bbe24a3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bbe24a3b2d4de7ec07b96ff64fe0e4dd6d71dba9))
+* **deps:** bump msw from 2.2.12 to 2.2.13 ([#298](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/298)) ([6179aff](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6179aff8397099a8a8100625f83d8af6426b0aa1))
+* **deps:** bump reflect-metadata from 0.2.1 to 0.2.2 ([#304](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/304)) ([f1de637](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f1de637ed6f253063b4fcbfc2345fd7a59fa09ab))
+* **deps:** bump tailwindcss from 3.4.1 to 3.4.3 ([#297](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/297)) ([0bdc9d9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0bdc9d97eda506ee4ab42c454c48828978d1fd33))
+* **deps:** bump the eslint group with 4 updates ([#308](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/308)) ([56436be](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/56436bed7deea4215cc536d96f941f34b8ccdba6))
+* **deps:** bump the types group with 1 update ([#307](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/307)) ([499b5a9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/499b5a943d925a38115a44df1e6602aabece97a3))
+* **node:** node 20 minimum engine version ([#309](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/309)) ([88b83a2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/88b83a2eab93e098ed3eefe96801d38de1e71034))
+
 ## [1.12.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.11.0...v1.12.0) (2024-03-27)
 
 
