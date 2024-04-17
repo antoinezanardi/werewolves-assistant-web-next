@@ -70,7 +70,7 @@ Feature: ❓ About Page
     Given the user is on about page
     And the user is about to open a page on new tab
     When the user clicks on the link with name "Buy me a coffee"
-    Then a new page should be opened with url "https://www.buymeacoffee.com/antoinezanardi?t=true"
+    Then a new page should be opened with url "https://buymeacoffee.com/antoinezanardi?t=true"
 
   Scenario: ❓ User goes on creator's portfolio by clicking on the link
     Given the user is on about page
