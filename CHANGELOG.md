@@ -1,5 +1,12 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.13.3](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.13.2...v1.13.3) (2024-04-17)
+
+
+### ✅ Tests
+
+* fix e2e buymeacoffee test ([#346](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/346)) ([6707223](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/670722356872eae0fe82ce4a85b06517d45d1491))
+
 ## [1.13.2](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.13.1...v1.13.2) (2024-04-04)
 
 
