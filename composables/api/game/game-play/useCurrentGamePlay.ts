@@ -4,11 +4,11 @@ import type { Game } from "~/composables/api/game/types/game.class";
 import type { PlayerInteractionType } from "~/composables/api/game/types/players/player-interaction/player-interaction.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 
-type UseGamePlay = {
+type UseCurrentGamePlay = {
   getEligibleTargetsWithInteractionInCurrentGamePlay: (interaction: PlayerInteractionType) => Player[] | undefined;
 };
 
-function useGamePlay(game: Ref<Game>): UseGamePlay {
+function useCurrentGamePlay(game: Ref<Game>): UseCurrentGamePlay {
   function getEligibleTargetsWithInteractionInCurrentGamePlay(interactionType: PlayerInteractionType): Player[] | undefined {
     if (game.value.currentPlay?.source.interactions === undefined) {
       return undefined;
@@ -22,4 +22,4 @@ function useGamePlay(game: Ref<Game>): UseGamePlay {
   return { getEligibleTargetsWithInteractionInCurrentGamePlay };
 }
 
-export { useGamePlay };
+export { useCurrentGamePlay };

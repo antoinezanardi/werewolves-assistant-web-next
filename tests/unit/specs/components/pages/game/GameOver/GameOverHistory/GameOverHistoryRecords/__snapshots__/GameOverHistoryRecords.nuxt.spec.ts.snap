@@ -7,7 +7,7 @@ exports[`Game Over History Records Component > should match snapshot when render
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
     <div class="p-timeline-event-separator" data-pc-section="separator">
-      <div class="p-timeline-event-marker" data-pc-section="marker"></div>
+      <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
       <div class="p-timeline-event-connector" data-pc-section="connector"></div>
     </div>
     <div class="p-timeline-event-content" data-pc-section="content">
@@ -19,7 +19,7 @@ exports[`Game Over History Records Component > should match snapshot when render
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
     <div class="p-timeline-event-separator" data-pc-section="separator">
-      <div class="p-timeline-event-marker" data-pc-section="marker"></div>
+      <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
       <div class="p-timeline-event-connector" data-pc-section="connector"></div>
     </div>
     <div class="p-timeline-event-content" data-pc-section="content">
@@ -31,7 +31,7 @@ exports[`Game Over History Records Component > should match snapshot when render
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
     <div class="p-timeline-event-separator" data-pc-section="separator">
-      <div class="p-timeline-event-marker" data-pc-section="marker"></div>
+      <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
       <!---->
     </div>
     <div class="p-timeline-event-content" data-pc-section="content">

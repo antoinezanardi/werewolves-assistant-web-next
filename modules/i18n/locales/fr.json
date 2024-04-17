@@ -666,6 +666,9 @@
     },
     "GameOverHistoryHeader": {
       "gameHistory": "Historique de la partie"
+    },
+    "GameOverHistoryRecordIcon": {
+      "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
     }
   }
 }

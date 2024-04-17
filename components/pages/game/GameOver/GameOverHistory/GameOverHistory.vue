@@ -2,14 +2,13 @@
   <VuePrimeDialog
     id="game-over-history"
     block-scroll
-    content-class="w-x-screen-9/10 max-w-x-screen-9/10"
     dismissable-mask
     :draggable="false"
     modal
     :pt="{
       'icons': 'pb-2',
       'header': '!py-2',
-      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',
+      'content': 'max-w-x-screen-9/10 !py-0',
       'footer': '!py-2'
     }"
     :visible="isVisible"
@@ -21,6 +20,8 @@
 
     <template #default>
       <GameOverHistoryRecords id="game-over-history-records"/>
+
+      <h2>FIN DE LA PARTIE</h2>
     </template>
 
     <template #footer>

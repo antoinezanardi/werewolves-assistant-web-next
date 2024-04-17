@@ -666,6 +666,34 @@
     },
     "GameOverHistoryHeader": {
       "gameHistory": "Game history"
+    },
+    "GameOverHistoryRecordIcon": {
+      "gameHistoryRecordIconAltText": "Game history record icon"
+    },
+    "GameOverHistoryRecordAction": {
+      "infected": "infected",
+      "growled": "growled",
+      "madeFallInLove": "made fall in love",
+      "protected": "protected from Werewolves",
+      "sniffed": "sniffed",
+      "shot": "shot at",
+      "metEachOther": "met each other",
+      "charmed": "charmed",
+      "markedWithFeather": "marked with a feather",
+      "bannedFromVotes": "banned from votes",
+      "seen": "have seen the role of",
+      "delegated": "delegated his role to",
+      "settledVotes": "settled the votes",
+      "requestedAnotherVote": "requested another vote",
+      "buriedDeadBodies": "buried",
+      "electedAsSheriff": "elect as Sheriff",
+      "voted": "voted for",
+      "choseCard": "chose the card",
+      "ate": "ate",
+      "choseAsModel": "chose as model",
+      "usedPotions": "used potions",
+      "choseSide": "joined the side of",
+      "skippedTurn": "skipped turn"
     }
   }
 }

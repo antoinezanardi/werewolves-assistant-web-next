@@ -27,6 +27,7 @@ describe("Game Over History Records Component", () => {
         plugins: [createTestingPinia(testingPinia)],
         stubs: {
           GameOverHistoryRecordPhase: true,
+          GameOverHistoryRecordIcon: true,
           GameOverHistoryRecord: true,
         },
       },
