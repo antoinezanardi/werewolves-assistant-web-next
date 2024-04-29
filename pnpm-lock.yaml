@@ -28,7 +28,7 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@cucumber/cucumber':
-        specifier: ^10.4.0
+        specifier: ^10.6.0
         version: 10.6.0
       '@eslint/eslintrc':
         specifier: ^3.0.2
