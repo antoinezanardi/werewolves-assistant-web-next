@@ -2,7 +2,6 @@ import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { GamePhase, GameStatus } from "~/composables/api/game/types/game.types";
 import { Player } from "~/composables/api/game/types/players/player.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";

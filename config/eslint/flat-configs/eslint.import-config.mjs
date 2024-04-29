@@ -1,6 +1,7 @@
 import { ERROR, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_IMPORT_CONFIG = {
+  name: "import",
   languageOptions: {
     parserOptions: {
       ecmaVersion: "latest",

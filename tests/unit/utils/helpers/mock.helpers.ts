@@ -40,7 +40,7 @@ function mockPiniaStore<TStoreDef extends () => unknown>(useStore: TStoreDef): T
 }
 
 function mockPrimeVueComposables(): void {
-  vi.mock("primevue/usetoast", () => ({ useToast: () => ({ add: vi.fn() }) }));
+  vi.mock("primevue/usetoast", () => ({ useToast: (): { add: Mock } => ({ add: vi.fn() }) }));
 }
 
 export {

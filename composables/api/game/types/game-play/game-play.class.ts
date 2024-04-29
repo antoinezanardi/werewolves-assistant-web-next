@@ -1,7 +1,6 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { GamePlaySource } from "~/composables/api/game/types/game-play/game-play-source/game-play-source.class";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import type { GamePlayAction, GamePlayCause, GamePlayOccurrence, GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
