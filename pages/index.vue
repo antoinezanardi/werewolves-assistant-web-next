@@ -55,7 +55,7 @@ import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 definePageMeta({ layout: false });
 </script>
 
-<style>
+<style scoped lang="scss">
 #title {
   font-size: 4rem;
 }

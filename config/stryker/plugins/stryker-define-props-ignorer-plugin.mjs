@@ -2,6 +2,7 @@ import { PluginKind, declareValuePlugin } from "@stryker-mutator/api/plugin";
 
 export const strykerPlugins = [
   declareValuePlugin(PluginKind.Ignore, "defineProps", {
+    // eslint-disable-next-line complexity
     shouldIgnore(path) {
       const isDefinePropsCall = node => node?.type === "Identifier" && node.name === "defineProps";
       const expression = path.node.expression || path.node.init && path.node.init.callee;

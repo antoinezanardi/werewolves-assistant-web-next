@@ -4,6 +4,7 @@ import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
 import { ERROR, OFF, NAMING_CONVENTION_DEFAULT_CONFIG, NEVER } from "../eslint.constants.mjs";
 
 const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
+  name: "typescript",
   files: [
     "nuxt.config.ts",
     "**/*.ts",
@@ -136,7 +137,6 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
       },
     ],
     "@typescript-eslint/no-this-alias": ERROR,
-    "@typescript-eslint/no-throw-literal": ERROR,
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": ERROR,
     "@typescript-eslint/no-unnecessary-condition": ERROR,
     "@typescript-eslint/no-unnecessary-qualifier": ERROR,

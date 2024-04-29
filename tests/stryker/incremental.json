@@ -1775,7 +1775,7 @@
           }
         }
       ],
-      "source": "<template>\n  <div class=\"flex\">\n    <div\n      id=\"role-left-description\"\n      class=\"flex flex-col items-center justify-center\"\n    >\n      <RoleImage\n        :alt=\"getRoleDescriptionLeftImageAlt(role.name)\"\n        class=\"available-role-description-role-image\"\n        :role-name=\"role.name\"\n        sizes=\"150\"\n      />\n\n      <h2 class=\"available-role-description-role-name mt-3\">\n        {{ getRoleNameLabel(role.name) }}\n      </h2>\n\n      <RoleTypeBadge\n        class=\"available-role-description-role-type-badge mt-3\"\n        :role-type=\"role.type\"\n      />\n\n      <RoleOriginBadge\n        class=\"available-role-description-role-origin-badge mt-3\"\n        :role-origin=\"role.origin\"\n      />\n    </div>\n\n    <RoleDescriptionLines :role=\"role\"/>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport RoleDescriptionLines from \"~/components/shared/role/RoleDescriptionLines/RoleDescriptionLines.vue\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\ndefineProps<AboutAvailableRoleDescriptionProps>();\n\nconst { t } = useI18n();\n\nconst { getRoleNameLabel } = useRoleName();\n\nfunction getRoleDescriptionLeftImageAlt(roleName: RoleName): string {\n  return t(\"components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt\", { role: getRoleNameLabel(roleName) });\n}\n</script>\n\n<style lang=\"scss\">\n#role-left-description {\n  min-width: 200px;\n}\n</style>"
+      "source": "<template>\n  <div class=\"flex\">\n    <div\n      id=\"role-left-description\"\n      class=\"flex flex-col items-center justify-center\"\n    >\n      <RoleImage\n        :alt=\"getRoleDescriptionLeftImageAlt(role.name)\"\n        class=\"available-role-description-role-image\"\n        :role-name=\"role.name\"\n        sizes=\"150\"\n      />\n\n      <h2 class=\"available-role-description-role-name mt-3\">\n        {{ getRoleNameLabel(role.name) }}\n      </h2>\n\n      <RoleTypeBadge\n        class=\"available-role-description-role-type-badge mt-3\"\n        :role-type=\"role.type\"\n      />\n\n      <RoleOriginBadge\n        class=\"available-role-description-role-origin-badge mt-3\"\n        :role-origin=\"role.origin\"\n      />\n    </div>\n\n    <RoleDescriptionLines :role=\"role\"/>\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { AboutAvailableRoleDescriptionProps } from \"~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/about-available-role-description.types\";\nimport RoleDescriptionLines from \"~/components/shared/role/RoleDescriptionLines/RoleDescriptionLines.vue\";\nimport RoleImage from \"~/components/shared/role/RoleImage/RoleImage.vue\";\nimport RoleOriginBadge from \"~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue\";\nimport RoleTypeBadge from \"~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue\";\nimport type { RoleName } from \"~/composables/api/role/types/role.types\";\nimport { useRoleName } from \"~/composables/api/role/useRoleName\";\n\ndefineProps<AboutAvailableRoleDescriptionProps>();\n\nconst { t } = useI18n();\n\nconst { getRoleNameLabel } = useRoleName();\n\nfunction getRoleDescriptionLeftImageAlt(roleName: RoleName): string {\n  return t(\"components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt\", { role: getRoleNameLabel(roleName) });\n}\n</script>\n\n<style scoped lang=\"scss\">\n#role-left-description {\n  min-width: 200px;\n}\n</style>"
     },
     "components/pages/about/AboutAvailableRoles/AboutAvailableRoles.vue": {
       "language": "html",
@@ -31971,16 +31971,16 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 30
+              "line": 29
             },
             "start": {
               "column": 54,
-              "line": 28
+              "line": 27
             }
           }
         }
       ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GamePlaySource } from \"~/composables/api/game/types/game-play/game-play-source/game-play-source.class\";\n// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport type { GamePlayAction, GamePlayCause, GamePlayOccurrence, GamePlayType } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GamePlay {\n  @Expose()\n  public type: GamePlayType;\n\n  @Type(() => GamePlaySource)\n  @Expose()\n  public source: GamePlaySource;\n\n  @Expose()\n  public action: GamePlayAction;\n\n  @Expose()\n  public cause?: GamePlayCause;\n\n  @Expose()\n  public canBeSkipped?: boolean;\n\n  @Expose()\n  public occurrence: GamePlayOccurrence;\n\n  public static create(gamePlay: GamePlay): GamePlay {\n    return plainToInstance(GamePlay, gamePlay, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GamePlay };"
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GamePlaySource } from \"~/composables/api/game/types/game-play/game-play-source/game-play-source.class\";\nimport type { GamePlayAction, GamePlayCause, GamePlayOccurrence, GamePlayType } from \"~/composables/api/game/types/game-play/game-play.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GamePlay {\n  @Expose()\n  public type: GamePlayType;\n\n  @Type(() => GamePlaySource)\n  @Expose()\n  public source: GamePlaySource;\n\n  @Expose()\n  public action: GamePlayAction;\n\n  @Expose()\n  public cause?: GamePlayCause;\n\n  @Expose()\n  public canBeSkipped?: boolean;\n\n  @Expose()\n  public occurrence: GamePlayOccurrence;\n\n  public static create(gamePlay: GamePlay): GamePlay {\n    return plainToInstance(GamePlay, gamePlay, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GamePlay };"
     },
     "composables/api/game/types/game-victory/game-victory.class.ts": {
       "language": "typescript",
@@ -32001,16 +32001,16 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 17
+              "line": 16
             },
             "start": {
               "column": 63,
-              "line": 15
+              "line": 14
             }
           }
         }
       ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\n// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport type { GameVictoryTypes } from \"~/composables/api/game/types/game-victory/game-victory.types\";\nimport type { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameVictory {\n  @Expose()\n  public type: GameVictoryTypes;\n\n  @Expose()\n  public winners?: Player[];\n\n  public static create(gameVictory: GameVictory): GameVictory {\n    return plainToInstance(GameVictory, gameVictory, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameVictory };"
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GameVictoryTypes } from \"~/composables/api/game/types/game-victory/game-victory.types\";\nimport type { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass GameVictory {\n  @Expose()\n  public type: GameVictoryTypes;\n\n  @Expose()\n  public winners?: Player[];\n\n  public static create(gameVictory: GameVictory): GameVictory {\n    return plainToInstance(GameVictory, gameVictory, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { GameVictory };"
     },
     "composables/api/game/types/game.class.ts": {
       "language": "typescript",
@@ -32045,16 +32045,16 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 50
+              "line": 49
             },
             "start": {
               "column": 42,
-              "line": 48
+              "line": 47
             }
           }
         }
       ],
-      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GamePlay } from \"~/composables/api/game/types/game-play/game-play.class\";\nimport { GameVictory } from \"~/composables/api/game/types/game-victory/game-victory.class\";\n// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport type { GamePhase, GameStatus } from \"~/composables/api/game/types/game.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Game {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  @Expose()\n  public tick: number;\n\n  @Expose()\n  public status: GameStatus;\n\n  @Type(() => Player)\n  @Expose()\n  public players: Player[];\n\n  @Type(() => GamePlay)\n  @Expose()\n  public currentPlay: GamePlay | null;\n\n  @Type(() => GamePlay)\n  @Expose()\n  public upcomingPlays: GamePlay[];\n\n  @Type(() => GameVictory)\n  @Expose()\n  public victory?: GameVictory;\n\n  @Expose()\n  public createdAt: Date;\n\n  @Expose()\n  public updatedAt: Date;\n\n  public static create(game: Game): Game {\n    return plainToInstance(Game, game, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Game };"
+      "source": "import { Expose, plainToInstance, Type } from \"class-transformer\";\n\nimport { GamePlay } from \"~/composables/api/game/types/game-play/game-play.class\";\nimport { GameVictory } from \"~/composables/api/game/types/game-victory/game-victory.class\";\nimport type { GamePhase, GameStatus } from \"~/composables/api/game/types/game.types\";\nimport { Player } from \"~/composables/api/game/types/players/player.class\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass Game {\n  @Expose()\n  public _id: string;\n\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  @Expose()\n  public tick: number;\n\n  @Expose()\n  public status: GameStatus;\n\n  @Type(() => Player)\n  @Expose()\n  public players: Player[];\n\n  @Type(() => GamePlay)\n  @Expose()\n  public currentPlay: GamePlay | null;\n\n  @Type(() => GamePlay)\n  @Expose()\n  public upcomingPlays: GamePlay[];\n\n  @Type(() => GameVictory)\n  @Expose()\n  public victory?: GameVictory;\n\n  @Expose()\n  public createdAt: Date;\n\n  @Expose()\n  public updatedAt: Date;\n\n  public static create(game: Game): Game {\n    return plainToInstance(Game, game, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { Game };"
     },
     "composables/api/game/types/players/player-attribute/player-attribute-activation/player-attribute-activation.class.ts": {
       "language": "typescript",
@@ -32074,16 +32074,16 @@
           "location": {
             "end": {
               "column": 4,
-              "line": 16
+              "line": 15
             },
             "start": {
               "column": 105,
-              "line": 14
+              "line": 13
             }
           }
         }
       ],
-      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\n// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport type { GamePhase } from \"~/composables/api/game/types/game.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerAttributeActivation {\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  public static create(playerAttributeActivation: PlayerAttributeActivation): PlayerAttributeActivation {\n    return plainToInstance(PlayerAttributeActivation, playerAttributeActivation, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerAttributeActivation };"
+      "source": "import { Expose, plainToInstance } from \"class-transformer\";\n\nimport type { GamePhase } from \"~/composables/api/game/types/game.types\";\nimport { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from \"~/utils/constants/class-transformer.constants\";\n\nclass PlayerAttributeActivation {\n  @Expose()\n  public turn: number;\n\n  @Expose()\n  public phase: GamePhase;\n\n  public static create(playerAttributeActivation: PlayerAttributeActivation): PlayerAttributeActivation {\n    return plainToInstance(PlayerAttributeActivation, playerAttributeActivation, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);\n  }\n}\n\nexport { PlayerAttributeActivation };"
     },
     "composables/api/game/types/players/player-attribute/player-attribute.class.ts": {
       "language": "typescript",
@@ -40163,6 +40163,60 @@
           }
         },
         {
+          "id": "1261",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(26,12): error TS18048: 'votes' is possibly 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "82"
+          ],
+          "location": {
+            "end": {
+              "column": 93,
+              "line": 17
+            },
+            "start": {
+              "column": 52,
+              "line": 17
+            }
+          }
+        },
+        {
+          "id": "1262",
+          "mutatorName": "EqualityOperator",
+          "replacement": "makeGamePlayDto.value.votes !== undefined",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(26,12): error TS18048: 'votes' is possibly 'undefined'.\n",
+          "status": "CompileError",
+          "static": false,
+          "killedBy": [],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "82"
+          ],
+          "location": {
+            "end": {
+              "column": 93,
+              "line": 17
+            },
+            "start": {
+              "column": 52,
+              "line": 17
+            }
+          }
+        },
+        {
           "id": "1263",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -40786,60 +40840,6 @@
             },
             "start": {
               "column": 42,
-              "line": 30
-            }
-          }
-        },
-        {
-          "id": "1283",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "68",
-            "69",
-            "70",
-            "71",
-            "72",
-            "82"
-          ],
-          "location": {
-            "end": {
-              "column": 97,
-              "line": 30
-            },
-            "start": {
-              "column": 54,
-              "line": 30
-            }
-          }
-        },
-        {
-          "id": "1284",
-          "mutatorName": "EqualityOperator",
-          "replacement": "makeGamePlayDto.value.targets !== undefined",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
-          "status": "CompileError",
-          "static": false,
-          "killedBy": [],
-          "coveredBy": [
-            "68",
-            "69",
-            "70",
-            "71",
-            "72",
-            "82"
-          ],
-          "location": {
-            "end": {
-              "column": 97,
-              "line": 30
-            },
-            "start": {
-              "column": 54,
               "line": 30
             }
           }
@@ -42550,70 +42550,56 @@
           }
         },
         {
-          "id": "1261",
-          "mutatorName": "ConditionalExpression",
-          "replacement": "false",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(26,12): error TS18048: 'votes' is possibly 'undefined'.\n",
+          "id": "1284",
+          "mutatorName": "EqualityOperator",
+          "replacement": "makeGamePlayDto.value.targets !== undefined",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
           "status": "CompileError",
           "static": false,
           "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
             "82",
-            "415",
-            "416",
-            "417",
-            "418",
-            "419",
-            "420",
-            "421",
-            "422"
+            "416"
           ],
           "location": {
             "end": {
-              "column": 93,
-              "line": 17
+              "column": 97,
+              "line": 30
             },
             "start": {
-              "column": 52,
-              "line": 17
+              "column": 54,
+              "line": 30
             }
           }
         },
         {
-          "id": "1262",
-          "mutatorName": "EqualityOperator",
-          "replacement": "makeGamePlayDto.value.votes !== undefined",
-          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(26,12): error TS18048: 'votes' is possibly 'undefined'.\n",
+          "id": "1283",
+          "mutatorName": "ConditionalExpression",
+          "replacement": "false",
+          "statusReason": "composables/api/game/useMakeGamePlayDtoValidation.ts(40,12): error TS18048: 'targets' is possibly 'undefined'.\n",
           "status": "CompileError",
           "static": false,
           "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
             "82",
-            "415",
-            "416",
-            "417",
-            "418",
-            "419",
-            "420",
-            "421",
-            "422"
+            "416"
           ],
           "location": {
             "end": {
-              "column": 93,
-              "line": 17
+              "column": 97,
+              "line": 30
             },
             "start": {
-              "column": 52,
-              "line": 17
+              "column": 54,
+              "line": 30
             }
           }
         }
@@ -47639,7 +47625,7 @@
           }
         }
       ],
-      "source": "<template>\n  <div class=\"flex flex-col\">\n    <div class=\"flex flex-col grow items-center justify-center\">\n      <div class=\"flex justify-center w-full\">\n        <NuxtImg\n          :alt=\"$t('pages.index.werewolvesAssistantLogo')\"\n          sizes=\"lg:200\"\n          src=\"/img/logo/square/werewolves-logo.png\"\n        />\n      </div>\n\n      <div class=\"my-6 text-center w-full\">\n        <h1\n          id=\"title\"\n          class=\"mt-0\"\n        >\n          {{ $t('shared.werewolvesAssistant') }}\n        </h1>\n      </div>\n\n      <NuxtLink\n        id=\"play-button\"\n        class=\"p-button p-button-raised w-3/12\"\n        to=\"/game-lobby\"\n      >\n        <span class=\"fa fa-2x fa-play-circle me-2\"/>\n\n        <span class=\"bold fs-3 fw-bold text-2xl uppercase\">\n          {{ $t('pages.index.play') }}\n        </span>\n      </NuxtLink>\n\n      <NuxtLink\n        id=\"about-button\"\n        class=\"mt-4 p-button p-button-secondary w-3/12\"\n        to=\"/about\"\n      >\n        <span class=\"fa fa-question me-2\"/>\n\n        <span>\n          {{ $t('pages.index.about') }}\n        </span>\n      </NuxtLink>\n    </div>\n\n    <VuePrimeDivider/>\n\n    <IndexFooter class=\"mt-1\"/>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport IndexFooter from \"~/components/pages/index/IndexFooter.vue\";\n\ndefinePageMeta({ layout: false });\n</script>\n\n<style>\n#title {\n  font-size: 4rem;\n}\n</style>"
+      "source": "<template>\n  <div class=\"flex flex-col\">\n    <div class=\"flex flex-col grow items-center justify-center\">\n      <div class=\"flex justify-center w-full\">\n        <NuxtImg\n          :alt=\"$t('pages.index.werewolvesAssistantLogo')\"\n          sizes=\"lg:200\"\n          src=\"/img/logo/square/werewolves-logo.png\"\n        />\n      </div>\n\n      <div class=\"my-6 text-center w-full\">\n        <h1\n          id=\"title\"\n          class=\"mt-0\"\n        >\n          {{ $t('shared.werewolvesAssistant') }}\n        </h1>\n      </div>\n\n      <NuxtLink\n        id=\"play-button\"\n        class=\"p-button p-button-raised w-3/12\"\n        to=\"/game-lobby\"\n      >\n        <span class=\"fa fa-2x fa-play-circle me-2\"/>\n\n        <span class=\"bold fs-3 fw-bold text-2xl uppercase\">\n          {{ $t('pages.index.play') }}\n        </span>\n      </NuxtLink>\n\n      <NuxtLink\n        id=\"about-button\"\n        class=\"mt-4 p-button p-button-secondary w-3/12\"\n        to=\"/about\"\n      >\n        <span class=\"fa fa-question me-2\"/>\n\n        <span>\n          {{ $t('pages.index.about') }}\n        </span>\n      </NuxtLink>\n    </div>\n\n    <VuePrimeDivider/>\n\n    <IndexFooter class=\"mt-1\"/>\n  </div>\n</template>\n\n<script lang=\"ts\" setup>\nimport IndexFooter from \"~/components/pages/index/IndexFooter.vue\";\n\ndefinePageMeta({ layout: false });\n</script>\n\n<style scoped lang=\"scss\">\n#title {\n  font-size: 4rem;\n}\n</style>"
     },
     "stores/game/create-game-dto/useCreateGameDtoStore.ts": {
       "language": "typescript",
@@ -56471,11 +56457,11 @@
           "location": {
             "end": {
               "column": 29,
-              "line": 43
+              "line": 44
             },
             "start": {
               "column": 7,
-              "line": 43
+              "line": 44
             }
           }
         },
@@ -56496,11 +56482,11 @@
           "location": {
             "end": {
               "column": 2,
-              "line": 45
+              "line": 46
             },
             "start": {
               "column": 37,
-              "line": 43
+              "line": 44
             }
           }
         },
@@ -56508,7 +56494,7 @@
           "id": "815",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 5,
@@ -56526,11 +56512,11 @@
           "location": {
             "end": {
               "column": 88,
-              "line": 41
+              "line": 42
             },
             "start": {
               "column": 66,
-              "line": 41
+              "line": 42
             }
           }
         },
@@ -56538,7 +56524,7 @@
           "id": "816",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Anything,\n  Object {\n    \"behavior\": \"smooth\",\n  },\n], but it was called with RefImpl {\n  \"__v_isRef\": true,\n  \"__v_isShallow\": false,\n  \"_rawValue\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"_value\": <div\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n    id=\"game-lobby-role-picker-description\"\n  >\n    <role-flipping-image-stub\n      class=\"rounded-2xl\"\n      definition=\"normal\"\n      rolename=\"seer\"\n      sizes=\"200px\"\n    />\n    <game-lobby-role-picker-description-content-stub\n      id=\"game-lobby-role-picker-description-content\"\n      pickedrole=\"[object Object]\"\n    />\n  </div>,\n  \"dep\": undefined,\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 5,
@@ -56556,16 +56542,16 @@
           "location": {
             "end": {
               "column": 86,
-              "line": 41
+              "line": 42
             },
             "start": {
               "column": 78,
-              "line": 41
+              "line": 42
             }
           }
         }
       ],
-      "source": "<template>\n  <div\n    id=\"game-lobby-role-picker-description\"\n    ref=\"gameLobbyRolePickerDescription\"\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n  >\n    <RoleFlippingImage\n      class=\"rounded-2xl\"\n      :role-name=\"pickedRole?.name\"\n      sizes=\"200px\"\n    />\n\n    <div\n      v-if=\"!pickedRole\"\n      id=\"no-picked-role-container\"\n      class=\"flex flex-col gap-4 items-center justify-center\"\n    >\n      <h3>\n        {{ $t(\"components.GameLobbyRolePickerDescription.pickARole\") }}\n      </h3>\n\n      <i class=\"fa-3x fa-circle-chevron-right fas\"/>\n    </div>\n\n    <GameLobbyRolePickerDescriptionContent\n      v-else\n      id=\"game-lobby-role-picker-description-content\"\n      :picked-role=\"pickedRole\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport RoleFlippingImage from \"~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue\";\n\nconst props = defineProps<GameLobbyRolePickerDescriptionProps>();\n\nconst gameLobbyRolePickerDescription = ref<HTMLElement | null>(null);\nconst { y: yScroll } = useScroll(gameLobbyRolePickerDescription, { behavior: \"smooth\" });\n\nwatch(() => props.pickedRole, () => {\n  yScroll.value = 0;\n});\n</script>"
+      "source": "<template>\n  <div\n    id=\"game-lobby-role-picker-description\"\n    ref=\"gameLobbyRolePickerDescription\"\n    class=\"border-gray-600 border-r flex flex-col gap-2 items-center pe-4\"\n    data-testid=\"game-lobby-role-picker-description\"\n  >\n    <RoleFlippingImage\n      class=\"rounded-2xl\"\n      :role-name=\"pickedRole?.name\"\n      sizes=\"200px\"\n    />\n\n    <div\n      v-if=\"!pickedRole\"\n      id=\"no-picked-role-container\"\n      class=\"flex flex-col gap-4 items-center justify-center\"\n    >\n      <h3>\n        {{ $t(\"components.GameLobbyRolePickerDescription.pickARole\") }}\n      </h3>\n\n      <i class=\"fa-3x fa-circle-chevron-right fas\"/>\n    </div>\n\n    <GameLobbyRolePickerDescriptionContent\n      v-else\n      id=\"game-lobby-role-picker-description-content\"\n      :picked-role=\"pickedRole\"\n    />\n  </div>\n</template>\n\n<script setup lang=\"ts\">\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport RoleFlippingImage from \"~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue\";\n\nconst props = defineProps<GameLobbyRolePickerDescriptionProps>();\n\nconst gameLobbyRolePickerDescription = ref<HTMLElement | null>(null);\nconst { y: yScroll } = useScroll(gameLobbyRolePickerDescription, { behavior: \"smooth\" });\n\nwatch(() => props.pickedRole, () => {\n  yScroll.value = 0;\n});\n</script>"
     },
     "composables/api/role/types/role.class.ts": {
       "language": "typescript",
@@ -58974,7 +58960,7 @@
           "name": "Game Lobby Role Picker Description Component Main Content should scroll back to top when picked role is changed."
         }
       ],
-      "source": "import { mockNuxtImport } from \"@nuxt/test-utils/runtime\";\nimport type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescription from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue\";\nimport type GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/role.factory\";\nimport { createFakeUseScroll } from \"~/tests/unit/utils/factories/composables/vue-use/useScroll.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\nconst { mockedUsedScroll } = vi.hoisted(() => ({ mockedUsedScroll: { y: { value: 0 } } }));\n\ndescribe(\"Game Lobby Role Picker Description Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerDescription>>;\n  const defaultProps: GameLobbyRolePickerDescriptionProps = { pickedRole: createFakeRole({ name: \"seer\" }) };\n\n  async function mountGameLobbyRolePickerDescriptionComponent(options: ComponentMountingOptions<typeof GameLobbyRolePickerDescription> = {}):\n  Promise<ReturnType<typeof mount<typeof GameLobbyRolePickerDescription>>> {\n    return mountSuspendedComponent(GameLobbyRolePickerDescription, {\n      props: defaultProps,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    mockedUsedScroll.y = ref(0);\n    mockNuxtImport<typeof useScroll>(\"useScroll\", () => vi.fn(() => mockedUsedScroll as ReturnType<typeof useScroll>));\n    wrapper = await mountGameLobbyRolePickerDescriptionComponent();\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Main Content\", () => {\n    it(\"should render no picked role container when picked role is not defined.\", async() => {\n      wrapper = await mountGameLobbyRolePickerDescriptionComponent({ props: { pickedRole: undefined } });\n      const noPickedRoleContainer = wrapper.find<HTMLDivElement>(\"#no-picked-role-container\");\n\n      expect(noPickedRoleContainer.exists()).toBeTruthy();\n    });\n\n    it(\"should translate no picked role text when picked role is not defined.\", async() => {\n      wrapper = await mountGameLobbyRolePickerDescriptionComponent({ props: { pickedRole: undefined } });\n      const noPickedRoleText = wrapper.find<HTMLParagraphElement>(\"#no-picked-role-container\");\n\n      expect(noPickedRoleText.text()).toBe(\"Pick a role\");\n    });\n\n    it(\"should render description content when picked role is defined.\", () => {\n      const descriptionContent = wrapper.findComponent<typeof GameLobbyRolePickerDescriptionContent>(\"#game-lobby-role-picker-description-content\");\n\n      expect(descriptionContent.exists()).toBeTruthy();\n    });\n\n    it(\"should initialize smooth scrolling when rendered.\", () => {\n      expect(useScroll).toHaveBeenCalledExactlyOnceWith(expect.anything(), { behavior: \"smooth\" });\n    });\n\n    it(\"should scroll back to top when picked role is changed.\", async() => {\n      mockedUsedScroll.y.value = 20;\n      await wrapper.setProps({ pickedRole: createFakeRole({ name: \"villager\" }) });\n      await nextTick();\n\n      expect(mockedUsedScroll.y.value).toBe(0);\n    });\n  });\n});"
+      "source": "import { mockNuxtImport } from \"@nuxt/test-utils/runtime\";\nimport type { mount } from \"@vue/test-utils\";\nimport type { ComponentMountingOptions } from \"@vue/test-utils/dist/mount\";\n\nimport type { GameLobbyRolePickerDescriptionProps } from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types\";\nimport GameLobbyRolePickerDescription from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue\";\nimport type GameLobbyRolePickerDescriptionContent from \"~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue\";\nimport { createFakeRole } from \"~/tests/unit/utils/factories/composables/api/role/role.factory\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\nconst { useScroll: partialMockedUsedScroll } = vi.hoisted(() => ({ useScroll: { y: { value: 0 } } }));\n\ndescribe(\"Game Lobby Role Picker Description Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerDescription>>;\n  const defaultProps: GameLobbyRolePickerDescriptionProps = { pickedRole: createFakeRole({ name: \"seer\" }) };\n\n  async function mountGameLobbyRolePickerDescriptionComponent(options: ComponentMountingOptions<typeof GameLobbyRolePickerDescription> = {}):\n  Promise<ReturnType<typeof mount<typeof GameLobbyRolePickerDescription>>> {\n    return mountSuspendedComponent(GameLobbyRolePickerDescription, {\n      props: defaultProps,\n      ...options,\n    });\n  }\n\n  beforeEach(async() => {\n    partialMockedUsedScroll.y = ref(0);\n    mockNuxtImport<typeof useScroll>(\"useScroll\", () => vi.fn(() => partialMockedUsedScroll as ReturnType<typeof useScroll>));\n    wrapper = await mountGameLobbyRolePickerDescriptionComponent();\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Main Content\", () => {\n    it(\"should render no picked role container when picked role is not defined.\", async() => {\n      wrapper = await mountGameLobbyRolePickerDescriptionComponent({ props: { pickedRole: undefined } });\n      const noPickedRoleContainer = wrapper.find<HTMLDivElement>(\"#no-picked-role-container\");\n\n      expect(noPickedRoleContainer.exists()).toBeTruthy();\n    });\n\n    it(\"should translate no picked role text when picked role is not defined.\", async() => {\n      wrapper = await mountGameLobbyRolePickerDescriptionComponent({ props: { pickedRole: undefined } });\n      const noPickedRoleText = wrapper.find<HTMLParagraphElement>(\"#no-picked-role-container\");\n\n      expect(noPickedRoleText.text()).toBe(\"Pick a role\");\n    });\n\n    it(\"should render description content when picked role is defined.\", () => {\n      const descriptionContent = wrapper.findComponent<typeof GameLobbyRolePickerDescriptionContent>(\"#game-lobby-role-picker-description-content\");\n\n      expect(descriptionContent.exists()).toBeTruthy();\n    });\n\n    it(\"should initialize smooth scrolling when rendered.\", () => {\n      expect(useScroll).toHaveBeenCalledExactlyOnceWith(expect.anything(), { behavior: \"smooth\" });\n    });\n\n    it(\"should scroll back to top when picked role is changed.\", async() => {\n      partialMockedUsedScroll.y.value = 20;\n      await wrapper.setProps({ pickedRole: createFakeRole({ name: \"villager\" }) });\n      await nextTick();\n\n      expect(partialMockedUsedScroll.y.value).toBe(0);\n    });\n  });\n});"
     },
     "tests/unit/specs/components/pages/game/GamePlaying/GamePlayground/CurrentPlayExpectedPlayersToAct/CurrentPlayExpectedPlayersToAct.nuxt.spec.ts": {
       "tests": [
@@ -59943,23 +59929,23 @@
       ],
       "source": "import { PlayerSide } from \"~/composables/api/game/types/players/player-side/player-side.class\";\n\ndescribe(\"Player Side Class\", () => {\n  describe(\"create\", () => {\n    it(\"should create a player side when called.\", () => {\n      const createdPlayerSide = PlayerSide.create({\n        original: \"werewolves\",\n        current: \"werewolves\",\n        extra: \"Extra\",\n      } as PlayerSide);\n      const expectedPlayerSide = new PlayerSide();\n      expectedPlayerSide.original = \"werewolves\";\n      expectedPlayerSide.current = \"werewolves\";\n\n      expect(createdPlayerSide).toStrictEqual<PlayerSide>(expectedPlayerSide);\n    });\n  });\n});"
     },
-    "tests/unit/specs/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeader.nuxt.spec.ts": {
-      "tests": [
-        {
-          "id": "699",
-          "name": "Game Playground Header Component should match snapshot when rendered."
-        }
-      ],
-      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GamePlaygroundHeader from \"~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeader.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Playground Header Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GamePlaygroundHeader>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GamePlaygroundHeader);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n});"
-    },
     "tests/unit/specs/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooter.nuxt.spec.ts": {
       "tests": [
         {
-          "id": "700",
+          "id": "699",
           "name": "Game Playground Footer Component should match snapshot when rendered."
         }
       ],
       "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GamePlaygroundFooter from \"~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooter.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Playground Footer Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GamePlaygroundFooter>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GamePlaygroundFooter);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n});"
+    },
+    "tests/unit/specs/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeader.nuxt.spec.ts": {
+      "tests": [
+        {
+          "id": "700",
+          "name": "Game Playground Header Component should match snapshot when rendered."
+        }
+      ],
+      "source": "import type { mount } from \"@vue/test-utils\";\n\nimport GamePlaygroundHeader from \"~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeader.vue\";\nimport { mountSuspendedComponent } from \"~/tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Game Playground Header Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof GamePlaygroundHeader>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(GamePlaygroundHeader);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n});"
     },
     "tests/unit/specs/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.nuxt.spec.ts": {
       "tests": [
@@ -60151,7 +60137,7 @@
     },
     "dependencies": {
       "@stryker-mutator/typescript-checker": "8.2.6",
-      "typescript": "5.4.3"
+      "typescript": "5.4.5"
     }
   }
 }

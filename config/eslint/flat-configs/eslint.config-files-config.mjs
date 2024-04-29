@@ -1,6 +1,7 @@
 import { OFF, READONLY } from "../eslint.constants.mjs";
 
 const ESLINT_CONFIG_FILES_CONFIG = {
+  name: "config-files",
   files: [
     ".releaserc.js",
     "eslint.config.js",
@@ -9,6 +10,7 @@ const ESLINT_CONFIG_FILES_CONFIG = {
     "modules/**/*.config.{js,mjs,ts}",
     "tests/unit/unit-setup.ts",
   ],
+
   languageOptions: { globals: { CustomMatchers: READONLY } },
   rules: {
     "@typescript-eslint/no-restricted-imports": OFF,

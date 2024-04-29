@@ -1,19 +1,24 @@
 import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
+import VuePlugin from "eslint-plugin-vue";
 
 import { ALWAYS, ERROR, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.mjs";
 
 import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
 const ESLINT_VUE_CONFIG = {
+  name: "vue",
   files: [
     "app.vue",
     "pages/**/*.vue",
     "layouts/**/*.vue",
     "components/**/*.vue",
   ],
-  plugins: { "@typescript-eslint": TypeScriptPlugin },
+  plugins: {
+    "@typescript-eslint": TypeScriptPlugin,
+    "vue": VuePlugin,
+  },
   languageOptions: {
     parser: VueParser,
     parserOptions: {
@@ -28,7 +33,7 @@ const ESLINT_VUE_CONFIG = {
   rules: {
     ...ESLINT_TYPESCRIPT_CONFIG.rules,
     "import/unambiguous": OFF,
-    "vue/comment-directive": ERROR,
+    "vue/comment-directive": OFF,
     "vue/jsx-uses-vars": ERROR,
     // ---- Vue Rules -----
     // - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
@@ -110,6 +115,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/valid-v-html": ERROR,
     "vue/valid-v-if": ERROR,
     "vue/valid-v-is": ERROR,
+    "vue/valid-v-memo": ERROR,
     "vue/valid-v-model": ERROR,
     "vue/valid-v-on": ERROR,
     "vue/valid-v-once": ERROR,
@@ -153,7 +159,10 @@ const ESLINT_VUE_CONFIG = {
     // - Uncategorized https://eslint.vuejs.org/rules/#uncategorized
     "vue/block-lang": [
       ERROR,
-      { script: { lang: "ts" } },
+      {
+        script: { lang: "ts" },
+        style: { lang: "scss" },
+      },
     ],
     "vue/block-order": [ERROR, { order: ["template", "script", "style"] }],
     "vue/block-tag-newline": ERROR,
@@ -164,6 +173,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/define-emits-declaration": ERROR,
     "vue/define-macros-order": ERROR,
     "vue/define-props-declaration": ERROR,
+    "vue/enforce-style-attribute": ERROR,
     "vue/html-button-has-type": ERROR,
     "vue/html-comment-content-newline": ERROR,
     "vue/html-comment-content-spacing": ERROR,
@@ -173,6 +183,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/max-lines-per-block": ERROR,
     "vue/new-line-between-multi-line-property": ERROR,
     "vue/next-tick-style": ERROR,
+    "vue/no-bare-strings-in-template": ERROR,
     "vue/no-boolean-default": ERROR,
     "vue/no-deprecated-model-definition": ERROR,
     "vue/no-duplicate-attr-inheritance": ERROR,
@@ -191,6 +202,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-restricted-props": ERROR,
     "vue/no-restricted-static-attribute": ERROR,
     "vue/no-restricted-v-bind": ERROR,
+    "vue/no-restricted-v-on": ERROR,
     "vue/no-root-v-if": ERROR,
     "vue/no-setup-props-reactivity-loss": ERROR,
     "vue/no-static-inline-styles": ERROR,
@@ -211,6 +223,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/no-unused-emit-declarations": ERROR,
     "vue/no-unused-properties": ERROR,
     "vue/no-unused-refs": ERROR,
+    "vue/no-use-v-else-with-v-for": ERROR,
     "vue/no-useless-mustaches": ERROR,
     "vue/no-useless-v-bind": ERROR,
     "vue/no-v-text": ERROR,
@@ -223,6 +236,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/prefer-true-attribute-shorthand": ERROR,
     "vue/require-direct-export": ERROR,
     "vue/require-emit-validator": ERROR,
+    "vue/require-explicit-slots": ERROR,
     "vue/require-expose": ERROR,
     "vue/require-macro-variable-name": ERROR,
     "vue/require-name-property": ERROR,

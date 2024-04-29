@@ -1,6 +1,7 @@
 import { OFF } from "../eslint.constants.mjs";
 
 const ESLINT_LAYOUTS_CONFIG = {
+  name: "layouts",
   files: ["layouts/**/*.vue"],
   rules: { "vue/multi-word-component-names": OFF },
 };

@@ -53,6 +53,22 @@ const NAMING_CONVENTION_DEFAULT_CONFIG = [
   },
 ];
 
+const ESLINT_IGNORES = [
+  ".output/*",
+  ".output/*/",
+  ".output/**/*",
+  ".output/**/*/",
+  ".output/server/chunks/runtime.mjs",
+  ".nuxt/*",
+  ".nuxt/*/",
+  ".nuxt/**/*",
+  ".nuxt/**/*/",
+  "node_modules/*",
+  "node_modules/**/*",
+  "public/*",
+  "public/**/*",
+];
+
 export {
   MAX_LENGTH,
   MAX_NESTED_CALLBACK,
@@ -67,4 +83,5 @@ export {
   MAX_LENGTH_DEFAULT_CONFIG,
   MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG,
   NAMING_CONVENTION_DEFAULT_CONFIG,
+  ESLINT_IGNORES,
 };

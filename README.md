@@ -318,6 +318,9 @@ pnpm run lint:fix
 
 # Lint and fix only on staged files (runs on pre-commit)
 pnpm run lint:staged:fix
+
+# Inspect ESLint config with @eslint/config-inspector
+pnpm run lint:inspect-config
 ```
 
 ### 🥇 Project quality scanner

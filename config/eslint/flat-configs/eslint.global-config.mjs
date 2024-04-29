@@ -2,7 +2,8 @@ import Vitest from "eslint-plugin-vitest";
 
 import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY, MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG } from "../eslint.constants.mjs";
 
-const ESLINT_BASE_CONFIG = Object.freeze({
+const ESLINT_GLOBAL_CONFIG = Object.freeze({
+  name: "global",
   languageOptions: {
     globals: {
       process: READONLY,
@@ -32,6 +33,9 @@ const ESLINT_BASE_CONFIG = Object.freeze({
       watch: READONLY,
       nextTick: READONLY,
       useScroll: READONLY,
+      console: READONLY,
+      document: READONLY,
+      setTimeout: READONLY,
     },
   },
   rules: {
@@ -69,7 +73,6 @@ const ESLINT_BASE_CONFIG = Object.freeze({
     "no-loss-of-precision": ERROR,
     "no-misleading-character-class": ERROR,
     "no-new-native-nonconstructor": ERROR,
-    "no-new-symbol": ERROR,
     "no-obj-calls": ERROR,
     "no-promise-executor-return": ERROR,
     "no-prototype-builtins": ERROR,
@@ -246,4 +249,4 @@ const ESLINT_BASE_CONFIG = Object.freeze({
   },
 });
 
-export { ESLINT_BASE_CONFIG };
+export { ESLINT_GLOBAL_CONFIG };

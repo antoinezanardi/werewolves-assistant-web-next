@@ -1,6 +1,7 @@
 import { ERROR, NAMING_CONVENTION_DEFAULT_CONFIG, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_STORES_CONFIG = {
+  name: "stores",
   files: ["stores/**/use*Store.ts"],
   rules: {
     "max-lines-per-function": OFF,

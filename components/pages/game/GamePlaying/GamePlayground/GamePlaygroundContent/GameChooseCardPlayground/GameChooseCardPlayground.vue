@@ -1,5 +1,5 @@
 <template>
   <div id="game-choose-card-playground">
-    GAME PLAYGROUND CHOOSE CARD
+    {{ $t("ChooseCard") }}
   </div>
 </template>
