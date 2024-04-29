@@ -50,7 +50,7 @@ function getRoleDescriptionLeftImageAlt(roleName: RoleName): string {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #role-left-description {
   min-width: 200px;
 }
