@@ -39,6 +39,7 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
         experimental: {
           localeDetector: "path",
           switchLocalePathLinkSSR: true,
+          autoImportTranslationFunctions: false,
         },
         locales: [{ code: "en", iso: "en-US", file: "en-US.json", name: "English" }],
       },
