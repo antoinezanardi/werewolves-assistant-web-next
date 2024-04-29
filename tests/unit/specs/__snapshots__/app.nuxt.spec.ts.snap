@@ -17,17 +17,17 @@ exports[`App Component > should render component without shallow and match snaps
     </div>
     <div data-v-433a9abd="" class="content-with-navbar grow h-full">
       <transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
-        <div class="flex flex-col h-full p-2">
-          <div class="flex flex-col grow items-center justify-center">
-            <div class="flex justify-center w-full"><img src="/_ipx/w_400/img/logo/square/werewolves-logo.png" alt="Werewolves Assistant logo" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
-            <div class="my-6 text-center w-full">
-              <h1 id="title" class="mt-0">Werewolves Assistant</h1>
-            </div><a href="/game-lobby" id="play-button" class="p-button p-button-raised w-3/12"><span class="fa fa-2x fa-play-circle me-2"></span><span class="bold fs-3 fw-bold text-2xl uppercase">Play</span></a><a href="/about" id="about-button" class="mt-4 p-button p-button-secondary w-3/12"><span class="fa fa-question me-2"></span><span>What is it ?</span></a>
+        <div data-v-02281a80="" class="flex flex-col h-full p-2">
+          <div data-v-02281a80="" class="flex flex-col grow items-center justify-center">
+            <div data-v-02281a80="" class="flex justify-center w-full"><img data-v-02281a80="" src="/_ipx/w_400/img/logo/square/werewolves-logo.png" alt="Werewolves Assistant logo" data-nuxt-img="" sizes="200px" srcset="/_ipx/w_200/img/logo/square/werewolves-logo.png 200w, /_ipx/w_400/img/logo/square/werewolves-logo.png 400w"></div>
+            <div data-v-02281a80="" class="my-6 text-center w-full">
+              <h1 data-v-02281a80="" id="title" class="mt-0">Werewolves Assistant</h1>
+            </div><a data-v-02281a80="" href="/game-lobby" id="play-button" class="p-button p-button-raised w-3/12"><span data-v-02281a80="" class="fa fa-2x fa-play-circle me-2"></span><span data-v-02281a80="" class="bold fs-3 fw-bold text-2xl uppercase">Play</span></a><a data-v-02281a80="" href="/about" id="about-button" class="mt-4 p-button p-button-secondary w-3/12"><span data-v-02281a80="" class="fa fa-question me-2"></span><span data-v-02281a80="">What is it ?</span></a>
           </div>
-          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
+          <div data-v-02281a80="" class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
             <!---->
           </div>
-          <div id="index-footer" class="flex mt-1">
+          <div data-v-02281a80="" id="index-footer" class="flex mt-1">
             <div class="flex flex-auto"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu"><span class="fa fa-envelope me-2"></span><span>Contact me</span></a></div>
             <div class="flex flex-auto justify-end"><a id="github-repository-link" class="p-button primary" href="https://www.github.com/antoinezanardi/werewolves-assistant-web-next" rel="noopener noreferrer" target="_blank"><span class="fa-github fab me-2"></span><span>components.GitHubRepositoryButton.thisProjectIsOpenSource</span></a></div>
           </div>

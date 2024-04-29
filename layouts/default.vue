@@ -13,6 +13,10 @@
 
 <script setup lang="ts">
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
+
+defineSlots<{
+  default: () => void;
+}>();
 </script>
 
 <style lang="scss" scoped>
