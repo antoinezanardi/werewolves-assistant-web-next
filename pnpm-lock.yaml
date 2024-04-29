@@ -15,7 +15,7 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       primevue:
-        specifier: ^3.49.1
+        specifier: ^3.52.0
         version: 3.52.0(vue@3.4.26(typescript@5.4.5))
     devDependencies:
       '@aksharahegde/nuxt-glow':
