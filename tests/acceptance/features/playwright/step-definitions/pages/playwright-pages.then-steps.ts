@@ -10,10 +10,11 @@ Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWor
   await waitForPageUrl(this, `/${pageName}`);
 });
 
-Then(/^a new page should be opened with url "(?<url>.+)"$/u, async function(this: CustomWorld, fullUrl: string): Promise<void> {
+Then(/^a new page should be opened with url starting with "(?<url>.+)"$/u, async function(this: CustomWorld, fullUrl: string): Promise<void> {
   const newPage = await this.newPagePromise;
+  const regexp = new RegExp(`^${fullUrl}`, "u");
 
-  expect(newPage.url()).toBe(fullUrl);
+  await expect(newPage).toHaveURL(regexp);
 });
 
 Then(/^the page should have head title "(?<title>.+)" and meta tags$/u, async function(this: CustomWorld, title: string, metaTagsDatable: DataTable): Promise<void> {

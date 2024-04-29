@@ -60,7 +60,7 @@
     "@aksharahegde/nuxt-glow": "^1.1.2",
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
-    "@cucumber/cucumber": "^10.4.0",
+    "@cucumber/cucumber": "^10.6.0",
     "@eslint/eslintrc": "^3.0.2",
     "@faker-js/faker": "^8.4.1",
     "@nuxt/image": "^1.6.0",
@@ -136,7 +136,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
     "is-ci": "^3.0.1",
-    "primevue": "^3.49.1"
+    "primevue": "^3.52.0"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -144,5 +144,6 @@
   "os": [
     "darwin",
     "linux"
-  ]
+  ],
+  "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617"
 }
