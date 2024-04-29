@@ -1,13 +1,13 @@
-import type { GamePhase } from "~/composables/api/game/types/game.types";
+import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 
 type UseGamePhase = {
-  getGamePhaseWithTurnText: (phase: GamePhase, turn: number) => string;
+  getGamePhaseWithTurnText: (phase: GamePhaseName, turn: number) => string;
 };
 
 function useGamePhase(): UseGamePhase {
   const { t } = useI18n();
 
-  function getGamePhaseWithTurnText(phase: GamePhase, turn: number): string {
+  function getGamePhaseWithTurnText(phase: GamePhaseName, turn: number): string {
     const phaseText = t(`shared.game.phase.${phase}`);
 
     return `${phaseText} ${turn}`;

@@ -1,8 +1,9 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
+import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
-import type { GamePhase, GameStatus } from "~/composables/api/game/types/game.types";
+import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { Player } from "~/composables/api/game/types/players/player.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 
@@ -13,6 +14,7 @@ class Game {
   @Expose()
   public turn: number;
 
+  @Type(() => GamePhase)
   @Expose()
   public phase: GamePhase;
 

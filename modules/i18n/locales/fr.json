@@ -669,6 +669,31 @@
     },
     "GameOverHistoryRecordIcon": {
       "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
+    },
+    "GameOverHistoryRecordAction": {
+      "infected": "a infecté",
+      "growled": "a grogné",
+      "madeFallInLove": "a fait tomber amoureux",
+      "protected": "a protégé",
+      "sniffed": "a reniflé",
+      "shot": "a tiré sur",
+      "metEachOther": "se sont rencontrés",
+      "charmed": "a charmé",
+      "markedWithFeather": "a marqué avec sa plume",
+      "bannedFromVotes": "a banni des votes",
+      "seen": "a vu le rôle de",
+      "delegated": "a délégué son rôle de Maire à",
+      "settledVotes": "a tranché les votes en choisissant",
+      "requestedAnotherVote": "a demandé un autre vote",
+      "buriedDeadBodies": "ont enterré les corps de",
+      "electedAsSheriff": "ont élu comme Maire",
+      "voted": "ont voté pour",
+      "choseCard": "a choisi la carte",
+      "ate": "a dévoré",
+      "choseAsModel": "a choisi comme modèle",
+      "usedPotions": "a utilisé ses potions",
+      "choseSide": "a choisi le camp des",
+      "skippedTurn": "a passé son tour"
     }
   }
 }

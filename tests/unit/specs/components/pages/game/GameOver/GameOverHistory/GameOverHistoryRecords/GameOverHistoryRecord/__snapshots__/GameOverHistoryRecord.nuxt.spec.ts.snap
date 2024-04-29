@@ -1,3 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Over History Record Component > should match snapshot when rendered. 1`] = `"<div id="game-over-history-record"> coucou </div>"`;
+exports[`Game Over History Record Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record" class="flex gap-4 items-center">
+  <game-over-history-record-source-stub id="game-over-history-record-source" game-history-record="[object Object]"></game-over-history-record-source-stub>
+  <game-over-history-record-action-stub gamehistoryrecord="[object Object]" id="game-over-history-record-action" class="w-56"></game-over-history-record-action-stub>
+  <game-over-history-record-target-stub id="game-over-history-record-target" game-history-record="[object Object]"></game-over-history-record-target-stub>
+</div>"
+`;

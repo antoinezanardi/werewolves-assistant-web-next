@@ -5,14 +5,14 @@
   >
     <GamePhaseIcon
       class="fa-2x me-3"
-      :phase="game.phase"
+      :phase="game.phase.name"
     />
 
     <span
       id="game-phase-text"
       class="text-2xl"
     >
-      {{ getGamePhaseWithTurnText(game.phase, game.turn) }}
+      {{ getGamePhaseWithTurnText(game.phase.name, game.turn) }}
     </span>
   </div>
 </template>

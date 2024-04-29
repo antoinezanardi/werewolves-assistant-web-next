@@ -5,12 +5,12 @@ describe("Player Attribute Activation Class", () => {
     it("should create a player attribute activation when called.", () => {
       const createdPlayerAttributeActivation = PlayerAttributeActivation.create({
         turn: 5,
-        phase: "night",
+        phaseName: "night",
         extra: "Extra",
       } as PlayerAttributeActivation);
       const expectedPlayerAttributeActivation = new PlayerAttributeActivation();
       expectedPlayerAttributeActivation.turn = 5;
-      expectedPlayerAttributeActivation.phase = "night";
+      expectedPlayerAttributeActivation.phaseName = "night";
 
       expect(createdPlayerAttributeActivation).toStrictEqual<PlayerAttributeActivation>(expectedPlayerAttributeActivation);
     });

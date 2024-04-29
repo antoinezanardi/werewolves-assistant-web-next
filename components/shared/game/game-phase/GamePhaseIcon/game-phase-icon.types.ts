@@ -1,7 +1,7 @@
-import type { GamePhase } from "~/composables/api/game/types/game.types";
+import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 
 type GamePhaseIconProps = {
-  phase: GamePhase;
+  phase: GamePhaseName;
 };
 
 export type { GamePhaseIconProps };
