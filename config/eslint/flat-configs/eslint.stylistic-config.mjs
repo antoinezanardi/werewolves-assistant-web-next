@@ -3,6 +3,7 @@ import StylisticPlugin from "@stylistic/eslint-plugin";
 import { ALWAYS, ERROR, INDENT_SPACE_COUNT, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_STYLISTIC_CONFIG = {
+  name: "stylistic",
   plugins: { "@stylistic": StylisticPlugin },
   rules: {
     "@stylistic/array-bracket-newline": [ERROR, { multiline: true }],

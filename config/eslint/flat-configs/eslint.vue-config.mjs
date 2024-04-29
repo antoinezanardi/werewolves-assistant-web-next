@@ -1,19 +1,24 @@
 import VueParser from "vue-eslint-parser";
 import TypescriptParser from "@typescript-eslint/parser";
 import TypeScriptPlugin from "@typescript-eslint/eslint-plugin";
+import VuePlugin from "eslint-plugin-vue";
 
 import { ALWAYS, ERROR, MAX_LENGTH_DEFAULT_CONFIG, NEVER, OFF } from "../eslint.constants.mjs";
 
 import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 
 const ESLINT_VUE_CONFIG = {
+  name: "vue",
   files: [
     "app.vue",
     "pages/**/*.vue",
     "layouts/**/*.vue",
     "components/**/*.vue",
   ],
-  plugins: { "@typescript-eslint": TypeScriptPlugin },
+  plugins: {
+    "@typescript-eslint": TypeScriptPlugin,
+    "vue": VuePlugin,
+  },
   languageOptions: {
     parser: VueParser,
     parserOptions: {
@@ -28,7 +33,7 @@ const ESLINT_VUE_CONFIG = {
   rules: {
     ...ESLINT_TYPESCRIPT_CONFIG.rules,
     "import/unambiguous": OFF,
-    "vue/comment-directive": ERROR,
+    "vue/comment-directive": OFF,
     "vue/jsx-uses-vars": ERROR,
     // ---- Vue Rules -----
     // - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention

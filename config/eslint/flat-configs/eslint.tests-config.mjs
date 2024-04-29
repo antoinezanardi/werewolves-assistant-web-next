@@ -3,6 +3,7 @@ import Vitest from "eslint-plugin-vitest";
 import { ERROR, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_TESTS_CONFIG = {
+  name: "tests",
   files: ["tests/**/*.spec.ts"],
   plugins: { vitest: Vitest },
   rules: {
@@ -22,7 +23,6 @@ const ESLINT_TESTS_CONFIG = {
     "vitest/no-conditional-in-test": ERROR,
     "vitest/no-conditional-tests": ERROR,
     "vitest/no-disabled-tests": ERROR,
-    "vitest/no-done-callback": ERROR,
     "vitest/no-duplicate-hooks": ERROR,
     "vitest/no-focused-tests": ERROR,
     "vitest/no-hooks": OFF,

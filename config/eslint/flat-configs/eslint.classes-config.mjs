@@ -1,6 +1,7 @@
 import { ERROR } from "../eslint.constants.mjs";
 
 const ESLINT_CLASSES_CONFIG = {
+  name: "classes",
   files: [
     "**/*.class.ts",
     "**/*.dto.ts",

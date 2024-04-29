@@ -1,6 +1,7 @@
 import { ERROR, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_CUCUMBER_CONFIG = {
+  name: "cucumber-files",
   files: ["tests/acceptance/**/*.ts"],
   rules: {
     "func-names": OFF,
