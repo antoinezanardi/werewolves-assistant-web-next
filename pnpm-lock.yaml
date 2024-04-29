@@ -217,7 +217,7 @@ importers:
         specifier: ^4.7.2
         version: 4.7.3
       type-fest:
-        specifier: ^4.15.0
+        specifier: ^4.17.0
         version: 4.18.0
       typescript:
         specifier: ^5.4.5
