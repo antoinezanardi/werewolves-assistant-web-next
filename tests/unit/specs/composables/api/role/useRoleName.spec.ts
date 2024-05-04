@@ -13,11 +13,19 @@ describe("Use Role Name Composable", () => {
     );
   });
 
-  describe("getRoleLabel", () => {
+  describe("getRoleNameLabel", () => {
     it("should translate role when called with role name.", () => {
       useRoleName().getRoleNameLabel("werewolf");
 
       expect(tMock).toHaveBeenCalledExactlyOnceWith("shared.role.name.werewolf");
+    });
+  });
+
+  describe("getDefiniteRoleNameLabel", () => {
+    it("should translate definite role name when called with role name and count.", () => {
+      useRoleName().getDefiniteRoleNameLabel("werewolf", 1);
+
+      expect(tMock).toHaveBeenCalledExactlyOnceWith("shared.role.definiteName.werewolf", 1);
     });
   });
 });

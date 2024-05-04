@@ -12,7 +12,6 @@ function useGameSourceName(): UseGameSourceName {
   const { t } = useI18n();
   const { getDefiniteRoleNameLabel } = useRoleName();
 
-  // TODO: to test
   function getDefiniteGameSourceNameLabel(gameSource: GameSource, count: number): string {
     if (gameSource === "sheriff") {
       return t(`shared.game.player.attribute.definiteName.sheriff`, count);

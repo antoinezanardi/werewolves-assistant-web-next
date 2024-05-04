@@ -12,7 +12,6 @@ function useRoleName(): UseRoleName {
     return t(`shared.role.name.${roleName}`);
   }
 
-  // TODO: To test
   function getDefiniteRoleNameLabel(roleName: RoleName, count: number): string {
     return t(`shared.role.definiteName.${roleName}`, count);
   }

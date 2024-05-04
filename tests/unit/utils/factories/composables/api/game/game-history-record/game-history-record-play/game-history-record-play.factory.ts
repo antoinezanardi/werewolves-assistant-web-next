@@ -14,7 +14,7 @@ function createFakeGameHistoryRecordPlay(gameHistoryRecordPlay: Partial<GameHist
     targets: gameHistoryRecordPlay.targets,
     votes: gameHistoryRecordPlay.votes,
     voting: gameHistoryRecordPlay.voting ?? createFakeGameHistoryRecordPlayVoting(),
-    didJudgeRequestAnotherVote: gameHistoryRecordPlay.didJudgeRequestAnotherVote ?? faker.datatype.boolean(),
+    didJudgeRequestAnotherVote: gameHistoryRecordPlay.didJudgeRequestAnotherVote,
     chosenSide: gameHistoryRecordPlay.chosenSide,
     chosenCard: gameHistoryRecordPlay.chosenCard,
   });

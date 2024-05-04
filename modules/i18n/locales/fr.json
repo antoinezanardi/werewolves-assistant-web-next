@@ -3,7 +3,7 @@
     "werewolvesAssistant": "Assistant Loups-Garous",
     "actions": {
       "add": "Ajouter",
-      "close": "Close"
+      "close": "Fermer"
     },
     "role": {
       "name": {
@@ -37,6 +37,38 @@
         "prejudiced-manipulator": "Abominable Sectaire",
         "actor": "Comédien",
         "devoted-servant": "Servante Dévouée"
+      },
+      "definiteName": {
+        "werewolf": "Le Loup-Garou | Les Loups-Garous",
+        "big-bad-wolf": "Le Grand Méchant Loup",
+        "accursed-wolf-father": "L'Infect Père des Loups",
+        "white-werewolf": "Le Loup-Garou Blanc",
+        "villager": "Le Villageois | Les Villageois",
+        "villager-villager": "Le Villageois-Villageois",
+        "seer": "La Voyante",
+        "cupid": "Cupidon",
+        "witch": "La Sorcière",
+        "hunter": "Le Chasseur",
+        "little-girl": "La Petite Fille",
+        "defender": "Le Salvateur",
+        "elder": "L'Ancien",
+        "scapegoat": "Le Bouc-Émissaire",
+        "idiot": "L'Idiot du Village",
+        "two-sisters": "Les Deux Sœurs",
+        "three-brothers": "Les Trois Frères",
+        "fox": "Le Renard",
+        "bear-tamer": "Le Montreur d'Ours",
+        "stuttering-judge": "Le Juge Bègue",
+        "rusty-sword-knight": "Le Chevalier à l'Épée Rouillée",
+        "thief": "Le Voleur",
+        "wild-child": "L'Enfant Sauvage",
+        "wolf-hound": "Le Chien-Loup",
+        "angel": "L'Ange",
+        "pied-piper": "Le Joueur de Flûte",
+        "scandalmonger": "Le Corbeau",
+        "prejudiced-manipulator": "L'Abominable Sectaire",
+        "actor": "Le Comédien",
+        "devoted-servant": "La Servante Dévouée"
       },
       "descriptions": {
         "werewolf": {
@@ -275,12 +307,42 @@
       "side": {
         "villagers": "Villageois",
         "werewolves": "Loups-Garous"
+      },
+      "definiteSide": {
+        "villagers": "Le Villageois | Les Villageois",
+        "werewolves": "Le Loup-Garou | Les Loups-Garous"
       }
     },
     "game": {
       "phase": {
         "night": "Nuit",
         "day": "Jour"
+      },
+      "player": {
+        "attribute": {
+          "name": {
+            "sheriff": "Maire"
+          },
+          "definiteName": {
+            "sheriff": "Le Maire"
+          }
+        },
+        "group": {
+          "name": {
+            "survivors": "Survivants",
+            "villagers": "Villageois",
+            "werewolves": "Loups-Garous",
+            "lovers": "Amoureux",
+            "charmed": "Charmés"
+          },
+          "definiteName": {
+            "survivors": "Le Survivant | Les Survivants",
+            "villagers": "Le Villageois | Les Villageois",
+            "werewolves": "Le Loup-Garou | Les Loups-Garous",
+            "lovers": "Les Amoureux",
+            "charmed": "Les Charmés"
+          }
+        }
       }
     }
   },
