@@ -4,14 +4,14 @@
     class="flex flex-col item-center justify-center text-center"
   >
     <GamePhaseIcon
-      :phase="gameHistoryRecord.phase"
+      :phase="gameHistoryRecord.phase.name"
     />
 
     <div
       id="game-phase-text"
       class="text-md"
     >
-      {{ getGamePhaseWithTurnText(gameHistoryRecord.phase, gameHistoryRecord.turn) }}
+      {{ getGamePhaseWithTurnText(gameHistoryRecord.phase.name, gameHistoryRecord.turn) }}
     </div>
   </div>
 </template>

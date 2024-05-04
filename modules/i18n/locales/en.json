@@ -38,6 +38,38 @@
         "actor": "Actor",
         "devoted-servant": "Devoted Servant"
       },
+      "definiteName": {
+        "werewolf": "The Werewolf | The Werewolves",
+        "big-bad-wolf": "The Big Bad Wolf",
+        "accursed-wolf-father": "The Accursed Wolf-Father",
+        "white-werewolf": "The White Werewolf",
+        "villager": "The Villager | The Villagers",
+        "villager-villager": "The Villager-Villager",
+        "seer": "The Seer",
+        "cupid": "Cupid",
+        "witch": "The Witch",
+        "hunter": "The Hunter",
+        "little-girl": "The Little Girl",
+        "defender": "The Defender",
+        "elder": "The Elder",
+        "scapegoat": "The Scapegoat",
+        "idiot": "The Idiot",
+        "two-sisters": "The Two Sisters",
+        "three-brothers": "The Three Brothers",
+        "fox": "The Fox",
+        "bear-tamer": "The Bear Tamer",
+        "stuttering-judge": "The Stuttering Judge",
+        "rusty-sword-knight": "The Rusty Sword Knight",
+        "thief": "The Thief",
+        "wild-child": "The Wild Child",
+        "wolf-hound": "The Wolf-Hound",
+        "angel": "The Angel",
+        "pied-piper": "The Pied Piper",
+        "scandalmonger": "The Scandalmonger",
+        "prejudiced-manipulator": "The Prejudiced Manipulator",
+        "actor": "The Actor",
+        "devoted-servant": "The Devoted Servant"
+      },
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Their goal is to eliminate the Villagers.",
@@ -275,12 +307,42 @@
       "side": {
         "villagers": "Villagers",
         "werewolves": "Werewolves"
+      },
+      "definiteSide": {
+        "villagers": "The Villager | The Villagers",
+        "werewolves": "The Werewolf | The Werewolves"
       }
     },
     "game": {
       "phase": {
         "night": "Night",
         "day": "Day"
+      },
+      "player": {
+        "attribute": {
+          "name": {
+            "sheriff": "Sheriff"
+          },
+          "definiteName": {
+            "sheriff": "The Sheriff"
+          }
+        },
+        "group": {
+          "name": {
+            "survivors": "Survivors",
+            "villagers": "Villagers",
+            "werewolves": "Werewolves",
+            "lovers": "Lovers",
+            "charmed": "Charmed"
+          },
+          "definiteName": {
+            "survivors": "The Survivor | The Survivors",
+            "villagers": "The Villager | The Villagers",
+            "werewolves": "The Werewolf | The Werewolves",
+            "lovers": "The Lovers",
+            "charmed": "The Charmed"
+          }
+        }
       }
     }
   },

@@ -8,7 +8,7 @@
     :pt="{
       'icons': 'pb-2',
       'header': '!py-2',
-      'content': 'max-w-x-screen-9/10 !py-0',
+      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',
       'footer': '!py-2'
     }"
     :visible="isVisible"

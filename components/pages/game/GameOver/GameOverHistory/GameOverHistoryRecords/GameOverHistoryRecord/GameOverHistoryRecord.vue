@@ -5,17 +5,19 @@
   >
     <GameOverHistoryRecordSource
       id="game-over-history-record-source"
+      class="w-4/12"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordAction
       id="game-over-history-record-action"
-      class="w-56"
+      class="w-3/12"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordTarget
       id="game-over-history-record-target"
+      class="w-4/12"
       :game-history-record="gameHistoryRecord"
     />
   </div>

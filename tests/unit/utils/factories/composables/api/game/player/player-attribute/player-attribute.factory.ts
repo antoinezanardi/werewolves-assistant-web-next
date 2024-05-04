@@ -187,7 +187,7 @@ function createFakeCantVoteByScapegoatPlayerAttribute(game: Game, attribute: Par
     source: "scapegoat",
     remainingPhases: 1,
     activeAt: {
-      turn: game.phase === "day" ? game.turn + 1 : game.turn,
+      turn: game.phase.name === "day" ? game.turn + 1 : game.turn,
       phaseName: "day",
     },
     ...attribute,
