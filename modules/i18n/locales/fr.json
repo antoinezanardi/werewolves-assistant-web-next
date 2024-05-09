@@ -733,6 +733,7 @@
       "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
     },
     "GameOverHistoryRecordAction": {
+      "actionIconAltText": "Icône de l'action de l'historique de la partie",
       "infected": "a infecté",
       "growled": "a grogné",
       "madeFallInLove": "a fait tomber amoureux",

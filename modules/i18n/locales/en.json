@@ -733,6 +733,7 @@
       "gameHistoryRecordIconAltText": "Game history record icon"
     },
     "GameOverHistoryRecordAction": {
+      "actionIconAltText": "Action icon",
       "infected": "infected",
       "growled": "growled",
       "madeFallInLove": "made fall in love",
