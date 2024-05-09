@@ -1,6 +1,6 @@
 {
   "name": "werewolves-assistant-web-next",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "description": "Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.",
   "readme": "README.md",
   "type": "module",
@@ -46,7 +46,7 @@
     "test:stryker": "cross-env NODE_ENV=test rimraf tests/stryker/coverage && stryker run config/stryker/stryker.conf.mjs",
     "test:stryker:force": "cross-env NODE_ENV=test rimraf tests/stryker/incremental.json tests/stryker/coverage && stryker run config/stryker/stryker.conf.mjs --force",
     "test:stryker:ci": "cross-env NODE_ENV=test rimraf tests/stryker/coverage && stryker run config/stryker/stryker-ci.conf.mjs",
-    "test:cucumber:prepare": "playwright install",
+    "test:cucumber:prepare": "playwright install --with-deps chromium",
     "test:cucumber": "cross-env NODE_OPTIONS='--import tsx/esm' cucumber-js --config config/cucumber/cucumber.json; EXIT_CODE_CUCUMBER=$?; npm run test:cucumber:html-report; exit $EXIT_CODE_CUCUMBER",
     "test:cucumber:skip-screenshots-comparison": "cross-env SKIP_SCREENSHOTS_COMPARISON_TESTS=true npm run test:cucumber",
     "test:cucumber:html-report": "tsx tests/acceptance/plugins/html-reporter/cucumber-html-reporter.ts",
