@@ -3,7 +3,7 @@
     id="game-over-history-record-source"
     class="flex flex-col gap-4 item-center justify-center text-center"
   >
-    <h4>
+    <h4 id="game-over-history-record-source-name">
       {{ gameHistoryRecordPlaySourceNameLabel }}
     </h4>
 
@@ -17,6 +17,7 @@
         class="game-over-history-record-source-player w-1/4"
       >
         <PlayerCard
+          class="game-over-history-record-source-player-card"
           :player-name="playerSource.name"
           :player-role="playerSource.role.current"
         />
@@ -24,7 +25,8 @@
 
       <VuePrimeTag
         v-if="areSourcePlayersTruncated"
-        class="game-over-history-record-source-players-truncated w-1/4"
+        id="game-over-history-record-source-players-truncated"
+        class="w-1/4"
         severity="info"
         :value="truncatedSourcePlayersCountText"
       />

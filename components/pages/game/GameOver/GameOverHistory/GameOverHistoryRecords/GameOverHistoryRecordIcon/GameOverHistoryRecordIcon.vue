@@ -16,10 +16,12 @@ import { GAME_PLAYS_TEXT_AND_SVG } from "~/components/shared/game/game-play/game
 
 const props = defineProps<GameOverHistoryRecordProps>();
 
-const gameHistoryRecordIconPath = computed<string | undefined>(() => {
+const gameHistoryRecordIconPath = computed<string>(() => {
   const { gameHistoryRecord } = props;
   const { source, action } = gameHistoryRecord.play;
 
-  return GAME_PLAYS_TEXT_AND_SVG[source.name][action]?.svgPath;
+  const svgPath = GAME_PLAYS_TEXT_AND_SVG[source.name][action]?.svgPath;
+
+  return svgPath ?? "/svg/misc/question-mark.svg";
 });
 </script>

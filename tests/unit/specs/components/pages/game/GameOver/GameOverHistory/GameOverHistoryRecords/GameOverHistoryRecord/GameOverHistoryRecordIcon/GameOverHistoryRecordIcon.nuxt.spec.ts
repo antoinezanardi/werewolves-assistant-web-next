@@ -41,5 +41,21 @@ describe("Game Over History Record Icon Component", () => {
 
       expect(icon.attributes("src")).toBe("/svg/game/player/player-attribute/sheriff.svg");
     });
+
+    it("should return question mark icon when the game history record icon is not found.", async() => {
+      wrapper = await mountGameOverHistoryRecordIconComponent({
+        props: {
+          gameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              source: createFakeGameHistoryRecordPlaySource({ name: "sheriff" }),
+              action: "eat",
+            }),
+          }),
+        },
+      });
+      const icon = wrapper.find<HTMLImageElement>("[alt='Game history record icon']");
+
+      expect(icon.attributes("src")).toBe("/svg/misc/question-mark.svg");
+    });
   });
 });
