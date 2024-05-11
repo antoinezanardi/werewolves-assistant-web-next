@@ -4,14 +4,14 @@ import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/g
 describe("Game History Record Play Target Class", () => {
   describe("Create", () => {
     it("should create a game history record play target when called.", () => {
-      const target = createFakePlayer();
+      const player = createFakePlayer();
       const gameHistoryRecordPlayTarget = GameHistoryRecordPlayTarget.create({
-        target,
+        player,
         drankPotion: "death",
         extra: "Extra",
       } as GameHistoryRecordPlayTarget);
       const expectedGameHistoryRecordPlayTarget = new GameHistoryRecordPlayTarget();
-      expectedGameHistoryRecordPlayTarget.target = target;
+      expectedGameHistoryRecordPlayTarget.player = player;
       expectedGameHistoryRecordPlayTarget.drankPotion = "death";
 
       expect(gameHistoryRecordPlayTarget).toStrictEqual<GameHistoryRecordPlayTarget>(expectedGameHistoryRecordPlayTarget);

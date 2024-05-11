@@ -7,7 +7,7 @@ import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-trans
 class GameHistoryRecordPlayTarget {
   @Expose()
   @Type(() => Player)
-  public target: Player;
+  public player: Player;
 
   @Expose()
   public drankPotion?: WitchPotion;

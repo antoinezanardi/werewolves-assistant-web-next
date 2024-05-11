@@ -3,7 +3,7 @@ import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/g
 
 function createFakeGameHistoryRecordPlayTarget(gameHistoryRecordPlayTarget: Partial<GameHistoryRecordPlayTarget> = {}): GameHistoryRecordPlayTarget {
   return GameHistoryRecordPlayTarget.create({
-    target: gameHistoryRecordPlayTarget.target ?? createFakePlayer(),
+    player: gameHistoryRecordPlayTarget.player ?? createFakePlayer(),
     drankPotion: gameHistoryRecordPlayTarget.drankPotion,
   });
 }

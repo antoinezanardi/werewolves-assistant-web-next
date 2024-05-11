@@ -309,8 +309,8 @@
         "werewolves": "Werewolves"
       },
       "definiteSide": {
-        "villagers": "The Villager | The Villagers",
-        "werewolves": "The Werewolf | The Werewolves"
+        "villagers": "The Villagers",
+        "werewolves": "The Werewolves"
       }
     },
     "game": {

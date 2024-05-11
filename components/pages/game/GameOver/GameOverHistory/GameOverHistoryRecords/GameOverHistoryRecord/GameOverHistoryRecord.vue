@@ -15,11 +15,13 @@
       :game-history-record="gameHistoryRecord"
     />
 
-    <GameOverHistoryRecordTarget
-      id="game-over-history-record-target"
-      class="w-4/12"
-      :game-history-record="gameHistoryRecord"
-    />
+    <div class="game-over-history-record-target-container w-4/12">
+      <GameOverHistoryRecordTarget
+        v-if="isGameHistoryRecordTargetDisplayed"
+        id="game-over-history-record-target"
+        :game-history-record="gameHistoryRecord"
+      />
+    </div>
   </div>
 </template>
 
@@ -27,7 +29,18 @@
 import type { GameOverHistoryRecordProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.types";
 import GameOverHistoryRecordAction from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordAction/GameOverHistoryRecordAction.vue";
 import GameOverHistoryRecordSource from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/GameOverHistoryRecordSource.vue";
-import GameOverHistoryRecordTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordTarget/GameOverHistoryRecordTarget.vue";
+import GameOverHistoryRecordTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecision.vue";
+import { useGameHistoryRecord } from "~/composables/api/game/game-history-record/useGameHistoryRecord";
+import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 
-defineProps<GameOverHistoryRecordProps>();
+const props = defineProps<GameOverHistoryRecordProps>();
+
+const { didSourceSkipped } = useGameHistoryRecord();
+
+const isGameHistoryRecordTargetDisplayed = computed<boolean>(() => {
+  const { type } = props.gameHistoryRecord.play;
+  const displayedTargetTypes: GamePlayType[] = ["target", "vote", "bury-dead-bodies", "choose-card", "choose-side"];
+
+  return displayedTargetTypes.includes(type) && !didSourceSkipped(props.gameHistoryRecord);
+});
 </script>
