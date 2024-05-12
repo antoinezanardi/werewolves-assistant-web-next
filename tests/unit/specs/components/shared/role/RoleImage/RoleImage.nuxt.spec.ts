@@ -22,7 +22,10 @@ describe("Role Image Component", () => {
   }
 
   beforeEach(async() => {
-    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn().mockReturnValue("werewolf") });
+    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({
+      getRoleNameLabel: vi.fn().mockReturnValue("werewolf"),
+      getDefiniteRoleNameLabel: vi.fn().mockReturnValue("werewolf 1"),
+    });
     wrapper = await mountRoleImageComponent();
   });
 

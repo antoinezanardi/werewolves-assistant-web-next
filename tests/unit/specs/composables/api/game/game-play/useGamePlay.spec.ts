@@ -1,4 +1,4 @@
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
+import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { PlayerInteractionType } from "~/composables/api/game/types/players/player-interaction/player-interaction.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
@@ -8,7 +8,7 @@ import { createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/fa
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 
-describe("Use Game Play Composable", () => {
+describe("Use Current Game Play Composable", () => {
   describe("getEligibleTargetsWithInteractionInCurrentGamePlay", () => {
     const foundPlayersWithInteraction = [
       createFakePlayer(),
@@ -76,7 +76,7 @@ describe("Use Game Play Composable", () => {
         test: "should return player when game current play interaction is found among interactable players.",
       },
     ])("$test", ({ game, interaction, expectedPlayers }) => {
-      const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useGamePlay(ref(game));
+      const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(ref(game));
 
       expect(getEligibleTargetsWithInteractionInCurrentGamePlay(interaction)).toStrictEqual<Player[] | undefined>(expectedPlayers);
     });

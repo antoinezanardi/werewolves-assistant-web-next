@@ -19,6 +19,9 @@ class GamePlaySourceInteraction {
   @Expose()
   public boundaries: GamePlaySourceInteractionBoundaries;
 
+  @Expose()
+  public isInconsequential?: boolean;
+
   public static create(gamePlaySourceInteraction: GamePlaySourceInteraction): GamePlaySourceInteraction {
     return plainToInstance(GamePlaySourceInteraction, gamePlaySourceInteraction, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }

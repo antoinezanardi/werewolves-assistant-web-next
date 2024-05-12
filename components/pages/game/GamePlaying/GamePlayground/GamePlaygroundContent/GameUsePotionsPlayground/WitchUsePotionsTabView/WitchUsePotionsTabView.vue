@@ -77,14 +77,14 @@
 import { storeToRefs } from "pinia";
 
 import GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
+import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useGamePlay(game);
+const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
 const giveLifePotionInteractionEligibleTargets = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-life-potion"));
 

@@ -2,6 +2,7 @@ import type { RoleName } from "~/composables/api/role/types/role.types";
 
 type UseRoleName = {
   getRoleNameLabel: (roleName: RoleName) => string;
+  getDefiniteRoleNameLabel: (roleName: RoleName, count: number) => string;
 };
 
 function useRoleName(): UseRoleName {
@@ -10,7 +11,14 @@ function useRoleName(): UseRoleName {
   function getRoleNameLabel(roleName: RoleName): string {
     return t(`shared.role.name.${roleName}`);
   }
-  return { getRoleNameLabel };
+
+  function getDefiniteRoleNameLabel(roleName: RoleName, count: number): string {
+    return t(`shared.role.definiteName.${roleName}`, count);
+  }
+  return {
+    getRoleNameLabel,
+    getDefiniteRoleNameLabel,
+  };
 }
 
 export { useRoleName };

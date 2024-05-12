@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
-import { CURRENT_PLAYS_TEXT_AND_SVG } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderCurrentPlay/game-playground-header-current-play.constants";
+import { GAME_PLAYS_TEXT_AND_SVG } from "~/components/shared/game/game-play/game-play.constants";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 type CurrentPlaySvgAndText = {
@@ -38,7 +38,7 @@ const currentPlaySvgAndTextKey = computed<CurrentPlaySvgAndText | undefined>(() 
   if (!currentPlay) {
     return undefined;
   }
-  const svgAndText = CURRENT_PLAYS_TEXT_AND_SVG[currentPlay.source.name][currentPlay.action];
+  const svgAndText = GAME_PLAYS_TEXT_AND_SVG[currentPlay.source.name][currentPlay.action];
   if (!svgAndText) {
     return undefined;
   }

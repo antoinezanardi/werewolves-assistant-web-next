@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Decision Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-decision">
+  <game-over-history-record-decision-nominated-players-stub gamehistoryrecord="[object Object]" id="game-over-history-record-play-nominated-players"></game-over-history-record-decision-nominated-players-stub>
+</div>"
+`;

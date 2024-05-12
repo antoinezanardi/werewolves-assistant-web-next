@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Decision Buried Players Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-decision-buried-players" class="flex gap-4 items-center justify-center">
+  <game-over-history-record-decision-buried-player-stub buriedplayer="[object Object]" gamehistoryrecord="[object Object]" class="game-over-history-record-buried-player w-full"></game-over-history-record-decision-buried-player-stub>
+  <game-over-history-record-decision-buried-player-stub buriedplayer="[object Object]" gamehistoryrecord="[object Object]" class="game-over-history-record-buried-player w-full"></game-over-history-record-decision-buried-player-stub>
+  <game-over-history-record-decision-buried-player-stub buriedplayer="[object Object]" gamehistoryrecord="[object Object]" class="game-over-history-record-buried-player w-full"></game-over-history-record-decision-buried-player-stub>
+  <overflow-tag-stub entitiescount="4" maximumentitiesdisplayed="3" id="buried-players-overflow-tag"></overflow-tag-stub>
+</div>"
+`;

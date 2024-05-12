@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Footer Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-footer" class="w-full">
+  <divider-stub class="!my-2"></divider-stub>
+  <div class="flex justify-end w-full"><button id="game-history-footer-close-button" class="p-button p-button-raised p-button-secondary p-button-sm" type="button">Fermer</button></div>
+</div>"
+`;
