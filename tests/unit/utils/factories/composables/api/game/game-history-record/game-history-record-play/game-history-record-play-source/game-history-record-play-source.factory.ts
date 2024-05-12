@@ -7,6 +7,7 @@ function createFakeGameHistoryRecordPlaySource(gameHistoryRecordPlaySource: Part
   return GameHistoryRecordPlaySource.create({
     name: gameHistoryRecordPlaySource.name ?? faker.helpers.arrayElement(GAME_PLAY_SOURCE_NAMES),
     players: gameHistoryRecordPlaySource.players ?? [],
+    interactions: gameHistoryRecordPlaySource.interactions ?? undefined,
   });
 }
 

@@ -4,6 +4,8 @@ exports[`Game Over History Record Component > should match snapshot when rendere
 "<div id="game-over-history-record" class="flex gap-4 items-center">
   <game-over-history-record-source-stub gamehistoryrecord="[object Object]" id="game-over-history-record-source" class="w-4/12"></game-over-history-record-source-stub>
   <game-over-history-record-action-stub gamehistoryrecord="[object Object]" id="game-over-history-record-action" class="w-3/12"></game-over-history-record-action-stub>
-  <game-over-history-record-target-stub id="game-over-history-record-target" class="w-4/12" game-history-record="[object Object]"></game-over-history-record-target-stub>
+  <div class="game-over-history-record-target-container w-4/12">
+    <game-over-history-record-decision-stub gamehistoryrecord="[object Object]" id="game-over-history-record-decision"></game-over-history-record-decision-stub>
+  </div>
 </div>"
 `;

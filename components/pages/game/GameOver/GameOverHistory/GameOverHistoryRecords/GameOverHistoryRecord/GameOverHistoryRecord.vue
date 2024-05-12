@@ -16,9 +16,9 @@
     />
 
     <div class="game-over-history-record-target-container w-4/12">
-      <GameOverHistoryRecordTarget
+      <GameOverHistoryRecordDecision
         v-if="isGameHistoryRecordTargetDisplayed"
-        id="game-over-history-record-target"
+        id="game-over-history-record-decision"
         :game-history-record="gameHistoryRecord"
       />
     </div>
@@ -29,7 +29,7 @@
 import type { GameOverHistoryRecordProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.types";
 import GameOverHistoryRecordAction from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordAction/GameOverHistoryRecordAction.vue";
 import GameOverHistoryRecordSource from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/GameOverHistoryRecordSource.vue";
-import GameOverHistoryRecordTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecision.vue";
+import GameOverHistoryRecordDecision from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecision.vue";
 import { useGameHistoryRecord } from "~/composables/api/game/game-history-record/useGameHistoryRecord";
 import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 

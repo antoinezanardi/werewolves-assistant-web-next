@@ -3,17 +3,13 @@
     id="game-over-history-record-decision-buried-players"
     class="flex gap-4 items-center justify-center"
   >
-    <div
+    <GameOverHistoryRecordDecisionBuriedPlayer
       v-for="buriedPlayer in truncatedBuriedPlayers"
       :key="buriedPlayer._id"
+      :buried-player="buriedPlayer"
       class="game-over-history-record-buried-player w-full"
-    >
-      <PlayerCard
-        class="game-over-history-record-decision-buried-player-card"
-        :player-name="buriedPlayer.name"
-        :player-role="buriedPlayer.role.current"
-      />
-    </div>
+      :game-history-record="props.gameHistoryRecord"
+    />
 
     <OverflowTag
       id="buried-players-overflow-tag"
@@ -25,7 +21,7 @@
 
 <script setup lang="ts">
 import type { GameOverHistoryRecordDecisionBuriedPlayersProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/game-over-history-record-decision-buried-players.types";
-import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import GameOverHistoryRecordDecisionBuriedPlayer from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/GameOverHistoryRecordDecisionBuriedPlayer.vue";
 import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 

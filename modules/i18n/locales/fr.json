@@ -757,6 +757,14 @@
       "usedPotions": "a utilisé ses potions",
       "choseSide": "a choisi le camp des",
       "skippedTurn": "a passé son tour"
+    },
+    "GameOverHistoryRecordDecisionTarget": {
+      "lifePotion": "Potion de vie",
+      "deathPotion": "Potion de mort"
+    },
+    "GameOverHistoryRecordDecisionBuriedPlayer": {
+      "stolenRoleByDevotedServant": "Rôle volé par la Servante Dévouée",
+      "stolenRoleByDevotedServantIcon": "Icône de rôle volé par la Servante Dévouée"
     }
   }
 }

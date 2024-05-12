@@ -6,6 +6,7 @@ import { vi } from "vitest";
 import type { GameOverHistoryRecordSourceProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/game-over-history-record-source.types";
 import GameOverHistoryRecordSource from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/GameOverHistoryRecordSource.vue";
 import type PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import type OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
 import { createFakeGameHistoryRecordPlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.factory";
 import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
@@ -87,51 +88,11 @@ describe("Game Over History Record Source Component", () => {
     });
   });
 
-  describe("Source Players Tag", () => {
-    it("should display source players tag when there are more than 3 players.", () => {
-      const sourcePlayersTag = wrapper.findComponent<Tag>("#game-over-history-record-source-players-truncated");
+  describe("Overflow tag", () => {
+    it("should display overflow when rendered.", () => {
+      const overflowTag = wrapper.findComponent<typeof OverflowTag>("#source-player-overflow-tag");
 
-      expect(sourcePlayersTag.attributes("value")).toBe("+ 1");
-    });
-
-    it("should display source players tag when there are exactly 3 players.", async() => {
-      wrapper = await mountGameOverHistoryRecordSourceComponent({
-        props: {
-          gameHistoryRecord: createFakeGameHistoryRecord({
-            play: createFakeGameHistoryRecordPlay({
-              type: "vote",
-              action: "vote",
-              source: createFakeGameHistoryRecordPlaySource({
-                name: "survivors",
-                players: defaultSourcePlayers.slice(0, 3),
-              }),
-            }),
-          }),
-        },
-      });
-      const sourcePlayersTag = wrapper.findComponent<Tag>("#game-over-history-record-source-players-truncated");
-
-      expect(sourcePlayersTag.exists()).toBeFalsy();
-    });
-
-    it("should not display source players tag when there are less than 4 players.", async() => {
-      wrapper = await mountGameOverHistoryRecordSourceComponent({
-        props: {
-          gameHistoryRecord: createFakeGameHistoryRecord({
-            play: createFakeGameHistoryRecordPlay({
-              type: "vote",
-              action: "vote",
-              source: createFakeGameHistoryRecordPlaySource({
-                name: "survivors",
-                players: defaultSourcePlayers.slice(0, 2),
-              }),
-            }),
-          }),
-        },
-      });
-      const sourcePlayersTag = wrapper.findComponent<Tag>("#game-over-history-record-source-players-truncated");
-
-      expect(sourcePlayersTag.exists()).toBeFalsy();
+      expect(overflowTag.exists()).toBeTruthy();
     });
   });
 });

@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Overflow Tag Component > should match snapshot when rendered. 1`] = `
+"<div id="overflow-tag-container">
+  <tag-stub id="overflow-tag" class="min-w-12" severity="info" value="+ 1"></tag-stub>
+</div>"
+`;

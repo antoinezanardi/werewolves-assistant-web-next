@@ -19,7 +19,9 @@
         width="25"
       />
 
-      <span>{{ tagText }}</span>
+      <span id="target-potion-tag-text">
+        {{ tagText }}
+      </span>
     </VuePrimeTag>
   </div>
 </template>

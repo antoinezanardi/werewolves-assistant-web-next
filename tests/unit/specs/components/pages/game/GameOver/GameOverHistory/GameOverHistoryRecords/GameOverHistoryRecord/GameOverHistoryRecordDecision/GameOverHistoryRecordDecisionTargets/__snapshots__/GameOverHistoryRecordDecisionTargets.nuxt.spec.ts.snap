@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Decision Targets Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-decision-targets" class="flex gap-4 items-center justify-center">
+  <game-over-history-record-decision-target-stub target="[object Object]" class="game-over-history-record-target-player w-full"></game-over-history-record-decision-target-stub>
+  <game-over-history-record-decision-target-stub target="[object Object]" class="game-over-history-record-target-player w-full"></game-over-history-record-decision-target-stub>
+  <game-over-history-record-decision-target-stub target="[object Object]" class="game-over-history-record-target-player w-full"></game-over-history-record-decision-target-stub>
+  <overflow-tag-stub entitiescount="4" maximumentitiesdisplayed="3" id="target-players-overflow-tag"></overflow-tag-stub>
+</div>"
+`;

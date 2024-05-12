@@ -761,6 +761,10 @@
     "GameOverHistoryRecordDecisionTarget": {
       "lifePotion": "Life potion",
       "deathPotion": "Death potion"
+    },
+    "GameOverHistoryRecordDecisionBuriedPlayer": {
+      "stolenRoleByDevotedServant": "Stolen role by the Devoted Servant",
+      "stolenRoleByDevotedServantIcon": "Stolen role by the Devoted Servant icon"
     }
   }
 }
