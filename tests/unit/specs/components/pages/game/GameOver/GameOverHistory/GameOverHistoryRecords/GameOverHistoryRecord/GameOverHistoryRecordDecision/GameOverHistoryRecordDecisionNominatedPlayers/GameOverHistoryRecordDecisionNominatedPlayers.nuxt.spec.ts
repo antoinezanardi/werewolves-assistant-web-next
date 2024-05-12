@@ -81,6 +81,7 @@ describe("Game Over History Record Decision Nominated Players Component", () => 
       wrapper = await mountGameOverHistoryRecordDecisionNominatedPlayersComponent({ props: { gameHistoryRecord } });
       const nominatedPlayers = wrapper.findAllComponents<typeof PlayerCard>(".game-over-history-record-decision-nominated-player-card");
 
+      expect(wrapper).toBeTruthy();
       expect(nominatedPlayers).toHaveLength(0);
     });
 

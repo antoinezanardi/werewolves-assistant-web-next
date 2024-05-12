@@ -21,7 +21,12 @@
     <template #default>
       <GameOverHistoryRecords id="game-over-history-records"/>
 
-      <h2>FIN DE LA PARTIE</h2>
+      <h2
+        id="end-of-game-text"
+        class="text-center"
+      >
+        {{ $t("components.GameOverHistory.endOfGame") }}
+      </h2>
     </template>
 
     <template #footer>

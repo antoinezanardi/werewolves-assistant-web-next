@@ -765,6 +765,9 @@
     "GameOverHistoryRecordDecisionBuriedPlayer": {
       "stolenRoleByDevotedServant": "Rôle volé par la Servante Dévouée",
       "stolenRoleByDevotedServantIcon": "Icône de rôle volé par la Servante Dévouée"
+    },
+    "GameOverHistory": {
+      "endOfGame": "Fin de la partie"
     }
   }
 }

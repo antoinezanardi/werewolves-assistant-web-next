@@ -13,7 +13,7 @@ function createFakeGameHistoryRecordPlay(gameHistoryRecordPlay: Partial<GameHist
     cause: gameHistoryRecordPlay.cause,
     targets: gameHistoryRecordPlay.targets,
     votes: gameHistoryRecordPlay.votes,
-    voting: gameHistoryRecordPlay.voting ?? createFakeGameHistoryRecordPlayVoting(),
+    voting: gameHistoryRecordPlay.voting ? createFakeGameHistoryRecordPlayVoting(gameHistoryRecordPlay.voting) : undefined,
     didJudgeRequestAnotherVote: gameHistoryRecordPlay.didJudgeRequestAnotherVote,
     chosenSide: gameHistoryRecordPlay.chosenSide,
     chosenCard: gameHistoryRecordPlay.chosenCard,

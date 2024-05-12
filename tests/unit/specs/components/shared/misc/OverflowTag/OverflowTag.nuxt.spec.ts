@@ -4,9 +4,6 @@ import type Tag from "primevue/tag";
 import type { OverflowTagProps } from "~/components/shared/misc/OverflowTag/overflow-tag.types";
 
 import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
-import { createFakeGameHistoryRecordPlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.factory";
-import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
 describe("Overflow Tag Component", () => {

@@ -28,6 +28,13 @@ describe("Game Over History Record Decision Buried Players Component", () => {
       source: createFakeGameHistoryRecordPlaySource({
         interactions: [
           createFakeGamePlaySourceInteraction({
+            type: "steal-role",
+            eligibleTargets: [
+              createFakeActorAlivePlayer({ name: "Antoine" }),
+              createFakeActorAlivePlayer({ name: "Vanessa" }),
+            ],
+          }),
+          createFakeGamePlaySourceInteraction({
             type: "bury",
             eligibleTargets: defaultBuriedPlayers,
           }),
