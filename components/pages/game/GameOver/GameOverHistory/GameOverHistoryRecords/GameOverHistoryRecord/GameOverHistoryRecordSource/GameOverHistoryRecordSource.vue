@@ -14,7 +14,7 @@
       <div
         v-for="playerSource in shuffledTruncatedSourcePlayers"
         :key="playerSource._id"
-        class="game-over-history-record-source-player w-1/4"
+        class="game-over-history-record-source-player grow"
       >
         <PlayerCard
           class="game-over-history-record-source-player-card"
@@ -23,12 +23,10 @@
         />
       </div>
 
-      <VuePrimeTag
-        v-if="areSourcePlayersTruncated"
-        id="game-over-history-record-source-players-truncated"
-        class="w-1/4"
-        severity="info"
-        :value="truncatedSourcePlayersCountText"
+      <OverflowTag
+        id="source-player-overflow-tag"
+        :entities-count="props.gameHistoryRecord.play.source.players.length"
+        :maximum-entities-displayed="maximumSourcePlayersDisplayed"
       />
     </div>
   </div>
@@ -38,6 +36,7 @@
 import { shuffle } from "radash";
 import type { GameOverHistoryRecordSourceProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/game-over-history-record-source.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useGameSourceName } from "~/composables/api/game/useGameSource";
 
@@ -53,11 +52,5 @@ const gameHistoryRecordPlaySourceNameLabel = computed<string>(() => {
 
 const maximumSourcePlayersDisplayed = 3;
 
-const areSourcePlayersTruncated = computed<boolean>(() => props.gameHistoryRecord.play.source.players.length > maximumSourcePlayersDisplayed);
-
 const shuffledTruncatedSourcePlayers = computed<Player[]>(() => shuffle(props.gameHistoryRecord.play.source.players).slice(0, maximumSourcePlayersDisplayed));
-
-const truncatedSourcePlayersCount = computed<number>(() => props.gameHistoryRecord.play.source.players.length - maximumSourcePlayersDisplayed);
-
-const truncatedSourcePlayersCountText = computed<string>(() => `+ ${truncatedSourcePlayersCount.value}`);
 </script>

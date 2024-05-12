@@ -9,8 +9,17 @@
     <VuePrimeTag
       v-if="isTagDisplayed"
       id="target-potion-tag"
+      class="flex gap-2 items-center justify-center"
+      :severity="tagSeverity"
     >
-      coucou
+      <NuxtImg
+        :alt="tagText"
+        height="25"
+        :src="tagIconPath"
+        width="25"
+      />
+
+      <span>{{ tagText }}</span>
     </VuePrimeTag>
   </div>
 </template>
@@ -21,5 +30,28 @@ import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vu
 
 const props = defineProps<GameOverHistoryRecordDecisionTargetProps>();
 
+const { t } = useI18n();
+
 const isTagDisplayed = computed<boolean>(() => !!props.target.drankPotion);
+
+const tagText = computed<string>(() => {
+  if (props.target.drankPotion === "life") {
+    return t("components.GameOverHistoryRecordDecisionTarget.lifePotion");
+  }
+  return t("components.GameOverHistoryRecordDecisionTarget.deathPotion");
+});
+
+const tagIconPath = computed<string>(() => {
+  if (props.target.drankPotion === "life") {
+    return "/svg/game/player/player-attribute/drank-life-potion.svg";
+  }
+  return "/svg/game/player/player-attribute/drank-death-potion.svg";
+});
+
+const tagSeverity = computed<"danger" | "success">(() => {
+  if (props.target.drankPotion === "life") {
+    return "success";
+  }
+  return "danger";
+});
 </script>

@@ -757,6 +757,10 @@
       "usedPotions": "used potions",
       "choseSide": "joined the side of",
       "skippedTurn": "skipped turn"
+    },
+    "GameOverHistoryRecordDecisionTarget": {
+      "lifePotion": "Life potion",
+      "deathPotion": "Death potion"
     }
   }
 }
