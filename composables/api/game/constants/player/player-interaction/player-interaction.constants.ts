@@ -16,6 +16,7 @@ const PLAYER_INTERACTION_TYPES = [
   "sentence-to-death",
   "steal-role",
   "infect",
+  "bury",
 ] as const;
 
 export { PLAYER_INTERACTION_TYPES };

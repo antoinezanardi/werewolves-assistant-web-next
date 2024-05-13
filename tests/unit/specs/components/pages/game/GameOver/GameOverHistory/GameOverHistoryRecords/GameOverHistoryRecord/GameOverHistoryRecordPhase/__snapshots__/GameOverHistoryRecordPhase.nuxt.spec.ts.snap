@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Phase Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-phase" class="flex flex-col item-center justify-center text-center">
+  <game-phase-icon-stub phase="day"></game-phase-icon-stub>
+  <div id="game-phase-text" class="text-md">shared.game.phase.day 1</div>
+</div>"
+`;

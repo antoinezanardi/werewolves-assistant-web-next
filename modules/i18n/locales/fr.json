@@ -2,7 +2,8 @@
   "shared": {
     "werewolvesAssistant": "Assistant Loups-Garous",
     "actions": {
-      "add": "Ajouter"
+      "add": "Ajouter",
+      "close": "Fermer"
     },
     "role": {
       "name": {
@@ -37,7 +38,39 @@
         "actor": "Comédien",
         "devoted-servant": "Servante Dévouée"
       },
-            "descriptions": {
+      "definiteName": {
+        "werewolf": "Le Loup-Garou | Les Loups-Garous",
+        "big-bad-wolf": "Le Grand Méchant Loup",
+        "accursed-wolf-father": "L'Infect Père des Loups",
+        "white-werewolf": "Le Loup-Garou Blanc",
+        "villager": "Le Villageois | Les Villageois",
+        "villager-villager": "Le Villageois-Villageois",
+        "seer": "La Voyante",
+        "cupid": "Cupidon",
+        "witch": "La Sorcière",
+        "hunter": "Le Chasseur",
+        "little-girl": "La Petite Fille",
+        "defender": "Le Salvateur",
+        "elder": "L'Ancien",
+        "scapegoat": "Le Bouc-Émissaire",
+        "idiot": "L'Idiot du Village",
+        "two-sisters": "Les Deux Sœurs",
+        "three-brothers": "Les Trois Frères",
+        "fox": "Le Renard",
+        "bear-tamer": "Le Montreur d'Ours",
+        "stuttering-judge": "Le Juge Bègue",
+        "rusty-sword-knight": "Le Chevalier à l'Épée Rouillée",
+        "thief": "Le Voleur",
+        "wild-child": "L'Enfant Sauvage",
+        "wolf-hound": "Le Chien-Loup",
+        "angel": "L'Ange",
+        "pied-piper": "Le Joueur de Flûte",
+        "scandalmonger": "Le Corbeau",
+        "prejudiced-manipulator": "L'Abominable Sectaire",
+        "actor": "Le Comédien",
+        "devoted-servant": "La Servante Dévouée"
+      },
+      "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
           "eachNightEatsVillager": "Chaque nuit, ils dévorent un Villageois. Le jour, ils essaient de masquer leur identité nocturne pour échapper à la vindicte populaire.",
@@ -274,12 +307,42 @@
       "side": {
         "villagers": "Villageois",
         "werewolves": "Loups-Garous"
+      },
+      "definiteSide": {
+        "villagers": "Le Villageois | Les Villageois",
+        "werewolves": "Le Loup-Garou | Les Loups-Garous"
       }
     },
     "game": {
       "phase": {
         "night": "Nuit",
         "day": "Jour"
+      },
+      "player": {
+        "attribute": {
+          "name": {
+            "sheriff": "Maire"
+          },
+          "definiteName": {
+            "sheriff": "Le Maire"
+          }
+        },
+        "group": {
+          "name": {
+            "survivors": "Survivants",
+            "villagers": "Villageois",
+            "werewolves": "Loups-Garous",
+            "lovers": "Amoureux",
+            "charmed": "Charmés"
+          },
+          "definiteName": {
+            "survivors": "Le Survivant | Les Survivants",
+            "villagers": "Le Villageois | Les Villageois",
+            "werewolves": "Le Loup-Garou | Les Loups-Garous",
+            "lovers": "Les Amoureux",
+            "charmed": "Les Charmés"
+          }
+        }
       }
     }
   },
@@ -628,7 +691,9 @@
       "alt": "Offrez-moi un café"
     },
     "GameOverActions": {
-      "createAnotherGame": "Lancer une nouvelle partie"
+      "createAnotherGame": "Lancer une nouvelle partie",
+      "showGameHistory": "Voir l'historique de la partie",
+      "loadingGameHistory": "Chargement de l'historique de la partie…"
     },
     "GameOver": {
       "gameOver": "Partie terminée"
@@ -660,6 +725,49 @@
       "roleCountMaxReached": "Nombre maximum atteint",
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
       "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+    },
+    "GameOverHistoryHeader": {
+      "gameHistory": "Historique de la partie"
+    },
+    "GameOverHistoryRecordIcon": {
+      "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
+    },
+    "GameOverHistoryRecordAction": {
+      "actionIconAltText": "Icône de l'action de l'historique de la partie",
+      "infected": "a infecté",
+      "growled": "a grogné",
+      "madeFallInLove": "a fait tomber amoureux",
+      "protected": "a protégé",
+      "sniffed": "a reniflé",
+      "shot": "a tiré sur",
+      "metEachOther": "se sont rencontrés",
+      "charmed": "a charmé",
+      "markedWithFeather": "a marqué avec sa plume",
+      "bannedFromVotes": "a banni des votes",
+      "seen": "a vu le rôle de",
+      "delegated": "a délégué son rôle de Maire à",
+      "settledVotes": "a tranché les votes en choisissant",
+      "requestedAnotherVote": "a demandé un autre vote",
+      "buriedDeadBodies": "ont enterré les corps de",
+      "electedAsSheriff": "ont élu comme Maire",
+      "voted": "ont voté pour",
+      "choseCard": "a choisi la carte",
+      "ate": "a dévoré",
+      "choseAsModel": "a choisi comme modèle",
+      "usedPotions": "a utilisé ses potions",
+      "choseSide": "a choisi le camp des",
+      "skippedTurn": "a passé son tour"
+    },
+    "GameOverHistoryRecordDecisionTarget": {
+      "lifePotion": "Potion de vie",
+      "deathPotion": "Potion de mort"
+    },
+    "GameOverHistoryRecordDecisionBuriedPlayer": {
+      "stolenRoleByDevotedServant": "Rôle volé par la Servante Dévouée",
+      "stolenRoleByDevotedServantIcon": "Icône de rôle volé par la Servante Dévouée"
+    },
+    "GameOverHistory": {
+      "endOfGame": "Fin de la partie"
     }
   }
 }

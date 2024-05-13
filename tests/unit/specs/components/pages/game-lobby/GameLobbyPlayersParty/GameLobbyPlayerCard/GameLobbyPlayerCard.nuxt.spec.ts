@@ -25,12 +25,20 @@ describe("Game Lobby Player Card Component", () => {
     composables: {
       useRoleName: {
         getRoleNameLabel: Mock;
+        getDefiniteRoleNameLabel: Mock;
       }
     }
   };
 
   beforeEach(async() => {
-    mocks = { composables: { useRoleName: { getRoleNameLabel: vi.fn() } } };
+    mocks = {
+      composables: {
+        useRoleName: {
+          getRoleNameLabel: vi.fn(),
+          getDefiniteRoleNameLabel: vi.fn(),
+        },
+      },
+    };
     vi.spyOn(UseRoleName, "useRoleName").mockImplementation(() => mocks.composables.useRoleName);
     wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps });
   });

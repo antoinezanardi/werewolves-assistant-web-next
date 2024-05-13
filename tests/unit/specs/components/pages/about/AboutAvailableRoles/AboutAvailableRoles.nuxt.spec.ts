@@ -19,7 +19,10 @@ describe("About Available Roles Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoles>>;
 
   beforeEach(async() => {
-    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({ getRoleNameLabel: vi.fn((roleName: RoleName) => roleName) });
+    vi.spyOn(UseRoleName, "useRoleName").mockReturnValue({
+      getRoleNameLabel: vi.fn((roleName: RoleName) => roleName),
+      getDefiniteRoleNameLabel: vi.fn((roleName: RoleName, count: number) => `${roleName} ${count}`),
+    });
     wrapper = await mountSuspendedComponent(AboutAvailableRoles);
   });
 

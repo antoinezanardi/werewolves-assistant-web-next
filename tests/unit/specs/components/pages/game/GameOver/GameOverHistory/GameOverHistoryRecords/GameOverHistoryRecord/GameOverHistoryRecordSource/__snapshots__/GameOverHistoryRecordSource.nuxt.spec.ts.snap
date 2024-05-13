@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Source Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-source" class="flex flex-col gap-4 item-center justify-center text-center">
+  <h4 id="game-over-history-record-source-name">shared.game.player.group.definiteName.survivors, 4</h4>
+  <div id="game-over-history-record-source-players" class="flex gap-4 items-center justify-center">
+    <div class="game-over-history-record-source-player grow">
+      <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-source-player-card"></player-card-stub>
+    </div>
+    <div class="game-over-history-record-source-player grow">
+      <player-card-stub playername="Vanessa" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-source-player-card"></player-card-stub>
+    </div>
+    <div class="game-over-history-record-source-player grow">
+      <player-card-stub playername="Thomas" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-source-player-card"></player-card-stub>
+    </div>
+    <overflow-tag-stub entitiescount="4" maximumentitiesdisplayed="3" id="source-player-overflow-tag"></overflow-tag-stub>
+  </div>
+</div>"
+`;

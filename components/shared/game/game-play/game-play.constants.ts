@@ -1,9 +1,9 @@
 import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/game-play-source/game-play-source.types";
 import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 
-type CurrentPlaySvgAndTextKey = { svgPath: string; textKey: string };
+type GamePlaySvgAndTextKey = { svgPath: string; textKey: string };
 
-const CURRENT_PLAYS_TEXT_AND_SVG: Record<GamePlaySourceName, Partial<Record<GamePlayAction, CurrentPlaySvgAndTextKey>>> = {
+const GAME_PLAYS_TEXT_AND_SVG: Record<GamePlaySourceName, Partial<Record<GamePlayAction, GamePlaySvgAndTextKey>>> = {
   "accursed-wolf-father": {
     infect: {
       svgPath: "/svg/role/accursed-wolf-father.svg",
@@ -168,4 +168,4 @@ const CURRENT_PLAYS_TEXT_AND_SVG: Record<GamePlaySourceName, Partial<Record<Game
   },
 };
 
-export { CURRENT_PLAYS_TEXT_AND_SVG };
+export { GAME_PLAYS_TEXT_AND_SVG };

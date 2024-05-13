@@ -2,7 +2,8 @@
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
     "actions": {
-      "add": "Add"
+      "add": "Add",
+      "close": "Close"
     },
     "role": {
       "name": {
@@ -36,6 +37,38 @@
         "prejudiced-manipulator": "Prejudiced Manipulator",
         "actor": "Actor",
         "devoted-servant": "Devoted Servant"
+      },
+      "definiteName": {
+        "werewolf": "The Werewolf | The Werewolves",
+        "big-bad-wolf": "The Big Bad Wolf",
+        "accursed-wolf-father": "The Accursed Wolf-Father",
+        "white-werewolf": "The White Werewolf",
+        "villager": "The Villager | The Villagers",
+        "villager-villager": "The Villager-Villager",
+        "seer": "The Seer",
+        "cupid": "Cupid",
+        "witch": "The Witch",
+        "hunter": "The Hunter",
+        "little-girl": "The Little Girl",
+        "defender": "The Defender",
+        "elder": "The Elder",
+        "scapegoat": "The Scapegoat",
+        "idiot": "The Idiot",
+        "two-sisters": "The Two Sisters",
+        "three-brothers": "The Three Brothers",
+        "fox": "The Fox",
+        "bear-tamer": "The Bear Tamer",
+        "stuttering-judge": "The Stuttering Judge",
+        "rusty-sword-knight": "The Rusty Sword Knight",
+        "thief": "The Thief",
+        "wild-child": "The Wild Child",
+        "wolf-hound": "The Wolf-Hound",
+        "angel": "The Angel",
+        "pied-piper": "The Pied Piper",
+        "scandalmonger": "The Scandalmonger",
+        "prejudiced-manipulator": "The Prejudiced Manipulator",
+        "actor": "The Actor",
+        "devoted-servant": "The Devoted Servant"
       },
       "descriptions": {
         "werewolf": {
@@ -274,12 +307,42 @@
       "side": {
         "villagers": "Villagers",
         "werewolves": "Werewolves"
+      },
+      "definiteSide": {
+        "villagers": "The Villagers",
+        "werewolves": "The Werewolves"
       }
     },
     "game": {
       "phase": {
         "night": "Night",
         "day": "Day"
+      },
+      "player": {
+        "attribute": {
+          "name": {
+            "sheriff": "Sheriff"
+          },
+          "definiteName": {
+            "sheriff": "The Sheriff"
+          }
+        },
+        "group": {
+          "name": {
+            "survivors": "Survivors",
+            "villagers": "Villagers",
+            "werewolves": "Werewolves",
+            "lovers": "Lovers",
+            "charmed": "Charmed"
+          },
+          "definiteName": {
+            "survivors": "The Survivor | The Survivors",
+            "villagers": "The Villager | The Villagers",
+            "werewolves": "The Werewolf | The Werewolves",
+            "lovers": "The Lovers",
+            "charmed": "The Charmed"
+          }
+        }
       }
     }
   },
@@ -628,7 +691,9 @@
       "alt": "Buy me a coffee"
     },
     "GameOverActions": {
-      "createAnotherGame": "Create another game"
+      "createAnotherGame": "Create another game",
+      "showGameHistory": "Show game history",
+      "loadingGameHistory": "Loading game history…"
     },
     "GameOver": {
       "gameOver": "Game over"
@@ -660,6 +725,49 @@
       "roleCountMaxReached": "Maximum reached",
       "recommendedMinPlayers": "Recommended for {count} players minimum",
       "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
+    },
+    "GameOverHistoryHeader": {
+      "gameHistory": "Game history"
+    },
+    "GameOverHistoryRecordIcon": {
+      "gameHistoryRecordIconAltText": "Game history record icon"
+    },
+    "GameOverHistoryRecordAction": {
+      "actionIconAltText": "Action icon",
+      "infected": "infected",
+      "growled": "growled",
+      "madeFallInLove": "made fall in love",
+      "protected": "protected from Werewolves",
+      "sniffed": "sniffed",
+      "shot": "shot at",
+      "metEachOther": "met each other",
+      "charmed": "charmed",
+      "markedWithFeather": "marked with a feather",
+      "bannedFromVotes": "banned from votes",
+      "seen": "have seen the role of",
+      "delegated": "delegated his role to",
+      "settledVotes": "settled the votes",
+      "requestedAnotherVote": "requested another vote",
+      "buriedDeadBodies": "buried",
+      "electedAsSheriff": "elect as Sheriff",
+      "voted": "voted for",
+      "choseCard": "chose the card",
+      "ate": "ate",
+      "choseAsModel": "chose as model",
+      "usedPotions": "used potions",
+      "choseSide": "joined the side of",
+      "skippedTurn": "skipped turn"
+    },
+    "GameOverHistoryRecordDecisionTarget": {
+      "lifePotion": "Life potion",
+      "deathPotion": "Death potion"
+    },
+    "GameOverHistoryRecordDecisionBuriedPlayer": {
+      "stolenRoleByDevotedServant": "Stolen role by the Devoted Servant",
+      "stolenRoleByDevotedServantIcon": "Stolen role by the Devoted Servant icon"
+    },
+    "GameOverHistory": {
+      "endOfGame": "End of the game"
     }
   }
 }

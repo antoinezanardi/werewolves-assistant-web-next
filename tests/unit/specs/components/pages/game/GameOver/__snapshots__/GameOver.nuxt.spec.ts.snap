@@ -5,6 +5,7 @@ exports[`Game Over Component > should match snapshot when rendered. 1`] = `
   <game-over-victory-text-stub></game-over-victory-text-stub>
   <game-over-winners-stub id="game-over-winners"></game-over-winners-stub>
   <divider-stub></divider-stub>
-  <game-over-actions-stub></game-over-actions-stub>
+  <game-over-actions-stub id="game-over-actions"></game-over-actions-stub>
+  <div id="game-over-history-stub"></div>
 </div>"
 `;

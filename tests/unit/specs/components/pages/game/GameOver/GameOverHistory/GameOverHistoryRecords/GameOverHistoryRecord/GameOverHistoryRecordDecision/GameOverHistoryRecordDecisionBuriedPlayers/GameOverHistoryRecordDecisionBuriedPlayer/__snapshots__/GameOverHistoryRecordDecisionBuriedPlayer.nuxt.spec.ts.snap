@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Decision Buried Player Component > should match snapshot when rendered. 1`] = `
+"<div class="flex flex-col gap-2 items-center justify-center">
+  <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-decision-buried-player-card"></player-card-stub>
+  <!--v-if-->
+</div>"
+`;

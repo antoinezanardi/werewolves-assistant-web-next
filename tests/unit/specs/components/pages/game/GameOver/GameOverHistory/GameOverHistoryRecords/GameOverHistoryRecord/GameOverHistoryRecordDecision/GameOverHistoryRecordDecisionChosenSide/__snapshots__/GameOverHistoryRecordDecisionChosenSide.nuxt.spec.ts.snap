@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over History Record Decision Chosen Side Component > should match snapshot when rendered. 1`] = `
+"<div id="game-over-history-record-decision-chosen-side" class="flex flex-col gap-4 items-center justify-center">
+  <h4 id="game-over-history-record-decision-chosen-side-text">shared.role.definiteSide.werewolves</h4>
+  <nuxt-img-stub src="/svg/role/werewolf.svg" width="75" height="75" alt="Werewolves side"></nuxt-img-stub>
+</div>"
+`;

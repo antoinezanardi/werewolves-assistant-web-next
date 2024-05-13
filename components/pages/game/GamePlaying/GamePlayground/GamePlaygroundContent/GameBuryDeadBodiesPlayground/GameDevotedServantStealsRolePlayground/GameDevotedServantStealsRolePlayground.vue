@@ -41,7 +41,7 @@ import { storeToRefs } from "pinia";
 
 import GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { useGamePlay } from "~/composables/api/game/game-play/useGamePlay";
+import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -50,7 +50,7 @@ const { game } = storeToRefs(gameStore);
 
 const { t } = useI18n();
 
-const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useGamePlay(game);
+const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
 const eliminatedPlayers = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
 
