@@ -28,8 +28,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@cucumber/cucumber':
-        specifier: ^10.6.0
-        version: 10.6.0
+        specifier: ^10.7.0
+        version: 10.7.0
       '@eslint/config-inspector':
         specifier: ^0.4.8
         version: 0.4.8(eslint@9.2.0)
@@ -47,7 +47,7 @@ importers:
         version: 3.11.2(rollup@4.17.2)
       '@nuxt/test-utils':
         specifier: ^3.12.1
-        version: 3.12.1(@cucumber/cucumber@10.6.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+        version: 3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       '@nuxtjs/google-fonts':
         specifier: ^3.2.0
         version: 3.2.0(rollup@4.17.2)
@@ -589,8 +589,8 @@ packages:
   '@cucumber/cucumber-expressions@17.1.0':
     resolution: {integrity: sha512-PCv/ppsPynniKPWJr5v566daCVe+pbxQpHGrIu/Ev57cCH9Rv+X0F6lio4Id3Z64TaG7btCRLUGewIgLwmrwOA==}
 
-  '@cucumber/cucumber@10.6.0':
-    resolution: {integrity: sha512-1ui/PDJelSRioZGYZdxeNepnCetbjbv16FUDdWi6WdjAeMqfCsuiJHjN++b7Wjxd1xKhXdSLfMntqpuNcPTIug==}
+  '@cucumber/cucumber@10.7.0':
+    resolution: {integrity: sha512-8E5vqOIpZOJlRH/aoZc50+yahrObvkbZSxI5WUqM39V3BHNpfzNaPpuLYpSHD2j+gTlubZ8c56RE3Udq38m66g==}
     engines: {node: 18 || >=20}
     hasBin: true
 
@@ -7646,7 +7646,7 @@ snapshots:
     dependencies:
       regexp-match-indices: 1.0.2
 
-  '@cucumber/cucumber@10.6.0':
+  '@cucumber/cucumber@10.7.0':
     dependencies:
       '@cucumber/ci-environment': 10.0.1
       '@cucumber/cucumber-expressions': 17.1.0
@@ -8448,7 +8448,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/test-utils@3.12.1(@cucumber/cucumber@10.6.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))':
+  '@nuxt/test-utils@3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.17.2)
       '@nuxt/schema': 3.11.2(rollup@4.17.2)
@@ -8474,11 +8474,11 @@ snapshots:
       unenv: 1.9.0
       unplugin: 1.10.1
       vite: 5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0)
-      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.6.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       vue: 3.4.27(typescript@5.4.5)
       vue-router: 4.3.2(vue@3.4.27(typescript@5.4.5))
     optionalDependencies:
-      '@cucumber/cucumber': 10.6.0
+      '@cucumber/cucumber': 10.7.0
       '@playwright/test': 1.44.0
       '@vue/test-utils': 2.4.6
       happy-dom: 14.10.1
@@ -15095,9 +15095,9 @@ snapshots:
       sass: 1.77.0
       terser: 5.31.0
 
-  vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.6.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
+  vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
     dependencies:
-      '@nuxt/test-utils': 3.12.1(@cucumber/cucumber@10.6.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+      '@nuxt/test-utils': 3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.10.1)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.0)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.10.1)(sass@1.77.0)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
