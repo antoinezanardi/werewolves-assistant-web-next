@@ -118,7 +118,7 @@
     "qs": "^6.12.1",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "sass": "^1.77.0",
     "semantic-release": "^23.0.8",
     "semantic-release-export-data": "^1.0.1",
