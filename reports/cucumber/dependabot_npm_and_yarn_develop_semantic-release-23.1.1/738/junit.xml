@@ -1,0 +1,619 @@
+<?xml version="1.0"?>
+<testsuite failures="0" skipped="0" name="cucumber-js" time="171.74735546200003" tests="70">
+  <testcase classname="❓ About Page" name="❓ About Page is displayed with title and various sections" time="3.447488675">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+Then the heading with name "Why an assistant ?" should be visible.........passed
+And the heading with name "The Werewolves of Miller's Hollow™ game" sho...passed
+And the heading with name "The Werewolves Assistant takes the stage !" ...passed
+And the heading with name "Available roles" should be visible.............passed
+And the heading with name "How to contribute to this project?" should b...passed
+And the heading with name "A word from the creator" should be visible.....passed
+And the link with name "Back to home" should be visible...................passed
+And the page should match the snapshot with name "About Page".............passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ About Page has valid head title and SEO tags" time="1.160788529">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+Then the page should have head title "Why an assistant ?" and meta tags...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ About Page loads roles and display them in accordions with descriptions and illustrations" time="1.9785717860000003">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the progressbar with name "Loading roles…" is hidden.................passed
+Then the button with name "Click to expand the description of the Werew...passed
+And the button with name "Click to expand the description of the Three ...passed
+And the button with name "Click to expand the description of the Witch ...passed
+And the button with name "Click to expand the description of the Actor ...passed
+And the img with name "Illustration of the Werewolf role on the left de...passed
+And the text "Each night, they devour a Villager. During the day, they ...passed
+When the user clicks on the button with name "Click to expand the descr...passed
+Then the text "Each night, they devour a Villager. During the day, they...passed
+And the text "Base Game" under the region with name "Click to expand th...passed
+And the img with name "Illustration of the Werewolf role on the left de...passed
+When the user clicks on the button with name "Click to expand the descr...passed
+Then the text "Each night, they devour a Villager. During the day, they...passed
+And the img with name "Illustration of the Werewolf role on the left de...passed
+And the text "Base Game" under the region with name "Click to expand th...passed
+And the text "Ignominiously chased from the village, he returned years ...passed
+And the img with name "Illustration of the Pied Piper role on the left ...passed
+And the text "Lonely" under the region with name "Click to expand the d...passed
+And the text "New Moon Expansion" under the region with name "Click to ...passed
+When the user clicks on the button with name "Click to expand the descr...passed
+Then the img with name "Illustration of the Pied Piper role on the left...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes on YouTube to watch a tutorial by clicking on the link" time="1.3938068749999997">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+And the user is about to open a page on new tab...........................passed
+When the user hovers the link with name "I don't know this game"..........passed
+Then the tooltip with text "Watch an explanatory video on YouTube" shou...passed
+When the user clicks on the link with name "I don't know this game".......passed
+Then a new page should be opened with url starting with "https://www.yo...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes on GitHub to contribute to the project by clicking on the link" time="1.9442184869999999">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+And the user is about to open a page on new tab...........................passed
+When the user clicks on the link with name "Access the project on GitHu...passed
+Then a new page should be opened with url starting with "https://github...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes on BuyMeACoffee to donate by clicking on the link" time="1.513103767">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+And the user is about to open a page on new tab...........................passed
+When the user clicks on the link with name "Buy me a coffee"..............passed
+Then a new page should be opened with url starting with "https://buymea...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes on creator's portfolio by clicking on the link" time="1.536420296">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+And the user is about to open a page on new tab...........................passed
+When the user clicks on the link with name "My portfolio".................passed
+Then a new page should be opened with url starting with "https://antoin...passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.1803849020000003">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the user clicks on werewolves assistant logo in navigation bar.......passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes back to the top of the page by clicking on back to top button in navigation bar" time="2.213739917">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the user scrolls to the link with name "Buy me a coffee".............passed
+And the user clicks on the button with exact name "Scroll Top"............passed
+Then the heading with name "Why an assistant ?" should be in viewport.....passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.419837833">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the back to home button in parameters in navigat...passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="❓ About Page" name="❓ User goes back on home page by clicking on back to home page button at the bottom of the page" time="1.214053759">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the user clicks on the link with name "Back to home".................passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Role Picker is displayed when user clicks on a player with description and available roles" time="1.552038069">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+And the heading with exact name "Pick a role" should be visible...........passed
+And the button with name "Pick role for the player" should be disabled....passed
+And the page should match the snapshot with name "Game Lobby Role Picke...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 User picks the seer role for a player" time="2.051184285">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+And the user chooses the role with name "Seer" in the lobby role picker...passed
+Then the button with name "Pick role for the player" should be enabled....passed
+And the heading with exact name "Pick a role" should be hidden............passed
+And the heading with exact name "Seer" should be visible..................passed
+And the page should match the snapshot with name "Game Lobby Role Picke...passed
+When the user clicks on the button with exact name "Pick role for the p...passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+And the player with name "Antoine" should have the "Seer" role in the l...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 User selects a random role for a player" time="1.7012608439999994">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+And the user chooses a random role in the lobby role picker...............passed
+Then the button with name "Pick role for the player" should be enabled....passed
+When the user clicks on the button with exact name "Pick role for the p...passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+And the player with name "Antoine" should have a role in the lobby........passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 User can't pick a role for a player if he already has this role" time="2.0299677020000004">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the button with name "Pick role for the player" should be disabled...passed
+When the user chooses the role with name "Seer" in the lobby role picke...passed
+Then the button with name "Pick role for the player" should be disabled...passed
+When the user chooses the role with name "Werewolf" in the lobby role p...passed
+Then the button with name "Pick role for the player" should be enabled....passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Current role is displayed for a player when picking a role for him" time="1.677545497">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the player should not have current role in the lobby role picker.....passed
+When the user chooses the role with name "Seer" in the lobby role picke...passed
+And the user clicks on the button with exact name "Pick role for the pl...passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the player should have "Seer" as current role in the lobby role pi...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Roles are swapped with first player with picked role when its maximum is reached" time="2.07854493">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the player with name "Antoine" should not have a role in the lobby...passed
+And the player with name "Bob" should have the "Seer" role in the lobby...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Total for each role present in the party is displayed in the role picker" time="4.2751704319999995">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the role "Seer" should have a total badge with "1" in the lobby ro...passed
+And the role "Seer" total badge should have tooltip with text "Total in...passed
+And the role "Werewolf" should have a total badge with "2" in the lobby...passed
+And the role "Werewolf" total badge should have tooltip with text "Tota...passed
+And the role "Hunter" should have a total badge with "1" in the lobby r...passed
+And the role "Hunter" total badge should have tooltip with text "Total ...passed
+And the role "Villager" should not have a total badge in the lobby role...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Warning is displayed when a role must be picked to reach the minimum number of players for this role" time="4.139627739">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the role "Two Sisters" should have a total badge with "1" in the l...passed
+Then the role "Three Brothers" should have a total badge with "1" in th...passed
+And the role "Two Sisters" should have a warning minimum players not re...passed
+And the role "Three Brothers" should have a warning minimum players not...passed
+And the role "Seer" should not have a warning minimum players not reach...passed
+And the role "Two Sisters" warning minimum players not reached badge sh...passed
+And the role "Three Brothers" warning minimum players not reached badge...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 Role Picker displays description of selected roles and scrolls to top if necessary when selecting another one" time="1.7787303959999998">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+And the user chooses the role with name "Wild Child" in the lobby role ...passed
+Then the role's description image with name "Wild Child" should be visi...passed
+And the role's description should have text "His goal is to eliminate t...passed
+When the user scrolls to the text "Game master's advice: not revealing ...passed
+And the user chooses the role with name "Werewolf" in the lobby role pi...passed
+Then the role's description image with name "Werewolf" should be in vie...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏👆 Game Lobby Role Picker" name="🃏👆 User closes the role picker with escape, close button or outside click" time="2.4301985529999994">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user clicks on the player with name "Antoine" in the lobby........passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+When the user presses the escape key......................................passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+When the user clicks on the player with name "Antoine" in the lobby.......passed
+And the user clicks on the button with exact name "Close".................passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed
+When the user clicks on the player with name "Antoine" in the lobby.......passed
+And the user clicks on the top left corner of the screen..................passed
+Then the heading with exact name "Pick a role for the player Antoine" s...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 Game Lobby page is displayed with title, inputs and buttons" time="1.069263101">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+Then the heading with name "Game Lobby" should be visible.................passed
+And the input with label "Player name" should be visible..................passed
+And the button with name "Add" should be visible..........................passed
+And the heading with name "Add player names with the input above" shoul...passed
+And the button with name "Random composition" should be visible...........passed
+And the button with name "Start game" should be visible...................passed
+And the page should match the snapshot with name "Game Lobby Page witho...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 Game Lobby page has valid head title and SEO tags" time="0.8615098">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+Then the page should have head title "Start a game" and meta tags.........passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User adds a player" time="0.952348684">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+Then the input with label "Player name" should be empty...................passed
+And the input with label "Please enter a player name" should be visible...passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+Then the input with label "Player name" should be empty...................passed
+And the heading with name "Add player names with the input above" shoul...passed
+And the player with name "Antoine" should be in the lobby.................passed
+And the player with name "Antoine" should not have a role in the lobby....passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add twice the same player" time="1.2994940309999998">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+Then the input with label "Player name" should be empty...................passed
+When the user types "Antoine" in the input with label "Player name".......passed
+Then the button with name "Add" should be disabled........................passed
+And the input with label "This player name is already taken" should be ...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with an empty name but input is emptied" time="0.893698621">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user types "          " in the input with label "Player name"....passed
+And the user clicks on the button with name "Add".........................passed
+Then the input with label "Player name" should be empty...................passed
+And the heading with name "Add player names with the input above" shoul...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player with a name longer than 30 characters" time="1.209626277">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user types "AntoineAntoineAntoineAntoineAn" in the input with ...passed
+Then the input with label "The player name must not exceed 30 character...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't add a player if game has reached 40 players" time="26.983771938">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the input with label "Maximum number of players reached" should be...passed
+And the button with name "Add" should be disabled.........................passed
+And the page should match the snapshot with name "Game Lobby Page with ...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User deletes a player" time="0.9700696279999999">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+Then the player with name "Antoine" should be in the lobby................passed
+When the user clicks on the button with name "Remove player Antoine"......passed
+Then the heading with name "Add player names with the input above" shou...passed
+And the player with name "Antoine" should not be in the lobby.............passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User generates a random composition for 4 players" time="1.2668719210000003">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user enters the player with name "Benoit" in the lobby............passed
+And the user enters the player with name "Clement" in the lobby...........passed
+And the user enters the player with name "David" in the lobby.............passed
+And the user clicks on the button with name "Random composition"..........passed
+Then the player with name "Antoine" should have a role in the lobby.......passed
+And the player with name "Benoit" should have a role in the lobby.........passed
+And the player with name "Clement" should have a role in the lobby........passed
+And the player with name "David" should have a role in the lobby..........passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't generate random composition if there is less than 4 players" time="1.151106412">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+Then the button with name "Random composition" should be disabled.........passed
+When the user hovers the button with name "Random composition"............passed
+Then the tooltip with text "The minimum number of players is not reache...passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user enters the player with name "Benoit" in the lobby............passed
+And the user enters the player with name "Clement" in the lobby...........passed
+And the user enters the player with name "David" in the lobby.............passed
+Then the button with name "Random composition" should be enabled..........passed
+When the user hovers the button with name "Random composition"............passed
+Then the tooltip with text "The minimum number of players is not reache...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is less than 4 players" time="0.875387011">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "The minimum number of players is not reache...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there some players doesn't have a role" time="3.0894991449999996">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+And the user enters the player with name "Xavier" in the lobby............passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "Not all roles are set among players" should...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is no villagers sided among players" time="3.9236693170000003">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "At least one villager sided role is needed"...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is no werewolves sided among players" time="3.9805854079999996">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "At least one werewolf sided role is needed"...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is only one sister among players" time="3.9179603970000003">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "The Two Sisters role requires at least 2 pl...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User can't start the game if there is only two brothers among players" time="4.636391008">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the players with name and role in the lobby..........passed
+Then the button with name "Start game" should be disabled.................passed
+When the user hovers the button with name "Start game"....................passed
+Then the tooltip with text "The Three Brothers role requires at least 3...passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User starts a game with random composition" time="1.4029026280000003">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user enters the player with name "Antoine" in the lobby..........passed
+And the user enters the player with name "Benoit" in the lobby............passed
+And the user enters the player with name "Clement" in the lobby...........passed
+And the user enters the player with name "David" in the lobby.............passed
+And the user clicks on the button with name "Random composition"..........passed
+And the user clicks on the button with name "Start game"..................passed
+Then the user should be on game page with any id..........................passed
+And the toast with text "Game created" should be visible..................passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.8697835799999999">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user clicks on werewolves assistant logo in navigation bar.......passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🃏 Game Lobby Page" name="🃏 User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.174876328">
+    <system-out><![CDATA[Given the user is on game-lobby page......................................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the back to home button in parameters in navigat...passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by nobody, there are no survivors" time="6.811207703">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Cupid charms"...............passed
+When the cupid charms the players.........................................passed
+Then the game's current play title should be "Lovers meet each other".....passed
+When the lovers meet each other...........................................passed
+Then the game's current play title should be "Werewolves eat".............passed
+When the werewolves eat the player with name "David"......................passed
+Then the game's current play title should be "Witch uses potions".........passed
+When the witch uses her potions on players................................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game's current play title should be "Hunter shoots"..............passed
+When the hunter shoots the player with name "Bob".........................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "Draw ! Everyone is dead in the...passed
+And the game winners should have no winners...............................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by nobody".....passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by Villagers" time="5.350622875999999">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Survivors vote".............passed
+When the survivors vote with the votes....................................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The Villagers win !" and subti...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by Villagers...passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by Werewolves" time="5.6410664819999985">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Werewolves eat".............passed
+When the werewolves eat the player with name "Charlie"....................passed
+Then the game's current play title should be "Accursed Wolf-Father infe...passed
+When the player or group skips his turn...................................passed
+Then the game's current play title should be "White Werewolf eats"........passed
+When the player or group skips his turn...................................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The Werewolves win !" and subt...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by Werewolve...passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by Lovers" time="5.991254834999999">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Cupid charms"...............passed
+When the cupid charms the players.........................................passed
+Then the game's current play title should be "Lovers meet each other".....passed
+When the lovers meet each other...........................................passed
+Then the game's current play title should be "Werewolves eat".............passed
+When the werewolves eat the player with name "Charlie"....................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game's current play title should be "Hunter shoots"..............passed
+When the hunter shoots the player with name "David".......................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The Lovers win together !" and...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by Lovers".....passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by Angel" time="5.319949242000002">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Survivors vote".............passed
+When the survivors vote with the votes....................................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The Angel wins by himself !" a...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by Angel"......passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by Pied Piper" time="5.493458784999998">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Werewolves eat".............passed
+When the werewolves eat the player with name "Charlie"....................passed
+Then the game's current play title should be "Pied Piper charms"..........passed
+When the pied piper charms the players....................................passed
+Then the game's current play title should be "Charmed people meet each ...passed
+When the charmed people meet each other...................................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The Pied Piper wins by himself...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by Pied Pipe...passed]]></system-out>
+  </testcase>
+  <testcase classname="🏆 Game Victory" name="🏆 Game is won by White Werewolf" time="5.717688552999999">
+    <system-out><![CDATA[Given the user creates a game with the players with name and role.........passed
+And the user closes the toast.............................................passed
+Then the game's current play title should be "Survivors elect the Sheri...passed
+When the survivors elect the sheriff with the votes.......................passed
+Then the game's current play title should be "Werewolves eat".............passed
+When the werewolves eat the player with name "Charlie"....................passed
+Then the game's current play title should be "White Werewolf eats"........passed
+When the white werewolf eats the player with name "Bob"...................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game's current play title should be "Hunter shoots"..............passed
+When the hunter shoots the player with name "David".......................passed
+Then the game's current play title should be "Survivors bury dead bodie...passed
+When the survivors bury the dead bodies...................................passed
+Then the game should be over with title "The White Werewolf wins by him...passed
+And the game winners should be the players................................passed
+And the link with name "Create another game" should be visible............passed
+And the page should match the snapshot with name "Game won by White Wer...passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User cancels a game when it is playing" time="1.851503607">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+And the user closes the toast.............................................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+Then the heading with name "Game canceled" should be visible..............passed
+And the link with name "Create another game" should be visible............passed
+And the link with name "Back to home" should be visible...................passed
+And the toast with text "Game canceled" should be visible.................passed
+And the page should match the snapshot with name "Game canceled"..........passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 Game Canceled page has valid head title and SEO tags" time="1.8239159260000002">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+Then the page should have head title "Game canceled" and meta tags........passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User can't cancel a game when it is already canceled" time="1.5455305910000001">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+When the user clicks on parameters button in navigation bar...............passed
+Then the cancel game button in parameters in navigation bar should be d...passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User creates a new game after canceling a game" time="1.765497914">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+And the user clicks on the link with name "Create another game"...........passed
+Then the user should be on game-lobby page................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫 User goes back to home after canceling a game" time="1.7593133399999998">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+And the user clicks on the link with name "Back to home"..................passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="1.567052664">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+And the user clicks on werewolves assistant logo in navigation bar........passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲🚫 Game Canceled" name="🎲🚫User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.6345573109999998">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the cancel game button in parameters in navigati...passed
+And the user clicks on parameters button in navigation bar................passed
+And the user clicks on the back to home button in parameters in navigat...passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓Game not found page is displayed when game is not found" time="1.135906069">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+Then the heading with name "Game not found… Did you get lost ?" should ...passed
+And the link with name "Create another game" should be visible............passed
+And the link with name "Back to home" should be visible...................passed
+And the toast with text "Bad request" should be visible...................passed
+And the page should match the snapshot with name "Game not found".........passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓Game not found page has valid head title and SEO tags" time="0.835159694">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+Then the page should have head title "Game not found… Did you get lost ...passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User creates a new game from the game not found page" time="0.885858342">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+When the user clicks on the link with name "Create another game"..........passed
+Then the user should be on game-lobby page................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes to home from the game not found page" time="0.8949451610000001">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+When the user clicks on the link with name "Back to home".................passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on werewolves assistant logo in navigation bar" time="0.894786907">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+When the user clicks on werewolves assistant logo in navigation bar.......passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🎲❓Game Not Found" name="🎲❓User goes back on home page by clicking on back to home page button in parameters dropdown" time="1.169962446">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+When the user clicks on parameters button in navigation bar...............passed
+And the user clicks on the back to home button in parameters in navigat...passed
+Then the user should be on home page......................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 Home Page is displayed with logo, title and many links" time="1.089962138">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+Then the img with name "Werewolves Assistant logo" should be visible......passed
+And the heading with name "Werewolves Assistant" should be visible........passed
+And the link with name "Play" should be visible...........................passed
+And the link with name "What is it ?" should be visible...................passed
+And the link with name "Contact me" should be visible.....................passed
+And the link with name "Contact me" should have the following attribute...passed
+And the link with name "This project is open-source!" should be visible...passed
+And the page should match the snapshot with name "Home Page"..............passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 Home Page has valid head title and SEO tags" time="0.7995000669999999">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+Then the page should have head title "Werewolves Assistant" and meta ta...passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 Home Page doesn't have navigation bar" time="0.821370321">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+Then the navigation with name "Navigation bar" should be hidden...........passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the game lobby page" time="0.8159147569999999">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+When the user clicks on the link with name "Play".........................passed
+Then the user should be on game-lobby page................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the about page" time="0.868047756">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+When the user clicks on the link with name "What is it ?".................passed
+Then the user should be on about page.....................................passed]]></system-out>
+  </testcase>
+  <testcase classname="🏠 Home Page" name="🏠 User goes on the GitHub repository page through the link" time="1.460252545">
+    <system-out><![CDATA[Given the user is on home page............................................passed
+And the user is about to open a page on new tab...........................passed
+When the user clicks on the link with name "This project is open-source...passed
+Then a new page should be opened with url starting with "https://github...passed]]></system-out>
+  </testcase>
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar is displayed with logo and many buttons" time="1.1475644260000002">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+Then the link with name "Werewolves Assistant" in navigation bar should...passed
+And the img with name "Werewolves Assistant" in navigation bar should b...passed
+And the button with name "Parameters" in navigation bar should be visib...passed
+When the user hovers the button with name "Parameters" in navigation ba...passed
+Then the tooltip with text "Parameters" should be visible.................passed]]></system-out>
+  </testcase>
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is not on the game page" time="1.1433013319999998">
+    <system-out><![CDATA[Given the user is on about page...........................................passed
+When the user clicks on parameters button in navigation bar...............passed
+Then the game section in parameters in navigation bar should be hidden....passed]]></system-out>
+  </testcase>
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar doesn't display the game section in parameters when the user is on unknown game page" time="0.870308961">
+    <system-out><![CDATA[Given the user goes on an unknown game....................................passed
+When the user clicks on parameters button in navigation bar...............passed
+Then the game section in parameters in navigation bar should be hidden....passed]]></system-out>
+  </testcase>
+  <testcase classname="🧭 Navigation bar" name="🧭 Navigation bar displays the game section in parameters when the user is on the game page" time="1.396396203">
+    <system-out><![CDATA[Given the user creates a game with 4 random role players..................passed
+When the user clicks on parameters button in navigation bar...............passed
+Then the game section in parameters in navigation bar should be visible...passed]]></system-out>
+  </testcase>
+</testsuite>
