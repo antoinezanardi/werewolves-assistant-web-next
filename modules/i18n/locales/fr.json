@@ -768,6 +768,9 @@
     },
     "GameOverHistory": {
       "endOfGame": "Fin de la partie"
+    },
+    "GameLobbyHeaderOptionButton": {
+      "gameOptions": "Options de la partie"
     }
   }
 }

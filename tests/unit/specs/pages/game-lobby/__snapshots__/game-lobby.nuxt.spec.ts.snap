@@ -2,11 +2,12 @@
 
 exports[`Game Lobby Page > should match snapshot when rendered. 1`] = `
 "<div class="flex flex-col">
-  <game-lobby-header-stub></game-lobby-header-stub>
+  <game-lobby-header-stub id="game-lobby-header"></game-lobby-header-stub>
   <divider-stub></divider-stub>
   <game-lobby-players-party-stub id="game-lobby-players-party" class="flex-auto overflow-y-auto"></game-lobby-players-party-stub>
   <divider-stub></divider-stub>
   <game-lobby-footer-stub></game-lobby-footer-stub>
   <div id="game-lobby-role-picker-stub"></div>
+  <div id="game-lobby-options-hub-stub"></div>
 </div>"
 `;

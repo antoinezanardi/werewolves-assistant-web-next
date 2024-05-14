@@ -3,6 +3,7 @@ import { expect } from "vitest";
 import type { Ref } from "vue";
 
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
+import type GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -110,6 +111,15 @@ describe("Game Lobby Header Component", () => {
         await form.trigger("submit");
 
         expect(gameLobbyPlayerInput.props("modelValue")).toBe("");
+      });
+    });
+
+    describe("Setup Buttons", () => {
+      it("should emit 'gameOptionsButtonClick' event when options button is clicked.", async() => {
+        const setupButtons = wrapper.findComponent<typeof GameLobbyHeaderSetupButtons>("#game-lobby-header-setup-buttons");
+        (setupButtons.vm as VueVm).$emit("gameOptionsButtonClick");
+
+        expect(wrapper.emitted("gameOptionsButtonClick")).toBeTruthy();
       });
     });
   });

@@ -768,6 +768,12 @@
     },
     "GameOverHistory": {
       "endOfGame": "End of the game"
+    },
+    "GameLobbyHeaderOptionButton": {
+      "gameOptions": "Game options"
+    },
+    "GameLobbyOptionsHubHeader": {
+      "gameOptions": "Game options"
     }
   }
 }

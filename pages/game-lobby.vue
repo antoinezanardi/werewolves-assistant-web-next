@@ -1,6 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <GameLobbyHeader/>
+    <GameLobbyHeader
+      id="game-lobby-header"
+      @game-options-button-click="openGameOptionsHub"
+    />
 
     <VuePrimeDivider/>
 
@@ -15,12 +18,16 @@
     <GameLobbyFooter/>
 
     <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
+
+    <GameLobbyOptionsHub ref="gameLobbyOptionsHub"/>
   </div>
 </template>
 
 <script setup lang="ts">
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
+import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
+import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
 import GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
 import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/GameLobbyRolePicker/game-lobby-role-picker.types";
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
@@ -36,6 +43,7 @@ const { resetGame } = gameStore;
 const { t } = useI18n();
 
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
+const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 
 useHead({
   title: t("pages.gameLobby.startGame"),
@@ -50,6 +58,13 @@ function pickRoleForPlayer(player?: CreateGamePlayerDto): void {
     return;
   }
   gameLobbyRolePicker.value.openToPickRoleForPlayer(player);
+}
+
+function openGameOptionsHub(): void {
+  if (!gameLobbyOptionsHub.value) {
+    throw createError("Game Lobby Options Hub is not defined");
+  }
+  gameLobbyOptionsHub.value.open();
 }
 
 resetCreateGameDto();

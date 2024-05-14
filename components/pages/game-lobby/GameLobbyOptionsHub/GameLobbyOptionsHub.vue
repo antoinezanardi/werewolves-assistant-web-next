@@ -1,11 +1,13 @@
 <template>
   <VuePrimeDialog
-    id="game-over-history"
+    id="game-lobby-role-picker"
     block-scroll
+    content-class="w-x-screen-9/10 max-w-x-screen-9/10"
     dismissable-mask
     :draggable="false"
     modal
     :pt="{
+      'root': 'h-9/10',
       'icons': 'pb-2',
       'header': '!py-2',
       'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',
@@ -15,18 +17,11 @@
     @update:visible="close"
   >
     <template #header>
-      <GameOverHistoryHeader id="game-over-history-header"/>
+      <GameLobbyOptionsHubHeader id="game-lobby-options-hub-header"/>
     </template>
 
     <template #default>
-      <GameOverHistoryRecords id="game-over-history-records"/>
-
-      <h2
-        id="end-of-game-text"
-        class="text-center"
-      >
-        {{ $t("components.GameOverHistory.endOfGame") }}
-      </h2>
+      coucou
     </template>
 
     <template #footer>
@@ -39,14 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
-import GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
-import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
+import GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
 import CloseButtonOnlyDialogFooter from "~/components/shared/dialogs/CloseButtonOnlyDialogFooter/CloseButtonOnlyDialogFooter.vue";
 
 const isVisible = ref<boolean>(false);
 
-function showGameHistory(): void {
+function open(): void {
   isVisible.value = true;
 }
 
@@ -54,5 +47,5 @@ function close(): void {
   isVisible.value = false;
 }
 
-defineExpose({ showGameHistory });
+defineExpose({ open });
 </script>
