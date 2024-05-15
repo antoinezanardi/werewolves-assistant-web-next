@@ -1,5 +1,6 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
+import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
@@ -35,6 +36,10 @@ class Game {
   @Type(() => GamePlay)
   @Expose()
   public upcomingPlays: GamePlay[];
+
+  @Type(() => GameOptions)
+  @Expose()
+  public options: GameOptions;
 
   @Type(() => GameVictory)
   @Expose()
