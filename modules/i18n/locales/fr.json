@@ -771,6 +771,9 @@
     },
     "GameLobbyHeaderOptionButton": {
       "gameOptions": "Options de la partie"
+    },
+    "GameLobbyOptionsHubHeader": {
+      "gameOptions": "Options de la partie"
     }
   }
 }

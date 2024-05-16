@@ -6,6 +6,7 @@ import type { GameOverHistoryExposed } from "~/components/pages/game/GameOver/Ga
 import GameOverHistory from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistory.vue";
 import type GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
 import type GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
+import type DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
 
@@ -99,14 +100,14 @@ describe("Game Over History Component", () => {
 
     describe("Game Over History Footer", () => {
       it("should render game over history footer when dialog is open.", () => {
-        const gameOverHistoryFooter = wrapper.findComponent<typeof GameOverHistoryFooter>("#game-over-history-footer");
+        const gameOverHistoryFooter = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#dialog-footer-close-button-only");
 
         expect(gameOverHistoryFooter.exists()).toBeTruthy();
       });
 
       it("should close game history when game over history footer emits event.", async() => {
-        const gameOverHistoryFooter = wrapper.findComponent<typeof GameOverHistoryFooter>("#game-over-history-footer");
-        (gameOverHistoryFooter.vm as VueVm).$emit("close-game-history");
+        const gameOverHistoryFooter = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#dialog-footer-close-button-only");
+        (gameOverHistoryFooter.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
 

@@ -774,6 +774,30 @@
     },
     "GameLobbyOptionsHubHeader": {
       "gameOptions": "Game options"
+    },
+    "GameLobbyOptionsHubTabView": {
+      "roles": "Roles",
+      "composition": "Composition",
+      "votes": "Votes"
+    },
+    "GameLobbyOptionsHubRolesTabGeneral": {
+      "general": "General",
+      "options": {
+        "doSkipCallIfNoTarget": {
+          "label": "Skip the call if no target",
+          "descriptions": {
+            "yes": "The Assistant won't call the role if there is no target to choose among players.",
+            "no": "The Assistant will call the role even if there is no target to choose among players."
+          }
+        },
+        "areRevealedOnDeath": {
+          "label": "Revealed on death",
+          "descriptions": {
+            "yes": "The role of the player is revealed to others when he dies.",
+            "no": "The role of the player is not revealed to others when he dies."
+          }
+        }
+      }
     }
   }
 }

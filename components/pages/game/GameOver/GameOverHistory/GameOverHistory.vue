@@ -30,8 +30,8 @@
     </template>
 
     <template #footer>
-      <CloseButtonOnlyDialogFooter
-        id="close-button-only-dialog-footer"
+      <DialogFooterCloseButtonOnly
+        id="dialog-footer-close-button-only"
         @close-dialog="close"
       />
     </template>
@@ -39,10 +39,9 @@
 </template>
 
 <script setup lang="ts">
-import GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
 import GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
 import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
-import CloseButtonOnlyDialogFooter from "~/components/shared/dialogs/CloseButtonOnlyDialogFooter/CloseButtonOnlyDialogFooter.vue";
+import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 
 const isVisible = ref<boolean>(false);
 

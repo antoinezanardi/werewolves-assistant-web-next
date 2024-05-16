@@ -17,7 +17,7 @@ import { StutteringJudgeGameOptions } from "~/composables/api/game/types/game-op
 import { ThiefGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/thief-game-options/thief-game-options.class";
 import { ThreeBrothersGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/three-brothers-game-options/three-brothers-game-options.class";
 import { TwoSistersGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/two-sisters-game-options/two-sisters-game-options.class";
-import { WhiteWerewolfGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/white-werewolf-options/white-werewolf-options.class";
+import { WhiteWerewolfGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/white-werewolf-options/white-werewolf-game-options.class";
 import { WildChildGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/wild-child-game-options/wild-child-game-options.class";
 import { WitchGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/witch-game-options/witch-game-options.class";
 import { WolfHoundGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.class";

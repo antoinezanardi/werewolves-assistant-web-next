@@ -68,6 +68,7 @@ export default defineNuxtConfig({
         "ButtonGroup",
         "Dialog",
         "Divider",
+        "Fieldset",
         "Menu",
         "ProgressSpinner",
         "Accordion",
