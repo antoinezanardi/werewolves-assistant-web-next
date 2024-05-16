@@ -46,8 +46,8 @@ importers:
         specifier: ^3.11.2
         version: 3.11.2(rollup@4.17.2)
       '@nuxt/test-utils':
-        specifier: ^3.12.1
-        version: 3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+        specifier: ^3.13.0
+        version: 3.13.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(nitropack@2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13))(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       '@nuxtjs/google-fonts':
         specifier: ^3.2.0
         version: 3.2.0(rollup@4.17.2)
@@ -828,8 +828,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@floating-ui/core@1.6.1':
-    resolution: {integrity: sha512-42UH54oPZHPdRHdw6BgoBD6cg/eVTmVrFcgeRDM3jbO7uxSoipVcmcIGFcA5jmOHO5apcyvBhkSKES3fQJnu7A==}
+  '@floating-ui/core@1.6.2':
+    resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
 
   '@floating-ui/dom@1.1.1':
     resolution: {integrity: sha512-TpIO93+DIujg3g7SykEAGZMDtbJRrmnYRCNYSjJlvIbGhBjRSNTLVbNeDQBrzy9qDgUbiWdc7KA0uZHZ2tJmiw==}
@@ -1097,20 +1097,21 @@ packages:
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
     hasBin: true
 
-  '@nuxt/test-utils@3.12.1':
-    resolution: {integrity: sha512-VRLNcDz9Ad/4pjHdNRVLPs5DVIO5IJ0ij81PLmsE/lt+5oeeIQld+AgHgcqM4BM1YKsXTBuavbk1mEBqj7h/+A==}
-    engines: {node: ^14.18.0 || >=16.10.0}
+  '@nuxt/test-utils@3.13.0':
+    resolution: {integrity: sha512-Q2PO43SsosuMa1qLJvbC+OlmdY5PmTd/Vf8tNmu6Ton0Y6dpxez1mLbkdltcGuer3DG0x3dSLCi94oCELDxRKg==}
+    engines: {node: '>=18.19.0'}
     peerDependencies:
       '@cucumber/cucumber': ^10.3.1
       '@jest/globals': ^29.5.0
-      '@playwright/test': ^1.42.1
+      '@playwright/test': ^1.43.1
       '@testing-library/vue': ^7.0.0 || ^8.0.1
       '@vitest/ui': ^0.34.6 || ^1.0.0
       '@vue/test-utils': ^2.4.2
       h3: '*'
       happy-dom: ^9.10.9 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       jsdom: ^22.0.0 || ^23.0.0 || ^24.0.0
-      playwright-core: ^1.34.3
+      nitropack: '*'
+      playwright-core: ^1.43.1
       vite: '*'
       vitest: ^0.34.6 || ^1.0.0
       vue: ^3.3.4
@@ -3406,6 +3407,10 @@ packages:
     resolution: {integrity: sha512-oO281GF7ksH/Ogv1xyDf1prvFta/6/XkGKxRUvA3IB2MU1rCJGlFs86HRZhdooow1ISkR0Np0rOxUCIJVw36Rg==}
     engines: {node: '>=18'}
 
+  execa@9.1.0:
+    resolution: {integrity: sha512-lSgHc4Elo2m6bUDhc3Hl/VxvUDJdQWI40RZ4KMY9bKRc+hgMOT7II/JjbNDhI8VnMtrCb7U/fhpJIkLORZozWw==}
+    engines: {node: '>=18'}
+
   expand-template@2.0.3:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
     engines: {node: '>=6'}
@@ -5378,6 +5383,9 @@ packages:
   pkg-types@1.1.0:
     resolution: {integrity: sha512-/RpmvKdxKf8uILTtoOhAgf30wYbP2Qw+L9p3Rvshx1JZVX+XQNZQFjlbmGHEGIm4CkVPlSn+NXmIM8+9oWQaSA==}
 
+  pkg-types@1.1.1:
+    resolution: {integrity: sha512-ko14TjmDuQJ14zsotODv7dBlwxKhUKQEhuhmbqo1uCi9BB0Z2alo/wAXg6q1dTR5TyuqYyWhjtfe/Tsh+X28jQ==}
+
   playwright-core@1.44.0:
     resolution: {integrity: sha512-ZTbkNpFfYcGWohvTTl+xewITm7EOuqIqex0c7dNZ+aXsbrLj0qI8XlGKfPpipjm0Wny/4Lt4CJsWJk1stVS5qQ==}
     engines: {node: '>=16'}
@@ -7192,6 +7200,10 @@ packages:
     resolution: {integrity: sha512-esbDnt0Z1zI1KgvOZU90hJbL6BkoUbrP9yy7ArNZ6TmxBxydMJTYMf9FZjmwwcA8ZgEQzriQ3hwZ0NYXhlFo8Q==}
     engines: {node: '>=18'}
 
+  yoctocolors@2.0.2:
+    resolution: {integrity: sha512-Ct97huExsu7cWeEjmrXlofevF8CvzUglJ4iGUet5B8xn1oumtAZBpHU4GzYuoE6PVqcZ5hghtBrSlhwHuR1Jmw==}
+    engines: {node: '>=18'}
+
   yup@0.32.11:
     resolution: {integrity: sha512-Z2Fe1bn+eLstG8DRR6FTavGD+MeAwyfmouhHsIUgaADz8jvFKbO/fXc2trJKZg+5EBjh4gGm3iU/t3onKlXHIg==}
     engines: {node: '>=10'}
@@ -8013,13 +8025,13 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@floating-ui/core@1.6.1':
+  '@floating-ui/core@1.6.2':
     dependencies:
       '@floating-ui/utils': 0.2.2
 
   '@floating-ui/dom@1.1.1':
     dependencies:
-      '@floating-ui/core': 1.6.1
+      '@floating-ui/core': 1.6.2
 
   '@floating-ui/utils@0.2.2': {}
 
@@ -8490,7 +8502,7 @@ snapshots:
       defu: 6.1.4
       hookable: 5.5.3
       pathe: 1.1.2
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
       scule: 1.3.0
       std-env: 3.7.0
       ufo: 1.5.3
@@ -8523,7 +8535,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/test-utils@3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))':
+  '@nuxt/test-utils@3.13.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(nitropack@2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13))(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.17.2)
       '@nuxt/schema': 3.11.2(rollup@4.17.2)
@@ -8532,12 +8544,13 @@ snapshots:
       defu: 6.1.4
       destr: 2.0.3
       estree-walker: 3.0.3
-      execa: 8.0.1
+      execa: 9.1.0
       fake-indexeddb: 5.0.2
       get-port-please: 3.1.2
       h3: 1.11.1
       local-pkg: 0.5.0
       magic-string: 0.30.10
+      nitropack: 2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13)
       node-fetch-native: 1.6.4
       ofetch: 1.3.4
       pathe: 1.1.2
@@ -8549,7 +8562,7 @@ snapshots:
       unenv: 1.9.0
       unplugin: 1.10.1
       vite: 5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0)
-      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+      vitest-environment-nuxt: 1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(nitropack@2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13))(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
       vue: 3.4.27(typescript@5.4.5)
       vue-router: 4.3.2(vue@3.4.27(typescript@5.4.5))
     optionalDependencies:
@@ -10378,7 +10391,7 @@ snapshots:
       ohash: 1.1.3
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
       rc9: 2.1.2
 
   cac@6.7.14: {}
@@ -11423,6 +11436,21 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 4.0.0
       yoctocolors: 2.0.0
+
+  execa@9.1.0:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      cross-spawn: 7.0.3
+      figures: 6.1.0
+      get-stream: 9.0.1
+      human-signals: 7.0.0
+      is-plain-obj: 4.1.0
+      is-stream: 4.0.1
+      npm-run-path: 5.3.0
+      pretty-ms: 9.0.0
+      signal-exit: 4.1.0
+      strip-final-newline: 4.0.0
+      yoctocolors: 2.0.2
 
   expand-template@2.0.3:
     optional: true
@@ -12565,7 +12593,7 @@ snapshots:
   local-pkg@0.5.0:
     dependencies:
       mlly: 1.7.0
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
 
   locate-path@2.0.0:
     dependencies:
@@ -13602,6 +13630,12 @@ snapshots:
       load-json-file: 4.0.0
 
   pkg-types@1.1.0:
+    dependencies:
+      confbox: 0.1.7
+      mlly: 1.7.0
+      pathe: 1.1.2
+
+  pkg-types@1.1.1:
     dependencies:
       confbox: 0.1.7
       mlly: 1.7.0
@@ -15246,9 +15280,9 @@ snapshots:
       sass: 1.77.1
       terser: 5.31.0
 
-  vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
+  vitest-environment-nuxt@1.0.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(nitropack@2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13))(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5)):
     dependencies:
-      '@nuxt/test-utils': 3.12.1(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
+      '@nuxt/test-utils': 3.13.0(@cucumber/cucumber@10.7.0)(@playwright/test@1.44.0)(@vue/test-utils@2.4.6)(h3@1.11.1)(happy-dom@14.11.0)(nitropack@2.9.6(@opentelemetry/api@1.8.0)(encoding@0.1.13))(playwright-core@1.44.0)(rollup@4.17.2)(vite@5.2.11(@types/node@20.12.11)(sass@1.77.1)(terser@5.31.0))(vitest@1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.1)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
@@ -15259,6 +15293,7 @@ snapshots:
       - h3
       - happy-dom
       - jsdom
+      - nitropack
       - playwright-core
       - rollup
       - supports-color
@@ -15561,6 +15596,8 @@ snapshots:
   yocto-queue@1.0.0: {}
 
   yoctocolors@2.0.0: {}
+
+  yoctocolors@2.0.2: {}
 
   yup@0.32.11:
     dependencies:
