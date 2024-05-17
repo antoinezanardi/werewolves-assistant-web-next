@@ -1,4 +1,5 @@
 import { createPinia, setActivePinia } from "pinia";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
@@ -7,6 +8,7 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Create Game Dto Store", () => {
@@ -16,7 +18,7 @@ describe("Create Game Dto Store", () => {
 
   it("should have initial state when created.", () => {
     const createGameDtoStore = useCreateGameDtoStore();
-    const expectedCreateGameDto = createFakeCreateGameDto();
+    const expectedCreateGameDto = createFakeCreateGameDto({ options: DEFAULT_GAME_OPTIONS });
 
     expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
   });
@@ -30,6 +32,7 @@ describe("Create Game Dto Store", () => {
           createFakeCreateGamePlayerDto(),
           createFakeCreateGamePlayerDto(),
         ],
+        options: createFakeGameOptions(),
       });
 
       createGameDtoStore.setCreateGameDto(expectedCreateGameDto);
@@ -48,7 +51,10 @@ describe("Create Game Dto Store", () => {
           createFakeCreateGamePlayerDto(),
         ],
       });
-      const expectedCreateGameDto = createFakeCreateGameDto({ players: [] });
+      const expectedCreateGameDto = createFakeCreateGameDto({
+        players: [],
+        options: DEFAULT_GAME_OPTIONS,
+      });
       createGameDtoStore.resetCreateGameDto();
 
       expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
@@ -59,7 +65,10 @@ describe("Create Game Dto Store", () => {
     it("should add player to createGameDto when called.", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       const player = createFakeCreateGamePlayerDto();
-      const expectedCreateGameDto = createFakeCreateGameDto({ players: [player] });
+      const expectedCreateGameDto = createFakeCreateGameDto({
+        players: [player],
+        options: DEFAULT_GAME_OPTIONS,
+      });
 
       createGameDtoStore.addPlayerToCreateGameDto(player);
 
@@ -83,6 +92,7 @@ describe("Create Game Dto Store", () => {
           player,
           players[2],
         ],
+        options: DEFAULT_GAME_OPTIONS,
       });
 
       createGameDtoStore.updatePlayerInCreateGameDto(player);
@@ -99,7 +109,10 @@ describe("Create Game Dto Store", () => {
       ];
       createGameDtoStore.createGameDto.players = players;
       const player = createFakeCreateGamePlayerDto({ name: "player4", role: { name: "seer" } });
-      const expectedCreateGameDto = createFakeCreateGameDto({ players });
+      const expectedCreateGameDto = createFakeCreateGameDto({
+        players,
+        options: DEFAULT_GAME_OPTIONS,
+      });
 
       createGameDtoStore.updatePlayerInCreateGameDto(player);
 
@@ -135,6 +148,7 @@ describe("Create Game Dto Store", () => {
           players[0],
           players[2],
         ],
+        options: DEFAULT_GAME_OPTIONS,
       });
       createGameDtoStore.removePlayerFromCreateGameDto(players[1].name);
 
@@ -149,7 +163,10 @@ describe("Create Game Dto Store", () => {
         createFakeCreateGamePlayerDto({ name: "player3" }),
       ];
       createGameDtoStore.createGameDto.players = players;
-      const expectedCreateGameDto = createFakeCreateGameDto({ players });
+      const expectedCreateGameDto = createFakeCreateGameDto({
+        players,
+        options: DEFAULT_GAME_OPTIONS,
+      });
 
       createGameDtoStore.removePlayerFromCreateGameDto("player4");
 

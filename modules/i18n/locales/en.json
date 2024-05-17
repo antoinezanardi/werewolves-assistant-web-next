@@ -1,6 +1,8 @@
 {
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
+    "yes": "Yes",
+    "no": "No",
     "actions": {
       "add": "Add",
       "close": "Close"
@@ -795,6 +797,81 @@
           "descriptions": {
             "yes": "The role of the player is revealed to others when he dies.",
             "no": "The role of the player is not revealed to others when he dies."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriff": {
+      "sheriff": "Sheriff",
+      "sheriffAlt": "Sheriff icon",
+      "options": {
+        "isEnabled": {
+          "label": "Play with the Sheriff",
+          "descriptions": {
+            "yes": "The game will have a Sheriff.",
+            "no": "The game will not have a Sheriff."
+          }
+        },
+        "mustSettleTieInVotes": {
+          "label": "The Sheriff must settle the votes",
+          "descriptions": {
+            "yes": "The Sheriff must settle the votes when there is a tie.",
+            "no": "The Sheriff doesn't have to settle the votes when there is a tie. A second vote will be called."
+          }
+        },
+        "hasDoubledVote": {
+          "label": "The Sheriff has a doubled vote",
+          "descriptions": {
+            "yes": "When the survivors vote to eliminate a player, the Sheriff has a doubled vote during the votes.",
+            "no": "The Sheriff doesn't have a doubled vote during the votes but a regular one like any other player."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriffElection": {
+      "options": {
+        "electedAt": {
+          "turn": {
+            "label": "Sheriff election turn"
+          },
+          "label": "Sheriff election time",
+          "description": "The Sheriff will be elected on the {phase} of the turn {turn}."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBigBadWolf": {
+      "options": {
+        "isPowerlessIfWerewolfDies": {
+          "label": "The Big Bad Wolf is powerless if a Werewolf dies",
+          "descriptions": {
+            "yes": "If a player from the Werewolf side dies, the Big Bad Wolf becomes powerless for the rest of the game.",
+            "no": "If a Werewolf dies, the Big Bad Wolf remains powerful."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWhiteWerewolf": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "White Werewolf waking up interval",
+          "description": "The White Werewolf will wake up every night to eat another Werewolf. | The White Werewolf will wake up every {interval} nights to eat another Werewolf."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSeer": {
+      "options": {
+        "isTalkative": {
+          "label": "The Seer is talkative",
+          "descriptions": {
+            "yes": "When the Seer looks at a player, the Game Master reveals the role of the player out loud.",
+            "no": "When the Seer looks at a player, the Game Master reveals the role of the player only to her (by miming it for example)."
+          }
+        },
+        "canSeeRoles": {
+          "label": "The Seer can see the roles",
+          "descriptions": {
+            "yes": "When the Seer looks at a player, the Game Master reveals the role of the player to her.",
+            "no": "When the Seer looks at a player, the Game Master doesn't reveal the role of the player to her but his side (Villager or Werewolf)."
           }
         }
       }

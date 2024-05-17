@@ -11,6 +11,7 @@
         class="w-8/12"
       >
         <i
+          id="game-option-label-icon"
           class="me-3"
           :class="optionIconClass"
         />
@@ -28,12 +29,12 @@
       </div>
     </div>
 
-    <div
+    <p
       id="game-option-description"
       class="italic mt-3 text-gray-400"
     >
       {{ optionDescription }}
-    </div>
+    </p>
 
     <VuePrimeDivider
       v-if="doesHaveBottomDivider"

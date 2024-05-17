@@ -1,6 +1,8 @@
 {
   "shared": {
     "werewolvesAssistant": "Assistant Loups-Garous",
+    "yes": "Oui",
+    "no": "Non",
     "actions": {
       "add": "Ajouter",
       "close": "Fermer"
@@ -774,6 +776,30 @@
     },
     "GameLobbyOptionsHubHeader": {
       "gameOptions": "Options de la partie"
+    },
+    "GameLobbyOptionsHubTabView": {
+      "roles": "Rôles",
+      "composition": "Composition",
+      "votes": "Votes"
+    },
+    "GameLobbyOptionsHubRolesTabGeneral": {
+      "general": "Général",
+      "options": {
+        "doSkipCallIfNoTarget": {
+          "label": "Appel de rôle sans cible possible",
+          "descriptions": {
+            "yes": "L'Assistant appellera le rôle même s'il n'y a pas de cible parmi les joueurs.",
+            "no": "L'Assistant n'appellera pas le rôle s'il n'y a pas de cible parmi les joueurs."
+          }
+        },
+        "areRevealedOnDeath": {
+          "label": "Révélation des rôles à la mort",
+          "descriptions": {
+            "yes": "Le rôle du joueur est révélé aux autres lorsqu'il meurt.",
+            "no": "Le rôle du joueur n'est pas révélé aux autres lorsqu'il meurt."
+          }
+        }
+      }
     }
   }
 }

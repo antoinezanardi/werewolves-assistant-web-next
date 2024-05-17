@@ -76,6 +76,7 @@ export default defineNuxtConfig({
         "Badge",
         "InputGroup",
         "InputText",
+        "InputNumber",
         "FloatLabel",
         "AutoComplete",
         "ScrollTop",

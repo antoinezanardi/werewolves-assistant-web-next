@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Option Input Group Component > should match snapshot when rendered. 1`] = `
+"<div id="game-option-input-group-container">
+  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 icon"></i><span>label</span></h3>
+    <div id="game-option-input" class="w-4/12"></div>
+  </div>
+  <p id="game-option-description" class="italic mt-3 text-gray-400">description</p>
+  <!--v-if-->
+</div>"
+`;

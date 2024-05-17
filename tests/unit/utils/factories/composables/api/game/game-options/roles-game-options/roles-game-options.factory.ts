@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { RolesGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/roles-game-options.class";
 import { createFakeActorGameOptionsFactory } from "~/tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/actor-game-options/actor-game-options.factory";
 import { createFakeBearTamerGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/bear-tamer-game-options/bear-tamer-game-options.factory";
@@ -24,8 +25,8 @@ import { createFakeWolfHoundGameOptions } from "~/tests/unit/utils/factories/com
 
 function createFakeRolesGameOptions(roleGameOptions: Partial<RolesGameOptions> = {}): RolesGameOptions {
   return RolesGameOptions.create({
-    areRevealedOnDeath: false,
-    doSkipCallIfNoTarget: false,
+    areRevealedOnDeath: roleGameOptions.areRevealedOnDeath ?? faker.datatype.boolean(),
+    doSkipCallIfNoTarget: roleGameOptions.doSkipCallIfNoTarget ?? faker.datatype.boolean(),
     actor: createFakeActorGameOptionsFactory(roleGameOptions.actor),
     bearTamer: createFakeBearTamerGameOptions(roleGameOptions.bearTamer),
     bigBadWolf: createFakeBigBadWolfGameOptions(roleGameOptions.bigBadWolf),

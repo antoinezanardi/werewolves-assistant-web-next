@@ -115,7 +115,7 @@ describe("Game Lobby Header Component", () => {
     });
 
     describe("Setup Buttons", () => {
-      it("should emit 'gameOptionsButtonClick' event when options button is clicked.", async() => {
+      it("should emit 'gameOptionsButtonClick' event when options button is clicked.", () => {
         const setupButtons = wrapper.findComponent<typeof GameLobbyHeaderSetupButtons>("#game-lobby-header-setup-buttons");
         (setupButtons.vm as VueVm).$emit("gameOptionsButtonClick");
 

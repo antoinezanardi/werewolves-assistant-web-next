@@ -4,7 +4,6 @@ import Dialog from "primevue/dialog";
 
 import type { GameOverHistoryExposed } from "~/components/pages/game/GameOver/GameOverHistory/game-over-history.types";
 import GameOverHistory from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistory.vue";
-import type GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
 import type GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
 import type DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";

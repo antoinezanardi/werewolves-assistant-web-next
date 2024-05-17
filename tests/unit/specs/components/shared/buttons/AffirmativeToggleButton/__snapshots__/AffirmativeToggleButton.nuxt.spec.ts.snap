@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Affirmative Toggle Button Component > should match snapshot when rendered. 1`] = `"<toggle-button-stub id="affirmative-toggle-button" modelvalue="true" off-icon="fa fa-thumbs-down !text-white" off-label="No"></toggle-button-stub>"`;
