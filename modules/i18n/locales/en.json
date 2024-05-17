@@ -875,6 +875,63 @@
           }
         }
       }
+    },
+    "GameLobbyOptionsHubRolesTabCupid": {
+      "options": {
+        "mustWinWithLovers": {
+          "label": "Cupid must win with the Lovers",
+          "descriptions": {
+            "yes": "Cupid teams up with the Lovers : if the Lovers and Cupid are the only survivors, they win together. Lovers can win alone without Cupid winning. Warning : Cupid can't charm himself with this option !",
+            "no": "Cupid doesn't team up with the Lovers. "
+          }
+        },
+        "lovers": {
+          "doRevealRoleToEachOther": {
+            "label": "The Lovers reveal their role to each other",
+            "descriptions": {
+              "yes": "The Lovers reveal their role to each other when they meet right after being charmed.",
+              "no": "The Lovers don't reveal their role to each other when they meet right after being charmed."
+            }
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabLittleGirl": {
+      "options": {
+        "isProtectedByDefender": {
+          "label": "The Little Girl is protected by the Defender",
+          "descriptions": {
+            "yes": "If the Little Girl is the target of the Werewolves, the Defender can save her with his protection.",
+            "no": "If the Little Girl is the target of the Werewolves, the Defender can't save her with his protection."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabDefender": {
+      "options": {
+        "canProtectTwice": {
+          "label": "The Defender can protect twice",
+          "descriptions": {
+            "yes": "The Defender can protect the same player twice or more in a row during the game.",
+            "no": "The Defender can't protect the same player twice in a row during the game."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabElder": {
+      "options": {
+        "livesCountAgainstWerewolves": {
+          "label": "The Elder lives count against the Werewolves",
+          "description": "The Elder has only one life against the Werewolves. | The Elder has {livesCount} lives against the Werewolves."
+        },
+        "doesTakeHisRevenge": {
+          "label": "The Elder takes his revenge",
+          "descriptions": {
+            "yes": "If the Elder is eliminated by a player from the Villagers side (votes from Survivors, potion from Witch, shot from Hunter, etc.), all the players from the Villagers side loose their power for the rest of the game.",
+            "no": "If the Elder is eliminated by a player from the Werewolves side, he can't eliminate a player from the Werewolves side."
+          }
+        }
+      }
     }
   }
 }

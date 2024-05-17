@@ -80,6 +80,7 @@ export default defineNuxtConfig({
         "FloatLabel",
         "AutoComplete",
         "ScrollTop",
+        "Slider",
         "Toast",
         "ToggleButton",
         "TabPanel",

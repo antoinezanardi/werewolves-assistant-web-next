@@ -27,10 +27,19 @@
         id="game-lobby-options-hub-roles-tab-sheriff-election-turn-input"
         v-model="sheriffElectionTurnValue"
         class="w-full"
-        :max="1000"
+        :max="10"
         :min="1"
       />
     </VuePrimeFloatLabel>
+
+    <VuePrimeSlider
+      id="game-lobby-options-hub-roles-tab-sheriff-election-turn-slider"
+      v-model="sheriffElectionTurnValue"
+      class="mt-4 w-full"
+      :max="10"
+      :min="1"
+      :step="1"
+    />
   </GameOptionInputGroup>
 </template>
 

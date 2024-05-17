@@ -29,6 +29,15 @@
           :min="1"
         />
       </VuePrimeFloatLabel>
+
+      <VuePrimeSlider
+        id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-slider"
+        v-model="whiteWerewolfWakingUpIntervalValue"
+        class="mt-4 w-full"
+        :max="5"
+        :min="1"
+        :step="1"
+      />
     </GameOptionInputGroup>
   </VuePrimeFieldset>
 </template>
