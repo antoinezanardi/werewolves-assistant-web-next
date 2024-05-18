@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Option Role Legend Component > should match snapshot when rendered. 1`] = `
+"<div id="game-option-role-legend" class="flex gap-4 items-center">
+  <role-image-stub rolename="werewolf" sizes="50px" definition="normal" id="game-option-role-legend-image" class="!border-0"></role-image-stub>
+  <h2 id="game-option-role-legend-title">shared.role.name.werewolf</h2>
+</div>"
+`;

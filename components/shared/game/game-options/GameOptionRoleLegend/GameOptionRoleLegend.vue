@@ -4,6 +4,7 @@
     class="flex gap-4 items-center"
   >
     <RoleImage
+      id="game-option-role-legend-image"
       class="!border-0"
       :role-name="roleName"
     />
