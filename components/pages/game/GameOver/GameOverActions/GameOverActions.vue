@@ -21,7 +21,7 @@
       severity="help"
       @click="showGameHistory"
     >
-      <i class="fa fa-clock me-2"/>
+      <i class="fa fa-clock-rotate-left me-2"/>
 
       <span>
         {{ showGameHistoryTextButton }}

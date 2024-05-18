@@ -10,7 +10,7 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input-group"
       :option-description="whiteWerewolfWakingUpIntervalDescription"
-      option-icon-class="fa fa-clock text-white"
+      option-icon-class="fa fa-clock-rotate-left text-white"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.label')"
     >
       <VuePrimeFloatLabel>

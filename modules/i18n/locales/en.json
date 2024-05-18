@@ -932,6 +932,74 @@
           }
         }
       }
+    },
+    "GameLobbyOptionsHubRolesTabIdiot": {
+      "options": {
+        "doesDieOnElderDeath": {
+          "label": "The revealed Idiot dies on Elder's death",
+          "descriptions": {
+            "yes": "If the Elder is eliminated in any way and the Idiot has his role revealed, the Idiot dies.",
+            "no": "If the Elder is eliminated in any way and the Idiot has his role revealed, the Idiot doesn't die."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabTwoSisters": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Two Sisters waking up interval",
+          "description": "The Two Sisters will wake up only the first night to meet each other. | The Two Sisters will wake up every night to meet each other. | The Two Sisters will wake up every {interval} nights to meet each other."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThreeBrothers": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Three Brothers waking up interval",
+          "description": "The Three Brothers will wake up only the first night to meet each other. | The Three Brothers will wake up every night to meet each other. | The Three Brothers will wake up every {interval} nights to meet each other."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabFox": {
+      "options": {
+        "isPowerlessIfMissesWerewolf": {
+          "label": "The Fox is powerless if he misses to sniff a Werewolf",
+          "descriptions": {
+            "yes": "If the Fox doesn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game.",
+            "no": "If the Fox doesn't sniff a Werewolf among the group of 3 players, he remains powerful."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBearTamer": {
+      "options": {
+        "doesGrowlOnWerewolvesSide": {
+          "label": "The Bear Tamer growls on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Bear Tamer is infected by the Vile Father Of Wolves, his bear will growl every morning.",
+            "no": "The bear will growl only if he has a neighbor from the Werewolves side, whether the Bear Tamer is infected or not."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabStutteringJudge": {
+      "options": {
+        "voteRequestsCount": {
+          "label": "Stuttering Judge vote requests",
+          "description": "The Stuttering Judge can only request one more vote during the game. | The Stuttering Judge can request another vote {count} times during the game."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWildChild": {
+      "options": {
+        "isTransformationRevealed": {
+          "label": "The Wild Child transformation is revealed",
+          "descriptions": {
+            "yes": "When the Wild Child becomes a Werewolf as his model dies, the Game Master reveals his transformation to the other players.",
+            "no": "When the Wild Child becomes a Werewolf as his model dies, the Game Master doesn't reveal his transformation to the other players."
+          }
+        }
+      }
     }
   }
 }
