@@ -320,6 +320,10 @@
         "night": "Night",
         "day": "Day"
       },
+      "definitePhase": {
+        "night": "The Night",
+        "day": "The Day"
+      },
       "player": {
         "attribute": {
           "name": {
@@ -835,7 +839,7 @@
             "label": "Sheriff election turn"
           },
           "label": "Sheriff election time",
-          "description": "The Sheriff will be elected on the {phase} of the turn {turn}."
+          "description": "The Sheriff will be elected on {phase} of the turn {turn}."
         }
       }
     },
@@ -928,7 +932,7 @@
           "label": "The Elder takes his revenge",
           "descriptions": {
             "yes": "If the Elder is eliminated by a player from the Villagers side (votes from Survivors, potion from Witch, shot from Hunter, etc.), all the players from the Villagers side loose their power for the rest of the game.",
-            "no": "If the Elder is eliminated by a player from the Werewolves side, he can't eliminate a player from the Werewolves side."
+            "no": "If the Elder is eliminated by a player from the Werewolves side, nothing happens."
           }
         }
       }
@@ -997,6 +1001,98 @@
           "descriptions": {
             "yes": "When the Wild Child becomes a Werewolf as his model dies, the Game Master reveals his transformation to the other players.",
             "no": "When the Wild Child becomes a Werewolf as his model dies, the Game Master doesn't reveal his transformation to the other players."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWolfHound": {
+      "options": {
+        "isChosenSideRevealed": {
+          "label": "The Wolf-Hound chosen side is revealed",
+          "descriptions": {
+            "yes": "When the Wolf-Hound chooses a side, the Game Master reveals his choice to the other players.",
+            "no": "When the Wolf-Hound chooses a side, the Game Master doesn't reveal his choice to the other players."
+          }
+        },
+        "isSideRandomlyChosen": {
+          "label": "The Wolf-Hound side is randomly chosen",
+          "descriptions": {
+            "yes": "The Wolf-Hound won't have the choice to choose a side at the beginning of the game. His side will be randomly chosen by the Assistant.",
+            "no": "The Wolf-Hound chooses his side at the beginning of the game."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThief": {
+      "options": {
+        "mustChooseBetweenWerewolves": {
+          "label": "The Thief must choose between only Werewolves",
+          "descriptions": {
+            "yes": "If all the cards designated to the Thief are from the Werewolves side, he must choose one of them and can't skip his turn.",
+            "no": "The Thief can skip his turn, even if all the cards designated to him are from the Werewolves side."
+          }
+        },
+        "isChosenCardRevealed": {
+          "label": "The chosen card is revealed",
+          "descriptions": {
+            "yes": "The Thief's chosen card is revealed to the other players.",
+            "no": "The Thief's chosen card is not revealed to the other players."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPiedPiper": {
+      "options": {
+        "charmedPeopleCountPerNight": {
+          "label": "Charmed people count per night",
+          "description": "The Pied Piper can charm only one player per night. | The Pied Piper can charm {count} players per night."
+        },
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Pied Piper is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Pied Piper is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Pied Piper remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabScandalmonger": {
+      "options": {
+        "markPenalty": {
+          "label": "Mark penalty",
+          "description": "The Scandalmonger marks a player with a feather. The player will have one more vote against him the next vote. | The Scandalmonger marks a player with a feather. The player will have {markPenalty} more votes against him the next vote."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWitch": {
+      "options": {
+        "doesKnowWerewolvesTargets": {
+          "label": "The Witch knows the Werewolves targets",
+          "descriptions": {
+            "yes": "The Witch knows the targets of the Werewolves when she can still use her death potion.",
+            "no": "The Witch doesn't know the targets of the Werewolves at all."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPrejudicedManipulator": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Prejudiced Manipulator is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Prejudiced Manipulator is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Prejudiced Manipulator remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabActor": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Actor is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Actor is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Actor remains powerful even he is infected by the Vile Father Of Wolves."
           }
         }
       }

@@ -38,7 +38,7 @@
       id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input-group"
       does-have-bottom-divider
       :option-description="mustSheriffSettleVotesDescription"
-      option-icon-class="fa fa-gavel text-amber-300"
+      option-icon-class="fa fa-gavel text-amber-800"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabSheriff.options.mustSettleTieInVotes.label')"
     >
       <AffirmativeToggleButton
@@ -52,7 +52,7 @@
       id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input-group"
       does-have-bottom-divider
       :option-description="doesSheriffHaveDoubledVoteDescription"
-      option-icon-class="fa fa-balance-scale text-amber-300"
+      option-icon-class="fa fa-balance-scale text-amber-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabSheriff.options.hasDoubledVote.label')"
     >
       <AffirmativeToggleButton

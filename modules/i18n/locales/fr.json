@@ -81,7 +81,7 @@
         },
         "big-bad-wolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
-          "eatsALot": "À Thiercelieux, les petits cochons ne sont pas les seuls à redouter le Grand-Méchant-Loup. Il est énorme et son appétit est gigantesque. À cause de lui, des villages entiers furent rayés de la carte !",
+          "eatsALot": "À Thiercelieux, les petits cochons ne sont pas les seuls à redouter le Grand Méchant Loup. Il est énorme et son appétit est gigantesque. À cause de lui, des villages entiers furent rayés de la carte !",
           "eachNightEatsAnotherVictimTwice": "Chaque nuit, il se réveille et dévore avec les autres Loups-Garous. Mais tant qu'aucun Loup-Garou, Chien-Loup devenu loup ou Enfant Sauvage ayant perdu son modèle n'est éliminé, il se réveille seul une deuxième fois et dévore une autre victime.",
           "cannotEatAnotherWolf": "Il ne peut pas dévorer de Loup-Garou."
         },
@@ -319,6 +319,10 @@
       "phase": {
         "night": "Nuit",
         "day": "Jour"
+      },
+      "definitePhase": {
+        "night": "La Nuit",
+        "day": "Le Jour"
       },
       "player": {
         "attribute": {
@@ -593,7 +597,7 @@
       "drankLifePotionByWitch": "La Sorcière a donné sa potion de vie à ce joueur, il sera sauvé des Loups-Garous.",
       "eatenByWerewolves": "Les Loups-Garous ont mangé ce joueur, il mourra au petit matin.",
       "eatenByWhiteWerewolf": "Le Loup-garou blanc a mangé ce joueur, il mourra au petit matin.",
-      "eatenByBigBadWolf": "Le Grand-Méchant-Loup a mangé ce joueur, il mourra au petit matin.",
+      "eatenByBigBadWolf": "Le Grand Méchant Loup a mangé ce joueur, il mourra au petit matin.",
       "inLoveByCupid": "Cupidon a fait tomber amoureux ce joueur d'un autre.",
       "powerlessByActor": "Le joueur ne peut plus jouer un autre rôle en tant qu'Acteur, il n'a plus de pouvoirs.",
       "powerlessByWerewolves": "Le joueur n'a plus de pouvoir car il est devenu un loup-garou.",
@@ -628,7 +632,7 @@
       "unknownQuestionForCurrentPlay": "??",
       "doesAccursedWolfFatherWantToInfect": "L'Infect Père des Loups veut-il infecter le joueur dévoré par les Loups-Garous ?",
       "doesActorWantToChooseCard": "Le Comédien veut-il choisir une carte et prendre ce rôle ?",
-      "whichPlayerDoesBigBadWolfEat": "Quel joueur le Grand-Méchant-Loup veut-il manger ?",
+      "whichPlayerDoesBigBadWolfEat": "Quel joueur le Grand Méchant Loup veut-il manger ?",
       "whichPlayersDoesCupidCharm": "Quels joueurs Cupidon veut-il rendre inséparables ?",
       "whichPlayerDoesDefenderProtect": "Quel joueur le Salvateur veut-il protéger ?",
       "doesFoxWantToSniff": "Le Renard veut-il renifler un groupe de joueurs ?",
@@ -793,10 +797,302 @@
           }
         },
         "areRevealedOnDeath": {
-          "label": "Révélation des rôles à la mort",
+          "label": "Révélation du rôle à la mort",
           "descriptions": {
             "yes": "Le rôle du joueur est révélé aux autres lorsqu'il meurt.",
             "no": "Le rôle du joueur n'est pas révélé aux autres lorsqu'il meurt."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriff": {
+      "sheriff": "Maire",
+      "sheriffAlt": "Icône du Maire",
+      "options": {
+        "isEnabled": {
+          "label": "Jouer avec le Maire",
+          "descriptions": {
+            "yes": "Le jeu aura un Maire.",
+            "no": "Le jeu n'aura pas de Maire."
+          }
+        },
+        "mustSettleTieInVotes": {
+          "label": "Le Maire doit départager les votes",
+          "descriptions": {
+            "yes": "Le Maire doit départager les votes en cas d'égalité.",
+            "no": "Le Maire n'a pas à départager les votes en cas d'égalité. Un second vote sera organisé juste ensuite."
+          }
+        },
+        "hasDoubledVote": {
+          "label": "Le Maire a un vote doublé",
+          "descriptions": {
+            "yes": "Quand les survivants votent pour éliminer un joueur, le Maire a un vote doublé lors des votes.",
+            "no": "Le Maire n'a pas un vote doublé lors des votes, mais un vote régulier comme tout autre joueur."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriffElection": {
+      "options": {
+        "electedAt": {
+          "turn": {
+            "label": "Tour d'élection du Maire"
+          },
+          "label": "Élection du Maire",
+          "description": "Le Maire sera élu pendant {phase} du tour {turn}."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBigBadWolf": {
+      "options": {
+        "isPowerlessIfWerewolfDies": {
+          "label": "Le Grand Méchant Loup perd ses pouvoirs si un Loup-Garou meurt",
+          "descriptions": {
+            "yes": "Si un joueur du côté des Loups-Garous meurt, le Grand Méchant Loup perd ses pouvoirs pour le reste de la partie.",
+            "no": "Si un Loup-Garou meurt, le Grand Méchant Loup garde ses pouvoirs."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWhiteWerewolf": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Nombre de nuits entre deux réveils du Loup-Garou Blanc",
+          "description": "Le Loup-Garou Blanc se réveillera chaque nuit pour manger un autre Loup-Garou. | Le Loup-Garou Blanc se réveillera tous les {interval} nuits pour manger un autre Loup-Garou."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSeer": {
+      "options": {
+        "isTalkative": {
+          "label": "La Voyante est bavarde",
+          "descriptions": {
+            "yes": "Lorsque la Voyante choisit un joueur, le Maître du Jeu révèle le rôle du joueur à voix haute.",
+            "no": "Lorsque la Voyante choisit un joueur, le Maître du Jeu révèle le rôle du joueur uniquement à elle (en le mimant par exemple)."
+          }
+        },
+        "canSeeRoles": {
+          "label": "La Voyante peut voir les rôles",
+          "descriptions": {
+            "yes": "Lorsque la Voyante choisit un joueur, le Maître du Jeu lui révèle le rôle du joueur.",
+            "no": "Lorsque la Voyante choisit un joueur, le Maître du Jeu ne lui révèle pas le rôle du joueur, mais son camp (Villageois ou Loup-Garou)."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabCupid": {
+      "options": {
+        "mustWinWithLovers": {
+          "label": "Cupidon doit gagner avec les Amoureux",
+          "descriptions": {
+            "yes": "Cupidon fait équipe avec les Amoureux : si les Amoureux et Cupidon sont les seuls survivants, ils gagnent ensemble. Les Amoureux peuvent gagner seuls sans que Cupidon gagne. Attention : Cupidon ne peut pas se charmer lui-même avec cette option activée !",
+            "no": "Cupidon ne fait pas équipe avec les Amoureux."
+          }
+        },
+        "lovers": {
+          "doRevealRoleToEachOther": {
+            "label": "Les Amoureux se révèlent leur rôle",
+            "descriptions": {
+              "yes": "Les Amoureux se révèlent leur rôle lorsqu'ils se rencontrent juste après avoir été charmés.",
+              "no": "Les Amoureux ne se révèlent pas leur rôle lorsqu'ils se rencontrent juste après avoir été charmés."
+            }
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabLittleGirl": {
+      "options": {
+        "isProtectedByDefender": {
+          "label": "La Petite Fille est protégée par le Salvateur",
+          "descriptions": {
+            "yes": "Si la Petite Fille est la cible des Loups-Garous, le Salvateur peut la sauver avec sa protection.",
+            "no": "Si la Petite Fille est la cible des Loups-Garous, le Salvateur ne peut pas la sauver avec sa protection."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabDefender": {
+      "options": {
+        "canProtectTwice": {
+          "label": "Le Salvateur peut protéger deux fois de suite",
+          "descriptions": {
+            "yes": "Le Salvateur peut protéger le même joueur deux fois de suite ou plus pendant la partie.",
+            "no": "Le Salvateur ne peut pas protéger le même joueur deux fois de suite pendant la partie."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabElder": {
+      "options": {
+        "livesCountAgainstWerewolves": {
+          "label": "Nombre de vies de l'Ancien contre les Loups-Garous",
+          "description": "L'Ancien n'a qu'une seule vie contre les Loups-Garous. | L'Ancien a {livesCount} vies contre les Loups-Garous."
+        },
+        "doesTakeHisRevenge": {
+          "label": "L'Ancien prend sa revanche",
+          "descriptions": {
+            "yes": "Si l'Ancien est éliminé par un joueur du côté des Villageois (votes des Survivants, potion de la Sorcière, tir du Chasseur, etc.), tous les joueurs du côté des Villageois perdent leurs pouvoirs pour le reste de la partie.",
+            "no": "Si l'Ancien est éliminé par un joueur du côté des Loups-Garous, rien ne se passe."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabIdiot": {
+      "options": {
+        "doesDieOnElderDeath": {
+          "label": "L'Idiot révélé meurt à la mort de l'Ancien",
+          "descriptions": {
+            "yes": "Si l'Ancien est éliminé et que l'Idiot a son rôle révélé, l'Idiot meurt en conséquence.",
+            "no": "Si l'Ancien est éliminé et que l'Idiot a son rôle révélé, l'Idiot ne meurt pas."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabTwoSisters": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Nombre de nuits entre deux réveils des Deux Sœurs",
+          "description": "Les Deux Sœurs se réveilleront seulement la première nuit pour se rencontrer. | Les Deux Sœurs se réveilleront chaque nuit pour se rencontrer. | Les Deux Sœurs se réveilleront toutes les {interval} nuits pour se rencontrer."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThreeBrothers": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Nombre de nuits entre deux réveils des Trois Frères",
+          "description": "Les Trois Frères se réveilleront seulement la première nuit pour se rencontrer. | Les Trois Frères se réveilleront chaque nuit pour se rencontrer. | Les Trois Frères se réveilleront toutes les {interval} nuits pour se rencontrer."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabFox": {
+      "options": {
+        "isPowerlessIfMissesWerewolf": {
+          "label": "Le Renard perd ses pouvoirs s'il ne renifle pas un Loup-Garou",
+          "descriptions": {
+            "yes": "Si le Renard ne renifle pas un Loup-Garou parmi le groupe de 3 joueurs, il perd ses pouvoirs pour le reste de la partie.",
+            "no": "Si le Renard ne renifle pas un Loup-Garou parmi le groupe de 3 joueurs, il garde ses pouvoirs."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBearTamer": {
+      "options": {
+        "doesGrowlOnWerewolvesSide": {
+          "label": "Le Montreur d'Ours grogne s'il est du côté des Loups-Garous",
+          "descriptions": {
+            "yes": "Si le Montreur d'Ours est infecté par l'Infect Père des Loups, son ours grognera chaque matin.",
+            "no": "L'ours grognera seulement s'il a un voisin du côté des Loups-Garous, que le Montreur d'Ours soit infecté ou non."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabStutteringJudge": {
+      "options": {
+        "voteRequestsCount": {
+          "label": "Nombre de requêtes de votes du Juge Bègue",
+          "description": "Le Juge Bègue ne peut demander qu'un seul vote supplémentaire pendant la partie. | Le Juge Bègue peut demander un autre vote {count} fois pendant la partie."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWildChild": {
+      "options": {
+        "isTransformationRevealed": {
+          "label": "La transformation de l'Enfant Sauvage est révélée aux joueurs",
+          "descriptions": {
+            "yes": "Lorsque l'Enfant Sauvage devient un Loup-Garou à la mort de son modèle, le Maître du Jeu révèle sa transformation aux autres joueurs.",
+            "no": "Lorsque l'Enfant Sauvage devient un Loup-Garou à la mort de son modèle, le Maître du Jeu ne révèle pas sa transformation aux autres joueurs."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWolfHound": {
+      "options": {
+        "isChosenSideRevealed": {
+          "label": "Le camp choisi par le Chien-Loup est révélé",
+          "descriptions": {
+            "yes": "Lorsque le Chien-Loup choisit un camp, le Maître du Jeu révèle son choix aux autres joueurs.",
+            "no": "Lorsque le Chien-Loup choisit un camp, le Maître du Jeu ne révèle pas son choix aux autres joueurs."
+          }
+        },
+        "isSideRandomlyChosen": {
+          "label": "Le camp du Chien-Loup est choisi aléatoirement",
+          "descriptions": {
+            "yes": "Le Chien-Loup n'aura pas le choix de choisir un camp au début de la partie. Son camp sera choisi aléatoirement par l'Assistant.",
+            "no": "Le Chien-Loup choisit son camp au début de la partie."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThief": {
+      "options": {
+        "mustChooseBetweenWerewolves": {
+          "label": "Le Voleur doit obligatoirement choisir une carte si elles sont toutes du camp des Loups-Garous",
+          "descriptions": {
+            "yes": "Si toutes les cartes désignées au Voleur sont du côté des Loups-Garous, il doit en choisir une et ne peut pas passer son tour.",
+            "no": "Le Voleur peut passer son tour, même si toutes les cartes désignées sont du côté des Loups-Garous."
+          }
+        },
+        "isChosenCardRevealed": {
+          "label": "La carte choisie est révélée",
+          "descriptions": {
+            "yes": "La carte choisie par le Voleur est révélée aux autres joueurs.",
+            "no": "La carte choisie par le Voleur n'est pas révélée aux autres joueurs."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPiedPiper": {
+      "options": {
+        "charmedPeopleCountPerNight": {
+          "label": "Nombre de personnes charmées par nuit",
+          "description": "Le Joueur de Flûte peut charmer seulement un joueur par nuit. | Le Joueur de Flûte peut charmer {count} joueurs par nuit."
+        },
+        "isPowerlessOnWerewolvesSide": {
+          "label": "Le Joueur de Flûte perd ses pouvoirs s'il est infecté",
+          "descriptions": {
+            "yes": "Si le Joueur de Flûte est infecté par l'Infect Père des Loups, il perd ses pouvoirs pour le reste de la partie.",
+            "no": "Le Joueur de Flûte garde ses pouvoirs même s'il est infecté par l'Infect Père des Loups."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabScandalmonger": {
+      "options": {
+        "markPenalty": {
+          "label": "Valeur de la plume du Corbeau",
+          "description": "Le Corbeau marque un joueur avec une plume. Le joueur aura un vote de plus contre lui lors du prochain vote. | Le Corbeau marque un joueur avec une plume. Le joueur aura {markPenalty} votes de plus contre lui lors du prochain vote."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWitch": {
+      "options": {
+        "doesKnowWerewolvesTargets": {
+          "label": "La Sorcière connaît les cibles des Loups-Garous",
+          "descriptions": {
+            "yes": "La Sorcière connaît les cibles des Loups-Garous lorsqu'elle peut encore utiliser sa potion de mort.",
+            "no": "La Sorcière ne connaît pas du tout les cibles des Loups-Garous."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPrejudicedManipulator": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "L'Abominable Sectaire perd ses pouvoirs s'il est infecté",
+          "descriptions": {
+            "yes": "Si le Abominable Sectaire est infecté par l'Infect Père des Loups, il perd ses pouvoirs pour le reste de la partie.",
+            "no": "L'Abominable Sectaire garde ses pouvoirs même s'il est infecté par l'Infect Père des Loups."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabActor": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "Le Comédien perd ses pouvoirs s'il est infecté",
+          "descriptions": {
+            "yes": "Si le Comédien est infecté par l'Infect Père des Loups, il perd ses pouvoirs pour le reste de la partie.",
+            "no": "Le Comédien garde ses pouvoirs même s'il est infecté par l'Infect Père des Loups."
           }
         }
       }

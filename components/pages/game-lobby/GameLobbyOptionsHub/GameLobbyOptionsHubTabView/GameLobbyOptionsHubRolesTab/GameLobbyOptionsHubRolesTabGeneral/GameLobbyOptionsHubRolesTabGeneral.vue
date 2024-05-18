@@ -30,7 +30,7 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input-group"
       :option-description="areRevealedOnDeathDescription"
-      option-icon-class="fa fa-skull-crossbones text-yellow-200"
+      option-icon-class="fa fa-skull text-gray-200"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.label')"
     >
       <AffirmativeToggleButton

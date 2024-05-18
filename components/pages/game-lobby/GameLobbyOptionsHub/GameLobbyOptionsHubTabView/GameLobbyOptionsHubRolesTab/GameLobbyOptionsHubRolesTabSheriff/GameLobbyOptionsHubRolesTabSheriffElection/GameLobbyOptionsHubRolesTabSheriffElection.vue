@@ -2,7 +2,7 @@
   <GameOptionInputGroup
     id="game-lobby-options-hub-roles-tab-sheriff-election-input-group"
     :option-description="sheriffElectionTurnDescription"
-    option-icon-class="fa fa-clock text-amber-300"
+    option-icon-class="fa fa-clock text-white"
     :option-label="$t('components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.label')"
   >
     <VuePrimeToggleButton
@@ -77,7 +77,7 @@ const sheriffPhaseNameElectionValueAsBoolean = computed<boolean>({
 });
 
 const sheriffElectionTurnDescription = computed<string>(() => {
-  const phaseLabel = t(`shared.game.phase.${createGameDto.value.options.roles.sheriff.electedAt.phaseName}`);
+  const phaseLabel = t(`shared.game.definitePhase.${createGameDto.value.options.roles.sheriff.electedAt.phaseName}`);
 
   return t("components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.description", {
     turn: sheriffElectionTurnValue.value,
