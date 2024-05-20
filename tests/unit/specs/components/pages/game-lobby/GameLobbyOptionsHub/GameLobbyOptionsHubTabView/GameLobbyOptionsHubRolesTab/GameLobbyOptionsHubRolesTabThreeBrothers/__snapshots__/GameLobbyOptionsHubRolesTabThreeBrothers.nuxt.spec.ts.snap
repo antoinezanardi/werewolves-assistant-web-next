@@ -24,28 +24,3 @@ exports[`Game Lobby Options Hub Roles Tab Three Brothers Component > should matc
   </transition-stub>
 </fieldset>"
 `;
-
-exports[`Game Lobby Options Hub Roles Tab Two Sisters Component > should match snapshot when rendered. 1`] = `
-"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-two-sisters" data-pc-name="fieldset" data-pc-section="root">
-  <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
-    <game-option-role-legend-stub rolename="two-sisters"></game-option-role-legend-stub>
-    <!---->
-  </legend>
-  <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-    <div id="game-lobby-options-hub-roles-tab-two-sisters_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-two-sisters_header" data-pc-section="toggleablecontent">
-      <div class="p-fieldset-content" data-pc-section="content">
-        <div id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input-group">
-          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock-rotate-left text-pink-500"></i><span>Two Sisters waking up interval</span></h3>
-            <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input">Two Sisters waking up interval</label><input-number-stub id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input" modelvalue="2" class="w-full" max="5" min="0"></input-number-stub></span>
-              <slider-stub id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-slider" modelvalue="2" class="mt-4 w-full" max="5" min="0" step="1"></slider-stub>
-            </div>
-          </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabTwoSisters.options.wakingUpInterval.description, {"interval":2}, 2</p>
-          <!--v-if-->
-        </div>
-      </div>
-    </div>
-  </transition-stub>
-</fieldset>"
-`;

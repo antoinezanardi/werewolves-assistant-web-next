@@ -1,6 +1,7 @@
 <template>
   <VuePrimeTabView
     id="game-lobby-options-hub-tab-view"
+    :pt="{ 'nav': '!border-none' }"
   >
     <VuePrimeTabPanel
       id="roles-tab-panel"

@@ -784,7 +784,9 @@
     "GameLobbyOptionsHubTabView": {
       "roles": "Rôles",
       "composition": "Composition",
-      "votes": "Votes"
+      "votes": "Votes",
+      "compositionTabImageAlt": "Icône de l'onglet Composition",
+      "votesTabImageAlt": "Icône de l'onglet Votes"
     },
     "GameLobbyOptionsHubRolesTabGeneral": {
       "general": "Général",
@@ -1093,6 +1095,17 @@
           "descriptions": {
             "yes": "Si le Comédien est infecté par l'Infect Père des Loups, il perd ses pouvoirs pour le reste de la partie.",
             "no": "Le Comédien garde ses pouvoirs même s'il est infecté par l'Infect Père des Loups."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubCompositionTab": {
+      "options": {
+        "isHidden": {
+          "label": "Composition cachée de la partie",
+          "descriptions": {
+            "yes": "La composition de la partie est cachée aux joueurs durant toute la partie.",
+            "no": "La composition de la partie est révélée aux joueurs au début de la partie."
           }
         }
       }

@@ -784,7 +784,9 @@
     "GameLobbyOptionsHubTabView": {
       "roles": "Roles",
       "composition": "Composition",
-      "votes": "Votes"
+      "votes": "Votes",
+      "compositionTabImageAlt": "Composition tab icon",
+      "votesTabImageAlt": "Votes tab icon"
     },
     "GameLobbyOptionsHubRolesTabGeneral": {
       "general": "General",
@@ -997,7 +999,7 @@
     "GameLobbyOptionsHubRolesTabWildChild": {
       "options": {
         "isTransformationRevealed": {
-          "label": "The Wild Child transformation is revealed",
+          "label": "The Wild Child's transformation is revealed",
           "descriptions": {
             "yes": "When the Wild Child becomes a Werewolf as his model dies, the Game Master reveals his transformation to the other players.",
             "no": "When the Wild Child becomes a Werewolf as his model dies, the Game Master doesn't reveal his transformation to the other players."
@@ -1008,14 +1010,14 @@
     "GameLobbyOptionsHubRolesTabWolfHound": {
       "options": {
         "isChosenSideRevealed": {
-          "label": "The Wolf-Hound chosen side is revealed",
+          "label": "The Wolf-Hound's chosen side is revealed",
           "descriptions": {
             "yes": "When the Wolf-Hound chooses a side, the Game Master reveals his choice to the other players.",
             "no": "When the Wolf-Hound chooses a side, the Game Master doesn't reveal his choice to the other players."
           }
         },
         "isSideRandomlyChosen": {
-          "label": "The Wolf-Hound side is randomly chosen",
+          "label": "The Wolf-Hound's side is randomly chosen",
           "descriptions": {
             "yes": "The Wolf-Hound won't have the choice to choose a side at the beginning of the game. His side will be randomly chosen by the Assistant.",
             "no": "The Wolf-Hound chooses his side at the beginning of the game."
@@ -1093,6 +1095,17 @@
           "descriptions": {
             "yes": "If the Actor is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
             "no": "The Actor remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubCompositionTab": {
+      "options": {
+        "isHidden": {
+          "label": "Composition is hidden",
+          "descriptions": {
+            "yes": "The composition of the party is hidden to the players.",
+            "no": "The composition of the party is revealed to the players at the beginning of the game."
           }
         }
       }
