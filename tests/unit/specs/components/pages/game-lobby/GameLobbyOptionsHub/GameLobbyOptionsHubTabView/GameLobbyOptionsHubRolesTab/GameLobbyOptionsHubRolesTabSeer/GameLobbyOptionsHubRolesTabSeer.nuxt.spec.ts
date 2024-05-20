@@ -41,7 +41,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
       expect(gameOptionInputGroup.props("optionLabel")).toBe("The Seer is talkative");
     });
 
-    it("should translate option description when the option is activated.", async() => {
+    it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-is-talkative-input-group");
       const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.descriptions.yes";
 
@@ -77,7 +77,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
       expect(gameOptionInputGroup.props("optionLabel")).toBe("The Seer can see the roles");
     });
 
-    it("should translate option description when the option is activated.", async() => {
+    it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-can-see-roles-input-group");
       const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.descriptions.yes";
 

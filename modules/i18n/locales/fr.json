@@ -1109,6 +1109,17 @@
           }
         }
       }
+    },
+    "GameLobbyOptionsHubVotesTab": {
+      "options": {
+        "canBeSkipped": {
+          "label": "Les votes peuvent être passés",
+          "descriptions": {
+            "yes": "Les joueurs peuvent éviter une pendaison en passant leurs votes.",
+            "no": "Les joueurs ne peuvent pas éviter la phase de votes, au moins un joueur devra voter."
+          }
+        }
+      }
     }
   }
 }

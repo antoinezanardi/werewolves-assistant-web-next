@@ -1,6 +1,6 @@
 <template>
   <VuePrimeDialog
-    id="game-lobby-role-picker"
+    id="game-lobby-options-hub"
     block-scroll
     dismissable-mask
     :draggable="false"

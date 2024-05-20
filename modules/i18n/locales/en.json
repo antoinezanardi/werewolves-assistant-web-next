@@ -1109,6 +1109,17 @@
           }
         }
       }
+    },
+    "GameLobbyOptionsHubVotesTab": {
+      "options": {
+        "canBeSkipped": {
+          "label": "Votes can be skipped",
+          "descriptions": {
+            "yes": "The players can skip their vote without any consequences.",
+            "no": "The players can't skip their vote, someone must die."
+          }
+        }
+      }
     }
   }
 }

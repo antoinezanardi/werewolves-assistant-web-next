@@ -50,7 +50,7 @@ describe("Game Lobby Options Hub Roles Tab Little Girl Component", () => {
       expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.descriptions.yes");
     });
 
-    it("should translate option description when the option is deactivated.", async() => {
+    it("should translate option description when the option is deactivated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input-group");
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.descriptions.no");

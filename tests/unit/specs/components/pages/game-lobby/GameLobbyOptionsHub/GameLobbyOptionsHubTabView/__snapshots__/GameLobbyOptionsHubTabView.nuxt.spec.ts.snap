@@ -5,7 +5,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
   <div class="p-tabview-nav-container" data-pc-section="navcontainer">
     <!---->
     <div class="p-tabview-nav-content" data-pc-section="navcontent">
-      <ul class="p-tabview-nav" data-pc-section="nav">
+      <ul class="p-tabview-nav !border-none" data-pc-section="nav">
         <li class="p-tabview-header p-highlight grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="true" data-pc-index="0" data-p-active="true"><a id="game-lobby-options-hub-tab-view_0_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="0" role="tab" aria-selected="true" aria-controls="game-lobby-options-hub-tab-view_0_content" data-pc-section="headeraction" data-pd-ripple="true">
             <!---->
             <div id="roles-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" src="/svg/misc/infinite-spinner.svg">
@@ -784,10 +784,36 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
       </div>
     </div>
     <div id="game-lobby-options-hub-tab-view_1_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="game-lobby-options-hub-tab-view_1_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="1" data-p-active="false" style="display: none;">
-      <div id="game-lobby-options-composition-tab"> COMPOSITION </div>
+      <div id="game-lobby-options-composition-tab">
+        <div id="game-lobby-options-hub-composition-tab-is-hidden-input-group">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye-slash text-green-400"></i><span>Composition is hidden</span></h3>
+            <div id="game-option-input" class="w-4/12">
+              <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-composition-tab-is-hidden-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
+                <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+              </div>
+            </div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no</p>
+          <!--v-if-->
+        </div>
+      </div>
     </div>
     <div id="game-lobby-options-hub-tab-view_2_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="game-lobby-options-hub-tab-view_2_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="2" data-p-active="false" style="display: none;">
-      <div id="game-lobby-options-votes-tab"> VOTES </div>
+      <div id="game-lobby-options-votes-tab">
+        <div id="game-lobby-options-hub-votes-tab-can-be-skipped-input-group">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-forward text-blue-300"></i><span>Votes can be skipped</span></h3>
+            <div id="game-option-input" class="w-4/12">
+              <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-votes-tab-can-be-skipped-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="true">
+                <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+              </div>
+            </div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
+          <!--v-if-->
+        </div>
+      </div>
     </div>
   </div>
 </div>"
