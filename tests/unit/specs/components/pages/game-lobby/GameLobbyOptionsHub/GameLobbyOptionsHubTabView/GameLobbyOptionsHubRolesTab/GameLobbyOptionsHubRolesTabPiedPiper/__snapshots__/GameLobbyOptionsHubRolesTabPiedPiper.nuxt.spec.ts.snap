@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match snapshot when rendered. 1`] = `
+"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-pied-piper" data-pc-name="fieldset" data-pc-section="root">
+  <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
+    <game-option-role-legend-stub rolename="pied-piper"></game-option-role-legend-stub>
+    <!---->
+  </legend>
+  <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+    <div id="game-lobby-options-hub-roles-tab-pied-piper_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-pied-piper_header" data-pc-section="toggleablecontent">
+      <div class="p-fieldset-content" data-pc-section="content">
+        <div id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input-group">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-people-line text-pink-500"></i><span>Charmed people count per night</span></h3>
+            <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label" for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input">Charmed people count per night</label><input-number-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input" modelvalue="2" class="w-full" max="5" min="1"></input-number-stub><slider-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider" modelvalue="2" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub></span></div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description, {"count":2}</p>
+          <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
+        </div>
+        <div id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Pied Piper is powerless on the Werewolves side</span></h3>
+            <div id="game-option-input" class="w-4/12">
+              <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input" class="w-full"></affirmative-toggle-button-stub>
+            </div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
+          <!--v-if-->
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+</fieldset>"
+`;

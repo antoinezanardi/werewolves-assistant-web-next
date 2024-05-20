@@ -78,6 +78,15 @@ describe("Game Lobby Options Hub Roles Tab Elder Component", () => {
 
       expect(createGameDtoStore.setCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedCreateGameDto);
     });
+
+    it("should not update the create game dto store when the option is changed by the input number and the value is null.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const toggleButton = wrapper.findComponent<typeof InputNumber>("#game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input");
+      (toggleButton.vm as VueVm).$emit("update:modelValue", null);
+      await nextTick();
+
+      expect(createGameDtoStore.setCreateGameDto).not.toHaveBeenCalled();
+    });
   });
 
   describe("Elder takes his revenge option", () => {

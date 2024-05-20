@@ -74,7 +74,10 @@ const { convertBooleanAsAffirmativeString } = useStrings();
 
 const elderLivesCountAgainstWerewolvesValue = computed<number>({
   get: () => createGameDto.value.options.roles.elder.livesCountAgainstWerewolves,
-  set: (value: number) => {
+  set: (value: number | null) => {
+    if (value === null) {
+      return;
+    }
     const localCreateGameDto = CreateGameDto.create(createGameDto.value);
     localCreateGameDto.options.roles.elder.livesCountAgainstWerewolves = value;
     setCreateGameDto(localCreateGameDto);
