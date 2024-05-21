@@ -1,5 +1,5 @@
 <template>
-  <div
+  <nav
     id="navbar"
     :aria-label="$t('components.NavBar.navBar')"
     class="flex items-center justify-between py-1"
@@ -29,7 +29,7 @@
       id="navbar-parameters-menu"
       v-p-tooltip.left="$t('components.NavBar.parameters')"
     />
-  </div>
+  </nav>
 </template>
 
 <script setup lang="ts">
