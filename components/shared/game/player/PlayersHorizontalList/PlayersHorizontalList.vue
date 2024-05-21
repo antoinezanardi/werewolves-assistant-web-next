@@ -1,15 +1,13 @@
 <template>
-  <div
+  <ul
     id="players-horizontal-list"
     class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap"
-    role="list"
   >
     <GlowCapture>
-      <div
+      <li
         v-for="player in players"
         :key="player._id"
         class="inline-block player-in-list text-center w-44"
-        role="listitem"
       >
         <GlowElement>
           <RoleImage
@@ -23,9 +21,9 @@
         <div class="truncate w-full">
           {{ player.name }}
         </div>
-      </div>
+      </li>
     </GlowCapture>
-  </div>
+  </ul>
 </template>
 
 <script setup lang="ts">
