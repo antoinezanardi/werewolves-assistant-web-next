@@ -1,6 +1,8 @@
 {
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
+    "yes": "Yes",
+    "no": "No",
     "actions": {
       "add": "Add",
       "close": "Close"
@@ -317,6 +319,10 @@
       "phase": {
         "night": "Night",
         "day": "Day"
+      },
+      "definitePhase": {
+        "night": "The Night",
+        "day": "The Day"
       },
       "player": {
         "attribute": {
@@ -768,6 +774,352 @@
     },
     "GameOverHistory": {
       "endOfGame": "End of the game"
+    },
+    "GameLobbyHeaderOptionButton": {
+      "gameOptions": "Game options"
+    },
+    "GameLobbyOptionsHubHeader": {
+      "gameOptions": "Game options"
+    },
+    "GameLobbyOptionsHubTabView": {
+      "roles": "Roles",
+      "composition": "Composition",
+      "votes": "Votes",
+      "compositionTabImageAlt": "Composition tab icon",
+      "votesTabImageAlt": "Votes tab icon"
+    },
+    "GameLobbyOptionsHubRolesTabGeneral": {
+      "general": "General",
+      "options": {
+        "doSkipCallIfNoTarget": {
+          "label": "Skip the call if no target",
+          "descriptions": {
+            "yes": "The Assistant won't call the role if there is no target to choose among players.",
+            "no": "The Assistant will call the role even if there is no target to choose among players."
+          }
+        },
+        "areRevealedOnDeath": {
+          "label": "Revealed on death",
+          "descriptions": {
+            "yes": "The role of the player is revealed to others when he dies.",
+            "no": "The role of the player is not revealed to others when he dies."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriff": {
+      "sheriff": "Sheriff",
+      "sheriffAlt": "Sheriff icon",
+      "options": {
+        "isEnabled": {
+          "label": "Play with the Sheriff",
+          "descriptions": {
+            "yes": "The game will have a Sheriff.",
+            "no": "The game will not have a Sheriff."
+          }
+        },
+        "mustSettleTieInVotes": {
+          "label": "The Sheriff must settle the votes",
+          "descriptions": {
+            "yes": "The Sheriff must settle the votes when there is a tie.",
+            "no": "The Sheriff doesn't have to settle the votes when there is a tie. A second vote will be called."
+          }
+        },
+        "hasDoubledVote": {
+          "label": "The Sheriff has a doubled vote",
+          "descriptions": {
+            "yes": "When the survivors vote to eliminate a player, the Sheriff has a doubled vote during the votes.",
+            "no": "The Sheriff doesn't have a doubled vote during the votes but a regular one like any other player."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSheriffElection": {
+      "options": {
+        "electedAt": {
+          "turn": {
+            "label": "Sheriff election turn"
+          },
+          "label": "Sheriff election time",
+          "description": "The Sheriff will be elected on {phase} of the turn {turn}."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBigBadWolf": {
+      "options": {
+        "isPowerlessIfWerewolfDies": {
+          "label": "The Big Bad Wolf is powerless if a Werewolf dies",
+          "descriptions": {
+            "yes": "If a player from the Werewolf side dies, the Big Bad Wolf becomes powerless for the rest of the game.",
+            "no": "If a Werewolf dies, the Big Bad Wolf remains powerful."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWhiteWerewolf": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "White Werewolf waking up interval",
+          "description": "The White Werewolf will wake up every night to eat another Werewolf. | The White Werewolf will wake up every {interval} nights to eat another Werewolf."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabSeer": {
+      "options": {
+        "isTalkative": {
+          "label": "The Seer is talkative",
+          "descriptions": {
+            "yes": "When the Seer looks at a player, the Game Master reveals the role of the player out loud.",
+            "no": "When the Seer looks at a player, the Game Master reveals the role of the player only to her (by miming it for example)."
+          }
+        },
+        "canSeeRoles": {
+          "label": "The Seer can see the roles",
+          "descriptions": {
+            "yes": "When the Seer looks at a player, the Game Master reveals the role of the player to her.",
+            "no": "When the Seer looks at a player, the Game Master doesn't reveal the role of the player to her but his side (Villager or Werewolf)."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabCupid": {
+      "options": {
+        "mustWinWithLovers": {
+          "label": "Cupid must win with the Lovers",
+          "descriptions": {
+            "yes": "Cupid teams up with the Lovers : if the Lovers and Cupid are the only survivors, they win together. Lovers can win alone without Cupid winning. Warning : Cupid can't charm himself with this option !",
+            "no": "Cupid doesn't team up with the Lovers. "
+          }
+        },
+        "lovers": {
+          "doRevealRoleToEachOther": {
+            "label": "The Lovers reveal their role to each other",
+            "descriptions": {
+              "yes": "The Lovers reveal their role to each other when they meet right after being charmed.",
+              "no": "The Lovers don't reveal their role to each other when they meet right after being charmed."
+            }
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabLittleGirl": {
+      "options": {
+        "isProtectedByDefender": {
+          "label": "The Little Girl is protected by the Defender",
+          "descriptions": {
+            "yes": "If the Little Girl is the target of the Werewolves, the Defender can save her with his protection.",
+            "no": "If the Little Girl is the target of the Werewolves, the Defender can't save her with his protection."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabDefender": {
+      "options": {
+        "canProtectTwice": {
+          "label": "The Defender can protect twice",
+          "descriptions": {
+            "yes": "The Defender can protect the same player twice or more in a row during the game.",
+            "no": "The Defender can't protect the same player twice in a row during the game."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabElder": {
+      "options": {
+        "livesCountAgainstWerewolves": {
+          "label": "The Elder lives count against the Werewolves",
+          "description": "The Elder has only one life against the Werewolves. | The Elder has {livesCount} lives against the Werewolves."
+        },
+        "doesTakeHisRevenge": {
+          "label": "The Elder takes his revenge",
+          "descriptions": {
+            "yes": "If the Elder is eliminated by a player from the Villagers side (votes from Survivors, potion from Witch, shot from Hunter, etc.), all the players from the Villagers side loose their power for the rest of the game.",
+            "no": "If the Elder is eliminated by a player from the Werewolves side, nothing happens."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabIdiot": {
+      "options": {
+        "doesDieOnElderDeath": {
+          "label": "The revealed Idiot dies on Elder's death",
+          "descriptions": {
+            "yes": "If the Elder is eliminated in any way and the Idiot has his role revealed, the Idiot dies.",
+            "no": "If the Elder is eliminated in any way and the Idiot has his role revealed, the Idiot doesn't die."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabTwoSisters": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Two Sisters waking up interval",
+          "description": "The Two Sisters will wake up only the first night to meet each other. | The Two Sisters will wake up every night to meet each other. | The Two Sisters will wake up every {interval} nights to meet each other."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThreeBrothers": {
+      "options": {
+        "wakingUpInterval": {
+          "label": "Three Brothers waking up interval",
+          "description": "The Three Brothers will wake up only the first night to meet each other. | The Three Brothers will wake up every night to meet each other. | The Three Brothers will wake up every {interval} nights to meet each other."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabFox": {
+      "options": {
+        "isPowerlessIfMissesWerewolf": {
+          "label": "The Fox is powerless if he misses to sniff a Werewolf",
+          "descriptions": {
+            "yes": "If the Fox doesn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game.",
+            "no": "If the Fox doesn't sniff a Werewolf among the group of 3 players, he remains powerful."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabBearTamer": {
+      "options": {
+        "doesGrowlOnWerewolvesSide": {
+          "label": "The Bear Tamer growls on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Bear Tamer is infected by the Vile Father Of Wolves, his bear will growl every morning.",
+            "no": "The bear will growl only if he has a neighbor from the Werewolves side, whether the Bear Tamer is infected or not."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabStutteringJudge": {
+      "options": {
+        "voteRequestsCount": {
+          "label": "Stuttering Judge vote requests",
+          "description": "The Stuttering Judge can only request one more vote during the game. | The Stuttering Judge can request another vote {count} times during the game."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWildChild": {
+      "options": {
+        "isTransformationRevealed": {
+          "label": "The Wild Child's transformation is revealed",
+          "descriptions": {
+            "yes": "When the Wild Child becomes a Werewolf as his model dies, the Game Master reveals his transformation to the other players.",
+            "no": "When the Wild Child becomes a Werewolf as his model dies, the Game Master doesn't reveal his transformation to the other players."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWolfHound": {
+      "options": {
+        "isChosenSideRevealed": {
+          "label": "The Wolf-Hound's chosen side is revealed",
+          "descriptions": {
+            "yes": "When the Wolf-Hound chooses a side, the Game Master reveals his choice to the other players.",
+            "no": "When the Wolf-Hound chooses a side, the Game Master doesn't reveal his choice to the other players."
+          }
+        },
+        "isSideRandomlyChosen": {
+          "label": "The Wolf-Hound's side is randomly chosen",
+          "descriptions": {
+            "yes": "The Wolf-Hound won't have the choice to choose a side at the beginning of the game. His side will be randomly chosen by the Assistant.",
+            "no": "The Wolf-Hound chooses his side at the beginning of the game."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabThief": {
+      "options": {
+        "mustChooseBetweenWerewolves": {
+          "label": "The Thief must choose between only Werewolves",
+          "descriptions": {
+            "yes": "If all the cards designated to the Thief are from the Werewolves side, he must choose one of them and can't skip his turn.",
+            "no": "The Thief can skip his turn, even if all the cards designated to him are from the Werewolves side."
+          }
+        },
+        "isChosenCardRevealed": {
+          "label": "The chosen card is revealed",
+          "descriptions": {
+            "yes": "The Thief's chosen card is revealed to the other players.",
+            "no": "The Thief's chosen card is not revealed to the other players."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPiedPiper": {
+      "options": {
+        "charmedPeopleCountPerNight": {
+          "label": "Charmed people count per night",
+          "description": "The Pied Piper can charm only one player per night. | The Pied Piper can charm {count} players per night."
+        },
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Pied Piper is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Pied Piper is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Pied Piper remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabScandalmonger": {
+      "options": {
+        "markPenalty": {
+          "label": "Mark penalty",
+          "description": "The Scandalmonger marks a player with a feather. The player will have one more vote against him the next vote. | The Scandalmonger marks a player with a feather. The player will have {markPenalty} more votes against him the next vote."
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabWitch": {
+      "options": {
+        "doesKnowWerewolvesTargets": {
+          "label": "The Witch knows the Werewolves targets",
+          "descriptions": {
+            "yes": "The Witch knows the targets of the Werewolves when she can still use her death potion.",
+            "no": "The Witch doesn't know the targets of the Werewolves at all."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabPrejudicedManipulator": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Prejudiced Manipulator is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Prejudiced Manipulator is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Prejudiced Manipulator remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubRolesTabActor": {
+      "options": {
+        "isPowerlessOnWerewolvesSide": {
+          "label": "The Actor is powerless on the Werewolves side",
+          "descriptions": {
+            "yes": "If the Actor is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
+            "no": "The Actor remains powerful even he is infected by the Vile Father Of Wolves."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubCompositionTab": {
+      "options": {
+        "isHidden": {
+          "label": "Composition is hidden",
+          "descriptions": {
+            "yes": "The composition of the party is hidden to the players.",
+            "no": "The composition of the party is revealed to the players at the beginning of the game."
+          }
+        }
+      }
+    },
+    "GameLobbyOptionsHubVotesTab": {
+      "options": {
+        "canBeSkipped": {
+          "label": "Votes can be skipped",
+          "descriptions": {
+            "yes": "The players can skip their vote without any consequences.",
+            "no": "The players can't skip their vote, someone must die."
+          }
+        }
+      }
     }
   }
 }

@@ -30,18 +30,18 @@
     </template>
 
     <template #footer>
-      <GameOverHistoryFooter
-        id="game-over-history-footer"
-        @close-game-history="close"
+      <DialogFooterCloseButtonOnly
+        id="dialog-footer-close-button-only"
+        @close-dialog="close"
       />
     </template>
   </VuePrimeDialog>
 </template>
 
 <script setup lang="ts">
-import GameOverHistoryFooter from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryFooter/GameOverHistoryFooter.vue";
 import GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
 import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
+import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 
 const isVisible = ref<boolean>(false);
 

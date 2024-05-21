@@ -21,14 +21,25 @@
         </form>
       </div>
     </div>
+
+    <div class="flex item-center justify-center">
+      <GameLobbyHeaderSetupButtons
+        id="game-lobby-header-setup-buttons"
+        @game-options-button-click="handleGameOptionsButtonClick"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { GameLobbyHeaderEmits } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type { GameLobbyPlayerInputExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/game-lobby-player-input.types";
 import GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+
+const emit = defineEmits<GameLobbyHeaderEmits>();
 
 const createGameDtoStore = useCreateGameDtoStore();
 
@@ -54,5 +65,9 @@ function addPlayerToCreateGameDto(): void {
     side: {},
   });
   createGameDtoStore.addPlayerToCreateGameDto(playerToAdd);
+}
+
+function handleGameOptionsButtonClick(): void {
+  emit("gameOptionsButtonClick");
 }
 </script>

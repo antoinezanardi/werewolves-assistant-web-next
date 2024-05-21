@@ -10,5 +10,8 @@ exports[`Game Lobby Header Component > should match snapshot when rendered. 1`] 
       </form>
     </div>
   </div>
+  <div class="flex item-center justify-center">
+    <game-lobby-header-setup-buttons-stub id="game-lobby-header-setup-buttons"></game-lobby-header-setup-buttons-stub>
+  </div>
 </div>"
 `;
