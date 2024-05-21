@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog Footer Close Button Only Component > should match snapshot when rendered. 1`] = `
+"<div id="close-button-only-dialog-footer" class="w-full">
+  <divider-stub class="!my-2"></divider-stub>
+  <div class="flex justify-end w-full">
+    <button-stub id="close-button-only-dialog-footer-close-button" label="Close" severity="secondary" size="small"></button-stub>
+  </div>
+</div>"
+`;

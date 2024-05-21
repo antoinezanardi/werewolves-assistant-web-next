@@ -3,6 +3,7 @@ import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
 import type { Ref } from "vue";
+import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
 import GameLobby from "~/pages/game-lobby.vue";
@@ -20,11 +21,19 @@ describe("Game Lobby Page", () => {
       gameLobbyRolePicker: {
         openToPickRoleForPlayer: Mock;
       }
+      gameLobbyOptionsHub: {
+        open: Mock;
+      };
     }
   };
 
   async function mountGameLobbyPageComponent(): Promise<ReturnType<typeof mount<typeof GameLobby>>> {
-    mocks = { components: { gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() } } };
+    mocks = {
+      components: {
+        gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
+        gameLobbyOptionsHub: { open: vi.fn() },
+      },
+    };
 
     return mountSuspendedComponent(GameLobby, {
       global: {
@@ -32,6 +41,10 @@ describe("Game Lobby Page", () => {
           GameLobbyRolePicker: {
             template: "<div id='game-lobby-role-picker-stub'></div>",
             methods: mocks.components.gameLobbyRolePicker,
+          },
+          GameLobbyOptionsHub: {
+            template: "<div id='game-lobby-options-hub-stub'></div>",
+            methods: mocks.components.gameLobbyOptionsHub,
           },
         },
       },
@@ -93,7 +106,27 @@ describe("Game Lobby Page", () => {
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyRolePicker: Ref }).gameLobbyRolePicker.value = null;
       const gameLobbyPlayersParty = wrapper.findComponent<typeof GameLobbyPlayersParty>("#game-lobby-players-party");
       await getError(() => (gameLobbyPlayersParty.vm as VueVm).$emit("pick-role-for-player", createFakeCreateGamePlayerDto()));
+
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Role Picker is not defined");
+    });
+  });
+
+  describe("Game Lobby Options Hub", () => {
+    it("should open game lobby options hub when game lobby players party emits open options hub event.", async() => {
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      (gameLobbyHeader.vm as VueVm).$emit("game-options-button-click");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyOptionsHub.open).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw error when game lobby header emits game options button click event but the options hub is not found in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyOptionsHub: Ref }).gameLobbyOptionsHub.value = null;
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      await getError(() => (gameLobbyHeader.vm as VueVm).$emit("game-options-button-click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Options Hub is not defined");
     });
   });
 });

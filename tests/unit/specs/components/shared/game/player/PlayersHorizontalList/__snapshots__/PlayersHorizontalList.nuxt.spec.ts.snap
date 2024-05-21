@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Players Horizontal List Component > should match snapshot when rendered. 1`] = `
-"<div id="players-horizontal-list" class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap" role="list">
+"<ul id="players-horizontal-list" class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap">
   <div class="glow-capture" style="position: relative; --glow-size: 400px;">
-    <div class="inline-block player-in-list text-center w-44" role="listitem">
+    <li class="inline-block player-in-list text-center w-44">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
           <role-image-stub rolename="fox" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
@@ -14,8 +14,8 @@ exports[`Players Horizontal List Component > should match snapshot when rendered
         </div>
       </div>
       <div class="truncate w-full">Antoine</div>
-    </div>
-    <div class="inline-block player-in-list text-center w-44" role="listitem">
+    </li>
+    <li class="inline-block player-in-list text-center w-44">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
           <role-image-stub rolename="seer" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
@@ -26,8 +26,8 @@ exports[`Players Horizontal List Component > should match snapshot when rendered
         </div>
       </div>
       <div class="truncate w-full">Benoit</div>
-    </div>
-    <div class="inline-block player-in-list text-center w-44" role="listitem">
+    </li>
+    <li class="inline-block player-in-list text-center w-44">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
           <role-image-stub rolename="werewolf" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
@@ -38,7 +38,7 @@ exports[`Players Horizontal List Component > should match snapshot when rendered
         </div>
       </div>
       <div class="truncate w-full">Alice</div>
-    </div>
+    </li>
   </div>
-</div>"
+</ul>"
 `;

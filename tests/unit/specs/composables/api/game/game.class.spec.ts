@@ -1,4 +1,5 @@
 import { Game } from "~/composables/api/game/types/game.class";
+import { createFakeGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 
@@ -10,6 +11,7 @@ describe("Game Class", () => {
         createFakeGamePlay(),
         createFakeGamePlay(),
       ];
+      const options = createFakeGameOptions();
       const phase = createFakeGamePhase();
       const createdAt = new Date();
       const updatedAt = new Date();
@@ -22,6 +24,7 @@ describe("Game Class", () => {
         upcomingPlays,
         tick: 1,
         turn: 1,
+        options,
         createdAt,
         updatedAt,
         extra: "Extra",
@@ -35,6 +38,7 @@ describe("Game Class", () => {
       expectedGame.turn = 1;
       expectedGame.currentPlay = currentPlay;
       expectedGame.upcomingPlays = upcomingPlays;
+      expectedGame.options = options;
       expectedGame.createdAt = createdAt;
       expectedGame.updatedAt = updatedAt;
 

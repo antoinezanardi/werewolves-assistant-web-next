@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
@@ -11,14 +12,19 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   const rolesStore = useRolesStore();
   const { getRoleWithNameInRoles } = rolesStore;
 
-  const createGameDto = ref<CreateGameDto>(CreateGameDto.create({ players: [] }));
+  const defaultCreateGameDto = CreateGameDto.create({
+    players: [],
+    options: DEFAULT_GAME_OPTIONS,
+  });
+
+  const createGameDto = ref<CreateGameDto>(CreateGameDto.create(defaultCreateGameDto));
 
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
   }
 
   function resetCreateGameDto(): void {
-    createGameDto.value = CreateGameDto.create({ players: [] });
+    createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
   }
 
   function addPlayerToCreateGameDto(player: CreateGamePlayerDto): void {

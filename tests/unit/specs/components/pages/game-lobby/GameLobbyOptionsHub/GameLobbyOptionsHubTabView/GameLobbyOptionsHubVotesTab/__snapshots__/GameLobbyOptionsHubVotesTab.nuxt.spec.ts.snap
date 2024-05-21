@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Options Hub Votes Tab Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-options-votes-tab">
+  <div id="game-lobby-options-hub-votes-tab-can-be-skipped-input-group">
+    <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+      <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-forward text-blue-300"></i><span>Votes can be skipped</span></h3>
+      <div id="game-option-input" class="w-4/12">
+        <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-votes-tab-can-be-skipped-input" class="w-full"></affirmative-toggle-button-stub>
+      </div>
+    </div>
+    <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
+    <!--v-if-->
+  </div>
+</div>"
+`;

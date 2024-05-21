@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Options Hub Composition Tab Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-options-composition-tab">
+  <div id="game-lobby-options-hub-composition-tab-is-hidden-input-group">
+    <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+      <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye-slash text-green-400"></i><span>Composition is hidden</span></h3>
+      <div id="game-option-input" class="w-4/12">
+        <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-composition-tab-is-hidden-input" class="w-full"></affirmative-toggle-button-stub>
+      </div>
+    </div>
+    <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no</p>
+    <!--v-if-->
+  </div>
+</div>"
+`;
