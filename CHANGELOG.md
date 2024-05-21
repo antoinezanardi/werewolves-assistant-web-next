@@ -1,5 +1,32 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.15.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.14.0...v1.15.0) (2024-05-21)
+
+
+### 🚀 Features
+
+* **game:** options hub ([#407](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/407)) ([16dc0ba](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/16dc0baef0c672df5b9843cb187bd1d0f40cfad7))
+
+
+### 🐛 Bug Fixes
+
+* **accessibility:** nav and list issues ([#417](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/417)) ([c2da1f1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c2da1f181d1d8d5f8b630ce566f5d7e56c7a2c09))
+
+
+### 🧹 Chore
+
+* **deps:** bump @nuxt/test-utils from 3.12.1 to 3.13.0 in the nuxt group ([#409](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/409)) ([2ce6348](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2ce63485f153e94f4aefa75b1acb351473ea84fc))
+* **deps:** bump @nuxt/test-utils from 3.13.0 to 3.13.1 in the nuxt group ([#413](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/413)) ([89ff57e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/89ff57e8089b061fd03493c8b5b34f77e4941989)), closes [#849](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/849) [#851](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/851) [#849](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/849) [#851](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/851) [#845](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/845)
+* **deps:** bump happy-dom from 14.10.1 to 14.10.2 ([#405](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/405)) ([1c89b29](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1c89b295aa01454dad71b08a42928dfbd829f2a1))
+* **deps:** bump happy-dom from 14.10.2 to 14.11.0 ([#408](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/408)) ([12258c3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/12258c38418433f28729f4f8c5468c80bdb4b8de))
+* **deps:** bump sass from 1.77.1 to 1.77.2 ([#411](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/411)) ([9c047d3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/9c047d3c10bcf0951b7d933e38f45b999f2702bb))
+* **deps:** bump the eslint group with 2 updates ([#414](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/414)) ([761b21e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/761b21ec8de4ef7aaafcd99e6faa8eee07e78d96))
+* **deps:** bump the eslint group with 3 updates ([#403](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/403)) ([20bc95e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/20bc95ebd3b77799331e943fdf1d854221c1ed5d))
+* **deps:** bump the eslint group with 3 updates ([#416](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/416)) ([37a1346](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/37a13460d9d09aaf2cd6b972bf17a0e64d8dea5b))
+* **deps:** bump tsx from 4.10.1 to 4.10.2 ([#404](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/404)) ([616d779](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/616d77917aa8d1253fb28233b18ac13a93e7fcdc))
+* **deps:** bump tsx from 4.10.2 to 4.10.4 ([#412](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/412)) ([c6fc544](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c6fc544e1a2a48ac0cf04397fba71e161cddcfb5)), closes [#18](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/18) [privatenumber/tsx#433](https://github.com/privatenumber/tsx/issues/433) [#18](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/18) [#555](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/555)
+* **deps:** bump tsx from 4.10.4 to 4.10.5 ([#415](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/415)) ([5c37023](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/5c3702355a5fea2b74e999935b6c26c6033e9bc6))
+
 ## [1.14.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.13.4...v1.14.0) (2024-05-13)
 
 
