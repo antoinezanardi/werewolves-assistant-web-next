@@ -137,7 +137,7 @@ Feature: 🃏👆 Game Lobby Role Picker
     Then the heading with exact name "Pick a role for the player Antoine" should be hidden
 
     When the user clicks on the player with name "Antoine" in the lobby
-    And the user clicks on the button with exact name "Close"
+    And the user clicks on the close button of the dialog's header
     Then the heading with exact name "Pick a role for the player Antoine" should be hidden
 
     When the user clicks on the player with name "Antoine" in the lobby
