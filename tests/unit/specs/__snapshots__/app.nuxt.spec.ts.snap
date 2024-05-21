@@ -5,7 +5,7 @@ exports[`App Component > should match snapshot when rendered. 1`] = `"<nuxt-layo
 exports[`App Component > should render component without shallow and match snapshot when rendered. 1`] = `
 "<transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
   <div data-v-433a9abd="" id="default-layout" class="flex flex-col h-full">
-    <div data-v-4f13fdda="" data-v-433a9abd="" id="navbar" aria-label="Navigation bar" class="flex items-center justify-between py-1" role="navigation"><a data-v-4f13fdda="" href="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"><img data-v-4f13fdda="" alt="Werewolves Assistant logo" data-nuxt-img="" srcset="/_ipx/_/img/logo/square/werewolves-logo-small.png 1x, /_ipx/_/img/logo/square/werewolves-logo-small.png 2x" id="navbar-werewolves-assistant-logo" src="/_ipx/_/img/logo/square/werewolves-logo-small.png">
+    <nav data-v-4f13fdda="" data-v-433a9abd="" id="navbar" aria-label="Navigation bar" class="flex items-center justify-between py-1" role="navigation"><a data-v-4f13fdda="" href="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"><img data-v-4f13fdda="" alt="Werewolves Assistant logo" data-nuxt-img="" srcset="/_ipx/_/img/logo/square/werewolves-logo-small.png 1x, /_ipx/_/img/logo/square/werewolves-logo-small.png 2x" id="navbar-werewolves-assistant-logo" src="/_ipx/_/img/logo/square/werewolves-logo-small.png">
         <h3 data-v-4f13fdda="" id="navbar-werewolves-assistant-logo-text" class="ms-2">Werewolves Assistant</h3>
       </a>
       <div data-v-4f13fdda="" id="navbar-parameters-menu" data-pd-tooltip="true"><button class="p-button p-component p-button-icon-only p-button-secondary" type="button" aria-label="Parameters" data-pc-name="button" data-pc-section="root" data-p-severity="secondary" data-pd-ripple="true"><span class="p-button-icon fa fa-cog" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
@@ -14,7 +14,7 @@ exports[`App Component > should render component without shallow and match snaps
         <!--teleport start-->
         <!--teleport end-->
       </div>
-    </div>
+    </nav>
     <div data-v-433a9abd="" class="content-with-navbar grow h-full">
       <transition-stub data-v-938b83b0="" name="page" mode="out-in" appear="false" persisted="false" css="true">
         <div data-v-02281a80="" class="flex flex-col h-full p-2">
