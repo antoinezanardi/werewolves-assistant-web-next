@@ -3,17 +3,16 @@
     id="game-events-monitor"
     class="flex flex-col h-full w-full"
   >
-    <div
-      id="game-event-container"
+    <GameEventsMonitorCurrentEvent
+      id="game-events-monitor-current-event"
       class="grow"
-    >
-      coucou
-    </div>
+    />
 
     <GameEventsMonitorFooter id="game-events-monitor-footer"/>
   </div>
 </template>
 
 <script setup lang="ts">
+import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 </script>

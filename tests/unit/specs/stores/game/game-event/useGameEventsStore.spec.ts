@@ -29,7 +29,7 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
+      gameEventsStore.currentGameEventIndex = 1;
 
       expect(gameEventsStore.canGoToNextGameEvent).toBeTruthy();
     });
@@ -41,9 +41,7 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
-      gameEventsStore.nextGameEvent();
-      gameEventsStore.nextGameEvent();
+      gameEventsStore.currentGameEventIndex = 3;
 
       expect(gameEventsStore.canGoToNextGameEvent).toBeFalsy();
     });
@@ -57,8 +55,7 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
-      gameEventsStore.nextGameEvent();
+      gameEventsStore.currentGameEventIndex = 2;
 
       expect(gameEventsStore.canGoToPreviousGameEvent).toBeTruthy();
     });
@@ -83,7 +80,7 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
+      gameEventsStore.goToNextGameEvent();
       gameEventsStore.resetGameEvents();
 
       expect(gameEventsStore.gameEvents).toStrictEqual<GameEvent[]>([]);
@@ -101,7 +98,7 @@ describe("Game Events Store", () => {
         game: createFakeGame({ tick: 1 }),
         expectedGameEvents: [
           createFakeGameEvent({ type: "game-starts" }),
-          createFakeGameEvent({ type: "turn-starts" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate game starts and turn starts events when game tick is 1.",
       },
@@ -114,8 +111,8 @@ describe("Game Events Store", () => {
           }),
         }),
         expectedGameEvents: [
-          createFakeGameEvent({ type: "day-rises" }),
-          createFakeGameEvent({ type: "turn-starts" }),
+          createFakeGameEvent({ type: "game-phase-starts" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate day rises and turn starts events when game phase tick is 1 and name is day.",
       },
@@ -128,8 +125,8 @@ describe("Game Events Store", () => {
           }),
         }),
         expectedGameEvents: [
-          createFakeGameEvent({ type: "night-falls" }),
-          createFakeGameEvent({ type: "turn-starts" }),
+          createFakeGameEvent({ type: "game-phase-starts" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate night falls and turn starts events when game phase tick is 1 and name is night.",
       },
@@ -141,7 +138,7 @@ describe("Game Events Store", () => {
             name: "day",
           }),
         }),
-        expectedGameEvents: [createFakeGameEvent({ type: "turn-starts" })],
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
         test: "should generate turn starts event when game tick nor phase tick is 1.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
@@ -152,7 +149,7 @@ describe("Game Events Store", () => {
     });
   });
 
-  describe("nextGameEvent", () => {
+  describe("goToNextGameEvent", () => {
     it("should go to the next game event when called.", () => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
@@ -160,13 +157,13 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
+      gameEventsStore.goToNextGameEvent();
 
       expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[1]);
     });
   });
 
-  describe("previousGameEvent", () => {
+  describe("goToPreviousGameEvent", () => {
     it("should go to the previous game event when called.", () => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
@@ -174,9 +171,9 @@ describe("Game Events Store", () => {
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.nextGameEvent();
-      gameEventsStore.nextGameEvent();
-      gameEventsStore.previousGameEvent();
+      gameEventsStore.goToNextGameEvent();
+      gameEventsStore.goToNextGameEvent();
+      gameEventsStore.goToPreviousGameEvent();
 
       expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[1]);
     });

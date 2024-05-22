@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { GameEvent } from "~/stores/game/game-event/types/game-event.class";
-import type { GameEventType } from "~/stores/game/game-event/types/game-event.types";
 
 const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
   const gameEvents = ref<GameEvent[]>([]);
@@ -21,28 +20,28 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (game.tick === 1) {
       gameEvents.value.push(GameEvent.create({ type: "game-starts" }));
     } else if (game.phase.tick === 1) {
-      const gameEventStartingPhaseType: GameEventType = game.phase.name === "day" ? "day-rises" : "night-falls";
-      gameEvents.value.push(GameEvent.create({ type: gameEventStartingPhaseType }));
+      gameEvents.value.push(GameEvent.create({ type: "game-phase-starts" }));
     }
-    gameEvents.value.push(GameEvent.create({ type: "turn-starts" }));
+    gameEvents.value.push(GameEvent.create({ type: "game-turn-starts" }));
   }
 
-  function nextGameEvent(): void {
+  function goToNextGameEvent(): void {
     currentGameEventIndex.value += 1;
   }
 
-  function previousGameEvent(): void {
+  function goToPreviousGameEvent(): void {
     currentGameEventIndex.value -= 1;
   }
   return {
     gameEvents,
+    currentGameEventIndex,
     currentGameEvent,
     canGoToNextGameEvent,
     canGoToPreviousGameEvent,
     resetGameEvents,
     generateAndSetGameEventsFromGame,
-    nextGameEvent,
-    previousGameEvent,
+    goToNextGameEvent,
+    goToPreviousGameEvent,
   };
 });
 
