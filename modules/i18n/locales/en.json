@@ -1120,6 +1120,12 @@
           }
         }
       }
+    },
+    "GameEventsMonitorFooter": {
+      "previous": "Previous",
+      "skip": "Skip",
+      "goBackToPreviousGameEvent": "Go back to the previous game event",
+      "skipCurrentGameEvent": "Skip the current game event"
     }
   }
 }

@@ -1120,6 +1120,12 @@
           }
         }
       }
+    },
+    "GameEventsMonitorFooter": {
+      "previous": "Précédent",
+      "skip": "Passer",
+      "goBackToPreviousGameEvent": "Revenir à l'événement précédent",
+      "skipCurrentGameEvent": "Passer l'événement actuel"
     }
   }
 }

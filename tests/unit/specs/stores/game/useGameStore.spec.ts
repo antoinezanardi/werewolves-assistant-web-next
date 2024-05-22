@@ -1,7 +1,9 @@
 import { createPinia, setActivePinia } from "pinia";
+import type { Mock } from "vitest";
 
 import { Game } from "~/composables/api/game/types/game.class";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
+import * as UseGameEventsStore from "~/stores/game/game-event/useGameEventsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
@@ -10,13 +12,20 @@ import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composable
 describe("Game Store", () => {
   let mocks: {
     composables: {
-      useFetchGames: ReturnType<typeof createFakeUseFetchGames>
+      useFetchGames: ReturnType<typeof createFakeUseFetchGames>;
+    };
+    stores: {
+      gameEvents: { generateAndSetGameEventsFromGame: Mock };
     }
   };
 
   beforeEach(() => {
-    mocks = { composables: { useFetchGames: createFakeUseFetchGames() } };
+    mocks = {
+      composables: { useFetchGames: createFakeUseFetchGames() },
+      stores: { gameEvents: { generateAndSetGameEventsFromGame: vi.fn() } },
+    };
     vi.spyOn(UseFetchGames, "useFetchGames").mockImplementation(() => mocks.composables.useFetchGames);
+    vi.spyOn(UseGameEventsStore, "useGameEventsStore").mockImplementation(() => mocks.stores.gameEvents as unknown as ReturnType<typeof UseGameEventsStore.useGameEventsStore>);
     setActivePinia(createPinia());
   });
 
@@ -44,6 +53,15 @@ describe("Game Store", () => {
       await gameStore.fetchAndSetGame("gameId");
 
       expect(mocks.composables.useFetchGames.getGame).toHaveBeenCalledExactlyOnceWith("gameId");
+    });
+
+    it("should generate and set game events from game when called.", async() => {
+      const game = createFakeGame();
+      mocks.composables.useFetchGames.getGame.mockResolvedValue(game);
+      const gameStore = useGameStore();
+      await gameStore.fetchAndSetGame("gameId");
+
+      expect(mocks.stores.gameEvents.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
     });
 
     it("should set game when called.", async() => {
@@ -83,6 +101,16 @@ describe("Game Store", () => {
       await gameStore.makeGamePlay(makeGamePlayDto);
 
       expect(mocks.composables.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", makeGamePlayDto);
+    });
+
+    it("should generate and set game events from game when called.", async() => {
+      const game = createFakeGame();
+      const makeGamePlayDto = createFakeMakeGamePlayDto();
+      mocks.composables.useFetchGames.makeGamePlay.mockResolvedValue(game);
+      const gameStore = useGameStore();
+      await gameStore.makeGamePlay(makeGamePlayDto);
+
+      expect(mocks.stores.gameEvents.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
     });
 
     it("should set game when called.", async() => {
