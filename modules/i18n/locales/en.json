@@ -3,17 +3,20 @@
     "werewolvesAssistant": "Werewolves Assistant",
     "yes": "Yes",
     "no": "No",
+    "and": "and",
     "actions": {
       "add": "Add",
-      "close": "Close"
+      "close": "Close",
+      "next": "Next",
+      "back": "Back"
     },
     "role": {
       "name": {
-        "werewolf": "Werewolf",
+        "werewolf": "Werewolf | Werewolves",
         "big-bad-wolf": "Big Bad Wolf",
         "accursed-wolf-father": "Accursed Wolf-Father",
         "white-werewolf": "White Werewolf",
-        "villager": "Villager",
+        "villager": "Villager | Villagers",
         "villager-villager": "Villager-Villager",
         "seer": "Seer",
         "cupid": "Cupid",
@@ -24,8 +27,8 @@
         "elder": "Elder",
         "scapegoat": "Scapegoat",
         "idiot": "Idiot",
-        "two-sisters": "Two Sisters",
-        "three-brothers": "Three Brothers",
+        "two-sisters": "Two Sisters | Sisters",
+        "three-brothers": "Three Brothers | Brothers",
         "fox": "Fox",
         "bear-tamer": "Bear Tamer",
         "stuttering-judge": "Stuttering Judge",
@@ -1126,6 +1129,18 @@
       "skip": "Skip",
       "goBackToPreviousGameEvent": "Go back to the previous game event",
       "skipCurrentGameEvent": "Skip the current game event"
+    },
+    "GameEventTextsManager": {
+      "nextEventText": "Next event text",
+      "previousEventText": "Back to the previous event text"
+    },
+    "GameStartsEvent": {
+      "welcomeToTheVillage": "Welcome everyone in the village of the Millers Hollow !",
+      "gameCompositionEvent": "The composition for this game is : {composition}",
+      "looksLifeSomeWerewolvesSneakedIntoTheVillage": "Looks like some Werewolves sneaked into the village…",
+      "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves !",
+      "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
+      "compositionIsHidden": "The composition of this party is hidden ! You'll have to find out who is who by yourself…"
     }
   }
 }

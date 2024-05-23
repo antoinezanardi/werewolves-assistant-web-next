@@ -36,6 +36,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       console: READONLY,
       document: READONLY,
       setTimeout: READONLY,
+      setInterval: READONLY,
     },
   },
   rules: {

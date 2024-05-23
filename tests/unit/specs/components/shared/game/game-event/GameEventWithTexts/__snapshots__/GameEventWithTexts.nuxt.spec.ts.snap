@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Event With Texts Component > should match snapshot when rendered. 1`] = `
+"<div id="game-event-with-texts" class="flex flex-col h-full">
+  <div id="game-event-default-slot-container" class="grow"></div>
+  <game-event-texts-manager-stub texts="Game starts.,Day rises.,Night falls." id="game-event-texts-manager"></game-event-texts-manager-stub>
+</div>"
+`;

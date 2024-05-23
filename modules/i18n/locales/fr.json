@@ -3,13 +3,16 @@
     "werewolvesAssistant": "Assistant Loups-Garous",
     "yes": "Oui",
     "no": "Non",
+    "and": "et",
     "actions": {
       "add": "Ajouter",
-      "close": "Fermer"
+      "close": "Fermer",
+      "next": "Suivant",
+      "back": "Retour"
     },
     "role": {
       "name": {
-        "werewolf": "Loup-Garou",
+        "werewolf": "Loup-Garou | Loups-Garous",
         "big-bad-wolf": "Grand Méchant Loup",
         "accursed-wolf-father": "Infect Père des Loups",
         "white-werewolf": "Loup-Garou Blanc",
@@ -24,8 +27,8 @@
         "elder": "Ancien",
         "scapegoat": "Bouc-Émissaire",
         "idiot": "Idiot du Village",
-        "two-sisters": "Deux Sœurs",
-        "three-brothers": "Trois Frères",
+        "two-sisters": "Deux Sœurs | Sœurs",
+        "three-brothers": "Trois Frères | Frères",
         "fox": "Renard",
         "bear-tamer": "Montreur d'Ours",
         "stuttering-judge": "Juge Bègue",
@@ -1126,6 +1129,18 @@
       "skip": "Passer",
       "goBackToPreviousGameEvent": "Revenir à l'événement précédent",
       "skipCurrentGameEvent": "Passer l'événement actuel"
+    },
+    "GameEventTextsManager": {
+      "nextEventText": "Prochain texte de l'événement",
+      "previousEventText": "Revenir au texte de l'événement précédent"
+    },
+    "GameStartsEvent": {
+      "welcomeToTheVillage": "Bienvenue à tous dans le village de Thiercelieux !",
+      "gameCompositionEvent": "La composition de cette partie est : {composition}",
+      "looksLifeSomeWerewolvesSneakedIntoTheVillage": "On dirait que des Loups-Garous se sont infiltrés dans le village…",
+      "villagersMurderWerewolves": "Villageois, prenez vos torches et vos fourches, il est temps de traquer les Loups-Garous !",
+      "letsElectSheriffBefore": "Mais avant cela, élisons le Maire du village.",
+      "compositionIsHidden": "La composition de cette partie est cachée ! Vous devrez découvrir qui est qui par vous-même…"
     }
   }
 }
