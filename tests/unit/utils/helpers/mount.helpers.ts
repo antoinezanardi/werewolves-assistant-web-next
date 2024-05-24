@@ -19,6 +19,7 @@ async function mountSuspendedComponent<T>(component: T, options: ComponentMounti
     ...crush(defaultMountingOptions),
     ...crush(options),
   }) as ComponentMountingOptions<typeof component>;
+  mergedOptions.props = options.props;
   if (mergedOptions.global) {
     mergedOptions.global.plugins = plugins;
   }

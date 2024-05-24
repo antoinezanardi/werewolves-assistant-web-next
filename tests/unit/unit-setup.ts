@@ -24,5 +24,9 @@ beforeAll(() => {
   mockPrimeVueComposables();
 });
 
+beforeEach(() => {
+  vi.useFakeTimers();
+});
+
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());

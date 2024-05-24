@@ -17,34 +17,7 @@ describe("Game Events Store", () => {
 
     expect(gameEventsStore.gameEvents).toStrictEqual<GameEvent[]>(expectedGameEvents);
     expect(gameEventsStore.currentGameEvent).toBeUndefined();
-    expect(gameEventsStore.canGoToNextGameEvent).toBeFalsy();
     expect(gameEventsStore.canGoToPreviousGameEvent).toBeFalsy();
-  });
-
-  describe("canGoToNextGameEvent", () => {
-    it("should return true when can go to next game event.", () => {
-      const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
-      gameEventsStore.currentGameEventIndex = 1;
-
-      expect(gameEventsStore.canGoToNextGameEvent).toBeTruthy();
-    });
-
-    it("should return false when cannot go to next game event.", () => {
-      const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
-      gameEventsStore.currentGameEventIndex = 3;
-
-      expect(gameEventsStore.canGoToNextGameEvent).toBeFalsy();
-    });
   });
 
   describe("canGoToPreviousGameEvent", () => {

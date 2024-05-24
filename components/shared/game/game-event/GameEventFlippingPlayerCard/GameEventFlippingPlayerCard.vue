@@ -1,12 +1,28 @@
 <template>
-  <RoleFlippingImage
-    id="role-flipping-image"
-    :alt="alt"
-    :class="imageClasses"
-    definition="normal"
-    :role-name="playerToDisplay.role.current"
-    sizes="200px"
-  />
+  <div id="game-event-flipping-player-card">
+    <RoleFlippingImage
+      id="game-event-flipping-player-role"
+      :alt="alt"
+      :class="imageClasses"
+      definition="normal"
+      :role-name="playerToDisplay?.role.current"
+      sizes="200px"
+    />
+
+    <transition
+      mode="out-in"
+      name="fade"
+    >
+      <h2
+        v-if="playerToDisplay"
+        id="player-name"
+        :key="playerToDisplay.name"
+        class="text-center"
+      >
+        {{ playerToDisplay.name }}
+      </h2>
+    </transition>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,21 +33,24 @@ import type { Player } from "~/composables/api/game/types/players/player.class";
 const props = defineProps<GameEventFlippingPlayerCardProps>();
 
 const playerIndex = ref<number>(0);
-const playerToDisplay = computed<Player>(() => props.players[playerIndex.value]);
+const playerToDisplay = computed<Player | undefined>(() => props.players[playerIndex.value]);
+
+function flipPlayerCard(): void {
+  if (playerIndex.value === props.players.length - 1) {
+    playerIndex.value = 0;
+
+    return;
+  }
+  playerIndex.value++;
+}
 
 function flipPlayerCardEachInterval(): void {
   const intervalInMs = 1500;
+
   if (props.players.length === 0) {
     return;
   }
-  setInterval(() => {
-    if (playerIndex.value === props.players.length - 1) {
-      playerIndex.value = 0;
-
-      return;
-    }
-    playerIndex.value++;
-  }, intervalInMs);
+  setInterval(flipPlayerCard, intervalInMs);
 }
 
 flipPlayerCardEachInterval();

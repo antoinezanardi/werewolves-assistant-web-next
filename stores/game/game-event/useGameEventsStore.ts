@@ -7,7 +7,6 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
   const gameEvents = ref<GameEvent[]>([]);
   const currentGameEventIndex = ref<number>(0);
   const currentGameEvent = computed<GameEvent | undefined>(() => gameEvents.value[currentGameEventIndex.value]);
-  const canGoToNextGameEvent = computed<boolean>(() => currentGameEventIndex.value < gameEvents.value.length - 1);
   const canGoToPreviousGameEvent = computed<boolean>(() => currentGameEventIndex.value > 0);
 
   function resetGameEvents(): void {
@@ -36,7 +35,6 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     gameEvents,
     currentGameEventIndex,
     currentGameEvent,
-    canGoToNextGameEvent,
     canGoToPreviousGameEvent,
     resetGameEvents,
     generateAndSetGameEventsFromGame,

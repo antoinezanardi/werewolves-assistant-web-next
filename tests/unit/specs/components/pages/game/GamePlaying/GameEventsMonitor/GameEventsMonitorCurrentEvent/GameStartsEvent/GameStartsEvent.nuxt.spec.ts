@@ -104,6 +104,22 @@ describe("Game Starts Event Component", () => {
       expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
 
+    it("should have texts for the game starts event without sheriff election when there is no current play.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = null;
+      await nextTick();
+      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameEventWithTexts>("#game-starts-event");
+      const expectedTexts: string[] = [
+        "components.GameStartsEvent.welcomeToTheVillage",
+        `components.GameStartsEvent.gameCompositionEvent, {"composition":""}`,
+        "components.GameStartsEvent.looksLifeSomeWerewolvesSneakedIntoTheVillage",
+        "components.GameStartsEvent.villagersMurderWerewolves",
+      ];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
     it("should have texts for the game starts event with composition hidden when composition is hidden in game options.", async() => {
       const gameStore = useGameStore();
       gameStore.game.options.composition.isHidden = true;
@@ -131,9 +147,9 @@ describe("Game Starts Event Component", () => {
         });
       });
 
-      it("should pass all players to the game event flipping player card component when rendered.", async() => {
+      it("should pass all players to the game event flipping player card component when rendered.", () => {
         const gameEventFlippingPlayerCardComponent = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-player-card");
-        const players = gameEventFlippingPlayerCardComponent.props("players");
+        const players = gameEventFlippingPlayerCardComponent.props("players") as Player[];
 
         expect(players).toStrictEqual<Player[]>(defaultPlayers);
       });

@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Event Flipping Player Card Component > should match snapshot when rendered. 1`] = `
+"<div id="game-event-flipping-player-card">
+  <role-flipping-image-stub rolename="seer" sizes="200px" definition="normal" id="game-event-flipping-player-role" class=""></role-flipping-image-stub>
+  <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
+    <h2 id="player-name" class="text-center">Antoine</h2>
+  </transition-stub>
+</div>"
+`;
