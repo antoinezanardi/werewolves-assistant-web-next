@@ -86,13 +86,13 @@ const { game } = storeToRefs(gameStore);
 
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
-const giveLifePotionInteractionEligibleTargets = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-life-potion"));
+const giveLifePotionInteractionEligibleTargets = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-life-potion"));
 
-const giveDeathPotionInteractionEligibleTargets = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-death-potion"));
+const giveDeathPotionInteractionEligibleTargets = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-death-potion"));
 
-const hasWitchUsedLifePotion = computed<boolean>(() => !giveLifePotionInteractionEligibleTargets.value);
+const hasWitchUsedLifePotion = computed<boolean>(() => giveLifePotionInteractionEligibleTargets.value.length === 0);
 
-const hasWitchUsedDeathPotion = computed<boolean>(() => !giveDeathPotionInteractionEligibleTargets.value);
+const hasWitchUsedDeathPotion = computed<boolean>(() => giveDeathPotionInteractionEligibleTargets.value.length === 0);
 
 const tabViewActiveIndex = computed<number>(() => (hasWitchUsedLifePotion.value ? 1 : 0));
 </script>

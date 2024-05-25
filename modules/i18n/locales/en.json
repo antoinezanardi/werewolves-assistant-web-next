@@ -1141,6 +1141,15 @@
       "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves !",
       "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
       "compositionIsHidden": "The composition of this party is hidden ! You'll have to find out who is who by yourself…"
+    },
+    "GameSurvivorsTurnStartsEvent": {
+      "gameStartsWithVoteBecauseOfAngelPresence": "The game starts with a vote because the Angel is present in the village.",
+      "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately !",
+      "voteBecauseOfStutteringJudge": "Survivors will vote again because the Stuttering Judge requested another vote.",
+      "voteBecauseOfPreviousTies": "Survivors will vote again because the previous vote ended in a tie.",
+      "survivorsMustVoteBetween": "The village must vote between {players}. Who will be eliminated ?",
+      "survivorsVote": "Survivors, it's time to vote and eliminate a player from the village.",
+      "survivorsBuryDeadBodies": "Survivors, it's time to bury the dead bodies of the village."
     }
   }
 }

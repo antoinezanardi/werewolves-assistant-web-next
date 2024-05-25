@@ -1141,6 +1141,15 @@
       "villagersMurderWerewolves": "Villageois, prenez vos torches et vos fourches, il est temps de traquer les Loups-Garous !",
       "letsElectSheriffBefore": "Mais avant cela, élisons le Maire du village.",
       "compositionIsHidden": "La composition de cette partie est cachée ! Vous devrez découvrir qui est qui par vous-même…"
+    },
+    "GameSurvivorsTurnStartsEvent": {
+      "gameStartsWithVoteBecauseOfAngelPresence": "La partie commence par un vote en raison d'une présence angélique dans le village.",
+      "watchOutForAngelOrHeWins": "Attention à l'Ange, s'il est éliminé lors de ce vote, il gagne la partie immédiatement et seul !",
+      "voteBecauseOfStutteringJudge": "Les survivants vont voter à nouveau car le Juge Bègue a demandé un autre vote.",
+      "voteBecauseOfPreviousTies": "Les survivants vont voter à nouveau car le précédent vote s'est terminé par une égalité.",
+      "survivorsMustVoteBetween": "Le village doit voter entre {players}. Qui sera éliminé ?",
+      "survivorsVote": "Survivants, il est temps de voter et d'éliminer un joueur du village.",
+      "survivorsBuryDeadBodies": "Survivants, il est temps d'enterrer les corps des morts du village."
     }
   }
 }
