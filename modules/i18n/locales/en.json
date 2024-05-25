@@ -1142,6 +1142,9 @@
       "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
       "compositionIsHidden": "The composition of this party is hidden ! You'll have to find out who is who by yourself…"
     },
+    "GameTurnStartsEvent": {
+      "unknownGameTurnStartsEvent": "Unknown game turn starts event"
+    },
     "GameSurvivorsTurnStartsEvent": {
       "gameStartsWithVoteBecauseOfAngelPresence": "The game starts with a vote because the Angel is present in the village.",
       "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately !",

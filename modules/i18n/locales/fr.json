@@ -1142,6 +1142,9 @@
       "letsElectSheriffBefore": "Mais avant cela, élisons le Maire du village.",
       "compositionIsHidden": "La composition de cette partie est cachée ! Vous devrez découvrir qui est qui par vous-même…"
     },
+    "GameTurnStartsEvent": {
+      "unknownGameTurnStartsEvent": "Événement de début de tour inconnu"
+    },
     "GameSurvivorsTurnStartsEvent": {
       "gameStartsWithVoteBecauseOfAngelPresence": "La partie commence par un vote en raison d'une présence angélique dans le village.",
       "watchOutForAngelOrHeWins": "Attention à l'Ange, s'il est éliminé lors de ce vote, il gagne la partie immédiatement et seul !",

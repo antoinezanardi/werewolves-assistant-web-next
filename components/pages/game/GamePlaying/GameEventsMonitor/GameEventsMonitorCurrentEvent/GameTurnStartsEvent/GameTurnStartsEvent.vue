@@ -1,8 +1,16 @@
 <template>
   <Component
     :is="gameTurnStartsEventTypeComponentToRender"
+    v-if="gameTurnStartsEventTypeComponentToRender"
     id="game-turn-starts-event"
   />
+
+  <div
+    v-else
+    id="unknown-game-turn-starts-event"
+  >
+    {{ $t("components.GameTurnStartsEvent.unknownGameTurnStartsEvent") }}
+  </div>
 </template>
 
 <script setup lang="ts">
