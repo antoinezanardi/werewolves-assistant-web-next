@@ -1153,6 +1153,94 @@
       "survivorsMustVoteBetween": "Le village doit voter entre {players}. Qui sera éliminé ?",
       "survivorsVote": "Survivants, il est temps de voter et d'éliminer un joueur du village.",
       "survivorsBuryDeadBodies": "Survivants, il est temps d'enterrer les corps des morts du village."
+    },
+    "GameAccursedWolfFatherTurnStartsEvent": {
+      "accursedWolfFatherCanInfect": "L'Infect Père des Loups se réveille et peut infecter un joueur dévoré par les Loups-Garous s'il le souhaite."
+    },
+    "GameActorTurnStartsEvent": {
+      "actorCanChooseCardToPlay": "L'Acteur se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
+    },
+    "GameBearTamerTurnStartsEvent": {
+      "bearGrowls": "Le Dresseur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui..."
+    },
+    "GameBigBadWolfTurnStartsEvent": {
+      "bigBadWolfEatsVillager": "Le Grand Méchant Loup se réveille et va dévorer un Villageois."
+    },
+    "GameCharmedTurnStartsEvent": {
+      "charmedPeopleMeetEachOther": "Les premiers charmés par le Joueur de Flûte se réveillent et se rencontrent.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
+    },
+    "GameCupidTurnStartsEvent": {
+      "cupidChoosesTwoPlayersToBeLovers": "Cupidon se réveille et choisit deux joueurs pour être amoureux.",
+      "cupidMustWinWithLovers": "Cupidon doit gagner avec les Amoureux qu'il choisira. Si les Amoureux et Cupidon sont les seuls survivants, ils gagnent ensemble."
+    },
+    "GameDefenderTurnStartsEvent": {
+      "defenderProtectsAnyone": "Le Défenseur se réveille et protégera quelqu'un des Loups-Garous.",
+      "defenderProtectsAnyoneExceptLastProtectedPlayer": "Le Défenseur se réveille et protégera quelqu'un des Loups-Garous sauf le dernier joueur protégé."
+    },
+    "GameFoxTurnStartsEvent": {
+      "foxSniffesGroupOfPlayers": "Le Renard se réveille et va renifler un groupe de 3 joueurs pour savoir s'il y a un Loup-Garou parmi eux."
+    },
+    "GameHunterTurnStartsEvent": {
+      "hunterShootsAtPlayer": "Dans son dernier souffle, le Chasseur va tirer sur un joueur et le tuera immédiatement."
+    },
+    "GameLoversTurnStartsEvent": {
+      "loversMeetEachOther": "Les Amoureux se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants.",
+      "ifOneLoveDiesOtherDiesToo": "Si des Amoureux meurt, l'autre mourra aussi.",
+      "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles."
+    },
+    "GamePiedPiperTurnStartsEvent": {
+      "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
+    },
+    "GameScandalmongerTurnStartsEvent": {
+      "scandalmongerMarksPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",
+      "playerWillHavePenaltyForNextVotes": "Le joueur marqué d'une plume aura un vote supplémentaire contre lui lors du prochain vote. | Le joueur marqué d'une plume aura {penalty} votes supplémentaires contre lui lors du prochain vote."
+    },
+    "GameScapegoatTurnStartsEvent": {
+      "scapegoatCanBanPlayerFromVoting": "Le Bouc Émissaire se réveille et peut interdire à un ou plusieurs joueurs de voter lors des votes du jour suivant."
+    },
+    "GameSeerTurnStartsEvent": {
+      "seerSeesRoles": "La Voyante se réveille et va regarder le rôle d'un joueur.",
+      "seerSeesSides": "La Voyante se réveille et va regarder le camp d'un joueur."
+    },
+    "GameSheriffTurnStartsEvent": {
+      "sheriffDelegates": "Dans son dernier souffle, le Maire va déléguer son rôle à un autre joueur.",
+      "sheriffSettlesVotes": "Le Maire va régler l'égalité des votes entre {players}. Le joueur choisi sera pendu."
+    },
+    "GameStutteringJudgeTurnStartsEvent": {
+      "stutteringJudgeCanRequestAnotherVote": "Après ce vote, le Juge Bègue peut demander un autre vote immédiatement.",
+      "everyonePutHandsInBackAndGameMasterWillRecognizeSign": "Chaque joueur va mettre ses mains dans son dos. Le Maître du Jeu va faire le tour des joueurs et reconnaître le signe du Juge Bègue s'il souhaite demander un autre vote."
+    },
+    "GameThiefTurnStartsEvent": {
+      "thiefCanStealCard": "Le Voleur se réveille et peut choisir la carte supplémentaire lui étant destinée. S'il la choisit, il prendra ce rôle pour le reste de la partie. | Le Voleur se réveille et peut choisir une carte supplémentaire parmi les {count} lui étant destinée. S'il en choisit une, il prendra ce rôle pour le reste de la partie.",
+      "gameMasterWillFlipThiefCards": "Le Maître du Jeu va retourner la carte pour que le Voleur puisse la voir. | Le Maître du Jeu va retourner les {count} cartes pour que le Voleur puisse les voir."
+    },
+    "GameThreeBrothersTurnStartsEvent": {
+      "threeBrothersMeetEachOtherForFirstTime": "Les Trois Frères se réveillent et se rencontrent pour la première fois. Ils peuvent se faire confiance désormais.",
+      "threeBrothersMeetEachOther": "Les Trois Frères se réveillent et vont se consulter sans un bruit."
+    },
+    "GameTwoSistersTurnStartsEvent": {
+      "twoSistersMeetEachOtherForFirstTime": "Les Deux Sœurs se réveillent et se rencontrent pour la première fois. Elles peuvent se faire confiance désormais.",
+      "twoSistersMeetEachOther": "Les Deux Sœurs se réveillent et vont se consulter sans un bruit."
+    },
+    "GameWerewolvesTurnStartsEvent": {
+      "werewolvesMeetEachOtherForFirstTime": "Les Loups-Garous se réveillent et se rencontrent pour la première fois.",
+      "whenMeetOverWerewolvesEat": "Quand les présentation sont faites, les Loups-Garous vont choisir leur repas de ce soir.",
+      "werewolvesEat": "Les Loups-Garous se réveillent et vont choisir leur repas de ce soir."
+    },
+    "GameWhiteWerewolfTurnStartsEvent": {
+      "whiteWerewolfCanEatAnotherWolf": "Le Loup-Garou Blanc se réveille et peut dévorer un autre Loup-Garou s'il le souhaite."
+    },
+    "GameWildChildTurnStartsEvent": {
+      "wildChildChoosesModel": "L'Enfant Sauvage se réveille et peut choisir un modèle parmi les joueurs.",
+      "ifModelDiesWildChildBecomesWolf": "Si le modèle meurt, l'Enfant Sauvage rejoindra le camp des Loups-Garous."
+    },
+    "GameWitchTurnStartsEvent": {
+      "witchCanUsePotions": "La Sorcière se réveille et peut utiliser une ou les deux de ses potions."
+    },
+    "GameWolfHoundTurnStartsEvent": {
+      "wolfHoundSideRandomlyChosen": "Dans cette partie spéciale, le camp du Chien-Loup est choisi aléatoirement par l'Assistant.",
+      "wolfHoundChoosesSide": "Le Chien-Loup se réveille et choisit quel camp il veut rejoindre entre les Villageois et les Loups-Garous."
     }
   }
 }
