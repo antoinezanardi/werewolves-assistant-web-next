@@ -1,6 +1,6 @@
 <template>
-  <div id="game-turn-starts-event">
-    GAME TURN STARTS EVENT
+  <div id="game-phase-starts-event">
+    GAME PHASE STARTS EVENT
   </div>
 </template>
 
