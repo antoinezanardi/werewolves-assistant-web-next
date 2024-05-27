@@ -133,7 +133,7 @@
     "vue-eslint-parser": "^9.4.2",
     "vue-flip": "^3.0.2",
     "vue-router": "^4.3.0",
-    "vue-tsc": "^1.8.27"
+    "vue-tsc": "^2.0.19"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
