@@ -22,8 +22,8 @@ const isFirstNight = computed<boolean>(() => game.value.turn === 1);
 
 const gameEventTexts = computed<string[]>(() => {
   if (isFirstNight.value) {
-    return [t("components.GameTwoSistersTurnStartsEvent.threeBrothersMeetEachOtherForFirstTime")];
+    return [t("components.GameTwoSistersTurnStartsEvent.twoSistersMeetEachOtherForFirstTime")];
   }
-  return [t("components.GameTwoSistersTurnStartsEvent.threeBrothersMeetEachOther")];
+  return [t("components.GameTwoSistersTurnStartsEvent.twoSistersMeetEachOther")];
 });
 </script>

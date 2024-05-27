@@ -1,6 +1,6 @@
 <template>
   <GameEventWithTexts
-    id="game-sheriff-turn-starts-event"
+    id="game-stuttering-judge-turn-starts-event"
     :texts="gameEventTexts"
   >
     <GameEventFlippingPlaySourcePlayersCard/>

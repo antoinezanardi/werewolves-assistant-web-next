@@ -23,7 +23,7 @@ const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePla
 const { t } = useI18n();
 
 const playersInTieText = computed<string>(() => {
-  const playersInTie = getEligibleTargetsWithInteractionInCurrentGamePlay("vote");
+  const playersInTie = getEligibleTargetsWithInteractionInCurrentGamePlay("sentence-to-death");
 
   return getPlayersNamesText(playersInTie);
 });
