@@ -1152,7 +1152,8 @@
       "voteBecauseOfPreviousTies": "Les survivants vont voter à nouveau car le précédent vote s'est terminé par une égalité.",
       "survivorsMustVoteBetween": "Le village doit voter entre {players}. Qui sera éliminé ?",
       "survivorsVote": "Survivants, il est temps de voter et d'éliminer un joueur du village.",
-      "survivorsBuryDeadBodies": "Survivants, il est temps d'enterrer les corps des morts du village."
+      "survivorsBuryDeadBodies": "Survivants, il est temps d'enterrer les corps des morts du village.",
+      "survivorsElectSheriff": "Survivants, il est temps d'élire le Maire du village."
     },
     "GameAccursedWolfFatherTurnStartsEvent": {
       "accursedWolfFatherCanInfect": "L'Infect Père des Loups se réveille et peut infecter un joueur dévoré par les Loups-Garous s'il le souhaite."

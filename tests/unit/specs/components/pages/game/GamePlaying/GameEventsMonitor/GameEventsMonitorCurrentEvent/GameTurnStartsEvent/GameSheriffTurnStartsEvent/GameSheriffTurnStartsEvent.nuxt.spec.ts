@@ -62,6 +62,15 @@ describe("Game Sheriff Turn Starts Event Component", () => {
   });
 
   describe("Game Event Texts", () => {
+    it("should not pass any event texts when current play is null.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = null;
+      await nextTick();
+      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameSheriffTurnStartsEvent>("#game-sheriff-turn-starts-event");
+
+      expect(gameEventWithTextsComponent.attributes("texts")).toBe("");
+    });
+
     it("should pass event texts when current play is settle votes.", () => {
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameSheriffTurnStartsEvent>("#game-sheriff-turn-starts-event");
       const expectedTexts: string[] = ["components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {\"players\":\"Antoine common.and Benoit\"}"];

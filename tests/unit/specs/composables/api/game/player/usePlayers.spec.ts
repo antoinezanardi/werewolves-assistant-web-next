@@ -14,5 +14,11 @@ describe("Use Players Composable", () => {
 
       expect(text).toBe(expectedText);
     });
+
+    it("should return empty string when there are no players.", () => {
+      const text = usePlayers().getPlayersNamesText([]);
+
+      expect(text).toBe("");
+    });
   });
 });

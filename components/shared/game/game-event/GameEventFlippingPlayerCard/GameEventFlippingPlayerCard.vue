@@ -50,7 +50,7 @@ function flipPlayerCardEachInterval(): void {
   if (props.players.length === 0) {
     return;
   }
-  setInterval(flipPlayerCard, intervalInMs);
+  window.setInterval(flipPlayerCard, intervalInMs);
 }
 
 flipPlayerCardEachInterval();

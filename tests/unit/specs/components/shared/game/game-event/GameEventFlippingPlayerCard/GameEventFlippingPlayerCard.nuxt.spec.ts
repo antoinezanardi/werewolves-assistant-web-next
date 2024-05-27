@@ -34,10 +34,11 @@ describe("Game Event Flipping Player Card Component", () => {
   });
 
   describe("Game Event Player Flipping Role", () => {
-    it.skip("should set interval of 1500ms for flipping player card when rendered.", async() => {
+    it("should set interval of 1500ms for flipping player card when rendered.", async() => {
+      const setIntervalSpy = vi.spyOn(window, "setInterval");
       wrapper = await mountGameEventFlippingPlayerCardComponent();
 
-      expect(setInterval).toHaveBeenCalledExactlyOnceWith(expect.any(Function), 1500);
+      expect(setIntervalSpy).toHaveBeenCalledExactlyOnceWith(expect.any(Function), 1500);
     });
 
     it("should render the first player role to display when rendered.", () => {

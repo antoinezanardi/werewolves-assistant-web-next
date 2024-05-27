@@ -1152,7 +1152,8 @@
       "voteBecauseOfPreviousTies": "Survivors will vote again because the previous vote ended in a tie.",
       "survivorsMustVoteBetween": "The village must vote between {players}. Who will be eliminated ?",
       "survivorsVote": "Survivors, it's time to vote and eliminate a player from the village.",
-      "survivorsBuryDeadBodies": "Survivors, it's time to bury the dead bodies of the village."
+      "survivorsBuryDeadBodies": "Survivors, it's time to bury the dead bodies of the village.",
+      "survivorsElectSheriff": "Survivors, it's time to elect the Sheriff for the village."
     },
     "GameAccursedWolfFatherTurnStartsEvent": {
       "accursedWolfFatherCanInfect": "The Accursed Father of Wolves wakes up and can infect a player eaten by the Werewolves if he wants to."

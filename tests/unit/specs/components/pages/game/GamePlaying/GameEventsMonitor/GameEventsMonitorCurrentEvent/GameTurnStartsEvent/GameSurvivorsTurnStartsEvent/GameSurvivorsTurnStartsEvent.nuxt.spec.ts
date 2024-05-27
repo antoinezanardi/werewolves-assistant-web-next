@@ -5,8 +5,11 @@ import GameSurvivorsTurnStartsEvent from "~/components/pages/game/GamePlaying/Ga
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -78,10 +81,25 @@ describe("Game Survivors Turn Starts Event Component", () => {
         test: "should display voting texts for stuttering judge vote when there is a voting cause is stuttering judge request.",
       },
       {
-        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ cause: "previous-votes-were-in-ties" }) }),
+        game: createFakeGame({
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "vote",
+                  eligibleTargets: [
+                    createFakePlayer({ name: "Antoine" }),
+                    createFakePlayer({ name: "Benoit" }),
+                  ],
+                }),
+              ],
+            }),
+            cause: "previous-votes-were-in-ties",
+          }),
+        }),
         expectedTexts: [
           "components.GameSurvivorsTurnStartsEvent.voteBecauseOfPreviousTies",
-          "components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween, {\"players\":\"\"}",
+          "components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween, {\"players\":\"Antoine common.and Benoit\"}",
         ],
         test: "should display voting texts for sheriff request vote when there is a voting cause is sheriff request.",
       },

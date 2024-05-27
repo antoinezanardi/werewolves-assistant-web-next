@@ -29,7 +29,10 @@ const playersInTieText = computed<string>(() => {
 });
 
 const gameEventTexts = computed<string[]>(() => {
-  if (game.value.currentPlay?.action === "delegate") {
+  if (game.value.currentPlay === null) {
+    return [];
+  }
+  if (game.value.currentPlay.action === "delegate") {
     return [t("components.GameSheriffTurnStartsEvent.sheriffDelegates")];
   }
   return [t("components.GameSheriffTurnStartsEvent.sheriffSettlesVotes", { players: playersInTieText.value })];
