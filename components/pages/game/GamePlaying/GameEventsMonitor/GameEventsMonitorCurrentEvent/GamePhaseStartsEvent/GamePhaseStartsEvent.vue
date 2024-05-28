@@ -11,18 +11,11 @@
         mode="out-in"
         name="phase-transition"
       >
-        <GameDayPhaseLottie
-          v-if="displayedPhase === 'day'"
-          id="game-day-phase-lottie"
-          :height="sunLottieSize"
-          :width="sunLottieSize"
-        />
-
-        <GameNightPhaseLottie
-          v-else-if="displayedPhase === 'night'"
-          id="game-night-phase-lottie"
-          :height="moonLottieSize"
-          :width="moonLottieSize"
+        <Component
+          :is="displayedPhaseLottieComponent"
+          :key="displayedPhase"
+          :height="displayedPhaseLottieSize"
+          :width="displayedPhaseLottieSize"
         />
       </transition>
     </div>
@@ -42,10 +35,6 @@ const { game } = storeToRefs(gameStore);
 
 const { t } = useI18n();
 
-const moonLottieSize = "200px";
-
-const sunLottieSize = "250px";
-
 const isPhaseTransitionTriggered = ref<boolean>(false);
 
 const displayedPhase = computed<GamePhaseName>(() => {
@@ -53,6 +42,20 @@ const displayedPhase = computed<GamePhaseName>(() => {
     return game.value.phase.name;
   }
   return game.value.phase.name === "day" ? "night" : "day";
+});
+
+const displayedPhaseLottieComponent = computed<typeof GameDayPhaseLottie | typeof GameNightPhaseLottie>(() => {
+  if (displayedPhase.value === "day") {
+    return GameDayPhaseLottie;
+  }
+  return GameNightPhaseLottie;
+});
+
+const displayedPhaseLottieSize = computed<string>(() => {
+  if (displayedPhase.value === "day") {
+    return "250px";
+  }
+  return "200px";
 });
 
 const gamePhaseStartsEventTexts = computed<string[]>(() => {
