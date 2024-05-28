@@ -39,7 +39,8 @@ const gameCompositionEventText = computed<string>(() => {
   }
   const gameRolesCount = counting(game.value.players, player => player.role.current);
   const shuffledPlayersRolesText = shuffle(Object.entries(gameRolesCount)).reduce((acc, [role, count], currentIndex) => {
-    const roleCountText = `${count.toString()} ${t(`shared.role.name.${role}`, { count }, count)}`;
+    const roleText = t(`shared.role.name.${role}`, count);
+    const roleCountText = `${count.toString()} ${roleText}`;
 
     if (currentIndex === 0) {
       return roleCountText;

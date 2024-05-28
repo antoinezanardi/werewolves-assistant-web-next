@@ -72,10 +72,7 @@ describe("Game Starts Event Component", () => {
       ]);
       wrapper = await mountGameStartsEventComponent();
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameEventWithTexts>("#game-starts-event");
-      const expectedCompositionText = "1 shared.role.name.seer, {\\\"count\\\":1}, 1, " +
-        "1 shared.role.name.cupid, {\\\"count\\\":1}, 1, " +
-        "1 shared.role.name.actor, {\\\"count\\\":1}, 1 shared.and " +
-        "2 shared.role.name.werewolf, {\\\"count\\\":2}, 2.";
+      const expectedCompositionText = `1 shared.role.name.seer, 1, 1 shared.role.name.cupid, 1, 1 shared.role.name.actor, 1 shared.and 2 shared.role.name.werewolf, 2.`;
       const expectedTexts: string[] = [
         "components.GameStartsEvent.welcomeToTheVillage",
         `components.GameStartsEvent.gameCompositionEvent, {"composition":"${expectedCompositionText}"}`,

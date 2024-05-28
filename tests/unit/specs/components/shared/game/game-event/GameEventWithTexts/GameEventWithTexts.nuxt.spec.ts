@@ -33,6 +33,13 @@ describe("Game Event With Texts Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should match snapshot without shallow when rendered.", async() => {
+    wrapper = await mountGameEventWithTextsComponent({ shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   describe("Game Event Texts Manager", () => {
     it("should pass texts from props when rendered.", () => {
       const gameEventTextsManager = wrapper.findComponent<typeof GameEventTextsManager>("#game-event-texts-manager");
