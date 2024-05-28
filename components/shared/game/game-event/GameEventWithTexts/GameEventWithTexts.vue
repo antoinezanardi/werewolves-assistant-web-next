@@ -12,7 +12,7 @@
 
     <GameEventTextsManager
       id="game-event-texts-manager"
-      :texts="texts"
+      :texts="props.texts"
     />
   </div>
 </template>
@@ -21,7 +21,7 @@
 import type { GameEventWithTextsProps } from "~/components/shared/game/game-event/GameEventWithTexts/game-event-with-texts.types";
 import GameEventTextsManager from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventTextsManager.vue";
 
-defineProps<GameEventWithTextsProps>();
+const props = defineProps<GameEventWithTextsProps>();
 
 defineSlots<{
   default: () => void;
