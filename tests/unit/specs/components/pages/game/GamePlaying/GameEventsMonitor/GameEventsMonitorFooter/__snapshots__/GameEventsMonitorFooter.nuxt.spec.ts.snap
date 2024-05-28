@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Events Monitor Footer Component > should match snapshot when rendered. 1`] = `
+"<div id="game-events-monitor-footer">
+  <divider-stub class="!my-2"></divider-stub>
+  <div class="flex gap-6 justify-center">
+    <button-stub id="previous-event-button" class="w-56" disabled="true" icon="fa fa-step-backward" label="Previous" severity="secondary" data-pd-tooltip="true"></button-stub>
+    <button-stub id="skip-current-event-button" class="w-56" icon="fa fa-step-forward" label="Skip" severity="secondary" data-pd-tooltip="true"></button-stub>
+  </div>
+</div>"
+`;

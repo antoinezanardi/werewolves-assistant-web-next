@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Events Monitor Component > should match snapshot when rendered. 1`] = `
+"<div id="game-events-monitor" class="flex flex-col h-full w-full">
+  <game-events-monitor-current-event-stub id="game-events-monitor-current-event" class="grow"></game-events-monitor-current-event-stub>
+  <game-events-monitor-footer-stub id="game-events-monitor-footer"></game-events-monitor-footer-stub>
+</div>"
+`;

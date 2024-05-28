@@ -32,9 +32,9 @@ const { game } = storeToRefs(gameStore);
 
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
-const giveLifePotionInteractionEligibleTargets = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-life-potion"));
+const giveLifePotionInteractionEligibleTargets = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-life-potion"));
 
-const giveDeathPotionInteractionEligibleTargets = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-death-potion"));
+const giveDeathPotionInteractionEligibleTargets = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("give-death-potion"));
 
-const hasWitchUsedBothPotions = computed<boolean>(() => !giveLifePotionInteractionEligibleTargets.value && !giveDeathPotionInteractionEligibleTargets.value);
+const hasWitchUsedBothPotions = computed<boolean>(() => !giveLifePotionInteractionEligibleTargets.value.length && !giveDeathPotionInteractionEligibleTargets.value.length);
 </script>

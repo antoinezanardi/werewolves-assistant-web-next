@@ -3,17 +3,20 @@
     "werewolvesAssistant": "Werewolves Assistant",
     "yes": "Yes",
     "no": "No",
+    "and": "and",
     "actions": {
       "add": "Add",
-      "close": "Close"
+      "close": "Close",
+      "next": "Next",
+      "back": "Back"
     },
     "role": {
       "name": {
-        "werewolf": "Werewolf",
+        "werewolf": "Werewolf | Werewolves",
         "big-bad-wolf": "Big Bad Wolf",
         "accursed-wolf-father": "Accursed Wolf-Father",
         "white-werewolf": "White Werewolf",
-        "villager": "Villager",
+        "villager": "Villager | Villagers",
         "villager-villager": "Villager-Villager",
         "seer": "Seer",
         "cupid": "Cupid",
@@ -24,8 +27,8 @@
         "elder": "Elder",
         "scapegoat": "Scapegoat",
         "idiot": "Idiot",
-        "two-sisters": "Two Sisters",
-        "three-brothers": "Three Brothers",
+        "two-sisters": "Two Sisters | Sisters",
+        "three-brothers": "Three Brothers | Brothers",
         "fox": "Fox",
         "bear-tamer": "Bear Tamer",
         "stuttering-judge": "Stuttering Judge",
@@ -1120,6 +1123,129 @@
           }
         }
       }
+    },
+    "GameEventsMonitorFooter": {
+      "previous": "Previous",
+      "skip": "Skip",
+      "goBackToPreviousGameEvent": "Go back to the previous game event",
+      "skipCurrentGameEvent": "Skip the current game event"
+    },
+    "GameEventTextsManager": {
+      "nextEventText": "Next event text",
+      "previousEventText": "Back to the previous event text"
+    },
+    "GameStartsEvent": {
+      "welcomeToTheVillage": "Welcome everyone in the village of the Millers Hollow !",
+      "gameCompositionEvent": "The composition for this game is : {composition}",
+      "looksLifeSomeWerewolvesSneakedIntoTheVillage": "Looks like some Werewolves sneaked into the village…",
+      "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves !",
+      "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
+      "compositionIsHidden": "The composition of this party is hidden ! You'll have to find out who is who by yourself…"
+    },
+    "GameTurnStartsEvent": {
+      "unknownGameTurnStartsEvent": "Unknown game turn starts event"
+    },
+    "GameSurvivorsTurnStartsEvent": {
+      "gameStartsWithVoteBecauseOfAngelPresence": "The game starts with a vote because the Angel is present in the village.",
+      "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately !",
+      "voteBecauseOfStutteringJudge": "Survivors will vote again because the Stuttering Judge requested another vote.",
+      "voteBecauseOfPreviousTies": "Survivors will vote again because the previous vote ended in a tie.",
+      "survivorsMustVoteBetween": "The village must vote between {players}. Who will be eliminated ?",
+      "survivorsVote": "Survivors, it's time to vote and eliminate a player from the village.",
+      "survivorsBuryDeadBodies": "Survivors, it's time to bury the dead bodies of the village.",
+      "survivorsElectSheriff": "Survivors, it's time to elect the Sheriff for the village."
+    },
+    "GameAccursedWolfFatherTurnStartsEvent": {
+      "accursedWolfFatherCanInfect": "The Accursed Father of Wolves wakes up and can infect a player eaten by the Werewolves if he wants to."
+    },
+    "GameActorTurnStartsEvent": {
+      "actorCanChooseCardToPlay": "The Actor wakes up and can choose a card to play for this turn."
+    },
+    "GameBearTamerTurnStartsEvent": {
+      "bearGrowls": "The Bear Tamer wakes up and his bear growls. One or more Werewolves are next to him…"
+    },
+    "GameBigBadWolfTurnStartsEvent": {
+      "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager."
+    },
+    "GameCharmedTurnStartsEvent": {
+      "charmedPeopleMeetEachOther": "The first charmed people by the Pied Piper wake up and meet each other.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+    },
+    "GameCupidTurnStartsEvent": {
+      "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
+      "cupidMustWinWithLovers": "Cupid must win with the Lovers he will choose. If the Lovers and Cupid are the only survivors, they win together."
+    },
+    "GameDefenderTurnStartsEvent": {
+      "defenderProtectsAnyone": "The Defender wakes up and will protect anyone from the Werewolves.",
+      "defenderProtectsAnyoneExceptLastProtectedPlayer": "The Defender wakes up and will protect anyone from the Werewolves except the last protected player."
+    },
+    "GameFoxTurnStartsEvent": {
+      "foxSniffesGroupOfPlayers": "The Fox wakes up and will sniff a group of 3 players to find out if there is a Werewolf among them."
+    },
+    "GameHunterTurnStartsEvent": {
+      "hunterShootsAtPlayer": "In his last breath, the Hunter will shoot at a player and kill him right away."
+    },
+    "GameLoversTurnStartsEvent": {
+      "loversMeetEachOther": "The Lovers wake up and meet each other. They are in love and will win together if they are the only survivors.",
+      "ifOneLoveDiesOtherDiesToo": "If one of the Lovers dies, the other one will die too.",
+      "loversRevealEachOtherRoles": "In this special game, the Lovers reveal their roles to each other."
+    },
+    "GamePiedPiperTurnStartsEvent": {
+      "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm one player | The Pied Piper wakes up and will charm {count} players."
+    },
+    "GameScandalmongerTurnStartsEvent": {
+      "scandalmongerMarksPlayer": "The Scandalmonger wakes up and can mark a player with a feather.",
+      "playerWillHavePenaltyForNextVotes": "The player marked with a feather will have one more vote against him the next vote. | The player marked with a feather will have {penalty} more votes against him the next vote."
+    },
+    "GameScapegoatTurnStartsEvent": {
+      "scapegoatCanBanPlayerFromVoting": "The Scapegoat wakes up and can ban one or more players from voting in the votes of the next day."
+    },
+    "GameSeerTurnStartsEvent": {
+      "seerSeesRoles": "The Seer wakes up and will look at a player's role.",
+      "seerSeesSides": "The Seer wakes up and will look at a player's side."
+    },
+    "GameSheriffTurnStartsEvent": {
+      "sheriffDelegates": "In his last breath, the Sheriff will delegate his role to another player.",
+      "sheriffSettlesVotes": "The Sheriff will settle the votes between {players}. The chosen player will be eliminated."
+    },
+    "GameStutteringJudgeTurnStartsEvent": {
+      "stutteringJudgeCanRequestAnotherVote": "After this vote, the Stuttering Judge can request another one immediately.",
+      "everyonePutHandsInBackAndGameMasterWillRecognizeSign": "Every player must put their hands in their back. The Game Master walk around and recognize the sign of the Stuttering Judge if he wants to request another vote."
+    },
+    "GameThiefTurnStartsEvent": {
+      "thiefCanStealCard": "The Thief wakes up and can choose the additional card for him. If he decides so, he will take the role of it for the rest of the game. | The Thief wakes up and can choose an additional card among the {count} for him. If he decides so, he will take the role of it for the rest of the game.",
+      "gameMasterWillFlipThiefCards": "The Game Master will flip the card for the Thief to see it. | The Game Master will flip the {count} cards for the Thief to see them."
+    },
+    "GameThreeBrothersTurnStartsEvent": {
+      "threeBrothersMeetEachOtherForFirstTime": "The Three Brothers wake up and meet each other for the first time. They can trust each other from now on.",
+      "threeBrothersMeetEachOther": "The Three Brothers wake up and meet each other. They can consult with each other quietly."
+    },
+    "GameTwoSistersTurnStartsEvent": {
+      "twoSistersMeetEachOtherForFirstTime": "The Two Sisters wake up and meet each other for the first time. They can trust each other from now on.",
+      "twoSistersMeetEachOther": "The Two Sisters wake up and meet each other. They can consult with each other quietly."
+    },
+    "GameWerewolvesTurnStartsEvent": {
+      "werewolvesMeetEachOtherForFirstTime": "The Werewolves wake up and meet each other for the first time.",
+      "whenMeetOverWerewolvesEat": "When the meeting is over, the Werewolves will eat a Villager.",
+      "werewolvesEat": "The Werewolves wake up and will eat a Villager."
+    },
+    "GameWhiteWerewolfTurnStartsEvent": {
+      "whiteWerewolfCanEatAnotherWolf": "The White Werewolf wakes up and can eat another Werewolf if he wants to."
+    },
+    "GameWildChildTurnStartsEvent": {
+      "wildChildChoosesModel": "The Wild Child wakes up and can choose a model among the players.",
+      "ifModelDiesWildChildBecomesWolf": "If the model dies, the Wild Child will join the Werewolves side."
+    },
+    "GameWitchTurnStartsEvent": {
+      "witchCanUsePotions": "The Witch wakes up and can use one of both of her potions."
+    },
+    "GameWolfHoundTurnStartsEvent": {
+      "wolfHoundSideRandomlyChosen": "In this special game, the Wolf-Hound's side is randomly chosen by the Assistant.",
+      "wolfHoundChoosesSide": "The Wolf-Hound wakes up and chooses which side he wants to join between Villagers and Werewolves."
+    },
+    "GamePhaseStartsEvent": {
+      "dayRises": "The day rises in the village of the Millers Hollow !",
+      "nightFalls": "The night falls in the village of the Millers Hollow…"
     }
   }
 }

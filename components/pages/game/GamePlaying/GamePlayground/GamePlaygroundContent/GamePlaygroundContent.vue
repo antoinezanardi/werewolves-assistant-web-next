@@ -11,6 +11,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
 
+import type { GamePlaygroundTypeComponent } from "~/components/pages/game/GamePlaying/GamePlayground/game-playground-content.types";
 import GameBuryDeadBodiesPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameBuryDeadBodiesPlayground/GameBuryDeadBodiesPlayground.vue";
 import GameChooseCardPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlayground.vue";
 import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseSidePlayground/GameChooseSidePlayground.vue";
@@ -21,16 +22,6 @@ import GameUsePotionsPlayground from "~/components/pages/game/GamePlaying/GamePl
 import GameVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameVotePlayground/GameVotePlayground.vue";
 import type { GamePlayType } from "~/composables/api/game/types/game-play/game-play.types";
 import { useGameStore } from "~/stores/game/useGameStore";
-
-type GamePlaygroundTypeComponent =
-  | typeof GameBuryDeadBodiesPlayground
-  | typeof GameChooseCardPlayground
-  | typeof GameChooseSidePlayground
-  | typeof GameNoActionPlayground
-  | typeof GameRequestAnotherVotePlayground
-  | typeof GameTargetPlayground
-  | typeof GameUsePotionsPlayground
-  | typeof GameVotePlayground;
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
