@@ -6,6 +6,7 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
   return {
     ...runtimeConfig,
     app: {
+      buildId: "test",
       baseURL: "",
       buildAssetsDir: "",
       cdnURL: "",
