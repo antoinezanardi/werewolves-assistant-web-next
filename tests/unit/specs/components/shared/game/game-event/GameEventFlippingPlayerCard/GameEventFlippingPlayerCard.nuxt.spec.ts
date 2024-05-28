@@ -48,7 +48,7 @@ describe("Game Event Flipping Player Card Component", () => {
     });
 
     it("should not set interval when there are no players to display.", async() => {
-      const mockedInterval = vi.spyOn(global, "setInterval");
+      const mockedInterval = vi.spyOn(window, "setInterval");
       wrapper = await mountGameEventFlippingPlayerCardComponent({ props: { players: [] } });
 
       expect(mockedInterval).not.toHaveBeenCalled();

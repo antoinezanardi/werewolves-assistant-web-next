@@ -215,6 +215,7 @@ const ESLINT_VUE_CONFIG = {
           "VuePrime*",
           "Glow*",
           "VueFlip",
+          "VueLottie",
         ],
       },
     ],

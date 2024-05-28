@@ -9,17 +9,10 @@
         :players="game.players"
       />
     </div>
-
-    <VueLottie
-      :animation-data="test"
-      :height="200"
-      :width="200"
-    />
   </GameEventWithTexts>
 </template>
 
 <script setup lang="ts">
-import test from "~/assets/lottie/sun.json";
 import { storeToRefs } from "pinia";
 import { shuffle, counting } from "radash";
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";

@@ -3,6 +3,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Tooltip from "primevue/tooltip";
+import { Vue3Lottie } from "vue3-lottie";
 import { clone, construct, crush } from "radash";
 
 async function mountSuspendedComponent<T>(component: T, options: ComponentMountingOptions<typeof component> = {}): Promise<ReturnType<typeof mount<T>>> {
@@ -13,7 +14,10 @@ async function mountSuspendedComponent<T>(component: T, options: ComponentMounti
   }
   const defaultMountingOptions: ComponentMountingOptions<typeof component> = {
     shallow: true,
-    global: { directives: { PTooltip: Tooltip } },
+    global: {
+      directives: { PTooltip: Tooltip },
+      components: { VueLottie: Vue3Lottie },
+    },
   };
   const mergedOptions = construct({
     ...crush(defaultMountingOptions),

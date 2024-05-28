@@ -10,36 +10,44 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Witch    |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Cupid charms"
 
     When the cupid charms the players
       | name    |
       | Bob     |
       | Charlie |
+    And the user skips all game events
     Then the game's current play title should be "Lovers meet each other"
 
     When the lovers meet each other
+    And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"
+    And the user skips all game events
     Then the game's current play title should be "Witch uses potions"
 
     When the witch uses her potions on players
       | potion | target  |
       | death  | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
+    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "Bob"
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -56,19 +64,22 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Angel    |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the survivors vote with the votes
       | source  | target |
       | Antoine | Bob    |
       | Charlie | Bob    |
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -89,22 +100,27 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf             |
       | Charlie | Villager             |
       | David   | Accursed Wolf-Father |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "Charlie"
+    And the user skips all game events
     Then the game's current play title should be "Accursed Wolf-Father infects"
 
     When the player or group skips his turn
+    And the user skips all game events
     Then the game's current play title should be "White Werewolf eats"
 
     When the player or group skips his turn
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -125,31 +141,38 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Hunter   |
       | David   | Idiot    |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Cupid charms"
 
     When the cupid charms the players
       | name    |
       | Antoine |
       | Bob     |
+    And the user skips all game events
     Then the game's current play title should be "Lovers meet each other"
 
     When the lovers meet each other
+    And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "Charlie"
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
+    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "David"
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -169,19 +192,22 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Villager |
       | David   | Angel    |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the survivors vote with the votes
       | source  | target |
       | Antoine | David  |
       | Charlie | David  |
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -200,25 +226,30 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf   |
       | Charlie | Villager   |
       | David   | Villager   |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "Charlie"
+    And the user skips all game events
     Then the game's current play title should be "Pied Piper charms"
 
     When the pied piper charms the players
       | name  |
       | Bob   |
       | David |
+    And the user skips all game events
     Then the game's current play title should be "Charmed people meet each other"
 
     When the charmed people meet each other
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
@@ -237,25 +268,31 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf       |
       | Charlie | Hunter         |
       | David   | Idiot          |
-    And the user closes the toast
+    When the user closes the toast
+    And the user skips all game events
     Then the game's current play title should be "Survivors elect the Sheriff"
 
     When the survivors elect the sheriff with the votes
       | source  | target  |
       | Bob     | Antoine |
       | Charlie | Antoine |
+    And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "Charlie"
+    And the user skips all game events
     Then the game's current play title should be "White Werewolf eats"
 
     When the white werewolf eats the player with name "Bob"
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies
+    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "David"
+    And the user skips all game events
     Then the game's current play title should be "Survivors bury dead bodies"
 
     When the survivors bury the dead bodies

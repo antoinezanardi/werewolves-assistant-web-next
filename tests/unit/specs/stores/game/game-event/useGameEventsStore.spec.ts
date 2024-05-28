@@ -140,9 +140,9 @@ describe("Game Events Store", () => {
     it("should go to the previous game event when called.", () => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-phase-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
       ];
       gameEventsStore.goToNextGameEvent();
       gameEventsStore.goToNextGameEvent();

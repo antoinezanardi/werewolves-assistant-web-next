@@ -1242,6 +1242,10 @@
     "GameWolfHoundTurnStartsEvent": {
       "wolfHoundSideRandomlyChosen": "In this special game, the Wolf-Hound's side is randomly chosen by the Assistant.",
       "wolfHoundChoosesSide": "The Wolf-Hound wakes up and chooses which side he wants to join between Villagers and Werewolves."
+    },
+    "GamePhaseStartsEvent": {
+      "dayRises": "The day rises in the village of the Millers Hollow !",
+      "nightFalls": "The night falls in the village of the Millers Hollow…"
     }
   }
 }

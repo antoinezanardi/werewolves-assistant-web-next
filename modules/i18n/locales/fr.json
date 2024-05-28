@@ -1242,6 +1242,10 @@
     "GameWolfHoundTurnStartsEvent": {
       "wolfHoundSideRandomlyChosen": "Dans cette partie spéciale, le camp du Chien-Loup est choisi aléatoirement par l'Assistant.",
       "wolfHoundChoosesSide": "Le Chien-Loup se réveille et choisit quel camp il veut rejoindre entre les Villageois et les Loups-Garous."
+    },
+    "GamePhaseStartsEvent": {
+      "dayRises": "Le jour se lève sur le village de Thiercelieux !",
+      "nightFalls": "La nuit tombe sur le village de Thiercelieux…"
     }
   }
 }

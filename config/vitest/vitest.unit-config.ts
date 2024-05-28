@@ -16,6 +16,7 @@ export default defineVitestConfig({
         "tests/**/*",
         "node_modules/**/*",
         "config/**/*",
+        "plugins/**/*",
         "**/*.types.ts",
       ],
       include: [

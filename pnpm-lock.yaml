@@ -228,6 +228,9 @@ importers:
       validate-branch-name:
         specifier: ^1.3.0
         version: 1.3.0
+      vi-canvas-mock:
+        specifier: ^1.0.0
+        version: 1.0.0
       vitest:
         specifier: ^1.5.3
         version: 1.6.0(@types/node@20.12.11)(happy-dom@14.11.0)(sass@1.77.2)(terser@5.31.0)
@@ -2663,10 +2666,10 @@ packages:
     engines: {node: '>=7.0.0'}
 
   color-name@1.1.3:
-    resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
+    resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==, tarball: https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz}
 
   color-name@1.1.4:
-    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==, tarball: https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz}
 
   color-string@1.9.1:
     resolution: {integrity: sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==}
@@ -2900,6 +2903,9 @@ packages:
 
   cssfilter@0.0.10:
     resolution: {integrity: sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw==}
+
+  cssfontparser@1.2.1:
+    resolution: {integrity: sha512-6tun4LoZnj7VN6YeegOVb67KBX/7JJsqvj+pv3ZA7F878/eN33AbGa5b/S/wXxS/tcp8nc40xRUrsPlxIyNUPg==, tarball: https://registry.npmjs.org/cssfontparser/-/cssfontparser-1.2.1.tgz}
 
   cssnano-preset-default@6.1.2:
     resolution: {integrity: sha512-1C0C+eNaeN8OcHQa193aRgYexyJtU8XwbdieEjClw+J9d94E41LwT6ivKH0WT+fYwYWB0Zp3I3IZ7tI/BbUbrg==}
@@ -4753,6 +4759,9 @@ packages:
 
   mlly@1.7.0:
     resolution: {integrity: sha512-U9SDaXGEREBYQgfejV97coK0UL1r+qnF2SyO9A3qcI8MzKnsIFKHNVEkrDyNncQTKQQumsasmeq84eNMdBfsNQ==}
+
+  moo-color@1.0.3:
+    resolution: {integrity: sha512-i/+ZKXMDf6aqYtBhuOcej71YSlbjT3wCO/4H1j8rPvxDJEifdwgg5MaFyu6iYAT8GBZJg2z0dkgK4YMzvURALQ==, tarball: https://registry.npmjs.org/moo-color/-/moo-color-1.0.3.tgz}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -6821,6 +6830,9 @@ packages:
   verror@1.10.1:
     resolution: {integrity: sha512-veufcmxri4e3XSrT0xwfUR7kguIkaxBeosDg00yDWhk49wdwkSUrvvsm7nc75e1PUyvIeZj6nS8VQRYz2/S4Xg==}
     engines: {node: '>=0.6.0'}
+
+  vi-canvas-mock@1.0.0:
+    resolution: {integrity: sha512-5olDeelVM0H4FiVJUjxwY7NX9l7DTn6pAn5Qtwa9s8S7UODkTH7MHsm4wjz1GNSAkIo8suwn4dPacX/XNn+ksw==, tarball: https://registry.npmjs.org/vi-canvas-mock/-/vi-canvas-mock-1.0.0.tgz}
 
   vite-hot-client@0.2.3:
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
@@ -10800,6 +10812,8 @@ snapshots:
   cssfilter@0.0.10:
     optional: true
 
+  cssfontparser@1.2.1: {}
+
   cssnano-preset-default@6.1.2(postcss@8.4.38):
     dependencies:
       browserslist: 4.23.0
@@ -12869,6 +12883,10 @@ snapshots:
       pathe: 1.1.2
       pkg-types: 1.1.0
       ufo: 1.5.3
+
+  moo-color@1.0.3:
+    dependencies:
+      color-name: 1.1.4
 
   mri@1.2.0: {}
 
@@ -15190,6 +15208,11 @@ snapshots:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
       extsprintf: 1.4.1
+
+  vi-canvas-mock@1.0.0:
+    dependencies:
+      cssfontparser: 1.2.1
+      moo-color: 1.0.3
 
   vite-hot-client@0.2.3(vite@5.2.11(@types/node@20.12.11)(sass@1.77.2)(terser@5.31.0)):
     dependencies:
