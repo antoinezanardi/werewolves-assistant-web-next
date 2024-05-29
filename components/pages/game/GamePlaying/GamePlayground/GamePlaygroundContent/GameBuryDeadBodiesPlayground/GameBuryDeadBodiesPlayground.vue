@@ -4,7 +4,7 @@
     class="flex items-center justify-center"
   >
     <GameDevotedServantStealsRolePlayground
-      v-if="eligibleStolenRoleByDevotedServantPlayers"
+      v-if="eligibleStolenRoleByDevotedServantPlayers.length"
       id="game-devoted-servant-steals-role-playground"
     />
 
@@ -29,5 +29,5 @@ const { game } = storeToRefs(gameStore);
 
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
-const eligibleStolenRoleByDevotedServantPlayers = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
+const eligibleStolenRoleByDevotedServantPlayers = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
 </script>

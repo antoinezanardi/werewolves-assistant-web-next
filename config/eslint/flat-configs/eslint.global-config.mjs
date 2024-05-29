@@ -6,6 +6,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
   name: "global",
   languageOptions: {
     globals: {
+      window: READONLY,
       process: READONLY,
       Buffer: READONLY,
       defineNuxtConfig: READONLY,
@@ -36,6 +37,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       console: READONLY,
       document: READONLY,
       setTimeout: READONLY,
+      setInterval: READONLY,
     },
   },
   rules: {

@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameStartsEvent.welcomeToTheVillage,components.GameStartsEvent.gameCompositionEvent, {" composition":""},components.GameStartsEvent.looksLifeSomeWerewolvesSneakedIntoTheVillage,components.GameStartsEvent.villagersMurderWerewolves,components.GameStartsEvent.letsElectSheriffBefore" id="game-starts-event"></game-event-with-texts-stub>"`;

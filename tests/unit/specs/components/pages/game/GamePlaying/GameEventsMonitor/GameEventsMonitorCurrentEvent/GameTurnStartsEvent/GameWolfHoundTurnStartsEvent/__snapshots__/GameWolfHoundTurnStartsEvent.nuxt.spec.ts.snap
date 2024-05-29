@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Wolf Hound Turn Starts Event Component > should match snapshot when rendered without shallow rendering. 1`] = `
+"<div id="game-wolf-hound-turn-starts-event" class="flex flex-col h-full">
+  <div id="game-event-default-slot-container" class="grow">
+    <div class="flex h-full items-center justify-center">
+      <div id="game-event-flipping-player-card">
+        <div class="flex-none" style="perspective: 1000; width: 200px; height: 200px;" id="game-event-flipping-player-role">
+          <div class="flipper" style="transition: 0.6s; transform-style: preserve-3d; position: relative; width: 100%; height: 100%; transition-duration: 0.5s;">
+            <div class="front" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2; transform: rotateY(0deg);"><img width="200" height="200" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[200pxpx] w-[200pxpx]" id="front-role-image" src="/svg/misc/infinite-spinner.svg"></div>
+            <div class="back" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transform: rotateY(180deg);"><img width="200" height="200" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[200pxpx] w-[200pxpx]" id="back-role-image" src="/svg/misc/infinite-spinner.svg"></div>
+          </div>
+        </div>
+        <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
+          <!--v-if-->
+        </transition-stub>
+      </div>
+    </div>
+  </div>
+  <div id="game-event-texts-manager" class="flex gap-4 h-1/2 items-center"><button id="previous-event-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button"><i class="fa fa-3x fa-chevron-left"></i></button>
+    <div id="game-event-text-container" class="flex grow h-1/2 items-center justify-center">
+      <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
+        <p id="current-event-text" class="!mb-0 !text-2xl text-center">components.GameWolfHoundTurnStartsEvent.wolfHoundChoosesSide</p>
+      </transition-stub>
+    </div><button id="next-event-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
+  </div>
+</div>"
+`;
+
+exports[`Game Wolf Hound Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameWolfHoundTurnStartsEvent.wolfHoundChoosesSide" id="game-wolf-hound-turn-starts-event"></game-event-with-texts-stub>"`;

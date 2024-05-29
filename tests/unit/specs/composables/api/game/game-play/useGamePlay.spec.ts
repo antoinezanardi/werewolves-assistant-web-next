@@ -19,20 +19,20 @@ describe("Use Current Game Play Composable", () => {
     it.each<{
       game: Game;
       interaction: PlayerInteractionType;
-      expectedPlayers: Player[] | undefined;
+      expectedPlayers: Player[];
       test: string;
     }>([
       {
         game: createFakeGame(),
         interaction: "steal-role",
-        expectedPlayers: undefined,
-        test: "should return undefined when game current play is null.",
+        expectedPlayers: [],
+        test: "should return empty array when game current play is null.",
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() }),
         interaction: "steal-role",
-        expectedPlayers: undefined,
-        test: "should return undefined when game current play source interactions are undefined.",
+        expectedPlayers: [],
+        test: "should return empty array when game current play source interactions are undefined.",
       },
       {
         game: createFakeGame({
@@ -48,8 +48,8 @@ describe("Use Current Game Play Composable", () => {
           }),
         }),
         interaction: "steal-role",
-        expectedPlayers: undefined,
-        test: "should return undefined when game current play interaction is not found among interactions.",
+        expectedPlayers: [],
+        test: "should return empty array when game current play interaction is not found among interactions.",
       },
       {
         game: createFakeGame({

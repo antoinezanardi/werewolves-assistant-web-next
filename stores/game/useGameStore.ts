@@ -5,6 +5,7 @@ import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/
 import { Game } from "~/composables/api/game/types/game.class";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import { StoreIds } from "~/stores/enums/store.enum";
+import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 
 const useGameStore = defineStore(StoreIds.GAME, () => {
   const {
@@ -12,6 +13,8 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     cancelGame: cancelGameFromApi,
     makeGamePlay: makeGamePlayFromApi,
   } = useFetchGames();
+
+  const { generateAndSetGameEventsFromGame } = useGameEventsStore();
 
   const game = ref<Game>(new Game());
   const fetchingGameStatus = ref<AsyncDataRequestStatus>("idle");
@@ -30,6 +33,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
 
       return;
     }
+    generateAndSetGameEventsFromGame(fetchedGame);
     game.value = fetchedGame;
     fetchingGameStatus.value = "success";
   }
@@ -54,6 +58,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
 
       return;
     }
+    generateAndSetGameEventsFromGame(playedGame);
     game.value = playedGame;
     makingGamePlayStatus.value = "success";
   }

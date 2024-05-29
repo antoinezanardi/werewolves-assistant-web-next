@@ -1,3 +1,4 @@
+import "vi-canvas-mock";
 import { beforeAll, expect } from "vitest";
 import matchers from "jest-extended";
 
@@ -22,6 +23,10 @@ beforeAll(() => {
   mockNuxtImports();
 
   mockPrimeVueComposables();
+});
+
+beforeEach(() => {
+  vi.useFakeTimers();
 });
 
 afterEach(() => server.resetHandlers());

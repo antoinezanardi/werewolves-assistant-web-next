@@ -1,0 +1,120 @@
+import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import GameSurvivorsTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSurvivorsTurnStartsEvent/GameSurvivorsTurnStartsEvent.vue";
+import type { Game } from "~/composables/api/game/types/game.class";
+import { StoreIds } from "~/stores/enums/store.enum";
+import { useGameStore } from "~/stores/game/useGameStore";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+
+import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+
+describe("Game Survivors Turn Starts Event Component", () => {
+  let wrapper: ReturnType<typeof mount<typeof GameSurvivorsTurnStartsEvent>>;
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }) } } };
+
+  async function mountGameSurvivorsTurnStartsEventComponent(options: ComponentMountingOptions<typeof GameSurvivorsTurnStartsEvent> = {}):
+  Promise<ReturnType<typeof mount<typeof GameSurvivorsTurnStartsEvent>>> {
+    return mountSuspendedComponent(GameSurvivorsTurnStartsEvent, {
+      global: { plugins: [createTestingPinia(testingPinia)] },
+      ...options,
+    });
+  }
+
+  beforeEach(async() => {
+    wrapper = await mountGameSurvivorsTurnStartsEventComponent();
+  });
+
+  it("should match snapshot when rendered.", () => {
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should match snapshot when rendered without shallow rendering.", async() => {
+    wrapper = await mountGameSurvivorsTurnStartsEventComponent({ shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  describe("Game Event Texts", () => {
+    it.each<{
+      game: Game;
+      expectedTexts: string[];
+      test: string;
+    }>([
+      {
+        game: createFakeGame({ currentPlay: null }),
+        expectedTexts: [],
+        test: "should not display any texts when there is no current play.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlayCupidCharms() }),
+        expectedTexts: [],
+        test: "should not display any texts when the current play source is not a survivors.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsElectSheriff() }),
+        expectedTexts: ["components.GameSurvivorsTurnStartsEvent.survivorsElectSheriff"],
+        test: "should display sheriff election texts when the current play is a sheriff election.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }),
+        expectedTexts: ["components.GameSurvivorsTurnStartsEvent.survivorsVote"],
+        test: "should display voting texts for classic vote when there is no particular voting cause.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ cause: "angel-presence" }) }),
+        expectedTexts: [
+          "components.GameSurvivorsTurnStartsEvent.gameStartsWithVoteBecauseOfAngelPresence",
+          "components.GameSurvivorsTurnStartsEvent.watchOutForAngelOrHeWins",
+        ],
+        test: "should display voting texts for angel presence vote when there is a voting cause is angel presence.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ cause: "stuttering-judge-request" }) }),
+        expectedTexts: ["components.GameSurvivorsTurnStartsEvent.voteBecauseOfStutteringJudge"],
+        test: "should display voting texts for stuttering judge vote when there is a voting cause is stuttering judge request.",
+      },
+      {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlaySurvivorsVote({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "vote",
+                  eligibleTargets: [
+                    createFakePlayer({ name: "Antoine" }),
+                    createFakePlayer({ name: "Benoit" }),
+                  ],
+                }),
+              ],
+            }),
+            cause: "previous-votes-were-in-ties",
+          }),
+        }),
+        expectedTexts: [
+          "components.GameSurvivorsTurnStartsEvent.voteBecauseOfPreviousTies",
+          "components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween, {\"players\":\"Antoine common.and Benoit\"}",
+        ],
+        test: "should display voting texts for sheriff request vote when there is a voting cause is sheriff request.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() }),
+        expectedTexts: ["components.GameSurvivorsTurnStartsEvent.survivorsBuryDeadBodies"],
+        test: "should display bury dead bodies texts when the current play is bury dead bodies.",
+      },
+    ])("$test", async({ game, expectedTexts }) => {
+      const gameStore = useGameStore();
+      gameStore.game = game;
+      await nextTick();
+      const textsAsString = expectedTexts.join(",");
+
+      expect(wrapper.attributes("texts")).toBe(textsAsString);
+    });
+  });
+});

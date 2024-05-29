@@ -52,10 +52,10 @@ const { t } = useI18n();
 
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
-const eliminatedPlayers = computed<Player[] | undefined>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
+const eliminatedPlayers = computed<Player[]>(() => getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role"));
 
 const doesDevotedServantStealRoleQuestion = computed<string>(() => {
-  const eliminatedPlayersCount = eliminatedPlayers.value?.length ?? 0;
+  const eliminatedPlayersCount = eliminatedPlayers.value.length;
 
   return t("components.GameDevotedServantStealsRolePlayground.doesDevotedServantStealRole", eliminatedPlayersCount);
 });

@@ -59,6 +59,7 @@ export default defineNuxtConfig({
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
+  plugins: ["~/plugins/vue-lottie/vue-lottie.client.ts"],
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {
