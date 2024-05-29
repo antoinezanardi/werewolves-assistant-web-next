@@ -19,20 +19,15 @@ describe("Current Play Expected Players To Act Component", () => {
     createFakeCupidAlivePlayer({ name: "Juju" }),
     createFakeCupidAlivePlayer({ name: "Doudou" }),
   ];
-  const testingPinia = {
-    initialState: {
-      [StoreIds.GAME]: {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlayCupidCharms({
-            source: createFakeGamePlaySource({
-              players: expectedPlayersToAct,
-              name: "cupid",
-            }),
-          }),
-        }),
-      },
-    },
-  };
+  const defaultGame = createFakeGame({
+    currentPlay: createFakeGamePlayCupidCharms({
+      source: createFakeGamePlaySource({
+        players: expectedPlayersToAct,
+        name: "cupid",
+      }),
+    }),
+  });
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountCurrentPlayExpectedPlayersToActComponent(): Promise<ReturnType<typeof mount<typeof CurrentPlayExpectedPlayersToAct>>> {
     return mountSuspendedComponent(CurrentPlayExpectedPlayersToAct, { global: { plugins: [createTestingPinia(testingPinia)] } });
@@ -49,7 +44,7 @@ describe("Current Play Expected Players To Act Component", () => {
 
   it("should not render the expected players to act when there is no current play.", async() => {
     const gameStore = useGameStore();
-    gameStore.game.currentPlay = null;
+    gameStore.game = createFakeGame({ currentPlay: null });
     await nextTick();
     const playersHorizontalList = wrapper.findComponent<typeof PlayersHorizontalList>("#player-horizontal-list");
 
@@ -58,7 +53,7 @@ describe("Current Play Expected Players To Act Component", () => {
 
   it("should not render the expected players to act when there is no source players in current play.", async() => {
     const gameStore = useGameStore();
-    gameStore.game.currentPlay = createFakeGamePlayCupidCharms({ source: createFakeGamePlaySource({ players: undefined }) });
+    gameStore.game = createFakeGame({ currentPlay: createFakeGamePlayCupidCharms({ source: createFakeGamePlaySource({ players: undefined }) }) });
     await nextTick();
     const playersHorizontalList = wrapper.findComponent<typeof PlayersHorizontalList>("#player-horizontal-list");
 

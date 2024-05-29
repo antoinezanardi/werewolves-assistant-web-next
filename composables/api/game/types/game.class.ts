@@ -1,4 +1,4 @@
-import { Expose, plainToInstance, Type } from "class-transformer";
+import { Expose, instanceToPlain, plainToInstance, Type } from "class-transformer";
 
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
@@ -7,6 +7,7 @@ import { GameVictory } from "~/composables/api/game/types/game-victory/game-vict
 import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { Player } from "~/composables/api/game/types/players/player.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
+import type { OmitToJSON } from "~/utils/types/class.types";
 
 class Game {
   @Expose()
@@ -51,8 +52,12 @@ class Game {
   @Expose()
   public updatedAt: Date;
 
-  public static create(game: Game): Game {
+  public static create(game: OmitToJSON<Game>): Game {
     return plainToInstance(Game, game, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
+  }
+
+  public toJSON(): object {
+    return instanceToPlain(this);
   }
 }
 
