@@ -21,25 +21,20 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
     createFakeSeerAlivePlayer({ name: "Antoine" }),
     createFakeSeerAlivePlayer({ name: "Florian" }),
   ];
-  const testingPinia = {
-    initialState: {
-      [StoreIds.GAME]: {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
-            source: createFakeGamePlaySource({
-              interactions: [
-                createFakeGamePlaySourceInteraction({
-                  source: "devoted-servant",
-                  type: "steal-role",
-                  eligibleTargets,
-                }),
-              ],
-            }),
+  const defaultGame = createFakeGame({
+    currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+      source: createFakeGamePlaySource({
+        interactions: [
+          createFakeGamePlaySourceInteraction({
+            source: "devoted-servant",
+            type: "steal-role",
+            eligibleTargets,
           }),
-        }),
-      },
-    },
-  };
+        ],
+      }),
+    }),
+  });
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameDevotedServantStealsRolePlaygroundComponent(options: ComponentMountingOptions<typeof GameDevotedServantStealsRolePlayground> = {}):
   Promise<ReturnType<typeof mount<typeof GameDevotedServantStealsRolePlayground>>> {
@@ -67,15 +62,18 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
 
     it("should translate devoted servant steals role question when there is only one player defined.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlaySurvivorsBuryDeadBodies({
-        source: createFakeGamePlaySource({
-          interactions: [
-            createFakeGamePlaySourceInteraction({
-              source: "devoted-servant",
-              type: "steal-role",
-              eligibleTargets: [eligibleTargets[0]],
-            }),
-          ],
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                source: "devoted-servant",
+                type: "steal-role",
+                eligibleTargets: [eligibleTargets[0]],
+              }),
+            ],
+          }),
         }),
       });
       const devotedServantStealsRoleQuestion = wrapper.find<HTMLHeadingElement>("#devoted-servant-steals-role-question");
@@ -86,7 +84,10 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
 
     it("should translate devoted servant steals role question as singular when there is no interaction.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlaySurvivorsBuryDeadBodies({ source: createFakeGamePlaySource({ interactions: [] }) });
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ source: createFakeGamePlaySource({ interactions: [] }) }),
+      });
       const devotedServantStealsRoleQuestion = wrapper.find<HTMLHeadingElement>("#devoted-servant-steals-role-question");
       await nextTick();
 
@@ -95,15 +96,19 @@ describe("Game Devoted Servant Steals Role Playground Component", () => {
 
     it("should translate devoted servant steals role question as singular when there is no eliminated players.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlaySurvivorsBuryDeadBodies({
-        source: createFakeGamePlaySource({
-          interactions: [
-            createFakeGamePlaySourceInteraction({
-              source: "devoted-servant",
-              type: "steal-role",
-              eligibleTargets: [],
-            }),
-          ],
+
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+          source: createFakeGamePlaySource({
+            interactions: [
+              createFakeGamePlaySourceInteraction({
+                source: "devoted-servant",
+                type: "steal-role",
+                eligibleTargets: [],
+              }),
+            ],
+          }),
         }),
       });
       const devotedServantStealsRoleQuestion = wrapper.find<HTMLHeadingElement>("#devoted-servant-steals-role-question");

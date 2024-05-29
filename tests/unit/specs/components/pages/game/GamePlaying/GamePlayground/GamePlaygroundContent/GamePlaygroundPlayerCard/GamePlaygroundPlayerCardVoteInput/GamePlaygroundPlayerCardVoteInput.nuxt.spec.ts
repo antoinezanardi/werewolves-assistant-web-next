@@ -27,25 +27,20 @@ describe("Game Playground Player Card Vote Input Component", () => {
     defaultPlayer,
     createFakeSeerAlivePlayer({ name: "Antony" }),
   ];
-  const pinia = {
-    initialState: {
-      [StoreIds.GAME]: {
-        game: createFakeGame({
-          players,
-          currentPlay: createFakeGamePlaySurvivorsVote({
-            source: createFakeGamePlaySource({
-              interactions: [
-                createFakeGamePlaySourceInteraction({
-                  type: "vote",
-                  eligibleTargets: players,
-                }),
-              ],
-            }),
+  const defaultGame = createFakeGame({
+    players,
+    currentPlay: createFakeGamePlaySurvivorsVote({
+      source: createFakeGamePlaySource({
+        interactions: [
+          createFakeGamePlaySourceInteraction({
+            type: "vote",
+            eligibleTargets: players,
           }),
-        }),
-      },
-    },
-  };
+        ],
+      }),
+    }),
+  });
+  const pinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
   const defaultProps: GamePlaygroundPlayerCardVoteInputProps = { player: defaultPlayer };
 
   async function mountGamePlaygroundPlayerCardVoteInputComponent(options: ComponentMountingOptions<typeof GamePlaygroundPlayerCardVoteInput> = {}):
@@ -99,7 +94,10 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should pass empty array as suggestions when there is no current play on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = null;
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: null,
+      });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
@@ -109,7 +107,10 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should pass empty array as suggestions when there is no current play eligible targets on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay();
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlay(),
+      });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
@@ -119,7 +120,10 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should pass empty array as suggestions when there is no current play source interactions on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource() });
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlay({ source: createFakeGamePlaySource() }),
+      });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
@@ -131,7 +135,10 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should pass empty array as suggestions when there is no current play source interactions (empty array) on complete event.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource({ interactions: [] }) });
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: createFakeGamePlay({ source: createFakeGamePlaySource({ interactions: [] }) }),
+      });
       const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });

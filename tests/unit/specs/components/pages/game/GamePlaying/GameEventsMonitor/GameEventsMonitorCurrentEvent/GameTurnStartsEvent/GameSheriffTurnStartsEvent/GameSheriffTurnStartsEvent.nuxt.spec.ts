@@ -14,28 +14,23 @@ import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helper
 
 describe("Game Sheriff Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameSheriffTurnStartsEvent>>;
-  const testingPinia = {
-    initialState: {
-      [StoreIds.GAME]: {
-        game: createFakeGame({
-          currentPlay: createFakeGamePlaySheriffSettlesVotes({
-            type: "target",
-            source: createFakeGamePlaySource({
-              interactions: [
-                createFakeGamePlaySourceInteraction({
-                  type: "sentence-to-death",
-                  eligibleTargets: [
-                    createFakePlayer({ name: "Antoine" }),
-                    createFakePlayer({ name: "Benoit" }),
-                  ],
-                }),
-              ],
-            }),
+  const defaultGame = createFakeGame({
+    currentPlay: createFakeGamePlaySheriffSettlesVotes({
+      type: "target",
+      source: createFakeGamePlaySource({
+        interactions: [
+          createFakeGamePlaySourceInteraction({
+            type: "sentence-to-death",
+            eligibleTargets: [
+              createFakePlayer({ name: "Antoine" }),
+              createFakePlayer({ name: "Benoit" }),
+            ],
           }),
-        }),
-      },
-    },
-  };
+        ],
+      }),
+    }),
+  });
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameSheriffTurnStartsEventComponent(options: ComponentMountingOptions<typeof GameSheriffTurnStartsEvent> = {}):
   Promise<ReturnType<typeof mount<typeof GameSheriffTurnStartsEvent>>> {
@@ -64,7 +59,10 @@ describe("Game Sheriff Turn Starts Event Component", () => {
   describe("Game Event Texts", () => {
     it("should not pass any event texts when current play is null.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = null;
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        currentPlay: null,
+      });
       await nextTick();
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameSheriffTurnStartsEvent>("#game-sheriff-turn-starts-event");
 
@@ -81,7 +79,7 @@ describe("Game Sheriff Turn Starts Event Component", () => {
 
     it("should pass event texts when current play is delegate sheriff role.", async() => {
       const gameStore = useGameStore();
-      gameStore.game.currentPlay = createFakeGamePlaySheriffDelegates();
+      gameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
       await nextTick();
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameSheriffTurnStartsEvent>("#game-sheriff-turn-starts-event");
       const expectedTexts: string[] = ["components.GameSheriffTurnStartsEvent.sheriffDelegates"];

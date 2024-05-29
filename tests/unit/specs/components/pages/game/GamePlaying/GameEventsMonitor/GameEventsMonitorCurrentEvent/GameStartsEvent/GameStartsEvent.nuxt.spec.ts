@@ -32,17 +32,12 @@ describe("Game Starts Event Component", () => {
     createFakeWerewolfAlivePlayer({ name: "Tak" }),
     createFakeWerewolfAlivePlayer({ name: "Joe" }),
   ];
-  const testingPinia = {
-    initialState: {
-      [StoreIds.GAME]: {
-        game: createFakeGame({
-          players: defaultPlayers,
-          currentPlay: createFakeGamePlaySurvivorsElectSheriff(),
-          options: DEFAULT_GAME_OPTIONS,
-        }),
-      },
-    },
-  };
+  const defaultGame = createFakeGame({
+    players: defaultPlayers,
+    currentPlay: createFakeGamePlaySurvivorsElectSheriff(),
+    options: DEFAULT_GAME_OPTIONS,
+  });
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameStartsEventComponent(options: ComponentMountingOptions<typeof GameStartsEvent> = {}):
   Promise<ReturnType<typeof mount<typeof GameStartsEvent>>> {
@@ -55,6 +50,12 @@ describe("Game Starts Event Component", () => {
   beforeEach(async() => {
     mockedRadash.shuffle.mockReturnValue([]);
     wrapper = await mountGameStartsEventComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame({
+      players: defaultPlayers,
+      currentPlay: createFakeGamePlaySurvivorsElectSheriff(),
+      options: DEFAULT_GAME_OPTIONS,
+    });
   });
 
   it("should match snapshot when rendered.", () => {
