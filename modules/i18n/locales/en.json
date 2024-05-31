@@ -321,11 +321,13 @@
     "game": {
       "phase": {
         "night": "Night",
-        "day": "Day"
+        "day": "Day",
+        "twilight": "Twilight"
       },
       "definitePhase": {
         "night": "The Night",
-        "day": "The Day"
+        "day": "The Day",
+        "twilight": "The Twilight"
       },
       "player": {
         "attribute": {

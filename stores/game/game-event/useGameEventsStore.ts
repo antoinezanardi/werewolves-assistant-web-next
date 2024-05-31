@@ -19,7 +19,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (game.tick === 1) {
       gameEvents.value.push(GameEvent.create({ type: "game-starts" }));
     }
-    if (game.phase.tick === 1) {
+    if (game.phase.tick === 1 && game.phase.name !== "twilight") {
       gameEvents.value.push(GameEvent.create({ type: "game-phase-starts" }));
     }
     gameEvents.value.push(GameEvent.create({ type: "game-turn-starts" }));
