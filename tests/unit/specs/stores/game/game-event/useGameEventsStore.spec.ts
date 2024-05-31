@@ -3,7 +3,11 @@ import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 
 describe("Game Events Store", () => {
@@ -62,6 +66,11 @@ describe("Game Events Store", () => {
   });
 
   describe("generateAndSetGameEventsFromGame", () => {
+    const deadPlayers = [
+      createFakePlayer(),
+      createFakePlayer(),
+    ];
+
     it.each<{
       game: Game;
       expectedGameEvents: GameEvent[];
@@ -124,6 +133,28 @@ describe("Game Events Store", () => {
         }),
         expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
         test: "should generate turn starts event when game tick nor phase tick is 1.",
+      },
+      {
+        game: createFakeGame({
+          tick: 1,
+          currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "bury",
+                  eligibleTargets: deadPlayers,
+                }),
+              ],
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "game-starts" }),
+          createFakeGameEvent({ type: "player-dies", players: [deadPlayers[0]] }),
+          createFakeGameEvent({ type: "player-dies", players: [deadPlayers[1]] }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate player dies event when game current play action is bury-dead-bodies.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();

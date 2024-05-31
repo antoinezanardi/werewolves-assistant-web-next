@@ -1248,6 +1248,15 @@
     "GamePhaseStartsEvent": {
       "dayRises": "Le jour se lève sur le village de Thiercelieux !",
       "nightFalls": "La nuit tombe sur le village de Thiercelieux…"
+    },
+    "GamePlayerDiesEvent": {
+      "cantFindDeadPlayer": "L'Assistant ne trouve pas le joueur mort… Veuillez continuer.",
+      "playerDies": "{playerName} est mort ! Quelle tragédie…",
+      "playerCanRevealRole": "Il ou elle peut révéler son rôle aux autres.",
+      "playerDoesntRevealRole": "Dans cette spéciale, le rôle du joueur mort n'est pas révélé aux autres. Le mystère demeure…"
+    },
+    "RoleFlippingImageSvgIcon": {
+      "iconAlt": "Icône associé au rôle"
     }
   }
 }

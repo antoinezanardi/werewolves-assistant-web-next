@@ -1248,6 +1248,15 @@
     "GamePhaseStartsEvent": {
       "dayRises": "The day rises in the village of the Millers Hollow !",
       "nightFalls": "The night falls in the village of the Millers Hollow…"
+    },
+    "GamePlayerDiesEvent": {
+      "cantFindDeadPlayer": "The Assistant can't find the dead player… Please proceed.",
+      "playerDies": "{playerName} is dead ! What a tragedy…",
+      "playerCanRevealRole": "He or she can reveal his role to the others.",
+      "playerDoesntRevealRole": "In this special game, the role of the dead player is not revealed to the others. The mystery remains…"
+    },
+    "RoleFlippingImageSvgIcon": {
+      "iconAlt": "Role icon"
     }
   }
 }

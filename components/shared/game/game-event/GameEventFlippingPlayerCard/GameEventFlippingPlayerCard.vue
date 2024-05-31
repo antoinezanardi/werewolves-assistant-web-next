@@ -1,5 +1,8 @@
 <template>
-  <div id="game-event-flipping-player-card">
+  <div
+    id="game-event-flipping-player-card"
+    class="flex flex-col items-center"
+  >
     <RoleFlippingImage
       id="game-event-flipping-player-role"
       :alt="alt"
@@ -7,6 +10,7 @@
       definition="normal"
       :role-name="playerToDisplay?.role.current"
       sizes="200px"
+      :svg-icon-path="props.svgIconPath"
     />
 
     <transition

@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { GameEvent } from "~/stores/game/game-event/types/game-event.class";
@@ -14,6 +15,13 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEventIndex.value = 0;
   }
 
+  function getDeadPlayerGameEvents(game: Game): GameEvent[] {
+    const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(ref(game));
+    const deadPlayers = getEligibleTargetsWithInteractionInCurrentGamePlay("bury");
+
+    return deadPlayers.map(player => GameEvent.create({ type: "player-dies", players: [player] }));
+  }
+
   function generateAndSetGameEventsFromGame(game: Game): void {
     resetGameEvents();
     if (game.tick === 1) {
@@ -21,6 +29,9 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     }
     if (game.phase.tick === 1 && game.phase.name !== "twilight") {
       gameEvents.value.push(GameEvent.create({ type: "game-phase-starts" }));
+    }
+    if (game.currentPlay?.action === "bury-dead-bodies") {
+      gameEvents.value.push(...getDeadPlayerGameEvents(game));
     }
     gameEvents.value.push(GameEvent.create({ type: "game-turn-starts" }));
   }
