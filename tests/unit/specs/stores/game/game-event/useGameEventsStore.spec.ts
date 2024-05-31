@@ -107,6 +107,17 @@ describe("Game Events Store", () => {
         game: createFakeGame({
           tick: 2,
           phase: createFakeGamePhase({
+            tick: 1,
+            name: "twilight",
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should turn starts event without game phase event when game phase tick is 1 but name is twilight.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          phase: createFakeGamePhase({
             tick: 2,
             name: "day",
           }),

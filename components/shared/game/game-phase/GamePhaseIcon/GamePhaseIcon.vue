@@ -15,6 +15,7 @@ const phaseIcon = computed<string>(() => {
   const phasesIcon: Record<GamePhaseName, string> = {
     night: "fa fa-moon text-night",
     day: "fa fa-sun text-day",
+    twilight: "fa fa-cloud-moon text-twilight",
   };
 
   return phasesIcon[props.phase];
