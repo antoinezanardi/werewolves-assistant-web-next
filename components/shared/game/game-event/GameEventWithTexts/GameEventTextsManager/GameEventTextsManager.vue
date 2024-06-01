@@ -39,6 +39,8 @@
       v-p-tooltip.top="$t('shared.actions.next')"
       :aria-label="$t('components.GameEventTextsManager.nextEventText')"
       class="pe-4"
+      :class="{ 'text-gray-500': !canGoToNextGameEventText }"
+      :disabled="!canGoToNextGameEventText"
       type="button"
       @click.prevent="nextEventText"
     >
@@ -48,12 +50,17 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import type { GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
+import { useGameStore } from "~/stores/game/useGameStore";
 
 const props = defineProps<GameEventTextsManagerProps>();
 
 const { t } = useI18n();
+
+const gameStore = useGameStore();
+const { makingGamePlayStatus } = storeToRefs(gameStore);
 
 const gameEventsStore = useGameEventsStore();
 const { goToNextGameEvent } = gameEventsStore;
@@ -62,7 +69,9 @@ const currentIndex = ref<number>(0);
 
 const currentGameEventText = computed<string | undefined>(() => props.texts[currentIndex.value]);
 
-const canGoToPreviousGameEventText = computed<boolean>(() => currentIndex.value > 0);
+const canGoToPreviousGameEventText = computed<boolean>(() => currentIndex.value > 0 && makingGamePlayStatus.value !== "pending");
+
+const canGoToNextGameEventText = computed<boolean>(() => makingGamePlayStatus.value !== "pending");
 
 const previousGameEventTextTooltip = computed<string>(() => {
   if (canGoToPreviousGameEventText.value) {
@@ -71,10 +80,10 @@ const previousGameEventTextTooltip = computed<string>(() => {
   return "";
 });
 
-function nextEventText(): void {
+async function nextEventText(): Promise<void> {
   currentIndex.value++;
   if (currentGameEventText.value === undefined) {
-    goToNextGameEvent();
+    await goToNextGameEvent();
   }
 }
 

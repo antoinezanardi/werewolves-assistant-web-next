@@ -3,12 +3,17 @@ import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentG
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { GameEvent } from "~/stores/game/game-event/types/game-event.class";
+import { useGameStore } from "~/stores/game/useGameStore";
 
 const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
   const gameEvents = ref<GameEvent[]>([]);
   const currentGameEventIndex = ref<number>(0);
+
+  const gameStore = useGameStore();
+
   const currentGameEvent = computed<GameEvent | undefined>(() => gameEvents.value[currentGameEventIndex.value]);
-  const canGoToPreviousGameEvent = computed<boolean>(() => currentGameEventIndex.value > 0);
+  const canGoToPreviousGameEvent = computed<boolean>(() => currentGameEventIndex.value > 0 && gameStore.makingGamePlayStatus !== "pending");
+  const canGoToNextGameEvent = computed<boolean>(() => gameStore.makingGamePlayStatus !== "pending");
 
   function resetGameEvents(): void {
     gameEvents.value = [];
@@ -36,7 +41,14 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     gameEvents.value.push(GameEvent.create({ type: "game-turn-starts" }));
   }
 
-  function goToNextGameEvent(): void {
+  async function goToNextGameEvent(): Promise<void> {
+    const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(gameStore.game));
+    const nextGameEvent = gameEvents.value[currentGameEventIndex.value + 1];
+    if (gameEvents.value.length > currentGameEventIndex.value + 1 && nextGameEvent.type === "game-turn-starts" && mustCurrentGamePlayBeSkipped.value) {
+      await gameStore.skipGamePlay();
+
+      return;
+    }
     currentGameEventIndex.value += 1;
   }
 
@@ -48,6 +60,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEventIndex,
     currentGameEvent,
     canGoToPreviousGameEvent,
+    canGoToNextGameEvent,
     resetGameEvents,
     generateAndSetGameEventsFromGame,
     goToNextGameEvent,

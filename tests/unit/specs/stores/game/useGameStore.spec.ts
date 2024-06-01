@@ -123,4 +123,15 @@ describe("Game Store", () => {
       expect(gameStore.game).toStrictEqual<Game>(game);
     });
   });
+
+  describe("skipGamePlay", () => {
+    it("should skip game play when called.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game._id = "gameId";
+      await gameStore.skipGamePlay();
+      const emptyMakeGamePlayDto = createFakeMakeGamePlayDto();
+
+      expect(mocks.composables.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", emptyMakeGamePlayDto);
+    });
+  });
 });
