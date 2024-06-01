@@ -5,7 +5,7 @@ import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore"
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
@@ -129,6 +129,16 @@ describe("Game Events Store", () => {
           phase: createFakeGamePhase({
             tick: 2,
             name: "day",
+          }),
+          currentPlay: createFakeGamePlaySheriffDelegates({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "bury",
+                  eligibleTargets: deadPlayers,
+                }),
+              ],
+            }),
           }),
         }),
         expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],

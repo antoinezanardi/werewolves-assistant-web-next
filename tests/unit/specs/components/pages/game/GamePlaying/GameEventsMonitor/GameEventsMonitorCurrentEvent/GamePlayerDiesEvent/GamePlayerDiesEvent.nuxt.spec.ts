@@ -69,6 +69,15 @@ describe("Game Player Dies Event Component", () => {
       expect(gamePlayerDiesEventComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
 
+    it("should pass can't find dead player texts when there are not players defined in event.", async() => {
+      wrapper = await mountGamePlayerDiesEventComponent({ props: { event: createFakeGameEvent({ players: undefined }) } });
+      const gamePlayerDiesEventComponent = wrapper.findComponent<typeof GamePlayerDiesEvent>("#game-player-dies-event");
+      const expectedTexts: string[] = ["components.GamePlayerDiesEvent.cantFindDeadPlayer"];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gamePlayerDiesEventComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
     it("should pass event texts with player role remaining hidden when the options is activated.", async() => {
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({ options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ areRevealedOnDeath: false }) }) });
@@ -107,6 +116,19 @@ describe("Game Player Dies Event Component", () => {
           plugins: [createTestingPinia(initialState)],
         },
         props: { event: createFakeGameEvent({ players: [] }) },
+      });
+      const playerRoleImage = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-player-card");
+
+      expect(playerRoleImage.exists()).toBeFalsy();
+    });
+
+    it("should not render player role image when there are not players defined in event.", async() => {
+      wrapper = await mountGamePlayerDiesEventComponent({
+        global: {
+          stubs: { GameEventWithTexts: false },
+          plugins: [createTestingPinia(initialState)],
+        },
+        props: { event: createFakeGameEvent({ players: undefined }) },
       });
       const playerRoleImage = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-player-card");
 
