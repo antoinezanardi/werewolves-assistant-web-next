@@ -4,6 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { VueFlip } from "#components";
 import type { RoleFlippingImageProps } from "~/components/shared/role/RoleImage/RoleFlippingImage/role-flipping-image.types";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
+import type RoleFlippingImageSvgIcon from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImageSvgIcon/RoleFlippingImageSvgIcon.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -75,6 +76,25 @@ describe("Role Flipping Image Component", () => {
 
         expect(frontRoleImage.props("roleName")).toBe("seer");
       });
+
+      it("should not render svg icon when icon path is not defined in props.", () => {
+        const svgIcon = wrapper.findComponent<typeof RoleFlippingImageSvgIcon>("#front-role-image-svg-icon");
+
+        expect(svgIcon.exists()).toBeFalsy();
+      });
+
+      it("should render svg icon when icon path is defined in props.", async() => {
+        wrapper = await mountRoleFlippingImageComponent({
+          shallow: false,
+          props: {
+            ...defaultProps,
+            svgIconPath: "/svg/werewolf.svg",
+          },
+        });
+        const svgIcon = wrapper.findComponent<typeof RoleFlippingImageSvgIcon>("#front-role-image-svg-icon");
+
+        expect(svgIcon.props("svgIconPath")).toBe("/svg/werewolf.svg");
+      });
     });
 
     describe("Back Role Image", () => {
@@ -97,6 +117,25 @@ describe("Role Flipping Image Component", () => {
         await wrapper.setProps({ roleName: "villager" });
 
         expect(backRoleImage.props("roleName")).toBe("villager");
+      });
+
+      it("should not render svg icon when icon path is not defined in props.", () => {
+        const svgIcon = wrapper.findComponent<typeof RoleFlippingImageSvgIcon>("#back-role-image-svg-icon");
+
+        expect(svgIcon.exists()).toBeFalsy();
+      });
+
+      it("should render svg icon when icon path is defined in props.", async() => {
+        wrapper = await mountRoleFlippingImageComponent({
+          shallow: false,
+          props: {
+            ...defaultProps,
+            svgIconPath: "/svg/werewolf.svg",
+          },
+        });
+        const svgIcon = wrapper.findComponent<typeof RoleFlippingImageSvgIcon>("#back-role-image-svg-icon");
+
+        expect(svgIcon.props("svgIconPath")).toBe("/svg/werewolf.svg");
       });
     });
   });
