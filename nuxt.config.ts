@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
     "./assets/css/google-fonts.css",
+    "animate.css/animate.min.css",
   ],
   devtools: { enabled: true },
   experimental: { renderJsonPayloads: false },

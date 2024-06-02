@@ -4,7 +4,7 @@
       <div class="flex justify-center w-full">
         <NuxtImg
           :alt="$t('pages.index.werewolvesAssistantLogo')"
-          sizes="lg:200"
+          sizes="sm:150 lg:200"
           src="/img/logo/square/werewolves-logo.png"
         />
       </div>
@@ -12,7 +12,7 @@
       <div class="my-6 text-center w-full">
         <h1
           id="title"
-          class="mt-0"
+          class="md:!text-5xl mt-0"
         >
           {{ $t('shared.werewolvesAssistant') }}
         </h1>
@@ -20,7 +20,7 @@
 
       <NuxtLink
         id="play-button"
-        class="p-button p-button-raised w-3/12"
+        class="lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"
         to="/game-lobby"
       >
         <span class="fa fa-2x fa-play-circle me-2"/>
@@ -32,7 +32,7 @@
 
       <NuxtLink
         id="about-button"
-        class="mt-4 p-button p-button-secondary w-3/12"
+        class="lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"
         to="/about"
       >
         <span class="fa fa-question me-2"/>
@@ -54,9 +54,3 @@ import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
 definePageMeta({ layout: false });
 </script>
-
-<style scoped lang="scss">
-#title {
-  font-size: 4rem;
-}
-</style>

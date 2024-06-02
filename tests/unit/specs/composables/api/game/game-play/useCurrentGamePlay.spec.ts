@@ -4,11 +4,66 @@ import type { PlayerInteractionType } from "~/composables/api/game/types/players
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 describe("Use Current Game Play Composable", () => {
+  describe("mustCurrentGamePlayBeSkipped", () => {
+    it.each< {
+      game: Game;
+      expectedBoolean: boolean;
+      test: string;
+    }>([
+      {
+        game: createFakeGame(),
+        expectedBoolean: false,
+        test: "should return false when game current play is null.",
+      },
+      {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "steal-role",
+                  eligibleTargets: [createFakePlayer()],
+                }),
+              ],
+            }),
+          }),
+        }),
+        expectedBoolean: false,
+        test: "should return false when there are no steal role interaction.",
+      },
+      {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlaySheriffDelegates({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "steal-role",
+                  eligibleTargets: [createFakePlayer()],
+                }),
+              ],
+            }),
+          }),
+        }),
+        expectedBoolean: false,
+        test: "should return false when game play action is not bury dead bodies.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ source: createFakeGamePlaySource({ interactions: [] }) }) }),
+        expectedBoolean: true,
+        test: "should return true when action is bury dead bodies and there are no steal role eligible targets",
+      },
+    ])("$test", ({ game, expectedBoolean }) => {
+      const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(game));
+
+      expect(mustCurrentGamePlayBeSkipped.value).toBe(expectedBoolean);
+    });
+  });
+
   describe("getEligibleTargetsWithInteractionInCurrentGamePlay", () => {
     const foundPlayersWithInteraction = [
       createFakePlayer(),

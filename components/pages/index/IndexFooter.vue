@@ -9,9 +9,9 @@
         class="p-button p-button-secondary"
         href="mailto: antoine.zanardi@epitech.eu"
       >
-        <span class="fa fa-envelope me-2"/>
+        <span class="fa fa-envelope md:me-2"/>
 
-        <span>
+        <span class="hidden md:inline">
           {{ $t('components.IndexFooter.contact') }}
         </span>
       </a>

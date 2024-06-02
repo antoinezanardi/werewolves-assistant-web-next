@@ -1,18 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Index Page Component > should match snapshot when rendered. 1`] = `
-"<div data-v-02281a80="" class="flex flex-col">
-  <div data-v-02281a80="" class="flex flex-col grow items-center justify-center">
-    <div data-v-02281a80="" class="flex justify-center w-full">
-      <nuxt-img-stub data-v-02281a80="" src="/img/logo/square/werewolves-logo.png" sizes="lg:200" alt="Werewolves Assistant logo"></nuxt-img-stub>
+"<div class="flex flex-col">
+  <div class="flex flex-col grow items-center justify-center">
+    <div class="flex justify-center w-full">
+      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="sm:150 lg:200" alt="Werewolves Assistant logo"></nuxt-img-stub>
     </div>
-    <div data-v-02281a80="" class="my-6 text-center w-full">
-      <h1 data-v-02281a80="" id="title" class="mt-0">Werewolves Assistant</h1>
+    <div class="my-6 text-center w-full">
+      <h1 id="title" class="md:!text-5xl mt-0">Werewolves Assistant</h1>
     </div>
-    <nuxt-link-stub data-v-02281a80="" to="/game-lobby" id="play-button" class="p-button p-button-raised w-3/12"></nuxt-link-stub>
-    <nuxt-link-stub data-v-02281a80="" to="/about" id="about-button" class="mt-4 p-button p-button-secondary w-3/12"></nuxt-link-stub>
+    <nuxt-link-stub to="/game-lobby" id="play-button" class="lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"></nuxt-link-stub>
+    <nuxt-link-stub to="/about" id="about-button" class="lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"></nuxt-link-stub>
   </div>
-  <divider-stub data-v-02281a80=""></divider-stub>
-  <index-footer-stub data-v-02281a80="" class="mt-1"></index-footer-stub>
+  <divider-stub></divider-stub>
+  <index-footer-stub class="mt-1"></index-footer-stub>
 </div>"
 `;

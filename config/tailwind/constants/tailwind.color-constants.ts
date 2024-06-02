@@ -16,6 +16,8 @@ const DAY_COLOR = colors.yellow[500];
 
 const NIGHT_COLOR = colors.blue[300];
 
+const TWILIGHT_COLOR = colors.cyan[700];
+
 export {
   PRIMARY_COLOR,
   SECONDARY_COLOR,
@@ -25,4 +27,5 @@ export {
   INFO_COLOR,
   DAY_COLOR,
   NIGHT_COLOR,
+  TWILIGHT_COLOR,
 };

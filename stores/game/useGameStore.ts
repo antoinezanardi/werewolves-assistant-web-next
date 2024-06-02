@@ -14,12 +14,12 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     makeGamePlay: makeGamePlayFromApi,
   } = useFetchGames();
 
-  const { generateAndSetGameEventsFromGame } = useGameEventsStore();
-
   const game = ref<Game>(new Game());
   const fetchingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const cancelingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const makingGamePlayStatus = ref<AsyncDataRequestStatus>("idle");
+
+  const { generateAndSetGameEventsFromGame } = useGameEventsStore();
 
   function resetGame(): void {
     game.value = new Game();
@@ -62,6 +62,10 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     game.value = playedGame;
     makingGamePlayStatus.value = "success";
   }
+
+  async function skipGamePlay(): Promise<void> {
+    return makeGamePlay({});
+  }
   return {
     game,
     fetchingGameStatus,
@@ -71,6 +75,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
     fetchAndSetGame,
     cancelGame,
     makeGamePlay,
+    skipGamePlay,
   };
 });
 
