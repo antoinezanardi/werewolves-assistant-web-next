@@ -20,7 +20,7 @@
     <div class="flex justify-center">
       <a
         id="about-creator-portfolio-button"
-        class="p-button primary"
+        class="mb-6 p-button primary"
         href="https://antoinezanardi.fr"
         rel="noopener noreferrer"
         target="_blank"

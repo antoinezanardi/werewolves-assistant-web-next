@@ -1,13 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`About Available Role Description Component > should match snapshot when rendered. 1`] = `
-"<div data-v-7bdaa060="" class="flex">
+"<div data-v-7bdaa060="" class="flex flex-col md:flex-row">
   <div data-v-7bdaa060="" id="role-left-description" class="flex flex-col items-center justify-center">
     <role-image-stub data-v-7bdaa060="" alt="components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt, {" role":"shared.role.name.werewolf"}" rolename="werewolf" sizes="150" definition="normal" class="available-role-description-role-image"></role-image-stub>
-    <h2 data-v-7bdaa060="" class="available-role-description-role-name mt-3">shared.role.name.werewolf</h2>
-    <role-type-badge-stub data-v-7bdaa060="" roletype="werewolf" class="available-role-description-role-type-badge mt-3"></role-type-badge-stub>
-    <role-origin-badge-stub data-v-7bdaa060="" roleorigin="classic" class="available-role-description-role-origin-badge mt-3"></role-origin-badge-stub>
+    <h2 data-v-7bdaa060="" class="available-role-description-role-name mt-3 text-center">shared.role.name.werewolf</h2>
+    <div data-v-7bdaa060="" class="flex gap-4 md:flex-col md:gap-1">
+      <role-type-badge-stub data-v-7bdaa060="" roletype="werewolf" class="available-role-description-role-type-badge mt-3"></role-type-badge-stub>
+      <role-origin-badge-stub data-v-7bdaa060="" roleorigin="classic" class="available-role-description-role-origin-badge mt-3"></role-origin-badge-stub>
+    </div>
   </div>
+  <divider-stub data-v-7bdaa060="" class="md:!hidden"></divider-stub>
   <role-description-lines-stub data-v-7bdaa060="" role="[object Object]"></role-description-lines-stub>
 </div>"
 `;

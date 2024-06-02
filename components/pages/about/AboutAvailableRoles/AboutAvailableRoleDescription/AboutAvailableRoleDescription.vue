@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex flex-col md:flex-row">
     <div
       id="role-left-description"
       class="flex flex-col items-center justify-center"
@@ -11,22 +11,28 @@
         sizes="150"
       />
 
-      <h2 class="available-role-description-role-name mt-3">
+      <h2 class="available-role-description-role-name mt-3 text-center">
         {{ getRoleNameLabel(role.name) }}
       </h2>
 
-      <RoleTypeBadge
-        class="available-role-description-role-type-badge mt-3"
-        :role-type="role.type"
-      />
+      <div class="flex gap-4 md:flex-col md:gap-1">
+        <RoleTypeBadge
+          class="available-role-description-role-type-badge mt-3"
+          :role-type="role.type"
+        />
 
-      <RoleOriginBadge
-        class="available-role-description-role-origin-badge mt-3"
-        :role-origin="role.origin"
-      />
+        <RoleOriginBadge
+          class="available-role-description-role-origin-badge mt-3"
+          :role-origin="role.origin"
+        />
+      </div>
     </div>
 
-    <RoleDescriptionLines :role="role"/>
+    <VuePrimeDivider class="md:!hidden"/>
+
+    <RoleDescriptionLines
+      :role="role"
+    />
   </div>
 </template>
 
