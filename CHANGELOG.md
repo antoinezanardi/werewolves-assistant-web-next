@@ -1,5 +1,38 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.17.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.16.0...v1.17.0) (2024-06-02)
+
+
+### 🚀 Features
+
+* **game:** player dies event ([#438](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/438)) ([8b54114](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8b54114dc480f22d52c9c7ffde39cccf7e939271))
+* **game:** skip bury dead bodies action when useless to save time ([#441](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/441)) ([268b734](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/268b7343a8d263bde19160480fb940449cc1bde5))
+* **game:** twilight phase added before first night ([#437](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/437)) ([f90e280](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f90e2804fa1b0e30a8ef1b371b7df40d70d8ec80))
+
+
+### 📖 Docs
+
+* **contributing:** various files for helping contribution ([#445](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/445)) ([8cd6d3a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8cd6d3a8394d95bf70d79e8207d4c84e5b765c47))
+
+
+### 🎨 Styles
+
+* **about:** responsive for about page ([#442](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/442)) ([921b86f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/921b86fdaf9abe6a6e8db949924351bf7234dcb5))
+* **home:** phones and tablet screens ([#440](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/440)) ([289d16f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/289d16f5348086a6063662eb582bb14f9af5d9e6))
+
+
+### 🔁 CI
+
+* **reports:** remove html reports from ci ([#443](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/443)) ([f1be2e1](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f1be2e1b16bef028520ee023ab9f4a0926d17a00))
+
+
+### 🧹 Chore
+
+* **deps:** bump happy-dom from 14.11.2 to 14.12.0 ([#433](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/433)) ([a78e56a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a78e56ae933e18643166a6d783e8471fa64e1faf))
+* **deps:** bump sass from 1.77.2 to 1.77.3 ([#434](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/434)) ([40310ec](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/40310eceb0d781d4a8872e9ac988b9449a6f44ac))
+* **deps:** bump sass from 1.77.3 to 1.77.4 ([#436](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/436)) ([b3f5aa2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/b3f5aa290c69848afd6a82d2220b3f59b5fdb400))
+* **renovate:** renovate added to deal with deps ([#444](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/444)) ([5f9fcb3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/5f9fcb37d94cd99a1db69a6921041e31039a03b8))
+
 ## [1.16.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.15.0...v1.16.0) (2024-05-29)
 
 
