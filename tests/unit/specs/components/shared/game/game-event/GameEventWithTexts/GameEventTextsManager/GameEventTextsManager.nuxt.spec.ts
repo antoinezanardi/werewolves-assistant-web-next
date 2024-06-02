@@ -3,6 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
 import GameEventTextsManager from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventTextsManager.vue";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
+import { useGameStore } from "~/stores/game/useGameStore";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
@@ -54,6 +55,17 @@ describe("Game Event Texts Manager Component", () => {
       const previousGameEventTextButton = wrapper.find<HTMLButtonElement>("[aria-label='Back to the previous event text']");
 
       expect(previousGameEventTextButton.classes()).toContain("text-gray-500");
+    });
+
+    it("should be disabled when making game play status is pending.", async() => {
+      const nextGameEventTextButton = wrapper.find<HTMLButtonElement>("[aria-label='Next event text']");
+      await nextGameEventTextButton.trigger("click");
+      const gameStore = useGameStore();
+      gameStore.makingGamePlayStatus = "pending";
+      await nextTick();
+      const previousGameEventTextButton = wrapper.find<HTMLButtonElement>("[aria-label='Back to the previous event text']");
+
+      expect(previousGameEventTextButton.attributes("disabled")).toBe("");
     });
 
     it("should be enabled when can go to previous game event.", async() => {
@@ -109,6 +121,15 @@ describe("Game Event Texts Manager Component", () => {
       const currentGameEventText = wrapper.find<HTMLParagraphElement>("#current-event-text");
 
       expect(currentGameEventText.text()).toBe("Day rises.");
+    });
+
+    it("should be disabled when making game play status is pending.", async() => {
+      const gameStore = useGameStore();
+      gameStore.makingGamePlayStatus = "pending";
+      await nextTick();
+      const nextGameEventTextButton = wrapper.find<HTMLButtonElement>("[aria-label='Next event text']");
+
+      expect(nextGameEventTextButton.attributes("disabled")).toBe("");
     });
 
     it("should go to next game event when there is no more text.", async() => {

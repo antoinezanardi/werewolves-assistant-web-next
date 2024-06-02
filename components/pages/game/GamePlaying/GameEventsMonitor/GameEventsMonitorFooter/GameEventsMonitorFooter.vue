@@ -18,8 +18,10 @@
         id="skip-current-event-button"
         v-p-tooltip="$t('components.GameEventsMonitorFooter.skipCurrentGameEvent')"
         class="w-56"
+        :disabled="!canGoToNextGameEvent"
         icon="fa fa-step-forward"
         :label="$t('components.GameEventsMonitorFooter.skip')"
+        :loading="!canGoToNextGameEvent"
         severity="secondary"
         @click="handleNextGameEventClick"
       />
@@ -32,14 +34,14 @@ import { storeToRefs } from "pinia";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 
 const gameEventsStore = useGameEventsStore();
-const { canGoToPreviousGameEvent } = storeToRefs(gameEventsStore);
+const { canGoToNextGameEvent, canGoToPreviousGameEvent } = storeToRefs(gameEventsStore);
 const { goToNextGameEvent, goToPreviousGameEvent } = gameEventsStore;
 
 function handlePreviousGameEventClick(): void {
   goToPreviousGameEvent();
 }
 
-function handleNextGameEventClick(): void {
-  goToNextGameEvent();
+async function handleNextGameEventClick(): Promise<void> {
+  await goToNextGameEvent();
 }
 </script>
