@@ -15,5 +15,7 @@ When(/^the user skips all game events$/u, async function(this: CustomWorld): Pro
 });
 
 When(/^the user skips the game event$/u, async function(this: CustomWorld): Promise<void> {
+  const skipEventButton = this.page.getByRole("button", { name: "Skip" });
+  await skipEventButton.waitFor({ state: "visible" });
   await skipGameEvent(this);
 });
