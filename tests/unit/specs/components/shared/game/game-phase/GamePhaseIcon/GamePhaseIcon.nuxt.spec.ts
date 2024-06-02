@@ -38,5 +38,12 @@ describe("Game Phase Icon Component", () => {
 
       expect(phaseIcon.classes()).toContainValues(["fa-sun", "text-day"]);
     });
+
+    it("should display the twilight icon when the phase is twilight.", async() => {
+      wrapper = await mountGamePhaseIconComponent({ props: { phase: "twilight" } });
+      const phaseIcon = wrapper.find("#game-phase-icon");
+
+      expect(phaseIcon.classes()).toContainValues(["fa-cloud-moon", "text-twilight"]);
+    });
   });
 });

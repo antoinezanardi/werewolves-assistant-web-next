@@ -2,6 +2,7 @@ import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-ima
 
 type RoleFlippingImageProps = RoleImageProps & {
   imageClasses?: string;
+  svgIconPath?: string;
 };
 
 export type { RoleFlippingImageProps };

@@ -10,6 +10,9 @@ function useGamePhase(): UseGamePhase {
   function getGamePhaseWithTurnText(phase: GamePhaseName, turn: number): string {
     const phaseText = t(`shared.game.phase.${phase}`);
 
+    if (phase === "twilight") {
+      return phaseText;
+    }
     return `${phaseText} ${turn}`;
   }
   return { getGamePhaseWithTurnText };

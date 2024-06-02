@@ -1,7 +1,7 @@
 <template>
   <div
     id="role-description-lines"
-    class="container-fluid flex flex-col justify-center"
+    class="container-fluid flex flex-col justify-center md:p-4 p-2"
   >
     <p
       v-for="line in roleDescriptionLines"

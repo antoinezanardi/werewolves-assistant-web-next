@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-import { DAY_COLOR, ERROR_COLOR, INFO_COLOR, NIGHT_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, SUCCESS_COLOR, WARNING_COLOR } from "./constants/tailwind.color-constants";
+import { DAY_COLOR, ERROR_COLOR, INFO_COLOR, NIGHT_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, SUCCESS_COLOR, TWILIGHT_COLOR, WARNING_COLOR } from "./constants/tailwind.color-constants";
 
 export default {
   content: [],
@@ -15,6 +15,7 @@ export default {
         info: INFO_COLOR,
         day: DAY_COLOR,
         night: NIGHT_COLOR,
+        twilight: TWILIGHT_COLOR,
       },
       spacing: {
         "1/10": "10%",

@@ -219,9 +219,6 @@ pnpm run build
 
 [![Covered Lines](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-lines)
 
-> [!NOTE]
-> 📊 Coverage reports for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/vitest)**.
-
 ### ⚗️ E2E / Acceptance tests
 
 ![Playwright](https://img.shields.io/badge/-Playwright-black?style=for-the-badge&logoColor=white&logo=playwright&color=1D8D22)
@@ -235,17 +232,11 @@ E2E tests are written in Gherkin language around Playwright functions and are av
 > [!NOTE]
 > 🏞️ Screenshots for visual regression tests for each platform (`linux` / `darwin`) are available in the **[screenshots directory](https://github.com/antoinezanardi/werewolves-assistant-web-next/tree/main/tests/acceptance/screenshots)**.
 
-> [!NOTE]
-> 📊 All scenarios results with screenshots for `main` and `develop` branches and pull requests are available **[here](https://antoinezanardi.github.io/werewolves-assistant-web-next/reports/cucumber)**.
-
 ### 👽 Mutant testing
 
 ![Stryker](https://img.shields.io/badge/-Stryker-black?style=for-the-badge&logoColor=white&logo=stryker&color=7F1B10) 
 
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantoinezanardi%2Fwerewolves-assistant-web-next%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main)
-
-> [!NOTE]
-> 📊 Mutation testing reports for `main` and `develop` branches and pull requests are available **[here](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main#mutant)**.
 
 ### ▶️ Commands
 
@@ -385,8 +376,6 @@ This project uses **GitHub Actions** to automate some boring tasks.
 |             **[🔃️ Upsert PR Release Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/upsert-pr-release.yml)**              | Creates or updates pull request to `main` depending on commits on `develop` since last release<br/><br/>[![🔃️ Upsert PR Release Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/upsert-pr-release.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/upsert-pr-release.yml) |                  `push` on `develop`                   | 
 |              **[🏷️ Release Creation Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/release-creation.yml)**               |           Creates a new release using `semantic-release` with tag and updated changelog<br/><br/>[![🏷️ Release Creation Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/release-creation.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/release-creation.yml)           |                    `push` on `main`                    | 
 |           **[🚀 Deploy To Production Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-to-production.yml)**           |              Deploys app with last tag version to `Docker Hub` and `GCP`<br/><br/>[![🚀 Deploy To Production Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-to-production.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-to-production.yml)               |                     `tag-creation`                     | 
-|                **[🍃 Branch Deletion Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/branch-deletion.yml)**                |                               Remove all reports for the deleted branch<br/><br/>[![🍃 Branch Deletion Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/branch-deletion.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/branch-deletion.yml)                               |                `delete` on all branches                | 
-| **[📑 Deploy Reports to GitHub Pages Workflow](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-reports-to-github-pages.yml)** |              Deploy the reports to the GitHub Pages<br/><br/>[![📑 Deploy Reports to GitHub Pages](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-reports-to-github-pages.yml/badge.svg)](https://github.com/antoinezanardi/werewolves-assistant-web-next/actions/workflows/deploy-reports-to-github-pages.yml)               |             `dispatch` by other workflows              | 
 
 ## <a name="misc-commands">✨ Misc commands</a>
 
@@ -424,6 +413,12 @@ Thank you to all the contributors:
                 <a href="https://github.com/danielroe">
                     <img src="https://github.com/danielroe.png?s=75" width="75" height="75"><br/>
                     Daniel Roe
+                </a>
+            </td>
+            <td align="center" valign="top">
+                <a href="https://github.com/manniL">
+                    <img src="https://github.com/manniL.png?s=75" width="75" height="75"><br/>
+                    Alexander Lichter
                 </a>
             </td>
         </tr>

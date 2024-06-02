@@ -15,6 +15,12 @@
         :role-name="frontRoleName"
         :sizes="sizes"
       />
+
+      <RoleFlippingImageSvgIcon
+        v-if="svgIconPath"
+        id="front-role-image-svg-icon"
+        :svg-icon-path="svgIconPath"
+      />
     </template>
 
     <template #back>
@@ -26,12 +32,19 @@
         :role-name="backRoleName"
         :sizes="sizes"
       />
+
+      <RoleFlippingImageSvgIcon
+        v-if="svgIconPath"
+        id="back-role-image-svg-icon"
+        :svg-icon-path="svgIconPath"
+      />
     </template>
   </VueFlip>
 </template>
 
 <script setup lang="ts">
 import type { RoleFlippingImageProps } from "~/components/shared/role/RoleImage/RoleFlippingImage/role-flipping-image.types";
+import RoleFlippingImageSvgIcon from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImageSvgIcon/RoleFlippingImageSvgIcon.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 

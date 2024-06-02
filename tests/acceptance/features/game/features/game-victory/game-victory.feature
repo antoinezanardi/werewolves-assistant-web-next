@@ -40,17 +40,10 @@ Feature: 🏆 Game Victory
       | potion | target  |
       | death  | Antoine |
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
-    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "Bob"
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "Draw ! Everyone is dead in the village…" and subtitle "Everybody murdered each other. A deadly silence reigns in the village…"
     And the game winners should have no winners
     And the link with name "Create another game" should be visible
@@ -80,9 +73,6 @@ Feature: 🏆 Game Victory
       | Antoine | Bob    |
       | Charlie | Bob    |
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The Villagers win !" and subtitle "All of the Werewolves are dead. The village is safe at last."
     And the game winners should be the players
       | name    |
@@ -121,9 +111,6 @@ Feature: 🏆 Game Victory
 
     When the player or group skips his turn
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The Werewolves win !" and subtitle "All of the Villagers are dead. The Werewolves have eaten a lot and are now full, eventually."
     And the game winners should be the players
       | name    |
@@ -165,17 +152,10 @@ Feature: 🏆 Game Victory
 
     When the werewolves eat the player with name "Charlie"
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
-    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "David"
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The Lovers win together !" and subtitle "The two people in love from Cupid's arrow are the only survivors. They win together and will be together forever."
     And the game winners should be the players
       | name    |
@@ -208,9 +188,6 @@ Feature: 🏆 Game Victory
       | Antoine | David  |
       | Charlie | David  |
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The Angel wins by himself !" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
     And the game winners should be the players
       | name  |
@@ -250,9 +227,6 @@ Feature: 🏆 Game Victory
 
     When the charmed people meet each other
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The Pied Piper wins by himself !" and subtitle "The Pied Piper managed to charm all the living players. He wins alone and has control over the village."
     And the game winners should be the players
       | name    |
@@ -285,17 +259,10 @@ Feature: 🏆 Game Victory
 
     When the white werewolf eats the player with name "Bob"
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
-    And the user skips all game events
     Then the game's current play title should be "Hunter shoots"
 
     When the hunter shoots the player with name "David"
     And the user skips all game events
-    Then the game's current play title should be "Survivors bury dead bodies"
-
-    When the survivors bury the dead bodies
     Then the game should be over with title "The White Werewolf wins by himself !" and subtitle "The White Werewolf is the only survivor. He wins alone and can be proud of his victory."
     And the game winners should be the players
       | name    |

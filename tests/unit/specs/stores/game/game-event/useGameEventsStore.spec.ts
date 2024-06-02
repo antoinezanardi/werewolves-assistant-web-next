@@ -1,14 +1,41 @@
+import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
 import { createPinia, setActivePinia } from "pinia";
+import type { Mock } from "vitest";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
+import * as UseGameStore from "~/stores/game/useGameStore";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 
 describe("Game Events Store", () => {
+  let mocks: {
+    stores: {
+      game: {
+        game: Game;
+        makingGamePlayStatus: AsyncDataRequestStatus;
+        skipGamePlay: Mock
+      };
+    };
+  };
+
   beforeEach(() => {
     setActivePinia(createPinia());
+    mocks = {
+      stores: {
+        game: {
+          game: createFakeGame(),
+          makingGamePlayStatus: "idle",
+          skipGamePlay: vi.fn(),
+        },
+      },
+    };
+    vi.spyOn(UseGameStore, "useGameStore").mockImplementation(() => mocks.stores.game as unknown as ReturnType<typeof UseGameStore.useGameStore>);
   });
 
   it("should have initial state when created.", () => {
@@ -18,6 +45,7 @@ describe("Game Events Store", () => {
     expect(gameEventsStore.gameEvents).toStrictEqual<GameEvent[]>(expectedGameEvents);
     expect(gameEventsStore.currentGameEvent).toBeUndefined();
     expect(gameEventsStore.canGoToPreviousGameEvent).toBeFalsy();
+    expect(gameEventsStore.canGoToNextGameEvent).toBeTruthy();
   });
 
   describe("canGoToPreviousGameEvent", () => {
@@ -43,17 +71,55 @@ describe("Game Events Store", () => {
 
       expect(gameEventsStore.canGoToPreviousGameEvent).toBeFalsy();
     });
-  });
 
-  describe("resetGameEvents", () => {
-    it("should reset game events when called.", () => {
+    it("should return false when making game play status is pending.", () => {
+      mocks.stores.game.makingGamePlayStatus = "pending";
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.goToNextGameEvent();
+      gameEventsStore.currentGameEventIndex = 2;
+
+      expect(gameEventsStore.canGoToPreviousGameEvent).toBeFalsy();
+    });
+  });
+
+  describe("canGoToNextGameEvent", () => {
+    it("should return true when can go to next game event.", () => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+      ];
+
+      expect(gameEventsStore.canGoToNextGameEvent).toBeTruthy();
+    });
+
+    it("should return false when making game play status is pending.", () => {
+      mocks.stores.game.makingGamePlayStatus = "pending";
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+      ];
+
+      expect(gameEventsStore.canGoToNextGameEvent).toBeFalsy();
+    });
+  });
+
+  describe("resetGameEvents", () => {
+    it("should reset game events when called.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+        createFakeGameEvent(),
+      ];
+      await gameEventsStore.goToNextGameEvent();
       gameEventsStore.resetGameEvents();
 
       expect(gameEventsStore.gameEvents).toStrictEqual<GameEvent[]>([]);
@@ -62,6 +128,11 @@ describe("Game Events Store", () => {
   });
 
   describe("generateAndSetGameEventsFromGame", () => {
+    const deadPlayers = [
+      createFakePlayer(),
+      createFakePlayer(),
+    ];
+
     it.each<{
       game: Game;
       expectedGameEvents: GameEvent[];
@@ -107,12 +178,55 @@ describe("Game Events Store", () => {
         game: createFakeGame({
           tick: 2,
           phase: createFakeGamePhase({
+            tick: 1,
+            name: "twilight",
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should turn starts event without game phase event when game phase tick is 1 but name is twilight.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          phase: createFakeGamePhase({
             tick: 2,
             name: "day",
+          }),
+          currentPlay: createFakeGamePlaySheriffDelegates({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "bury",
+                  eligibleTargets: deadPlayers,
+                }),
+              ],
+            }),
           }),
         }),
         expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
         test: "should generate turn starts event when game tick nor phase tick is 1.",
+      },
+      {
+        game: createFakeGame({
+          tick: 1,
+          currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "bury",
+                  eligibleTargets: deadPlayers,
+                }),
+              ],
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "game-starts" }),
+          createFakeGameEvent({ type: "player-dies", players: [deadPlayers[0]] }),
+          createFakeGameEvent({ type: "player-dies", players: [deadPlayers[1]] }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate player dies event when game current play action is bury-dead-bodies.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();
@@ -123,29 +237,76 @@ describe("Game Events Store", () => {
   });
 
   describe("goToNextGameEvent", () => {
-    it("should go to the next game event when called.", () => {
+    it("should go to the next game event when called.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
         createFakeGameEvent(),
         createFakeGameEvent(),
       ];
-      gameEventsStore.goToNextGameEvent();
+      await gameEventsStore.goToNextGameEvent();
 
       expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[1]);
+    });
+
+    it("should go to the next game event when the next current game event is undefined.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [createFakeGameEvent()];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(gameEventsStore.currentGameEvent).toBeUndefined();
+      expect(gameEventsStore.currentGameEventIndex).toBe(1);
+    });
+
+    it("should go to the next game event when current game play must be skipped but next event is not game turn start type.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent(),
+        createFakeGameEvent({ type: "game-phase-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(gameEventsStore.currentGameEventIndex).toBe(1);
+    });
+
+    it("should not go to the next game event when the next current game event is game turn starts and must current game play be skipped.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[0]);
+    });
+
+    it("should skip current game play when the next current game event is game turn starts and must current game play be skipped.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(mocks.stores.game.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
     });
   });
 
   describe("goToPreviousGameEvent", () => {
-    it("should go to the previous game event when called.", () => {
+    it("should go to the previous game event when called.", async() => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent({ type: "game-starts" }),
         createFakeGameEvent({ type: "game-phase-starts" }),
         createFakeGameEvent({ type: "game-turn-starts" }),
       ];
-      gameEventsStore.goToNextGameEvent();
-      gameEventsStore.goToNextGameEvent();
+      await gameEventsStore.goToNextGameEvent();
+      await gameEventsStore.goToNextGameEvent();
       gameEventsStore.goToPreviousGameEvent();
 
       expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[1]);

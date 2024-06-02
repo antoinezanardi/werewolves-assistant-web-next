@@ -5,7 +5,7 @@ exports[`Game Events Monitor Footer Component > should match snapshot when rende
   <divider-stub class="!my-2"></divider-stub>
   <div class="flex gap-6 justify-center">
     <button-stub id="previous-event-button" class="w-56" disabled="true" icon="fa fa-step-backward" label="Previous" severity="secondary" data-pd-tooltip="true"></button-stub>
-    <button-stub id="skip-current-event-button" class="w-56" icon="fa fa-step-forward" label="Skip" severity="secondary" data-pd-tooltip="true"></button-stub>
+    <button-stub id="skip-current-event-button" class="w-56" disabled="false" icon="fa fa-step-forward" label="Skip" loading="false" severity="secondary" data-pd-tooltip="true"></button-stub>
   </div>
 </div>"
 `;
