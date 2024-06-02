@@ -336,20 +336,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
-
-  deploy-tests-reports:
-    name: Deploy Tests Reports 📑
-    runs-on: ubuntu-latest
-    needs:
-      - unit-tests
-      - e2e-tests
-      - mutant-tests
-    if: always()
-    env:
-      GH_TOKEN: ${{ secrets.GH_PAGES_REPORTS_TOKEN }}
-    steps:
-      - name: Checkout GitHub repository 📡
-        uses: actions/checkout@v4
-
-      - name: Invoke reports to GitHub Pages Workflow 📑
-        run: gh workflow run deploy-reports-to-github-pages.yml --ref ${{ github.head_ref || github.ref_name }} -f branch=${{ github.head_ref || github.ref_name }} -f caller-run-id=${{ github.run_id }}
