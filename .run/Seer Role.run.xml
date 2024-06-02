@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Seer Role" type="cucumber.js" factoryName="Cucumber.js" folderName="Tags">
+    <option name="myFilePath" value="$PROJECT_DIR$/tests/acceptance" />
+    <option name="myNameFilter" value="" />
+    <option name="cucumberJsArguments" value="--config config/cucumber/cucumber.json  --parallel 1 --tags @seer-role" />
+    <option name="workingDirectory" value="$PROJECT_DIR$" />
+    <envs>
+      <env name="NODE_OPTIONS" value="--import tsx/esm" />
+      <env name="SKIP_SCREENSHOTS_COMPARISON_TESTS" value="true" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

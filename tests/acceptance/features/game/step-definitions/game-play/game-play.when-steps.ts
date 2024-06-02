@@ -74,3 +74,8 @@ When(/^the white werewolf eats the player with name "(?<name>.+)"$/u, async func
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
+
+When(/^the seer looks at the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});

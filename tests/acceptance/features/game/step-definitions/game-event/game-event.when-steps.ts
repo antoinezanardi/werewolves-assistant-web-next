@@ -13,3 +13,7 @@ When(/^the user skips all game events$/u, async function(this: CustomWorld): Pro
     isSkipButtonVisible = await skipEventButton.isVisible();
   }
 });
+
+When(/^the user skips the game event$/u, async function(this: CustomWorld): Promise<void> {
+  await skipGameEvent(this);
+});
