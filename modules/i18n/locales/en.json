@@ -75,6 +75,38 @@
         "actor": "The Actor",
         "devoted-servant": "The Devoted Servant"
       },
+      "indefiniteName": {
+        "werewolf": "a Werewolf",
+        "big-bad-wolf": "a Big Bad Wolf",
+        "accursed-wolf-father": "an Accursed Wolf-Father",
+        "white-werewolf": "a White Werewolf",
+        "villager": "a Villager",
+        "villager-villager": "a Villager-Villager",
+        "seer": "a Seer",
+        "cupid": "Cupid",
+        "witch": "a Witch",
+        "hunter": "a Hunter",
+        "little-girl": "a Little Girl",
+        "defender": "a Defender",
+        "elder": "an Elder",
+        "scapegoat": "a Scapegoat",
+        "idiot": "an Idiot",
+        "two-sisters": "a Sister from the Two Sisters",
+        "three-brothers": "a Brother From the Three Brothers",
+        "fox": "a Fox",
+        "bear-tamer": "a Bear Tamer",
+        "stuttering-judge": "a Stuttering Judge",
+        "rusty-sword-knight": "a Rusty Sword Knight",
+        "thief": "a Thief",
+        "wild-child": "a Wild Child",
+        "wolf-hound": "a Wolf-Hound",
+        "angel": "an Angel",
+        "pied-piper": "a Pied Piper",
+        "scandalmonger": "a Scandalmonger",
+        "prejudiced-manipulator": "a Prejudiced Manipulator",
+        "actor": "an Actor",
+        "devoted-servant": "a Devoted Servant"
+      },
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Their goal is to eliminate the Villagers.",
@@ -1257,6 +1289,13 @@
     },
     "RoleFlippingImageSvgIcon": {
       "iconAlt": "Role icon"
+    },
+    "GameSeerHasSeenEvent": {
+      "cantFindTargetedPlayer": "The seen player can't be found… Please proceed.",
+      "gameMasterWillMimeSide": "Because the Seer is quiet, the Game Master will mime the side of the seen player.",
+      "gameMasterWillMimeRole": "Because the Seer is quiet, the Game Master will mime the role of the seen player.",
+      "seerHasSeenSide": "The Seer has seen a player from the {side} side !",
+      "seerHasSeenRole": "The Seer has seen {role} !"
     }
   }
 }

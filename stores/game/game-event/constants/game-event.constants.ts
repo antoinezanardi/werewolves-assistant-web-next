@@ -3,6 +3,7 @@ const GAME_EVENT_TYPES = [
   "game-phase-starts",
   "game-turn-starts",
   "player-dies",
+  "seer-has-seen",
 ] as const;
 
 export { GAME_EVENT_TYPES };
