@@ -1,6 +1,6 @@
 <template>
   <div id="about-werewolves-game">
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col gap-4 items-center justify-between md:flex-row">
       <h2
         id="about-werewolves-game-title"
         class="flex items-center"

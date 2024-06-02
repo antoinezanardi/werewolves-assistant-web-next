@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <NuxtPage
-      class="h-full p-2"
+      class="h-full md:p-2 p-4"
     />
 
     <VuePrimeToast position="bottom-right"/>
