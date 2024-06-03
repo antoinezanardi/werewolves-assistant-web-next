@@ -1,7 +1,6 @@
 <template>
   <div
     id="game-playground-player-card"
-    class="m-3"
     :data-testid="`game-playground-player-card-${props.player.name}`"
   >
     <PlayerCard
