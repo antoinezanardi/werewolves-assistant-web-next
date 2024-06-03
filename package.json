@@ -114,7 +114,7 @@
     "playwright": "^1.44.1",
     "playwright-core": "^1.44.1",
     "pngjs": "^7.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.0",
     "qs": "^6.12.1",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
