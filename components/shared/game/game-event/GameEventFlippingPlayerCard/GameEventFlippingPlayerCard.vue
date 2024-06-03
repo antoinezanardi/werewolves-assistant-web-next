@@ -13,7 +13,7 @@
       :svg-icon-path="props.svgIconPath"
     />
 
-    <transition
+    <Transition
       mode="out-in"
       name="fade"
     >
@@ -25,7 +25,7 @@
       >
         {{ playerToDisplay.name }}
       </h2>
-    </transition>
+    </Transition>
   </div>
 </template>
 

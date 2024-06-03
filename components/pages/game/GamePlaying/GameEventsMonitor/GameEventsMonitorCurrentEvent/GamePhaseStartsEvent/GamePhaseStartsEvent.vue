@@ -7,7 +7,7 @@
       id="game-phase-lottie-container"
       class="flex h-full items-center justify-center"
     >
-      <transition
+      <Transition
         mode="out-in"
         name="phase-transition"
       >
@@ -17,7 +17,7 @@
           :height="displayedPhaseLottieSize"
           :width="displayedPhaseLottieSize"
         />
-      </transition>
+      </Transition>
     </div>
   </GameEventWithTexts>
 </template>

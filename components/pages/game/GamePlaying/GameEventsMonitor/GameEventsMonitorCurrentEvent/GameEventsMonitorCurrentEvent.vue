@@ -3,7 +3,7 @@
     id="game-events-monitor-current-event-container"
     class="h-full"
   >
-    <transition
+    <Transition
       mode="out-in"
       name="fade"
     >
@@ -15,7 +15,7 @@
         class="h-full"
         :event="currentGameEvent"
       />
-    </transition>
+    </Transition>
   </div>
 </template>
 
