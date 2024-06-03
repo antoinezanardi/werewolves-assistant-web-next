@@ -15,12 +15,12 @@
     <div
       v-else
       id="targets"
-      class="grid grid-cols-4 h-full items-center justify-center place-content-center place-items-center"
+      class="flex flex-wrap h-full items-center justify-center"
     >
       <GamePlaygroundPlayerCard
         v-for="target in targets"
         :key="target._id"
-        class="target"
+        class="p-3 target w-3/12"
         :interaction="game.currentPlay?.source.interactions?.[0].type"
         :player="target"
       />
