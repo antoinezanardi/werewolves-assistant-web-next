@@ -19,7 +19,7 @@ Feature: ✨Seer role
     Then the game's event should display the text "The Seer wakes up and will look at a player's role."
 
     When the user skips the game event
-    And the game's current play title should be "Seer looks"
+    Then the game's current play title should be "Seer looks"
     And the game's current play question should be "Which player does the Seer want to look at ?"
     And the game's current play should have the following targets
       | name    |
