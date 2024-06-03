@@ -5,6 +5,8 @@ import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import * as UseGameStore from "~/stores/game/useGameStore";
+import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
+import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
@@ -145,6 +147,30 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate game starts and turn starts events when game tick is 1.",
+      },
+      {
+        test: "should not generate see has seen event when last game history is null.",
+        game: createFakeGame({ tick: 2 }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+      },
+      {
+        test: "should not generate see has seen event when last game history record action is not look.",
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "vote" }) }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+      },
+      {
+        test: "should generate seer has seen event when last game history record action is look.",
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "look" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "seer-has-seen" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
       },
       {
         game: createFakeGame({

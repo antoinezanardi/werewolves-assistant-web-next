@@ -3,7 +3,7 @@
     id="game-events-monitor-current-event-container"
     class="h-full"
   >
-    <transition
+    <Transition
       mode="out-in"
       name="fade"
     >
@@ -15,7 +15,7 @@
         class="h-full"
         :event="currentGameEvent"
       />
-    </transition>
+    </Transition>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ import { storeToRefs } from "pinia";
 import type { GameEventsMonitorEventTypeComponent } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
+import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
 import type { GameEventType } from "~/stores/game/game-event/types/game-event.types";
@@ -38,6 +39,7 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "game-phase-starts": GamePhaseStartsEvent,
     "game-turn-starts": GameTurnStartsEvent,
     "player-dies": GamePlayerDiesEvent,
+    "seer-has-seen": GameSeerHasSeenEvent,
   };
   if (!currentGameEvent.value) {
     return undefined;

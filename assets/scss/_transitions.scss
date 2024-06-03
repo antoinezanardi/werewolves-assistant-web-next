@@ -1,3 +1,4 @@
+// PAGE TRANSITIONS
 .page-enter-active,
 .page-leave-active {
   transition: opacity .25s;
@@ -8,6 +9,7 @@
   opacity: 0;
 }
 
+// FADE TRANSITIONS
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .18s;
@@ -16,4 +18,32 @@
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+// LIST TRANSITIONS
+
+.fade-list {
+  transition: all .25s;
+}
+
+.fade-list-enter-from,
+.fade-list-leave-to {
+  opacity: 0;
+}
+
+.fade-list-leave-active {
+  position: absolute !important;
+}
+
+.fade-list-item {
+  transition: all 0.5s;
+}
+
+.fade-list-item-enter,
+.fade-list-item-leave-to {
+  opacity: 0;
+}
+
+.fade-list-item-leave-active {
+  position: absolute !important;
 }

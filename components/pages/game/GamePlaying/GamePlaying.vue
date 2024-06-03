@@ -9,7 +9,7 @@
     />
 
     <div class="game-playground-container px-2 w-8/12">
-      <transition
+      <Transition
         mode="out-in"
         name="fade"
       >
@@ -22,7 +22,7 @@
           v-else
           id="game-playground"
         />
-      </transition>
+      </Transition>
     </div>
 
     <GameTeamSide

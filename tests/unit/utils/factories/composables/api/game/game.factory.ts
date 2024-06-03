@@ -15,6 +15,7 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     players: game.players ?? [],
     currentPlay: game.currentPlay ?? null,
     upcomingPlays: game.upcomingPlays ?? [],
+    lastGameHistoryRecord: game.lastGameHistoryRecord ?? null,
     options: createFakeGameOptions(game.options),
     victory: game.victory ?? undefined,
     createdAt: game.createdAt ?? faker.date.recent(),

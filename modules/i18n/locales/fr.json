@@ -75,6 +75,38 @@
         "actor": "Le Comédien",
         "devoted-servant": "La Servante Dévouée"
       },
+      "indefiniteName": {
+        "werewolf": "un Loup-Garou",
+        "big-bad-wolf": "un Grand Méchant Loup",
+        "accursed-wolf-father": "un Infect Père des Loups",
+        "white-werewolf": "un Loup-Garou Blanc",
+        "villager": "un Villageois",
+        "villager-villager": "un Villageois-Villageois",
+        "seer": "une Voyante",
+        "cupid": "Cupidon",
+        "witch": "une Sorcière",
+        "hunter": "un Chasseur",
+        "little-girl": "une Petite Fille",
+        "defender": "un Salvateur",
+        "elder": "un Ancien",
+        "scapegoat": "un Bouc-Émissaire",
+        "idiot": "un Idiot du Village",
+        "two-sisters": "Une des Deux Sœurs",
+        "three-brothers": "Un des Trois Frères",
+        "fox": "un Renard",
+        "bear-tamer": "un Montreur d'Ours",
+        "stuttering-judge": "un Juge Bègue",
+        "rusty-sword-knight": "un Chevalier à l'Épée Rouillée",
+        "thief": "un Voleur",
+        "wild-child": "un Enfant Sauvage",
+        "wolf-hound": "un Chien-Loup",
+        "angel": "un Ange",
+        "pied-piper": "un Joueur de Flûte",
+        "scandalmonger": "un Corbeau",
+        "prejudiced-manipulator": "un Abominable Sectaire",
+        "actor": "un Comédien",
+        "devoted-servant": "une Servante Dévouée"
+      },
       "descriptions": {
         "werewolf": {
           "hisGoalIsToKillVillagers": "Son but est d'éliminer les Villageois.",
@@ -1257,6 +1289,13 @@
     },
     "RoleFlippingImageSvgIcon": {
       "iconAlt": "Icône associé au rôle"
+    },
+    "GameSeerHasSeenEvent": {
+      "cantFindTargetedPlayer": "Le joueur vu ne peut être trouvé... Veuillez continuer.",
+      "gameMasterWillMimeSide": "Comme la Voyante est silencieuse, le Maître de jeu mimera le camp du joueur vu.",
+      "gameMasterWillMimeRole": "Comme la Voyante est silencieuse, le Maître de jeu mimera le rôle du joueur vu.",
+      "seerHasSeenSide": "Le Voyant a vu un joueur du camp des {side} !",
+      "seerHasSeenRole": "Le Voyant a vu {role} !"
     }
   }
 }

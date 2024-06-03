@@ -20,7 +20,7 @@
       id="game-event-text-container"
       class="flex grow h-1/2 items-center justify-center"
     >
-      <transition
+      <Transition
         mode="out-in"
         name="fade"
       >
@@ -31,7 +31,7 @@
         >
           {{ currentGameEventText }}
         </p>
-      </transition>
+      </Transition>
     </div>
 
     <button

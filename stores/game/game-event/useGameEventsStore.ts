@@ -20,6 +20,18 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEventIndex.value = 0;
   }
 
+  function getLastGameHistoryRecordEvents(game: Game): GameEvent[] {
+    const { lastGameHistoryRecord } = game;
+    if (!lastGameHistoryRecord) {
+      return [];
+    }
+    const { action } = lastGameHistoryRecord.play;
+    if (action === "look") {
+      return [GameEvent.create({ type: "seer-has-seen" })];
+    }
+    return [];
+  }
+
   function getDeadPlayerGameEvents(game: Game): GameEvent[] {
     const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(ref(game));
     const deadPlayers = getEligibleTargetsWithInteractionInCurrentGamePlay("bury");
@@ -32,6 +44,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (game.tick === 1) {
       gameEvents.value.push(GameEvent.create({ type: "game-starts" }));
     }
+    gameEvents.value.push(...getLastGameHistoryRecordEvents(game));
     if (game.phase.tick === 1 && game.phase.name !== "twilight") {
       gameEvents.value.push(GameEvent.create({ type: "game-phase-starts" }));
     }

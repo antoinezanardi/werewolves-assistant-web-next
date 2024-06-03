@@ -2,6 +2,7 @@ import { Expose, instanceToPlain, plainToInstance, Type } from "class-transforme
 
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
+import { GameHistoryRecord } from "~/composables/api/game/types/game-history-record/game-history-record.class";
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
 import type { GameStatus } from "~/composables/api/game/types/game.types";
@@ -37,6 +38,10 @@ class Game {
   @Type(() => GamePlay)
   @Expose()
   public upcomingPlays: GamePlay[];
+
+  @Type(() => GameHistoryRecord)
+  @Expose()
+  public lastGameHistoryRecord: GameHistoryRecord | null;
 
   @Type(() => GameOptions)
   @Expose()

@@ -4,7 +4,13 @@ import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 async function goOnPage(world: CustomWorld, pageName: string): Promise<void> {
   const trimmedPageName = pageName.replace(/^\/|\/$/gu, "");
-  await world.page.goto(url(`/${trimmedPageName}`));
+  const fullUrl = url(`/${trimmedPageName}`);
+  if (world.page.url() === fullUrl) {
+    await waitForPageLoadStates(world);
+
+    return;
+  }
+  await world.page.goto(fullUrl);
   await waitForPageLoadStates(world);
 }
 

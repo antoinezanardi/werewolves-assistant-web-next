@@ -1,6 +1,9 @@
 <template>
-  <div id="game-target-playground">
-    <GameTargetPlaygroundTargets/>
+  <div
+    id="game-target-playground"
+    class="h-full"
+  >
+    <GameTargetPlaygroundTargets class="h-full"/>
   </div>
 </template>
 
