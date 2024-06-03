@@ -11,3 +11,7 @@ Then(/^the user should be on game page with any id$/u, async function(this: Cust
 Then(/^the game's current play title should be "(?<name>.+?)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await expect(this.page.getByRole("heading", { name, exact: true })).toBeVisible();
 });
+
+Then(/^the game's current play question should be "(?<name>.+?)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await expect(this.page.getByRole("heading", { name, exact: true })).toBeVisible();
+});

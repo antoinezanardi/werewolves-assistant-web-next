@@ -5,6 +5,7 @@
         id="game-team-side-player"
         class="border-2 border-gray-700 p-2 rounded-md w-full"
         :class="playerSideGlowClass"
+        :data-testid="`game-team-side-player-${player.name}`"
       >
         <div class="flex justify-center">
           <NuxtImg

@@ -4,7 +4,7 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
 "<div class="glow-capture" style="position: relative; --glow-size: 400px;">
   <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
     <div class="" style="grid-area: 1/1/1/1;">
-      <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500">
+      <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500" data-testid="game-team-side-player-Antoine">
         <div class="flex justify-center">
           <!--v-if-->
           <div id="player-name" class="text-center truncate">Antoine</div>
@@ -24,7 +24,7 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
     </div>
     <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
         calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-      <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500">
+      <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500" data-testid="game-team-side-player-Antoine">
         <div class="flex justify-center">
           <!--v-if-->
           <div id="player-name" class="text-center truncate">Antoine</div>
