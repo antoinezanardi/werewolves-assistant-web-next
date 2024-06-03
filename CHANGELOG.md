@@ -1,5 +1,36 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.18.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.17.0...v1.18.0) (2024-06-03)
+
+
+### 🚀 Features
+
+* **seer:** game events and e2e tests ([#450](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/450)) ([a9753a6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a9753a633d6ee460ca0b7d267552b17ef3e6e383))
+
+
+### 🐛 Bug Fixes
+
+* **renovate:** base branch set to develop ([#448](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/448)) ([2fad98a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/2fad98a9765d16da09e47f077263484e3906ee84))
+
+
+### 🎨 Styles
+
+* **game-lobby:** correct player party display and animations ([#457](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/457)) ([08930b2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/08930b21efb28b3a879941864cc7208f96a5327c))
+
+
+### ✅ Tests
+
+* **hunter:** e2e tests for hunter role ([#456](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/456)) ([4b7c065](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/4b7c065078d9871b035e6b7f5dfd2607c1d66f19))
+* **werewolf:** some style and e2e tests ([#458](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/458)) ([707be8d](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/707be8dc634a5de195d5263f4c1487fae7db26ba))
+
+
+### 🧹 Chore
+
+* **deps:** bump msw from 2.3.0 to 2.3.1 ([#452](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/452)) ([1590455](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/159045513f538fb84720cb11bf70f54be72b63fc))
+* **deps:** bump prettier from 3.2.5 to 3.3.0 ([#454](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/454)) ([45cb898](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/45cb898186008d6da895703731b71d578dc48771))
+* **deps:** bump the eslint group with 2 updates ([#451](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/451)) ([9e7a37a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/9e7a37a7637520a716cce90afe4530148b0ef07c))
+* **deps:** bump tsx from 4.11.0 to 4.11.2 ([#455](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/455)) ([49ec594](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/49ec59445f1ac8b635b0b558e66fb9d457095601))
+
 ## [1.17.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.16.0...v1.17.0) (2024-06-02)
 
 
