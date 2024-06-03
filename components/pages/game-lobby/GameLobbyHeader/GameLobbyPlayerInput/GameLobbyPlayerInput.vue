@@ -35,7 +35,7 @@
       </VuePrimeButton>
     </VuePrimeInputGroup>
 
-    <transition
+    <Transition
       mode="out-in"
       name="fade"
     >
@@ -45,7 +45,7 @@
       >
         {{ playerNameInputHelpText }}
       </small>
-    </transition>
+    </Transition>
   </div>
 </template>
 
