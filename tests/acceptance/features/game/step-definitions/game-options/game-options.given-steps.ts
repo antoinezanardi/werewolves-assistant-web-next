@@ -21,3 +21,9 @@ Given(/^the user doesn't allow the seer to see roles in game options$/u, async f
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-seer-can-see-roles-input", false);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user makes the big bad wolf remaining powerful even if one werewolf dies in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input", false);
+  await closeDialogWithHeaderButton(this);
+});

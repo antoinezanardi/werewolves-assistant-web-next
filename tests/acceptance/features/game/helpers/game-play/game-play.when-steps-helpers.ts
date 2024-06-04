@@ -7,6 +7,7 @@ async function playersVoteInPlayground(world: CustomWorld, votes: [source: strin
     await voteInput.waitFor({ state: "visible" });
     await voteInput.click();
     await voteInput.fill(target);
+    await voteInput.blur();
   }
 }
 
