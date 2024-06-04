@@ -1,8 +1,8 @@
 @seer-role
 
-Feature: ✨Seer role
+Feature: 🔮Seer role
 
-  Scenario: ✨Seer looks the role of a player
+  Scenario: 🔮Seer looks the role of a player
 
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
@@ -47,7 +47,7 @@ Feature: ✨Seer role
     Then the game's event should display the text "The Seer has seen an Idiot !"
     And the player with name "Charlie" should have the attribute seen by seer in the game
 
-  Scenario: ✨Seer looks the role of a player but game master doesn't say the role out loud because she is quiet
+  Scenario: 🔮Seer looks the role of a player but game master doesn't say the role out loud because she is quiet
 
     Given the user disables the sheriff in game options
     And the user makes the seer quiet in game options
@@ -68,7 +68,7 @@ Feature: ✨Seer role
     Then the game's event should display the text "The Seer has seen a Werewolf !"
     And the player with name "Bob" should have the attribute seen by seer in the game
 
-  Scenario: ✨Seer looks only the side of a player because the game master doesn't allow her to see the role
+  Scenario: 🔮Seer looks only the side of a player because the game master doesn't allow her to see the role
 
     Given the user disables the sheriff in game options
     And the user doesn't allow the seer to see roles in game options
@@ -100,7 +100,7 @@ Feature: ✨Seer role
     When the seer looks at the player with name "Charlie"
     Then the game's event should display the text "The Seer has seen a player from the Villagers side !"
 
-  Scenario: ✨Seer looks only the side of a player and is quiet because the game master changed the game options
+  Scenario: 🔮Seer looks only the side of a player and is quiet because the game master changed the game options
 
     Given the user disables the sheriff in game options
     And the user doesn't allow the seer to see roles in game options

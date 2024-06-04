@@ -63,111 +63,152 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 ## <a name="screenshots">📸 Screenshots</a>
 
 <details>
-  <summary>🏠 Home page</summary>
+  <summary>🏠 Home Page</summary>
   
   ![Home page](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/develop/tests/acceptance/screenshots/darwin/Home%20Page.png)
 
 </details>
 
 <details>
-  <summary>❓ About page</summary>
+  <summary>❓ About Page</summary>
 
   ![About page](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/develop/tests/acceptance/screenshots/darwin/About%20Page.png)
 
 </details>
 
 <details>
-  <summary>🤼 Game Lobby Page without players</summary>
+  <summary>🤼 Game Lobby Page</summary>
 
-  ![Game Lobby Page without players](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Page%20without%20players.png)
-
+>  <details>
+>    <summary>🤼 Game Lobby Page without players</summary>
+>  
+>    ![Game Lobby Page without players](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Page%20without%20players.png)
+>
+>  </details>
+>  
+>  <details>
+>    <summary>🤼 Game Lobby Page with 40 players</summary>
+>  
+>    ![Game Lobby Page with 40 players](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Page%20with%2040%20players.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>🃏 Game Lobby Role Picker without picked role</summary>
+>  
+>    ![Game Lobby Role Picker without picked role](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Role%20Picker%20without%20picked%20role.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>🃏 Game Lobby Role Picker with picked role</summary>
+>  
+>    ![Game Lobby Role Picker with picked role](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Role%20Picker%20with%20picked%20role.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>⚙️ Game Lobby Options Hub</summary>
+>  
+>    ![Game Lobby Options Hub](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Options%20Hub%20on%20Roles%20tab.png)
+>  </details>
 </details>
 
 <details>
-  <summary>🤼 Game Lobby Page with 40 players</summary>
+  <summary>🎲 Game Page</summary>
 
-  ![Game Lobby Page with 40 players](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Page%20with%2040%20players.png)
-
+>  <details>
+>    <summary>🕹️ Game Playgrounds</summary>
+>     
+>>   <details>
+>>    <summary>🐺 👹 Big Bad Wolf eats Playground</summary>
+>>        
+>>    ![Big Bad Wolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Big%20Bad%20Wolf%20eats%20Playground.png)
+>> 
+>>   </details>
+>>   <details>
+>>    <summary>🔫 Hunter shoots Playground</summary>
+>>        
+>>    ![Hunter shoots Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Hunter%20shoots%20Playground.png)
+>> 
+>>   </details>
+>>   <details>
+>>    <summary>🔮 Seer looks Playground</summary>
+>>        
+>>    ![Seer looks Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Seer%20looks%20Playground.png)
+>> 
+>>   </details>
+>>   <details>
+>>    <summary>🐺 Werewolves eat Playground</summary>
+>>        
+>>    ![Werewolves eat Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Werewolves%20eat%20Playground.png)
+>> 
+>>   </details>
+>  
+>  </details>
+>  <details>
+>    <summary>❓ Game not found</summary>
+>  
+>    ![Game not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20not%20found.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>❌ Game canceled</summary>
+>  
+>    ![Game canceled](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20canceled.png)
+>  
+>  </details>
 </details>
 
 <details>
-  <summary>🃏 Game Lobby Role Picker without picked role</summary>
+  <summary>🏆 Game Victory Page</summary>
 
-  ![Game Lobby Role Picker without picked role](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Role%20Picker%20without%20picked%20role.png)
-
-</details>
-
-<details>
-  <summary>🃏 Game Lobby Role Picker with picked role</summary>
-
-  ![Game Lobby Role Picker with picked role](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Role%20Picker%20with%20picked%20role.png)
-
-</details>
-
-<details>
-  <summary>⚙️ Game Lobby Options Hub</summary>
-
-  ![Game Lobby Options Hub](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Options%20Hub%20on%20Roles%20tab.png)
-
-</details>
-
-<details>
-  <summary>🎲 ❓ Game not found</summary>
-
-  ![Game not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20not%20found.png)
-
-</details>
-
-<details>
-  <summary>🎲 ❌ Game canceled</summary>
-
-  ![Game canceled](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20canceled.png)
-
-</details>
-
-<details>
-  <summary>🏆 🪽 Game won by Angel</summary>
-
-  ![Game won by Angel](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Angel.png)
-
-</details>
-
-<details>
-  <summary>🏆 💞 Game won by Lovers</summary>
-
-  ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
-
-</details>
-
-<details>
-  <summary>🏆 🧑🏻‍🌾 Game won by Villagers</summary>
-
-  ![Game won by Villagers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Villagers.png)
-
-</details>
-
-<details>
-  <summary>🏆 🐺 Game won by Werewolves</summary>
-
-  ![Game won by Werewolves](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Werewolves.png)
-</details>
-
-<details>
-  <summary>🏆 ☠️ Game won by nobody</summary>
-
-  ![Game won by nobody](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20nobody.png)
-</details>
-
-<details>
-  <summary>🏆 🪈 Game won by Pied Piper</summary>
-
-  ![Game won by Pied Piper](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Pied%20Piper.png)
-</details>
-
-<details>
-  <summary>🏆 🐺 🦴 Game won by White Werewolf</summary>
-
-  ![Game won by White Werewolf](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20White%20Werewolf.png)
+>  <details>
+>    <summary>🪽 Game won by Angel</summary>
+>  
+>    ![Game won by Angel](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Angel.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>💞 Game won by Lovers</summary>
+>  
+>    ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>🧑🏻‍🌾 Game won by Villagers</summary>
+>  
+>    ![Game won by Villagers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Villagers.png)
+>  
+>  </details>
+>  
+>  <details>
+>    <summary>🐺 Game won by Werewolves</summary>
+>  
+>    ![Game won by Werewolves](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Werewolves.png)
+>  </details>
+>  
+>  <details>
+>    <summary>☠️ Game won by nobody</summary>
+>  
+>    ![Game won by nobody](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20nobody.png)
+>  </details>
+>  
+>  <details>
+>    <summary>🪈 Game won by Pied Piper</summary>
+>  
+>    ![Game won by Pied Piper](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Pied%20Piper.png)
+>  </details>
+>  
+>  <details>
+>    <summary>🐺 🦴 Game won by White Werewolf</summary>
+>  
+>    ![Game won by White Werewolf](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20White%20Werewolf.png)
+>  </details>
+>
 </details>
 
 ## <a name="installation">🔨 Installation</a>
