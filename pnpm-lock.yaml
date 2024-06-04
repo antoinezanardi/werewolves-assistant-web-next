@@ -242,7 +242,7 @@ importers:
         version: 3.4.27(typescript@5.4.5)
       vue-eslint-parser:
         specifier: ^9.4.2
-        version: 9.4.2(eslint@9.4.0)
+        version: 9.4.3(eslint@9.4.0)
       vue-flip:
         specifier: ^3.0.2
         version: 3.0.2(typescript@5.4.5)
@@ -7330,8 +7330,8 @@ packages:
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
-  vue-eslint-parser@9.4.2:
-    resolution: {integrity: sha512-Ry9oiGmCAK91HrKMtCrKFWmSFWvYkpGglCeFAIqDdr9zdXmMMpJOmUJS7WWsW7fX81h6mwHmUZCQQ1E0PkSwYQ==}
+  vue-eslint-parser@9.4.3:
+    resolution: {integrity: sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -9747,7 +9747,7 @@ snapshots:
       read-pkg: 9.0.1
       registry-auth-token: 5.0.2
       semantic-release: 23.1.1(typescript@5.4.5)
-      semver: 7.6.2
+      semver: 7.6.1
       tempy: 3.1.0
 
   '@semantic-release/release-notes-generator@13.0.0(semantic-release@23.1.1(typescript@5.4.5))':
@@ -9858,7 +9858,7 @@ snapshots:
       '@stryker-mutator/api': 8.2.6
       '@stryker-mutator/util': 8.2.6
       angular-html-parser: 5.2.0
-      semver: 7.6.2
+      semver: 7.6.1
       weapon-regex: 1.3.2
     transitivePeerDependencies:
       - supports-color
@@ -11946,7 +11946,7 @@ snapshots:
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.16
       semver: 7.6.1
-      vue-eslint-parser: 9.4.2(eslint@9.4.0)
+      vue-eslint-parser: 9.4.3(eslint@9.4.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -14909,7 +14909,7 @@ snapshots:
 
   semver-diff@4.0.0:
     dependencies:
-      semver: 7.6.2
+      semver: 7.6.1
 
   semver-regex@4.0.5: {}
 
@@ -16054,16 +16054,16 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-eslint-parser@9.4.2(eslint@9.4.0):
+  vue-eslint-parser@9.4.3(eslint@9.4.0):
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.5(supports-color@8.1.1)
       eslint: 9.4.0
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.6.1
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
 
