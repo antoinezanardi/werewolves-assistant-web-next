@@ -393,7 +393,8 @@
     "index": {
       "play": "Play",
       "about": "What is it ?",
-      "werewolvesAssistantLogo": "Werewolves Assistant logo"
+      "werewolvesAssistantLogo": "Werewolves Assistant logo",
+      "perfectToolForGameMasters": "The perfect tool for game masters of the Werewolves of Miller's Hollow™"
     },
     "about": {
       "whyAnAssistant": "Why an assistant ?",
@@ -438,7 +439,7 @@
       "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
     },
     "IndexFooter": {
-      "contact": "Contact me"
+      "contact": "Contact the creator"
     },
     "NavBar": {
       "navBar": "Navigation bar",
