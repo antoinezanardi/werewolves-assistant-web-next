@@ -7,13 +7,13 @@ import { PNG } from "pngjs";
 
 import { waitForPageLoadStates } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
 import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
-import { saveFullPageScreenshot, throwErrorIfBrokenThreshold, tryScreenshotWithCorrectDimensions } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.helpers";
+import { saveFullPageScreenshot, throwErrorIfBrokenThreshold, tryScreenshotWithCorrectDimensions } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.then-helpers";
 import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 const screenshotStepTimeout = 30000;
 
-Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, { timeout: screenshotStepTimeout }, async function(this: CustomWorld, name: string): Promise<void> {
+Then(/^the page(?<shouldMatch> should match or)? creates the missing snapshot with name "(?<name>.+)"$/u, { timeout: screenshotStepTimeout }, async function(this: CustomWorld, shouldMatch: string | null, name: string): Promise<void> {
   if (process.env.SKIP_SCREENSHOTS_COMPARISON_TESTS === "true") {
     console.info("Skipping screenshot comparison because the environment variable SKIP_SCREENSHOTS_COMPARISON_TESTS is set to true.");
 
@@ -26,6 +26,9 @@ Then(/^the page should match the snapshot with name "(?<name>.+)"$/u, { timeout:
     this.attach(PNG.sync.write(screenshot), "image/png");
     await saveFullPageScreenshot(this.page, screenshotPath);
 
+    return;
+  }
+  if (shouldMatch === null) {
     return;
   }
   const screenshot = await tryScreenshotWithCorrectDimensions(this.page, PNG.sync.read(readFileSync(screenshotPath)));

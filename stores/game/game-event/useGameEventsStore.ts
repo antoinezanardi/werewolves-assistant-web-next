@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
+import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { GameEvent } from "~/stores/game/game-event/types/game-event.class";
@@ -25,9 +26,11 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (!lastGameHistoryRecord) {
       return [];
     }
-    const { action } = lastGameHistoryRecord.play;
+    const { action, voting } = lastGameHistoryRecord.play;
     if (action === "look") {
       return [GameEvent.create({ type: "seer-has-seen" })];
+    } else if (action === "elect-sheriff" && voting?.result === "sheriff-election") {
+      return [GameEvent.create({ type: "sheriff-has-been-elected", players: voting.nominatedPlayers })];
     }
     return [];
   }

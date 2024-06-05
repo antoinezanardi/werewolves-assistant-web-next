@@ -21,12 +21,13 @@ Feature: 🔮Seer role
     When the user skips the game event
     Then the game's current play title should be "Seer looks"
     And the game's current play question should be "Which player does the Seer want to look at ?"
+    And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
       | Bob     |
       | Charlie |
       | David   |
-    And the page should match the snapshot with name "Seer looks Playground"
+    And the page should match or creates the missing snapshot with name "Seer looks Playground"
 
     When the seer looks at the player with name "Bob"
     Then the game's event should display the text "The Seer has seen a Werewolf !"
@@ -132,6 +133,7 @@ Feature: 🔮Seer role
     When the player or group skips his turn
     And the user skips all game events
     Then the game's current play title should be "Seer looks"
+    And the game's phase name should be "Night 2"
 
     When the seer looks at the player with name "Charlie"
     Then the game's event should display the text "Because the Seer is quiet, the Game Master will mime the side of the seen player."

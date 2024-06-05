@@ -23,12 +23,13 @@ Feature: 🐺 Werewolf role
     When the user skips the game event
     Then the game's current play title should be "Werewolves eat"
     And the game's current play question should be "Which player do the Werewolves want to eat ?"
+    And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
       | Antoine |
       | Charlie |
       | David   |
-    And the page should match the snapshot with name "Werewolves eat Playground"
+    And the page should match or creates the missing snapshot with name "Werewolves eat Playground"
 
     When the werewolves eat the player with name "David"
     Then the player with name "David" should have the attribute eaten by werewolves in the game

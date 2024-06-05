@@ -13,7 +13,7 @@ function usePlayers(): UsePlayers {
         return player.name;
       }
       if (index === players.length - 1) {
-        return `${acc} ${t("common.and")} ${player.name}`;
+        return `${acc} ${t("shared.and")} ${player.name}`;
       }
       return `${acc}, ${player.name}`;
     }, "");
