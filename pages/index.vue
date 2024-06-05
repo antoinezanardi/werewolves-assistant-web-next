@@ -17,7 +17,10 @@
           {{ $t('shared.werewolvesAssistant') }}
         </h1>
 
-        <h5 class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6">
+        <h5
+          id="subtitle"
+          class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"
+        >
           <i class="fa fa-sun md:w-auto text-2xl text-day w-2/12"/>
 
           <span>
@@ -35,6 +38,7 @@
         to="/game-lobby"
       >
         <i
+          id="play-button-icon"
           class="absolute animate__animated fa fa-2x fa-play-circle left-5 me-2"
           :class="{ 'animate__heartBeat': isPlayButtonHovered }"
         />
@@ -51,6 +55,7 @@
         to="/about"
       >
         <i
+          id="about-button-icon"
           class="absolute animate__animated fa-2x fa-question-circle fa-regular left-5 me-2"
           :class="{ 'animate__rubberBand': isAboutButtonHovered }"
         />
@@ -68,7 +73,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useElementHover } from "@vueuse/core";
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
 definePageMeta({ layout: false });
