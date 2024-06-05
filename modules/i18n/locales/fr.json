@@ -392,8 +392,9 @@
   "pages": {
     "index": {
       "play": "Jouer",
-      "about": "À quoi ça sert",
-      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
+      "about": "À quoi ça sert ?",
+      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous",
+      "perfectToolForGameMasters": "L'outil parfait pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
     },
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
@@ -438,7 +439,7 @@
       "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
     },
     "IndexFooter": {
-      "contact": "Me contacter"
+      "contact": "Contacter le créateur"
     },
     "NavBar": {
       "navBar": "Barre de navigation",

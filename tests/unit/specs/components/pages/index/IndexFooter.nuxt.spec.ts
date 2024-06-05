@@ -19,7 +19,7 @@ describe("Index Page Footer Component", () => {
     it("should display contact me with translated text button when rendered.", () => {
       const contactMeButton = wrapper.find("#contact-button");
 
-      expect(contactMeButton.text()).toBe("Contact me");
+      expect(contactMeButton.text()).toBe("Contact the creator");
     });
   });
 });
