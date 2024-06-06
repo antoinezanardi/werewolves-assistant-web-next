@@ -20,9 +20,11 @@ Feature: 🔫 Hunter role
 
     When the user skips the game event
     Then the game's event should display the text "Antoine is dead ! What a tragedy…"
+    And the player with name "Antoine" should be dead in the game
 
     When the user skips the game event
     Then the game's event should display the text "In his last breath, the Hunter will shoot at a player and kill him right away."
+    And the game's event player card should have the name "Antoine"
 
     When the user skips the game event
     Then the game's current play title should be "Hunter shoots"
@@ -37,3 +39,4 @@ Feature: 🔫 Hunter role
 
     When the hunter shoots the player with name "David"
     Then the game's event should display the text "David is dead ! What a tragedy…"
+    And the player with name "David" should be dead in the game

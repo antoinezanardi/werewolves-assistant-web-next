@@ -24,11 +24,11 @@ exports[`Game Sheriff Turn Starts Event Component > should match snapshot when r
   <div id="game-event-texts-manager" class="flex gap-4 h-1/2 items-center"><button id="previous-event-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button"><i class="fa fa-3x fa-chevron-left"></i></button>
     <div id="game-event-text-container" class="flex grow h-1/2 items-center justify-center">
       <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
-        <p id="current-event-text" class="!mb-0 !text-2xl text-center">components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {"players":"Antoine common.and Benoit"}</p>
+        <p id="current-event-text" class="!mb-0 !text-2xl text-center">components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {"players":"Antoine shared.and Benoit"}</p>
       </transition-stub>
     </div><button id="next-event-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
   </div>
 </div>"
 `;
 
-exports[`Game Sheriff Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {" players":"Antoine common.and Benoit"}" id="game-sheriff-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Sheriff Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {" players":"Antoine shared.and Benoit"}" id="game-sheriff-turn-starts-event"></game-event-with-texts-stub>"`;

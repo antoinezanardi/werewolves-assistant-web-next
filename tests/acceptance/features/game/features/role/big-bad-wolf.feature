@@ -71,7 +71,7 @@ Feature: 🐺👹 Big Bad Wolf role
     And the user skips all game events
     Then the player with name "Charlie" should have the attribute powerless by werewolves in the game
 
-  Scenario: 🐺👹 Big Bad Wolf remains powerful if one werewolf dies when game master disabled the option
+  Scenario: 🐺👹 Big Bad Wolf remains powerful if one werewolf dies when game master disables the option
 
     Given the user disables the sheriff in game options
     And the user makes the big bad wolf remaining powerful even if one werewolf dies in game options

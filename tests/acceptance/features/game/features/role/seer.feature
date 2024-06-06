@@ -17,6 +17,7 @@ Feature: 🔮Seer role
 
     When the user skips the game event
     Then the game's event should display the text "The Seer wakes up and will look at a player's role."
+    And the game's event player card should have the name "Antoine"
 
     When the user skips the game event
     Then the game's current play title should be "Seer looks"
@@ -68,6 +69,7 @@ Feature: 🔮Seer role
     When the user goes to the next game event text
     Then the game's event should display the text "The Seer has seen a Werewolf !"
     And the player with name "Bob" should have the attribute seen by seer in the game
+    And the game's event player card should have the name "Bob"
 
   Scenario: 🔮Seer looks only the side of a player because the game master doesn't allow her to see the role
 

@@ -16,6 +16,8 @@ Feature: 🐺 Werewolf role
     And the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Werewolves wake up and meet each other for the first time."
+    And the game's event player card should have the name "Bob"
+    And the game's event player card should have the name "Mama"
 
     When the user goes to the next game event text
     Then the game's event should display the text "When the meeting is over, the Werewolves will eat a Villager."
