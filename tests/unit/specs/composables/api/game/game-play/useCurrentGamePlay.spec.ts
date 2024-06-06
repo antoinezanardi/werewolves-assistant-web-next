@@ -1,4 +1,5 @@
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
+import type { GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { PlayerInteractionType } from "~/composables/api/game/types/players/player-interaction/player-interaction.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
@@ -10,7 +11,7 @@ import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/g
 
 describe("Use Current Game Play Composable", () => {
   describe("mustCurrentGamePlayBeSkipped", () => {
-    it.each< {
+    it.each<{
       game: Game;
       expectedBoolean: boolean;
       test: string;
@@ -61,6 +62,49 @@ describe("Use Current Game Play Composable", () => {
       const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(game));
 
       expect(mustCurrentGamePlayBeSkipped.value).toBe(expectedBoolean);
+    });
+  });
+
+  describe("priorityCauseInCurrentGamePlay", () => {
+    it.each<{
+      game: Game;
+      expectedCause: GamePlayCause | undefined;
+      test: string;
+    }>([
+      {
+        game: createFakeGame(),
+        expectedCause: undefined,
+        test: "should return undefined when game current play is null.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() }),
+        expectedCause: undefined,
+        test: "should return undefined when game current play causes are undefined.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ causes: [] }) }),
+        expectedCause: undefined,
+        test: "should return undefined when game current play causes are empty.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ causes: ["stuttering-judge-request", "angel-presence"] }) }),
+        expectedCause: "angel-presence",
+        test: "should return angel presence when game current play causes includes angel presence.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ causes: ["stuttering-judge-request"] }) }),
+        expectedCause: "stuttering-judge-request",
+        test: "should return stuttering judge request when game current play causes includes stuttering judge request.",
+      },
+      {
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ causes: ["previous-votes-were-in-ties", "angel-presence", "stuttering-judge-request"] }) }),
+        expectedCause: "previous-votes-were-in-ties",
+        test: "should return previous votes were in ties when game current play causes includes previous votes were in ties.",
+      },
+    ])("$test", ({ game, expectedCause }) => {
+      const { priorityCauseInCurrentGamePlay } = useCurrentGamePlay(ref(game));
+
+      expect(priorityCauseInCurrentGamePlay.value).toBe(expectedCause);
     });
   });
 

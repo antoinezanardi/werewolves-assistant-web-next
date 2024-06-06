@@ -6,7 +6,7 @@
     <div class="flex h-full items-center justify-center">
       <GameEventFlippingPlayerCard
         v-if="electedSheriffPlayer"
-        id="game-event-flipping-last-play-targets-card"
+        id="game-event-flipping-sheriff-card"
         :players="[electedSheriffPlayer]"
         svg-icon-path="svg/game/player/player-attribute/sheriff.svg"
       />

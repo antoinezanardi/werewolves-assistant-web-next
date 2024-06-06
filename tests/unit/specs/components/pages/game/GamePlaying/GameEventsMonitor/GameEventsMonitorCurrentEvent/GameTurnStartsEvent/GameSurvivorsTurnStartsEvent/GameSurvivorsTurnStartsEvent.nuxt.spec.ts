@@ -63,6 +63,29 @@ describe("Game Survivors Turn Starts Event Component", () => {
         test: "should display sheriff election texts when the current play is a sheriff election.",
       },
       {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlaySurvivorsElectSheriff({
+            source: createFakeGamePlaySource({
+              interactions: [
+                createFakeGamePlaySourceInteraction({
+                  type: "choose-as-sheriff",
+                  eligibleTargets: [
+                    createFakePlayer({ name: "Antoine" }),
+                    createFakePlayer({ name: "Benoit" }),
+                  ],
+                }),
+              ],
+            }),
+            causes: ["previous-votes-were-in-ties"],
+          }),
+        }),
+        expectedTexts: [
+          "components.GameSurvivorsTurnStartsEvent.sheriffElectionBecauseOfPreviousTies",
+          "components.GameSurvivorsTurnStartsEvent.survivorsMustElectBetween, {\"players\":\"Antoine shared.and Benoit\"}",
+        ],
+        test: "should display sheriff election with previous tie texts when the current play is a sheriff election and cause is votes in tie.",
+      },
+      {
         game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }),
         expectedTexts: ["components.GameSurvivorsTurnStartsEvent.survivorsVote"],
         test: "should display voting texts for classic vote when there is no particular voting cause.",
@@ -101,7 +124,7 @@ describe("Game Survivors Turn Starts Event Component", () => {
           "components.GameSurvivorsTurnStartsEvent.voteBecauseOfPreviousTies",
           "components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween, {\"players\":\"Antoine shared.and Benoit\"}",
         ],
-        test: "should display voting texts for sheriff request vote when there is a voting cause is sheriff request.",
+        test: "should display voting texts when there is a voting cause is previous votes were in tie.",
       },
       {
         game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() }),

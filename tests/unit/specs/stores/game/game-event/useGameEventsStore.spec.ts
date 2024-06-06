@@ -5,6 +5,7 @@ import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import * as UseGameStore from "~/stores/game/useGameStore";
+import { createFakeGameHistoryRecordPlayVoting } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
 import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
@@ -253,6 +254,56 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate player dies event when game current play action is bury-dead-bodies.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "elect-sheriff",
+              voting: createFakeGameHistoryRecordPlayVoting({ result: "death" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate sheriff has been elected event when last game history record action is elect-sheriff but voting result is not sheriff-election.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "elect-sheriff" }) }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate sheriff has been elected event when last game history record action is elect-sheriff but voting is not defined.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "vote",
+              voting: createFakeGameHistoryRecordPlayVoting({ result: "sheriff-election" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate sheriff has been elected event when last game history record action is vote and voting result is sheriff-election.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "elect-sheriff",
+              voting: createFakeGameHistoryRecordPlayVoting({ result: "sheriff-election" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "sheriff-has-been-elected" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate sheriff has been elected event when last game history record action is elect-sheriff and voting result is sheriff-election.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();
