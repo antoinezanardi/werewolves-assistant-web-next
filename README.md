@@ -139,6 +139,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>🎖️ Sheriff delegates Playground</summary>
+>>
+>>    ![Sheriff delegates Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Sheriff%20delegates%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🎖️ Sheriff settles votes Playground</summary>
 >>
 >>    ![Sheriff settles votes Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Sheriff%20settles%20votes%20Playground.png)

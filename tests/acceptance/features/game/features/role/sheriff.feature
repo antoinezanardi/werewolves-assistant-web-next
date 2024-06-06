@@ -175,7 +175,7 @@ Feature: 🎖️ Sheriff Attribute
       | David   |
       | Antoine |
       | Bob     |
-    And the page creates the missing snapshot with name "Sheriff settles votes Playground"
+    And the page should match or creates the missing snapshot with name "Sheriff settles votes Playground"
 
     When the sheriff settles the vote with the player with name "Antoine"
     Then the player with name "Antoine" should be dead in the game
@@ -243,7 +243,7 @@ Feature: 🎖️ Sheriff Attribute
       | Antoine |
       | Bob     |
       | David   |
-    And the page creates the missing snapshot with name "Sheriff delegates Playground"
+    And the page should match or creates the missing snapshot with name "Sheriff delegates Playground"
 
     When the sheriff delegates his role to the player with name "David"
     Then the player with name "David" should have the attribute sheriff by sheriff in the game
