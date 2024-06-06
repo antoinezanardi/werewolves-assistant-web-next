@@ -122,7 +122,7 @@
     "sass": "^1.77.4",
     "semantic-release": "^23.1.1",
     "semantic-release-export-data": "^1.0.1",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "ts-case-convert": "^2.0.7",
     "tsx": "^4.11.2",
     "type-fest": "^4.18.3",
