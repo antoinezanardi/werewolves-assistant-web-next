@@ -5,7 +5,7 @@ import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/G
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
-import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffHasBeenElectedEvent/GameSheriffHasBeenElectedEvent.vue";
+import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -102,7 +102,7 @@ describe("Game Events Monitor Current Event Component", () => {
     it("should render sheriff has been elected event component when current game event is sheriff has been elected type.", async() => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
-        createFakeGameEvent({ type: "sheriff-has-been-elected" }),
+        createFakeGameEvent({ type: "sheriff-promotion" }),
         createFakeGameEvent({ type: "game-turn-starts" }),
       ];
       await nextTick();

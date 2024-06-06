@@ -25,7 +25,7 @@ import type { GameEventsMonitorEventTypeComponent } from "~/components/pages/gam
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
-import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffHasBeenElectedEvent/GameSheriffHasBeenElectedEvent.vue";
+import GameSheriffPromotionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
 import type { GameEventType } from "~/stores/game/game-event/types/game-event.types";
@@ -41,7 +41,7 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "game-turn-starts": GameTurnStartsEvent,
     "player-dies": GamePlayerDiesEvent,
     "seer-has-seen": GameSeerHasSeenEvent,
-    "sheriff-has-been-elected": GameSheriffHasBeenElectedEvent,
+    "sheriff-promotion": GameSheriffPromotionEvent,
   };
   if (!currentGameEvent.value) {
     return undefined;

@@ -1302,8 +1302,9 @@
     },
     "GameSheriffHasBeenElectedEvent": {
       "cantFindElectedSheriff": "Le Maire élu ne peut être trouvé… Veuillez continuer.",
-      "sheriffHasBeenElected": "Les survivants ont élu {sheriffName} comme Maire du village !",
-      "sheriffCanMakeSpeech": "Le Maire peut faire un discours poignant sur son élection."
+      "sheriffHasBeenElectedBySurvivors": "Les survivants ont élu {playerName} comme Maire du village !",
+      "sheriffCanMakeSpeech": "Le Maire peut faire un discours poignant sur son élection.",
+      "sheriffHasBeenElectedByDelegation": "{playerName} est le nouveau Maire du village !"
     }
   }
 }

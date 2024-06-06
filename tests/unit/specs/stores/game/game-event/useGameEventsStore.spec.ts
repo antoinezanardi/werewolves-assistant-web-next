@@ -287,7 +287,7 @@ describe("Game Events Store", () => {
           }),
         }),
         expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
-        test: "should not generate sheriff has been elected event when last game history record action is vote and voting result is sheriff-election.",
+        test: "should not generate sheriff promotion event when last game history record action is vote and voting result is sheriff-election.",
       },
       {
         game: createFakeGame({
@@ -300,10 +300,21 @@ describe("Game Events Store", () => {
           }),
         }),
         expectedGameEvents: [
-          createFakeGameEvent({ type: "sheriff-has-been-elected" }),
+          createFakeGameEvent({ type: "sheriff-promotion" }),
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
-        test: "should generate sheriff has been elected event when last game history record action is elect-sheriff and voting result is sheriff-election.",
+        test: "should generate sheriff promotion event when last game history record action is elect-sheriff and voting result is sheriff-election.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "delegate" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "sheriff-promotion" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate sheriff promotion event when last game history record action is delegate.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();

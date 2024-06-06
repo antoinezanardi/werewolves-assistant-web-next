@@ -205,3 +205,49 @@ Feature: 🎖️ Sheriff Attribute
       | David   | Antoine |
     And the user skips all game events
     Then the game's current play question should be "Which player do the survivors want to vote for to break the tie ?"
+
+  Scenario: 🎖 Sheriff delegates his role to another survivor when he dies
+
+    Given the user creates a game with the players with name and role
+      | name    | role     |
+      | Antoine | Hunter   |
+      | Bob     | Werewolf |
+      | Charlie | Cupid    |
+      | David   | Angel    |
+    When the user closes the toast
+    And the user skips all game events
+
+    When the survivors elect the sheriff with the votes
+      | voter   | target  |
+      | Antoine | Charlie |
+    And the user skips all game events
+    Then the game's current play title should be "Survivors vote"
+
+    When the survivors vote with the votes
+      | voter   | target  |
+      | Antoine | Charlie |
+    Then the player with name "Charlie" should be dead in the game
+    And the game's event should display the text "Charlie is dead ! What a tragedy…"
+
+    When the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "In his last breath, the Sheriff will delegate his role to another player."
+    And the game's event player card should have the name "Charlie"
+
+    When the user goes to the next game event text
+    Then the game's current play title should be "Sheriff delegates"
+    And the game's phase name should be "Twilight"
+    And the game's current play question should be "Which player does the Sheriff want to delegate his role to ?"
+    And the game's current play should have the following targets
+      | name    |
+      | Antoine |
+      | Bob     |
+      | David   |
+    And the page creates the missing snapshot with name "Sheriff delegates Playground"
+
+    When the sheriff delegates his role to the player with name "David"
+    Then the player with name "David" should have the attribute sheriff by sheriff in the game
+    And the game's event should display the text "David is the new Sheriff of the village !"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."

@@ -1302,8 +1302,9 @@
     },
     "GameSheriffHasBeenElectedEvent": {
       "cantFindElectedSheriff": "The elected Sheriff can't be found… Please proceed.",
-      "sheriffHasBeenElected": "The survivors have elected {playerName} as the Sheriff of the village !",
-      "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers."
+      "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village !",
+      "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers.",
+      "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village !"
     }
   }
 }
