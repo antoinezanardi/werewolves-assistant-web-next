@@ -101,6 +101,13 @@ export default defineNuxtConfig({
     composables: { include: ["useToast"] },
     options: { ripple: true },
   },
+  routeRules: {
+    "/": { prerender: true },
+    "/about": { swr: true },
+    "/game-lobby": { ssr: false },
+    "/game": { ssr: false },
+    "/game/**": { ssr: false },
+  },
   runtimeConfig: {
     public: {
       defaultLocale: "en",
