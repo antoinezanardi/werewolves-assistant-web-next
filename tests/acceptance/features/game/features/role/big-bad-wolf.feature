@@ -21,12 +21,13 @@ Feature: 🐺👹 Big Bad Wolf role
 
     When the user skips the game event
     Then the game's current play title should be "Big Bad Wolf eats"
+    And the game's phase name should be "Night 1"
     And the game's current play question should be "Which player does the Big Bad Wolf want to eat ?"
     And the game's current play should have the following targets
       | name  |
       | David |
       | Maria |
-    And the page should match the snapshot with name "Big Bad Wolf eats Playground"
+    And the page should match or creates the missing snapshot with name "Big Bad Wolf eats Playground"
 
     When the big bad wolf eats the player with name "David"
     And the user skips all game events
@@ -49,7 +50,7 @@ Feature: 🐺👹 Big Bad Wolf role
     And the user skips all game events
     Then the game's current play title should be "Big Bad Wolf eats"
     And the game's current play should not have targets
-    And the page should match the snapshot with name "Game Playground without targets"
+    And the page should match or creates the missing snapshot with name "Game Playground without targets"
 
   Scenario: 🐺👹 Big Bad Wolf is powerless if one werewolf dies
 
@@ -70,7 +71,7 @@ Feature: 🐺👹 Big Bad Wolf role
     And the user skips all game events
     Then the player with name "Charlie" should have the attribute powerless by werewolves in the game
 
-  Scenario: 🐺👹 Big Bad Wolf remains powerful if one werewolf dies when game master disabled the option
+  Scenario: 🐺👹 Big Bad Wolf remains powerful if one werewolf dies when game master disables the option
 
     Given the user disables the sheriff in game options
     And the user makes the big bad wolf remaining powerful even if one werewolf dies in game options

@@ -16,7 +16,7 @@ class GamePlay {
   public action: GamePlayAction;
 
   @Expose()
-  public cause?: GamePlayCause;
+  public causes?: GamePlayCause[];
 
   @Expose()
   public canBeSkipped?: boolean;

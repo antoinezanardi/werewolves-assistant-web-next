@@ -2,6 +2,7 @@
   <div id="game-playground-player-card-vote-input">
     <VuePrimeFloatLabel class="mt-5">
       <VuePrimeAutoComplete
+        class="w-full"
         complete-on-focus
         data-key="name"
         :delay="100"

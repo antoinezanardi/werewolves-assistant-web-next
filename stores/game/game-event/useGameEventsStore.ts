@@ -25,9 +25,11 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (!lastGameHistoryRecord) {
       return [];
     }
-    const { action } = lastGameHistoryRecord.play;
+    const { action, voting } = lastGameHistoryRecord.play;
     if (action === "look") {
       return [GameEvent.create({ type: "seer-has-seen" })];
+    } else if (action === "elect-sheriff" && voting?.result === "sheriff-election" || action === "delegate") {
+      return [GameEvent.create({ type: "sheriff-promotion" })];
     }
     return [];
   }

@@ -139,11 +139,31 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>🎖️ Sheriff delegates Playground</summary>
+>>
+>>    ![Sheriff delegates Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Sheriff%20delegates%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🎖️ Sheriff settles votes Playground</summary>
+>>
+>>    ![Sheriff settles votes Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Sheriff%20settles%20votes%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🎖️ Survivors elect the Sheriff Playground</summary>
+>>
+>>    ![Survivors elect the Sheriff Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Survivors%20elect%20Sheriff%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🐺 Werewolves eat Playground</summary>
 >>        
 >>    ![Werewolves eat Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Werewolves%20eat%20Playground.png)
 >> 
 >>   </details>
+>>   <details>
+>>    <summary>🤷 Game Playground without targets</summary>
+>>
+>>    ![Game Playground without targets](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Playground%20without%20targets.png)
+>>  </details>
 >  
 >  </details>
 >  <details>

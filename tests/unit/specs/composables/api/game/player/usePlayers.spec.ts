@@ -10,7 +10,7 @@ describe("Use Players Composable", () => {
         createFakePlayer({ name: "player-3" }),
       ];
       const text = usePlayers().getPlayersNamesText(players);
-      const expectedText = "player-1, player-2 common.and player-3";
+      const expectedText = "player-1, player-2 shared.and player-3";
 
       expect(text).toBe(expectedText);
     });

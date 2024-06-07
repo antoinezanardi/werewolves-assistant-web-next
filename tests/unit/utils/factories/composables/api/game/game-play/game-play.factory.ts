@@ -77,9 +77,10 @@ function createFakeGamePlaySheriffDelegates(gamePlay: Partial<GamePlay> = {}): G
 
 function createFakeGamePlaySurvivorsVote(gamePlay: Partial<GamePlay> = {}): GamePlay {
   let occurrence: GamePlayOccurrence = "on-days";
-  if (gamePlay.cause === "angel-presence") {
+  const consequentialGamePlayCauses: GamePlayCause[] = ["previous-votes-were-in-ties", "stuttering-judge-request"];
+  if (gamePlay.causes?.includes("angel-presence") === true) {
     occurrence = "one-night-only";
-  } else if (["previous-votes-were-in-tie", "stuttering-judge-request"].includes(gamePlay.cause as GamePlayCause)) {
+  } else if (consequentialGamePlayCauses.some(cause => gamePlay.causes?.includes(cause) === true)) {
     occurrence = "consequential";
   }
   return createFakeGamePlay({
@@ -297,7 +298,7 @@ function createFakeGamePlay(gamePlay: Partial<GamePlay> = {}): GamePlay {
     action: gamePlay.action ?? faker.helpers.arrayElement(GAME_PLAY_ACTIONS),
     source: createFakeGamePlaySource(gamePlay.source),
     canBeSkipped: gamePlay.canBeSkipped ?? undefined,
-    cause: gamePlay.cause ?? undefined,
+    causes: gamePlay.causes ?? undefined,
     occurrence: gamePlay.occurrence ?? faker.helpers.arrayElement(GAME_PLAY_OCCURRENCES),
   });
 }

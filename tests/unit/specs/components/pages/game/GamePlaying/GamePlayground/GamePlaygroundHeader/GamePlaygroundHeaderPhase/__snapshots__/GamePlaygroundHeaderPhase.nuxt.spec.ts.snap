@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Playground Header Phase > should match snapshot when rendered. 1`] = `
-"<div id="game-playground-header-phase" class="flex items-center">
+"<div id="game-playground-header-phase" class="flex items-center" data-testid="game-playground-header-phase">
   <game-phase-icon-stub phase="night" class="fa-2x me-3"></game-phase-icon-stub><span id="game-phase-text" class="text-2xl">shared.game.phase.night 3</span>
 </div>"
 `;

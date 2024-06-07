@@ -11,7 +11,7 @@ Feature: 🎲🚫 Game Canceled
     And the link with name "Create another game" should be visible
     And the link with name "Back to home" should be visible
     And the toast with text "Game canceled" should be visible
-    And the page should match the snapshot with name "Game canceled"
+    And the page should match or creates the missing snapshot with name "Game canceled"
 
   Scenario: 🎲🚫 Game Canceled page has valid head title and SEO tags
     Given the user creates a game with 4 random role players

@@ -132,7 +132,7 @@ describe("Current Play Question Component", () => {
       test: "should render the question for survivors elect sheriff when current play is survivors who elect sheriff.",
     },
     {
-      currentPlay: createFakeGamePlaySurvivorsElectSheriff({ cause: "previous-votes-were-in-ties" }),
+      currentPlay: createFakeGamePlaySurvivorsElectSheriff({ causes: ["previous-votes-were-in-ties"] }),
       expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsElectSheriffOnTie",
       test: "should render the question for survivors elect sheriff when current play is survivors who elect sheriff and previous votes were in tie.",
     },
@@ -142,17 +142,17 @@ describe("Current Play Question Component", () => {
       test: "should render the question for survivors vote when current play is survivors who vote and there is no cause.",
     },
     {
-      currentPlay: createFakeGamePlaySurvivorsVote({ cause: "angel-presence" }),
+      currentPlay: createFakeGamePlaySurvivorsVote({ causes: ["angel-presence"] }),
       expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteFor",
       test: "should render the question for survivors vote when current play is survivors who vote and cause is angel presence.",
     },
     {
-      currentPlay: createFakeGamePlaySurvivorsVote({ cause: "stuttering-judge-request" }),
+      currentPlay: createFakeGamePlaySurvivorsVote({ causes: ["stuttering-judge-request"] }),
       expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteForOnJudgeRequest",
       test: "should render the question for survivors vote when current play is survivors who vote and cause is stuttering judge request.",
     },
     {
-      currentPlay: createFakeGamePlaySurvivorsVote({ cause: "previous-votes-were-in-ties" }),
+      currentPlay: createFakeGamePlaySurvivorsVote({ causes: ["previous-votes-were-in-ties"] }),
       expectedQuestion: "components.CurrentPlayQuestion.whichPlayerDoesSurvivorsVoteForOnTie",
       test: "should render the question for survivors vote when current play is survivors who vote and cause is stuttering judge request and target is player 1.",
     },
@@ -202,7 +202,7 @@ describe("Current Play Question Component", () => {
       test: "should render unknown question when action is not relevant.",
     },
     {
-      currentPlay: createFakeGamePlayWitchUsesPotions({ cause: "stuttering-judge-request" }),
+      currentPlay: createFakeGamePlayWitchUsesPotions({ causes: ["stuttering-judge-request"] }),
       expectedQuestion: "components.CurrentPlayQuestion.unknownQuestionForCurrentPlay",
       test: "should render unknown question when cause is not relevant.",
     },
