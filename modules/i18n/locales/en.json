@@ -393,7 +393,8 @@
     "index": {
       "play": "Play",
       "about": "What is it ?",
-      "werewolvesAssistantLogo": "Werewolves Assistant logo"
+      "werewolvesAssistantLogo": "Werewolves Assistant logo",
+      "perfectToolForGameMasters": "The perfect tool for game masters of the Werewolves of Miller's Hollow™"
     },
     "about": {
       "whyAnAssistant": "Why an assistant ?",
@@ -438,7 +439,7 @@
       "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
     },
     "IndexFooter": {
-      "contact": "Contact me"
+      "contact": "Contact the creator"
     },
     "NavBar": {
       "navBar": "Navigation bar",
@@ -679,8 +680,8 @@
       "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban one or more players from voting ?",
       "whichPlayerDoesSeerLook": "Which player does the Seer want to look at ?",
       "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to ?",
-      "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with?",
-      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff for to break the tie ?",
+      "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with ?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff to break the tie ?",
       "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff ?",
       "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for ?",
@@ -1184,10 +1185,12 @@
       "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately !",
       "voteBecauseOfStutteringJudge": "Survivors will vote again because the Stuttering Judge requested another vote.",
       "voteBecauseOfPreviousTies": "Survivors will vote again because the previous vote ended in a tie.",
-      "survivorsMustVoteBetween": "The village must vote between {players}. Who will be eliminated ?",
+      "survivorsMustVoteBetween": "The village must vote between {players}. If there is a tie, there won't be any elimination.",
       "survivorsVote": "Survivors, it's time to vote and eliminate a player from the village.",
       "survivorsBuryDeadBodies": "Survivors, it's time to bury the dead bodies of the village.",
-      "survivorsElectSheriff": "Survivors, it's time to elect the Sheriff for the village."
+      "survivorsElectSheriff": "Survivors, it's time to elect the Sheriff for the village.",
+      "sheriffElectionBecauseOfPreviousTies": "Survivors will elect again the Sheriff because the previous vote ended in a tie.",
+      "survivorsMustElectBetween": "The village must elect the Sheriff between {players}. If there is a tie, the Sheriff will be elected randomly."
     },
     "GameAccursedWolfFatherTurnStartsEvent": {
       "accursedWolfFatherCanInfect": "The Accursed Father of Wolves wakes up and can infect a player eaten by the Werewolves if he wants to."
@@ -1296,6 +1299,12 @@
       "gameMasterWillMimeRole": "Because the Seer is quiet, the Game Master will mime the role of the seen player.",
       "seerHasSeenSide": "The Seer has seen a player from the {side} side !",
       "seerHasSeenRole": "The Seer has seen {role} !"
+    },
+    "GameSheriffHasBeenElectedEvent": {
+      "cantFindElectedSheriff": "The elected Sheriff can't be found… Please proceed.",
+      "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village !",
+      "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers.",
+      "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village !"
     }
   }
 }

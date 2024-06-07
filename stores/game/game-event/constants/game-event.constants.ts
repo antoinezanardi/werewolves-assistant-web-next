@@ -4,6 +4,7 @@ const GAME_EVENT_TYPES = [
   "game-turn-starts",
   "player-dies",
   "seer-has-seen",
+  "sheriff-promotion",
 ] as const;
 
 export { GAME_EVENT_TYPES };

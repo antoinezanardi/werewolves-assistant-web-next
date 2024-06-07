@@ -8,12 +8,12 @@ Feature: 🏠 Home Page
     And the heading with name "Werewolves Assistant" should be visible
     And the link with name "Play" should be visible
     And the link with name "What is it ?" should be visible
-    And the link with name "Contact me" should be visible
-    And the link with name "Contact me" should have the following attributes
+    And the link with name "Contact the creator" should be visible
+    And the link with name "Contact the creator" should have the following attributes
       | name | value                              |
       | href | mailto: antoine.zanardi@epitech.eu |
     And the link with name "This project is open-source!" should be visible
-    And the page should match the snapshot with name "Home Page"
+    And the page should match or creates the missing snapshot with name "Home Page"
 
   Scenario: 🏠 Home Page has valid head title and SEO tags
     Given the user is on home page

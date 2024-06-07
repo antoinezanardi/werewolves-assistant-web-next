@@ -10,7 +10,7 @@ describe("Game Play Class", () => {
         source,
         action: "eat",
         occurrence: "on-days",
-        cause: "stuttering-judge-request",
+        causes: ["stuttering-judge-request"],
         extra: "Extra",
       } as GamePlay);
       const expectedGamePlay = new GamePlay();
@@ -18,7 +18,7 @@ describe("Game Play Class", () => {
       expectedGamePlay.source = source;
       expectedGamePlay.action = "eat";
       expectedGamePlay.occurrence = "on-days";
-      expectedGamePlay.cause = "stuttering-judge-request";
+      expectedGamePlay.causes = ["stuttering-judge-request"];
 
       expect(createdGamePlay).toStrictEqual<GamePlay>(expectedGamePlay);
     });

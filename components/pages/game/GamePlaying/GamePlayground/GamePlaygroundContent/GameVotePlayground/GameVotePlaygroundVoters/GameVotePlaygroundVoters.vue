@@ -15,12 +15,12 @@
     <div
       v-else
       id="voters"
-      class="grid grid-cols-4 items-center justify-center"
+      class="flex flex-wrap h-full items-center justify-center"
     >
       <GamePlaygroundPlayerCard
         v-for="voter in voters"
         :key="voter._id"
-        class="voter"
+        class="p-3 voter w-1/3"
         :player="voter"
       />
     </div>

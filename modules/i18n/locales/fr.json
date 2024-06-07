@@ -392,8 +392,9 @@
   "pages": {
     "index": {
       "play": "Jouer",
-      "about": "À quoi ça sert",
-      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous"
+      "about": "À quoi ça sert ?",
+      "werewolvesAssistantLogo": "Logo de l'Assistant Loups-Garous",
+      "perfectToolForGameMasters": "L'outil parfait pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
     },
     "about": {
       "whyAnAssistant": "Un assistant ? Pour quoi faire ?",
@@ -438,7 +439,7 @@
       "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
     },
     "IndexFooter": {
-      "contact": "Me contacter"
+      "contact": "Contacter le créateur"
     },
     "NavBar": {
       "navBar": "Barre de navigation",
@@ -1184,10 +1185,12 @@
       "watchOutForAngelOrHeWins": "Attention à l'Ange, s'il est éliminé lors de ce vote, il gagne la partie immédiatement et seul !",
       "voteBecauseOfStutteringJudge": "Les survivants vont voter à nouveau car le Juge Bègue a demandé un autre vote.",
       "voteBecauseOfPreviousTies": "Les survivants vont voter à nouveau car le précédent vote s'est terminé par une égalité.",
-      "survivorsMustVoteBetween": "Le village doit voter entre {players}. Qui sera éliminé ?",
+      "survivorsMustVoteBetween": "Le village doit voter entre {players}. Qui sera éliminé ? En cas d'égalité, il n'y aura pas de pendaison.",
       "survivorsVote": "Survivants, il est temps de voter et d'éliminer un joueur du village.",
       "survivorsBuryDeadBodies": "Survivants, il est temps d'enterrer les corps des morts du village.",
-      "survivorsElectSheriff": "Survivants, il est temps d'élire le Maire du village."
+      "survivorsElectSheriff": "Survivants, il est temps d'élire le Maire du village.",
+      "sheriffElectionBecauseOfPreviousTies": "Les survivants vont élire à nouveau le Maire du village car le précédent vote s'est terminé par une égalité.",
+      "survivorsMustElectBetween": "Le village doit élire entre {players}. En cas d'égalité, le Maire sera choisi aléatoirement."
     },
     "GameAccursedWolfFatherTurnStartsEvent": {
       "accursedWolfFatherCanInfect": "L'Infect Père des Loups se réveille et peut infecter un joueur dévoré par les Loups-Garous s'il le souhaite."
@@ -1296,6 +1299,12 @@
       "gameMasterWillMimeRole": "Comme la Voyante est silencieuse, le Maître de jeu mimera le rôle du joueur vu.",
       "seerHasSeenSide": "Le Voyant a vu un joueur du camp des {side} !",
       "seerHasSeenRole": "Le Voyant a vu {role} !"
+    },
+    "GameSheriffHasBeenElectedEvent": {
+      "cantFindElectedSheriff": "Le Maire élu ne peut être trouvé… Veuillez continuer.",
+      "sheriffHasBeenElectedBySurvivors": "Les survivants ont élu {playerName} comme Maire du village !",
+      "sheriffCanMakeSpeech": "Le Maire peut faire un discours poignant sur son élection.",
+      "sheriffHasBeenElectedByDelegation": "{playerName} est le nouveau Maire du village !"
     }
   }
 }

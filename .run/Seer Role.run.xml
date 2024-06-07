@@ -6,7 +6,6 @@
     <option name="workingDirectory" value="$PROJECT_DIR$" />
     <envs>
       <env name="NODE_OPTIONS" value="--import tsx/esm" />
-      <env name="SKIP_SCREENSHOTS_COMPARISON_TESTS" value="true" />
     </envs>
     <method v="2" />
   </configuration>

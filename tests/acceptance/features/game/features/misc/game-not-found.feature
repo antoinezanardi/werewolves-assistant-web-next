@@ -8,7 +8,7 @@ Feature: 🎲❓Game Not Found
     And the link with name "Create another game" should be visible
     And the link with name "Back to home" should be visible
     And the toast with text "Bad request" should be visible
-    And the page should match the snapshot with name "Game not found"
+    And the page should match or creates the missing snapshot with name "Game not found"
 
   Scenario: 🎲❓Game not found page has valid head title and SEO tags
     Given the user goes on an unknown game

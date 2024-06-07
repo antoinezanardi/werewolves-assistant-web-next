@@ -21,7 +21,7 @@ const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
 const { getPlayersNamesText } = usePlayers();
-const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
+const { priorityCauseInCurrentGamePlay, getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
 
 const { t } = useI18n();
 
@@ -39,32 +39,40 @@ const gameEventTexts = computed<string[]>(() => {
   return currentPlayActionTextMethods[currentPlay.action]?.(currentPlay) ?? [];
 });
 
-function getGameEventTextsForElectingSheriff(): string[] {
+function getGameEventTextsForElectingSheriff(gamePlay: GamePlay): string[] {
+  if (gamePlay.causes?.includes("previous-votes-were-in-ties") === true) {
+    const eligiblePlayersInTie = getEligibleTargetsWithInteractionInCurrentGamePlay("choose-as-sheriff");
+
+    return [
+      t("components.GameSurvivorsTurnStartsEvent.sheriffElectionBecauseOfPreviousTies"),
+      t("components.GameSurvivorsTurnStartsEvent.survivorsMustElectBetween", { players: getPlayersNamesText(eligiblePlayersInTie) }),
+    ];
+  }
   return [t("components.GameSurvivorsTurnStartsEvent.survivorsElectSheriff")];
 }
 
 function getGameEventTextsForVotingWithCause(cause: GamePlayCause): string[] {
   const eligiblePlayersInTie = getEligibleTargetsWithInteractionInCurrentGamePlay("vote");
   const votingCauseTexts: Record<GamePlayCause, string[]> = {
+    "previous-votes-were-in-ties": [
+      t("components.GameSurvivorsTurnStartsEvent.voteBecauseOfPreviousTies"),
+      t("components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween", { players: getPlayersNamesText(eligiblePlayersInTie) }),
+    ],
     "angel-presence": [
       t("components.GameSurvivorsTurnStartsEvent.gameStartsWithVoteBecauseOfAngelPresence"),
       t("components.GameSurvivorsTurnStartsEvent.watchOutForAngelOrHeWins"),
     ],
     "stuttering-judge-request": [t("components.GameSurvivorsTurnStartsEvent.voteBecauseOfStutteringJudge")],
-    "previous-votes-were-in-ties": [
-      t("components.GameSurvivorsTurnStartsEvent.voteBecauseOfPreviousTies"),
-      t("components.GameSurvivorsTurnStartsEvent.survivorsMustVoteBetween", { players: getPlayersNamesText(eligiblePlayersInTie) }),
-    ],
   };
 
   return votingCauseTexts[cause];
 }
 
-function getGameEventTextsForVoting(currentPlay: GamePlay): string[] {
-  if (currentPlay.cause === undefined) {
+function getGameEventTextsForVoting(): string[] {
+  if (!priorityCauseInCurrentGamePlay.value) {
     return [t("components.GameSurvivorsTurnStartsEvent.survivorsVote")];
   }
-  return getGameEventTextsForVotingWithCause(currentPlay.cause);
+  return getGameEventTextsForVotingWithCause(priorityCauseInCurrentGamePlay.value);
 }
 
 function getGameEventTextsForBuryingDeadBodies(): string[] {

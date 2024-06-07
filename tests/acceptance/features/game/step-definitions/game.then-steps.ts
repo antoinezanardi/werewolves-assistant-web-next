@@ -15,3 +15,7 @@ Then(/^the game's current play title should be "(?<name>.+?)"$/u, async function
 Then(/^the game's current play question should be "(?<name>.+?)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await expect(this.page.getByRole("heading", { name, exact: true })).toBeVisible();
 });
+
+Then(/^the game's phase name should be "(?<name>.+?)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await expect(this.page.getByTestId("game-playground-header-phase").getByText(name, { exact: true })).toBeVisible();
+});

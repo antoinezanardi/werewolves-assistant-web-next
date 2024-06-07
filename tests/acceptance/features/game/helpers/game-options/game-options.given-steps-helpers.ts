@@ -1,8 +1,6 @@
-import { clickOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
 
 async function switchRoleOptionInGameOptionsHub(world: CustomWorld, selector: string, isChecked: boolean): Promise<void> {
-  await clickOnRoleWithText(world, "button", "Game options");
   const switchOption = world.page.locator(selector).getByRole("switch");
   if (isChecked) {
     await switchOption.check();
@@ -12,4 +10,13 @@ async function switchRoleOptionInGameOptionsHub(world: CustomWorld, selector: st
   await switchOption.uncheck();
 }
 
-export { switchRoleOptionInGameOptionsHub };
+async function fillInputNumberInGameOptionsHub(world: CustomWorld, locator: string, value: string): Promise<void> {
+  const input = world.page.locator(locator).getByRole("spinbutton");
+  await input.waitFor({ state: "visible" });
+  await input.fill(value);
+}
+
+export {
+  switchRoleOptionInGameOptionsHub,
+  fillInputNumberInGameOptionsHub,
+};

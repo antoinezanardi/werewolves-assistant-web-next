@@ -71,7 +71,7 @@ describe("Game Sheriff Turn Starts Event Component", () => {
 
     it("should pass event texts when current play is settle votes.", () => {
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameSheriffTurnStartsEvent>("#game-sheriff-turn-starts-event");
-      const expectedTexts: string[] = ["components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {\"players\":\"Antoine common.and Benoit\"}"];
+      const expectedTexts: string[] = ["components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {\"players\":\"Antoine shared.and Benoit\"}"];
       const expectedTextsAsString = expectedTexts.join(",");
 
       expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);

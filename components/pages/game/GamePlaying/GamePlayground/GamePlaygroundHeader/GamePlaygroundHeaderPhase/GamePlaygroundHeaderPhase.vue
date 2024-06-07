@@ -2,6 +2,7 @@
   <div
     id="game-playground-header-phase"
     class="flex items-center"
+    data-testid="game-playground-header-phase"
   >
     <GamePhaseIcon
       class="fa-2x me-3"

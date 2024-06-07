@@ -4,13 +4,14 @@ exports[`Index Page Component > should match snapshot when rendered. 1`] = `
 "<div class="flex flex-col">
   <div class="flex flex-col grow items-center justify-center">
     <div class="flex justify-center w-full">
-      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="sm:150 lg:200" alt="Werewolves Assistant logo"></nuxt-img-stub>
+      <nuxt-img-stub src="/img/logo/square/werewolves-logo.png" sizes="sm:125 lg:200" alt="Werewolves Assistant logo"></nuxt-img-stub>
     </div>
-    <div class="my-6 text-center w-full">
-      <h1 id="title" class="md:!text-5xl mt-0">Werewolves Assistant</h1>
+    <div class="mb-16 mt-6 text-center w-full">
+      <h1 id="title" class="!text-5xl !tracking-wider mt-0">Werewolves Assistant</h1>
+      <h5 id="subtitle" class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"><i class="fa fa-sun md:w-auto text-2xl text-day w-2/12"></i><span>The perfect tool for game masters of the Werewolves of Miller's Hollow™</span><i class="fa fa-moon md:w-auto text-2xl text-night w-2/12"></i></h5>
     </div>
-    <nuxt-link-stub to="/game-lobby" id="play-button" class="lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"></nuxt-link-stub>
-    <nuxt-link-stub to="/about" id="about-button" class="lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"></nuxt-link-stub>
+    <nuxt-link-stub to="/game-lobby" id="play-button" class="flex justify-center lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"></nuxt-link-stub>
+    <nuxt-link-stub to="/about" id="about-button" class="flex justify-center lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"></nuxt-link-stub>
   </div>
   <divider-stub></divider-stub>
   <index-footer-stub class="mt-1"></index-footer-stub>

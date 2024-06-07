@@ -21,4 +21,11 @@ function createFakeUseScroll(): ReturnType<typeof useScroll> {
   };
 }
 
-export { createFakeUseScroll };
+function createFakeUseElementHover(): ReturnType<typeof useElementHover> {
+  return ref(false);
+}
+
+export {
+  createFakeUseScroll,
+  createFakeUseElementHover,
+};
