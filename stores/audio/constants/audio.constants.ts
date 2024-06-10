@@ -1,0 +1,47 @@
+const SOUND_EFFECT_NAMES = [
+  "angelic-intervention",
+  "bear-growling",
+  "boys-playing",
+  "cocorico",
+  "crowd-cheering",
+  "death",
+  "dog-barking",
+  "dramatic-announcement",
+  "dramatic-drums",
+  "evil-laugh",
+  "flute-and-drums",
+  "fox-sniffing",
+  "gavel-hitting",
+  "girls-playing",
+  "goat-cry",
+  "gun-shot",
+  "heartbeat",
+  "love-arrow-shot",
+  "magic-mood",
+  "magic-wand",
+  "monkey-cry",
+  "mystical-mood",
+  "raven-cry",
+  "supernatural-mood",
+  "sword",
+  "time-is-up",
+  "trumpet-fanfare",
+  "werewolf-howling",
+  "werewolf-growling-2",
+  "werewolf-growling",
+  "werewolf-transformation",
+  "witch-laughing",
+] as const;
+
+const BACKGROUND_AUDIO_NAMES = [
+  "day-1",
+  "day-2",
+  "night-1",
+  "night-2",
+  "night-3",
+] as const;
+
+export {
+  SOUND_EFFECT_NAMES,
+  BACKGROUND_AUDIO_NAMES,
+};

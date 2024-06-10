@@ -13,6 +13,8 @@ import GameEventFlippingPlaySourcePlayersCard from "~/components/shared/game/gam
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import { usePlayers } from "~/composables/api/game/player/usePlayers";
+import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
@@ -20,6 +22,10 @@ const { game } = storeToRefs(gameStore);
 
 const { getPlayersNamesText } = usePlayers();
 const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
+
+const audioStore = useAudioStore();
+const { playSoundEffect } = audioStore;
+
 const { t } = useI18n();
 
 const playersInTieText = computed<string>(() => {
@@ -37,4 +43,6 @@ const gameEventTexts = computed<string[]>(() => {
   }
   return [t("components.GameSheriffTurnStartsEvent.sheriffSettlesVotes", { players: playersInTieText.value })];
 });
+
+playSoundEffect("dramatic-drums");
 </script>
