@@ -1,4 +1,4 @@
-import { Howl } from "howler";
+import { Howl, Howler } from "howler";
 import { draw } from "radash";
 import { defineStore } from "pinia";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
@@ -7,6 +7,8 @@ import type { BackgroundAudioName, SoundEffectName } from "~/stores/audio/types/
 import { StoreIds } from "~/stores/enums/store.enum";
 
 const useAudioStore = defineStore(StoreIds.AUDIO, () => {
+  const isMuted = ref<boolean>(false);
+
   const soundEffects = Object.fromEntries(SOUND_EFFECT_NAMES.map(name => [name, createSoundEffect(name)])) as Record<SoundEffectName, Howl>;
 
   const backgroundAudios = Object.fromEntries(BACKGROUND_AUDIO_NAMES.map(name => [name, createBackgroundAudio(name)])) as Record<BackgroundAudioName, Howl>;
@@ -56,6 +58,7 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
     const fadeOutDuration = 1000;
     const playingBackgroundAudio = backgroundAudios[playingBackgroundAudioName.value];
     playingBackgroundAudio.fade(1, 0, fadeOutDuration);
+    playingBackgroundAudioName.value = undefined;
     setTimeout(() => playingBackgroundAudio.stop(), fadeOutDuration);
   }
 
@@ -78,7 +81,13 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
     fadeOutPlayingBackgroundAudio();
     playBackgroundAudio(randomGamePhaseBackgroundAudioName);
   }
+
+  function toggleMute(): void {
+    isMuted.value = !isMuted.value;
+    Howler.mute(isMuted.value);
+  }
   return {
+    isMuted,
     soundEffects,
     backgroundAudios,
     playingBackgroundAudioName,
@@ -91,6 +100,7 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
     fadeOutPlayingBackgroundAudio,
     playBackgroundAudio,
     playRandomGamePhaseBackgroundAudio,
+    toggleMute,
   };
 });
 

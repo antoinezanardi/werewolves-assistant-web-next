@@ -59,6 +59,7 @@ describe("Game Over Component", () => {
             methods: mocks.components.gameOverHistory,
           },
         },
+        plugins: [createTestingPinia(testingPinia)],
       },
     });
   });
@@ -116,6 +117,46 @@ describe("Game Over Component", () => {
         test: "should play angelic intervention sound effect when angels win.",
         expectedSoundEffect: "angelic-intervention",
         game: createFakeGame({ victory: createFakeGameVictory({ type: "angel" }) }),
+      },
+      {
+        test: "should play heartbeat sound effect when lovers win.",
+        expectedSoundEffect: "heartbeat",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "lovers" }) }),
+      },
+      {
+        test: "should play death sound effect when none win.",
+        expectedSoundEffect: "death",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "none" }) }),
+      },
+      {
+        test: "should play flute and drums sound effect when pied piper win.",
+        expectedSoundEffect: "flute-and-drums",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "pied-piper" }) }),
+      },
+      {
+        test: "should play possessed laugh sound effect when prejudiced manipulator wins.",
+        expectedSoundEffect: "possessed-laugh",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "prejudiced-manipulator" }) }),
+      },
+      {
+        test: "should play crowd cheering sound effect when villagers win.",
+        expectedSoundEffect: "crowd-cheering",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "villagers" }) }),
+      },
+      {
+        test: "should play werewolf howling sound effect when werewolves win.",
+        expectedSoundEffect: "werewolf-howling",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "werewolves" }) }),
+      },
+      {
+        test: "should play werewolf transformation sound effect when white werewolf wins.",
+        expectedSoundEffect: "werewolf-transformation",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "white-werewolf" }) }),
+      },
+      {
+        test: "should play death sound effect when there is no win.",
+        expectedSoundEffect: "death",
+        game: createFakeGame(),
       },
     ])("$test", async({ expectedSoundEffect, game }) => {
       wrapper = await mountGameOverWinnersComponent({ global: { plugins: [createTestingPinia({ initialState: { [StoreIds.GAME]: { game } } })] } });

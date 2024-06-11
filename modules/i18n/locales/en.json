@@ -1305,6 +1305,10 @@
       "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village !",
       "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers.",
       "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village !"
+    },
+    "MuteButton": {
+      "mute": "Mute",
+      "unmute": "Unmute"
     }
   }
 }
