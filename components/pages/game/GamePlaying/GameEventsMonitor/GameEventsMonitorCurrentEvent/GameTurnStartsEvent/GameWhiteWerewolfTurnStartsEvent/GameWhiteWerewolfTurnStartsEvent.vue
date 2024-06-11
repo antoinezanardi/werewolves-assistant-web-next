@@ -19,5 +19,5 @@ const { t } = useI18n();
 
 const gameEventTexts = computed<string[]>(() => [t("components.GameWhiteWerewolfTurnStartsEvent.whiteWerewolfCanEatAnotherWolf")]);
 
-playSoundEffect("werewolf-growling");
+playSoundEffect("werewolf-growling-1");
 </script>

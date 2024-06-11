@@ -1,8 +1,17 @@
 import { createPinia, setActivePinia } from "pinia";
 import { Howl } from "howler";
+import type Radash from "radash";
+import { vi } from "vitest";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 vi.mock("howler");
+
+const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
+
+vi.mock("radash", async importOriginal => ({
+  ...await importOriginal<typeof Radash>(),
+  draw: vi.fn(mockedRadash.draw),
+}));
 
 describe("Use Audio Store", () => {
   beforeEach(() => {
@@ -13,25 +22,43 @@ describe("Use Audio Store", () => {
     it("should create sound effects and background audios when created.", () => {
       useAudioStore();
 
-      expect(Howl).toHaveBeenCalledTimes(35);
+      expect(Howl).toHaveBeenCalledTimes(38);
       expect(Howl).toHaveBeenNthCalledWith(1, {
         preload: false,
-        src: ["audio/sound-effects/angelic-intervention.webm"],
+        src: ["/audio/sound-effects/angelic-intervention.webm"],
       });
       expect(Howl).toHaveBeenNthCalledWith(2, {
         preload: false,
-        src: ["audio/sound-effects/bear-growling.webm"],
+        src: ["/audio/sound-effects/bear-growling.webm"],
       });
-      expect(Howl).toHaveBeenNthCalledWith(34, {
+      expect(Howl).toHaveBeenNthCalledWith(37, {
         preload: false,
-        src: [`audio/audio-backgrounds/night-2.webm`],
+        src: [`/audio/audio-backgrounds/night-2.webm`],
         loop: true,
       });
-      expect(Howl).toHaveBeenNthCalledWith(35, {
+      expect(Howl).toHaveBeenNthCalledWith(38, {
         preload: false,
-        src: [`audio/audio-backgrounds/night-3.webm`],
+        src: [`/audio/audio-backgrounds/night-3.webm`],
         loop: true,
       });
+    });
+
+    it("should set playing background audio name to undefined when created.", () => {
+      const { playingBackgroundAudioName } = useAudioStore();
+
+      expect(playingBackgroundAudioName).toBeUndefined();
+    });
+
+    it("should set night background audio names when created.", () => {
+      const { nightBackgroundAudioNames } = useAudioStore();
+
+      expect(nightBackgroundAudioNames).toStrictEqual<string[]>(["night-1", "night-2", "night-3"]);
+    });
+
+    it("should set day background audio names when created.", () => {
+      const { dayBackgroundAudioNames } = useAudioStore();
+
+      expect(dayBackgroundAudioNames).toStrictEqual<string[]>(["day-1", "day-2"]);
     });
   });
 
@@ -57,6 +84,21 @@ describe("Use Audio Store", () => {
     });
   });
 
+  describe("loadAllAudios", () => {
+    it("should load all audios when called.", () => {
+      const { loadAllAudios } = useAudioStore();
+      const { backgroundAudios, soundEffects } = useAudioStore();
+      loadAllAudios();
+
+      for (const backgroundAudio of Object.values(backgroundAudios)) {
+        expect(backgroundAudio.load).toHaveBeenCalledExactlyOnceWith();
+      }
+      for (const soundEffect of Object.values(soundEffects)) {
+        expect(soundEffect.load).toHaveBeenCalledExactlyOnceWith();
+      }
+    });
+  });
+
   describe("playSoundEffect", () => {
     it("should play the sound effect when called.", () => {
       const { soundEffects, playSoundEffect } = useAudioStore();
@@ -67,13 +109,116 @@ describe("Use Audio Store", () => {
     });
   });
 
+  describe("fadeOutPlayingBackgroundAudio", () => {
+    it("should not fade out playing background audio when there is no playing background audio.", () => {
+      const { fadeOutPlayingBackgroundAudio, backgroundAudios } = useAudioStore();
+      fadeOutPlayingBackgroundAudio();
+
+      for (const backgroundAudio of Object.values(backgroundAudios)) {
+        expect(backgroundAudio.fade).not.toHaveBeenCalled();
+      }
+    });
+
+    it("should fade out playing background audio when there is playing background audio.", () => {
+      const audioStore = useAudioStore();
+      const { fadeOutPlayingBackgroundAudio, backgroundAudios } = audioStore;
+      audioStore.playingBackgroundAudioName = "night-1";
+      fadeOutPlayingBackgroundAudio();
+
+      expect(backgroundAudios["night-1"].fade).toHaveBeenCalledExactlyOnceWith(1, 0, 1000);
+    });
+
+    it("should stop playing background audio when there is playing background audio.", () => {
+      const audioStore = useAudioStore();
+      const { fadeOutPlayingBackgroundAudio, backgroundAudios } = audioStore;
+      audioStore.playingBackgroundAudioName = "night-1";
+      fadeOutPlayingBackgroundAudio();
+      vi.runAllTimers();
+
+      expect(backgroundAudios["night-1"].stop).toHaveBeenCalledExactlyOnceWith();
+    });
+  });
+
   describe("playBackgroundAudio", () => {
+    it("should fade in playing background audio when called.", () => {
+      const { backgroundAudios, playBackgroundAudio } = useAudioStore();
+      const backgroundAudioName = "night-1";
+      playBackgroundAudio(backgroundAudioName);
+
+      expect(backgroundAudios[backgroundAudioName].fade).toHaveBeenCalledExactlyOnceWith(0, 1, 1000);
+    });
+
     it("should play the background audio when called.", () => {
       const { backgroundAudios, playBackgroundAudio } = useAudioStore();
       const backgroundAudioName = "night-1";
       playBackgroundAudio(backgroundAudioName);
 
       expect(backgroundAudios[backgroundAudioName].play).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should set playing background audio name to the background audio name when called.", () => {
+      const { playBackgroundAudio } = useAudioStore();
+      const backgroundAudioName = "night-1";
+      playBackgroundAudio(backgroundAudioName);
+
+      expect(useAudioStore().playingBackgroundAudioName).toBe(backgroundAudioName);
+    });
+  });
+
+  describe("playRandomGamePhaseBackgroundAudio", () => {
+    beforeEach(() => {
+      mockedRadash.draw.mockReturnValue("night-1");
+    });
+
+    it("should not draw a random game phase background audio when the playing background audio is in the same game phase.", () => {
+      const audioStore = useAudioStore();
+      audioStore.playingBackgroundAudioName = "night-2";
+      audioStore.playRandomGamePhaseBackgroundAudio("night");
+
+      expect(mockedRadash.draw).not.toHaveBeenCalled();
+    });
+
+    it("should draw a random game phase background audio when the playing background audio is not in the same game phase.", () => {
+      const audioStore = useAudioStore();
+      audioStore.playingBackgroundAudioName = "day-1";
+      audioStore.playRandomGamePhaseBackgroundAudio("night");
+
+      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.nightBackgroundAudioNames);
+    });
+
+    it("should draw a random game phase background audio when there is no playing background audio.", () => {
+      const audioStore = useAudioStore();
+      audioStore.playRandomGamePhaseBackgroundAudio("day");
+
+      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.dayBackgroundAudioNames);
+    });
+
+    it("should fade out playing background audio when called.", () => {
+      const audioStore = useAudioStore();
+      const { backgroundAudios } = audioStore;
+      audioStore.playingBackgroundAudioName = "day-1";
+      audioStore.playRandomGamePhaseBackgroundAudio("night");
+
+      expect(backgroundAudios["day-1"].fade).toHaveBeenCalledExactlyOnceWith(1, 0, 1000);
+    });
+
+    it("should play the random game phase background audio when called.", () => {
+      const audioStore = useAudioStore();
+      const { backgroundAudios } = audioStore;
+      audioStore.playingBackgroundAudioName = "day-1";
+      audioStore.playRandomGamePhaseBackgroundAudio("night");
+
+      expect(backgroundAudios["night-1"].play).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should not play the random game phase background audio when there is no random game phase background audio.", () => {
+      const audioStore = useAudioStore();
+      const { backgroundAudios } = audioStore;
+      audioStore.playingBackgroundAudioName = "day-1";
+      mockedRadash.draw.mockReturnValue(null);
+      audioStore.playRandomGamePhaseBackgroundAudio("night");
+
+      expect(backgroundAudios["day-1"].fade).not.toHaveBeenCalled();
     });
   });
 });

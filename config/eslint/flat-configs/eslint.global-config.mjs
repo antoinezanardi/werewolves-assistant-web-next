@@ -32,6 +32,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       reactive: READONLY,
       onMounted: READONLY,
       watch: READONLY,
+      onUnmounted: READONLY,
       nextTick: READONLY,
       useScroll: READONLY,
       console: READONLY,

@@ -7,6 +7,7 @@ import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/
 
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
 import GameLobby from "~/pages/game-lobby.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -80,6 +81,12 @@ describe("Game Lobby Page", () => {
       const gameStore = useGameStore();
 
       expect(gameStore.resetGame).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should load all audios when rendered.", () => {
+      const audioStore = useAudioStore();
+
+      expect(audioStore.loadAllAudios).toHaveBeenCalledExactlyOnceWith();
     });
   });
 

@@ -54,7 +54,7 @@ const { fetchAndSetGame } = gameStore;
 const { game, fetchingGameStatus } = storeToRefs(gameStore);
 
 const audioStore = useAudioStore();
-const { loadAllAudios } = audioStore;
+const { loadAllAudios, fadeOutPlayingBackgroundAudio } = audioStore;
 
 const { t } = useI18n();
 
@@ -78,4 +78,6 @@ const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
 const gameId = Array.isArray(id) ? id[0] : id;
 void fetchAndSetGame(gameId);
 loadAllAudios();
+
+onUnmounted(fadeOutPlayingBackgroundAudio);
 </script>

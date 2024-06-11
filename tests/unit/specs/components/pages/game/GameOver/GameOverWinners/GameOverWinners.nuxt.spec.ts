@@ -1,5 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 
 import GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
 import { StoreIds } from "~/stores/enums/store.enum";

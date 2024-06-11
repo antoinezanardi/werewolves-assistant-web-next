@@ -35,7 +35,7 @@ import { useGameStore } from "~/stores/game/useGameStore";
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const { playSoundEffect } = useAudioStore();
+const { playSoundEffect, playRandomGamePhaseBackgroundAudio } = useAudioStore();
 
 const { t } = useI18n();
 
@@ -74,7 +74,7 @@ function triggerPhaseTransition(): void {
 }
 
 function triggerPhaseTransitionTimeout(): void {
-  const timeoutInMs = 1000;
+  const timeoutInMs = 750;
 
   window.setTimeout(triggerPhaseTransition, timeoutInMs);
 }
@@ -86,6 +86,7 @@ function playPhaseSoundEffect(): void {
 
 triggerPhaseTransitionTimeout();
 playPhaseSoundEffect();
+playRandomGamePhaseBackgroundAudio(game.value.phase.name);
 </script>
 
 <style scoped lang="scss">
