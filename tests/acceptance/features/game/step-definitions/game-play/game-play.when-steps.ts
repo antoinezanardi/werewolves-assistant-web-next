@@ -94,3 +94,8 @@ When(/^the sheriff delegates his role to the player with name "(?<name>.+)"$/u, 
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
+
+When(/^the defender protects the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});
