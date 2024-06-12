@@ -72,3 +72,10 @@ Given(/^the user makes the big bad wolf remaining powerful even if one werewolf 
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input", false);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user allows the defender to protect twice in a row in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-defender-can-protect-twice-input", true);
+  await closeDialogWithHeaderButton(this);
+});

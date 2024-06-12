@@ -127,6 +127,12 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>🛡️ Defender protects Playground</summary>
+>>        
+>>    ![Defender protects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Defender%20protects%20Playground.png)
+>> 
+>>   </details>
+>>   <details>
 >>    <summary>🔫 Hunter shoots Playground</summary>
 >>        
 >>    ![Hunter shoots Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Hunter%20shoots%20Playground.png)
