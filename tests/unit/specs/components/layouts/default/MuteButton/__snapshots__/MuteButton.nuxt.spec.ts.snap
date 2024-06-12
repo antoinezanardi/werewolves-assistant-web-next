@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Mute Button Component > should match snapshot when rendered. 1`] = `
+"<button id="mute-button" aria-label="components.MuteButton.mute" type="button" data-pd-tooltip="true">
+  <div id="mute-button-lottie" animation-data="[object Object]" auto-play="false" height="25" loop="false" speed="2" width="25"></div>
+</button>"
+`;
