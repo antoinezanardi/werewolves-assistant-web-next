@@ -32,6 +32,7 @@ import GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayer
 import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/GameLobbyRolePicker/game-lobby-role-picker.types";
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -39,6 +40,9 @@ const createGameDtoStore = useCreateGameDtoStore();
 const { resetCreateGameDto } = createGameDtoStore;
 const gameStore = useGameStore();
 const { resetGame } = gameStore;
+
+const audioStore = useAudioStore();
+const { loadAllAudios } = audioStore;
 
 const { t } = useI18n();
 
@@ -69,4 +73,5 @@ function openGameOptionsHub(): void {
 
 resetCreateGameDto();
 resetGame();
+loadAllAudios();
 </script>

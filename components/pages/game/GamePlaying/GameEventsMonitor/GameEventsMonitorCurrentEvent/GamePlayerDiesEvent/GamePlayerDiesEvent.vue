@@ -21,9 +21,13 @@ import type { GamePlayerDiesEventProps } from "~/components/pages/game/GamePlayi
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const props = defineProps<GamePlayerDiesEventProps>();
+
+const audioStore = useAudioStore();
+const { playSoundEffect } = audioStore;
 
 const { t } = useI18n();
 
@@ -45,4 +49,6 @@ const gamePlayerDiesEventTexts = computed<string[]>(() => {
     t(roleRevealTKey),
   ];
 });
+
+playSoundEffect("death");
 </script>

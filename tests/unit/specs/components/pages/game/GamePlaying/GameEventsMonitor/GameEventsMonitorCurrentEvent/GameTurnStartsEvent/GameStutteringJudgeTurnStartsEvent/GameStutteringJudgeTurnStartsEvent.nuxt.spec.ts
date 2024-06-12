@@ -1,6 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameStutteringJudgeTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameStutteringJudgeTurnStartsEvent/GameStutteringJudgeTurnStartsEvent.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 
@@ -26,6 +27,12 @@ describe("Game Stuttering Judge Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play gavel hitting sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("gavel-hitting");
   });
 
   describe("Game Stuttering Judge Turn Starts Event Texts", () => {

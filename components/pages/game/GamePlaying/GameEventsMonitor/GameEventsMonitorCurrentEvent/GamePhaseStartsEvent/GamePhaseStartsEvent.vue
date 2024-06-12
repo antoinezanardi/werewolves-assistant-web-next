@@ -28,10 +28,14 @@ import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWit
 import GameDayPhaseLottie from "~/components/shared/game/game-phase/GamePhaseLottie/GameDayPhaseLottie/GameDayPhaseLottie.vue";
 import GameNightPhaseLottie from "~/components/shared/game/game-phase/GamePhaseLottie/GameNightPhaseLottie/GameNightPhaseLottie.vue";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
+import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
+
+const { playSoundEffect, playRandomGamePhaseBackgroundAudio } = useAudioStore();
 
 const { t } = useI18n();
 
@@ -70,12 +74,19 @@ function triggerPhaseTransition(): void {
 }
 
 function triggerPhaseTransitionTimeout(): void {
-  const timeoutInMs = 1000;
+  const timeoutInMs = 750;
 
   window.setTimeout(triggerPhaseTransition, timeoutInMs);
 }
 
+function playPhaseSoundEffect(): void {
+  const phaseSoundEffect: SoundEffectName = game.value.phase.name === "day" ? "cocorico" : "supernatural-mood";
+  playSoundEffect(phaseSoundEffect);
+}
+
 triggerPhaseTransitionTimeout();
+playPhaseSoundEffect();
+playRandomGamePhaseBackgroundAudio(game.value.phase.name);
 </script>
 
 <style scoped lang="scss">

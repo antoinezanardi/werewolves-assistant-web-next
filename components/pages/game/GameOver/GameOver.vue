@@ -29,7 +29,10 @@ import type { GameOverHistoryExposed } from "~/components/pages/game/GameOver/Ga
 import GameOverHistory from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistory.vue";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
+import type { GameVictoryType } from "~/composables/api/game/types/game-victory/game-victory.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -39,7 +42,20 @@ const { game } = storeToRefs(gameStore);
 const gameHistoryRecordsStore = useGameHistoryRecordsStore();
 const { fetchAndSetGameHistoryRecords } = gameHistoryRecordsStore;
 
+const audioStore = useAudioStore();
+
 const { t } = useI18n();
+
+const victoryTypesSoundEffectName: Record<GameVictoryType, SoundEffectName> = {
+  "angel": "angelic-intervention",
+  "lovers": "heartbeat",
+  "none": "death",
+  "pied-piper": "flute-and-drums",
+  "prejudiced-manipulator": "possessed-laugh",
+  "villagers": "crowd-cheering",
+  "werewolves": "werewolf-howling",
+  "white-werewolf": "werewolf-transformation",
+};
 
 useHead({ title: t("components.GameOver.gameOver") });
 
@@ -54,5 +70,11 @@ function showGameHistory(): void {
   gameOverHistory.value.showGameHistory();
 }
 
+function playVictorySoundEffect(): void {
+  const soundEffectName = victoryTypesSoundEffectName[game.value.victory?.type ?? "none"];
+  audioStore.playSoundEffect(soundEffectName);
+}
+
 void fetchAndSetGameHistoryRecords(game.value._id);
+playVictorySoundEffect();
 </script>

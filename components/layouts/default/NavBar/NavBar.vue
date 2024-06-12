@@ -25,15 +25,31 @@
       </h3>
     </NuxtLink>
 
-    <ParametersMenu
-      id="navbar-parameters-menu"
-      v-p-tooltip.left="$t('components.NavBar.parameters')"
-    />
+    <div class="flex gap-4 items-center">
+      <Transition
+        mode="out-in"
+        name="fade"
+      >
+        <MuteButton
+          v-if="isOnGamePage"
+          id="navbar-mute-button"
+        />
+      </Transition>
+
+      <ParametersMenu
+        id="navbar-parameters-menu"
+        v-p-tooltip="$t('components.NavBar.parameters')"
+      />
+    </div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import MuteButton from "~/components/layouts/default/NavBar/MuteButton/MuteButton.vue";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
+import { useWerewolvesAssistantRoutes } from "~/composables/route/useWerewolvesAssistantRoutes";
+
+const { isOnGamePage } = useWerewolvesAssistantRoutes();
 </script>
 
 <style scoped lang="scss">
