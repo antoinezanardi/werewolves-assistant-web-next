@@ -1305,6 +1305,10 @@
       "sheriffHasBeenElectedBySurvivors": "Les survivants ont élu {playerName} comme Maire du village !",
       "sheriffCanMakeSpeech": "Le Maire peut faire un discours poignant sur son élection.",
       "sheriffHasBeenElectedByDelegation": "{playerName} est le nouveau Maire du village !"
+    },
+    "MuteButton": {
+      "mute": "Couper le son",
+      "unmute": "Activer le son"
     }
   }
 }

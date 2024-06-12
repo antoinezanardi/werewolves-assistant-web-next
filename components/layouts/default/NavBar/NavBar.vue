@@ -32,7 +32,7 @@
       >
         <MuteButton
           v-if="isOnGamePage"
-          id="mute-button"
+          id="navbar-mute-button"
         />
       </Transition>
 

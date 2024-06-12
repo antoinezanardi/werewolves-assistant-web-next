@@ -39,7 +39,7 @@ const tooltipText = computed<string>(() => (isMuted.value ? t("components.MuteBu
 
 function toggleSound(): void {
   if (!soundLottie.value) {
-    return;
+    throw createError("Sound Lottie is not initialized");
   }
   const firstMuteSegmentFrame = 0;
   const lastMuteSegmentFrame = 30;

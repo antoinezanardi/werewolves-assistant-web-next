@@ -13,7 +13,6 @@ import GameEventFlippingPlaySourcePlayersCard from "~/components/shared/game/gam
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import { usePlayers } from "~/composables/api/game/player/usePlayers";
-import type { SoundEffectName } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 

@@ -60,6 +60,12 @@ describe("Use Audio Store", () => {
 
       expect(dayBackgroundAudioNames).toStrictEqual<string[]>(["day-1", "day-2"]);
     });
+
+    it("should not be muted when created.", () => {
+      const { isMuted } = useAudioStore();
+
+      expect(isMuted).toBeFalsy();
+    });
   });
 
   describe("loadSoundEffects", () => {
@@ -219,6 +225,16 @@ describe("Use Audio Store", () => {
       audioStore.playRandomGamePhaseBackgroundAudio("night");
 
       expect(backgroundAudios["day-1"].fade).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("toggleMute", () => {
+    it("should toggle mute when called.", () => {
+      const audioStore = useAudioStore();
+      const { toggleMute } = audioStore;
+      toggleMute();
+
+      expect(audioStore.isMuted).toBeTruthy();
     });
   });
 });
