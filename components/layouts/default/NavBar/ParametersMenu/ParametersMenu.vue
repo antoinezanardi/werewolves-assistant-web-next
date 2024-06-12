@@ -2,6 +2,7 @@
   <div id="parameters-menu">
     <VuePrimeButton
       :aria-label="$t('components.ParametersMenu.parameters')"
+      class="!p-2"
       icon="fa fa-cog"
       severity="secondary"
       type="button"

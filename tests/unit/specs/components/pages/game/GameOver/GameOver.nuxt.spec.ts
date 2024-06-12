@@ -1,5 +1,6 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
@@ -8,6 +9,9 @@ import type { Ref } from "vue";
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import type GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
 import type GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
+import type { Game } from "~/composables/api/game/types/game.class";
+import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
@@ -19,7 +23,7 @@ import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helper
 import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Over Component", () => {
-  const game = createFakeGame({
+  const defaultGame = createFakeGame({
     victory: createFakeGameVictory({
       winners: [
         createFakeSeerAlivePlayer(),
@@ -36,11 +40,18 @@ describe("Game Over Component", () => {
     }
   };
   let wrapper: ReturnType<typeof mount<typeof GameOver>>;
-  const testingPinia = { initialState: { [StoreIds.GAME]: { game } } };
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
+
+  async function mountGameOverWinnersComponent(options: ComponentMountingOptions<typeof GameOver> = {}): Promise<ReturnType<typeof mount<typeof GameOver>>> {
+    return mountSuspendedComponent(GameOver, {
+      global: { plugins: [createTestingPinia(testingPinia)] },
+      ...options,
+    });
+  }
 
   beforeEach(async() => {
     mocks = { components: { gameOverHistory: { showGameHistory: vi.fn() } } };
-    wrapper = await mountSuspendedComponent(GameOver, {
+    wrapper = await mountGameOverWinnersComponent({
       global: {
         stubs: {
           GameOverHistory: {
@@ -67,7 +78,7 @@ describe("Game Over Component", () => {
   it("should fetch and set game history records when rendered.", () => {
     const gameHistoryRecordsStore = useGameHistoryRecordsStore();
 
-    expect(gameHistoryRecordsStore.fetchAndSetGameHistoryRecords).toHaveBeenCalledExactlyOnceWith(game._id);
+    expect(gameHistoryRecordsStore.fetchAndSetGameHistoryRecords).toHaveBeenCalledExactlyOnceWith(defaultGame._id);
   });
 
   describe("Game Over Winners", () => {
@@ -93,6 +104,65 @@ describe("Game Over Component", () => {
       const gameOverWinners = wrapper.findComponent<typeof GameOverWinners>("#game-over-winners");
 
       expect(gameOverWinners.exists()).toBeFalsy();
+    });
+  });
+
+  describe("Sound Effect", () => {
+    it.each<{
+      test: string;
+      expectedSoundEffect: SoundEffectName;
+      game: Game;
+    }>([
+      {
+        test: "should play angelic intervention sound effect when angels win.",
+        expectedSoundEffect: "angelic-intervention",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "angel" }) }),
+      },
+      {
+        test: "should play heartbeat sound effect when lovers win.",
+        expectedSoundEffect: "heartbeat",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "lovers" }) }),
+      },
+      {
+        test: "should play death sound effect when none win.",
+        expectedSoundEffect: "death",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "none" }) }),
+      },
+      {
+        test: "should play flute and drums sound effect when pied piper win.",
+        expectedSoundEffect: "flute-and-drums",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "pied-piper" }) }),
+      },
+      {
+        test: "should play possessed laugh sound effect when prejudiced manipulator wins.",
+        expectedSoundEffect: "possessed-laugh",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "prejudiced-manipulator" }) }),
+      },
+      {
+        test: "should play crowd cheering sound effect when villagers win.",
+        expectedSoundEffect: "crowd-cheering",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "villagers" }) }),
+      },
+      {
+        test: "should play werewolf howling sound effect when werewolves win.",
+        expectedSoundEffect: "werewolf-howling",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "werewolves" }) }),
+      },
+      {
+        test: "should play werewolf transformation sound effect when white werewolf wins.",
+        expectedSoundEffect: "werewolf-transformation",
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "white-werewolf" }) }),
+      },
+      {
+        test: "should play death sound effect when there is no win.",
+        expectedSoundEffect: "death",
+        game: createFakeGame(),
+      },
+    ])("$test", async({ expectedSoundEffect, game }) => {
+      wrapper = await mountGameOverWinnersComponent({ global: { plugins: [createTestingPinia({ initialState: { [StoreIds.GAME]: { game } } })] } });
+      const { playSoundEffect } = useAudioStore();
+
+      expect(playSoundEffect).toHaveBeenCalledExactlyOnceWith(expectedSoundEffect);
     });
   });
 

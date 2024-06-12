@@ -18,10 +18,14 @@ import GameEventFlippingLastPlayTargetsCard from "~/components/shared/game/game-
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useArrays } from "~/composables/misc/useArrays";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
+
+const audioStore = useAudioStore();
+const { playSoundEffect } = audioStore;
 
 const { t } = useI18n();
 
@@ -57,4 +61,6 @@ const gameSeerHasSeenEventTexts = computed<string[]>(() => {
     t("components.GameSeerHasSeenEvent.seerHasSeenRole", { role: targetedPlayerRoleText }),
   ];
 });
+
+playSoundEffect("magic-wand");
 </script>

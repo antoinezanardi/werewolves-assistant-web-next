@@ -6,6 +6,7 @@ import type GameEventWithTexts from "~/components/shared/game/game-event/GameEve
 import GameDayPhaseLottie from "~/components/shared/game/game-phase/GamePhaseLottie/GameDayPhaseLottie/GameDayPhaseLottie.vue";
 import GameNightPhaseLottie from "~/components/shared/game/game-phase/GamePhaseLottie/GameNightPhaseLottie/GameNightPhaseLottie.vue";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
@@ -132,6 +133,12 @@ describe("Game Phase Starts Event Component", () => {
 
         expect(gameNightPhaseLottieComponent.exists()).toBeTruthy();
       });
+
+      it("should play night sound effect when new game phase is night.", () => {
+        const audioStore = useAudioStore();
+
+        expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("supernatural-mood");
+      });
     });
 
     describe("Night to Day Transition", () => {
@@ -177,6 +184,12 @@ describe("Game Phase Starts Event Component", () => {
 
         expect(gameDayPhaseLottieComponent.exists()).toBeTruthy();
       });
+
+      it("should play day sound effect when new game phase is day.", () => {
+        const audioStore = useAudioStore();
+
+        expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("cocorico");
+      });
     });
 
     it("should set timeout to transition phase when rendered.", async() => {
@@ -184,7 +197,7 @@ describe("Game Phase Starts Event Component", () => {
       wrapper = await mountGamePhaseStartsEventComponent();
       await nextTick();
 
-      expect(setTimeoutSpy).toHaveBeenCalledExactlyOnceWith(expect.any(Function), 1000);
+      expect(setTimeoutSpy).toHaveBeenCalledExactlyOnceWith(expect.any(Function), 750);
     });
 
     it("should render any phase lottie when new game phase is not day or night.", async() => {

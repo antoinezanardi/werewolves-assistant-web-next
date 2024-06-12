@@ -3,6 +3,11 @@
 exports[`NavBar Component > should match snapshot when rendered. 1`] = `
 "<nav data-v-4f13fdda="" id="navbar" aria-label="Navigation bar" class="flex items-center justify-between py-1" role="navigation">
   <nuxt-link-stub data-v-4f13fdda="" to="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"></nuxt-link-stub>
-  <parameters-menu-stub data-v-4f13fdda="" id="navbar-parameters-menu" data-pd-tooltip="true"></parameters-menu-stub>
+  <div data-v-4f13fdda="" class="flex gap-4 items-center">
+    <transition-stub data-v-4f13fdda="" mode="out-in" name="fade" appear="false" persisted="false" css="true">
+      <mute-button-stub data-v-4f13fdda="" id="navbar-mute-button"></mute-button-stub>
+    </transition-stub>
+    <parameters-menu-stub data-v-4f13fdda="" id="navbar-parameters-menu" data-pd-tooltip="true"></parameters-menu-stub>
+  </div>
 </nav>"
 `;

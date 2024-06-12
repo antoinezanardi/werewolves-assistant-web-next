@@ -2,12 +2,16 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { NuxtImg, NuxtLink } from "#components";
+import type MuteButton from "~/components/layouts/default/NavBar/MuteButton/MuteButton.vue";
+import * as UseWerewolvesAssistantRoutes from "~/composables/route/useWerewolvesAssistantRoutes";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
 import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("NavBar Component", () => {
+  const isOnGamePage = ref<boolean>(true);
+  let mocks: { composables: { useWerewolvesAssistantRoutes: ReturnType<typeof UseWerewolvesAssistantRoutes.useWerewolvesAssistantRoutes> } };
   let wrapper: ReturnType<typeof mount<typeof NavBar>>;
 
   async function mountNavBarComponent(options: ComponentMountingOptions<typeof NavBar> = {}): Promise<ReturnType<typeof mount<typeof NavBar>>> {
@@ -20,6 +24,9 @@ describe("NavBar Component", () => {
   }
 
   beforeEach(async() => {
+    isOnGamePage.value = true;
+    mocks = { composables: { useWerewolvesAssistantRoutes: { isOnGamePage: computed<boolean>(() => isOnGamePage.value) } } };
+    vi.spyOn(UseWerewolvesAssistantRoutes, "useWerewolvesAssistantRoutes").mockReturnValue(mocks.composables.useWerewolvesAssistantRoutes);
     wrapper = await mountNavBarComponent();
   });
 
@@ -51,6 +58,22 @@ describe("NavBar Component", () => {
 
         expect(werewolvesAssistantLogoText.text()).toBe("Werewolves Assistant");
       });
+    });
+  });
+
+  describe("Mute Button", () => {
+    it("should render when on game page.", () => {
+      const muteButton = wrapper.findComponent<typeof MuteButton>("#navbar-mute-button");
+
+      expect(muteButton.exists()).toBeTruthy();
+    });
+
+    it("should not render when not on game page.", async() => {
+      isOnGamePage.value = false;
+      await nextTick();
+      const muteButton = wrapper.findComponent<typeof MuteButton>("#navbar-mute-button");
+
+      expect(muteButton.exists()).toBeFalsy();
     });
   });
 

@@ -15,6 +15,7 @@ import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentG
 import { usePlayers } from "~/composables/api/game/player/usePlayers";
 import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import type { GamePlayAction, GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
@@ -22,6 +23,9 @@ const { game } = storeToRefs(gameStore);
 
 const { getPlayersNamesText } = usePlayers();
 const { priorityCauseInCurrentGamePlay, getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(game);
+
+const audioStore = useAudioStore();
+const { playSoundEffect } = audioStore;
 
 const { t } = useI18n();
 
@@ -78,4 +82,15 @@ function getGameEventTextsForVoting(): string[] {
 function getGameEventTextsForBuryingDeadBodies(): string[] {
   return [t("components.GameSurvivorsTurnStartsEvent.survivorsBuryDeadBodies")];
 }
+
+function playSurvivorsTurnSoundEffects(): void {
+  playSoundEffect("dramatic-drums");
+  if (game.value.currentPlay?.causes?.includes("angel-presence") === true) {
+    playSoundEffect("angelic-intervention");
+  } else if (game.value.currentPlay?.causes?.includes("stuttering-judge-request") === true) {
+    playSoundEffect("gavel-hitting");
+  }
+}
+
+playSurvivorsTurnSoundEffects();
 </script>

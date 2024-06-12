@@ -1,4 +1,4 @@
-import type { GameVictoryTypes } from "~/composables/api/game/types/game-victory/game-victory.types";
+import type { GameVictoryType } from "~/composables/api/game/types/game-victory/game-victory.types";
 
 type TextsKeyAndSvgPath = {
   textKey: string;
@@ -6,7 +6,7 @@ type TextsKeyAndSvgPath = {
   svgPath: string;
 };
 
-const VICTORY_TYPES_TEXTS_AND_SVG: Record<GameVictoryTypes, TextsKeyAndSvgPath> = {
+const VICTORY_TYPES_TEXTS_AND_SVG: Record<GameVictoryType, TextsKeyAndSvgPath> = {
   "angel": {
     textKey: "components.GameOverVictoryText.angelWins",
     subTextKey: "components.GameOverVictoryText.angelComesBackToParadise",

@@ -20,11 +20,17 @@
       class="h-full"
     />
 
-    <Component
-      :is="gameStatusComponentToRender"
+    <Transition
       v-else
-      class="h-full"
-    />
+      mode="out-in"
+      name="fade"
+    >
+      <Component
+        :is="gameStatusComponentToRender"
+        :key="game.status"
+        class="h-full"
+      />
+    </Transition>
   </div>
 </template>
 
@@ -37,6 +43,7 @@ import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
 import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import type { GameStatus } from "~/composables/api/game/types/game.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 type GameStatusComponent = typeof GameCanceled | typeof GameOver | typeof GamePlaying;
@@ -45,6 +52,9 @@ const route = useRoute();
 const gameStore = useGameStore();
 const { fetchAndSetGame } = gameStore;
 const { game, fetchingGameStatus } = storeToRefs(gameStore);
+
+const audioStore = useAudioStore();
+const { loadAllAudios, fadeOutPlayingBackgroundAudio } = audioStore;
 
 const { t } = useI18n();
 
@@ -67,4 +77,7 @@ const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
 
 const gameId = Array.isArray(id) ? id[0] : id;
 void fetchAndSetGame(gameId);
+loadAllAudios();
+
+onUnmounted(fadeOutPlayingBackgroundAudio);
 </script>
