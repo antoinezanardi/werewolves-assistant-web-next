@@ -1,7 +1,7 @@
 <template>
   <GameEventWithTexts
     id="game-charmed-turn-starts-event"
-    :texts="gameEventTexts"
+    :texts="charmedGameEventTexts"
   >
     <GameEventFlippingPlaySourcePlayersCard/>
   </GameEventWithTexts>
@@ -24,12 +24,16 @@ const { t } = useI18n();
 
 const isFirstNight = computed<boolean>(() => game.value.turn === 1);
 
-const gameEventTexts = computed<string[]>(() => {
+const charmedGameEventTexts = computed<string[]>(() => {
   if (isFirstNight.value) {
     return [t("components.GameCharmedTurnStartsEvent.charmedPeopleMeetEachOther")];
   }
   return [t("components.GameCharmedTurnStartsEvent.charmedPeopleMeetEachOtherWithOldOnes")];
 });
 
-playSoundEffect("magic-mood");
+function playCharmedTurnStartsSoundEffect(): void {
+  playSoundEffect("magic-mood");
+}
+
+playCharmedTurnStartsSoundEffect();
 </script>

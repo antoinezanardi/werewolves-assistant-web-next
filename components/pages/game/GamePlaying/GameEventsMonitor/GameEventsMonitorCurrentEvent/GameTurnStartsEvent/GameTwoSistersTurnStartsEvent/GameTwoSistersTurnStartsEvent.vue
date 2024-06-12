@@ -1,7 +1,7 @@
 <template>
   <GameEventWithTexts
     id="game-two-sisters-turn-starts-event"
-    :texts="gameEventTexts"
+    :texts="twoSistersGameEventTexts"
   >
     <GameEventFlippingPlaySourcePlayersCard/>
   </GameEventWithTexts>
@@ -24,12 +24,16 @@ const { t } = useI18n();
 
 const isFirstNight = computed<boolean>(() => game.value.turn === 1);
 
-const gameEventTexts = computed<string[]>(() => {
+const twoSistersGameEventTexts = computed<string[]>(() => {
   if (isFirstNight.value) {
     return [t("components.GameTwoSistersTurnStartsEvent.twoSistersMeetEachOtherForFirstTime")];
   }
   return [t("components.GameTwoSistersTurnStartsEvent.twoSistersMeetEachOther")];
 });
 
-playSoundEffect("girls-playing");
+function playTwoSistersTurnStartsSoundEffect(): void {
+  playSoundEffect("girls-playing");
+}
+
+playTwoSistersTurnStartsSoundEffect();
 </script>
