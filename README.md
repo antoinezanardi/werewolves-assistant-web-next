@@ -139,6 +139,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>🐦‍⬛ Scandalmonger marks Playground</summary>
+>>
+>>    ![Scandalmonger marks Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Scandalmonger%20marks%20Playground.png)
+>>   </details> 
+>>   <details>
 >>    <summary>🔮 Seer looks Playground</summary>
 >>        
 >>    ![Seer looks Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Seer%20looks%20Playground.png)
