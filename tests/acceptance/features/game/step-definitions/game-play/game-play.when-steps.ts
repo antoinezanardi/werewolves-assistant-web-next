@@ -99,3 +99,8 @@ When(/^the defender protects the player with name "(?<name>.+)"$/u, async functi
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
+
+When(/^the scandalmonger marks the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});

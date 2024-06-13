@@ -23,6 +23,7 @@ const SOUND_EFFECT_NAMES = [
   "mystical-mood",
   "possessed-laugh",
   "raven-cry",
+  "raven-flying-away",
   "supernatural-mood",
   "sword",
   "time-is-up",

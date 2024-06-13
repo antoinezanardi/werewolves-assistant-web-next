@@ -79,3 +79,10 @@ Given(/^the user allows the defender to protect twice in a row in game options$/
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-defender-can-protect-twice-input", true);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets the scandalmonger mark penalty to (?<markPenalty>\d+) in game options$/u, async function(this: CustomWorld, markPenalty: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input", markPenalty);
+  await closeDialogWithHeaderButton(this);
+});

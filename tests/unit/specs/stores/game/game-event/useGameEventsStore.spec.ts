@@ -316,6 +316,17 @@ describe("Game Events Store", () => {
         ],
         test: "should generate sheriff promotion event when last game history record action is delegate.",
       },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "mark" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "scandalmonger-has-marked" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate scandalmonger has marked event when last game history record action is mark.",
+      },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.generateAndSetGameEventsFromGame(game);
