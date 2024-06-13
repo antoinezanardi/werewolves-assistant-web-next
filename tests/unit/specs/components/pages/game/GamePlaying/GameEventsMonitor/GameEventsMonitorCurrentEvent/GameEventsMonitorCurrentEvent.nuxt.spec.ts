@@ -4,6 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
+import GameScandalmongerHasMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerHasMarkedEvent/GameScandalmongerHasMarkedEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
 import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
@@ -109,6 +110,18 @@ describe("Game Events Monitor Current Event Component", () => {
       const gameSheriffHasBeenElectedEvent = wrapper.findComponent<typeof GameSheriffHasBeenElectedEvent>(GameSheriffHasBeenElectedEvent);
 
       expect(gameSheriffHasBeenElectedEvent.exists()).toBeTruthy();
+    });
+
+    it("should render scandalmonger has marked event component when current game event is scandalmonger has marked type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "scandalmonger-has-marked" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gameScandalmongerHasMarkedEvent = wrapper.findComponent<typeof GameScandalmongerHasMarkedEvent>(GameScandalmongerHasMarkedEvent);
+
+      expect(gameScandalmongerHasMarkedEvent.exists()).toBeTruthy();
     });
 
     it("should not render any game event component when there is no current game event.", async() => {

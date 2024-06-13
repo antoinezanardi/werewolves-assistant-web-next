@@ -142,3 +142,10 @@ Then(/^the player with name "(?<name>.+)" should have the attribute worshiped by
 
   await expect(worshipedByWildChildAttribute).toBeVisible();
 });
+
+Then(/^the player with name "(?<name>.+)" should have the attribute scandalmonger-marked by scandalmonger in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const roleName = "The Scandalmonger marked this player, he'll have 2 more votes against him the next morning.";
+  const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
+
+  await expect(worshipedByWildChildAttribute).toBeVisible();
+});

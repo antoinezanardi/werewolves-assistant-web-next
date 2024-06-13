@@ -30,6 +30,8 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
       return [GameEvent.create({ type: "seer-has-seen" })];
     } else if (action === "elect-sheriff" && voting?.result === "sheriff-election" || action === "delegate") {
       return [GameEvent.create({ type: "sheriff-promotion" })];
+    } else if (action === "mark") {
+      return [GameEvent.create({ type: "scandalmonger-has-marked" })];
     }
     return [];
   }
