@@ -1,10 +1,12 @@
 import type { mount } from "@vue/test-utils";
+import type { useBreakpoints } from "@vueuse/core";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
 import type { Ref } from "vue";
 
 import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
 import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
+import * as UseBreakpoints from "@vueuse/core";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -13,18 +15,29 @@ import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helper
 import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Random Composition Button Component", () => {
+  const isSmallerThanMd = ref<boolean>(false);
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRandomCompositionButton>>;
   let mocks: {
     composables: {
       useFetchRandomGameComposition: {
         fetchRandomGameComposition: Mock;
-      }
+      };
+      useBreakpoints: {
+        smaller: Mock;
+      };
     }
   };
 
   beforeEach(async() => {
-    mocks = { composables: { useFetchRandomGameComposition: { fetchRandomGameComposition: vi.fn() } } };
+    isSmallerThanMd.value = false;
+    mocks = {
+      composables: {
+        useFetchRandomGameComposition: { fetchRandomGameComposition: vi.fn() },
+        useBreakpoints: { smaller: vi.fn(() => isSmallerThanMd) },
+      },
+    };
     vi.spyOn(UseFetchRandomGameComposition, "useFetchRandomGameComposition").mockImplementation(() => mocks.composables.useFetchRandomGameComposition);
+    vi.spyOn(UseBreakpoints, "useBreakpoints").mockReturnValue(mocks.composables.useBreakpoints as unknown as ReturnType<typeof useBreakpoints>);
     wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton);
   });
 
@@ -64,6 +77,34 @@ describe("Game Lobby Random Composition Button Component", () => {
     });
 
     describe("Button", () => {
+      it("should have label when screen is not smaller than md.", () => {
+        const button = wrapper.findComponent<Button>(".random-composition-button");
+
+        expect(button.attributes("label")).toBe("components.GameLobbyRandomCompositionButton.randomComposition");
+      });
+
+      it("should not have label when screen is smaller than md.", async() => {
+        isSmallerThanMd.value = true;
+        await nextTick();
+        const button = wrapper.findComponent<Button>(".random-composition-button");
+
+        expect(button.attributes("label")).toBeUndefined();
+      });
+
+      it("should have large size when screen is not smaller than md.", () => {
+        const button = wrapper.findComponent<Button>(".random-composition-button");
+
+        expect(button.attributes("size")).toBe("large");
+      });
+
+      it("should have small size when screen is smaller than md.", async() => {
+        isSmallerThanMd.value = true;
+        await nextTick();
+        const button = wrapper.findComponent<Button>(".random-composition-button");
+
+        expect(button.attributes("size")).toBe("small");
+      });
+
       it("should be disabled when min of players is not reached.", async() => {
         const createGameDtoStore = useCreateGameDtoStore();
         createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });

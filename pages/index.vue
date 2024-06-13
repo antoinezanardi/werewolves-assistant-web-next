@@ -4,7 +4,7 @@
       <div class="flex justify-center w-full">
         <NuxtImg
           :alt="$t('pages.index.werewolvesAssistantLogo')"
-          sizes="sm:125 lg:200"
+          sizes="sm:125 md:200 lg:200"
           src="/img/logo/square/werewolves-logo.png"
         />
       </div>
