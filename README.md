@@ -451,6 +451,12 @@ This project uses **GitHub Actions** to automate some boring tasks.
 
 ## <a name="misc-commands">✨ Misc commands</a>
 
+### 🌳 Animated tree visualisation of the project's evolution with **[Gource](https://gource.io/)**
+```shell
+# Please ensure that `gource` is installed on your system.
+pnpm run gource
+```
+
 ### 🔀 Create git branch with a conventional name
 ```shell
 pnpm run script:create-branch

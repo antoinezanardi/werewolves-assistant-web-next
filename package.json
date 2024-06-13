@@ -55,7 +55,8 @@
     "docker:sandbox-api:reset": "npm run docker:sandbox-api:stop && npm run docker:sandbox-api:start",
     "playwright:codegen": "npx playwright codegen http://localhost:3000",
     "script:create-branch": "scripts/create-git-branch.sh",
-    "script:create-pull-request": "scripts/create-pull-request.sh"
+    "script:create-pull-request": "scripts/create-pull-request.sh",
+    "gource": "gource --load-config config/gource/gource.config"
   },
   "devDependencies": {
     "@aksharahegde/nuxt-glow": "^1.1.2",
