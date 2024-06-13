@@ -7,11 +7,11 @@
       class="random-composition-button"
       :disabled="!isMinimumPlayersReached"
       icon="fa-random fa"
-      :label="$t('components.GameLobbyRandomCompositionButton.randomComposition')"
+      :label="buttonLabel"
       :loading="isLoadingGetRandomGameComposition"
       raised
       severity="secondary"
-      size="large"
+      :size="buttonSize"
       type="button"
       @click="handleRandomCompositionButtonClick"
     />
@@ -20,14 +20,19 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const { fetchRandomGameComposition } = useFetchRandomGameComposition();
 
 const { t } = useI18n();
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
@@ -35,6 +40,10 @@ const { setPlayersToCreateGameDto } = createGameDtoStore;
 const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
+
+const buttonSize = computed<"large" | "small">(() => (isSmallerThanMd.value ? "small" : "large"));
+
+const buttonLabel = computed<string | undefined>(() => (isSmallerThanMd.value ? undefined : t("components.GameLobbyRandomCompositionButton.randomComposition")));
 
 const containerTooltip = computed<string | undefined>(() => {
   if (!isMinimumPlayersReached.value) {

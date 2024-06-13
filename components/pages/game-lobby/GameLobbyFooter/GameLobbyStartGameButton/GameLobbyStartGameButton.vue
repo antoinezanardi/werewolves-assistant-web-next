@@ -2,9 +2,10 @@
   <div
     id="game-lobby-start-game-button-container"
     v-p-tooltip.top="containerTooltip"
+    class="h-full"
   >
     <VuePrimeButton
-      class="start-game-button"
+      class="!h-full start-game-button"
       :disabled="!canCreateGame"
       icon="fa-play fa"
       :label="$t('components.GameLobbyStartGameButton.startGame')"

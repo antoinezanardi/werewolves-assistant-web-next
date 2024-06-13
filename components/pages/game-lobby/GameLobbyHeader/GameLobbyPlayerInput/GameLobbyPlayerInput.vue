@@ -29,7 +29,7 @@
       >
         <i class="fa fa-plus me-2"/>
 
-        <span>
+        <span class="me-3">
           {{ $t("shared.actions.add") }}
         </span>
       </VuePrimeButton>

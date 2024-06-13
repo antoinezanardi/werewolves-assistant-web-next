@@ -8,7 +8,7 @@
     </h1>
 
     <div class="flex justify-center row">
-      <div class="w-6/12">
+      <div class="md:w-6/12">
         <form
           id="game-lobby-header-form"
           @submit.prevent="addPlayerToCreateGameDto"
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="flex item-center justify-center">
+    <div class="flex item-center justify-center mt-2">
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
         @game-options-button-click="handleGameOptionsButtonClick"

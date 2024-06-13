@@ -10,9 +10,9 @@
       <h2
         v-if="!createGameDto.players.length"
         id="no-players-in-lobby-message"
-        class="flex items-center justify-center"
+        class="flex gap-4 items-center justify-center"
       >
-        <i class="fa fa-plus me-2"/>
+        <i class="fa fa-plus"/>
 
         <span>
           {{ $t("components.GameLobbyPlayersParty.addPlayersWithInputAbove") }}
@@ -28,7 +28,7 @@
           <GameLobbyPlayerCard
             v-for="player in createGameDto.players"
             :key="player.name"
-            class="fade-list-item game-lobby-player-card w-1/5"
+            class="fade-list-item game-lobby-player-card md:w-1/5 w-1/3"
             :player="player"
             @pick-role-for-player="pickRoleForPlayer"
           />

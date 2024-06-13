@@ -10,7 +10,7 @@ Feature: 🃏👆 Game Lobby Role Picker
     Then the heading with exact name "Pick a role for the player Antoine" should be visible
     And the heading with exact name "Pick a role" should be visible
     And the button with name "Pick role for the player" should be disabled
-    And the page should match or creates the missing snapshot with name "Game Lobby Role Picker without picked role"
+    And the page creates the missing snapshot with name "Game Lobby Role Picker without picked role"
 
   Scenario: 🃏👆 User picks the seer role for a player
 
