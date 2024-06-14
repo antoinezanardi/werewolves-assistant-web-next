@@ -1,5 +1,5 @@
-import type { NuxtImg } from "@nuxt/components";
-import type { VuePrimeTag } from "@nuxt/components";
+import type { NuxtImg } from "#components";
+import type { VuePrimeTag } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameOverHistoryRecordDecisionBuriedPlayerProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/game-over-history-record-decision-buried-player.types";

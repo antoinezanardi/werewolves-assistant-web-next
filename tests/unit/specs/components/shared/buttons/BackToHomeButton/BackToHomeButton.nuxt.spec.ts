@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 
-import type { NuxtLink } from "@nuxt/components";
+import type { NuxtLink } from "#components";
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 

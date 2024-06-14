@@ -3,7 +3,7 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { expect } from "vitest";
 
-import type { VuePrimeToggleButton } from "@nuxt/components";
+import type { VuePrimeToggleButton } from "#components";
 import GameRequestAnotherVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameRequestAnotherVotePlayground/GameRequestAnotherVotePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";

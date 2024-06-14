@@ -7,7 +7,7 @@ import type { Mock } from "vitest";
 import { beforeAll, expect } from "vitest";
 import type { Ref } from "vue";
 
-import type { VuePrimeButton } from "@nuxt/components";
+import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
 import { Game } from "~/composables/api/game/types/game.class";
 import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";

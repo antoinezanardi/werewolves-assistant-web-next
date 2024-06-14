@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
-import type { NuxtImg, NuxtLink } from "@nuxt/components";
+import type { NuxtImg, NuxtLink } from "#components";
 import type MuteButton from "~/components/layouts/default/NavBar/MuteButton/MuteButton.vue";
 import * as UseWerewolvesAssistantRoutes from "~/composables/route/useWerewolvesAssistantRoutes";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";

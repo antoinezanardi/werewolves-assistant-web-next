@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { VuePrimeMenu } from "@nuxt/components";
 import { storeToRefs } from "pinia";
+import type Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";
 
@@ -61,7 +61,7 @@ const parametersMenuItems = computed<MenuItem[]>(() => [
   },
 ]);
 
-const parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);
+const parametersMenu = ref<InstanceType<typeof Menu> | null>(null);
 
 function toggleParametersMenu(event: MouseEvent): void {
   if (!parametersMenu.value) {

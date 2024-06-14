@@ -45,12 +45,10 @@ import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/Te
 import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import type { TempUseRoute } from "~/utils/types/temp.types";
 
 type GameStatusComponent = typeof GameCanceled | typeof GameOver | typeof GamePlaying;
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-const route = useRoute() as TempUseRoute;
+const route = useRoute();
 const gameStore = useGameStore();
 const { fetchAndSetGame } = gameStore;
 const { game, fetchingGameStatus } = storeToRefs(gameStore);

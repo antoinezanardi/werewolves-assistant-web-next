@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 
-import type { VuePrimeProgressSpinner } from "@nuxt/components";
+import type { VuePrimeProgressSpinner } from "#components";
 import type { TextProgressSpinnerProps } from "~/components/shared/misc/TextProgressSpinner/text-progress-spinner.types";
 import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";

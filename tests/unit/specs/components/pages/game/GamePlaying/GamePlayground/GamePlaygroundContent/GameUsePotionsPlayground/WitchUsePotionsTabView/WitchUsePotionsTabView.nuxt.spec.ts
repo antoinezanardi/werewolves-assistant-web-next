@@ -4,7 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import TabPanel from "primevue/tabpanel";
 import type TabView from "primevue/tabview";
 
-import type { NuxtImg } from "@nuxt/components";
+import type { NuxtImg } from "#components";
 import type GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
 import WitchUsePotionsTabView from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameUsePotionsPlayground/WitchUsePotionsTabView/WitchUsePotionsTabView.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";

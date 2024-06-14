@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { expect } from "vitest";
 
-import type { VuePrimeBadge } from "@nuxt/components";
+import type { VuePrimeBadge } from "#components";
 import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBadge/role-origin-badge.types";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";

@@ -2,7 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { Ref } from "vue";
 
-import type { VuePrimeButton } from "@nuxt/components";
+import type { VuePrimeButton } from "#components";
 import GamePlaygroundFooterMakePlayButton from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterMakePlayButton/GamePlaygroundFooterMakePlayButton.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";

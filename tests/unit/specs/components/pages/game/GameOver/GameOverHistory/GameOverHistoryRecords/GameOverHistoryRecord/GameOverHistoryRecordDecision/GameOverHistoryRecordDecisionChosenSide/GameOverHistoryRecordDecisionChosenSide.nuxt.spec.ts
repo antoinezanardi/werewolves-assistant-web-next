@@ -1,4 +1,4 @@
-import type { NuxtImg } from "@nuxt/components";
+import type { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameOverHistoryRecordDecisionChosenSideProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionChosenSide/game-over-history-record-decision-chosen-side.types";

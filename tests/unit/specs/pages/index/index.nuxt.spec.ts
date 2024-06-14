@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 
-import type { NuxtLink } from "@nuxt/components";
+import type { NuxtLink } from "#components";
 import Index from "@/pages/index.vue";
 import type { Ref } from "vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";

@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 
-import type { NuxtImg } from "@nuxt/components";
+import type { NuxtImg } from "#components";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import type { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
 import { useGameStore } from "~/stores/game/useGameStore";

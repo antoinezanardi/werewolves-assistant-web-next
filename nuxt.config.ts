@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url";
+
 const modules = [
   "@nuxtjs/tailwindcss",
   "@nuxt/test-utils/module",
@@ -13,10 +15,8 @@ const modules = [
 
 export default defineNuxtConfig({
   alias: {
-    "@nuxt/components": ".nuxt/components",
-    "#components": ".nuxt/components",
-    "@tests": "./tests",
-    "@modules": "./modules",
+    "@tests": fileURLToPath(new URL("./tests", import.meta.url)),
+    "@modules": fileURLToPath(new URL("./modules", import.meta.url)),
   },
   app: {
     head: {

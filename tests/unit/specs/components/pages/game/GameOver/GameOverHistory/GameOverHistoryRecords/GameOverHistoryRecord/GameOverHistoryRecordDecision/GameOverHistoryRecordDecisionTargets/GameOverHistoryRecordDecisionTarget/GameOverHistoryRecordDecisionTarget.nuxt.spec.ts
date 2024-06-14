@@ -1,5 +1,5 @@
-import type { NuxtImg } from "@nuxt/components";
-import type { VuePrimeTag } from "@nuxt/components";
+import type { NuxtImg } from "#components";
+import type { VuePrimeTag } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameOverHistoryRecordDecisionTargetProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/game-over-history-record-decision-target.types";

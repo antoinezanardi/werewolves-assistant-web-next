@@ -12,14 +12,6 @@
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["app/*"],
-      "@nuxt/*": [".nuxt/*"],
-      "#components": [".nuxt/components"],
-      "@tests/*": ["./tests/*"],
-      "@modules/*": ["./modules/*"]
-    },
     "noUncheckedIndexedAccess": false,
   }
 }

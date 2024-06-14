@@ -1,4 +1,4 @@
-import type { NuxtImg } from "@nuxt/components";
+import type { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameLobbyOptionsHubRolesTabSheriff from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabSheriff/GameLobbyOptionsHubRolesTabSheriff.vue";
