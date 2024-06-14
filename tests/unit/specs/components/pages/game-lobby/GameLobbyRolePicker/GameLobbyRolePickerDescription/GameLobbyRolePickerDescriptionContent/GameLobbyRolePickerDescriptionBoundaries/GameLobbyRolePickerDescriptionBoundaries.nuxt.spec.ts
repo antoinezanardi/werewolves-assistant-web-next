@@ -5,10 +5,10 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameLobbyRolePickerDescriptionBoundariesProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionBoundaries/game-lobby-role-picker-description-boundaries.types";
 import GameLobbyRolePickerDescriptionBoundaries from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionBoundaries/GameLobbyRolePickerDescriptionBoundaries.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mockPiniaStore } from "~/tests/unit/utils/helpers/mock.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mockPiniaStore } from "@tests/unit/utils/helpers/mock.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Role Picker Description Boundaries Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerDescriptionBoundaries>>;

@@ -1,20 +1,20 @@
-import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
+import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
 import type { Mock } from "vitest";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import * as UseGameStore from "~/stores/game/useGameStore";
-import { createFakeGameHistoryRecordPlayVoting } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
-import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
-import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
-import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
+import { createFakeGameHistoryRecordPlayVoting } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
+import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 
 describe("Game Events Store", () => {
   let mocks: {
@@ -315,6 +315,17 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate sheriff promotion event when last game history record action is delegate.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "mark" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "scandalmonger-has-marked" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate scandalmonger has marked event when last game history record action is mark.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();

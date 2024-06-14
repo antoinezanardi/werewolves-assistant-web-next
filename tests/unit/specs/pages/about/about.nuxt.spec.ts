@@ -4,7 +4,7 @@ import { expect } from "vitest";
 
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import About from "~/pages/about.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("About Page Component", () => {
   let wrapper: ReturnType<typeof mount<typeof About>>;

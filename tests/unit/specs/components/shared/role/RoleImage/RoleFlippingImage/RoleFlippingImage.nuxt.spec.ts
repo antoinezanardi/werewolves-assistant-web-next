@@ -6,7 +6,7 @@ import type { RoleFlippingImageProps } from "~/components/shared/role/RoleImage/
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import type RoleFlippingImageSvgIcon from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImageSvgIcon/RoleFlippingImageSvgIcon.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Flipping Image Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleFlippingImage>>;

@@ -7,10 +7,10 @@ import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Playground Header Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlaygroundHeaderCard>>;

@@ -5,9 +5,9 @@ import { Game } from "~/composables/api/game/types/game.class";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import * as UseGameEventsStore from "~/stores/game/game-event/useGameEventsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
+import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
 
 describe("Game Store", () => {
   let mocks: {

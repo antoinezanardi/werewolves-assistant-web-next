@@ -1,10 +1,10 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Badge from "primevue/badge";
 
-import type { VuePrimeBadge } from "#components";
 import type { RoleSideBadgeProps } from "~/components/shared/role/RoleSideBadge/role-side-badge-types";
 import RoleSideBadge from "~/components/shared/role/RoleSideBadge/RoleSideBadge.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Side Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleSideBadge>>;
@@ -32,27 +32,27 @@ describe("Role Side Badge Component", () => {
 
   describe("Badge", () => {
     it("should translate role side when side is villagers.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("#role-side-badge");
+      const badge = wrapper.findComponent<typeof Badge>("#role-side-badge");
 
       expect(badge.attributes("value")).toBe("components.RoleSideBadge.villagersSide");
     });
 
     it("should translate role side when side is werewolves.", async() => {
       wrapper = await mountRoleSideBadgeComponent({ props: { roleSide: "werewolves" } });
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("#role-side-badge");
+      const badge = wrapper.findComponent<typeof Badge>("#role-side-badge");
 
       expect(badge.attributes("value")).toBe("components.RoleSideBadge.werewolvesSide");
     });
 
     it("should set severity to success when side is villagers.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("#role-side-badge");
+      const badge = wrapper.findComponent<typeof Badge>("#role-side-badge");
 
       expect(badge.attributes("severity")).toBe("success");
     });
 
     it("should set severity to danger when side is werewolves.", async() => {
       wrapper = await mountRoleSideBadgeComponent({ props: { roleSide: "werewolves" } });
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>("#role-side-badge");
+      const badge = wrapper.findComponent<typeof Badge>("#role-side-badge");
 
       expect(badge.attributes("severity")).toBe("danger");
     });

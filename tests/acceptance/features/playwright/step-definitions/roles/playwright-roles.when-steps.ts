@@ -1,8 +1,8 @@
 import { When } from "@cucumber/cucumber";
 
-import { clickOnRoleWithText, hoverOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
-import type { LocatorRole } from "~/tests/acceptance/shared/types/playwright.types";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { clickOnRoleWithText, hoverOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
+import type { LocatorRole } from "@tests/acceptance/shared/types/playwright.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 When(/^the user clicks on the (?<role>button|link|menuitem|tab) with(?<isExact> exact)? name "(?<name>.+?)"$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
   await clickOnRoleWithText(this, role, name, exact !== null);

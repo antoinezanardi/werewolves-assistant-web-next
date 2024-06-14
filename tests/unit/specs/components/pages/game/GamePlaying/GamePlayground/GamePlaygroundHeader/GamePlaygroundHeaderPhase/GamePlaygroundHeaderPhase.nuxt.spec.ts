@@ -4,9 +4,9 @@ import type { mount } from "@vue/test-utils";
 import GamePlaygroundHeaderPhase from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundHeader/GamePlaygroundHeaderPhase/GamePlaygroundHeaderPhase.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Playground Header Phase", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlaygroundHeaderPhase>>;

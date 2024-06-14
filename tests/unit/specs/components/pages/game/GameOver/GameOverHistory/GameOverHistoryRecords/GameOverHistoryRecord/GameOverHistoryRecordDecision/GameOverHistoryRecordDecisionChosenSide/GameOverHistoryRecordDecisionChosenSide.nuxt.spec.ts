@@ -3,10 +3,10 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameOverHistoryRecordDecisionChosenSideProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionChosenSide/game-over-history-record-decision-chosen-side.types";
 import GameOverHistoryRecordDecisionChosenSide from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionChosenSide/GameOverHistoryRecordDecisionChosenSide.vue";
-import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over History Record Decision Chosen Side Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionChosenSide>>;

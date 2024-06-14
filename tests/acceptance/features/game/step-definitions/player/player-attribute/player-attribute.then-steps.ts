@@ -1,7 +1,7 @@
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
-import { getPlayerAttributeByRoleNameInGameTeamSide } from "~/tests/acceptance/features/game/helpers/player/player-attribute/player-attribute.then-steps-helpers";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { getPlayerAttributeByRoleNameInGameTeamSide } from "@tests/acceptance/features/game/helpers/player/player-attribute/player-attribute.then-steps-helpers";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the player with name "(?<name>.+)" should have the attribute seen by seer in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
   const seenBySeerAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, "The Seer saw this player and thus knows his role.");
@@ -138,6 +138,13 @@ Then(/^the player with name "(?<name>.+)" should have the attribute stolen role 
 
 Then(/^the player with name "(?<name>.+)" should have the attribute worshiped by wild child in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
   const roleName = "The Wild Child chose this player as his model.";
+  const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
+
+  await expect(worshipedByWildChildAttribute).toBeVisible();
+});
+
+Then(/^the player with name "(?<name>.+)" should have the attribute scandalmonger-marked by scandalmonger in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const roleName = "The Scandalmonger marked this player, he'll have 2 more votes against him the next morning.";
   const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
   await expect(worshipedByWildChildAttribute).toBeVisible();

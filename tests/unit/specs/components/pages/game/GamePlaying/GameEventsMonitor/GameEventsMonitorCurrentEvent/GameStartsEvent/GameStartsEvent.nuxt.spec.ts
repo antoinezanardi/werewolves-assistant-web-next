@@ -10,11 +10,11 @@ import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-opti
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsElectSheriff } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeActorAlivePlayer, createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsElectSheriff } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeActorAlivePlayer, createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
 

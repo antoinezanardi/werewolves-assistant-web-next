@@ -3,15 +3,17 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameSurvivorsTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSurvivorsTurnStartsEvent/GameSurvivorsTurnStartsEvent.vue";
 import type { Game } from "~/composables/api/game/types/game.class";
+import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Survivors Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameSurvivorsTurnStartsEvent>>;
@@ -138,6 +140,44 @@ describe("Game Survivors Turn Starts Event Component", () => {
       const textsAsString = expectedTexts.join(",");
 
       expect(wrapper.attributes("texts")).toBe(textsAsString);
+    });
+  });
+
+  describe("Sound Effect", () => {
+    it.each<{
+      game: Game;
+      expectedSoundEffects: SoundEffectName[];
+      test: string;
+    }>([
+      {
+        test: "should play dramatic drums sound effect only when there is no current play.",
+        game: createFakeGame({ currentPlay: null }),
+        expectedSoundEffects: ["dramatic-drums"],
+      },
+      {
+        test: "should play dramatic drums sound effect only when there is no causes.",
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote() }),
+        expectedSoundEffects: ["dramatic-drums"],
+      },
+      {
+        test: "should play dramatic drums and angelic intervention sound effects when the cause is angelic presence.",
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ causes: ["angel-presence"] }) }),
+        expectedSoundEffects: ["dramatic-drums", "angelic-intervention"],
+      },
+      {
+        test: "should play dramatic drums and gavel hitting sound effects when the cause is stuttering judge request.",
+        game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsVote({ causes: ["stuttering-judge-request"] }) }),
+        expectedSoundEffects: ["dramatic-drums", "gavel-hitting"],
+      },
+    ])("$test", async({ game, expectedSoundEffects }) => {
+      const initialState = { [StoreIds.GAME]: { game } };
+      wrapper = await mountGameSurvivorsTurnStartsEventComponent({ global: { plugins: [createTestingPinia({ initialState })] } });
+      const audioStore = useAudioStore();
+
+      expect(audioStore.playSoundEffect).toHaveBeenCalledTimes(expectedSoundEffects.length);
+      for (let i = 0; i < expectedSoundEffects.length; i++) {
+        expect(audioStore.playSoundEffect).toHaveBeenNthCalledWith(i + 1, expectedSoundEffects[i]);
+      }
     });
   });
 });

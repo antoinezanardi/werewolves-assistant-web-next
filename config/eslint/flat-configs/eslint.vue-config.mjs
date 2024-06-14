@@ -10,10 +10,10 @@ import { ESLINT_TYPESCRIPT_CONFIG } from "./eslint.typescript-config.mjs";
 const ESLINT_VUE_CONFIG = {
   name: "vue",
   files: [
-    "app.vue",
-    "pages/**/*.vue",
-    "layouts/**/*.vue",
-    "components/**/*.vue",
+    "app/app.vue",
+    "app/pages/**/*.vue",
+    "app/layouts/**/*.vue",
+    "app/components/**/*.vue",
   ],
   plugins: {
     "@typescript-eslint": TypeScriptPlugin,

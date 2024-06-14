@@ -3,7 +3,7 @@ import type { UseHeadInput } from "unhead";
 
 import App from "@/app.vue";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("App Component", () => {
   let wrapper: ReturnType<typeof mount<typeof App>>;

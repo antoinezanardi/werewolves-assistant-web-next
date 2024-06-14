@@ -3,7 +3,7 @@ import { faker } from "@faker-js/faker";
 import { GAME_PLAY_ACTIONS, GAME_PLAY_OCCURRENCES, GAME_PLAY_TYPES } from "~/composables/api/game/constants/game-play/game-play.constants";
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import type { GamePlayCause, GamePlayOccurrence } from "~/composables/api/game/types/game-play/game-play.types";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 
 function createFakeGamePlayStutteringJudgeRequestsAnotherVote(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({

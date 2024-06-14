@@ -10,10 +10,10 @@ import type GameLobbyRolePickerGrid from "~/components/pages/game-lobby/GameLobb
 import type GameLobbyRolePickerHeader from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/GameLobbyRolePickerHeader.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { Role } from "~/composables/api/role/types/role.class";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Role Picker Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePicker>>;

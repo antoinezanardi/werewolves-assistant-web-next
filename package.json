@@ -55,7 +55,8 @@
     "docker:sandbox-api:reset": "npm run docker:sandbox-api:stop && npm run docker:sandbox-api:start",
     "playwright:codegen": "npx playwright codegen http://localhost:3000",
     "script:create-branch": "scripts/create-git-branch.sh",
-    "script:create-pull-request": "scripts/create-pull-request.sh"
+    "script:create-pull-request": "scripts/create-pull-request.sh",
+    "gource": "gource --load-config config/gource/gource.config"
   },
   "devDependencies": {
     "@aksharahegde/nuxt-glow": "^1.1.2",
@@ -82,6 +83,7 @@
     "@stryker-mutator/vitest-runner": "^8.2.6",
     "@stylistic/eslint-plugin": "^2.1.0",
     "@types/eslint": "^8.56.7",
+    "@types/howler": "^2.2.11",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
     "@types/qs": "^6.9.15",
@@ -93,6 +95,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "class-transformer": "^0.5.1",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "cross-env": "^7.0.3",
     "cucumber-html-reporter": "^7.1.1",
     "eslint": "^9.4.0",
@@ -102,6 +105,7 @@
     "eslint-plugin-vue": "^9.25.0",
     "fuse.js": "^7.0.0",
     "happy-dom": "^14.12.0",
+    "howler": "^2.2.4",
     "husky": "^9.0.11",
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.5",
@@ -120,7 +124,7 @@
     "reflect-metadata": "^0.2.2",
     "rimraf": "^5.0.7",
     "sass": "^1.77.4",
-    "semantic-release": "^23.1.1",
+    "semantic-release": "^24.0.0",
     "semantic-release-export-data": "^1.0.1",
     "tailwindcss": "^3.4.3",
     "ts-case-convert": "^2.0.7",
@@ -130,7 +134,7 @@
     "validate-branch-name": "^1.3.0",
     "vi-canvas-mock": "^1.0.0",
     "vitest": "^1.5.3",
-    "vue": "^3.4.21",
+    "vue": "^3.4.27",
     "vue-eslint-parser": "^9.4.2",
     "vue-flip": "^3.0.2",
     "vue-router": "^4.3.0",
@@ -150,5 +154,5 @@
     "darwin",
     "linux"
   ],
-  "packageManager": "pnpm@9.2.0"
+  "packageManager": "pnpm@9.3.0"
 }

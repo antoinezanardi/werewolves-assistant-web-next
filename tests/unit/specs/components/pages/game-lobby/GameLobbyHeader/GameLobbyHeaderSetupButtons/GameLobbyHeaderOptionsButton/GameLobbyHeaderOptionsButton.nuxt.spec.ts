@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Header Options Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeaderOptionsButton>>;

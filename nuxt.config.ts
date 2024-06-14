@@ -1,3 +1,5 @@
+import { fileURLToPath } from "node:url";
+
 const modules = [
   "@nuxtjs/tailwindcss",
   "@nuxt/test-utils/module",
@@ -12,6 +14,10 @@ const modules = [
 ];
 
 export default defineNuxtConfig({
+  alias: {
+    "@tests": fileURLToPath(new URL("./tests", import.meta.url)),
+    "@modules": fileURLToPath(new URL("./modules", import.meta.url)),
+  },
   app: {
     head: {
       link: [
@@ -40,6 +46,7 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   experimental: { renderJsonPayloads: false },
+  future: { compatibilityVersion: 4 },
   googleFonts: {
     display: "swap",
     families: { Quicksand: { wght: "300..700" } },
@@ -117,7 +124,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     quiet: true,
     cssPath: "~/assets/scss/tailwind.scss",
-    configPath: "~/config/tailwind/tailwind.config.ts",
+    configPath: "./config/tailwind/tailwind.config.ts",
   },
   typescript: {
     strict: true,

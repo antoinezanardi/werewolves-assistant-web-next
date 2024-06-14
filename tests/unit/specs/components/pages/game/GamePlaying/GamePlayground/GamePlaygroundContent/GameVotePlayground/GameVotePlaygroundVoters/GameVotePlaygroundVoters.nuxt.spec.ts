@@ -7,11 +7,11 @@ import GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePl
 import GameVotePlaygroundVoters from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameVotePlayground/GameVotePlaygroundVoters/GameVotePlaygroundVoters.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlay } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
 

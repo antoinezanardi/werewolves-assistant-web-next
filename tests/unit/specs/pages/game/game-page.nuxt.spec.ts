@@ -8,22 +8,23 @@ import type GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
 import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeUseRoute } from "~/tests/unit/utils/factories/composables/nuxt/useRoute.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GamePage from "~/pages/game/[id].vue";
 
-const hoistedMocks = vi.hoisted(() => ({ useRoute: {} as ReturnType<typeof createFakeUseRoute> }));
+const { useRoute: useRouteMock } = vi.hoisted(() => ({ useRoute: {} as ReturnType<typeof createFakeUseRoute> }));
 
 describe("Game Page", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePage>>;
 
   beforeAll(() => {
-    mockNuxtImport<typeof useRoute>("useRoute", () => vi.fn(() => createFakeUseRoute(hoistedMocks.useRoute)));
+    mockNuxtImport<typeof useRoute>("useRoute", () => vi.fn(() => createFakeUseRoute(useRouteMock)));
   });
 
   beforeEach(async() => {
-    hoistedMocks.useRoute.params = { id: "1" };
+    useRouteMock.params = { id: "1" };
     wrapper = await mountSuspendedComponent(GamePage);
     const gameStore = useGameStore();
     gameStore.fetchingGameStatus = "pending";
@@ -51,11 +52,17 @@ describe("Game Page", () => {
   });
 
   it("should fetch and set game in store when rendered with valid game id as array of strings.", async() => {
-    hoistedMocks.useRoute.params.id = ["4", "2", "3"];
+    useRouteMock.params.id = ["4", "2", "3"];
     wrapper = await mountSuspendedComponent(GamePage);
     const gameStore = useGameStore();
 
     expect(gameStore.fetchAndSetGame).toHaveBeenCalledExactlyOnceWith("4");
+  });
+
+  it("should load all audios when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.loadAllAudios).toHaveBeenCalledExactlyOnceWith();
   });
 
   describe("Game Status Containers", () => {
@@ -102,6 +109,15 @@ describe("Game Page", () => {
       await nextTick();
 
       expect(wrapper.findComponent<typeof GameCanceled>(GameCanceled).exists()).toBeTruthy();
+    });
+  });
+
+  describe("Unmount", () => {
+    it("should fade out playing background audio when unmounted.", () => {
+      const audioStore = useAudioStore();
+      wrapper.unmount();
+
+      expect(audioStore.fadeOutPlayingBackgroundAudio).toHaveBeenCalledExactlyOnceWith();
     });
   });
 });

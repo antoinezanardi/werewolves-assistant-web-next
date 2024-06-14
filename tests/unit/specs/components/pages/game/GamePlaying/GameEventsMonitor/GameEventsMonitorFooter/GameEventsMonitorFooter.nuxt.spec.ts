@@ -5,11 +5,11 @@ import type Button from "primevue/button";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Game Events Monitor Footer Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventsMonitorFooter>>;

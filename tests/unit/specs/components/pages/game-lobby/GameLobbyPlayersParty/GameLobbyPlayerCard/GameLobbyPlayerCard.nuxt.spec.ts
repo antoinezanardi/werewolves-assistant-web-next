@@ -7,11 +7,11 @@ import GameLobbyPlayerCard from "~/components/pages/game-lobby/GameLobbyPlayersP
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyPlayerCard>>;

@@ -2,11 +2,12 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCharmedTurnStartsEvent/GameCharmedTurnStartsEvent.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Charmed Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameCharmedTurnStartsEvent>>;
@@ -34,6 +35,12 @@ describe("Game Charmed Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play magic mood sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("magic-mood");
   });
 
   describe("Game Event Texts", () => {

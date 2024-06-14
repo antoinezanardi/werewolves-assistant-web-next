@@ -5,15 +5,16 @@ import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSheriffBySheriffPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
-import { createFakeAccursedWolfFatherAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSheriffBySheriffPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
+import { createFakeAccursedWolfFatherAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Sheriff Has Been Elected Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameSheriffHasBeenElectedEvent>>;
@@ -50,6 +51,12 @@ describe("Game Sheriff Has Been Elected Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play sheriff promotion effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("trumpet-fanfare");
   });
 
   describe("Sheriff Has Been Elected Event Texts", () => {

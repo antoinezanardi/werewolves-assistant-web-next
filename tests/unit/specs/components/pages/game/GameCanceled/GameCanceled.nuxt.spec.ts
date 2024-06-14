@@ -3,7 +3,7 @@ import type { UseHeadInput } from "unhead";
 import { expect } from "vitest";
 
 import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Canceled Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameCanceled>>;

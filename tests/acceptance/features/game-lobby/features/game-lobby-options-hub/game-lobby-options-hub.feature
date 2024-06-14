@@ -11,15 +11,15 @@ Feature: ⚙️ Game Lobby Options Hub
     And the tab with name "Composition" should be visible
     And the tab with name "Votes" should be visible
     And the heading with name "Skip the call if no target" should be visible
-    And the page should match or creates the missing snapshot with name "Game Lobby Options Hub on Roles tab"
+    And the page creates the missing snapshot with name "Game Lobby Options Hub on Roles tab"
 
     When the user clicks on the tab with name "Composition"
     And the heading with name "Composition is hidden" should be visible
-    Then the page should match or creates the missing snapshot with name "Game Lobby Options Hub on Composition tab"
+    Then the page creates the missing snapshot with name "Game Lobby Options Hub on Composition tab"
 
     When the user clicks on the tab with name "Votes"
     And the heading with name "Votes can be skipped" should be visible
-    Then the page should match or creates the missing snapshot with name "Game Lobby Options Hub on Votes tab"
+    Then the page creates the missing snapshot with name "Game Lobby Options Hub on Votes tab"
 
 
   Scenario: ⚙️ User closes the options hub with escape, close button or outside click

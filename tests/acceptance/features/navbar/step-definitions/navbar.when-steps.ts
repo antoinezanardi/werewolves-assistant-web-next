@@ -1,7 +1,7 @@
 import { When } from "@cucumber/cucumber";
 
-import type { LocatorRole } from "~/tests/acceptance/shared/types/playwright.types";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { LocatorRole } from "@tests/acceptance/shared/types/playwright.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 When(/^the user hovers the (?<role>button|link|menuitem) with name "(?<name>.+?)" in navigation bar$/u, async function(this: CustomWorld, role: LocatorRole, name: string): Promise<void> {
   const navigationBar = this.page.getByRole("navigation", { name: "Navigation bar", exact: true });

@@ -4,7 +4,7 @@ import type Tag from "primevue/tag";
 import type { OverflowTagProps } from "~/components/shared/misc/OverflowTag/overflow-tag.types";
 
 import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Overflow Tag Component", () => {
   let wrapper: ReturnType<typeof mount<typeof OverflowTag>>;

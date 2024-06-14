@@ -1,7 +1,7 @@
 import { Given } from "@cucumber/cucumber";
 
-import { goOnPage } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Given(/^the user is on (?<page>.+) page$/u, async function(this: CustomWorld, page: string): Promise<void> {
   const pageName = page === "home" ? "" : page;

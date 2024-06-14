@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { GamePhaseIconProps } from "~/components/shared/game/game-phase/GamePhaseIcon/game-phase-icon.types";
 import GamePhaseIcon from "~/components/shared/game/game-phase/GamePhaseIcon/GamePhaseIcon.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Phase Icon Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePhaseIcon>>;

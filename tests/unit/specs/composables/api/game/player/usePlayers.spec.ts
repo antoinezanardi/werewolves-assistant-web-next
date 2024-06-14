@@ -1,5 +1,5 @@
 import { usePlayers } from "~/composables/api/game/player/usePlayers";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 describe("Use Players Composable", () => {
   describe("getPlayersNamesText", () => {

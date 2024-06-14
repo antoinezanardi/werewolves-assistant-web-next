@@ -1,8 +1,9 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameFoxTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameFoxTurnStartsEvent/GameFoxTurnStartsEvent.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Fox Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameFoxTurnStartsEvent>>;
@@ -26,6 +27,12 @@ describe("Game Fox Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play fox sniffing sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("fox-sniffing");
   });
 
   describe("Game Event Texts", () => {

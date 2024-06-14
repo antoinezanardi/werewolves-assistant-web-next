@@ -3,9 +3,9 @@ import { createPinia, setActivePinia } from "pinia";
 import { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
-import { createFakeMakeGamePlayTargetDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
-import { createFakeMakeGamePlayVoteDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
-import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
+import { createFakeMakeGamePlayTargetDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-target/make-game-play-target.dto.factory";
+import { createFakeMakeGamePlayVoteDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play-vote/make-game-play-vote.dto.factory";
+import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 
 describe("Make Game Play Dto Store", () => {
   beforeEach(() => {

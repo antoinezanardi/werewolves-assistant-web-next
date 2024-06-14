@@ -6,15 +6,16 @@ import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsM
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
-import { createFakeRolesGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { createFakeGameEvent } from "~/tests/unit/utils/factories/stores/game/game-event/game-event.factory";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Player Dies Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlayerDiesEvent>>;
@@ -46,6 +47,12 @@ describe("Game Player Dies Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play death sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("death");
   });
 
   describe("Player Dies Event Texts", () => {

@@ -1,17 +1,17 @@
+import type { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { TooltipOptions } from "primevue/tooltip";
 
-import type { NuxtImg } from "#components";
 import type { GameTeamSidePlayerAttributeProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/game-team-side-player-attribute.types";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
 import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeActingByActorPlayerAttribute, createFakeCantVoteByScapegoatPlayerAttribute, createFakeCantVoteBySurvivorsPlayerAttribute, createFakeCharmedByPiedPiperPlayerAttribute, createFakeContaminatedByRustySwordKnightPlayerAttribute, createFakeDrankDeathPotionByWitchPlayerAttribute, createFakeDrankLifePotionByWitchPlayerAttribute, createFakeEatenByBigBadWolfPlayerAttribute, createFakeEatenByWerewolvesPlayerAttribute, createFakeEatenByWhiteWerewolfPlayerAttribute, createFakeInLoveByCupidPlayerAttribute, createFakePlayerAttribute, createFakePowerlessByAccursedWolfFatherPlayerAttribute, createFakePowerlessByActorPlayerAttribute, createFakePowerlessByElderPlayerAttribute, createFakePowerlessByFoxPlayerAttribute, createFakePowerlessByWerewolvesPlayerAttribute, createFakeProtectedByDefenderPlayerAttribute, createFakeScandalmongerMarkedByScandalmongerPlayerAttribute, createFakeSeenBySeerPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute, createFakeSheriffBySurvivorsPlayerAttribute, createFakeStolenRoleByDevotedServantPlayerAttribute, createFakeWorshipedByWildChildPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
-import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeActingByActorPlayerAttribute, createFakeCantVoteByScapegoatPlayerAttribute, createFakeCantVoteBySurvivorsPlayerAttribute, createFakeCharmedByPiedPiperPlayerAttribute, createFakeContaminatedByRustySwordKnightPlayerAttribute, createFakeDrankDeathPotionByWitchPlayerAttribute, createFakeDrankLifePotionByWitchPlayerAttribute, createFakeEatenByBigBadWolfPlayerAttribute, createFakeEatenByWerewolvesPlayerAttribute, createFakeEatenByWhiteWerewolfPlayerAttribute, createFakeInLoveByCupidPlayerAttribute, createFakePlayerAttribute, createFakePowerlessByAccursedWolfFatherPlayerAttribute, createFakePowerlessByActorPlayerAttribute, createFakePowerlessByElderPlayerAttribute, createFakePowerlessByFoxPlayerAttribute, createFakePowerlessByWerewolvesPlayerAttribute, createFakeProtectedByDefenderPlayerAttribute, createFakeScandalmongerMarkedByScandalmongerPlayerAttribute, createFakeSeenBySeerPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute, createFakeSheriffBySurvivorsPlayerAttribute, createFakeStolenRoleByDevotedServantPlayerAttribute, createFakeWorshipedByWildChildPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
+import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Game Team Side Player Attribute Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameTeamSidePlayerAttribute>>;

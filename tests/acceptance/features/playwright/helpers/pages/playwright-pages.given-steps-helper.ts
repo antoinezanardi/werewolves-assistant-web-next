@@ -1,6 +1,6 @@
 import { url } from "@nuxt/test-utils/e2e";
 
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function goOnPage(world: CustomWorld, pageName: string): Promise<void> {
   const trimmedPageName = pageName.replace(/^\/|\/$/gu, "");

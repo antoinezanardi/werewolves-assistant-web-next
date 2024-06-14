@@ -6,12 +6,12 @@ import GameEventFlippingPlaySourcePlayersCard from "~/components/shared/game/gam
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySurvivorsVote } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Event Flipping Play Source Players Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventFlippingPlaySourcePlayersCard>>;

@@ -12,9 +12,9 @@ import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/P
 import { Game } from "~/composables/api/game/types/game.class";
 import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseVuePrimeToasts } from "@tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;

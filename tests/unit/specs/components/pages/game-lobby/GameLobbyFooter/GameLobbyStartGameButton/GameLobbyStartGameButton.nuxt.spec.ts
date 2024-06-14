@@ -8,15 +8,15 @@ import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeUseFetchGames } from "~/tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { createFakeUseVuePrimeToasts } from "~/tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeUseVuePrimeToasts } from "@tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Start Game Button Component", () => {
   const validCreateGameDto = createFakeCreateGameDto({

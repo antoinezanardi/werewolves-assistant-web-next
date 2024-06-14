@@ -4,12 +4,12 @@ import type { GameOverHistoryRecordDecisionNominatedPlayersProps } from "~/compo
 import GameOverHistoryRecordDecisionNominatedPlayers from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionNominatedPlayers/GameOverHistoryRecordDecisionNominatedPlayers.vue";
 import type PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import type OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
-import { createFakeGameHistoryRecordPlayVoting } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
-import { createFakeGameHistoryRecordPlay } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { createFakeActorAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeGameHistoryRecordPlayVoting } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
+import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeActorAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over History Record Decision Nominated Players Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionNominatedPlayers>>;

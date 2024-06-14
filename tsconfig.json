@@ -12,5 +12,6 @@
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noUncheckedIndexedAccess": false,
   }
 }

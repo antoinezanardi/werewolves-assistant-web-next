@@ -1231,7 +1231,7 @@
       "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
     },
     "GameScandalmongerTurnStartsEvent": {
-      "scandalmongerMarksPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",
+      "scandalmongerCanMarkPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",
       "playerWillHavePenaltyForNextVotes": "Le joueur marqué d'une plume aura un vote supplémentaire contre lui lors du prochain vote. | Le joueur marqué d'une plume aura {penalty} votes supplémentaires contre lui lors du prochain vote."
     },
     "GameScapegoatTurnStartsEvent": {
@@ -1305,6 +1305,15 @@
       "sheriffHasBeenElectedBySurvivors": "Les survivants ont élu {playerName} comme Maire du village !",
       "sheriffCanMakeSpeech": "Le Maire peut faire un discours poignant sur son élection.",
       "sheriffHasBeenElectedByDelegation": "{playerName} est le nouveau Maire du village !"
+    },
+    "MuteButton": {
+      "mute": "Couper le son",
+      "unmute": "Activer le son"
+    },
+    "GameScandalmongerHasMarkedEvent": {
+      "scandalMongerDidntMarkAnyone": "Le Corbeau n'a marqué personne pour cette nuit. Il s'est envolé…",
+      "scandalmongerHasMarkedAPlayer": "Le Corbeau a marqué un joueur avec sa plume.",
+      "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va mettre la plume en face du joueur marqué."
     }
   }
 }

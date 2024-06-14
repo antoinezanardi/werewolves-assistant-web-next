@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Dialog Footer Close Button Only Component", () => {
   let wrapper: ReturnType<typeof mount<typeof DialogFooterCloseButtonOnly>>;

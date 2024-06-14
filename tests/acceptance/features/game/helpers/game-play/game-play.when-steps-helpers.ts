@@ -1,4 +1,4 @@
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function playersVoteInPlayground(world: CustomWorld, votes: [source: string, target: string][]): Promise<void> {
   for (const [source, target] of votes) {

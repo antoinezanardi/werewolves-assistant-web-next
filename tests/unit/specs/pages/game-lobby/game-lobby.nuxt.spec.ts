@@ -7,12 +7,13 @@ import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/
 
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
 import GameLobby from "~/pages/game-lobby.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { getError } from "~/tests/unit/utils/helpers/exception.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Page", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobby>>;
@@ -80,6 +81,12 @@ describe("Game Lobby Page", () => {
       const gameStore = useGameStore();
 
       expect(gameStore.resetGame).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should load all audios when rendered.", () => {
+      const audioStore = useAudioStore();
+
+      expect(audioStore.loadAllAudios).toHaveBeenCalledExactlyOnceWith();
     });
   });
 

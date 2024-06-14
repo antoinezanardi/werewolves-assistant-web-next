@@ -1,6 +1,6 @@
 import reporter from "cucumber-html-reporter";
 
-import { ACCEPTANCE_TESTS_REPORTS_PATH, ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
+import { ACCEPTANCE_TESTS_REPORTS_PATH, ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH } from "@tests/acceptance/shared/constants/acceptance.constants";
 
 reporter.generate({
   theme: "bootstrap",

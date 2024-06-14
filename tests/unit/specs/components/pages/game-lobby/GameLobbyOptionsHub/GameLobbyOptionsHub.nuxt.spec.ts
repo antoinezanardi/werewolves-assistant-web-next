@@ -7,8 +7,8 @@ import type GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLo
 import type GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubContent/GameLobbyOptionsHubContent.vue";
 import type DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Options Hub Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyOptionsHub>>;

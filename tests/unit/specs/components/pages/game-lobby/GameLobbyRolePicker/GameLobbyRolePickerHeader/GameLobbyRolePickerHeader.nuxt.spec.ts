@@ -3,8 +3,8 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import type { GameLobbyRolePickerHeaderProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/game-lobby-role-picker-header.types";
 import GameLobbyRolePickerHeader from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/GameLobbyRolePickerHeader.vue";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Role Picker Header Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerHeader>>;

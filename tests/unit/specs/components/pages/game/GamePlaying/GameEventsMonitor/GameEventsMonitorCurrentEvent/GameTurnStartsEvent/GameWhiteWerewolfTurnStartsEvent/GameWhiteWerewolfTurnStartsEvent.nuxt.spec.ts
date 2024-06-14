@@ -1,8 +1,9 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameWhiteWerewolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWhiteWerewolfTurnStartsEvent/GameWhiteWerewolfTurnStartsEvent.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game White Werewolf Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameWhiteWerewolfTurnStartsEvent>>;
@@ -26,6 +27,12 @@ describe("Game White Werewolf Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play werewolf growling sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("werewolf-growling-1");
   });
 
   describe("Game Event Texts", () => {

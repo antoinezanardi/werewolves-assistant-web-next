@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { RoleFlippingImageSvgIconProps } from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImageSvgIcon/role-flipping-image-svg-icon.types";
 import RoleFlippingImageSvgIcon from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImageSvgIcon/RoleFlippingImageSvgIcon.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Flipping Image Svg Icon Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleFlippingImageSvgIcon>>;

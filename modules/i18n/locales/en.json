@@ -1231,7 +1231,7 @@
       "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm one player | The Pied Piper wakes up and will charm {count} players."
     },
     "GameScandalmongerTurnStartsEvent": {
-      "scandalmongerMarksPlayer": "The Scandalmonger wakes up and can mark a player with a feather.",
+      "scandalmongerCanMarkPlayer": "The Scandalmonger wakes up and can mark a player with a feather.",
       "playerWillHavePenaltyForNextVotes": "The player marked with a feather will have one more vote against him the next vote. | The player marked with a feather will have {penalty} more votes against him the next vote."
     },
     "GameScapegoatTurnStartsEvent": {
@@ -1305,6 +1305,15 @@
       "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village !",
       "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers.",
       "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village !"
+    },
+    "MuteButton": {
+      "mute": "Mute",
+      "unmute": "Unmute"
+    },
+    "GameScandalmongerHasMarkedEvent": {
+      "scandalMongerDidntMarkAnyone": "The Scandalmonger didn't mark anyone for this night. He flew away…",
+      "scandalmongerHasMarkedAPlayer": "The Scandalmonger has marked a player with a feather.",
+      "gameMasterWillPutScandalmongerMark": "The Game Master will put the mark in front of the player to remember the penalty for the next vote."
     }
   }
 }

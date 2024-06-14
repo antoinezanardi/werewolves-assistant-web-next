@@ -1,8 +1,9 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameWitchTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWitchTurnStartsEvent/GameWitchTurnStartsEvent.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Witch Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameWitchTurnStartsEvent>>;
@@ -26,6 +27,12 @@ describe("Game Witch Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should play witch laughing sound effect when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("witch-laughing");
   });
 
   describe("Game Event Texts", () => {

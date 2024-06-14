@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 import { expect } from "vitest";
 
 import AboutWerewolvesAssistant from "~/components/pages/about/AboutWerewolvesAssistant.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("About Werewolves Assistant Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutWerewolvesAssistant>>;
