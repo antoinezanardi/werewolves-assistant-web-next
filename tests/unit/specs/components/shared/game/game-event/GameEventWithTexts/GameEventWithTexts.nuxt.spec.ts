@@ -4,7 +4,7 @@ import type { GameEventWithTextsProps } from "~/components/shared/game/game-even
 import type GameEventTextsManager from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventTextsManager.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Event With Texts Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventWithTexts>>;

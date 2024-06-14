@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Playing Component > should match snapshot when rendered. 1`] = `
-"<div data-v-4473cdbb="" id="game-playing" class="flex">
-  <game-team-side-stub data-v-4473cdbb="" side="villagers" class="flex-none w-2/12"></game-team-side-stub>
-  <div data-v-4473cdbb="" class="game-playground-container px-2 w-8/12">
-    <transition-stub data-v-4473cdbb="" mode="out-in" name="fade" appear="false" persisted="false" css="true">
-      <game-playground-stub data-v-4473cdbb="" id="game-playground"></game-playground-stub>
+"<div data-v-315ffc41="" id="game-playing" class="flex">
+  <game-team-side-stub data-v-315ffc41="" side="villagers" class="flex-none w-2/12"></game-team-side-stub>
+  <div data-v-315ffc41="" class="game-playground-container px-2 w-8/12">
+    <transition-stub data-v-315ffc41="" mode="out-in" name="fade" appear="false" persisted="false" css="true">
+      <game-playground-stub data-v-315ffc41="" id="game-playground"></game-playground-stub>
     </transition-stub>
   </div>
-  <game-team-side-stub data-v-4473cdbb="" side="werewolves" class="flex-none w-2/12"></game-team-side-stub>
+  <game-team-side-stub data-v-315ffc41="" side="werewolves" class="flex-none w-2/12"></game-team-side-stub>
 </div>"
 `;

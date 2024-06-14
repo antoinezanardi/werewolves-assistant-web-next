@@ -12,6 +12,13 @@ const modules = [
 ];
 
 export default defineNuxtConfig({
+  alias: {
+    "@nuxt/components": ".nuxt/components",
+    "#components": ".nuxt/components",
+    "@tests": "./tests",
+    "@modules": "./modules",
+  },
+  future: { compatibilityVersion: 4 },
   app: {
     head: {
       link: [
@@ -117,7 +124,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     quiet: true,
     cssPath: "~/assets/scss/tailwind.scss",
-    configPath: "~/config/tailwind/tailwind.config.ts",
+    configPath: "./config/tailwind/tailwind.config.ts",
   },
   typescript: {
     strict: true,

@@ -4,10 +4,10 @@ import type { GameEventTextsManagerProps } from "~/components/shared/game/game-e
 import GameEventTextsManager from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventTextsManager.vue";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Game Event Texts Manager Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventTextsManager>>;

@@ -1,5 +1,5 @@
 import { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
 
 describe("Game Play Class", () => {
   describe("create", () => {

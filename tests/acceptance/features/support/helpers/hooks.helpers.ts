@@ -2,8 +2,8 @@ import type { ITestCaseHookParameter } from "@cucumber/cucumber";
 import { rimraf } from "rimraf";
 import { format } from "prettier";
 
-import { ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH } from "@tests/acceptance/shared/constants/acceptance.constants";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 function removeAcceptanceTestsReportsScreenshotsDirectory(): void {
   const acceptanceTestsReportsDirectoryFilesPath = `${process.cwd()}/${ACCEPTANCE_TESTS_REPORTS_SCREENSHOTS_PATH}`;

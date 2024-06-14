@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import CreateAnotherGameButton from "~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Create Another Game Button", () => {
   let wrapper: ReturnType<typeof mount<typeof CreateAnotherGameButton>>;

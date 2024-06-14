@@ -1,6 +1,6 @@
 import type { Directive, DirectiveBinding } from "vue";
 
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 function pTooltipDirectiveBinder(boundTooltip: BoundTooltip, cssSelector: string): { "p-tooltip": Directive } {
   const tooltip = boundTooltip;

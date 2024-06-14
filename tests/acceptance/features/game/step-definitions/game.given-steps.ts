@@ -2,9 +2,9 @@ import type { DataTable } from "@cucumber/cucumber";
 import { Given } from "@cucumber/cucumber";
 
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import { createGame, createGameWithRandomComposition } from "~/tests/acceptance/features/game/helpers/game.given-steps-helpers";
-import { goOnPage } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { createGame, createGameWithRandomComposition } from "@tests/acceptance/features/game/helpers/game.given-steps-helpers";
+import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Given(/^the user goes on an unknown game$/u, async function(this: CustomWorld): Promise<void> {
   await goOnPage(this, "/game/unknown-game");

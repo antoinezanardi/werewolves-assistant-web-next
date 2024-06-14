@@ -2,9 +2,9 @@ import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
 
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
-import { makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "~/tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
-import { clickOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
+import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 When(/^the survivors elect the sheriff with the votes$/u, async function(this: CustomWorld, votes: DataTable): Promise<void> {
   const votesData = votes.rows() as [source: string, target: string][];

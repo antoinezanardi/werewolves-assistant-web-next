@@ -3,8 +3,8 @@ import { createPinia, setActivePinia } from "pinia";
 import * as UseFetchGameHistoryRecords from "~/composables/api/game/game-history-record/useFetchGameHistoryRecords";
 import type { GameHistoryRecord } from "~/composables/api/game/types/game-history-record/game-history-record.class";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { createFakeUseFetchGameHistoryRecords } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/useFetchGameHistoryRecords.factory";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeUseFetchGameHistoryRecords } from "@tests/unit/utils/factories/composables/api/game/game-history-record/useFetchGameHistoryRecords.factory";
 
 describe("Game History Records Store", () => {
   let mocks: {

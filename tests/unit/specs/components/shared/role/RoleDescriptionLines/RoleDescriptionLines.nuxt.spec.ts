@@ -5,8 +5,8 @@ import type { RoleDescriptionLinesProps } from "~/components/shared/role/RoleDes
 import RoleDescriptionLines from "~/components/shared/role/RoleDescriptionLines/RoleDescriptionLines.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Role Description Lines Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleDescriptionLines>>;

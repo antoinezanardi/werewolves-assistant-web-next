@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import Default from "~/layouts/default.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Default Layout", () => {
   let wrapper: ReturnType<typeof mount<typeof Default>>;

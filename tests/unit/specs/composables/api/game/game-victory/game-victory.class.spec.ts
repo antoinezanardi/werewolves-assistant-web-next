@@ -1,5 +1,5 @@
 import { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 describe("Game Victory Class", () => {
   describe("create", () => {

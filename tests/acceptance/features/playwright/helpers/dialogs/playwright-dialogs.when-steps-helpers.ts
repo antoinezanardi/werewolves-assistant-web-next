@@ -1,4 +1,4 @@
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function closeDialogWithHeaderButton(world: CustomWorld): Promise<void> {
   const button = world.page.getByLabel("Close", { exact: true }).first();

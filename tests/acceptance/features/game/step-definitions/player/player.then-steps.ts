@@ -1,6 +1,6 @@
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the player with name "(?<name>.+)" should be alive in the game$/u, async function(this: CustomWorld, playerName: string): Promise<void> {
   const gameTeamSidePlayerLocator = this.page.getByTestId(`game-team-side-player-${playerName}`).first();

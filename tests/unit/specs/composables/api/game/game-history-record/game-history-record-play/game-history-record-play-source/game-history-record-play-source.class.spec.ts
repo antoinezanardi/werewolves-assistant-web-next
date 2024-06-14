@@ -1,5 +1,5 @@
 import { GameHistoryRecordPlaySource } from "~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.class";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 describe("Game History Record Play Source Class", () => {
   describe("Create", () => {

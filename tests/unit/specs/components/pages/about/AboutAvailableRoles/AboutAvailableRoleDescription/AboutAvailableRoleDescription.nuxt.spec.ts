@@ -6,8 +6,8 @@ import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import type RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("About Available Role Description Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoleDescription>>;

@@ -1,5 +1,5 @@
 import { CupidGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/cupid-game-options/cupid-game-options.class";
-import { createFakeCupidLoversGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/cupid-game-options/cupid-lovers-game-options/cupid-lovers-game-options.factory";
+import { createFakeCupidLoversGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/cupid-game-options/cupid-lovers-game-options/cupid-lovers-game-options.factory";
 
 describe("Cupid Game Options Class", () => {
   describe("create", () => {

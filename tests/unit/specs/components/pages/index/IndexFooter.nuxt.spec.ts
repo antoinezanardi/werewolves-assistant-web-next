@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Index Page Footer Component", () => {
   let wrapper: ReturnType<typeof mount<typeof IndexFooter>>;

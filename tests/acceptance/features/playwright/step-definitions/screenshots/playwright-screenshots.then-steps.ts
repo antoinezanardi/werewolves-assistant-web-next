@@ -5,11 +5,11 @@ import { Then } from "@cucumber/cucumber";
 import pixelMatch from "pixelmatch";
 import { PNG } from "pngjs";
 
-import { waitForPageLoadStates } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
-import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
-import { saveFullPageScreenshot, throwErrorIfBrokenThreshold, tryScreenshotWithCorrectDimensions } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.then-helpers";
-import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "~/tests/acceptance/shared/constants/acceptance.constants";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { waitForPageLoadStates } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
+import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "@tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
+import { saveFullPageScreenshot, throwErrorIfBrokenThreshold, tryScreenshotWithCorrectDimensions } from "@tests/acceptance/features/playwright/step-definitions/screenshots/helpers/playwright-screenshots.then-helpers";
+import { ACCEPTANCE_TESTS_PATH_SCREENSHOTS_PATH } from "@tests/acceptance/shared/constants/acceptance.constants";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 const screenshotStepTimeout = 30000;
 

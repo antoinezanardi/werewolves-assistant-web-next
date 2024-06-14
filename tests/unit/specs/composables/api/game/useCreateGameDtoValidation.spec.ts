@@ -5,10 +5,10 @@ import type { CreateGameDto } from "~/composables/api/game/dto/create-game/creat
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { createFakeCreateGameAdditionalCardDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Use Create Game Dto Validation Composable", () => {
   const defaultRoles = [

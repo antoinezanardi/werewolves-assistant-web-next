@@ -1,9 +1,19 @@
+import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { defineVitestConfig } from "@nuxt/test-utils/config";
 
 export default defineVitestConfig({
+  resolve: {
+    alias: {
+      "@tests": path.resolve("tests"),
+      "@modules": path.resolve("modules"),
+      "@nuxt/*": path.resolve(".nuxt/*"),
+      "@nuxt/components": path.resolve(".nuxt/components"),
+    },
+  },
   test: {
+    root: fileURLToPath(new URL("../../", import.meta.url)),
     environment: "nuxt",
     environmentOptions: { nuxt: { rootDir: fileURLToPath(new URL("../../", import.meta.url)) } },
     setupFiles: ["./tests/unit/unit-setup.ts"],

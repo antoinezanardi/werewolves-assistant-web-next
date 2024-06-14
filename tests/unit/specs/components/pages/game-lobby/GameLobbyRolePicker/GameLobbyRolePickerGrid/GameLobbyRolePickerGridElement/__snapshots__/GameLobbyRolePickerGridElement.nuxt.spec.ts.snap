@@ -1,12 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Role Picker Grid Element Component > should match snapshot when rendered. 1`] = `
-"<div data-v-54c5e19c="" id="game-lobby-role-picker-grid-element" class="flex flex-col items-center"><button data-v-54c5e19c="" id="game-lobby-role-picker-grid-element-button" class="border-4 border-gray-600 hover:border-gray-400 relative rounded-lg" type="button">
-    <role-image-stub data-v-54c5e19c="" alt="shared.role.name.seer" rolename="seer" sizes="100px" definition="normal" id="game-lobby-role-picker-grid-element-role-image"></role-image-stub>
-    <game-lobby-role-picker-grid-element-badges-stub data-v-54c5e19c="" role="[object Object]" aria-hidden="true"></game-lobby-role-picker-grid-element-badges-stub>
+"<div data-v-f598ad9a="" id="game-lobby-role-picker-grid-element" class="flex flex-col items-center"><button data-v-f598ad9a="" id="game-lobby-role-picker-grid-element-button" class="border-4 border-gray-600 hover:border-gray-400 relative rounded-lg" type="button">
+    <role-image-stub data-v-f598ad9a="" alt="shared.role.name.seer" rolename="seer" sizes="100px" definition="normal" id="game-lobby-role-picker-grid-element-role-image"></role-image-stub>
+    <game-lobby-role-picker-grid-element-badges-stub data-v-f598ad9a="" role="[object Object]" aria-hidden="true"></game-lobby-role-picker-grid-element-badges-stub>
   </button>
-  <div data-v-54c5e19c="" id="game-lobby-role-picker-grid-element-role-name" class="cursor-pointer font-semibold mt-1 text-center">
-    <!--v-if--><span data-v-54c5e19c="">shared.role.name.seer</span>
+  <div data-v-f598ad9a="" id="game-lobby-role-picker-grid-element-role-name" class="cursor-pointer font-semibold mt-1 text-center">
+    <!--v-if--><span data-v-f598ad9a="">shared.role.name.seer</span>
   </div>
 </div>"
 `;

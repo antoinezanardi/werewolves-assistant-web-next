@@ -2,10 +2,10 @@ import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { Mock } from "vitest";
 import type { Store, StoreDefinition } from "pinia";
 
-import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
-import { createFakeUseRoute } from "~/tests/unit/utils/factories/composables/nuxt/useRoute.factory";
-import { createFakeRuntimeConfig } from "~/tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
-import { createFakeUseElementHover, createFakeUseScroll } from "~/tests/unit/utils/factories/composables/vue-use/useScroll.factory";
+import { createFakeI18n } from "@tests/unit/utils/factories/composables/i18n/useI18n.factory";
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
+import { createFakeRuntimeConfig } from "@tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
+import { createFakeUseElementHover, createFakeUseScroll } from "@tests/unit/utils/factories/composables/vue-use/useScroll.factory";
 
 function mockNuxtImports(): void {
   mockNuxtImport<typeof definePageMeta>("definePageMeta", () => vi.fn());

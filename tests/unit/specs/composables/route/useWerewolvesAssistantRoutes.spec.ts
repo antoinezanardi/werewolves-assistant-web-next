@@ -1,6 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
 import { useWerewolvesAssistantRoutes } from "~/composables/route/useWerewolvesAssistantRoutes";
+import type { TempUseRoute } from "~/utils/types/temp.types";
 
 const { mockedUseRoute } = vi.hoisted(() => ({ mockedUseRoute: { name: "home" } }));
 
@@ -11,7 +12,8 @@ describe("Use Werewolves Assistant Routes Composable", () => {
 
   describe("isOnGamePage", () => {
     it("should be set to true when route name is game.", () => {
-      const route = useRoute();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      const route = useRoute() as TempUseRoute;
       route.name = "game-id";
       const { isOnGamePage } = useWerewolvesAssistantRoutes();
 
@@ -19,7 +21,8 @@ describe("Use Werewolves Assistant Routes Composable", () => {
     });
 
     it("should be set to false when route name is not game.", () => {
-      const route = useRoute();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      const route = useRoute() as TempUseRoute;
       route.name = "home";
       const { isOnGamePage } = useWerewolvesAssistantRoutes();
 

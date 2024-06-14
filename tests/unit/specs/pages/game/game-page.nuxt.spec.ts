@@ -10,8 +10,8 @@ import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
 import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeUseRoute } from "~/tests/unit/utils/factories/composables/nuxt/useRoute.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GamePage from "~/pages/game/[id].vue";
 
 const { useRoute: useRouteMock } = vi.hoisted(() => ({ useRoute: {} as ReturnType<typeof createFakeUseRoute> }));

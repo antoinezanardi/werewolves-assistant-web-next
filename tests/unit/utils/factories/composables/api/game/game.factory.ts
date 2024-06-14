@@ -2,8 +2,8 @@ import { faker } from "@faker-js/faker";
 
 import { GAME_STATUSES } from "~/composables/api/game/constants/game.constants";
 import { Game } from "~/composables/api/game/types/game.class";
-import { createFakeGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
-import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 
 function createFakeGame(game: Partial<Game> = {}): Game {
   return Game.create({

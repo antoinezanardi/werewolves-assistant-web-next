@@ -5,9 +5,9 @@ import GameThiefTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEv
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Thief Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameThiefTurnStartsEvent>>;

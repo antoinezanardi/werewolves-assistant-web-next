@@ -1,11 +1,11 @@
 import type { mount } from "@vue/test-utils";
 
-import type { NuxtImg } from "#components";
+import type { NuxtImg } from "@nuxt/components";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import type { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameVictory } from "~/tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGameVictory } from "@tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over Victory Text Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverVictoryText>>;

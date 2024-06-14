@@ -2,21 +2,21 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Fuse from "fuse.js";
+import AutoComplete from "primevue/autocomplete";
 import type { AutoCompleteChangeEvent } from "primevue/autocomplete";
 
-import { VuePrimeAutoComplete } from "#components";
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlaySourceInteraction } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
-import { createFakeGamePlaySource } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlay, createFakeGamePlaySurvivorsVote } from "~/tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
+import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
+import { createFakeGamePlay, createFakeGamePlaySurvivorsVote } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Playground Player Card Vote Input Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlaygroundPlayerCardVoteInput>>;
@@ -81,13 +81,13 @@ describe("Game Playground Player Card Vote Input Component", () => {
           plugins: [createTestingPinia(pinia)],
         },
       });
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
 
       expect(autocomplete.props("modelValue")).toBeNull();
     });
 
     it("should pass empty array as suggestions when render.", () => {
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
 
       expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
     });
@@ -98,7 +98,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
         ...defaultGame,
         currentPlay: null,
       });
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
 
@@ -111,7 +111,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
         ...defaultGame,
         currentPlay: createFakeGamePlay(),
       });
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
 
@@ -124,7 +124,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
         ...defaultGame,
         currentPlay: createFakeGamePlay({ source: createFakeGamePlaySource() }),
       });
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
@@ -139,7 +139,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
         ...defaultGame,
         currentPlay: createFakeGamePlay({ source: createFakeGamePlaySource({ interactions: [] }) }),
       });
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
@@ -149,7 +149,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
     });
 
     it("should pass all players without the player in props himself as suggestions when query is empty on complete event.", async() => {
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "   " });
       await nextTick();
       const expectedSuggestions = players.filter(player => player._id !== defaultPlayer._id);
@@ -158,7 +158,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
     });
 
     it("should pass players with similar name without the player in props himself as suggestions when query the player's name himself on complete event.", async() => {
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
       const expectedSuggestions = [
@@ -170,7 +170,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
     });
 
     it("should empty suggestions when hide event is emitted.", async() => {
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
       autocomplete.vm.$emit("hide");
@@ -181,7 +181,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should do nothing when v-model change event is emitted but value is string.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: "Antoine" };
       autocomplete.vm.$emit("change", event);
       await nextTick();
@@ -192,7 +192,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should remove make game play vote from dto when item select event is emitted and player is null.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: null };
       autocomplete.vm.$emit("change", event);
       await nextTick();
@@ -202,7 +202,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should remove make game play vote from dto when v-model change event is emitted and player is voted.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
       autocomplete.vm.$emit("change", event);
       await nextTick();
@@ -212,7 +212,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
 
     it("should add make game play vote from dto when item select event is emitted and player is voted.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
       autocomplete.vm.$emit("change", event);
       await nextTick();
@@ -221,7 +221,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
     });
 
     it("should have the same value as the player in props when v-model change event is emitted and player is voted.", async() => {
-      const autocomplete = wrapper.findComponent<typeof VuePrimeAutoComplete>(VuePrimeAutoComplete);
+      const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
       autocomplete.vm.$emit("change", event);
       await nextTick();

@@ -5,8 +5,8 @@ import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePl
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Choose Side Playground Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameChooseSidePlayground>>;

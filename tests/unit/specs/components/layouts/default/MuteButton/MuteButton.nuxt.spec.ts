@@ -7,12 +7,12 @@ import type { Vue3Lottie } from "vue3-lottie";
 import MuteButton from "~/components/layouts/default/NavBar/MuteButton/MuteButton.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeVueLottie } from "~/tests/unit/utils/factories/plugins/vue-lottie/vue-lottie.factory";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { getError } from "~/tests/unit/utils/helpers/exception.helpers";
+import { createFakeVueLottie } from "@tests/unit/utils/factories/plugins/vue-lottie/vue-lottie.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Mute Button Component", () => {
   const mocks = { plugins: { vueLottie: createFakeVueLottie() } };

@@ -5,9 +5,9 @@ import GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/Game
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Charmed Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameCharmedTurnStartsEvent>>;

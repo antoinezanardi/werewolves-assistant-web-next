@@ -4,8 +4,8 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import GamePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Playground Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlayground>>;
