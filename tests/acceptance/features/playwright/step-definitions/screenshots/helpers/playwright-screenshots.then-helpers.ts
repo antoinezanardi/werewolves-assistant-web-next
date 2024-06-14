@@ -1,7 +1,7 @@
 import type { Page } from "playwright-core";
 import { PNG } from "pngjs";
 
-import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "~/tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
+import { DEFAULT_PLAYWRIGHT_PAGE_SCREENSHOT_OPTIONS } from "@tests/acceptance/features/playwright/step-definitions/screenshots/constants/playwright-screenshots.constants";
 
 async function saveFullPageScreenshot(page: Page, screenshotPath: string): Promise<void> {
   console.info(`The snapshot with path "${screenshotPath}" does not exist. Creating a new snapshot.`);

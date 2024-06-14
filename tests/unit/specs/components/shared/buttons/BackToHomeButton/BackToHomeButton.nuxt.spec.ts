@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import type { NuxtLink } from "#components";
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Back To Home Button", () => {
   let wrapper: ReturnType<typeof mount<typeof BackToHomeButton>>;

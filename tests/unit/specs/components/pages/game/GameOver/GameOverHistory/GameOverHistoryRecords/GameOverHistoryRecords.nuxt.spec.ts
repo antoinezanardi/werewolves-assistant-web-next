@@ -7,8 +7,8 @@ import type GameOverHistoryRecordPhase from "~/components/pages/game/GameOver/Ga
 import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
 import type { GameHistoryRecord } from "~/composables/api/game/types/game-history-record/game-history-record.class";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over History Records Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverHistoryRecords>>;

@@ -1,5 +1,5 @@
 import { Role } from "~/composables/api/role/types/role.class";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Role Class", () => {
   describe("create", () => {

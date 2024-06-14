@@ -1,5 +1,5 @@
-import type { LocatorRole } from "~/tests/acceptance/shared/types/playwright.types";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { LocatorRole } from "@tests/acceptance/shared/types/playwright.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function clickOnRoleWithText(world: CustomWorld, role: LocatorRole, text: string, isExact = false): Promise<void> {
   const button = world.page.getByRole(role, { name: text, exact: isExact });

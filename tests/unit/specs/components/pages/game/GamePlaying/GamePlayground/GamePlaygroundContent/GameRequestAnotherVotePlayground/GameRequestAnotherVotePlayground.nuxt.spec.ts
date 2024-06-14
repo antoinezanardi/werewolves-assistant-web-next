@@ -7,8 +7,8 @@ import type { VuePrimeToggleButton } from "#components";
 import GameRequestAnotherVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameRequestAnotherVotePlayground/GameRequestAnotherVotePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Request Another Vote Playground Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameRequestAnotherVotePlayground>>;

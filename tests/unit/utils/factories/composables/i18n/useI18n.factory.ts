@@ -2,8 +2,8 @@ import type { Mock } from "vitest";
 import { ref } from "vue";
 import type { Ref } from "vue";
 
-import fr from "~/modules/i18n/locales/fr.json";
-import en from "~/modules/i18n/locales/en.json";
+import fr from "@modules/i18n/locales/fr.json";
+import en from "@modules/i18n/locales/en.json";
 
 type MockedI18n = {
   locale: Ref<"en" | "fr">

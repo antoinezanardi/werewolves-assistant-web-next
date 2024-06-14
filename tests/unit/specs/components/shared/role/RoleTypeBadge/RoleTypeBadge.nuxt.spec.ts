@@ -5,9 +5,9 @@ import type Badge from "primevue/badge";
 import type { RoleTypeBadgeProps } from "~/components/shared/role/RoleTypeBadge/role-type-badge-types";
 import RoleTypeBadge from "~/components/shared/role/RoleTypeBadge/RoleTypeBadge.vue";
 import type { RoleType } from "~/composables/api/role/types/role.types";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Role Type Badge Component", () => {
   let wrapper: ReturnType<typeof mount<typeof RoleTypeBadge>>;

@@ -1,11 +1,11 @@
 import { Given } from "@cucumber/cucumber";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
-import { fillInputNumberInGameOptionsHub, switchRoleOptionInGameOptionsHub } from "~/tests/acceptance/features/game/helpers/game-options/game-options.given-steps-helpers";
-import { openGameOptionsDialogInGameLobby } from "~/tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
-import { closeDialogWithHeaderButton } from "~/tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
-import { goOnPage } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
-import { clickOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { fillInputNumberInGameOptionsHub, switchRoleOptionInGameOptionsHub } from "@tests/acceptance/features/game/helpers/game-options/game-options.given-steps-helpers";
+import { openGameOptionsDialogInGameLobby } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
+import { closeDialogWithHeaderButton } from "@tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
+import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
+import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Given(/^the user makes the game skipping role call if no target in game options$/u, async function(this: CustomWorld): Promise<void> {
   await goOnPage(this, "/game-lobby");

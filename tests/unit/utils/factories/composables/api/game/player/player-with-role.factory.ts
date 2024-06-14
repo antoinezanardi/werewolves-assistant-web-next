@@ -1,8 +1,8 @@
 import type { PlayerRole } from "~/composables/api/game/types/players/player-role/player-role.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import { createFakePlayerSide } from "~/tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakePlayerSide } from "@tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 const werewolfSide = createFakePlayerSide({
   original: "werewolves",

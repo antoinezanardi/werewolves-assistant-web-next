@@ -3,8 +3,8 @@ import type { mount } from "@vue/test-utils";
 
 import GameChooseCardPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Choose Card Playground Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameChooseCardPlayground>>;

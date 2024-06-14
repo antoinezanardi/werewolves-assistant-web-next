@@ -4,6 +4,7 @@ import { defineVitestConfig } from "@nuxt/test-utils/config";
 
 export default defineVitestConfig({
   test: {
+    root: fileURLToPath(new URL("../../", import.meta.url)),
     environment: "nuxt",
     environmentOptions: { nuxt: { rootDir: fileURLToPath(new URL("../../", import.meta.url)) } },
     setupFiles: ["./tests/unit/unit-setup.ts"],
@@ -21,12 +22,7 @@ export default defineVitestConfig({
       ],
       include: [
         "app.vue",
-        "pages/**/*.{vue,ts}",
-        "layouts/**/*.{vue,ts}",
-        "components/**/*.{vue,ts}",
-        "composables/**/*.ts",
-        "stores/**/*.ts",
-        "utils/**/*.ts",
+        "app/**/*.{vue,ts}",
       ],
       reportsDirectory: "./tests/unit/coverage",
       reporter: [

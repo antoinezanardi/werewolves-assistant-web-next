@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type ToggleButton from "primevue/togglebutton";
 import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Affirmative Toggle Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AffirmativeToggleButton>>;

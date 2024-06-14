@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Player Card Component > should match snapshot when rendered without shallow. 1`] = `
-"<div data-v-ed2a42b3="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto"><button data-v-ed2a42b3="" class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm mb-1 player-card-delete-button" type="button" aria-label="Remove player Toto" data-pc-name="button" data-pc-section="root" data-p-severity="danger" data-pd-tooltip="true" data-pd-ripple="true"><span class="p-button-icon fa-minus fa fa-2x" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
+"<div data-v-8e9d6ebf="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto"><button data-v-8e9d6ebf="" class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm mb-1 player-card-delete-button" type="button" aria-label="Remove player Toto" data-pc-name="button" data-pc-section="root" data-p-severity="danger" data-pd-tooltip="true" data-pd-ripple="true"><span class="p-button-icon fa-minus fa fa-2x" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
     <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
   </button>
-  <div data-v-3d002e09="" data-v-ed2a42b3="" class="flex flex-col items-center player-card position-relative player-card"><button data-v-3d002e09="" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" class="border-4 border-gray-600 flex player-card-selector rounded-lg" type="button">
-      <div data-v-3d002e09="" class="flex-none player-card-role-image" style="perspective: 1000; width: 50px; height: 50px;" id="role-flipping-image">
+  <div data-v-e2c53b32="" data-v-8e9d6ebf="" class="flex flex-col items-center player-card position-relative player-card"><button data-v-e2c53b32="" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" class="border-4 border-gray-600 flex player-card-selector rounded-lg" type="button">
+      <div data-v-e2c53b32="" class="flex-none player-card-role-image" style="perspective: 1000; width: 50px; height: 50px;" id="role-flipping-image">
         <div class="flipper" style="transition: 0.6s; transform-style: preserve-3d; position: relative; width: 100%; height: 100%; transition-duration: 0.5s;">
           <div class="front" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2; transform: rotateY(0deg);"><img width="50" height="50" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" id="front-role-image" src="/svg/misc/infinite-spinner.svg">
             <!--v-if-->
@@ -15,13 +15,13 @@ exports[`Game Lobby Player Card Component > should match snapshot when rendered 
           </div>
         </div>
       </div>
-    </button><span data-v-3d002e09="" class="max-w-full player-card-name truncate">Toto</span></div><small data-v-ed2a42b3="" class="player-card-role truncate"></small>
+    </button><span data-v-e2c53b32="" class="max-w-full player-card-name truncate">Toto</span></div><small data-v-8e9d6ebf="" class="player-card-role truncate"></small>
 </div>"
 `;
 
 exports[`Game Lobby Player Card Component > should match snapshot when rendered. 1`] = `
-"<div data-v-ed2a42b3="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto">
-  <button-stub data-v-ed2a42b3="" aria-label="Remove player Toto" class="mb-1 player-card-delete-button" icon="fa-minus fa fa-2x" raised="" severity="danger" size="small" type="button" data-pd-tooltip="true"></button-stub>
-  <player-card-stub data-v-ed2a42b3="" playername="Toto" playerrole="werewolf" doesshowselectortooltip="false" isselected="false" class="player-card"></player-card-stub><small data-v-ed2a42b3="" class="player-card-role truncate"></small>
+"<div data-v-8e9d6ebf="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto">
+  <button-stub data-v-8e9d6ebf="" aria-label="Remove player Toto" class="mb-1 player-card-delete-button" icon="fa-minus fa fa-2x" raised="" severity="danger" size="small" type="button" data-pd-tooltip="true"></button-stub>
+  <player-card-stub data-v-8e9d6ebf="" playername="Toto" playerrole="werewolf" doesshowselectortooltip="false" isselected="false" class="player-card"></player-card-stub><small data-v-8e9d6ebf="" class="player-card-role truncate"></small>
 </div>"
 `;

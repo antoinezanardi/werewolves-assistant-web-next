@@ -12,8 +12,8 @@ import type { Role } from "~/composables/api/role/types/role.class";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import * as UseRoleName from "~/composables/api/role/useRoleName";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("About Available Roles Component", () => {
   let wrapper: ReturnType<typeof mount<typeof AboutAvailableRoles>>;

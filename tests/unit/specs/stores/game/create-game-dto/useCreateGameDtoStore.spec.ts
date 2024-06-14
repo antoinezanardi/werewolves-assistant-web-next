@@ -6,10 +6,10 @@ import type { CreateGameDto } from "~/composables/api/game/dto/create-game/creat
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { createFakeCreateGamePlayerDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { createFakeGameOptions } from "~/tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Create Game Dto Store", () => {
   beforeEach(() => {

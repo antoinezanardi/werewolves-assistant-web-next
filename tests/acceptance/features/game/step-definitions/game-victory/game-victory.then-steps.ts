@@ -2,7 +2,7 @@ import type { DataTable } from "@cucumber/cucumber";
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the game should be over with title "(?<title>.+?)" and subtitle "(?<subTitle>.+?)"$/u, async function(this: CustomWorld, title: string, subTitle: string): Promise<void> {
   await Promise.all([

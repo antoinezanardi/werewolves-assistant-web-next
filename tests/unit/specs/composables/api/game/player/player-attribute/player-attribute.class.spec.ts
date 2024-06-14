@@ -1,5 +1,5 @@
 import { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
-import { createFakePlayerAttributeActivation } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute-activation/player-attribute-activation.factory";
+import { createFakePlayerAttributeActivation } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute-activation/player-attribute-activation.factory";
 
 describe("Player Attribute Class", () => {
   describe("create", () => {

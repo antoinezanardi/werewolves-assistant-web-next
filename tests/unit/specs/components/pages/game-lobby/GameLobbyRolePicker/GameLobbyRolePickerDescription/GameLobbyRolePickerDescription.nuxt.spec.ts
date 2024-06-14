@@ -5,8 +5,8 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameLobbyRolePickerDescriptionProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types";
 import GameLobbyRolePickerDescription from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue";
 import type GameLobbyRolePickerDescriptionContent from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const { useScroll: partialMockedUsedScroll } = vi.hoisted(() => ({ useScroll: { y: { value: 0 } } }));
 

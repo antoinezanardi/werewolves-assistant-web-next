@@ -2,7 +2,7 @@ import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the player with name "(?<name>.+?)" should be in the lobby$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await expect(this.page.getByTestId(`game-lobby-player-card-${name}`)).toBeVisible();

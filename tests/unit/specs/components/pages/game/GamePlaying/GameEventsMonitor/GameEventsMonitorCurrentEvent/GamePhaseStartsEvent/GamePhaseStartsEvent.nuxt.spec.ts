@@ -9,10 +9,10 @@ import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePhase } from "~/tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Phase Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePhaseStartsEvent>>;

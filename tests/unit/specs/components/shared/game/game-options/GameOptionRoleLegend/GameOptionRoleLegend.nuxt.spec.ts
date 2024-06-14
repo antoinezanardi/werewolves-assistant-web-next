@@ -4,7 +4,7 @@ import type { GameOptionRoleLegendProps } from "~/components/shared/game/game-op
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Option Role Legend Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOptionRoleLegend>>;

@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 
 import NoActionNeeded from "~/components/shared/game/game-play/NoNeededAction/NoActionNeeded.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("No Action Needed Component", () => {
   let wrapper: ReturnType<typeof mount<typeof NoActionNeeded>>;

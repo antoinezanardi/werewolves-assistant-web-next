@@ -2,8 +2,8 @@ import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import { expectTooltipWithTextToBeVisible } from "~/tests/acceptance/features/playwright/helpers/tooltips/playwright-tooltips.then-steps-helpers";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { expectTooltipWithTextToBeVisible } from "@tests/acceptance/features/playwright/helpers/tooltips/playwright-tooltips.then-steps-helpers";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the player should not have current role in the lobby role picker$/u, async function(this: CustomWorld): Promise<void> {
   const currentRoleContainer = this.page.getByTestId("game-lobby-role-picker-header-current-role");

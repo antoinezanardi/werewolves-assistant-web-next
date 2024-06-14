@@ -4,7 +4,7 @@ import GameAccursedWolfFatherTurnStartsEvent from "~/components/pages/game/GameP
 import type GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Accursed Wolf Father Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameAccursedWolfFatherTurnStartsEvent>>;

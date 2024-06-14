@@ -21,10 +21,10 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
+import type Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";
 
-import { VuePrimeMenu } from "#components";
 import { useVuePrimeToasts } from "~/composables/vue-prime/useVuePrimeToasts";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -61,7 +61,7 @@ const parametersMenuItems = computed<MenuItem[]>(() => [
   },
 ]);
 
-const parametersMenu = ref<InstanceType<typeof VuePrimeMenu> | null>(null);
+const parametersMenu = ref<InstanceType<typeof Menu> | null>(null);
 
 function toggleParametersMenu(event: MouseEvent): void {
   if (!parametersMenu.value) {

@@ -3,7 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameBearTamerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBearTamerTurnStartsEvent/GameBearTamerTurnStartsEvent.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Bear Tamer Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameBearTamerTurnStartsEvent>>;

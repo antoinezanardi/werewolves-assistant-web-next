@@ -1,7 +1,7 @@
 import { crush } from "radash";
 
-import fr from "~/modules/i18n/locales/fr.json";
-import en from "~/modules/i18n/locales/en.json";
+import fr from "@modules/i18n/locales/fr.json";
+import en from "@modules/i18n/locales/en.json";
 
 describe("I18n module", () => {
   describe("Locales", () => {

@@ -2,8 +2,8 @@ import type { DataTable } from "@cucumber/cucumber";
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
-import { waitForPageUrl } from "~/tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { waitForPageUrl } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 Then(/^the user should be on (?<page>.+) page$/u, async function(this: CustomWorld, page: string): Promise<void> {
   const pageName = page === "home" ? "" : page;

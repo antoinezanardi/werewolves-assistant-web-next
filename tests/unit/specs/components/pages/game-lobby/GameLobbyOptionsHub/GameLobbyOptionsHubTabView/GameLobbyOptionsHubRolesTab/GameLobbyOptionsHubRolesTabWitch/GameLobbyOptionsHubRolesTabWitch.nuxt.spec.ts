@@ -4,10 +4,10 @@ import GameLobbyOptionsHubRolesTabWitch from "~/components/pages/game-lobby/Game
 import type AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import type GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Options Hub Roles Tab Witch Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyOptionsHubRolesTabWitch>>;

@@ -4,10 +4,10 @@ import type { mount } from "@vue/test-utils";
 import GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameVictory } from "~/tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer, createFakeVillagerAlivePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeGameVictory } from "@tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSeerAlivePlayer, createFakeVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over Winners Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverWinners>>;

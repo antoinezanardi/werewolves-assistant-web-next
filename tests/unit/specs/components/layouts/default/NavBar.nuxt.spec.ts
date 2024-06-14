@@ -5,9 +5,9 @@ import type { NuxtImg, NuxtLink } from "#components";
 import type MuteButton from "~/components/layouts/default/NavBar/MuteButton/MuteButton.vue";
 import * as UseWerewolvesAssistantRoutes from "~/composables/route/useWerewolvesAssistantRoutes";
 import NavBar from "~/components/layouts/default/NavBar/NavBar.vue";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("NavBar Component", () => {
   const isOnGamePage = ref<boolean>(true);

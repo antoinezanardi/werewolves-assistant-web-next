@@ -1,8 +1,8 @@
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useGamePlayers } from "~/composables/api/game/useGamePlayers";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeProtectedByDefenderPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
-import { createFakePlayer } from "~/tests/unit/utils/factories/composables/api/game/player/player.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeProtectedByDefenderPlayerAttribute, createFakeSheriffBySheriffPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
+import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
 describe("Use Game Players Composable", () => {
   describe("sheriffInPlayers", () => {

@@ -30,9 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 
 const props = defineProps<GameEventFlippingPlayerCardProps>();
 

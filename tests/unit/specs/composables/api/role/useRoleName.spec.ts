@@ -1,7 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 
 import { useRoleName } from "~/composables/api/role/useRoleName";
-import { createFakeI18n } from "~/tests/unit/utils/factories/composables/i18n/useI18n.factory";
+import { createFakeI18n } from "@tests/unit/utils/factories/composables/i18n/useI18n.factory";
 
 const { tMock } = vi.hoisted(() => ({ tMock: vi.fn() }));
 

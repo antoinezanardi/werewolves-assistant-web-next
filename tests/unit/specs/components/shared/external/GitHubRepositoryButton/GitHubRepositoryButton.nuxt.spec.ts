@@ -2,7 +2,7 @@ import type { mount } from "@vue/test-utils";
 
 import type { GitHubRepositoryButtonProps } from "~/components/shared/external/GitHubRepositoryButton/git-hub-repository-button.types";
 import GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("GitHub Repository Button", () => {
   let wrapper: ReturnType<typeof mount<typeof GitHubRepositoryButton>>;

@@ -3,9 +3,9 @@ import type { mount } from "@vue/test-utils";
 import type { PlayerCardProps } from "~/components/shared/game/player/PlayerCard/player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
-import { pTooltipDirectiveBinder } from "~/tests/unit/utils/helpers/directive.helpers";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "~/tests/unit/utils/types/directive.types";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof PlayerCard>>;

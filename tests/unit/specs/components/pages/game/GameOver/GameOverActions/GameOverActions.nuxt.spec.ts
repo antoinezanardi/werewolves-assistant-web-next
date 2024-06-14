@@ -3,9 +3,9 @@ import type Button from "primevue/button";
 
 import GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
-import { createFakeGameHistoryRecord } from "~/tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Over Actions Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverActions>>;

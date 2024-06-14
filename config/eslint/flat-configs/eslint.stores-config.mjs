@@ -2,7 +2,7 @@ import { ERROR, NAMING_CONVENTION_DEFAULT_CONFIG, OFF } from "../eslint.constant
 
 const ESLINT_STORES_CONFIG = {
   name: "stores",
-  files: ["stores/**/use*Store.ts"],
+  files: ["app/stores/**/use*Store.ts"],
   rules: {
     "max-lines-per-function": OFF,
     "@typescript-eslint/naming-convention": [

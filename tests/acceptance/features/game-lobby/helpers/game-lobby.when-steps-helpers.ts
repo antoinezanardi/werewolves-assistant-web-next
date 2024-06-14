@@ -1,7 +1,7 @@
 import type { RoleName } from "~/composables/api/role/types/role.types";
-import { chooseRoleInLobbyRolePicker } from "~/tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
-import { clickOnRoleWithText } from "~/tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { chooseRoleInLobbyRolePicker } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
+import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function enterPlayerInLobby(world: CustomWorld, name: string): Promise<void> {
   const input = world.page.getByLabel("Player name");

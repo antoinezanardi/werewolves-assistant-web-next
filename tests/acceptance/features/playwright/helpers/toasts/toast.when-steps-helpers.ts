@@ -1,4 +1,4 @@
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function closeToast(world: CustomWorld): Promise<void> {
   const toast = world.page.getByRole("alert");

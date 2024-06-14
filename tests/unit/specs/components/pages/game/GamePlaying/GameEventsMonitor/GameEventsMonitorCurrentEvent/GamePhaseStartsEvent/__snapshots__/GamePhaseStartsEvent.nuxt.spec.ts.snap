@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Phase Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub data-v-c7849405="" texts="components.GamePhaseStartsEvent.nightFalls" id="game-phase-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Phase Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub data-v-f4ef27a5="" texts="components.GamePhaseStartsEvent.nightFalls" id="game-phase-starts-event"></game-event-with-texts-stub>"`;
 
 exports[`Game Phase Starts Event Component > should match snapshot without shallow rendering when rendered for day rising. 1`] = `
-"<div data-v-c7849405="" id="game-phase-starts-event" class="flex flex-col h-full">
+"<div data-v-f4ef27a5="" id="game-phase-starts-event" class="flex flex-col h-full">
   <div id="game-event-default-slot-container" class="grow">
-    <div data-v-c7849405="" id="game-phase-lottie-container" class="flex h-full items-center justify-center">
-      <transition-stub data-v-c7849405="" mode="out-in" name="phase-transition" appear="false" persisted="false" css="true">
-        <div data-v-c7849405="" class="lottie-animation-container" style="--lottie-animation-container-width: 200px; --lottie-animation-container-height: 200px; --lottie-animation-container-background-color: transparent; --lottie-animation-margin: 0 auto;" id="game-night-phase-lottie"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 430 430" width="430" height="430" style="width: 100%; height: 100%; transform: translate3d(0,0,0); content-visibility: visible;" preserveAspectRatio="xMidYMid meet">
+    <div data-v-f4ef27a5="" id="game-phase-lottie-container" class="flex h-full items-center justify-center">
+      <transition-stub data-v-f4ef27a5="" mode="out-in" name="phase-transition" appear="false" persisted="false" css="true">
+        <div data-v-f4ef27a5="" class="lottie-animation-container" style="--lottie-animation-container-width: 200px; --lottie-animation-container-height: 200px; --lottie-animation-container-background-color: transparent; --lottie-animation-margin: 0 auto;" id="game-night-phase-lottie"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 430 430" width="430" height="430" style="width: 100%; height: 100%; transform: translate3d(0,0,0); content-visibility: visible;" preserveAspectRatio="xMidYMid meet">
             <defs>
               <clipPath id="__lottie_element_28">
                 <rect width="430" height="430" x="0" y="0"></rect>
@@ -151,11 +151,11 @@ exports[`Game Phase Starts Event Component > should match snapshot without shall
 `;
 
 exports[`Game Phase Starts Event Component > should match snapshot without shallow rendering when rendered for night falling. 1`] = `
-"<div data-v-c7849405="" id="game-phase-starts-event" class="flex flex-col h-full">
+"<div data-v-f4ef27a5="" id="game-phase-starts-event" class="flex flex-col h-full">
   <div id="game-event-default-slot-container" class="grow">
-    <div data-v-c7849405="" id="game-phase-lottie-container" class="flex h-full items-center justify-center">
-      <transition-stub data-v-c7849405="" mode="out-in" name="phase-transition" appear="false" persisted="false" css="true">
-        <div data-v-c7849405="" class="lottie-animation-container" style="--lottie-animation-container-width: 250px; --lottie-animation-container-height: 250px; --lottie-animation-container-background-color: transparent; --lottie-animation-margin: 0 auto;" id="game-day-phase-lottie"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600" width="600" height="600" style="width: 100%; height: 100%; transform: translate3d(0,0,0); content-visibility: visible;" preserveAspectRatio="xMidYMid meet">
+    <div data-v-f4ef27a5="" id="game-phase-lottie-container" class="flex h-full items-center justify-center">
+      <transition-stub data-v-f4ef27a5="" mode="out-in" name="phase-transition" appear="false" persisted="false" css="true">
+        <div data-v-f4ef27a5="" class="lottie-animation-container" style="--lottie-animation-container-width: 250px; --lottie-animation-container-height: 250px; --lottie-animation-container-background-color: transparent; --lottie-animation-margin: 0 auto;" id="game-day-phase-lottie"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600" width="600" height="600" style="width: 100%; height: 100%; transform: translate3d(0,0,0); content-visibility: visible;" preserveAspectRatio="xMidYMid meet">
             <defs>
               <clipPath id="__lottie_element_2">
                 <rect width="600" height="600" x="0" y="0"></rect>

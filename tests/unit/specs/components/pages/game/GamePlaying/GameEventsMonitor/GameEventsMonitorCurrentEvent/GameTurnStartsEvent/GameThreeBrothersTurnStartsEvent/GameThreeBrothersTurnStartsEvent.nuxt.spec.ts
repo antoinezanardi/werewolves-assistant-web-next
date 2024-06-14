@@ -6,9 +6,9 @@ import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-opti
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGame } from "~/tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Three Brothers Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameThreeBrothersTurnStartsEvent>>;

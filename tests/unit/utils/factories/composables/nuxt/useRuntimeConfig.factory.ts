@@ -1,6 +1,6 @@
 import type { RuntimeConfig } from "nuxt/schema";
 
-import { I18N_TEST_LOCALE } from "~/modules/i18n/i18n.constants";
+import { I18N_TEST_LOCALE } from "@modules/i18n/i18n.constants";
 
 function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): RuntimeConfig {
   return {

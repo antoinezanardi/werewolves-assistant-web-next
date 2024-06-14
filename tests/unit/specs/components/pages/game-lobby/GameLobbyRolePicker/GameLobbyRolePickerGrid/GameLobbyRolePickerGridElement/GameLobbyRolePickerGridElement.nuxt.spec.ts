@@ -9,8 +9,8 @@ import GameLobbyRolePickerGridElement from "~/components/pages/game-lobby/GameLo
 import type { Role } from "~/composables/api/role/types/role.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
 

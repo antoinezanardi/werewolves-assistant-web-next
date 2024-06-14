@@ -4,10 +4,10 @@ import { After, AfterAll, Before, BeforeAll, Status } from "@cucumber/cucumber";
 import type { ITestCaseHookParameter } from "@cucumber/cucumber";
 import { createPage, createTest } from "@nuxt/test-utils/e2e";
 
-import { I18N_TEST_LOCALE } from "~/modules/i18n/i18n.constants";
-import { generateScreenshotOnScenarioFailure, removeAcceptanceTestsReportsScreenshotsDirectory } from "~/tests/acceptance/features/support/helpers/hooks.helpers";
-import { WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL } from "~/tests/acceptance/shared/constants/werewolves-assistant-sandbox-api.constants";
-import type { CustomWorld } from "~/tests/acceptance/shared/types/word.types";
+import { I18N_TEST_LOCALE } from "@modules/i18n/i18n.constants";
+import { generateScreenshotOnScenarioFailure, removeAcceptanceTestsReportsScreenshotsDirectory } from "@tests/acceptance/features/support/helpers/hooks.helpers";
+import { WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL } from "@tests/acceptance/shared/constants/werewolves-assistant-sandbox-api.constants";
+import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 const { beforeEach, afterEach, afterAll, setup } = createTest({
   runner: "cucumber",

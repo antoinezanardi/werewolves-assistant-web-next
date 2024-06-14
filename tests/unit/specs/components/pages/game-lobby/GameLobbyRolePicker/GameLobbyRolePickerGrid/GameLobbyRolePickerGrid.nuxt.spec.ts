@@ -6,9 +6,9 @@ import GameLobbyRolePickerGrid from "~/components/pages/game-lobby/GameLobbyRole
 import type GameLobbyRolePickerGridElement from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/GameLobbyRolePickerGridElement.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
-import { mountSuspendedComponent } from "~/tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "~/tests/unit/utils/types/vue-test-utils.types";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Role Picker Grid Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerGrid>>;

@@ -2,8 +2,8 @@ import type { Mock } from "vitest";
 
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
-import { createFakeCreateGameDto } from "~/tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { createFakeMakeGamePlayDto } from "~/tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 
 describe("Use Fetch Game Composable", () => {
   let mocks: {

@@ -1,7 +1,7 @@
 import { Player } from "~/composables/api/game/types/players/player.class";
-import { createFakePlayerAttribute } from "~/tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
-import { createFakePlayerRole } from "~/tests/unit/utils/factories/composables/api/game/player/player-role/player-role.factory";
-import { createFakePlayerSide } from "~/tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
+import { createFakePlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
+import { createFakePlayerRole } from "@tests/unit/utils/factories/composables/api/game/player/player-role/player-role.factory";
+import { createFakePlayerSide } from "@tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
 
 describe("Player Class", () => {
   describe("create", () => {

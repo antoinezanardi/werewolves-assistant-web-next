@@ -5,7 +5,7 @@ import type { Mock } from "vitest";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import * as UseFetchRolesComposable from "~/composables/api/role/useFetchRoles";
-import { createFakeRole } from "~/tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 
 describe("Roles Store", () => {
   let mocks: {

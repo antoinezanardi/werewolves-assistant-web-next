@@ -1,4 +1,4 @@
-import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
+import type { AsyncDataRequestStatus } from "nuxt/app";
 import { defineStore } from "pinia";
 
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";

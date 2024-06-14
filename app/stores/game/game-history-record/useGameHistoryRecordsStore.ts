@@ -1,4 +1,4 @@
-import type { AsyncDataRequestStatus } from "#app/composables/asyncData";
+import type { AsyncDataRequestStatus } from "nuxt/app";
 import { defineStore } from "pinia";
 
 import { useFetchGameHistoryRecords } from "~/composables/api/game/game-history-record/useFetchGameHistoryRecords";
