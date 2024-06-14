@@ -31,12 +31,7 @@ export default defineVitestConfig({
       ],
       include: [
         "app.vue",
-        "pages/**/*.{vue,ts}",
-        "layouts/**/*.{vue,ts}",
-        "components/**/*.{vue,ts}",
-        "composables/**/*.ts",
-        "stores/**/*.ts",
-        "utils/**/*.ts",
+        "app/**/*.{vue,ts}",
       ],
       reportsDirectory: "./tests/unit/coverage",
       reporter: [
