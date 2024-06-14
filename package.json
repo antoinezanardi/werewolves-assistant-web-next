@@ -95,6 +95,7 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "class-transformer": "^0.5.1",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "cross-env": "^7.0.3",
     "cucumber-html-reporter": "^7.1.1",
     "eslint": "^9.4.0",
