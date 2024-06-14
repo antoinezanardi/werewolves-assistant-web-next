@@ -58,4 +58,13 @@ describe("Game Playing Component", () => {
       expect(wrapper.findComponent<typeof GameEventsMonitor>("#game-events-monitor").exists()).toBeTruthy();
     });
   });
+
+  describe("Unmount", () => {
+    it("should fade out playing background audio when unmounted.", () => {
+      const audioStore = useAudioStore();
+      wrapper.unmount();
+
+      expect(audioStore.fadeOutPlayingBackgroundAudio).toHaveBeenCalledExactlyOnceWith();
+    });
+  });
 });

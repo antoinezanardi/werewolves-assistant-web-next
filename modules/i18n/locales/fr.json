@@ -481,7 +481,7 @@
     "AboutAvailableRoles": {
       "availableRoles": "Rôles disponibles",
       "availableRolesImage": "Image des rôles disponibles",
-      "loadingRoles": "Chargement des rôles...",
+      "loadingRoles": "Chargement des rôles…",
       "assistantHasManyRoles": "Dans cette version de l'Assistant Loups-Garous, {n} rôles sont disponibles :",
       "clickToExpandRoleDescription": "Cliquez sur le rôle {role} pour afficher sa description.",
       "availableRoleImage": "Image du rôle {role}"
@@ -1199,7 +1199,7 @@
       "actorCanChooseCardToPlay": "L'Acteur se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
     },
     "GameBearTamerTurnStartsEvent": {
-      "bearGrowls": "Le Dresseur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui..."
+      "bearGrowls": "Le Dresseur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui…"
     },
     "GameBigBadWolfTurnStartsEvent": {
       "bigBadWolfEatsVillager": "Le Grand Méchant Loup se réveille et va dévorer un Villageois."
@@ -1294,7 +1294,7 @@
       "iconAlt": "Icône associé au rôle"
     },
     "GameSeerHasSeenEvent": {
-      "cantFindTargetedPlayer": "Le joueur vu ne peut être trouvé... Veuillez continuer.",
+      "cantFindTargetedPlayer": "Le joueur vu ne peut être trouvé… Veuillez continuer.",
       "gameMasterWillMimeSide": "Comme la Voyante est silencieuse, le Maître de jeu mimera le camp du joueur vu.",
       "gameMasterWillMimeRole": "Comme la Voyante est silencieuse, le Maître de jeu mimera le rôle du joueur vu.",
       "seerHasSeenSide": "Le Voyant a vu un joueur du camp des {side} !",
@@ -1314,6 +1314,10 @@
       "scandalMongerDidntMarkAnyone": "Le Corbeau n'a marqué personne pour cette nuit. Il s'est envolé…",
       "scandalmongerHasMarkedAPlayer": "Le Corbeau a marqué un joueur avec sa plume.",
       "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va mettre la plume en face du joueur marqué."
+    },
+    "GameAccursedWolfFatherMayHaveInfectedEvent": {
+      "accursedWolfFatherMayHaveInfectedAPlayer": "L'Infect Père des Loups a peut-être infecté un joueur dévoré par les Loups-Garous.",
+      "gameMasterWillTapAccursedWolfFatherMarkVictim": "Si c'est le cas, le Maître du Jeu va faire le tour des joueurs et tapoter le dos du joueur infecté par l'Infect Père des Loups. Ce joueur est désormais un Loup-Garou mais garde ses anciens pouvoirs de Villageois."
     }
   }
 }

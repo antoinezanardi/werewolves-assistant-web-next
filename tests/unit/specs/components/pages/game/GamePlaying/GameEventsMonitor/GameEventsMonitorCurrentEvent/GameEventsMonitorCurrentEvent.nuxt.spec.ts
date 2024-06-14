@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
@@ -122,6 +123,18 @@ describe("Game Events Monitor Current Event Component", () => {
       const gameScandalmongerHasMarkedEvent = wrapper.findComponent<typeof GameScandalmongerHasMarkedEvent>(GameScandalmongerHasMarkedEvent);
 
       expect(gameScandalmongerHasMarkedEvent.exists()).toBeTruthy();
+    });
+
+    it("should render accursed wolf father may have infected event component when current game event is accursed wolf father may have infected type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "accursed-wolf-father-may-have-infected" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gameAccursedWolfFatherMayHaveInfectedEvent = wrapper.findComponent<typeof GameAccursedWolfFatherMayHaveInfectedEvent>(GameAccursedWolfFatherMayHaveInfectedEvent);
+
+      expect(gameAccursedWolfFatherMayHaveInfectedEvent.exists()).toBeTruthy();
     });
 
     it("should not render any game event component when there is no current game event.", async() => {
