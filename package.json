@@ -82,7 +82,7 @@
     "@stryker-mutator/typescript-checker": "^8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
     "@stylistic/eslint-plugin": "^2.1.0",
-    "@types/eslint": "^8.56.7",
+    "@types/eslint": "^8.56.10",
     "@types/howler": "^2.2.11",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
