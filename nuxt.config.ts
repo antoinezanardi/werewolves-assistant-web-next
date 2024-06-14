@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     "@tests": "./tests",
     "@modules": "./modules",
   },
-  future: { compatibilityVersion: 4 },
   app: {
     head: {
       link: [
@@ -47,6 +46,7 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   experimental: { renderJsonPayloads: false },
+  future: { compatibilityVersion: 4 },
   googleFonts: {
     display: "swap",
     families: { Quicksand: { wght: "300..700" } },
