@@ -169,7 +169,7 @@ importers:
         specifier: ^4.0.2
         version: 4.0.2
       lint-staged:
-        specifier: ^15.2.5
+        specifier: ^15.2.7
         version: 15.2.7
       msw:
         specifier: ^2.3.1

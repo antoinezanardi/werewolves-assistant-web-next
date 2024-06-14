@@ -108,7 +108,7 @@
     "howler": "^2.2.4",
     "husky": "^9.0.11",
     "jest-extended": "^4.0.2",
-    "lint-staged": "^15.2.5",
+    "lint-staged": "^15.2.7",
     "msw": "^2.3.1",
     "nuxt": "^3.11.2",
     "nuxt-primevue": "^3.0.0",
