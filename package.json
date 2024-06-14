@@ -92,7 +92,7 @@
     "@typescript-eslint/types": "^7.11.0",
     "@vitest/coverage-istanbul": "^1.5.3",
     "@vue/test-utils": "^2.4.6",
-    "@vueuse/core": "^10.9.0",
+    "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "class-transformer": "^0.5.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
