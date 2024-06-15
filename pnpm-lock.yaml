@@ -256,7 +256,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2(typescript@5.4.5)
       vue-router:
-        specifier: ^4.3.0
+        specifier: ^4.3.3
         version: 4.3.3(vue@3.4.29(typescript@5.4.5))
       vue-tsc:
         specifier: ^1.8.27
