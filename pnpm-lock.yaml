@@ -220,7 +220,7 @@ importers:
         specifier: ^24.0.0
         version: 24.0.0(typescript@5.4.5)
       semantic-release-export-data:
-        specifier: ^1.0.1
+        specifier: ^1.1.0
         version: 1.1.0(semantic-release@24.0.0(typescript@5.4.5))
       tailwindcss:
         specifier: ^3.4.4
