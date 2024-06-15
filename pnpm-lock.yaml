@@ -199,7 +199,7 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       prettier:
-        specifier: ^3.3.0
+        specifier: ^3.3.2
         version: 3.3.2
       qs:
         specifier: ^6.12.1
