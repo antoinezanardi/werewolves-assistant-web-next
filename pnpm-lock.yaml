@@ -214,7 +214,7 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7
       sass:
-        specifier: ^1.77.4
+        specifier: ^1.77.5
         version: 1.77.5
       semantic-release:
         specifier: ^24.0.0
