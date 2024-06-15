@@ -223,7 +223,7 @@ importers:
         specifier: ^1.0.1
         version: 1.1.0(semantic-release@24.0.0(typescript@5.4.5))
       tailwindcss:
-        specifier: ^3.4.3
+        specifier: ^3.4.4
         version: 3.4.4
       ts-case-convert:
         specifier: ^2.0.7
