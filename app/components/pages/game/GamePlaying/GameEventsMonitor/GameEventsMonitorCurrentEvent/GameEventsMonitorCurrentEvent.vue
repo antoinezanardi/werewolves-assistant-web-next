@@ -22,6 +22,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import type { GameEventsMonitorEventTypeComponent } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
 import GameScandalmongerHasMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerHasMarkedEvent/GameScandalmongerHasMarkedEvent.vue";
@@ -44,6 +45,7 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "seer-has-seen": GameSeerHasSeenEvent,
     "sheriff-promotion": GameSheriffPromotionEvent,
     "scandalmonger-has-marked": GameScandalmongerHasMarkedEvent,
+    "accursed-wolf-father-may-have-infected": GameAccursedWolfFatherMayHaveInfectedEvent,
   };
   if (!currentGameEvent.value) {
     return undefined;
