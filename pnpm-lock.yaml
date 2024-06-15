@@ -115,7 +115,7 @@ importers:
         specifier: ^7.11.0
         version: 7.13.0
       '@vitest/coverage-istanbul':
-        specifier: ^1.5.3
+        specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(sass@1.77.5)(terser@5.31.1))
       '@vue/test-utils':
         specifier: ^2.4.6
@@ -244,7 +244,7 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       vitest:
-        specifier: ^1.5.3
+        specifier: ^1.6.0
         version: 1.6.0(@types/node@20.14.2)(happy-dom@14.12.0)(sass@1.77.5)(terser@5.31.1)
       vue:
         specifier: ^3.4.29
