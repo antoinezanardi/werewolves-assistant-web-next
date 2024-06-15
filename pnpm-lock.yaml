@@ -250,7 +250,7 @@ importers:
         specifier: ^3.4.29
         version: 3.4.29(typescript@5.4.5)
       vue-eslint-parser:
-        specifier: ^9.4.2
+        specifier: ^9.4.3
         version: 9.4.3(eslint@9.5.0)
       vue-flip:
         specifier: ^3.0.2
