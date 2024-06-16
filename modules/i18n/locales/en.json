@@ -438,6 +438,13 @@
     "App": {
       "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
     },
+    "Error": {
+      "unexpectedError": "An unexpected error occurred",
+      "notNormalTeamNotified": "This is not normal… The team has been notified of the problem.",
+      "pageNotFound": "Page not found",
+      "youAreLost": "Looks like you're lost… You were trying to flee the Werewolves, weren't you ?",
+      "goBackToSafePlace": "Go back to a safe place"
+    },
     "IndexFooter": {
       "contact": "Contact the creator"
     },
