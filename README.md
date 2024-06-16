@@ -247,6 +247,13 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >
 </details>
 
+<details>
+  <summary>❓ Page not found</summary>
+
+  ![Page not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Page%20not%20found.png)
+
+</details>
+
 ## <a name="installation">🔨 Installation</a>
 
 To install this project, you will need to have on your machine :

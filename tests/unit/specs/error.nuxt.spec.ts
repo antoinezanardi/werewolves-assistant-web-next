@@ -2,6 +2,7 @@ import { createFakeNuxtError } from "@tests/unit/utils/factories/nuxt/nuxt-error
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { expect } from "vitest";
+import type { ComputedRef } from "vue";
 import type { Vue3Lottie } from "vue3-lottie";
 import Error from "~/error.vue";
 
@@ -30,7 +31,9 @@ describe("Error Component", () => {
 
   describe("Error Title", () => {
     it("should set head title of error title when rendered.", () => {
-      expect(useHead).toHaveBeenCalledExactlyOnceWith(expect.any(Object));
+      const expectedPartialUseHeadInput = { title: expect.objectContaining({ value: "components.Error.pageNotFound" }) as ComputedRef<string> };
+
+      expect(useHead).toHaveBeenCalledWith(expect.objectContaining(expectedPartialUseHeadInput));
     });
 
     it("should render page not found title when error status code is 404.", async() => {
