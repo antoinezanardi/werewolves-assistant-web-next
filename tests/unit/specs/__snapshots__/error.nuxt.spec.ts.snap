@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Error Component > should match snapshot when rendered. 1`] = `
+"<div id="error-page" class="flex flex-col gap-2 h-full items-center justify-center p-4 w-full">
+  <h1 id="error-title" class="!text-5xl">components.Error.pageNotFound</h1>
+  <vue-lottie-stub animationdata="[object Object]" animationlink="" loop="true" autoplay="true" width="250px" height="250px" speed="1" delay="0" direction="forward" pauseonhover="false" playonhover="false" backgroundcolor="transparent" pauseanimation="false" nomargin="false" scale="1" renderer="svg" renderersettings="[object Object]" assetspath="" id="lottie-error"></vue-lottie-stub>
+  <h3 id="error-description" class="!text-2xl">components.Error.youAreLost</h3>
+  <back-to-home-button-stub pbuttonclass="p-button-primary" textkey="components.Error.goBackToSafePlace" icon="fa fa-flip-horizontal fa-person-running" class="mt-4"></back-to-home-button-stub>
+</div>"
+`;

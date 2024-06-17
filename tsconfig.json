@@ -1,17 +1,3 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "types": [
-      "vitest/globals"
-    ],
-    "strictPropertyInitialization": false,
-    "esModuleInterop": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noUncheckedIndexedAccess": false,
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }

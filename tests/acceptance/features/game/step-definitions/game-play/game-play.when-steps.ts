@@ -104,3 +104,8 @@ When(/^the scandalmonger marks the player with name "(?<name>.+)"$/u, async func
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
+
+When(/^the accursed wolf father infects the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});

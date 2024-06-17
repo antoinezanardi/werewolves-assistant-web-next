@@ -48,9 +48,11 @@ const gameEventsStore = useGameEventsStore();
 const { currentGameEvent } = storeToRefs(gameEventsStore);
 
 const audioStore = useAudioStore();
-const { playRandomGamePhaseBackgroundAudio } = audioStore;
+const { playRandomGamePhaseBackgroundAudio, fadeOutPlayingBackgroundAudio } = audioStore;
 
 playRandomGamePhaseBackgroundAudio(game.value.phase.name);
+
+onUnmounted(fadeOutPlayingBackgroundAudio);
 </script>
 
 <style lang="scss" scoped>

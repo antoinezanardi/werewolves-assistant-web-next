@@ -126,10 +126,26 @@ export default defineNuxtConfig({
     cssPath: "~/assets/scss/tailwind.scss",
     configPath: "./config/tailwind/tailwind.config.ts",
   },
+  telemetry: false,
+  test: true,
   typescript: {
-    strict: true,
-    typeCheck: true,
     shim: true,
+    strict: true,
+    tsConfig: {
+      compilerOptions: {
+        types: ["vitest/globals"],
+        strictPropertyInitialization: false,
+        esModuleInterop: true,
+        module: "ESNext",
+        moduleResolution: "Node",
+        allowSyntheticDefaultImports: true,
+        resolveJsonModule: true,
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true,
+        noUncheckedIndexedAccess: false,
+      },
+    },
+    typeCheck: true,
   },
   vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
 });

@@ -123,9 +123,9 @@
         "accursed-wolf-father": {
           "hisGoalIsToKillVillagers": "His goal is to eliminate the Villagers.",
           "spreadEngeanceAndSleep": "The very first Werewolf in our lands, the father of all their fathers, had two powers: the first was to spread its progeny through a special bite, and the second was to escape this world by sleeping for a few centuries.",
-          "awokenWithHunger": "Fortunately for our recent ancestors, it had long since dozed off. The authors of this work wish good luck to today's Villagers and note that the Infect Father of Wolves has just awakened from a long sleep and is very hungry!",
+          "awokenWithHunger": "Fortunately for our recent ancestors, it had long since dozed off. The authors of this work wish good luck to today's Villagers and note that the Accursed Wolf-Father has just awakened from a long sleep and is very hungry!",
           "eachNightCanInfect": "Each night, it wakes up and feasts with the other Werewolves. But once in the game, if it desires, after the Werewolves have fallen asleep, it raises its hand. This means the victim is not devoured but infected.",
-          "infectOncePerGame": "The Infect Father of Wolves can use its power only once in the game. The game master then touches the infected inhabitant, who immediately (and secretly) becomes a Werewolf and will now participate in the Werewolves' feast.",
+          "infectOncePerGame": "The Accursed Wolf-Father can use its power only once in the game. The game master then touches the infected inhabitant, who immediately (and secretly) becomes a Werewolf and will now participate in the Werewolves' feast.",
           "usePowerAndAwokenWithWolves": "If it possessed a nighttime power, it will be awakened by the game master in the following turns to use this power, in addition to being called with the Werewolves."
         },
         "white-werewolf": {
@@ -186,14 +186,14 @@
           "nightlyProtection": "The player thus designated will be protected during the night (and only that night) against the Werewolves. Even if chosen by them, they will not be eliminated from the game.",
           "selfProtection": "The Defender has the right to self-protect. They are not allowed to protect the same player for two consecutive nights.",
           "limitations": "The protection of the Defender has no effect on the Little Girl. (She is in the midst of preadolescent crisis, and nothing can save her from getting into trouble).",
-          "exclusions": "The Defender does not protect against the Piper or infection by the Infect Father of Wolves."
+          "exclusions": "The Defender does not protect against the Piper or infection by the Accursed Wolf-Father."
         },
         "elder": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
           "remarkableResilience": "He has victoriously traversed all the terrible trials of life and acquired an extraordinary resistance! The Werewolves will have to try twice to devour him.",
           "survivalTrait": "The first time the Elder of the village is devoured by the Werewolves, he survives. The game master does not flip his card. The Elder is eliminated only the second time he is devoured.",
           "quickElimination": "The village vote, the Witch's poisoning potion, the Hunter's shot, and the Barber's razor eliminate the Elder on the first attempt.",
-          "specialConsequence": "But despairing at having eliminated such a well of knowledge, the Villagers lose their special powers until the end of the game. He is not affected by the Infect Father of Wolves if it is the first time he is bitten.",
+          "specialConsequence": "But despairing at having eliminated such a well of knowledge, the Villagers lose their special powers until the end of the game. He is not affected by the Accursed Wolf-Father if it is the first time he is bitten.",
           "healingOption": "Warning: If the Elder of the village is healed by the Witch, he recovers only one life."
         },
         "scapegoat": {
@@ -438,6 +438,13 @@
     "App": {
       "seoDescription": "The Werewolves Assistant is a free tool to help game masters manage their Werewolves of Miller's Hollow games."
     },
+    "Error": {
+      "unexpectedError": "An unexpected error occurred",
+      "notNormalTeamNotified": "This is not normal… The team has been notified of the problem.",
+      "pageNotFound": "Page not found",
+      "youAreLost": "Looks like you're lost… You were trying to flee the Werewolves, weren't you ?",
+      "goBackToSafePlace": "Go back to a safe place"
+    },
     "IndexFooter": {
       "contact": "Contact the creator"
     },
@@ -639,7 +646,7 @@
       "inLoveByCupid": "Cupid made this player fall in love with another one.",
       "powerlessByActor": "The player can't act anymore, he's powerless.",
       "powerlessByWerewolves": "The player became powerless because he became a werewolf.",
-      "powerlessByAccursedWolfFather": "The player became powerless because he was infected by the Accursed Father of Wolves.",
+      "powerlessByAccursedWolfFather": "The player became powerless because he was infected by the Accursed Wolf-Father.",
       "powerlessByFox": "The player became powerless because he didn't sniff a werewolf in his last turn.",
       "powerlessByElder": "The player became powerless because one or more villagers eliminated the Elder.",
       "protectedByDefender": "The Defender protects this player from the werewolves for the current night.",
@@ -668,7 +675,7 @@
     },
     "CurrentPlayQuestion": {
       "unknownQuestionForCurrentPlay": "??",
-      "doesAccursedWolfFatherWantToInfect": "Does the Accursed Father of Wolves want to infect the player eaten by the Werewolves ?",
+      "doesAccursedWolfFatherWantToInfect": "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves ?",
       "doesActorWantToChooseCard": "Does the Actor want to choose a card and act the role ?",
       "whichPlayerDoesBigBadWolfEat": "Which player does the Big Bad Wolf want to eat ?",
       "whichPlayersDoesCupidCharm": "Which players does Cupid want to charm ?",
@@ -1193,7 +1200,7 @@
       "survivorsMustElectBetween": "The village must elect the Sheriff between {players}. If there is a tie, the Sheriff will be elected randomly."
     },
     "GameAccursedWolfFatherTurnStartsEvent": {
-      "accursedWolfFatherCanInfect": "The Accursed Father of Wolves wakes up and can infect a player eaten by the Werewolves if he wants to."
+      "accursedWolfFatherCanInfect": "The Accursed Wolf-Father wakes up and can infect a player eaten by the Werewolves if he wants to."
     },
     "GameActorTurnStartsEvent": {
       "actorCanChooseCardToPlay": "The Actor wakes up and can choose a card to play for this turn."
@@ -1314,6 +1321,10 @@
       "scandalMongerDidntMarkAnyone": "The Scandalmonger didn't mark anyone for this night. He flew away…",
       "scandalmongerHasMarkedAPlayer": "The Scandalmonger has marked a player with a feather.",
       "gameMasterWillPutScandalmongerMark": "The Game Master will put the mark in front of the player to remember the penalty for the next vote."
+    },
+    "GameAccursedWolfFatherMayHaveInfectedEvent": {
+      "accursedWolfFatherMayHaveInfectedAPlayer": "The Accursed Wolf-Father may have infected a player eaten by the Werewolves.",
+      "gameMasterWillTapAccursedWolfFatherMarkVictim": "If so, the Game Master goes around every player and taps in the back the player infected by the Accursed Wolf-Father. This player is from now a Werewolf but will keep his old villagers powers."
     }
   }
 }

@@ -17,6 +17,10 @@ Then(/^a new page should be opened with url starting with "(?<url>.+)"$/u, async
   await expect(newPage).toHaveURL(regexp);
 });
 
+Then(/^the page should have head title "(?<title>.+)"$/u, async function(this: CustomWorld, title: string): Promise<void> {
+  await expect(this.page).toHaveTitle(title);
+});
+
 Then(/^the page should have head title "(?<title>.+)" and meta tags$/u, async function(this: CustomWorld, title: string, metaTagsDatable: DataTable): Promise<void> {
   await expect(this.page).toHaveTitle(title);
 

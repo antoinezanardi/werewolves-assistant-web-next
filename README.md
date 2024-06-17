@@ -121,6 +121,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    <summary>🕹️ Game Playgrounds</summary>
 >     
 >>   <details>
+>>    <summary>🐺 Accursed Wolf-Father infects Playground</summary>
+>>
+>>    ![Accursed Wolf-Father infects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Accursed%20Wolf-Father%20infects%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🐺 👹 Big Bad Wolf eats Playground</summary>
 >>        
 >>    ![Big Bad Wolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Big%20Bad%20Wolf%20eats%20Playground.png)
@@ -240,6 +245,13 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    ![Game won by White Werewolf](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20White%20Werewolf.png)
 >  </details>
 >
+</details>
+
+<details>
+  <summary>❓ Page not found</summary>
+
+  ![Page not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Page%20not%20found.png)
+
 </details>
 
 ## <a name="installation">🔨 Installation</a>

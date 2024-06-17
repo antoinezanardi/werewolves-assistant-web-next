@@ -6,7 +6,7 @@ import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-describe("Game Accursed Wolf Father Turn Starts Event Component", () => {
+describe("Game Accursed Wolf-Father Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameAccursedWolfFatherTurnStartsEvent>>;
 
   async function mountGameAccursedWolfFatherTurnStartsEventComponent(options: ComponentMountingOptions<typeof GameAccursedWolfFatherTurnStartsEvent> = {}):
