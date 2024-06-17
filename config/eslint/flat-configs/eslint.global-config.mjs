@@ -22,6 +22,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       $fetch: READONLY,
       useI18n: READONLY,
       useHead: READONLY,
+      useError: READONLY,
       navigateTo: READONLY,
       storeToRefs: READONLY,
       ...Vitest.environments.env.globals,

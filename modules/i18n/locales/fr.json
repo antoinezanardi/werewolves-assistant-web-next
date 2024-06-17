@@ -438,6 +438,13 @@
     "App": {
       "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
     },
+    "Error": {
+      "unexpectedError": "Une erreur inattendue est survenue",
+      "notNormalTeamNotified": "Quelque chose cloche… L'équipe technique a été notifiée.",
+      "pageNotFound": "Page non trouvée",
+      "youAreLost": "On dirait que vous êtes perdu… Vous fuyez les Loups-Garous ?",
+      "goBackToSafePlace": "Retournez dans un endroit sûr"
+    },
     "IndexFooter": {
       "contact": "Contacter le créateur"
     },

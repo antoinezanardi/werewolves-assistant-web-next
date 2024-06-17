@@ -1,13 +1,27 @@
 <template>
   <NuxtLink
     id="back-to-home-button"
-    class="p-button p-button-secondary"
+    class="p-button"
+    :class="pButtonClass"
     to="/"
   >
-    <i class="fa-sign-out fas me-2"/>
+    <i
+      class="me-2"
+      :class="icon"
+    />
 
     <span>
-      {{ $t("components.BackToHomeButton.backToHome") }}
+      {{ $t(textKey) }}
     </span>
   </NuxtLink>
 </template>
+
+<script setup lang="ts">
+import type { BackToHomeButtonProps } from "~/components/shared/buttons/BackToHomeButton/back-to-home-button.types";
+
+withDefaults(defineProps<BackToHomeButtonProps>(), {
+  pButtonClass: "p-button-secondary",
+  icon: "fas fa-sign-out",
+  textKey: "components.BackToHomeButton.backToHome",
+});
+</script>

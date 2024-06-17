@@ -14,7 +14,7 @@ exports[`About Page Component > should match snapshot when rendered. 1`] = `
   <about-creator-stub class="mt-5"></about-creator-stub>
   <divider-stub></divider-stub>
   <div class="flex justify-center pb-3">
-    <back-to-home-button-stub></back-to-home-button-stub>
+    <back-to-home-button-stub pbuttonclass="p-button-secondary" textkey="components.BackToHomeButton.backToHome" icon="fas fa-sign-out"></back-to-home-button-stub>
   </div>
   <scroll-top-stub></scroll-top-stub>
 </div>"

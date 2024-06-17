@@ -6,7 +6,7 @@ exports[`Game Canceled Component > should match snapshot when rendered. 1`] = `
   <div>
     <divider-stub class="mb-4"></divider-stub>
     <create-another-game-button-stub></create-another-game-button-stub>
-    <back-to-home-button-stub></back-to-home-button-stub>
+    <back-to-home-button-stub pbuttonclass="p-button-secondary" textkey="components.BackToHomeButton.backToHome" icon="fas fa-sign-out"></back-to-home-button-stub>
   </div>
 </div>"
 `;
