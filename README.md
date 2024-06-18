@@ -176,6 +176,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>🦴🐺 White Werewolf eats Playground</summary>
+>>
+>>    ![White Werewolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/White%20Werewolf%20eats%20Playground.png)
+>>   </details> 
+>>   <details>
 >>    <summary>🤷 Game Playground without targets</summary>
 >>
 >>    ![Game Playground without targets](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Playground%20without%20targets.png)

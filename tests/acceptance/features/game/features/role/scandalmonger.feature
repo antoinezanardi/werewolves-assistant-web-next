@@ -15,6 +15,7 @@ Feature: 🐦‍⬛ Scandalmonger role
     And the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Scandalmonger wakes up and can mark a player with a feather."
+    And the game's event player card should have the name "Antoine"
 
     When the user goes to the next game event text
     Then the game's event should display the text "The player marked with a feather will have 2 more votes against him the next vote."

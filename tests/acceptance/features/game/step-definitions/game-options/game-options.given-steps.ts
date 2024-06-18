@@ -86,3 +86,10 @@ Given(/^the user sets the scandalmonger mark penalty to (?<markPenalty>\d+) in g
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input", markPenalty);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets the white werewolf waking up interval to (?<wakingUpInterval>\d+) in game options$/u, async function(this: CustomWorld, wakingUpInterval: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input", wakingUpInterval);
+  await closeDialogWithHeaderButton(this);
+});
