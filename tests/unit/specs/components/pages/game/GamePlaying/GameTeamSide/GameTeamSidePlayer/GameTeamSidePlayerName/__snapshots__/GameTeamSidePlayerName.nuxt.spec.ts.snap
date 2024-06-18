@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Team Side Player Name Component > should match snapshot when rendered. 1`] = `
+"<div class="flex items-center justify-center">
+  <!--v-if-->
+  <div id="player-name" class="text-center truncate">Antoine</div>
+</div>"
+`;

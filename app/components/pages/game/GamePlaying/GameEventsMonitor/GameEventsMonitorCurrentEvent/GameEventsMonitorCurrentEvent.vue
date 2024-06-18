@@ -30,6 +30,7 @@ import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEvents
 import GameSheriffPromotionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
+import GameVillagerVillagerIntroductionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameVillagerVillagerIntroductionEvent/GameVillagerVillagerIntroductionEvent.vue";
 import type { GameEventType } from "~/stores/game/game-event/types/game-event.types";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 
@@ -41,6 +42,7 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "game-starts": GameStartsEvent,
     "game-phase-starts": GamePhaseStartsEvent,
     "game-turn-starts": GameTurnStartsEvent,
+    "villager-villager-introduction": GameVillagerVillagerIntroductionEvent,
     "player-dies": GamePlayerDiesEvent,
     "seer-has-seen": GameSeerHasSeenEvent,
     "sheriff-promotion": GameSheriffPromotionEvent,
