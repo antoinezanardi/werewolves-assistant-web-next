@@ -1,3 +1,4 @@
+import { createFakeAccursedWolfFatherAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
 import type { Mock } from "vitest";
@@ -142,12 +143,27 @@ describe("Game Events Store", () => {
       test: string;
     }>([
       {
-        game: createFakeGame({ tick: 1 }),
+        game: createFakeGame({
+          tick: 1,
+          players: [createFakeAccursedWolfFatherAlivePlayer()],
+        }),
         expectedGameEvents: [
           createFakeGameEvent({ type: "game-starts" }),
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate game starts and turn starts events when game tick is 1.",
+      },
+      {
+        game: createFakeGame({
+          tick: 1,
+          players: [createFakeVillagerVillagerAlivePlayer()],
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "game-starts" }),
+          createFakeGameEvent({ type: "villager-villager-introduction" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate game starts, villager-villager introduction and turn starts events when game tick is 1 and villager villager is in the game.",
       },
       {
         test: "should not generate see has seen event when last game history is null.",

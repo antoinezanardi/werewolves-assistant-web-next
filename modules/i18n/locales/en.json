@@ -1334,7 +1334,7 @@
     "GameVillagerVillagerIntroductionEvent": {
       "cantFindVillagerVillager": "The Villager-Villager can't be found… Please proceed.",
       "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village ! His/Her role is revealed to the others.",
-      "goodPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
+      "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
     }
   }
 }

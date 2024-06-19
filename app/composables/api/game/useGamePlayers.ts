@@ -11,7 +11,6 @@ type UseGamePlayers = {
 function useGamePlayers(game: Ref<Game>): UseGamePlayers {
   const sheriffInPlayers = computed<Player | undefined>(() => game.value.players.find(({ attributes }) => attributes.some(({ name }) => name === "sheriff")));
 
-  // TODO: to test
   function getPlayersWithCurrentRole(role: RoleName): Player[] {
     return game.value.players.filter(player => player.role.current === role);
   }

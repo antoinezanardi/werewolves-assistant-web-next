@@ -1,6 +1,6 @@
 <template>
   <GameEventWithTexts
-    id="game-sheriff-promotion-event"
+    id="game-villager-villager-introduction-event"
     :texts="gameVillagerVillagerIntroductionEventTexts"
   >
     <div class="flex h-full items-center justify-center">
@@ -40,7 +40,7 @@ const gameVillagerVillagerIntroductionEventTexts = computed<string[]>(() => {
   }
   return [
     t("components.GameVillagerVillagerIntroductionEvent.villagerVillagerIntroduction", { playerName: villagerVillagerInPlayers.value.name }),
-    t("components.GameVillagerVillagerIntroductionEvent.goodPlayerForSheriff"),
+    t("components.GameVillagerVillagerIntroductionEvent.idealPlayerForSheriff"),
   ];
 });
 
