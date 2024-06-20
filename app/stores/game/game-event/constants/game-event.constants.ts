@@ -8,6 +8,7 @@ const GAME_EVENT_TYPES = [
   "sheriff-promotion",
   "scandalmonger-has-marked",
   "accursed-wolf-father-may-have-infected",
+  "pied-piper-has-charmed",
 ] as const;
 
 export { GAME_EVENT_TYPES };

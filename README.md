@@ -132,6 +132,12 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >> 
 >>   </details>
 >>   <details>
+>>    <summary>😵‍💫 Charmed people meet each other Playground</summary>
+>>
+>>    ![Charmed people meet each other Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Charmed%20people%20meet%20each%20other%20Playground.png)
+>>        
+>>   </details>
+>>   <details>
 >>    <summary>🛡️ Defender protects Playground</summary>
 >>        
 >>    ![Defender protects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Defender%20protects%20Playground.png)
@@ -143,6 +149,12 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Hunter shoots Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Hunter%20shoots%20Playground.png)
 >> 
 >>   </details>
+>>   <details>
+>>    <summary>🪈 Pied Piper charms Playground</summary>
+>>
+>>    ![Pied Piper charms Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Pied%20Piper%20charms%20Playground.png)
+>>
+>>  </details>
 >>   <details>
 >>    <summary>🐦‍⬛ Scandalmonger marks Playground</summary>
 >>

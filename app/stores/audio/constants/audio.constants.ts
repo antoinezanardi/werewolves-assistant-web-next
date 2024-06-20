@@ -23,6 +23,7 @@ const SOUND_EFFECT_NAMES = [
   "magic-wand",
   "monkey-cry",
   "mystical-mood",
+  "pan-flute",
   "possessed-laugh",
   "raven-cry",
   "raven-flying-away",
