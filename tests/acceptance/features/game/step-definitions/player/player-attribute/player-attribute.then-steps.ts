@@ -1,3 +1,4 @@
+import type { DataTable } from "@cucumber/cucumber";
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { getPlayerAttributeByRoleNameInGameTeamSide } from "@tests/acceptance/features/game/helpers/player/player-attribute/player-attribute.then-steps-helpers";
@@ -148,4 +149,12 @@ Then(/^the player with name "(?<name>.+)" should have the attribute scandalmonge
   const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
   await expect(worshipedByWildChildAttribute).toBeVisible();
+});
+
+Then(/^the following players should have the attribute charmed by pied piper in the game$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+  const players = playersDatatable.rows();
+  for (const [name] of players) {
+    const charmedByPiedPiperAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, "The Pied Piper charmed this player.");
+    await expect(charmedByPiedPiperAttribute).toBeVisible();
+  }
 });
