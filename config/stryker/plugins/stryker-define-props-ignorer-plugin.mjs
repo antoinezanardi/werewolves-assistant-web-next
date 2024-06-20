@@ -11,9 +11,9 @@ export const strykerPlugins = [
       if (
         expression?.type === "CallExpression" &&
         (isDefinePropsCall(expression.callee) ||
-        expression.callee?.name === "withDefaults" &&
-        expression.arguments[0]?.type === "CallExpression" &&
-        isDefinePropsCall(expression.arguments[0]?.callee))
+          expression.callee?.name === "withDefaults" &&
+          expression.arguments[0]?.type === "CallExpression" &&
+          isDefinePropsCall(expression.arguments[0]?.callee))
       ) {
         return ignoreReason;
       }
@@ -23,9 +23,9 @@ export const strykerPlugins = [
         path.node.id.type === "Identifier" &&
         path.node.init?.type === "CallExpression" &&
         (isDefinePropsCall(path.node.init.callee) ||
-        path.node.init?.callee?.name === "withDefaults" &&
-        path.node.init?.arguments[0]?.type === "CallExpression" &&
-        isDefinePropsCall(path.node.init?.arguments[0]?.callee));
+          path.node.init?.callee?.name === "withDefaults" &&
+          path.node.init?.arguments[0]?.type === "CallExpression" &&
+          isDefinePropsCall(path.node.init?.arguments[0]?.callee));
 
       if (isVariableWithDefineProps) {
         return ignoreReason;
