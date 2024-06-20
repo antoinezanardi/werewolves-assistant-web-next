@@ -12,6 +12,6 @@
       "json:tests/acceptance/reports/report.json",
       "junit:tests/acceptance/reports/junit.xml"
     ],
-    "parallel": 3
+    "parallel": 2
   }
 }
