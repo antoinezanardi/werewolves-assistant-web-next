@@ -1,3 +1,4 @@
+import type { DataTable } from "@cucumber/cucumber";
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import { getPlayerAttributeByRoleNameInGameTeamSide } from "@tests/acceptance/features/game/helpers/player/player-attribute/player-attribute.then-steps-helpers";
@@ -80,10 +81,15 @@ Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the 
   await expect(powerlessByWerewolvesAttribute).toBeVisible();
 });
 
-Then(/^the player with name "(?<name>.+)" should have the attribute powerless by accursed wolf father in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
-  const roleName = "The player became powerless because he was infected by the Accursed Father of Wolves.";
+Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the attribute powerless by accursed wolf-father in the game$/u, async function(this: CustomWorld, name: string, notPowerless: string | null): Promise<void> {
+  const roleName = "The player became powerless because he was infected by the Accursed Wolf-Father.";
   const powerlessByAccursedWolfFatherAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
+  if (notPowerless !== null) {
+    await expect(powerlessByAccursedWolfFatherAttribute).toBeHidden();
+
+    return;
+  }
   await expect(powerlessByAccursedWolfFatherAttribute).toBeVisible();
 });
 
@@ -148,4 +154,12 @@ Then(/^the player with name "(?<name>.+)" should have the attribute scandalmonge
   const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
   await expect(worshipedByWildChildAttribute).toBeVisible();
+});
+
+Then(/^the following players should have the attribute charmed by pied piper in the game$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+  const players = playersDatatable.rows();
+  for (const [name] of players) {
+    const charmedByPiedPiperAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, "The Pied Piper charmed this player.");
+    await expect(charmedByPiedPiperAttribute).toBeVisible();
+  }
 });

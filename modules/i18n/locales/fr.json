@@ -583,8 +583,13 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Image du rôle du joueur {playerName}",
+      "roleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameTeamSidePlayerName": {
       "thisPlayerIsDead": "Ce joueur est mort"
+    },
+    "GameTeamSidePlayerRoleName": {
+      "thisPlayerRoleIsRevealed": "Le rôle de ce joueur est révélé"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
@@ -1212,8 +1217,8 @@
       "bigBadWolfEatsVillager": "Le Grand Méchant Loup se réveille et va dévorer un Villageois."
     },
     "GameCharmedTurnStartsEvent": {
-      "charmedPeopleMeetEachOther": "Les premiers charmés par le Joueur de Flûte se réveillent et se rencontrent.",
-      "charmedPeopleMeetEachOtherWithOldOnes": "Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
+      "charmedPeopleMeetEachOther": "Le premier charmé par le Joueur de Flûte se réveille. | Les premiers charmés par le Joueur de Flûte se réveillent et se rencontrent.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "Le nouveau charmé par le Joueur de Flûte se réveille et rencontre les anciens. Attention aux dernières victimes du Joueur de Flûte ! | Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupidon se réveille et choisit deux joueurs pour être amoureux.",
@@ -1235,7 +1240,7 @@
       "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles."
     },
     "GamePiedPiperTurnStartsEvent": {
-      "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
+      "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un seul joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
     },
     "GameScandalmongerTurnStartsEvent": {
       "scandalmongerCanMarkPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",
@@ -1325,6 +1330,15 @@
     "GameAccursedWolfFatherMayHaveInfectedEvent": {
       "accursedWolfFatherMayHaveInfectedAPlayer": "L'Infect Père des Loups a peut-être infecté un joueur dévoré par les Loups-Garous.",
       "gameMasterWillTapAccursedWolfFatherMarkVictim": "Si c'est le cas, le Maître du Jeu va faire le tour des joueurs et tapoter le dos du joueur infecté par l'Infect Père des Loups. Ce joueur est désormais un Loup-Garou mais garde ses anciens pouvoirs de Villageois."
+    },
+    "GameVillagerVillagerIntroductionEvent": {
+      "cantFindVillagerVillager": "Le Villageois-Villageois ne peut être trouvé… Veuillez continuer.",
+      "villagerVillagerIntroduction": "{playerName} est le Villageois-Villageois du village ! Son rôle est connu de tous.",
+      "idealPlayerForSheriff": "Sans pouvoir particulier, les autres joueurs peuvent lui donner une confiance aveugle. Pourquoi pas ne pas l'élire comme Maire ?"
+    },
+    "GamePiedPiperHasCharmedEvent": {
+      "piedPiperHasCharmed": "Le Joueur de Flûte a charmé un joueur | Le Joueur de Flûte a charmé {charmedCount} joueurs.",
+      "gameMasterWillTapCharmedPlayers": "Le Maître du Jeu va tapoter le dos du joueur charmé pour qu'il sache qu'il est charmé. | Le Maître du Jeu va tapoter le dos des {charmedCount} joueurs charmés pour qu'ils sachent qu'ils sont charmés."
     }
   }
 }

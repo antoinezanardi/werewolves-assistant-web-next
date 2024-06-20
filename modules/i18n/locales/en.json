@@ -294,7 +294,7 @@
           "revengePlot": "Ignominiously chased from the village, he returned years later under the guise of a false identity to exact his terrible revenge.",
           "nightlyAction": "Every night, at the game master's call, the Piper charms two new players. As soon as only charmed players remain, the Piper wins against all others. (Even if this happens through a village vote or thanks to the Werewolves).",
           "wolfTransformation": "If he is infected by the Infected Father of the Werewolves, he becomes a simple Werewolf. His initial goal of charming all players is thus abandoned. He will collaborate with the Werewolves for their common victory.",
-          "attentionNote": "Caution: the Pied Piper cannot self-charm. The Savior does not protect against charm. The Witch does not heal from charm. Werewolves are not immune to charm. Charmed players retain all their powers and characteristics. Charm is not transmitted between Lovers."
+          "attentionNote": "Caution: the Pied Piper cannot self-charm. The Defender does not protect against charm. The Witch does not heal from charm. Werewolves are not immune to charm. Charmed players retain all their powers and characteristics. Charm is not transmitted between Lovers."
         },
         "scandalmonger": {
           "hisGoalIsToKillWerewolves": "His goal is to eliminate the Werewolves.",
@@ -583,8 +583,13 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Role image of the player {playerName}",
+      "roleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameTeamSidePlayerName": {
       "thisPlayerIsDead": "This player is dead"
+    },
+    "GameTeamSidePlayerRoleName": {
+      "thisPlayerRoleIsRevealed": "This player's role is revealed"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Current play icon",
@@ -1212,8 +1217,8 @@
       "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager."
     },
     "GameCharmedTurnStartsEvent": {
-      "charmedPeopleMeetEachOther": "The first charmed people by the Pied Piper wake up and meet each other.",
-      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+      "charmedPeopleMeetEachOther": "The first charmed person by the Pied Piper wakes up. | The first charmed people by the Pied Piper wake up and meet each other.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims ! | The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
@@ -1235,7 +1240,7 @@
       "loversRevealEachOtherRoles": "In this special game, the Lovers reveal their roles to each other."
     },
     "GamePiedPiperTurnStartsEvent": {
-      "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm one player | The Pied Piper wakes up and will charm {count} players."
+      "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm only one player. | The Pied Piper wakes up and will charm {count} players."
     },
     "GameScandalmongerTurnStartsEvent": {
       "scandalmongerCanMarkPlayer": "The Scandalmonger wakes up and can mark a player with a feather.",
@@ -1325,6 +1330,15 @@
     "GameAccursedWolfFatherMayHaveInfectedEvent": {
       "accursedWolfFatherMayHaveInfectedAPlayer": "The Accursed Wolf-Father may have infected a player eaten by the Werewolves.",
       "gameMasterWillTapAccursedWolfFatherMarkVictim": "If so, the Game Master goes around every player and taps in the back the player infected by the Accursed Wolf-Father. This player is from now a Werewolf but will keep his old villagers powers."
+    },
+    "GameVillagerVillagerIntroductionEvent": {
+      "cantFindVillagerVillager": "The Villager-Villager can't be found… Please proceed.",
+      "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village ! His/Her role is revealed to the others.",
+      "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
+    },
+    "GamePiedPiperHasCharmedEvent": {
+      "piedPiperHasCharmed": "The Pied Piper just charmed a player. | The Pied Piper just charmed {charmedCount} players.",
+      "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed."
     }
   }
 }

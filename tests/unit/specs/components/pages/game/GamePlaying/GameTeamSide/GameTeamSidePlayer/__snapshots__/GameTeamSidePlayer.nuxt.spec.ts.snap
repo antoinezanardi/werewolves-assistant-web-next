@@ -5,13 +5,11 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
   <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
     <div class="" style="grid-area: 1/1/1/1;">
       <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500" data-testid="game-team-side-player-Antoine">
-        <div class="flex justify-center">
-          <!--v-if-->
-          <div id="player-name" class="text-center truncate">Antoine</div>
-        </div>
+        <game-team-side-player-name-stub player="[object Object]" id="game-team-side-player-name"></game-team-side-player-name-stub>
         <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-1" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
           <!---->
-        </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
+        </div>
+        <game-team-side-player-role-name-stub player="[object Object]" id="game-team-side-player-role-name"></game-team-side-player-role-name-stub>
         <div class="flex items-center mt-2">
           <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">
@@ -25,13 +23,11 @@ exports[`Game Team Side Player Component > should match snapshot when rendered. 
     <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
         calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
       <div id="game-team-side-player" class="border-2 border-gray-700 p-2 rounded-md w-full glow:border-red-500" data-testid="game-team-side-player-Antoine">
-        <div class="flex justify-center">
-          <!--v-if-->
-          <div id="player-name" class="text-center truncate">Antoine</div>
-        </div>
+        <game-team-side-player-name-stub player="[object Object]" id="game-team-side-player-name"></game-team-side-player-name-stub>
         <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-1" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
           <!---->
-        </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
+        </div>
+        <game-team-side-player-role-name-stub player="[object Object]" id="game-team-side-player-role-name"></game-team-side-player-role-name-stub>
         <div class="flex items-center mt-2">
           <role-image-stub alt="components.GameTeamSidePlayer.roleImageAlt, {" playerName":"Antoine"}" rolename="werewolf" sizes="50" definition="small" id="player-werewolf-role-image" class="!border-2 glow:border-red-500"></role-image-stub>
           <div id="player-attributes" class="grid grid-cols-3 grow mx-2">

@@ -26,9 +26,12 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (!lastGameHistoryRecord) {
       return [];
     }
-    const { action, voting } = lastGameHistoryRecord.play;
+    const { source, action, voting } = lastGameHistoryRecord.play;
     if (action === "elect-sheriff" && voting?.result === "sheriff-election" || action === "delegate") {
       return [GameEvent.create({ type: "sheriff-promotion" })];
+    }
+    if (action === "charm" && source.name === "pied-piper") {
+      return [GameEvent.create({ type: "pied-piper-has-charmed" })];
     }
     const actionsGameEvents: Partial<Record<GamePlayAction, GameEvent[]>> = {
       look: [GameEvent.create({ type: "seer-has-seen" })],
@@ -50,6 +53,9 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     resetGameEvents();
     if (game.tick === 1) {
       gameEvents.value.push(GameEvent.create({ type: "game-starts" }));
+      if (game.players.some(player => player.role.current === "villager-villager")) {
+        gameEvents.value.push(GameEvent.create({ type: "villager-villager-introduction" }));
+      }
     }
     gameEvents.value.push(...getLastGameHistoryRecordEvents(game));
     if (game.phase.tick === 1 && game.phase.name !== "twilight") {

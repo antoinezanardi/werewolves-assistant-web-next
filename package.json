@@ -81,7 +81,7 @@
     "@stryker-mutator/core": "^8.2.6",
     "@stryker-mutator/typescript-checker": "^8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
-    "@stylistic/eslint-plugin": "^2.2.1",
+    "@stylistic/eslint-plugin": "^2.2.2",
     "@types/eslint": "^8.56.10",
     "@types/howler": "^2.2.11",
     "@types/pixelmatch": "^5.2.6",
@@ -104,7 +104,7 @@
     "eslint-plugin-vitest": "^0.5.4",
     "eslint-plugin-vue": "^9.26.0",
     "fuse.js": "^7.0.0",
-    "happy-dom": "^14.12.0",
+    "happy-dom": "^14.12.3",
     "howler": "^2.2.4",
     "husky": "^9.0.11",
     "jest-extended": "^4.0.2",
@@ -123,7 +123,7 @@
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^5.0.7",
-    "sass": "^1.77.5",
+    "sass": "^1.77.6",
     "semantic-release": "^24.0.0",
     "semantic-release-export-data": "^1.1.0",
     "tailwindcss": "^3.4.4",
@@ -148,7 +148,7 @@
     "primevue": "^3.52.0"
   },
   "engines": {
-    "node": ">=20.14.0"
+    "node": ">=20.15.0"
   },
   "os": [
     "darwin",

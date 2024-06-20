@@ -17,3 +17,19 @@ Then(/^the player with name "(?<name>.+)" should be dead in the game$/u, async f
 
   await expect(deadImage).toBeVisible();
 });
+
+Then(/^the player with name "(?<name>.+)" should have his role hidden in the game$/u, async function(this: CustomWorld, playerName: string): Promise<void> {
+  const gameTeamSidePlayerLocator = this.page.getByTestId(`game-team-side-player-${playerName}`).first();
+  await gameTeamSidePlayerLocator.waitFor({ state: "visible" });
+  const revealedRoleImage = gameTeamSidePlayerLocator.getByRole("img", { name: "This player's role is revealed", exact: true });
+
+  await expect(revealedRoleImage).toBeHidden();
+});
+
+Then(/^the player with name "(?<name>.+)" should have his role revealed in the game$/u, async function(this: CustomWorld, playerName: string): Promise<void> {
+  const gameTeamSidePlayerLocator = this.page.getByTestId(`game-team-side-player-${playerName}`).first();
+  await gameTeamSidePlayerLocator.waitFor({ state: "visible" });
+  const revealedRoleImage = gameTeamSidePlayerLocator.getByRole("img", { name: "This player's role is revealed", exact: true });
+
+  await expect(revealedRoleImage).toBeVisible();
+});

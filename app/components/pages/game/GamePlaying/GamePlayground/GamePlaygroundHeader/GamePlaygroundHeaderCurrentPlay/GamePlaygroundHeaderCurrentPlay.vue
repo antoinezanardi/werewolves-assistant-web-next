@@ -1,20 +1,27 @@
 <template>
   <div
     id="game-playground-header-current-play"
-    class="flex items-center justify-center"
+    class="flex gap-2 items-center justify-center"
   >
-    <NuxtImg
-      v-if="currentPlaySvgAndTextKey"
-      :alt="$t(`components.GamePlaygroundHeaderCurrentPlay.currentPlayAltText`)"
-      class="me-3"
-      height="50"
-      :src="currentPlaySvgAndTextKey.svgPath"
-      width="50"
-    />
+    <div class="flex justify-end w-2/12">
+      <NuxtImg
+        v-if="currentPlaySvgAndTextKey"
+        :alt="$t(`components.GamePlaygroundHeaderCurrentPlay.currentPlayAltText`)"
+        class="me-3"
+        height="50"
+        :src="currentPlaySvgAndTextKey.svgPath"
+        width="50"
+      />
+    </div>
 
-    <h2 id="current-play-text">
+    <h2
+      id="current-play-text"
+      class="text-center"
+    >
       {{ currentPlayText }}
     </h2>
+
+    <div class="w-2/12"/>
   </div>
 </template>
 

@@ -4,12 +4,14 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
+import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
 import GameScandalmongerHasMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerHasMarkedEvent/GameScandalmongerHasMarkedEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
 import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
+import GameVillagerVillagerIntroductionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameVillagerVillagerIntroductionEvent/GameVillagerVillagerIntroductionEvent.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
@@ -135,6 +137,30 @@ describe("Game Events Monitor Current Event Component", () => {
       const gameAccursedWolfFatherMayHaveInfectedEvent = wrapper.findComponent<typeof GameAccursedWolfFatherMayHaveInfectedEvent>(GameAccursedWolfFatherMayHaveInfectedEvent);
 
       expect(gameAccursedWolfFatherMayHaveInfectedEvent.exists()).toBeTruthy();
+    });
+
+    it("should render villager villager introduction event component when current game event is villager villager introduction type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "villager-villager-introduction" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gameVillagerVillagerIntroductionEvent = wrapper.findComponent<typeof GameVillagerVillagerIntroductionEvent>(GameVillagerVillagerIntroductionEvent);
+
+      expect(gameVillagerVillagerIntroductionEvent.exists()).toBeTruthy();
+    });
+
+    it("should render pied piper has charmed event component when current game event is pied piper has charmed type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "pied-piper-has-charmed" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gamePiedPiperHasCharmedEvent = wrapper.findComponent<typeof GamePiedPiperHasCharmedEvent>(GamePiedPiperHasCharmedEvent);
+
+      expect(gamePiedPiperHasCharmedEvent.exists()).toBeTruthy();
     });
 
     it("should not render any game event component when there is no current game event.", async() => {

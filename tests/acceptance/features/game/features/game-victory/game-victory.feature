@@ -4,20 +4,14 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by nobody, there are no survivors
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Witch    |
     When the user closes the toast
-    And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
     And the user skips all game events
     Then the game's current play title should be "Cupid charms"
 
@@ -51,7 +45,8 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by Villagers
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
@@ -59,19 +54,11 @@ Feature: 🏆 Game Victory
       | David   | Angel    |
     When the user closes the toast
     And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
-    And the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the survivors vote with the votes
       | source  | target |
       | Antoine | Bob    |
-      | Charlie | Bob    |
     And the user skips all game events
     Then the game should be over with title "The Villagers win !" and subtitle "All of the Werewolves are dead. The village is safe at last."
     And the game winners should be the players
@@ -84,20 +71,14 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by Werewolves
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role                 |
       | Antoine | White Werewolf       |
       | Bob     | Werewolf             |
       | Charlie | Villager             |
       | David   | Accursed Wolf-Father |
     When the user closes the toast
-    And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
@@ -122,20 +103,14 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by Lovers
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Cupid    |
       | Bob     | Werewolf |
       | Charlie | Hunter   |
       | David   | Idiot    |
     When the user closes the toast
-    And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
     And the user skips all game events
     Then the game's current play title should be "Cupid charms"
 
@@ -166,7 +141,8 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by Angel
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Villager |
       | Bob     | Werewolf |
@@ -174,19 +150,11 @@ Feature: 🏆 Game Victory
       | David   | Angel    |
     When the user closes the toast
     And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
-    And the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the survivors vote with the votes
       | source  | target |
       | Antoine | David  |
-      | Charlie | David  |
     And the user skips all game events
     Then the game should be over with title "The Angel wins by himself !" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
     And the game winners should be the players
@@ -197,20 +165,14 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by Pied Piper
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role       |
       | Antoine | Pied Piper |
       | Bob     | Werewolf   |
       | Charlie | Villager   |
       | David   | Villager   |
     When the user closes the toast
-    And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
@@ -236,20 +198,14 @@ Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by White Werewolf
 
-    Given the user creates a game with the players with name and role
+    Given the user disables the sheriff in game options
+    And the user creates a game with the players with name and role
       | name    | role           |
       | Antoine | White Werewolf |
       | Bob     | Werewolf       |
       | Charlie | Hunter         |
       | David   | Idiot          |
     When the user closes the toast
-    And the user skips all game events
-    Then the game's current play title should be "Survivors elect the Sheriff"
-
-    When the survivors elect the sheriff with the votes
-      | source  | target  |
-      | Bob     | Antoine |
-      | Charlie | Antoine |
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 

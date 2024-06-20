@@ -81,7 +81,7 @@ jobs:
       - name: Get next release version and create release changelog 🏷️
         id: release
         run: |
-          npx semantic-release --dry-run --no-ci | awk '/^## / {if (found) exit; found=1} found {print}' > RELEASE.md
+          npx semantic-release --dry-run --no-ci | awk '/^## [0-9]+\.[0-9]+\.[0-9]+ \(https:\/\/github\.com\/antoinezanardi/ {if (found) exit; found=1} found {print}' > RELEASE.md
           awk '/^## /{header=1} header{print; header=0; next} {sub(/^ */, ""); sub(/ \(.+?\)$/, ""); print}' RELEASE.md > temp.md && mv temp.md RELEASE.md
           awk '/^\* / { sub(/^\* /, "* **"); sub(/: /, "**: ", $0) } 1' RELEASE.md > temp.md && mv temp.md RELEASE.md
           sed -E 's/^## ([0-9]+\.[0-9]+\.[0-9]+) \(https:\/\/github\.com\/antoinezanardi\/werewolves-assistant-web-next\/compare\/v[0-9]+\.[0-9]+\.[0-9]+...v[0-9]+\.[0-9]+\.[0-9]+\) \(([0-9-]+)\)/## Release v\1/' RELEASE.md > temp.md && mv temp.md RELEASE.md

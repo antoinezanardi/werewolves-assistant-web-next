@@ -1,7 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
+import GameSheriffPromotionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
@@ -16,8 +16,8 @@ import { createFakeAccursedWolfFatherAlivePlayer } from "@tests/unit/utils/facto
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-describe("Game Sheriff Has Been Elected Event Component", () => {
-  let wrapper: ReturnType<typeof mount<typeof GameSheriffHasBeenElectedEvent>>;
+describe("Game Sheriff Promotion Event Component", () => {
+  let wrapper: ReturnType<typeof mount<typeof GameSheriffPromotionEvent>>;
   const defaultSheriffPlayer = createFakeAccursedWolfFatherAlivePlayer({ name: "Antoine", attributes: [createFakeSheriffBySheriffPlayerAttribute()] });
   const defaultGame = createFakeGame({
     players: [
@@ -29,9 +29,9 @@ describe("Game Sheriff Has Been Elected Event Component", () => {
   });
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
-  async function mountGameSheriffHasBeenElectedEventComponent(options: ComponentMountingOptions<typeof GameSheriffHasBeenElectedEvent> = {}):
-  Promise<ReturnType<typeof mount<typeof GameSheriffHasBeenElectedEvent>>> {
-    return mountSuspendedComponent(GameSheriffHasBeenElectedEvent, {
+  async function mountGameSheriffHasBeenElectedEventComponent(options: ComponentMountingOptions<typeof GameSheriffPromotionEvent> = {}):
+  Promise<ReturnType<typeof mount<typeof GameSheriffPromotionEvent>>> {
+    return mountSuspendedComponent(GameSheriffPromotionEvent, {
       global: { plugins: [createTestingPinia(testingPinia)] },
       ...options,
     });
@@ -59,7 +59,7 @@ describe("Game Sheriff Has Been Elected Event Component", () => {
     expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("trumpet-fanfare");
   });
 
-  describe("Sheriff Has Been Elected Event Texts", () => {
+  describe("Sheriff Promotion Event Texts", () => {
     it("should pass sheriff promotion by old sheriff event texts when sheriff is defined and last game play action is delegate.", async() => {
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({

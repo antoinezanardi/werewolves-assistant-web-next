@@ -1,3 +1,5 @@
+import { createFakeGameHistoryRecordPlaySource } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.factory";
+import { createFakeAccursedWolfFatherAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
 import type { Mock } from "vitest";
@@ -142,12 +144,27 @@ describe("Game Events Store", () => {
       test: string;
     }>([
       {
-        game: createFakeGame({ tick: 1 }),
+        game: createFakeGame({
+          tick: 1,
+          players: [createFakeAccursedWolfFatherAlivePlayer()],
+        }),
         expectedGameEvents: [
           createFakeGameEvent({ type: "game-starts" }),
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate game starts and turn starts events when game tick is 1.",
+      },
+      {
+        game: createFakeGame({
+          tick: 1,
+          players: [createFakeVillagerVillagerAlivePlayer()],
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "game-starts" }),
+          createFakeGameEvent({ type: "villager-villager-introduction" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate game starts, villager-villager introduction and turn starts events when game tick is 1 and villager villager is in the game.",
       },
       {
         test: "should not generate see has seen event when last game history is null.",
@@ -246,6 +263,12 @@ describe("Game Events Store", () => {
               ],
             }),
           }),
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "charm",
+              source: createFakeGameHistoryRecordPlaySource({ name: "hunter" }),
+            }),
+          }),
         }),
         expectedGameEvents: [
           createFakeGameEvent({ type: "game-starts" }),
@@ -315,6 +338,35 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate sheriff promotion event when last game history record action is delegate.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "charm",
+              source: createFakeGameHistoryRecordPlaySource({ name: "pied-piper" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "pied-piper-has-charmed" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate pied piper has charmed event when last game history action is charm and source name is pied piper.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "shoot",
+              source: createFakeGameHistoryRecordPlaySource({ name: "pied-piper" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate pied piper has charmed event when last game history action is not charmed.",
       },
       {
         game: createFakeGame({

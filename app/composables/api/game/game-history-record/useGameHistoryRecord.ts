@@ -16,8 +16,8 @@ function useGameHistoryRecord(): UseGameHistoryRecord {
 
     return type === "vote" && !votes ||
       type === "target" && !targets ||
-        type === "request-another-vote" && didJudgeRequestAnotherVote === undefined ||
-          type === "choose-card" && !chosenCard;
+      type === "request-another-vote" && didJudgeRequestAnotherVote === undefined ||
+      type === "choose-card" && !chosenCard;
   }
   return { didSourceSkipped };
 }
