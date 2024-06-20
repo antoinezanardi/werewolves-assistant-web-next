@@ -1,5 +1,30 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.22.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.21.0...v1.22.0) (2024-06-20)
+
+### 🚀 Features
+
+* **villager-villager:** event and revelations among player roles ([#552](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/552)) ([1f6fb83](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1f6fb83195bb550284e4577af341fd1157cab134))
+
+### 🐛 Bug Fixes
+
+* **release:** correct release content in develop ([#561](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/561)) ([af8a869](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/af8a8698b8f2915fe1b0b2cb999240bdbcae984a))
+
+### ✅ Tests
+
+* **acceptance:** white werewolf acceptance tests ([#551](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/551)) ([700f730](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/700f73093ef2e7ce0c9b8a5aabf82f1da2a975ed))
+* **cucumber:** run tests in parallel ([#554](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/554)) ([731a938](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/731a9384a293817bc82d13830a53ef2975bff348))
+* **game:** optimize game victory acceptance tests ([#558](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/558)) ([52524bf](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/52524bf4ec7dfcac970c61299d8d9f3f3f3880bc))
+* **pied-piper:** acceptance tests ([#555](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/555)) ([c8036fd](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c8036fd7eaeea1bd7b363e15712fa64157ab3832))
+
+### 🧹 Chore
+
+* **coderabbit:** config file ([#560](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/560)) ([8a0a95b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/8a0a95b0e6cab2b68a5d3f14b194a2ce33734553))
+* **deps:** update dependency @stylistic/eslint-plugin to ^2.2.2 ([#553](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/553)) ([fd12df9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/fd12df9252f6f058050a9a998029da63b5ed0e0b))
+* **deps:** update dependency happy-dom to ^14.12.3 ([#556](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/556)) ([1ab29be](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1ab29be9ce9c448262f7ac6b0fbd5c460940c7d5))
+* **deps:** update dependency sass to ^1.77.6 ([#549](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/549)) ([b0573a0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/b0573a0e76d852e9e377a54f25e1e18b0fced6bb))
+* **deps:** update node.js to >=20.15.0 ([#557](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/557)) ([3be5c0f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3be5c0f218f3d50f432b6f0260ca00963578c39e))
+
 ## [1.21.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.20.0...v1.21.0) (2024-06-17)
 
 ### 🚀 Features
