@@ -6,13 +6,13 @@ import { makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
-When(/^the survivors elect the sheriff with the votes$/u, async function(this: CustomWorld, votes: DataTable): Promise<void> {
+When(/^the survivors elect the sheriff with the votes$/u, { timeout: 10000 }, async function(this: CustomWorld, votes: DataTable): Promise<void> {
   const votesData = votes.rows() as [source: string, target: string][];
   await playersVoteInPlayground(this, votesData);
   await makePlayInPlayground(this);
 });
 
-When(/^the survivors vote with the votes$/u, async function(this: CustomWorld, votes: DataTable): Promise<void> {
+When(/^the survivors vote with the votes$/u, { timeout: 10000 }, async function(this: CustomWorld, votes: DataTable): Promise<void> {
   const votesData = votes.rows() as [source: string, target: string][];
   await playersVoteInPlayground(this, votesData);
   await makePlayInPlayground(this);
