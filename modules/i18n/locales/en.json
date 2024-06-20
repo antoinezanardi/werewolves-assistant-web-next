@@ -1335,6 +1335,10 @@
       "cantFindVillagerVillager": "The Villager-Villager can't be found… Please proceed.",
       "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village ! His/Her role is revealed to the others.",
       "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
+    },
+    "GamePiedPiperHasCharmedEvent": {
+      "piedPiperHasCharmed": "The Pied Piper just charmed a player | The Pied Piper just charmed {charmedCount} players.",
+      "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed."
     }
   }
 }

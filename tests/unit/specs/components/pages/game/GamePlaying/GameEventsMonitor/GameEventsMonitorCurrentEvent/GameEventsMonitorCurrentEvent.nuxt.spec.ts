@@ -4,6 +4,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
+import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePlayerDiesEvent/GamePlayerDiesEvent.vue";
 import GameScandalmongerHasMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerHasMarkedEvent/GameScandalmongerHasMarkedEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
@@ -148,6 +149,18 @@ describe("Game Events Monitor Current Event Component", () => {
       const gameVillagerVillagerIntroductionEvent = wrapper.findComponent<typeof GameVillagerVillagerIntroductionEvent>(GameVillagerVillagerIntroductionEvent);
 
       expect(gameVillagerVillagerIntroductionEvent.exists()).toBeTruthy();
+    });
+
+    it("should render pied piper has charmed event component when current game event is pied piper has charmed type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "pied-piper-has-charmed" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gamePiedPiperHasCharmedEvent = wrapper.findComponent<typeof GamePiedPiperHasCharmedEvent>(GamePiedPiperHasCharmedEvent);
+
+      expect(gamePiedPiperHasCharmedEvent.exists()).toBeTruthy();
     });
 
     it("should not render any game event component when there is no current game event.", async() => {

@@ -1335,6 +1335,10 @@
       "cantFindVillagerVillager": "Le Villageois-Villageois ne peut être trouvé… Veuillez continuer.",
       "villagerVillagerIntroduction": "{playerName} est le Villageois-Villageois du village ! Son rôle est connu de tous.",
       "idealPlayerForSheriff": "Sans pouvoir particulier, les autres joueurs peuvent lui donner une confiance aveugle. Pourquoi pas ne pas l'élire comme Maire ?"
+    },
+    "GamePiedPiperHasCharmedEvent": {
+      "piedPiperHasCharmed": "Le Joueur de Flûte a charmé un joueur | Le Joueur de Flûte a charmé {charmedCount} joueurs.",
+      "gameMasterWillTapCharmedPlayers": "Le Maître du Jeu va tapoter le dos du joueur charmé pour qu'il sache qu'il est charmé. | Le Maître du Jeu va tapoter le dos des {charmedCount} joueurs charmés pour qu'ils sachent qu'ils sont charmés."
     }
   }
 }

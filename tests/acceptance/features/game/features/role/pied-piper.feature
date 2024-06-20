@@ -42,7 +42,15 @@ Feature: 🪈 Pied Piper role
       | name    |
       | Bob     |
       | Charlie |
-    And the game's event should display the text "The first charmed people by the Pied Piper wake up and meet each other."
+    And the game's event should display the text "The Pied Piper just charmed 2 players."
+    And the game's event player card should have the name "Bob"
+    And the game's event player card should have the name "Charlie"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The Game Master will tap in the back the 2 charmed players so they know they are charmed."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The first charmed people by the Pied Piper wake up and meet each other."
     And the game's event player card should have the name "Bob"
     And the game's event player card should have the name "Charlie"
 
@@ -83,7 +91,15 @@ Feature: 🪈 Pied Piper role
       | Bob   |
       | David |
       | Neil  |
-    And the game's event should display the text "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+    And the game's event should display the text "The Pied Piper just charmed 2 players."
+    And the game's event player card should have the name "David"
+    And the game's event player card should have the name "Neil"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The Game Master will tap in the back the 2 charmed players so they know they are charmed."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
     And the game's event player card should have the name "Bob"
     And the game's event player card should have the name "David"
 
