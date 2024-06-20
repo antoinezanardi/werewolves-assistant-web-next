@@ -81,10 +81,15 @@ Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the 
   await expect(powerlessByWerewolvesAttribute).toBeVisible();
 });
 
-Then(/^the player with name "(?<name>.+)" should have the attribute powerless by accursed wolf father in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
-  const roleName = "The player became powerless because he was infected by the Accursed Father of Wolves.";
+Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the attribute powerless by accursed wolf-father in the game$/u, async function(this: CustomWorld, name: string, notPowerless: string | null): Promise<void> {
+  const roleName = "The player became powerless because he was infected by the Accursed Wolf-Father.";
   const powerlessByAccursedWolfFatherAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
+  if (notPowerless !== null) {
+    await expect(powerlessByAccursedWolfFatherAttribute).toBeHidden();
+
+    return;
+  }
   await expect(powerlessByAccursedWolfFatherAttribute).toBeVisible();
 });
 

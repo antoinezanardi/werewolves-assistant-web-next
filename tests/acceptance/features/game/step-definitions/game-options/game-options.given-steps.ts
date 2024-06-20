@@ -93,3 +93,17 @@ Given(/^the user sets the white werewolf waking up interval to (?<wakingUpInterv
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input", wakingUpInterval);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets the pied piper charmed people count per night to (?<charmedCount>\d+) in game options$/u, async function(this: CustomWorld, charmedCount: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input", charmedCount);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the infected pied piper powerful in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input", false);
+  await closeDialogWithHeaderButton(this);
+});

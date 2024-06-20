@@ -1217,8 +1217,8 @@
       "bigBadWolfEatsVillager": "Le Grand Méchant Loup se réveille et va dévorer un Villageois."
     },
     "GameCharmedTurnStartsEvent": {
-      "charmedPeopleMeetEachOther": "Les premiers charmés par le Joueur de Flûte se réveillent et se rencontrent.",
-      "charmedPeopleMeetEachOtherWithOldOnes": "Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
+      "charmedPeopleMeetEachOther": "Le premier charmé par le Joueur de Flûte se réveille. | Les premiers charmés par le Joueur de Flûte se réveillent et se rencontrent.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "Le nouveau charmé par le Joueur de Flûte se réveille et rencontre les anciens. Attention aux dernières victimes du Joueur de Flûte ! | Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupidon se réveille et choisit deux joueurs pour être amoureux.",
@@ -1240,7 +1240,7 @@
       "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles."
     },
     "GamePiedPiperTurnStartsEvent": {
-      "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
+      "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un seul joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
     },
     "GameScandalmongerTurnStartsEvent": {
       "scandalmongerCanMarkPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",

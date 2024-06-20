@@ -1217,8 +1217,8 @@
       "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager."
     },
     "GameCharmedTurnStartsEvent": {
-      "charmedPeopleMeetEachOther": "The first charmed people by the Pied Piper wake up and meet each other.",
-      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+      "charmedPeopleMeetEachOther": "The first charmed person by the Pied Piper wakes up. | The first charmed people by the Pied Piper wake up and meet each other.",
+      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims ! | The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
@@ -1240,7 +1240,7 @@
       "loversRevealEachOtherRoles": "In this special game, the Lovers reveal their roles to each other."
     },
     "GamePiedPiperTurnStartsEvent": {
-      "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm one player | The Pied Piper wakes up and will charm {count} players."
+      "piedPiperCharmsPeople": "The Pied Piper wakes up and will charm only one player. | The Pied Piper wakes up and will charm {count} players."
     },
     "GameScandalmongerTurnStartsEvent": {
       "scandalmongerCanMarkPlayer": "The Scandalmonger wakes up and can mark a player with a feather.",
@@ -1337,7 +1337,7 @@
       "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
     },
     "GamePiedPiperHasCharmedEvent": {
-      "piedPiperHasCharmed": "The Pied Piper just charmed a player | The Pied Piper just charmed {charmedCount} players.",
+      "piedPiperHasCharmed": "The Pied Piper just charmed a player. | The Pied Piper just charmed {charmedCount} players.",
       "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed."
     }
   }
