@@ -7,34 +7,17 @@
         :class="playerSideGlowClass"
         :data-testid="`game-team-side-player-${player.name}`"
       >
-        <div class="flex justify-center">
-          <NuxtImg
-            v-if="!player.isAlive"
-            v-p-tooltip="$t('components.GameTeamSidePlayer.thisPlayerIsDead')"
-            :alt="$t('components.GameTeamSidePlayer.thisPlayerIsDead')"
-            class="me-2"
-            height="20"
-            src="/svg/game/player/dead.svg"
-            width="20"
-          />
-
-          <div
-            id="player-name"
-            class="text-center truncate"
-            :class="{ 'line-through decoration-1': !player.isAlive }"
-          >
-            {{ player.name }}
-          </div>
-        </div>
+        <GameTeamSidePlayerName
+          id="game-team-side-player-name"
+          :player="player"
+        />
 
         <VuePrimeDivider class="!my-1"/>
 
-        <small
-          id="player-role-name"
-          class="flex justify-center"
-        >
-          {{ $t(`shared.role.name.${player.role.current}`) }}
-        </small>
+        <GameTeamSidePlayerRoleName
+          id="game-team-side-player-role-name"
+          :player="player"
+        />
 
         <div class="flex items-center mt-2">
           <RoleImage
@@ -79,6 +62,8 @@
 <script lang="ts" setup>
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
+import GameTeamSidePlayerName from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerName/GameTeamSidePlayerName.vue";
+import GameTeamSidePlayerRoleName from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerRoleName/GameTeamSidePlayerRoleName.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
 const props = defineProps<GameTeamSidePlayerProps>();

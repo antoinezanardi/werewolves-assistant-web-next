@@ -583,8 +583,13 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Role image of the player {playerName}",
+      "roleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameTeamSidePlayerName": {
       "thisPlayerIsDead": "This player is dead"
+    },
+    "GameTeamSidePlayerRoleName": {
+      "thisPlayerRoleIsRevealed": "This player's role is revealed"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Current play icon",
@@ -1325,6 +1330,11 @@
     "GameAccursedWolfFatherMayHaveInfectedEvent": {
       "accursedWolfFatherMayHaveInfectedAPlayer": "The Accursed Wolf-Father may have infected a player eaten by the Werewolves.",
       "gameMasterWillTapAccursedWolfFatherMarkVictim": "If so, the Game Master goes around every player and taps in the back the player infected by the Accursed Wolf-Father. This player is from now a Werewolf but will keep his old villagers powers."
+    },
+    "GameVillagerVillagerIntroductionEvent": {
+      "cantFindVillagerVillager": "The Villager-Villager can't be found… Please proceed.",
+      "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village ! His/Her role is revealed to the others.",
+      "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
     }
   }
 }

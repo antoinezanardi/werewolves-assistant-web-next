@@ -583,8 +583,13 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Image du rôle du joueur {playerName}",
+      "roleImageAlt": "Role image of the player {playerName}"
+    },
+    "GameTeamSidePlayerName": {
       "thisPlayerIsDead": "Ce joueur est mort"
+    },
+    "GameTeamSidePlayerRoleName": {
+      "thisPlayerRoleIsRevealed": "Le rôle de ce joueur est révélé"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
@@ -1325,6 +1330,11 @@
     "GameAccursedWolfFatherMayHaveInfectedEvent": {
       "accursedWolfFatherMayHaveInfectedAPlayer": "L'Infect Père des Loups a peut-être infecté un joueur dévoré par les Loups-Garous.",
       "gameMasterWillTapAccursedWolfFatherMarkVictim": "Si c'est le cas, le Maître du Jeu va faire le tour des joueurs et tapoter le dos du joueur infecté par l'Infect Père des Loups. Ce joueur est désormais un Loup-Garou mais garde ses anciens pouvoirs de Villageois."
+    },
+    "GameVillagerVillagerIntroductionEvent": {
+      "cantFindVillagerVillager": "Le Villageois-Villageois ne peut être trouvé… Veuillez continuer.",
+      "villagerVillagerIntroduction": "{playerName} est le Villageois-Villageois du village ! Son rôle est connu de tous.",
+      "idealPlayerForSheriff": "Sans pouvoir particulier, les autres joueurs peuvent lui donner une confiance aveugle. Pourquoi pas ne pas l'élire comme Maire ?"
     }
   }
 }

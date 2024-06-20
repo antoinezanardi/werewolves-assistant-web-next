@@ -15,7 +15,6 @@ Feature: 🦴🐺 White Werewolf role
       | Lucy    | Little Girl    |
     When the user closes the toast
     And the user skips all game events
-
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"
