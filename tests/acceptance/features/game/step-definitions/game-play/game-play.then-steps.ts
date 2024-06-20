@@ -17,3 +17,7 @@ Then(/^the game's current play should have the following voters$/u, async functi
 Then(/^the game's current play should not have targets$/u, async function(this: CustomWorld): Promise<void> {
   await expect(this.page.getByRole("heading", { name: "Nobody can be targeted…", exact: true })).toBeVisible();
 });
+
+Then(/^the game's current play should not expect any action$/u, async function(this: CustomWorld): Promise<void> {
+  await expect(this.page.getByRole("heading", { name: "No action needed, the game can proceed" })).toBeVisible();
+});
