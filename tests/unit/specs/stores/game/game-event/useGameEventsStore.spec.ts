@@ -390,6 +390,17 @@ describe("Game Events Store", () => {
         ],
         test: "should generate accursed wolf father may have infected event when last game history record action is infect.",
       },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "choose-side" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "wolf-hound-has-chosen-side" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate wolf hound has chosen side event when last game history record action is choose side.",
+      },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.generateAndSetGameEventsFromGame(game);

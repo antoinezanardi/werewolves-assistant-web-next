@@ -34,9 +34,10 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
       return [GameEvent.create({ type: "pied-piper-has-charmed" })];
     }
     const actionsGameEvents: Partial<Record<GamePlayAction, GameEvent[]>> = {
-      look: [GameEvent.create({ type: "seer-has-seen" })],
-      mark: [GameEvent.create({ type: "scandalmonger-has-marked" })],
-      infect: [GameEvent.create({ type: "accursed-wolf-father-may-have-infected" })],
+      "look": [GameEvent.create({ type: "seer-has-seen" })],
+      "mark": [GameEvent.create({ type: "scandalmonger-has-marked" })],
+      "infect": [GameEvent.create({ type: "accursed-wolf-father-may-have-infected" })],
+      "choose-side": [GameEvent.create({ type: "wolf-hound-has-chosen-side" })],
     };
 
     return actionsGameEvents[action] ?? [];
@@ -70,8 +71,15 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
   async function goToNextGameEvent(): Promise<void> {
     const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(gameStore.game));
     const nextGameEvent = gameEvents.value[currentGameEventIndex.value + 1];
-    if (gameEvents.value.length > currentGameEventIndex.value + 1 && nextGameEvent.type === "game-turn-starts" && mustCurrentGamePlayBeSkipped.value) {
+    const isLastGameEvent = currentGameEventIndex.value === gameEvents.value.length - 1;
+    const isNextGameEventGameTurnStarts = gameEvents.value.length > currentGameEventIndex.value + 1 && nextGameEvent.type === "game-turn-starts";
+    const isCurrentGamePlayBuryDeadBodiesAndNextEventIsGameTurnStarts = gameStore.game.currentPlay?.action === "bury-dead-bodies" && isNextGameEventGameTurnStarts;
+    if (
+      isCurrentGamePlayBuryDeadBodiesAndNextEventIsGameTurnStarts && mustCurrentGamePlayBeSkipped.value ||
+      isLastGameEvent && mustCurrentGamePlayBeSkipped.value
+    ) {
       await gameStore.skipGamePlay();
+      currentGameEventIndex.value = 0;
 
       return;
     }

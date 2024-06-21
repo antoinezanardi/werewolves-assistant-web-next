@@ -6,6 +6,7 @@ const SOUND_EFFECT_NAMES = [
   "cocorico",
   "crowd-cheering",
   "death",
+  "distant-dog-howling",
   "dog-barking",
   "dramatic-announcement",
   "dramatic-drums",

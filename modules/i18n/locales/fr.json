@@ -1339,6 +1339,13 @@
     "GamePiedPiperHasCharmedEvent": {
       "piedPiperHasCharmed": "Le Joueur de Flûte a charmé un joueur | Le Joueur de Flûte a charmé {charmedCount} joueurs.",
       "gameMasterWillTapCharmedPlayers": "Le Maître du Jeu va tapoter le dos du joueur charmé pour qu'il sache qu'il est charmé. | Le Maître du Jeu va tapoter le dos des {charmedCount} joueurs charmés pour qu'ils sachent qu'ils sont charmés."
+    },
+    "GameWolfHoundHasChosenSideEvent": {
+      "cantFindWolfHoundOrChosenSide": "Le Chien-Loup ou son camp choisi ne peut être trouvé… Veuillez continuer.",
+      "assistantChoseSideForWolfHoundRevelation": "L'Assistant a assigné le Chien-Loup dans le camp des … {side} !",
+      "wolfHoundChoseSideRevelation": "Le Chien-Loup a décidé de rejoindre le camp des … {side} !",
+      "assistantChoseSideForWolfHoundMime": "L'Assistant a assigné le Chien-Loup à un camp aléatoire. Le Maître du Jeu va mimer le camp du Chien-Loup. ({side})",
+      "wolfHoundChoseSideQuietly": "Le Chien-Loup a choisi son camp. Le camp choisi restera secret pour les autres joueurs…"
     }
   }
 }
