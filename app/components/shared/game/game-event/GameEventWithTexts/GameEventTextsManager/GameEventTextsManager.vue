@@ -3,18 +3,11 @@
     id="game-event-texts-manager"
     class="flex gap-4 h-1/2 items-center"
   >
-    <button
-      id="previous-event-text-button"
-      v-p-tooltip.top="previousGameEventTextTooltip"
-      :aria-label="$t('components.GameEventTextsManager.previousEventText')"
-      class="ps-4"
-      :class="{ 'text-gray-500': !canGoToPreviousGameEventText }"
-      :disabled="!canGoToPreviousGameEventText"
-      type="button"
-      @click.prevent="previousGameEventText"
-    >
-      <i class="fa fa-3x fa-chevron-left"/>
-    </button>
+    <GameEventPreviousTextButton
+      id="game-event-previous-text-button"
+      :current-text-index="currentIndex"
+      @click="decrementCurrentIndex"
+    />
 
     <div
       id="game-event-text-container"
@@ -34,30 +27,24 @@
       </Transition>
     </div>
 
-    <button
-      id="next-event-text-button"
-      v-p-tooltip.top="$t('shared.actions.next')"
-      :aria-label="$t('components.GameEventTextsManager.nextEventText')"
-      class="pe-4"
-      :class="{ 'text-gray-500': !canGoToNextGameEventText }"
-      :disabled="!canGoToNextGameEventText"
-      type="button"
-      @click.prevent="nextEventText"
-    >
-      <i class="fa fa-3x fa-chevron-right"/>
-    </button>
+    <GameEventNextTextButton
+      id="game-event-next-text-button"
+      :can-go-to-next-game-event-text="canGoToNextGameEventText"
+      @click="nextEventText"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import GameEventNextTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/GameEventNextTextButton.vue";
+import GameEventPreviousTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/GameEventPreviousTextButton.vue";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import type { GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
 import { useGameStore } from "~/stores/game/useGameStore";
+import { useMagicKeys } from "@vueuse/core";
 
 const props = defineProps<GameEventTextsManagerProps>();
-
-const { t } = useI18n();
 
 const gameStore = useGameStore();
 const { makingGamePlayStatus } = storeToRefs(gameStore);
@@ -69,25 +56,26 @@ const currentIndex = ref<number>(0);
 
 const currentGameEventText = computed<string | undefined>(() => props.texts[currentIndex.value]);
 
-const canGoToPreviousGameEventText = computed<boolean>(() => currentIndex.value > 0 && makingGamePlayStatus.value !== "pending");
+const nextGameEventText = computed<string | undefined>(() => props.texts[currentIndex.value + 1]);
 
 const canGoToNextGameEventText = computed<boolean>(() => makingGamePlayStatus.value !== "pending");
 
-const previousGameEventTextTooltip = computed<string>(() => {
-  if (canGoToPreviousGameEventText.value) {
-    return t("shared.actions.back");
+function decrementCurrentIndex(): void {
+  if (currentIndex.value === 0) {
+    return;
   }
-  return "";
-});
-
-async function nextEventText(): Promise<void> {
-  currentIndex.value++;
-  if (currentGameEventText.value === undefined) {
-    await goToNextGameEvent();
-  }
+  currentIndex.value--;
 }
 
-function previousGameEventText(): void {
-  currentIndex.value--;
+async function nextEventText(): Promise<void> {
+  if (!canGoToNextGameEventText.value) {
+    return;
+  }
+  if (nextGameEventText.value === undefined) {
+    await goToNextGameEvent();
+
+    return;
+  }
+  currentIndex.value++;
 }
 </script>
