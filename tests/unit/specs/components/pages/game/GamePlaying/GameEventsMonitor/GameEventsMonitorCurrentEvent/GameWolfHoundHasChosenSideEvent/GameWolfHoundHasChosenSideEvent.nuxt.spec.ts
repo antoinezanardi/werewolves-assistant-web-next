@@ -10,6 +10,7 @@ import type { mount } from "@vue/test-utils";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameWolfHoundHasChosenSideEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWolfHoundHasChosenSideEvent/GameWolfHoundHasChosenSideEvent.vue";
+import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -55,6 +56,17 @@ describe("Game Wolf Hound Has Chosen Side Event Component", () => {
   });
 
   describe("Sound Effect", () => {
+    it("should not play any sound effect when wolf hound is not in the game.", async() => {
+      const game = createFakeGame({
+        players: [createFakeSeerAlivePlayer()],
+        options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isChosenSideRevealed: true }) }) }),
+      });
+      wrapper = await mountGameWolfHoundHasChosenSideEventComponent({ global: { plugins: [createTestingPinia({ initialState: { [StoreIds.GAME]: { game } } })] } });
+      const audioStore = useAudioStore();
+
+      expect(audioStore.playSoundEffect).not.toHaveBeenCalled();
+    });
+
     it("should play distant dog howling sound effect when chosen side is not revealed.", () => {
       const audioStore = useAudioStore();
 
@@ -176,7 +188,7 @@ describe("Game Wolf Hound Has Chosen Side Event Component", () => {
       expect(gameWolfHoundHasChosenSideEventComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
 
-    it("should pass wolf hound chose side quietly for wolf hound mime text when chosen side is not random and not revealed.", async() => {
+    it("should pass wolf hound chose side quietly text when chosen side is not random and not revealed.", async() => {
       const gameStore = useGameStore();
       gameStore.game = createFakeGame({
         ...defaultGame,
@@ -195,6 +207,67 @@ describe("Game Wolf Hound Has Chosen Side Event Component", () => {
       const expectedTextsAsString = expectedTexts.join(",");
 
       expect(gameWolfHoundHasChosenSideEventComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+  });
+
+  describe("Game Event Flipping Card", () => {
+    beforeEach(async() => {
+      wrapper = await mountGameWolfHoundHasChosenSideEventComponent({
+        global: {
+          stubs: { GameEventWithTexts: false },
+          plugins: [createTestingPinia({ initialState: { [StoreIds.GAME]: { game: defaultGame } } })],
+        },
+      });
+    });
+
+    it("should not render game event flipping player card when wolf hound is not in the game.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game = createFakeGame({
+        ...defaultGame,
+        players: [createFakeSeerAlivePlayer()],
+      });
+      await nextTick();
+      const gameEventFlippingPlayerCard = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-wolf-hound-card");
+
+      expect(gameEventFlippingPlayerCard.exists()).toBeFalsy();
+    });
+
+    it("should set svg icon path to villager role when chosen side is villagers.", async() => {
+      const gameStore = useGameStore();
+      const villagerSidedWolfHoundPlayer = createFakeWolfHoundAlivePlayer({
+        name: "Antoine",
+        side: createFakePlayerSide({ current: "villagers" }),
+      });
+      gameStore.game = createFakeGame({
+        players: [
+          villagerSidedWolfHoundPlayer,
+          createFakeSeerAlivePlayer(),
+        ],
+        options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isChosenSideRevealed: true }) }) }),
+      });
+      await nextTick();
+      const gameEventFlippingPlayerCard = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-wolf-hound-card");
+
+      expect(gameEventFlippingPlayerCard.props("svgIconPath")).toBe("svg/role/villager.svg");
+    });
+
+    it("should set svg icon path to werewolf role when chosen side is werewolves.", async() => {
+      const gameStore = useGameStore();
+      const werewolfSidedWolfHoundPlayer = createFakeWolfHoundAlivePlayer({
+        name: "Antoine",
+        side: createFakePlayerSide({ current: "werewolves" }),
+      });
+      gameStore.game = createFakeGame({
+        players: [
+          werewolfSidedWolfHoundPlayer,
+          createFakeSeerAlivePlayer(),
+        ],
+        options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isChosenSideRevealed: true }) }) }),
+      });
+      await nextTick();
+      const gameEventFlippingPlayerCard = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-wolf-hound-card");
+
+      expect(gameEventFlippingPlayerCard.props("svgIconPath")).toBe("svg/role/werewolf.svg");
     });
   });
 });

@@ -6,7 +6,7 @@
     <div class="flex h-full items-center justify-center">
       <GameEventFlippingPlayerCard
         v-if="wolfHoundInPlayers"
-        id="game-event-flipping-sheriff-card"
+        id="game-event-flipping-wolf-hound-card"
         :players="[wolfHoundInPlayers]"
         :svg-icon-path="wolfHoundChosenSideSvgIconPath"
       />
@@ -60,10 +60,7 @@ const gameWolfHoundHasChosenSideEventTexts = computed<string[]>(() => {
   return [t("components.GameWolfHoundHasChosenSideEvent.wolfHoundChoseSideQuietly")];
 });
 
-const wolfHoundChosenSideSvgIconPath = computed<string | undefined>(() => {
-  if (!chosenSide.value) {
-    return undefined;
-  }
+const wolfHoundChosenSideSvgIconPath = computed<string>(() => {
   const svgRole = chosenSide.value === "villagers" ? "villager" : "werewolf";
 
   return `svg/role/${svgRole}.svg`;
