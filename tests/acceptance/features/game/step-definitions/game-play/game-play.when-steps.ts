@@ -2,9 +2,10 @@ import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
 
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
-import { makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
+import { chooseSideInPlayground, makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 
 When(/^the survivors elect the sheriff with the votes$/u, { timeout: 10000 }, async function(this: CustomWorld, votes: DataTable): Promise<void> {
   const votesData = votes.rows() as [source: string, target: string][];
@@ -107,5 +108,10 @@ When(/^the scandalmonger marks the player with name "(?<name>.+)"$/u, async func
 
 When(/^the accursed wolf father infects the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});
+
+When(/^the wolf-hound chooses the (?<side>villagers|werewolves) side$/u, async function(this: CustomWorld, side: RoleSide): Promise<void> {
+  await chooseSideInPlayground(this, side);
   await makePlayInPlayground(this);
 });
