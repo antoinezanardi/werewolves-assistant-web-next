@@ -13,9 +13,13 @@ type UseCurrentGamePlay = {
 
 function useCurrentGamePlay(game: Ref<Game>): UseCurrentGamePlay {
   const mustCurrentGamePlayBeSkipped = computed<boolean>(() => {
+    const isWolfHoundSideRandomlyChosen = game.value.options.roles.wolfHound.isSideRandomlyChosen;
     const stealRoleEligibleTargets = getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role");
+    const currentGameAction = game.value.currentPlay?.action;
+    const isCurrentActionBuryDeadBodiesAndNoStealRoleEligibleTargets = currentGameAction === "bury-dead-bodies" && !stealRoleEligibleTargets.length;
+    const isCurrentActionChooseSideAndSideRandomlyChosen = currentGameAction === "choose-side" && isWolfHoundSideRandomlyChosen;
 
-    return game.value.currentPlay?.action === "bury-dead-bodies" && !stealRoleEligibleTargets.length;
+    return isCurrentActionBuryDeadBodiesAndNoStealRoleEligibleTargets || isCurrentActionChooseSideAndSideRandomlyChosen;
   });
 
   const priorityCauseInCurrentGamePlay = computed<GamePlayCause | undefined>(() => {

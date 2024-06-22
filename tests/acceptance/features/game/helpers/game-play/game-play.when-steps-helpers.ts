@@ -1,4 +1,5 @@
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
+import type { RoleSide } from "~/composables/api/role/types/role.types";
 
 async function playersVoteInPlayground(world: CustomWorld, votes: [source: string, target: string][]): Promise<void> {
   for (const [source, target] of votes) {
@@ -29,9 +30,16 @@ async function makePlayInPlayground(world: CustomWorld): Promise<void> {
   await makePlayButton.click();
 }
 
+async function chooseSideInPlayground(world: CustomWorld, side: RoleSide): Promise<void> {
+  const sideName = side === "villagers" ? "Villagers side" : "Werewolves side";
+  const sideButton = world.page.getByRole("button", { name: sideName, exact: true }).first();
+  await sideButton.click();
+}
+
 export {
   playersVoteInPlayground,
   targetPlayerInPlayground,
   targetPlayersInPlayground,
   makePlayInPlayground,
+  chooseSideInPlayground,
 };

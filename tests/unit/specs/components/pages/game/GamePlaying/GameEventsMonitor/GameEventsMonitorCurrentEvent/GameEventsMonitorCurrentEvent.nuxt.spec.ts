@@ -12,6 +12,7 @@ import GameSheriffHasBeenElectedEvent from "~/components/pages/game/GamePlaying/
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
 import GameVillagerVillagerIntroductionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameVillagerVillagerIntroductionEvent/GameVillagerVillagerIntroductionEvent.vue";
+import GameWolfHoundHasChosenSide from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWolfHoundHasChosenSideEvent/GameWolfHoundHasChosenSideEvent.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
@@ -161,6 +162,18 @@ describe("Game Events Monitor Current Event Component", () => {
       const gamePiedPiperHasCharmedEvent = wrapper.findComponent<typeof GamePiedPiperHasCharmedEvent>(GamePiedPiperHasCharmedEvent);
 
       expect(gamePiedPiperHasCharmedEvent.exists()).toBeTruthy();
+    });
+
+    it("should render wolf hound has chosen side event component when current game event is wolf hound has chosen side type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "wolf-hound-has-chosen-side" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gameWolfHoundHasChosenSideEvent = wrapper.findComponent<typeof GameWolfHoundHasChosenSide>(GameWolfHoundHasChosenSide);
+
+      expect(gameWolfHoundHasChosenSideEvent.exists()).toBeTruthy();
     });
 
     it("should not render any game event component when there is no current game event.", async() => {

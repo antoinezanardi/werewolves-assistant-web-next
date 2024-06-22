@@ -1339,6 +1339,13 @@
     "GamePiedPiperHasCharmedEvent": {
       "piedPiperHasCharmed": "The Pied Piper just charmed a player. | The Pied Piper just charmed {charmedCount} players.",
       "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed."
+    },
+    "GameWolfHoundHasChosenSideEvent": {
+      "cantFindWolfHoundOrChosenSide": "The Wolf-Hound or his chosen side can't be found… Please proceed.",
+      "assistantChoseSideForWolfHoundRevelation": "The Assistant assigned the Wolf-Hound to the side of the … {side} !",
+      "wolfHoundChoseSideRevelation": "The Wolf-Hound chose to join the side of the … {side} !",
+      "assistantChoseSideForWolfHoundMime": "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. ({side})",
+      "wolfHoundChoseSideQuietly": "The Wolf-Hound chose to join a side. The chosen side will remain a secret to the other players…"
     }
   }
 }

@@ -32,6 +32,7 @@ import GameSheriffPromotionEvent from "~/components/pages/game/GamePlaying/GameE
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import GameTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTurnStartsEvent.vue";
 import GameVillagerVillagerIntroductionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameVillagerVillagerIntroductionEvent/GameVillagerVillagerIntroductionEvent.vue";
+import GameWolfHoundHasChosenSide from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWolfHoundHasChosenSideEvent/GameWolfHoundHasChosenSideEvent.vue";
 import type { GameEventType } from "~/stores/game/game-event/types/game-event.types";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 
@@ -50,6 +51,7 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "scandalmonger-has-marked": GameScandalmongerHasMarkedEvent,
     "accursed-wolf-father-may-have-infected": GameAccursedWolfFatherMayHaveInfectedEvent,
     "pied-piper-has-charmed": GamePiedPiperHasCharmedEvent,
+    "wolf-hound-has-chosen-side": GameWolfHoundHasChosenSide,
   };
   if (!currentGameEvent.value) {
     return undefined;

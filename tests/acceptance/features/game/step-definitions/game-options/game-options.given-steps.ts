@@ -107,3 +107,17 @@ Given(/^the user sets the infected pied piper powerful in game options$/u, async
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input", false);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets wolf-hound chosen side revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input", true);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets wolf-hound side randomly chosen by assistant in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input", true);
+  await closeDialogWithHeaderButton(this);
+});
