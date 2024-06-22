@@ -16,9 +16,10 @@ function useCurrentGamePlay(game: Ref<Game>): UseCurrentGamePlay {
     const isWolfHoundSideRandomlyChosen = game.value.options.roles.wolfHound.isSideRandomlyChosen;
     const stealRoleEligibleTargets = getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role");
     const currentGameAction = game.value.currentPlay?.action;
+    const isCurrentActionBuryDeadBodiesAndNoStealRoleEligibleTargets = currentGameAction === "bury-dead-bodies" && !stealRoleEligibleTargets.length;
+    const isCurrentActionChooseSideAndSideRandomlyChosen = currentGameAction === "choose-side" && isWolfHoundSideRandomlyChosen;
 
-    return currentGameAction === "bury-dead-bodies" && !stealRoleEligibleTargets.length ||
-      currentGameAction === "choose-side" && isWolfHoundSideRandomlyChosen;
+    return isCurrentActionBuryDeadBodiesAndNoStealRoleEligibleTargets || isCurrentActionChooseSideAndSideRandomlyChosen;
   });
 
   const priorityCauseInCurrentGamePlay = computed<GamePlayCause | undefined>(() => {
