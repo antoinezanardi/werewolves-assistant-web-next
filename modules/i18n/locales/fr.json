@@ -387,6 +387,11 @@
           }
         }
       }
+    },
+    "keyboard": {
+      "shiftKey": "Shift",
+      "leftArrowKey": "Flèche gauche",
+      "rightArrowKey": "Flèche droite"
     }
   },
   "pages": {
@@ -1177,9 +1182,11 @@
       "goBackToPreviousGameEvent": "Revenir à l'événement précédent",
       "skipCurrentGameEvent": "Passer l'événement actuel"
     },
-    "GameEventTextsManager": {
-      "nextEventText": "Prochain texte de l'événement",
+    "GameEventPreviousTextButton": {
       "previousEventText": "Revenir au texte de l'événement précédent"
+    },
+    "GameEventNextTextButton": {
+      "nextEventText": "Prochain texte de l'événement"
     },
     "GameStartsEvent": {
       "welcomeToTheVillage": "Bienvenue à tous dans le village de Thiercelieux !",

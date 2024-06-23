@@ -23,12 +23,12 @@ exports[`Game Scandalmonger Has Marked Event Component > should match snapshot w
       </div>
     </div>
   </div>
-  <div id="game-event-texts-manager" class="flex gap-4 h-1/2 items-center"><button id="previous-event-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button"><i class="fa fa-3x fa-chevron-left"></i></button>
+  <div id="game-event-texts-manager" class="flex gap-4 h-1/2 items-center"><button id="game-event-previous-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-left"></i></button>
     <div id="game-event-text-container" class="flex grow h-1/2 items-center justify-center">
       <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
         <p id="current-event-text" class="!mb-0 !text-2xl text-center">components.GameScandalmongerHasMarkedEvent.scandalMongerDidntMarkAnyone</p>
       </transition-stub>
-    </div><button id="next-event-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
+    </div><button id="game-event-next-text-button" aria-label="Next event text" class="pe-4" type="button" can-go-to-next-game-event-text="true" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
   </div>
 </div>"
 `;

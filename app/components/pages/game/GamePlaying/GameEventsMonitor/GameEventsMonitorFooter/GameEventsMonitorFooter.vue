@@ -17,7 +17,10 @@
           class="fa fa-step-backward w-1/12"
         />
 
-        <span class="text-center w-11/12">
+        <span
+          id="previous-event-button-text"
+          class="text-center w-11/12"
+        >
           {{ $t('components.GameEventsMonitorFooter.previous') }}
         </span>
       </VuePrimeButton>
@@ -37,7 +40,12 @@
           class="fa fa-step-forward w-1/12"
         />
 
-        <span class="text-center w-11/12">{{ $t('components.GameEventsMonitorFooter.skip') }}</span>
+        <span
+          id="skip-current-event-button-text"
+          class="text-center w-11/12"
+        >
+          {{ $t('components.GameEventsMonitorFooter.skip') }}
+        </span>
       </VuePrimeButton>
     </div>
   </div>
@@ -67,15 +75,15 @@ const { animateElementOnce } = useAnimateCss();
 const { t } = useI18n();
 
 const previousEventButtonTooltipOptions = computed<TooltipOptions>(() => {
-  const keyCursorLeftImgUrl = img("svg/keyboard/key-cursor-left.svg");
-  const keyShiftImgUrl = img("svg/keyboard/key-shift.svg");
+  const leftCursorKeyImgUrl = img("svg/keyboard/left-cursor-key.svg");
+  const shiftKeyImgUrl = img("svg/keyboard/shift-key.svg");
 
   return {
     value: `<div class="flex flex-col gap-2 items-center">
                 <div class="text-center">${t("components.GameEventsMonitorFooter.goBackToPreviousGameEvent")}</div>
                 <div class="flex gap-2 items-center">
-                  <img height="40" src="${keyShiftImgUrl}"/>
-                  <img height="40" src="${keyCursorLeftImgUrl}"/>
+                  <img height="40" alt="${t("shared.keyboard.shiftKey")}" src="${shiftKeyImgUrl}"/>
+                  <img height="40" alt="${t("shared.keyboard.leftArrowKey")}" src="${leftCursorKeyImgUrl}"/>
                 </div>
             </div>`,
     escape: false,
@@ -84,15 +92,15 @@ const previousEventButtonTooltipOptions = computed<TooltipOptions>(() => {
 });
 
 const nextEventButtonTooltipOptions = computed<TooltipOptions>(() => {
-  const keyCursorRightImgUrl = img("svg/keyboard/key-cursor-right.svg");
-  const keyShiftImgUrl = img("svg/keyboard/key-shift.svg");
+  const rightCursorKeyImgUrl = img("svg/keyboard/right-cursor-key.svg");
+  const shiftKeyImgUrl = img("svg/keyboard/shift-key.svg");
 
   return {
     value: `<div class="flex flex-col gap-2 items-center">
                 <div class="text-center">${t("components.GameEventsMonitorFooter.skipCurrentGameEvent")}</div>
                 <div class="flex gap-2 items-center">
-                  <img height="40" src="${keyShiftImgUrl}"/>
-                  <img height="40" src="${keyCursorRightImgUrl}"/>
+                  <img height="40" alt="${t("shared.keyboard.shiftKey")}" src="${shiftKeyImgUrl}"/>
+                  <img height="40" alt="${t("shared.keyboard.rightArrowKey")}" src="${rightCursorKeyImgUrl}"/>
                 </div>
             </div>`,
     escape: false,
