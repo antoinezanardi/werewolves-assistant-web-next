@@ -1177,9 +1177,11 @@
       "goBackToPreviousGameEvent": "Go back to the previous game event",
       "skipCurrentGameEvent": "Skip the current game event"
     },
-    "GameEventTextsManager": {
-      "nextEventText": "Next event text",
+    "GameEventPreviousTextButton": {
       "previousEventText": "Back to the previous event text"
+    },
+    "GameEventNextTextButton": {
+      "nextEventText": "Next event text"
     },
     "GameStartsEvent": {
       "welcomeToTheVillage": "Welcome everyone in the village of the Millers Hollow !",

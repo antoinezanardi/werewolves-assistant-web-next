@@ -42,7 +42,6 @@ import GameEventPreviousTextButton from "~/components/shared/game/game-event/Gam
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import type { GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { useMagicKeys } from "@vueuse/core";
 
 const props = defineProps<GameEventTextsManagerProps>();
 
