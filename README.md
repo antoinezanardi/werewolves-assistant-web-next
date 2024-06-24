@@ -205,6 +205,20 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >  
 >  </details>
 >  <details>
+>  <summary>🌟 Game Events</summary>
+>
+>>  <details>
+>>    <summary>🎬 Game Starts Event</summary>
+>>
+>>    ![Game Starts Event](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Starts%20Event.png)
+>>  </details>
+>>  <details>
+>>    <summary>🌙 Game Phase Event</summary>
+>>
+>>    ![Game Phase Event](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Phase%20Event.png)
+>>  </details>
+>  </details>
+>  <details>
 >    <summary>❓ Game not found</summary>
 >  
 >    ![Game not found](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20not%20found.png)

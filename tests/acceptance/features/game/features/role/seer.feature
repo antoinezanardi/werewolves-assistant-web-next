@@ -13,7 +13,7 @@ Feature: 🔮Seer role
       | David   | Villager |
     When the user closes the toast
     And the user skips the game event
-    Then the game's event should display the text "The night falls in the village of the Millers Hollow…"
+    Then the game's event should display the text "The night falls on the village of the Millers Hollow…"
 
     When the user skips the game event
     Then the game's event should display the text "The Seer wakes up and will look at a player's role."
