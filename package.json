@@ -138,7 +138,7 @@
     "vue-eslint-parser": "^9.4.3",
     "vue-flip": "^3.0.2",
     "vue-router": "^4.4.0",
-    "vue-tsc": "^2.0.21",
+    "vue-tsc": "^2.0.22",
     "vue3-lottie": "^3.3.0"
   },
   "dependencies": {
