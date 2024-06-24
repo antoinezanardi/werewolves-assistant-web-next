@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { useMagicKeys } from "@vueuse/core";
 import { StoreIds } from "~/stores/enums/store.enum";
 import type { Keyboard } from "~/stores/keyboard/types/keyboard.types";
 

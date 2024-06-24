@@ -29,7 +29,6 @@
 
     <GameEventNextTextButton
       id="game-event-next-text-button"
-      :can-go-to-next-game-event-text="canGoToNextGameEventText"
       @click="nextEventText"
     />
   </div>

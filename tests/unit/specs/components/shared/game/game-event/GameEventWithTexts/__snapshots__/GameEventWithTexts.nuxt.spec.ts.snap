@@ -15,7 +15,7 @@ exports[`Game Event With Texts Component > should match snapshot without shallow
       <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
         <p id="current-event-text" class="!mb-0 !text-2xl text-center">Game starts.</p>
       </transition-stub>
-    </div><button id="game-event-next-text-button" aria-label="Next event text" class="pe-4" type="button" can-go-to-next-game-event-text="true" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
+    </div><button id="game-event-next-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>
   </div>
 </div>"
 `;

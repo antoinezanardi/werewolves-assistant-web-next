@@ -8,6 +8,6 @@ exports[`Game Event Texts Manager Component > should match snapshot when rendere
       <p id="current-event-text" class="!mb-0 !text-2xl text-center">Game starts.</p>
     </transition-stub>
   </div>
-  <game-event-next-text-button-stub id="game-event-next-text-button" can-go-to-next-game-event-text="true"></game-event-next-text-button-stub>
+  <game-event-next-text-button-stub id="game-event-next-text-button"></game-event-next-text-button-stub>
 </div>"
 `;

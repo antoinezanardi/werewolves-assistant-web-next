@@ -43,13 +43,13 @@ const { makingGamePlayStatus } = storeToRefs(gameStore);
 const canGoToPreviousGameEventText = computed<boolean>(() => props.currentTextIndex > 0 && makingGamePlayStatus.value !== "pending");
 
 const buttonTooltipOptions = computed<TooltipOptions>(() => {
-  const imgUrl = img("svg/keyboard/key-cursor-left.svg");
+  const imgUrl = img("svg/keyboard/left-cursor-key.svg");
 
   return {
     disabled: !canGoToPreviousGameEventText.value,
     value: `<div class="flex flex-col gap-2 items-center">
                 <div class="text-center">${t("shared.actions.back")}</div>
-                <img width="35" src="${imgUrl}"/>
+                <img width="35" alt="${t("shared.keyboard.leftArrowKey")}" src="${imgUrl}"/>
             </div>`,
     escape: false,
   };

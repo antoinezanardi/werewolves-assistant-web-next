@@ -1301,7 +1301,7 @@
     },
     "GamePhaseStartsEvent": {
       "dayRises": "The day rises in the village of the Millers Hollow !",
-      "nightFalls": "The night falls in the village of the Millers Hollow…"
+      "nightFalls": "The night falls on the village of the Millers Hollow…"
     },
     "GamePlayerDiesEvent": {
       "cantFindDeadPlayer": "The Assistant can't find the dead player… Please proceed.",

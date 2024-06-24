@@ -41,12 +41,12 @@ const { t } = useI18n();
 const canGoToNextGameEventText = computed<boolean>(() => makingGamePlayStatus.value !== "pending");
 
 const buttonTooltipOptions = computed<TooltipOptions>(() => {
-  const imgUrl = img("svg/keyboard/key-cursor-right.svg");
+  const imgUrl = img("svg/keyboard/right-cursor-key.svg");
 
   return {
     value: `<div class="flex flex-col gap-2 items-center">
                 <div class="text-center">${t("shared.actions.next")}</div>
-                <img width="35" src="${imgUrl}"/>
+                <img width="35" alt="${t("shared.keyboard.rightArrowKey")}" src="${imgUrl}"/>
             </div>`,
     escape: false,
   };
