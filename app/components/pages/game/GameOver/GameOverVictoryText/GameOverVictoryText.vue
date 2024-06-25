@@ -49,15 +49,29 @@ const { game } = storeToRefs(gameStore);
 
 const { t } = useI18n();
 
+const isGameWonByLoversAndCupid = computed<boolean>(() => {
+  const { victory, options, players } = game.value;
+  const alivePlayers = players.filter(player => player.isAlive);
+  const teamOfLoveCount = 3;
+
+  return options.roles.cupid.mustWinWithLovers && victory?.type === "lovers" && alivePlayers.length === teamOfLoveCount;
+});
+
 const victoryTypeTextsAndSvg = computed<TextsAndSvg>(() => {
   const { victory } = game.value;
-  const unknownVictoryTextsAndSvg: TextsAndSvg = {
-    text: "??",
-    subText: "??",
-    svgPath: "svg/misc/question-mark.svg",
-  };
+  if (isGameWonByLoversAndCupid.value) {
+    return {
+      text: t("components.GameOverVictoryText.loversAndCupidWin"),
+      subText: t("components.GameOverVictoryText.loversAndCupidAreTogetherForever"),
+      svgPath: VICTORY_TYPES_TEXTS_AND_SVG.lovers.svgPath,
+    };
+  }
   if (!victory) {
-    return unknownVictoryTextsAndSvg;
+    return {
+      text: "??",
+      subText: "??",
+      svgPath: "svg/misc/question-mark.svg",
+    };
   }
   const { textKey, subTextKey, svgPath } = VICTORY_TYPES_TEXTS_AND_SVG[victory.type];
 

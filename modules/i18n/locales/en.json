@@ -735,6 +735,8 @@
       "angelComesBackToParadise": "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place.",
       "loversWin": "The Lovers win together !",
       "loversAreTogetherForever": "The two people in love from Cupid's arrow are the only survivors. They win together and will be together forever.",
+      "loversAndCupidWin": "The Lovers and Cupid win together !",
+      "loversAndCupidAreTogetherForever": "The two people in love from Cupid's arrow and Cupid himself are the only survivors. The team of Love wins !",
       "nobodyWins": "Draw ! Everyone is dead in the village…",
       "everybodyMurderedEachOther": "Everybody murdered each other. A deadly silence reigns in the village…",
       "piedPiperWins": "The Pied Piper wins by himself !",
@@ -1229,7 +1231,8 @@
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
-      "cupidMustWinWithLovers": "Cupid must win with the Lovers he will choose. If the Lovers and Cupid are the only survivors, they win together."
+      "cupidCanChooseHimself": "Cupid can choose himself to be in love if he wants to.",
+      "cupidMustWinWithLovers": "In this special game, Cupid must win with the Lovers he will choose. Thus, he can't charm himself."
     },
     "GameDefenderTurnStartsEvent": {
       "defenderProtectsAnyone": "The Defender wakes up and will protect anyone from the Werewolves.",
@@ -1243,7 +1246,9 @@
     },
     "GameLoversTurnStartsEvent": {
       "loversMeetEachOther": "The Lovers wake up and meet each other. They are in love and will win together if they are the only survivors.",
+      "loversAndCupidMeetEachOther": "The Lovers wake up and meet each other. They are in love and will win together if they are the only survivors. Cupid wins with them if he survives with them.",
       "ifOneLoveDiesOtherDiesToo": "If one of the Lovers dies, the other one will die too.",
+      "ifOneLoveDiesOtherDiesTooButNotCupid": "If one of the Lovers dies, the other one will die too. If Cupid dies, the Lovers will survive and also the other way around.",
       "loversRevealEachOtherRoles": "In this special game, the Lovers reveal their roles to each other."
     },
     "GamePiedPiperTurnStartsEvent": {
@@ -1353,6 +1358,10 @@
       "wolfHoundChoseSideRevelation": "The Wolf-Hound chose to join the side of the … {side} !",
       "assistantChoseSideForWolfHoundMime": "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. ({side})",
       "wolfHoundChoseSideQuietly": "The Wolf-Hound chose to join a side. The chosen side will remain a secret to the other players…"
+    },
+    "GameCupidHasCharmedEvent": {
+      "cupidHasCharmedPlayers": "Cupid has charmed two players to be in love with each other.",
+      "gameMasterWillTapInLovePlayers": "The Game Master will tap in the back the Lovers so they know they are in love."
     }
   }
 }

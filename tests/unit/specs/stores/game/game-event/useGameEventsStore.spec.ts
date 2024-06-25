@@ -27,7 +27,7 @@ describe("Game Events Store", () => {
       game: {
         game: Game;
         makingGamePlayStatus: AsyncDataRequestStatus;
-        skipGamePlay: Mock
+        skipGamePlay: Mock;
       };
     };
   };
@@ -357,6 +357,22 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate pied piper has charmed event when last game history action is charm and source name is pied piper.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "charm",
+              source: createFakeGameHistoryRecordPlaySource({ name: "cupid" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "cupid-has-charmed" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate cupid has charmed event when last game history action is charm and source name is cupid.",
       },
       {
         game: createFakeGame({

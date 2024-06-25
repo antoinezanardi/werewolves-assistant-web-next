@@ -2,6 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
+import GameCupidHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameCupidHasCharmedEvent/GameCupidHasCharmedEvent.vue";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
@@ -160,6 +161,18 @@ describe("Game Events Monitor Current Event Component", () => {
       ];
       await nextTick();
       const gamePiedPiperHasCharmedEvent = wrapper.findComponent<typeof GamePiedPiperHasCharmedEvent>(GamePiedPiperHasCharmedEvent);
+
+      expect(gamePiedPiperHasCharmedEvent.exists()).toBeTruthy();
+    });
+
+    it("should render cupid has charmed event component when current game event is cupid has charmed type.", async() => {
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "cupid-has-charmed" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const gamePiedPiperHasCharmedEvent = wrapper.findComponent<typeof GameCupidHasCharmedEvent>(GameCupidHasCharmedEvent);
 
       expect(gamePiedPiperHasCharmedEvent.exists()).toBeTruthy();
     });

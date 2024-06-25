@@ -30,6 +30,7 @@ const gameEventTexts = computed<string[]>(() => {
 
   return [
     t("components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers"),
+    ...insertIf(!mustCupidWinWithLovers, t("components.GameCupidTurnStartsEvent.cupidCanChooseHimself")),
     ...insertIf(mustCupidWinWithLovers, t("components.GameCupidTurnStartsEvent.cupidMustWinWithLovers")),
   ];
 });

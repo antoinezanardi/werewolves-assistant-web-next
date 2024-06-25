@@ -31,4 +31,4 @@ exports[`Game Cupid Turn Starts Event Component > should match snapshot when ren
 </div>"
 `;
 
-exports[`Game Cupid Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers" id="game-cupid-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Cupid Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers,components.GameCupidTurnStartsEvent.cupidCanChooseHimself" id="game-cupid-turn-starts-event"></game-event-with-texts-stub>"`;

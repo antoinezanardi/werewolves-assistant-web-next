@@ -27,11 +27,18 @@ const { t } = useI18n();
 
 const doLoversRevealEachOtherRoles = computed<boolean>(() => game.value.options.roles.cupid.lovers.doRevealRoleToEachOther);
 
-const gameEventTexts = computed<string[]>(() => [
-  t("components.GameLoversTurnStartsEvent.loversMeetEachOther"),
-  t("components.GameLoversTurnStartsEvent.ifOneLoveDiesOtherDiesToo"),
-  ...insertIf(doLoversRevealEachOtherRoles.value, t("components.GameLoversTurnStartsEvent.loversRevealEachOtherRoles")),
-]);
+const mustCupidWinWithLovers = computed<boolean>(() => game.value.options.roles.cupid.mustWinWithLovers);
+
+const gameEventTexts = computed<string[]>(() => {
+  const meetEachOtherKey = mustCupidWinWithLovers.value ? "loversAndCupidMeetEachOther" : "loversMeetEachOther";
+  const loversDieTogetherKey = mustCupidWinWithLovers.value ? "ifOneLoveDiesOtherDiesTooButNotCupid" : "ifOneLoveDiesOtherDiesToo";
+
+  return [
+    t(`components.GameLoversTurnStartsEvent.${meetEachOtherKey}`),
+    t(`components.GameLoversTurnStartsEvent.${loversDieTogetherKey}`),
+    ...insertIf(doLoversRevealEachOtherRoles.value, t("components.GameLoversTurnStartsEvent.loversRevealEachOtherRoles")),
+  ];
+});
 
 playSoundEffect("heartbeat");
 </script>

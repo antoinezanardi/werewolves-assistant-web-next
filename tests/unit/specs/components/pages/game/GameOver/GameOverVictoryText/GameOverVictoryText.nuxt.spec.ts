@@ -1,20 +1,30 @@
-import type { mount } from "@vue/test-utils";
-
 import type { NuxtImg } from "#components";
+import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeCupidGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/cupid-game-options/cupid-game-options.factory";
+import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
+import { createFakeGameVictory } from "@tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { mount } from "@vue/test-utils";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import type { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
+import type { Game } from "~/composables/api/game/types/game.class";
+import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameVictory } from "@tests/unit/utils/factories/composables/api/game/game-victory/game-victory.factory";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Over Victory Text Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverVictoryText>>;
+  const defaultGame = createFakeGame();
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameOverVictoryTextComponent(): Promise<ReturnType<typeof mount<typeof GameOverVictoryText>>> {
-    return mountSuspendedComponent(GameOverVictoryText);
+    return mountSuspendedComponent(GameOverVictoryText, { global: { plugins: [createTestingPinia(testingPinia)] } });
   }
 
   beforeEach(async() => {
+    testingPinia.initialState[StoreIds.GAME].game = createFakeGame(defaultGame);
     wrapper = await mountGameOverVictoryTextComponent();
   });
 
@@ -94,58 +104,100 @@ describe("Game Over Victory Text Component", () => {
 
   describe("Victory Type Text", () => {
     it.each<{
-      victory: GameVictory | undefined;
+      game: Game;
       expectedText: string;
       test: string;
     }>([
       {
-        victory: undefined,
+        game: createFakeGame({ victory: undefined }),
         expectedText: "??",
         test: "should render unknown text when victory is undefined.",
       },
       {
-        victory: createFakeGameVictory({ type: "werewolves" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "werewolves" }) }),
         expectedText: "components.GameOverVictoryText.werewolvesWin",
         test: "should render werewolves text when victory type is werewolves.",
       },
       {
-        victory: createFakeGameVictory({ type: "villagers" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "villagers" }) }),
         expectedText: "components.GameOverVictoryText.villagersWin",
         test: "should render villagers text when victory type is villagers.",
       },
       {
-        victory: createFakeGameVictory({ type: "lovers" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "lovers" }) }),
         expectedText: "components.GameOverVictoryText.loversWin",
         test: "should render lovers text when victory type is lovers.",
       },
       {
-        victory: createFakeGameVictory({ type: "angel" }),
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedText: "components.GameOverVictoryText.loversAndCupidWin",
+        test: "should render lovers and cupid text when victory type is lovers, cupid must win in options and there are 3 survivors.",
+      },
+      {
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedText: "components.GameOverVictoryText.loversWin",
+        test: "should render lovers text when victory type is lovers, cupid must win in options but there are 2 survivors.",
+      },
+      {
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeSeerAlivePlayer(),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: false }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedText: "components.GameOverVictoryText.loversWin",
+        test: "should render lovers text when victory type is lovers, there are 3 survivors but cupid must not win in options.",
+      },
+      {
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "angel" }) }),
         expectedText: "components.GameOverVictoryText.angelWins",
         test: "should render angel text when victory type is angel.",
       },
       {
-        victory: createFakeGameVictory({ type: "none" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "none" }) }),
         expectedText: "components.GameOverVictoryText.nobodyWins",
         test: "should render none text when victory type is none.",
       },
       {
-        victory: createFakeGameVictory({ type: "pied-piper" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "pied-piper" }) }),
         expectedText: "components.GameOverVictoryText.piedPiperWins",
         test: "should render pied piper text when victory type is pied piper.",
       },
       {
-        victory: createFakeGameVictory({ type: "prejudiced-manipulator" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "prejudiced-manipulator" }) }),
         expectedText: "components.GameOverVictoryText.prejudicedManipulatorWins",
         test: "should render prejudiced manipulator text when victory type is prejudiced manipulator.",
       },
       {
-        victory: createFakeGameVictory({ type: "white-werewolf" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "white-werewolf" }) }),
         expectedText: "components.GameOverVictoryText.whiteWerewolfWins",
         test: "should render white werewolf text when victory type is white werewolf.",
       },
-    ])("$test", async({ victory, expectedText }) => {
+    ])("$test", async({ game, expectedText }) => {
       const gameStore = useGameStore();
-      gameStore.game.victory = victory;
+      gameStore.game = createFakeGame(game);
       await nextTick();
       const victoryTypeText = wrapper.find<HTMLHeadingElement>("#victory-text");
 
@@ -155,58 +207,118 @@ describe("Game Over Victory Text Component", () => {
 
   describe("Victory Type SubText", () => {
     it.each<{
-      victory: GameVictory | undefined;
+      game: Game;
       expectedSubText: string;
       test: string;
     }>([
       {
-        victory: undefined,
+        game: createFakeGame({
+          victory: undefined,
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+        }),
         expectedSubText: "??",
         test: "should render unknown subtext when victory is undefined.",
       },
       {
-        victory: createFakeGameVictory({ type: "werewolves" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "werewolves" }) }),
         expectedSubText: "components.GameOverVictoryText.werewolvesHaveEatenALot",
         test: "should render werewolves subtext when victory type is werewolves.",
       },
       {
-        victory: createFakeGameVictory({ type: "villagers" }),
+        game: createFakeGame({
+          victory: createFakeGameVictory({ type: "villagers" }),
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+        }),
         expectedSubText: "components.GameOverVictoryText.villagersHaveSurvivedWerewolves",
         test: "should render villagers subtext when victory type is villagers.",
       },
       {
-        victory: createFakeGameVictory({ type: "lovers" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "lovers" }) }),
         expectedSubText: "components.GameOverVictoryText.loversAreTogetherForever",
         test: "should render lovers subtext when victory type is lovers.",
       },
       {
-        victory: createFakeGameVictory({ type: "angel" }),
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedSubText: "components.GameOverVictoryText.loversAndCupidAreTogetherForever",
+        test: "should render lovers and cupid subtext when victory type is lovers, cupid must win in options and there are 3 survivors.",
+      },
+      {
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: true }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedSubText: "components.GameOverVictoryText.loversAreTogetherForever",
+        test: "should render lovers subtext when victory type is lovers, cupid must win in options but there are 2 survivors.",
+      },
+      {
+        game: createFakeGame({
+          players: [
+            createFakeSeerAlivePlayer(),
+            createFakeSeerAlivePlayer({ isAlive: false }),
+            createFakeSeerAlivePlayer(),
+            createFakeCupidAlivePlayer(),
+          ],
+          options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ cupid: createFakeCupidGameOptions({ mustWinWithLovers: false }) }) }),
+          victory: createFakeGameVictory({ type: "lovers" }),
+        }),
+        expectedSubText: "components.GameOverVictoryText.loversAreTogetherForever",
+        test: "should render lovers subtext when victory type is lovers, there are 3 survivors but cupid must not win in options.",
+      },
+      {
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "angel" }) }),
         expectedSubText: "components.GameOverVictoryText.angelComesBackToParadise",
         test: "should render angel subtext when victory type is angel.",
       },
       {
-        victory: createFakeGameVictory({ type: "none" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "none" }) }),
         expectedSubText: "components.GameOverVictoryText.everybodyMurderedEachOther",
         test: "should render none subtext when victory type is none.",
       },
       {
-        victory: createFakeGameVictory({ type: "pied-piper" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "pied-piper" }) }),
         expectedSubText: "components.GameOverVictoryText.piedPiperHasControl",
         test: "should render pied piper subtext when victory type is pied piper.",
       },
       {
-        victory: createFakeGameVictory({ type: "prejudiced-manipulator" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "prejudiced-manipulator" }) }),
         expectedSubText: "components.GameOverVictoryText.prejudicedManipulatorGroupRemainsAlive",
         test: "should render prejudiced manipulator subtext when victory type is prejudiced manipulator.",
       },
       {
-        victory: createFakeGameVictory({ type: "white-werewolf" }),
+        game: createFakeGame({ victory: createFakeGameVictory({ type: "white-werewolf" }) }),
         expectedSubText: "components.GameOverVictoryText.whiteWerewolfWinsAlone",
         test: "should render white werewolf subtext when victory type is white werewolf.",
       },
-    ])("$test", async({ victory, expectedSubText }) => {
+    ])("$test", async({ game, expectedSubText }) => {
       const gameStore = useGameStore();
-      gameStore.game.victory = victory;
+      gameStore.game = createFakeGame(game);
       await nextTick();
       const victoryTypeSubText = wrapper.find<HTMLParagraphElement>("#victory-sub-text");
 
