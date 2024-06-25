@@ -138,6 +138,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>        
 >>   </details>
 >>   <details>
+>>    <summary>👼 Cupid charms Playground</summary>
+>>
+>>    ![Cupid charms Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Cupid%20charms%20Playground.png)
+>>   </details> 
+>>   <details>
 >>    <summary>🛡️ Defender protects Playground</summary>
 >>        
 >>    ![Defender protects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Defender%20protects%20Playground.png)
@@ -149,6 +154,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Hunter shoots Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Hunter%20shoots%20Playground.png)
 >> 
 >>   </details>
+>>   <details>
+>>   <summary>💞 Lovers meet each other Playground</summary>
+>>
+>>    ![Lovers meet each other Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Lovers%20meet%20each%20other%20Playground.png)
+>>   </details> 
 >>   <details>
 >>    <summary>🪈 Pied Piper charms Playground</summary>
 >>
@@ -247,6 +257,13 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    <summary>💞 Game won by Lovers</summary>
 >  
 >    ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
+>  
+>  </details>
+>
+>  <details>
+>    <summary>💞👼 Game won by Lovers and Cupid</summary>
+>  
+>    ![Game won by Lovers and Cupid](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers%20and%20Cupid.png)
 >  
 >  </details>
 >  
