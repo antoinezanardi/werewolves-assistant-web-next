@@ -735,6 +735,8 @@
       "angelComesBackToParadise": "L'Ange a été éliminé lors du premier vote ou de la première nuit par les Loups-Garous. Il gagne seul et retourne au Bon Endroit.",
       "loversWin": "Les Amoureux gagnent ensemble !",
       "loversAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon sont les seuls survivants. Ils gagnent ensemble et seront ensemble pour toujours.",
+      "loversAndCupidWin": "Les Amoureux et Cupidon gagnent ensemble !",
+      "loversAndCupidAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon et Cupidon lui-même sont les seuls survivants. L'Amour avec un grand A a gagné.",
       "nobodyWins": "Match nul ! Tout le monde est mort dans le village…",
       "everybodyMurderedEachOther": "Tout le monde s'est entretué. Un silence mortel règne dans le village…",
       "piedPiperWins": "Le Joueur de Flûte gagne seul !",
@@ -1244,7 +1246,7 @@
     },
     "GameLoversTurnStartsEvent": {
       "loversMeetEachOther": "Les Amoureux se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants.",
-      "loversAndCupidMeetEachOther": "Les Amoureux et Cupidon se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants. Cupidon gagnera aussi s'il survit avec eux.",
+      "loversAndCupidMeetEachOther": "Les Amoureux se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants. Cupidon gagnera aussi s'il survit avec eux.",
       "ifOneLoveDiesOtherDiesToo": "Si un des Amoureux meurt, l'autre mourra aussi.",
       "ifOneLoveDiesOtherDiesTooButNotCupid": "Si un des Amoureux meurt, l'autre mourra aussi. Cupidon ne mourra pas si un des Amoureux meurt et inversement.",
       "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles entre eux."
@@ -1359,7 +1361,7 @@
     },
     "GameCupidHasCharmedEvent": {
       "cupidHasCharmedPlayers": "Cupidon a charmé deux joueurs qui sont devenus Amoureux, et donc inséparables !",
-      "gameMasterWillTapLovers": "Le Maître du Jeu va tapoter le dos des joueurs devenus Amoureux"
+      "gameMasterWillTapInLovePlayers": "Le Maître du Jeu va tapoter le dos des joueurs devenus Amoureux"
     }
   }
 }
