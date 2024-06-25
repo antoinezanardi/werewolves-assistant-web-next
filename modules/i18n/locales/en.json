@@ -1229,7 +1229,8 @@
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
-      "cupidMustWinWithLovers": "Cupid must win with the Lovers he will choose. If the Lovers and Cupid are the only survivors, they win together."
+      "cupidCanChooseHimself": "Cupid can choose himself to be in love if he wants to.",
+      "cupidMustWinWithLovers": "In this special game, Cupid must win with the Lovers he will choose. Thus, he can't charm himself."
     },
     "GameDefenderTurnStartsEvent": {
       "defenderProtectsAnyone": "The Defender wakes up and will protect anyone from the Werewolves.",
@@ -1243,7 +1244,9 @@
     },
     "GameLoversTurnStartsEvent": {
       "loversMeetEachOther": "The Lovers wake up and meet each other. They are in love and will win together if they are the only survivors.",
+      "loversAndCupidMeetEachOther": "The Lovers and Cupid wake up and meet each other. They are in love and will win together if they are the only survivors. Cupid wins with them if he survives with them.",
       "ifOneLoveDiesOtherDiesToo": "If one of the Lovers dies, the other one will die too.",
+      "ifOneLoveDiesOtherDiesTooButNotCupid": "If one of the Lovers dies, the other one will die too. If Cupid dies, the Lovers will survive and also the other way around.",
       "loversRevealEachOtherRoles": "In this special game, the Lovers reveal their roles to each other."
     },
     "GamePiedPiperTurnStartsEvent": {
@@ -1353,6 +1356,10 @@
       "wolfHoundChoseSideRevelation": "The Wolf-Hound chose to join the side of the … {side} !",
       "assistantChoseSideForWolfHoundMime": "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. ({side})",
       "wolfHoundChoseSideQuietly": "The Wolf-Hound chose to join a side. The chosen side will remain a secret to the other players…"
+    },
+    "GameCupidHasCharmedEvent": {
+      "cupidHasCharmedPlayers": "Cupid has charmed two players to be in love with each other.",
+      "gameMasterWillTapLovers": "The Game Master will tap in the back the Lovers so they know they are in love."
     }
   }
 }

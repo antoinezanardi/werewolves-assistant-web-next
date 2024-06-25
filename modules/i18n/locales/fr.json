@@ -1228,8 +1228,9 @@
       "charmedPeopleMeetEachOtherWithOldOnes": "Le nouveau charmé par le Joueur de Flûte se réveille et rencontre les anciens. Attention aux dernières victimes du Joueur de Flûte ! | Les nouveaux charmés par le Joueur de Flûte se réveillent et rencontrent les anciens. Attention aux dernières victimes du Joueur de Flûte !"
     },
     "GameCupidTurnStartsEvent": {
-      "cupidChoosesTwoPlayersToBeLovers": "Cupidon se réveille et choisit deux joueurs pour être amoureux.",
-      "cupidMustWinWithLovers": "Cupidon doit gagner avec les Amoureux qu'il choisira. Si les Amoureux et Cupidon sont les seuls survivants, ils gagnent ensemble."
+      "cupidChoosesTwoPlayersToBeLovers": "Cupidon se réveille et choisit deux joueurs pour être Amoureux.",
+      "cupidCanChooseHimself": "Cupidon peut se choisir lui-même comme Amoureux si le cœur lui en dit.",
+      "cupidMustWinWithLovers": "Dans cette partie spéciale, Cupidon doit gagner avec les Amoureux qu'il va choisir. Dans ce cas, il ne pourra pas se charmer lui-même."
     },
     "GameDefenderTurnStartsEvent": {
       "defenderProtectsAnyone": "Le Défenseur se réveille et protégera quelqu'un des Loups-Garous.",
@@ -1243,8 +1244,10 @@
     },
     "GameLoversTurnStartsEvent": {
       "loversMeetEachOther": "Les Amoureux se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants.",
-      "ifOneLoveDiesOtherDiesToo": "Si des Amoureux meurt, l'autre mourra aussi.",
-      "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles."
+      "loversAndCupidMeetEachOther": "Les Amoureux et Cupidon se réveillent et se rencontrent, c'est le coup de foudre. Ils sont amoureux et gagneront ensemble s'ils sont les seuls survivants. Cupidon gagnera aussi s'il survit avec eux.",
+      "ifOneLoveDiesOtherDiesToo": "Si un des Amoureux meurt, l'autre mourra aussi.",
+      "ifOneLoveDiesOtherDiesTooButNotCupid": "Si un des Amoureux meurt, l'autre mourra aussi. Cupidon ne mourra pas si un des Amoureux meurt et inversement.",
+      "loversRevealEachOtherRoles": "Dans cette partie spéciale, les Amoureux se révèlent leurs rôles entre eux."
     },
     "GamePiedPiperTurnStartsEvent": {
       "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un seul joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
@@ -1353,6 +1356,10 @@
       "wolfHoundChoseSideRevelation": "Le Chien-Loup a décidé de rejoindre le camp des … {side} !",
       "assistantChoseSideForWolfHoundMime": "L'Assistant a assigné le Chien-Loup à un camp aléatoire. Le Maître du Jeu va mimer le camp du Chien-Loup. ({side})",
       "wolfHoundChoseSideQuietly": "Le Chien-Loup a choisi son camp. Le camp choisi restera secret pour les autres joueurs…"
+    },
+    "GameCupidHasCharmedEvent": {
+      "cupidHasCharmedPlayers": "Cupidon a charmé deux joueurs qui sont devenus Amoureux, et donc inséparables !",
+      "gameMasterWillTapLovers": "Le Maître du Jeu va tapoter le dos des joueurs devenus Amoureux"
     }
   }
 }
