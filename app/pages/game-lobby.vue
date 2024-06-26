@@ -71,7 +71,18 @@ function openGameOptionsHub(): void {
   gameLobbyOptionsHub.value.open();
 }
 
+function injectPlayerNamesFromQuery(): void {
+  const { query } = useRoute();
+  const playerNamesFromQuery = query.playerNames as string[];
+  createGameDtoStore.setPlayersToCreateGameDto(playerNamesFromQuery.map((name: string) => ({
+    name,
+    role: {},
+    side: {},
+  })));
+}
+
 resetCreateGameDto();
 resetGame();
+injectPlayerNamesFromQuery();
 loadAllAudios();
 </script>

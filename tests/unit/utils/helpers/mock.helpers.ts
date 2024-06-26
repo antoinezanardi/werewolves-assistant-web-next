@@ -47,6 +47,7 @@ function mockPiniaStore<TStoreDef extends () => unknown>(useStore: TStoreDef): T
 
 function mockPrimeVueComposables(): void {
   vi.mock("primevue/usetoast", () => ({ useToast: (): { add: Mock } => ({ add: vi.fn() }) }));
+  vi.mock("primevue/useconfirm", () => ({ useConfirm: (): { require: Mock } => ({ require: vi.fn() }) }));
 }
 
 export {
