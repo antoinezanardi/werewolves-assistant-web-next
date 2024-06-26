@@ -102,7 +102,12 @@ const ESLINT_STYLISTIC_CONFIG = {
     "@stylistic/no-trailing-spaces": [ERROR, { skipBlankLines: true }],
     "@stylistic/no-whitespace-before-property": ERROR,
     "@stylistic/nonblock-statement-body-position": [ERROR, "below"],
-    "@stylistic/object-curly-newline": [ERROR, { multiline: true }],
+    "@stylistic/object-curly-newline": [
+      ERROR, {
+        multiline: true,
+        consistent: true,
+      },
+    ],
     "@stylistic/object-curly-spacing": [ERROR, ALWAYS],
     "@stylistic/object-property-newline": [ERROR, { allowAllPropertiesOnSameLine: true }],
     "@stylistic/one-var-declaration-per-line": [ERROR, ALWAYS],
