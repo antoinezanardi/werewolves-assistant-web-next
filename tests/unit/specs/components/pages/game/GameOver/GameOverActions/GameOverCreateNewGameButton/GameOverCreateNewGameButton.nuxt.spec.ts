@@ -1,6 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
@@ -27,7 +28,12 @@ mockNuxtImport<typeof navigateTo>("navigateTo", () => hoistedMocks.navigateTo);
 
 describe("Game Over Create New Game Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverCreateNewGameButton>>;
-  const defaultGame = createFakeGame();
+  const defaultPlayers = [
+    createFakeSeerAlivePlayer({ name: "Antoine" }),
+    createFakeSeerAlivePlayer({ name: "Benoit" }),
+    createFakeSeerAlivePlayer({ name: "Corentin" }),
+  ];
+  const defaultGame = createFakeGame({ players: defaultPlayers });
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameOverCreateNewGameButtonComponent(options: ComponentMountingOptions<typeof GameOverCreateNewGameButton> = {}):
@@ -85,13 +91,17 @@ describe("Game Over Create New Game Button Component", () => {
       });
 
       it("should navigate to create game page with existing players when confirmed.", () => {
-        console.log(wrapper.html());
-        const acceptCallback = hoistedMocks.useConfirm.require.mock.calls[0].args[0].accept as () => void;
+        const acceptCallback = (hoistedMocks.useConfirm.require.mock.calls[0] as ConfirmationOptions[])[0].accept as () => void;
         acceptCallback();
 
-        expect(hoistedMocks.navigateTo).toHaveBeenCalledExactlyOnceWith({
-          name: "game-create",
-        });
+        expect(hoistedMocks.navigateTo).toHaveBeenCalledExactlyOnceWith("/game-lobby?playerNames=Antoine&playerNames=Benoit&playerNames=Corentin");
+      });
+
+      it("should navigate to create page with new players when rejected.", () => {
+        const rejectCallback = (hoistedMocks.useConfirm.require.mock.calls[0] as ConfirmationOptions[])[0].reject as () => void;
+        rejectCallback();
+
+        expect(hoistedMocks.navigateTo).toHaveBeenCalledExactlyOnceWith("/game-lobby");
       });
     });
   });

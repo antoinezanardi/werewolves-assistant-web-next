@@ -73,6 +73,9 @@ function openGameOptionsHub(): void {
 
 function injectPlayerNamesFromQuery(): void {
   const { query } = useRoute();
+  if (!Object.hasOwn(query, "playerNames")) {
+    return;
+  }
   const playerNamesFromQuery = query.playerNames as string[];
   createGameDtoStore.setPlayersToCreateGameDto(playerNamesFromQuery.map((name: string) => ({
     name,

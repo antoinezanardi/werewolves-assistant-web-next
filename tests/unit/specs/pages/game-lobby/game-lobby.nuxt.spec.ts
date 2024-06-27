@@ -1,3 +1,5 @@
+import { mockNuxtImport } from "@nuxt/test-utils/runtime";
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import type { mount } from "@vue/test-utils";
 import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
@@ -14,6 +16,12 @@ import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/compo
 import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useRoute: {} as unknown as ReturnType<typeof useRoute>,
+}));
+
+mockNuxtImport("useRoute", () => vi.fn(() => hoistedMocks.useRoute));
 
 describe("Game Lobby Page", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobby>>;
@@ -53,6 +61,7 @@ describe("Game Lobby Page", () => {
   }
 
   beforeEach(async() => {
+    hoistedMocks.useRoute = createFakeUseRoute();
     wrapper = await mountGameLobbyPageComponent();
   });
 
@@ -134,6 +143,28 @@ describe("Game Lobby Page", () => {
       await getError(() => (gameLobbyHeader.vm as VueVm).$emit("game-options-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Options Hub is not defined");
+    });
+  });
+
+  describe("Inject player from query", () => {
+    it("should set players to create game dto when query is fulfilled with player names.", async() => {
+      hoistedMocks.useRoute.query = { playerNames: ["Antoine", "Benoit", "Corentin"] };
+      wrapper = await mountGameLobbyPageComponent();
+      const createGameDtoStore = useCreateGameDtoStore();
+
+      expect(createGameDtoStore.setPlayersToCreateGameDto).toHaveBeenCalledExactlyOnceWith([
+        createFakeCreateGamePlayerDto({ name: "Antoine" }),
+        createFakeCreateGamePlayerDto({ name: "Benoit" }),
+        createFakeCreateGamePlayerDto({ name: "Corentin" }),
+      ]);
+    });
+
+    it("should not set players to create game dto when query is not fulfilled with player names.", async() => {
+      hoistedMocks.useRoute.query = { toto: "tata" };
+      wrapper = await mountGameLobbyPageComponent();
+      const createGameDtoStore = useCreateGameDtoStore();
+
+      expect(createGameDtoStore.setPlayersToCreateGameDto).not.toHaveBeenCalled();
     });
   });
 });

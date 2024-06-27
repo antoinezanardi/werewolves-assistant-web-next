@@ -15,7 +15,9 @@ async function goOnPage(world: CustomWorld, pageName: string): Promise<void> {
 }
 
 async function waitForPageUrl(world: CustomWorld, pageUrl: string): Promise<void> {
-  await world.page.waitForURL(url(pageUrl));
+  const expectedUrl = url(pageUrl);
+  const expectedUrlRegexp = new RegExp(`${expectedUrl}(\\?.*)?`, "u");
+  await world.page.waitForURL(expectedUrlRegexp);
   await waitForPageLoadStates(world);
 }
 
