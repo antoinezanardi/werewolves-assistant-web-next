@@ -1,10 +1,9 @@
 @game-lobby-options-hub
-
 Feature: ⚙️ Game Lobby Options Hub
 
   Scenario: ⚙️ Options Hub is displayed when user clicks game options button in lobby
-
     Given the user is on game-lobby page
+
     When the user clicks on the game options button in the lobby
     Then the heading with exact name "Game options" should be visible
     And the tab with name "Roles" should be visible
@@ -21,10 +20,9 @@ Feature: ⚙️ Game Lobby Options Hub
     And the heading with name "Votes can be skipped" should be visible
     Then the page creates the missing snapshot with name "Game Lobby Options Hub on Votes tab"
 
-
   Scenario: ⚙️ User closes the options hub with escape, close button or outside click
-
     Given the user is on game-lobby page
+
     When the user clicks on the game options button in the lobby
     Then the heading with exact name "Game options" should be visible
 

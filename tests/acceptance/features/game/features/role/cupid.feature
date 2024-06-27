@@ -1,9 +1,7 @@
 @cupid-role
-
 Feature: 👼Cupid role
 
   Scenario: 👼Cupid makes two players fall in love
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 👼Cupid role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Elder    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -61,7 +60,6 @@ Feature: 👼Cupid role
     And the page should match or creates the missing snapshot with name "Lovers meet each other Playground"
 
   Scenario: 👼Lovers from Cupid reveal their role to each other because the game master enabled the option
-
     Given the user disables the sheriff in game options
     And the user forces the lovers from cupid reveal their roles to each other in game options
     And the user creates a game with the players with name and role
@@ -70,6 +68,7 @@ Feature: 👼Cupid role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Elder    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Cupid charms"
@@ -93,7 +92,6 @@ Feature: 👼Cupid role
     Then the game's event should display the text "In this special game, the Lovers reveal their roles to each other."
 
   Scenario: 👼Cupid can win with the lovers
-
     Given the user disables the sheriff in game options
     And the user sets cupid must win with lovers in game options
     And the user creates a game with the players with name and role
@@ -102,6 +100,7 @@ Feature: 👼Cupid role
       | Bob     | Werewolf  |
       | Charlie | Idiot     |
       | David   | Scapegoat |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event

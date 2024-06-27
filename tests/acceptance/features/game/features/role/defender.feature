@@ -1,9 +1,7 @@
 @defender-role
-
 Feature: 🛡️ Defender Role
 
   Scenario: 🛡️ Defender protects from werewolf attack but can't choose twice in a row the same player
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🛡️ Defender Role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -54,7 +53,6 @@ Feature: 🛡️ Defender Role
       | David   |
 
   Scenario: 🛡️ Defender protects from werewolf attack and can choose anyone at any moment if the game master allows it
-
     Given the user disables the sheriff in game options
     And the user allows the defender to protect twice in a row in game options
     And the user creates a game with the players with name and role
@@ -63,8 +61,8 @@ Feature: 🛡️ Defender Role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
-    When the user closes the toast
 
+    When the user closes the toast
     And the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Defender wakes up and will protect anyone from the Werewolves."

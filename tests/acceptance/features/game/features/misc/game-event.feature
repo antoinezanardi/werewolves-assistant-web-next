@@ -1,9 +1,7 @@
 @game-event
-
 Feature: 🌟 Game Event
 
   Scenario: 🌟 User can navigate between game events and their texts with buttons
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🌟 Game Event
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     Then the game's event should display the text "Welcome everyone in the village of the Millers Hollow !"
     And the game's previous event button should be disabled
@@ -42,7 +41,6 @@ Feature: 🌟 Game Event
     Then the game's event should display the text "The Seer wakes up and will look at a player's role."
 
   Scenario: 🌟 User can navigate between game events and their texts with keyboard
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -50,6 +48,7 @@ Feature: 🌟 Game Event
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     Then the game's event should display the text "Welcome everyone in the village of the Millers Hollow !"
 

@@ -1,9 +1,7 @@
 @seer-role
-
 Feature: 🔮Seer role
 
   Scenario: 🔮Seer looks the role of a player
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🔮Seer role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips the game event
     Then the game's event should display the text "The night falls on the village of the Millers Hollow…"
@@ -50,7 +49,6 @@ Feature: 🔮Seer role
     And the player with name "Charlie" should have the attribute seen by seer in the game
 
   Scenario: 🔮Seer looks the role of a player but game master doesn't say the role out loud because she is quiet
-
     Given the user disables the sheriff in game options
     And the user makes the seer quiet in game options
     And the user creates a game with the players with name and role
@@ -59,6 +57,7 @@ Feature: 🔮Seer role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Seer looks"
@@ -72,7 +71,6 @@ Feature: 🔮Seer role
     And the game's event player card should have the name "Bob"
 
   Scenario: 🔮Seer looks only the side of a player because the game master doesn't allow her to see the role
-
     Given the user disables the sheriff in game options
     And the user doesn't allow the seer to see roles in game options
     And the user creates a game with the players with name and role
@@ -81,6 +79,7 @@ Feature: 🔮Seer role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Seer looks"
@@ -104,7 +103,6 @@ Feature: 🔮Seer role
     Then the game's event should display the text "The Seer has seen a player from the Villagers side !"
 
   Scenario: 🔮Seer looks only the side of a player and is quiet because the game master changed the game options
-
     Given the user disables the sheriff in game options
     And the user doesn't allow the seer to see roles in game options
     And the user makes the seer quiet in game options
@@ -114,6 +112,7 @@ Feature: 🔮Seer role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Seer looks"

@@ -1,15 +1,14 @@
 @sheriff-attribute
-
 Feature: 🎖️ Sheriff Attribute
 
   Scenario: 🎖 Sheriff is elected the first night of the game
-
     Given the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Witch    |
+
     When the user closes the toast
     And the user skips the game event
     Then the game's event should display the text "Survivors, it's time to elect the Sheriff for the village."
@@ -37,13 +36,13 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."
 
   Scenario: 🎖 Sheriff is elected after a tie between two players
-
     Given the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Witch    |
+
     When the user closes the toast
     And the user skips all game events
 
@@ -69,7 +68,6 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."
 
   Scenario: 🎖 Sheriff is elected the second day of the game when game master changes the sheriff election time in game options
-
     Given the user sets sheriff election time on day 2 in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -77,14 +75,15 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     | Werewolf |
       | Charlie | Villager |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"
     And the user skips all game events
-
     Then the game's current play title should be "Survivors vote"
+
     When the player or group skips his turn
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -94,13 +93,13 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's current play title should be "Survivors elect the Sheriff"
 
   Scenario: 🎖 Sheriff has doubled vote during votes
-
     Given the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
 
@@ -117,7 +116,6 @@ Feature: 🎖️ Sheriff Attribute
     Then the player with name "Charlie" should be dead in the game
 
   Scenario: 🎖 Sheriff has regular vote when game master disables the option
-
     Given the user gives the sheriff a regular vote in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -125,6 +123,7 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
 
@@ -142,13 +141,13 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's current play question should be "Which player does the Sheriff want to settle the votes with ?"
 
   Scenario: 🎖 Sheriff settles votes between players in tie
-
     Given the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
 
@@ -182,7 +181,6 @@ Feature: 🎖️ Sheriff Attribute
     And the game's event should display the text "Antoine is dead ! What a tragedy…"
 
   Scenario: 🎖 Sheriff doesn't settle votes between players in tie when game master disables the option
-
     Given the user doesn't allow the sheriff to settle votes in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -190,6 +188,7 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
 
@@ -207,13 +206,13 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's current play question should be "Which player do the survivors want to vote for to break the tie ?"
 
   Scenario: 🎖 Sheriff delegates his role to another survivor when he dies
-
     Given the user creates a game with the players with name and role
       | name    | role     |
       | Antoine | Hunter   |
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
 
