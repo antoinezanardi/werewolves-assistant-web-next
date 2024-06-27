@@ -18,8 +18,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       primevue:
-        specifier: ^3.52.0
-        version: 3.52.0(vue@3.4.30(typescript@5.4.5))
+        specifier: ^3.53.0
+        version: 3.53.0(vue@3.4.30(typescript@5.4.5))
     devDependencies:
       '@aksharahegde/nuxt-glow':
         specifier: ^1.1.2
@@ -5898,8 +5898,8 @@ packages:
     resolution: {integrity: sha512-E9e9HJ9R9NasGOgPaPE8VMeiPKAyWR5jcFpNnwIejslIhWqdqOrb2wShBsncMPUb+BcCd2OPYfh7p2W6oemTng==}
     engines: {node: '>=18'}
 
-  primevue@3.52.0:
-    resolution: {integrity: sha512-HLOVP5YI0ArFKUhIyfZsWmTNMaBYNCBWC/3DYvdd/Po4LY5/WXf7yIYvArE2q/3OuwSXJXvjlR8UNQeJYRSQog==}
+  primevue@3.53.0:
+    resolution: {integrity: sha512-mRqTPGGZX+3AQokaCCjxLVSNEjGEA7LaPdBT4qSpGEdMstK6vhUBCxgLH7IPjHudbaSi4Xo3CIO62pXQxbz8dQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -13705,7 +13705,7 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.12.2(magicast@0.3.4)(rollup@4.18.0)
       pathe: 1.1.2
-      primevue: 3.52.0(vue@3.4.30(typescript@5.4.5))
+      primevue: 3.53.0(vue@3.4.30(typescript@5.4.5))
     transitivePeerDependencies:
       - magicast
       - rollup
@@ -14404,7 +14404,7 @@ snapshots:
     dependencies:
       parse-ms: 4.0.0
 
-  primevue@3.52.0(vue@3.4.30(typescript@5.4.5)):
+  primevue@3.53.0(vue@3.4.30(typescript@5.4.5)):
     dependencies:
       vue: 3.4.30(typescript@5.4.5)
 
