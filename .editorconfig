@@ -5,3 +5,6 @@ insert_final_newline = false
 indent_style = space
 indent_size = 2
 max_line_length = 180
+
+[*.feature]
+insert_final_newline = true
