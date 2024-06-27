@@ -1,9 +1,7 @@
 @white-werewolf-role
-
 Feature: 🦴🐺 White Werewolf role
 
   Scenario: 🦴🐺 White Werewolf eats another wolf or can skip its turn every other night
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role           |
@@ -13,6 +11,7 @@ Feature: 🦴🐺 White Werewolf role
       | David   | Villager       |
       | Nelson  | Scapegoat      |
       | Lucy    | Little Girl    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -72,7 +71,6 @@ Feature: 🦴🐺 White Werewolf role
     Then the player with name "Charlie" should be dead in the game
 
   Scenario: 🦴🐺 White Werewolf should not have any targets if there is no other werewolf to eat
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role           |
@@ -82,7 +80,6 @@ Feature: 🦴🐺 White Werewolf role
       | Nelson  | Scapegoat      |
     And the user closes the toast
     And the user skips all game events
-
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"
@@ -94,7 +91,6 @@ Feature: 🦴🐺 White Werewolf role
     And the game's current play should not have targets
 
   Scenario: 🦴🐺 White Werewolf wakes every night when game master sets its waking up interval to 1
-
     Given the user disables the sheriff in game options
     And the user sets the white werewolf waking up interval to 1 in game options
     And the user creates a game with the players with name and role
@@ -106,7 +102,6 @@ Feature: 🦴🐺 White Werewolf role
       | Nelson  | Scapegoat      |
     And the user closes the toast
     And the user skips all game events
-
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"

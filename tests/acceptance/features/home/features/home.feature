@@ -1,5 +1,4 @@
 @home-page
-
 Feature: 🏠 Home Page
 
   Scenario: 🏠 Home Page is displayed with logo, title and many links
@@ -33,16 +32,19 @@ Feature: 🏠 Home Page
 
   Scenario: 🏠 User goes on the game lobby page
     Given the user is on home page
+
     When the user clicks on the link with name "Play"
     Then the user should be on game-lobby page
 
   Scenario: 🏠 User goes on the about page
     Given the user is on home page
+
     When the user clicks on the link with name "What is it ?"
     Then the user should be on about page
 
   Scenario: 🏠 User goes on the GitHub repository page through the link
     Given the user is on home page
     And the user is about to open a page on new tab
+
     When the user clicks on the link with name "This project is open-source!"
     Then a new page should be opened with url starting with "https://github.com/antoinezanardi/werewolves-assistant-web-next"

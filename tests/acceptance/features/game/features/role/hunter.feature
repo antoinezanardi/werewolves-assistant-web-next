@@ -1,9 +1,7 @@
 @hunter-role
-
 Feature: 🔫 Hunter role
 
   Scenario: 🔫 Hunter shoots and kill someone when he dies
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🔫 Hunter role
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Villager |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"

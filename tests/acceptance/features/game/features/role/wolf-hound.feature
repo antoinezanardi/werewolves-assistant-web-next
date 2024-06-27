@@ -1,9 +1,7 @@
 @wolf-hound-role
-
 Feature: 🐕 Wolf-Hound role
 
   Scenario: 🐕 Wolf-Hound chooses the Werewolves side
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role        |
@@ -11,6 +9,7 @@ Feature: 🐕 Wolf-Hound role
       | Bob     | Werewolf    |
       | Charlie | Little Girl |
       | David   | Villager    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -28,7 +27,6 @@ Feature: 🐕 Wolf-Hound role
     And the game's event should display the text "The Wolf-Hound chose to join a side. The chosen side will remain a secret to the other players…"
 
   Scenario: 🐕 Wolf-Hound chooses the Villagers side and it's revealed to other players because game master enabled the option
-
     Given the user disables the sheriff in game options
     And the user sets wolf-hound chosen side revealed to everyone in game options
     And the user creates a game with the players with name and role
@@ -37,6 +35,7 @@ Feature: 🐕 Wolf-Hound role
       | Bob     | Werewolf    |
       | Charlie | Little Girl |
       | David   | Villager    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -51,7 +50,6 @@ Feature: 🐕 Wolf-Hound role
     And the game's event should display the text "The Wolf-Hound chose to join the side of the … Villagers !"
 
   Scenario: 🐕 Wolf-Hound's side is randomly chosen by the assistant because the game master enabled the option
-
     Given the user disables the sheriff in game options
     And the user sets wolf-hound side randomly chosen by assistant in game options
     And the user creates a game with the players with name and role
@@ -60,6 +58,7 @@ Feature: 🐕 Wolf-Hound role
       | Bob     | Werewolf    |
       | Charlie | Little Girl |
       | David   | Villager    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -70,7 +69,6 @@ Feature: 🐕 Wolf-Hound role
     Then the game's event should display either "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. (Villagers)" or "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. (Werewolves)"
 
   Scenario: 🐕 Wolf-Hound's side is randomly chosen by the assistant and revealed to everyone because the game master enabled both options
-
     Given the user disables the sheriff in game options
     And the user sets wolf-hound chosen side revealed to everyone in game options
     And the user sets wolf-hound side randomly chosen by assistant in game options
@@ -80,6 +78,7 @@ Feature: 🐕 Wolf-Hound role
       | Bob     | Werewolf    |
       | Charlie | Little Girl |
       | David   | Villager    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event

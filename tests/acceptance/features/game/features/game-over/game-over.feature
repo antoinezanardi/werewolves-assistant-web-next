@@ -1,9 +1,7 @@
 @game-over-page
-
 Feature: 🏁 Game Over Page
 
   Scenario: 🏁 User is sent back to game lobby with same players to create a new game with them
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🏁 Game Over Page
       | Bob     | Werewolf |
       | Charlie | Villager |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Survivors vote"
@@ -34,7 +33,6 @@ Feature: 🏁 Game Over Page
     And the player with name "David" should not have a role in the lobby
 
   Scenario: 🏁 User is sent back to empty game lobby to create a new game with new players
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -42,6 +40,7 @@ Feature: 🏁 Game Over Page
       | Bob     | Werewolf |
       | Charlie | Villager |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Survivors vote"

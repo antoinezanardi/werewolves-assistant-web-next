@@ -1,9 +1,7 @@
 @scandalmonger-role
-
 Feature: 🐦‍⬛ Scandalmonger role
 
   Scenario: 🐦‍⬛ Scandalmonger marks a player with its feather or can skip its turn
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role          |
@@ -11,6 +9,7 @@ Feature: 🐦‍⬛ Scandalmonger role
       | Bob     | Werewolf      |
       | Charlie | Idiot         |
       | David   | Villager      |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event
@@ -55,7 +54,6 @@ Feature: 🐦‍⬛ Scandalmonger role
     Then the game's event should display the text "The Scandalmonger didn't mark anyone for this night. He flew away…"
 
   Scenario: 🐦‍⬛ Scandalmonger's mark penalty is changed to 1 vote by game master
-
     Given the user disables the sheriff in game options
     And the user sets the scandalmonger mark penalty to 1 in game options
     And the user creates a game with the players with name and role
@@ -64,6 +62,7 @@ Feature: 🐦‍⬛ Scandalmonger role
       | Bob     | Werewolf      |
       | Charlie | Idiot         |
       | David   | Villager      |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event

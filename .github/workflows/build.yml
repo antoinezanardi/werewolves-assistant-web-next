@@ -3,8 +3,8 @@ name: ⚙️ Build Workflow
 on:
   pull_request:
     branches:
-      - 'main'
-      - 'develop'
+      - "main"
+      - "develop"
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
@@ -60,8 +60,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Cache pnpm dependencies 🥡
         uses: actions/cache@v4
@@ -91,8 +91,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Restore pnpm dependencies from cache 🥡
         uses: actions/cache/restore@v4
@@ -124,8 +124,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Restore pnpm dependencies from cache 🥡
         uses: actions/cache/restore@v4
@@ -139,6 +139,9 @@ jobs:
 
       - name: Check and lint code 🔍
         run: pnpm run lint
+
+      - name: Check gherkin files format 🥒
+        run: pnpm run prettier:gherkin
 
   unit-tests:
     name: Unit Tests 🧪
@@ -157,8 +160,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Restore pnpm dependencies from cache 🥡
         uses: actions/cache/restore@v4
@@ -210,8 +213,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Restore pnpm dependencies from cache 🥡
         uses: actions/cache/restore@v4
@@ -267,8 +270,8 @@ jobs:
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: Restore pnpm dependencies from cache 🥡
         uses: actions/cache/restore@v4

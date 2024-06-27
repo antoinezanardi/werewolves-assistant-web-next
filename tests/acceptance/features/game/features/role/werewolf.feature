@@ -1,9 +1,7 @@
 @werewolf-role
-
 Feature: 🐺 Werewolf role
 
   Scenario: 🐺 Werewolves eat a villager each night
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -12,6 +10,7 @@ Feature: 🐺 Werewolf role
       | Mama    | Werewolf |
       | Charlie | Idiot    |
       | David   | Witch    |
+
     When the user closes the toast
     And the user skips the game event
     And the user skips the game event

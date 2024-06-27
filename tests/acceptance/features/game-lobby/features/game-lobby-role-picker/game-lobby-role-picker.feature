@@ -1,10 +1,9 @@
 @game-lobby-role-picker
-
 Feature: 🃏👆 Game Lobby Role Picker
 
   Scenario: 🃏👆 Role Picker is displayed when user clicks on a player with description and available roles
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     Then the heading with exact name "Pick a role for the player Antoine" should be visible
@@ -13,8 +12,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the page creates the missing snapshot with name "Game Lobby Role Picker without picked role"
 
   Scenario: 🃏👆 User picks the seer role for a player
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     And the user chooses the role with name "Seer" in the lobby role picker
@@ -28,8 +27,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the player with name "Antoine" should have the "Seer" role in the lobby
 
   Scenario: 🃏👆 User selects a random role for a player
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     And the user chooses a random role in the lobby role picker
@@ -40,8 +39,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the player with name "Antoine" should have a role in the lobby
 
   Scenario: 🃏👆 User can't pick a role for a player if he already has this role
-
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name    | role |
       | Antoine | Seer |
@@ -55,8 +54,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     Then the button with name "Pick role for the player" should be enabled
 
   Scenario: 🃏👆 Current role is displayed for a player when picking a role for him
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     Then the player should not have current role in the lobby role picker
@@ -67,8 +66,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     Then the player should have "Seer" as current role in the lobby role picker
 
   Scenario: 🃏👆 Roles are swapped with first player with picked role when its maximum is reached
-
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name    | role |
       | Antoine | Seer |
@@ -77,8 +76,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the player with name "Bob" should have the "Seer" role in the lobby
 
   Scenario: 🃏👆 Total for each role present in the party is displayed in the role picker
-
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name    | role     |
       | Antoine | Seer     |
@@ -94,10 +93,9 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the role "Hunter" total badge should have tooltip with text "Total in the party" in the lobby role picker
     And the role "Villager" should not have a total badge in the lobby role picker
 
-
   Scenario: 🃏👆 Warning is displayed when a role must be picked to reach the minimum number of players for this role
-
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name    | role           |
       | Antoine | Seer           |
@@ -114,8 +112,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the role "Three Brothers" warning minimum players not reached badge should have tooltip with text "Minimum in the party not reached (2 left to pick)" in the lobby role picker
 
   Scenario: 🃏👆 Role Picker displays description of selected roles and scrolls to top if necessary when selecting another one
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     And the user chooses the role with name "Wild Child" in the lobby role picker
@@ -127,8 +125,8 @@ Feature: 🃏👆 Game Lobby Role Picker
     Then the role's description image with name "Werewolf" should be in viewport in the lobby role picker
 
   Scenario: 🃏👆 User closes the role picker with escape, close button or outside click
-
     Given the user is on game-lobby page
+
     When the user enters the player with name "Antoine" in the lobby
     And the user clicks on the player with name "Antoine" in the lobby
     Then the heading with exact name "Pick a role for the player Antoine" should be visible

@@ -1,5 +1,4 @@
 @not-found-page
-
 Feature: ❓ Not Found Page
 
   Scenario: ❓ Not Found Page is displayed when the user navigates to a non-existent page
@@ -15,5 +14,6 @@ Feature: ❓ Not Found Page
 
   Scenario: ❓ User goes back on home page by clicking on button
     Given the user is on unknown page
+
     When the user clicks on the link with name "Go back to a safe place"
     Then the user should be on home page
