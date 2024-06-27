@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Over Create New Game Button Component > should match snapshot when rendered. 1`] = `
+"<div id="create-new-game-button-container">
+  <confirm-popup-stub></confirm-popup-stub>
+  <button-stub id="create-new-game-button" class="p-button p-button-raised"></button-stub>
+</div>"
+`;

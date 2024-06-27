@@ -75,6 +75,7 @@ export default defineNuxtConfig({
       include: [
         "Button",
         "ButtonGroup",
+        "ConfirmPopup",
         "Dialog",
         "Divider",
         "Fieldset",

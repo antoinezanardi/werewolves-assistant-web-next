@@ -1362,6 +1362,9 @@
     "GameCupidHasCharmedEvent": {
       "cupidHasCharmedPlayers": "Cupidon a charmé deux joueurs qui sont devenus Amoureux, et donc inséparables !",
       "gameMasterWillTapInLovePlayers": "Le Maître du Jeu va tapoter le dos des joueurs devenus Amoureux"
+    },
+    "GameOverCreateNewGameButton": {
+      "createNewGameWithSamePlayers": "Voulez-vous créer une nouvelle partie avec les mêmes joueurs ?"
     }
   }
 }

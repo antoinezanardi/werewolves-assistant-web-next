@@ -3,17 +3,7 @@
     id="game-over-actions"
     class="flex gap-8 justify-center w-full"
   >
-    <NuxtLink
-      id="new-game-button"
-      class="p-button p-button-raised"
-      to="/game-lobby"
-    >
-      <span class="fa fa-play-circle me-2"/>
-
-      <span>
-        {{ $t('components.GameOverActions.createAnotherGame') }}
-      </span>
-    </NuxtLink>
+    <GameOverCreateNewGameButton id="game-over-create-new-game-button"/>
 
     <VuePrimeButton
       id="show-game-history-button"
@@ -34,6 +24,7 @@
 import { storeToRefs } from "pinia";
 
 import type { GameOverActionsEmits } from "~/components/pages/game/GameOver/GameOverActions/game-over-actions.types";
+import GameOverCreateNewGameButton from "~/components/pages/game/GameOver/GameOverActions/GameOverCreateNewGameButton/GameOverCreateNewGameButton.vue";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 
 const emit = defineEmits<GameOverActionsEmits>();

@@ -1362,6 +1362,9 @@
     "GameCupidHasCharmedEvent": {
       "cupidHasCharmedPlayers": "Cupid has charmed two players to be in love with each other.",
       "gameMasterWillTapInLovePlayers": "The Game Master will tap in the back the Lovers so they know they are in love."
+    },
+    "GameOverCreateNewGameButton": {
+      "createNewGameWithSamePlayers": "Do you want to create a new game with the same players ?"
     }
   }
 }

@@ -192,12 +192,12 @@ Feature: 🃏 Game Lobby Page
   Scenario: 🃏 User can't start the game if there is only two brothers among players
     Given the user is on game-lobby page
     When the user enters the players with name and role in the lobby
-      | name     | role         |
+      | name     | role           |
       | Ulysse   | Three Brothers |
       | Antoine  | Three Brothers |
-      | Valentin | Werewolf     |
-      | William  | Witch        |
-      | Xavier   | Fox          |
+      | Valentin | Werewolf       |
+      | William  | Witch          |
+      | Xavier   | Fox            |
     Then the button with name "Start game" should be disabled
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Three Brothers role requires at least 3 players with this role" should be visible
