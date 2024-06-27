@@ -13,9 +13,11 @@ Feature: 🔮Seer role
     When the user closes the toast
     And the user skips the game event
     Then the game's event should display the text "The night falls on the village of the Millers Hollow…"
+
     When the user skips the game event
     Then the game's event should display the text "The Seer wakes up and will look at a player's role."
     And the game's event player card should have the name "Antoine"
+
     When the user skips the game event
     Then the game's current play title should be "Seer looks"
     And the game's current play question should be "Which player does the Seer want to look at ?"
