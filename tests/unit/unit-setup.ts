@@ -9,14 +9,6 @@ expect.extend(matchers);
 
 const server = setupMswServer();
 
-declare module "vitest" {
-  type Assertion<T = unknown> = CustomMatchers<T>;
-
-  type AsymmetricMatchersContaining<T = unknown> = CustomMatchers<T>;
-
-  type ExpectStatic<T = unknown> = CustomMatchers<T>;
-}
-
 beforeAll(() => {
   server.listen();
 
