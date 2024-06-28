@@ -391,7 +391,8 @@
     "keyboard": {
       "shiftKey": "Shift",
       "leftArrowKey": "Flèche gauche",
-      "rightArrowKey": "Flèche droite"
+      "rightArrowKey": "Flèche droite",
+      "enterKey": "Entrée"
     }
   },
   "pages": {
@@ -632,7 +633,8 @@
       "roleImageAlt": "Image du rôle du game play en cours"
     },
     "GamePlaygroundFooterMakePlayButton": {
-      "makePlay": "Valider"
+      "makePlay": "Valider",
+      "makePlayAndProceedToNextOne": "Valider et passer au tour suivant"
     },
     "GameVotePlaygroundVoters": {
       "nobodyCanVote": "Personne ne peut voter…"

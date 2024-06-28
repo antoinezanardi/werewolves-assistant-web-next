@@ -5,7 +5,6 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
-import type { Ref } from "vue";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
@@ -16,15 +15,10 @@ import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
-const { hoistedMocks } = vi.hoisted(() => ({
-  hoistedMocks: {
-    useMagicKeys: {
-      shift: { value: false } as Ref<boolean>,
-      arrowright: { value: false } as Ref<boolean>,
-      arrowleft: { value: false } as Ref<boolean>,
-    } satisfies ReturnType<typeof createFakeUseMagicKeys>,
-  },
+const hoistedMocks = vi.hoisted(() => ({
+  useMagicKeys: {} as unknown as ReturnType<typeof createFakeUseMagicKeys>,
 }));
+mockNuxtImport("useMagicKeys", () => vi.fn(() => hoistedMocks.useMagicKeys));
 
 describe("Game Events Monitor Footer Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventsMonitorFooter>>;
@@ -39,7 +33,6 @@ describe("Game Events Monitor Footer Component", () => {
 
   beforeEach(async() => {
     hoistedMocks.useMagicKeys = createFakeUseMagicKeys();
-    mockNuxtImport("useMagicKeys", () => vi.fn(() => hoistedMocks.useMagicKeys));
     wrapper = await mountGameEventsMonitorFooterComponent();
   });
 

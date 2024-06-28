@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Playground Footer Make Play Button Component > should match snapshot when rendered. 1`] = `
-"<div id="game-playground-footer-make-play-button" class="flex justify-center">
+"<div id="game-playground-footer-make-play-button" class="flex justify-center" data-pd-tooltip="true">
   <button-stub id="make-play-button" class="uppercase w-full" disabled="true" icon="fa fa-play" label="Make play" loading="false" raised="" severity="primary" type="button"></button-stub>
 </div>"
 `;
