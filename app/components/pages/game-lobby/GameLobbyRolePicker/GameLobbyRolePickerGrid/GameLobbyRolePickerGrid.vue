@@ -10,7 +10,7 @@
     />
 
     <GameLobbyRolePickerGridElement
-      v-for="role in roles"
+      v-for="role in sortedRoleBySideAndName"
       :key="role.name"
       class="available-role"
       :picked-role="pickedRole"
@@ -35,6 +35,23 @@ const emit = defineEmits<GameLobbyRolePickerGridEmits>();
 const rolesStore = useRolesStore();
 
 const { roles } = storeToRefs(rolesStore);
+
+const { t } = useI18n();
+
+const sortedRoleBySideAndName = computed<Role[]>(() => {
+  if (!roles.value) {
+    return [];
+  }
+  return roles.value.toSorted((roleA, roleB) => {
+    if (roleA.side === roleB.side) {
+      const roleAName = t(`shared.role.name.${roleA.name}`);
+      const roleBName = t(`shared.role.name.${roleB.name}`);
+
+      return roleAName.localeCompare(roleBName);
+    }
+    return roleA.side === "werewolves" ? -1 : 1;
+  });
+});
 
 function pickRole(role: Role): void {
   emit("pickRole", role);

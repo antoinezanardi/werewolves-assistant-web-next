@@ -20,7 +20,7 @@
         {{ $t("components.GameLobbyRolePickerDescription.pickARole") }}
       </h3>
 
-      <i class="fa-3x fa-circle-chevron-right fas"/>
+      <i class="animate__animated animate__headShake animate__infinite animate__slow fa-3x fa-circle-chevron-right fas"/>
     </div>
 
     <GameLobbyRolePickerDescriptionContent
