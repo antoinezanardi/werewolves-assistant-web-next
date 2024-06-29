@@ -1298,7 +1298,8 @@
       "ifModelDiesWildChildBecomesWolf": "If the model dies, the Wild Child will join the Werewolves side."
     },
     "GameWitchTurnStartsEvent": {
-      "witchCanUsePotions": "The Witch wakes up and can use one of both of her potions."
+      "witchCanUsePotions": "The Witch wakes up and can use her life and/or death potions.",
+      "gameMasterWillAskHerEventIfUsed": "The Game Master will ask her will for each potion, even if she already used them."
     },
     "GameWolfHoundTurnStartsEvent": {
       "wolfHoundSideRandomlyChosen": "In this special game, the Wolf-Hound's side is randomly chosen by the Assistant.",

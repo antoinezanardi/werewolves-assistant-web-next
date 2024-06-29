@@ -1298,7 +1298,8 @@
       "ifModelDiesWildChildBecomesWolf": "Si le modèle meurt, l'Enfant Sauvage rejoindra le camp des Loups-Garous."
     },
     "GameWitchTurnStartsEvent": {
-      "witchCanUsePotions": "La Sorcière se réveille et peut utiliser une ou les deux de ses potions."
+      "witchCanUsePotions": "La Sorcière se réveille et peut utiliser sa potion de vie et/ou sa potion de mort.",
+      "gameMasterWillAskHerEventIfUsed": "Le Maître du Jeu va demander à la Sorcière son intention pour chaque potion, même si elle les a déjà utilisées."
     },
     "GameWolfHoundTurnStartsEvent": {
       "wolfHoundSideRandomlyChosen": "Dans cette partie spéciale, le camp du Chien-Loup est choisi aléatoirement par l'Assistant.",

@@ -15,6 +15,7 @@
     <WitchUsePotionsTabView
       v-else
       id="witch-use-potions-tab-view"
+      class="h-full"
     />
   </div>
 </template>
