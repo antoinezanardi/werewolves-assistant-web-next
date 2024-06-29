@@ -23,13 +23,13 @@ Then(/^the (?<role>button|img|heading|navigation|link|region|tab) with(?<isExact
   await expect(this.page.getByRole(role, { name, exact: isExact })).toBeHidden();
 });
 
-Then(/^the (?<role>button) with(?<isExact> exact)? name "(?<name>.+)" should be disabled$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
+Then(/^the (?<role>button|tab) with(?<isExact> exact)? name "(?<name>.+)" should be disabled$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
   const isExact = exact !== null;
 
   await expect(this.page.getByRole(role, { name, exact: isExact })).toBeDisabled();
 });
 
-Then(/^the (?<role>button) with(?<isExact> exact)? name "(?<name>.+)" should be enabled$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
+Then(/^the (?<role>button|tab) with(?<isExact> exact)? name "(?<name>.+)" should be enabled$/u, async function(this: CustomWorld, role: LocatorRole, exact: string | null, name: string): Promise<void> {
   const isExact = exact !== null;
 
   await expect(this.page.getByRole(role, { name, exact: isExact })).toBeEnabled();
