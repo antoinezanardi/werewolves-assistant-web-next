@@ -66,7 +66,7 @@ describe("Game Witch Turn Starts Event Component", () => {
       const gameEventWithTextsComponent = wrapper.findComponent<typeof GameWitchTurnStartsEvent>("#game-witch-turn-starts-event");
       const expectedTexts: string[] = [
         "components.GameWitchTurnStartsEvent.witchCanUsePotions",
-        "components.GameWitchTurnStartsEvent.gameMasterWillAskHerEventIfUsedPotions",
+        "components.GameWitchTurnStartsEvent.gameMasterWillAskHerEventIfUsed",
       ];
       const expectedTextsAsString = expectedTexts.join(",");
 

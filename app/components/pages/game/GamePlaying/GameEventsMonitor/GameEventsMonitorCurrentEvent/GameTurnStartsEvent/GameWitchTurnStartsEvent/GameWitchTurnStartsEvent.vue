@@ -29,7 +29,7 @@ const isFirstTurn = computed<boolean>(() => game.value.turn === 1);
 
 const gameEventTexts = computed<string[]>(() => [
   t("components.GameWitchTurnStartsEvent.witchCanUsePotions"),
-  ...insertIf(!isFirstTurn.value, t("components.GameWitchTurnStartsEvent.gameMasterWillAskHerEventIfUsedPotions")),
+  ...insertIf(!isFirstTurn.value, t("components.GameWitchTurnStartsEvent.gameMasterWillAskHerEventIfUsed")),
 ]);
 
 playSoundEffect("witch-laughing");
