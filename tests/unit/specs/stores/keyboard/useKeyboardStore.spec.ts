@@ -15,6 +15,7 @@ describe("Use Keyboard Store", () => {
       shift: { isPressed: false },
       arrowRight: { isPressed: false },
       arrowLeft: { isPressed: false },
+      enter: { isPressed: false },
     });
   });
 });

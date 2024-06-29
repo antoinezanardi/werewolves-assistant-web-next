@@ -40,7 +40,7 @@ Feature: 🔮Seer role
     And the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
-    When the player or group skips his turn
+    When the user skips game play with keyboard
     And the user skips all game events
     Then the game's current play title should be "Seer looks"
 
