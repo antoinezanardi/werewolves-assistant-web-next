@@ -19,6 +19,7 @@ const { hoistedMocks } = vi.hoisted(() => ({
       shift: { value: false } as Ref<boolean>,
       arrowright: { value: false } as Ref<boolean>,
       arrowleft: { value: false } as Ref<boolean>,
+      enter: { value: false } as Ref<boolean>,
     } satisfies ReturnType<typeof createFakeUseMagicKeys>,
     useAnimateCss: { animateElementOnce: vi.fn() },
   },

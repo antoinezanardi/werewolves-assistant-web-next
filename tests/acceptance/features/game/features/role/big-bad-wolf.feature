@@ -47,6 +47,7 @@ Feature: 🐺👹 Big Bad Wolf role
 
     When the werewolves eat the player with name "Antoine"
     And the user skips all game events
+    And the user moves his mouse away
     Then the game's current play title should be "Big Bad Wolf eats"
     And the game's current play should not have targets
     And the page should match or creates the missing snapshot with name "Game Playground without targets"

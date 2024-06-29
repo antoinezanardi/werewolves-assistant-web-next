@@ -83,4 +83,5 @@ Feature: 🪄 Witch role
     And the witch should be out of potions
     And the tab with name "Give life potion to save the player…" should be hidden
     And the tab with name "Give death potion to kill the player…" should be hidden
+    And the user moves his mouse away
     And the page should match or creates the missing snapshot with name "Witch out of potions Playground"

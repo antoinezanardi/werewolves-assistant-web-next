@@ -203,6 +203,21 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![White Werewolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/White%20Werewolf%20eats%20Playground.png)
 >>   </details>
 >>   <details>
+>>    <summary>🪄 Witch uses life potion Playground</summary>
+>>
+>>    ![Witch uses life potion Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20uses%20life%20potion%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🪄 Witch uses death potion Playground</summary>
+>>
+>>    ![Witch uses death potion Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20uses%20death%20potion%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🪄 Witch out of potions Playground</summary>
+>>
+>>    ![Witch out of potions Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20out%20of%20potions%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🐕 Wolf-Hound chooses side Playground</summary>
 >>
 >>    ![Wolf-Hound chooses side Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Wolf-Hound%20chooses%20side%20Playground.png)

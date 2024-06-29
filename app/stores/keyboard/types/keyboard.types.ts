@@ -1,5 +1,6 @@
 type Keyboard = {
   shift: KeyboardKey;
+  enter: KeyboardKey;
   arrowRight: KeyboardKey;
   arrowLeft: KeyboardKey;
 };

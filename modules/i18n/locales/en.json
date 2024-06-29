@@ -391,7 +391,8 @@
     "keyboard": {
       "shiftKey": "Shift",
       "leftArrowKey": "Left arrow",
-      "rightArrowKey": "Right arrow"
+      "rightArrowKey": "Right arrow",
+      "enterKey": "Enter"
     }
   },
   "pages": {
@@ -632,7 +633,8 @@
       "roleImageAlt": "Role image of the current play"
     },
     "GamePlaygroundFooterMakePlayButton": {
-      "makePlay": "Make play"
+      "makePlay": "Make play",
+      "makePlayAndProceedToNextOne": "Make play and proceed to the next one"
     },
     "GameVotePlaygroundVoters": {
       "nobodyCanVote": "Nobody can vote…"

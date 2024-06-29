@@ -4,6 +4,7 @@ type MockedUseMagicKeys = {
   shift: Ref<boolean>;
   arrowright: Ref<boolean>;
   arrowleft: Ref<boolean>;
+  enter: Ref<boolean>;
 };
 
 function createFakeUseMagicKeys(): MockedUseMagicKeys {
@@ -11,6 +12,7 @@ function createFakeUseMagicKeys(): MockedUseMagicKeys {
     shift: ref<boolean>(false),
     arrowright: ref<boolean>(false),
     arrowleft: ref<boolean>(false),
+    enter: ref<boolean>(false),
   };
 }
 
