@@ -23,6 +23,10 @@ When(/^the survivors bury the dead bodies$/u, async function(this: CustomWorld):
   await makePlayInPlayground(this);
 });
 
+When(/^the user skips game play with keyboard$/u, async function(this: CustomWorld): Promise<void> {
+  await this.page.keyboard.press("Shift+Enter");
+});
+
 When(/^the player or group skips his turn$/u, async function(this: CustomWorld): Promise<void> {
   await makePlayInPlayground(this);
 });
