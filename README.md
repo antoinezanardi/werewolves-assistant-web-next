@@ -138,6 +138,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>        
 >>   </details>
 >>   <details>
+>>    <summary>👼 Cupid charms Playground</summary>
+>>
+>>    ![Cupid charms Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Cupid%20charms%20Playground.png)
+>>   </details> 
+>>   <details>
 >>    <summary>🛡️ Defender protects Playground</summary>
 >>        
 >>    ![Defender protects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Defender%20protects%20Playground.png)
@@ -149,6 +154,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Hunter shoots Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Hunter%20shoots%20Playground.png)
 >> 
 >>   </details>
+>>   <details>
+>>   <summary>💞 Lovers meet each other Playground</summary>
+>>
+>>    ![Lovers meet each other Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Lovers%20meet%20each%20other%20Playground.png)
+>>   </details> 
 >>   <details>
 >>    <summary>🪈 Pied Piper charms Playground</summary>
 >>
@@ -191,6 +201,26 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    <summary>🦴🐺 White Werewolf eats Playground</summary>
 >>
 >>    ![White Werewolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/White%20Werewolf%20eats%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🪄 Witch uses life potion Playground</summary>
+>>
+>>    ![Witch uses life potion Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20uses%20life%20potion%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🪄 Witch uses death potion Playground</summary>
+>>
+>>    ![Witch uses death potion Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20uses%20death%20potion%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🪄 Witch out of potions Playground</summary>
+>>
+>>    ![Witch out of potions Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20out%20of%20potions%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🐕 Wolf-Hound chooses side Playground</summary>
+>>
+>>    ![Wolf-Hound chooses side Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Wolf-Hound%20chooses%20side%20Playground.png)
 >>   </details> 
 >>   <details>
 >>    <summary>🤷 Game Playground without targets</summary>
@@ -198,6 +228,20 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Game Playground without targets](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Playground%20without%20targets.png)
 >>  </details>
 >  
+>  </details>
+>  <details>
+>  <summary>🌟 Game Events</summary>
+>
+>>  <details>
+>>    <summary>🎬 Game Starts Event</summary>
+>>
+>>    ![Game Starts Event](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Starts%20Event.png)
+>>  </details>
+>>  <details>
+>>    <summary>🌙 Game Phase Event</summary>
+>>
+>>    ![Game Phase Event](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Phase%20Event.png)
+>>  </details>
 >  </details>
 >  <details>
 >    <summary>❓ Game not found</summary>
@@ -228,6 +272,13 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    <summary>💞 Game won by Lovers</summary>
 >  
 >    ![Game won by Lovers](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers.png)
+>  
+>  </details>
+>
+>  <details>
+>    <summary>💞👼 Game won by Lovers and Cupid</summary>
+>  
+>    ![Game won by Lovers and Cupid](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20won%20by%20Lovers%20and%20Cupid.png)
 >  
 >  </details>
 >  

@@ -56,7 +56,11 @@ const ESLINT_TESTS_CONFIG = {
     "vitest/prefer-to-contain": ERROR,
     "vitest/prefer-to-have-length": ERROR,
     "vitest/prefer-todo": ERROR,
-    "vitest/require-hook": ERROR,
+    "vitest/require-hook": [
+      ERROR, {
+        allowedFunctionCalls: ["mockNuxtImport"],
+      },
+    ],
     "vitest/require-local-test-context-for-concurrent-snapshots": ERROR,
     "vitest/require-to-throw-message": ERROR,
     "vitest/require-top-level-describe": ERROR,

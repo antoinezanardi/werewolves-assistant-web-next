@@ -5,6 +5,7 @@
   >
     <GameTeamSide
       class="flex-none w-2/12"
+      data-testid="villagers-side"
       side="villagers"
     />
 
@@ -27,6 +28,7 @@
 
     <GameTeamSide
       class="flex-none w-2/12"
+      data-testid="werewolves-side"
       side="werewolves"
     />
   </div>

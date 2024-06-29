@@ -8,6 +8,7 @@
         <GlowElement>
           <button
             id="choose-villagers-side-button"
+            :aria-label="$t('components.GameChooseSidePlayground.villagersSide')"
             class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg"
             :class="{ '!border-green-500': makeGamePlayDto.chosenSide === 'villagers' }"
             type="button"
@@ -31,6 +32,7 @@
         <GlowElement>
           <button
             id="choose-werewolves-side-button"
+            :aria-label="$t('components.GameChooseSidePlayground.werewolvesSide')"
             class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"
             :class="{ '!border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
             type="button"

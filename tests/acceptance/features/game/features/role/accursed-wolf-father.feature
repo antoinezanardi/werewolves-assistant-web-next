@@ -1,9 +1,7 @@
 @accursed-wolf-father-role
-
 Feature: 🐺 Accursed Wolf-Father role
 
   Scenario: 🐺 Accursed Wolf-Father can infect a victim of Werewolves or skip
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role                 |
@@ -12,6 +10,7 @@ Feature: 🐺 Accursed Wolf-Father role
       | Charlie | Idiot                |
       | David   | Villager             |
       | Coco    | Little Girl          |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Seer looks"

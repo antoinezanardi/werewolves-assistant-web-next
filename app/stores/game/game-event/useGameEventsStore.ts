@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
+import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/game-play-source/game-play-source.types";
 import type { GamePlayAction } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -21,6 +22,15 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEventIndex.value = 0;
   }
 
+  function getLastGameHistoryRecordCharmEvents(game: Game, source: GamePlaySourceName): GameEvent[] {
+    const sourcesGameEvents: Partial<Record<GamePlaySourceName, GameEvent[]>> = {
+      "pied-piper": [GameEvent.create({ type: "pied-piper-has-charmed" })],
+      "cupid": [GameEvent.create({ type: "cupid-has-charmed" })],
+    };
+
+    return sourcesGameEvents[source] ?? [];
+  }
+
   function getLastGameHistoryRecordEvents(game: Game): GameEvent[] {
     const { lastGameHistoryRecord } = game;
     if (!lastGameHistoryRecord) {
@@ -30,13 +40,12 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     if (action === "elect-sheriff" && voting?.result === "sheriff-election" || action === "delegate") {
       return [GameEvent.create({ type: "sheriff-promotion" })];
     }
-    if (action === "charm" && source.name === "pied-piper") {
-      return [GameEvent.create({ type: "pied-piper-has-charmed" })];
-    }
     const actionsGameEvents: Partial<Record<GamePlayAction, GameEvent[]>> = {
-      look: [GameEvent.create({ type: "seer-has-seen" })],
-      mark: [GameEvent.create({ type: "scandalmonger-has-marked" })],
-      infect: [GameEvent.create({ type: "accursed-wolf-father-may-have-infected" })],
+      "look": [GameEvent.create({ type: "seer-has-seen" })],
+      "mark": [GameEvent.create({ type: "scandalmonger-has-marked" })],
+      "infect": [GameEvent.create({ type: "accursed-wolf-father-may-have-infected" })],
+      "choose-side": [GameEvent.create({ type: "wolf-hound-has-chosen-side" })],
+      "charm": getLastGameHistoryRecordCharmEvents(game, source.name),
     };
 
     return actionsGameEvents[action] ?? [];
@@ -70,8 +79,15 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
   async function goToNextGameEvent(): Promise<void> {
     const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(gameStore.game));
     const nextGameEvent = gameEvents.value[currentGameEventIndex.value + 1];
-    if (gameEvents.value.length > currentGameEventIndex.value + 1 && nextGameEvent.type === "game-turn-starts" && mustCurrentGamePlayBeSkipped.value) {
+    const isLastGameEvent = currentGameEventIndex.value === gameEvents.value.length - 1;
+    const isNextGameEventGameTurnStarts = gameEvents.value.length > currentGameEventIndex.value + 1 && nextGameEvent.type === "game-turn-starts";
+    const isCurrentGamePlayBuryDeadBodiesAndNextEventIsGameTurnStarts = gameStore.game.currentPlay?.action === "bury-dead-bodies" && isNextGameEventGameTurnStarts;
+    if (
+      isCurrentGamePlayBuryDeadBodiesAndNextEventIsGameTurnStarts && mustCurrentGamePlayBeSkipped.value ||
+      isLastGameEvent && mustCurrentGamePlayBeSkipped.value
+    ) {
       await gameStore.skipGamePlay();
+      currentGameEventIndex.value = 0;
 
       return;
     }

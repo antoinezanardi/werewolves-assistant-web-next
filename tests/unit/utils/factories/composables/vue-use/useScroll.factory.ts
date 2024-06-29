@@ -2,9 +2,9 @@ import type { WritableComputedRef } from "vue";
 
 function createFakeUseScroll(): ReturnType<typeof useScroll> {
   return {
-    x: ref(0) as WritableComputedRef<number>,
-    y: ref(0) as WritableComputedRef<number>,
-    isScrolling: ref(false),
+    x: ref<number>(0) as WritableComputedRef<number>,
+    y: ref<number>(0) as WritableComputedRef<number>,
+    isScrolling: ref<boolean>(false),
     directions: {
       left: false,
       right: false,
@@ -21,11 +21,4 @@ function createFakeUseScroll(): ReturnType<typeof useScroll> {
   };
 }
 
-function createFakeUseElementHover(): ReturnType<typeof useElementHover> {
-  return ref(false);
-}
-
-export {
-  createFakeUseScroll,
-  createFakeUseElementHover,
-};
+export { createFakeUseScroll };

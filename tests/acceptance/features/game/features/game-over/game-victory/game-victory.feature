@@ -1,9 +1,7 @@
 @game-victory
-
 Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by nobody, there are no survivors
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -11,6 +9,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Cupid    |
       | David   | Witch    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Cupid charms"
@@ -40,11 +39,10 @@ Feature: 🏆 Game Victory
     And the user skips all game events
     Then the game should be over with title "Draw ! Everyone is dead in the village…" and subtitle "Everybody murdered each other. A deadly silence reigns in the village…"
     And the game winners should have no winners
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by nobody"
 
   Scenario: 🏆 Game is won by Villagers
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -52,6 +50,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Idiot    |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Survivors vote"
@@ -66,11 +65,10 @@ Feature: 🏆 Game Victory
       | Antoine |
       | Charlie |
       | David   |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Villagers"
 
   Scenario: 🏆 Game is won by Werewolves
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role                 |
@@ -78,6 +76,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf             |
       | Charlie | Villager             |
       | David   | Accursed Wolf-Father |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -98,11 +97,10 @@ Feature: 🏆 Game Victory
       | Antoine |
       | Bob     |
       | David   |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Werewolves"
 
   Scenario: 🏆 Game is won by Lovers
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -110,6 +108,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Hunter   |
       | David   | Idiot    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Cupid charms"
@@ -136,11 +135,10 @@ Feature: 🏆 Game Victory
       | name    |
       | Antoine |
       | Bob     |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Lovers"
 
   Scenario: 🏆 Game is won by Angel
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
@@ -148,6 +146,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf |
       | Charlie | Villager |
       | David   | Angel    |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Survivors vote"
@@ -160,11 +159,10 @@ Feature: 🏆 Game Victory
     And the game winners should be the players
       | name  |
       | David |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Angel"
 
   Scenario: 🏆 Game is won by Pied Piper
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role       |
@@ -172,6 +170,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf   |
       | Charlie | Villager   |
       | David   | Villager   |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -193,11 +192,10 @@ Feature: 🏆 Game Victory
     And the game winners should be the players
       | name    |
       | Antoine |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Pied Piper"
 
   Scenario: 🏆 Game is won by White Werewolf
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role           |
@@ -205,6 +203,7 @@ Feature: 🏆 Game Victory
       | Bob     | Werewolf       |
       | Charlie | Hunter         |
       | David   | Idiot          |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -223,5 +222,5 @@ Feature: 🏆 Game Victory
     And the game winners should be the players
       | name    |
       | Antoine |
-    And the link with name "Create another game" should be visible
+    And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by White Werewolf"

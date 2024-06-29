@@ -23,14 +23,6 @@ describe("Game Over Actions Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Create another game button", () => {
-    it("should translate create another game button text when rendered.", () => {
-      const createAnotherGameButton = wrapper.findComponent<typeof GameOverActions>("#new-game-button");
-
-      expect(createAnotherGameButton.text()).toBe("Create another game");
-    });
-  });
-
   describe("Show Game History Button", () => {
     it("should be in loading state when the game history is empty.", () => {
       const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");

@@ -1,5 +1,4 @@
 @villager-villager-role
-
 Feature: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager role
 
   Scenario: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager is revealed at the start of the game
@@ -10,6 +9,7 @@ Feature: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager role
       | Bob     | Werewolf          |
       | Charlie | Villager          |
       | David   | Villager          |
+
     When the user closes the toast
     And the user skips the game event
     Then the game's event should display the text "Antoine is the Villager-Villager of the village ! His/Her role is revealed to the others."

@@ -21,3 +21,7 @@ Then(/^the game's current play should not have targets$/u, async function(this: 
 Then(/^the game's current play should not expect any action$/u, async function(this: CustomWorld): Promise<void> {
   await expect(this.page.getByRole("heading", { name: "No action needed, the game can proceed" })).toBeVisible();
 });
+
+Then(/^the witch should be out of potions$/u, async function(this: CustomWorld): Promise<void> {
+  await expect(this.page.getByRole("heading", { name: "The Witch has used both potions, the game can proceed" })).toBeVisible();
+});

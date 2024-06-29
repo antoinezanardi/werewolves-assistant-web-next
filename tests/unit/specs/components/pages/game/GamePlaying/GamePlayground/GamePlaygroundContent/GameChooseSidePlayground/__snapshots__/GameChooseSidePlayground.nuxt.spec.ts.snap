@@ -5,20 +5,20 @@ exports[`Game Choose Side Playground Component > should match snapshot when rend
   <div>
     <div class="glow-capture flex" style="position: relative; --glow-size: 400px;">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-        <div class="" style="grid-area: 1/1/1/1;"><button id="choose-villagers-side-button" class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg" type="button">
+        <div class="" style="grid-area: 1/1/1/1;"><button id="choose-villagers-side-button" aria-label="Villagers side" class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg" type="button">
             <role-image-stub rolename="villager" sizes="200" definition="normal" id="villagers-side-image" class="glow:border-green-500 mb-1"></role-image-stub><span class="font-semibold">Villagers side</span>
           </button></div>
         <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);"><button id="choose-villagers-side-button" class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg" type="button">
+        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);"><button id="choose-villagers-side-button" aria-label="Villagers side" class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg" type="button">
             <role-image-stub rolename="villager" sizes="200" definition="normal" id="villagers-side-image" class="glow:border-green-500 mb-1"></role-image-stub><span class="font-semibold">Villagers side</span>
           </button></div>
       </div>
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-        <div class="" style="grid-area: 1/1/1/1;"><button id="choose-werewolves-side-button" class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg" type="button">
+        <div class="" style="grid-area: 1/1/1/1;"><button id="choose-werewolves-side-button" aria-label="Werewolves side" class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg" type="button">
             <role-image-stub rolename="werewolf" sizes="200" definition="normal" id="werewolves-side-image" class="glow:border-red-500 mb-1"></role-image-stub><span class="font-semibold">Werewolves side</span>
           </button></div>
         <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);"><button id="choose-werewolves-side-button" class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg" type="button">
+        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);"><button id="choose-werewolves-side-button" aria-label="Werewolves side" class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg" type="button">
             <role-image-stub rolename="werewolf" sizes="200" definition="normal" id="werewolves-side-image" class="glow:border-red-500 mb-1"></role-image-stub><span class="font-semibold">Werewolves side</span>
           </button></div>
       </div>

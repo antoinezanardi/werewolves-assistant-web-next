@@ -12,7 +12,8 @@ import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers
 
 describe("Game Cupid Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameCupidTurnStartsEvent>>;
-  const testingPinia = { initialState: { [StoreIds.GAME]: { game: createFakeGame({ options: DEFAULT_GAME_OPTIONS }) } } };
+  const defaultGame = createFakeGame({ options: DEFAULT_GAME_OPTIONS });
+  const testingPinia = { initialState: { [StoreIds.GAME]: { game: createFakeGame(defaultGame) } } };
 
   async function mountGameCupidTurnStartsEventComponent(options: ComponentMountingOptions<typeof GameCupidTurnStartsEvent> = {}):
   Promise<ReturnType<typeof mount<typeof GameCupidTurnStartsEvent>>> {
@@ -23,6 +24,7 @@ describe("Game Cupid Turn Starts Event Component", () => {
   }
 
   beforeEach(async() => {
+    testingPinia.initialState[StoreIds.GAME].game = createFakeGame(defaultGame);
     wrapper = await mountGameCupidTurnStartsEventComponent();
   });
 
@@ -45,14 +47,6 @@ describe("Game Cupid Turn Starts Event Component", () => {
   });
 
   describe("Game Event Texts", () => {
-    it("should pass event texts when rendered.", () => {
-      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameCupidTurnStartsEvent>("#game-cupid-turn-starts-event");
-      const expectedTexts: string[] = ["components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers"];
-      const expectedTextsAsString = expectedTexts.join(",");
-
-      expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
-    });
-
     it("should pass event texts with cupid must win with lovers text when the options is activated.", async() => {
       const gameStore = useGameStore();
       gameStore.game.options.roles.cupid.mustWinWithLovers = true;
@@ -61,6 +55,17 @@ describe("Game Cupid Turn Starts Event Component", () => {
       const expectedTexts: string[] = [
         "components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers",
         "components.GameCupidTurnStartsEvent.cupidMustWinWithLovers",
+      ];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
+    it("should pass event texts when rendered.", () => {
+      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameCupidTurnStartsEvent>("#game-cupid-turn-starts-event");
+      const expectedTexts: string[] = [
+        "components.GameCupidTurnStartsEvent.cupidChoosesTwoPlayersToBeLovers",
+        "components.GameCupidTurnStartsEvent.cupidCanChooseHimself",
       ];
       const expectedTextsAsString = expectedTexts.join(",");
 

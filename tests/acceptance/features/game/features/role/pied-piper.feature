@@ -1,9 +1,7 @@
 @pied-piper-role
-
 Feature: 🪈 Pied Piper role
 
   Scenario: 🪈 Pied Piper charms 2 players per night
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role       |
@@ -13,6 +11,7 @@ Feature: 🪈 Pied Piper role
       | David   | Villager   |
       | Neil    | Werewolf   |
       | Cody    | Idiot      |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -109,7 +108,6 @@ Feature: 🪈 Pied Piper role
     And the game's current play should not expect any action
 
   Scenario: 🪈 Pied Piper charms only one player per night when game master sets the charmed count to one in game options
-
     Given the user disables the sheriff in game options
     And the user sets the pied piper charmed people count per night to 1 in game options
     And the user creates a game with the players with name and role
@@ -120,6 +118,7 @@ Feature: 🪈 Pied Piper role
       | David   | Villager   |
       | Neil    | Werewolf   |
       | Cody    | Idiot      |
+
     When the user closes the toast
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -206,7 +205,6 @@ Feature: 🪈 Pied Piper role
     Then the game's current play title should be "Charmed people meet each other"
 
   Scenario: 🪈 Pied Piper is powerless when infected by Accursed Wolf-Father
-
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role                 |
@@ -228,7 +226,6 @@ Feature: 🪈 Pied Piper role
     And the player with name "Antoine" should have the attribute powerless by accursed wolf-father in the game
 
   Scenario: 🪈 Pied Piper is still powerful when infected by Accursed Wolf-Father if game master sets the infected Pied Piper powerful in game options
-
     Given the user disables the sheriff in game options
     And the user sets the infected pied piper powerful in game options
     And the user creates a game with the players with name and role

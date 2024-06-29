@@ -1,4 +1,7 @@
 import { createFakeGameHistoryRecordPlaySource } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-source/game-history-record-play-source.factory";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
+import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
@@ -13,7 +16,7 @@ import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composa
 import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlayWolfHoundChoosesSide } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
@@ -24,7 +27,7 @@ describe("Game Events Store", () => {
       game: {
         game: Game;
         makingGamePlayStatus: AsyncDataRequestStatus;
-        skipGamePlay: Mock
+        skipGamePlay: Mock;
       };
     };
   };
@@ -360,6 +363,22 @@ describe("Game Events Store", () => {
           tick: 2,
           lastGameHistoryRecord: createFakeGameHistoryRecord({
             play: createFakeGameHistoryRecordPlay({
+              action: "charm",
+              source: createFakeGameHistoryRecordPlaySource({ name: "cupid" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "cupid-has-charmed" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate cupid has charmed event when last game history action is charm and source name is cupid.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
               action: "shoot",
               source: createFakeGameHistoryRecordPlaySource({ name: "pied-piper" }),
             }),
@@ -389,6 +408,17 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate accursed wolf father may have infected event when last game history record action is infect.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "choose-side" }) }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "wolf-hound-has-chosen-side" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate wolf hound has chosen side event when last game history record action is choose side.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();
@@ -446,6 +476,21 @@ describe("Game Events Store", () => {
       expect(gameEventsStore.currentGameEvent).toStrictEqual<GameEvent>(gameEventsStore.gameEvents[0]);
     });
 
+    it("should not skip current game play when the next current game event is game turn starts but current action is not bury dead bodies.", async() => {
+      mocks.stores.game.game = createFakeGame({
+        currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
+        options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isSideRandomlyChosen: true }) }) }),
+      });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(mocks.stores.game.skipGamePlay).not.toHaveBeenCalled();
+    });
+
     it("should skip current game play when the next current game event is game turn starts and must current game play be skipped.", async() => {
       mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
       const gameEventsStore = useGameEventsStore();
@@ -456,6 +501,34 @@ describe("Game Events Store", () => {
       await gameEventsStore.goToNextGameEvent();
 
       expect(mocks.stores.game.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should skip current game play when it's the last game event and must current game play be skipped.", async() => {
+      mocks.stores.game.game = createFakeGame({
+        currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
+        options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isSideRandomlyChosen: true }) }) }),
+      });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.currentGameEventIndex = 1;
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(mocks.stores.game.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should set current game event index to 0 when skipping current game play.", async() => {
+      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.gameEvents = [
+        createFakeGameEvent({ type: "game-starts" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await gameEventsStore.goToNextGameEvent();
+
+      expect(gameEventsStore.currentGameEventIndex).toBe(0);
     });
   });
 
