@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Witch Use Potions Tab View Component > should match snapshot when rendered. 1`] = `
-"<div class="p-tabview p-component tabview-custom" role="tablist" id="witch-use-potions-tab-view" data-pc-name="tabview" data-pc-section="root">
+"<div class="p-tabview p-component tabview-custom flex flex-col" role="tablist" id="witch-use-potions-tab-view" data-pc-name="tabview" data-pc-section="root">
   <div class="p-tabview-nav-container" data-pc-section="navcontainer">
     <!---->
     <div class="p-tabview-nav-content" data-pc-section="navcontent">
@@ -25,15 +25,15 @@ exports[`Witch Use Potions Tab View Component > should match snapshot when rende
     </div>
     <!---->
   </div>
-  <div class="p-tabview-panels" data-pc-section="panelcontainer">
-    <div id="witch-use-potions-tab-view_0_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_0_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="0" data-p-active="true">
-      <div id="give-life-potion-panel" class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center">
-        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target"></game-playground-player-card-stub>
-        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target"></game-playground-player-card-stub>
+  <div class="p-tabview-panels grow" data-pc-section="panelcontainer">
+    <div id="witch-use-potions-tab-view_0_content" class="p-tabview-panel h-full" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_0_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="0" data-p-active="true">
+      <div id="give-life-potion-panel" class="flex flex-wrap h-full items-center justify-center m-0 place-content-center place-items-center">
+        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target p-3 w-1/4"></game-playground-player-card-stub>
+        <game-playground-player-card-stub interaction="give-life-potion" player="[object Object]" class="life-potion-target p-3 w-1/4"></game-playground-player-card-stub>
       </div>
     </div>
-    <div id="witch-use-potions-tab-view_1_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_1_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="1" data-p-active="false" style="display: none;">
-      <div id="give-death-potion-panel" class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center"></div>
+    <div id="witch-use-potions-tab-view_1_content" class="p-tabview-panel h-full" role="tabpanel" aria-labelledby="witch-use-potions-tab-view_1_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="1" data-p-active="false" style="display: none;">
+      <div id="give-death-potion-panel" class="flex flex-wrap h-full items-center justify-center m-0 place-content-center"></div>
     </div>
   </div>
 </div>"

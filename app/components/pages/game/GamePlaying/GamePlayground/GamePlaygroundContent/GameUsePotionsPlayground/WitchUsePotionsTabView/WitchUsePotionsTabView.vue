@@ -3,11 +3,18 @@
     id="witch-use-potions-tab-view"
     :active-index="tabViewActiveIndex"
     class="tabview-custom"
-    :pt="{ 'nav': 'gap-2' }"
+    :pt="{
+      'nav': 'gap-2',
+      'root': 'flex flex-col',
+      'panelContainer': 'grow'
+    }"
   >
     <VuePrimeTabPanel
       :disabled="hasWitchUsedLifePotion"
-      :pt="{ 'header': 'grow' }"
+      :pt="{
+        'header': 'grow',
+        'root': 'h-full'
+      }"
     >
       <template #header>
         <div class="flex gap-2 items-center">
@@ -26,12 +33,12 @@
 
       <div
         id="give-life-potion-panel"
-        class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center"
+        class="flex flex-wrap h-full items-center justify-center m-0 place-content-center place-items-center"
       >
         <GamePlaygroundPlayerCard
           v-for="target in giveLifePotionInteractionEligibleTargets"
           :key="target._id"
-          class="life-potion-target"
+          class="life-potion-target p-3 w-1/4"
           interaction="give-life-potion"
           :player="target"
         />
@@ -40,7 +47,10 @@
 
     <VuePrimeTabPanel
       :disabled="hasWitchUsedDeathPotion"
-      :pt="{ 'header': 'grow' }"
+      :pt="{
+        'header': 'grow',
+        'root': 'h-full'
+      }"
     >
       <template #header>
         <div class="flex gap-2 items-center">
@@ -59,12 +69,12 @@
 
       <div
         id="give-death-potion-panel"
-        class="grid grid-cols-4 h-full items-center justify-center m-0 place-content-center place-items-center"
+        class="flex flex-wrap h-full items-center justify-center m-0 place-content-center"
       >
         <GamePlaygroundPlayerCard
           v-for="target in giveDeathPotionInteractionEligibleTargets"
           :key="target._id"
-          class="death-potion-target"
+          class="death-potion-target p-3 w-1/4"
           interaction="give-death-potion"
           :player="target"
         />
