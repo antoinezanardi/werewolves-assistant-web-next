@@ -6,5 +6,6 @@ exports[`Game Lobby Role Picker Grid Component > should match snapshot when rend
   <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
   <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
   <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
+  <game-lobby-role-picker-grid-element-stub role="[object Object]" class="available-role"></game-lobby-role-picker-grid-element-stub>
 </div>"
 `;
