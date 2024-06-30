@@ -67,7 +67,10 @@ export default defineNuxtConfig({
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
-  plugins: ["~/plugins/vue-lottie/vue-lottie.client.ts"],
+  plugins: [
+    "~/plugins/vue-lottie/vue-lottie.client.ts",
+    "~/plugins/vue-draggable/vue-draggable.client.ts",
+  ],
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {
@@ -75,6 +78,7 @@ export default defineNuxtConfig({
       include: [
         "Button",
         "ButtonGroup",
+        "Chart",
         "ConfirmPopup",
         "Dialog",
         "Divider",

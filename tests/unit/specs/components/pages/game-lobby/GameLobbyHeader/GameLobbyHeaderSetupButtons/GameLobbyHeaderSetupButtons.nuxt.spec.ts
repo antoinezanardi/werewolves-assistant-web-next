@@ -1,6 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
+import type GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -32,6 +33,15 @@ describe("Game Lobby Header Setup Buttons Component", () => {
       (optionsButton.vm as VueVm).$emit("gameOptionsButtonClick");
 
       expect(wrapper.emitted("gameOptionsButtonClick")).toBeTruthy();
+    });
+  });
+
+  describe("Position Coordinator", () => {
+    it("should emit 'positionCoordinatorButtonClick' event when clicked.", () => {
+      const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
+      (positionCoordinatorButton.vm as VueVm).$emit("positionCoordinatorButtonClick");
+
+      expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();
     });
   });
 });

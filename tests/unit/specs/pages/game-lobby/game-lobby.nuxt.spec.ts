@@ -33,6 +33,9 @@ describe("Game Lobby Page", () => {
       gameLobbyOptionsHub: {
         open: Mock;
       };
+      gameLobbyPositionCoordinator: {
+        open: Mock;
+      }
     }
   };
 
@@ -41,6 +44,7 @@ describe("Game Lobby Page", () => {
       components: {
         gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
         gameLobbyOptionsHub: { open: vi.fn() },
+        gameLobbyPositionCoordinator: { open: vi.fn() },
       },
     };
 
@@ -54,6 +58,10 @@ describe("Game Lobby Page", () => {
           GameLobbyOptionsHub: {
             template: "<div id='game-lobby-options-hub-stub'></div>",
             methods: mocks.components.gameLobbyOptionsHub,
+          },
+          GameLobbyPositionCoordinator: {
+            template: "<div id='game-lobby-position-coordinator-stub'></div>",
+            methods: mocks.components.gameLobbyPositionCoordinator,
           },
         },
       },
@@ -143,6 +151,25 @@ describe("Game Lobby Page", () => {
       await getError(() => (gameLobbyHeader.vm as VueVm).$emit("game-options-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Options Hub is not defined");
+    });
+  });
+
+  describe("Game Lobby Position Coordinator", () => {
+    it("should open game lobby position coordinator when game lobby players party emits position coordinator button click event.", async() => {
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      (gameLobbyHeader.vm as VueVm).$emit("position-coordinator-button-click");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyPositionCoordinator.open).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw error when game lobby header emits position coordinator button click event but the position coordinator is not found in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyPositionCoordinator: Ref }).gameLobbyPositionCoordinator.value = null;
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      await getError(() => (gameLobbyHeader.vm as VueVm).$emit("position-coordinator-button-click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Position Coordinator is not defined");
     });
   });
 

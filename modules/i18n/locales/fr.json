@@ -791,9 +791,6 @@
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
       "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
     },
-    "GameOverHistoryHeader": {
-      "gameHistory": "Historique de la partie"
-    },
     "GameOverHistoryRecordIcon": {
       "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
     },
@@ -832,12 +829,13 @@
       "stolenRoleByDevotedServantIcon": "Icône de rôle volé par la Servante Dévouée"
     },
     "GameOverHistory": {
-      "endOfGame": "Fin de la partie"
+      "endOfGame": "Fin de la partie",
+      "gameHistory": "Historique de la partie"
     },
     "GameLobbyHeaderOptionButton": {
       "gameOptions": "Options de la partie"
     },
-    "GameLobbyOptionsHubHeader": {
+    "GameLobbyOptionsHub": {
       "gameOptions": "Options de la partie"
     },
     "GameLobbyOptionsHubTabView": {
@@ -1368,6 +1366,12 @@
     },
     "GameOverCreateNewGameButton": {
       "createNewGameWithSamePlayers": "Voulez-vous créer une nouvelle partie avec les mêmes joueurs ?"
+    },
+    "GameLobbyHeaderPositionCoordinatorButton": {
+      "positionCoordinator": "Position des joueurs"
+    },
+    "GameLobbyPositionCoordinator": {
+      "positionCoordinator": "Position des joueurs"
     }
   }
 }

@@ -791,9 +791,6 @@
       "recommendedMinPlayers": "Recommended for {count} players minimum",
       "minInGameNotReached": "Minimum in the party not reached ({count} left to pick)"
     },
-    "GameOverHistoryHeader": {
-      "gameHistory": "Game history"
-    },
     "GameOverHistoryRecordIcon": {
       "gameHistoryRecordIconAltText": "Game history record icon"
     },
@@ -832,12 +829,13 @@
       "stolenRoleByDevotedServantIcon": "Stolen role by the Devoted Servant icon"
     },
     "GameOverHistory": {
-      "endOfGame": "End of the game"
+      "endOfGame": "End of the game",
+      "gameHistory": "Game history"
     },
     "GameLobbyHeaderOptionButton": {
       "gameOptions": "Game options"
     },
-    "GameLobbyOptionsHubHeader": {
+    "GameLobbyOptionsHub": {
       "gameOptions": "Game options"
     },
     "GameLobbyOptionsHubTabView": {
@@ -1368,6 +1366,20 @@
     },
     "GameOverCreateNewGameButton": {
       "createNewGameWithSamePlayers": "Do you want to create a new game with the same players ?"
+    },
+    "GameLobbyHeaderPositionCoordinatorButton": {
+      "positionCoordinator": "Players positions"
+    },
+    "GameLobbyPositionCoordinator": {
+      "positionCoordinator": "Players positions"
+    },
+    "GameLobbyPositionCoordinatorSorter": {
+      "leftNeighbors": "Left neighbors",
+      "rightNeighbors": "Right neighbors"
+    },
+    "GameLobbyPositionCoordinatorGraph": {
+      "checkPositionWithGraphBelow": "Check the position of the players with the graph below.",
+      "canHoverOnNodes": "You can hover on the nodes in case you can't clearly see a player's name."
     }
   }
 }

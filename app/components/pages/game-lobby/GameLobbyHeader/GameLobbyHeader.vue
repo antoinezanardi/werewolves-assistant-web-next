@@ -26,6 +26,7 @@
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
         @game-options-button-click="handleGameOptionsButtonClick"
+        @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
       />
     </div>
   </div>
@@ -69,5 +70,9 @@ function addPlayerToCreateGameDto(): void {
 
 function handleGameOptionsButtonClick(): void {
   emit("gameOptionsButtonClick");
+}
+
+function handlePositionCoordinatorButtonClick(): void {
+  emit("positionCoordinatorButtonClick");
 }
 </script>
