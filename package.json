@@ -84,6 +84,7 @@
     "@stryker-mutator/typescript-checker": "^8.2.6",
     "@stryker-mutator/vitest-runner": "^8.2.6",
     "@stylistic/eslint-plugin": "^2.3.0",
+    "@types/chart.js": "^2.9.41",
     "@types/eslint": "^8.56.10",
     "@types/howler": "^2.2.11",
     "@types/pixelmatch": "^5.2.6",
@@ -96,6 +97,8 @@
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
+    "chart.js": "^4.4.3",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "class-transformer": "^0.5.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "cross-env": "^7.0.3",
@@ -129,6 +132,7 @@
     "sass": "^1.77.6",
     "semantic-release": "^24.0.0",
     "semantic-release-export-data": "^1.1.0",
+    "string-to-color": "^2.2.2",
     "tailwindcss": "^3.4.4",
     "ts-case-convert": "^2.0.7",
     "tsx": "^4.16.0",
@@ -142,7 +146,8 @@
     "vue-flip": "^3.0.2",
     "vue-router": "^4.4.0",
     "vue-tsc": "^2.0.24",
-    "vue3-lottie": "^3.3.0"
+    "vue3-lottie": "^3.3.0",
+    "vuedraggable": "^4.1.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",

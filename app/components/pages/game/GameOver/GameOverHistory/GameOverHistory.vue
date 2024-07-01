@@ -15,7 +15,11 @@
     @update:visible="close"
   >
     <template #header>
-      <GameOverHistoryHeader id="game-over-history-header"/>
+      <DialogHeaderTitleOnly
+        id="game-over-history-header"
+        icon-class="fa fa-clock-rotate-left text-primary"
+        :title="$t('components.GameOverHistory.gameHistory')"
+      />
     </template>
 
     <template #default>
@@ -39,9 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import GameOverHistoryHeader from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryHeader/GameOverHistoryHeader.vue";
 import GameOverHistoryRecords from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecords.vue";
 import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
+import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";
 
 const isVisible = ref<boolean>(false);
 

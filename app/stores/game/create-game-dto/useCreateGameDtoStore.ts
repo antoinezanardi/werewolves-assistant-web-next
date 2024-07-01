@@ -19,6 +19,13 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
   const createGameDto = ref<CreateGameDto>(CreateGameDto.create(defaultCreateGameDto));
 
+  const doesCreateGameDtoContainPositionDependantRoles = computed<boolean>(() => {
+    const positionDependantRoles: RoleName[] = ["rusty-sword-knight", "bear-tamer", "fox"];
+    const playersWithPositionDependantRoles = getPlayersWithAnyRoleNameInCreateGameDto(positionDependantRoles);
+
+    return playersWithPositionDependantRoles.length > 0;
+  });
+
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
   }
@@ -53,6 +60,10 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     return createGameDto.value.players.filter(player => player.role.name === roleName);
   }
 
+  function getPlayersWithAnyRoleNameInCreateGameDto(roleNames: RoleName[]): CreateGamePlayerDto[] {
+    return createGameDto.value.players.filter(player => player.role.name && roleNames.includes(player.role.name));
+  }
+
   function isRoleMinReachedInCreateGameDto(roleName: RoleName): boolean {
     const playersWithRoleName = getPlayersWithRoleNameInCreateGameDto(roleName);
     const role = getRoleWithNameInRoles(roleName);
@@ -79,6 +90,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   }
   return {
     createGameDto,
+    doesCreateGameDtoContainPositionDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
     addPlayerToCreateGameDto,
@@ -86,6 +98,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     setPlayersToCreateGameDto,
     removePlayerFromCreateGameDto,
     getPlayersWithRoleNameInCreateGameDto,
+    getPlayersWithAnyRoleNameInCreateGameDto,
     isRoleMinReachedInCreateGameDto,
     isRoleMaxReachedInCreateGameDto,
     getRoleLeftCountToReachMinInCreateGameDto,

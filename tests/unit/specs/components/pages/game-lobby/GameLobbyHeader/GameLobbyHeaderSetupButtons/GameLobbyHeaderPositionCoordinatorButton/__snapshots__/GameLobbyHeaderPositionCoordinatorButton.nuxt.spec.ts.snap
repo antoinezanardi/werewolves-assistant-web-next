@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Header Position Coordinator Button Component > should match snapshot when rendered. 1`] = `"<button-stub id="game-lobby-header-position-coordinator-button" icon="fa fa-users animate__animated animate__slow animate__heartBeat" label="Players positions" pt="[object Object]" severity="info" size="small"></button-stub>"`;

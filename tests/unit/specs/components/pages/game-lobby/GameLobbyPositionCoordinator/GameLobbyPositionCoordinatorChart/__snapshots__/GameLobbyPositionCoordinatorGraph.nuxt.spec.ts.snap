@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Position Coordinator Graph Component > should match snapshot when rendered. 1`] = `"<chart-stub data="[object Object]" options="[object Object]" plugins="[object Object]" type="doughnut"></chart-stub>"`;

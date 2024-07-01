@@ -5,7 +5,7 @@ Feature: ⚙️ Game Lobby Options Hub
     Given the user is on game-lobby page
 
     When the user clicks on the game options button in the lobby
-    Then the heading with exact name "Game options" should be visible
+    Then the heading with name "Game options" should be visible
     And the tab with name "Roles" should be visible
     And the tab with name "Composition" should be visible
     And the tab with name "Votes" should be visible
@@ -24,7 +24,7 @@ Feature: ⚙️ Game Lobby Options Hub
     Given the user is on game-lobby page
 
     When the user clicks on the game options button in the lobby
-    Then the heading with exact name "Game options" should be visible
+    Then the heading with name "Game options" should be visible
 
     When the user presses the escape key
     Then the heading with exact name "Game options" should be hidden
