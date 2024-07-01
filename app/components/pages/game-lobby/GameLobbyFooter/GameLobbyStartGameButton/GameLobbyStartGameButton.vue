@@ -4,7 +4,7 @@
     v-p-tooltip.top="containerTooltip"
     class="h-full"
   >
-    <VuePrimeButton
+    <PrimeVueButton
       class="!h-full start-game-button"
       :disabled="!canCreateGame"
       icon="fa-play fa"
@@ -23,12 +23,12 @@ import { storeToRefs } from "pinia";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
-import { useVuePrimeToasts } from "~/composables/vue-prime/useVuePrimeToasts";
+import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { t } = useI18n();
 
-const { addSuccessToast } = useVuePrimeToasts();
+const { addSuccessToast } = usePrimeVueToasts();
 
 const { createGame } = useFetchGames();
 

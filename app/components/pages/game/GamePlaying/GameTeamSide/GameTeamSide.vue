@@ -30,7 +30,7 @@
       <div/>
     </div>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <div
       id="team-players"

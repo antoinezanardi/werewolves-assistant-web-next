@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <VuePrimeDivider class="md:!hidden"/>
+    <PrimeVueDivider class="md:!hidden"/>
 
     <RoleDescriptionLines
       :role="role"

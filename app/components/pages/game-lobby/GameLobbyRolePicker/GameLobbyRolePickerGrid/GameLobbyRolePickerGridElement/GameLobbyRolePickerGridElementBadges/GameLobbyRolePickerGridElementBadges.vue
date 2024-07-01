@@ -2,7 +2,7 @@
   <div
     id="game-lobby-role-picker-grid-element-badges"
   >
-    <VuePrimeBadge
+    <PrimeVueBadge
       v-if="countInCreateGameDto"
       id="role-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInParty')"
@@ -14,9 +14,9 @@
       <span>
         {{ countInCreateGameDto }}
       </span>
-    </VuePrimeBadge>
+    </PrimeVueBadge>
 
-    <VuePrimeBadge
+    <PrimeVueBadge
       v-if="countInCreateGameDto && leftCountToReachMinInCreateGameDto"
       id="role-min-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.minInGameNotReached', { 'count': leftCountToReachMinInCreateGameDto })"
@@ -25,7 +25,7 @@
       severity="danger"
     >
       <i class="fa fa-exclamation-circle"/>
-    </VuePrimeBadge>
+    </PrimeVueBadge>
   </div>
 </template>
 

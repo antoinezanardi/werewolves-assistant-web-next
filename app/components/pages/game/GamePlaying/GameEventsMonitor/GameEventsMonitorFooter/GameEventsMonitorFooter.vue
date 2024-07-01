@@ -1,9 +1,9 @@
 <template>
   <div id="game-events-monitor-footer">
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
 
     <div class="flex gap-6 justify-center">
-      <VuePrimeButton
+      <PrimeVueButton
         id="previous-event-button"
         v-p-tooltip="previousEventButtonTooltipOptions"
         class="flex w-56"
@@ -23,9 +23,9 @@
         >
           {{ $t('components.GameEventsMonitorFooter.previous') }}
         </span>
-      </VuePrimeButton>
+      </PrimeVueButton>
 
-      <VuePrimeButton
+      <PrimeVueButton
         id="skip-current-event-button"
         v-p-tooltip="nextEventButtonTooltipOptions"
         class="w-56"
@@ -46,7 +46,7 @@
         >
           {{ $t('components.GameEventsMonitorFooter.skip') }}
         </span>
-      </VuePrimeButton>
+      </PrimeVueButton>
     </div>
   </div>
 </template>

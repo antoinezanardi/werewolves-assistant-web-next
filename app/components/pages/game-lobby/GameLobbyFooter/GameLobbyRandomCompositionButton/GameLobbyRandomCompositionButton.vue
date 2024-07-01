@@ -3,7 +3,7 @@
     id="game-lobby-random-composition-button-container"
     v-p-tooltip.top="containerTooltip"
   >
-    <VuePrimeButton
+    <PrimeVueButton
       class="random-composition-button"
       :disabled="!isMinimumPlayersReached"
       icon="fa-random fa"

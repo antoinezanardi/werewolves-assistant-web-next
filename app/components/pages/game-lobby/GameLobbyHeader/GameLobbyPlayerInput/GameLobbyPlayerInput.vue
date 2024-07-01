@@ -1,11 +1,11 @@
 <template>
   <div id="game-lobby-player-input">
-    <VuePrimeInputGroup
+    <PrimeVueInputGroup
       id="game-lobby-player-input-group"
       class="mt-3"
     >
       <span class="p-float-label">
-        <VuePrimeInputText
+        <PrimeVueInputText
           id="player-name-input"
           v-model="inputValue"
           aria-labelledby="player-name-input-help"
@@ -21,7 +21,7 @@
         </label>
       </span>
 
-      <VuePrimeButton
+      <PrimeVueButton
         id="add-player-button"
         :disabled="isAddButtonDisabled"
         severity="primary"
@@ -32,8 +32,8 @@
         <span class="me-3">
           {{ $t("shared.actions.add") }}
         </span>
-      </VuePrimeButton>
-    </VuePrimeInputGroup>
+      </PrimeVueButton>
+    </PrimeVueInputGroup>
 
     <Transition
       mode="out-in"

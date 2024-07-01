@@ -2,7 +2,7 @@
   <div
     id="game-playground-footer"
   >
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
 
     <div class="flex justify-center">
       <div class="w-4/12">

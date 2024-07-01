@@ -11,7 +11,7 @@
       </span>
     </h2>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <p id="about-how-to-contribute-first-section">
       {{ $t("components.AboutHowToContribute.thereAreManyWaysToContribute") }}

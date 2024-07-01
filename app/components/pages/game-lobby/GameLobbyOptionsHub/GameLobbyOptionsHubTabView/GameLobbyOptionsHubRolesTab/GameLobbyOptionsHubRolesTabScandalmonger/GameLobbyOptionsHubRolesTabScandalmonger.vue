@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-scandalmonger"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -13,7 +13,7 @@
       option-icon-class="fa fa-feather text-cyan-700"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabScandalmonger.options.markPenalty.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-label"
           for="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input"
@@ -21,7 +21,7 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabScandalmonger.options.markPenalty.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input"
           v-model="scandalmongerMarkPenaltyValue"
           class="w-full"
@@ -29,7 +29,7 @@
           :min="1"
         />
 
-        <VuePrimeSlider
+        <PrimeVueSlider
           id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-slider"
           v-model="scandalmongerMarkPenaltyValue"
           class="mt-4 w-full"
@@ -37,9 +37,9 @@
           :min="1"
           :step="1"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

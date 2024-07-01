@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeTabView
+  <PrimeVueTabView
     id="witch-use-potions-tab-view"
     :active-index="tabViewActiveIndex"
     class="tabview-custom"
@@ -9,7 +9,7 @@
       'panelContainer': 'grow'
     }"
   >
-    <VuePrimeTabPanel
+    <PrimeVueTabPanel
       :disabled="hasWitchUsedLifePotion"
       :pt="{
         'header': 'grow',
@@ -43,9 +43,9 @@
           :player="target"
         />
       </div>
-    </VuePrimeTabPanel>
+    </PrimeVueTabPanel>
 
-    <VuePrimeTabPanel
+    <PrimeVueTabPanel
       :disabled="hasWitchUsedDeathPotion"
       :pt="{
         'header': 'grow',
@@ -79,8 +79,8 @@
           :player="target"
         />
       </div>
-    </VuePrimeTabPanel>
-  </VuePrimeTabView>
+    </PrimeVueTabPanel>
+  </PrimeVueTabView>
 </template>
 
 <script setup lang="ts">

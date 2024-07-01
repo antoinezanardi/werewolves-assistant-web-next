@@ -3,7 +3,7 @@
     id="progress-spinner"
     class="flex flex-col items-center justify-center"
   >
-    <VuePrimeProgressSpinner :aria-label="text"/>
+    <PrimeVueProgressSpinner :aria-label="text"/>
 
     <small class="text-progress-spinner-text">{{ text }}</small>
   </div>

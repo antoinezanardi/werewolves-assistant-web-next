@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeToggleButton
+  <PrimeVueToggleButton
     id="affirmative-toggle-button"
     v-model="model"
     off-icon="fa fa-thumbs-down !text-white"

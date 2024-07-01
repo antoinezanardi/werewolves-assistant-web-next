@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeBadge
+  <PrimeVueBadge
     v-p-tooltip="$t('components.RoleOriginBadge.roleOrigin')"
     class="cursor-help role-origin-badge"
     :size="size"

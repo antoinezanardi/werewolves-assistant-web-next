@@ -3,10 +3,10 @@
     id="close-button-only-dialog-footer"
     class="w-full"
   >
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
 
     <div class="flex justify-end w-full">
-      <VuePrimeButton
+      <PrimeVueButton
         id="close-button-only-dialog-footer-close-button"
         :label="$t('shared.actions.close')"
         severity="secondary"

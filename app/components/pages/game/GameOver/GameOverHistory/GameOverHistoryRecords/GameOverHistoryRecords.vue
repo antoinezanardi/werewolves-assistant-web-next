@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeTimeline
+  <PrimeVueTimeline
     id="game-over-history-records"
     align="left"
     class="w-full"
@@ -26,9 +26,9 @@
         :game-history-record="slotProps.item"
       />
 
-      <VuePrimeDivider class="!my-4"/>
+      <PrimeVueDivider class="!my-4"/>
     </template>
-  </VuePrimeTimeline>
+  </PrimeVueTimeline>
 </template>
 
 <script setup lang="ts">

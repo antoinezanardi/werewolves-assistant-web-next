@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeDialog
+  <PrimeVueDialog
     id="game-lobby-options-hub"
     block-scroll
     dismissable-mask
@@ -33,7 +33,7 @@
         @close-dialog="close"
       />
     </template>
-  </VuePrimeDialog>
+  </PrimeVueDialog>
 </template>
 
 <script setup lang="ts">

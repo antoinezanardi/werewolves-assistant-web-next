@@ -10,7 +10,7 @@
       id="game-over-winners"
     />
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <GameOverActions
       id="game-over-actions"

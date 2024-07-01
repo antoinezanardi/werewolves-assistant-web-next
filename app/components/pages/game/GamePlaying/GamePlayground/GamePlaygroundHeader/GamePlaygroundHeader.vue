@@ -10,7 +10,7 @@
       <GamePlaygroundHeaderCard class="w-3/12"/>
     </div>
 
-    <VuePrimeDivider class="!my-3"/>
+    <PrimeVueDivider class="!my-3"/>
   </div>
 </template>
 

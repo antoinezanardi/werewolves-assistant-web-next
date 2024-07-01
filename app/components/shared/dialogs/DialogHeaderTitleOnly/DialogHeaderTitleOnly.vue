@@ -16,7 +16,7 @@
       </span>
     </h2>
 
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
   </div>
 </template>
 

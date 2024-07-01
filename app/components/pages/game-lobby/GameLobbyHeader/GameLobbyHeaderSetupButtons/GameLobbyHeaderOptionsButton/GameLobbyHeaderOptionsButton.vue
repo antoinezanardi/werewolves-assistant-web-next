@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeButton
+  <PrimeVueButton
     id="game-lobby-header-options-button"
     icon="fa fa-sliders"
     :label="$t('components.GameLobbyHeaderOptionButton.gameOptions')"

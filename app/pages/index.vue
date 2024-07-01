@@ -66,7 +66,7 @@
       </NuxtLink>
     </div>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <IndexFooter class="mt-1"/>
   </div>

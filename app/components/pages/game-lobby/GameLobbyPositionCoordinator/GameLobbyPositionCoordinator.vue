@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeDialog
+  <PrimeVueDialog
     id="game-lobby-position-coordinator"
     block-scroll
     content-class="w-x-screen-9/10 max-w-x-screen-9/10"
@@ -47,7 +47,7 @@
         @close-dialog="close"
       />
     </template>
-  </VuePrimeDialog>
+  </PrimeVueDialog>
 </template>
 
 <script setup lang="ts">

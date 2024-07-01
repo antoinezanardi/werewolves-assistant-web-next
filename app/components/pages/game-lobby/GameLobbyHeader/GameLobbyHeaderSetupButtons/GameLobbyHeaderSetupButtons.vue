@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeButtonGroup>
+  <PrimeVueButtonGroup>
     <TransitionGroup
       name="fade-list"
     >
@@ -16,7 +16,7 @@
         @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
       />
     </TransitionGroup>
-  </VuePrimeButtonGroup>
+  </PrimeVueButtonGroup>
 </template>
 
 <script setup lang="ts">

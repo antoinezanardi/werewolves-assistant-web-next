@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeButton
+  <PrimeVueButton
     id="game-lobby-header-position-coordinator-button"
     icon="fa fa-users animate__animated animate__slow animate__heartBeat"
     :label="$t('components.GameLobbyHeaderPositionCoordinatorButton.positionCoordinator')"

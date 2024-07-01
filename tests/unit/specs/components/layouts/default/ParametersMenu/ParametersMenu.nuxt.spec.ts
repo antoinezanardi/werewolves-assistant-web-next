@@ -1,32 +1,32 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import { MouseEvent } from "happy-dom";
+import type Button from "primevue/button";
 import Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import type { Mock } from "vitest";
 import { beforeAll, expect } from "vitest";
 import type { Ref } from "vue";
 
-import type { VuePrimeButton } from "#components";
 import ParametersMenu from "~/components/layouts/default/NavBar/ParametersMenu/ParametersMenu.vue";
 import { Game } from "~/composables/api/game/types/game.class";
-import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
+import * as UsePrimeVueToasts from "~/composables/prime-vue/usePrimeVueToasts";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeUseVuePrimeToasts } from "@tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
+import { createFakeUsePrimeVueToasts } from "@tests/unit/utils/factories/composables/prime-vue/usePrimeVueToasts.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Parameters Menu Component", () => {
   let wrapper: ReturnType<typeof mount<typeof ParametersMenu>>;
   let mocks: {
     composables: {
-      useVuePrimeToasts: ReturnType<typeof createFakeUseVuePrimeToasts>;
+      usePrimeVueToasts: ReturnType<typeof createFakeUsePrimeVueToasts>;
     };
   };
 
   beforeEach(async() => {
-    mocks = { composables: { useVuePrimeToasts: createFakeUseVuePrimeToasts() } };
-    vi.spyOn(UseVuePrimeToasts, "useVuePrimeToasts").mockReturnValue(mocks.composables.useVuePrimeToasts);
+    mocks = { composables: { usePrimeVueToasts: createFakeUsePrimeVueToasts() } };
+    vi.spyOn(UsePrimeVueToasts, "usePrimeVueToasts").mockReturnValue(mocks.composables.usePrimeVueToasts);
     wrapper = await mountSuspendedComponent(ParametersMenu);
   });
 
@@ -53,7 +53,7 @@ describe("Parameters Menu Component", () => {
     });
 
     it("should open the parameters menu when clicked.", async() => {
-      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));
@@ -71,7 +71,7 @@ describe("Parameters Menu Component", () => {
         },
       });
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { parametersMenu: Ref }).parametersMenu.value = null;
-      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).not.toHaveBeenCalled();
@@ -93,7 +93,7 @@ describe("Parameters Menu Component", () => {
         shallow: false,
         global: { plugins: [testingPinia] },
       });
-      const parametersMenuButton = wrapper.findComponent<typeof VuePrimeButton>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
     });
 
@@ -102,7 +102,7 @@ describe("Parameters Menu Component", () => {
       await nextTick();
       document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menuitem-link")?.click();
 
-      expect(mocks.composables.useVuePrimeToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.ParametersMenu.gameCanceled" });
+      expect(mocks.composables.usePrimeVueToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.ParametersMenu.gameCanceled" });
     });
 
     it("should pass the default items to the menu when rendered.", async() => {

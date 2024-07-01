@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-sheriff"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -63,7 +63,7 @@
     </GameOptionInputGroup>
 
     <GameLobbyOptionsHubRolesTabSheriffElection/>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

@@ -36,7 +36,7 @@
       {{ optionDescription }}
     </p>
 
-    <VuePrimeDivider
+    <PrimeVueDivider
       v-if="doesHaveBottomDivider"
       id="game-option-bottom-divider"
       class="!my-4"

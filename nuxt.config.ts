@@ -74,7 +74,7 @@ export default defineNuxtConfig({
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {
-      prefix: "VuePrime",
+      prefix: "PrimeVue",
       include: [
         "Button",
         "ButtonGroup",
