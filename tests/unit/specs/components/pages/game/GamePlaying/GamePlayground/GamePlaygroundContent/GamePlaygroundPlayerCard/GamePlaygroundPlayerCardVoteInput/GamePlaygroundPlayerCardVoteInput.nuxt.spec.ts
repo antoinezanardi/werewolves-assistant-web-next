@@ -77,7 +77,7 @@ describe("Game Playground Player Card Vote Input Component", () => {
     it("should have null as model value when render.", async() => {
       wrapper = await mountGamePlaygroundPlayerCardVoteInputComponent({
         global: {
-          stubs: { RoleImage: true, VuePrimeAutoComplete: true },
+          stubs: { RoleImage: true, PrimeVueAutoComplete: true },
           plugins: [createTestingPinia(pinia)],
         },
       });

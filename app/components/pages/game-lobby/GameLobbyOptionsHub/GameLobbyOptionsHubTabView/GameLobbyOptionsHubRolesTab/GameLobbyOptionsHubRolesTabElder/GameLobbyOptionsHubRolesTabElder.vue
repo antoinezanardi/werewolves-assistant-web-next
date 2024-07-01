@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-elder"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -14,7 +14,7 @@
       option-icon-class="fa fa-heart text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-label"
           for="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input"
@@ -22,16 +22,16 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input"
           v-model="elderLivesCountAgainstWerewolvesValue"
           class="w-full"
           :max="5"
           :min="1"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
 
-      <VuePrimeSlider
+      <PrimeVueSlider
         id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-slider"
         v-model="elderLivesCountAgainstWerewolvesValue"
         class="mt-4 w-full"
@@ -53,7 +53,7 @@
         class="w-full"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

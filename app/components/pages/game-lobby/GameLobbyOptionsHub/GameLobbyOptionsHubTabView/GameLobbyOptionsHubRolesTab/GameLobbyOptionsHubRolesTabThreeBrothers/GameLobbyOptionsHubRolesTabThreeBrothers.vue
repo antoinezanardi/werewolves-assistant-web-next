@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-three-brothers"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -13,7 +13,7 @@
       option-icon-class="fa fa-clock-rotate-left text-blue-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabThreeBrothers.options.wakingUpInterval.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-label"
           for="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input"
@@ -21,16 +21,16 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabThreeBrothers.options.wakingUpInterval.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input"
           v-model="threeBrothersWakingUpIntervalValue"
           class="w-full"
           :max="5"
           :min="0"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
 
-      <VuePrimeSlider
+      <PrimeVueSlider
         id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-slider"
         v-model="threeBrothersWakingUpIntervalValue"
         class="mt-4 w-full"
@@ -39,7 +39,7 @@
         :step="1"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

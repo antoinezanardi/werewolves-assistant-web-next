@@ -11,7 +11,7 @@
       </span>
     </h2>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <p id="about-werewolves-assistant-first-section">
       {{ $t("components.AboutWerewolvesAssistant.toHelpGameMaster") }}
@@ -48,7 +48,7 @@
       </span>
     </h3>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <p id="about-werewolves-assistant-disclaimer-first-section">
       {{ $t('components.AboutWerewolvesAssistant.physicalGameIsNeeded') }}

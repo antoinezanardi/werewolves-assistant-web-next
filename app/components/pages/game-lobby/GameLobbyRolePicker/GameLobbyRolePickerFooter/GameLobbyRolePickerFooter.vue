@@ -3,9 +3,9 @@
     id="game-lobby-role-picker-footer"
     class="text-center w-full"
   >
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
 
-    <VuePrimeButton
+    <PrimeVueButton
       id="game-lobby-role-picker-footer-button"
       :disabled="!canRoleBePicked"
       :label="$t('components.GameLobbyRolePickerFooter.pickRole')"

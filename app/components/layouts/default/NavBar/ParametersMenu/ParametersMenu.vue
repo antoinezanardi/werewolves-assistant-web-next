@@ -1,6 +1,6 @@
 <template>
   <div id="parameters-menu">
-    <VuePrimeButton
+    <PrimeVueButton
       :aria-label="$t('components.ParametersMenu.parameters')"
       class="!p-2"
       icon="fa fa-cog"
@@ -9,7 +9,7 @@
       @click="toggleParametersMenu"
     />
 
-    <VuePrimeMenu
+    <PrimeVueMenu
       id="overlay-menu"
       ref="parametersMenu"
       :aria-label="$t('components.ParametersMenu.parametersMenu')"
@@ -25,14 +25,14 @@ import type Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";
 
-import { useVuePrimeToasts } from "~/composables/vue-prime/useVuePrimeToasts";
+import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
 const { cancelGame: cancelGameFromStore } = gameStore;
 const { game } = storeToRefs(gameStore);
 const { t } = useI18n();
-const { addSuccessToast } = useVuePrimeToasts();
+const { addSuccessToast } = usePrimeVueToasts();
 
 const gameMenuItems = computed<MenuItem>(() => ({
   visible: !!game.value._id,

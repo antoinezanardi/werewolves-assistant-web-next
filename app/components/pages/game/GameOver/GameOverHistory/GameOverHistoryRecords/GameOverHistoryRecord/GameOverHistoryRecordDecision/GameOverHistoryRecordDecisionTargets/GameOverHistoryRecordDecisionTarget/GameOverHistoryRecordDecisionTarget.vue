@@ -6,7 +6,7 @@
       :player-role="target.player.role.current"
     />
 
-    <VuePrimeTag
+    <PrimeVueTag
       v-if="isTagDisplayed"
       id="target-potion-tag"
       class="flex gap-2 items-center justify-center"
@@ -22,7 +22,7 @@
       <span id="target-potion-tag-text">
         {{ tagText }}
       </span>
-    </VuePrimeTag>
+    </PrimeVueTag>
   </div>
 </template>
 

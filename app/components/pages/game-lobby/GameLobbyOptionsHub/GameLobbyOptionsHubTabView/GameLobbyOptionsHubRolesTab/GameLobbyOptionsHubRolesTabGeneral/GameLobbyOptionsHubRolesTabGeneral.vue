@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-general"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -39,7 +39,7 @@
         class="w-full"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

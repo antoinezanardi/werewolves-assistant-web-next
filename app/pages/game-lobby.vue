@@ -6,7 +6,7 @@
       @position-coordinator-button-click="openGamePositionCoordinator"
     />
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <GameLobbyPlayersParty
       id="game-lobby-players-party"
@@ -14,7 +14,7 @@
       @pick-role-for-player="pickRoleForPlayer"
     />
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <GameLobbyFooter/>
 

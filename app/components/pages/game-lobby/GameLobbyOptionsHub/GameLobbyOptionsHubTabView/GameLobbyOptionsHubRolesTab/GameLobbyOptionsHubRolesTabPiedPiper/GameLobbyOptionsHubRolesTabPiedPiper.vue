@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-pied-piper"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -14,7 +14,7 @@
       option-icon-class="fa fa-people-line text-pink-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label"
           for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input"
@@ -22,7 +22,7 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input"
           v-model="piedPiperCharmedPeopleCountPerNightValue"
           class="w-full"
@@ -30,7 +30,7 @@
           :min="1"
         />
 
-        <VuePrimeSlider
+        <PrimeVueSlider
           id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider"
           v-model="piedPiperCharmedPeopleCountPerNightValue"
           class="mt-4 w-full"
@@ -38,7 +38,7 @@
           :min="1"
           :step="1"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
     </GameOptionInputGroup>
 
     <GameOptionInputGroup
@@ -53,7 +53,7 @@
         class="w-full"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

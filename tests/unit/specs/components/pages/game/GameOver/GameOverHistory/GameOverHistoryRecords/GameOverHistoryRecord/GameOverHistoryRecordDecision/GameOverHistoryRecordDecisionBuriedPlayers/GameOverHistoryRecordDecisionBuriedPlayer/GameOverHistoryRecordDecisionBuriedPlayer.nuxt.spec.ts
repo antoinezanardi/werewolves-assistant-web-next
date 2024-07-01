@@ -1,7 +1,7 @@
 import type { NuxtImg } from "#components";
-import type { VuePrimeTag } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Tag from "primevue/tag";
 import type { GameOverHistoryRecordDecisionBuriedPlayerProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/game-over-history-record-decision-buried-player.types";
 import GameOverHistoryRecordDecisionBuriedPlayer from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/GameOverHistoryRecordDecisionBuriedPlayer.vue";
 import type PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
@@ -61,13 +61,13 @@ describe("Game Over History Record Decision Buried Player Component", () => {
           }),
         },
       });
-      const devotedServantTag = wrapper.findComponent<typeof VuePrimeTag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeTruthy();
     });
 
     it("should not render Devoted Servant Tag when there is no targets.", () => {
-      const devotedServantTag = wrapper.findComponent<typeof VuePrimeTag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeFalsy();
     });
@@ -85,7 +85,7 @@ describe("Game Over History Record Decision Buried Player Component", () => {
           }),
         },
       });
-      const devotedServantTag = wrapper.findComponent<typeof VuePrimeTag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeFalsy();
     });

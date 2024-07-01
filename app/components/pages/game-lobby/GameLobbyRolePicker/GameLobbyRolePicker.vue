@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeDialog
+  <PrimeVueDialog
     id="game-lobby-role-picker"
     block-scroll
     content-class="w-x-screen-9/10 max-w-x-screen-9/10"
@@ -51,7 +51,7 @@
         @player-update="close"
       />
     </template>
-  </VuePrimeDialog>
+  </PrimeVueDialog>
 </template>
 
 <script setup lang="ts">

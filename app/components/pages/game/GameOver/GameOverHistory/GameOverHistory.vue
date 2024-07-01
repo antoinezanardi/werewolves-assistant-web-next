@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeDialog
+  <PrimeVueDialog
     id="game-over-history"
     block-scroll
     dismissable-mask
@@ -39,7 +39,7 @@
         @close-dialog="close"
       />
     </template>
-  </VuePrimeDialog>
+  </PrimeVueDialog>
 </template>
 
 <script setup lang="ts">

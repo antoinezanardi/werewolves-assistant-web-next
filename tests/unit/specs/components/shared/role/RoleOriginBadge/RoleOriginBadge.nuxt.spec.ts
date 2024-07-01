@@ -1,8 +1,8 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Badge from "primevue/badge";
 import { expect } from "vitest";
 
-import type { VuePrimeBadge } from "#components";
 import type { RoleOriginBadgeProps } from "~/components/shared/role/RoleOriginBadge/role-origin-badge.types";
 import RoleOriginBadge from "~/components/shared/role/RoleOriginBadge/RoleOriginBadge.vue";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
@@ -39,7 +39,7 @@ describe("Role Origin Badge Component", () => {
     });
 
     it("should translate role origin when rendered.", () => {
-      const badge = wrapper.findComponent<typeof VuePrimeBadge>(".role-origin-badge");
+      const badge = wrapper.findComponent<Badge>(".role-origin-badge");
 
       expect(badge.attributes("value")).toBe("Base Game");
     });

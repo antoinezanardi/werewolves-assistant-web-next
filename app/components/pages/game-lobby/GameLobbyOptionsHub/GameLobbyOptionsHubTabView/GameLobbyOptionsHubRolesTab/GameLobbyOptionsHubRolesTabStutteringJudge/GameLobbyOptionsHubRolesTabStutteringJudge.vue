@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-stuttering-judge"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -13,7 +13,7 @@
       option-icon-class="fa fa-gavel text-cyan-300"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-label"
           for="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input"
@@ -21,16 +21,16 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input"
           v-model="stutteringJudgeVoteRequestsCountValue"
           class="w-full"
           :max="5"
           :min="1"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
 
-      <VuePrimeSlider
+      <PrimeVueSlider
         id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-slider"
         v-model="stutteringJudgeVoteRequestsCountValue"
         class="mt-4 w-full"
@@ -39,7 +39,7 @@
         :step="1"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

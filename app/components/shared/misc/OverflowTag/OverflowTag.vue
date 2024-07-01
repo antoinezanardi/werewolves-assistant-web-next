@@ -1,6 +1,6 @@
 <template>
   <div id="overflow-tag-container">
-    <VuePrimeTag
+    <PrimeVueTag
       v-if="areEntitiesTruncated"
       id="overflow-tag"
       class="min-w-12"

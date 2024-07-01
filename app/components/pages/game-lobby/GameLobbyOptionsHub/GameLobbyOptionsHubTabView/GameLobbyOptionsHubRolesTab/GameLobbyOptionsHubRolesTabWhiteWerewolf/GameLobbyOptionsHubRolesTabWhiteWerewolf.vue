@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeFieldset
+  <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-white-werewolf"
     :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
   >
@@ -13,7 +13,7 @@
       option-icon-class="fa fa-clock-rotate-left text-white"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.label')"
     >
-      <VuePrimeFloatLabel>
+      <PrimeVueFloatLabel>
         <label
           id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-label"
           for="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input"
@@ -21,16 +21,16 @@
           {{ $t("components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.label") }}
         </label>
 
-        <VuePrimeInputNumber
+        <PrimeVueInputNumber
           id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input"
           v-model="whiteWerewolfWakingUpIntervalValue"
           class="w-full"
           :max="5"
           :min="1"
         />
-      </VuePrimeFloatLabel>
+      </PrimeVueFloatLabel>
 
-      <VuePrimeSlider
+      <PrimeVueSlider
         id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-slider"
         v-model="whiteWerewolfWakingUpIntervalValue"
         class="mt-4 w-full"
@@ -39,7 +39,7 @@
         :step="1"
       />
     </GameOptionInputGroup>
-  </VuePrimeFieldset>
+  </PrimeVueFieldset>
 </template>
 
 <script setup lang="ts">

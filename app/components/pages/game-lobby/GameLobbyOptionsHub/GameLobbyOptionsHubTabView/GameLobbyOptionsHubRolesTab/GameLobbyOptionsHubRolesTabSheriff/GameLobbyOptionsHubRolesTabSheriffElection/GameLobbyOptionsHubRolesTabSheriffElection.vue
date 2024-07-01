@@ -5,7 +5,7 @@
     option-icon-class="fa fa-clock text-white"
     :option-label="$t('components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.label')"
   >
-    <VuePrimeToggleButton
+    <PrimeVueToggleButton
       id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input"
       v-model="sheriffPhaseNameElectionValueAsBoolean"
       class="mb-8 w-full"
@@ -15,7 +15,7 @@
       :on-label="$t('shared.game.phase.day')"
     />
 
-    <VuePrimeFloatLabel>
+    <PrimeVueFloatLabel>
       <label
         id="game-lobby-options-hub-roles-tab-sheriff-election-turn-label"
         for="game-lobby-options-hub-roles-tab-sheriff-election-turn-input"
@@ -23,16 +23,16 @@
         {{ $t("components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.turn.label") }}
       </label>
 
-      <VuePrimeInputNumber
+      <PrimeVueInputNumber
         id="game-lobby-options-hub-roles-tab-sheriff-election-turn-input"
         v-model="sheriffElectionTurnValue"
         class="w-full"
         :max="10"
         :min="1"
       />
-    </VuePrimeFloatLabel>
+    </PrimeVueFloatLabel>
 
-    <VuePrimeSlider
+    <PrimeVueSlider
       id="game-lobby-options-hub-roles-tab-sheriff-election-turn-slider"
       v-model="sheriffElectionTurnValue"
       class="mt-4 w-full"

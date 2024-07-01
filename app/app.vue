@@ -4,7 +4,7 @@
       class="h-full md:p-2 p-4"
     />
 
-    <VuePrimeToast position="bottom-right"/>
+    <PrimeVueToast position="bottom-right"/>
   </NuxtLayout>
 </template>
 

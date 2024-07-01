@@ -3,7 +3,7 @@
     id="game-request-another-vote-playground"
     class="flex flex-col items-center justify-center"
   >
-    <VuePrimeToggleButton
+    <PrimeVueToggleButton
       id="does-judge-request-another-vote-button"
       v-model="doesJudgeRequestAnotherVote"
       class="w-9rem"

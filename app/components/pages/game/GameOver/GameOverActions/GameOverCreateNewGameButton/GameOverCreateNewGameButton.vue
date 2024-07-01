@@ -1,8 +1,8 @@
 <template>
   <div id="create-new-game-button-container">
-    <VuePrimeConfirmPopup/>
+    <PrimeVueConfirmPopup/>
 
-    <VuePrimeButton
+    <PrimeVueButton
       id="create-new-game-button"
       ref="createNewGameButton"
       class="p-button p-button-raised"
@@ -13,7 +13,7 @@
       <span id="create-new-game-button-text">
         {{ $t('components.GameOverActions.createAnotherGame') }}
       </span>
-    </VuePrimeButton>
+    </PrimeVueButton>
   </div>
 </template>
 

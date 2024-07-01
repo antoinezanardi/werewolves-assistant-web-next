@@ -14,7 +14,7 @@
       </h2>
     </div>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <div
       v-if="!roles"
@@ -32,11 +32,11 @@
         {{ availableRolesText }}
       </p>
 
-      <VuePrimeAccordion
+      <PrimeVueAccordion
         class="w-full"
         multiple
       >
-        <VuePrimeAccordionTab
+        <PrimeVueAccordionTab
           v-for="role in roles"
           :key="role.name"
           :pt="{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }"
@@ -56,8 +56,8 @@
           </template>
 
           <AboutAvailableRoleDescription :role="role"/>
-        </VuePrimeAccordionTab>
-      </VuePrimeAccordion>
+        </PrimeVueAccordionTab>
+      </PrimeVueAccordion>
     </div>
   </div>
 </template>

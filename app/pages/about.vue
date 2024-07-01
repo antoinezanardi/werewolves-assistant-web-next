@@ -17,7 +17,7 @@
       </h1>
     </div>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <AboutWerewolvesGame/>
 
@@ -29,13 +29,13 @@
 
     <AboutCreator class="mt-5"/>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <div class="flex justify-center pb-3">
       <BackToHomeButton/>
     </div>
 
-    <VuePrimeScrollTop/>
+    <PrimeVueScrollTop/>
   </div>
 </template>
 

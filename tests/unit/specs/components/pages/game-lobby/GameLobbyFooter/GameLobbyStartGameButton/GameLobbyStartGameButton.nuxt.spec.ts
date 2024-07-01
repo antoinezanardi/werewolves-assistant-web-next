@@ -5,7 +5,7 @@ import type { Ref } from "vue";
 
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
-import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
+import * as UsePrimeVueToasts from "~/composables/prime-vue/usePrimeVueToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -13,7 +13,7 @@ import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
 import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
-import { createFakeUseVuePrimeToasts } from "@tests/unit/utils/factories/composables/vue-prime/useVuePrimeToasts.factory";
+import { createFakeUsePrimeVueToasts } from "@tests/unit/utils/factories/composables/prime-vue/usePrimeVueToasts.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
@@ -48,7 +48,7 @@ describe("Game Lobby Start Game Button Component", () => {
   let mocks: {
     composables: {
       useFetchGames: ReturnType<typeof createFakeUseFetchGames>;
-      useVuePrimeToasts: ReturnType<typeof createFakeUseVuePrimeToasts>;
+      usePrimeVueToasts: ReturnType<typeof createFakeUsePrimeVueToasts>;
     }
   };
 
@@ -56,11 +56,11 @@ describe("Game Lobby Start Game Button Component", () => {
     mocks = {
       composables: {
         useFetchGames: createFakeUseFetchGames(),
-        useVuePrimeToasts: createFakeUseVuePrimeToasts(),
+        usePrimeVueToasts: createFakeUsePrimeVueToasts(),
       },
     };
     vi.spyOn(UseFetchGames, "useFetchGames").mockReturnValue(mocks.composables.useFetchGames);
-    vi.spyOn(UseVuePrimeToasts, "useVuePrimeToasts").mockReturnValue(mocks.composables.useVuePrimeToasts);
+    vi.spyOn(UsePrimeVueToasts, "usePrimeVueToasts").mockReturnValue(mocks.composables.usePrimeVueToasts);
     wrapper = await mountSuspendedComponent(GameLobbyStartGameButton);
   });
 
@@ -162,7 +162,7 @@ describe("Game Lobby Start Game Button Component", () => {
         await button.trigger("click");
         await flushPromises();
 
-        expect(mocks.composables.useVuePrimeToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.GameLobbyStartGameButton.gameCreated" });
+        expect(mocks.composables.usePrimeVueToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.GameLobbyStartGameButton.gameCreated" });
       });
 
       it("should not add success toast when game is not created.", async() => {
@@ -170,7 +170,7 @@ describe("Game Lobby Start Game Button Component", () => {
         const button = wrapper.find(".start-game-button");
         await button.trigger("click");
 
-        expect(mocks.composables.useVuePrimeToasts.addSuccessToast).not.toHaveBeenCalled();
+        expect(mocks.composables.usePrimeVueToasts.addSuccessToast).not.toHaveBeenCalled();
       });
 
       it("should be loading when fetch is in progress.", () => {

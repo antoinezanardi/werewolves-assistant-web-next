@@ -4,7 +4,7 @@
     v-p-tooltip="buttonTooltipOptions"
     class="flex justify-center"
   >
-    <VuePrimeButton
+    <PrimeVueButton
       id="make-play-button"
       class="uppercase w-full"
       :disabled="!canMakeGamePlay"
