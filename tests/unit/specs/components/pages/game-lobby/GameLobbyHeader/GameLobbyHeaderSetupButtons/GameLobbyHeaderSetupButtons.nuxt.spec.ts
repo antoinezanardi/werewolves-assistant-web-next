@@ -62,6 +62,21 @@ describe("Game Lobby Header Setup Buttons Component", () => {
           createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
           createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
           createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
+          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
+        ],
+      });
+      await nextTick();
+      const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
+
+      expect(positionCoordinatorButton.exists()).toBeFalsy();
+    });
+
+    it("should not render position coordinator button when there are not enough players in game.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [
+          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
+          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "rusty-sword-knight" }) }),
         ],
       });
       await nextTick();
