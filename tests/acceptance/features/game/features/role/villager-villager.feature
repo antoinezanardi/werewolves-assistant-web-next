@@ -1,4 +1,5 @@
 @villager-villager-role
+@shard-1
 Feature: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager role
 
   Scenario: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager is revealed at the start of the game

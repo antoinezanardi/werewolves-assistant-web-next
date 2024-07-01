@@ -1,4 +1,5 @@
 @big-bad-wolf-role
+@shard-1
 Feature: 🐺👹 Big Bad Wolf role
 
   Scenario: 🐺👹 Big Bad Wolf eats a Villager after the the other Werewolves

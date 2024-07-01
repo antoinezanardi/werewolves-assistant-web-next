@@ -1,4 +1,5 @@
 @defender-role
+@shard-3
 Feature: 🛡️ Defender Role
 
   Scenario: 🛡️ Defender protects from werewolf attack but can't choose twice in a row the same player

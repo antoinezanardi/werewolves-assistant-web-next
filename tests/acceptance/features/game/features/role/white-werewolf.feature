@@ -1,4 +1,5 @@
 @white-werewolf-role
+@shard-3
 Feature: 🦴🐺 White Werewolf role
 
   Scenario: 🦴🐺 White Werewolf eats another wolf or can skip its turn every other night

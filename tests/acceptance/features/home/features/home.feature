@@ -1,4 +1,5 @@
 @home-page
+@shard-1
 Feature: 🏠 Home Page
 
   Scenario: 🏠 Home Page is displayed with logo, title and many links

@@ -1,4 +1,5 @@
 @seer-role
+@shard-3
 Feature: 🔮Seer role
 
   Scenario: 🔮Seer looks the role of a player

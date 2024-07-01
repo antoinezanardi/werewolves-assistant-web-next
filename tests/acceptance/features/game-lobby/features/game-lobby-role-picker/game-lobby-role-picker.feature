@@ -1,4 +1,5 @@
 @game-lobby-role-picker
+@shard-2
 Feature: 🃏👆 Game Lobby Role Picker
 
   Scenario: 🃏👆 Role Picker is displayed when user clicks on a player with description and available roles

@@ -1,4 +1,5 @@
 @witch-role
+@shard-4
 Feature: 🪄 Witch role
 
   Scenario: 🪄 Witch uses her potions to save a player and to kill a player

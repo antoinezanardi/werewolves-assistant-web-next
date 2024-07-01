@@ -1,4 +1,5 @@
 @navbar
+@shard-4
 Feature: 🧭 Navigation bar
 
   Scenario: 🧭 Navigation bar is displayed with logo and many buttons
