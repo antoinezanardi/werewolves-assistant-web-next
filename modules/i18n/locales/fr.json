@@ -1372,6 +1372,14 @@
     },
     "GameLobbyPositionCoordinator": {
       "positionCoordinator": "Position des joueurs"
+    },
+    "GameLobbyPositionCoordinatorSorter": {
+      "leftNeighbors": "Voisins de gauche",
+      "rightNeighbors": "Voisins de droite"
+    },
+    "GameLobbyPositionCoordinatorChart": {
+      "checkPositionWithGraphBelow": "Vérifiez la position des joueurs avec le graphique ci-dessous.",
+      "canHoverOnNodes": "Vous pouvez survoler les parts pour voir les noms des joueurs qui peuvent être cachés."
     }
   }
 }

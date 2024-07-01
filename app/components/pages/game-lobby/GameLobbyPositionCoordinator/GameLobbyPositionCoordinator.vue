@@ -30,9 +30,15 @@
       id="game-lobby-position-coordinator-content"
       class="flex gap-2 h-full"
     >
-      <GameLobbyPositionCoordinatorGraph class="w-7/12"/>
+      <GameLobbyPositionCoordinatorChart
+        id="game-lobby-position-coordinator-chart"
+        class="w-7/12"
+      />
 
-      <GameLobbyPositionCoordinatorSorter class="w-5/12"/>
+      <GameLobbyPositionCoordinatorSorter
+        id="game-lobby-position-coordinator-sorter"
+        class="w-5/12"
+      />
     </div>
 
     <template #footer>
@@ -46,7 +52,7 @@
 
 <script setup lang="ts">
 import type { GameLobbyPositionCoordinatorExposed } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/game-lobby-position-coordinator.types";
-import GameLobbyPositionCoordinatorGraph from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorGraph/GameLobbyPositionCoordinatorGraph.vue";
+import GameLobbyPositionCoordinatorChart from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/GameLobbyPositionCoordinatorChart.vue";
 import GameLobbyPositionCoordinatorSorter from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorSorter/GameLobbyPositionCoordinatorSorter.vue";
 import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";

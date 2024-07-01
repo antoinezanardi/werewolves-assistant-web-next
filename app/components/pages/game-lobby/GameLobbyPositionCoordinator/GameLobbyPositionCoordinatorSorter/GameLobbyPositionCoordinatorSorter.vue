@@ -6,7 +6,10 @@
     <div class="flex flex-col gap-2 items-center justify-center w-2/12">
       <i class="fa fa-2x fa-arrow-up"/>
 
-      <span class="text-center">
+      <span
+        id="sorter-left-neighbors-text"
+        class="text-center"
+      >
         {{ $t("components.GameLobbyPositionCoordinatorSorter.leftNeighbors") }}
       </span>
     </div>
@@ -30,7 +33,10 @@
     <div class="flex flex-col gap-2 items-center justify-center w-2/12">
       <i class="fa fa-2x fa-arrow-down"/>
 
-      <span class="text-center">
+      <span
+        id="sorter-right-neighbors-text"
+        class="text-center"
+      >
         {{ $t("components.GameLobbyPositionCoordinatorSorter.rightNeighbors") }}
       </span>
     </div>

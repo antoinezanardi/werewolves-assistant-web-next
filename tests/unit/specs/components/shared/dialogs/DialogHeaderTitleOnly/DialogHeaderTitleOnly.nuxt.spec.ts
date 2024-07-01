@@ -28,4 +28,25 @@ describe("Dialog Header Title Only Component", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
+
+  describe("Title", () => {
+    it("should render icon when icon classes are set in props.", () => {
+      const icon = wrapper.find<HTMLSpanElement>("#game-lobby-options-hub-header-title-icon");
+
+      expect(icon.attributes("class")).toBe("me-3 pi pi-info-circle");
+    });
+
+    it("should not render icon when icon classes are not set in props.", async() => {
+      wrapper = await mountDialogHeaderTitleOnlyComponent({ props: { ...defaultProps, iconClass: undefined } });
+      const icon = wrapper.find<HTMLSpanElement>("#game-lobby-options-hub-header-title-icon");
+
+      expect(icon.exists()).toBeFalsy();
+    });
+
+    it("should set title text when rendered.", () => {
+      const title = wrapper.find<HTMLSpanElement>("#game-lobby-options-hub-header-title-text");
+
+      expect(title.text()).toBe("Dialog Title");
+    });
+  });
 });

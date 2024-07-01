@@ -1377,7 +1377,7 @@
       "leftNeighbors": "Left neighbors",
       "rightNeighbors": "Right neighbors"
     },
-    "GameLobbyPositionCoordinatorGraph": {
+    "GameLobbyPositionCoordinatorChart": {
       "checkPositionWithGraphBelow": "Check the position of the players with the graph below.",
       "canHoverOnNodes": "You can hover on the nodes in case you can't clearly see a player's name."
     }

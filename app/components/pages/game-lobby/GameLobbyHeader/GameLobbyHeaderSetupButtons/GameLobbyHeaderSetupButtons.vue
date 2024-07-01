@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
 import type { GameLobbyHeaderSetupButtonsEmits } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderOptionButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
@@ -31,7 +32,7 @@ const emit = defineEmits<GameLobbyHeaderSetupButtonsEmits>();
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto, doesCreateGameDtoContainPositionDependantRoles } = storeToRefs(createGameDtoStore);
 
-const isPositionCoordinatorVisible = computed<boolean>(() => doesCreateGameDtoContainPositionDependantRoles.value && createGameDto.value.players.length > MIN_PLAYERS_IN_GAME);
+const isPositionCoordinatorVisible = computed<boolean>(() => doesCreateGameDtoContainPositionDependantRoles.value && createGameDto.value.players.length >= MIN_PLAYERS_IN_GAME);
 
 function handleGameOptionsButtonClick(): void {
   emit("gameOptionsButtonClick");
