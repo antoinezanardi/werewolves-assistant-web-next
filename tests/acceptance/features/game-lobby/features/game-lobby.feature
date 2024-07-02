@@ -1,5 +1,5 @@
 @game-lobby-page
-@shard-3
+@shard-4
 Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 Game Lobby page is displayed with title, inputs and buttons

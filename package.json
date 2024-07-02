@@ -62,6 +62,7 @@
     "playwright:codegen": "npx playwright codegen http://localhost:3000",
     "script:create-branch": "scripts/create-git-branch.sh",
     "script:create-pull-request": "scripts/create-pull-request.sh",
+    "script:check-acceptance-features-shard": "scripts/check-acceptance-features-shard.sh tests/acceptance",
     "gource": "gource --load-config config/gource/gource.config"
   },
   "devDependencies": {

@@ -17,6 +17,7 @@
 ![Dependencies](https://img.shields.io/badge/-dependencies-black?style=flat-square&logoColor=white&logo=pnpm&color=B76507)[![Known Vulnerabilities](https://snyk.io/test/github/antoinezanardi/werewolves-assistant-web-next/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/antoinezanardi/werewolves-assistant-web-next?targetFile=package.json)
 
 [![Tests count](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/tests-count)
+[![Covered Statements](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-statements)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/covered-statements)
 [![Scenarios](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)](https://byob.yarr.is/antoinezanardi/werewolves-assistant-web-next/scenarios)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantoinezanardi%2Fwerewolves-assistant-web-next%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antoinezanardi/werewolves-assistant-web-next/main)
 
@@ -410,8 +411,14 @@ pnpm run test:unit:staged
 # Before running e2e tests, you must prepare them
 pnpm run test:cucumber:prepare
 
-# Run e2e acceptance tests and generate a HTML report
+# Run all e2e acceptance tests and generate a HTML report
 pnpm run test:cucumber
+
+# Run shard-X tagged e2e acceptance tests and generate a HTML report (Every feature file is tagged with a shard number)
+pnpm run test:cucumber:shard-1
+pnpm run test:cucumber:shard-2
+pnpm run test:cucumber:shard-3
+pnpm run test:cucumber:shard-4
 
 # Run e2e acceptance tests without screenshots comparison and generate a HTML report
 pnpm run test:cucumber:skip-screenshots-comparison
@@ -545,6 +552,11 @@ pnpm run script:create-branch
 ### ⤴️ Create pull request against the `develop` branch from current branch
 ```shell
 pnpm run script:create-pull-request
+```
+
+### 💠 Check that all acceptance features have an associated shard 
+```shell
+pnpm run script:check-acceptance-features-shard;
 ```
 
 ### 📣 To all IntelliJ IDEs users (IntelliJ, Webstorm, PHPStorm, etc.)

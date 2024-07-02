@@ -197,7 +197,7 @@ jobs:
         run: exit 1;
 
   e2e-tests:
-    name: E2E Tests ⚗️
+    name: E2E Tests ⚗️💠
     runs-on: ubuntu-latest
     needs:
       - install
@@ -212,6 +212,9 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           run_install: false
+
+      - name: Check features shard 💠
+        run: pnpm run script:check-acceptance-features-shard
 
       - name: Setup NodeJS ✨
         uses: actions/setup-node@v4
