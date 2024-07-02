@@ -1,4 +1,5 @@
 @werewolf-role
+@shard-2
 Feature: 🐺 Werewolf role
 
   Scenario: 🐺 Werewolves eat a villager each night

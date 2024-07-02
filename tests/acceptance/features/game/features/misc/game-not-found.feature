@@ -1,4 +1,5 @@
 @game-not-found
+@shard-2
 Feature: 🎲❓Game Not Found
 
   Scenario: 🎲❓Game not found page is displayed when game is not found

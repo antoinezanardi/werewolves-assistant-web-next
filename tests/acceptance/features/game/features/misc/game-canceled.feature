@@ -1,4 +1,5 @@
 @game-canceled
+@shard-1
 Feature: 🎲🚫 Game Canceled
 
   Scenario: 🎲🚫 User cancels a game when it is playing

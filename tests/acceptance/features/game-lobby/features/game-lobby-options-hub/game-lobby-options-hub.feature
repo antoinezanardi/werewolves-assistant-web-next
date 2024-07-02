@@ -1,4 +1,5 @@
 @game-lobby-options-hub
+@shard-1
 Feature: ⚙️ Game Lobby Options Hub
 
   Scenario: ⚙️ Options Hub is displayed when user clicks game options button in lobby

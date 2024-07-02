@@ -1,4 +1,5 @@
 @not-found-page
+@shard-2
 Feature: ❓ Not Found Page
 
   Scenario: ❓ Not Found Page is displayed when the user navigates to a non-existent page
