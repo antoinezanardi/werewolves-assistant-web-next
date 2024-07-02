@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   api:
-    image: antoinezanardi/werewolves-assistant-api:latest
+    image: antoinezanardi/werewolves-assistant-api:v1.32.4
     container_name: werewolves-assistant-api
     depends_on:
       - mongodb
