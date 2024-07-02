@@ -3,13 +3,13 @@
 exports[`Game Over History Record Decision Nominated Players Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-history-record-decision-nominated-players" class="flex gap-4 items-center justify-center">
   <div class="game-over-history-record-source-player w-full">
-    <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
+    <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" isdisabled="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
   </div>
   <div class="game-over-history-record-source-player w-full">
-    <player-card-stub playername="Vanessa" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
+    <player-card-stub playername="Vanessa" playerrole="actor" doesshowselectortooltip="false" isselected="false" isdisabled="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
   </div>
   <div class="game-over-history-record-source-player w-full">
-    <player-card-stub playername="Thomas" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
+    <player-card-stub playername="Thomas" playerrole="actor" doesshowselectortooltip="false" isselected="false" isdisabled="false" class="game-over-history-record-decision-nominated-player-card"></player-card-stub>
   </div>
   <overflow-tag-stub entitiescount="4" maximumentitiesdisplayed="3" id="nominated-players-overflow-tag"></overflow-tag-stub>
 </div>"

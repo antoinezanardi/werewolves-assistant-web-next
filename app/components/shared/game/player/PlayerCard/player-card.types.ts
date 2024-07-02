@@ -6,6 +6,7 @@ type PlayerCardProps = {
   selectorAriaLabel?: string;
   doesShowSelectorTooltip?: boolean;
   isSelected?: boolean;
+  isDisabled?: boolean;
 };
 
 type PlayerCardEmits = {
