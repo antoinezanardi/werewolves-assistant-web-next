@@ -197,7 +197,7 @@ jobs:
         run: exit 1;
 
   e2e-tests:
-    name: E2E Tests ⚗️💠
+    name: E2E Tests ⚗️ 💠
     runs-on: ubuntu-latest
     needs:
       - install
