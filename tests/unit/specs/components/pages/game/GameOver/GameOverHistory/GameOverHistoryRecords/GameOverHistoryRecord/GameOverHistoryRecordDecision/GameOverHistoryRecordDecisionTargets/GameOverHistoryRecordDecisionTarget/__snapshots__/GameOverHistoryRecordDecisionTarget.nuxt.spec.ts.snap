@@ -2,7 +2,7 @@
 
 exports[`Game Over History Record Decision Target Component > should match snapshot when rendered. 1`] = `
 "<div class="flex flex-col gap-2 items-center justify-center">
-  <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" class="game-over-history-record-decision-target-player-card"></player-card-stub>
+  <player-card-stub playername="Antoine" playerrole="actor" doesshowselectortooltip="false" isselected="false" isdisabled="false" class="game-over-history-record-decision-target-player-card"></player-card-stub>
   <!--v-if-->
 </div>"
 `;

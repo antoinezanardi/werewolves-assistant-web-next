@@ -2,7 +2,7 @@
 
 exports[`Game Playground Player Card Component > should match snapshot when rendered. 1`] = `
 "<div id="game-playground-player-card" data-testid="game-playground-player-card-Antoine">
-  <player-card-stub playername="Antoine" playerrole="seer" doesshowselectortooltip="false" isselected="false" id="player-card"></player-card-stub>
+  <player-card-stub playername="Antoine" playerrole="seer" doesshowselectortooltip="false" isselected="false" isdisabled="false" id="player-card"></player-card-stub>
   <!--v-if-->
 </div>"
 `;
