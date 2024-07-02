@@ -28,6 +28,6 @@ const GAME_PLAY_SOURCE_NAMES = [
   "actor",
   "bear-tamer",
   "accursed-wolf-father",
-] as const satisfies Readonly<(PlayerGroup | RoleName | "sheriff")[]>;
+] as const satisfies readonly (PlayerGroup | RoleName | "sheriff")[];
 
 export { GAME_PLAY_SOURCE_NAMES };

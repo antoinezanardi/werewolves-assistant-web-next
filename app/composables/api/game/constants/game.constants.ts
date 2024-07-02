@@ -14,7 +14,7 @@ const GAME_SOURCES = [
   ...PLAYER_GROUPS,
   ...Object.values(ROLE_NAMES),
   "sheriff",
-] as const satisfies Readonly<(PlayerAttributeName | PlayerGroup | RoleName)[]>;
+] as const satisfies readonly (PlayerAttributeName | PlayerGroup | RoleName)[];
 
 const MIN_PLAYERS_IN_GAME = 4;
 
