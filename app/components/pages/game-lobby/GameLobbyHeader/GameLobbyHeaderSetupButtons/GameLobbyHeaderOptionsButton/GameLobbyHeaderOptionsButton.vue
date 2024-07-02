@@ -1,8 +1,9 @@
 <template>
-  <VuePrimeButton
+  <PrimeVueButton
     id="game-lobby-header-options-button"
     icon="fa fa-sliders"
     :label="$t('components.GameLobbyHeaderOptionButton.gameOptions')"
+    :pt="{ 'root': '!border-sky-600' }"
     severity="info"
     size="small"
     @click.prevent="clickHandler"

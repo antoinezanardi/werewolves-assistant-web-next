@@ -11,7 +11,7 @@
       </span>
     </h2>
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <p id="about-creator-first-section">
       {{ $t("components.AboutCreator.creatorBackground") }}

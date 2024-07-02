@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeBadge
+  <PrimeVueBadge
     v-p-tooltip="$t(`components.RoleTypeBadge.descriptions.${roleType}`)"
     class="cursor-help role-type-badge"
     :severity="roleTypeBadgeAttributes.severity"

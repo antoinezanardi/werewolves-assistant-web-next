@@ -4,10 +4,10 @@ import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
+import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
 import type { Ref } from "vue";
 
-import type { VuePrimeButton } from "#components";
 import GamePlaygroundFooterMakePlayButton from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterMakePlayButton/GamePlaygroundFooterMakePlayButton.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
@@ -58,7 +58,7 @@ describe("Game Playground Footer Make Play Button Component", () => {
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlay({ canBeSkipped: false });
       await nextTick();
-      const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+      const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
 
       expect(makeGamePlayButton.attributes("disabled")).toBe("true");
     });
@@ -67,13 +67,13 @@ describe("Game Playground Footer Make Play Button Component", () => {
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlay({ canBeSkipped: true });
       await nextTick();
-      const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+      const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
 
       expect(makeGamePlayButton.attributes("disabled")).toBe("false");
     });
 
     it("should have a translated label when rendered.", () => {
-      const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+      const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
 
       expect(makeGamePlayButton.attributes("label")).toBe("Make play");
     });
@@ -145,7 +145,7 @@ describe("Game Playground Footer Make Play Button Component", () => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         makeGamePlayDtoStore.makeGamePlayDto = makeGamePlayDto;
         const gameStore = useGameStore();
-        const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+        const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
         await makeGamePlayButton.trigger("click");
 
         expect(gameStore.makeGamePlay).toHaveBeenCalledExactlyOnceWith(makeGamePlayDto);
@@ -155,7 +155,7 @@ describe("Game Playground Footer Make Play Button Component", () => {
         const makeGamePlayDto = createFakeMakeGamePlayDto();
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         makeGamePlayDtoStore.makeGamePlayDto = makeGamePlayDto;
-        const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+        const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
         await makeGamePlayButton.trigger("click");
 
         expect(makeGamePlayDtoStore.resetMakeGamePlayDto).toHaveBeenCalledExactlyOnceWith();
@@ -222,14 +222,14 @@ describe("Game Playground Footer Make Play Button Component", () => {
       });
 
       it("should be loading when fetch is in progress.", () => {
-        const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+        const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
         void makeGamePlayButton.trigger("click");
 
         expect((wrapper.vm as unknown as { isLoadingMakePlay: Ref<boolean> }).isLoadingMakePlay.value).toBeTrue();
       });
 
       it("should not be loading when fetch is finished.", async() => {
-        const makeGamePlayButton = wrapper.findComponent<typeof VuePrimeButton>("#make-play-button");
+        const makeGamePlayButton = wrapper.findComponent<Button>("#make-play-button");
         await makeGamePlayButton.trigger("click");
 
         expect(makeGamePlayButton.attributes("loading")).toBe("false");

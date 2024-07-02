@@ -4,6 +4,7 @@ import { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Tooltip from "primevue/tooltip";
 import { Vue3Lottie } from "vue3-lottie";
+import VueDraggable from "vuedraggable";
 import { clone, construct, crush } from "radash";
 
 function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
@@ -16,7 +17,10 @@ function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>
     shallow: true,
     global: {
       directives: { PTooltip: Tooltip },
-      components: { VueLottie: Vue3Lottie },
+      components: {
+        VueLottie: Vue3Lottie,
+        VueDraggable,
+      },
     },
   };
   const mergedOptions = construct({

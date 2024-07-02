@@ -212,10 +212,11 @@ const ESLINT_VUE_CONFIG = {
       ERROR, {
         ignorePatterns: [
           "Nuxt*",
-          "VuePrime*",
+          "PrimeVue*",
           "Glow*",
           "VueFlip",
           "VueLottie",
+          "VueDraggable",
         ],
       },
     ],

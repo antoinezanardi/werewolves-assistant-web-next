@@ -108,7 +108,7 @@ describe("Game Lobby Options Hub Component", () => {
       it("should close options hub when option hub footer emits event.", async() => {
         const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#close-button-only-dialog-footer");
         (dialogFooterCloseButtonOnly.vm as VueVm).$emit("close-dialog");
-        await wrapper.vm.$nextTick();
+        await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
 
         expect(dialog.props("visible")).toBeFalsy();

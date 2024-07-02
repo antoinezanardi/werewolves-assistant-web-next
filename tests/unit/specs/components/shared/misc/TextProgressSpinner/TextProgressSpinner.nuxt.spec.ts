@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
+import type ProgressSpinner from "primevue/progressspinner";
 
-import type { VuePrimeProgressSpinner } from "#components";
 import type { TextProgressSpinnerProps } from "~/components/shared/misc/TextProgressSpinner/text-progress-spinner.types";
 import TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -20,7 +20,7 @@ describe("Text Progress Spinner Component", () => {
 
   describe("Spinner", () => {
     it("should render spinner with aria label as text prop when rendered.", () => {
-      const spinner = wrapper.findComponent<typeof VuePrimeProgressSpinner>("[aria-label=\"Loading…\"]");
+      const spinner = wrapper.findComponent<ProgressSpinner>("[aria-label=\"Loading…\"]");
 
       expect(spinner).toBeTruthy();
     });

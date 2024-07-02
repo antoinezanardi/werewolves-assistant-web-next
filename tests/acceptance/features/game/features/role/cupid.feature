@@ -1,4 +1,5 @@
 @cupid-role
+@shard-2
 Feature: 👼Cupid role
 
   Scenario: 👼Cupid makes two players fall in love

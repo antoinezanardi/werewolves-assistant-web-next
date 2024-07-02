@@ -1,4 +1,5 @@
 @game-victory
+@shard-3
 Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by nobody, there are no survivors

@@ -1,14 +1,14 @@
 import type { FetchResponse } from "ofetch";
 
 import type { WerewolvesAssistantApiError } from "~/composables/api/error/types/api-error.types";
-import { useVuePrimeToasts } from "~/composables/vue-prime/useVuePrimeToasts";
+import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";
 
 type UseWerewolvesAssistantApiError = {
   handleWerewolvesAssistantApiError: (error: { response: FetchResponse<WerewolvesAssistantApiError> }) => void;
 };
 
 function useWerewolvesAssistantApiError(): UseWerewolvesAssistantApiError {
-  const { addErrorToast } = useVuePrimeToasts();
+  const { addErrorToast } = usePrimeVueToasts();
   const { t } = useI18n();
 
   function handleWerewolvesAssistantApiError({ response }: { response: FetchResponse<WerewolvesAssistantApiError> }): void {

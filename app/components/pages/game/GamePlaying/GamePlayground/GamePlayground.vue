@@ -10,7 +10,7 @@
     <CurrentPlayQuestion/>
 
     <div class="flex justify-center">
-      <VuePrimeDivider class="!mb-2 !mt-4 !w-3/4"/>
+      <PrimeVueDivider class="!mb-2 !mt-4 !w-3/4"/>
     </div>
 
     <GamePlaygroundContent class="grow overflow-y-auto py-2"/>

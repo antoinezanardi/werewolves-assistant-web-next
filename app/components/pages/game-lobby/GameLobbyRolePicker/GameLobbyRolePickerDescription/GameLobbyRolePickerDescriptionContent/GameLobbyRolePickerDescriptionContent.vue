@@ -32,7 +32,7 @@
       :picked-role="pickedRole"
     />
 
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
 
     <RoleDescriptionLines
       id="role-description-lines"

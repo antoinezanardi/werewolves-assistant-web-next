@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog Header Title Only Component > should match snapshot when rendered. 1`] = `
+"<div id="dialog-header-title-only" class="w-full">
+  <h2 id="game-lobby-options-hub-header-title"><i id="game-lobby-options-hub-header-title-icon" class="me-3 pi pi-info-circle"></i><span id="game-lobby-options-hub-header-title-text">Dialog Title</span></h2>
+  <divider-stub class="!my-2"></divider-stub>
+</div>"
+`;

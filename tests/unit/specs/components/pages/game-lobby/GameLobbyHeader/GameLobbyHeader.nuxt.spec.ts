@@ -121,6 +121,13 @@ describe("Game Lobby Header Component", () => {
 
         expect(wrapper.emitted("gameOptionsButtonClick")).toBeTruthy();
       });
+
+      it("should emit 'positionCoordinatorButtonClick' event when position coordinator button is clicked.", () => {
+        const setupButtons = wrapper.findComponent<typeof GameLobbyHeaderSetupButtons>("#game-lobby-header-setup-buttons");
+        (setupButtons.vm as VueVm).$emit("positionCoordinatorButtonClick");
+
+        expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();
+      });
     });
   });
 });

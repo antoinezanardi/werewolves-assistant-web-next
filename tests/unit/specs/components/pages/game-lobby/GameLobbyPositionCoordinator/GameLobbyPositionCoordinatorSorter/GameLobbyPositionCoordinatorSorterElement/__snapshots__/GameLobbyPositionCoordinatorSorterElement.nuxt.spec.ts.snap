@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Position Coordinator Sorter Element Component > should match snapshot when rendered. 1`] = `
+"<li id="game-lobby-position-coordinator-sorter-element" class="border-2 border-gray-700 cursor-move flex gap-2 items-center rounded-md shadow-black shadow-md w-full">
+  <div id="position-coordinator-sorter-element-square" class="h-8 w-8" style="background-color: #daa42b;"></div>
+  <role-image-stub rolename="seer" sizes="50px" definition="small" id="position-coordinator-sorter-element-role-image" class="h-8 w-8"></role-image-stub>
+  <div id="position-coordinator-sorter-element-player-name" class="grow truncate">Player 1</div><i class="fa fa-bars me-2"></i>
+</li>"
+`;

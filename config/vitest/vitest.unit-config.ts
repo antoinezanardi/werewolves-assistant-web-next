@@ -19,6 +19,7 @@ export default defineVitestConfig({
         "config/**/*",
         "plugins/**/*",
         "**/*.types.ts",
+        "**/*.constants.ts",
       ],
       include: [
         "app/*.vue",

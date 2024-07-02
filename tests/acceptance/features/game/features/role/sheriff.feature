@@ -1,4 +1,5 @@
 @sheriff-attribute
+@shard-4
 Feature: 🎖️ Sheriff Attribute
 
   Scenario: 🎖 Sheriff is elected the first night of the game

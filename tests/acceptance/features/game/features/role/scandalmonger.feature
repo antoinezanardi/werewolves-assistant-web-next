@@ -1,4 +1,5 @@
 @scandalmonger-role
+@shard-2
 Feature: 🐦‍⬛ Scandalmonger role
 
   Scenario: 🐦‍⬛ Scandalmonger marks a player with its feather or can skip its turn

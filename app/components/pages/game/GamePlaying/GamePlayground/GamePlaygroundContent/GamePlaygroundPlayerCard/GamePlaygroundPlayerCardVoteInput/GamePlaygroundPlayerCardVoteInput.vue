@@ -1,7 +1,7 @@
 <template>
   <div id="game-playground-player-card-vote-input">
-    <VuePrimeFloatLabel class="mt-5">
-      <VuePrimeAutoComplete
+    <PrimeVueFloatLabel class="mt-5">
+      <PrimeVueAutoComplete
         class="w-full"
         complete-on-focus
         data-key="name"
@@ -38,7 +38,7 @@
             </span>
           </div>
         </template>
-      </VuePrimeAutoComplete>
+      </PrimeVueAutoComplete>
 
       <label
         id="player-vote-input-label"
@@ -46,7 +46,7 @@
       >
         {{ $t("components.GamePlaygroundPlayerCardVoteInput.voteFor") }}
       </label>
-    </VuePrimeFloatLabel>
+    </PrimeVueFloatLabel>
   </div>
 </template>
 

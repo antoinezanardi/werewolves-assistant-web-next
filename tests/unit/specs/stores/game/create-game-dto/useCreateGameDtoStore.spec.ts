@@ -23,6 +23,28 @@ describe("Create Game Dto Store", () => {
     expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
   });
 
+  describe("doesCreateGameDtoContainPositionDependantRoles", () => {
+    it("should return true when createGameDto contains position dependant roles.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.players = [
+        createFakeCreateGamePlayerDto({ role: { name: "rusty-sword-knight" } }),
+        createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+      ];
+
+      expect(createGameDtoStore.doesCreateGameDtoContainPositionDependantRoles).toBeTruthy();
+    });
+
+    it("should return false when createGameDto does not contain position dependant roles.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.players = [
+        createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+        createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+      ];
+
+      expect(createGameDtoStore.doesCreateGameDtoContainPositionDependantRoles).toBeFalsy();
+    });
+  });
+
   describe("setCreateGameDto", () => {
     it("should set createGameDto when called.", () => {
       const createGameDtoStore = useCreateGameDtoStore();
@@ -186,6 +208,24 @@ describe("Create Game Dto Store", () => {
       const expectedPlayers = [players[0], players[1]];
 
       const result = createGameDtoStore.getPlayersWithRoleNameInCreateGameDto("seer");
+
+      expect(result).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
+    });
+  });
+
+  describe("getPlayersWithAnyRoleNameInCreateGameDto", () => {
+    it("should return players with any role name in createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ role: { name: "seer" } }),
+        createFakeCreateGamePlayerDto({ role: { name: "seer" } }),
+        createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+        createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+      ];
+      createGameDtoStore.createGameDto.players = players;
+      const expectedPlayers = [players[0], players[1], players[3]];
+
+      const result = createGameDtoStore.getPlayersWithAnyRoleNameInCreateGameDto(["seer", "villager"]);
 
       expect(result).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
     });

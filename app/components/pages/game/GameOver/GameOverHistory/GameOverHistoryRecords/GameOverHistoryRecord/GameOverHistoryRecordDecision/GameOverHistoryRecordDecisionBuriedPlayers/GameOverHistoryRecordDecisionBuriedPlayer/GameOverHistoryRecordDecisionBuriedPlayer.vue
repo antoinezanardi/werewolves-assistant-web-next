@@ -6,7 +6,7 @@
       :player-role="buriedPlayer.role.current"
     />
 
-    <VuePrimeTag
+    <PrimeVueTag
       v-if="isTagDisplayed"
       id="devoted-servant-stolen-role-tag"
       class="flex gap-2 items-center justify-center"
@@ -23,7 +23,7 @@
       <span id="devoted-servant-stolen-role-tag-text">
         {{ $t("components.GameOverHistoryRecordDecisionBuriedPlayer.stolenRoleByDevotedServant") }}
       </span>
-    </VuePrimeTag>
+    </PrimeVueTag>
   </div>
 </template>
 

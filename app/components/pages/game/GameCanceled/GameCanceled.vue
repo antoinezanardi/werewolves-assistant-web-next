@@ -15,7 +15,7 @@
     </h1>
 
     <div>
-      <VuePrimeDivider class="mb-4"/>
+      <PrimeVueDivider class="mb-4"/>
 
       <CreateAnotherGameButton/>
 

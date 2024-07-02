@@ -46,7 +46,7 @@
       <div class="w-3/12"/>
     </div>
 
-    <VuePrimeDivider class="!my-2"/>
+    <PrimeVueDivider class="!my-2"/>
   </div>
 </template>
 

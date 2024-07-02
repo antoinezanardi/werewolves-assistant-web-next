@@ -1,9 +1,9 @@
 <template>
-  <VuePrimeTabView
+  <PrimeVueTabView
     id="game-lobby-options-hub-tab-view"
     :pt="{ 'nav': '!border-none' }"
   >
-    <VuePrimeTabPanel
+    <PrimeVueTabPanel
       id="roles-tab-panel"
       :pt="{ 'header': 'grow' }"
     >
@@ -24,9 +24,9 @@
       </template>
 
       <GameLobbyOptionsHubRolesTab/>
-    </VuePrimeTabPanel>
+    </PrimeVueTabPanel>
 
-    <VuePrimeTabPanel
+    <PrimeVueTabPanel
       id="composition-tab-panel"
       :pt="{ 'header': 'grow' }"
     >
@@ -49,9 +49,9 @@
       </template>
 
       <GameLobbyOptionsHubCompositionTab/>
-    </VuePrimeTabPanel>
+    </PrimeVueTabPanel>
 
-    <VuePrimeTabPanel
+    <PrimeVueTabPanel
       id="votes-tab-panel"
       :pt="{ 'header': 'grow' }"
     >
@@ -74,8 +74,8 @@
       </template>
 
       <GameLobbyOptionsHubVotesTab/>
-    </VuePrimeTabPanel>
-  </VuePrimeTabView>
+    </PrimeVueTabPanel>
+  </PrimeVueTabView>
 </template>
 
 <script setup lang="ts">

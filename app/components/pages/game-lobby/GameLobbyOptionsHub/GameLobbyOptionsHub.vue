@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeDialog
+  <PrimeVueDialog
     id="game-lobby-options-hub"
     block-scroll
     dismissable-mask
@@ -16,7 +16,11 @@
     @update:visible="close"
   >
     <template #header>
-      <GameLobbyOptionsHubHeader id="game-lobby-options-hub-header"/>
+      <DialogHeaderTitleOnly
+        id="game-lobby-options-hub-header"
+        icon-class="fa fa-sliders text-primary"
+        :title="$t('components.GameLobbyOptionsHub.gameOptions')"
+      />
     </template>
 
     <template #default>
@@ -29,13 +33,13 @@
         @close-dialog="close"
       />
     </template>
-  </VuePrimeDialog>
+  </PrimeVueDialog>
 </template>
 
 <script setup lang="ts">
 import GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubTabView.vue";
-import GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
 import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
+import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";
 
 const isVisible = ref<boolean>(false);
 

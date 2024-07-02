@@ -1,4 +1,5 @@
 @game-event
+@shard-2
 Feature: 🌟 Game Event
 
   Scenario: 🌟 User can navigate between game events and their texts with buttons

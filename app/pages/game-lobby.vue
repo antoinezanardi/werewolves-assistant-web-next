@@ -3,9 +3,10 @@
     <GameLobbyHeader
       id="game-lobby-header"
       @game-options-button-click="openGameOptionsHub"
+      @position-coordinator-button-click="openGamePositionCoordinator"
     />
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <GameLobbyPlayersParty
       id="game-lobby-players-party"
@@ -13,13 +14,15 @@
       @pick-role-for-player="pickRoleForPlayer"
     />
 
-    <VuePrimeDivider/>
+    <PrimeVueDivider/>
 
     <GameLobbyFooter/>
 
     <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
 
     <GameLobbyOptionsHub ref="gameLobbyOptionsHub"/>
+
+    <GameLobbyPositionCoordinator ref="gameLobbyPositionCoordinator"/>
   </div>
 </template>
 
@@ -29,6 +32,8 @@ import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameL
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
 import GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
+import type { GameLobbyPositionCoordinatorExposed } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/game-lobby-position-coordinator.types";
+import GameLobbyPositionCoordinator from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinator.vue";
 import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/GameLobbyRolePicker/game-lobby-role-picker.types";
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
@@ -48,6 +53,7 @@ const { t } = useI18n();
 
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
+const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
 
 useHead({
   title: t("pages.gameLobby.startGame"),
@@ -69,6 +75,13 @@ function openGameOptionsHub(): void {
     throw createError("Game Lobby Options Hub is not defined");
   }
   gameLobbyOptionsHub.value.open();
+}
+
+function openGamePositionCoordinator(): void {
+  if (!gameLobbyPositionCoordinator.value) {
+    throw createError("Game Lobby Position Coordinator is not defined");
+  }
+  gameLobbyPositionCoordinator.value.open();
 }
 
 function injectPlayerNamesFromQuery(): void {

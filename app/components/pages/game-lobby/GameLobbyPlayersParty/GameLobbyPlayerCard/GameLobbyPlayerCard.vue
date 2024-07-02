@@ -3,7 +3,7 @@
     class="flex flex-col game-lobby-player-card items-center mb-4 p-1"
     :data-testid="`game-lobby-player-card-${props.player.name}`"
   >
-    <VuePrimeButton
+    <PrimeVueButton
       v-p-tooltip="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"
       :aria-label="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"
       class="mb-1 player-card-delete-button"

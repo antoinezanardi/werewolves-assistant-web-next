@@ -1,4 +1,5 @@
 @about-page
+@shard-1
 Feature: ❓ About Page
 
   Scenario: ❓ About Page is displayed with title and various sections

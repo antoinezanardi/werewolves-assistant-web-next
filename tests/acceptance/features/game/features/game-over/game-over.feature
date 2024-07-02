@@ -1,4 +1,5 @@
 @game-over-page
+@shard-4
 Feature: 🏁 Game Over Page
 
   Scenario: 🏁 User is sent back to game lobby with same players to create a new game with them

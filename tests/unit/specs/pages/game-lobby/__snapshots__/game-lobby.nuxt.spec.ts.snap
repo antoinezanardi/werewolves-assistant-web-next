@@ -9,5 +9,6 @@ exports[`Game Lobby Page > should match snapshot when rendered. 1`] = `
   <game-lobby-footer-stub></game-lobby-footer-stub>
   <div id="game-lobby-role-picker-stub"></div>
   <div id="game-lobby-options-hub-stub"></div>
+  <div id="game-lobby-position-coordinator-stub"></div>
 </div>"
 `;

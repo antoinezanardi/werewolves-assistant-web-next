@@ -1,4 +1,5 @@
 @hunter-role
+@shard-4
 Feature: 🔫 Hunter role
 
   Scenario: 🔫 Hunter shoots and kill someone when he dies

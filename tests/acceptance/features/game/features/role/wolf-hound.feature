@@ -1,4 +1,5 @@
 @wolf-hound-role
+@shard-1
 Feature: 🐕 Wolf-Hound role
 
   Scenario: 🐕 Wolf-Hound chooses the Werewolves side

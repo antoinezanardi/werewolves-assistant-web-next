@@ -12,7 +12,7 @@
           :player="player"
         />
 
-        <VuePrimeDivider class="!my-1"/>
+        <PrimeVueDivider class="!my-1"/>
 
         <GameTeamSidePlayerRoleName
           id="game-team-side-player-role-name"

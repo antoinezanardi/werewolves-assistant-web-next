@@ -3,7 +3,7 @@ import type { Mock, MockInstance } from "vitest";
 
 import type { WerewolvesAssistantApiError } from "~/composables/api/error/types/api-error.types";
 import { useWerewolvesAssistantApiError } from "~/composables/api/error/useWerewolvesAssistantApiError";
-import * as UseVuePrimeToasts from "~/composables/vue-prime/useVuePrimeToasts";
+import * as UsePrimeVueToasts from "~/composables/prime-vue/usePrimeVueToasts";
 
 describe("Use Werewolves Assistant Api Error Composable", () => {
   let mocks: {
@@ -11,7 +11,7 @@ describe("Use Werewolves Assistant Api Error Composable", () => {
       error: MockInstance;
     };
     composables: {
-      useVuePrimeToasts: {
+      usePrimeVueToasts: {
         addToast: Mock;
         addSuccessToast: Mock;
         addInfoToast: Mock;
@@ -25,7 +25,7 @@ describe("Use Werewolves Assistant Api Error Composable", () => {
     mocks = {
       console: { error: vi.spyOn(console, "error").mockImplementation(vi.fn()) },
       composables: {
-        useVuePrimeToasts: {
+        usePrimeVueToasts: {
           addToast: vi.fn(),
           addErrorToast: vi.fn(),
           addInfoToast: vi.fn(),
@@ -34,7 +34,7 @@ describe("Use Werewolves Assistant Api Error Composable", () => {
         },
       },
     };
-    vi.spyOn(UseVuePrimeToasts, "useVuePrimeToasts").mockReturnValue(mocks.composables.useVuePrimeToasts);
+    vi.spyOn(UsePrimeVueToasts, "usePrimeVueToasts").mockReturnValue(mocks.composables.usePrimeVueToasts);
   });
 
   describe("handleWerewolvesAssistantApiError", () => {
@@ -50,7 +50,7 @@ describe("Use Werewolves Assistant Api Error Composable", () => {
       const response = { status: 404 } as unknown as FetchResponse<WerewolvesAssistantApiError>;
       useWerewolvesAssistantApiError().handleWerewolvesAssistantApiError({ response });
 
-      expect(mocks.composables.useVuePrimeToasts.addErrorToast).toHaveBeenCalledExactlyOnceWith({
+      expect(mocks.composables.usePrimeVueToasts.addErrorToast).toHaveBeenCalledExactlyOnceWith({
         summary: "composables.useWerewolvesAssistantApiError.statusCode.404",
         detail: "composables.useWerewolvesAssistantApiError.checkConsoleForMoreDetails",
       });

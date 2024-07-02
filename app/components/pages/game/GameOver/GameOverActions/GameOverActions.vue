@@ -5,7 +5,7 @@
   >
     <GameOverCreateNewGameButton id="game-over-create-new-game-button"/>
 
-    <VuePrimeButton
+    <PrimeVueButton
       id="show-game-history-button"
       :loading="!gameHistoryRecords.length"
       severity="help"
@@ -16,7 +16,7 @@
       <span>
         {{ showGameHistoryTextButton }}
       </span>
-    </VuePrimeButton>
+    </PrimeVueButton>
   </div>
 </template>
 

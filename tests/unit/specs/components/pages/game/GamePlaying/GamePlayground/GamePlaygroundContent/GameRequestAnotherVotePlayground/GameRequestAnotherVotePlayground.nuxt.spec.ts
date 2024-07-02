@@ -1,9 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type ToggleButton from "primevue/togglebutton";
 import { expect } from "vitest";
 
-import type { VuePrimeToggleButton } from "#components";
 import GameRequestAnotherVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameRequestAnotherVotePlayground/GameRequestAnotherVotePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
@@ -34,14 +34,14 @@ describe("Game Request Another Vote Playground Component", () => {
   describe("Toggle Button", () => {
     it("should translate off button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
-      const toggleButton = wrapper.findComponent<typeof VuePrimeToggleButton>("#does-judge-request-another-vote-button");
+      const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");
 
       expect(toggleButton.props("offLabel")).toBe("He doesn't request another vote");
     });
 
     it("should translate on button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
-      const toggleButton = wrapper.findComponent<typeof VuePrimeToggleButton>("#does-judge-request-another-vote-button");
+      const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");
 
       expect(toggleButton.props("onLabel")).toBe("He requests another vote");
     });

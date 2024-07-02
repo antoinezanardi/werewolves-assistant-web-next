@@ -1,5 +1,5 @@
 <template>
-  <VuePrimeBadge
+  <PrimeVueBadge
     id="role-side-badge"
     :severity="roleTypeBadgeAttributes.severity"
     :size="size"

@@ -1,8 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Game Over History Header Component > should match snapshot when rendered. 1`] = `
-"<div id="game-over-history-header" class="w-full">
-  <h2 id="game-history-header-title">Game history</h2>
-  <divider-stub class="!my-2"></divider-stub>
-</div>"
-`;
