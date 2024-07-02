@@ -135,3 +135,10 @@ Given(/^the user sets cupid must win with lovers in game options$/u, async funct
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-cupid-must-win-with-lovers-input", true);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user user allows the defender to protect the little girl from the werewolves in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input", true);
+  await closeDialogWithHeaderButton(this);
+});
