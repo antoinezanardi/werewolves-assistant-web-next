@@ -1,5 +1,29 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.24.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.23.0...v1.24.0) (2024-07-02)
+
+### 🚀 Features
+
+* **game-lobby:** position coordinator ([#589](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/589)) ([95a7976](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/95a79763a966a1c0e98bb3f07a208cb16e363238))
+
+### ✅ Tests
+
+* **little-girl:** acceptance tests ([#596](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/596)) ([ea2004c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ea2004c8f22284694a6157e5e887b3cead03c029))
+
+### 🔁 CI
+
+* **e2e:** e2e sharded tests ([#592](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/592)) ([005858f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/005858fea8929c7b0a70d0c5fc337e446e3513d1))
+
+### 🧹 Chore
+
+* **deps:** update dependency eslint-plugin-vue to ^9.27.0 ([#597](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/597)) ([f8d45aa](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f8d45aa93092a1fe0bd763bbca7baa83bca5d140))
+* **deps:** update dependency qs to ^6.12.2 ([#593](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/593)) ([356a638](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/356a638a8b0b8375f9d86c686888655f867de1f3))
+* **deps:** update dependency typescript to ^5.5.3 ([#595](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/595)) ([93e7a6a](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/93e7a6a1a2f8197031cca4ee558e15f7484d1bfd))
+* **deps:** update dependency vue-tsc to ^2.0.24 ([#588](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/588)) ([1870ad6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/1870ad6083a8c68b4b90e7b74788f4027b8a97a7))
+* **deps:** update typescript-eslint monorepo to ^7.15.0 ([#594](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/594)) ([f929264](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f929264525d1bd3a63d077a447438198eb4e352e))
+* **docker:** specify sandbox api version in docker ([#598](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/598)) ([0b6f6ae](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0b6f6aeb602571e3839418843be330d3d808f810))
+* **prime-vue:** flip suffix ([#591](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/591)) ([dae0500](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/dae05002b8b0903d9445e7d0a35ef15622ba071f))
+
 ## [1.23.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.22.0...v1.23.0) (2024-06-29)
 
 ### 🚀 Features
