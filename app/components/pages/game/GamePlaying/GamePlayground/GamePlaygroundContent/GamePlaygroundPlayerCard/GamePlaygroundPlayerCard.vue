@@ -5,6 +5,7 @@
   >
     <PlayerCard
       id="player-card"
+      :is-disabled="isPlayerCardDisabled"
       :is-selected="isPlayerTargeted"
       :player-name="player.name"
       :player-role="player.role.current"
@@ -54,6 +55,12 @@ const isPlayerTargeted = computed<boolean>(() => {
     return false;
   }
   return makeGamePlayDto.value.targets.some(({ playerId }) => playerId === props.player._id);
+});
+
+const isPlayerCardDisabled = computed<boolean>(() => {
+  const { type } = game.value.currentPlay ?? {};
+
+  return type === "vote";
 });
 
 function handleWitchGivesPotionClick(): void {
