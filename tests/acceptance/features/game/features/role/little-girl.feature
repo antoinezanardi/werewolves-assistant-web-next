@@ -4,7 +4,7 @@ Feature: 👧 Little Girl role
 
   Scenario: 👧 Little Girl is protected by the Defender when Game Master allows it in game options
     Given the user disables the sheriff in game options
-    And the user user allows the defender to protect the little girl from the werewolves in game options
+    And the user allows the defender to protect the little girl from the werewolves in game options
     And the user creates a game with the players with name and role
       | name    | role        |
       | Antoine | Little Girl |
