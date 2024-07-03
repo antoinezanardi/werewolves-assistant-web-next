@@ -5,7 +5,7 @@ import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 Then(/^the game's current play should have the following targets$/u, async function(this: CustomWorld, dataTable: DataTable): Promise<void> {
   const targets = dataTable.hashes();
 
-  await Promise.all(targets.map(async target => expect(this.page.getByTestId(`game-playground-player-card-${target.name}`).first()).toBeVisible()));
+  await Promise.all(targets.map(async target => expect(this.page.getByTestId(`game-playground-player-card-${target.name}`).first()).toBeEnabled()));
 });
 
 Then(/^the game's current play should have the following voters$/u, async function(this: CustomWorld, dataTable: DataTable): Promise<void> {
@@ -24,4 +24,15 @@ Then(/^the game's current play should not expect any action$/u, async function(t
 
 Then(/^the witch should be out of potions$/u, async function(this: CustomWorld): Promise<void> {
   await expect(this.page.getByRole("heading", { name: "The Witch has used both potions, the game can proceed" })).toBeVisible();
+});
+
+Then(/^the following players can't be targeted in game's playground$/u, async function(this: CustomWorld, dataTable: DataTable): Promise<void> {
+  const names = dataTable.hashes();
+
+  await Promise.all(names.map(async player => {
+    const targetCard = this.page.getByTestId(`game-playground-player-card-${player.name}`);
+    const targetButton = targetCard.getByRole("button");
+
+    return expect(targetButton).toBeDisabled();
+  }));
 });
