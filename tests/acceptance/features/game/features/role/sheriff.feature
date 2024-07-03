@@ -24,6 +24,12 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     |
       | Charlie |
       | David   |
+    And the following players can't be targeted in game's playground
+      | name    |
+      | Antoine |
+      | Bob     |
+      | Charlie |
+      | David   |
     And the page creates the missing snapshot with name "Survivors elect Sheriff Playground"
 
     When the survivors elect the sheriff with the votes
