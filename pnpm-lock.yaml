@@ -211,8 +211,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       prettier-plugin-gherkin:
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.4.0
+        version: 2.4.0
       qs:
         specifier: ^6.12.2
         version: 6.12.2
@@ -5890,8 +5890,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-gherkin@2.3.0:
-    resolution: {integrity: sha512-RzwgXL4r8QgKaynr2WTIU4eD8uTnoSnA/or/HqzIGbgEGgiGGjFH5NzAORCD8LU8m2aTQbZSF/LvbLHsT6ETzQ==}
+  prettier-plugin-gherkin@2.4.0:
+    resolution: {integrity: sha512-lN3UxZp7unG9l2CG2PFryQnOZqIfbVTteGQwQklwbTR0+sduyT5efXV9XZ+THTGdKdDXU9dD3UyAa6e13MgztA==}
 
   prettier@3.3.2:
     resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
@@ -14108,7 +14108,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-gherkin@2.3.0:
+  prettier-plugin-gherkin@2.4.0:
     dependencies:
       '@cucumber/gherkin': 27.0.0
       '@cucumber/messages': 23.0.0

@@ -129,7 +129,7 @@
     "playwright-core": "^1.45.1",
     "pngjs": "^7.0.0",
     "prettier": "^3.3.2",
-    "prettier-plugin-gherkin": "^2.3.0",
+    "prettier-plugin-gherkin": "^2.4.0",
     "qs": "^6.12.2",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
