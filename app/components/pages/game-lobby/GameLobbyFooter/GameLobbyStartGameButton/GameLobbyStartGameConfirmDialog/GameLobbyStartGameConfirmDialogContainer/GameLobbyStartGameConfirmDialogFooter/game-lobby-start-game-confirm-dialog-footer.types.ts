@@ -2,10 +2,14 @@ import type { GameLobbyStartGameConfirmDialogStep } from "~/components/pages/gam
 
 type GameLobbyStartGameConfirmDialogFooterProps = {
   currentConfirmStep: GameLobbyStartGameConfirmDialogStep;
-  acceptCallback: () => void;
-  rejectCallback: () => void;
+};
+
+type GameLobbyStartGameConfirmDialogFooterEmits = {
+  confirmStartGame: [];
+  rejectStartGame: [];
 };
 
 export type {
   GameLobbyStartGameConfirmDialogFooterProps,
+  GameLobbyStartGameConfirmDialogFooterEmits,
 };

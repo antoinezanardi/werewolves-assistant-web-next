@@ -7,7 +7,7 @@
         id="cancel-button"
         severity="secondary"
         size="small"
-        @click="rejectCallback"
+        @click="onRejectStartGame"
       >
         <i class="fa fa-times me-2"/>
 
@@ -22,7 +22,7 @@
         :class="confirmButtonClasses"
         severity="secondary"
         size="small"
-        @click="acceptCallback"
+        @click="onConfirmStartGame"
       >
         <i
           id="confirm-button-icon"
@@ -39,8 +39,11 @@
 
 <script setup lang="ts">
 import type { GameLobbyStartGameConfirmDialogFooterProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/game-lobby-start-game-confirm-dialog-footer.types";
+import type { GameLobbyStartGameConfirmDialogFooterEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/game-lobby-start-game-confirm-dialog-footer.types";
 
 const props = defineProps<GameLobbyStartGameConfirmDialogFooterProps>();
+
+const emit = defineEmits<GameLobbyStartGameConfirmDialogFooterEmits>();
 
 const { t } = useI18n();
 
@@ -55,8 +58,18 @@ const confirmButtonText = computed<string>(() => {
   return t("components.GameLobbyStartGameConfirmDialogFooter.skipAndPlay");
 });
 
-const confirmButtonIconClasses = computed<Record<string, boolean>>(() => ({
-  "fa fa-forward me-2": props.currentConfirmStep !== "players-ready",
-  "fa fa-beat-fade fa-play me-4": props.currentConfirmStep === "players-ready",
-}));
+const confirmButtonIconClasses = computed<string>(() => {
+  if (props.currentConfirmStep === "players-ready") {
+    return "fa fa-beat-fade fa-play me-4";
+  }
+  return "fa fa-forward me-2";
+});
+
+function onConfirmStartGame(): void {
+  emit("confirmStartGame");
+}
+
+function onRejectStartGame(): void {
+  emit("rejectStartGame");
+}
 </script>

@@ -8,8 +8,6 @@ import GameLobbyStartGameConfirmDialogFooter from "~/components/pages/game-lobby
 
 describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
   const defaultProps: GameLobbyStartGameConfirmDialogFooterProps = {
-    acceptCallback: vi.fn(),
-    rejectCallback: vi.fn(),
     currentConfirmStep: "players-ready",
   };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyStartGameConfirmDialogFooter>>;
@@ -33,11 +31,11 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
   });
 
   describe("Cancel Button", () => {
-    it("should call rejectCallback when clicked.", async() => {
+    it("should emit reject start game event when clicked.", async() => {
       const cancelButton = wrapper.findComponent<typeof Button>("#cancel-button");
       await cancelButton.trigger("click");
 
-      expect(defaultProps.rejectCallback).toHaveBeenCalledExactlyOnceWith(expect.any(Event));
+      expect(wrapper.emitted("rejectStartGame")).toHaveLength(1);
     });
 
     it("should translate button text when rendered.", () => {
@@ -48,11 +46,11 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
   });
 
   describe("Confirm Button", () => {
-    it("should call acceptCallback when clicked.", async() => {
+    it("should emit confirm start game event when clicked.", async() => {
       const confirmButton = wrapper.findComponent<typeof Button>("#confirm-button");
       await confirmButton.trigger("click");
 
-      expect(defaultProps.acceptCallback).toHaveBeenCalledExactlyOnceWith(expect.any(Event));
+      expect(wrapper.emitted("confirmStartGame")).toHaveLength(1);
     });
 
     it("should translate confirm button when confirm step is 'players-positioned'.", async() => {
@@ -129,6 +127,7 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
       const expectedIconClasses = ["fa", "fa-beat-fade", "fa-play", "me-4"];
 
       expect(confirmButton.classes()).toIncludeAllMembers(expectedIconClasses);
+      expect(confirmButton.classes()).not.toIncludeAnyMembers(["fa-forward"]);
     });
   });
 });

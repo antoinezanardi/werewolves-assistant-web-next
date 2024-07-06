@@ -7,12 +7,12 @@
     <template #container="{ acceptCallback, rejectCallback }">
       <GameLobbyStartGameConfirmDialogContainer
         id="game-lobby-start-game-confirm-dialog-container"
-        :accept-callback="acceptCallback"
         :current-confirm-step="currentConfirmStep"
         :reject-callback="rejectCallback"
         @confirm-start-game="acceptCallback"
         @confirm-step="confirmStep"
         @reject-players-position-step="rejectPlayersPositionStep"
+        @reject-start-game="rejectCallback"
       />
     </template>
   </PrimeVueConfirmDialog>
@@ -67,7 +67,8 @@ function confirmStartGame(): void {
   emit("confirmStartGame");
 }
 
-function rejectPlayersPositionStep(): void {
+function rejectPlayersPositionStep(rejectCallback: () => void): void {
+  rejectCallback();
   emit("rejectPlayersPositionStep");
 }
 

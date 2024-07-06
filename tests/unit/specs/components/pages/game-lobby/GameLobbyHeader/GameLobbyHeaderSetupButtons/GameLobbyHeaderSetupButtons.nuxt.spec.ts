@@ -104,13 +104,13 @@ describe("Game Lobby Header Setup Buttons Component", () => {
 
     it("should throw error when highlightPositionCoordinatorButton method is called but component is not defined.", async() => {
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderPositionCoordinatorButton: Ref }).gameLobbyHeaderPositionCoordinatorButton.value = null;
-      await getError(() => (wrapper.vm as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton());
+      await getError(() => (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton());
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Position Coordinator Button is not defined");
     });
 
     it("should highlight position coordinator button when method is called from parent component.", async() => {
-      (wrapper.vm as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton();
+      (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton();
       await flushPromises();
 
       expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");

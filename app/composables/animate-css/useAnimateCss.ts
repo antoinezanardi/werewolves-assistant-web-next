@@ -34,9 +34,6 @@ function useAnimateCss(): UseAnimateCss {
   }
 
   async function animateElementOnce(element: MaybeRef<HTMLElement | null>, animation: AnimateCssAnimationName): Promise<void> {
-    if (element === null) {
-      return Promise.resolve();
-    }
     const HtmlElement = isRef(element) ? element.value : element;
     if (!HtmlElement) {
       return Promise.resolve();

@@ -250,7 +250,7 @@ const ESLINT_VUE_CONFIG = {
     "vue/static-class-names-order": ERROR,
     "vue/v-for-delimiter-style": ERROR,
     "vue/v-if-else-key": ERROR,
-    "vue/v-on-handler-style": ERROR,
+    "vue/v-on-handler-style": [ERROR, ["method", "inline"]],
     "vue/valid-define-options": ERROR,
     // - Extension Rules https://eslint.vuejs.org/rules/#extension-rules
     "vue/array-bracket-newline": ERROR,

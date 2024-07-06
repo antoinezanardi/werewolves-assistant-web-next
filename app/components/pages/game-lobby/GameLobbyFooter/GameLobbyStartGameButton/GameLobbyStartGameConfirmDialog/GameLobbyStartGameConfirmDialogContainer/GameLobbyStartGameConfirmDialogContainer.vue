@@ -29,9 +29,9 @@
 
     <GameLobbyStartGameConfirmDialogFooter
       id="game-lobby-start-game-confirm-dialog-footer"
-      :accept-callback="onConfirmStartGame"
       :current-confirm-step="currentConfirmStep"
-      :reject-callback="rejectCallback"
+      @confirm-start-game="onConfirmStartGame"
+      @reject-start-game="onRejectStartGame"
     />
   </div>
 </template>
@@ -50,11 +50,14 @@ function onConfirmStep(): void {
 }
 
 function onRejectPlayersPositionStep(): void {
-  props.rejectCallback();
-  emit("rejectPlayersPositionStep");
+  emit("rejectPlayersPositionStep", props.rejectCallback);
 }
 
 function onConfirmStartGame(): void {
   emit("confirmStartGame");
+}
+
+function onRejectStartGame(): void {
+  emit("rejectStartGame");
 }
 </script>
