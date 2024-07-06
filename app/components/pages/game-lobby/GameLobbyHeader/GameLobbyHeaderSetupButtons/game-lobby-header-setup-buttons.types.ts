@@ -3,4 +3,11 @@ type GameLobbyHeaderSetupButtonsEmits = {
   positionCoordinatorButtonClick: [];
 };
 
-export type { GameLobbyHeaderSetupButtonsEmits };
+type GameLobbyHeaderSetupButtonsExposed = {
+  highlightPositionCoordinatorButton: () => void;
+};
+
+export type {
+  GameLobbyHeaderSetupButtonsEmits,
+  GameLobbyHeaderSetupButtonsExposed,
+};

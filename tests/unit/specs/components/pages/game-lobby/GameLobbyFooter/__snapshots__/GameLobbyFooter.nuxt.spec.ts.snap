@@ -6,7 +6,7 @@ exports[`Game Lobby Footer Component > should match snapshot when rendered. 1`] 
     <game-lobby-random-composition-button-stub></game-lobby-random-composition-button-stub>
   </div>
   <div class="flex h-full justify-center lg:1/3 md:w-6/12 w-8/12">
-    <game-lobby-start-game-button-stub></game-lobby-start-game-button-stub>
+    <game-lobby-start-game-button-stub id="game-lobby-start-game-button"></game-lobby-start-game-button-stub>
   </div>
   <div class="lg:1/3 md:w-3/12 w-2/12"></div>
 </div>"

@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Start Game Confirm Dialog Players Positioned Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-positioned" class="flex flex-col gap-6 items-center justify-center">
+  <nuxt-img-stub src="/svg/misc/pie-chart-clock-wise.svg" width="75" height="75" alt="Players position"></nuxt-img-stub>
+  <h4 id="game-lobby-start-game-confirm-dialog-players-positioned-text" class="text-center">Some roles rely on players position. Are players placed correctly in the game lobby?</h4>
+  <div id="game-lobby-start-game-confirm-dialog-players-positioned-actions" class="flex gap-2 items-center justify-evenly w-full">
+    <button-stub id="reject-step-button" icon="fa-compass fa" label="Show me how to position players" severity="info"></button-stub>
+    <button-stub id="confirm-step-button" icon="fa-check fa" label="Yes" severity="success"></button-stub>
+  </div>
+</div>"
+`;

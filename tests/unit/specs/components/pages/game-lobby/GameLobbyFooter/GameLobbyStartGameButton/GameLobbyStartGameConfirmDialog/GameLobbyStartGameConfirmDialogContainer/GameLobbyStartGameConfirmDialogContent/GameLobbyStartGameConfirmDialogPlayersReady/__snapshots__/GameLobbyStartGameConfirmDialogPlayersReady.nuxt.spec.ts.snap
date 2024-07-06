@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Start Game Confirm Dialog Players Ready Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-ready" class="flex flex-col gap-6 items-center justify-center">
+  <div class="flex gap-2">
+    <nuxt-img-stub src="/svg/role/villager.svg" width="75" height="75" alt="Villagers"></nuxt-img-stub>
+    <nuxt-img-stub src="/svg/role/werewolf.svg" width="75" height="75" alt="Werewolves"></nuxt-img-stub>
+  </div>
+  <h4 id="game-lobby-start-game-confirm-dialog-players-ready-text" class="text-center">Do all the players have their role and are ready to play?</h4>
+</div>"
+`;

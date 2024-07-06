@@ -25,6 +25,7 @@
     <div class="flex item-center justify-center mt-2">
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
+        ref="gameLobbyHeaderSetupButtons"
         @game-options-button-click="handleGameOptionsButtonClick"
         @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
       />
@@ -33,7 +34,8 @@
 </template>
 
 <script setup lang="ts">
-import type { GameLobbyHeaderEmits } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import type { GameLobbyHeaderEmits, GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type { GameLobbyPlayerInputExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/game-lobby-player-input.types";
 import GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
@@ -47,6 +49,8 @@ const createGameDtoStore = useCreateGameDtoStore();
 const playerInputValue = ref<string>("");
 
 const gameLobbyPlayerInput = ref<GameLobbyPlayerInputExposed | null>(null);
+
+const gameLobbyHeaderSetupButtons = ref<GameLobbyHeaderSetupButtonsExposed | null>(null);
 
 function addPlayerToCreateGameDto(): void {
   if (gameLobbyPlayerInput.value === null) {
@@ -75,4 +79,15 @@ function handleGameOptionsButtonClick(): void {
 function handlePositionCoordinatorButtonClick(): void {
   emit("positionCoordinatorButtonClick");
 }
+
+function highlightPositionCoordinatorButton(): void {
+  if (gameLobbyHeaderSetupButtons.value === null) {
+    throw createError("Game Lobby Header Setup Buttons is not defined");
+  }
+  gameLobbyHeaderSetupButtons.value.highlightPositionCoordinatorButton();
+}
+
+defineExpose<GameLobbyHeaderExposed>({
+  highlightPositionCoordinatorButton,
+});
 </script>

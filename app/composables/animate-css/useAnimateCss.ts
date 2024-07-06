@@ -1,4 +1,4 @@
-import type { Ref } from "vue";
+import type { MaybeRef } from "vue";
 
 type AnimateCssAnimationName =
   | "bounce"
@@ -22,7 +22,7 @@ type AnimateCssAnimationName =
 
 type UseAnimateCss = {
   handleAnimationEnd: (event: Event, animation: AnimateCssAnimationName, resolve: () => void) => void;
-  animateElementOnce: (element: Ref<HTMLElement | null>, animation: AnimateCssAnimationName) => Promise<void>;
+  animateElementOnce: (element: MaybeRef<HTMLElement | null>, animation: AnimateCssAnimationName) => Promise<void>;
 };
 
 function useAnimateCss(): UseAnimateCss {
@@ -33,15 +33,19 @@ function useAnimateCss(): UseAnimateCss {
     resolve();
   }
 
-  async function animateElementOnce(element: Ref<HTMLElement | null>, animation: AnimateCssAnimationName): Promise<void> {
-    if (!element.value) {
+  async function animateElementOnce(element: MaybeRef<HTMLElement | null>, animation: AnimateCssAnimationName): Promise<void> {
+    if (element === null) {
+      return Promise.resolve();
+    }
+    const HtmlElement = isRef(element) ? element.value : element;
+    if (!HtmlElement) {
       return Promise.resolve();
     }
     const animationName = `animate__${animation}`;
-    element.value.classList.add(`animate__animated`, animationName);
+    HtmlElement.classList.add(`animate__animated`, animationName);
 
     return new Promise(resolve => {
-      element.value?.addEventListener("animationend", (event: Event) => handleAnimationEnd(event, animation, resolve), { once: true });
+      HtmlElement.addEventListener("animationend", (event: Event) => handleAnimationEnd(event, animation, resolve), { once: true });
     });
   }
   return {

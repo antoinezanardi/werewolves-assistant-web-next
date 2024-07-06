@@ -13,7 +13,15 @@ describe("Use Animate Css Composable", () => {
   });
 
   describe("animateElementOnce", () => {
-    it("should not add animate__animated and animate__bounce classes to element when element is null.", async() => {
+    it("should not add animate__animated and animate__bounce classes to element when element is not a ref and null.", async() => {
+      const animateCss = useAnimateCss();
+      element.value = null;
+      await animateCss.animateElementOnce(element.value, "bounce");
+
+      expect(element.value).toBeNull();
+    });
+
+    it("should not add animate__animated and animate__bounce classes to element when element ref and value is null.", async() => {
       const animateCss = useAnimateCss();
       element.value = null;
       await animateCss.animateElementOnce(element, "bounce");
