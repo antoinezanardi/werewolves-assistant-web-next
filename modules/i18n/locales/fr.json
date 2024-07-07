@@ -8,7 +8,8 @@
       "add": "Ajouter",
       "close": "Fermer",
       "next": "Suivant",
-      "back": "Retour"
+      "back": "Retour",
+      "cancel": "Annuler"
     },
     "role": {
       "name": {
@@ -1378,8 +1379,23 @@
       "rightNeighbors": "Voisins de droite"
     },
     "GameLobbyPositionCoordinatorChart": {
-      "checkPositionWithGraphBelow": "Vérifiez la position des joueurs avec le graphique ci-dessous.",
+      "checkPositionWithChartBelow": "Vérifiez la position des joueurs avec le graphique ci-dessous.",
       "canHoverOnNodes": "Vous pouvez survoler les parts pour voir les noms des joueurs qui peuvent être cachés."
+    },
+    "GameLobbyStartGameConfirmDialog": {
+      "beforeStartingGame": "Avant de commencer la partie"
+    },
+    "GameLobbyStartGameConfirmDialogFooter": {
+      "skipAndPlay": "Passer et jouer maintenant",
+      "letsGo": "C'est parti !"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersReady": {
+      "doAllPlayersHaveRoleAndReady": "Tous les joueurs ont-ils un rôle et sont-ils prêts à jouer ?"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersPositioned": {
+      "playersPosition": "Position des joueurs",
+      "someRolesArePositionDependant": "Certains rôles dépendent de la position des joueurs. Est-ce que tous les joueurs sont bien positionnés dans l'Assistant ?",
+      "showMeHowToPositionPlayers": "Montrez-moi comment positionner les joueurs"
     }
   }
 }

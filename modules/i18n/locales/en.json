@@ -8,7 +8,8 @@
       "add": "Add",
       "close": "Close",
       "next": "Next",
-      "back": "Back"
+      "back": "Back",
+      "cancel": "Cancel"
     },
     "role": {
       "name": {
@@ -1378,8 +1379,23 @@
       "rightNeighbors": "Right neighbors"
     },
     "GameLobbyPositionCoordinatorChart": {
-      "checkPositionWithGraphBelow": "Check the position of the players with the graph below.",
+      "checkPositionWithChartBelow": "Check the position of the players with the graph below.",
       "canHoverOnNodes": "You can hover on the nodes in case you can't clearly see a player's name."
+    },
+    "GameLobbyStartGameConfirmDialog": {
+      "beforeStartingGame": "Before starting the game"
+    },
+    "GameLobbyStartGameConfirmDialogFooter": {
+      "skipAndPlay": "Skip and play now",
+      "letsGo": "Let's go !"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersReady": {
+      "doAllPlayersHaveRoleAndReady": "Do all the players have their role and are ready to play?"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersPositioned": {
+      "playersPosition": "Players position",
+      "someRolesArePositionDependant": "Some roles rely on players position. Are players placed correctly in the game lobby?",
+      "showMeHowToPositionPlayers": "Show me how to position players"
     }
   }
 }

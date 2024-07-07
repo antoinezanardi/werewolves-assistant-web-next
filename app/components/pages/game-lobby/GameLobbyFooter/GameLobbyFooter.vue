@@ -8,7 +8,10 @@
     </div>
 
     <div class="flex h-full justify-center lg:1/3 md:w-6/12 w-8/12">
-      <GameLobbyStartGameButton/>
+      <GameLobbyStartGameButton
+        id="game-lobby-start-game-button"
+        @reject-players-position-step="handleRejectPlayersPositionStep"
+      />
     </div>
 
     <div class="lg:1/3 md:w-3/12 w-2/12"/>
@@ -16,6 +19,13 @@
 </template>
 
 <script setup lang="ts">
+import type { GameLobbyFooterEmits } from "~/components/pages/game-lobby/GameLobbyFooter/game-lobby-footer.types";
 import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
+
+const emit = defineEmits<GameLobbyFooterEmits>();
+
+function handleRejectPlayersPositionStep(): void {
+  emit("rejectPlayersPositionStep");
+}
 </script>

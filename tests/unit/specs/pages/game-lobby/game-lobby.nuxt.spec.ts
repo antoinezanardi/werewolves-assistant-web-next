@@ -5,6 +5,7 @@ import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
 import type { Ref } from "vue";
+import type GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
@@ -27,21 +28,25 @@ describe("Game Lobby Page", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobby>>;
   let mocks: {
     components: {
+      gameLobbyHeader: {
+        highlightPositionCoordinatorButton: Mock;
+      };
       gameLobbyRolePicker: {
         openToPickRoleForPlayer: Mock;
-      }
+      };
       gameLobbyOptionsHub: {
         open: Mock;
       };
       gameLobbyPositionCoordinator: {
         open: Mock;
-      }
+      };
     }
   };
 
   async function mountGameLobbyPageComponent(): Promise<ReturnType<typeof mount<typeof GameLobby>>> {
     mocks = {
       components: {
+        gameLobbyHeader: { highlightPositionCoordinatorButton: vi.fn() },
         gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
         gameLobbyOptionsHub: { open: vi.fn() },
         gameLobbyPositionCoordinator: { open: vi.fn() },
@@ -51,6 +56,10 @@ describe("Game Lobby Page", () => {
     return mountSuspendedComponent(GameLobby, {
       global: {
         stubs: {
+          GameLobbyHeader: {
+            template: "<div id='game-lobby-header-stub'></div>",
+            methods: mocks.components.gameLobbyHeader,
+          },
           GameLobbyRolePicker: {
             template: "<div id='game-lobby-role-picker-stub'></div>",
             methods: mocks.components.gameLobbyRolePicker,
@@ -170,6 +179,34 @@ describe("Game Lobby Page", () => {
       await getError(() => (gameLobbyHeader.vm as VueVm).$emit("position-coordinator-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Position Coordinator is not defined");
+    });
+  });
+
+  describe("Reject Players Position Step", () => {
+    it("should throw error when reject players position step event is emitted by footer but header is not defined in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeader: Ref }).gameLobbyHeader.value = null;
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      await getError(() => (gameLobbyFooter.vm as VueVm).$emit("reject-players-position-step"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header is not defined");
+    });
+
+    it("should highlight position coordinator button when reject players position step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-players-position-step");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyHeader.highlightPositionCoordinatorButton).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should open position coordinator after timeout when reject players position step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-players-position-step");
+      vi.advanceTimersByTime(1000);
+      await nextTick();
+
+      expect(mocks.components.gameLobbyPositionCoordinator.open).toHaveBeenCalledExactlyOnceWith();
     });
   });
 

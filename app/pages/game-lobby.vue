@@ -2,6 +2,7 @@
   <div class="flex flex-col">
     <GameLobbyHeader
       id="game-lobby-header"
+      ref="gameLobbyHeader"
       @game-options-button-click="openGameOptionsHub"
       @position-coordinator-button-click="openGamePositionCoordinator"
     />
@@ -16,7 +17,10 @@
 
     <PrimeVueDivider/>
 
-    <GameLobbyFooter/>
+    <GameLobbyFooter
+      id="game-lobby-footer"
+      @reject-players-position-step="handleRejectPlayersPositionStep"
+    />
 
     <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
 
@@ -28,6 +32,7 @@
 
 <script setup lang="ts">
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
+import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
@@ -51,6 +56,7 @@ const { loadAllAudios } = audioStore;
 
 const { t } = useI18n();
 
+const gameLobbyHeader = ref<GameLobbyHeaderExposed | null>(null);
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
@@ -82,6 +88,17 @@ function openGamePositionCoordinator(): void {
     throw createError("Game Lobby Position Coordinator is not defined");
   }
   gameLobbyPositionCoordinator.value.open();
+}
+
+function handleRejectPlayersPositionStep(): void {
+  if (!gameLobbyHeader.value) {
+    throw createError("Game Lobby Header is not defined");
+  }
+  gameLobbyHeader.value.highlightPositionCoordinatorButton();
+  const intervalMs = 1000;
+  setTimeout(() => {
+    openGamePositionCoordinator();
+  }, intervalMs);
 }
 
 function injectPlayerNamesFromQuery(): void {
