@@ -21,7 +21,9 @@ const hoistedMocks = vi.hoisted(() => ({
   useAnimateCss: { animateElementOnce: vi.fn() },
 }));
 
-vi.mock("~/composables/animate-css/useAnimateCss", () => ({ useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss }));
+vi.mock("~/composables/animate-css/useAnimateCss", () => ({
+  useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss,
+}));
 
 describe("Game Lobby Header Setup Buttons Component", () => {
   const defaultCreateGameDto = createFakeCreateGameDto({

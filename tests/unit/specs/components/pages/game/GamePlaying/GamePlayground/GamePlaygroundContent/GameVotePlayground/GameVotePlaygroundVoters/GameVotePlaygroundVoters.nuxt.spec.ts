@@ -13,11 +13,11 @@ import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game
 import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
+const hoistedMocks = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
 
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
-  shuffle: vi.fn(mockedRadash.shuffle),
+  ...hoistedMocks.radash,
 }));
 
 describe("Game Vote Playground Voter Component", () => {
@@ -78,7 +78,7 @@ describe("Game Vote Playground Voter Component", () => {
         createFakeSeerAlivePlayer(),
         createFakeSeerAlivePlayer(),
       ];
-      mockedRadash.shuffle.mockReturnValue(shuffledPlayers);
+      hoistedMocks.radash.shuffle.mockReturnValue(shuffledPlayers);
       wrapper = await mountGameVotePlaygroundVotersComponent();
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlay({ source: createFakeGamePlaySource({ players: expectedPlayersToVote }) });

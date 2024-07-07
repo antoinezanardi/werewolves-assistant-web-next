@@ -4,13 +4,12 @@ import type Radash from "radash";
 import { vi } from "vitest";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 
+const hoistedMocks = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
+
 vi.mock("howler");
-
-const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
-
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
-  draw: vi.fn(mockedRadash.draw),
+  ...hoistedMocks.radash,
 }));
 
 describe("Use Audio Store", () => {
@@ -173,7 +172,7 @@ describe("Use Audio Store", () => {
 
   describe("playRandomGamePhaseBackgroundAudio", () => {
     beforeEach(() => {
-      mockedRadash.draw.mockReturnValue("night-1");
+      hoistedMocks.radash.draw.mockReturnValue("night-1");
     });
 
     it("should not draw a random game phase background audio when the playing background audio is in the same game phase.", () => {
@@ -181,7 +180,7 @@ describe("Use Audio Store", () => {
       audioStore.playingBackgroundAudioName = "night-2";
       audioStore.playRandomGamePhaseBackgroundAudio("night");
 
-      expect(mockedRadash.draw).not.toHaveBeenCalled();
+      expect(hoistedMocks.radash.draw).not.toHaveBeenCalled();
     });
 
     it("should draw a random game phase background audio when the playing background audio is not in the same game phase.", () => {
@@ -189,14 +188,14 @@ describe("Use Audio Store", () => {
       audioStore.playingBackgroundAudioName = "day-1";
       audioStore.playRandomGamePhaseBackgroundAudio("night");
 
-      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.nightBackgroundAudioNames);
+      expect(hoistedMocks.radash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.nightBackgroundAudioNames);
     });
 
     it("should draw a random game phase background audio when there is no playing background audio.", () => {
       const audioStore = useAudioStore();
       audioStore.playRandomGamePhaseBackgroundAudio("day");
 
-      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.dayBackgroundAudioNames);
+      expect(hoistedMocks.radash.draw).toHaveBeenCalledExactlyOnceWith(audioStore.dayBackgroundAudioNames);
     });
 
     it("should fade out playing background audio when called.", () => {
@@ -221,7 +220,7 @@ describe("Use Audio Store", () => {
       const audioStore = useAudioStore();
       const { backgroundAudios } = audioStore;
       audioStore.playingBackgroundAudioName = "day-1";
-      mockedRadash.draw.mockReturnValue(null);
+      hoistedMocks.radash.draw.mockReturnValue(null);
       audioStore.playRandomGamePhaseBackgroundAudio("night");
 
       expect(backgroundAudios["day-1"].fade).not.toHaveBeenCalled();
