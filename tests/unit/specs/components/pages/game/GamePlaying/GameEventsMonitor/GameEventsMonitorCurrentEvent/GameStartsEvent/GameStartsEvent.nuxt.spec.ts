@@ -16,11 +16,11 @@ import { createFakeActorAlivePlayer, createFakeCupidAlivePlayer, createFakeSeerA
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
+const hoistedMocks = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
 
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
-  shuffle: vi.fn(mockedRadash.shuffle),
+  ...hoistedMocks.radash,
 }));
 
 describe("Game Starts Event Component", () => {
@@ -48,7 +48,7 @@ describe("Game Starts Event Component", () => {
   }
 
   beforeEach(async() => {
-    mockedRadash.shuffle.mockReturnValue([]);
+    hoistedMocks.radash.shuffle.mockReturnValue([]);
     wrapper = await mountGameStartsEventComponent();
     const gameStore = useGameStore();
     gameStore.game = createFakeGame({
@@ -65,7 +65,7 @@ describe("Game Starts Event Component", () => {
 
   describe("Game Starts Event texts", () => {
     it("should have texts for the game starts event containing sheriff election when first action is sheriff election.", async() => {
-      mockedRadash.shuffle.mockReturnValue([
+      hoistedMocks.radash.shuffle.mockReturnValue([
         ["seer", 1],
         ["cupid", 1],
         ["actor", 1],
