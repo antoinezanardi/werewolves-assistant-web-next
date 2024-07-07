@@ -10,8 +10,8 @@
         :current-confirm-step="currentConfirmStep"
         :reject-callback="rejectCallback"
         @confirm-start-game="acceptCallback"
-        @confirm-step="confirmStep"
-        @reject-players-position-step="rejectPlayersPositionStep"
+        @confirm-step="onConfirmStepFromGameLobbyStartGameConfirmDialogContainer"
+        @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-start-game="rejectCallback"
       />
     </template>
@@ -59,7 +59,7 @@ function open(): void {
   });
 }
 
-function confirmStep(): void {
+function onConfirmStepFromGameLobbyStartGameConfirmDialogContainer(): void {
   confirmStepIndex.value++;
 }
 
@@ -67,7 +67,7 @@ function confirmStartGame(): void {
   emit("confirmStartGame");
 }
 
-function rejectPlayersPositionStep(rejectCallback: () => void): void {
+function onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
   rejectCallback();
   emit("rejectPlayersPositionStep");
 }

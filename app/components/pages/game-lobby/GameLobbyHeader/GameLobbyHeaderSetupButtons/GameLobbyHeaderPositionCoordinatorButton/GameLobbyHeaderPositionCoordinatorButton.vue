@@ -6,7 +6,7 @@
     :pt="{ 'root': '!border-sky-600' }"
     severity="info"
     size="small"
-    @click.prevent="clickHandler"
+    @click.prevent="onClickFromGamePositionCoordinatorButton"
   />
 </template>
 
@@ -15,7 +15,7 @@ import type { GameLobbyHeaderPositionCoordinatorButtonEmits } from "~/components
 
 const emit = defineEmits<GameLobbyHeaderPositionCoordinatorButtonEmits>();
 
-function clickHandler(): void {
+function onClickFromGamePositionCoordinatorButton(): void {
   emit("positionCoordinatorButtonClick");
 }
 </script>

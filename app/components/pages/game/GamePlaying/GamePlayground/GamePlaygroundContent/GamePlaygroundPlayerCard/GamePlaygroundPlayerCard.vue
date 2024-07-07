@@ -9,7 +9,7 @@
       :is-selected="isPlayerTargeted"
       :player-name="player.name"
       :player-role="player.role.current"
-      @player-card-selector-click="handlePlayerCardSelectorClick"
+      @player-card-selector-click="onPlayerCardSelectorClickFromPlayerCard"
     />
 
     <GamePlaygroundPlayerCardVoteInput
@@ -63,7 +63,7 @@ const isPlayerCardDisabled = computed<boolean>(() => {
   return type === "vote";
 });
 
-function handleWitchGivesPotionClick(): void {
+function onWitchGivesPotionClick(): void {
   const givenLifePotionTargets = makeGamePlayDto.value.targets?.filter(({ drankPotion }) => drankPotion === "life");
   const givenDeathPotionTargets = makeGamePlayDto.value.targets?.filter(({ drankPotion }) => drankPotion === "death");
   const drankPotion: WitchPotion = props.interaction === "give-life-potion" ? "life" : "death";
@@ -77,7 +77,7 @@ function handleWitchGivesPotionClick(): void {
   });
 }
 
-function handlePlayerCardSelectorClick(): void {
+function onPlayerCardSelectorClickFromPlayerCard(): void {
   const currentPlayInteraction = game.value.currentPlay?.source.interactions?.find(({ type }) => type === props.interaction);
   if (!currentPlayInteraction || !canPlayerBeTargeted.value) {
     return;
@@ -88,7 +88,7 @@ function handlePlayerCardSelectorClick(): void {
     return;
   }
   if (currentPlayInteraction.type === "give-life-potion" || currentPlayInteraction.type === "give-death-potion") {
-    handleWitchGivesPotionClick();
+    onWitchGivesPotionClick();
 
     return;
   }

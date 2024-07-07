@@ -13,7 +13,7 @@
       severity="secondary"
       :size="buttonSize"
       type="button"
-      @click="handleRandomCompositionButtonClick"
+      @click.prevent="onClickFromRandomCompositionButton"
     />
   </div>
 </template>
@@ -52,7 +52,7 @@ const containerTooltip = computed<string | undefined>(() => {
   return undefined;
 });
 
-async function handleRandomCompositionButtonClick(): Promise<void> {
+async function onClickFromRandomCompositionButton(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,

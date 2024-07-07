@@ -26,7 +26,7 @@
         icon="fa-compass fa"
         :label="$t(`components.GameLobbyStartGameConfirmDialogPlayersPositioned.showMeHowToPositionPlayers`)"
         severity="info"
-        @click="onRejectPlayersPositionStep"
+        @click.prevent="onRejectPlayersPositionStep"
       />
 
       <PrimeVueButton
@@ -34,7 +34,7 @@
         icon="fa-check fa"
         :label="$t(`shared.yes`)"
         severity="success"
-        @click="onConfirmPlayersPositionStep"
+        @click.prevent="onConfirmPlayersPositionStep"
       />
     </div>
   </div>

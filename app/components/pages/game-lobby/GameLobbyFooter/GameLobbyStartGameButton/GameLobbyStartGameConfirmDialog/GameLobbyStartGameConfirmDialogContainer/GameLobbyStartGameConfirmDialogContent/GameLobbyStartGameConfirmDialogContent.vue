@@ -7,8 +7,8 @@
       <Component
         :is="currentConfirmStepComponent"
         :key="currentConfirmStep"
-        @confirm-step="confirmStep"
-        @reject-players-position-step="rejectPlayersPositionStep"
+        @confirm-step="onConfirmStepFromConfirmStepComponent"
+        @reject-players-position-step="onRejectPlayersPositionStepFromConfirmStepComponent"
       />
     </Transition>
   </div>
@@ -31,11 +31,11 @@ const confirmStepsComponents: Record<GameLobbyStartGameConfirmDialogStep, GameLo
 
 const currentConfirmStepComponent = computed<GameLobbyStartGameConfirmDialogStepComponents>(() => confirmStepsComponents[props.currentConfirmStep]);
 
-function confirmStep(): void {
+function onConfirmStepFromConfirmStepComponent(): void {
   emit("confirmStep");
 }
 
-function rejectPlayersPositionStep(): void {
+function onRejectPlayersPositionStepFromConfirmStepComponent(): void {
   emit("rejectPlayersPositionStep");
 }
 </script>

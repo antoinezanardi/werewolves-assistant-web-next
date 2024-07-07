@@ -9,7 +9,7 @@
       id="show-game-history-button"
       :loading="!gameHistoryRecords.length"
       severity="help"
-      @click="showGameHistory"
+      @click="onClickFromShowHistoryButton"
     >
       <i class="fa fa-clock-rotate-left me-2"/>
 
@@ -41,7 +41,7 @@ const showGameHistoryTextButton = computed<string>(() => {
   return t("components.GameOverActions.loadingGameHistory");
 });
 
-function showGameHistory(): void {
+function onClickFromShowHistoryButton(): void {
   emit("showGameHistory");
 }
 </script>

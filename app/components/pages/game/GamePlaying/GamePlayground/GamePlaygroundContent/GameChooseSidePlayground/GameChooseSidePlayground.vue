@@ -12,7 +12,7 @@
             class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg"
             :class="{ '!border-green-500': makeGamePlayDto.chosenSide === 'villagers' }"
             type="button"
-            @click.prevent="handleChooseVillagersSideButtonClick"
+            @click.prevent="onClickFromChooseVillagersSideButton"
           >
             <RoleImage
               id="villagers-side-image"
@@ -36,7 +36,7 @@
             class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"
             :class="{ '!border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
             type="button"
-            @click="handleChooseWerewolvesSideButtonClick"
+            @click.prevent="onClickFromChooseWerewolvesSideButton"
           >
             <RoleImage
               id="werewolves-side-image"
@@ -67,11 +67,11 @@ const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
 const { makeGamePlayDto } = storeToRefs(makeGamePlayDtoStore);
 const { setChosenSide } = makeGamePlayDtoStore;
 
-function handleChooseVillagersSideButtonClick(): void {
+function onClickFromChooseVillagersSideButton(): void {
   setChosenSide("villagers");
 }
 
-function handleChooseWerewolvesSideButtonClick(): void {
+function onClickFromChooseWerewolvesSideButton(): void {
   setChosenSide("werewolves");
 }
 </script>

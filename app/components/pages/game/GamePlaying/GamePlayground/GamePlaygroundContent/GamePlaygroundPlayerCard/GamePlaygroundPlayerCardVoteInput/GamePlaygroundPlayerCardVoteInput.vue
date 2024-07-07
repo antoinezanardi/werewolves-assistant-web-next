@@ -12,9 +12,9 @@
         :model-value="votedPlayer"
         option-label="name"
         :suggestions="filteredVoteOptions"
-        @change="handleUpdateModelValueEvent"
-        @complete="searchVoteOptions"
-        @hide="handleHideEvent"
+        @change="onChangeFromPlayerVoteInput"
+        @complete="onCompleteFromPlayerVoteInput"
+        @hide="onHideFromPlayerVoteInput"
       >
         <template #option="slotProps">
           <div class="align-options-center flex">
@@ -80,7 +80,7 @@ const voteOptions = computed<Player[] | undefined>(() => {
   return eligibleTargets.filter(({ _id }) => _id !== props.player._id);
 });
 
-function searchVoteOptions({ query }: AutoCompleteCompleteEvent): void {
+function onCompleteFromPlayerVoteInput({ query }: AutoCompleteCompleteEvent): void {
   const options: Player[] = voteOptions.value ?? [];
   if (!query.trim()) {
     filteredVoteOptions.value = options;
@@ -91,11 +91,11 @@ function searchVoteOptions({ query }: AutoCompleteCompleteEvent): void {
   filteredVoteOptions.value = fuse.search(query).map(({ item }) => item);
 }
 
-function handleHideEvent(): void {
+function onHideFromPlayerVoteInput(): void {
   filteredVoteOptions.value = [];
 }
 
-function handleUpdateModelValueEvent({ value }: AutoCompleteChangeEvent): void {
+function onChangeFromPlayerVoteInput({ value }: AutoCompleteChangeEvent): void {
   votedPlayer.value = value as Player | string | null;
   if (typeof votedPlayer.value === "string") {
     return;

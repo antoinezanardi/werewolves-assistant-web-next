@@ -11,7 +11,7 @@
         :label="$t('shared.actions.close')"
         severity="secondary"
         size="small"
-        @click="close"
+        @click.prevent="close"
       />
     </div>
   </div>

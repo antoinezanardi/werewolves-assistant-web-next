@@ -8,7 +8,7 @@
       class="border-4 border-gray-600 hover:border-gray-400 relative rounded-lg"
       :class="{ '!border-gray-100': isPicked }"
       type="button"
-      @click.prevent="pickRole"
+      @click.prevent="onPickRoleFromGameLobbyRolePickerGridElementButton"
     >
       <RoleImage
         id="game-lobby-role-picker-grid-element-role-image"
@@ -28,7 +28,7 @@
       id="game-lobby-role-picker-grid-element-role-name"
       class="cursor-pointer font-semibold mt-1 text-center"
       :class="{ 'italic text-gray-300': !role }"
-      @click="pickRole"
+      @click.prevent="onPickRoleFromGameLobbyRolePickerGridElementButton"
     >
       <i
         v-if="!role"
@@ -74,7 +74,7 @@ const roleLabel = computed<string>(() => {
 
 const isPicked = computed<boolean>(() => !!props.role && props.role.name === props.pickedRole?.name);
 
-function pickRole(): void {
+function onPickRoleFromGameLobbyRolePickerGridElementButton(): void {
   if (!roles.value) {
     return;
   }
