@@ -249,7 +249,7 @@ Feature: 🃏 Game Lobby Page
     Then the heading with name "Before starting the game" should be visible
     And the heading with name "Do all the players have their role and are ready to play?" should be visible
     And the button with name "Cancel" should be visible
-    And the button with name "Let's go !" should be visible
+    And the button with name "Let's go!" should be visible
 
     When the user clicks on the button with name "Cancel"
     Then the button with name "Start game" should be enabled

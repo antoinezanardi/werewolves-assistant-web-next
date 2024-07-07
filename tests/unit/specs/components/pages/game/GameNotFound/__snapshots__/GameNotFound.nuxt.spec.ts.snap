@@ -2,7 +2,7 @@
 
 exports[`Game Not Found Component > should match snapshot when rendered. 1`] = `
 "<div id="game-not-found" class="flex flex-col items-center justify-center">
-  <h1 id="game-not-found-text" class="flex flex-col items-center justify-center"><i class="fa fa-2x fa-question-circle mb-3 text-warning"></i><span>Game not found… Did you get lost ?</span></h1>
+  <h1 id="game-not-found-text" class="flex flex-col items-center justify-center"><i class="fa fa-2x fa-question-circle mb-3 text-warning"></i><span>Game not found… Did you get lost?</span></h1>
   <div>
     <divider-stub class="mb-4"></divider-stub>
     <create-another-game-button-stub class="me-2"></create-another-game-button-stub>

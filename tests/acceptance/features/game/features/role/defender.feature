@@ -19,7 +19,7 @@ Feature: 🛡️ Defender Role
 
     When the user skips the game event
     Then the game's current play title should be "Defender protects"
-    And the game's current play question should be "Which player does the Defender want to protect ?"
+    And the game's current play question should be "Which player does the Defender want to protect?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -71,7 +71,7 @@ Feature: 🛡️ Defender Role
 
     When the user skips the game event
     Then the game's current play title should be "Defender protects"
-    And the game's current play question should be "Which player does the Defender want to protect ?"
+    And the game's current play question should be "Which player does the Defender want to protect?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -98,7 +98,7 @@ Feature: 🛡️ Defender Role
 
     When the user skips the game event
     Then the game's current play title should be "Defender protects"
-    And the game's current play question should be "Which player does the Defender want to protect ?"
+    And the game's current play question should be "Which player does the Defender want to protect?"
     And the game's phase name should be "Night 2"
     And the game's current play should have the following targets
       | name    |

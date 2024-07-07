@@ -4,9 +4,9 @@ Feature: ❓ About Page
 
   Scenario: ❓ About Page is displayed with title and various sections
     Given the user is on about page
-    Then the heading with name "Why an assistant ?" should be visible
+    Then the heading with name "Why an assistant?" should be visible
     And the heading with name "The Werewolves of Miller's Hollow™ game" should be visible
-    And the heading with name "The Werewolves Assistant takes the stage !" should be visible
+    And the heading with name "The Werewolves Assistant takes the stage!" should be visible
     And the heading with name "Available roles" should be visible
     And the heading with name "How to contribute to this project?" should be visible
     And the heading with name "A word from the creator" should be visible
@@ -15,15 +15,15 @@ Feature: ❓ About Page
 
   Scenario: ❓ About Page has valid head title and SEO tags
     Given the user is on about page
-    Then the page should have head title "Why an assistant ?" and meta tags
-      | name             | content                                                                  |
-      | description      | What is the Werewolves Assistant and why is it useful for game masters ? |
-      | application-name | Werewolves Assistant                                                     |
-      | creator          | Antoine ZANARDI                                                          |
-      | viewport         | width=device-width, initial-scale=1                                      |
-      | charset          | utf-8                                                                    |
-      | generator        | nuxt                                                                     |
-      | color-scheme     | dark                                                                     |
+    Then the page should have head title "Why an assistant?" and meta tags
+      | name             | content                                                                 |
+      | description      | What is the Werewolves Assistant and why is it useful for game masters? |
+      | application-name | Werewolves Assistant                                                    |
+      | creator          | Antoine ZANARDI                                                         |
+      | viewport         | width=device-width, initial-scale=1                                     |
+      | charset          | utf-8                                                                   |
+      | generator        | nuxt                                                                    |
+      | color-scheme     | dark                                                                    |
 
   Scenario: ❓ About Page loads roles and display them in accordions with descriptions and illustrations
     Given the user is on about page
@@ -95,7 +95,7 @@ Feature: ❓ About Page
 
     When the user scrolls to the link with name "Buy me a coffee"
     And the user clicks on the button with exact name "Scroll Top"
-    Then the heading with name "Why an assistant ?" should be in viewport
+    Then the heading with name "Why an assistant?" should be in viewport
 
   Scenario: ❓ User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on about page

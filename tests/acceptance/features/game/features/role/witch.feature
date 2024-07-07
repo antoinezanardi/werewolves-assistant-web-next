@@ -21,7 +21,7 @@ Feature: 🪄 Witch role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Witch uses potions"
-    And the game's current play question should be "Does the Witch want to use her potions ?"
+    And the game's current play question should be "Does the Witch want to use her potions?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -56,7 +56,7 @@ Feature: 🪄 Witch role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Witch uses potions"
-    And the game's current play question should be "Does the Witch want to use her potions ?"
+    And the game's current play question should be "Does the Witch want to use her potions?"
     And the game's phase name should be "Night 2"
     And the game's current play should have the following targets
       | name    |
@@ -79,7 +79,7 @@ Feature: 🪄 Witch role
     When the werewolves eat the player with name "Antoine"
     And the user skips all game events
     Then the game's current play title should be "Witch uses potions"
-    And the game's current play question should be "Does the Witch want to use her potions ?"
+    And the game's current play question should be "Does the Witch want to use her potions?"
     And the game's phase name should be "Night 3"
     And the witch should be out of potions
     And the tab with name "Give life potion to save the player…" should be hidden

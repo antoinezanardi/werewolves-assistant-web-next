@@ -13,12 +13,12 @@ Feature: 🧑🏻‍🌾🧑🏻‍🌾 Villager-Villager role
 
     When the user closes the toast
     And the user skips the game event
-    Then the game's event should display the text "Antoine is the Villager-Villager of the village ! His/Her role is revealed to the others."
+    Then the game's event should display the text "Antoine is the Villager-Villager of the village! His/Her role is revealed to the others."
     And the player with name "Antoine" should have his role revealed in the game
     And the player with name "Charlie" should have his role hidden in the game
 
     When the user goes to the next game event text
-    Then the game's event should display the text "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
+    Then the game's event should display the text "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff?"
 
     When the user skips all game events
     Then the game's current play title should be "Werewolves eat"

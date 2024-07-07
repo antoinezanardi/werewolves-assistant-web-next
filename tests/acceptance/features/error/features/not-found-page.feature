@@ -5,7 +5,7 @@ Feature: ❓ Not Found Page
   Scenario: ❓ Not Found Page is displayed when the user navigates to a non-existent page
     Given the user is on unknown page
     Then the heading with name "Page not found" should be visible
-    And the heading with name "Looks like you're lost… You were trying to flee the Werewolves, weren't you ?" should be visible
+    And the heading with name "Looks like you're lost… You were trying to flee the Werewolves, weren't you?" should be visible
     And the link with name "Go back to a safe place" should be visible
     And the page should match or creates the missing snapshot with name "Page not found"
 

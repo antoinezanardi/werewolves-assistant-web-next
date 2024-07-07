@@ -7,7 +7,7 @@ Feature: 🏠 Home Page
     Then the img with name "Werewolves Assistant logo" should be visible
     And the heading with name "Werewolves Assistant" should be visible
     And the link with name "Play" should be visible
-    And the link with name "What is it ?" should be visible
+    And the link with name "What is it?" should be visible
     And the link with name "Contact the creator" should be visible
     And the link with name "Contact the creator" should have the following attributes
       | name | value                              |
@@ -40,7 +40,7 @@ Feature: 🏠 Home Page
   Scenario: 🏠 User goes on the about page
     Given the user is on home page
 
-    When the user clicks on the link with name "What is it ?"
+    When the user clicks on the link with name "What is it?"
     Then the user should be on about page
 
   Scenario: 🏠 User goes on the GitHub repository page through the link

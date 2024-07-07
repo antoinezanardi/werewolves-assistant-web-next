@@ -36,7 +36,7 @@ async function createGameInLobby(world: CustomWorld): Promise<void> {
   const startGameButton = world.page.getByRole("button", { name: "Start game" });
   await startGameButton.waitFor({ state: "visible" });
   await startGameButton.click();
-  const confirmStartGameButton = world.page.getByRole("button", { name: "Let's go !" }).or(world.page.getByRole("button", { name: "Skip and play now" }));
+  const confirmStartGameButton = world.page.getByRole("button", { name: "Let's go!" }).or(world.page.getByRole("button", { name: "Skip and play now" }));
   await confirmStartGameButton.waitFor({ state: "visible" });
   await confirmStartGameButton.click();
 }
