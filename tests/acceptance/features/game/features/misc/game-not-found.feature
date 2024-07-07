@@ -4,7 +4,7 @@ Feature: 🎲❓Game Not Found
 
   Scenario: 🎲❓Game not found page is displayed when game is not found
     Given the user goes on an unknown game
-    Then the heading with name "Game not found… Did you get lost ?" should be visible
+    Then the heading with name "Game not found… Did you get lost?" should be visible
     And the link with name "Create another game" should be visible
     And the link with name "Back to home" should be visible
     And the toast with text "Bad request" should be visible
@@ -12,7 +12,7 @@ Feature: 🎲❓Game Not Found
 
   Scenario: 🎲❓Game not found page has valid head title and SEO tags
     Given the user goes on an unknown game
-    Then the page should have head title "Game not found… Did you get lost ?" and meta tags
+    Then the page should have head title "Game not found… Did you get lost?" and meta tags
       | name             | content                             |
       | application-name | Werewolves Assistant                |
       | creator          | Antoine ZANARDI                     |

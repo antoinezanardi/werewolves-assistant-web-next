@@ -22,7 +22,7 @@ Feature: 🐺👹 Big Bad Wolf role
     When the user skips the game event
     Then the game's current play title should be "Big Bad Wolf eats"
     And the game's phase name should be "Night 1"
-    And the game's current play question should be "Which player does the Big Bad Wolf want to eat ?"
+    And the game's current play question should be "Which player does the Big Bad Wolf want to eat?"
     And the game's current play should have the following targets
       | name  |
       | David |

@@ -27,7 +27,7 @@ describe("Game Not Found Component", () => {
     it("should translate game not found text when rendered.", () => {
       const gameNotFoundText = wrapper.find<HTMLHeadElement>("#game-not-found-text");
 
-      expect(gameNotFoundText.text()).toBe("Game not found… Did you get lost ?");
+      expect(gameNotFoundText.text()).toBe("Game not found… Did you get lost?");
     });
   });
 });

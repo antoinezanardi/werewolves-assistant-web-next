@@ -22,7 +22,7 @@ Feature: 🐦‍⬛ Scandalmonger role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Scandalmonger marks"
-    And the game's current play question should be "Does the Scandalmonger want to mark a player ?"
+    And the game's current play question should be "Does the Scandalmonger want to mark a player?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |

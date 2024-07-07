@@ -26,7 +26,7 @@ Feature: 🐺 Accursed Wolf-Father role
     When the user skips the game event
     And the user moves his mouse away
     Then the game's current play title should be "Accursed Wolf-Father infects"
-    And the game's current play question should be "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves ?"
+    And the game's current play question should be "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name  |

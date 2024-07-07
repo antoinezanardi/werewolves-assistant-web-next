@@ -37,7 +37,7 @@ describe("About Page Component", () => {
     it("should display translated title when rendered.", () => {
       const title = wrapper.find<HTMLHeadElement>("#about-title");
 
-      expect(title.text()).toBe("Why an assistant ?");
+      expect(title.text()).toBe("Why an assistant?");
     });
   });
 });

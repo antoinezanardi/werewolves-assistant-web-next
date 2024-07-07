@@ -19,7 +19,7 @@ Feature: 🐕 Wolf-Hound role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Wolf-Hound chooses side"
-    And the game's current play question should be "Which side does the Wolf-Hound want to choose ?"
+    And the game's current play question should be "Which side does the Wolf-Hound want to choose?"
     And the game's phase name should be "Night 1"
     And the page should match or creates the missing snapshot with name "Wolf-Hound chooses side Playground"
 
@@ -48,7 +48,7 @@ Feature: 🐕 Wolf-Hound role
 
     When the wolf-hound chooses the villagers side
     Then the player with name "Antoine" should be in the villagers side in the game
-    And the game's event should display the text "The Wolf-Hound chose to join the side of the … Villagers !"
+    And the game's event should display the text "The Wolf-Hound chose to join the side of the … Villagers!"
 
   Scenario: 🐕 Wolf-Hound's side is randomly chosen by the assistant because the game master enabled the option
     Given the user disables the sheriff in game options
@@ -87,4 +87,4 @@ Feature: 🐕 Wolf-Hound role
     And the game's event player card should have the name "Antoine"
 
     When the user goes to the next game event text
-    Then the game's event should display either "The Assistant assigned the Wolf-Hound to the side of the … Villagers !" or "The Assistant assigned the Wolf-Hound to the side of the … Werewolves !"
+    Then the game's event should display either "The Assistant assigned the Wolf-Hound to the side of the … Villagers!" or "The Assistant assigned the Wolf-Hound to the side of the … Werewolves!"

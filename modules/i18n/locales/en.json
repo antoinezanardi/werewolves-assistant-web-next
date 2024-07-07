@@ -399,15 +399,15 @@
   "pages": {
     "index": {
       "play": "Play",
-      "about": "What is it ?",
+      "about": "What is it?",
       "werewolvesAssistantLogo": "Werewolves Assistant logo",
       "perfectToolForGameMasters": "The perfect tool for game masters of the Werewolves of Miller's Hollow™"
     },
     "about": {
-      "whyAnAssistant": "Why an assistant ?",
+      "whyAnAssistant": "Why an assistant?",
       "backToHome": "Back to home",
       "imageTitle": "Werewolf illustration",
-      "seoDescription": "What is the Werewolves Assistant and why is it useful for game masters ?"
+      "seoDescription": "What is the Werewolves Assistant and why is it useful for game masters?"
     },
     "gameLobby": {
       "startGame": "Start a game",
@@ -449,7 +449,7 @@
       "unexpectedError": "An unexpected error occurred",
       "notNormalTeamNotified": "This is not normal… The team has been notified of the problem.",
       "pageNotFound": "Page not found",
-      "youAreLost": "Looks like you're lost… You were trying to flee the Werewolves, weren't you ?",
+      "youAreLost": "Looks like you're lost… You were trying to flee the Werewolves, weren't you?",
       "goBackToSafePlace": "Go back to a safe place"
     },
     "IndexFooter": {
@@ -479,8 +479,8 @@
       "whyGameMasterIsImportant": "The success of a game relies on the shoulders of the game master, tasked with creating an enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, lacking experience, or being in a state of distraction make this task a significant challenge."
     },
     "AboutWerewolvesAssistant": {
-      "werewolvesAssistantInThePlace": "The Werewolves Assistant takes the stage !",
-      "toHelpGameMaster": "To ease the heavy task that falls on the game master when hosting a Werewolves game, the Werewolves Assistant proves to be the ideal tool !",
+      "werewolvesAssistantInThePlace": "The Werewolves Assistant takes the stage!",
+      "toHelpGameMaster": "To ease the heavy task that falls on the game master when hosting a Werewolves game, the Werewolves Assistant proves to be the ideal tool!",
       "assistantHasManyFeatures": "This Assistant offers a variety of features, including:",
       "gameLayout": "A game composition screen allowing the creation of sessions for 4 to 40 players, with the option to randomly assign roles.",
       "intuitiveUserInterface": "A playful game tracking interface, providing a pleasant visual experience.",
@@ -571,7 +571,7 @@
       "addPlayersWithInputAbove": "Add player names with the input above"
     },
     "GameNotFound": {
-      "gameNotFound": "Game not found… Did you get lost ?"
+      "gameNotFound": "Game not found… Did you get lost?"
     },
     "GameCanceled": {
       "gameCanceled": "Game canceled"
@@ -674,7 +674,7 @@
       "noActionNeeded": "No action needed, the game can proceed"
     },
     "GameDevotedServantStealsRolePlayground": {
-      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player ? | Does the Devoted Servant wants to steal the role of one of the eliminated players ?",
+      "doesDevotedServantStealRole": "Does the Devoted Servant wants to steal the role of the eliminated player? | Does the Devoted Servant wants to steal the role of one of the eliminated players?",
       "sheStealsRole": "She steals the role",
       "sheDoesntStealRole": "She doesn't steal the role"
     },
@@ -688,34 +688,34 @@
     },
     "CurrentPlayQuestion": {
       "unknownQuestionForCurrentPlay": "??",
-      "doesAccursedWolfFatherWantToInfect": "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves ?",
-      "doesActorWantToChooseCard": "Does the Actor want to choose a card and act the role ?",
-      "whichPlayerDoesBigBadWolfEat": "Which player does the Big Bad Wolf want to eat ?",
-      "whichPlayersDoesCupidCharm": "Which players does Cupid want to charm ?",
-      "whichPlayerDoesDefenderProtect": "Which player does the Defender want to protect ?",
-      "doesFoxWantToSniff": "Does the Fox want to sniff a group of players ?",
-      "whichPlayerDoesHunterShoot": "Which player does the Hunter want to shoot ?",
-      "whichPlayersDoesPiedPiperCharm": "Which players does the Pied Piper want to charm ?",
-      "doesScandalmongerWantToMark": "Does the Scandalmonger want to mark a player ?",
-      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban one or more players from voting ?",
-      "whichPlayerDoesSeerLook": "Which player does the Seer want to look at ?",
-      "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to ?",
-      "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with ?",
-      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff to break the tie ?",
-      "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote ?",
-      "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff ?",
-      "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for ?",
-      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Which player do the survivors want to vote for on the Stuttering Judge's request ?",
-      "whichPlayerDoesSurvivorsVoteForOnTie": "Which player do the survivors want to vote for to break the tie ?",
-      "doesThiefWantToChooseCard": "Does the Thief want to choose a card and take the role ?",
-      "whichPlayerDoesWerewolvesEat": "Which player do the Werewolves want to eat ?",
-      "doesWhiteWerewolfWantToEat": "Does the White Werewolf want to eat another Werewolf ?",
-      "whichPlayerDoesWildChildChoose": "Which player does the Wild Child want to choose as his model ?",
-      "doesWitchWantToUsePotions": "Does the Witch want to use her potions ?",
-      "whichSideDoesWolfHoundChoose": "Which side does the Wolf-Hound want to choose ?",
+      "doesAccursedWolfFatherWantToInfect": "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves?",
+      "doesActorWantToChooseCard": "Does the Actor want to choose a card and act the role?",
+      "whichPlayerDoesBigBadWolfEat": "Which player does the Big Bad Wolf want to eat?",
+      "whichPlayersDoesCupidCharm": "Which players does Cupid want to charm?",
+      "whichPlayerDoesDefenderProtect": "Which player does the Defender want to protect?",
+      "doesFoxWantToSniff": "Does the Fox want to sniff a group of players?",
+      "whichPlayerDoesHunterShoot": "Which player does the Hunter want to shoot?",
+      "whichPlayersDoesPiedPiperCharm": "Which players does the Pied Piper want to charm?",
+      "doesScandalmongerWantToMark": "Does the Scandalmonger want to mark a player?",
+      "doesScapegoatWantToBanVoting": "Does the Scapegoat want to ban one or more players from voting?",
+      "whichPlayerDoesSeerLook": "Which player does the Seer want to look at?",
+      "whichPlayerDoesSheriffDelegate": "Which player does the Sheriff want to delegate his role to?",
+      "whichPlayerDoesSheriffSettleVotes": "Which player does the Sheriff want to settle the votes with?",
+      "whichPlayerDoesSurvivorsElectSheriffOnTie": "Which player do the survivors want to elect as Sheriff to break the tie?",
+      "doesJudgeRequestAnotherVote": "Does the Stuttering Judge want to request another vote?",
+      "whichPlayerDoesSurvivorsElectAsSheriff": "Which player do the survivors want to elect as the Sheriff?",
+      "whichPlayerDoesSurvivorsVoteFor": "Which player do the survivors want to vote for?",
+      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Which player do the survivors want to vote for on the Stuttering Judge's request?",
+      "whichPlayerDoesSurvivorsVoteForOnTie": "Which player do the survivors want to vote for to break the tie?",
+      "doesThiefWantToChooseCard": "Does the Thief want to choose a card and take the role?",
+      "whichPlayerDoesWerewolvesEat": "Which player do the Werewolves want to eat?",
+      "doesWhiteWerewolfWantToEat": "Does the White Werewolf want to eat another Werewolf?",
+      "whichPlayerDoesWildChildChoose": "Which player does the Wild Child want to choose as his model?",
+      "doesWitchWantToUsePotions": "Does the Witch want to use her potions?",
+      "whichSideDoesWolfHoundChoose": "Which side does the Wolf-Hound want to choose?",
       "bearGrowled": "The Bear growled, some Werewolves are next to him…",
-      "charmedPeopleMeetEachOther": "The charmed people meet each other, watch out for the Pied Piper last victims !",
-      "loversMeetEachOther": "The lovers meet each other, it's a love at first sight !",
+      "charmedPeopleMeetEachOther": "The charmed people meet each other, watch out for the Pied Piper last victims!",
+      "loversMeetEachOther": "The lovers meet each other, it's a love at first sight!",
       "threeBrothersMeetEachOther": "The Three Brothers convene and consult with each other.",
       "twoSistersMeetEachOther": "The Two Sisters meet and consult one another."
     },
@@ -734,23 +734,23 @@
     "GameOverVictoryText": {
       "trophyImageAlt": "Trophy icon",
       "victoryTypeImageAlt": "Victory type icon",
-      "angelWins": "The Angel wins by himself !",
+      "angelWins": "The Angel wins by himself!",
       "angelComesBackToParadise": "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place.",
-      "loversWin": "The Lovers win together !",
+      "loversWin": "The Lovers win together!",
       "loversAreTogetherForever": "The two people in love from Cupid's arrow are the only survivors. They win together and will be together forever.",
-      "loversAndCupidWin": "The Lovers and Cupid win together !",
-      "loversAndCupidAreTogetherForever": "The two people in love from Cupid's arrow and Cupid himself are the only survivors. The team of Love wins !",
-      "nobodyWins": "Draw ! Everyone is dead in the village…",
+      "loversAndCupidWin": "The Lovers and Cupid win together!",
+      "loversAndCupidAreTogetherForever": "The two people in love from Cupid's arrow and Cupid himself are the only survivors. The team of Love wins!",
+      "nobodyWins": "Draw! Everyone is dead in the village…",
       "everybodyMurderedEachOther": "Everybody murdered each other. A deadly silence reigns in the village…",
-      "piedPiperWins": "The Pied Piper wins by himself !",
+      "piedPiperWins": "The Pied Piper wins by himself!",
       "piedPiperHasControl": "The Pied Piper managed to charm all the living players. He wins alone and has control over the village.",
-      "prejudicedManipulatorWins": "The Prejudiced Manipulator wins with his group !",
+      "prejudicedManipulatorWins": "The Prejudiced Manipulator wins with his group!",
       "prejudicedManipulatorGroupRemainsAlive": "All of the players from the group The Prejudiced Manipulator hates are dead. He wins with his own group while laughing.",
-      "villagersWin": "The Villagers win !",
+      "villagersWin": "The Villagers win!",
       "villagersHaveSurvivedWerewolves": "All of the Werewolves are dead. The village is safe at last.",
-      "werewolvesWin": "The Werewolves win !",
+      "werewolvesWin": "The Werewolves win!",
       "werewolvesHaveEatenALot": "All of the Villagers are dead. The Werewolves have eaten a lot and are now full, eventually.",
-      "whiteWerewolfWins": "The White Werewolf wins by himself !",
+      "whiteWerewolfWins": "The White Werewolf wins by himself!",
       "whiteWerewolfWinsAlone": "The White Werewolf is the only survivor. He wins alone and can be proud of his victory."
     },
     "BuyMeACoffeeButton": {
@@ -945,7 +945,7 @@
         "mustWinWithLovers": {
           "label": "Cupid must win with the Lovers",
           "descriptions": {
-            "yes": "Cupid teams up with the Lovers : if the Lovers and Cupid are the only survivors, they win together. Lovers can win alone without Cupid winning. Warning : Cupid can't charm himself with this option !",
+            "yes": "Cupid teams up with the Lovers : if the Lovers and Cupid are the only survivors, they win together. Lovers can win alone without Cupid winning. Warning : Cupid can't charm himself with this option!",
             "no": "Cupid doesn't team up with the Lovers. "
           }
         },
@@ -1192,19 +1192,19 @@
       "nextEventText": "Next event text"
     },
     "GameStartsEvent": {
-      "welcomeToTheVillage": "Welcome everyone in the village of the Millers Hollow !",
+      "welcomeToTheVillage": "Welcome everyone in the village of the Millers Hollow!",
       "gameCompositionEvent": "The composition for this game is : {composition}",
       "looksLifeSomeWerewolvesSneakedIntoTheVillage": "Looks like some Werewolves sneaked into the village…",
-      "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves !",
+      "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves!",
       "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
-      "compositionIsHidden": "The composition of this party is hidden ! You'll have to find out who is who by yourself…"
+      "compositionIsHidden": "The composition of this party is hidden! You'll have to find out who is who by yourself…"
     },
     "GameTurnStartsEvent": {
       "unknownGameTurnStartsEvent": "Unknown game turn starts event"
     },
     "GameSurvivorsTurnStartsEvent": {
       "gameStartsWithVoteBecauseOfAngelPresence": "The game starts with a vote because the Angel is present in the village.",
-      "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately !",
+      "watchOutForAngelOrHeWins": "Watch out for the Angel, if he's eliminated during this vote, he wins the game alone immediately!",
       "voteBecauseOfStutteringJudge": "Survivors will vote again because the Stuttering Judge requested another vote.",
       "voteBecauseOfPreviousTies": "Survivors will vote again because the previous vote ended in a tie.",
       "survivorsMustVoteBetween": "The village must vote between {players}. If there is a tie, there won't be any elimination.",
@@ -1228,7 +1228,7 @@
     },
     "GameCharmedTurnStartsEvent": {
       "charmedPeopleMeetEachOther": "The first charmed person by the Pied Piper wakes up. | The first charmed people by the Pied Piper wake up and meet each other.",
-      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims ! | The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+      "charmedPeopleMeetEachOtherWithOldOnes": "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims! | The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims!"
     },
     "GameCupidTurnStartsEvent": {
       "cupidChoosesTwoPlayersToBeLovers": "Cupid wakes up and chooses two players to be in love with each other.",
@@ -1307,12 +1307,12 @@
       "wolfHoundChoosesSide": "The Wolf-Hound wakes up and chooses which side he wants to join between Villagers and Werewolves."
     },
     "GamePhaseStartsEvent": {
-      "dayRises": "The day rises in the village of the Millers Hollow !",
+      "dayRises": "The day rises in the village of the Millers Hollow!",
       "nightFalls": "The night falls on the village of the Millers Hollow…"
     },
     "GamePlayerDiesEvent": {
       "cantFindDeadPlayer": "The Assistant can't find the dead player… Please proceed.",
-      "playerDies": "{playerName} is dead ! What a tragedy…",
+      "playerDies": "{playerName} is dead! What a tragedy…",
       "playerCanRevealRole": "He or she can reveal his role to the others.",
       "playerDoesntRevealRole": "In this special game, the role of the dead player is not revealed to the others. The mystery remains…"
     },
@@ -1323,14 +1323,14 @@
       "cantFindTargetedPlayer": "The seen player can't be found… Please proceed.",
       "gameMasterWillMimeSide": "Because the Seer is quiet, the Game Master will mime the side of the seen player.",
       "gameMasterWillMimeRole": "Because the Seer is quiet, the Game Master will mime the role of the seen player.",
-      "seerHasSeenSide": "The Seer has seen a player from the {side} side !",
-      "seerHasSeenRole": "The Seer has seen {role} !"
+      "seerHasSeenSide": "The Seer has seen a player from the {side} side!",
+      "seerHasSeenRole": "The Seer has seen {role}!"
     },
     "GameSheriffHasBeenElectedEvent": {
       "cantFindElectedSheriff": "The elected Sheriff can't be found… Please proceed.",
-      "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village !",
+      "sheriffHasBeenElectedBySurvivors": "The survivors have elected {playerName} as the Sheriff of the village!",
       "sheriffCanMakeSpeech": "The new Sheriff can make a powerful speech to his fellow villagers.",
-      "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village !"
+      "sheriffHasBeenElectedByDelegation": "{playerName} is the new Sheriff of the village!"
     },
     "MuteButton": {
       "mute": "Mute",
@@ -1347,8 +1347,8 @@
     },
     "GameVillagerVillagerIntroductionEvent": {
       "cantFindVillagerVillager": "The Villager-Villager can't be found… Please proceed.",
-      "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village ! His/Her role is revealed to the others.",
-      "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff ?"
+      "villagerVillagerIntroduction": "{playerName} is the Villager-Villager of the village! His/Her role is revealed to the others.",
+      "idealPlayerForSheriff": "Without any special power, the other players can fully trust him/her. Why not elect him/her as the Sheriff?"
     },
     "GamePiedPiperHasCharmedEvent": {
       "piedPiperHasCharmed": "The Pied Piper just charmed a player. | The Pied Piper just charmed {charmedCount} players.",
@@ -1356,8 +1356,8 @@
     },
     "GameWolfHoundHasChosenSideEvent": {
       "cantFindWolfHoundOrChosenSide": "The Wolf-Hound or his chosen side can't be found… Please proceed.",
-      "assistantChoseSideForWolfHoundRevelation": "The Assistant assigned the Wolf-Hound to the side of the … {side} !",
-      "wolfHoundChoseSideRevelation": "The Wolf-Hound chose to join the side of the … {side} !",
+      "assistantChoseSideForWolfHoundRevelation": "The Assistant assigned the Wolf-Hound to the side of the … {side}!",
+      "wolfHoundChoseSideRevelation": "The Wolf-Hound chose to join the side of the … {side}!",
       "assistantChoseSideForWolfHoundMime": "The Assistant assigned the Wolf-Hound to a random side. The Game Master will mime the side of the Wolf-Hound. ({side})",
       "wolfHoundChoseSideQuietly": "The Wolf-Hound chose to join a side. The chosen side will remain a secret to the other players…"
     },
@@ -1366,7 +1366,7 @@
       "gameMasterWillTapInLovePlayers": "The Game Master will tap in the back the Lovers so they know they are in love."
     },
     "GameOverCreateNewGameButton": {
-      "createNewGameWithSamePlayers": "Do you want to create a new game with the same players ?"
+      "createNewGameWithSamePlayers": "Do you want to create a new game with the same players?"
     },
     "GameLobbyHeaderPositionCoordinatorButton": {
       "positionCoordinator": "Players positions"
@@ -1387,7 +1387,7 @@
     },
     "GameLobbyStartGameConfirmDialogFooter": {
       "skipAndPlay": "Skip and play now",
-      "letsGo": "Let's go !"
+      "letsGo": "Let's go!"
     },
     "GameLobbyStartGameConfirmDialogPlayersReady": {
       "doAllPlayersHaveRoleAndReady": "Do all the players have their role and are ready to play?"
