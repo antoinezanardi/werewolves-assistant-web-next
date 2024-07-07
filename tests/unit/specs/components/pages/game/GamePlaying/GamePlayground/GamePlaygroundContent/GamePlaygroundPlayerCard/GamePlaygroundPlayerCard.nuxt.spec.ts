@@ -87,6 +87,33 @@ describe("Game Playground Player Card Component", () => {
       expect(playerCard.props("isSelected")).toBeTruthy();
     });
 
+    it("should be disabled when current play is vote type.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = createFakeGamePlaySurvivorsElectSheriff();
+      await nextTick();
+      const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+
+      expect(playerCard.props("isDisabled")).toBeTruthy();
+    });
+
+    it("should not be disabled when current play is not vote type.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = createFakeGamePlayWerewolvesEat();
+      await nextTick();
+      const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+
+      expect(playerCard.props("isDisabled")).toBeFalsy();
+    });
+
+    it("should not be disabled when current play is null.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.currentPlay = null;
+      await nextTick();
+      const playerCard = wrapper.findComponent<typeof PlayerCard>("#player-card");
+
+      expect(playerCard.props("isDisabled")).toBeFalsy();
+    });
+
     describe("Click on Player Card", () => {
       it("should do nothing when player can't be targeted because game play is null.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();

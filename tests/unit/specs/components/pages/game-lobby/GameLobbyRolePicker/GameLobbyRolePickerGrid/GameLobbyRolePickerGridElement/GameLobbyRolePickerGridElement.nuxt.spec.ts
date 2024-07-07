@@ -12,11 +12,13 @@ import { useRolesStore } from "~/stores/role/useRolesStore";
 import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
+const hoistedMocks = vi.hoisted(() => ({
+  radash: { draw: vi.fn() },
+}));
 
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
-  draw: vi.fn(mockedRadash.draw),
+  ...hoistedMocks.radash,
 }));
 
 describe("Game Lobby Role Picker Grid Element Component", () => {
@@ -145,12 +147,12 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
           pickedRole: undefined,
         },
       });
-      mockedRadash.draw.mockReturnValue(roles[1]);
+      hoistedMocks.radash.draw.mockReturnValue(roles[1]);
       const button = wrapper.find("#game-lobby-role-picker-grid-element-button");
       await button.trigger("click");
       const emittedRole = wrapper.emitted("pickRole")?.[0][0];
 
-      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith(roles);
+      expect(hoistedMocks.radash.draw).toHaveBeenCalledExactlyOnceWith(roles);
       expect(wrapper.emitted("pickRole")).toHaveLength(1);
       expect(emittedRole).toStrictEqual<Role>(roles[1]);
     });
@@ -162,12 +164,12 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
           pickedRole: roles[0],
         },
       });
-      mockedRadash.draw.mockReturnValue(roles[2]);
+      hoistedMocks.radash.draw.mockReturnValue(roles[2]);
       const button = wrapper.find("#game-lobby-role-picker-grid-element-button");
       await button.trigger("click");
       const emittedRole = wrapper.emitted("pickRole")?.[0][0];
 
-      expect(mockedRadash.draw).toHaveBeenCalledExactlyOnceWith([
+      expect(hoistedMocks.radash.draw).toHaveBeenCalledExactlyOnceWith([
         roles[1],
         roles[2],
       ]);

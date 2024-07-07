@@ -6,7 +6,7 @@
       id="create-new-game-button"
       ref="createNewGameButton"
       class="p-button p-button-raised"
-      @click="confirmCreateNewGame"
+      @click="onClickFromCreateNewGameButton"
     >
       <span class="fa fa-play-circle me-2"/>
 
@@ -33,7 +33,7 @@ const { require: confirmRequire } = useConfirm();
 
 const { t } = useI18n();
 
-function confirmCreateNewGame(): void {
+function onClickFromCreateNewGameButton(): void {
   confirmRequire({
     target: createNewGameButton.value?.$el as HTMLElement,
     icon: "fa fa-question-circle",

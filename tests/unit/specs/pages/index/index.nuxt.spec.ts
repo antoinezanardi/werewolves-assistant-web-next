@@ -76,7 +76,7 @@ describe("Index Page Component", () => {
     it("should display about button with translated label when rendered.", () => {
       const aboutButton = wrapper.findComponent<typeof NuxtLink>("#about-button");
 
-      expect(aboutButton.text()).toBe("What is it ?");
+      expect(aboutButton.text()).toBe("What is it?");
     });
 
     describe("About Button Icon", () => {

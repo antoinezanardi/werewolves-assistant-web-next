@@ -25,7 +25,9 @@ const { hoistedMocks } = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("~/composables/animate-css/useAnimateCss", () => ({ useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss }));
+vi.mock("~/composables/animate-css/useAnimateCss", () => ({
+  useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss,
+}));
 
 describe("Game Event Previous Text Button Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventPreviousTextButton>>;

@@ -27,6 +27,7 @@ logs
 # Tests
 tests/unit/coverage
 tests/acceptance/reports
+tests/acceptance/screenshots/linux/rename-screenshots.sh
 tests/stryker/coverage
 
 # Stryker

@@ -20,7 +20,7 @@ describe("About Werewolves Assistant Component", () => {
     it("should display translated title when rendered.", () => {
       const title = wrapper.find<HTMLHeadElement>("#about-werewolves-assistant-title");
 
-      expect(title.text()).toBe("The Werewolves Assistant takes the stage !");
+      expect(title.text()).toBe("The Werewolves Assistant takes the stage!");
     });
   });
 
@@ -29,7 +29,7 @@ describe("About Werewolves Assistant Component", () => {
       const firstSection = wrapper.find<HTMLParagraphElement>("#about-werewolves-assistant-first-section");
 
       expect(firstSection.text()).toBe("To ease the heavy task that falls on the game master when hosting a Werewolves game, " +
-      "the Werewolves Assistant proves to be the ideal tool !");
+      "the Werewolves Assistant proves to be the ideal tool!");
     });
 
     it("should translate second section when rendered.", () => {

@@ -4,7 +4,7 @@ exports[`About Page Component > should match snapshot when rendered. 1`] = `
 "<div class="container h-full">
   <div class="flex items-center justify-center">
     <role-image-stub alt="Werewolf illustration" rolename="werewolf" sizes="75" definition="small" id="about-role-image-title"></role-image-stub>
-    <h1 id="about-title" class="ms-4">Why an assistant ?</h1>
+    <h1 id="about-title" class="ms-4">Why an assistant?</h1>
   </div>
   <divider-stub></divider-stub>
   <about-werewolves-game-stub></about-werewolves-game-stub>

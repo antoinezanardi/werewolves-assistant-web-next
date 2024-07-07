@@ -23,7 +23,7 @@ Feature: 🪈 Pied Piper role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Pied Piper charms"
-    And the game's current play question should be "Which players does the Pied Piper want to charm ?"
+    And the game's current play question should be "Which players does the Pied Piper want to charm?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -74,7 +74,7 @@ Feature: 🪈 Pied Piper role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Pied Piper charms"
-    And the game's current play question should be "Which players does the Pied Piper want to charm ?"
+    And the game's current play question should be "Which players does the Pied Piper want to charm?"
     And the game's phase name should be "Night 2"
     And the game's current play should have the following targets
       | name  |
@@ -99,7 +99,7 @@ Feature: 🪈 Pied Piper role
     Then the game's event should display the text "The Game Master will tap in the back the 2 charmed players so they know they are charmed."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims !"
+    Then the game's event should display the text "The new charmed people by the Pied Piper wake up and meet each other with the old ones. Watch out for the Pied Piper last victims!"
     And the game's event player card should have the name "Bob"
     And the game's event player card should have the name "David"
 
@@ -130,7 +130,7 @@ Feature: 🪈 Pied Piper role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Pied Piper charms"
-    And the game's current play question should be "Which players does the Pied Piper want to charm ?"
+    And the game's current play question should be "Which players does the Pied Piper want to charm?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -175,7 +175,7 @@ Feature: 🪈 Pied Piper role
 
     When the user goes to the next game event text
     Then the game's current play title should be "Pied Piper charms"
-    And the game's current play question should be "Which players does the Pied Piper want to charm ?"
+    And the game's current play question should be "Which players does the Pied Piper want to charm?"
     And the game's phase name should be "Night 2"
     And the game's current play should have the following targets
       | name    |
@@ -198,7 +198,7 @@ Feature: 🪈 Pied Piper role
     Then the game's event should display the text "The Game Master will tap in the back the charmed player so he knows he is charmed."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims !"
+    Then the game's event should display the text "The new charmed person by the Pied Piper wakes up with the old ones. Watch out for the Pied Piper last victims!"
     And the game's event player card should have the name "Bob"
     And the game's event player card should have the name "David"
 

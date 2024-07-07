@@ -1,6 +1,8 @@
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { mount } from "@vue/test-utils";
-import { expect } from "vitest";
+import { expect, type Mock } from "vitest";
 import type { Ref } from "vue";
+import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
@@ -11,10 +13,37 @@ import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 describe("Game Lobby Header Component", () => {
+  let mocks: {
+    components: {
+      gameLobbyHeaderSetupButtons: {
+        highlightPositionCoordinatorButton: Mock;
+      }
+    }
+  };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeader>>;
 
+  async function mountGameLobbyHeaderComponent(): Promise<ReturnType<typeof mount<typeof GameLobbyHeader>>> {
+    return mountSuspendedComponent(GameLobbyHeader, {
+      global: {
+        stubs: {
+          GameLobbyHeaderSetupButtons: {
+            template: "<div id='game-lobby-header-setup-buttons'/>",
+            methods: mocks.components.gameLobbyHeaderSetupButtons,
+          },
+        },
+      },
+    });
+  }
+
   beforeEach(async() => {
-    wrapper = await mountSuspendedComponent(GameLobbyHeader);
+    mocks = {
+      components: {
+        gameLobbyHeaderSetupButtons: {
+          highlightPositionCoordinatorButton: vi.fn(),
+        },
+      },
+    };
+    wrapper = await mountGameLobbyHeaderComponent();
     const gameLobbyPlayerInput = wrapper.findComponent<typeof GameLobbyPlayerInput>("#game-lobby-player-input");
     (gameLobbyPlayerInput.vm as unknown as typeof GameLobbyPlayerInput).isAddButtonDisabled = false;
   });
@@ -127,6 +156,21 @@ describe("Game Lobby Header Component", () => {
         (setupButtons.vm as VueVm).$emit("positionCoordinatorButtonClick");
 
         expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();
+      });
+
+      it("should throw error when highlightPositionCoordinatorButton method is called but component is not defined.", async() => {
+        (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderSetupButtons: Ref }).gameLobbyHeaderSetupButtons.value = null;
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        await getError(() => (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightPositionCoordinatorButton());
+
+        expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Setup Buttons is not defined");
+      });
+
+      it("should highlight position coordinator button when method is called.", () => {
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightPositionCoordinatorButton();
+
+        expect(mocks.components.gameLobbyHeaderSetupButtons.highlightPositionCoordinatorButton).toHaveBeenCalledExactlyOnceWith();
       });
     });
   });

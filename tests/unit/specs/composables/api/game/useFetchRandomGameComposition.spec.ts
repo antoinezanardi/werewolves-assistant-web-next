@@ -1,11 +1,16 @@
 import type { $Fetch } from "nitropack";
+import { vi } from "vitest";
+import type Qs from "qs";
 
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
 
-const { stringifyMock } = vi.hoisted(() => ({ stringifyMock: vi.fn() }));
+const hoistedMocks = vi.hoisted(() => ({ qs: { stringify: vi.fn() } }));
 
-vi.mock("qs", () => ({ stringify: stringifyMock }));
+vi.mock("qs", async importOriginal => ({
+  ...await importOriginal<typeof Qs>(),
+  ...hoistedMocks.qs,
+}));
 
 describe("Use Fetch Random Game Composition", () => {
   let mocks: {
@@ -23,7 +28,7 @@ describe("Use Fetch Random Game Composition", () => {
 
   describe("fetchRandomGameComposition", () => {
     it("should fetch random game composition when called.", async() => {
-      stringifyMock.mockReturnValue("stringifiedQuery");
+      hoistedMocks.qs.stringify.mockReturnValue("stringifiedQuery");
       const expectedUrl = `/games/random-composition?stringifiedQuery`;
       await useFetchRandomGameComposition().fetchRandomGameComposition({
         players: [

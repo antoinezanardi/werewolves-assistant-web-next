@@ -2,8 +2,9 @@
   <div class="flex flex-col">
     <GameLobbyHeader
       id="game-lobby-header"
-      @game-options-button-click="openGameOptionsHub"
-      @position-coordinator-button-click="openGamePositionCoordinator"
+      ref="gameLobbyHeader"
+      @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeader"
+      @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeader"
     />
 
     <PrimeVueDivider/>
@@ -11,12 +12,15 @@
     <GameLobbyPlayersParty
       id="game-lobby-players-party"
       class="flex-auto overflow-y-auto"
-      @pick-role-for-player="pickRoleForPlayer"
+      @pick-role-for-player="onPickRoleForPlayerFromGameLobbyPlayersParty"
     />
 
     <PrimeVueDivider/>
 
-    <GameLobbyFooter/>
+    <GameLobbyFooter
+      id="game-lobby-footer"
+      @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyFooter"
+    />
 
     <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
 
@@ -28,6 +32,7 @@
 
 <script setup lang="ts">
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
+import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
@@ -51,6 +56,7 @@ const { loadAllAudios } = audioStore;
 
 const { t } = useI18n();
 
+const gameLobbyHeader = ref<GameLobbyHeaderExposed | null>(null);
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
@@ -60,7 +66,7 @@ useHead({
   meta: [{ name: "description", content: t("pages.gameLobby.seoDescription") }],
 });
 
-function pickRoleForPlayer(player?: CreateGamePlayerDto): void {
+function onPickRoleForPlayerFromGameLobbyPlayersParty(player?: CreateGamePlayerDto): void {
   if (!gameLobbyRolePicker.value) {
     throw createError("Game Lobby Role Picker is not defined");
   }
@@ -70,18 +76,29 @@ function pickRoleForPlayer(player?: CreateGamePlayerDto): void {
   gameLobbyRolePicker.value.openToPickRoleForPlayer(player);
 }
 
-function openGameOptionsHub(): void {
+function onGameOptionsButtonClickFromGameLobbyHeader(): void {
   if (!gameLobbyOptionsHub.value) {
     throw createError("Game Lobby Options Hub is not defined");
   }
   gameLobbyOptionsHub.value.open();
 }
 
-function openGamePositionCoordinator(): void {
+function onPositionCoordinatorButtonClickFromGameLobbyHeader(): void {
   if (!gameLobbyPositionCoordinator.value) {
     throw createError("Game Lobby Position Coordinator is not defined");
   }
   gameLobbyPositionCoordinator.value.open();
+}
+
+function onRejectPlayersPositionStepFromGameLobbyFooter(): void {
+  if (!gameLobbyHeader.value) {
+    throw createError("Game Lobby Header is not defined");
+  }
+  gameLobbyHeader.value.highlightPositionCoordinatorButton();
+  const intervalMs = 1000;
+  setTimeout(() => {
+    onPositionCoordinatorButtonClickFromGameLobbyHeader();
+  }, intervalMs);
 }
 
 function injectPlayerNamesFromQuery(): void {

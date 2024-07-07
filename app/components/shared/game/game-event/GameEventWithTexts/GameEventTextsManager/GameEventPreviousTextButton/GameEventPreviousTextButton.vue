@@ -8,7 +8,7 @@
     :class="{ 'text-gray-500': !canGoToPreviousGameEventText }"
     :disabled="!canGoToPreviousGameEventText"
     type="button"
-    @click.prevent="previousGameEventText"
+    @click.prevent="onClickFromPreviousEventTextButton"
   >
     <i class="fa fa-3x fa-chevron-left"/>
   </button>
@@ -55,12 +55,12 @@ const buttonTooltipOptions = computed<TooltipOptions>(() => {
   };
 });
 
-function previousGameEventText(): void {
+function onClickFromPreviousEventTextButton(): void {
   emit("click");
 }
 
-async function handlePressArrowLeftKey(): Promise<void> {
-  previousGameEventText();
+async function onPressArrowLeftKey(): Promise<void> {
+  onClickFromPreviousEventTextButton();
   await nextTick();
   void animateElementOnce(previousGameEventTextButton, "headShake");
 }
@@ -69,6 +69,6 @@ watch(() => keyboard.value.arrowLeft.isPressed, (isKeyPressed: boolean) => {
   if (!isKeyPressed) {
     return;
   }
-  void handlePressArrowLeftKey();
+  void onPressArrowLeftKey();
 });
 </script>

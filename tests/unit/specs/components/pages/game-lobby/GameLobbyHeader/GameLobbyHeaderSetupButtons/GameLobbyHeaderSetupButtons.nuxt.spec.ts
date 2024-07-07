@@ -2,8 +2,12 @@ import { createTestingPinia } from "@pinia/testing";
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import type { mount } from "@vue/test-utils";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { flushPromises, type mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import { expect } from "vitest";
+import type { Ref } from "vue";
+import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import type GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import type GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
@@ -12,6 +16,14 @@ import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useAnimateCss: { animateElementOnce: vi.fn() },
+}));
+
+vi.mock("~/composables/animate-css/useAnimateCss", () => ({
+  useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss,
+}));
 
 describe("Game Lobby Header Setup Buttons Component", () => {
   const defaultCreateGameDto = createFakeCreateGameDto({
@@ -90,6 +102,20 @@ describe("Game Lobby Header Setup Buttons Component", () => {
       (positionCoordinatorButton.vm as VueVm).$emit("positionCoordinatorButtonClick");
 
       expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();
+    });
+
+    it("should throw error when highlightPositionCoordinatorButton method is called but component is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderPositionCoordinatorButton: Ref }).gameLobbyHeaderPositionCoordinatorButton.value = null;
+      await getError(() => (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Position Coordinator Button is not defined");
+    });
+
+    it("should highlight position coordinator button when method is called from parent component.", async() => {
+      (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightPositionCoordinatorButton();
+      await flushPromises();
+
+      expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");
     });
   });
 });

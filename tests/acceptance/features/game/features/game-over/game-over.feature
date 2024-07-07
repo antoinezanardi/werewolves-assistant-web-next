@@ -19,7 +19,7 @@ Feature: 🏁 Game Over Page
       | source  | target |
       | Antoine | David  |
     And the user skips all game events
-    Then the game should be over with title "The Angel wins by himself !" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
+    Then the game should be over with title "The Angel wins by himself!" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
     And the button with name "Create another game" should be visible
 
     When the user creates a new game with same players in game over
@@ -50,7 +50,7 @@ Feature: 🏁 Game Over Page
       | source  | target |
       | Antoine | David  |
     And the user skips all game events
-    Then the game should be over with title "The Angel wins by himself !" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
+    Then the game should be over with title "The Angel wins by himself!" and subtitle "The Angel has been eliminated during the first vote or the first night by the werewolves. He wins alone and comes back to the Good Place."
     And the button with name "Create another game" should be visible
 
     When the user creates a new game with new players in game over

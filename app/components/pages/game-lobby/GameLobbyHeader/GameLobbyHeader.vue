@@ -11,7 +11,7 @@
       <div class="md:w-6/12">
         <form
           id="game-lobby-header-form"
-          @submit.prevent="addPlayerToCreateGameDto"
+          @submit.prevent="onSubmitFromHeaderForm"
         >
           <GameLobbyPlayerInput
             id="game-lobby-player-input"
@@ -25,15 +25,17 @@
     <div class="flex item-center justify-center mt-2">
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
-        @game-options-button-click="handleGameOptionsButtonClick"
-        @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
+        ref="gameLobbyHeaderSetupButtons"
+        @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons"
+        @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { GameLobbyHeaderEmits } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import type { GameLobbyHeaderEmits, GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type { GameLobbyPlayerInputExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/game-lobby-player-input.types";
 import GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
@@ -48,7 +50,9 @@ const playerInputValue = ref<string>("");
 
 const gameLobbyPlayerInput = ref<GameLobbyPlayerInputExposed | null>(null);
 
-function addPlayerToCreateGameDto(): void {
+const gameLobbyHeaderSetupButtons = ref<GameLobbyHeaderSetupButtonsExposed | null>(null);
+
+function onSubmitFromHeaderForm(): void {
   if (gameLobbyPlayerInput.value === null) {
     throw createError("Game Lobby Player Input is not initialized");
   }
@@ -68,11 +72,22 @@ function addPlayerToCreateGameDto(): void {
   createGameDtoStore.addPlayerToCreateGameDto(playerToAdd);
 }
 
-function handleGameOptionsButtonClick(): void {
+function onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("gameOptionsButtonClick");
 }
 
-function handlePositionCoordinatorButtonClick(): void {
+function onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("positionCoordinatorButtonClick");
 }
+
+function highlightPositionCoordinatorButton(): void {
+  if (gameLobbyHeaderSetupButtons.value === null) {
+    throw createError("Game Lobby Header Setup Buttons is not defined");
+  }
+  gameLobbyHeaderSetupButtons.value.highlightPositionCoordinatorButton();
+}
+
+defineExpose<GameLobbyHeaderExposed>({
+  highlightPositionCoordinatorButton,
+});
 </script>

@@ -13,11 +13,11 @@ import { createFakeActorAlivePlayer } from "@tests/unit/utils/factories/composab
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
-const { radash: mockedRadash } = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
+const hoistedMocks = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));
 
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
-  shuffle: vi.fn(mockedRadash.shuffle),
+  ...hoistedMocks.radash,
 }));
 
 describe("Game Over History Record Source Component", () => {
@@ -49,7 +49,7 @@ describe("Game Over History Record Source Component", () => {
   }
 
   beforeEach(async() => {
-    mockedRadash.shuffle.mockReturnValue(defaultSourcePlayers);
+    hoistedMocks.radash.shuffle.mockReturnValue(defaultSourcePlayers);
     wrapper = await mountGameOverHistoryRecordSourceComponent();
   });
 
@@ -77,7 +77,7 @@ describe("Game Over History Record Source Component", () => {
     });
 
     it("should display all players when there are less than 4 players in source.", async() => {
-      mockedRadash.shuffle.mockReturnValue(defaultSourcePlayers.slice(0, 2));
+      hoistedMocks.radash.shuffle.mockReturnValue(defaultSourcePlayers.slice(0, 2));
       wrapper = await mountGameOverHistoryRecordSourceComponent();
       const sourcePlayerCards = wrapper.findAllComponents<typeof PlayerCard>(".game-over-history-record-source-player-card");
 

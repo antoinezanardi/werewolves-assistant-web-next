@@ -39,7 +39,7 @@
         id="game-lobby-role-picker-grid"
         class="overflow-y-scroll w-8/12"
         :picked-role="pickedRole"
-        @pick-role="pickRole"
+        @pick-role="onPickRoleFromGameLobbyRolePickerGrid"
       />
     </div>
 
@@ -72,7 +72,7 @@ function openToPickRoleForPlayer(player: CreateGamePlayerDto): void {
   isVisible.value = true;
 }
 
-function pickRole(role: Role): void {
+function onPickRoleFromGameLobbyRolePickerGrid(role: Role): void {
   pickedRole.value = role;
 }
 

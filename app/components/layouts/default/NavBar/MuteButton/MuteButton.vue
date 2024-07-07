@@ -4,7 +4,7 @@
     v-p-tooltip.bottom="tooltipText"
     :aria-label="tooltipText"
     type="button"
-    @click="toggleSound"
+    @click.prevent="onClickFromMuteButton"
   >
     <VueLottie
       id="mute-button-lottie"
@@ -37,7 +37,7 @@ const soundLottie = ref<InstanceType<typeof Vue3Lottie> | null>(null);
 
 const tooltipText = computed<string>(() => (isMuted.value ? t("components.MuteButton.unmute") : t("components.MuteButton.mute")));
 
-function toggleSound(): void {
+function onClickFromMuteButton(): void {
   if (!soundLottie.value) {
     throw createError("Sound Lottie is not initialized");
   }

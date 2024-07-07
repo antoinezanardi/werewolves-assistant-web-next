@@ -14,7 +14,7 @@
       raised
       severity="primary"
       type="button"
-      @click="handleMakePlayButtonClick"
+      @click.prevent="onClickFromMakePlayButton"
     />
   </div>
 </template>
@@ -68,7 +68,7 @@ const buttonTooltipOptions = computed<TooltipOptions>(() => {
   };
 });
 
-async function handleMakePlayButtonClick(): Promise<void> {
+async function onClickFromMakePlayButton(): Promise<void> {
   if (!canClickMakePlayButton.value) {
     return;
   }
@@ -82,6 +82,6 @@ watch(() => keyboard.value.enter.isPressed, (isKeyPressed: boolean) => {
   if (!isKeyPressed || !keyboard.value.shift.isPressed) {
     return;
   }
-  void handleMakePlayButtonClick();
+  void onClickFromMakePlayButton();
 });
 </script>

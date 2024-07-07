@@ -30,7 +30,7 @@
             :key="player.name"
             class="fade-list-item game-lobby-player-card md:w-1/5 w-1/3"
             :player="player"
-            @pick-role-for-player="pickRoleForPlayer"
+            @pick-role-for-player="onPickRoleForPlayerFromGameLobbyPlayerCard"
           />
         </TransitionGroup>
       </div>
@@ -52,7 +52,7 @@ const createGameDtoStore = useCreateGameDtoStore();
 
 const { createGameDto } = storeToRefs(createGameDtoStore);
 
-function pickRoleForPlayer(player?: CreateGamePlayerDto): void {
+function onPickRoleForPlayerFromGameLobbyPlayerCard(player?: CreateGamePlayerDto): void {
   if (!player) {
     return;
   }

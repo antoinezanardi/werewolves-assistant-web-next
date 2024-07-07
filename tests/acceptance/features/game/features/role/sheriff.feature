@@ -17,8 +17,14 @@ Feature: 🎖️ Sheriff Attribute
     When the user skips the game event
     Then the game's current play title should be "Survivors elect the Sheriff"
     And the game's phase name should be "Twilight"
-    And the game's current play question should be "Which player do the survivors want to elect as the Sheriff ?"
+    And the game's current play question should be "Which player do the survivors want to elect as the Sheriff?"
     And the game's current play should have the following voters
+      | name    |
+      | Antoine |
+      | Bob     |
+      | Charlie |
+      | David   |
+    And the following players can't be targeted in game's playground
       | name    |
       | Antoine |
       | Bob     |
@@ -30,7 +36,7 @@ Feature: 🎖️ Sheriff Attribute
       | voter   | target |
       | Antoine | Bob    |
     Then the player with name "Bob" should have the attribute sheriff by survivors in the game
-    And the game's event should display the text "The survivors have elected Bob as the Sheriff of the village !"
+    And the game's event should display the text "The survivors have elected Bob as the Sheriff of the village!"
     And the game's event player card should have the name "Bob"
 
     When the user goes to the next game event text
@@ -57,13 +63,13 @@ Feature: 🎖️ Sheriff Attribute
     Then the game's event should display the text "The village must elect the Sheriff between Bob and Antoine. If there is a tie, the Sheriff will be elected randomly."
 
     When the user skips the game event
-    Then the game's current play question should be "Which player do the survivors want to elect as Sheriff to break the tie ?"
+    Then the game's current play question should be "Which player do the survivors want to elect as Sheriff to break the tie?"
 
     When the survivors elect the sheriff with the votes
       | voter   | target |
       | Antoine | Bob    |
     Then the player with name "Bob" should have the attribute sheriff by survivors in the game
-    And the game's event should display the text "The survivors have elected Bob as the Sheriff of the village !"
+    And the game's event should display the text "The survivors have elected Bob as the Sheriff of the village!"
 
     When the user goes to the next game event text
     Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."
@@ -139,7 +145,7 @@ Feature: 🎖️ Sheriff Attribute
       | Antoine | David   |
       | Bob     | Charlie |
     And the user skips all game events
-    Then the game's current play question should be "Which player does the Sheriff want to settle the votes with ?"
+    Then the game's current play question should be "Which player does the Sheriff want to settle the votes with?"
 
   Scenario: 🎖 Sheriff settles votes between players in tie
     Given the user creates a game with the players with name and role
@@ -169,7 +175,7 @@ Feature: 🎖️ Sheriff Attribute
     When the user goes to the next game event text
     Then the game's current play title should be "Sheriff settles votes"
     And the game's phase name should be "Twilight"
-    And the game's current play question should be "Which player does the Sheriff want to settle the votes with ?"
+    And the game's current play question should be "Which player does the Sheriff want to settle the votes with?"
     And the game's current play should have the following targets
       | name    |
       | David   |
@@ -179,7 +185,7 @@ Feature: 🎖️ Sheriff Attribute
 
     When the sheriff settles the vote with the player with name "Antoine"
     Then the player with name "Antoine" should be dead in the game
-    And the game's event should display the text "Antoine is dead ! What a tragedy…"
+    And the game's event should display the text "Antoine is dead! What a tragedy…"
 
   Scenario: 🎖 Sheriff doesn't settle votes between players in tie when game master disables the option
     Given the user doesn't allow the sheriff to settle votes in game options
@@ -204,7 +210,7 @@ Feature: 🎖️ Sheriff Attribute
       | Antoine | David   |
       | David   | Antoine |
     And the user skips all game events
-    Then the game's current play question should be "Which player do the survivors want to vote for to break the tie ?"
+    Then the game's current play question should be "Which player do the survivors want to vote for to break the tie?"
 
   Scenario: 🎖 Sheriff delegates his role to another survivor when he dies
     Given the user creates a game with the players with name and role
@@ -227,7 +233,7 @@ Feature: 🎖️ Sheriff Attribute
       | voter   | target  |
       | Antoine | Charlie |
     Then the player with name "Charlie" should be dead in the game
-    And the game's event should display the text "Charlie is dead ! What a tragedy…"
+    And the game's event should display the text "Charlie is dead! What a tragedy…"
 
     When the user goes to the next game event text
     And the user goes to the next game event text
@@ -237,7 +243,7 @@ Feature: 🎖️ Sheriff Attribute
     When the user goes to the next game event text
     Then the game's current play title should be "Sheriff delegates"
     And the game's phase name should be "Twilight"
-    And the game's current play question should be "Which player does the Sheriff want to delegate his role to ?"
+    And the game's current play question should be "Which player does the Sheriff want to delegate his role to?"
     And the game's current play should have the following targets
       | name    |
       | Antoine |
@@ -247,7 +253,7 @@ Feature: 🎖️ Sheriff Attribute
 
     When the sheriff delegates his role to the player with name "David"
     Then the player with name "David" should have the attribute sheriff by sheriff in the game
-    And the game's event should display the text "David is the new Sheriff of the village !"
+    And the game's event should display the text "David is the new Sheriff of the village!"
 
     When the user goes to the next game event text
     Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."

@@ -4,10 +4,11 @@
       v-p-tooltip="tooltipContent"
       :alt="getPlayerCardRoleImageAlt()"
       :aria-label="selectorAriaLabel"
-      class="border-4 border-gray-600 flex player-card-selector rounded-lg"
-      :class="{ '!border-gray-100': isSelected }"
+      class="border-4 border-gray-600 flex player-card-selector rounded-lg transition-all"
+      :class="playerCardClasses"
+      :disabled="isDisabled"
       type="button"
-      @click.prevent="emitPlayerCardSelectorClickEvent"
+      @click.prevent="onClickFromPlayerCardButton"
     >
       <RoleFlippingImage
         :alt="getPlayerCardRoleImageAlt()"
@@ -29,6 +30,7 @@ import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingIm
 const props = withDefaults(defineProps<PlayerCardProps>(), {
   doesShowSelectorTooltip: false,
   isSelected: false,
+  isDisabled: false,
 });
 
 const emit = defineEmits<PlayerCardEmits>();
@@ -37,21 +39,16 @@ const { t } = useI18n();
 
 const tooltipContent = computed<string | undefined>(() => (props.doesShowSelectorTooltip ? props.selectorAriaLabel : undefined));
 
+const playerCardClasses = computed<Record<string, boolean>>(() => ({
+  "!border-gray-100": props.isSelected,
+  "hover:border-gray-400": !props.isDisabled,
+}));
+
 function getPlayerCardRoleImageAlt(): string {
   return t("components.PlayerCard.playerCardRoleImageAlt", { playerName: props.playerName });
 }
 
-function emitPlayerCardSelectorClickEvent(): void {
+function onClickFromPlayerCardButton(): void {
   emit("playerCardSelectorClick");
 }
 </script>
-
-<style lang="scss" scoped>
-.player-card-selector {
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-color: #747474;
-  }
-}
-</style>

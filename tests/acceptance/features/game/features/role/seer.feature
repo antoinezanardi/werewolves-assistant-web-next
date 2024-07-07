@@ -21,7 +21,7 @@ Feature: 🔮Seer role
 
     When the user skips the game event
     Then the game's current play title should be "Seer looks"
-    And the game's current play question should be "Which player does the Seer want to look at ?"
+    And the game's current play question should be "Which player does the Seer want to look at?"
     And the game's phase name should be "Night 1"
     And the game's current play should have the following targets
       | name    |
@@ -31,7 +31,7 @@ Feature: 🔮Seer role
     And the page should match or creates the missing snapshot with name "Seer looks Playground"
 
     When the seer looks at the player with name "Bob"
-    Then the game's event should display the text "The Seer has seen a Werewolf !"
+    Then the game's event should display the text "The Seer has seen a Werewolf!"
     And the player with name "Bob" should have the attribute seen by seer in the game
 
     When the user skips all game events
@@ -46,7 +46,7 @@ Feature: 🔮Seer role
     Then the game's current play title should be "Seer looks"
 
     When the seer looks at the player with name "Charlie"
-    Then the game's event should display the text "The Seer has seen an Idiot !"
+    Then the game's event should display the text "The Seer has seen an Idiot!"
     And the player with name "Charlie" should have the attribute seen by seer in the game
 
   Scenario: 🔮Seer looks the role of a player but game master doesn't say the role out loud because she is quiet
@@ -67,7 +67,7 @@ Feature: 🔮Seer role
     Then the game's event should display the text "Because the Seer is quiet, the Game Master will mime the role of the seen player."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "The Seer has seen a Werewolf !"
+    Then the game's event should display the text "The Seer has seen a Werewolf!"
     And the player with name "Bob" should have the attribute seen by seer in the game
     And the game's event player card should have the name "Bob"
 
@@ -86,7 +86,7 @@ Feature: 🔮Seer role
     Then the game's current play title should be "Seer looks"
 
     When the seer looks at the player with name "Bob"
-    Then the game's event should display the text "The Seer has seen a player from the Werewolves side !"
+    Then the game's event should display the text "The Seer has seen a player from the Werewolves side!"
     And the player with name "Bob" should have the attribute seen by seer in the game
 
     When the user skips all game events
@@ -101,7 +101,7 @@ Feature: 🔮Seer role
     Then the game's current play title should be "Seer looks"
 
     When the seer looks at the player with name "Charlie"
-    Then the game's event should display the text "The Seer has seen a player from the Villagers side !"
+    Then the game's event should display the text "The Seer has seen a player from the Villagers side!"
 
   Scenario: 🔮Seer looks only the side of a player and is quiet because the game master changed the game options
     Given the user disables the sheriff in game options
@@ -122,7 +122,7 @@ Feature: 🔮Seer role
     Then the game's event should display the text "Because the Seer is quiet, the Game Master will mime the side of the seen player."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "The Seer has seen a player from the Werewolves side !"
+    Then the game's event should display the text "The Seer has seen a player from the Werewolves side!"
     And the player with name "Bob" should have the attribute seen by seer in the game
 
     When the user skips all game events
@@ -141,4 +141,4 @@ Feature: 🔮Seer role
     Then the game's event should display the text "Because the Seer is quiet, the Game Master will mime the side of the seen player."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "The Seer has seen a player from the Villagers side !"
+    Then the game's event should display the text "The Seer has seen a player from the Villagers side!"

@@ -13,7 +13,15 @@ describe("Use Animate Css Composable", () => {
   });
 
   describe("animateElementOnce", () => {
-    it("should not add animate__animated and animate__bounce classes to element when element is null.", async() => {
+    it("should not add animate__animated and animate__bounce classes to element when element is not a ref and null.", async() => {
+      const animateCss = useAnimateCss();
+      element.value = null;
+      await animateCss.animateElementOnce(element.value, "bounce");
+
+      expect(element.value).toBeNull();
+    });
+
+    it("should not add animate__animated and animate__bounce classes to ref element when element ref and value is null.", async() => {
       const animateCss = useAnimateCss();
       element.value = null;
       await animateCss.animateElementOnce(element, "bounce");
@@ -23,13 +31,21 @@ describe("Use Animate Css Composable", () => {
 
     it("should add animate__animated and animate__bounce classes to element when called.", () => {
       const animateCss = useAnimateCss();
+      void animateCss.animateElementOnce(element.value, "bounce");
+
+      expect(element.value?.classList.contains("animate__animated")).toBeTruthy();
+      expect(element.value?.classList.contains("animate__bounce")).toBeTruthy();
+    });
+
+    it("should add animate__animated and animate__bounce classes to ref element when called.", () => {
+      const animateCss = useAnimateCss();
       void animateCss.animateElementOnce(element, "bounce");
 
       expect(element.value?.classList.contains("animate__animated")).toBeTruthy();
       expect(element.value?.classList.contains("animate__bounce")).toBeTruthy();
     });
 
-    it("should remove animate__animated and animate__bounce classes from element when animation ends.", () => {
+    it("should remove animate__animated and animate__bounce classes from ref element when animation ends.", () => {
       const animateCss = useAnimateCss();
       void animateCss.animateElementOnce(element, "bounce");
       element.value?.dispatchEvent(new Event("animationend"));
@@ -38,7 +54,7 @@ describe("Use Animate Css Composable", () => {
       expect(element.value?.classList.contains("animate__bounce")).toBeFalsy();
     });
 
-    it("should add event listener to element when called.", () => {
+    it("should add event listener to ref element when called.", () => {
       const animateCss = useAnimateCss();
       const { value } = element as Ref<HTMLElement>;
       const addEventListenerSpy = vi.spyOn(value, "addEventListener");
