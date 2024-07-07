@@ -11,7 +11,7 @@
       <div class="md:w-6/12">
         <form
           id="game-lobby-header-form"
-          @submit.prevent="addPlayerToCreateGameDto"
+          @submit.prevent="onSubmitFromHeaderForm"
         >
           <GameLobbyPlayerInput
             id="game-lobby-player-input"
@@ -26,8 +26,8 @@
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
         ref="gameLobbyHeaderSetupButtons"
-        @game-options-button-click="handleGameOptionsButtonClick"
-        @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
+        @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons"
+        @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons"
       />
     </div>
   </div>
@@ -52,7 +52,7 @@ const gameLobbyPlayerInput = ref<GameLobbyPlayerInputExposed | null>(null);
 
 const gameLobbyHeaderSetupButtons = ref<GameLobbyHeaderSetupButtonsExposed | null>(null);
 
-function addPlayerToCreateGameDto(): void {
+function onSubmitFromHeaderForm(): void {
   if (gameLobbyPlayerInput.value === null) {
     throw createError("Game Lobby Player Input is not initialized");
   }
@@ -72,11 +72,11 @@ function addPlayerToCreateGameDto(): void {
   createGameDtoStore.addPlayerToCreateGameDto(playerToAdd);
 }
 
-function handleGameOptionsButtonClick(): void {
+function onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("gameOptionsButtonClick");
 }
 
-function handlePositionCoordinatorButtonClick(): void {
+function onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("positionCoordinatorButtonClick");
 }
 

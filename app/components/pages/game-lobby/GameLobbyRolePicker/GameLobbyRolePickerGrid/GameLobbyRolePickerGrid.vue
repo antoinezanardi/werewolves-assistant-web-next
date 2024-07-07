@@ -6,7 +6,7 @@
     <GameLobbyRolePickerGridElement
       class="available-role"
       :picked-role="pickedRole"
-      @pick-role="pickRole"
+      @pick-role="onPickRoleFromGameLobbyRolePickerGridElement"
     />
 
     <GameLobbyRolePickerGridElement
@@ -15,7 +15,7 @@
       class="available-role"
       :picked-role="pickedRole"
       :role="role"
-      @pick-role="pickRole"
+      @pick-role="onPickRoleFromGameLobbyRolePickerGridElement"
     />
   </div>
 </template>
@@ -53,7 +53,7 @@ const sortedRoleBySideAndName = computed<Role[]>(() => {
   });
 });
 
-function pickRole(role: Role): void {
+function onPickRoleFromGameLobbyRolePickerGridElement(role: Role): void {
   emit("pickRole", role);
 }
 </script>

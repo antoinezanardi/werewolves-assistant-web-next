@@ -6,7 +6,7 @@
     <GameEventPreviousTextButton
       id="game-event-previous-text-button"
       :current-text-index="currentIndex"
-      @click="decrementCurrentIndex"
+      @click="onClickFromGameEventPreviousTextButton"
     />
 
     <div
@@ -29,7 +29,7 @@
 
     <GameEventNextTextButton
       id="game-event-next-text-button"
-      @click="nextEventText"
+      @click="onClickFromGameEventNextTextButton"
     />
   </div>
 </template>
@@ -58,14 +58,14 @@ const nextGameEventText = computed<string | undefined>(() => props.texts[current
 
 const canGoToNextGameEventText = computed<boolean>(() => makingGamePlayStatus.value !== "pending");
 
-function decrementCurrentIndex(): void {
+function onClickFromGameEventPreviousTextButton(): void {
   if (currentIndex.value === 0) {
     return;
   }
   currentIndex.value--;
 }
 
-async function nextEventText(): Promise<void> {
+async function onClickFromGameEventNextTextButton(): Promise<void> {
   if (!canGoToNextGameEventText.value) {
     return;
   }

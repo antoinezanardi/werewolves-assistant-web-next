@@ -6,7 +6,7 @@
     :pt="{ 'root': '!border-sky-600' }"
     severity="info"
     size="small"
-    @click.prevent="clickHandler"
+    @click.prevent="onClickFromGameOptionsButton"
   />
 </template>
 
@@ -15,7 +15,7 @@ import type { GameLobbyHeaderOptionsButtonEmits } from "~/components/pages/game-
 
 const emit = defineEmits<GameLobbyHeaderOptionsButtonEmits>();
 
-function clickHandler(): void {
+function onClickFromGameOptionsButton(): void {
   emit("gameOptionsButtonClick");
 }
 </script>

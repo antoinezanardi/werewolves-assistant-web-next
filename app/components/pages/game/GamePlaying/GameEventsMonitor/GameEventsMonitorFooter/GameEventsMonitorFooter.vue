@@ -9,7 +9,7 @@
         class="flex w-56"
         :disabled="!canGoToPreviousGameEvent"
         severity="secondary"
-        @click="handlePreviousGameEventClick"
+        @click.prevent="onClickFromPreviousEventButton"
       >
         <i
           id="previous-event-button-icon"
@@ -32,7 +32,7 @@
         :disabled="!canGoToNextGameEvent"
         :loading="!canGoToNextGameEvent"
         severity="secondary"
-        @click="handleNextGameEventClick"
+        @click.prevent="onClickFromSkipCurrentEventButton"
       >
         <i
           id="skip-current-event-button-icon"
@@ -108,7 +108,7 @@ const nextEventButtonTooltipOptions = computed<TooltipOptions>(() => {
   };
 });
 
-function handlePreviousGameEventClick(): void {
+function onClickFromPreviousEventButton(): void {
   if (!canGoToPreviousGameEvent.value) {
     return;
   }
@@ -116,7 +116,7 @@ function handlePreviousGameEventClick(): void {
   void animateElementOnce(previousEventButtonIcon, "headShake");
 }
 
-async function handleNextGameEventClick(): Promise<void> {
+async function onClickFromSkipCurrentEventButton(): Promise<void> {
   if (!canGoToNextGameEvent.value) {
     return;
   }
@@ -128,13 +128,13 @@ watch(() => keyboard.value.arrowRight.isPressed, (isKeyPressed: boolean) => {
   if (!isKeyPressed || !keyboard.value.shift.isPressed) {
     return;
   }
-  void handleNextGameEventClick();
+  void onClickFromSkipCurrentEventButton();
 });
 
 watch(() => keyboard.value.arrowLeft.isPressed, (isKeyPressed: boolean) => {
   if (!isKeyPressed || !keyboard.value.shift.isPressed) {
     return;
   }
-  handlePreviousGameEventClick();
+  onClickFromPreviousEventButton();
 });
 </script>

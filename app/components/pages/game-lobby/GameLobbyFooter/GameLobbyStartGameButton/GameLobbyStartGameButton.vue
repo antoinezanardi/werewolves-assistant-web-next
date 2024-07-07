@@ -13,14 +13,14 @@
       raised
       size="large"
       type="button"
-      @click="handleStartGameButtonClick"
+      @click.prevent="onClickFromStartGameButton"
     />
 
     <GameLobbyStartGameConfirmDialog
       id="game-lobby-start-game-confirm-dialog"
       ref="gameLobbyStartGameConfirmDialog"
-      @confirm-start-game="handleConfirmStartGame"
-      @reject-players-position-step="handleRejectPlayersPositionStep"
+      @confirm-start-game="onConfirmStartGameFromGameLobbyStartGameConfirmDialog"
+      @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog"
     />
   </div>
 </template>
@@ -54,14 +54,14 @@ const isLoadingCreateGame = ref<boolean>(false);
 
 const containerTooltip = computed<string | undefined>(() => gameCreationValidationErrors.value[0]);
 
-function handleStartGameButtonClick(): void {
+function onClickFromStartGameButton(): void {
   if (!gameLobbyStartGameConfirmDialog.value) {
     throw createError("Game Lobby Start Game Confirm Dialog is not defined");
   }
   gameLobbyStartGameConfirmDialog.value.open();
 }
 
-async function handleConfirmStartGame(): Promise<void> {
+async function onConfirmStartGameFromGameLobbyStartGameConfirmDialog(): Promise<void> {
   isLoadingCreateGame.value = true;
   const createdGame = await createGame(createGameDto.value);
   if (createdGame) {
@@ -71,7 +71,7 @@ async function handleConfirmStartGame(): Promise<void> {
   isLoadingCreateGame.value = false;
 }
 
-function handleRejectPlayersPositionStep(): void {
+function onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog(): void {
   emit("rejectPlayersPositionStep");
 }
 </script>

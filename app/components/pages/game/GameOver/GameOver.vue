@@ -14,7 +14,7 @@
 
     <GameOverActions
       id="game-over-actions"
-      @show-game-history="showGameHistory"
+      @show-game-history="onShowGameHistoryFromGameOverActions"
     />
 
     <GameOverHistory ref="gameOverHistory"/>
@@ -63,7 +63,7 @@ const gameOverHistory = ref<GameOverHistoryExposed | null>(null);
 
 const winners = computed<Player[] | undefined>(() => game.value.victory?.winners);
 
-function showGameHistory(): void {
+function onShowGameHistoryFromGameOverActions(): void {
   if (!gameOverHistory.value) {
     throw createError("Game Over History is not defined");
   }

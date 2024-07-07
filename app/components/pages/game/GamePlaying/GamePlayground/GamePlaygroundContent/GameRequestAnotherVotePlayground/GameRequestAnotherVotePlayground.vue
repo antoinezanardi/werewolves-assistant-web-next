@@ -11,7 +11,7 @@
       :off-label="$t('components.GameRequestAnotherVotePlayground.heDoesntRequestAnotherVote')"
       on-icon="fa fa-thumbs-up me-4 !text-white"
       :on-label="$t('components.GameRequestAnotherVotePlayground.heRequestsAnotherVote')"
-      @change="handleDoesJudgeRequestAnotherVoteChange"
+      @change="onChangeFromDoesJudgeRequestAnotherVoteButton"
     />
   </div>
 </template>
@@ -24,7 +24,7 @@ const { setDoesJudgeRequestAnotherVote } = makeGamePlayDtoStore;
 
 const doesJudgeRequestAnotherVote = ref<boolean>(false);
 
-function handleDoesJudgeRequestAnotherVoteChange(): void {
+function onChangeFromDoesJudgeRequestAnotherVoteButton(): void {
   setDoesJudgeRequestAnotherVote(doesJudgeRequestAnotherVote.value);
 }
 </script>

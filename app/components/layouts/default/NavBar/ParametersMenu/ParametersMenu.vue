@@ -6,7 +6,7 @@
       icon="fa fa-cog"
       severity="secondary"
       type="button"
-      @click="toggleParametersMenu"
+      @click.prevent="onClickFromParametersButton"
     />
 
     <PrimeVueMenu
@@ -63,7 +63,7 @@ const parametersMenuItems = computed<MenuItem[]>(() => [
 
 const parametersMenu = ref<InstanceType<typeof Menu> | null>(null);
 
-function toggleParametersMenu(event: MouseEvent): void {
+function onClickFromParametersButton(event: MouseEvent): void {
   if (!parametersMenu.value) {
     throw createError("Parameters Menu is not initialized");
   }

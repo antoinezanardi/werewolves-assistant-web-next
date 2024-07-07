@@ -10,7 +10,7 @@
     <div class="flex h-full justify-center lg:1/3 md:w-6/12 w-8/12">
       <GameLobbyStartGameButton
         id="game-lobby-start-game-button"
-        @reject-players-position-step="handleRejectPlayersPositionStep"
+        @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameButton"
       />
     </div>
 
@@ -25,7 +25,7 @@ import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFoo
 
 const emit = defineEmits<GameLobbyFooterEmits>();
 
-function handleRejectPlayersPositionStep(): void {
+function onRejectPlayersPositionStepFromGameLobbyStartGameButton(): void {
   emit("rejectPlayersPositionStep");
 }
 </script>

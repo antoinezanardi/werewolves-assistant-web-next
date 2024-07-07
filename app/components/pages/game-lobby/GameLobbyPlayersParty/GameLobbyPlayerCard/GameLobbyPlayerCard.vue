@@ -12,14 +12,14 @@
       severity="danger"
       size="small"
       type="button"
-      @click.prevent="removePlayerFromCreateGameDto"
+      @click.prevent="onClickFromRemovePlayerButton"
     />
 
     <PlayerCard
       class="player-card"
       :player-name="player.name"
       :player-role="player.role.name"
-      @player-card-selector-click="pickRoleForPlayer"
+      @player-card-selector-click="onPlayerCardSelectorClickFromPlayerCard"
     />
 
     <small class="player-card-role truncate">
@@ -51,11 +51,11 @@ const playerCardRoleText = computed<string>(() => {
   return getRoleNameLabel(props.player.role.name);
 });
 
-function removePlayerFromCreateGameDto(): void {
+function onClickFromRemovePlayerButton(): void {
   createGameDtoStore.removePlayerFromCreateGameDto(props.player.name);
 }
 
-function pickRoleForPlayer(): void {
+function onPlayerCardSelectorClickFromPlayerCard(): void {
   emit("pickRoleForPlayer", props.player);
 }
 </script>

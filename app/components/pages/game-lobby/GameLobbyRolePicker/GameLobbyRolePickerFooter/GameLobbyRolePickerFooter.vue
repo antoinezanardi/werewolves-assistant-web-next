@@ -9,7 +9,7 @@
       id="game-lobby-role-picker-footer-button"
       :disabled="!canRoleBePicked"
       :label="$t('components.GameLobbyRolePickerFooter.pickRole')"
-      @click="pickRoleForPlayer"
+      @click="onClickFromGameLobbyRolePickerFooterButton"
     />
   </div>
 </template>
@@ -52,7 +52,7 @@ function swapRoleWithFirstPlayerWithRole(pickedRole: Role, sourcePlayer: CreateG
   updatePlayerInCreateGameDto(updatedPlayer);
 }
 
-function pickRoleForPlayer(): void {
+function onClickFromGameLobbyRolePickerFooterButton(): void {
   if (!props.pickedRole || !props.player) {
     return;
   }

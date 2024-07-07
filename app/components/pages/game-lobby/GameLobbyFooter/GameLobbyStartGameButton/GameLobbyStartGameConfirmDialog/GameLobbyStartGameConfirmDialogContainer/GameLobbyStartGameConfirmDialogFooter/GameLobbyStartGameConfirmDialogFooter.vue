@@ -7,7 +7,7 @@
         id="cancel-button"
         severity="secondary"
         size="small"
-        @click="onRejectStartGame"
+        @click.prevent="onRejectStartGame"
       >
         <i class="fa fa-times me-2"/>
 
@@ -22,7 +22,7 @@
         :class="confirmButtonClasses"
         severity="secondary"
         size="small"
-        @click="onConfirmStartGame"
+        @click.prevent="onConfirmStartGame"
       >
         <i
           id="confirm-button-icon"

@@ -8,7 +8,7 @@
       :class="playerCardClasses"
       :disabled="isDisabled"
       type="button"
-      @click.prevent="emitPlayerCardSelectorClickEvent"
+      @click.prevent="onClickFromPlayerCardButton"
     >
       <RoleFlippingImage
         :alt="getPlayerCardRoleImageAlt()"
@@ -48,7 +48,7 @@ function getPlayerCardRoleImageAlt(): string {
   return t("components.PlayerCard.playerCardRoleImageAlt", { playerName: props.playerName });
 }
 
-function emitPlayerCardSelectorClickEvent(): void {
+function onClickFromPlayerCardButton(): void {
   emit("playerCardSelectorClick");
 }
 </script>

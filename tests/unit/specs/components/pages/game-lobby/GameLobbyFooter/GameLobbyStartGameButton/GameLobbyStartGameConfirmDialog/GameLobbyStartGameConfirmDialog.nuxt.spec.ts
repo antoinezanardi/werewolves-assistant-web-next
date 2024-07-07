@@ -20,9 +20,9 @@ type GameLobbyStartGameConfirmDialogPrivateVariables = {
   confirmStepIndex: Ref<number>;
   currentConfirmStep: GameLobbyStartGameConfirmDialogStep;
   open: () => void;
-  confirmStep: () => void;
+  onConfirmStepFromGameLobbyStartGameConfirmDialogContainer: () => void;
   confirmStartGame: () => void;
-  rejectPlayersPositionStep: (rejectCallback: () => void) => void;
+  onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
 };
 
 const hoistedMocks = vi.hoisted(() => ({
@@ -122,7 +122,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
 
   describe("Confirm Step", () => {
     it("should increment confirm step index when step is confirmed.", () => {
-      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmStep();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onConfirmStepFromGameLobbyStartGameConfirmDialogContainer();
 
       expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmStepIndex.value).toBe(1);
     });
@@ -137,7 +137,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
           createFakeCreateGamePlayerDto({ role: { name: "rusty-sword-knight" } }),
         ],
       });
-      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmStep();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onConfirmStepFromGameLobbyStartGameConfirmDialogContainer();
       await nextTick();
 
       expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).currentConfirmStep).toBe("players-ready");
@@ -155,14 +155,14 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
   describe("Reject Players Position Step", () => {
     it("should call reject callback pass as argument when reject players position step is called.", () => {
       const rejectCallback = vi.fn();
-      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).rejectPlayersPositionStep(rejectCallback);
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
 
       expect(rejectCallback).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should emit reject players position step event when reject players position step is called.", () => {
       const rejectCallback = vi.fn();
-      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).rejectPlayersPositionStep(rejectCallback);
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
 
       expect(wrapper.emitted("rejectPlayersPositionStep")).toHaveLength(1);
     });

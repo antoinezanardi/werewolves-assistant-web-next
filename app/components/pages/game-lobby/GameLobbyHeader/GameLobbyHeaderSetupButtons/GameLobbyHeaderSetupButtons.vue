@@ -7,7 +7,7 @@
         id="game-lobby-header-options-button"
         key="game-options-button"
         class="fade-list-item"
-        @game-options-button-click="handleGameOptionsButtonClick"
+        @game-options-button-click="onGameOptionsButtonClickFromGameOptionButton"
       />
 
       <GameLobbyHeaderPositionCoordinatorButton
@@ -16,7 +16,7 @@
         key="game-position-coordinator-button"
         ref="gameLobbyHeaderPositionCoordinatorButton"
         class="fade-list-item"
-        @position-coordinator-button-click="handlePositionCoordinatorButtonClick"
+        @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGamePositionCoordinatorButton"
       />
     </TransitionGroup>
   </PrimeVueButtonGroup>
@@ -43,11 +43,11 @@ const gameLobbyHeaderPositionCoordinatorButton = ref<ComponentPublicInstance | n
 
 const isPositionCoordinatorVisible = computed<boolean>(() => doesCreateGameDtoContainPositionDependantRoles.value && createGameDto.value.players.length >= MIN_PLAYERS_IN_GAME);
 
-function handleGameOptionsButtonClick(): void {
+function onGameOptionsButtonClickFromGameOptionButton(): void {
   emit("gameOptionsButtonClick");
 }
 
-function handlePositionCoordinatorButtonClick(): void {
+function onPositionCoordinatorButtonClickFromGamePositionCoordinatorButton(): void {
   emit("positionCoordinatorButtonClick");
 }
 

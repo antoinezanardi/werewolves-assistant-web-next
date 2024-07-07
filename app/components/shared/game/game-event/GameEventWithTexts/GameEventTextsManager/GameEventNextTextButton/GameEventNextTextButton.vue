@@ -8,7 +8,7 @@
     :class="{ 'text-gray-500': !canGoToNextGameEventText }"
     :disabled="!canGoToNextGameEventText"
     type="button"
-    @click.prevent="nextEventText"
+    @click.prevent="onClickFromNextEventTextButton"
   >
     <i class="fa fa-3x fa-chevron-right"/>
   </button>
@@ -52,12 +52,12 @@ const buttonTooltipOptions = computed<TooltipOptions>(() => {
   };
 });
 
-function nextEventText(): void {
+function onClickFromNextEventTextButton(): void {
   emit("click");
 }
 
-function handlePressArrowRightKey(): void {
-  nextEventText();
+function onPressArrowRightKey(): void {
+  onClickFromNextEventTextButton();
   void animateElementOnce(nextGameEventTextButton, "headShake");
 }
 
@@ -65,6 +65,6 @@ watch(() => keyboard.value.arrowRight.isPressed, (isKeyPressed: boolean) => {
   if (!isKeyPressed || !canGoToNextGameEventText.value) {
     return;
   }
-  handlePressArrowRightKey();
+  onPressArrowRightKey();
 });
 </script>
