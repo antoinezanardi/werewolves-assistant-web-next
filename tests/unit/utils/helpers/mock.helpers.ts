@@ -38,8 +38,7 @@ function mockPiniaStore<TStoreDef extends () => unknown>(useStore: TStoreDef): T
   infer Actions
 >
   ? Store<Id, State, Getters, {
-    [K in keyof Actions]: Actions[K] extends (...args: infer Args) =>
-    infer ReturnT ? Mock<Args, ReturnT> : Actions[K]
+    [K in keyof Actions]: Mock
   }>
   : ReturnType<TStoreDef> {
   return useStore() as never;
