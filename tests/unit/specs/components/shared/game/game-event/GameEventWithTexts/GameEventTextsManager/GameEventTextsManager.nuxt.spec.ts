@@ -107,5 +107,13 @@ describe("Game Event Texts Manager Component", () => {
 
       expect(currentGameEventText.text()).toBe("Game starts.");
     });
+
+    it("should emit game event text change event when clicked.", async() => {
+      const nextGameEventTextButton = wrapper.findComponent<typeof GameEventNextTextButton>("#game-event-next-text-button");
+      (nextGameEventTextButton.vm as VueVm).$emit("click");
+      await nextTick();
+
+      expect(wrapper.emitted("gameEventTextChange")).toHaveLength(1);
+    });
   });
 });

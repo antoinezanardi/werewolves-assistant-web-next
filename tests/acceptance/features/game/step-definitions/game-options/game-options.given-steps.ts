@@ -142,3 +142,10 @@ Given(/^the user allows the defender to protect the little girl from the werewol
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input", true);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user prevents the revealed idiot death on elder's death in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input", false);
+  await closeDialogWithHeaderButton(this);
+});

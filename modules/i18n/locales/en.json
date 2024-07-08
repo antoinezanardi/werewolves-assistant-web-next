@@ -1396,6 +1396,12 @@
       "playersPosition": "Players position",
       "someRolesArePositionDependant": "Some roles rely on players position. Are players placed correctly in the game lobby?",
       "showMeHowToPositionPlayers": "Show me how to position players"
+    },
+    "GameIdiotIsSparedEvent": {
+      "cantFindIdiot": "The Idiot can't be found… Please proceed.",
+      "playerDies": "{playerName} is dead! What a tragedy… He/she can reveal his/her role to the others.",
+      "playerIsActuallyIdiot": "{playerName} is actually the Idiot!",
+      "idiotIsSpared": "The survivors have pity for the Idiot and spare him. He is not eliminated but can't vote for the rest of the game."
     }
   }
 }

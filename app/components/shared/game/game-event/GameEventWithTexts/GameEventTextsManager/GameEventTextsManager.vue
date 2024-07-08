@@ -39,10 +39,12 @@ import { storeToRefs } from "pinia";
 import GameEventNextTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/GameEventNextTextButton.vue";
 import GameEventPreviousTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/GameEventPreviousTextButton.vue";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import type { GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
+import type { GameEventTextsManagerEmits, GameEventTextsManagerProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/game-event-texts-manager.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const props = defineProps<GameEventTextsManagerProps>();
+
+const emit = defineEmits<GameEventTextsManagerEmits>();
 
 const gameStore = useGameStore();
 const { makingGamePlayStatus } = storeToRefs(gameStore);
@@ -76,4 +78,8 @@ async function onClickFromGameEventNextTextButton(): Promise<void> {
   }
   currentIndex.value++;
 }
+
+watch(currentGameEventText, () => {
+  emit("gameEventTextChange", currentGameEventText.value);
+});
 </script>

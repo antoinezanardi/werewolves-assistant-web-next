@@ -10,6 +10,7 @@ const SOUND_EFFECT_NAMES = [
   "dog-barking",
   "dramatic-announcement",
   "dramatic-drums",
+  "dumb-huh",
   "evil-demonic-laugh",
   "evil-laugh",
   "flute-and-drums",

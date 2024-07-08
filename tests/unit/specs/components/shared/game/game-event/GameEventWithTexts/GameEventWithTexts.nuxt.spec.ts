@@ -1,3 +1,4 @@
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameEventWithTextsProps } from "~/components/shared/game/game-event/GameEventWithTexts/game-event-with-texts.types";
@@ -45,6 +46,17 @@ describe("Game Event With Texts Component", () => {
       const gameEventTextsManager = wrapper.findComponent<typeof GameEventTextsManager>("#game-event-texts-manager");
 
       expect(gameEventTextsManager.props("texts")).toStrictEqual<string[]>(defaultProps.texts);
+    });
+  });
+
+  describe("Emits", () => {
+    it("should emit game event text change when game event texts manager emits the same event.", async() => {
+      const gameEventTextsManager = wrapper.findComponent<typeof GameEventTextsManager>("#game-event-texts-manager");
+      const expectedText = defaultProps.texts[1];
+      (gameEventTextsManager.vm as VueVm).$emit("game-event-text-change", expectedText);
+      await nextTick();
+
+      expect(wrapper.emitted("gameEventTextChange")).toStrictEqual([[expectedText]]);
     });
   });
 });
