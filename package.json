@@ -130,7 +130,7 @@
     "pngjs": "^7.0.0",
     "prettier": "^3.3.2",
     "prettier-plugin-gherkin": "^2.4.0",
-    "qs": "^6.12.2",
+    "qs": "^6.12.3",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.0.0",
