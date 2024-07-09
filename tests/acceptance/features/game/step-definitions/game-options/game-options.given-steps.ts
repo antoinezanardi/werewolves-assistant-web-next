@@ -156,3 +156,10 @@ Given(/^the user sets the two sisters waking up interval to (?<wakingUpInterval>
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input", wakingUpInterval);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets the three brothers waking up interval to (?<wakingUpInterval>\d+) in game options$/u, async function(this: CustomWorld, wakingUpInterval: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input", wakingUpInterval);
+  await closeDialogWithHeaderButton(this);
+});
