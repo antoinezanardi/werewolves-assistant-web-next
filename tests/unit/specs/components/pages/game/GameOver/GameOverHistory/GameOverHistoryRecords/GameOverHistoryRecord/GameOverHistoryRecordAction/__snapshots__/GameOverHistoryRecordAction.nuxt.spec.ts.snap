@@ -3,6 +3,6 @@
 exports[`Game Over History Record Action Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-history-record-action" class="flex flex-col gap-2 items-center justify-center">
   <h4 id="game-over-history-record-action-text">components.GameOverHistoryRecordAction.skippedTurn</h4>
-  <nuxt-img-stub src="/svg/game/player/player-attribute/powerless.svg" width="25" height="25" alt="Action icon"></nuxt-img-stub>
+  <nuxt-img-stub src="/svg/game/player/player-attribute/powerless.svg" width="25" height="25" alt="Action icon" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
 </div>"
 `;

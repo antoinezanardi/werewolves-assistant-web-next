@@ -4,6 +4,7 @@
       <div class="flex justify-center w-full">
         <NuxtImg
           :alt="$t('pages.index.werewolvesAssistantLogo')"
+          placeholder="/svg/misc/infinite-spinner.svg"
           sizes="sm:125 md:200 lg:200"
           src="/img/logo/square/werewolves-logo.png"
         />

@@ -10,6 +10,7 @@
     <NuxtImg
       :alt="$t('components.GameOverHistoryRecordAction.actionIconAltText')"
       height="25"
+      placeholder="/svg/misc/infinite-spinner.svg"
       :src="gameHistoryRecordActionTextIcon"
       width="25"
     />

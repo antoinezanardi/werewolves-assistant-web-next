@@ -4,7 +4,7 @@ exports[`Game Lobby Options Hub Roles Tab Sheriff Component > should match snaps
 "<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root">
   <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
     <div class="flex gap-4 items-center">
-      <nuxt-img-stub src="/svg/game/player/player-attribute/sheriff.svg" width="50px" height="50px" alt="Sheriff icon" class="duration-300 ease-in-out transition-all"></nuxt-img-stub>
+      <nuxt-img-stub src="/svg/game/player/player-attribute/sheriff.svg" width="50px" height="50px" alt="Sheriff icon" placeholder="/svg/misc/infinite-spinner.svg" class="duration-300 ease-in-out transition-all"></nuxt-img-stub>
       <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
     </div>
     <!---->

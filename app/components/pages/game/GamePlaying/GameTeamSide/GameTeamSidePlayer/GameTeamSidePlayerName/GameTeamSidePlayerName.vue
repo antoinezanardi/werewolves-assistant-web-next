@@ -6,6 +6,7 @@
       :alt="$t('components.GameTeamSidePlayerName.thisPlayerIsDead')"
       class="me-2"
       height="20"
+      placeholder="/svg/misc/infinite-spinner.svg"
       src="/svg/game/player/dead.svg"
       width="20"
     />

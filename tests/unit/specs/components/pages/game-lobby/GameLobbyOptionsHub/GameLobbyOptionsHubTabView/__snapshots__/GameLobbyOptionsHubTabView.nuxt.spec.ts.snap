@@ -14,13 +14,13 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
           </a></li>
         <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="1" data-p-active="false"><a id="game-lobby-options-hub-tab-view_1_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true">
             <!---->
-            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" srcset="/_ipx/s_40x40/svg/misc/people.svg 1x, /_ipx/s_80x80/svg/misc/people.svg 2x" src="/_ipx/s_40x40/svg/misc/people.svg">
+            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="composition-tab-header-text">Composition</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
         <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="2" data-p-active="false"><a id="game-lobby-options-hub-tab-view_2_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_2_content" data-pc-section="headeraction" data-pd-ripple="true">
             <!---->
-            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" srcset="/_ipx/s_40x40/svg/game/game-play/game-play-action/settle-votes.svg 1x, /_ipx/s_80x80/svg/game/game-play/game-play-action/settle-votes.svg 2x" src="/_ipx/s_40x40/svg/game/game-play/game-play-action/settle-votes.svg">
+            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="votes-tab-header-text">Votes</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
@@ -74,7 +74,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
-            <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" srcset="/_ipx/s_50x50/svg/game/player/player-attribute/sheriff.svg 1x, /_ipx/s_100x100/svg/game/player/player-attribute/sheriff.svg 2x" src="/_ipx/s_50x50/svg/game/player/player-attribute/sheriff.svg" class="duration-300 ease-in-out transition-all">
+            <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" class="duration-300 ease-in-out transition-all" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
             </div>
             <!---->
