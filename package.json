@@ -133,7 +133,7 @@
     "qs": "^6.12.2",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
-    "rimraf": "^5.0.8",
+    "rimraf": "^5.0.9",
     "sass": "^1.77.6",
     "semantic-release": "^24.0.0",
     "semantic-release-export-data": "^1.1.0",
