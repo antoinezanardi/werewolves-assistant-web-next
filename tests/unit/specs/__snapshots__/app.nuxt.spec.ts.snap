@@ -24,7 +24,7 @@ exports[`App Component > should render component without shallow and match snaps
       <transition-stub data-v-8ff0109a="" name="page" mode="out-in" appear="false" persisted="false" css="true">
         <div class="flex flex-col h-full md:p-2 p-4">
           <div class="flex flex-col grow items-center justify-center">
-            <div class="flex justify-center w-full"><img alt="Werewolves Assistant logo" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg"></div>
+            <div class="flex justify-center w-full"><img alt="Werewolves Assistant logo" data-nuxt-img="" class="w-24 h-24" src="/svg/misc/infinite-spinner.svg"></div>
             <div class="mb-16 mt-6 text-center w-full">
               <h1 id="title" class="!text-5xl !tracking-wider mt-0">Werewolves Assistant</h1>
               <h5 id="subtitle" class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"><i class="fa fa-sun md:w-auto text-2xl text-day w-2/12"></i><span>The perfect tool for game masters of the Werewolves of Miller's Hollow™</span><i class="fa fa-moon md:w-auto text-2xl text-night w-2/12"></i></h5>
