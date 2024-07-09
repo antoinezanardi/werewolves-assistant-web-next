@@ -7,6 +7,7 @@
       <NuxtImg
         :alt="$t('components.GameOverVictoryText.trophyImageAlt')"
         height="125"
+        placeholder="/svg/misc/infinite-spinner.svg"
         src="svg/misc/trophy.svg"
         width="125"
       />
@@ -14,6 +15,7 @@
       <NuxtImg
         :alt="$t('components.GameOverVictoryText.victoryTypeImageAlt')"
         height="125"
+        placeholder="/svg/misc/infinite-spinner.svg"
         :src="victoryTypeTextsAndSvg.svgPath"
         width="125"
       />

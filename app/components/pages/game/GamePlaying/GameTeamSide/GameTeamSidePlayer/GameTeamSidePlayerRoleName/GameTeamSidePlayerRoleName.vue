@@ -8,6 +8,7 @@
       v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
       :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
       height="20"
+      placeholder="/svg/misc/infinite-spinner.svg"
       src="svg/game/player/player-attribute/seen.svg"
       width="20"
     />

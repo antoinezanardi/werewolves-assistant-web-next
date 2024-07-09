@@ -6,6 +6,7 @@
     <NuxtImg
       :alt="$t(`components.GameLobbyStartGameConfirmDialogPlayersPositioned.playersPosition`)"
       :height="svgSize"
+      placeholder="/svg/misc/infinite-spinner.svg"
       src="/svg/misc/pie-chart-clock-wise.svg"
       :width="svgSize"
     />

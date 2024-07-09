@@ -14,6 +14,7 @@
       <NuxtImg
         id="navbar-werewolves-assistant-logo"
         :alt="$t('components.NavBar.werewolvesAssistantLogo')"
+        placeholder="/svg/misc/infinite-spinner.svg"
         src="/img/logo/square/werewolves-logo-small.png"
       />
 

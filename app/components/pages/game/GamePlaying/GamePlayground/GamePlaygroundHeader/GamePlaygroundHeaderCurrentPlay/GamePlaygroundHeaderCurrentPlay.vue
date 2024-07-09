@@ -9,6 +9,7 @@
         :alt="$t(`components.GamePlaygroundHeaderCurrentPlay.currentPlayAltText`)"
         class="me-3"
         height="50"
+        placeholder="/svg/misc/infinite-spinner.svg"
         :src="currentPlaySvgAndTextKey.svgPath"
         width="50"
       />
