@@ -108,6 +108,13 @@ Given(/^the user sets the infected pied piper powerful in game options$/u, async
   await closeDialogWithHeaderButton(this);
 });
 
+Given(/^the user sets the pied piper charmed people revealed in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input", true);
+  await closeDialogWithHeaderButton(this);
+});
+
 Given(/^the user sets wolf-hound chosen side revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
   await goOnPage(this, "/game-lobby");
   await openGameOptionsDialogInGameLobby(this);

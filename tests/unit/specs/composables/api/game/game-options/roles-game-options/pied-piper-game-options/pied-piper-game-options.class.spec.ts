@@ -6,10 +6,12 @@ describe("Pied Piper Game Options Class", () => {
       const createdPiedPiperGameOptions = PiedPiperGameOptions.create({
         isPowerlessOnWerewolvesSide: false,
         charmedPeopleCountPerNight: 1,
+        areCharmedPeopleRevealed: true,
       });
       const expectedPiedPiperGameOptions = new PiedPiperGameOptions();
       expectedPiedPiperGameOptions.isPowerlessOnWerewolvesSide = false;
       expectedPiedPiperGameOptions.charmedPeopleCountPerNight = 1;
+      expectedPiedPiperGameOptions.areCharmedPeopleRevealed = true;
 
       expect(createdPiedPiperGameOptions).toStrictEqual<PiedPiperGameOptions>(expectedPiedPiperGameOptions);
     });

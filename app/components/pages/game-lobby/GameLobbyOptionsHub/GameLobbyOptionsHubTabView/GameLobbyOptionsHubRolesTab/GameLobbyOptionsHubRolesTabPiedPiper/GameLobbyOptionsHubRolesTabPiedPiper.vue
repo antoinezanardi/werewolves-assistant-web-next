@@ -43,6 +43,7 @@
 
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group"
+      does-have-bottom-divider
       :option-description="isPiedPiperPowerlessOnWerewolvesSideDescription"
       option-icon-class="fa fa-ban text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.label')"
@@ -50,6 +51,19 @@
       <AffirmativeToggleButton
         id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input"
         v-model="isPiedPiperPowerlessOnWerewolvesSideValue"
+        class="w-full"
+      />
+    </GameOptionInputGroup>
+
+    <GameOptionInputGroup
+      id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group"
+      :option-description="areCharmedPeopleByPiedPiperRevealedDescription"
+      option-icon-class="fa fa-bullhorn text-blue-500"
+      :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.label')"
+    >
+      <AffirmativeToggleButton
+        id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input"
+        v-model="areCharmedPeopleByPiedPiperRevealedValue"
         class="w-full"
       />
     </GameOptionInputGroup>
@@ -94,6 +108,15 @@ const isPiedPiperPowerlessOnWerewolvesSideValue = computed<boolean>({
   },
 });
 
+const areCharmedPeopleByPiedPiperRevealedValue = computed<boolean>({
+  get: () => createGameDto.value.options.roles.piedPiper.areCharmedPeopleRevealed,
+  set: (value: boolean) => {
+    const localCreateGameDto = CreateGameDto.create(createGameDto.value);
+    localCreateGameDto.options.roles.piedPiper.areCharmedPeopleRevealed = value;
+    setCreateGameDto(localCreateGameDto);
+  },
+});
+
 const piedPiperCharmedPeopleCountPerNightDescription = computed<string>(() => {
   const tKey = "components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description";
 
@@ -104,5 +127,11 @@ const isPiedPiperPowerlessOnWerewolvesSideDescription = computed<string>(() => {
   const booleanAsAffirmative = convertBooleanAsAffirmativeString(isPiedPiperPowerlessOnWerewolvesSideValue.value);
 
   return t(`components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.${booleanAsAffirmative}`);
+});
+
+const areCharmedPeopleByPiedPiperRevealedDescription = computed<string>(() => {
+  const booleanAsAffirmative = convertBooleanAsAffirmativeString(areCharmedPeopleByPiedPiperRevealedValue.value);
+
+  return t(`components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.${booleanAsAffirmative}`);
 });
 </script>

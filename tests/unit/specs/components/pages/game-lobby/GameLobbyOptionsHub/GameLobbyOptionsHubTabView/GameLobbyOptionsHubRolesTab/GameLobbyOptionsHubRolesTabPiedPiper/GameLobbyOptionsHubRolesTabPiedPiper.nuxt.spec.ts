@@ -124,4 +124,41 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
       expect(createGameDtoStore.setCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedCreateGameDto);
     });
   });
+
+  describe("Are charmed people revealed", () => {
+    it("should translate option label when rendered.", () => {
+      const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group");
+
+      expect(gameOptionInputGroup.props("optionLabel")).toBe("Charmed people are revealed");
+    });
+
+    it("should translate option description when the option is activated.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.options.roles.piedPiper.areCharmedPeopleRevealed = true;
+      const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group");
+      await nextTick();
+
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.yes");
+    });
+
+    it("should translate option description when the option is deactivated.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.options.roles.piedPiper.areCharmedPeopleRevealed = false;
+      const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group");
+      await nextTick();
+
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no");
+    });
+
+    it("should update the create game dto store when the option is toggled.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const toggleButton = wrapper.findComponent<typeof AffirmativeToggleButton>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input");
+      (toggleButton.vm as VueVm).$emit("update:modelValue", false);
+      await nextTick();
+      const expectedCreateGameDto = createFakeCreateGameDto(createGameDtoStore.createGameDto);
+      expectedCreateGameDto.options.roles.piedPiper.areCharmedPeopleRevealed = false;
+
+      expect(createGameDtoStore.setCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedCreateGameDto);
+    });
+  });
 });

@@ -1113,6 +1113,13 @@
             "yes": "Si le Joueur de Flûte est infecté par l'Infect Père des Loups, il perd ses pouvoirs pour le reste de la partie.",
             "no": "Le Joueur de Flûte garde ses pouvoirs même s'il est infecté par l'Infect Père des Loups."
           }
+        },
+        "areCharmedPeopleRevealed": {
+          "label": "Les personnes charmées sont révélées",
+          "descriptions": {
+            "yes": "Les personnes charmées sont révélées aux autres joueurs.",
+            "no": "Les personnes charmées ne sont pas révélées aux autres joueurs."
+          }
         }
       }
     },
@@ -1352,7 +1359,9 @@
     },
     "GamePiedPiperHasCharmedEvent": {
       "piedPiperHasCharmed": "Le Joueur de Flûte a charmé un joueur | Le Joueur de Flûte a charmé {charmedCount} joueurs.",
-      "gameMasterWillTapCharmedPlayers": "Le Maître du Jeu va tapoter le dos du joueur charmé pour qu'il sache qu'il est charmé. | Le Maître du Jeu va tapoter le dos des {charmedCount} joueurs charmés pour qu'ils sachent qu'ils sont charmés."
+      "gameMasterWillTapCharmedPlayers": "Le Maître du Jeu va tapoter le dos du joueur charmé pour qu'il sache qu'il est charmé. | Le Maître du Jeu va tapoter le dos des {charmedCount} joueurs charmés pour qu'ils sachent qu'ils sont charmés.",
+      "charmedPeopleAreRevealed": "Dans cette partie spéciale, les personnes charmées sont révélées aux autres joueurs.",
+      "peopleAreCharmed": "{charmedPeople} a été charmé ! | {charmedPeople} ont été charmés !"
     },
     "GameWolfHoundHasChosenSideEvent": {
       "cantFindWolfHoundOrChosenSide": "Le Chien-Loup ou son camp choisi ne peut être trouvé… Veuillez continuer.",
