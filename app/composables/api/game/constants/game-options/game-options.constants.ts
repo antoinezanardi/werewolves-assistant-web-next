@@ -50,6 +50,7 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
     piedPiper: {
       charmedPeopleCountPerNight: 2,
       isPowerlessOnWerewolvesSide: true,
+      areCharmedPeopleRevealed: false,
     },
     scandalmonger: { markPenalty: 2 },
     witch: { doesKnowWerewolvesTargets: true },

@@ -672,6 +672,18 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
                   <!--v-if-->
                 </div>
+                <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
+                  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-blue-500"></i><span>Charmed people are revealed</span></h3>
+                    <div id="game-option-input" class="w-4/12">
+                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
+                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no</p>
+                  <!--v-if-->
+                </div>
               </div>
             </div>
           </transition-stub>
