@@ -152,17 +152,7 @@ Feature: 🪈 Pied Piper role
     When the user goes to the next game event text
     Then the game's event should display the text "The Game Master will tap in the back the charmed player so he knows he is charmed."
 
-    When the user goes to the next game event text
-    Then the game's event should display the text "The first charmed person by the Pied Piper wakes up."
-    And the game's event player card should have the name "Bob"
-
-    When the user goes to the next game event text
-    Then the game's current play title should be "Charmed people meet each other"
-    And the game's phase name should be "Night 1"
-    And the game's current play should not expect any action
-
-    When the player or group skips his turn
-    And the user skips all game events
+    When the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the player or group skips his turn
