@@ -670,7 +670,9 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
                     </div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
-                  <!--v-if-->
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                    <!---->
+                  </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">

@@ -43,6 +43,7 @@
 
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group"
+      does-have-bottom-divider
       :option-description="isPiedPiperPowerlessOnWerewolvesSideDescription"
       option-icon-class="fa fa-ban text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.label')"
