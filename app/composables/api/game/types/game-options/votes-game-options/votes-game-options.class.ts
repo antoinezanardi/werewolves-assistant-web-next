@@ -5,6 +5,9 @@ class VotesGameOptions {
   @Expose()
   public canBeSkipped: boolean;
 
+  @Expose()
+  public duration: number;
+
   public static create(votesGameOptions: VotesGameOptions): VotesGameOptions {
     return plainToInstance(VotesGameOptions, votesGameOptions, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }

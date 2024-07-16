@@ -11,6 +11,10 @@
       "back": "Retour",
       "cancel": "Annuler"
     },
+    "time": {
+      "second": "1 seconde | {count} secondes",
+      "minute": "1 minute | {count} minutes"
+    },
     "role": {
       "name": {
         "werewolf": "Loup-Garou | Loups-Garous",
@@ -1183,6 +1187,10 @@
             "yes": "Les joueurs peuvent éviter une pendaison en passant leurs votes.",
             "no": "Les joueurs ne peuvent pas éviter la phase de votes, au moins un joueur devra voter."
           }
+        },
+        "duration": {
+          "label": "Durée des votes en secondes",
+          "description": "Les joueurs ont {time} pour voter. Seulement à titre indicatif, le Maître du Jeu peut décider de prolonger ou de raccourcir ce temps."
         }
       }
     },

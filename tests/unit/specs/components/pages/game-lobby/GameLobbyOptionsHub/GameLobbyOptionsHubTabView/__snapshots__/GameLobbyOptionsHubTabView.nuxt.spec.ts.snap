@@ -851,6 +851,21 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+            <!---->
+          </div>
+        </div>
+        <div id="game-lobby-options-hub-roles-tab-votes-duration-input-group" class="mt-8">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock text-yellow-500"></i><span>Votes duration in seconds</span></h3>
+            <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-votes-duration-label" for="game-lobby-options-hub-roles-tab-votes-duration-input">Votes duration in seconds</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-votes-duration-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="10" aria-valuemax="600" aria-valuenow="180" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="180"><!----><!----><!----></span>
+              <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-votes-duration-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 28.8135593220339%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 28.8135593220339%;" tabindex="0" role="slider" aria-valuemin="10" aria-valuenow="180" aria-valuemax="600" aria-orientation="horizontal" data-pc-section="handle"></span>
+                <!---->
+                <!---->
+              </div></span>
+            </div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.duration.description, {"time":"shared.time.minute, {\\"count\\":3}, 3"}</p>
           <!--v-if-->
         </div>
       </div>
