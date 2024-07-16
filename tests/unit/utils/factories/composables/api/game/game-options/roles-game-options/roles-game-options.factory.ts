@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { createFakeWerewolfGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/werewolf-game-options/werewolf-game-options.factory";
 import { RolesGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/roles-game-options.class";
 import { createFakeActorGameOptionsFactory } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/actor-game-options/actor-game-options.factory";
 import { createFakeBearTamerGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/bear-tamer-game-options/bear-tamer-game-options.factory";
@@ -48,6 +49,7 @@ function createFakeRolesGameOptions(roleGameOptions: Partial<RolesGameOptions> =
     whiteWerewolf: createFakeWhiteWerewolfGameOptions(roleGameOptions.whiteWerewolf),
     wildChild: createFakeWildChildGameOptions(roleGameOptions.wildChild),
     witch: createFakeWitchGameOptions(roleGameOptions.witch),
+    werewolf: createFakeWerewolfGameOptions(roleGameOptions.werewolf),
     wolfHound: createFakeWolfHoundGameOptions(roleGameOptions.wolfHound),
   });
 }

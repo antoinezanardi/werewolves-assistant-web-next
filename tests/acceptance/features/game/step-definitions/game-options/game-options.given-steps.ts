@@ -52,6 +52,13 @@ Given(/^the user sets sheriff election time on (?<phaseName>night|day) (?<turn>\
   await closeDialogWithHeaderButton(this);
 });
 
+Given(/^the user allows werewolves to eat each other in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input", true);
+  await closeDialogWithHeaderButton(this);
+});
+
 Given(/^the user makes the seer quiet in game options$/u, async function(this: CustomWorld): Promise<void> {
   await goOnPage(this, "/game-lobby");
   await openGameOptionsDialogInGameLobby(this);

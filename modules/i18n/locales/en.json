@@ -1231,7 +1231,8 @@
       "bearGrowls": "The Bear Tamer wakes up and his bear growls. One or more Werewolves are next to him…"
     },
     "GameBigBadWolfTurnStartsEvent": {
-      "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager."
+      "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager.",
+      "bigBadWolfCanEatWerewolves": "In this special game, the Big Bad Wolf can eat another Werewolf if he wants to."
     },
     "GameCharmedTurnStartsEvent": {
       "charmedPeopleMeetEachOther": "The first charmed person by the Pied Piper wakes up. | The first charmed people by the Pied Piper wake up and meet each other.",
@@ -1296,7 +1297,8 @@
     "GameWerewolvesTurnStartsEvent": {
       "werewolvesMeetEachOtherForFirstTime": "The Werewolves wake up and meet each other for the first time.",
       "whenMeetOverWerewolvesEat": "When the meeting is over, the Werewolves will eat a Villager.",
-      "werewolvesEat": "The Werewolves wake up and will eat a Villager."
+      "werewolvesEat": "The Werewolves wake up and will eat a Villager.",
+      "werewolvesCanEatEachOther": "In this special game, the Werewolves can eat each other if they want to. A good way to remove all suspicions…"
     },
     "GameWhiteWerewolfTurnStartsEvent": {
       "whiteWerewolfCanEatAnotherWolf": "The White Werewolf wakes up and can eat another Werewolf if he wants to."
@@ -1411,6 +1413,17 @@
       "playerDies": "{playerName} is dead! What a tragedy… He/she can reveal his/her role to the others.",
       "playerIsActuallyIdiot": "{playerName} is actually the Idiot!",
       "idiotIsSpared": "The survivors have pity for the Idiot and spare him. He is not eliminated but can't vote for the rest of the game."
+    },
+    "GameLobbyOptionsHubRolesTabWerewolf": {
+      "options": {
+        "canEatEachOther": {
+          "label": "Werewolves can eat each other",
+          "descriptions": {
+            "yes": "The Werewolves (or the Big Bad Wolf) can eat each other if they want to.",
+            "no": "The Werewolves (nor the Big Bad Wolf) can eat each other."
+          }
+        }
+      }
     }
   }
 }
