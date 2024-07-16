@@ -7,6 +7,8 @@
 
     <GameLobbyOptionsHubRolesTabSheriff/>
 
+    <GameLobbyOptionsHubRolesTabWerewolf/>
+
     <GameLobbyOptionsHubRolesTabBigBadWolf/>
 
     <GameLobbyOptionsHubRolesTabWhiteWerewolf/>
@@ -71,6 +73,7 @@ import GameLobbyOptionsHubRolesTabStutteringJudge from "~/components/pages/game-
 import GameLobbyOptionsHubRolesTabThief from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabThief/GameLobbyOptionsHubRolesTabThief.vue";
 import GameLobbyOptionsHubRolesTabThreeBrothers from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabThreeBrothers/GameLobbyOptionsHubRolesTabThreeBrothers.vue";
 import GameLobbyOptionsHubRolesTabTwoSisters from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabTwoSisters/GameLobbyOptionsHubRolesTabTwoSisters.vue";
+import GameLobbyOptionsHubRolesTabWerewolf from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabWerewolf/GameLobbyOptionsHubRolesTabWerewolf.vue";
 import GameLobbyOptionsHubRolesTabWhiteWerewolf from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabWhiteWerewolf/GameLobbyOptionsHubRolesTabWhiteWerewolf.vue";
 import GameLobbyOptionsHubRolesTabWildChild from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabWildChild/GameLobbyOptionsHubRolesTabWildChild.vue";
 import GameLobbyOptionsHubRolesTabWitch from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabWitch/GameLobbyOptionsHubRolesTabWitch.vue";

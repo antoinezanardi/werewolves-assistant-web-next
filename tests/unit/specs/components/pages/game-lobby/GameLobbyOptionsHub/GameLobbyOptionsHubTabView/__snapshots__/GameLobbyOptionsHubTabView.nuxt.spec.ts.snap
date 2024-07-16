@@ -144,6 +144,32 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root">
+          <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+              <h2 id="game-option-role-legend-title">shared.role.name.werewolf</h2>
+            </div>
+            <!---->
+          </legend>
+          <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+            <div id="game-lobby-options-hub-roles-tab-werewolf_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-werewolf_header" data-pc-section="toggleablecontent">
+              <div class="p-fieldset-content" data-pc-section="content">
+                <div id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group">
+                  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-utensils text-gray-500"></i><span>Werewolves can eat each other</span></h3>
+                    <div id="game-option-input" class="w-4/12">
+                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
+                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.no</p>
+                  <!--v-if-->
+                </div>
+              </div>
+            </div>
+          </transition-stub>
+        </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-big-bad-wolf" data-pc-name="fieldset" data-pc-section="root">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.big-bad-wolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">

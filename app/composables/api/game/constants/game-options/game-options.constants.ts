@@ -6,6 +6,7 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
   roles: {
     areRevealedOnDeath: true,
     doSkipCallIfNoTarget: false,
+    werewolf: { canEatEachOther: false },
     sheriff: {
       isEnabled: true,
       electedAt: {
