@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     "@tests": fileURLToPath(new URL("./tests", import.meta.url)),
     "@modules": fileURLToPath(new URL("./modules", import.meta.url)),
   },
-
   app: {
     head: {
       link: [
@@ -38,7 +37,6 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
   },
-
   css: [
     "primevue/resources/themes/lara-dark-blue/theme.css",
     "@fortawesome/fontawesome-free/css/all.css",
@@ -46,11 +44,9 @@ export default defineNuxtConfig({
     "./assets/css/google-fonts.css",
     "animate.css/animate.min.css",
   ],
-
   devtools: { enabled: true },
   experimental: { renderJsonPayloads: false },
   future: { compatibilityVersion: 4 },
-
   googleFonts: {
     display: "swap",
     families: { Quicksand: { wght: "300..700" } },
@@ -61,25 +57,21 @@ export default defineNuxtConfig({
     text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
     overwriting: false,
   },
-
   i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
-
   image: {
     domains: [
       "antoinezanardi.fr",
       "appspot.com",
     ],
   },
-
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   pinia: { storesDirs: [] },
-
   plugins: [
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",
+    "~/plugins/vue-countdown/vue-countdown.client.ts",
   ],
-
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
     components: {
@@ -123,7 +115,6 @@ export default defineNuxtConfig({
     composables: { include: ["useToast"] },
     options: { ripple: true },
   },
-
   routeRules: {
     "/": { prerender: true },
     "/about": { swr: true },
@@ -131,23 +122,19 @@ export default defineNuxtConfig({
     "/game": { ssr: false },
     "/game/**": { ssr: false },
   },
-
   runtimeConfig: {
     public: {
       defaultLocale: "en",
       werewolvesAssistantApi: { baseUrl: "" },
     },
   },
-
   tailwindcss: {
     quiet: true,
     cssPath: "~/assets/scss/tailwind.scss",
     configPath: "./config/tailwind/tailwind.config.ts",
   },
-
   telemetry: false,
   test: true,
-
   typescript: {
     shim: true,
     strict: true,
@@ -167,7 +154,12 @@ export default defineNuxtConfig({
     },
     typeCheck: true,
   },
-
-  vite: { esbuild: { tsconfigRaw: { compilerOptions: { experimentalDecorators: true } } } },
+  vite: {
+    esbuild: {
+      tsconfigRaw: {
+        compilerOptions: { experimentalDecorators: true },
+      },
+    },
+  },
   compatibilityDate: "2024-07-04",
 });

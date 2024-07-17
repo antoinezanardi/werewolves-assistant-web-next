@@ -5,6 +5,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Tooltip from "primevue/tooltip";
 import { Vue3Lottie } from "vue3-lottie";
 import VueDraggable from "vuedraggable";
+import VueCountdown from "@chenfengyuan/vue-countdown";
 import { clone, construct, crush } from "radash";
 
 function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
@@ -20,6 +21,7 @@ function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>
       components: {
         VueLottie: Vue3Lottie,
         VueDraggable,
+        VueCountdown,
       },
     },
   };

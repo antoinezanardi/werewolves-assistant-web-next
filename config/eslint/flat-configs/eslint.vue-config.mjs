@@ -217,6 +217,7 @@ const ESLINT_VUE_CONFIG = {
           "VueFlip",
           "VueLottie",
           "VueDraggable",
+          "VueCountdown",
         ],
       },
     ],
