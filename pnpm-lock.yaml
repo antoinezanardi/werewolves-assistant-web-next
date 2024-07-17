@@ -34,8 +34,8 @@ importers:
         specifier: ^10.8.0
         version: 10.8.0
       '@eslint/config-inspector':
-        specifier: ^0.5.1
-        version: 0.5.1(eslint@9.7.0)
+        specifier: ^0.5.2
+        version: 0.5.2(eslint@9.7.0)
       '@eslint/eslintrc':
         specifier: ^3.1.0
         version: 3.1.0
@@ -1121,8 +1121,8 @@ packages:
     resolution: {integrity: sha512-A68TBu6/1mHHuc5YJL0U0VVeGNiklLAL6rRmhTCP2B5XjWLMnrX+HkO+IAXyHvks5cyyY1jjK5ITPQ1HGS2EVA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/config-inspector@0.5.1':
-    resolution: {integrity: sha512-MgXlqfuD7K/eOf0ZHKrBuNtmSfgOq548ru0IJZScOVf14Zp12PeU0CK5b4m94TP2D5dBXlXoGtOkL3UGlzHtVw==}
+  '@eslint/config-inspector@0.5.2':
+    resolution: {integrity: sha512-m7uUwWhYU4DoHTakyLIRauqnYK05Bv8G+R47IN7a6KC4XXAjIw/OeztgBU5tjGNfzsSOM8nr9Rf779B7D3GPtw==}
     hasBin: true
     peerDependencies:
       eslint: ^8.50.0 || ^9.0.0
@@ -7352,6 +7352,18 @@ packages:
       utf-8-validate:
         optional: true
 
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
@@ -8379,7 +8391,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/config-inspector@0.5.1(eslint@9.7.0)':
+  '@eslint/config-inspector@0.5.2(eslint@9.7.0)':
     dependencies:
       '@eslint/config-array': 0.17.0
       '@voxpelli/config-array-find-files': 0.1.2(@eslint/config-array@0.17.0)
@@ -8397,7 +8409,7 @@ snapshots:
       mrmime: 2.0.0
       open: 10.1.0
       picocolors: 1.0.1
-      ws: 8.17.1
+      ws: 8.18.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -13220,7 +13232,7 @@ snapshots:
     dependencies:
       acorn: 8.12.0
       pathe: 1.1.2
-      pkg-types: 1.1.1
+      pkg-types: 1.1.2
       ufo: 1.5.3
 
   module-details-from-path@1.0.3: {}
@@ -15774,6 +15786,8 @@ snapshots:
   wrappy@1.0.2: {}
 
   ws@8.17.1: {}
+
+  ws@8.18.0: {}
 
   xml-name-validator@4.0.0: {}
 
