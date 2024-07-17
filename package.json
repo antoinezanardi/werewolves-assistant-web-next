@@ -116,7 +116,7 @@
     "fuse.js": "^7.0.0",
     "happy-dom": "^14.12.3",
     "howler": "^2.2.4",
-    "husky": "^9.0.11",
+    "husky": "^9.1.0",
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.7",
     "msw": "^2.3.1",
