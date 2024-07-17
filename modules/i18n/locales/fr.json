@@ -450,7 +450,7 @@
       "notNormalTeamNotified": "Quelque chose cloche… L'équipe technique a été notifiée.",
       "pageNotFound": "Page non trouvée",
       "youAreLost": "On dirait que vous êtes perdu… Vous fuyez les Loups-Garous ?",
-      "goBackToSafePlace": "Retournez dans un endroit sûr"
+      "goBackToSafePlace": "Retourner dans un endroit sûr"
     },
     "IndexFooter": {
       "contact": "Contacter le créateur"
@@ -475,22 +475,22 @@
       "werewolvesAssistantGame": "Le jeu Les Loups-Garous de Thiercelieux™",
       "iDontKnowWerewolvesGame": "Je ne connais pas ce jeu",
       "watchTutorialVideoOnYoutube": "Regarder une vidéo explicative sur Youtube",
-      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un maître du jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
-      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du maître du jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
+      "whatIsWerewolvesGame": "Les Loups-Garous de Thiercelieux™ est un jeu de société d'ambiance captivant, où chaque participant se glisse dans la peau d'un Villageois ou d'un redoutable Loup-Garou. Sous la direction d'un Maître du Jeu, chaque session dévoile un éventail de surprises, de trahisons, de rebondissements, et même de moments empreints de rires et parfois de larmes.",
+      "whyGameMasterIsImportant": "Le succès d'une partie repose sur les épaules du Maître du Jeu, chargé d'insuffler une atmosphère envoûtante, d'imposer un rythme dynamique et de maîtriser les subtilités des règles du jeu. Gérer un groupe conséquent de joueurs, manquer d'expérience, ou se trouver dans un état second font de cette tâche un défi de taille."
     },
     "AboutWerewolvesAssistant": {
       "werewolvesAssistantInThePlace": "L'assistant Loups-Garous entre en scène !",
-      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au maître du jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
+      "toHelpGameMaster": "Pour faciliter la lourde tâche qui incombe au Maître du Jeu lors de l'animation d'une partie des Loups-Garous, l'Assistant Loups-Garous s'avère être l'outil idéal !",
       "assistantHasManyFeatures": "Cet Assistant propose une variété de fonctionnalités, dont :",
-      "gameLayout": "Un écran de composition de partie permettant de créer des sessions pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
+      "gameLayout": "Un écran de composition de partie permettant de créer des sessions de jeu pour 4 à 40 joueurs, avec la possibilité de répartir aléatoirement les rôles.",
       "intuitiveUserInterface": "Une interface ludique de suivi de partie, offrant une expérience visuelle agréable.",
-      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels que la sélection de la cible des Loups-Garous ou l'élection du maire.",
+      "inputForEachEvent": "Pour chaque événement clé, la possibilité de renseigner les choix des joueurs, tels la victime des Loups-Garous ou les votes pour élire le Maire du village.",
       "gamePlaysQueue": "L'Assistant prend en charge l'ordonnancement des tours de jeu, l'affichage des décès et autres événements, ainsi que la conservation de tous les choix effectués pendant la partie.",
       "gameHistory": "À la fin de la partie, un récapitulatif est généré, indiquant le camp victorieux et fournissant un historique complet des actions passées.",
-      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de maître du jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
+      "assistantGoodForYouAndFreeToPlay": "En résumé, l'Assistant Loups-Garous vous invite à (re-)découvrir le plaisir d'assumer le rôle de Maître du Jeu lors d'une partie de Loups-Garous. Accessible depuis n'importe quel support équipé d'un navigateur Internet, cet outil est et restera entièrement GRATUIT.",
       "pleaseBeAware": "Attention cependant",
       "physicalGameIsNeeded": "L'Assistant Loups-Garous n'a nullement l'intention de se substituer au jeu original Les Loups-Garous de Thiercelieux™. Son utilisation nécessite la possession préalable d'un jeu avec ses cartes.",
-      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au maître du jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
+      "assistantIsABonus": "Il est important de souligner que l'Assistant se positionne comme une aide exclusive au Maître du Jeu, facilitant la gestion de la partie sans altérer l'essence et l'expérience propre au jeu de société initial. Ainsi, il vient compléter et améliorer la dynamique du jeu tout en préservant son caractère authentique."
     },
     "AboutAvailableRoles": {
       "availableRoles": "Rôles disponibles",
@@ -534,9 +534,9 @@
     "AboutCreator": {
       "wordFromCreator": "Un mot du créateur",
       "creatorBackground": "Je suis Antoine ZANARDI, développeur Full-Stack Web et adepte de l'open-source en général. Si vous souhaitez en savoir plus sur moi, je vous invite à découvrir mon portfolio.",
-      "whyWerewolvesGameIsGreat": "Pour moi, Les Loups-Garous de Thiercelieux™ est un des meilleurs jeux entre amis ou en famille autour d'une table, où s'entremêlent alliances et trahisons, un peu comme un Mario Kart en fait… Au fur et à mesure d'une partie, la vraie nature de chaque joueur se révèle, les masques tombent, chacun se sent menacé… Chaque partie est une aventure unique, ponctuée de rebondissements inattendus.",
-      "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
-      "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous maîtres du jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
+      "whyWerewolvesGameIsGreat": "Pour moi, le jeu Les Loups-Garous de Thiercelieux™ est un des meilleurs jeux entre amis ou en famille autour d'une table, où s'entremêlent alliances et trahisons, un peu comme un Mario Kart en fait… Au fur et à mesure d'une partie, la vraie nature de chaque joueur se révèle, les masques tombent, chacun se sent menacé… Chaque partie est une aventure unique, ponctuée de rebondissements inattendus.",
+      "whyWerewolvesAssistant": "Étant un grand fan du rôle de maître du Jeu, j'ai toujours eu l'envie de partager ce doux sentiment de chef d'orchestre durant une partie. J'ai donc créé cet assistant pour que n'importe qui puisse endosser ce rôle si important, et ce, dans n'importe quelle configuration de jeu.",
+      "pleaseShareFeedback": "Vos retours sur cet assistant sont les bienvenus. Il a été créé pour servir tous Maîtres du Jeu, novices ou experts, et rendre vos parties mémorables. Amusez-vous bien !",
       "myPortfolio": "Mon portfolio"
     },
     "RoleImage": {
@@ -590,7 +590,7 @@
       }
     },
     "GameTeamSidePlayer": {
-      "roleImageAlt": "Role image of the player {playerName}"
+      "roleImageAlt": "Image du rôle du joueur {playerName}"
     },
     "GameTeamSidePlayerName": {
       "thisPlayerIsDead": "Ce joueur est mort"
@@ -648,19 +648,19 @@
       "unknownPlayerAttribute": "Attribut inconnu.",
       "actingByActor": "Le joueur joue un autre rôle pour le tour en cours.",
       "cantVoteBySurvivors": "Les survivants ont décidé que ce joueur ne peut pas voter.",
-      "cantVoteByScapegoat": "Le bouc émissaire a décidé que ce joueur ne peut pas voter.",
-      "charmedByPiedPiper": "Le joueur a été charmé par le Joueur de flûte.",
-      "contaminatedByRustySwordKnight": "Le Chevalier à l'Épée Rouillée a contaminé ce joueur, il sera éliminé la nuit suivante.",
+      "cantVoteByScapegoat": "Le Bouc Émissaire a décidé que ce joueur ne peut pas voter.",
+      "charmedByPiedPiper": "Le joueur a été charmé par le Joueur de Flûte.",
+      "contaminatedByRustySwordKnight": "Le Chevalier à l'Épée Rouillée a contaminé ce joueur, il sera éliminé au début de la nuit suivante.",
       "drankDeathPotionByWitch": "La Sorcière a donné sa potion de mort à ce joueur, il mourra au petit matin.",
-      "drankLifePotionByWitch": "La Sorcière a donné sa potion de vie à ce joueur, il sera sauvé des Loups-Garous.",
+      "drankLifePotionByWitch": "La Sorcière a donné sa potion de vie à ce joueur, il sera sauvé de la morsure de n'importe quel Loup-Garou.",
       "eatenByWerewolves": "Les Loups-Garous ont mangé ce joueur, il mourra au petit matin.",
-      "eatenByWhiteWerewolf": "Le Loup-garou blanc a mangé ce joueur, il mourra au petit matin.",
+      "eatenByWhiteWerewolf": "Le Loup-Garou Blanc a mangé ce joueur, il mourra au petit matin.",
       "eatenByBigBadWolf": "Le Grand Méchant Loup a mangé ce joueur, il mourra au petit matin.",
-      "inLoveByCupid": "Cupidon a fait tomber amoureux ce joueur d'un autre.",
-      "powerlessByActor": "Le joueur ne peut plus jouer un autre rôle en tant qu'Acteur, il n'a plus de pouvoirs.",
-      "powerlessByWerewolves": "Le joueur n'a plus de pouvoir car il est devenu un loup-garou.",
+      "inLoveByCupid": "Cupidon a rendu amoureux ce joueur d'un autre.",
+      "powerlessByActor": "Le joueur ne peut plus jouer un autre rôle en tant que Comédien, il n'a plus de pouvoirs.",
+      "powerlessByWerewolves": "Le joueur n'a plus de pouvoir car un Loup-Garou a été tué.",
       "powerlessByAccursedWolfFather": "Le joueur n'a plus de pouvoir car il a été infecté par l'Infect Père des Loups.",
-      "powerlessByFox": "Le joueur n'a plus de pouvoirs car il n'a pas sniffé de loup-garou lors de son dernier tour.",
+      "powerlessByFox": "Le joueur n'a plus de pouvoirs car il n'a pas reniflé de Loup-Garou lors de son dernier tour.",
       "powerlessByElder": "Le joueur n'a plus de pouvoirs car un ou plusieurs villageois ont éliminé l'Ancien.",
       "protectedByDefender": "Le Salvateur protège ce joueur des Loups-Garous pour la nuit en cours.",
       "scandalmongerMarkedByScandalmonger": "Le Corbeau a marqué ce joueur, il aura 2 votes de plus contre lui au petit matin.",
@@ -704,9 +704,9 @@
       "whichPlayerDoesSurvivorsElectSheriffOnTie": "Quel joueur les survivants veulent-ils élire comme Maire parmi les ex-æquo ?",
       "doesJudgeRequestAnotherVote": "Le Juge Bègue veut-il demander un autre vote ?",
       "whichPlayerDoesSurvivorsElectAsSheriff": "Quel joueur les survivants veulent-ils élire comme Maire ?",
-      "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux urnes !",
-      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Quel joueur va être pendu par les survivants à la demande du Juge Bègue? Aux urnes !",
-      "whichPlayerDoesSurvivorsVoteForOnTie": "Quel joueur parmi les ex-æquo va être pendu par les survivants ? Aux urnes !",
+      "whichPlayerDoesSurvivorsVoteFor": "Quel joueur va être pendu par les survivants ? Aux votes !",
+      "whichPlayerDoesSurvivorsVoteForOnJudgeRequest": "Quel joueur va être pendu par les survivants à la demande du Juge Bègue? Aux votes !",
+      "whichPlayerDoesSurvivorsVoteForOnTie": "Quel joueur parmi les ex-æquo va être pendu par les survivants ? Aux votes !",
       "doesThiefWantToChooseCard": "Le Voleur veut-il choisir une carte et prendre ce role ?",
       "whichPlayerDoesWerewolvesEat": "Quel joueur les Loups-Garous veulent-ils manger ?",
       "doesWhiteWerewolfWantToEat": "Le Loup-Garou Blanc veut-il manger un autre Loup-Garou ?",
@@ -735,23 +735,23 @@
       "trophyImageAlt": "Icône de trophée",
       "victoryTypeImageAlt": "Icône de type de victoire",
       "angelWins": "L'Ange gagne seul !",
-      "angelComesBackToParadise": "L'Ange a été éliminé lors du premier vote ou de la première nuit par les Loups-Garous. Il gagne seul et retourne au Bon Endroit.",
+      "angelComesBackToParadise": "L'Ange a été éliminé lors du premier vote ou de la première nuit par les Loups-Garous. Il gagne seul et retourne au Paradis.",
       "loversWin": "Les Amoureux gagnent ensemble !",
-      "loversAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon sont les seuls survivants. Ils gagnent ensemble et seront ensemble pour toujours.",
+      "loversAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon sont les seuls survivants. Ils gagnent ensemble et vivent heureux pour toujours.",
       "loversAndCupidWin": "Les Amoureux et Cupidon gagnent ensemble !",
-      "loversAndCupidAreTogetherForever": "Les deux personnes amoureuses de la flèche de Cupidon et Cupidon lui-même sont les seuls survivants. L'Amour avec un grand A a gagné.",
-      "nobodyWins": "Match nul ! Tout le monde est mort dans le village…",
+      "loversAndCupidAreTogetherForever": "Les deux personnes amoureuses et Cupidon lui-même sont les seuls survivants. L'Amour avec un grand A a gagné.",
+      "nobodyWins": "Match nul ! Tout le monde est mort…",
       "everybodyMurderedEachOther": "Tout le monde s'est entretué. Un silence mortel règne dans le village…",
       "piedPiperWins": "Le Joueur de Flûte gagne seul !",
       "piedPiperHasControl": "Le Joueur de Flûte a réussi à charmer tous les joueurs vivants. Il gagne seul et a le contrôle sur tout le village.",
       "prejudicedManipulatorWins": "L'Abominable Sectaire gagne avec son groupe !",
-      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne avec son propre groupe tout en riant.",
+      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne avec son propre groupe dans un rire diabolique.",
       "villagersWin": "Les Villageois gagnent !",
       "villagersHaveSurvivedWerewolves": "Tous les Loups-Garous sont morts. Le village est enfin en sécurité.",
       "werewolvesWin": "Les Loups-Garous gagnent !",
-      "werewolvesHaveEatenALot": "Tous les Villageois sont morts. Les Loups-Garous ont beaucoup mangé et sont maintenant repus, pour de bon.",
+      "werewolvesHaveEatenALot": "Tous les Villageois sont morts. Les Loups-Garous ont bien mangé et sont maintenant repus, pour de bon.",
       "whiteWerewolfWins": "Le Loup-Garou Blanc gagne seul !",
-      "whiteWerewolfWinsAlone": "Le Loup-Garou Blanc est le seul survivant. Il gagne seul et peut être fier de sa victoire."
+      "whiteWerewolfWinsAlone": "Le Loup-Garou Blanc est le seul survivant. Il gagne seul et peut être fier de sa victoire écrasante."
     },
     "BuyMeACoffeeButton": {
       "alt": "Offrez-moi un café"
@@ -880,14 +880,14 @@
           "label": "Le Maire doit départager les votes",
           "descriptions": {
             "yes": "Le Maire doit départager les votes en cas d'égalité.",
-            "no": "Le Maire n'a pas à départager les votes en cas d'égalité. Un second vote sera organisé juste ensuite."
+            "no": "Le Maire n'a pas à départager les votes en cas d'égalité. Un second vote sera organisé juste ensuite entre les ex-æquo."
           }
         },
         "hasDoubledVote": {
           "label": "Le Maire a un vote doublé",
           "descriptions": {
             "yes": "Quand les survivants votent pour éliminer un joueur, le Maire a un vote doublé lors des votes.",
-            "no": "Le Maire n'a pas un vote doublé lors des votes, mais un vote régulier comme tout autre joueur."
+            "no": "Le Maire n'a pas un vote doublé lors des votes, mais un vote simple comme tout autre joueur."
           }
         }
       }
@@ -918,7 +918,7 @@
       "options": {
         "wakingUpInterval": {
           "label": "Nombre de nuits entre deux réveils du Loup-Garou Blanc",
-          "description": "Le Loup-Garou Blanc se réveillera chaque nuit pour manger un autre Loup-Garou. | Le Loup-Garou Blanc se réveillera tous les {interval} nuits pour manger un autre Loup-Garou."
+          "description": "Le Loup-Garou Blanc se réveillera chaque nuit pour manger un autre Loup-Garou. | Le Loup-Garou Blanc se réveillera toutes les {interval} nuits pour manger un autre Loup-Garou."
         }
       }
     },
@@ -945,7 +945,7 @@
         "mustWinWithLovers": {
           "label": "Cupidon doit gagner avec les Amoureux",
           "descriptions": {
-            "yes": "Cupidon fait équipe avec les Amoureux : si les Amoureux et Cupidon sont les seuls survivants, ils gagnent ensemble. Les Amoureux peuvent gagner seuls sans que Cupidon gagne. Attention : Cupidon ne peut pas se charmer lui-même avec cette option activée !",
+            "yes": "Cupidon fait équipe avec les Amoureux : si les Amoureux et Cupidon sont les seuls survivants, ils gagnent ensemble. Les Amoureux peuvent gagner seuls sans que Cupidon gagne. Attention : Cupidon ne peut pas se charmer lui-même avec cette variante activée !",
             "no": "Cupidon ne fait pas équipe avec les Amoureux."
           }
         },
@@ -953,8 +953,8 @@
           "doRevealRoleToEachOther": {
             "label": "Les Amoureux se révèlent leur rôle",
             "descriptions": {
-              "yes": "Les Amoureux se révèlent leur rôle lorsqu'ils se rencontrent juste après avoir été charmés.",
-              "no": "Les Amoureux ne se révèlent pas leur rôle lorsqu'ils se rencontrent juste après avoir été charmés."
+              "yes": "Les Amoureux se révèlent leur rôle lorsqu'ils se rencontrent juste après avoir été charmés par Cupidon.",
+              "no": "Les Amoureux ne se révèlent pas leur rôle lorsqu'ils se rencontrent juste après avoir été charmés par Cupidon."
             }
           }
         }
@@ -991,8 +991,8 @@
         "doesTakeHisRevenge": {
           "label": "L'Ancien prend sa revanche",
           "descriptions": {
-            "yes": "Si l'Ancien est éliminé par un joueur du côté des Villageois (votes des Survivants, potion de la Sorcière, tir du Chasseur, etc.), tous les joueurs du côté des Villageois perdent leurs pouvoirs pour le reste de la partie.",
-            "no": "Si l'Ancien est éliminé par un joueur du côté des Loups-Garous, rien ne se passe."
+            "yes": "Si l'Ancien est éliminé par un joueur du côté des Villageois (votes des survivants, potion de la Sorcière, tir du Chasseur, etc.), tous les joueurs du côté des Villageois perdent leurs pouvoirs pour le reste de la partie.",
+            "no": "Si l'Ancien est éliminé par un joueur du côté des Villageois, rien ne se passe."
           }
         }
       }
@@ -1038,7 +1038,7 @@
     "GameLobbyOptionsHubRolesTabBearTamer": {
       "options": {
         "doesGrowlOnWerewolvesSide": {
-          "label": "Le Montreur d'Ours grogne s'il est du côté des Loups-Garous",
+          "label": "L'Ours du Montreur grogne s'il est du côté des Loups-Garous",
           "descriptions": {
             "yes": "Si le Montreur d'Ours est infecté par l'Infect Père des Loups, son ours grognera chaque matin.",
             "no": "L'ours grognera seulement s'il a un voisin du côté des Loups-Garous, que le Montreur d'Ours soit infecté ou non."
@@ -1060,7 +1060,7 @@
           "label": "La transformation de l'Enfant Sauvage est révélée aux joueurs",
           "descriptions": {
             "yes": "Lorsque l'Enfant Sauvage devient un Loup-Garou à la mort de son modèle, le Maître du Jeu révèle sa transformation aux autres joueurs.",
-            "no": "Lorsque l'Enfant Sauvage devient un Loup-Garou à la mort de son modèle, le Maître du Jeu ne révèle pas sa transformation aux autres joueurs."
+            "no": "Lorsque l'Enfant Sauvage devient un Loup-Garou à la mort de son modèle, la transformation reste secrète pour les autres joueurs."
           }
         }
       }
@@ -1071,7 +1071,7 @@
           "label": "Le camp choisi par le Chien-Loup est révélé",
           "descriptions": {
             "yes": "Lorsque le Chien-Loup choisit un camp, le Maître du Jeu révèle son choix aux autres joueurs.",
-            "no": "Lorsque le Chien-Loup choisit un camp, le Maître du Jeu ne révèle pas son choix aux autres joueurs."
+            "no": "Lorsque le Chien-Loup choisit un camp, son choix reste secret pour les autres joueurs."
           }
         },
         "isSideRandomlyChosen": {
@@ -1096,7 +1096,7 @@
           "label": "La carte choisie est révélée",
           "descriptions": {
             "yes": "La carte choisie par le Voleur est révélée aux autres joueurs.",
-            "no": "La carte choisie par le Voleur n'est pas révélée aux autres joueurs."
+            "no": "La carte choisie par le Voleur reste secrète pour les autres joueurs."
           }
         }
       }
@@ -1118,7 +1118,7 @@
           "label": "Les personnes charmées sont révélées",
           "descriptions": {
             "yes": "Les personnes charmées sont révélées aux autres joueurs.",
-            "no": "Les personnes charmées ne sont pas révélées aux autres joueurs."
+            "no": "Les personnes charmées restent secrètes pour celles qui n'ont pas encore été charmées."
           }
         }
       }
@@ -1136,7 +1136,7 @@
         "doesKnowWerewolvesTargets": {
           "label": "La Sorcière connaît les cibles des Loups-Garous",
           "descriptions": {
-            "yes": "La Sorcière connaît les cibles des Loups-Garous lorsqu'elle peut encore utiliser sa potion de mort.",
+            "yes": "La Sorcière connaît la ou les cibles des Loups-Garous lorsqu'elle peut encore utiliser sa potion de vie.",
             "no": "La Sorcière ne connaît pas du tout les cibles des Loups-Garous."
           }
         }
@@ -1190,7 +1190,7 @@
       "previous": "Précédent",
       "skip": "Passer",
       "goBackToPreviousGameEvent": "Revenir à l'événement précédent",
-      "skipCurrentGameEvent": "Passer l'événement actuel"
+      "skipCurrentGameEvent": "Passer l'événement en cours"
     },
     "GameEventPreviousTextButton": {
       "previousEventText": "Revenir au texte de l'événement précédent"
@@ -1204,7 +1204,7 @@
       "looksLifeSomeWerewolvesSneakedIntoTheVillage": "On dirait que des Loups-Garous se sont infiltrés dans le village…",
       "villagersMurderWerewolves": "Villageois, prenez vos torches et vos fourches, il est temps de traquer les Loups-Garous !",
       "letsElectSheriffBefore": "Mais avant cela, élisons le Maire du village.",
-      "compositionIsHidden": "La composition de cette partie est cachée ! Vous devrez découvrir qui est qui par vous-même…"
+      "compositionIsHidden": "La composition de cette partie est cachée ! Vous devrez découvrir qui est qui par vous-même au fur et à mesure de la partie…"
     },
     "GameTurnStartsEvent": {
       "unknownGameTurnStartsEvent": "Événement de début de tour inconnu"
@@ -1225,10 +1225,10 @@
       "accursedWolfFatherCanInfect": "L'Infect Père des Loups se réveille et peut infecter un joueur dévoré par les Loups-Garous s'il le souhaite."
     },
     "GameActorTurnStartsEvent": {
-      "actorCanChooseCardToPlay": "L'Acteur se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
+      "actorCanChooseCardToPlay": "Le Comédien se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
     },
     "GameBearTamerTurnStartsEvent": {
-      "bearGrowls": "Le Dresseur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui…"
+      "bearGrowls": "Le Montreur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui…"
     },
     "GameBigBadWolfTurnStartsEvent": {
       "bigBadWolfEatsVillager": "Le Grand Méchant Loup se réveille et va dévorer un Villageois.",
@@ -1244,8 +1244,8 @@
       "cupidMustWinWithLovers": "Dans cette partie spéciale, Cupidon doit gagner avec les Amoureux qu'il va choisir. Dans ce cas, il ne pourra pas se charmer lui-même."
     },
     "GameDefenderTurnStartsEvent": {
-      "defenderProtectsAnyone": "Le Défenseur se réveille et protégera quelqu'un des Loups-Garous.",
-      "defenderProtectsAnyoneExceptLastProtectedPlayer": "Le Défenseur se réveille et protégera quelqu'un des Loups-Garous sauf le dernier joueur protégé."
+      "defenderProtectsAnyone": "Le Salvateur se réveille et va protéger quelqu'un des Loups-Garous.",
+      "defenderProtectsAnyoneExceptLastProtectedPlayer": "Le Salvateur se réveille et va protéger quelqu'un des Loups-Garous sauf le joueur qu'il a choisi la nuit dernière."
     },
     "GameFoxTurnStartsEvent": {
       "foxSniffesGroupOfPlayers": "Le Renard se réveille et va renifler un groupe de 3 joueurs pour savoir s'il y a un Loup-Garou parmi eux."
@@ -1264,7 +1264,7 @@
       "piedPiperCharmsPeople": "Le Joueur de Flûte se réveille et va charmer un seul joueur | Le Joueur de Flûte se réveille et va charmer {count} joueurs."
     },
     "GameScandalmongerTurnStartsEvent": {
-      "scandalmongerCanMarkPlayer": "Le Corbeau se réveille et peut marquer un joueur avec une plume.",
+      "scandalmongerCanMarkPlayer": "Le Corbeau se réveille et peut marquer un joueur avec sa plume.",
       "playerWillHavePenaltyForNextVotes": "Le joueur marqué d'une plume aura un vote supplémentaire contre lui lors du prochain vote. | Le joueur marqué d'une plume aura {penalty} votes supplémentaires contre lui lors du prochain vote."
     },
     "GameScapegoatTurnStartsEvent": {
@@ -1280,10 +1280,10 @@
     },
     "GameStutteringJudgeTurnStartsEvent": {
       "stutteringJudgeCanRequestAnotherVote": "Après ce vote, le Juge Bègue peut demander un autre vote immédiatement.",
-      "everyonePutHandsInBackAndGameMasterWillRecognizeSign": "Chaque joueur va mettre ses mains dans son dos. Le Maître du Jeu va faire le tour des joueurs et reconnaître le signe du Juge Bègue s'il souhaite demander un autre vote."
+      "everyonePutHandsInBackAndGameMasterWillRecognizeSign": "Chaque joueur va mettre ses mains dans son dos. Le Maître du Jeu va faire le tour des joueurs et reconnaître le signe du Juge Bègue (les pouces en l'air par exemple) s'il souhaite demander un autre vote."
     },
     "GameThiefTurnStartsEvent": {
-      "thiefCanStealCard": "Le Voleur se réveille et peut choisir la carte supplémentaire lui étant destinée. S'il la choisit, il prendra ce rôle pour le reste de la partie. | Le Voleur se réveille et peut choisir une carte supplémentaire parmi les {count} lui étant destinée. S'il en choisit une, il prendra ce rôle pour le reste de la partie.",
+      "thiefCanStealCard": "Le Voleur se réveille et peut choisir la carte supplémentaire lui étant destinée. S'il la choisit, il prendra ce rôle pour le reste de la partie. | Le Voleur se réveille et peut choisir une carte supplémentaire parmi les {count} lui étant destinées. S'il en choisit une, il prendra ce rôle pour le reste de la partie.",
       "gameMasterWillFlipThiefCards": "Le Maître du Jeu va retourner la carte pour que le Voleur puisse la voir. | Le Maître du Jeu va retourner les {count} cartes pour que le Voleur puisse les voir."
     },
     "GameThreeBrothersTurnStartsEvent": {
@@ -1296,7 +1296,7 @@
     },
     "GameWerewolvesTurnStartsEvent": {
       "werewolvesMeetEachOtherForFirstTime": "Les Loups-Garous se réveillent et se rencontrent pour la première fois.",
-      "whenMeetOverWerewolvesEat": "Quand les présentation sont faites, les Loups-Garous vont choisir leur repas de ce soir.",
+      "whenMeetOverWerewolvesEat": "Une fois les présentation faites, les Loups-Garous vont choisir leur repas de ce soir.",
       "werewolvesEat": "Les Loups-Garous se réveillent et vont choisir leur repas de ce soir.",
       "werewolvesCanEatEachOther": "Dans cette partie spéciale, les Loups-Garous peuvent se dévorer entre eux. Une bonne façon d'enlever tout soupçon…"
     },
@@ -1304,7 +1304,7 @@
       "whiteWerewolfCanEatAnotherWolf": "Le Loup-Garou Blanc se réveille et peut dévorer un autre Loup-Garou s'il le souhaite."
     },
     "GameWildChildTurnStartsEvent": {
-      "wildChildChoosesModel": "L'Enfant Sauvage se réveille et peut choisir un modèle parmi les joueurs.",
+      "wildChildChoosesModel": "L'Enfant Sauvage se réveille et va choisir un modèle parmi les joueurs.",
       "ifModelDiesWildChildBecomesWolf": "Si le modèle meurt, l'Enfant Sauvage rejoindra le camp des Loups-Garous."
     },
     "GameWitchTurnStartsEvent": {
@@ -1313,7 +1313,7 @@
     },
     "GameWolfHoundTurnStartsEvent": {
       "wolfHoundSideRandomlyChosen": "Dans cette partie spéciale, le camp du Chien-Loup est choisi aléatoirement par l'Assistant.",
-      "wolfHoundChoosesSide": "Le Chien-Loup se réveille et choisit quel camp il veut rejoindre entre les Villageois et les Loups-Garous."
+      "wolfHoundChoosesSide": "Le Chien-Loup se réveille et va choisir quel camp il veut rejoindre entre les Villageois et les Loups-Garous."
     },
     "GamePhaseStartsEvent": {
       "dayRises": "Le jour se lève sur le village de Thiercelieux !",
@@ -1348,7 +1348,7 @@
     "GameScandalmongerHasMarkedEvent": {
       "scandalMongerDidntMarkAnyone": "Le Corbeau n'a marqué personne pour cette nuit. Il s'est envolé…",
       "scandalmongerHasMarkedAPlayer": "Le Corbeau a marqué un joueur avec sa plume.",
-      "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va mettre la plume en face du joueur marqué."
+      "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va déposer la plume en face du joueur marqué."
     },
     "GameAccursedWolfFatherMayHaveInfectedEvent": {
       "accursedWolfFatherMayHaveInfectedAPlayer": "L'Infect Père des Loups a peut-être infecté un joueur dévoré par les Loups-Garous.",
@@ -1401,12 +1401,12 @@
       "letsGo": "C'est parti !"
     },
     "GameLobbyStartGameConfirmDialogPlayersReady": {
-      "doAllPlayersHaveRoleAndReady": "Tous les joueurs ont-ils un rôle et sont-ils prêts à jouer ?"
+      "doAllPlayersHaveRoleAndReady": "Tous les joueurs ont un rôle et sont prêts à jouer ?"
     },
     "GameLobbyStartGameConfirmDialogPlayersPositioned": {
       "playersPosition": "Position des joueurs",
       "someRolesArePositionDependant": "Certains rôles dépendent de la position des joueurs. Est-ce que tous les joueurs sont bien positionnés dans l'Assistant ?",
-      "showMeHowToPositionPlayers": "Montrez-moi comment positionner les joueurs"
+      "showMeHowToPositionPlayers": "Me montrer comment positionner les joueurs"
     },
     "GameIdiotIsSparedEvent": {
       "cantFindIdiot": "L'Idiot ne peut être trouvé… Veuillez continuer.",
