@@ -1,32 +1,35 @@
-import { createPinia, setActivePinia } from "pinia";
-import type { Mock } from "vitest";
-
-import { Game } from "~/composables/api/game/types/game.class";
-import * as UseFetchGames from "~/composables/api/game/useFetchGames";
-import * as UseGameEventsStore from "~/stores/game/game-event/useGameEventsStore";
-import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
+import { createPinia, setActivePinia } from "pinia";
+
+import { Game } from "~/composables/api/game/types/game.class";
+import { useGameStore } from "~/stores/game/useGameStore";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useGameEventsStore: { generateAndSetGameEventsFromGame: vi.fn() },
+  useFetchGames: {
+    getGame: vi.fn(),
+    cancelGame: vi.fn(),
+    makeGamePlay: vi.fn(),
+  },
+}));
+
+vi.mock("~/stores/game/game-event/useGameEventsStore", () => ({
+  useGameEventsStore: (): typeof hoistedMocks.useGameEventsStore => hoistedMocks.useGameEventsStore,
+}));
+
+vi.mock("~/composables/api/game/useFetchGames", () => ({
+  useFetchGames: (): typeof hoistedMocks.useFetchGames => hoistedMocks.useFetchGames,
+}));
 
 describe("Game Store", () => {
-  let mocks: {
-    composables: {
-      useFetchGames: ReturnType<typeof createFakeUseFetchGames>;
-    };
-    stores: {
-      gameEvents: { generateAndSetGameEventsFromGame: Mock };
-    }
-  };
-
   beforeEach(() => {
-    mocks = {
-      composables: { useFetchGames: createFakeUseFetchGames() },
-      stores: { gameEvents: { generateAndSetGameEventsFromGame: vi.fn() } },
-    };
-    vi.spyOn(UseFetchGames, "useFetchGames").mockImplementation(() => mocks.composables.useFetchGames);
-    vi.spyOn(UseGameEventsStore, "useGameEventsStore").mockImplementation(() => mocks.stores.gameEvents as unknown as ReturnType<typeof UseGameEventsStore.useGameEventsStore>);
     setActivePinia(createPinia());
+    hoistedMocks.useGameEventsStore = {
+      generateAndSetGameEventsFromGame: vi.fn(),
+    };
+    hoistedMocks.useFetchGames = createFakeUseFetchGames();
   });
 
   it("should have initial state when created.", () => {
@@ -52,21 +55,21 @@ describe("Game Store", () => {
       const gameStore = useGameStore();
       await gameStore.fetchAndSetGame("gameId");
 
-      expect(mocks.composables.useFetchGames.getGame).toHaveBeenCalledExactlyOnceWith("gameId");
+      expect(hoistedMocks.useFetchGames.getGame).toHaveBeenCalledExactlyOnceWith("gameId");
     });
 
     it("should generate and set game events from game when called.", async() => {
       const game = createFakeGame();
-      mocks.composables.useFetchGames.getGame.mockResolvedValue(game);
+      hoistedMocks.useFetchGames.getGame.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.fetchAndSetGame("gameId");
 
-      expect(mocks.stores.gameEvents.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
+      expect(hoistedMocks.useGameEventsStore.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
     });
 
     it("should set game when called.", async() => {
       const game = createFakeGame();
-      mocks.composables.useFetchGames.getGame.mockResolvedValue(game);
+      hoistedMocks.useFetchGames.getGame.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.fetchAndSetGame("gameId");
 
@@ -80,12 +83,12 @@ describe("Game Store", () => {
       gameStore.game._id = "gameId";
       await gameStore.cancelGame();
 
-      expect(mocks.composables.useFetchGames.cancelGame).toHaveBeenCalledExactlyOnceWith("gameId");
+      expect(hoistedMocks.useFetchGames.cancelGame).toHaveBeenCalledExactlyOnceWith("gameId");
     });
 
     it("should set game when called.", async() => {
       const game = createFakeGame();
-      mocks.composables.useFetchGames.cancelGame.mockResolvedValue(game);
+      hoistedMocks.useFetchGames.cancelGame.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.cancelGame();
 
@@ -100,23 +103,23 @@ describe("Game Store", () => {
       const makeGamePlayDto = createFakeMakeGamePlayDto();
       await gameStore.makeGamePlay(makeGamePlayDto);
 
-      expect(mocks.composables.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", makeGamePlayDto);
+      expect(hoistedMocks.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", makeGamePlayDto);
     });
 
     it("should generate and set game events from game when called.", async() => {
       const game = createFakeGame();
       const makeGamePlayDto = createFakeMakeGamePlayDto();
-      mocks.composables.useFetchGames.makeGamePlay.mockResolvedValue(game);
+      hoistedMocks.useFetchGames.makeGamePlay.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.makeGamePlay(makeGamePlayDto);
 
-      expect(mocks.stores.gameEvents.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
+      expect(hoistedMocks.useGameEventsStore.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
     });
 
     it("should set game when called.", async() => {
       const game = createFakeGame();
       const makeGamePlayDto = createFakeMakeGamePlayDto();
-      mocks.composables.useFetchGames.makeGamePlay.mockResolvedValue(game);
+      hoistedMocks.useFetchGames.makeGamePlay.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.makeGamePlay(makeGamePlayDto);
 
@@ -131,7 +134,7 @@ describe("Game Store", () => {
       await gameStore.skipGamePlay();
       const emptyMakeGamePlayDto = createFakeMakeGamePlayDto();
 
-      expect(mocks.composables.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", emptyMakeGamePlayDto);
+      expect(hoistedMocks.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", emptyMakeGamePlayDto);
     });
   });
 });

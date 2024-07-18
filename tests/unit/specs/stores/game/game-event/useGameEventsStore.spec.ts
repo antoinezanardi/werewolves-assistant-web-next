@@ -3,13 +3,10 @@ import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/a
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
 import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeIdiotAlivePlayer, createFakeSeerAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
-import type { Mock } from "vitest";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import * as UseGameStore from "~/stores/game/useGameStore";
 import { createFakeGameHistoryRecordPlayVoting } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-voting/game-history-record-play-voting.factory";
 import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
@@ -21,29 +18,26 @@ import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 
-describe("Game Events Store", () => {
-  let mocks: {
-    stores: {
-      game: {
-        game: Game;
-        makingGamePlayStatus: AsyncDataRequestStatus;
-        skipGamePlay: Mock;
-      };
-    };
-  };
+const hoistedMocks = vi.hoisted(() => ({
+  useGameStore: {
+    game: {} as Game,
+    makingGamePlayStatus: "idle",
+    skipGamePlay: vi.fn(),
+  },
+}));
 
+vi.mock("~/stores/game/useGameStore", () => ({
+  useGameStore: (): typeof hoistedMocks.useGameStore => hoistedMocks.useGameStore,
+}));
+
+describe("Game Events Store", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
-    mocks = {
-      stores: {
-        game: {
-          game: createFakeGame(),
-          makingGamePlayStatus: "idle",
-          skipGamePlay: vi.fn(),
-        },
-      },
+    hoistedMocks.useGameStore = {
+      game: createFakeGame(),
+      makingGamePlayStatus: "idle",
+      skipGamePlay: vi.fn(),
     };
-    vi.spyOn(UseGameStore, "useGameStore").mockImplementation(() => mocks.stores.game as unknown as ReturnType<typeof UseGameStore.useGameStore>);
   });
 
   it("should have initial state when created.", () => {
@@ -81,7 +75,7 @@ describe("Game Events Store", () => {
     });
 
     it("should return false when making game play status is pending.", () => {
-      mocks.stores.game.makingGamePlayStatus = "pending";
+      hoistedMocks.useGameStore.makingGamePlayStatus = "pending";
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
@@ -107,7 +101,7 @@ describe("Game Events Store", () => {
     });
 
     it("should return false when making game play status is pending.", () => {
-      mocks.stores.game.makingGamePlayStatus = "pending";
+      hoistedMocks.useGameStore.makingGamePlayStatus = "pending";
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
@@ -480,7 +474,7 @@ describe("Game Events Store", () => {
 
   describe("goToNextGameEvent", () => {
     it("should go to the next game event when called.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
@@ -493,7 +487,7 @@ describe("Game Events Store", () => {
     });
 
     it("should go to the next game event when the next current game event is undefined.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySheriffDelegates() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [createFakeGameEvent()];
       await gameEventsStore.goToNextGameEvent();
@@ -503,7 +497,7 @@ describe("Game Events Store", () => {
     });
 
     it("should go to the next game event when current game play must be skipped but next event is not game turn start type.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent(),
@@ -515,7 +509,7 @@ describe("Game Events Store", () => {
     });
 
     it("should not go to the next game event when the next current game event is game turn starts and must current game play be skipped.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent({ type: "game-starts" }),
@@ -527,7 +521,7 @@ describe("Game Events Store", () => {
     });
 
     it("should not skip current game play when the next current game event is game turn starts but current action is not bury dead bodies.", async() => {
-      mocks.stores.game.game = createFakeGame({
+      hoistedMocks.useGameStore.game = createFakeGame({
         currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
         options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isSideRandomlyChosen: true }) }) }),
       });
@@ -538,11 +532,11 @@ describe("Game Events Store", () => {
       ];
       await gameEventsStore.goToNextGameEvent();
 
-      expect(mocks.stores.game.skipGamePlay).not.toHaveBeenCalled();
+      expect(hoistedMocks.useGameStore.skipGamePlay).not.toHaveBeenCalled();
     });
 
     it("should skip current game play when the next current game event is game turn starts and must current game play be skipped.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent({ type: "game-starts" }),
@@ -550,11 +544,11 @@ describe("Game Events Store", () => {
       ];
       await gameEventsStore.goToNextGameEvent();
 
-      expect(mocks.stores.game.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
+      expect(hoistedMocks.useGameStore.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should skip current game play when it's the last game event and must current game play be skipped.", async() => {
-      mocks.stores.game.game = createFakeGame({
+      hoistedMocks.useGameStore.game = createFakeGame({
         currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
         options: createFakeGameOptions({ roles: createFakeRolesGameOptions({ wolfHound: createFakeWolfHoundGameOptions({ isSideRandomlyChosen: true }) }) }),
       });
@@ -566,11 +560,11 @@ describe("Game Events Store", () => {
       ];
       await gameEventsStore.goToNextGameEvent();
 
-      expect(mocks.stores.game.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
+      expect(hoistedMocks.useGameStore.skipGamePlay).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should set current game event index to 0 when skipping current game play.", async() => {
-      mocks.stores.game.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
+      hoistedMocks.useGameStore.game = createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies() });
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.gameEvents = [
         createFakeGameEvent({ type: "game-starts" }),
