@@ -13,15 +13,22 @@
     <GameEventTextsManager
       id="game-event-texts-manager"
       :texts="props.texts"
+      @game-event-text-change="onGameEventTextChangeFromGameEventTextsManager"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { GameEventWithTextsProps } from "~/components/shared/game/game-event/GameEventWithTexts/game-event-with-texts.types";
+import type { GameEventWithTextsEmits, GameEventWithTextsProps } from "~/components/shared/game/game-event/GameEventWithTexts/game-event-with-texts.types";
 import GameEventTextsManager from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventTextsManager.vue";
 
 const props = defineProps<GameEventWithTextsProps>();
+
+const emit = defineEmits<GameEventWithTextsEmits>();
+
+function onGameEventTextChangeFromGameEventTextsManager(newGameEventText: string | undefined): void {
+  emit("gameEventTextChange", newGameEventText);
+}
 
 defineSlots<{
   default: () => void;

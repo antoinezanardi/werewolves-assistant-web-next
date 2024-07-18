@@ -11,6 +11,7 @@ const GAME_EVENT_TYPES = [
   "pied-piper-has-charmed",
   "wolf-hound-has-chosen-side",
   "cupid-has-charmed",
+  "idiot-is-spared",
 ] as const;
 
 export { GAME_EVENT_TYPES };

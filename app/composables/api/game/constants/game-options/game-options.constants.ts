@@ -2,10 +2,14 @@ import type { GameOptions } from "~/composables/api/game/types/game-options/game
 
 const DEFAULT_GAME_OPTIONS: GameOptions = {
   composition: { isHidden: false },
-  votes: { canBeSkipped: true },
+  votes: {
+    canBeSkipped: true,
+    duration: 180,
+  },
   roles: {
     areRevealedOnDeath: true,
     doSkipCallIfNoTarget: false,
+    werewolf: { canEatEachOther: false },
     sheriff: {
       isEnabled: true,
       electedAt: {
@@ -50,6 +54,7 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
     piedPiper: {
       charmedPeopleCountPerNight: 2,
       isPowerlessOnWerewolvesSide: true,
+      areCharmedPeopleRevealed: false,
     },
     scandalmonger: { markPenalty: 2 },
     witch: { doesKnowWerewolvesTargets: true },

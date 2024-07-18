@@ -14,13 +14,13 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
           </a></li>
         <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="1" data-p-active="false"><a id="game-lobby-options-hub-tab-view_1_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true">
             <!---->
-            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" srcset="/_ipx/s_40x40/svg/misc/people.svg 1x, /_ipx/s_80x80/svg/misc/people.svg 2x" src="/_ipx/s_40x40/svg/misc/people.svg">
+            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="composition-tab-header-text">Composition</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
         <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="2" data-p-active="false"><a id="game-lobby-options-hub-tab-view_2_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_2_content" data-pc-section="headeraction" data-pd-ripple="true">
             <!---->
-            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" srcset="/_ipx/s_40x40/svg/game/game-play/game-play-action/settle-votes.svg 1x, /_ipx/s_80x80/svg/game/game-play/game-play-action/settle-votes.svg 2x" src="/_ipx/s_40x40/svg/game/game-play/game-play-action/settle-votes.svg">
+            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="votes-tab-header-text">Votes</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
@@ -74,7 +74,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
-            <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" srcset="/_ipx/s_50x50/svg/game/player/player-attribute/sheriff.svg 1x, /_ipx/s_100x100/svg/game/player/player-attribute/sheriff.svg 2x" src="/_ipx/s_50x50/svg/game/player/player-attribute/sheriff.svg" class="duration-300 ease-in-out transition-all">
+            <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" class="duration-300 ease-in-out transition-all" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
             </div>
             <!---->
@@ -138,6 +138,32 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
                     </div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.description, {"turn":1,"phase":"shared.game.definitephase.night"}</p>
+                  <!--v-if-->
+                </div>
+              </div>
+            </div>
+          </transition-stub>
+        </fieldset>
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root">
+          <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+              <h2 id="game-option-role-legend-title">shared.role.name.werewolf</h2>
+            </div>
+            <!---->
+          </legend>
+          <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+            <div id="game-lobby-options-hub-roles-tab-werewolf_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-werewolf_header" data-pc-section="toggleablecontent">
+              <div class="p-fieldset-content" data-pc-section="content">
+                <div id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group">
+                  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-utensils text-gray-500"></i><span>Werewolves can eat each other</span></h3>
+                    <div id="game-option-input" class="w-4/12">
+                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
+                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.no</p>
                   <!--v-if-->
                 </div>
               </div>
@@ -670,6 +696,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
                     </div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                    <!---->
+                  </div>
+                </div>
+                <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
+                  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-blue-500"></i><span>Charmed people are revealed</span></h3>
+                    <div id="game-option-input" class="w-4/12">
+                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
+                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no</p>
                   <!--v-if-->
                 </div>
               </div>
@@ -811,6 +851,21 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+            <!---->
+          </div>
+        </div>
+        <div id="game-lobby-options-hub-roles-tab-votes-duration-input-group" class="mt-8">
+          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock text-yellow-500"></i><span>Votes duration in seconds</span></h3>
+            <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-votes-duration-label" for="game-lobby-options-hub-roles-tab-votes-duration-input">Votes duration in seconds</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-votes-duration-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="10" aria-valuemax="600" aria-valuenow="180" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="180"><!----><!----><!----></span>
+              <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-votes-duration-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 28.8135593220339%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 28.8135593220339%;" tabindex="0" role="slider" aria-valuemin="10" aria-valuenow="180" aria-valuemax="600" aria-orientation="horizontal" data-pc-section="handle"></span>
+                <!---->
+                <!---->
+              </div></span>
+            </div>
+          </div>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.duration.description, {"time":"shared.time.minute, {\\"count\\":3}, 3"}</p>
           <!--v-if-->
         </div>
       </div>

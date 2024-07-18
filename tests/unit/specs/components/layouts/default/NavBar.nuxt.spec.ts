@@ -47,7 +47,7 @@ describe("NavBar Component", () => {
         wrapper = await mountNavBarComponent({ shallow: false });
         const werewolvesAssistantLogo = wrapper.findComponent<typeof NuxtImg>("[alt='Werewolves Assistant logo']");
 
-        expect(werewolvesAssistantLogo.attributes("src")).toBe("/_ipx/_/img/logo/square/werewolves-logo-small.png");
+        expect(werewolvesAssistantLogo.props("src")).toBe("/img/logo/square/werewolves-logo-small.png");
       });
     });
 

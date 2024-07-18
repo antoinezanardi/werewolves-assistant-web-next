@@ -151,9 +151,16 @@ Then(/^the player with name "(?<name>.+)" should have the attribute worshiped by
 
 Then(/^the player with name "(?<name>.+)" should have the attribute scandalmonger-marked by scandalmonger in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
   const roleName = "The Scandalmonger marked this player, he'll have 2 more votes against him the next morning.";
-  const worshipedByWildChildAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
+  const markedByScandalmonger = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
-  await expect(worshipedByWildChildAttribute).toBeVisible();
+  await expect(markedByScandalmonger).toBeVisible();
+});
+
+Then(/^the player with name "(?<name>.+)" should have the attribute cant-vote by survivors in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const roleName = "The survivors decided that this player can't vote.";
+  const cantVoteBySurvivors = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
+
+  await expect(cantVoteBySurvivors).toBeVisible();
 });
 
 Then(/^the following players should have the attribute charmed by pied piper in the game$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {

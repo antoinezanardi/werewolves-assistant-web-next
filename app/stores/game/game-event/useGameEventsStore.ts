@@ -22,7 +22,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEventIndex.value = 0;
   }
 
-  function getLastGameHistoryRecordCharmEvents(game: Game, source: GamePlaySourceName): GameEvent[] {
+  function getLastGameHistoryRecordCharmEvents(source: GamePlaySourceName): GameEvent[] {
     const sourcesGameEvents: Partial<Record<GamePlaySourceName, GameEvent[]>> = {
       "pied-piper": [GameEvent.create({ type: "pied-piper-has-charmed" })],
       "cupid": [GameEvent.create({ type: "cupid-has-charmed" })],
@@ -45,10 +45,18 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
       "mark": [GameEvent.create({ type: "scandalmonger-has-marked" })],
       "infect": [GameEvent.create({ type: "accursed-wolf-father-may-have-infected" })],
       "choose-side": [GameEvent.create({ type: "wolf-hound-has-chosen-side" })],
-      "charm": getLastGameHistoryRecordCharmEvents(game, source.name),
+      "charm": getLastGameHistoryRecordCharmEvents(source.name),
     };
 
     return actionsGameEvents[action] ?? [];
+  }
+
+  function getRevealedRolePlayerGameEvents(game: Game): GameEvent[] {
+    const { lastGameHistoryRecord } = game;
+    if (lastGameHistoryRecord?.revealedPlayers?.some(player => player.role.current === "idiot") === true) {
+      return [GameEvent.create({ type: "idiot-is-spared" })];
+    }
+    return [];
   }
 
   function getDeadPlayerGameEvents(game: Game): GameEvent[] {
@@ -66,6 +74,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
         gameEvents.value.push(GameEvent.create({ type: "villager-villager-introduction" }));
       }
     }
+    gameEvents.value.push(...getRevealedRolePlayerGameEvents(game));
     gameEvents.value.push(...getLastGameHistoryRecordEvents(game));
     if (game.phase.tick === 1 && game.phase.name !== "twilight") {
       gameEvents.value.push(GameEvent.create({ type: "game-phase-starts" }));

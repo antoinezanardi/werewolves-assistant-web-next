@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Playground Footer Countdown Ellipse Progress Component > should match snapshot when rendered. 1`] = `
+"<div id="game-playground-footer-countdown-ellipse-progress">
+  <ve-stub id="vue-ellipse-progress" color="#9843a0" font-size="0" progress="50" reverse="" size="20" thickness="4"></ve-stub>
+</div>"
+`;

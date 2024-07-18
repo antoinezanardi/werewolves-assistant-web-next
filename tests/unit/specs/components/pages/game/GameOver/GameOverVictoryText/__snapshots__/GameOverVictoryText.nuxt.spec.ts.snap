@@ -3,8 +3,8 @@
 exports[`Game Over Victory Text Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-winners-text" class="text-center">
   <div class="flex gap-2 items-center justify-center">
-    <nuxt-img-stub src="svg/misc/trophy.svg" width="125" height="125" alt="Trophy icon"></nuxt-img-stub>
-    <nuxt-img-stub src="svg/misc/question-mark.svg" width="125" height="125" alt="Victory type icon"></nuxt-img-stub>
+    <nuxt-img-stub src="svg/misc/trophy.svg" width="125" height="125" alt="Trophy icon" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
+    <nuxt-img-stub src="svg/misc/question-mark.svg" width="125" height="125" alt="Victory type icon" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
   </div>
   <h1 id="victory-text" class="my-3">??</h1>
   <h3 id="victory-sub-text">??</h3>

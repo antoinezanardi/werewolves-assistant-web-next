@@ -11,6 +11,10 @@
       "back": "Back",
       "cancel": "Cancel"
     },
+    "time": {
+      "second": "1 second | {count} seconds",
+      "minute": "1 minute | {count} minutes"
+    },
     "role": {
       "name": {
         "werewolf": "Werewolf | Werewolves",
@@ -1113,6 +1117,13 @@
             "yes": "If the Pied Piper is infected by the Vile Father Of Wolves, he becomes powerless for the rest of the game.",
             "no": "The Pied Piper remains powerful even he is infected by the Vile Father Of Wolves."
           }
+        },
+        "areCharmedPeopleRevealed": {
+          "label": "Charmed people are revealed",
+          "descriptions": {
+            "yes": "The charmed people are revealed to the other players.",
+            "no": "The charmed people are not revealed to the other players."
+          }
         }
       }
     },
@@ -1176,6 +1187,10 @@
             "yes": "The players can skip their vote without any consequences.",
             "no": "The players can't skip their vote, someone must die."
           }
+        },
+        "duration": {
+          "label": "Votes duration in seconds",
+          "description": "The survivors have {time} to vote. It's only a recommendation, the Game Master can decide to extend or shorten this time."
         }
       }
     },
@@ -1224,7 +1239,8 @@
       "bearGrowls": "The Bear Tamer wakes up and his bear growls. One or more Werewolves are next to him…"
     },
     "GameBigBadWolfTurnStartsEvent": {
-      "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager."
+      "bigBadWolfEatsVillager": "The Big Bad Wolf wakes up and will eat a Villager.",
+      "bigBadWolfCanEatWerewolves": "In this special game, the Big Bad Wolf can eat another Werewolf if he wants to."
     },
     "GameCharmedTurnStartsEvent": {
       "charmedPeopleMeetEachOther": "The first charmed person by the Pied Piper wakes up. | The first charmed people by the Pied Piper wake up and meet each other.",
@@ -1289,7 +1305,8 @@
     "GameWerewolvesTurnStartsEvent": {
       "werewolvesMeetEachOtherForFirstTime": "The Werewolves wake up and meet each other for the first time.",
       "whenMeetOverWerewolvesEat": "When the meeting is over, the Werewolves will eat a Villager.",
-      "werewolvesEat": "The Werewolves wake up and will eat a Villager."
+      "werewolvesEat": "The Werewolves wake up and will eat a Villager.",
+      "werewolvesCanEatEachOther": "In this special game, the Werewolves can eat each other if they want to. A good way to remove all suspicions…"
     },
     "GameWhiteWerewolfTurnStartsEvent": {
       "whiteWerewolfCanEatAnotherWolf": "The White Werewolf wakes up and can eat another Werewolf if he wants to."
@@ -1352,7 +1369,9 @@
     },
     "GamePiedPiperHasCharmedEvent": {
       "piedPiperHasCharmed": "The Pied Piper just charmed a player. | The Pied Piper just charmed {charmedCount} players.",
-      "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed."
+      "gameMasterWillTapCharmedPlayers": "The Game Master will tap in the back the charmed player so he knows he is charmed. | The Game Master will tap in the back the {charmedCount} charmed players so they know they are charmed.",
+      "charmedPeopleAreRevealed": "In this special game, the charmed players are revealed to the others.",
+      "peopleAreCharmed": "{charmedPeople} has been charmed! | {charmedPeople} have been charmed!"
     },
     "GameWolfHoundHasChosenSideEvent": {
       "cantFindWolfHoundOrChosenSide": "The Wolf-Hound or his chosen side can't be found… Please proceed.",
@@ -1396,6 +1415,31 @@
       "playersPosition": "Players position",
       "someRolesArePositionDependant": "Some roles rely on players position. Are players placed correctly in the game lobby?",
       "showMeHowToPositionPlayers": "Show me how to position players"
+    },
+    "GameIdiotIsSparedEvent": {
+      "cantFindIdiot": "The Idiot can't be found… Please proceed.",
+      "playerDies": "{playerName} is dead! What a tragedy… He/she can reveal his/her role to the others.",
+      "playerIsActuallyIdiot": "{playerName} is actually the Idiot!",
+      "idiotIsSpared": "The survivors have pity for the Idiot and spare him. He is not eliminated but can't vote for the rest of the game."
+    },
+    "GameLobbyOptionsHubRolesTabWerewolf": {
+      "options": {
+        "canEatEachOther": {
+          "label": "Werewolves can eat each other",
+          "descriptions": {
+            "yes": "The Werewolves (or the Big Bad Wolf) can eat each other if they want to.",
+            "no": "The Werewolves (nor the Big Bad Wolf) can eat each other."
+          }
+        }
+      }
+    },
+    "GamePlaygroundFooterCountdown": {
+      "remainingTimeToMeetEachOther": "Remaining time to meet each other",
+      "remainingTimeToVote": "Remaining time to vote",
+      "remainingTimeToElectSheriff": "Remaining time to elect the Sheriff",
+      "meetEachOtherTimeIsOver": "Time to go back to sleep!",
+      "voteTimeIsOver": "Time to vote!",
+      "electSheriffTimeIsOver": "Sheriff election time!"
     }
   }
 }

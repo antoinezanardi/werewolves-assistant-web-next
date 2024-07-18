@@ -2,4 +2,11 @@ type GameEventWithTextsProps = {
   texts: string[];
 };
 
-export type { GameEventWithTextsProps };
+type GameEventWithTextsEmits = {
+  gameEventTextChange: [string | undefined];
+};
+
+export type {
+  GameEventWithTextsProps,
+  GameEventWithTextsEmits,
+};

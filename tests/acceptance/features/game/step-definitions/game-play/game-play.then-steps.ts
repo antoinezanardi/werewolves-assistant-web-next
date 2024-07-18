@@ -36,3 +36,11 @@ Then(/^the following players can't be targeted in game's playground$/u, async fu
     return expect(targetButton).toBeDisabled();
   }));
 });
+
+Then(/^the game's current play should have a countdown of (?<minutes>\d+) minutes and (?<seconds>\d+) seconds$/u, async function(this: CustomWorld, minutes: string, seconds: string): Promise<void> {
+  const maxSecondsLength = 2;
+  const paddedSeconds = seconds.padStart(maxSecondsLength, "0");
+  const expectedTime = `${minutes}:${paddedSeconds}`;
+
+  await expect(this.page.getByText(expectedTime, { exact: true })).toBeVisible();
+});

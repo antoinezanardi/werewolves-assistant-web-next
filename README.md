@@ -193,6 +193,18 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Survivors elect the Sheriff Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Survivors%20elect%20Sheriff%20Playground.png)
 >>   </details>
 >>   <details>
+>>    <summary>👨‍👨‍👦 Three Brothers meet each other Playground</summary>
+>>
+>>    ![Three Brothers meet each other Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Three%20Brothers%20meet%20each%20other%20Playground.png)
+>>
+>>   </details>
+>>   <details>
+>>    <summary>👯‍ Two Sisters meet each other Playground</summary>
+>>
+>>    ![Two Sisters meet each other Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Two%20Sisters%20meet%20each%20other%20Playground.png)
+>>
+>>   </details>
+>>   <details>
 >>    <summary>🐺 Werewolves eat Playground</summary>
 >>        
 >>    ![Werewolves eat Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Werewolves%20eat%20Playground.png)

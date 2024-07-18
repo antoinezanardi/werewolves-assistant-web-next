@@ -2,7 +2,7 @@ import { createFakeGameHistoryRecordPlaySource } from "@tests/unit/utils/factori
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
 import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
-import { createFakeAccursedWolfFatherAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeAccursedWolfFatherAlivePlayer, createFakeIdiotAlivePlayer, createFakeSeerAlivePlayer, createFakeVillagerVillagerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { createPinia, setActivePinia } from "pinia";
 import type { Mock } from "vitest";
@@ -419,6 +419,56 @@ describe("Game Events Store", () => {
           createFakeGameEvent({ type: "game-turn-starts" }),
         ],
         test: "should generate wolf hound has chosen side event when last game history record action is choose side.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "shoot",
+              source: createFakeGameHistoryRecordPlaySource({ name: "hunter" }),
+            }),
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate idiot is spared event when last game history record doesn't have revealed players.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "vote",
+              source: createFakeGameHistoryRecordPlaySource({ name: "survivors" }),
+            }),
+            revealedPlayers: [
+              createFakeSeerAlivePlayer(),
+              createFakeSeerAlivePlayer(),
+            ],
+          }),
+        }),
+        expectedGameEvents: [createFakeGameEvent({ type: "game-turn-starts" })],
+        test: "should not generate idiot is spared event when last game history record doesn't have an idiot revealed.",
+      },
+      {
+        game: createFakeGame({
+          tick: 2,
+          lastGameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              action: "vote",
+              source: createFakeGameHistoryRecordPlaySource({ name: "survivors" }),
+            }),
+            revealedPlayers: [
+              createFakeSeerAlivePlayer(),
+              createFakeIdiotAlivePlayer(),
+            ],
+          }),
+        }),
+        expectedGameEvents: [
+          createFakeGameEvent({ type: "idiot-is-spared" }),
+          createFakeGameEvent({ type: "game-turn-starts" }),
+        ],
+        test: "should generate idiot is spared event when last game history record has an idiot revealed.",
       },
     ])("$test", ({ game, expectedGameEvents }) => {
       const gameEventsStore = useGameEventsStore();

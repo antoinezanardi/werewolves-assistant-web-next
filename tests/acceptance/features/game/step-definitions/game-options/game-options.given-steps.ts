@@ -1,7 +1,7 @@
 import { Given } from "@cucumber/cucumber";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 import { fillInputNumberInGameOptionsHub, switchRoleOptionInGameOptionsHub } from "@tests/acceptance/features/game/helpers/game-options/game-options.given-steps-helpers";
-import { openGameOptionsDialogInGameLobby } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
+import { openGameOptionsDialogInGameLobby, openVotesTabInGameOptionsDialog } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
 import { closeDialogWithHeaderButton } from "@tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
 import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
@@ -49,6 +49,13 @@ Given(/^the user sets sheriff election time on (?<phaseName>night|day) (?<turn>\
     await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-sheriff-election-phase-input", true);
   }
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-sheriff-election-turn-input", turn);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user allows werewolves to eat each other in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input", true);
   await closeDialogWithHeaderButton(this);
 });
 
@@ -108,6 +115,13 @@ Given(/^the user sets the infected pied piper powerful in game options$/u, async
   await closeDialogWithHeaderButton(this);
 });
 
+Given(/^the user sets the pied piper charmed people revealed in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input", true);
+  await closeDialogWithHeaderButton(this);
+});
+
 Given(/^the user sets wolf-hound chosen side revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
   await goOnPage(this, "/game-lobby");
   await openGameOptionsDialogInGameLobby(this);
@@ -140,5 +154,34 @@ Given(/^the user allows the defender to protect the little girl from the werewol
   await goOnPage(this, "/game-lobby");
   await openGameOptionsDialogInGameLobby(this);
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input", true);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user prevents the revealed idiot death on elder's death in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input", false);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the two sisters waking up interval to (?<wakingUpInterval>\d+) in game options$/u, async function(this: CustomWorld, wakingUpInterval: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input", wakingUpInterval);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the three brothers waking up interval to (?<wakingUpInterval>\d+) in game options$/u, async function(this: CustomWorld, wakingUpInterval: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input", wakingUpInterval);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the votes duration to (?<votesDuration>\d+) seconds in game options$/u, async function(this: CustomWorld, votesDuration: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await openVotesTabInGameOptionsDialog(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-votes-duration-input", votesDuration);
   await closeDialogWithHeaderButton(this);
 });

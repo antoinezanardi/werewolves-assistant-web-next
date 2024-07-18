@@ -119,3 +119,11 @@ When(/^the wolf-hound chooses the (?<side>villagers|werewolves) side$/u, async f
   await chooseSideInPlayground(this, side);
   await makePlayInPlayground(this);
 });
+
+When(/^the two sisters meet each other$/u, async function(this: CustomWorld): Promise<void> {
+  await makePlayInPlayground(this);
+});
+
+When(/^the three brothers meet each other$/u, async function(this: CustomWorld): Promise<void> {
+  await makePlayInPlayground(this);
+});

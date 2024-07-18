@@ -8,6 +8,9 @@ class PiedPiperGameOptions {
   @Expose()
   public isPowerlessOnWerewolvesSide: boolean;
 
+  @Expose()
+  public areCharmedPeopleRevealed: boolean;
+
   public static create(piedPiperGameOptions: PiedPiperGameOptions): PiedPiperGameOptions {
     return plainToInstance(PiedPiperGameOptions, piedPiperGameOptions, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }

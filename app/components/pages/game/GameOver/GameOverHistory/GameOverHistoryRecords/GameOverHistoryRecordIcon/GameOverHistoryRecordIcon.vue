@@ -5,6 +5,7 @@
   >
     <NuxtImg
       :alt="$t(`components.GameOverHistoryRecordIcon.gameHistoryRecordIconAltText`)"
+      placeholder="/svg/misc/infinite-spinner.svg"
       :src="gameHistoryRecordIconPath"
     />
   </div>

@@ -4,13 +4,15 @@ import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/com
 import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
+import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Pied Piper Has Charmed Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePiedPiperHasCharmedEvent>>;
@@ -23,6 +25,7 @@ describe("Game Pied Piper Has Charmed Event Component", () => {
         ],
       }),
     }),
+    options: DEFAULT_GAME_OPTIONS,
   });
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
@@ -62,6 +65,20 @@ describe("Game Pied Piper Has Charmed Event Component", () => {
       const expectedTexts: string[] = [
         "components.GamePiedPiperHasCharmedEvent.piedPiperHasCharmed, {\"charmedCount\":2}, 2",
         "components.GamePiedPiperHasCharmedEvent.gameMasterWillTapCharmedPlayers, {\"charmedCount\":2}, 2",
+      ];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gamePiedPiperHasCharmedEventComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
+    it("should pass revealed charmed players when game options says that charmed people are revealed.", async() => {
+      const gameStore = useGameStore();
+      const gamePiedPiperHasCharmedEventComponent = wrapper.findComponent<typeof GamePiedPiperHasCharmedEvent>("#game-pied-piper-has-charmed-event");
+      gameStore.game.options.roles.piedPiper.areCharmedPeopleRevealed = true;
+      await nextTick();
+      const expectedTexts: string[] = [
+        "components.GamePiedPiperHasCharmedEvent.charmedPeopleAreRevealed",
+        "components.GamePiedPiperHasCharmedEvent.peopleAreCharmed, {\"charmedPeople\":\"Antoine shared.and Baptiste\"}, 2",
       ];
       const expectedTextsAsString = expectedTexts.join(",");
 
