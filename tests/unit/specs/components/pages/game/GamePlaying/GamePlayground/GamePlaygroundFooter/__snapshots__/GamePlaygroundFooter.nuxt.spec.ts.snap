@@ -5,8 +5,12 @@ exports[`Game Playground Footer Component > should match snapshot when rendered.
   <divider-stub class="!my-2"></divider-stub>
   <div class="flex justify-center">
     <div class="w-4/12">
+      <game-playground-footer-countdown-stub id="game-playground-footer-countdown"></game-playground-footer-countdown-stub>
+    </div>
+    <div class="w-4/12">
       <game-playground-footer-make-play-button-stub></game-playground-footer-make-play-button-stub>
     </div>
+    <div class="w-4/12"></div>
   </div>
 </div>"
 `;

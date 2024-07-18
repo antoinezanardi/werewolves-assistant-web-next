@@ -11,6 +11,10 @@
       "back": "Back",
       "cancel": "Cancel"
     },
+    "time": {
+      "second": "1 second | {count} seconds",
+      "minute": "1 minute | {count} minutes"
+    },
     "role": {
       "name": {
         "werewolf": "Werewolf | Werewolves",
@@ -1183,6 +1187,10 @@
             "yes": "The players can skip their vote without any consequences.",
             "no": "The players can't skip their vote, someone must die."
           }
+        },
+        "duration": {
+          "label": "Votes duration in seconds",
+          "description": "The survivors have {time} to vote. It's only a recommendation, the Game Master can decide to extend or shorten this time."
         }
       }
     },
@@ -1424,6 +1432,14 @@
           }
         }
       }
+    },
+    "GamePlaygroundFooterCountdown": {
+      "remainingTimeToMeetEachOther": "Remaining time to meet each other",
+      "remainingTimeToVote": "Remaining time to vote",
+      "remainingTimeToElectSheriff": "Remaining time to elect the Sheriff",
+      "meetEachOtherTimeIsOver": "Time to go back to sleep!",
+      "voteTimeIsOver": "Time to vote!",
+      "electSheriffTimeIsOver": "Sheriff election time!"
     }
   }
 }
