@@ -1,7 +1,7 @@
 <template>
   <div
     id="remaining-time"
-    class="antialiased font-semibold tabular-nums tracking-wide"
+    class="!tabular-nums antialiased font-semibold text-center tracking-wide"
   >
     {{ remainingTimeAsString }}
   </div>

@@ -26,7 +26,7 @@ importers:
         version: 1.1.2(magicast@0.3.4)(rollup@4.18.0)
       '@chenfengyuan/vue-countdown':
         specifier: ^2.1.2
-        version: 2.1.2(vue@3.4.31(typescript@5.5.3))
+        version: 2.1.2(vue@3.4.32(typescript@5.5.3))
       '@commitlint/cli':
         specifier: ^19.3.0
         version: 19.3.0(@types/node@20.14.2)(typescript@5.5.3)
@@ -102,6 +102,9 @@ importers:
       '@types/howler':
         specifier: ^2.2.11
         version: 2.2.11
+      '@types/javascript-color-gradient':
+        specifier: ^2.4.2
+        version: 2.4.2
       '@types/pixelmatch':
         specifier: ^5.2.6
         version: 5.2.6
@@ -138,6 +141,9 @@ importers:
       chartjs-plugin-datalabels:
         specifier: ^2.2.0
         version: 2.2.0(chart.js@4.4.3)
+      circle-progress.vue:
+        specifier: ^3.2.1
+        version: 3.2.1
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -177,6 +183,9 @@ importers:
       husky:
         specifier: ^9.1.0
         version: 9.1.0
+      javascript-color-gradient:
+        specifier: ^2.5.0
+        version: 2.5.0
       jest-extended:
         specifier: ^4.0.2
         version: 4.0.2
@@ -267,6 +276,9 @@ importers:
       vue:
         specifier: ^3.4.32
         version: 3.4.32(typescript@5.5.3)
+      vue-ellipse-progress:
+        specifier: ^2.1.2
+        version: 2.1.2(vue@3.4.32(typescript@5.5.3))
       vue-eslint-parser:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.7.0)
@@ -2110,6 +2122,9 @@ packages:
   '@types/http-proxy@1.17.14':
     resolution: {integrity: sha512-SSrD0c1OQzlFX7pGu1eXxSEjemej64aaNPRhhVYUGqXh0BtldAAx37MG8btcumvpgKyZp1F5Gn3JkktdxiFv6w==}
 
+  '@types/javascript-color-gradient@2.4.2':
+    resolution: {integrity: sha512-Ch78g3wHZ7qfj4fShfnERiW/jV+yc0SY/702cm+l4YgTnDDRoYRvfctJqOVSz0Rppj4RN7/pQIwB3tW3NJbH3A==, tarball: https://registry.npmjs.org/@types/javascript-color-gradient/-/javascript-color-gradient-2.4.2.tgz}
+
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
@@ -2885,6 +2900,9 @@ packages:
   ci-info@4.0.0:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
     engines: {node: '>=8'}
+
+  circle-progress.vue@3.2.1:
+    resolution: {integrity: sha512-gJlqyVHBdMJWwMEPk+u6WEr2iPkxIEX+1Lbsziu+2SPGaHHEQGP20rmQjGOB8GcAFosr616S5kH0BIiFKwsIzg==, tarball: https://registry.npmjs.org/circle-progress.vue/-/circle-progress.vue-3.2.1.tgz}
 
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==}
@@ -4602,6 +4620,9 @@ packages:
   java-properties@1.0.2:
     resolution: {integrity: sha512-qjdpeo2yKlYTH7nFdK0vbZWuTCesk4o63v5iVOlhMQPfuIZQfW/HI35SjfhA+4qpg36rnFSvUK5b1m+ckIblQQ==}
     engines: {node: '>= 0.6.0'}
+
+  javascript-color-gradient@2.5.0:
+    resolution: {integrity: sha512-NfmEygIgldzvs/HUZ9EXjZENhh2q9aB1T/vZvCtQ5EKkuFfJ1/RKWcWd9YNA9BdBYTAh3odokubysjr2dBBZtg==, tarball: https://registry.npmjs.org/javascript-color-gradient/-/javascript-color-gradient-2.5.0.tgz}
 
   jest-diff@29.7.0:
     resolution: {integrity: sha512-LMIgiIrhigmPrs03JHpxUh2yISK3vLFPkAodPeo0+BuF7wA2FoQbkEg1u8gBYBThncu7e1oEDUfIXVuTqLRUjw==}
@@ -7218,6 +7239,11 @@ packages:
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
+  vue-ellipse-progress@2.1.2:
+    resolution: {integrity: sha512-CQl2DMx7uvWyD+1vFd8cNjLQ0l1d6ZD3pTVZaUgsPev1S/9Jo8LGKX7TXxeTyf18y7ckMmeFt/cQY4Rt4CoEsg==, tarball: https://registry.npmjs.org/vue-ellipse-progress/-/vue-ellipse-progress-2.1.2.tgz}
+    peerDependencies:
+      vue: ^3
+
   vue-eslint-parser@9.4.3:
     resolution: {integrity: sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==}
     engines: {node: ^14.17.0 || >=16.0.0}
@@ -7853,9 +7879,9 @@ snapshots:
     dependencies:
       statuses: 2.0.1
 
-  '@chenfengyuan/vue-countdown@2.1.2(vue@3.4.31(typescript@5.5.3))':
+  '@chenfengyuan/vue-countdown@2.1.2(vue@3.4.32(typescript@5.5.3))':
     dependencies:
-      vue: 3.4.31(typescript@5.5.3)
+      vue: 3.4.32(typescript@5.5.3)
 
   '@cloudflare/kv-asset-handler@0.3.4':
     dependencies:
@@ -9795,6 +9821,8 @@ snapshots:
     dependencies:
       '@types/node': 20.14.2
 
+  '@types/javascript-color-gradient@2.4.2': {}
+
   '@types/json-schema@7.0.15': {}
 
   '@types/json5@0.0.29': {}
@@ -10822,6 +10850,8 @@ snapshots:
   ci-info@3.9.0: {}
 
   ci-info@4.0.0: {}
+
+  circle-progress.vue@3.2.1: {}
 
   citty@0.1.6:
     dependencies:
@@ -12766,6 +12796,8 @@ snapshots:
       '@pkgjs/parseargs': 0.11.0
 
   java-properties@1.0.2: {}
+
+  javascript-color-gradient@2.5.0: {}
 
   jest-diff@29.7.0:
     dependencies:
@@ -15643,6 +15675,10 @@ snapshots:
       vue: 3.4.32(typescript@5.5.3)
 
   vue-devtools-stub@0.1.0: {}
+
+  vue-ellipse-progress@2.1.2(vue@3.4.32(typescript@5.5.3)):
+    dependencies:
+      vue: 3.4.32(typescript@5.5.3)
 
   vue-eslint-parser@9.4.3(eslint@9.7.0):
     dependencies:

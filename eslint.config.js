@@ -14,6 +14,7 @@ import { ESLINT_COMPOSABLES_CONFIG } from "./config/eslint/flat-configs/eslint.c
 import { ESLINT_MODULES_CONFIG } from "./config/eslint/flat-configs/eslint.modules-config.mjs";
 import { ESLINT_GLOBAL_CONFIG } from "./config/eslint/flat-configs/eslint.global-config.mjs";
 import { ESLINT_IGNORES } from "./config/eslint/eslint.constants.mjs";
+import { ESLINT_TYPESCRIPT_DECLARATION_CONFIG } from "./config/eslint/flat-configs/eslint.typescript-declaration-config.mjs";
 
 export default [
   {
@@ -22,6 +23,7 @@ export default [
   },
   ESLINT_GLOBAL_CONFIG,
   ESLINT_TYPESCRIPT_CONFIG,
+  ESLINT_TYPESCRIPT_DECLARATION_CONFIG,
   ESLINT_VUE_CONFIG,
   ESLINT_COMPOSABLES_CONFIG,
   ESLINT_PAGES_CONFIG,

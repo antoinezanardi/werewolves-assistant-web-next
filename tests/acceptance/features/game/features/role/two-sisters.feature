@@ -25,6 +25,7 @@ Feature: 👯‍ Two sisters role
     And the game's current play question should be "The Two Sisters meet and consult one another."
     And the game's phase name should be "Night 1"
     And the game's current play should not expect any action
+    And the game's current play should have a countdown of 0 minutes and 20 seconds
     And the page should match or creates the missing snapshot with name "Two Sisters meet each other Playground"
 
     When the two sisters meet each other

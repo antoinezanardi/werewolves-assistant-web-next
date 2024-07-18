@@ -1432,6 +1432,14 @@
           }
         }
       }
+    },
+     "GamePlaygroundFooterCountdown": {
+      "remainingTimeToMeetEachOther": "Temps restant pour la rencontre",
+      "remainingTimeToVote": "Temps restant pour voter",
+      "remainingTimeToElectSheriff": "Temps restant pour l'élection du Maire",
+      "meetEachOtherTimeIsOver": "Il est l'heure de se rendormir !",
+      "voteTimeIsOver": "Il est l'heure de voter !",
+      "electSheriffTimeIsOver": "Il est l'heure d'élire le Maire !"
     }
   }
 }

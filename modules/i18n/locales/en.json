@@ -1432,6 +1432,14 @@
           }
         }
       }
+    },
+    "GamePlaygroundFooterCountdown": {
+      "remainingTimeToMeetEachOther": "Remaining time to meet each other",
+      "remainingTimeToVote": "Remaining time to vote",
+      "remainingTimeToElectSheriff": "Remaining time to elect the Sheriff",
+      "meetEachOtherTimeIsOver": "Time to go back to sleep!",
+      "voteTimeIsOver": "Time to vote!",
+      "electSheriffTimeIsOver": "Sheriff election time!"
     }
   }
 }

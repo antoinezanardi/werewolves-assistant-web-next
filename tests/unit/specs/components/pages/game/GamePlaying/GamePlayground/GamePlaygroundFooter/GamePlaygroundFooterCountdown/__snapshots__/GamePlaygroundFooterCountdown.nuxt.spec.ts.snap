@@ -4,8 +4,8 @@ exports[`Game Playground Footer Countdown Component > should match snapshot when
 "<div id="game-playground-footer-countdown" class="flex flex-col h-full items-center justify-center">
   <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
     <div id="countdown-running" class="flex flex-col items-center justify-center">
-      <div id="countdown-remaining-time-title" class="text-center">components.GamePlaygroundFooterCountdown.remainingTimeToVote</div>
-      <vue-countdown-stub autostart="true" emitevents="true" interval="1000" now="[Function]" tag="span" time="180000" transform="[Function]" id="game-playground-footer-countdown-component" class="text-center w-full"></vue-countdown-stub>
+      <div id="countdown-remaining-time-title" class="font-medium text-center text-sm">components.GamePlaygroundFooterCountdown.remainingTimeToVote</div>
+      <vue-countdown-stub autostart="true" emitevents="true" interval="1000" now="[Function]" tag="span" time="180000" transform="[Function]" id="game-playground-footer-countdown-component" class="flex gap-1 items-center justify-center relative text-center w-full"></vue-countdown-stub>
     </div>
   </transition-stub>
 </div>"

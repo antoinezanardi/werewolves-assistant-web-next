@@ -6,6 +6,7 @@ import Tooltip from "primevue/tooltip";
 import { Vue3Lottie } from "vue3-lottie";
 import VueDraggable from "vuedraggable";
 import VueCountdown from "@chenfengyuan/vue-countdown";
+import VueEllipseProgress from "vue-ellipse-progress";
 import { clone, construct, crush } from "radash";
 
 function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
@@ -22,6 +23,7 @@ function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>
         VueLottie: Vue3Lottie,
         VueDraggable,
         VueCountdown,
+        VueEllipseProgress,
       },
     },
   };

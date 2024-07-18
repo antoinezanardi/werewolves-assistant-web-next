@@ -58,6 +58,7 @@ Feature: 🪈 Pied Piper role
     Then the game's current play title should be "Charmed people meet each other"
     And the game's phase name should be "Night 1"
     And the game's current play should not expect any action
+    And the game's current play should have a countdown of 0 minutes and 20 seconds
     And the page should match or creates the missing snapshot with name "Charmed people meet each other Playground"
 
     When the player or group skips his turn

@@ -30,6 +30,7 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     |
       | Charlie |
       | David   |
+    And the game's current play should have a countdown of 3 minutes and 0 seconds
     And the page creates the missing snapshot with name "Survivors elect Sheriff Playground"
 
     When the survivors elect the sheriff with the votes

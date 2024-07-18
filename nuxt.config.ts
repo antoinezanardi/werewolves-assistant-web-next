@@ -71,6 +71,7 @@ export default defineNuxtConfig({
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",
     "~/plugins/vue-countdown/vue-countdown.client.ts",
+    "~/plugins/vue-ellipse-progress/vue-ellipse-progress.client.ts",
   ],
   primevue: {
     cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",

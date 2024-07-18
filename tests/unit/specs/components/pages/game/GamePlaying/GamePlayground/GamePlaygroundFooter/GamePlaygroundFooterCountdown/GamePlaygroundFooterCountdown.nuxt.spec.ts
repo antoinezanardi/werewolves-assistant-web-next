@@ -8,6 +8,8 @@ import type { mount } from "@vue/test-utils";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GamePlaygroundFooterCountdown from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdown.vue";
+import type GamePlaygroundFooterCountdownEllipseProgress from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownEllipseProgress/GamePlaygroundFooterCountdownEllipseProgress.vue";
+import type GamePlaygroundFooterCountdownRemainingTime from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownRemainingTime/GamePlaygroundFooterCountdownRemainingTime.vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
@@ -177,7 +179,7 @@ describe("Game Playground Footer Countdown Component", () => {
       });
     });
 
-    describe("Countdown remaining time", () => {
+    describe("Countdown component", () => {
       it.each <{
         test: string;
         game: Game;
@@ -230,6 +232,42 @@ describe("Game Playground Footer Countdown Component", () => {
         await nextTick();
 
         expect(countdown.props("time")).toBe(expectedTime);
+      });
+
+      describe("Countdown Ellipse Progress", () => {
+        it("should pass total and remaining seconds to ellipse progress when rendered.", async() => {
+          wrapper = await mountGamePlaygroundFooterCountdownComponent({
+            shallow: false,
+            global: {
+              plugins: [createTestingPinia({ initialState })],
+              stubs: {
+                Ve: true,
+              },
+            },
+          });
+          const countdownEllipseProgress = wrapper.findComponent<typeof GamePlaygroundFooterCountdownEllipseProgress>("#game-playground-footer-countdown-ellipse-progress");
+
+          expect(countdownEllipseProgress.props("totalSeconds")).toBe(180);
+          expect(countdownEllipseProgress.props("remainingSeconds")).toBe(180);
+        });
+      });
+
+      describe("Countdown Remaining Time", () => {
+        it("should pass minutes and seconds to countdown remaining time when rendered.", async() => {
+          wrapper = await mountGamePlaygroundFooterCountdownComponent({
+            shallow: false,
+            global: {
+              plugins: [createTestingPinia({ initialState })],
+              stubs: {
+                Ve: true,
+              },
+            },
+          });
+          const countdownRemainingTime = wrapper.findComponent<typeof GamePlaygroundFooterCountdownRemainingTime>("#game-playground-footer-countdown-remaining-time");
+
+          expect(countdownRemainingTime.props("minutes")).toBe(3);
+          expect(countdownRemainingTime.props("seconds")).toBe(0);
+        });
       });
     });
   });
