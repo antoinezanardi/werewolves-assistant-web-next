@@ -1,7 +1,7 @@
 import { Given } from "@cucumber/cucumber";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 import { fillInputNumberInGameOptionsHub, switchRoleOptionInGameOptionsHub } from "@tests/acceptance/features/game/helpers/game-options/game-options.given-steps-helpers";
-import { openGameOptionsDialogInGameLobby } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
+import { openGameOptionsDialogInGameLobby, openVotesTabInGameOptionsDialog } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";
 import { closeDialogWithHeaderButton } from "@tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
 import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
@@ -175,5 +175,13 @@ Given(/^the user sets the three brothers waking up interval to (?<wakingUpInterv
   await goOnPage(this, "/game-lobby");
   await openGameOptionsDialogInGameLobby(this);
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input", wakingUpInterval);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the votes duration to (?<votesDuration>\d+) seconds in game options$/u, async function(this: CustomWorld, votesDuration: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await openVotesTabInGameOptionsDialog(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-votes-duration-input", votesDuration);
   await closeDialogWithHeaderButton(this);
 });

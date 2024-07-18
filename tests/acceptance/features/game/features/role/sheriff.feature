@@ -258,3 +258,17 @@ Feature: 🎖️ Sheriff Attribute
 
     When the user goes to the next game event text
     Then the game's event should display the text "The new Sheriff can make a powerful speech to his fellow villagers."
+
+  Scenario: 🎖 Sheriff must be elected in 10 minutes when game master sets votes duration to 10 minutes in game options
+    Given the user sets the votes duration to 600 seconds in game options
+    And the user creates a game with the players with name and role
+      | name    | role     |
+      | Antoine | Hunter   |
+      | Bob     | Werewolf |
+      | Charlie | Cupid    |
+      | David   | Angel    |
+
+    When the user closes the toast
+    And the user skips all game events
+    Then the game's current play title should be "Survivors elect the Sheriff"
+    And the game's current play should have a countdown of 10 minutes and 0 seconds

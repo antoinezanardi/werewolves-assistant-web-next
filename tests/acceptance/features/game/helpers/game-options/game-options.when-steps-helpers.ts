@@ -5,4 +5,11 @@ async function openGameOptionsDialogInGameLobby(world: CustomWorld): Promise<voi
   await clickOnRoleWithText(world, "button", "Game options");
 }
 
-export { openGameOptionsDialogInGameLobby };
+async function openVotesTabInGameOptionsDialog(world: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(world, "tab", "Votes");
+}
+
+export {
+  openGameOptionsDialogInGameLobby,
+  openVotesTabInGameOptionsDialog,
+};
