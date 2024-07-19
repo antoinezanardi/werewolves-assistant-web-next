@@ -100,10 +100,15 @@ Then(/^the player with name "(?<name>.+)" should have the attribute powerless by
   await expect(powerlessByFoxAttribute).toBeVisible();
 });
 
-Then(/^the player with name "(?<name>.+)" should have the attribute powerless by elder in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
+Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the attribute powerless by elder in the game$/u, async function(this: CustomWorld, name: string, notPowerless: string | null): Promise<void> {
   const roleName = "The player became powerless because one or more villagers eliminated the Elder.";
   const powerlessByElderAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
+  if (notPowerless !== null) {
+    await expect(powerlessByElderAttribute).toBeHidden();
+
+    return;
+  }
   await expect(powerlessByElderAttribute).toBeVisible();
 });
 
@@ -168,5 +173,14 @@ Then(/^the following players should have the attribute charmed by pied piper in 
   for (const [name] of players) {
     const charmedByPiedPiperAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, "The Pied Piper charmed this player.");
     await expect(charmedByPiedPiperAttribute).toBeVisible();
+  }
+});
+
+Then(/^the following players should have the attribute powerless by elder in the game$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+  const players = playersDatatable.rows();
+  for (const [name] of players) {
+    const roleName = "The player became powerless because one or more villagers eliminated the Elder.";
+    const powerlessByElderAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
+    await expect(powerlessByElderAttribute).toBeVisible();
   }
 });

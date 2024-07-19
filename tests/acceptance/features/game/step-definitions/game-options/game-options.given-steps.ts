@@ -185,3 +185,17 @@ Given(/^the user sets the votes duration to (?<votesDuration>\d+) seconds in gam
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-votes-duration-input", votesDuration);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets the elder's lives count to (?<livesCount>\d+) in game options$/u, async function(this: CustomWorld, livesCount: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input", livesCount);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user doesn't allow the elder to take his revenge in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input", false);
+  await closeDialogWithHeaderButton(this);
+});

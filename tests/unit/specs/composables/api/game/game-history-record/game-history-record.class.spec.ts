@@ -1,3 +1,4 @@
+import { createFakeGameHistoryRecordPlayerAttributeAlteration } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-player-attribute-alteration/game-history-record-player-attribute-alteration.factory";
 import { GameHistoryRecord } from "~/composables/api/game/types/game-history-record/game-history-record.class";
 import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
@@ -11,6 +12,10 @@ describe("Game History Record Class", () => {
         createFakePlayer(),
         createFakePlayer(),
       ];
+      const playerAttributeAlterations = [
+        createFakeGameHistoryRecordPlayerAttributeAlteration(),
+        createFakeGameHistoryRecordPlayerAttributeAlteration(),
+      ];
       const phase = createFakeGamePhase();
       const createdAt = new Date();
       const gameHistoryRecord = GameHistoryRecord.create({
@@ -21,6 +26,7 @@ describe("Game History Record Class", () => {
         tick: 1,
         turn: 1,
         revealedPlayers,
+        playerAttributeAlterations,
         createdAt,
         extra: "Extra",
       } as GameHistoryRecord);
@@ -32,6 +38,7 @@ describe("Game History Record Class", () => {
       expectedGameHistoryRecord.revealedPlayers = revealedPlayers;
       expectedGameHistoryRecord.tick = 1;
       expectedGameHistoryRecord.turn = 1;
+      expectedGameHistoryRecord.playerAttributeAlterations = playerAttributeAlterations;
       expectedGameHistoryRecord.createdAt = createdAt;
 
       expect(gameHistoryRecord).toStrictEqual<GameHistoryRecord>(expectedGameHistoryRecord);

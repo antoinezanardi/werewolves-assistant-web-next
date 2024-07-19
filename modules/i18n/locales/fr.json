@@ -1440,6 +1440,11 @@
       "meetEachOtherTimeIsOver": "Il est l'heure de se rendormir !",
       "voteTimeIsOver": "Il est l'heure de voter !",
       "electSheriffTimeIsOver": "Il est l'heure d'élire le Maire !"
+    },
+    "GameElderHasTakenRevengeEvent": {
+      "cantFindElder": "L'Ancien ne peut être trouvé… Veuillez continuer.",
+      "elderHasBeenMurderedByVillager": "L'Ancien a été éliminé par son propre camp !",
+      "elderHasTakenRevenge": "Sa vengeance s'abat sur le Village ! Tous les joueurs du camp des Villageois perdent leur pouvoirs pour le reste de la partie."
     }
   }
 }

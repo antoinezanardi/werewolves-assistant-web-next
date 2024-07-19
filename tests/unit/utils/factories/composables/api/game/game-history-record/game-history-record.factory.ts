@@ -14,6 +14,7 @@ function createFakeGameHistoryRecord(gameHistoryRecord: Partial<GameHistoryRecor
     play: gameHistoryRecord.play ?? createFakeGameHistoryRecordPlay(),
     revealedPlayers: gameHistoryRecord.revealedPlayers,
     deadPlayers: gameHistoryRecord.deadPlayers,
+    playerAttributeAlterations: gameHistoryRecord.playerAttributeAlterations,
     createdAt: gameHistoryRecord.createdAt ?? faker.date.recent(),
   });
 }

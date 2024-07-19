@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Elder Has Taken Revenge Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub id="game-elder-has-taken-revenge-event" texts="components.GameElderHasTakenRevengeEvent.elderHasBeenMurderedByVillager,components.GameElderHasTakenRevengeEvent.elderHasTakenRevenge"></game-event-with-texts-stub>"`;
