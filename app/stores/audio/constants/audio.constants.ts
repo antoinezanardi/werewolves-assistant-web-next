@@ -31,6 +31,7 @@ const SOUND_EFFECT_NAMES = [
   "raven-flying-away",
   "supernatural-mood",
   "sword",
+  "thunder",
   "time-is-up",
   "trumpet-fanfare",
   "werewolf-howling",

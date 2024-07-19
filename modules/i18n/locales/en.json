@@ -1440,6 +1440,11 @@
       "meetEachOtherTimeIsOver": "Time to go back to sleep!",
       "voteTimeIsOver": "Time to vote!",
       "electSheriffTimeIsOver": "Sheriff election time!"
+    },
+    "GameElderHasTakenRevengeEvent": {
+      "cantFindElder": "The Elder can't be found… Please proceed.",
+      "elderHasBeenMurderedByVillager": "The Elder has been murdered by his own kind!",
+      "elderHasTakenRevenge": "He has taken his revenge! All the players from the Villagers side loose their power for the rest of the game."
     }
   }
 }
