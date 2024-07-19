@@ -34,7 +34,7 @@ Feature: 👴🏻 Elder role
     And the game's event player card should have the name "Antoine"
 
     When the user goes to the next game event text
-    Then the game's event should display the text "He has taken his revenge! All the players from the Villagers side loose their power for the rest of the game."
+    Then the game's event should display the text "He has taken his revenge! All the players from the Villagers side lose their power for the rest of the game."
 
   Scenario: 👴🏻 Elder has only one life against werewolves if game master sets it in game options
     Given the user disables the sheriff in game options
