@@ -91,7 +91,7 @@
     "@stryker-mutator/vitest-runner": "^8.2.6",
     "@stylistic/eslint-plugin": "^2.3.0",
     "@types/chart.js": "^2.9.41",
-    "@types/eslint": "^8.56.10",
+    "@types/eslint": "^8.56.11",
     "@types/howler": "^2.2.11",
     "@types/javascript-color-gradient": "^2.4.2",
     "@types/pixelmatch": "^5.2.6",
