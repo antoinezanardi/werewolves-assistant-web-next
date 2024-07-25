@@ -13,6 +13,7 @@ function createFakeGameHistoryRecord(gameHistoryRecord: Partial<GameHistoryRecor
     tick: gameHistoryRecord.tick ?? faker.number.int({ min: 1 }),
     play: gameHistoryRecord.play ?? createFakeGameHistoryRecordPlay(),
     revealedPlayers: gameHistoryRecord.revealedPlayers,
+    switchedSidePlayers: gameHistoryRecord.switchedSidePlayers,
     deadPlayers: gameHistoryRecord.deadPlayers,
     playerAttributeAlterations: gameHistoryRecord.playerAttributeAlterations,
     createdAt: gameHistoryRecord.createdAt ?? faker.date.recent(),

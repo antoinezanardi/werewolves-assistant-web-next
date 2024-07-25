@@ -18,6 +18,7 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     lastGameHistoryRecord: game.lastGameHistoryRecord ?? null,
     options: createFakeGameOptions(game.options),
     victory: game.victory ?? undefined,
+    events: game.events ?? undefined,
     createdAt: game.createdAt ?? faker.date.recent(),
     updatedAt: game.updatedAt ?? faker.date.recent(),
   });

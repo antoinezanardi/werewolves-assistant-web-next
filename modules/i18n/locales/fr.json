@@ -1327,7 +1327,7 @@
       "dayRises": "Le jour se lève sur le village de Thiercelieux !",
       "nightFalls": "La nuit tombe sur le village de Thiercelieux…"
     },
-    "GamePlayerDiesEvent": {
+    "GameDeathEvent": {
       "cantFindDeadPlayer": "L'Assistant ne trouve pas le joueur mort… Veuillez continuer.",
       "playerDies": "{playerName} est mort ! Quelle tragédie…",
       "playerCanRevealRole": "Il ou elle peut révéler son rôle aux autres joueurs.",
@@ -1340,8 +1340,8 @@
       "cantFindTargetedPlayer": "Le joueur vu ne peut être trouvé… Veuillez continuer.",
       "gameMasterWillMimeSide": "Comme la Voyante est silencieuse, le Maître de jeu mimera le camp du joueur vu.",
       "gameMasterWillMimeRole": "Comme la Voyante est silencieuse, le Maître de jeu mimera le rôle du joueur vu.",
-      "seerHasSeenSide": "Le Voyant a vu un joueur du camp des {side} !",
-      "seerHasSeenRole": "Le Voyant a vu {role} !"
+      "seerHasSeenSide": "La Voyante a vu un joueur du camp des {side} !",
+      "seerHasSeenRole": "La Voyante a vu {role} !"
     },
     "GameSheriffHasBeenElectedEvent": {
       "cantFindElectedSheriff": "Le Maire élu ne peut être trouvé… Veuillez continuer.",
@@ -1353,7 +1353,7 @@
       "mute": "Couper le son",
       "unmute": "Activer le son"
     },
-    "GameScandalmongerHasMarkedEvent": {
+    "GameScandalmongerMayHaveMarkedEvent": {
       "scandalMongerDidntMarkAnyone": "Le Corbeau n'a marqué personne pour cette nuit. Il s'est envolé…",
       "scandalmongerHasMarkedAPlayer": "Le Corbeau a marqué un joueur avec sa plume.",
       "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va déposer la plume en face du joueur marqué."

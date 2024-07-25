@@ -1,0 +1,25 @@
+const GAME_EVENT_TYPES = [
+  "game-starts",
+  "game-phase-starts",
+  "game-turn-starts",
+  "villager-villager-introduction",
+  "death",
+  "seer-has-seen",
+  "sheriff-promotion",
+  "scandalmonger-may-have-marked",
+  "accursed-wolf-father-may-have-infected",
+  "pied-piper-has-charmed",
+  "wolf-hound-has-chosen-side",
+  "cupid-has-charmed",
+  "idiot-is-spared",
+  "elder-has-taken-revenge",
+  "bear-growls",
+  "bear-sleeps",
+  "fox-may-have-sniffed",
+  "thief-may-have-chosen-card",
+  "wild-child-has-transformed",
+  "actor-may-have-chosen-card",
+  "scandalmonger-mark-is-active",
+] as const;
+
+export { GAME_EVENT_TYPES };

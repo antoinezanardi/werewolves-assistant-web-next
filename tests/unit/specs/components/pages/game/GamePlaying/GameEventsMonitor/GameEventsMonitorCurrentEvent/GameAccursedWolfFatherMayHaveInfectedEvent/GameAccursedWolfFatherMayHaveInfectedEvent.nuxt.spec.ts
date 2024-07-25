@@ -1,4 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGameHistoryRecordPlayTarget } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.factory";
 import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
@@ -6,6 +7,7 @@ import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game
 import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -17,6 +19,12 @@ import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Accursed Wolf Father May Have Infected Event Component", () => {
   const defaultPlayer = createFakeSeerAlivePlayer({ name: "Antoine" });
+  const defaultProps: CurrentGameEventProps = {
+    event: createFakeGameEvent({
+      type: "accursed-wolf-father-may-have-infected",
+      players: [defaultPlayer],
+    }),
+  };
   const defaultGame = createFakeGame({
     lastGameHistoryRecord: createFakeGameHistoryRecord({
       play: createFakeGameHistoryRecordPlay({
@@ -32,12 +40,15 @@ describe("Game Accursed Wolf Father May Have Infected Event Component", () => {
   Promise<ReturnType<typeof mount<typeof GameAccursedWolfFatherMayHaveInfectedEvent>>> {
     return mountSuspendedComponent(GameAccursedWolfFatherMayHaveInfectedEvent, {
       global: { plugins: [createTestingPinia(testingPinia)] },
+      props: defaultProps,
       ...options,
     });
   }
 
   beforeEach(async() => {
     wrapper = await mountGameAccursedWolfFatherMayHaveInfectedEventComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame(defaultGame);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -76,17 +87,25 @@ describe("Game Accursed Wolf Father May Have Infected Event Component", () => {
     });
 
     it("should not pass svg icon path when accursed wolf father didn't infect anyone.", async() => {
-      const game = createFakeGame({ lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "infect" }) }) });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
-      const gameAccursedWolfFatherVictimComponent = wrapper.findComponent<typeof GameEventFlippingLastPlayTargetsCard>("#game-event-flipping-last-play-targets-card");
+      wrapper = await mountGameAccursedWolfFatherMayHaveInfectedEventComponent({
+        global: {
+          plugins: [createTestingPinia(testingPinia)],
+          stubs: { GameEventWithTexts: false },
+        },
+        props: {
+          event: createFakeGameEvent({
+            type: "accursed-wolf-father-may-have-infected",
+            players: [],
+          }),
+        },
+      });
+      const gameAccursedWolfFatherVictimComponent = wrapper.findComponent<typeof GameEventFlippingLastPlayTargetsCard>("#game-event-flipping-card");
 
       expect(gameAccursedWolfFatherVictimComponent.props("svgIconPath")).toBeUndefined();
     });
 
     it("should pass svg icon path when accursed wolf father infected someone.", () => {
-      const gameAccursedWolfFatherVictimComponent = wrapper.findComponent<typeof GameEventFlippingLastPlayTargetsCard>("#game-event-flipping-last-play-targets-card");
+      const gameAccursedWolfFatherVictimComponent = wrapper.findComponent<typeof GameEventFlippingLastPlayTargetsCard>("#game-event-flipping-card");
 
       expect(gameAccursedWolfFatherVictimComponent.props("svgIconPath")).toBe("/svg/role/werewolf.svg");
     });

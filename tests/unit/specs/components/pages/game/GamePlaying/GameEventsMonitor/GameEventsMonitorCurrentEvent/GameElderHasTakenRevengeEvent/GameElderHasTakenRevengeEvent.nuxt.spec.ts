@@ -1,12 +1,14 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeElderAlivePlayer, createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameElderHasTakenRevengeEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameElderHasTakenRevengeEvent/GameElderHasTakenRevengeEvent.vue";
-import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
+import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -14,6 +16,12 @@ import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Elder Has Taken Revenge Event Component", () => {
   const defaultElder = createFakeElderAlivePlayer({ name: "Antoine" });
+  const defaultProps: CurrentGameEventProps = {
+    event: createFakeGameEvent({
+      type: "elder-has-taken-revenge",
+      players: [defaultElder],
+    }),
+  };
   const defaultGame = createFakeGame({
     players: [
       defaultElder,
@@ -29,6 +37,7 @@ describe("Game Elder Has Taken Revenge Event Component", () => {
       global: {
         plugins: [createTestingPinia(testingPinia)],
       },
+      props: defaultProps,
       ...options,
     });
   }
@@ -61,17 +70,6 @@ describe("Game Elder Has Taken Revenge Event Component", () => {
 
       expect(gameElderHasTakenRevengeEventComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
-
-    it("should pass can't find elder player when elder is not found.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game = createFakeGame({ players: [] });
-      await nextTick();
-      const gameElderHasTakenRevengeEventComponent = wrapper.findComponent<typeof GameElderHasTakenRevengeEvent>("#game-elder-has-taken-revenge-event");
-      const expectedTexts: string[] = ["components.GameElderHasTakenRevengeEvent.cantFindElder"];
-      const expectedTextsAsString = expectedTexts.join(",");
-
-      expect(gameElderHasTakenRevengeEventComponent.attributes("texts")).toBe(expectedTextsAsString);
-    });
   });
 
   describe("Flipping Player Card", () => {
@@ -95,9 +93,7 @@ describe("Game Elder Has Taken Revenge Event Component", () => {
     });
 
     it("should not render flipping player card when elder player is not found.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game = createFakeGame({ players: [] });
-      await nextTick();
+      wrapper = await mountGameElderHasTakenRevengeEventComponent({ props: { event: createFakeGameEvent() } });
       const gameEventFlippingPlayerCardComponent = wrapper.findComponent("#game-event-flipping-elder-card");
 
       expect(gameEventFlippingPlayerCardComponent.exists()).toBeFalsy();

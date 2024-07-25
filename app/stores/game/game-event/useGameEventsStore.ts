@@ -1,34 +1,28 @@
 import { defineStore } from "pinia";
-import { useGameEventsGenerator } from "~/composables/api/game/game-event/useGameEventsGenerator";
+import type { GameEvent } from "~/composables/api/game/game-event/game-event.class";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
-import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
-import type { GameEvent } from "~/stores/game/game-event/types/game-event.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
-  const gameEvents = ref<GameEvent[]>([]);
   const currentGameEventIndex = ref<number>(0);
 
   const gameStore = useGameStore();
 
-  const { generateGameEventsFromGame } = useGameEventsGenerator();
+  const gameEvents = computed<GameEvent[] | undefined>(() => gameStore.game.events);
 
-  const currentGameEvent = computed<GameEvent | undefined>(() => gameEvents.value[currentGameEventIndex.value]);
+  const currentGameEvent = computed<GameEvent | undefined>(() => gameEvents.value?.[currentGameEventIndex.value]);
   const canGoToPreviousGameEvent = computed<boolean>(() => currentGameEventIndex.value > 0 && gameStore.makingGamePlayStatus !== "pending");
   const canGoToNextGameEvent = computed<boolean>(() => gameStore.makingGamePlayStatus !== "pending");
 
-  function resetGameEvents(): void {
-    gameEvents.value = [];
+  function resetGameEventIndex(): void {
     currentGameEventIndex.value = 0;
   }
 
-  function generateAndSetGameEventsFromGame(game: Game): void {
-    resetGameEvents();
-    gameEvents.value = generateGameEventsFromGame(game);
-  }
-
   async function goToNextGameEvent(): Promise<void> {
+    if (!gameEvents.value) {
+      return;
+    }
     const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(gameStore.game);
     const nextGameEvent = gameEvents.value[currentGameEventIndex.value + 1];
     const isLastGameEvent = currentGameEventIndex.value === gameEvents.value.length - 1;
@@ -39,7 +33,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
       isLastGameEvent && mustCurrentGamePlayBeSkipped.value
     ) {
       await gameStore.skipGamePlay();
-      currentGameEventIndex.value = 0;
+      resetGameEventIndex();
 
       return;
     }
@@ -55,8 +49,7 @@ const useGameEventsStore = defineStore(StoreIds.GAME_EVENTS, () => {
     currentGameEvent,
     canGoToPreviousGameEvent,
     canGoToNextGameEvent,
-    resetGameEvents,
-    generateAndSetGameEventsFromGame,
+    resetGameEventIndex,
     goToNextGameEvent,
     goToPreviousGameEvent,
   };

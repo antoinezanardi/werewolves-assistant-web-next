@@ -2,7 +2,7 @@
 @shard-1
 Feature: 🐺👹 Big Bad Wolf role
 
-  Scenario: 🐺👹 Big Bad Wolf eats a Villager after the the other Werewolves
+  Scenario: 🐺👹 Big Bad Wolf eats a Villager after the other Werewolves
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role         |

@@ -4,8 +4,9 @@
     :texts="gameAccursedWolfFatherMayHaveInfectedEventTexts"
   >
     <div class="flex h-full items-center justify-center">
-      <GameEventFlippingLastPlayTargetsCard
-        id="game-event-flipping-last-play-targets-card"
+      <GameEventFlippingPlayersCard
+        id="game-event-flipping-card"
+        :players="event.players"
         :svg-icon-path="svgIconPath"
       />
     </div>
@@ -13,24 +14,19 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import GameEventFlippingLastPlayTargetsCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingLastPlayTargetsCard/GameEventFlippingLastPlayTargetsCard.vue";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import GameEventFlippingPlayersCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayersCard.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
-import { useGameLastHistoryRecord } from "~/composables/api/game/game-history-record/useGameLastHistoryRecord";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
-import { useGameStore } from "~/stores/game/useGameStore";
 
-const gameStore = useGameStore();
-const { game } = storeToRefs(gameStore);
+const props = defineProps<CurrentGameEventProps>();
 
 const audioStore = useAudioStore();
 const { playSoundEffect } = audioStore;
 
-const { lastTargetedPlayers } = useGameLastHistoryRecord(game);
-
 const { t } = useI18n();
 
-const hasAccursedWolfFatherInfectedAnyone = computed<boolean>(() => lastTargetedPlayers.value.length > 0);
+const hasAccursedWolfFatherInfectedAnyone = computed<boolean>(() => !!props.event.players && props.event.players.length > 0);
 
 const gameAccursedWolfFatherMayHaveInfectedEventTexts = computed<string[]>(() => [
   t("components.GameAccursedWolfFatherMayHaveInfectedEvent.accursedWolfFatherMayHaveInfectedAPlayer"),

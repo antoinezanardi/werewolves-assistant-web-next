@@ -27,6 +27,9 @@ const props = defineProps<GameEventWithTextsProps>();
 const emit = defineEmits<GameEventWithTextsEmits>();
 
 function onGameEventTextChangeFromGameEventTextsManager(newGameEventText: string | undefined): void {
+  if (newGameEventText === undefined) {
+    return;
+  }
   emit("gameEventTextChange", newGameEventText);
 }
 
