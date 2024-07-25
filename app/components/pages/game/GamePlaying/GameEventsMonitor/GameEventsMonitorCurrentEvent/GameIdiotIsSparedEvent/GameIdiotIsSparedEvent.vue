@@ -5,10 +5,10 @@
     @game-event-text-change="onGameEventTextChangeFromGameEventWithTexts"
   >
     <div class="flex h-full items-center justify-center">
-      <GameEventFlippingPlayerCard
+      <GameEventFlippingPlayersCard
         v-if="idiotInPlayers"
         id="game-event-flipping-idiot-card"
-        :players="[idiotInPlayers]"
+        :players="event.players"
         svg-icon-path="/svg/game/player/player-attribute/seen.svg"
       />
     </div>
@@ -16,25 +16,20 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import GameEventFlippingPlayersCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayersCard.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { useGamePlayers } from "~/composables/api/game/useGamePlayers";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
-import { useGameStore } from "~/stores/game/useGameStore";
 
-const gameStore = useGameStore();
-const { game } = storeToRefs(gameStore);
-
-const { getPlayersWithCurrentRole } = useGamePlayers(game);
+const props = defineProps<CurrentGameEventProps>();
 
 const audioStore = useAudioStore();
 const { playSoundEffect } = audioStore;
 
 const { t } = useI18n();
 
-const idiotInPlayers = computed<Player | undefined>(() => getPlayersWithCurrentRole("idiot")[0]);
+const idiotInPlayers = computed<Player | undefined>(() => props.event.players?.[0]);
 
 const gameIdiotIsSparedEventTexts = computed<string[]>(() => {
   if (!idiotInPlayers.value) {
@@ -47,7 +42,7 @@ const gameIdiotIsSparedEventTexts = computed<string[]>(() => {
   ];
 });
 
-function onGameEventTextChangeFromGameEventWithTexts(newGameEventText: string | undefined): void {
+function onGameEventTextChangeFromGameEventWithTexts(newGameEventText: string): void {
   if (newGameEventText === gameIdiotIsSparedEventTexts.value[0]) {
     playSoundEffect("death");
   } else if (newGameEventText === gameIdiotIsSparedEventTexts.value[1]) {

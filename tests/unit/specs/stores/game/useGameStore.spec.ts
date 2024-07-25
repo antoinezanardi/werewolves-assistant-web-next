@@ -7,7 +7,9 @@ import { Game } from "~/composables/api/game/types/game.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useGameEventsStore: { generateAndSetGameEventsFromGame: vi.fn() },
+  useGameEventsStore: {
+    resetGameEventIndex: vi.fn(),
+  },
   useFetchGames: {
     getGame: vi.fn(),
     cancelGame: vi.fn(),
@@ -27,7 +29,7 @@ describe("Game Store", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
     hoistedMocks.useGameEventsStore = {
-      generateAndSetGameEventsFromGame: vi.fn(),
+      resetGameEventIndex: vi.fn(),
     };
     hoistedMocks.useFetchGames = createFakeUseFetchGames();
   });
@@ -58,13 +60,13 @@ describe("Game Store", () => {
       expect(hoistedMocks.useFetchGames.getGame).toHaveBeenCalledExactlyOnceWith("gameId");
     });
 
-    it("should generate and set game events from game when called.", async() => {
+    it("should reset game current event index when called.", async() => {
       const game = createFakeGame();
       hoistedMocks.useFetchGames.getGame.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.fetchAndSetGame("gameId");
 
-      expect(hoistedMocks.useGameEventsStore.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
+      expect(hoistedMocks.useGameEventsStore.resetGameEventIndex).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should set game when called.", async() => {
@@ -106,14 +108,14 @@ describe("Game Store", () => {
       expect(hoistedMocks.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", makeGamePlayDto);
     });
 
-    it("should generate and set game events from game when called.", async() => {
+    it("should reset game event indes when called.", async() => {
       const game = createFakeGame();
       const makeGamePlayDto = createFakeMakeGamePlayDto();
       hoistedMocks.useFetchGames.makeGamePlay.mockResolvedValue(game);
       const gameStore = useGameStore();
       await gameStore.makeGamePlay(makeGamePlayDto);
 
-      expect(hoistedMocks.useGameEventsStore.generateAndSetGameEventsFromGame).toHaveBeenCalledExactlyOnceWith(game);
+      expect(hoistedMocks.useGameEventsStore.resetGameEventIndex).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should set game when called.", async() => {

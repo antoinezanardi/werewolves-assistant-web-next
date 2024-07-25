@@ -1327,7 +1327,7 @@
       "dayRises": "The day rises in the village of the Millers Hollow!",
       "nightFalls": "The night falls on the village of the Millers Hollow…"
     },
-    "GamePlayerDiesEvent": {
+    "GameDeathEvent": {
       "cantFindDeadPlayer": "The Assistant can't find the dead player… Please proceed.",
       "playerDies": "{playerName} is dead! What a tragedy…",
       "playerCanRevealRole": "He or she can reveal his role to the others.",
@@ -1353,7 +1353,7 @@
       "mute": "Mute",
       "unmute": "Unmute"
     },
-    "GameScandalmongerHasMarkedEvent": {
+    "GameScandalmongerMayHaveMarkedEvent": {
       "scandalMongerDidntMarkAnyone": "The Scandalmonger didn't mark anyone for this night. He flew away…",
       "scandalmongerHasMarkedAPlayer": "The Scandalmonger has marked a player with a feather.",
       "gameMasterWillPutScandalmongerMark": "The Game Master will put the mark in front of the player to remember the penalty for the next vote."

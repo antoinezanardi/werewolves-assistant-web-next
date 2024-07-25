@@ -1,4 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type GameEventsMonitor from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitor.vue";
@@ -6,11 +7,10 @@ import type GameEventsMonitor from "~/components/pages/game/GamePlaying/GameEven
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { createFakeGamePhase } from "@tests/unit/utils/factories/composables/api/game/game-phase/game-phase.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Playing Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GamePlaying>>;
@@ -47,8 +47,8 @@ describe("Game Playing Component", () => {
     });
 
     it("should render game events monitor when there is a current game event.", async() => {
-      const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
+      const gameStore = useGameStore();
+      gameStore.game.events = [
         createFakeGameEvent(),
         createFakeGameEvent(),
         createFakeGameEvent(),

@@ -56,7 +56,15 @@ describe("Game Event With Texts Component", () => {
       (gameEventTextsManager.vm as VueVm).$emit("game-event-text-change", expectedText);
       await nextTick();
 
-      expect(wrapper.emitted("gameEventTextChange")).toStrictEqual([[expectedText]]);
+      expect(wrapper.emitted("gameEventTextChange")).toStrictEqual<string[][]>([[expectedText]]);
+    });
+
+    it("should not emit game event text change when text is undefined.", async() => {
+      const gameEventTextsManager = wrapper.findComponent<typeof GameEventTextsManager>("#game-event-texts-manager");
+      (gameEventTextsManager.vm as VueVm).$emit("game-event-text-change", undefined);
+      await nextTick();
+
+      expect(wrapper.emitted("gameEventTextChange")).toBeUndefined();
     });
   });
 });

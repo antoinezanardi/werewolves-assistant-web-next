@@ -4,7 +4,7 @@ exports[`Game Seer Has Seen Event Component > should match snapshot when rendere
 "<div id="game-seer-has-seen-event" class="flex flex-col h-full">
   <div id="game-event-default-slot-container" class="grow">
     <div class="flex h-full items-center justify-center">
-      <div class="flex h-full items-center justify-center" id="game-event-flipping-last-play-targets-card">
+      <div id="game-event-flipping-last-play-targets-card" class="flex h-full items-center justify-center">
         <div id="game-event-flipping-player-card" class="flex flex-col items-center">
           <div class="flex-none" style="perspective: 1000; width: 200px; height: 200px;" id="game-event-flipping-player-role">
             <div class="flipper" style="transition: 0.6s; transform-style: preserve-3d; position: relative; width: 100%; height: 100%; transition-duration: 0.5s;">

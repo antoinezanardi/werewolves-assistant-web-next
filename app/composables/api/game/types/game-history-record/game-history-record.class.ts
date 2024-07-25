@@ -33,6 +33,10 @@ class GameHistoryRecord {
 
   @Expose()
   @Type(() => Player)
+  public switchedSidePlayers?: Player[];
+
+  @Expose()
+  @Type(() => Player)
   public deadPlayers?: Player[];
 
   @Expose()
