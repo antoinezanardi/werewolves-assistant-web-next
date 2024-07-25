@@ -6,7 +6,7 @@ import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlay, createFakeGamePlayAccursedWolfFatherInfects, createFakeGamePlayActorChoosesCard, createFakeGamePlayBearTamerGrowls, createFakeGamePlayBigBadWolfEats, createFakeGamePlayCharmedMeetEachOther, createFakeGamePlayCupidCharms, createFakeGamePlayDefenderProtects, createFakeGamePlayFoxSniffs, createFakeGamePlayHunterShoots, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayPiedPiperCharms, createFakeGamePlayScandalmongerMarks, createFakeGamePlayScapegoatBansVoting, createFakeGamePlaySeerLooks, createFakeGamePlaySheriffDelegates, createFakeGamePlaySheriffSettlesVotes, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote, createFakeGamePlayThiefChoosesCard, createFakeGamePlayThreeBrothersMeetEachOther, createFakeGamePlayTwoSistersMeetEachOther, createFakeGamePlayWerewolvesEat, createFakeGamePlayWhiteWerewolfEats, createFakeGamePlayWildChildChoosesModel, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlay, createFakeGamePlayAccursedWolfFatherInfects, createFakeGamePlayActorChoosesCard, createFakeGamePlayBigBadWolfEats, createFakeGamePlayCharmedMeetEachOther, createFakeGamePlayCupidCharms, createFakeGamePlayDefenderProtects, createFakeGamePlayFoxSniffs, createFakeGamePlayHunterShoots, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayPiedPiperCharms, createFakeGamePlayScandalmongerMarks, createFakeGamePlayScapegoatBansVoting, createFakeGamePlaySeerLooks, createFakeGamePlaySheriffDelegates, createFakeGamePlaySheriffSettlesVotes, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote, createFakeGamePlayThiefChoosesCard, createFakeGamePlayThreeBrothersMeetEachOther, createFakeGamePlayTwoSistersMeetEachOther, createFakeGamePlayWerewolvesEat, createFakeGamePlayWhiteWerewolfEats, createFakeGamePlayWildChildChoosesModel, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
@@ -65,11 +65,6 @@ describe("Game Playground Header Current Play Component", () => {
         currentGamePlay: createFakeGamePlayActorChoosesCard(),
         expectedIconPath: "/svg/role/actor.svg",
         test: "should render the current play SVG icon for the actor chooses card.",
-      },
-      {
-        currentGamePlay: createFakeGamePlayBearTamerGrowls(),
-        expectedIconPath: "/svg/role/bear-tamer.svg",
-        test: "should render the current play SVG icon for the bear tamer growls.",
       },
       {
         currentGamePlay: createFakeGamePlayBigBadWolfEats(),
@@ -234,11 +229,6 @@ describe("Game Playground Header Current Play Component", () => {
         currentGamePlay: createFakeGamePlayActorChoosesCard(),
         expectedText: "components.GamePlaygroundHeaderCurrentPlay.actorChoosesCard",
         test: "should render the current play text for the actor chooses card.",
-      },
-      {
-        currentGamePlay: createFakeGamePlayBearTamerGrowls(),
-        expectedText: "components.GamePlaygroundHeaderCurrentPlay.bearTamerGrowls",
-        test: "should render the current play text for the bear tamer growls.",
       },
       {
         currentGamePlay: createFakeGamePlayBigBadWolfEats(),

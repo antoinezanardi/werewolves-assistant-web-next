@@ -5,8 +5,7 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameActorMayHaveChosenCardEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameActorMayHaveChosenCardEvent/GameActorMayHaveChosenCardEvent.vue";
-import GameBearGrowlsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsEvent/GameBearGrowlsEvent.vue";
-import GameBearSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearSleepsEvent/GameBearSleepsEvent.vue";
+import GameBearGrowlsOrSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsOrSleepsEvent/GameBearGrowlsOrSleepsEvent.vue";
 import GameCupidHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameCupidHasCharmedEvent/GameCupidHasCharmedEvent.vue";
 import GameElderHasTakenRevengeEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameElderHasTakenRevengeEvent/GameElderHasTakenRevengeEvent.vue";
 import GameEventsMonitorCurrentEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameEventsMonitorCurrentEvent.vue";
@@ -231,26 +230,26 @@ describe("Game Events Monitor Current Event Component", () => {
       expect(gameElderHasTakenRevengeEvent.exists()).toBeTruthy();
     });
 
-    it("should render bear growls event component when current game event is bear growls type.", async() => {
+    it("should render bear growls or sleeps event component when current game event is bear growls type.", async() => {
       const gameStore = useGameStore();
       gameStore.game.events = [
         createFakeGameEvent({ type: "bear-growls" }),
         createFakeGameEvent({ type: "game-turn-starts" }),
       ];
       await nextTick();
-      const gameBearGrowlsEvent = wrapper.findComponent<typeof GameBearGrowlsEvent>(GameBearGrowlsEvent);
+      const gameBearGrowlsEvent = wrapper.findComponent<typeof GameBearGrowlsOrSleepsEvent>(GameBearGrowlsOrSleepsEvent);
 
       expect(gameBearGrowlsEvent.exists()).toBeTruthy();
     });
 
-    it("should render bear sleeps event component when current game event is bear sleeps type.", async() => {
+    it("should render bear growls or sleeps event component when current game event is bear sleeps type.", async() => {
       const gameStore = useGameStore();
       gameStore.game.events = [
         createFakeGameEvent({ type: "bear-sleeps" }),
         createFakeGameEvent({ type: "game-turn-starts" }),
       ];
       await nextTick();
-      const gameBearSleepsEvent = wrapper.findComponent<typeof GameBearSleepsEvent>(GameBearSleepsEvent);
+      const gameBearSleepsEvent = wrapper.findComponent<typeof GameBearGrowlsOrSleepsEvent>(GameBearGrowlsOrSleepsEvent);
 
       expect(gameBearSleepsEvent.exists()).toBeTruthy();
     });

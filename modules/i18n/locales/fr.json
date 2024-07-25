@@ -1445,6 +1445,10 @@
       "cantFindElder": "L'Ancien ne peut être trouvé… Veuillez continuer.",
       "elderHasBeenMurderedByVillager": "L'Ancien a été éliminé par son propre camp !",
       "elderHasTakenRevenge": "Sa vengeance s'abat sur le Village ! Tous les joueurs du camp des Villageois perdent leur pouvoirs pour le reste de la partie."
+    },
+    "GameBearGrowlsOrSleepsEvent": {
+      "bearGrowls": "L'ours grogne ! Un ou plusieurs Loups-Garous se trouvent à juste à côté du Montreur d'Ours…",
+      "bearSleeps": "L'ours mange paisiblement son miel. Aucun Loup-Garou n'est juste à côté du Montreur d'Ours…"
     }
   }
 }

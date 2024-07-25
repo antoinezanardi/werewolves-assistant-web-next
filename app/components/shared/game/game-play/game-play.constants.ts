@@ -16,12 +16,6 @@ const GAME_PLAYS_TEXT_AND_SVG: Record<GamePlaySourceName, Partial<Record<GamePla
       textKey: "components.GamePlaygroundHeaderCurrentPlay.actorChoosesCard",
     },
   },
-  "bear-tamer": {
-    growl: {
-      svgPath: "/svg/role/bear-tamer.svg",
-      textKey: "components.GamePlaygroundHeaderCurrentPlay.bearTamerGrowls",
-    },
-  },
   "big-bad-wolf": {
     eat: {
       svgPath: "/svg/role/big-bad-wolf.svg",

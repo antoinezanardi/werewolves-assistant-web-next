@@ -25,16 +25,6 @@ function createFakeGamePlayAccursedWolfFatherInfects(gamePlay: Partial<GamePlay>
   });
 }
 
-function createFakeGamePlayBearTamerGrowls(gamePlay: Partial<GamePlay> = {}): GamePlay {
-  return createFakeGamePlay({
-    type: "no-action",
-    action: "growl",
-    source: createFakeGamePlaySource({ name: "bear-tamer" }),
-    occurrence: "on-nights",
-    ...gamePlay,
-  });
-}
-
 function createFakeGamePlayActorChoosesCard(gamePlay: Partial<GamePlay> = {}): GamePlay {
   return createFakeGamePlay({
     type: "choose-card",
@@ -306,7 +296,6 @@ function createFakeGamePlay(gamePlay: Partial<GamePlay> = {}): GamePlay {
 export {
   createFakeGamePlayStutteringJudgeRequestsAnotherVote,
   createFakeGamePlayAccursedWolfFatherInfects,
-  createFakeGamePlayBearTamerGrowls,
   createFakeGamePlayActorChoosesCard,
   createFakeGamePlaySurvivorsBuryDeadBodies,
   createFakeGamePlaySheriffSettlesVotes,
