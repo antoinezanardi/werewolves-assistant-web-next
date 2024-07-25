@@ -206,7 +206,7 @@ describe("Game Over History Record Decision Component", () => {
           gameHistoryRecord: createFakeGameHistoryRecord({
             play: createFakeGameHistoryRecordPlay({
               type: "no-action",
-              action: "growl",
+              action: "meet-each-other",
             }),
           }),
         },

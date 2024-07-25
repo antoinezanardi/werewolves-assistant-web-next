@@ -44,7 +44,7 @@ const gameHistoryRecordActionTextIcon = computed<string>(() => {
   if (didSourceSkipped(props.gameHistoryRecord)) {
     return "/svg/game/player/player-attribute/powerless.svg";
   }
-  if (action === "growl" || action === "request-another-vote") {
+  if (action === "request-another-vote") {
     return "/svg/misc/exclamation-mark.svg";
   }
   if (action === "meet-each-other") {

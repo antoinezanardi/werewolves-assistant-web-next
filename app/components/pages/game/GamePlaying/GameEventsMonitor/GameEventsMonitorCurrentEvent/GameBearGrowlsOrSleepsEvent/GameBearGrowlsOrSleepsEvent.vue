@@ -1,6 +1,6 @@
 <template>
   <GameEventWithTexts
-    id="game-wolf-hound-has-chosen-side-event"
+    id="game-bear-growls-or-sleeps-event"
     :texts="gameBearGrowlsOrSleepsEventTexts"
   >
     <div class="flex h-full items-center justify-center">
@@ -45,9 +45,10 @@ const bearSvgIconPath = computed<string>(() => {
 function playBearSoundEffect(): void {
   if (doesBearGrowl.value) {
     playSoundEffect("bear-growling");
-  } else {
-    playSoundEffect("calm-bear-eating");
+
+    return;
   }
+  playSoundEffect("calm-bear-eating");
 }
 
 playBearSoundEffect();
