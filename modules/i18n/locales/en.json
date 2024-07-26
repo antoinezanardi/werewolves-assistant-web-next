@@ -1449,6 +1449,11 @@
     "GameBearGrowlsOrSleepsEvent": {
       "bearGrowls": "The bear growls! One or more Werewolves are right next to the Bear Tamer…",
       "bearSleeps": "The bear is calmly eating. No Werewolf is right next to the Bear Tamer…"
+    },
+    "GameScandalmongerMarkIsActiveEvent": {
+      "cantFindScandalmongerMarkedPlayer": "The player marked by the Scandalmonger can't be found… Please proceed.",
+      "scandalmongerHasMarkedAPlayer": "The Scandalmonger's mark has been placed on {playerName}!",
+      "playerHasPenaltyForVotes": "This player will have one more vote against him the next vote. | This player will have {penalty} more votes against him the next vote."
     }
   }
 }

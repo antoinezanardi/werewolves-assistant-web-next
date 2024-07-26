@@ -1449,6 +1449,11 @@
     "GameBearGrowlsOrSleepsEvent": {
       "bearGrowls": "L'ours grogne ! Un ou plusieurs Loups-Garous se trouvent à juste à côté du Montreur d'Ours…",
       "bearSleeps": "L'ours mange paisiblement son miel. Aucun Loup-Garou n'est juste à côté du Montreur d'Ours…"
+    },
+    "GameScandalmongerMarkIsActiveEvent": {
+      "cantFindScandalmongerMarkedPlayer": "Le joueur marqué par le Corbeau ne peut être trouvé… Veuillez continuer.",
+      "scandalmongerHasMarkedAPlayer": "La plume du Corbeau a été placée sur {playerName} !",
+      "playerHasPenaltyForVotes": "Cette personne aura un vote supplémentaire contre elle lors du prochain vote. | Cette personne aura {penalty} votes supplémentaires contre elle lors du prochain vote."
     }
   }
 }
