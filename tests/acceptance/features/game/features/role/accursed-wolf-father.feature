@@ -58,6 +58,7 @@ Feature: 🐺 Accursed Wolf-Father role
     When the accursed wolf father infects the player with name "Antoine"
     And the user skips all game events
     Then the player with name "Antoine" should be alive in the game
+    And the player with name "Antoine" should be in the werewolves side in the game
     And the game's current play title should be "Survivors vote"
 
     When the player or group skips his turn

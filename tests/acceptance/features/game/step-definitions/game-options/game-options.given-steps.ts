@@ -199,3 +199,10 @@ Given(/^the user doesn't allow the elder to take his revenge in game options$/u,
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input", false);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user prevents bear to growl if he's infected in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input", false);
+  await closeDialogWithHeaderButton(this);
+});
