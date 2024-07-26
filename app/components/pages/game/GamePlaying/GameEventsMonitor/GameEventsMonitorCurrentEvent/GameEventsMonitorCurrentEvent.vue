@@ -24,8 +24,7 @@ import { storeToRefs } from "pinia";
 import type { GameEventsMonitorEventTypeComponent } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameActorMayHaveChosenCardEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameActorMayHaveChosenCardEvent/GameActorMayHaveChosenCardEvent.vue";
-import GameBearGrowlsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsEvent/GameBearGrowlsEvent.vue";
-import GameBearSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearSleepsEvent/GameBearSleepsEvent.vue";
+import GameBearGrowlsOrSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsOrSleepsEvent/GameBearGrowlsOrSleepsEvent.vue";
 import GameCupidHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameCupidHasCharmedEvent/GameCupidHasCharmedEvent.vue";
 import GameDeathEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameDeathEvent/GameDeathEvent.vue";
 import GameElderHasTakenRevengeEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameElderHasTakenRevengeEvent/GameElderHasTakenRevengeEvent.vue";
@@ -65,8 +64,8 @@ const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeCompone
     "wolf-hound-has-chosen-side": GameWolfHoundHasChosenSideEvent,
     "idiot-is-spared": GameIdiotIsSparedEvent,
     "elder-has-taken-revenge": GameElderHasTakenRevengeEvent,
-    "bear-growls": GameBearGrowlsEvent,
-    "bear-sleeps": GameBearSleepsEvent,
+    "bear-growls": GameBearGrowlsOrSleepsEvent,
+    "bear-sleeps": GameBearGrowlsOrSleepsEvent,
     "fox-may-have-sniffed": GameFoxMayHaveSniffedEvent,
     "thief-may-have-chosen-card": GameThiefMayHaveChosenCardEvent,
     "wild-child-has-transformed": GameWildChildHasTransformedEvent,

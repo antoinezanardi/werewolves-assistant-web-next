@@ -2,6 +2,7 @@ const SOUND_EFFECT_NAMES = [
   "angelic-intervention",
   "bear-growling",
   "boys-playing",
+  "calm-bear-eating",
   "clearing-throat-and-bell-dings",
   "cocorico",
   "crowd-cheering",

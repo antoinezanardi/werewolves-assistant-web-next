@@ -1,7 +1,6 @@
 import type { GameTurnStartsEventTypeComponent } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/game-turn-starts-event.types";
 import GameAccursedWolfFatherTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent.vue";
 import GameActorTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameActorTurnStartsEvent/GameActorTurnStartsEvent.vue";
-import GameBearTamerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBearTamerTurnStartsEvent/GameBearTamerTurnStartsEvent.vue";
 import GameBigBadWolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBigBadWolfTurnStartsEvent/GameBigBadWolfTurnStartsEvent.vue";
 import GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCharmedTurnStartsEvent/GameCharmedTurnStartsEvent.vue";
 import GameCupidTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCupidTurnStartsEvent/GameCupidTurnStartsEvent.vue";
@@ -29,7 +28,6 @@ import type { GamePlaySourceName } from "~/composables/api/game/types/game-play/
 const GAME_PLAY_SOURCE_NAME_TURN_STARTS_EVENT_COMPONENTS: Record<GamePlaySourceName, GameTurnStartsEventTypeComponent> = {
   "accursed-wolf-father": GameAccursedWolfFatherTurnStartsEvent,
   "actor": GameActorTurnStartsEvent,
-  "bear-tamer": GameBearTamerTurnStartsEvent,
   "big-bad-wolf": GameBigBadWolfTurnStartsEvent,
   "charmed": GameCharmedTurnStartsEvent,
   "cupid": GameCupidTurnStartsEvent,

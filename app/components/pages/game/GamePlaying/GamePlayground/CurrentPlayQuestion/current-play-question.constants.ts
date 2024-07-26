@@ -8,7 +8,6 @@ type CurrentPlayCausesQuestion = {
 const GAME_PLAYS_QUESTIONS: Record<GamePlaySourceName, Partial<Record<GamePlayAction, CurrentPlayCausesQuestion>>> = {
   "accursed-wolf-father": { infect: { default: "components.CurrentPlayQuestion.doesAccursedWolfFatherWantToInfect" } },
   "actor": { "choose-card": { default: "components.CurrentPlayQuestion.doesActorWantToChooseCard" } },
-  "bear-tamer": { growl: { default: "components.CurrentPlayQuestion.bearGrowled" } },
   "big-bad-wolf": { eat: { default: "components.CurrentPlayQuestion.whichPlayerDoesBigBadWolfEat" } },
   "charmed": { "meet-each-other": { default: "components.CurrentPlayQuestion.charmedPeopleMeetEachOther" } },
   "cupid": { charm: { default: "components.CurrentPlayQuestion.whichPlayersDoesCupidCharm" } },

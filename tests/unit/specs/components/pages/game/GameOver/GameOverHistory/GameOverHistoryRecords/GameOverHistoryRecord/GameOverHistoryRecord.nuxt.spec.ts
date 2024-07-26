@@ -46,7 +46,7 @@ describe("Game Over History Record Component", () => {
           gameHistoryRecord: createFakeGameHistoryRecord({
             play: createFakeGameHistoryRecordPlay({
               type: "no-action",
-              action: "growl",
+              action: "meet-each-other",
             }),
           }),
         },

@@ -1,6 +1,5 @@
 import type GameAccursedWolfFatherTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent.vue";
 import type GameActorTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameActorTurnStartsEvent/GameActorTurnStartsEvent.vue";
-import type GameBearTamerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBearTamerTurnStartsEvent/GameBearTamerTurnStartsEvent.vue";
 import type GameBigBadWolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBigBadWolfTurnStartsEvent/GameBigBadWolfTurnStartsEvent.vue";
 import type GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCharmedTurnStartsEvent/GameCharmedTurnStartsEvent.vue";
 import type GameCupidTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCupidTurnStartsEvent/GameCupidTurnStartsEvent.vue";
@@ -27,7 +26,6 @@ import type GameWolfHoundTurnStartsEvent from "~/components/pages/game/GamePlayi
 type GameTurnStartsEventTypeComponent =
   | typeof GameAccursedWolfFatherTurnStartsEvent
   | typeof GameActorTurnStartsEvent
-  | typeof GameBearTamerTurnStartsEvent
   | typeof GameBigBadWolfTurnStartsEvent
   | typeof GameCharmedTurnStartsEvent
   | typeof GameCupidTurnStartsEvent
