@@ -1454,6 +1454,13 @@
       "cantFindScandalmongerMarkedPlayer": "Le joueur marqué par le Corbeau ne peut être trouvé… Veuillez continuer.",
       "scandalmongerHasMarkedAPlayer": "La plume du Corbeau a été placée sur {playerName} !",
       "playerHasPenaltyForVotes": "Cette personne aura un vote supplémentaire contre elle lors du prochain vote. | Cette personne aura {penalty} votes supplémentaires contre elle lors du prochain vote."
+    },
+    "GameFoxMayHaveSniffedEvent": {
+      "foxMayHaveSniffed": "Le Renard a peut-être reniflé un groupe de 3 joueurs.",
+      "gameMasterWillTellIfPresentWerewolfInGroup": "Si c'est le cas, le Maître du Jeu va révéler au Renard s'il y a un Loup-Garou parmi le groupe de joueurs avec un pouce en l'air. Sinon, il donnera un pouce vers le bas.",
+      "foxHaveSniffedWerewolf": "La phrase suivante ne peut pas être dite à voix haute : Le Renard a reniflé un Loup-Garou parmi le groupe de joueurs, le Maître du Jeu donne un pouce en l'air.",
+      "foxDidNotSniffWerewolf": "La phrase suivante ne peut pas être dite à voix haute : Le Renard n'a pas reniflé de Loup-Garou parmi le groupe de joueurs, le Maître du Jeu donne un pouce vers le bas.",
+      "foxIsPowerlessIfMissesWerewolf": "Si le Renard n'a pas reniflé de Loup-Garou parmi le groupe de 3 joueurs, il perd ses pouvoirs pour le reste de la partie."
     }
   }
 }

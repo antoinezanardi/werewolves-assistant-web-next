@@ -1454,6 +1454,13 @@
       "cantFindScandalmongerMarkedPlayer": "The player marked by the Scandalmonger can't be found… Please proceed.",
       "scandalmongerHasMarkedAPlayer": "The Scandalmonger's mark has been placed on {playerName}!",
       "playerHasPenaltyForVotes": "This player will have one more vote against him the next vote. | This player will have {penalty} more votes against him the next vote."
+    },
+    "GameFoxMayHaveSniffedEvent": {
+      "foxMayHaveSniffed": "The Fox may have sniffed a group of 3 players.",
+      "gameMasterWillTellIfPresentWerewolfInGroup": "If so, the Game Master will tell the Fox if there is a Werewolf among the group of players with a thumbs up. Otherwise, he will give a thumbs down.",
+      "foxHaveSniffedWerewolf": "The following sentence can't be said out loud : The Fox has sniffed a Werewolf among the group of players, the Game Master gives a thumbs up.",
+      "foxDidNotSniffWerewolf": "The following sentence can't be said out loud : The Fox didn't sniff a Werewolf among the group of players, the Game Master gives a thumbs down.",
+      "foxIsPowerlessIfMissesWerewolf": "If the Fox didn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game."
     }
   }
 }
