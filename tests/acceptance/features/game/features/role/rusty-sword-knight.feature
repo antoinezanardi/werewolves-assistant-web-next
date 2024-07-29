@@ -2,7 +2,7 @@
 @shard-1
 Feature: 🤺 Rusty Sword Knight role
 
-  Scenario: 🤺 Rusty Sword Knight kills the first alive werewolf on the his when he died at the end of the day
+  Scenario: 🤺 Rusty Sword Knight kills the first alive werewolf on his left when he died at the end of the day
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role               |
