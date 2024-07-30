@@ -206,3 +206,10 @@ Given(/^the user prevents bear to growl if he's infected in game options$/u, asy
   await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input", false);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user prevents fox to be powerless if it misses a werewolf in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await switchRoleOptionInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input", false);
+  await closeDialogWithHeaderButton(this);
+});

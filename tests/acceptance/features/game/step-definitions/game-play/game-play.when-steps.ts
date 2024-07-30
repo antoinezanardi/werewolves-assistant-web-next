@@ -127,3 +127,8 @@ When(/^the two sisters meet each other$/u, async function(this: CustomWorld): Pr
 When(/^the three brothers meet each other$/u, async function(this: CustomWorld): Promise<void> {
   await makePlayInPlayground(this);
 });
+
+When(/^the fox sniffs the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});
