@@ -51,7 +51,7 @@ Feature: 🦊 Fox role
     And the user skips all game events
     Then the game's current play title should be "Fox sniffs"
 
-    When the fox sniffes the player with name "Bob"
+    When the fox sniffs the player with name "Bob"
     Then the game's event should display the text "The Fox may have sniffed a group of 3 players."
 
     When the user goes to the next game event text
@@ -74,7 +74,7 @@ Feature: 🦊 Fox role
     And the user skips all game events
     Then the game's current play title should be "Fox sniffs"
 
-    When the fox sniffes the player with name "David"
+    When the fox sniffs the player with name "David"
     Then the game's event should display the text "The Fox may have sniffed a group of 3 players."
 
     When the user goes to the next game event text
@@ -101,5 +101,5 @@ Feature: 🦊 Fox role
     And the user skips all game events
     Then the game's current play title should be "Fox sniffs"
 
-    When the fox sniffes the player with name "Fred"
+    When the fox sniffs the player with name "Fred"
     Then the player with name "Antoine" should not have the attribute powerless by fox in the game

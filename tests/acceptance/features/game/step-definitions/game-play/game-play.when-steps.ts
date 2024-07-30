@@ -128,7 +128,7 @@ When(/^the three brothers meet each other$/u, async function(this: CustomWorld):
   await makePlayInPlayground(this);
 });
 
-When(/^the fox sniffes the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+When(/^the fox sniffs the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
