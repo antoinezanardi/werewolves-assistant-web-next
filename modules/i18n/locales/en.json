@@ -1460,7 +1460,7 @@
       "gameMasterWillTellIfPresentWerewolfInGroup": "If so, the Game Master will tell the Fox if there is a Werewolf among the group of players with a thumbs up. Otherwise, he will give a thumbs down.",
       "foxHaveSniffedWerewolf": "The following sentence can't be said out loud : The Fox has sniffed a Werewolf among the group of players, the Game Master gives a thumbs up.",
       "foxDidNotSniffWerewolf": "The following sentence can't be said out loud : The Fox didn't sniff a Werewolf among the group of players, the Game Master gives a thumbs down.",
-      "foxIsPowerlessIfMissesWerewolf": "If the Fox didn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game."
+      "foxIsPowerlessIfMissesWerewolf": "If the Fox chose a group and didn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game."
     }
   }
 }
