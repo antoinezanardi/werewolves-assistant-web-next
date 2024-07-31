@@ -53,6 +53,9 @@ Feature: 🦊 Fox role
 
     When the fox sniffs the player with name "Bob"
     Then the game's event should display the text "The Fox may have sniffed a group of 3 players."
+    And the game's event player card should have the name "Antoine"
+    And the game's event player card should have the name "Bob"
+    And the game's event player card should have the name "Charlie"
 
     When the user goes to the next game event text
     Then the game's event should display the text "If so, the Game Master will tell the Fox if there is a Werewolf among the group of players with a thumbs up. Otherwise, he will give a thumbs down."
@@ -76,6 +79,9 @@ Feature: 🦊 Fox role
 
     When the fox sniffs the player with name "David"
     Then the game's event should display the text "The Fox may have sniffed a group of 3 players."
+    And the game's event player card should have the name "Charlie"
+    And the game's event player card should have the name "David"
+    And the game's event player card should have the name "Antoine"
 
     When the user goes to the next game event text
     Then the game's event should display the text "If so, the Game Master will tell the Fox if there is a Werewolf among the group of players with a thumbs up. Otherwise, he will give a thumbs down."
