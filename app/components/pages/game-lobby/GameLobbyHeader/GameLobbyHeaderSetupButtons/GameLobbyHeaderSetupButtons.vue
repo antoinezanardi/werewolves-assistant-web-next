@@ -29,19 +29,20 @@ import type { GameLobbyHeaderSetupButtonsEmits, GameLobbyHeaderSetupButtonsExpos
 import GameLobbyHeaderOptionButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
-import { MIN_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const emit = defineEmits<GameLobbyHeaderSetupButtonsEmits>();
 
 const createGameDtoStore = useCreateGameDtoStore();
-const { createGameDto, doesCreateGameDtoContainPositionDependantRoles } = storeToRefs(createGameDtoStore);
+const { createGameDto } = storeToRefs(createGameDtoStore);
+
+const minPlayerToDisplayPositionCoordinator = 2;
 
 const { animateElementOnce } = useAnimateCss();
 
 const gameLobbyHeaderPositionCoordinatorButton = ref<ComponentPublicInstance | null>(null);
 
-const isPositionCoordinatorVisible = computed<boolean>(() => doesCreateGameDtoContainPositionDependantRoles.value && createGameDto.value.players.length >= MIN_PLAYERS_IN_GAME);
+const isPositionCoordinatorVisible = computed<boolean>(() => createGameDto.value.players.length >= minPlayerToDisplayPositionCoordinator);
 
 function onGameOptionsButtonClickFromGameOptionButton(): void {
   emit("gameOptionsButtonClick");
