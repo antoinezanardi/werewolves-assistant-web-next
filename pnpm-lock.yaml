@@ -193,8 +193,8 @@ importers:
         specifier: ^15.2.7
         version: 15.2.7
       msw:
-        specifier: ^2.3.4
-        version: 2.3.4(typescript@5.5.4)
+        specifier: ^2.3.5
+        version: 2.3.5(typescript@5.5.4)
       nuxt:
         specifier: ^3.12.4
         version: 3.12.4(@opentelemetry/api@1.9.0)(@parcel/watcher@2.4.1)(@types/node@22.0.2)(encoding@0.1.13)(eslint@9.8.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.8)(terser@5.31.1)(typescript@5.5.4)(vite@5.3.4(@types/node@22.0.2)(sass@1.77.8)(terser@5.31.1))(vue-tsc@2.0.29(typescript@5.5.4))
@@ -1239,14 +1239,6 @@ packages:
     resolution: {integrity: sha512-UvG5Plh0MfCqUvZB8RKzBBEWB/EeMzO59Awy/Jg4NgeSjIPqhPaQFnnmxiyWUTwZh4uENB7wCklEFUwckioXWg==}
     engines: {node: '>=18'}
 
-  '@inquirer/confirm@3.1.9':
-    resolution: {integrity: sha512-UF09aejxCi4Xqm6N/jJAiFXArXfi9al52AFaSD+2uIHnhZGtd1d6lIGTRMPouVSJxbGEi+HkOWSYaiEY/+szUw==}
-    engines: {node: '>=18'}
-
-  '@inquirer/core@8.2.2':
-    resolution: {integrity: sha512-K8SuNX45jEFlX3EBJpu9B+S2TISzMPGXZIuJ9ME924SqbdW6Pt6fIkKvXg7mOEOKJ4WxpQsxj0UTfcL/A434Ww==}
-    engines: {node: '>=18'}
-
   '@inquirer/core@9.0.8':
     resolution: {integrity: sha512-ttnI/BGlP9SxjbQnv1nssv7dPAwiR82KmjJZx2SxSZyi2mGbaEvh4jg0I4yU/4mVQf7QvCVGGr/hGuJFEYhwnw==}
     engines: {node: '>=18'}
@@ -1257,10 +1249,6 @@ packages:
 
   '@inquirer/expand@2.1.20':
     resolution: {integrity: sha512-ruUTCUGKhe6TvDM3/gKjX9v7D5cWbiuawFE6aF/cFmNO79R/zMjrFFVoueDM8FRw8yXqnREb0jFkYF1LUxnDNA==}
-    engines: {node: '>=18'}
-
-  '@inquirer/figures@1.0.3':
-    resolution: {integrity: sha512-ErXXzENMH5pJt5/ssXV0DfWUZqly8nGzf0UcBV9xTnP+KyffE2mqyxIMBrZ8ijQck2nU0TQm40EQB53YreyWHw==}
     engines: {node: '>=18'}
 
   '@inquirer/figures@1.0.5':
@@ -1293,10 +1281,6 @@ packages:
 
   '@inquirer/select@2.4.5':
     resolution: {integrity: sha512-DbCthH3l7vrrK+Ewll3bgzxC3dzMle8xkWYta4if31p9NOmFNhZKhSfdYMjaOtGFBCUEwo4D5LMgN6sPKgUWIw==}
-    engines: {node: '>=18'}
-
-  '@inquirer/type@1.3.3':
-    resolution: {integrity: sha512-xTUt0NulylX27/zMx04ZYar/kr1raaiFTVvQ5feljQsiAgdm0WPj4S73/ye0fbslh+15QrIuDvfCXTek7pMY5A==}
     engines: {node: '>=18'}
 
   '@inquirer/type@1.5.1':
@@ -5176,8 +5160,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  msw@2.3.4:
-    resolution: {integrity: sha512-sHMlwrajgmZSA2l1o7qRSe+azm/I+x9lvVVcOxAzi4vCtH8uVPJk1K5BQYDkzGl+tt0RvM9huEXXdeGrgcc79g==}
+  msw@2.3.5:
+    resolution: {integrity: sha512-+GUI4gX5YC5Bv33epBrD+BGdmDvBg2XGruiWnI3GbIbRmMMBeZ5gs3mJ51OWSGHgJKztZ8AtZeYMMNMVrje2/Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -8634,27 +8618,6 @@ snapshots:
       '@inquirer/core': 9.0.8
       '@inquirer/type': 1.5.1
 
-  '@inquirer/confirm@3.1.9':
-    dependencies:
-      '@inquirer/core': 8.2.2
-      '@inquirer/type': 1.3.3
-
-  '@inquirer/core@8.2.2':
-    dependencies:
-      '@inquirer/figures': 1.0.3
-      '@inquirer/type': 1.3.3
-      '@types/mute-stream': 0.0.4
-      '@types/node': 20.14.2
-      '@types/wrap-ansi': 3.0.0
-      ansi-escapes: 4.3.2
-      chalk: 4.1.2
-      cli-spinners: 2.9.2
-      cli-width: 4.1.0
-      mute-stream: 1.0.0
-      signal-exit: 4.1.0
-      strip-ansi: 6.0.1
-      wrap-ansi: 6.2.0
-
   '@inquirer/core@9.0.8':
     dependencies:
       '@inquirer/figures': 1.0.5
@@ -8682,8 +8645,6 @@ snapshots:
       '@inquirer/core': 9.0.8
       '@inquirer/type': 1.5.1
       yoctocolors-cjs: 2.1.2
-
-  '@inquirer/figures@1.0.3': {}
 
   '@inquirer/figures@1.0.5': {}
 
@@ -8736,8 +8697,6 @@ snapshots:
       '@inquirer/type': 1.5.1
       ansi-escapes: 4.3.2
       yoctocolors-cjs: 2.1.2
-
-  '@inquirer/type@1.3.3': {}
 
   '@inquirer/type@1.5.1':
     dependencies:
@@ -10016,7 +9975,7 @@ snapshots:
 
   '@types/mute-stream@0.0.4':
     dependencies:
-      '@types/node': 20.14.2
+      '@types/node': 22.0.2
 
   '@types/node@20.14.2':
     dependencies:
@@ -13447,12 +13406,12 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.3.4(typescript@5.5.4):
+  msw@2.3.5(typescript@5.5.4):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.0
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
-      '@inquirer/confirm': 3.1.9
+      '@inquirer/confirm': 3.1.20
       '@mswjs/interceptors': 0.29.1
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
@@ -14398,7 +14357,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.14.2
+      '@types/node': 22.0.2
       long: 5.2.3
 
   protocols@2.0.1: {}
