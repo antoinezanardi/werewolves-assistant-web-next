@@ -440,8 +440,8 @@
       "noWerewolfSidedRole": "At least one werewolf sided role is needed",
       "twoSistersMinimumPlayersNotReached": "The Two Sisters role requires at least 2 players with this role",
       "threeBrothersMinimumPlayersNotReached": "The Three Brothers role requires at least 3 players with this role",
-      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set (not implemented yet)",
-      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set (not implemented yet)",
+      "thiefAdditionalCardsNotSet": "The Thief's additional cards are not set",
+      "actorAdditionalCardsNotSet": "The Actor's additional cards are not set",
       "prejudicedManipulatorGroupsNotSet": "The players groups needed for Prejudiced Manipulator are not set (not implemented yet)"
     }
   },
@@ -1461,6 +1461,19 @@
       "foxHaveSniffedWerewolf": "The following sentence can't be said out loud : The Fox has sniffed a Werewolf among the group of players, the Game Master gives a thumbs up.",
       "foxDidNotSniffWerewolf": "The following sentence can't be said out loud : The Fox didn't sniff a Werewolf among the group of players, the Game Master gives a thumbs down.",
       "foxIsPowerlessIfMissesWerewolf": "If the Fox chose a group and didn't sniff a Werewolf among the group of 3 players, he becomes powerless for the rest of the game."
+    },
+    "GameLobbyHeaderAdditionalCardsManagerButton": {
+      "additionalCards": "Additional cards"
+    },
+    "GameLobbyAdditionalCardsManager": {
+      "additionalCards": "Additional cards"
+    },
+    "RecipientRoleAdditionalCardsManager": {
+      "searchRole": "Search for a role",
+      "noRoleFound": "No role found",
+      "pickOneToFiveCards": "Pick one to five cards",
+      "additionalCardsNotSetDisclaimer": "Please set additional cards for {definiteRecipientRoleName} below",
+      "additionalCardsSetDisclaimer": "{definiteRecipientRoleName} will play with only one card in this game | {definiteRecipientRoleName} will play with {count} cards in this game"
     }
   }
 }

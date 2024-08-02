@@ -452,6 +452,78 @@ describe("Use Create Game Dto Validation Composable", () => {
     });
   });
 
+  describe("areAdditionalCardsSetForAdditionalCardsDependantRoles", () => {
+    it.each<{
+      test: string;
+      createGameDto: Ref<CreateGameDto>;
+      expected: boolean;
+    }>([
+      {
+        test: "should return true when the actor and the thief are not present.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({ role: { name: "villager" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+          ],
+        })),
+        expected: true,
+      },
+      {
+        test: "should return true when the actor and the thief are present and additional cards are set.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+          ],
+          additionalCards: [
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "actor" }),
+          ],
+        })),
+        expected: true,
+      },
+      {
+        test: "should return false when the actor is present but additional cards are not set.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+          ],
+        })),
+        expected: false,
+      },
+      {
+        test: "should return false when the thief is present but additional cards are not set.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({ role: { name: "thief" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+          ],
+        })),
+        expected: false,
+      },
+      {
+        test: "should return false when the actor is present but additional cards are for the thief.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({ role: { name: "actor" } }),
+            createFakeCreateGamePlayerDto({ role: { name: "werewolf" } }),
+          ],
+          additionalCards: [
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+            createFakeCreateGameAdditionalCardDto({ recipient: "thief" }),
+          ],
+        })),
+        expected: false,
+      },
+    ])(`$test`, ({ createGameDto, expected }) => {
+      const { areAdditionalCardsSetForAdditionalCardsDependantRoles } = useCreateGameDtoValidation(createGameDto);
+
+      expect(areAdditionalCardsSetForAdditionalCardsDependantRoles.value).toBe(expected);
+    });
+  });
+
   describe("arePlayerGroupsSetForPrejudicedManipulatorIfPresent", () => {
     it.each<{
       test: string;

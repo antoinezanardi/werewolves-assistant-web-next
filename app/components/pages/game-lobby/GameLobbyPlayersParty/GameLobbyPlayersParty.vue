@@ -28,7 +28,7 @@
           <GameLobbyPlayerCard
             v-for="player in createGameDto.players"
             :key="player.name"
-            class="fade-list-item game-lobby-player-card md:w-1/5 w-1/3"
+            class="fade-list-item game-lobby-player-card md:w-1/6 w-1/3"
             :player="player"
             @pick-role-for-player="onPickRoleForPlayerFromGameLobbyPlayerCard"
           />

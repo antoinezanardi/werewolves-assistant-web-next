@@ -18,6 +18,7 @@ type UseCreateGameDtoValidation = {
   isThreeBrothersRolePresentAndMinimumPlayersReached: ComputedRef<boolean>;
   areAdditionalCardsSetForThiefIfPresent: ComputedRef<boolean>;
   areAdditionalCardsSetForActorIfPresent: ComputedRef<boolean>;
+  areAdditionalCardsSetForAdditionalCardsDependantRoles: ComputedRef<boolean>;
   arePlayerGroupsSetForPrejudicedManipulatorIfPresent: ComputedRef<boolean>;
   canCreateGame: ComputedRef<boolean>;
   gameCreationValidationErrors: ComputedRef<string[]>;
@@ -83,6 +84,9 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
     return true;
   });
 
+  const areAdditionalCardsSetForAdditionalCardsDependantRoles = computed<boolean>(() => areAdditionalCardsSetForActorIfPresent.value &&
+    areAdditionalCardsSetForThiefIfPresent.value);
+
   const arePlayerGroupsSetForPrejudicedManipulatorIfPresent = computed<boolean>(() => {
     const isPrejudicedManipulatorPresent = createGameDto.value.players.some(player => player.role.name === "prejudiced-manipulator");
     const arePlayerGroupsSet = createGameDto.value.players.every(player => player.group);
@@ -133,6 +137,7 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
     isThreeBrothersRolePresentAndMinimumPlayersReached,
     areAdditionalCardsSetForThiefIfPresent,
     areAdditionalCardsSetForActorIfPresent,
+    areAdditionalCardsSetForAdditionalCardsDependantRoles,
     arePlayerGroupsSetForPrejudicedManipulatorIfPresent,
     canCreateGame,
     gameCreationValidationErrors,

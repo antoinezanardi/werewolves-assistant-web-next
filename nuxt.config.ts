@@ -95,6 +95,7 @@ export default defineNuxtConfig({
         "InputNumber",
         "FloatLabel",
         "AutoComplete",
+        "MultiSelect",
         "ScrollTop",
         "Slider",
         "Toast",

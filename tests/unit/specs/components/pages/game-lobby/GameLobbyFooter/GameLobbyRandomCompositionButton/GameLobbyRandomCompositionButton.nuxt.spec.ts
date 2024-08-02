@@ -151,11 +151,7 @@ describe("Game Lobby Random Composition Button Component", () => {
 
           expect(mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition).toHaveBeenCalledExactlyOnceWith({
             players: createGameDtoStore.createGameDto.players,
-            excludedRoles: [
-              "thief",
-              "actor",
-              "prejudiced-manipulator",
-            ],
+            excludedRoles: ["prejudiced-manipulator"],
           });
         });
 
