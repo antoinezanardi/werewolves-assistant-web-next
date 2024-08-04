@@ -12,7 +12,6 @@ WORKDIR /app
 
 COPY --chown=node:node package.json ./
 COPY --chown=node:node nuxt.config.ts ./
-COPY --chown=node:node .nuxt ./.nuxt
 COPY --chown=node:node app ./app
 COPY --chown=node:node config ./config
 COPY --chown=node:node modules ./modules
