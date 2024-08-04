@@ -102,7 +102,6 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     return leftCount <= -1 ? 0 : leftCount;
   }
 
-  // TODO: to test
   function setAdditionalCardsForRecipientInCreateGameDto(additionalCards: CreateGameAdditionalCardDto[], recipient: GameAdditionalCardRecipientRoleName): void {
     if (!createGameDto.value.additionalCards) {
       createGameDto.value.additionalCards = additionalCards;
@@ -110,6 +109,10 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
     createGameDto.value.additionalCards = createGameDto.value.additionalCards.filter(card => card.recipient !== recipient);
     createGameDto.value.additionalCards.push(...additionalCards);
+  }
+
+  function getAdditionalCardsForRecipientInCreateGameDto(recipient: GameAdditionalCardRecipientRoleName): CreateGameAdditionalCardDto[] {
+    return createGameDto.value.additionalCards?.filter(card => card.recipient === recipient) ?? [];
   }
   return {
     createGameDto,
@@ -128,6 +131,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     isRoleMaxReachedInCreateGameDto,
     getRoleLeftCountToReachMinInCreateGameDto,
     setAdditionalCardsForRecipientInCreateGameDto,
+    getAdditionalCardsForRecipientInCreateGameDto,
   };
 });
 

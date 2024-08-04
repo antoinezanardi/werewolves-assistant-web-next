@@ -1467,6 +1467,15 @@
     },
     "GameLobbyAdditionalCardsManager": {
       "additionalCards": "Cartes additionnelles"
+    },
+    "RecipientRoleAdditionalCardsDisclaimer": {
+      "additionalCardsNotSetDisclaimer": "Veuillez choisir les cartes supplémentaires pour {definiteRecipientRoleName} ci-dessous",
+      "additionalCardsSetDisclaimer": "{definiteRecipientRoleName} jouera avec une seule carte dans cette partie | {definiteRecipientRoleName} jouera avec {count} cartes dans cette partie"
+    },
+    "RecipientRoleAdditionalCardsMultiSelect": {
+      "searchRole": "Rechercher un rôle",
+      "noRoleFound": "Aucun rôle trouvé",
+      "pickOneToFiveCards": "Choisissez une à cinq cartes"
     }
   }
 }

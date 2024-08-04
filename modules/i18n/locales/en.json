@@ -1468,12 +1468,14 @@
     "GameLobbyAdditionalCardsManager": {
       "additionalCards": "Additional cards"
     },
-    "RecipientRoleAdditionalCardsManager": {
-      "searchRole": "Search for a role",
-      "noRoleFound": "No role found",
-      "pickOneToFiveCards": "Pick one to five cards",
+    "RecipientRoleAdditionalCardsDisclaimer": {
       "additionalCardsNotSetDisclaimer": "Please set additional cards for {definiteRecipientRoleName} below",
       "additionalCardsSetDisclaimer": "{definiteRecipientRoleName} will play with only one card in this game | {definiteRecipientRoleName} will play with {count} cards in this game"
+    },
+    "RecipientRoleAdditionalCardsMultiSelect": {
+      "searchRole": "Search for a role",
+      "noRoleFound": "No role found",
+      "pickOneToFiveCards": "Pick one to five cards"
     }
   }
 }

@@ -24,7 +24,6 @@ const useRolesStore = defineStore(StoreIds.ROLES, () => {
     return roles.value?.find(role => role.name === roleName);
   }
 
-  // TODO: To test
   function getRolesForRecipientRoleName(recipientRoleName: GameAdditionalCardRecipientRoleName): Role[] {
     return roles.value?.filter(role => role.additionalCardsEligibleRecipients?.includes(recipientRoleName)) ?? [];
   }

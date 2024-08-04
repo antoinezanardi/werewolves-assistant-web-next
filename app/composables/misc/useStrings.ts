@@ -8,7 +8,6 @@ function useStrings(): UseStrings {
     return value ? "yes" : "no";
   }
 
-  // TODO: to test
   function lowerCaseFirstLetter(value: string): string {
     return value.charAt(0).toLowerCase() + value.slice(1);
   }

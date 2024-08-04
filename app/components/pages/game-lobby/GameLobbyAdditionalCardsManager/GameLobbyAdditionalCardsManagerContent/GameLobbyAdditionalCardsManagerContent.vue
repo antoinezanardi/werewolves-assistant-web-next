@@ -6,7 +6,7 @@
     <RecipientRoleAdditionalCardsManager
       v-for="roleName in additionalCardsDependantRolesInCreateGameDto"
       :key="roleName"
-      class="role-additional-cards-manager"
+      class="recipient-role-additional-cards-manager"
       :recipient-role-name="roleName"
     />
   </div>

@@ -1,9 +1,11 @@
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 import { createPinia, setActivePinia } from "pinia";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
+import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
 
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
@@ -469,6 +471,99 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.createGameDto.players = players;
 
       expect(createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto(roleName)).toBe(expected);
+    });
+  });
+
+  describe("setAdditionalCardsForRecipientInCreateGameDto", () => {
+    it("should set additional cards for recipient in createGameDto when additional cards are not set yet.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const additionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "villager",
+        }),
+      ];
+      createGameDtoStore.setAdditionalCardsForRecipientInCreateGameDto(additionalCards, "thief");
+
+      expect(createGameDtoStore.createGameDto.additionalCards).toStrictEqual<CreateGameAdditionalCardDto[]>(additionalCards);
+    });
+
+    it("should add additional cards for recipient in createGameDto when additional cards are set.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const additionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "actor",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "actor",
+          roleName: "seer",
+        }),
+      ];
+      createGameDtoStore.createGameDto.additionalCards = additionalCards;
+      const newAdditionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "villager",
+        }),
+      ];
+      const expectedAdditionalCards = [
+        additionalCards[1],
+        additionalCards[2],
+        newAdditionalCards[0],
+      ];
+
+      createGameDtoStore.setAdditionalCardsForRecipientInCreateGameDto(newAdditionalCards, "thief");
+
+      expect(createGameDtoStore.createGameDto.additionalCards).toStrictEqual<CreateGameAdditionalCardDto[]>(expectedAdditionalCards);
+    });
+  });
+
+  describe("getAdditionalCardsForRecipientInCreateGameDto", () => {
+    it("should return additional cards for recipient in createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const additionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "villager",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "actor",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "actor",
+          roleName: "seer",
+        }),
+      ];
+      createGameDtoStore.createGameDto.additionalCards = additionalCards;
+      const expectedAdditionalCards = [
+        additionalCards[0],
+        additionalCards[1],
+      ];
+
+      const result = createGameDtoStore.getAdditionalCardsForRecipientInCreateGameDto("thief");
+
+      expect(result).toStrictEqual<CreateGameAdditionalCardDto[]>(expectedAdditionalCards);
+    });
+
+    it("should return an empty array when additional cards are not set.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const result = createGameDtoStore.getAdditionalCardsForRecipientInCreateGameDto("thief");
+
+      expect(result).toStrictEqual<CreateGameAdditionalCardDto[]>([]);
     });
   });
 });

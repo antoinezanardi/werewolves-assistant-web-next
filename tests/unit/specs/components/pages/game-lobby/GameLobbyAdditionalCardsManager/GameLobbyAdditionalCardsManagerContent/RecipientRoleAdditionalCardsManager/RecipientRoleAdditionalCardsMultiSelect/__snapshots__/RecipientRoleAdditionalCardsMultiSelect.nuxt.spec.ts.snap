@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Recipient Role Additional Cards Multi Select Component > should match snapshot when rendered. 1`] = `
+"<div id="recipient-role-additional-cards-multi-select-container">
+  <div class="p-multiselect p-component p-inputwrapper p-multiselect-chip p-inputwrapper-filled w-full" id="recipient-role-additional-cards-multi-select" data-pc-name="multiselect" data-pc-section="root">
+    <div class="p-hidden-accessible" data-pc-section="hiddeninputwrapper" data-p-hidden-accessible="true"><input type="text" readonly="" placeholder="Pick one to five cards" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="recipient-role-additional-cards-multi-select_list" data-pc-section="hiddeninput"></div>
+    <div class="p-multiselect-label-container flex justify-center items-center h-20" data-pc-section="labelcontainer">
+      <div class="p-multiselect-label" data-pc-section="label">
+        <div class="p-multiselect-token" data-pc-section="token">
+          <role-image-stub rolename="pied-piper" sizes="50px" definition="normal" class="me-2" size="small"></role-image-stub><span></span>
+          <times-circle-icon-stub class="p-multiselect-token-icon" data-pc-section="removetokenicon"></times-circle-icon-stub>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div class="p-multiselect-trigger" data-pc-section="trigger">
+      <chevron-down-icon-stub class="p-multiselect-trigger-icon" aria-hidden="true" data-pc-section="dropdownicon"></chevron-down-icon-stub>
+    </div>
+    <portal-stub appendto="body" disabled="false"></portal-stub>
+  </div>
+</div>"
+`;

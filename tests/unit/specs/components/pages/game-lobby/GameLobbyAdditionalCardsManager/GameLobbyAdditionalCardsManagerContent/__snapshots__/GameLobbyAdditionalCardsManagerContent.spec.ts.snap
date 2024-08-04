@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Additional Cards Manager Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-additional-cards-manager-content" class="flex flex-col gap-4">
+  <recipient-role-additional-cards-manager-stub recipientrolename="thief" class="recipient-role-additional-cards-manager"></recipient-role-additional-cards-manager-stub>
+</div>"
+`;

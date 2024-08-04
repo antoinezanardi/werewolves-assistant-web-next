@@ -78,4 +78,43 @@ describe("Roles Store", () => {
       expect(role).toBeUndefined();
     });
   });
+
+  describe("getRolesForRecipientRoleName", () => {
+    it("should return roles that are eligible for given recipient role name when called.", () => {
+      const roles = [
+        createFakeRole({ additionalCardsEligibleRecipients: ["thief"] }),
+        createFakeRole({ additionalCardsEligibleRecipients: ["thief"] }),
+        createFakeRole(),
+        createFakeRole({ additionalCardsEligibleRecipients: ["actor"] }),
+      ];
+      const rolesStore = useRolesStore();
+      rolesStore.roles = roles;
+      const eligibleRoles = rolesStore.getRolesForRecipientRoleName("thief");
+
+      expect(eligibleRoles).toStrictEqual<Role[]>([
+        roles[0],
+        roles[1],
+      ]);
+    });
+
+    it("should return an empty array when no roles are eligible for given recipient role name.", () => {
+      const roles = [
+        createFakeRole({ additionalCardsEligibleRecipients: ["actor"] }),
+        createFakeRole(),
+        createFakeRole({ additionalCardsEligibleRecipients: ["actor"] }),
+      ];
+      const rolesStore = useRolesStore();
+      rolesStore.roles = roles;
+      const eligibleRoles = rolesStore.getRolesForRecipientRoleName("thief");
+
+      expect(eligibleRoles).toStrictEqual<Role[]>([]);
+    });
+
+    it("should return an empty array when roles are not set.", () => {
+      const rolesStore = useRolesStore();
+      const eligibleRoles = rolesStore.getRolesForRecipientRoleName("actor");
+
+      expect(eligibleRoles).toStrictEqual<Role[]>([]);
+    });
+  });
 });
