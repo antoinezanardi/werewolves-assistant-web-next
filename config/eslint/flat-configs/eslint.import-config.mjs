@@ -16,8 +16,10 @@ const ESLINT_IMPORT_CONFIG = {
     },
   },
   rules: {
-    // ---- ESLint Import Rules -----
-    // - Helpful warnings (https://github.com/import-js/eslint-plugin-import#helpful-warnings)
+    /*
+     * ---- ESLint Import Rules -----
+     * - Helpful warnings (https://github.com/import-js/eslint-plugin-import#helpful-warnings)
+     */
     "import/export": ERROR,
     "import/no-deprecated": ERROR,
     "import/no-empty-named-blocks": ERROR,

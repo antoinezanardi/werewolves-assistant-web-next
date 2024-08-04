@@ -36,8 +36,8 @@ describe("Game Over Component", () => {
     components: {
       gameOverHistory: {
         showGameHistory: Mock;
-      }
-    }
+      };
+    };
   };
   let wrapper: ReturnType<typeof mount<typeof GameOver>>;
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };

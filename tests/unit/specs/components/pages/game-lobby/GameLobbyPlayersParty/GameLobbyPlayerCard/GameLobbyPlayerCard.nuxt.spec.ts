@@ -26,8 +26,8 @@ describe("Game Lobby Player Card Component", () => {
       useRoleName: {
         getRoleNameLabel: Mock;
         getDefiniteRoleNameLabel: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(async() => {

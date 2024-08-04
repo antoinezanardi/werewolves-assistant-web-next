@@ -4,12 +4,11 @@ import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 import type { Locator } from "playwright-core";
 
 async function clickOnRoleWithText(worldOrLocator: CustomWorld | Locator, role: LocatorRole, text: string, isExact = false): Promise<void> {
-  let locator: Locator | null = null;
-  if (worldOrLocator instanceof World) {
-    locator = worldOrLocator.page.getByRole(role, { name: text, exact: isExact });
-  } else {
-    locator = worldOrLocator.getByRole(role, { name: text, exact: isExact });
-  }
+  const options = {
+    name: text,
+    exact: isExact,
+  };
+  const locator = worldOrLocator instanceof World ? worldOrLocator.page.getByRole(role, options) : worldOrLocator.getByRole(role, options);
   await locator.waitFor({ state: "visible" });
   await locator.click();
 }

@@ -11,7 +11,7 @@ function useFetchGameHistoryRecords(): UseFetchGameHistory {
   async function getGameHistoryRecords(gameId: string): Promise<ReturnType<typeof $fetch<GameHistoryRecord[]>> | null> {
     try {
       return await fetchWerewolvesAssistantApi<GameHistoryRecord[]>(`/games/${gameId}/history`, { method: "GET" });
-    } catch (error) {
+    } catch {
       return null;
     }
   }

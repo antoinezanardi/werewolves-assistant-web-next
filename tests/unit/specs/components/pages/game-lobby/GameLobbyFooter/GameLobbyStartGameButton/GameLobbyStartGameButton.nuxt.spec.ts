@@ -55,12 +55,12 @@ describe("Game Lobby Start Game Button Component", () => {
     composables: {
       useFetchGames: ReturnType<typeof createFakeUseFetchGames>;
       usePrimeVueToasts: ReturnType<typeof createFakeUsePrimeVueToasts>;
-    },
+    };
     components: {
       gameLobbyStartGameConfirmDialog: {
         open: Mock;
-      }
-    }
+      };
+    };
   };
 
   async function mountGameLobbyStartGameButtonComponent(options: ComponentMountingOptions<typeof GameLobbyStartGameButton> = {}):

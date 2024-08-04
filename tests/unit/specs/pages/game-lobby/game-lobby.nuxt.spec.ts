@@ -40,7 +40,7 @@ describe("Game Lobby Page", () => {
       gameLobbyPositionCoordinator: {
         open: Mock;
       };
-    }
+    };
   };
 
   async function mountGameLobbyPageComponent(): Promise<ReturnType<typeof mount<typeof GameLobby>>> {

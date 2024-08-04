@@ -1,7 +1,7 @@
 import type { Role } from "~/composables/api/role/types/role.class";
 
 type GameLobbyRolePickerDescriptionContentProps = {
-  pickedRole: Role
+  pickedRole: Role;
 };
 
 export type { GameLobbyRolePickerDescriptionContentProps };

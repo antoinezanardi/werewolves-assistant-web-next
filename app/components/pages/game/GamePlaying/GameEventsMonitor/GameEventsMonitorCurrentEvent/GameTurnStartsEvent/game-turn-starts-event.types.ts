@@ -1,52 +1,7 @@
 import type GameAccursedWolfFatherTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent.vue";
-import type GameActorTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameActorTurnStartsEvent/GameActorTurnStartsEvent.vue";
-import type GameBigBadWolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBigBadWolfTurnStartsEvent/GameBigBadWolfTurnStartsEvent.vue";
-import type GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCharmedTurnStartsEvent/GameCharmedTurnStartsEvent.vue";
-import type GameCupidTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCupidTurnStartsEvent/GameCupidTurnStartsEvent.vue";
-import type GameDefenderTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameDefenderTurnStartsEvent/GameDefenderTurnStartsEvent.vue";
-import type GameFoxTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameFoxTurnStartsEvent/GameFoxTurnStartsEvent.vue";
-import type GameHunterTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameHunterTurnStartsEvent/GameHunterTurnStartsEvent.vue";
-import type GameLoversTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameLoversTurnStartsEvent/GameLoversTurnStartsEvent.vue";
-import type GamePiedPiperTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GamePiedPiperTurnStartsEvent/GamePiedPiperTurnStartsEvent.vue";
-import type GameScandalmongerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameScandalmongerTurnStartsEvent/GameScandalmongerTurnStartsEvent.vue";
-import type GameScapegoatTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameScapegoatTurnStartsEvent/GameScapegoatTurnStartsEvent.vue";
-import type GameSeerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSeerTurnStartsEvent/GameSeerTurnStartsEvent.vue";
-import type GameSheriffTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSheriffTurnStartsEvent/GameSheriffTurnStartsEvent.vue";
-import type GameStutteringJudgeTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameStutteringJudgeTurnStartsEvent/GameStutteringJudgeTurnStartsEvent.vue";
-import type GameSurvivorsTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSurvivorsTurnStartsEvent/GameSurvivorsTurnStartsEvent.vue";
-import type GameThiefTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameThiefTurnStartsEvent/GameThiefTurnStartsEvent.vue";
-import type GameThreeBrothersTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameThreeBrothersTurnStartsEvent/GameThreeBrothersTurnStartsEvent.vue";
-import type GameTwoSistersTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameTwoSistersTurnStartsEvent/GameTwoSistersTurnStartsEvent.vue";
-import type GameWerewolvesTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWerewolvesTurnStartsEvent/GameWerewolvesTurnStartsEvent.vue";
-import type GameWhiteWerewolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWhiteWerewolfTurnStartsEvent/GameWhiteWerewolfTurnStartsEvent.vue";
-import type GameWildChildTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWildChildTurnStartsEvent/GameWildChildTurnStartsEvent.vue";
-import type GameWitchTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWitchTurnStartsEvent/GameWitchTurnStartsEvent.vue";
-import type GameWolfHoundTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWolfHoundTurnStartsEvent/GameWolfHoundTurnStartsEvent.vue";
 
-type GameTurnStartsEventTypeComponent =
-  | typeof GameAccursedWolfFatherTurnStartsEvent
-  | typeof GameActorTurnStartsEvent
-  | typeof GameBigBadWolfTurnStartsEvent
-  | typeof GameCharmedTurnStartsEvent
-  | typeof GameCupidTurnStartsEvent
-  | typeof GameDefenderTurnStartsEvent
-  | typeof GameFoxTurnStartsEvent
-  | typeof GameHunterTurnStartsEvent
-  | typeof GameLoversTurnStartsEvent
-  | typeof GamePiedPiperTurnStartsEvent
-  | typeof GameScandalmongerTurnStartsEvent
-  | typeof GameScapegoatTurnStartsEvent
-  | typeof GameSeerTurnStartsEvent
-  | typeof GameSheriffTurnStartsEvent
-  | typeof GameStutteringJudgeTurnStartsEvent
-  | typeof GameSurvivorsTurnStartsEvent
-  | typeof GameThiefTurnStartsEvent
-  | typeof GameThreeBrothersTurnStartsEvent
-  | typeof GameTwoSistersTurnStartsEvent
-  | typeof GameWerewolvesTurnStartsEvent
-  | typeof GameWhiteWerewolfTurnStartsEvent
-  | typeof GameWildChildTurnStartsEvent
-  | typeof GameWitchTurnStartsEvent
-  | typeof GameWolfHoundTurnStartsEvent;
+type GameTurnStartsEventTypeComponent = typeof GameAccursedWolfFatherTurnStartsEvent
+
+   ;
 
 export type { GameTurnStartsEventTypeComponent };

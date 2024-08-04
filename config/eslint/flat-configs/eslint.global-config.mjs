@@ -46,8 +46,10 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     },
   },
   rules: {
-    // ---- ESLint Rules -----
-    // - Possible Problems (https://eslint.org/docs/rules/#possible-problems)
+    /*
+     * ---- ESLint Rules -----
+     * - Possible Problems (https://eslint.org/docs/rules/#possible-problems)
+     */
     "array-callback-return": ERROR,
     "constructor-super": ERROR,
     "for-direction": ERROR,
@@ -58,6 +60,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "no-compare-neg-zero": ERROR,
     "no-cond-assign": ERROR,
     "no-const-assign": ERROR,
+    "no-constant-binary-expression": ERROR,
     "no-constant-condition": ERROR,
     "no-constructor-return": ERROR,
     "no-control-regex": ERROR,
@@ -100,12 +103,15 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "no-unused-private-class-members": ERROR,
     "no-unused-vars": ERROR,
     "no-use-before-define": ERROR,
+    "no-useless-assignment": ERROR,
     "no-useless-backreference": ERROR,
     "require-atomic-updates": OFF,
     "use-isnan": ERROR,
     "valid-typeof": ERROR,
-    // ---- ESLint Rules -----
-    // - Suggestions (https://eslint.org/docs/rules/#suggestions)
+    /*
+     * ---- ESLint Rules -----
+     * - Suggestions (https://eslint.org/docs/rules/#suggestions)
+     */
     "accessor-pairs": ERROR,
     "arrow-body-style": [ERROR, "as-needed"],
     "block-scoped-var": ERROR,
@@ -113,7 +119,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "capitalized-comments": [ERROR, NEVER, { ignorePattern: "TODO|Stryker" }],
     "class-methods-use-this": ERROR,
     "complexity": ERROR,
-    "consistent-return": ERROR,
+    "consistent-return": OFF,
     "consistent-this": ERROR,
     "curly": ERROR,
     "default-case": ERROR,
@@ -138,7 +144,6 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "max-nested-callbacks": [ERROR, MAX_NESTED_CALLBACK],
     "max-params": [ERROR, MAX_PARAMS],
     "max-statements": OFF,
-    "multiline-comment-style": [ERROR, "separate-lines"],
     "new-cap": ERROR,
     "no-alert": ERROR,
     "no-array-constructor": ERROR,
@@ -152,6 +157,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "no-else-return": ERROR,
     "no-empty": ERROR,
     "no-empty-function": ERROR,
+    "no-empty-static-block": ERROR,
     "no-eq-null": ERROR,
     "no-eval": ERROR,
     "no-extend-native": ERROR,
@@ -195,6 +201,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "no-regex-spaces": ERROR,
     "no-restricted-exports": OFF,
     "no-restricted-globals": OFF,
+    "no-restricted-imports": OFF,
     "no-restricted-properties": OFF,
     "no-restricted-syntax": [ERROR, "SwitchStatement", "SwitchCase", "DoWhileStatement"],
     "no-return-assign": ERROR,
@@ -249,9 +256,10 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     "symbol-description": ERROR,
     "vars-on-top": ERROR,
     "yoda": ERROR,
-    // ---- ESLint Rules -----
-    // - Layout & Formatting (https://eslint.org/docs/rules/#layout-formatting)
-    "line-comment-position": ERROR,
+    /*
+     * ---- ESLint Rules -----
+     * - Layout & Formatting (https://eslint.org/docs/rules/#layout-formatting)
+     */
     "unicode-bom": ERROR,
   },
 });

@@ -25,7 +25,7 @@ describe("Game Lobby Random Composition Button Component", () => {
       useBreakpoints: {
         smaller: Mock;
       };
-    }
+    };
   };
 
   beforeEach(async() => {

@@ -48,7 +48,7 @@ const displayedPhase = computed<GamePhaseName>(() => {
   return game.value.phase.name === "day" ? "night" : "day";
 });
 
-const displayedPhaseLottieComponent = computed<typeof GameDayPhaseLottie | typeof GameNightPhaseLottie>(() => {
+const displayedPhaseLottieComponent = computed<typeof GameDayPhaseLottie >(() => {
   if (displayedPhase.value === "day") {
     return GameDayPhaseLottie;
   }
