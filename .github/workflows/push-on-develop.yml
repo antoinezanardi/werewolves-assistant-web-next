@@ -3,7 +3,7 @@ name: ⛵️ Push On Develop Branch Workflow
 on:
   push:
     branches:
-      - "*"
+      - "develop"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
