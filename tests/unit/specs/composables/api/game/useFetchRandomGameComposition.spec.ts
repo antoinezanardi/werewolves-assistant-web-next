@@ -17,8 +17,8 @@ describe("Use Fetch Random Game Composition", () => {
     composables: {
       useWerewolvesAssistantApi: {
         fetchWerewolvesAssistantApi: $Fetch;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {

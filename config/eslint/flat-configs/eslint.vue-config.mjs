@@ -32,11 +32,14 @@ const ESLINT_VUE_CONFIG = {
   },
   rules: {
     ...ESLINT_TYPESCRIPT_CONFIG.rules,
+    "no-useless-assignment": OFF,
     "import/unambiguous": OFF,
     "vue/comment-directive": OFF,
     "vue/jsx-uses-vars": ERROR,
-    // ---- Vue Rules -----
-    // - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
+    /*
+     * ---- Vue Rules -----
+     * - Priority A: Essential (Error Prevention) https://eslint.vuejs.org/rules/#priority-a-essential-error-prevention
+     */
     "vue/multi-word-component-names": [ERROR, { ignores: ["App", "Error"] }],
     "vue/no-arrow-functions-in-watch": ERROR,
     "vue/no-async-in-computed-properties": ERROR,

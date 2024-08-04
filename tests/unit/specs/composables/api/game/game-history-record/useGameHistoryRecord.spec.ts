@@ -9,7 +9,7 @@ import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composa
 describe("Use Game History Record Spec", () => {
   describe("didSourceSkipped", () => {
     it.each<{
-      gameHistoryRecord: GameHistoryRecord
+      gameHistoryRecord: GameHistoryRecord;
       expected: boolean;
       test: string;
     }>([

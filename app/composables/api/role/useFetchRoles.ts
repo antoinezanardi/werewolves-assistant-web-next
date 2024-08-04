@@ -11,7 +11,7 @@ function useFetchRoles(): UseFetchRoles {
   async function fetchRoles(): Promise<ReturnType<typeof $fetch<Role[]>> | null> {
     try {
       return await fetchWerewolvesAssistantApi<Role[]>(`/roles`, { method: "GET" });
-    } catch (error) {
+    } catch {
       return null;
     }
   }
