@@ -43,6 +43,14 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
   }
 
+  function removeObsoleteAdditionalCardsFromCreateGameDto(): void {
+    if (!createGameDto.value.additionalCards) {
+      return;
+    }
+    const rolesInGame = new Set(createGameDto.value.players.map(player => player.role.name));
+    createGameDto.value.additionalCards = createGameDto.value.additionalCards.filter(({ recipient }) => rolesInGame.has(recipient));
+  }
+
   function addPlayerToCreateGameDto(player: CreateGamePlayerDto): void {
     createGameDto.value.players.push(CreateGamePlayerDto.create(player));
   }
@@ -114,12 +122,17 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   function getAdditionalCardsForRecipientInCreateGameDto(recipient: GameAdditionalCardRecipientRoleName): CreateGameAdditionalCardDto[] {
     return createGameDto.value.additionalCards?.filter(card => card.recipient === recipient) ?? [];
   }
+
+  function getAdditionalCardsWithRoleNameInCreateGameDto(roleName: RoleName): CreateGameAdditionalCardDto[] {
+    return createGameDto.value.additionalCards?.filter(card => card.roleName === roleName) ?? [];
+  }
   return {
     createGameDto,
     doesCreateGameDtoContainPositionDependantRoles,
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
+    removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,
     updatePlayerInCreateGameDto,
     setPlayersToCreateGameDto,
@@ -132,6 +145,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     getRoleLeftCountToReachMinInCreateGameDto,
     setAdditionalCardsForRecipientInCreateGameDto,
     getAdditionalCardsForRecipientInCreateGameDto,
+    getAdditionalCardsWithRoleNameInCreateGameDto,
   };
 });
 

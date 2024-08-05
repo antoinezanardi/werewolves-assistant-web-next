@@ -774,14 +774,17 @@
       "noRole": "Aucun"
     },
     "GameLobbyRolePickerFooter": {
-      "pickRole": "Assigner ce rôle pour le joueur"
+      "pickRole": "Assigner ce rôle pour le joueur",
+      "additionalCardRemoved": "Carte additionnelle retirée",
+      "roleAdditionalCardRemovedForRecipient": "La carte additionnelle avec le rôle de {roleName} a été retirée pour {recipient}"
     },
     "GameLobbyRolePickerGridElement": {
       "random": "Aléatoire"
     },
     "GameLobbyRolePickerGridElementBadges": {
       "totalInParty": "Total dans la partie",
-      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)",
+      "totalInAdditionalCards": "Total dans les cartes additionnelles"
     },
     "GameLobbyRolePickerDescription": {
       "pickARole": "Choisissez un rôle"
@@ -794,7 +797,8 @@
       "roleCountInParty": "Aucun dans la partie | 1 dans la partie | {count} dans la partie",
       "roleCountMaxReached": "Nombre maximum atteint",
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
-      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)",
+      "roleCountInGameAdditionalCards": "Aucun dans les cartes additionnelles | 1 dans les cartes additionnelles | {count} dans les cartes additionnelles"
     },
     "GameOverHistoryRecordIcon": {
       "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"

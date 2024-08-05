@@ -3,6 +3,21 @@
     id="game-lobby-role-picker-grid-element-badges"
   >
     <PrimeVueBadge
+      v-if="countInGameAdditionalCardsCreateGameDto"
+      id="role-count-in-additional-cards-badge"
+      v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInAdditionalCards')"
+      class="-right-4 absolute top-1"
+      data-testid="game-lobby-role-picker-role-count-in-additional-cards-badge"
+      severity="warning"
+    >
+      <i class="fa fa-clover me-2"/>
+
+      <span>
+        {{ countInGameAdditionalCardsCreateGameDto }}
+      </span>
+    </PrimeVueBadge>
+
+    <PrimeVueBadge
       v-if="countInCreateGameDto"
       id="role-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInParty')"
@@ -39,6 +54,7 @@ const createGameDtoStore = useCreateGameDtoStore();
 const {
   getPlayersWithRoleNameInCreateGameDto,
   getRoleLeftCountToReachMinInCreateGameDto,
+  getAdditionalCardsWithRoleNameInCreateGameDto,
 } = createGameDtoStore;
 
 const countInCreateGameDto = computed<number>(() => {
@@ -53,5 +69,12 @@ const leftCountToReachMinInCreateGameDto = computed<number>(() => {
     return 0;
   }
   return getRoleLeftCountToReachMinInCreateGameDto(props.role.name);
+});
+
+const countInGameAdditionalCardsCreateGameDto = computed<number>(() => {
+  if (!props.role) {
+    return 0;
+  }
+  return getAdditionalCardsWithRoleNameInCreateGameDto(props.role.name).length;
 });
 </script>

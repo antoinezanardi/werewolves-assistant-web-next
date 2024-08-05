@@ -1,3 +1,5 @@
+import { createTestingPinia } from "@pinia/testing";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
@@ -10,6 +12,8 @@ import type { Ref } from "vue";
 
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import type GameLobbyStartGameConfirmDialog from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialog.vue";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
+import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
 import * as UsePrimeVueToasts from "~/composables/prime-vue/usePrimeVueToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
@@ -50,6 +54,9 @@ describe("Game Lobby Start Game Button Component", () => {
     ],
   });
 
+  const testingPinia = {
+    stubActions: false,
+  };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyStartGameButton>>;
   let mocks: {
     composables: {
@@ -73,6 +80,7 @@ describe("Game Lobby Start Game Button Component", () => {
             methods: mocks.components.gameLobbyStartGameConfirmDialog,
           },
         },
+        plugins: [createTestingPinia(testingPinia)],
       },
       ...options,
     });
@@ -194,6 +202,28 @@ describe("Game Lobby Start Game Button Component", () => {
             createFakeCreateGamePlayerDto({ name: "Player 4" }),
           ],
         });
+      });
+
+      it("should adjust game additional cards count in create game dto options when confirm start game event is emitted.", async() => {
+        const initialCreateGameDto = createFakeCreateGameDto({
+          additionalCards: [
+            createFakeCreateGameAdditionalCardDto({
+              recipient: "thief",
+              roleName: "werewolf",
+            }),
+          ],
+          options: DEFAULT_GAME_OPTIONS,
+        });
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto = createFakeCreateGameDto(initialCreateGameDto);
+        const expectedCreateGameDto = createFakeCreateGameDto(initialCreateGameDto);
+        expectedCreateGameDto.options.roles.thief.additionalCardsCount = 1;
+        expectedCreateGameDto.options.roles.actor.additionalCardsCount = 3;
+        const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
+        (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("confirm-start-game");
+        await nextTick();
+
+        expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
       });
 
       it("should create game when confirm start game event is emitted.", async() => {

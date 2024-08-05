@@ -191,6 +191,42 @@ describe("Game Lobby Random Composition Button Component", () => {
           expect(createGameDtoStore.setPlayersToCreateGameDto).not.toHaveBeenCalled();
         });
 
+        it("should remove obsolete additional cards from create game dto when fetched.", async() => {
+          const createGameDtoStore = useCreateGameDtoStore();
+          const randomComposition = [
+            createFakeCreateGamePlayerDto({ name: "Player 1" }),
+            createFakeCreateGamePlayerDto({ name: "Player 2" }),
+            createFakeCreateGamePlayerDto({ name: "Player 3" }),
+            createFakeCreateGamePlayerDto({ name: "Player 4" }),
+          ];
+          mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
+          const button = wrapper.findComponent<Button>(".random-composition-button");
+          await button.trigger("click");
+          await nextTick();
+          mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
+
+          expect(createGameDtoStore.removeObsoleteAdditionalCardsFromCreateGameDto).toHaveBeenCalledExactlyOnceWith();
+        });
+
+        it("should not remove obsolete additional cards from create game dto when fetch returned null.", async() => {
+          const createGameDtoStore = useCreateGameDtoStore();
+          createGameDtoStore.createGameDto = createFakeCreateGameDto({
+            players: [
+              createFakeCreateGamePlayerDto({ name: "Player 1" }),
+              createFakeCreateGamePlayerDto({ name: "Player 2" }),
+              createFakeCreateGamePlayerDto({ name: "Player 3" }),
+              createFakeCreateGamePlayerDto({ name: "Player 4" }),
+            ],
+          });
+          await nextTick();
+          mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(null);
+          const button = wrapper.findComponent<Button>(".random-composition-button");
+          await button.trigger("click");
+          await nextTick();
+
+          expect(createGameDtoStore.removeObsoleteAdditionalCardsFromCreateGameDto).not.toHaveBeenCalled();
+        });
+
         it("should be loading when fetch is in progress.", () => {
           const button = wrapper.findComponent<Button>(".random-composition-button");
           void button.trigger("click");

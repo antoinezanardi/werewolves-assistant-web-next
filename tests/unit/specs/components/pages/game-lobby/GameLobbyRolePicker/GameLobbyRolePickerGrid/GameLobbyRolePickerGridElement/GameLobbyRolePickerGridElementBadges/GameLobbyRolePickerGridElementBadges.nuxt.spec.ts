@@ -1,4 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Badge from "primevue/badge";
@@ -30,6 +31,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
     const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
     createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
     createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+    createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
     wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
       shallow: false,
       global: { plugins: [pinia] },
@@ -39,6 +41,64 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
   it("should match snapshot when rendered.", () => {
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  describe("Count in Additional Cards Badge", () => {
+    it("should not render the count in additional cards badge when there are no additional cards with this role.", () => {
+      const countInAdditionalCardsBadge = wrapper.findComponent<Badge>("#role-count-in-additional-cards-badge");
+
+      expect(countInAdditionalCardsBadge.exists()).toBeFalsy();
+    });
+
+    it("should assign tooltip to count in additional cards badge when there are additional cards with this role.", async() => {
+      const tooltip: BoundTooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, "#role-count-in-additional-cards-badge") };
+      const pinia = createTestingPinia();
+      const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+      createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
+      createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGameAdditionalCardDto()]);
+      wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
+        global: {
+          plugins: [pinia],
+          directives,
+        },
+      });
+
+      expect(tooltip.value).toBe("Total in the additional cards");
+    });
+
+    it("should not render the count in additional cards badge when role is not defined.", async() => {
+      const pinia = createTestingPinia();
+      const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+      createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
+      createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGameAdditionalCardDto()]);
+      wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
+        global: { plugins: [pinia] },
+        props: { role: undefined },
+      });
+      const countInAdditionalCardsBadge = wrapper.findComponent<Badge>("#role-count-in-additional-cards-badge");
+
+      expect(countInAdditionalCardsBadge.exists()).toBeFalsy();
+    });
+
+    it("should set count in game additional cards create game dto text when there are additional cards with this role.", async() => {
+      const pinia = createTestingPinia();
+      const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+      createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
+      createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGameAdditionalCardDto()]);
+      wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
+        shallow: false,
+        global: {
+          plugins: [pinia],
+        },
+      });
+      const countInAdditionalCardsBadge = wrapper.findComponent<Badge>("#role-count-in-additional-cards-badge");
+
+      expect(countInAdditionalCardsBadge.text()).toBe("1");
+    });
   });
 
   describe("Count in Party Badge", () => {
@@ -55,6 +115,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
         global: {
           plugins: [pinia],
@@ -69,6 +130,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const pinia = createTestingPinia();
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
       const countInPartyBadge = wrapper.findComponent<Badge>("#role-count-in-game-badge");
 
@@ -80,6 +142,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
         global: { plugins: [pinia] },
         props: { role: undefined },
@@ -104,6 +167,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
         global: {
           plugins: [pinia],
@@ -119,6 +183,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(0);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
       const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
 
@@ -130,6 +195,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
       const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
 
@@ -141,6 +207,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({
         global: { plugins: [pinia] },
         props: { role: undefined },

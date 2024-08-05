@@ -36,7 +36,10 @@ const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
-const { setPlayersToCreateGameDto } = createGameDtoStore;
+const {
+  setPlayersToCreateGameDto,
+  removeObsoleteAdditionalCardsFromCreateGameDto,
+} = createGameDtoStore;
 const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
@@ -60,6 +63,7 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
   });
   if (randomGameComposition !== null) {
     setPlayersToCreateGameDto(randomGameComposition);
+    removeObsoleteAdditionalCardsFromCreateGameDto();
   }
   isLoadingGetRandomGameComposition.value = false;
 }
