@@ -12,8 +12,8 @@ describe("Roles Store", () => {
     composables: {
       useFetchRoles: {
         fetchRoles: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {

@@ -17,8 +17,8 @@ describe("Use Werewolves Assistant Api Error Composable", () => {
         addInfoToast: Mock;
         addWarnToast: Mock;
         addErrorToast: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {

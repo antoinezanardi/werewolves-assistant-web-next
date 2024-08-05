@@ -6,6 +6,39 @@ on:
 
 jobs:
 
+  upload-to-docker-hub:
+    name: Upload image with tag version to Docker Hub 🐳
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Log in to Docker Hub 🔐
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build and push Docker image on tag name 🐳
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: antoinezanardi/werewolves-assistant-web:${{ github.event.release.tag_name }}
+
+      - name: Build and push Docker image on latest 🐳
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: antoinezanardi/werewolves-assistant-web:latest
+
   deploy:
     name: Deploy to production 🚀
     runs-on: ubuntu-latest

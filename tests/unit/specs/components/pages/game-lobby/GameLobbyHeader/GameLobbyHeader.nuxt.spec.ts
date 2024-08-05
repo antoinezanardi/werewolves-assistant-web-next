@@ -17,8 +17,8 @@ describe("Game Lobby Header Component", () => {
     components: {
       gameLobbyHeaderSetupButtons: {
         highlightPositionCoordinatorButton: Mock;
-      }
-    }
+      };
+    };
   };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeader>>;
 

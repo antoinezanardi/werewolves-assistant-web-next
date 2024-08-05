@@ -9,8 +9,8 @@ import { createFakeUseFetchGameHistoryRecords } from "@tests/unit/utils/factorie
 describe("Game History Records Store", () => {
   let mocks: {
     composables: {
-      useFetchGameHistoryRecords: ReturnType<typeof createFakeUseFetchGameHistoryRecords>
-    }
+      useFetchGameHistoryRecords: ReturnType<typeof createFakeUseFetchGameHistoryRecords>;
+    };
   };
 
   beforeEach(() => {

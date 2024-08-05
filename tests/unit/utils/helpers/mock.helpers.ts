@@ -20,7 +20,11 @@ function mockNuxtImports(): void {
 
   mockNuxtImport<typeof useHead>("useHead", () => vi.fn());
 
-  mockNuxtImport<typeof createError>("createError", <DataT>() => (vi.fn(() => new Error("Mocked error")) as DataT));
+  mockNuxtImport<typeof createError>("createError", <DataT extends object>() => {
+    const errorInstance: DataT = new Error("Mocked error") as DataT;
+
+    return vi.fn(() => errorInstance) as DataT;
+  });
 
   mockNuxtImport<() => ReturnType<typeof createFakeI18n>>("useI18n", () => vi.fn(() => createFakeI18n()));
 

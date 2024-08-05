@@ -43,7 +43,7 @@ describe("Game Lobby Page", () => {
       gameLobbyAdditionalCardsManager: {
         open: Mock;
       };
-    }
+    };
   };
 
   async function mountGameLobbyPageComponent(): Promise<ReturnType<typeof mount<typeof GameLobby>>> {

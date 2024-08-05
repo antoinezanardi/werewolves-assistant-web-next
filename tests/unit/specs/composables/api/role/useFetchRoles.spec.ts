@@ -8,8 +8,8 @@ describe("Use Fetch Roles Composable", () => {
     composables: {
       useWerewolvesAssistantApi: {
         fetchWerewolvesAssistantApi: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {
