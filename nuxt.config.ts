@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 const modules = [
   "@nuxtjs/tailwindcss",
   "@nuxt/test-utils/module",
-  "nuxt-primevue",
+  "@primevue/nuxt-module",
   "@nuxtjs/i18n",
   "@nuxt/image",
   "@nuxtjs/google-fonts",
@@ -38,7 +38,6 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    "primevue/resources/themes/lara-dark-blue/theme.css",
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
     "./assets/css/google-fonts.css",
@@ -73,7 +72,7 @@ export default defineNuxtConfig({
     "~/plugins/vue-ellipse-progress/vue-ellipse-progress.client.ts",
   ],
   primevue: {
-    cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
+    importTheme: { from: fileURLToPath(new URL("./config/primevue/custom-theme.ts", import.meta.url)) },
     components: {
       prefix: "PrimeVue",
       include: [
@@ -112,8 +111,8 @@ export default defineNuxtConfig({
         "Ripple",
       ],
     },
+    autoImport: false,
     composables: { include: ["useToast"] },
-    options: { ripple: true },
   },
   routeRules: {
     "/": { prerender: true },
