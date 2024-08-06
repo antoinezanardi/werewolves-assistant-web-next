@@ -42,6 +42,8 @@ function onClickFromCreateNewGameButton(): void {
     rejectLabel: t("shared.no"),
     acceptIcon: "fa fa-check",
     rejectIcon: "fa fa-times",
+    rejectClass: "p-button-secondary",
+    defaultFocus: "accept",
     accept: createNewGameWithSamePlayers,
     reject: createNewGameWithNewPlayers,
   });

@@ -31,7 +31,7 @@ describe("Overflow Tag Component", () => {
 
   describe("Overflow Tag", () => {
     it("should display the overflow number when the entities count is greater than the maximum entities displayed.", () => {
-      const tag = wrapper.findComponent<Tag>("#overflow-tag");
+      const tag = wrapper.findComponent<typeof Tag>("#overflow-tag");
 
       expect(tag.attributes("value")).toBe("+ 1");
     });
@@ -43,7 +43,7 @@ describe("Overflow Tag Component", () => {
           maximumEntitiesDisplayed: 3,
         },
       });
-      const tag = wrapper.findComponent<Tag>("#overflow-tag");
+      const tag = wrapper.findComponent<typeof Tag>("#overflow-tag");
 
       expect(tag.exists()).toBeFalsy();
     });

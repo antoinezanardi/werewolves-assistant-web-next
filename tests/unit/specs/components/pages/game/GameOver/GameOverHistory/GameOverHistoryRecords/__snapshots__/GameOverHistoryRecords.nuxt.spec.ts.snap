@@ -1,48 +1,48 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Over History Records Component > should match snapshot when rendered. 1`] = `
-"<div class="p-timeline p-component p-timeline-left p-timeline-vertical w-full" id="game-over-history-records" data-pc-name="timeline" data-pc-section="root">
+"<div class="p-timeline p-component p-timeline-left p-timeline-vertical w-full" id="game-over-history-records" data-pc-name="timeline" data-pc-section="root" pc4="">
   <div class="p-timeline-event" data-pc-section="event">
-    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="opposite">
+    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="eventopposite">
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
-    <div class="p-timeline-event-separator" data-pc-section="separator">
+    <div class="p-timeline-event-separator" data-pc-section="eventseparator">
       <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
-      <div class="p-timeline-event-connector" data-pc-section="connector"></div>
+      <div class="p-timeline-event-connector" data-pc-section="eventconnector"></div>
     </div>
-    <div class="p-timeline-event-content" data-pc-section="content">
+    <div class="p-timeline-event-content" data-pc-section="eventcontent">
       <game-over-history-record-stub gamehistoryrecord="[object Object]" class="game-over-history-record"></game-over-history-record-stub>
-      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
+      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root" pc1="">
         <!---->
       </div>
     </div>
   </div>
   <div class="p-timeline-event" data-pc-section="event">
-    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="opposite">
+    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="eventopposite">
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
-    <div class="p-timeline-event-separator" data-pc-section="separator">
+    <div class="p-timeline-event-separator" data-pc-section="eventseparator">
       <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
-      <div class="p-timeline-event-connector" data-pc-section="connector"></div>
+      <div class="p-timeline-event-connector" data-pc-section="eventconnector"></div>
     </div>
-    <div class="p-timeline-event-content" data-pc-section="content">
+    <div class="p-timeline-event-content" data-pc-section="eventcontent">
       <game-over-history-record-stub gamehistoryrecord="[object Object]" class="game-over-history-record"></game-over-history-record-stub>
-      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
+      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root" pc2="">
         <!---->
       </div>
     </div>
   </div>
   <div class="p-timeline-event" data-pc-section="event">
-    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="opposite">
+    <div class="p-timeline-event-opposite !flex-none !w-24" data-pc-section="eventopposite">
       <game-over-history-record-phase-stub gamehistoryrecord="[object Object]" class="game-over-history-record-phase w-full"></game-over-history-record-phase-stub>
     </div>
-    <div class="p-timeline-event-separator" data-pc-section="separator">
+    <div class="p-timeline-event-separator" data-pc-section="eventseparator">
       <game-over-history-record-icon-stub gamehistoryrecord="[object Object]" class="game-over-history-record-icon"></game-over-history-record-icon-stub>
       <!---->
     </div>
-    <div class="p-timeline-event-content" data-pc-section="content">
+    <div class="p-timeline-event-content" data-pc-section="eventcontent">
       <game-over-history-record-stub gamehistoryrecord="[object Object]" class="game-over-history-record"></game-over-history-record-stub>
-      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root">
+      <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root" pc3="">
         <!---->
       </div>
     </div>

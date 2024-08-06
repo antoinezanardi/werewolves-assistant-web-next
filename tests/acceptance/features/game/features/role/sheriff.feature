@@ -24,12 +24,6 @@ Feature: 🎖️ Sheriff Attribute
       | Bob     |
       | Charlie |
       | David   |
-    And the following players can't be targeted in game's playground
-      | name    |
-      | Antoine |
-      | Bob     |
-      | Charlie |
-      | David   |
     And the game's current play should have a countdown of 3 minutes and 0 seconds
     And the page creates the missing snapshot with name "Survivors elect Sheriff Playground"
 

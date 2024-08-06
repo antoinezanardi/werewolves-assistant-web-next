@@ -2,7 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import { MouseEvent } from "happy-dom";
 import type Button from "primevue/button";
-import Menu from "primevue/menu";
+import Menu, { type MenuProps } from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import type { Mock } from "vitest";
 import { beforeAll, expect } from "vitest";
@@ -53,7 +53,7 @@ describe("Parameters Menu Component", () => {
     });
 
     it("should open the parameters menu when clicked.", async() => {
-      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<typeof Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).toHaveBeenCalledExactlyOnceWith(expect.any(MouseEvent));
@@ -71,7 +71,7 @@ describe("Parameters Menu Component", () => {
         },
       });
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { parametersMenu: Ref }).parametersMenu.value = null;
-      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<typeof Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
 
       expect(toggleMenuMock).not.toHaveBeenCalled();
@@ -93,14 +93,14 @@ describe("Parameters Menu Component", () => {
         shallow: false,
         global: { plugins: [testingPinia] },
       });
-      const parametersMenuButton = wrapper.findComponent<Button>("[aria-label='Parameters']");
+      const parametersMenuButton = wrapper.findComponent<typeof Button>("[aria-label='Parameters']");
       await parametersMenuButton.trigger("click");
     });
 
     it("should show success toast when game is canceled.", async() => {
       gameStore.game = createFakeGame({ status: "playing" });
       await nextTick();
-      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menuitem-link")?.click();
+      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menu-item-link")?.click();
 
       expect(mocks.composables.usePrimeVueToasts.addSuccessToast).toHaveBeenCalledExactlyOnceWith({ summary: "components.ParametersMenu.gameCanceled" });
     });
@@ -109,8 +109,9 @@ describe("Parameters Menu Component", () => {
       gameStore.game = new Game();
       await nextTick();
       const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
+      const props = parametersMenu.props() as MenuProps;
 
-      expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([
+      expect(props.model).toStrictEqual<MenuItem[]>([
         {
           visible: false,
           items: [
@@ -136,8 +137,9 @@ describe("Parameters Menu Component", () => {
       gameStore.game = createFakeGame({ status: "playing" });
       await nextTick();
       const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
+      const props = parametersMenu.props() as MenuProps;
 
-      expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([
+      expect(props.model).toStrictEqual<MenuItem[]>([
         {
           visible: true,
           items: [
@@ -164,8 +166,9 @@ describe("Parameters Menu Component", () => {
       store.game = createFakeGame({ status: "canceled" });
       await nextTick();
       const parametersMenu = wrapper.findComponent<typeof Menu>(Menu);
+      const props = parametersMenu.props() as MenuProps;
 
-      expect(parametersMenu.props("model")).toStrictEqual<MenuItem[]>([
+      expect(props.model).toStrictEqual<MenuItem[]>([
         {
           visible: true,
           items: [
@@ -190,13 +193,13 @@ describe("Parameters Menu Component", () => {
     it("should cancel game when clicking on cancel game button.", async() => {
       gameStore.game = createFakeGame({ status: "playing" });
       await nextTick();
-      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menuitem-link")?.click();
+      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.cancelGame\"] .p-menu-item-link")?.click();
 
       expect(gameStore.cancelGame).toHaveBeenCalledExactlyOnceWith();
     });
 
     it("should navigate to home page when clicking on back to home button.", () => {
-      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.backToHome\"] .p-menuitem-link")?.click();
+      document.querySelector<HTMLElement>("[aria-label=\"components.ParametersMenu.backToHome\"] .p-menu-item-link")?.click();
 
       expect(navigateTo).toHaveBeenCalledExactlyOnceWith("/");
     });

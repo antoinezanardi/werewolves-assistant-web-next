@@ -5,8 +5,8 @@
     class="h-full"
   >
     <PrimeVueButton
-      class="!h-full start-game-button"
-      :disabled="!canCreateGame"
+      class="!h-full !px-6 !py-4 start-game-button"
+      :disabled="isButtonDisabled"
       icon="fa-play fa"
       :label="$t('components.GameLobbyStartGameButton.startGame')"
       :loading="isLoadingCreateGame"
@@ -55,6 +55,8 @@ const { canCreateGame, gameCreationValidationErrors } = useCreateGameDtoValidati
 const isLoadingCreateGame = ref<boolean>(false);
 
 const containerTooltip = computed<string | undefined>(() => gameCreationValidationErrors.value[0]);
+
+const isButtonDisabled = computed<boolean>(() => !canCreateGame.value || isLoadingCreateGame.value);
 
 function onClickFromStartGameButton(): void {
   if (!gameLobbyStartGameConfirmDialog.value) {

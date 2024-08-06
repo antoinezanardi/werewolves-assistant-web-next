@@ -6,17 +6,17 @@
     size="small"
     @click.prevent="onClickFromAdditionalCardsManagerButton"
   >
-    <i
-      v-if="!areAdditionalCardsSetForAdditionalCardsDependantRoles"
-      id="additional-cards-not-set-warning-icon"
-      class="absolute fa fa-beat fa-exclamation-circle right-0.5 text-white top-0.5"
-    />
-
-    <i class="animate__animated animate__heartBeat animate__slow fa fa-clover me-2"/>
+    <i class="animate__animated animate__heartBeat animate__slow fa fa-clover"/>
 
     <span id="game-lobby-header-additional-cards-manager-button-text">
       {{ $t('components.GameLobbyHeaderAdditionalCardsManagerButton.additionalCards') }}
     </span>
+
+    <i
+      v-if="!areAdditionalCardsSetForAdditionalCardsDependantRoles"
+      id="additional-cards-not-set-warning-icon"
+      class="fa fa-beat fa-exclamation-circle text-white"
+    />
   </PrimeVueButton>
 </template>
 

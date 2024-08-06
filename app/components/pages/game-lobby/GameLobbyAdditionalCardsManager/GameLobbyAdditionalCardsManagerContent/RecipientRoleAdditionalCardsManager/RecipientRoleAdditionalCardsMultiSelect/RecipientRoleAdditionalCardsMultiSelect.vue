@@ -14,7 +14,10 @@
       option-label="label"
       :options="availableAdditionalCards"
       :placeholder="$t('components.RecipientRoleAdditionalCardsMultiSelect.pickOneToFiveCards')"
-      :pt="{ 'labelContainer': 'flex justify-center items-center h-20' }"
+      :pt="{
+        'labelContainer': 'flex justify-center items-center h-20',
+        'chipItem': 'flex items-center bg-gray-800 rounded gap-2 px-2 py-1'
+      }"
       reset-filter-on-hide
       :selection-limit="5"
       :show-toggle-all="false"
@@ -34,12 +37,17 @@
 
       <template #chip="{ value }">
         <RoleImage
-          class="me-2"
           :role-name="value.roleName"
           size="small"
         />
 
         <span>{{ value.label }}</span>
+
+        <PrimeVueButton
+          class="p-button-rounded p-button-sm p-button-text remove-additional-card-button"
+          icon="fa fa-times z-10"
+          @click.stop="onClickFromRemoveAdditionalCardButton(value)"
+        />
       </template>
     </PrimeVueMultiSelect>
   </div>
@@ -95,5 +103,10 @@ function isRoleAvailableInCreateGameDto(roleName: RoleName): boolean {
     additionalCard.recipient !== props.recipientRoleName) === true;
 
   return !isRoleTakenAmongPlayers && !isRoleTakenAmongAdditionalCards;
+}
+
+function onClickFromRemoveAdditionalCardButton(additionalCard: CreateGameAdditionalCardDto): void {
+  const newAdditionalCards = selectedAdditionalCards.value.filter(card => card !== additionalCard);
+  createGameDtoStore.setAdditionalCardsForRecipientInCreateGameDto(newAdditionalCards, props.recipientRoleName);
 }
 </script>

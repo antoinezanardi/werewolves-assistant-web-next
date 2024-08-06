@@ -20,7 +20,7 @@ describe("Text Progress Spinner Component", () => {
 
   describe("Spinner", () => {
     it("should render spinner with aria label as text prop when rendered.", () => {
-      const spinner = wrapper.findComponent<ProgressSpinner>("[aria-label=\"Loading…\"]");
+      const spinner = wrapper.findComponent<typeof ProgressSpinner>("[aria-label=\"Loading…\"]");
 
       expect(spinner).toBeTruthy();
     });

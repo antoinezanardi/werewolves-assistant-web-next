@@ -8,7 +8,9 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Button from "primevue/button";
 import type MultiSelect from "primevue/multiselect";
+import type { MultiSelectProps } from "primevue/multiselect";
 import type { LabeledCreateGameAdditionalCardDto, RecipientRoleAdditionalCardsMultiSelectProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/recipient-role-additional-cards-multi-select.types";
 import RecipientRoleAdditionalCardsMultiSelect from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/RecipientRoleAdditionalCardsMultiSelect.vue";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
@@ -131,8 +133,9 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
         },
       ];
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("options")).toStrictEqual<LabeledCreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
+      expect(props.options).toStrictEqual<LabeledCreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
     });
 
     it("should pass more recipient available additional cards to multi select when there are no additional cards.", async() => {
@@ -170,20 +173,23 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
         },
       ];
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("options")).toStrictEqual<LabeledCreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
+      expect(props.options).toStrictEqual<LabeledCreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
     });
 
     it("should translate empty filter message when rendered.", () => {
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("emptyFilterMessage")).toBe("No role found");
+      expect(props.emptyFilterMessage).toBe("No role found");
     });
 
     it("should translate filter placeholder when rendered.", () => {
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("filterPlaceholder")).toBe("Search for a role");
+      expect(props.filterPlaceholder).toBe("Search for a role");
     });
 
     it("should pass selected recipient additional cards to multi select when recipient has selected cards already.", () => {
@@ -194,8 +200,9 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
         }),
       ];
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("modelValue")).toStrictEqual<CreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
+      expect(props.modelValue).toStrictEqual<CreateGameAdditionalCardDto[]>(expectedRecipientAdditionalCards);
     });
 
     it("should update create game dto additional cards when multi select emit update model value event.", async() => {
@@ -218,14 +225,42 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
       createGameDtoStore.createGameDto.additionalCards = [];
       await nextTick();
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("invalid")).toBeTruthy();
+      expect(props.invalid).toBeTruthy();
     });
 
     it("should not set invalid when there are additional cards for recipient role.", () => {
       const multiSelect = wrapper.findComponent<typeof MultiSelect>("#recipient-role-additional-cards-multi-select");
+      const props = multiSelect.props() as MultiSelectProps;
 
-      expect(multiSelect.props("invalid")).toBeFalsy();
+      expect(props.invalid).toBeFalsy();
+    });
+
+    it("should remove card when click on remove button.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.additionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          roleName: "pied-piper",
+          recipient: "thief",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          roleName: "seer",
+          recipient: "thief",
+        }),
+      ];
+      await nextTick();
+      const removeAdditionalCardButtons = wrapper.findAllComponents<typeof Button>(".remove-additional-card-button");
+      const secondButton = removeAdditionalCardButtons[1];
+      await secondButton.trigger("click");
+      const newAdditionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          roleName: "pied-piper",
+          recipient: "thief",
+        }),
+      ];
+
+      expect(createGameDtoStore.setAdditionalCardsForRecipientInCreateGameDto).toHaveBeenCalledExactlyOnceWith(newAdditionalCards, "thief");
     });
   });
 });

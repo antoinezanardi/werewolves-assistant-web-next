@@ -25,6 +25,10 @@ When(/^the user clicks on the game options button in the lobby$/u, async functio
   await clickOnRoleWithText(this, "button", "Game options");
 });
 
+When(/^the user clicks on the additional cards manager button in the lobby$/u, async function(this: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(this, "button", "Additional cards");
+});
+
 When(/^the user generates a random composition and starts the game in the lobby$/u, async function(this: CustomWorld): Promise<void> {
   await generateRandomCompositionInLobby(this);
   await createGameInLobby(this);

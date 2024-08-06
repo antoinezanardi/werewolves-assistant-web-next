@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog from "primevue/dialog";
+import Dialog, { type DialogProps } from "primevue/dialog";
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
 import type GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
@@ -41,8 +41,9 @@ describe("Game Lobby Options Hub Component", () => {
     it("should set dialog to invisible when rendered.", async() => {
       await mountGameLobbyOptionsHubComponent({ shallow: true });
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeFalsy();
+      expect(props.visible).toBeFalsy();
     });
 
     describe("Game Lobby Options Hub Header", () => {
@@ -78,8 +79,9 @@ describe("Game Lobby Options Hub Component", () => {
 
     it("should set dialog to visible when opened.", () => {
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeTruthy();
+      expect(props.visible).toBeTruthy();
     });
 
     describe("Game Lobby Options Hub Header", () => {
@@ -110,8 +112,9 @@ describe("Game Lobby Options Hub Component", () => {
         (dialogFooterCloseButtonOnly.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+        const props = dialog.props() as DialogProps;
 
-        expect(dialog.props("visible")).toBeFalsy();
+        expect(props.visible).toBeFalsy();
       });
     });
   });

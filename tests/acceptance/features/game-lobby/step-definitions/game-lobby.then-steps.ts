@@ -23,3 +23,15 @@ Then(/^the player with name "(?<name>.+?)" should have the "(?<role>.+?)" role i
 Then(/^the player with name "(?<name>.+?)" should not have a role in the lobby$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await expect(this.page.getByTestId(`game-lobby-player-card-${name}`)).toContainText("Role not selected");
 });
+
+Then(/^the game lobby additional cards manager button should be hidden in the lobby$/u, async function(this: CustomWorld): Promise<void> {
+  const button = this.page.getByRole("button", { name: "Additional cards" });
+
+  await expect(button).toBeHidden();
+});
+
+Then(/^the game lobby additional cards manager button should be visible in the lobby$/u, async function(this: CustomWorld): Promise<void> {
+  const button = this.page.getByRole("button", { name: "Additional cards" });
+
+  await expect(button).toBeVisible();
+});

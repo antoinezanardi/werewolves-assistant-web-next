@@ -3,7 +3,7 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog from "primevue/dialog";
+import Dialog, { type DialogProps } from "primevue/dialog";
 import type { GameLobbyPositionCoordinatorExposed } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/game-lobby-position-coordinator.types";
 import GameLobbyPositionCoordinator from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinator.vue";
 import type GameLobbyPositionCoordinatorChart from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/GameLobbyPositionCoordinatorChart.vue";
@@ -43,8 +43,9 @@ describe("Game Lobby Position Coordinator Component", () => {
     it("should set dialog to invisible when rendered.", async() => {
       await mountGameLobbyPositionCoordinatorComponent({ shallow: true });
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeFalsy();
+      expect(props.visible).toBeFalsy();
     });
 
     describe("Dialog Header Title Only", () => {
@@ -86,8 +87,9 @@ describe("Game Lobby Position Coordinator Component", () => {
 
     it("should set dialog to visible when opened.", () => {
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeTruthy();
+      expect(props.visible).toBeTruthy();
     });
 
     describe("Dialog Header Title Only", () => {
@@ -124,8 +126,9 @@ describe("Game Lobby Position Coordinator Component", () => {
         (dialogFooterCloseButtonOnly.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+        const props = dialog.props() as DialogProps;
 
-        expect(dialog.props("visible")).toBeFalsy();
+        expect(props.visible).toBeFalsy();
       });
     });
   });

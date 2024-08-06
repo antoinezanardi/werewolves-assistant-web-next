@@ -4,7 +4,7 @@
       id="game-lobby-player-input-group"
       class="mt-3"
     >
-      <span class="p-float-label">
+      <PrimeVueFloatLabel>
         <PrimeVueInputText
           id="player-name-input"
           v-model="inputValue"
@@ -19,7 +19,7 @@
         <label for="player-name-input">
           {{ $t("components.GameLobbyPlayerInput.playerName") }}
         </label>
-      </span>
+      </PrimeVueFloatLabel>
 
       <PrimeVueButton
         id="add-player-button"

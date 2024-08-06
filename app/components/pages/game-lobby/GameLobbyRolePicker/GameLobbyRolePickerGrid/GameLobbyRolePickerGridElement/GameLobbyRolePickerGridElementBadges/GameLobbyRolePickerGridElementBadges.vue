@@ -8,7 +8,7 @@
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInAdditionalCards')"
       class="-right-4 absolute top-1"
       data-testid="game-lobby-role-picker-role-count-in-additional-cards-badge"
-      severity="warning"
+      severity="warn"
     >
       <i class="fa fa-clover me-2"/>
 

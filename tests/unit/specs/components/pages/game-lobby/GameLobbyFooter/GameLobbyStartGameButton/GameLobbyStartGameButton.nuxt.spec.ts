@@ -273,7 +273,7 @@ describe("Game Lobby Start Game Button Component", () => {
       it("should not be loading when fetch returned.", async() => {
         const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
         (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("confirm-start-game");
-        const button = wrapper.findComponent<Button>(".start-game-button");
+        const button = wrapper.findComponent<typeof Button>(".start-game-button");
         await flushPromises();
 
         expect(button.attributes("loading")).toBe("false");

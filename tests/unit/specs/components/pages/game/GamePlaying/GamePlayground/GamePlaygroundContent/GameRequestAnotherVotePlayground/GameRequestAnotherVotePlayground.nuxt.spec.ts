@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { ToggleButtonProps } from "primevue/togglebutton";
 import type ToggleButton from "primevue/togglebutton";
 import { expect } from "vitest";
 
@@ -35,22 +36,24 @@ describe("Game Request Another Vote Playground Component", () => {
     it("should translate off button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");
+      const props = toggleButton.props() as ToggleButtonProps;
 
-      expect(toggleButton.props("offLabel")).toBe("He doesn't request another vote");
+      expect(props.offLabel).toBe("He doesn't request another vote");
     });
 
     it("should translate on button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");
+      const props = toggleButton.props() as ToggleButtonProps;
 
-      expect(toggleButton.props("onLabel")).toBe("He requests another vote");
+      expect(props.onLabel).toBe("He requests another vote");
     });
 
     it("should set the does request another vote value to true in dto when the toggle button emits true change event.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-judge-request-another-vote-button > .p-togglebutton-input");
-      await toggleButtonCheckbox.setValue(true);
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-judge-request-another-vote-button.p-togglebutton");
+      await toggleButtonCheckbox.trigger("click");
 
       expect(makeGamePlayDtoStore.setDoesJudgeRequestAnotherVote).toHaveBeenCalledExactlyOnceWith(true);
     });
@@ -58,9 +61,9 @@ describe("Game Request Another Vote Playground Component", () => {
     it("should set the does request another vote value to false in dto when the toggle button emits first true then false change event.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
-      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-judge-request-another-vote-button > .p-togglebutton-input");
-      await toggleButtonCheckbox.setValue(true);
-      await toggleButtonCheckbox.setValue(false);
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-judge-request-another-vote-button.p-togglebutton");
+      await toggleButtonCheckbox.trigger("click");
+      await toggleButtonCheckbox.trigger("click");
 
       expect(makeGamePlayDtoStore.setDoesJudgeRequestAnotherVote).toHaveBeenNthCalledWith(1, true);
       expect(makeGamePlayDtoStore.setDoesJudgeRequestAnotherVote).toHaveBeenNthCalledWith(2, false);

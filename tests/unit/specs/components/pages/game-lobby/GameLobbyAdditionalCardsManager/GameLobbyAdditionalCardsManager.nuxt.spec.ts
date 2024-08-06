@@ -4,6 +4,7 @@ import type { mount } from "@vue/test-utils";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Dialog from "primevue/dialog";
+import type { DialogProps } from "primevue/dialog";
 import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import type GameLobbyAdditionalCardsManagerContent from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/GameLobbyAdditionalCardsManagerContent.vue";
@@ -41,8 +42,9 @@ describe("Game Lobby Additional Cards Manager Component", () => {
     it("should set dialog to invisible when rendered.", async() => {
       await mountGameLobbyAdditionalCardsManagerComponent({ shallow: true });
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeFalsy();
+      expect(props.visible).toBeFalsy();
     });
 
     describe("Dialog Header Title Only", () => {
@@ -78,8 +80,9 @@ describe("Game Lobby Additional Cards Manager Component", () => {
 
     it("should set dialog to visible when rendered.", () => {
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeTruthy();
+      expect(props.visible).toBeTruthy();
     });
 
     describe("Dialog Header Title Only", () => {
@@ -110,8 +113,9 @@ describe("Game Lobby Additional Cards Manager Component", () => {
         (dialogFooterCloseButtonOnly.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+        const props = dialog.props() as DialogProps;
 
-        expect(dialog.props("visible")).toBeFalsy();
+        expect(props.visible).toBeFalsy();
       });
     });
   });

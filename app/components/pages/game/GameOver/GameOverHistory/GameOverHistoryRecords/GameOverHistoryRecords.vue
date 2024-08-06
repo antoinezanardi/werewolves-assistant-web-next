@@ -1,9 +1,8 @@
 <template>
   <PrimeVueTimeline
     id="game-over-history-records"
-    align="left"
     class="w-full"
-    :pt="{ 'opposite': '!flex-none !w-24' }"
+    :pt="{ 'eventOpposite': '!flex-none !w-24' }"
     :value="gameHistoryRecords"
   >
     <template #opposite="slotProps">
