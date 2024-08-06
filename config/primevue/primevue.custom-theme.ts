@@ -158,6 +158,10 @@ const badgeColorScheme = {
     background: successColor,
     color: "{white}",
   },
+  warn: {
+    background: helpColor,
+    color: "{white}",
+  },
 };
 
 const accordionColorScheme = {

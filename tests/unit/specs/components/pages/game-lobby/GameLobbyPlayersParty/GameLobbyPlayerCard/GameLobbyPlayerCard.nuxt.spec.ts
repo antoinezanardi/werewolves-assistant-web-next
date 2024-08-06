@@ -70,6 +70,14 @@ describe("Game Lobby Player Card Component", () => {
 
       expect(createGameDtoStore.removePlayerFromCreateGameDto).toHaveBeenCalledExactlyOnceWith(defaultProps.player.name);
     });
+
+    it("should remove obsolete additional cards when player is removed from party.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const deleteButton = wrapper.findComponent<typeof Button>("[aria-label='Remove player Toto']");
+      await deleteButton.trigger("click");
+
+      expect(createGameDtoStore.removeObsoleteAdditionalCardsFromCreateGameDto).toHaveBeenCalledExactlyOnceWith();
+    });
   });
 
   describe("Role", () => {

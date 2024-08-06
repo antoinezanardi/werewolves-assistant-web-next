@@ -5,6 +5,7 @@ exports[`Game Lobby Role Picker Description Boundaries Component > should match 
   <div id="role-count-in-party" class="flex gap-2 items-center"><i class="fa-chess-pawn fas text-center text-info w-4"></i><span id="role-count">components.GameLobbyRolePickerDescriptionBoundaries.roleCountInParty, {"count":2}</span>
     <!--v-if-->
   </div>
+  <!--v-if-->
   <div id="recommended-role-min-in-game" class="flex gap-2 items-center"><i class="fa-chess fas text-center text-warning w-4"></i><span>components.GameLobbyRolePickerDescriptionBoundaries.recommendedMinPlayers, {"count":5}</span></div>
   <div id="min-in-game-not-reached" class="flex gap-2 items-center"><i class="fa-circle-exclamation fas text-center text-error w-4"></i><span>components.GameLobbyRolePickerDescriptionBoundaries.minInGameNotReached, {}</span></div>
 </div>"

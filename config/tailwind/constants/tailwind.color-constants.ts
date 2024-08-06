@@ -8,7 +8,7 @@ const SUCCESS_COLOR = colors.emerald[500];
 
 const ERROR_COLOR = colors.red[500];
 
-const WARNING_COLOR = colors.yellow[500];
+const WARNING_COLOR = colors.orange[600];
 
 const INFO_COLOR = colors.sky[500];
 

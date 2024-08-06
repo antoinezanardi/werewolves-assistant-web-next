@@ -22,6 +22,18 @@
     </div>
 
     <div
+      v-if="roleCountInGameAdditionalCardsCreateGameDto"
+      id="role-count-in-game-additional-cards"
+      class="flex gap-2 items-center"
+    >
+      <i class="fa-clover fas text-center text-warning w-4"/>
+
+      <span>
+        {{ t("components.GameLobbyRolePickerDescriptionBoundaries.roleCountInGameAdditionalCards", { "count": roleCountInGameAdditionalCardsCreateGameDto }) }}
+      </span>
+    </div>
+
+    <div
       v-if="pickedRole.recommendedMinPlayers"
       id="recommended-role-min-in-game"
       class="flex gap-2 items-center"
@@ -59,11 +71,14 @@ const {
   getRoleLeftCountToReachMinInCreateGameDto,
   isRoleMinReachedInCreateGameDto,
   isRoleMaxReachedInCreateGameDto,
+  getAdditionalCardsWithRoleNameInCreateGameDto,
 } = createGameDtoStore;
 
 const { t } = useI18n();
 
 const roleCountInCreateGameDto = computed<number>(() => getPlayersWithRoleNameInCreateGameDto(props.pickedRole.name).length);
+
+const roleCountInGameAdditionalCardsCreateGameDto = computed<number>(() => getAdditionalCardsWithRoleNameInCreateGameDto(props.pickedRole.name).length);
 
 const isRoleMinInGameReached = computed<boolean>(() => isRoleMinReachedInCreateGameDto(props.pickedRole.name));
 

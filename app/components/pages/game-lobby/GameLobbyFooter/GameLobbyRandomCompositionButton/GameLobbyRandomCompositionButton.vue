@@ -36,7 +36,10 @@ const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
-const { setPlayersToCreateGameDto } = createGameDtoStore;
+const {
+  setPlayersToCreateGameDto,
+  removeObsoleteAdditionalCardsFromCreateGameDto,
+} = createGameDtoStore;
 const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
@@ -58,14 +61,11 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,
-    excludedRoles: [
-      "thief",
-      "actor",
-      "prejudiced-manipulator",
-    ],
+    excludedRoles: ["prejudiced-manipulator"],
   });
   if (randomGameComposition !== null) {
     setPlayersToCreateGameDto(randomGameComposition);
+    removeObsoleteAdditionalCardsFromCreateGameDto();
   }
   isLoadingGetRandomGameComposition.value = false;
 }

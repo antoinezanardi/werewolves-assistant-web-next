@@ -1,4 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
@@ -39,6 +40,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       createFakeCreateGamePlayerDto(),
       createFakeCreateGamePlayerDto(),
     ]);
+    createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
     wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
   });
 
@@ -61,6 +63,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.isRoleMaxReachedInCreateGameDto.mockReturnValue(true);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
       const roleMaxReached = wrapper.find("#role-count-max-reached");
 
@@ -71,6 +74,28 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       const roleMaxReached = wrapper.find("#role-count-max-reached");
 
       expect(roleMaxReached.exists()).toBeFalsy();
+    });
+  });
+
+  describe("Role Count in Additional Cards", () => {
+    it("should render role count in additional cards when role is in additional cards.", async() => {
+      const pinia = createTestingPinia();
+      const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
+      createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([
+        createFakeCreateGameAdditionalCardDto(),
+        createFakeCreateGameAdditionalCardDto(),
+      ]);
+      wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
+      const roleCountInAdditionalCards = wrapper.find("#role-count-in-game-additional-cards");
+
+      expect(roleCountInAdditionalCards.text()).toBe(`components.GameLobbyRolePickerDescriptionBoundaries.roleCountInGameAdditionalCards, {"count":2}`);
+    });
+
+    it("should not render role count in additional cards when role is not in additional cards.", () => {
+      const roleCountInAdditionalCards = wrapper.find("#role-count-in-game-additional-cards");
+
+      expect(roleCountInAdditionalCards.exists()).toBeFalsy();
     });
   });
 
@@ -88,6 +113,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
         createFakeCreateGamePlayerDto(),
         createFakeCreateGamePlayerDto(),
       ]);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({
         props: { pickedRole: createFakeRole({ recommendedMinPlayers: undefined }) },
         global: { plugins: [pinia] },
@@ -105,6 +131,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(2);
       createGameDtoStore.isRoleMinReachedInCreateGameDto.mockReturnValue(false);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
       const roleMinNotReached = wrapper.find("#min-in-game-not-reached");
 
@@ -117,6 +144,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(2);
       createGameDtoStore.isRoleMinReachedInCreateGameDto.mockReturnValue(true);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
       const roleMinNotReached = wrapper.find("#min-in-game-not-reached");
 
@@ -129,6 +157,7 @@ describe("Game Lobby Role Picker Description Boundaries Component", () => {
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(2);
       createGameDtoStore.isRoleMinReachedInCreateGameDto.mockReturnValue(false);
+      createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerDescriptionBoundariesComponent({ global: { plugins: [pinia] } });
       const roleMinNotReached = wrapper.find("#min-in-game-not-reached");
 

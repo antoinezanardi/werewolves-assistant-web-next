@@ -114,6 +114,16 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >  
 >    ![Game Lobby Options Hub](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Options%20Hub%20on%20Roles%20tab.png)
 >  </details>
+>  <details>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards without cards</summary>
+>  
+>    ![Game Lobby Additional Cards without cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20without%20cards.png)
+>  </details>
+>  <details>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards with 5 cards</summary>
+>  
+>    ![Game Lobby Additional Cards with 5 cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20with%205%20cards.png)
+>  </details>
 </details>
 
 <details>

@@ -40,6 +40,9 @@ describe("Game Lobby Page", () => {
       gameLobbyPositionCoordinator: {
         open: Mock;
       };
+      gameLobbyAdditionalCardsManager: {
+        open: Mock;
+      };
     };
   };
 
@@ -50,6 +53,7 @@ describe("Game Lobby Page", () => {
         gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
         gameLobbyOptionsHub: { open: vi.fn() },
         gameLobbyPositionCoordinator: { open: vi.fn() },
+        gameLobbyAdditionalCardsManager: { open: vi.fn() },
       },
     };
 
@@ -71,6 +75,10 @@ describe("Game Lobby Page", () => {
           GameLobbyPositionCoordinator: {
             template: "<div id='game-lobby-position-coordinator-stub'></div>",
             methods: mocks.components.gameLobbyPositionCoordinator,
+          },
+          GameLobbyAdditionalCardsManager: {
+            template: "<div id='game-lobby-additional-cards-manager-stub'></div>",
+            methods: mocks.components.gameLobbyAdditionalCardsManager,
           },
         },
       },
@@ -179,6 +187,25 @@ describe("Game Lobby Page", () => {
       await getError(() => (gameLobbyHeader.vm as VueVm).$emit("position-coordinator-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Position Coordinator is not defined");
+    });
+  });
+
+  describe("Game Lobby Additional Cards Manager", () => {
+    it("should open game lobby additional cards manager when game lobby players party emits additional cards button click event.", async() => {
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      (gameLobbyHeader.vm as VueVm).$emit("additional-cards-manager-button-click");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyAdditionalCardsManager.open).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw error when game lobby header emits additional cards button click event but the additional cards manager is not found in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyAdditionalCardsManager: Ref }).gameLobbyAdditionalCardsManager.value = null;
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      await getError(() => (gameLobbyHeader.vm as VueVm).$emit("additional-cards-manager-button-click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Additional Cards Manager is not defined");
     });
   });
 

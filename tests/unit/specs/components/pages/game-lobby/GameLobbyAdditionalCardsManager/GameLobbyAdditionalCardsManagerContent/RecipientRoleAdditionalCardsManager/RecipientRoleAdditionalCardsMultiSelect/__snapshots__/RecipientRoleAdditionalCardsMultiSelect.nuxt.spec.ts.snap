@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Recipient Role Additional Cards Multi Select Component > should match snapshot when rendered without shallow rendering. 1`] = `
+"<div id="recipient-role-additional-cards-multi-select-container">
+  <div class="p-multiselect p-component p-inputwrapper p-multiselect-display-chip p-inputwrapper-filled w-full" id="recipient-role-additional-cards-multi-select" data-testid="recipient-role-additional-cards-multi-select-thief" data-pc-name="multiselect" data-pc-section="root" pc4="">
+    <div class="p-hidden-accessible" data-pc-section="hiddeninputcontainer" data-p-hidden-accessible="true"><input type="text" readonly="" placeholder="Pick one to five cards" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="recipient-role-additional-cards-multi-select_list" data-pc-section="hiddeninput"></div>
+    <div class="p-multiselect-label-container flex justify-center items-center h-20" data-pc-section="labelcontainer">
+      <div class="p-multiselect-label" data-pc-section="label"><span class="p-multiselect-chip-item flex items-center bg-gray-800 rounded gap-2 px-2 py-1" data-pc-section="chipitem"><img width="50" height="50" alt="shared.role.name.pied-piper" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" size="small" src="/svg/misc/infinite-spinner.svg"><span></span><button class="p-button p-component p-button-icon-only p-button-rounded p-button-sm p-button-text remove-additional-card-button" type="button" data-pc-name="button" data-p-disabled="false" data-testid="recipient-role-additional-cards-multi-select-remove-pied-piper-for-thief" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc3=""><span class="p-button-icon fa fa-times z-10" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label"> </span>
+          <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
+        </button></span>
+        <!---->
+      </div>
+    </div>
+    <div class="p-multiselect-dropdown" data-pc-section="dropdown"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-multiselect-dropdown-icon" aria-hidden="true" data-pc-section="dropdownicon">
+        <path d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z" fill="currentColor"></path>
+      </svg></div>
+    <!--teleport start-->
+    <!--teleport end-->
+  </div>
+</div>"
+`;
+
+exports[`Recipient Role Additional Cards Multi Select Component > should match snapshot when rendered. 1`] = `
+"<div id="recipient-role-additional-cards-multi-select-container">
+  <div class="p-multiselect p-component p-inputwrapper p-multiselect-display-chip p-inputwrapper-filled w-full" id="recipient-role-additional-cards-multi-select" data-testid="recipient-role-additional-cards-multi-select-thief" data-pc-name="multiselect" data-pc-section="root" pc1="">
+    <div class="p-hidden-accessible" data-pc-section="hiddeninputcontainer" data-p-hidden-accessible="true"><input type="text" readonly="" placeholder="Pick one to five cards" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="recipient-role-additional-cards-multi-select_list" data-pc-section="hiddeninput"></div>
+    <div class="p-multiselect-label-container flex justify-center items-center h-20" data-pc-section="labelcontainer">
+      <div class="p-multiselect-label" data-pc-section="label"><span class="p-multiselect-chip-item flex items-center bg-gray-800 rounded gap-2 px-2 py-1" data-pc-section="chipitem"><role-image-stub rolename="pied-piper" sizes="50px" definition="normal" size="small"></role-image-stub><span></span>
+        <button-stub class="p-button-rounded p-button-sm p-button-text remove-additional-card-button" data-testid="recipient-role-additional-cards-multi-select-remove-pied-piper-for-thief" icon="fa fa-times z-10"></button-stub></span>
+        <!---->
+      </div>
+    </div>
+    <div class="p-multiselect-dropdown" data-pc-section="dropdown">
+      <chevron-down-icon-stub class="p-multiselect-dropdown-icon" aria-hidden="true" data-pc-section="dropdownicon"></chevron-down-icon-stub>
+    </div>
+    <portal-stub appendto="body" disabled="false"></portal-stub>
+  </div>
+</div>"
+`;

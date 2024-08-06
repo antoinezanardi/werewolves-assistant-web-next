@@ -24,7 +24,7 @@ Feature: 🧭 Navigation bar
     Then the game section in parameters in navigation bar should be hidden
 
   Scenario: 🧭 Navigation bar displays the game section in parameters when the user is on the game page
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     Then the game section in parameters in navigation bar should be visible
