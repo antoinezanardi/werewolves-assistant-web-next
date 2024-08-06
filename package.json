@@ -83,7 +83,7 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/i18n": "^8.3.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@pinia/nuxt": "^0.5.2",
+    "@pinia/nuxt": "^0.5.3",
     "@pinia/testing": "^0.1.4",
     "@playwright/test": "^1.46.0",
     "@semantic-release/changelog": "^6.0.3",
