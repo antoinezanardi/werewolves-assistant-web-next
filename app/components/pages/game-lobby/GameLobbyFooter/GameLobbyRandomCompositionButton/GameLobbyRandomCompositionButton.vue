@@ -5,7 +5,7 @@
   >
     <PrimeVueButton
       class="random-composition-button"
-      :disabled="!isMinimumPlayersReached"
+      :disabled="isButtonDisabled"
       icon="fa-random fa"
       :label="buttonLabel"
       :loading="isLoadingGetRandomGameComposition"
@@ -44,6 +44,8 @@ const isLoadingGetRandomGameComposition = ref<boolean>(false);
 const buttonSize = computed<"large" | "small">(() => (isSmallerThanMd.value ? "small" : "large"));
 
 const buttonLabel = computed<string | undefined>(() => (isSmallerThanMd.value ? undefined : t("components.GameLobbyRandomCompositionButton.randomComposition")));
+
+const isButtonDisabled = computed<boolean>(() => !isMinimumPlayersReached.value || isLoadingGetRandomGameComposition.value);
 
 const containerTooltip = computed<string | undefined>(() => {
   if (!isMinimumPlayersReached.value) {

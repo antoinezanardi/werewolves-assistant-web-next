@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: { class: "dark-mode" },
       link: [
         {
           rel: "icon",
@@ -72,7 +73,7 @@ export default defineNuxtConfig({
     "~/plugins/vue-ellipse-progress/vue-ellipse-progress.client.ts",
   ],
   primevue: {
-    importTheme: { from: fileURLToPath(new URL("./config/primevue/custom-theme.ts", import.meta.url)) },
+    importTheme: { from: fileURLToPath(new URL("./config/primevue/primevue.custom-theme.ts", import.meta.url)) },
     components: {
       prefix: "PrimeVue",
       include: [

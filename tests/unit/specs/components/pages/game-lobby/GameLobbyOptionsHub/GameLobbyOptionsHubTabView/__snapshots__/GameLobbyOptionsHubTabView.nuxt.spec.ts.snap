@@ -1,28 +1,28 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Options Hub Tab View Component > should match snapshot when rendered. 1`] = `
-"<div class="p-tabview p-component" role="tablist" id="game-lobby-options-hub-tab-view" data-pc-name="tabview" data-pc-section="root">
-  <div class="p-tabview-nav-container" data-pc-section="navcontainer">
+"<div class="p-tabview p-component" role="tablist" id="game-lobby-options-hub-tab-view" data-pc-name="tabview" data-pc-section="root" pc94="">
+  <div class="p-tabview-tablist-container" data-pc-section="navcontainer">
     <!---->
-    <div class="p-tabview-nav-content" data-pc-section="navcontent">
-      <ul class="p-tabview-nav !border-none" data-pc-section="nav">
-        <li class="p-tabview-header p-highlight grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="true" data-pc-index="0" data-p-active="true"><a id="game-lobby-options-hub-tab-view_0_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="0" role="tab" aria-selected="true" aria-controls="game-lobby-options-hub-tab-view_0_content" data-pc-section="headeraction" data-pd-ripple="true">
+    <div class="p-tabview-tablist-scroll-container" data-pc-section="navcontent">
+      <ul class="p-tabview-tablist !border-none" data-pc-section="nav">
+        <li class="p-tabview-tablist-item p-tabview-tablist-item-active grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-active="true" data-pc-index="0"><a id="game-lobby-options-hub-tab-view_0_header_action" class="p-tabview-tab-header" tabindex="0" role="tab" aria-selected="true" aria-controls="game-lobby-options-hub-tab-view_0_content" data-pc-section="headeraction" data-pd-ripple="true" style="overflow: hidden; position: relative;">
             <!---->
             <div id="roles-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" src="/svg/misc/infinite-spinner.svg">
               <h3 id="roles-tab-header-text">Roles</h3>
-            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
-        <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="1" data-p-active="false"><a id="game-lobby-options-hub-tab-view_1_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true">
+        <li class="p-tabview-tablist-item grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-active="false" data-pc-index="1"><a id="game-lobby-options-hub-tab-view_1_header_action" class="p-tabview-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true" style="overflow: hidden; position: relative;">
             <!---->
             <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="composition-tab-header-text">Composition</h3>
-            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
-        <li class="p-tabview-header grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-highlight="false" data-pc-index="2" data-p-active="false"><a id="game-lobby-options-hub-tab-view_2_header_action" class="p-tabview-nav-link p-tabview-header-action" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_2_content" data-pc-section="headeraction" data-pd-ripple="true">
+        <li class="p-tabview-tablist-item grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-active="false" data-pc-index="2"><a id="game-lobby-options-hub-tab-view_2_header_action" class="p-tabview-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_2_content" data-pc-section="headeraction" data-pd-ripple="true" style="overflow: hidden; position: relative;">
             <!---->
             <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="votes-tab-header-text">Votes</h3>
-            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+            </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd3="" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
         <li class="p-tabview-ink-bar" role="presentation" aria-hidden="true" data-pc-section="inkbar" style="left: 0px;"></li>
       </ul>
@@ -32,38 +32,29 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
   <div class="p-tabview-panels" data-pc-section="panelcontainer">
     <div id="game-lobby-options-hub-tab-view_0_content" class="p-tabview-panel" role="tabpanel" aria-labelledby="game-lobby-options-hub-tab-view_0_header_action" data-pc-section="content" data-pc-name="tabpanel" data-pc-index="0" data-p-active="true">
       <div id="game-lobby-options-roles-tab" class="flex flex-col gap-6">
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-general" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-general" data-pc-name="fieldset" data-pc-section="root" pc4="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div class="flex gap-4 items-center"><img width="50" height="50" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-lobby-options-hub-roles-tab-general-title">General</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-general_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-general_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-general_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-general_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-forward text-yellow-200"></i><span>Skip the call if no target</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc1=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd4="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabGeneral.options.doSkipCallIfNoTarget.descriptions.no</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc2="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-skull text-gray-200"></i><span>Revealed on death</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc3=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd5="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.descriptions.yes</p>
                   <!--v-if-->
@@ -72,66 +63,50 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root" pc15="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" class="duration-300 ease-in-out transition-all" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-sheriff_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-sheriff_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-sheriff_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-sheriff_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-sheriff-is-enabled-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-crown text-amber-300"></i><span>Play with the Sheriff</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-sheriff-is-sheriff-enabled-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-sheriff-is-sheriff-enabled-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc5=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd6="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSheriff.options.isEnabled.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc6="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-gavel text-amber-800"></i><span>The Sheriff must settle the votes</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc7=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd7="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSheriff.options.mustSettleTieInVotes.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc8="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-balance-scale text-amber-500"></i><span>The Sheriff has a doubled vote</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc9=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd8="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSheriff.options.hasDoubledVote.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc10="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-sheriff-election-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock text-white"></i><span>Sheriff election time</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component mb-8 w-full" id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-moon !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Night</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-sheriff-election-turn-label" for="game-lobby-options-hub-roles-tab-sheriff-election-turn-input">Sheriff election turn</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-sheriff-election-turn-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="1"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-sheriff-election-turn-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 0%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 0%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="1" aria-valuemax="10" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component mb-8 w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc11=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-moon !text-white" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Night</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd9="" data-pc-name="ripple" data-pc-section="root"></span></button><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc13=""><label id="game-lobby-options-hub-roles-tab-sheriff-election-turn-label" for="game-lobby-options-hub-roles-tab-sheriff-election-turn-input">Sheriff election turn</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-sheriff-election-turn-input" data-pc-name="inputnumber" data-pc-section="root" pc12=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="1"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-sheriff-election-turn-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc14=""><span class="p-slider-range" style="position: absolute; width: 0%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 0%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="1" aria-valuemax="10" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
@@ -144,24 +119,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root" pc17="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.werewolf</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-werewolf_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-werewolf_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-werewolf_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-werewolf_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-utensils text-gray-500"></i><span>Werewolves can eat each other</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc16=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd10="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.no</p>
                   <!--v-if-->
@@ -170,24 +140,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-big-bad-wolf" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-big-bad-wolf" data-pc-name="fieldset" data-pc-section="root" pc19="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.big-bad-wolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.big-bad-wolf</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-big-bad-wolf_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-big-bad-wolf_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-big-bad-wolf_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-big-bad-wolf_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-700"></i><span>The Big Bad Wolf is powerless if a Werewolf dies</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc18=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd11="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabBigBadWolf.options.isPowerlessIfWerewolfDies.descriptions.yes</p>
                   <!--v-if-->
@@ -196,21 +161,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-white-werewolf" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-white-werewolf" data-pc-name="fieldset" data-pc-section="root" pc23="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.white-werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.white-werewolf</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-white-werewolf_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-white-werewolf_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-white-werewolf_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-white-werewolf_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock-rotate-left text-white"></i><span>White Werewolf waking up interval</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input">White Werewolf waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc21=""><label id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input">White Werewolf waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root" pc20=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc22=""><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
@@ -223,38 +187,29 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-seer" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-seer" data-pc-name="fieldset" data-pc-section="root" pc27="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.seer" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.seer</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-seer_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-seer_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-seer_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-seer_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-seer-is-talkative-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-comments text-purple-400"></i><span>The Seer is talkative</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-seer-is-talkative-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-seer-is-talkative-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc24=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd12="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc25="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-seer-can-see-roles-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye text-purple-400"></i><span>The Seer can see the roles</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-seer-can-see-roles-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-seer-can-see-roles-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc26=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd13="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.descriptions.yes</p>
                   <!--v-if-->
@@ -263,38 +218,29 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-cupid" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-cupid" data-pc-name="fieldset" data-pc-section="root" pc31="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.cupid" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.cupid</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-cupid_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-cupid_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-cupid_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-cupid_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-cupid-must-win-with-lovers-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-heart text-red-500"></i><span>Cupid must win with the Lovers</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-cupid-must-win-with-lovers-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-cupid-must-win-with-lovers-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc28=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd14="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabCupid.options.mustWinWithLovers.descriptions.no</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc29="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-cupid-do-lovers-reveal-role-to-each-other-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-hand-holding-heart text-red-500"></i><span>The Lovers reveal their role to each other</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-cupid-do-lovers-reveal-role-to-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-cupid-do-lovers-reveal-role-to-each-other-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc30=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd15="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabCupid.options.lovers.doRevealRoleToEachOther.descriptions.no</p>
                   <!--v-if-->
@@ -303,24 +249,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-little-girl" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-little-girl" data-pc-name="fieldset" data-pc-section="root" pc33="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.little-girl" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.little-girl</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-little-girl_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-little-girl_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-little-girl_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-little-girl_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-shield-alt text-blue-500"></i><span>The Little Girl is protected by the Defender</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc32=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd16="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.descriptions.no</p>
                   <!--v-if-->
@@ -329,24 +270,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-defender" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-defender" data-pc-name="fieldset" data-pc-section="root" pc35="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.defender" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.defender</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-defender_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-defender_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-defender_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-defender_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-defender-can-protect-twice-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-shield-heart text-amber-400"></i><span>The Defender can protect twice</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-defender-can-protect-twice-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-defender-can-protect-twice-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc34=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd17="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabDefender.options.canProtectTwice.descriptions.no</p>
                   <!--v-if-->
@@ -355,39 +291,34 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-elder" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-elder" data-pc-name="fieldset" data-pc-section="root" pc41="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.elder" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.elder</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-elder_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-elder_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-elder_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-elder_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-heart text-red-500"></i><span>The Elder lives count against the Werewolves</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-label" for="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input">The Elder lives count against the Werewolves</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc37=""><label id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-label" for="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input">The Elder lives count against the Werewolves</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input" data-pc-name="inputnumber" data-pc-section="root" pc36=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc38=""><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
                     </div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.description, {"livesCount":2}, 2</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc39="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bolt text-yellow-500"></i><span>The Elder takes his revenge</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc40=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd18="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.descriptions.yes</p>
                   <!--v-if-->
@@ -396,24 +327,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-idiot" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-idiot" data-pc-name="fieldset" data-pc-section="root" pc43="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.idiot" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.idiot</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-idiot_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-idiot_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-idiot_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-idiot_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-skull-crossbones text-red-500"></i><span>The revealed Idiot dies on Elder's death</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc42=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd19="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.descriptions.yes</p>
                   <!--v-if-->
@@ -422,21 +348,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-two-sisters" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-two-sisters" data-pc-name="fieldset" data-pc-section="root" pc47="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.two-sisters" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.two-sisters</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-two-sisters_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-two-sisters_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-two-sisters_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-two-sisters_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock-rotate-left text-pink-500"></i><span>Two Sisters waking up interval</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input">Two Sisters waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 40%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 40%;" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc45=""><label id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input">Two Sisters waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root" pc44=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc46=""><span class="p-slider-range" style="position: absolute; width: 40%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 40%;" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
@@ -449,21 +374,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-three-brothers" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-three-brothers" data-pc-name="fieldset" data-pc-section="root" pc51="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.three-brothers" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.three-brothers</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-three-brothers_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-three-brothers_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-three-brothers_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-three-brothers_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock-rotate-left text-blue-400"></i><span>Three Brothers waking up interval</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input">Three Brothers waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 40%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 40%;" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc49=""><label id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-label" for="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input">Three Brothers waking up interval</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input" data-pc-name="inputnumber" data-pc-section="root" pc48=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc50=""><span class="p-slider-range" style="position: absolute; width: 40%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 40%;" tabindex="0" role="slider" aria-valuemin="0" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
@@ -476,24 +400,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-fox" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-fox" data-pc-name="fieldset" data-pc-section="root" pc53="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.fox" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.fox</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-fox_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-fox_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-fox_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-fox_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Fox is powerless if he misses to sniff a Werewolf</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc52=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd20="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabFox.options.isPowerlessIfMissesWerewolf.descriptions.yes</p>
                   <!--v-if-->
@@ -502,24 +421,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-bear-tamer" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-bear-tamer" data-pc-name="fieldset" data-pc-section="root" pc55="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.bear-tamer" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.bear-tamer</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-bear-tamer_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-bear-tamer_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-bear-tamer_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-bear-tamer_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-paw text-amber-700"></i><span>The Bear Tamer growls on the Werewolves side</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc54=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd21="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabBearTamer.options.doesGrowlOnWerewolvesSide.descriptions.yes</p>
                   <!--v-if-->
@@ -528,21 +442,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-stuttering-judge" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-stuttering-judge" data-pc-name="fieldset" data-pc-section="root" pc59="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.stuttering-judge" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.stuttering-judge</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-stuttering-judge_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-stuttering-judge_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-stuttering-judge_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-stuttering-judge_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-gavel text-cyan-300"></i><span>Stuttering Judge vote requests</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-label" for="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input">Stuttering Judge vote requests</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="1"><!----><!----><!----></span></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 0%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 0%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="1" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc57=""><label id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-label" for="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input">Stuttering Judge vote requests</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input" data-pc-name="inputnumber" data-pc-section="root" pc56=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="1"><!----><!----><!----></span></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc58=""><span class="p-slider-range" style="position: absolute; width: 0%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 0%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="1" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div>
@@ -555,24 +468,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wild-child" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wild-child" data-pc-name="fieldset" data-pc-section="root" pc61="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.wild-child" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.wild-child</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-wild-child_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wild-child_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-wild-child_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wild-child_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-red-600"></i><span>The Wild Child's transformation is revealed</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc60=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd22="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWildChild.options.isTransformationRevealed.descriptions.no</p>
                   <!--v-if-->
@@ -581,38 +489,29 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wolf-hound" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wolf-hound" data-pc-name="fieldset" data-pc-section="root" pc65="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.wolf-hound" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.wolf-hound</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-wolf-hound_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wolf-hound_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-wolf-hound_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wolf-hound_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-dog text-red-600"></i><span>The Wolf-Hound's chosen side is revealed</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc62=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd23="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.descriptions.no</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc63="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-green-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc64=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd24="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.no</p>
                   <!--v-if-->
@@ -621,38 +520,29 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-thief" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-thief" data-pc-name="fieldset" data-pc-section="root" pc69="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.thief</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-thief_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-thief_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-thief_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-thief_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-hands-bound text-cyan-500"></i><span>The Thief must choose between only Werewolves</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc66=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd25="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabThief.options.mustChooseBetweenWerewolves.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc67="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-mask text-cyan-500"></i><span>The chosen card is revealed</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc68=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd26="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabThief.options.isChosenCardRevealed.descriptions.no</p>
                   <!--v-if-->
@@ -661,53 +551,44 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-pied-piper" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-pied-piper" data-pc-name="fieldset" data-pc-section="root" pc77="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.pied-piper" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.pied-piper</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-pied-piper_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-pied-piper_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-pied-piper_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-pied-piper_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-people-line text-pink-500"></i><span>Charmed people count per night</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label" for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input">Charmed people count per night</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc72=""><label id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label" for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input">Charmed people count per night</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input" data-pc-name="inputnumber" data-pc-section="root" pc70=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc71=""><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div></span>
                     </div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description, {"count":2}</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc73="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Pied Piper is powerless on the Werewolves side</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc74=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd27="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
-                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+                  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc75="">
                     <!---->
                   </div>
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-blue-500"></i><span>Charmed people are revealed</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc76=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd28="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no</p>
                   <!--v-if-->
@@ -716,21 +597,20 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-scandalmonger" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-scandalmonger" data-pc-name="fieldset" data-pc-section="root" pc81="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.scandalmonger" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.scandalmonger</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-scandalmonger_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-scandalmonger_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-scandalmonger_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-scandalmonger_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-feather text-cyan-700"></i><span>Mark penalty</span></h3>
-                    <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-label" for="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input">Mark penalty</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span>
-                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
+                    <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc80=""><label id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-label" for="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input">Mark penalty</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input" data-pc-name="inputnumber" data-pc-section="root" pc78=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="2"><!----><!----><!----></span>
+                      <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc79=""><span class="p-slider-range" style="position: absolute; width: 25%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 25%;" tabindex="0" role="slider" aria-valuemin="1" aria-valuenow="2" aria-valuemax="5" aria-orientation="horizontal" data-pc-section="handle"></span>
                         <!---->
                         <!---->
                       </div></span>
@@ -743,24 +623,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-witch" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-witch" data-pc-name="fieldset" data-pc-section="root" pc83="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.witch" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.witch</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-witch_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-witch_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-witch_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-witch_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-wand-sparkles text-orange-600"></i><span>The Witch knows the Werewolves targets</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc82=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd29="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWitch.options.doesKnowWerewolvesTargets.descriptions.yes</p>
                   <!--v-if-->
@@ -769,24 +644,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-prejudiced-manipulator" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-prejudiced-manipulator" data-pc-name="fieldset" data-pc-section="root" pc85="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.prejudiced-manipulator" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.prejudiced-manipulator</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-prejudiced-manipulator_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-prejudiced-manipulator_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-prejudiced-manipulator_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-prejudiced-manipulator_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Prejudiced Manipulator is powerless on the Werewolves side</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc84=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd30="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPrejudicedManipulator.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
                   <!--v-if-->
@@ -795,24 +665,19 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
             </div>
           </transition-stub>
         </fieldset>
-        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-actor" data-pc-name="fieldset" data-pc-section="root">
+        <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-actor" data-pc-name="fieldset" data-pc-section="root" pc87="">
           <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
             <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.actor" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.actor</h2>
             </div>
-            <!---->
           </legend>
           <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-            <div id="game-lobby-options-hub-roles-tab-actor_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-actor_header" data-pc-section="toggleablecontent">
+            <div id="game-lobby-options-hub-roles-tab-actor_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-actor_header" data-pc-section="contentcontainer">
               <div class="p-fieldset-content" data-pc-section="content">
                 <div id="game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
                     <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Actor is powerless on the Werewolves side</span></h3>
-                    <div id="game-option-input" class="w-4/12">
-                      <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                        <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-                      </div>
-                    </div>
+                    <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc86=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd31="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabActor.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
                   <!--v-if-->
@@ -828,11 +693,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         <div id="game-lobby-options-hub-composition-tab-is-hidden-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
             <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye-slash text-green-400"></i><span>Composition is hidden</span></h3>
-            <div id="game-option-input" class="w-4/12">
-              <div class="p-togglebutton p-component w-full" id="game-lobby-options-hub-composition-tab-is-hidden-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="false" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" data-pc-section="input" value="false">
-                <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-down !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">No</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-              </div>
-            </div>
+            <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-composition-tab-is-hidden-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc88=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd32="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no</p>
           <!--v-if-->
@@ -844,22 +705,18 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         <div id="game-lobby-options-hub-votes-tab-can-be-skipped-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
             <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-forward text-blue-300"></i><span>Votes can be skipped</span></h3>
-            <div id="game-option-input" class="w-4/12">
-              <div class="p-togglebutton p-component p-highlight w-full" id="game-lobby-options-hub-votes-tab-can-be-skipped-input" data-pc-name="togglebutton" data-pc-section="root" data-p-highlight="true" data-p-disabled="false"><input type="checkbox" role="switch" class="p-togglebutton-input" checked="" data-pc-section="input" value="true">
-                <div class="p-button p-component" data-pc-section="box" data-pd-ripple="true"><span class="p-button-icon p-button-icon-left fa fa-thumbs-up !text-white" data-pc-section="icon"></span><span class="p-button-label" data-pc-section="label">Yes</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span></div>
-              </div>
-            </div>
+            <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component p-togglebutton-checked w-full" aria-pressed="true" id="game-lobby-options-hub-votes-tab-can-be-skipped-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="true" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc89=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-up" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">Yes</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd33="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
-          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root">
+          <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left !my-4" style="justify-content: center;" role="separator" aria-orientation="horizontal" id="game-option-bottom-divider" data-pc-name="divider" data-pc-section="root" pc90="">
             <!---->
           </div>
         </div>
         <div id="game-lobby-options-hub-roles-tab-votes-duration-input-group" class="mt-8">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
             <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-clock text-yellow-500"></i><span>Votes duration in seconds</span></h3>
-            <div id="game-option-input" class="w-4/12"><span class="p-float-label" data-pc-name="floatlabel" data-pc-section="root"><label id="game-lobby-options-hub-roles-tab-votes-duration-label" for="game-lobby-options-hub-roles-tab-votes-duration-input">Votes duration in seconds</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-votes-duration-input" data-pc-name="inputnumber" data-pc-section="root"><input class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="10" aria-valuemax="600" aria-valuenow="180" inputmode="numeric" data-pc-name="input" data-pc-extend="inputtext" data-pc-section="root" value="180"><!----><!----><!----></span>
-              <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-votes-duration-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false"><span class="p-slider-range" style="position: absolute; width: 28.8135593220339%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 28.8135593220339%;" tabindex="0" role="slider" aria-valuemin="10" aria-valuenow="180" aria-valuemax="600" aria-orientation="horizontal" data-pc-section="handle"></span>
+            <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc93=""><label id="game-lobby-options-hub-roles-tab-votes-duration-label" for="game-lobby-options-hub-roles-tab-votes-duration-input">Votes duration in seconds</label><span class="p-inputnumber p-component p-inputwrapper p-inputwrapper-filled w-full" id="game-lobby-options-hub-roles-tab-votes-duration-input" data-pc-name="inputnumber" data-pc-section="root" pc91=""><input type="text" class="p-inputtext p-component p-inputnumber-input" role="spinbutton" aria-valuemin="10" aria-valuemax="600" aria-valuenow="180" inputmode="numeric" data-pc-name="pcinput" data-pc-extend="inputtext" data-pc-section="root" value="180"><!----><!----><!----></span>
+              <div class="p-slider p-component p-slider-horizontal mt-4 w-full" id="game-lobby-options-hub-roles-tab-votes-duration-slider" data-pc-name="slider" data-pc-section="root" data-p-sliding="false" pc92=""><span class="p-slider-range" style="position: absolute; width: 28.8135593220339%;" data-pc-section="range"></span><span class="p-slider-handle" style="position: absolute; left: 28.8135593220339%;" tabindex="0" role="slider" aria-valuemin="10" aria-valuenow="180" aria-valuemax="600" aria-orientation="horizontal" data-pc-section="handle"></span>
                 <!---->
                 <!---->
               </div></span>

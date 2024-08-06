@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import Accordion from "primevue/accordion";
-import type { AccordionTabPassThroughOptions } from "primevue/accordiontab";
+import type { AccordionTabPassThroughOptions, AccordionTabProps } from "primevue/accordiontab";
 import AccordionTab from "primevue/accordiontab";
 import { nextTick } from "vue";
 
@@ -103,10 +103,13 @@ describe("About Available Roles Component", () => {
         const expectedWerewolfPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedWerewolfAriaLabel } };
         const expectedAngelPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedAngelAriaLabel } };
         const expectedAccursedWolfFatherPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedAccursedWolfFatherAriaLabel } };
+        const firstProps = availableRolesAccordionTabs[0].props() as AccordionTabProps;
+        const secondProps = availableRolesAccordionTabs[1].props() as AccordionTabProps;
+        const thirdProps = availableRolesAccordionTabs[2].props() as AccordionTabProps;
 
-        expect(availableRolesAccordionTabs[0].props("pt")).toStrictEqual<AccordionTabPassThroughOptions>(expectedWerewolfPassThroughOptions);
-        expect(availableRolesAccordionTabs[1].props("pt")).toStrictEqual<AccordionTabPassThroughOptions>(expectedAngelPassThroughOptions);
-        expect(availableRolesAccordionTabs[2].props("pt")).toStrictEqual<AccordionTabPassThroughOptions>(expectedAccursedWolfFatherPassThroughOptions);
+        expect(firstProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedWerewolfPassThroughOptions);
+        expect(secondProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedAngelPassThroughOptions);
+        expect(thirdProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedAccursedWolfFatherPassThroughOptions);
       });
 
       it("should render roles accordion tabs with header images when roles are set.", () => {

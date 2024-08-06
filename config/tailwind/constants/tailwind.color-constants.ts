@@ -10,7 +10,7 @@ const ERROR_COLOR = colors.red[500];
 
 const WARNING_COLOR = colors.yellow[500];
 
-const INFO_COLOR = colors.cyan[600];
+const INFO_COLOR = colors.sky[500];
 
 const DAY_COLOR = colors.yellow[500];
 

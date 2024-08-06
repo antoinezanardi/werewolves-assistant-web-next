@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog from "primevue/dialog";
+import Dialog, { type DialogProps } from "primevue/dialog";
 
 import type { GameOverHistoryExposed } from "~/components/pages/game/GameOver/GameOverHistory/game-over-history.types";
 import GameOverHistory from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistory.vue";
@@ -40,8 +40,9 @@ describe("Game Over History Component", () => {
     it("should set dialog to invisible when rendered.", async() => {
       await mountGameOverHistoryComponent({ shallow: true });
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeFalsy();
+      expect(props.visible).toBeFalsy();
     });
 
     describe("Game Over History Header", () => {
@@ -77,8 +78,9 @@ describe("Game Over History Component", () => {
 
     it("should set dialog to visible when showGameHistory is called.", () => {
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeTruthy();
+      expect(props.visible).toBeTruthy();
     });
 
     describe("Game Over History Header", () => {
@@ -109,8 +111,9 @@ describe("Game Over History Component", () => {
         (gameOverHistoryFooter.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+        const props = dialog.props() as DialogProps;
 
-        expect(dialog.props("visible")).toBeFalsy();
+        expect(props.visible).toBeFalsy();
       });
     });
   });

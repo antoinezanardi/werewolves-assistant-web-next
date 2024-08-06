@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`NavBar Component > should match snapshot when rendered. 1`] = `
-"<nav data-v-88649fe9="" id="navbar" aria-label="Navigation bar" class="flex items-center justify-between py-1" role="navigation">
+"<nav data-v-88649fe9="" id="navbar" aria-label="Navigation bar" class="bg-gray-900 border-b border-b-slate-800 flex items-center justify-between py-1" role="navigation">
   <nuxt-link-stub data-v-88649fe9="" to="/" id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"></nuxt-link-stub>
   <div data-v-88649fe9="" class="flex gap-4 items-center">
     <transition-stub data-v-88649fe9="" mode="out-in" name="fade" appear="false" persisted="false" css="true">

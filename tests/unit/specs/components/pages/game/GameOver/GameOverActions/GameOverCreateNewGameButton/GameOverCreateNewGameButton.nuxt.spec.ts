@@ -81,6 +81,8 @@ describe("Game Over Create New Game Button Component", () => {
           acceptIcon: "fa fa-check",
           rejectLabel: "shared.no",
           rejectIcon: "fa fa-times",
+          rejectClass: "p-button-secondary",
+          defaultFocus: "accept",
           icon: "fa fa-question-circle",
           message: "components.GameOverCreateNewGameButton.createNewGameWithSamePlayers",
           accept: expect.any(Function) as () => void,

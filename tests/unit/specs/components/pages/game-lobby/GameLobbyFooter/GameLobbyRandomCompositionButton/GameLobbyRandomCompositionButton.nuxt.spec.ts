@@ -78,7 +78,7 @@ describe("Game Lobby Random Composition Button Component", () => {
 
     describe("Button", () => {
       it("should have label when screen is not smaller than md.", () => {
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("label")).toBe("components.GameLobbyRandomCompositionButton.randomComposition");
       });
@@ -86,13 +86,13 @@ describe("Game Lobby Random Composition Button Component", () => {
       it("should not have label when screen is smaller than md.", async() => {
         isSmallerThanMd.value = true;
         await nextTick();
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("label")).toBeUndefined();
       });
 
       it("should have large size when screen is not smaller than md.", () => {
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("size")).toBe("large");
       });
@@ -100,7 +100,7 @@ describe("Game Lobby Random Composition Button Component", () => {
       it("should have small size when screen is smaller than md.", async() => {
         isSmallerThanMd.value = true;
         await nextTick();
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("size")).toBe("small");
       });
@@ -109,7 +109,7 @@ describe("Game Lobby Random Composition Button Component", () => {
         const createGameDtoStore = useCreateGameDtoStore();
         createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });
         await nextTick();
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("disabled")).toBe("true");
       });
@@ -125,7 +125,7 @@ describe("Game Lobby Random Composition Button Component", () => {
           ],
         });
         await nextTick();
-        const button = wrapper.findComponent<Button>(".random-composition-button");
+        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("disabled")).toBe("false");
       });
@@ -145,7 +145,7 @@ describe("Game Lobby Random Composition Button Component", () => {
 
         it("should fetch random game composition when clicked.", async() => {
           const createGameDtoStore = useCreateGameDtoStore();
-          const button = wrapper.findComponent<Button>(".random-composition-button");
+          const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           await button.trigger("click");
           await nextTick();
 
@@ -168,7 +168,7 @@ describe("Game Lobby Random Composition Button Component", () => {
             createFakeCreateGamePlayerDto({ name: "Player 4" }),
           ];
           mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
-          const button = wrapper.findComponent<Button>(".random-composition-button");
+          const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           await button.trigger("click");
           await nextTick();
           mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
@@ -188,7 +188,7 @@ describe("Game Lobby Random Composition Button Component", () => {
           });
           await nextTick();
           mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(null);
-          const button = wrapper.findComponent<Button>(".random-composition-button");
+          const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           await button.trigger("click");
           await nextTick();
 
@@ -196,14 +196,14 @@ describe("Game Lobby Random Composition Button Component", () => {
         });
 
         it("should be loading when fetch is in progress.", () => {
-          const button = wrapper.findComponent<Button>(".random-composition-button");
+          const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           void button.trigger("click");
 
           expect((wrapper.vm as unknown as { isLoadingGetRandomGameComposition: Ref<boolean> }).isLoadingGetRandomGameComposition.value).toBeTrue();
         });
 
         it("should not be loading when fetch returned.", async() => {
-          const button = wrapper.findComponent<Button>(".random-composition-button");
+          const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           await button.trigger("click");
 
           expect(button.attributes("loading")).toBe("false");

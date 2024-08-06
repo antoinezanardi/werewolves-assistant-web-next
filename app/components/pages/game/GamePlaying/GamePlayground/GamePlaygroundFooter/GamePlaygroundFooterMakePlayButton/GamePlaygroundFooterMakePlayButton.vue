@@ -7,7 +7,7 @@
     <PrimeVueButton
       id="make-play-button"
       class="uppercase w-full"
-      :disabled="!canMakeGamePlay"
+      :disabled="isButtonDisabled"
       icon="fa fa-play"
       :label="$t('components.GamePlaygroundFooterMakePlayButton.makePlay')"
       :loading="isLoadingMakePlay"
@@ -49,6 +49,8 @@ const { t } = useI18n();
 const isLoadingMakePlay = ref<boolean>(false);
 
 const canClickMakePlayButton = computed<boolean>(() => canMakeGamePlay.value && !isLoadingMakePlay.value);
+
+const isButtonDisabled = computed<boolean>(() => !canMakeGamePlay.value || isLoadingMakePlay.value);
 
 const buttonTooltipOptions = computed<TooltipOptions>(() => {
   const enterImgUrl = img("svg/keyboard/enter-key.svg");

@@ -39,7 +39,7 @@ describe("Role Type Badge Component", () => {
     });
 
     it("should translate role type when rendered.", () => {
-      const badge = wrapper.findComponent<Badge>(".role-type-badge");
+      const badge = wrapper.findComponent<typeof Badge>(".role-type-badge");
 
       expect(badge.attributes("value")).toBe("Werewolf");
     });
@@ -71,7 +71,7 @@ describe("Role Type Badge Component", () => {
       },
     ])("$test", async({ roleType, expectedSeverity }) => {
       await wrapper.setProps({ roleType });
-      const badge = wrapper.findComponent<Badge>(".role-type-badge");
+      const badge = wrapper.findComponent<typeof Badge>(".role-type-badge");
 
       expect(badge.attributes("severity")).toBe(expectedSeverity);
     });
