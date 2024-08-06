@@ -2,11 +2,11 @@
 
 exports[`Recipient Role Additional Cards Multi Select Component > should match snapshot when rendered. 1`] = `
 "<div id="recipient-role-additional-cards-multi-select-container">
-  <div class="p-multiselect p-component p-inputwrapper p-multiselect-display-chip p-inputwrapper-filled w-full" id="recipient-role-additional-cards-multi-select" data-pc-name="multiselect" data-pc-section="root" pc1="">
+  <div class="p-multiselect p-component p-inputwrapper p-multiselect-display-chip p-inputwrapper-filled w-full" id="recipient-role-additional-cards-multi-select" data-testid="recipient-role-additional-cards-multi-select-thief" data-pc-name="multiselect" data-pc-section="root" pc1="">
     <div class="p-hidden-accessible" data-pc-section="hiddeninputcontainer" data-p-hidden-accessible="true"><input type="text" readonly="" placeholder="Pick one to five cards" tabindex="0" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="recipient-role-additional-cards-multi-select_list" data-pc-section="hiddeninput"></div>
     <div class="p-multiselect-label-container flex justify-center items-center h-20" data-pc-section="labelcontainer">
       <div class="p-multiselect-label" data-pc-section="label"><span class="p-multiselect-chip-item flex items-center bg-gray-800 rounded gap-2 px-2 py-1" data-pc-section="chipitem"><role-image-stub rolename="pied-piper" sizes="50px" definition="normal" size="small"></role-image-stub><span></span>
-        <button-stub class="p-button-rounded p-button-sm p-button-text remove-additional-card-button" icon="fa fa-times z-10"></button-stub></span>
+        <button-stub class="p-button-rounded p-button-sm p-button-text remove-additional-card-button" data-testid="recipient-role-additional-cards-multi-select-remove-pied-piper-for-thief" icon="fa fa-times z-10"></button-stub></span>
         <!---->
       </div>
     </div>

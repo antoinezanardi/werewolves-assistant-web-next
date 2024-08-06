@@ -106,7 +106,9 @@ Feature: 🃏 Game Lobby Page
       | Antoine   | Seer                 |
     Then the input with label "Maximum number of players reached" should be disabled
     And the button with name "+ Add" should be disabled
-    And the page should match or creates the missing snapshot with name "Game Lobby Page with 40 players"
+
+    When the user moves his mouse away
+    Then the page should match or creates the missing snapshot with name "Game Lobby Page with 40 players"
 
   Scenario: 🃏 User deletes a player
     Given the user is on game-lobby page
@@ -225,6 +227,36 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Three Brothers role requires at least 3 players with this role" should be visible
 
+  Scenario: 🃏 User can't start the game if the thief is present but no cards are set for him
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Antoine  | Villager |
+      | Valentin | Werewolf |
+      | William  | Witch    |
+      | Xavier   | Fox      |
+    Then the button with name "Start game" should be disabled
+
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Thief's additional cards are not set" should be visible
+
+  Scenario: 🃏 User can't start the game if the actor is present but no cards are set for him
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Actor    |
+      | Antoine  | Villager |
+      | Valentin | Werewolf |
+      | William  | Witch    |
+      | Xavier   | Fox      |
+    Then the button with name "Start game" should be disabled
+
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Actor's additional cards are not set" should be visible
+
 #  TODO: To reactivate when option to choose random roles is available
 #  Scenario: 🃏 User starts a game with random composition
 #    Given the user is on game-lobby page
@@ -337,3 +369,44 @@ Feature: 🃏 Game Lobby Page
 
     When the user sets role "Werewolf" for the player with name "Ulysse" in the lobby
     Then the game additional cards manager button should be hidden in the lobby
+
+  Scenario: 🃏 Toast is displayed if user sets a role for a player which was set in additional cards
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Valentin | Villager |
+      | William  | Werewolf |
+      | Xavier   | Actor    |
+    And the user sets the following additional cards for "thief" in the lobby
+      | roleName |
+      | Seer     |
+    And the user sets the following additional cards for "actor" in the lobby
+      | roleName |
+      | Defender |
+    And the user sets role "Seer" for the player with name "Valentin" in the lobby
+    Then the toast with text "Additional card with role of the Seer has been removed for the Thief" should be visible
+
+    When the user sets role "Defender" for the player with name "Valentin" in the lobby
+    Then the toast with text "Additional card with role of the Defender has been removed for the Actor" should be visible
+
+  Scenario: 🃏 User starts a game with additional cards for Thief and Actor
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Valentin | Actor    |
+      | William  | Werewolf |
+      | Xavier   | Villager |
+    And the user sets the following additional cards for "thief" in the lobby
+      | roleName |
+      | Seer     |
+    And the user sets the following additional cards for "actor" in the lobby
+      | roleName |
+      | Defender |
+    And the user clicks on the button with name "Start game"
+    And the user clicks on the button with name "LET'S GO"
+    Then the user should be on game page with any id
+    And the toast with text "Game created" should be visible

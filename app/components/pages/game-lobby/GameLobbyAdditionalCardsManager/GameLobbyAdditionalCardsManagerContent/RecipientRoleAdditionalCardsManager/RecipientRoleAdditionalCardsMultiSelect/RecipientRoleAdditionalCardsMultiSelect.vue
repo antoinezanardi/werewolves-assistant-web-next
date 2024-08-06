@@ -5,6 +5,7 @@
       v-model="selectedAdditionalCards"
       auto-filter-focus
       class="w-full"
+      :data-testid="`recipient-role-additional-cards-multi-select-${recipientRoleName}`"
       display="chip"
       :empty-filter-message="$t('components.RecipientRoleAdditionalCardsMultiSelect.noRoleFound')"
       filter
@@ -23,7 +24,10 @@
       :show-toggle-all="false"
     >
       <template #option="{ option }">
-        <div class="align-options-center flex">
+        <div
+          class="align-options-center flex"
+          :data-testid="`recipient-role-additional-cards-multi-select-option-${option.roleName}-for-${recipientRoleName}`"
+        >
           <RoleImage
             class="me-2"
             :role-name="option.roleName"
@@ -45,6 +49,7 @@
 
         <PrimeVueButton
           class="p-button-rounded p-button-sm p-button-text remove-additional-card-button"
+          :data-testid="`recipient-role-additional-cards-multi-select-remove-${value.roleName}-for-${recipientRoleName}`"
           icon="fa fa-times z-10"
           @click.stop="onClickFromRemoveAdditionalCardButton(value)"
         />

@@ -19,6 +19,10 @@ async function openRolePickerForPlayer(world: CustomWorld, name: string): Promis
   await player.click();
 }
 
+async function openAdditionalCardsManager(world: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(world, "button", "Additional cards");
+}
+
 async function enterPlayerWithRoleInLobby(world: CustomWorld, name: string, roleName: RoleName): Promise<void> {
   await enterPlayerInLobby(world, name);
   await openRolePickerForPlayer(world, name);
@@ -44,6 +48,7 @@ async function createGameInLobby(world: CustomWorld): Promise<void> {
 export {
   enterPlayerInLobby,
   openRolePickerForPlayer,
+  openAdditionalCardsManager,
   enterPlayerWithRoleInLobby,
   generateRandomCompositionInLobby,
   createGameInLobby,
