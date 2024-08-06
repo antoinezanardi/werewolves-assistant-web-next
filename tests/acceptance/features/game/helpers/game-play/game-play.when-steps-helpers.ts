@@ -7,6 +7,7 @@ async function playersVoteInPlayground(world: CustomWorld, votes: [source: strin
     const voteInput = playerCard.locator("#player-vote-input");
     await voteInput.click();
     await voteInput.fill(target);
+    await voteInput.blur();
   }
   await world.page.mouse.click(-1, -1);
 }
