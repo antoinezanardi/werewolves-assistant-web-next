@@ -26,7 +26,6 @@
       <template #option="{ option }">
         <div
           class="align-options-center flex"
-          :data-testid="`recipient-role-additional-cards-multi-select-option-${option.roleName}-for-${recipientRoleName}`"
         >
           <RoleImage
             class="me-2"

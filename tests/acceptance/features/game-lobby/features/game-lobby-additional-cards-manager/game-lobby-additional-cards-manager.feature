@@ -1,11 +1,10 @@
 @game-lobby-additional-cards-manager
 @shard-2
-
 Feature: 🃏🃏🃏 Game Lobby Additional Cards Manager
 
   Scenario: 🃏🃏🃏 Additional Cards Manager is displayed when user clicks on button in lobby
-
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name     | role     |
       | Ulysse   | Werewolf |
@@ -18,9 +17,9 @@ Feature: 🃏🃏🃏 Game Lobby Additional Cards Manager
     And the page should match or creates the missing snapshot with name "Game Lobby Additional Cards Manager without cards"
 
     When the user sets the following additional cards for "thief" in additional cards manager
-      | role       |
-      | Seer       |
-      | Wolf-Hound |
+      | role                 |
+      | Seer                 |
+      | Accursed Wolf-Father |
     Then the heading with name "The Thief will play with 2 cards in this game" should be visible
 
     When the user sets the following additional cards for "actor" in additional cards manager
@@ -36,6 +35,7 @@ Feature: 🃏🃏🃏 Game Lobby Additional Cards Manager
 
   Scenario: 🃏🃏🃏 Additional Cards Manager's sections are displayed based on present recipients
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name     | role     |
       | Ulysse   | Werewolf |
@@ -54,6 +54,7 @@ Feature: 🃏🃏🃏 Game Lobby Additional Cards Manager
 
   Scenario: 🃏🃏🃏 User closes the Additional Cards Manager with escape, close button or outside click
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name     | role     |
       | Ulysse   | Werewolf |

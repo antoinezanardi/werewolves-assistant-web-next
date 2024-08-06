@@ -107,6 +107,13 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should match snapshot when rendered without shallow rendering.", async() => {
+    wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent({ shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   describe("Multi Select", () => {
     it("should pass recipient available additional cards to multi select when role is not taken by players nor by existing additional cards recipients.", () => {
       const expectedRecipientAdditionalCards: LabeledCreateGameAdditionalCardDto[] = [

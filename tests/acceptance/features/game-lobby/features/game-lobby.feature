@@ -257,17 +257,17 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Actor's additional cards are not set" should be visible
 
-#  TODO: To reactivate when option to choose random roles is available
-#  Scenario: 🃏 User starts a game with random composition
-#    Given the user is on game-lobby page
-#
-#    When the user enters the player with name "Antoine" in the lobby
-#    And the user enters the player with name "Benoit" in the lobby
-#    And the user enters the player with name "Clement" in the lobby
-#    And the user enters the player with name "David" in the lobby
-#    And the user generates a random composition and starts the game in the lobby
-#    Then the user should be on game page with any id
-#    And the toast with text "Game created" should be visible
+  #  TODO: To reactivate when option to choose random roles is available
+  #  Scenario: 🃏 User starts a game with random composition
+  #    Given the user is on game-lobby page
+  #
+  #    When the user enters the player with name "Antoine" in the lobby
+  #    And the user enters the player with name "Benoit" in the lobby
+  #    And the user enters the player with name "Clement" in the lobby
+  #    And the user enters the player with name "David" in the lobby
+  #    And the user generates a random composition and starts the game in the lobby
+  #    Then the user should be on game page with any id
+  #    And the toast with text "Game created" should be visible
 
   Scenario: 🃏 User is asked if everybody is ready before starting the game and can cancel if not
     Given the user is on game-lobby page
@@ -353,6 +353,7 @@ Feature: 🃏 Game Lobby Page
 
   Scenario: 🃏 Game additional cards manager button is only visible when there is at least a Thief or an Actor
     Given the user is on game-lobby page
+
     When the user enters the players with name and role in the lobby
       | name     | role               |
       | Ulysse   | Werewolf           |
