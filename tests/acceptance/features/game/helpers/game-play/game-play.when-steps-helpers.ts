@@ -5,9 +5,11 @@ async function playersVoteInPlayground(world: CustomWorld, votes: [source: strin
   for (const [source, target] of votes) {
     const playerCard = world.page.getByTestId(`game-playground-player-card-${source}`);
     const voteInput = playerCard.locator("#player-vote-input");
+    const optionList = world.page.getByRole("listbox");
     await voteInput.click();
-    await voteInput.fill(target);
+    await optionList.getByLabel(target).click();
     await voteInput.blur();
+    await optionList.waitFor({ state: "hidden" });
   }
   await world.page.mouse.click(-1, -1);
 }
