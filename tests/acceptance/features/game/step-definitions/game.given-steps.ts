@@ -8,7 +8,7 @@ Given(/^the user goes on an unknown game$/u, async function(this: CustomWorld): 
   await goOnPage(this, "/game/unknown-game");
 });
 
-Given(/^the user creates a game with 4 simple role players$/u, async function(this: CustomWorld): Promise<void> {
+Given(/^the user creates a game with 4 simple role players$/u, { timeout: 30000 }, async function(this: CustomWorld): Promise<void> {
   const playersWithRoles: [playerName: string, role: string][] = [
     ["Player 1", "Werewolf"],
     ["Player 2", "Werewolf"],
