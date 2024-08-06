@@ -43,7 +43,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
 
   describe("Count in Party Badge", () => {
     it("should render the count in party badge when there are players with this role.", () => {
-      const countInPartyBadge = wrapper.findComponent<Badge>("#role-count-in-game-badge");
+      const countInPartyBadge = wrapper.findComponent<typeof Badge>("#role-count-in-game-badge");
 
       expect(countInPartyBadge.exists()).toBeTruthy();
     });
@@ -70,7 +70,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       const createGameDtoStore = mockPiniaStore(useCreateGameDtoStore);
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
-      const countInPartyBadge = wrapper.findComponent<Badge>("#role-count-in-game-badge");
+      const countInPartyBadge = wrapper.findComponent<typeof Badge>("#role-count-in-game-badge");
 
       expect(countInPartyBadge.exists()).toBeFalsy();
     });
@@ -84,7 +84,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
         global: { plugins: [pinia] },
         props: { role: undefined },
       });
-      const countInPartyBadge = wrapper.findComponent<Badge>("#role-count-in-game-badge");
+      const countInPartyBadge = wrapper.findComponent<typeof Badge>("#role-count-in-game-badge");
 
       expect(countInPartyBadge.exists()).toBeFalsy();
     });
@@ -92,7 +92,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
 
   describe("Left to Pick Badge", () => {
     it("should render the left to pick badge when there are roles left to pick.", () => {
-      const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
+      const leftToPickBadge = wrapper.findComponent<typeof Badge>("#role-min-count-in-game-badge");
 
       expect(leftToPickBadge.exists()).toBeTruthy();
     });
@@ -120,7 +120,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([createFakeCreateGamePlayerDto()]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(0);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
-      const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
+      const leftToPickBadge = wrapper.findComponent<typeof Badge>("#role-min-count-in-game-badge");
 
       expect(leftToPickBadge.exists()).toBeFalsy();
     });
@@ -131,7 +131,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
       createGameDtoStore.getPlayersWithRoleNameInCreateGameDto.mockReturnValue([]);
       createGameDtoStore.getRoleLeftCountToReachMinInCreateGameDto.mockReturnValue(1);
       wrapper = await mountGameLobbyRolePickerGridElementBadgesComponent({ global: { plugins: [pinia] } });
-      const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
+      const leftToPickBadge = wrapper.findComponent<typeof Badge>("#role-min-count-in-game-badge");
 
       expect(leftToPickBadge.exists()).toBeFalsy();
     });
@@ -145,7 +145,7 @@ describe("Game Lobby Role Picker Grid Element Badges Component", () => {
         global: { plugins: [pinia] },
         props: { role: undefined },
       });
-      const leftToPickBadge = wrapper.findComponent<Badge>("#role-min-count-in-game-badge");
+      const leftToPickBadge = wrapper.findComponent<typeof Badge>("#role-min-count-in-game-badge");
 
       expect(leftToPickBadge.exists()).toBeFalsy();
     });

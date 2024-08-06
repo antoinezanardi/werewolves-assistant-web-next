@@ -61,13 +61,13 @@ describe("Game Over History Record Decision Buried Player Component", () => {
           }),
         },
       });
-      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<typeof Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeTruthy();
     });
 
     it("should not render Devoted Servant Tag when there is no targets.", () => {
-      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<typeof Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeFalsy();
     });
@@ -85,7 +85,7 @@ describe("Game Over History Record Decision Buried Player Component", () => {
           }),
         },
       });
-      const devotedServantTag = wrapper.findComponent<Tag>("#devoted-servant-stolen-role-tag");
+      const devotedServantTag = wrapper.findComponent<typeof Tag>("#devoted-servant-stolen-role-tag");
 
       expect(devotedServantTag.exists()).toBeFalsy();
     });

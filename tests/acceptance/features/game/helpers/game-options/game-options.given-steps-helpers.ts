@@ -1,13 +1,9 @@
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
-async function switchRoleOptionInGameOptionsHub(world: CustomWorld, selector: string, isChecked: boolean): Promise<void> {
-  const switchOption = world.page.locator(selector).getByRole("switch");
-  if (isChecked) {
-    await switchOption.check();
-
-    return;
-  }
-  await switchOption.uncheck();
+async function clickOnToggleButtonInGameOptionsHub(world: CustomWorld, locator: string): Promise<void> {
+  const button = world.page.locator(locator);
+  await button.waitFor({ state: "visible" });
+  await button.click();
 }
 
 async function fillInputNumberInGameOptionsHub(world: CustomWorld, locator: string, value: string): Promise<void> {
@@ -17,6 +13,6 @@ async function fillInputNumberInGameOptionsHub(world: CustomWorld, locator: stri
 }
 
 export {
-  switchRoleOptionInGameOptionsHub,
+  clickOnToggleButtonInGameOptionsHub,
   fillInputNumberInGameOptionsHub,
 };

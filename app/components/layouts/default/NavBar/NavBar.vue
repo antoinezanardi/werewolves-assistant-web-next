@@ -2,7 +2,7 @@
   <nav
     id="navbar"
     :aria-label="$t('components.NavBar.navBar')"
-    class="flex items-center justify-between py-1"
+    class="bg-gray-900 border-b border-b-slate-800 flex items-center justify-between py-1"
     role="navigation"
   >
     <NuxtLink
@@ -55,9 +55,7 @@ const { isOnGamePage } = useWerewolvesAssistantRoutes();
 
 <style scoped lang="scss">
 #navbar {
-  border-bottom: 1px solid #282424;
   height: 4rem;
-  background-color: #343A3F;
   padding: 0 1rem;
 
   #navbar-werewolves-assistant-logo {

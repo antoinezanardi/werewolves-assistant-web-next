@@ -39,7 +39,7 @@ describe("Role Origin Badge Component", () => {
     });
 
     it("should translate role origin when rendered.", () => {
-      const badge = wrapper.findComponent<Badge>(".role-origin-badge");
+      const badge = wrapper.findComponent<typeof Badge>(".role-origin-badge");
 
       expect(badge.attributes("value")).toBe("Base Game");
     });

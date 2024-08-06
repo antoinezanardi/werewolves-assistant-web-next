@@ -1,4 +1,5 @@
 import type { mount } from "@vue/test-utils";
+import type { ButtonProps } from "primevue/button";
 import type Button from "primevue/button";
 
 import GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
@@ -26,12 +27,13 @@ describe("Game Over Actions Component", () => {
   describe("Show Game History Button", () => {
     it("should be in loading state when the game history is empty.", () => {
       const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");
+      const props = showGameHistoryButton.props() as ButtonProps;
 
-      expect(showGameHistoryButton.props("loading")).toBeTruthy();
+      expect(props.loading).toBeTruthy();
     });
 
     it("should translate loading show game history button text when the game history is empty.", () => {
-      const showGameHistoryButton = wrapper.findComponent<Button>("#show-game-history-button");
+      const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");
 
       expect(showGameHistoryButton.text()).toBe("components.GameOverActions.loadingGameHistory");
     });
@@ -40,7 +42,7 @@ describe("Game Over Actions Component", () => {
       const gameHistoryRecordsStore = useGameHistoryRecordsStore();
       gameHistoryRecordsStore.gameHistoryRecords = [createFakeGameHistoryRecord()];
       await nextTick();
-      const showGameHistoryButton = wrapper.findComponent<Button>("#show-game-history-button");
+      const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");
 
       expect(showGameHistoryButton.text()).toBe("components.GameOverActions.showGameHistory");
     });
@@ -48,7 +50,7 @@ describe("Game Over Actions Component", () => {
 
   describe("Emits", () => {
     it("should emit show game history event when the show game history button is clicked.", () => {
-      const showGameHistoryButton = wrapper.findComponent<Button>("#show-game-history-button");
+      const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");
       (showGameHistoryButton.vm as VueVm).$emit("click");
 
       expect(wrapper.emitted("showGameHistory")).toBeTruthy();

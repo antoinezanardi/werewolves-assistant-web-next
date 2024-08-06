@@ -13,7 +13,12 @@ describe("Game Lobby Player Input Component", () => {
   const defaultProps: GameLobbyPlayerInputProps = { modelValue: "" };
   const defaultMountingOptions: ComponentMountingOptions<typeof GameLobbyPlayerInput> = {
     props: defaultProps,
-    global: { stubs: { InputGroup: false } },
+    global: {
+      stubs: {
+        InputGroup: false,
+        FloatLabel: false,
+      },
+    },
   };
 
   beforeEach(async() => {

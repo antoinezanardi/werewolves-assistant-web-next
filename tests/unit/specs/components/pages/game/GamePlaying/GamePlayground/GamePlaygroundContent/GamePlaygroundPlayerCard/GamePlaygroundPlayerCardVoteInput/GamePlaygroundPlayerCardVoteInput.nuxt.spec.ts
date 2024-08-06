@@ -2,7 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Fuse from "fuse.js";
-import AutoComplete from "primevue/autocomplete";
+import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
 import type { AutoCompleteChangeEvent } from "primevue/autocomplete";
 
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
@@ -82,14 +82,16 @@ describe("Game Playground Player Card Vote Input Component", () => {
         },
       });
       const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("modelValue")).toBeNull();
+      expect(props.modelValue).toBeNull();
     });
 
     it("should pass empty array as suggestions when render.", () => {
       const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
     });
 
     it("should pass empty array as suggestions when there is no current play on complete event.", async() => {
@@ -101,8 +103,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
     });
 
     it("should pass empty array as suggestions when there is no current play eligible targets on complete event.", async() => {
@@ -114,8 +117,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       const autocomplete = wrapper.findComponent<typeof AutoComplete>(AutoComplete);
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
     });
 
     it("should pass empty array as suggestions when there is no current play source interactions on complete event.", async() => {
@@ -128,8 +132,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
       expect(setCollectionSpy).toHaveBeenCalledExactlyOnceWith([], undefined);
     });
 
@@ -143,8 +148,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       const setCollectionSpy = vi.spyOn(Fuse.prototype, "setCollection");
       autocomplete.vm.$emit("complete", { query: "Antoine" });
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
       expect(setCollectionSpy).toHaveBeenCalledExactlyOnceWith([], undefined);
     });
 
@@ -153,8 +159,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       autocomplete.vm.$emit("complete", { query: "   " });
       await nextTick();
       const expectedSuggestions = players.filter(player => player._id !== defaultPlayer._id);
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>(expectedSuggestions);
+      expect(props.suggestions).toStrictEqual<Player[]>(expectedSuggestions);
     });
 
     it("should pass players with similar name without the player in props himself as suggestions when query the player's name himself on complete event.", async() => {
@@ -165,8 +172,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
         players[0],
         players[3],
       ];
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>(expectedSuggestions);
+      expect(props.suggestions).toStrictEqual<Player[]>(expectedSuggestions);
     });
 
     it("should empty suggestions when hide event is emitted.", async() => {
@@ -175,8 +183,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       await nextTick();
       autocomplete.vm.$emit("hide");
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("suggestions")).toStrictEqual<Player[]>([]);
+      expect(props.suggestions).toStrictEqual<Player[]>([]);
     });
 
     it("should do nothing when v-model change event is emitted but value is string.", async() => {
@@ -225,8 +234,9 @@ describe("Game Playground Player Card Vote Input Component", () => {
       const event: AutoCompleteChangeEvent = { originalEvent: new Event("change"), value: players[0] };
       autocomplete.vm.$emit("change", event);
       await nextTick();
+      const props = autocomplete.props() as AutoCompleteProps;
 
-      expect(autocomplete.props("modelValue")).toStrictEqual<Player>(players[0]);
+      expect(props.modelValue).toStrictEqual<Player>(players[0]);
     });
   });
 });
