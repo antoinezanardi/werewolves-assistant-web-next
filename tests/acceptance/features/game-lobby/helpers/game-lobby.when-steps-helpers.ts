@@ -1,4 +1,3 @@
-import type { RoleName } from "~/composables/api/role/types/role.types";
 import { chooseRoleInLobbyRolePicker } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
@@ -23,7 +22,7 @@ async function openAdditionalCardsManager(world: CustomWorld): Promise<void> {
   await clickOnRoleWithText(world, "button", "Additional cards");
 }
 
-async function enterPlayerWithRoleInLobby(world: CustomWorld, name: string, roleName: RoleName): Promise<void> {
+async function enterPlayerWithRoleInLobby(world: CustomWorld, name: string, roleName: string): Promise<void> {
   await enterPlayerInLobby(world, name);
   await openRolePickerForPlayer(world, name);
   await chooseRoleInLobbyRolePicker(world, roleName);

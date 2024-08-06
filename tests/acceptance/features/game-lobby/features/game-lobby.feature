@@ -268,7 +268,6 @@ Feature: 🃏 Game Lobby Page
   #    And the user generates a random composition and starts the game in the lobby
   #    Then the user should be on game page with any id
   #    And the toast with text "Game created" should be visible
-
   Scenario: 🃏 User is asked if everybody is ready before starting the game and can cancel if not
     Given the user is on game-lobby page
 
