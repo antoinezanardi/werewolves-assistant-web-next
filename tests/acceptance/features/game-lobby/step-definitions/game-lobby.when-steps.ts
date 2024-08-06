@@ -1,5 +1,6 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
+import { chooseRoleInLobbyRolePicker } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
 
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { createGameInLobby, enterPlayerInLobby, enterPlayerWithRoleInLobby, generateRandomCompositionInLobby, openRolePickerForPlayer } from "@tests/acceptance/features/game-lobby/helpers/game-lobby.when-steps-helpers";
@@ -32,4 +33,10 @@ When(/^the user clicks on the additional cards manager button in the lobby$/u, a
 When(/^the user generates a random composition and starts the game in the lobby$/u, async function(this: CustomWorld): Promise<void> {
   await generateRandomCompositionInLobby(this);
   await createGameInLobby(this);
+});
+
+When(/^the user sets role "(?<role>.+?)" for the player with name "(?<name>.+?)" in the lobby$/u, async function(this: CustomWorld, role: RoleName, name: string): Promise<void> {
+  await openRolePickerForPlayer(this, name);
+  await chooseRoleInLobbyRolePicker(this, role);
+  await clickOnRoleWithText(this, "button", "Pick role for the player", true);
 });
