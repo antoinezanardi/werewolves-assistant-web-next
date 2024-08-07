@@ -26,8 +26,8 @@ describe("Game Lobby Player Card Component", () => {
       useRoleName: {
         getRoleNameLabel: Mock;
         getDefiniteRoleNameLabel: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(async() => {
@@ -65,10 +65,18 @@ describe("Game Lobby Player Card Component", () => {
 
     it("should remove player from party when clicked.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
-      const deleteButton = wrapper.findComponent<Button>("[aria-label='Remove player Toto']");
+      const deleteButton = wrapper.findComponent<typeof Button>("[aria-label='Remove player Toto']");
       await deleteButton.trigger("click");
 
       expect(createGameDtoStore.removePlayerFromCreateGameDto).toHaveBeenCalledExactlyOnceWith(defaultProps.player.name);
+    });
+
+    it("should remove obsolete additional cards when player is removed from party.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const deleteButton = wrapper.findComponent<typeof Button>("[aria-label='Remove player Toto']");
+      await deleteButton.trigger("click");
+
+      expect(createGameDtoStore.removeObsoleteAdditionalCardsFromCreateGameDto).toHaveBeenCalledExactlyOnceWith();
     });
   });
 

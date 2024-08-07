@@ -1,6 +1,7 @@
 import type { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { TagProps } from "primevue/tag";
 import type Tag from "primevue/tag";
 import type { GameOverHistoryRecordDecisionTargetProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/game-over-history-record-decision-target.types";
 import GameOverHistoryRecordDecisionTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/GameOverHistoryRecordDecisionTarget.vue";
@@ -43,7 +44,7 @@ describe("Game Over History Record Decision Target Component", () => {
 
   describe("Drank potion tag", () => {
     it("should not render drank potion tag when the target did not drink a potion.", () => {
-      const overflowTag = wrapper.findComponent<Tag>("#target-potion-tag");
+      const overflowTag = wrapper.findComponent<typeof Tag>("#target-potion-tag");
 
       expect(overflowTag.exists()).toBeFalsy();
     });
@@ -63,8 +64,9 @@ describe("Game Over History Record Decision Target Component", () => {
 
       it("should set severity to success when the target drank a life potion.", () => {
         const lifePotionTag = wrapper.findComponent<typeof Tag>("#target-potion-tag");
+        const props = lifePotionTag.props() as TagProps;
 
-        expect(lifePotionTag.props("severity")).toBe("success");
+        expect(props.severity).toBe("success");
       });
 
       it("should render drank life potion tag icon when the target drank a life potion.", () => {
@@ -95,8 +97,9 @@ describe("Game Over History Record Decision Target Component", () => {
 
       it("should set severity to danger when the target drank a death potion.", () => {
         const deathPotionTag = wrapper.findComponent<typeof Tag>("#target-potion-tag");
+        const props = deathPotionTag.props() as TagProps;
 
-        expect(deathPotionTag.props("severity")).toBe("danger");
+        expect(props.severity).toBe("danger");
       });
 
       it("should render drank death potion tag icon when the target drank a death potion.", () => {

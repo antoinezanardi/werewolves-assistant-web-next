@@ -1,6 +1,7 @@
 type GameLobbyHeaderEmits = {
   gameOptionsButtonClick: [];
   positionCoordinatorButtonClick: [];
+  additionalCardsManagerButtonClick: [];
 };
 
 type GameLobbyHeaderExposed = {

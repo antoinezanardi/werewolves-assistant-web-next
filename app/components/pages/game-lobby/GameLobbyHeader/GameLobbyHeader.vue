@@ -26,6 +26,7 @@
       <GameLobbyHeaderSetupButtons
         id="game-lobby-header-setup-buttons"
         ref="gameLobbyHeaderSetupButtons"
+        @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameLobbyHeaderSetupButtons"
         @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons"
         @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons"
       />
@@ -78,6 +79,10 @@ function onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons(): void {
 
 function onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("positionCoordinatorButtonClick");
+}
+
+function onAdditionalCardsManagerButtonClickFromGameLobbyHeaderSetupButtons(): void {
+  emit("additionalCardsManagerButtonClick");
 }
 
 function highlightPositionCoordinatorButton(): void {

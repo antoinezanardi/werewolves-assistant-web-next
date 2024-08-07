@@ -5,7 +5,7 @@
   >
     <PrimeVueButton
       class="random-composition-button"
-      :disabled="!isMinimumPlayersReached"
+      :disabled="isButtonDisabled"
       icon="fa-random fa"
       :label="buttonLabel"
       :loading="isLoadingGetRandomGameComposition"
@@ -36,7 +36,10 @@ const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
-const { setPlayersToCreateGameDto } = createGameDtoStore;
+const {
+  setPlayersToCreateGameDto,
+  removeObsoleteAdditionalCardsFromCreateGameDto,
+} = createGameDtoStore;
 const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
@@ -44,6 +47,8 @@ const isLoadingGetRandomGameComposition = ref<boolean>(false);
 const buttonSize = computed<"large" | "small">(() => (isSmallerThanMd.value ? "small" : "large"));
 
 const buttonLabel = computed<string | undefined>(() => (isSmallerThanMd.value ? undefined : t("components.GameLobbyRandomCompositionButton.randomComposition")));
+
+const isButtonDisabled = computed<boolean>(() => !isMinimumPlayersReached.value || isLoadingGetRandomGameComposition.value);
 
 const containerTooltip = computed<string | undefined>(() => {
   if (!isMinimumPlayersReached.value) {
@@ -56,14 +61,11 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,
-    excludedRoles: [
-      "thief",
-      "actor",
-      "prejudiced-manipulator",
-    ],
+    excludedRoles: ["prejudiced-manipulator"],
   });
   if (randomGameComposition !== null) {
     setPlayersToCreateGameDto(randomGameComposition);
+    removeObsoleteAdditionalCardsFromCreateGameDto();
   }
   isLoadingGetRandomGameComposition.value = false;
 }

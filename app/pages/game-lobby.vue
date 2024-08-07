@@ -3,6 +3,7 @@
     <GameLobbyHeader
       id="game-lobby-header"
       ref="gameLobbyHeader"
+      @additional-cards-manager-button-click="onAdditionalCardsButtonManagerClickFromGameLobbyHeader"
       @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeader"
       @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeader"
     />
@@ -27,10 +28,14 @@
     <GameLobbyOptionsHub ref="gameLobbyOptionsHub"/>
 
     <GameLobbyPositionCoordinator ref="gameLobbyPositionCoordinator"/>
+
+    <GameLobbyAdditionalCardsManager ref="gameLobbyAdditionalCardsManager"/>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
+import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
@@ -60,6 +65,7 @@ const gameLobbyHeader = ref<GameLobbyHeaderExposed | null>(null);
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
+const gameLobbyAdditionalCardsManager = ref<GameLobbyAdditionalCardsManagerExposed | null>(null);
 
 useHead({
   title: t("pages.gameLobby.startGame"),
@@ -88,6 +94,13 @@ function onPositionCoordinatorButtonClickFromGameLobbyHeader(): void {
     throw createError("Game Lobby Position Coordinator is not defined");
   }
   gameLobbyPositionCoordinator.value.open();
+}
+
+function onAdditionalCardsButtonManagerClickFromGameLobbyHeader(): void {
+  if (!gameLobbyAdditionalCardsManager.value) {
+    throw createError("Game Lobby Additional Cards Manager is not defined");
+  }
+  gameLobbyAdditionalCardsManager.value.open();
 }
 
 function onRejectPlayersPositionStepFromGameLobbyFooter(): void {

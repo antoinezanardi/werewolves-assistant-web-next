@@ -17,8 +17,8 @@ describe("Game Lobby Header Component", () => {
     components: {
       gameLobbyHeaderSetupButtons: {
         highlightPositionCoordinatorButton: Mock;
-      }
-    }
+      };
+    };
   };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeader>>;
 
@@ -171,6 +171,13 @@ describe("Game Lobby Header Component", () => {
         (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightPositionCoordinatorButton();
 
         expect(mocks.components.gameLobbyHeaderSetupButtons.highlightPositionCoordinatorButton).toHaveBeenCalledExactlyOnceWith();
+      });
+
+      it("should emit 'additionalCardsManagerButtonClick' event when additional cards manager button is clicked.", () => {
+        const setupButtons = wrapper.findComponent<typeof GameLobbyHeaderSetupButtons>("#game-lobby-header-setup-buttons");
+        (setupButtons.vm as VueVm).$emit("additionalCardsManagerButtonClick");
+
+        expect(wrapper.emitted("additionalCardsManagerButtonClick")).toBeTruthy();
       });
     });
   });

@@ -6,11 +6,11 @@ import fr from "@modules/i18n/locales/fr.json";
 import en from "@modules/i18n/locales/en.json";
 
 type MockedI18n = {
-  locale: Ref<"en" | "fr">
+  locale: Ref<"en" | "fr">;
   messages: Ref<{
     en: typeof en;
     fr: typeof fr;
-  }>,
+  }>;
   t: Mock;
 };
 

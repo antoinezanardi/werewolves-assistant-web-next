@@ -27,7 +27,6 @@ const GAME_PLAY_ACTIONS = [
   "delegate",
   "settle-votes",
   "bury-dead-bodies",
-  "growl",
   "infect",
   "request-another-vote",
 ] as const;

@@ -51,9 +51,15 @@ const ROLE_ORIGINS = [
   "unconventional",
 ] as const;
 
+const ADDITIONAL_CARDS_DEPENDANT_ROLES = [
+  "thief",
+  "actor",
+] as const;
+
 export {
   ROLE_NAMES,
   ROLE_SIDES,
   ROLE_TYPES,
   ROLE_ORIGINS,
+  ADDITIONAL_CARDS_DEPENDANT_ROLES,
 };

@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Event Flipping Players Card Component > should match snapshot when rendered. 1`] = `
+"<div id="game-event-flipping-players-card" class="flex h-full items-center justify-center">
+  <game-event-flipping-player-card-stub players="[object Object]" id="game-event-flipping-player-card"></game-event-flipping-player-card-stub>
+</div>"
+`;

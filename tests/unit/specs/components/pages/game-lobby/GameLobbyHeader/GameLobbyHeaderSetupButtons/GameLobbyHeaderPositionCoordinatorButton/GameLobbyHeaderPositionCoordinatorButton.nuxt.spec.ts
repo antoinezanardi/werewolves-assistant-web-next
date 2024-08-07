@@ -24,14 +24,14 @@ describe("Game Lobby Header Position Coordinator Button Component", () => {
 
   describe("Position Coordinator button", () => {
     it("should translate button label when rendered.", () => {
-      const button = wrapper.findComponent<Button>("#game-lobby-header-position-coordinator-button");
+      const button = wrapper.findComponent<typeof Button>("#game-lobby-header-position-coordinator-button");
 
       expect(button.attributes("label")).toBe("Players positions");
     });
 
     describe("Click on button", () => {
       it("should emit 'positionCoordinatorButtonClick' event when clicked.", async() => {
-        const button = wrapper.findComponent<Button>("#game-lobby-header-position-coordinator-button");
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-header-position-coordinator-button");
         await button.trigger("click");
 
         expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();

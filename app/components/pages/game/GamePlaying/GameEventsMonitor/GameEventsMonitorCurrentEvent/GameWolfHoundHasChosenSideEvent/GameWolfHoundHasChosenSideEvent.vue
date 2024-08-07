@@ -5,9 +5,9 @@
   >
     <div class="flex h-full items-center justify-center">
       <GameEventFlippingPlayerCard
-        v-if="wolfHoundInPlayers"
+        v-if="wolfHoundPlayer"
         id="game-event-flipping-wolf-hound-card"
-        :players="[wolfHoundInPlayers]"
+        :players="[wolfHoundPlayer]"
         :svg-icon-path="wolfHoundChosenSideSvgIconPath"
       />
     </div>
@@ -16,35 +16,35 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { useGamePlayers } from "~/composables/api/game/useGamePlayers";
 import type { RoleSide } from "~/composables/api/role/types/role.types";
 import type { SoundEffectName } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
+const props = defineProps<CurrentGameEventProps>();
+
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
 
-const { getPlayersWithCurrentRole } = useGamePlayers(game);
-
-const wolfHoundInPlayers = computed<Player | undefined>(() => getPlayersWithCurrentRole("wolf-hound")[0]);
+const wolfHoundPlayer = computed<Player | undefined>(() => props.event.players?.[0]);
 
 const { t } = useI18n();
 
 const audioStore = useAudioStore();
 const { playSoundEffect } = audioStore;
 
-const chosenSide = computed<RoleSide | undefined>(() => wolfHoundInPlayers.value?.side.current);
+const chosenSide = computed<RoleSide | undefined>(() => wolfHoundPlayer.value?.side.current);
 
 const isWolfHoundSideRandomlyChosen = computed<boolean>(() => game.value.options.roles.wolfHound.isSideRandomlyChosen);
 
 const isWolfHoundChosenSideRevealed = computed<boolean>(() => game.value.options.roles.wolfHound.isChosenSideRevealed);
 
 const gameWolfHoundHasChosenSideEventTexts = computed<string[]>(() => {
-  if (!wolfHoundInPlayers.value) {
+  if (!wolfHoundPlayer.value) {
     return [t("components.GameWolfHoundHasChosenSideEvent.cantFindWolfHoundOrChosenSide")];
   }
   const chosenSideLabel = t(`shared.role.side.${chosenSide.value}`);

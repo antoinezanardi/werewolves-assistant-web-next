@@ -82,8 +82,8 @@ Feature: 🃏 Game Lobby Page
       | Jerome    | Villager             |
       | Kamel     | Villager             |
       | Lionel    | Villager             |
-      | Mathieu   | Villager             |
-      | Nabil     | Villager             |
+      | Mathieu   | Actor                |
+      | Nabil     | Thief                |
       | Benoit    | Hunter               |
       | David     | Little Girl          |
       | Eliott    | Defender             |
@@ -105,8 +105,10 @@ Feature: 🃏 Game Lobby Page
       | Theo      | Big Bad Wolf         |
       | Antoine   | Seer                 |
     Then the input with label "Maximum number of players reached" should be disabled
-    And the button with name "Add" should be disabled
-    And the page should match or creates the missing snapshot with name "Game Lobby Page with 40 players"
+    And the button with name "+ Add" should be disabled
+
+    When the user moves his mouse away
+    Then the page should match or creates the missing snapshot with name "Game Lobby Page with 40 players"
 
   Scenario: 🃏 User deletes a player
     Given the user is on game-lobby page
@@ -225,17 +227,47 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Three Brothers role requires at least 3 players with this role" should be visible
 
-  Scenario: 🃏 User starts a game with random composition
+  Scenario: 🃏 User can't start the game if the thief is present but no cards are set for him
     Given the user is on game-lobby page
 
-    When the user enters the player with name "Antoine" in the lobby
-    And the user enters the player with name "Benoit" in the lobby
-    And the user enters the player with name "Clement" in the lobby
-    And the user enters the player with name "David" in the lobby
-    And the user generates a random composition and starts the game in the lobby
-    Then the user should be on game page with any id
-    And the toast with text "Game created" should be visible
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Antoine  | Villager |
+      | Valentin | Werewolf |
+      | William  | Witch    |
+      | Xavier   | Fox      |
+    Then the button with name "Start game" should be disabled
 
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Thief's additional cards are not set" should be visible
+
+  Scenario: 🃏 User can't start the game if the actor is present but no cards are set for him
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Actor    |
+      | Antoine  | Villager |
+      | Valentin | Werewolf |
+      | William  | Witch    |
+      | Xavier   | Fox      |
+    Then the button with name "Start game" should be disabled
+
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The Actor's additional cards are not set" should be visible
+
+  #  TODO: To reactivate when option to choose random roles is available
+  #  Scenario: 🃏 User starts a game with random composition
+  #    Given the user is on game-lobby page
+  #
+  #    When the user enters the player with name "Antoine" in the lobby
+  #    And the user enters the player with name "Benoit" in the lobby
+  #    And the user enters the player with name "Clement" in the lobby
+  #    And the user enters the player with name "David" in the lobby
+  #    And the user generates a random composition and starts the game in the lobby
+  #    Then the user should be on game page with any id
+  #    And the toast with text "Game created" should be visible
   Scenario: 🃏 User is asked if everybody is ready before starting the game and can cancel if not
     Given the user is on game-lobby page
 
@@ -304,3 +336,77 @@ Feature: 🃏 Game Lobby Page
     When the user clicks on parameters button in navigation bar
     And the user clicks on the back to home button in parameters in navigation bar
     Then the user should be on home page
+
+  Scenario: 🃏 Player positions coordinator button is only visible when there are at least 2 players
+    Given the user is on game-lobby page
+    Then the players positions coordinator button should be hidden in the lobby
+
+    When the user enters the player with name "Antoine" in the lobby
+    Then the players positions coordinator button should be hidden in the lobby
+
+    When the user enters the player with name "Benoit" in the lobby
+    Then the players positions coordinator button should be visible in the lobby
+
+    When the user enters the player with name "Alice" in the lobby
+    Then the players positions coordinator button should be visible in the lobby
+
+  Scenario: 🃏 Game additional cards manager button is only visible when there is at least a Thief or an Actor
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role               |
+      | Ulysse   | Werewolf           |
+      | Valentin | Rusty Sword Knight |
+      | William  | Villager           |
+      | Xavier   | Villager           |
+    Then the game additional cards manager button should be hidden in the lobby
+
+    When the user sets role "Thief" for the player with name "Ulysse" in the lobby
+    Then the game additional cards manager button should be visible in the lobby
+
+    When the user sets role "Actor" for the player with name "Ulysse" in the lobby
+    Then the game additional cards manager button should be visible in the lobby
+
+    When the user sets role "Werewolf" for the player with name "Ulysse" in the lobby
+    Then the game additional cards manager button should be hidden in the lobby
+
+  Scenario: 🃏 Toast is displayed if user sets a role for a player which was set in additional cards
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Valentin | Villager |
+      | William  | Werewolf |
+      | Xavier   | Actor    |
+    And the user sets the following additional cards for "thief" in the lobby
+      | roleName |
+      | Seer     |
+    And the user sets the following additional cards for "actor" in the lobby
+      | roleName |
+      | Defender |
+    And the user sets role "Seer" for the player with name "Valentin" in the lobby
+    Then the toast with text "Additional card with role of the Seer has been removed for the Thief" should be visible
+
+    When the user sets role "Defender" for the player with name "Valentin" in the lobby
+    Then the toast with text "Additional card with role of the Defender has been removed for the Actor" should be visible
+
+  Scenario: 🃏 User starts a game with additional cards for Thief and Actor
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Thief    |
+      | Valentin | Actor    |
+      | William  | Werewolf |
+      | Xavier   | Villager |
+    And the user sets the following additional cards for "thief" in the lobby
+      | roleName |
+      | Seer     |
+    And the user sets the following additional cards for "actor" in the lobby
+      | roleName |
+      | Defender |
+    And the user clicks on the button with name "Start game"
+    And the user clicks on the button with name "LET'S GO"
+    Then the user should be on game page with any id
+    And the toast with text "Game created" should be visible

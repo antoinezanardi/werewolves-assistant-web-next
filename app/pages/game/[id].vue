@@ -46,7 +46,7 @@ import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
-type GameStatusComponent = typeof GameCanceled | typeof GameOver | typeof GamePlaying;
+type GameStatusComponent = typeof GameCanceled ;
 
 const route = useRoute();
 const gameStore = useGameStore();

@@ -1,6 +1,6 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog from "primevue/dialog";
+import Dialog, { type DialogProps } from "primevue/dialog";
 
 import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/GameLobbyRolePicker/game-lobby-role-picker.types";
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
@@ -47,8 +47,9 @@ describe("Game Lobby Role Picker Component", () => {
     it("should set dialog to invisible when rendered.", async() => {
       await mountGameLobbyRolePickerComponent({ shallow: true });
       const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
+      const props = dialog.props() as DialogProps;
 
-      expect(dialog.props("visible")).toBeFalsy();
+      expect(props.visible).toBeFalsy();
     });
 
     describe("Game Lobby Role Picker Header", () => {

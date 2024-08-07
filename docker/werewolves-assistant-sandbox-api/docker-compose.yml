@@ -1,38 +1,33 @@
-version: "3.8"
-
 services:
   api:
-    image: antoinezanardi/werewolves-assistant-api:v1.33.0
-    container_name: werewolves-assistant-api
+    image: antoinezanardi/werewolves-assistant-api:v1.35.1
+    container_name: werewolves-assistant-sandbox-api
     depends_on:
       - mongodb
     environment:
       ENVIRONMENT: "production"
       HOST: "0.0.0.0"
       PORT: "9090"
-      DATABASE_HOST: "mongodb-production"
+      DATABASE_HOST: "werewolves-assistant-sandbox-api-mongodb"
       DATABASE_PORT: "27017"
       DATABASE_NAME: "werewolves-assistant"
       DATABASE_USERNAME: "production"
       DATABASE_PASSWORD: "a_very_good_password"
     ports:
       - "9090:9090"
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
     restart: unless-stopped
 
   mongodb:
-    container_name: mongodb-production
+    container_name: werewolves-assistant-sandbox-api-mongodb
     image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: "production"
       MONGO_INITDB_ROOT_PASSWORD: "a_very_good_password"
     volumes:
-      - mongodb_data_container:/data/db
+      - werewolves-assistant-sandbox-api-mongodb-data-container:/data/db
     ports:
       - "28000:27017"
     restart: unless-stopped
 
 volumes:
-  mongodb_data_container:
+  werewolves-assistant-sandbox-api-mongodb-data-container:

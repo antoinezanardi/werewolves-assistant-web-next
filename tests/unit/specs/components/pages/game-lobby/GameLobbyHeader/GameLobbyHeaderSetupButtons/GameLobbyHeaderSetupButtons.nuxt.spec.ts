@@ -8,6 +8,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { expect } from "vitest";
 import type { Ref } from "vue";
 import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
+import type GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/GameLobbyHeaderAdditionalCardsManagerButton.vue";
 import type GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import type GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
@@ -29,9 +30,7 @@ describe("Game Lobby Header Setup Buttons Component", () => {
   const defaultCreateGameDto = createFakeCreateGameDto({
     players: [
       createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-      createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-      createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-      createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "rusty-sword-knight" }) }),
+      createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "thief" }) }),
     ],
   });
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeaderSetupButtons>>;
@@ -67,29 +66,10 @@ describe("Game Lobby Header Setup Buttons Component", () => {
   });
 
   describe("Position Coordinator", () => {
-    it("should not render position coordinator button when there are no position dependant roles in create game dto.", async() => {
-      const createGameDtoStore = useCreateGameDtoStore();
-      createGameDtoStore.createGameDto = createFakeCreateGameDto({
-        players: [
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-        ],
-      });
-      await nextTick();
-      const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
-
-      expect(positionCoordinatorButton.exists()).toBeFalsy();
-    });
-
     it("should not render position coordinator button when there are not enough players in game.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
-        players: [
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
-          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "rusty-sword-knight" }) }),
-        ],
+        players: [createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) })],
       });
       await nextTick();
       const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
@@ -116,6 +96,26 @@ describe("Game Lobby Header Setup Buttons Component", () => {
       await flushPromises();
 
       expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");
+    });
+  });
+
+  describe("Additional Cards Manager Button", () => {
+    it("should not render additional cards manager button when there are no thief not actor.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) })],
+      });
+      await nextTick();
+      const additionalCardsManagerButton = wrapper.findComponent<typeof GameLobbyHeaderAdditionalCardsManagerButton>("#game-lobby-header-additional-cards-manager-button");
+
+      expect(additionalCardsManagerButton.exists()).toBeFalsy();
+    });
+
+    it("should emit 'additionalCardsManagerButtonClick' event when clicked.", () => {
+      const additionalCardsManagerButton = wrapper.findComponent<typeof GameLobbyHeaderAdditionalCardsManagerButton>("#game-lobby-header-additional-cards-manager-button");
+      (additionalCardsManagerButton.vm as VueVm).$emit("additionalCardsManagerButtonClick");
+
+      expect(wrapper.emitted("additionalCardsManagerButtonClick")).toBeTruthy();
     });
   });
 });

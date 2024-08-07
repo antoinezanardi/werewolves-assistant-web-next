@@ -1,4 +1,6 @@
-import type { ComputedRef, Ref } from "vue";
+import type { ComputedRef, MaybeRef } from "vue";
+import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
+import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import type { GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
 
 import type { Game } from "~/composables/api/game/types/game.class";
@@ -11,11 +13,14 @@ type UseCurrentGamePlay = {
   getEligibleTargetsWithInteractionInCurrentGamePlay: (interaction: PlayerInteractionType) => Player[];
 };
 
-function useCurrentGamePlay(game: Ref<Game>): UseCurrentGamePlay {
+function useCurrentGamePlay(game: MaybeRef<Game>): UseCurrentGamePlay {
+  const currentPlay = computed<GamePlay | null>(() => (isRef(game) ? game.value.currentPlay : game.currentPlay));
+  const gameOptions = computed<GameOptions>(() => (isRef(game) ? game.value.options : game.options));
+
   const mustCurrentGamePlayBeSkipped = computed<boolean>(() => {
-    const isWolfHoundSideRandomlyChosen = game.value.options.roles.wolfHound.isSideRandomlyChosen;
+    const isWolfHoundSideRandomlyChosen = gameOptions.value.roles.wolfHound.isSideRandomlyChosen;
     const stealRoleEligibleTargets = getEligibleTargetsWithInteractionInCurrentGamePlay("steal-role");
-    const currentGameAction = game.value.currentPlay?.action;
+    const currentGameAction = currentPlay.value?.action;
     const isCurrentActionBuryDeadBodiesAndNoStealRoleEligibleTargets = currentGameAction === "bury-dead-bodies" && !stealRoleEligibleTargets.length;
     const isCurrentActionChooseSideAndSideRandomlyChosen = currentGameAction === "choose-side" && isWolfHoundSideRandomlyChosen;
 
@@ -29,14 +34,14 @@ function useCurrentGamePlay(game: Ref<Game>): UseCurrentGamePlay {
       "stuttering-judge-request",
     ];
 
-    return gamePlayCausesSortedByPriority.find(cause => game.value.currentPlay?.causes?.includes(cause));
+    return gamePlayCausesSortedByPriority.find(cause => currentPlay.value?.causes?.includes(cause));
   });
 
   function getEligibleTargetsWithInteractionInCurrentGamePlay(interactionType: PlayerInteractionType): Player[] {
-    if (game.value.currentPlay?.source.interactions === undefined) {
+    if (currentPlay.value?.source.interactions === undefined) {
       return [];
     }
-    const interaction = game.value.currentPlay.source.interactions.find(({ type }) => type === interactionType);
+    const interaction = currentPlay.value.source.interactions.find(({ type }) => type === interactionType);
     if (interaction === undefined) {
       return [];
     }

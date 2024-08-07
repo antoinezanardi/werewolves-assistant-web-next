@@ -19,7 +19,7 @@ function useFetchGames(): UseFetchGames {
         method: "POST",
         body: JSON.stringify(createGameDto),
       });
-    } catch (error) {
+    } catch {
       return null;
     }
   }
@@ -27,7 +27,7 @@ function useFetchGames(): UseFetchGames {
   async function getGame(gameId: string): Promise<ReturnType<typeof $fetch<Game>> | null> {
     try {
       return await fetchWerewolvesAssistantApi<Game>(`/games/${gameId}`, { method: "GET" });
-    } catch (error) {
+    } catch {
       return null;
     }
   }
@@ -35,7 +35,7 @@ function useFetchGames(): UseFetchGames {
   async function cancelGame(gameId: string): Promise<ReturnType<typeof $fetch<Game>> | null> {
     try {
       return await fetchWerewolvesAssistantApi<Game>(`/games/${gameId}`, { method: "DELETE" });
-    } catch (error) {
+    } catch {
       return null;
     }
   }
@@ -46,7 +46,7 @@ function useFetchGames(): UseFetchGames {
         method: "POST",
         body: JSON.stringify(makeGamePlayDto),
       });
-    } catch (error) {
+    } catch {
       return null;
     }
   }

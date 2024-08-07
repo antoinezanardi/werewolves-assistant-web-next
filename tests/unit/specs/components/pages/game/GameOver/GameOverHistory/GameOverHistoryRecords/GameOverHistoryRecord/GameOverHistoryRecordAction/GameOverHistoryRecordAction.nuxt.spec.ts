@@ -82,18 +82,6 @@ describe("Game Over History Record Action Component", () => {
       {
         gameHistoryRecord: createFakeGameHistoryRecord({
           play: createFakeGameHistoryRecordPlay({
-            source: createFakeGameHistoryRecordPlaySource({ name: "bear-tamer" }),
-            action: "growl",
-            type: "target",
-            targets: [createFakeGameHistoryRecordPlayTarget()],
-          }),
-        }),
-        expectedText: "components.GameOverHistoryRecordAction.growled",
-        test: "should have growled text when game history record action is growled.",
-      },
-      {
-        gameHistoryRecord: createFakeGameHistoryRecord({
-          play: createFakeGameHistoryRecordPlay({
             source: createFakeGameHistoryRecordPlaySource({ name: "big-bad-wolf" }),
             action: "eat",
             type: "target",
@@ -406,7 +394,7 @@ describe("Game Over History Record Action Component", () => {
       {
         gameHistoryRecord: createFakeGameHistoryRecord({
           play: createFakeGameHistoryRecordPlay({
-            source: createFakeGameHistoryRecordPlaySource({ name: "bear-tamer" }),
+            source: createFakeGameHistoryRecordPlaySource({ name: "witch" }),
             action: "eat",
             type: "target",
             targets: [createFakeGameHistoryRecordPlayTarget()],
@@ -441,18 +429,6 @@ describe("Game Over History Record Action Component", () => {
         }),
         expectedIconSrc: "/svg/game/player/player-attribute/powerless.svg",
         test: "should have skipped icon when game history record action is skipped.",
-      },
-      {
-        gameHistoryRecord: createFakeGameHistoryRecord({
-          play: createFakeGameHistoryRecordPlay({
-            source: createFakeGameHistoryRecordPlaySource({ name: "bear-tamer" }),
-            action: "growl",
-            type: "target",
-            targets: [createFakeGameHistoryRecordPlayTarget()],
-          }),
-        }),
-        expectedIconSrc: "/svg/misc/exclamation-mark.svg",
-        test: "should have exclamation mark icon when game history record action is growled.",
       },
       {
         gameHistoryRecord: createFakeGameHistoryRecord({

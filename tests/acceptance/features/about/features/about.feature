@@ -29,28 +29,28 @@ Feature: ❓ About Page
     Given the user is on about page
 
     When the progressbar with name "Loading roles…" is hidden
-    Then the button with name "Click to expand the description of the Werewolf role" should be visible
-    And the button with name "Click to expand the description of the Three Brothers role" should be visible
-    And the button with name "Click to expand the description of the Witch role" should be visible
-    And the button with name "Click to expand the description of the Actor role" should be visible
+    Then the button with name "Illustration of the Werewolf" should be visible
+    And the button with name "Illustration of the Three Brothers" should be visible
+    And the button with name "Illustration of the Witch" should be visible
+    And the button with name "Illustration of the Actor" should be visible
     And the img with name "Illustration of the Werewolf role on the left description" should be hidden
-    And the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Click to expand the description of the Werewolf role" should be hidden
+    And the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Illustration of the Werewolf" should be hidden
 
-    When the user clicks on the button with name "Click to expand the description of the Werewolf role"
-    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Click to expand the description of the Werewolf role" should be visible
-    And the text "Base Game" under the region with name "Click to expand the description of the Werewolf role" should be visible
+    When the user clicks on the button with name "Illustration of the Werewolf"
+    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Illustration of the Werewolf" should be visible
+    And the text "Base Game" under the region with name "Illustration of the Werewolf" should be visible
     And the img with name "Illustration of the Werewolf role on the left description" should be visible
 
-    When the user clicks on the button with name "Click to expand the description of the Pied Piper role"
-    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Click to expand the description of the Werewolf role" should be visible
+    When the user clicks on the button with name "Illustration of the Pied Piper"
+    Then the text "Each night, they devour a Villager. During the day, they try to conceal their nocturnal identity to escape public vengeance." under the region with name "Illustration of the Werewolf" should be visible
     And the img with name "Illustration of the Werewolf role on the left description" should be visible
-    And the text "Base Game" under the region with name "Click to expand the description of the Werewolf role" should be visible
-    And the text "Ignominiously chased from the village, he returned years later under the guise of a false identity to exact his terrible revenge." under the region with name "Click to expand the description of the Pied Piper role" should be visible
+    And the text "Base Game" under the region with name "Illustration of the Werewolf" should be visible
+    And the text "Ignominiously chased from the village, he returned years later under the guise of a false identity to exact his terrible revenge." under the region with name "Illustration of the Pied Piper" should be visible
     And the img with name "Illustration of the Pied Piper role on the left description" should be visible
-    And the text "Lonely" under the region with name "Click to expand the description of the Pied Piper role" should be visible
-    And the text "New Moon Expansion" under the region with name "Click to expand the description of the Pied Piper role" should be visible
+    And the text "Lonely" under the region with name "Illustration of the Pied Piper" should be visible
+    And the text "New Moon Expansion" under the region with name "Illustration of the Pied Piper" should be visible
 
-    When the user clicks on the button with name "Click to expand the description of the Pied Piper role"
+    When the user clicks on the button with name "Illustration of the Pied Piper"
     Then the img with name "Illustration of the Pied Piper role on the left description" should be hidden
 
   Scenario: ❓ User goes on YouTube to watch a tutorial by clicking on the link

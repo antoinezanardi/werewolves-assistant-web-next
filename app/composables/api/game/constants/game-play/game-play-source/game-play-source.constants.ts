@@ -26,7 +26,6 @@ const GAME_PLAY_SOURCE_NAMES = [
   "wild-child",
   "witch",
   "actor",
-  "bear-tamer",
   "accursed-wolf-father",
 ] as const satisfies readonly (PlayerGroup | RoleName | "sheriff")[];
 

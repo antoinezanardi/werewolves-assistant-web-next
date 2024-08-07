@@ -1,9 +1,12 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
+import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
 
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
+import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
+import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constants/role.constants";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useRolesStore } from "~/stores/role/useRolesStore";
@@ -26,12 +29,26 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     return playersWithPositionDependantRoles.length > 0;
   });
 
+  const doesCreateGameDtoContainAdditionalCardsDependantRoles = computed<boolean>(() => {
+    const playersWithAdditionalCardsDependantRoles = getPlayersWithAnyRoleNameInCreateGameDto([...ADDITIONAL_CARDS_DEPENDANT_ROLES]);
+
+    return playersWithAdditionalCardsDependantRoles.length > 0;
+  });
+
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
   }
 
   function resetCreateGameDto(): void {
     createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
+  }
+
+  function removeObsoleteAdditionalCardsFromCreateGameDto(): void {
+    if (!createGameDto.value.additionalCards) {
+      return;
+    }
+    const rolesInGame = new Set(createGameDto.value.players.map(player => player.role.name));
+    createGameDto.value.additionalCards = createGameDto.value.additionalCards.filter(({ recipient }) => rolesInGame.has(recipient));
   }
 
   function addPlayerToCreateGameDto(player: CreateGamePlayerDto): void {
@@ -54,6 +71,10 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     if (playerIndex !== -1) {
       createGameDto.value.players = createGameDto.value.players.toSpliced(playerIndex, 1);
     }
+  }
+
+  function isRoleInCreateGameDto(roleName: RoleName): boolean {
+    return createGameDto.value.players.some(player => player.role.name === roleName);
   }
 
   function getPlayersWithRoleNameInCreateGameDto(roleName: RoleName): CreateGamePlayerDto[] {
@@ -88,20 +109,43 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
     return leftCount <= -1 ? 0 : leftCount;
   }
+
+  function setAdditionalCardsForRecipientInCreateGameDto(additionalCards: CreateGameAdditionalCardDto[], recipient: GameAdditionalCardRecipientRoleName): void {
+    if (!createGameDto.value.additionalCards) {
+      createGameDto.value.additionalCards = additionalCards;
+    }
+
+    createGameDto.value.additionalCards = createGameDto.value.additionalCards.filter(card => card.recipient !== recipient);
+    createGameDto.value.additionalCards.push(...additionalCards);
+  }
+
+  function getAdditionalCardsForRecipientInCreateGameDto(recipient: GameAdditionalCardRecipientRoleName): CreateGameAdditionalCardDto[] {
+    return createGameDto.value.additionalCards?.filter(card => card.recipient === recipient) ?? [];
+  }
+
+  function getAdditionalCardsWithRoleNameInCreateGameDto(roleName: RoleName): CreateGameAdditionalCardDto[] {
+    return createGameDto.value.additionalCards?.filter(card => card.roleName === roleName) ?? [];
+  }
   return {
     createGameDto,
     doesCreateGameDtoContainPositionDependantRoles,
+    doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
+    removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,
     updatePlayerInCreateGameDto,
     setPlayersToCreateGameDto,
     removePlayerFromCreateGameDto,
+    isRoleInCreateGameDto,
     getPlayersWithRoleNameInCreateGameDto,
     getPlayersWithAnyRoleNameInCreateGameDto,
     isRoleMinReachedInCreateGameDto,
     isRoleMaxReachedInCreateGameDto,
     getRoleLeftCountToReachMinInCreateGameDto,
+    setAdditionalCardsForRecipientInCreateGameDto,
+    getAdditionalCardsForRecipientInCreateGameDto,
+    getAdditionalCardsWithRoleNameInCreateGameDto,
   };
 });
 

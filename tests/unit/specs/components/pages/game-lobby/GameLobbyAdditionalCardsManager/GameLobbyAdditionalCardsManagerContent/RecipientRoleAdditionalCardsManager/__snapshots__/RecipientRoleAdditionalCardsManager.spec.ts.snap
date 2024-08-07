@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Recipient Role Additional Cards Manager Component > should match snapshot when rendered without shallow. 1`] = `
+"<fieldset class="p-fieldset p-component" id="role-additional-cards-manager-thief" data-pc-name="fieldset" data-pc-section="root" pc1="">
+  <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
+    <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+      <h2 id="game-option-role-legend-title">shared.role.name.thief</h2>
+    </div>
+  </legend>
+  <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+    <div id="role-additional-cards-manager-thief_content" class="p-fieldset-content-container" role="region" aria-labelledby="role-additional-cards-manager-thief_header" data-pc-section="contentcontainer">
+      <div class="p-fieldset-content" data-pc-section="content">
+        <recipient-role-additional-cards-disclaimer-stub recipientrolename="thief" id="recipient-role-additional-cards-disclaimer"></recipient-role-additional-cards-disclaimer-stub>
+        <recipient-role-additional-cards-multi-select-stub recipientrolename="thief" id="recipient-role-additional-cards-multi-select"></recipient-role-additional-cards-multi-select-stub>
+      </div>
+    </div>
+  </transition-stub>
+</fieldset>"
+`;
+
+exports[`Recipient Role Additional Cards Manager Component > should match snapshot when rendered. 1`] = `"<fieldset-stub id="role-additional-cards-manager-thief" pt="[object Object]"></fieldset-stub>"`;

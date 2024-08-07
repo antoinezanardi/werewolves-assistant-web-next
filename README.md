@@ -32,14 +32,15 @@
 3. 📸 [Screenshots](#screenshots)
 4. 🔨 [Installation](#installation)
 5. 🚀 [Build](#build)
-6. 💯 [Tests](#tests)
-7. 🌿 [Env variables](#env-variables)
-8. ☑️ [Code analysis and consistency](#code-analysis-and-consistency)
-9. 📈 [Releases & Changelog](#versions)
-10. 🐙 [GitHub Actions](#github-actions)
-11. ✨ [Misc commands](#misc-commands)
-12. ©️ [License](#license)
-13. ❤️ [Contributors](#contributors)
+6. 🐳 [Docker](#docker)
+7. 💯 [Tests](#tests)
+8. 🌿 [Env variables](#env-variables)
+9. ☑️ [Code analysis and consistency](#code-analysis-and-consistency)
+10. 📈 [Releases & Changelog](#versions)
+11. 🐙 [GitHub Actions](#github-actions)
+12. ✨ [Misc commands](#misc-commands)
+13. ©️ [License](#license)
+14. ❤️ [Contributors](#contributors)
 
 ## <a name="what-is-this-app">🐺 What is this app ?</a>
 Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.
@@ -112,6 +113,16 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    <summary>⚙️ Game Lobby Options Hub</summary>
 >  
 >    ![Game Lobby Options Hub](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Options%20Hub%20on%20Roles%20tab.png)
+>  </details>
+>  <details>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards without cards</summary>
+>  
+>    ![Game Lobby Additional Cards without cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20without%20cards.png)
+>  </details>
+>  <details>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards with 5 cards</summary>
+>  
+>    ![Game Lobby Additional Cards with 5 cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20with%205%20cards.png)
 >  </details>
 </details>
 
@@ -367,6 +378,21 @@ In order to build the app for production, run the following command :
 # Build the app
 pnpm run build
 ```
+
+## <a name="docker">🐳 Docker</a>
+
+This app is Docker ready !
+
+The Dockerfile is available at the root of the project. It uses a multi-stage build to optimize the image size.
+
+You can run the whole project (including MongoDB and the Werewolves Assistant API) with the following command :
+
+```bash
+# Run the whole project with `develop` tags for the API and the Web app
+pnpm run docker:production-example:start
+```
+
+The `docker-compose.yml` file used for the production example stated above is available **[here](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/docker/werewolves-assistant-production-example/docker-compose.yml)**.
 
 ## <a name="tests">💯 Tests</a>
 

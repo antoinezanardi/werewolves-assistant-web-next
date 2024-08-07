@@ -1,30 +1,29 @@
 import { createTestingPinia } from "@pinia/testing";
-import type { mount } from "@vue/test-utils";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
-import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
-import { useAudioStore } from "~/stores/audio/useAudioStore";
-import { StoreIds } from "~/stores/enums/store.enum";
-import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGameHistoryRecordPlayTarget } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.factory";
-import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
-import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeScandalmongerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
+import { StoreIds } from "~/stores/enums/store.enum";
+import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Seer Has Seen Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameSeerHasSeenEvent>>;
   const defaultSeenPlayer = createFakeScandalmongerAlivePlayer({ name: "Antoine" });
-  const defaultGame = createFakeGame({
-    lastGameHistoryRecord: createFakeGameHistoryRecord({
-      play: createFakeGameHistoryRecordPlay({
-        action: "look",
-        targets: [createFakeGameHistoryRecordPlayTarget({ player: defaultSeenPlayer })],
-      }),
+  const defaultProps: CurrentGameEventProps = {
+    event: createFakeGameEvent({
+      type: "seer-has-seen",
+      players: [defaultSeenPlayer],
     }),
+  };
+  const defaultGame = createFakeGame({
     options: DEFAULT_GAME_OPTIONS,
   });
   const initialState = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
@@ -33,12 +32,15 @@ describe("Game Seer Has Seen Event Component", () => {
   Promise<ReturnType<typeof mount<typeof GameSeerHasSeenEvent>>> {
     return mountSuspendedComponent(GameSeerHasSeenEvent, {
       global: { plugins: [createTestingPinia(initialState)] },
+      props: defaultProps,
       ...options,
     });
   }
 
   beforeEach(async() => {
     wrapper = await mountGameSeerHasSeenEventComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame(defaultGame);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -68,49 +70,30 @@ describe("Game Seer Has Seen Event Component", () => {
       expect(gameSeerHasSeenEventComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
 
-    it("should pass not found targeted player texts when last game history record is null.", async() => {
-      const game = createFakeGame({
-        lastGameHistoryRecord: null,
-        options: DEFAULT_GAME_OPTIONS,
-      });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
-      const gameSeerHasSeenEventComponent = wrapper.findComponent<typeof GameSeerHasSeenEvent>("#game-seer-has-seen-event");
-      const expectedTexts: string[] = ["components.GameSeerHasSeenEvent.cantFindTargetedPlayer"];
-      const expectedTextsAsString = expectedTexts.join(",");
-
-      expect(gameSeerHasSeenEventComponent.attributes("texts")).toBe(expectedTextsAsString);
-    });
-
-    it("should pass not found targeted player texts when last game history record has no targets.", async() => {
-      const game = createFakeGame({
-        lastGameHistoryRecord: createFakeGameHistoryRecord({ play: createFakeGameHistoryRecordPlay({ action: "look" }) }),
-        options: DEFAULT_GAME_OPTIONS,
-      });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
-      const gameSeerHasSeenEventComponent = wrapper.findComponent<typeof GameSeerHasSeenEvent>("#game-seer-has-seen-event");
-      const expectedTexts: string[] = ["components.GameSeerHasSeenEvent.cantFindTargetedPlayer"];
-      const expectedTextsAsString = expectedTexts.join(",");
-
-      expect(gameSeerHasSeenEventComponent.attributes("texts")).toBe(expectedTextsAsString);
-    });
-
-    it("should pass not found targeted player texts when last game history record has no player targets.", async() => {
-      const game = createFakeGame({
-        lastGameHistoryRecord: createFakeGameHistoryRecord({
-          play: createFakeGameHistoryRecordPlay({
-            action: "look",
-            targets: [],
+    it("should pass not found targeted player texts when there are no players in event.", async() => {
+      wrapper = await mountGameSeerHasSeenEventComponent({
+        props: {
+          event: createFakeGameEvent({
+            type: "seer-has-seen",
+            players: [],
           }),
-        }),
-        options: DEFAULT_GAME_OPTIONS,
+        },
       });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
+      const gameSeerHasSeenEventComponent = wrapper.findComponent<typeof GameSeerHasSeenEvent>("#game-seer-has-seen-event");
+      const expectedTexts: string[] = ["components.GameSeerHasSeenEvent.cantFindTargetedPlayer"];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gameSeerHasSeenEventComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
+    it("should pass not found targeted player texts when players in event are undefined.", async() => {
+      wrapper = await mountGameSeerHasSeenEventComponent({
+        props: {
+          event: createFakeGameEvent({
+            type: "seer-has-seen",
+          }),
+        },
+      });
       const gameSeerHasSeenEventComponent = wrapper.findComponent<typeof GameSeerHasSeenEvent>("#game-seer-has-seen-event");
       const expectedTexts: string[] = ["components.GameSeerHasSeenEvent.cantFindTargetedPlayer"];
       const expectedTextsAsString = expectedTexts.join(",");

@@ -10,8 +10,8 @@ describe("Use Fetch Game Composable", () => {
     composables: {
       useWerewolvesAssistantApi: {
         fetchWerewolvesAssistantApi: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {

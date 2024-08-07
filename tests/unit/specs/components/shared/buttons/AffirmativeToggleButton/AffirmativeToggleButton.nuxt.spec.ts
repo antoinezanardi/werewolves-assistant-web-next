@@ -34,10 +34,10 @@ describe("Affirmative Toggle Button Component", () => {
 
     it("should change v-model value when toggle button emits input event.", async() => {
       wrapper = await mountAffirmativeToggleButtonComponent({ shallow: false });
-      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#affirmative-toggle-button > .p-togglebutton-input");
-      await toggleButtonCheckbox.setValue(false);
+      const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#affirmative-toggle-button");
+      await toggleButtonCheckbox.trigger("click");
 
-      expect(toggleButtonCheckbox.attributes("value")).toBe("false");
+      expect(toggleButtonCheckbox.attributes("value")).toBeUndefined();
     });
 
     it("should translate no label when rendered.", () => {

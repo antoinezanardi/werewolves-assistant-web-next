@@ -43,6 +43,10 @@ const { getRoleNameLabel } = useRoleName();
 const { t } = useI18n();
 
 const createGameDtoStore = useCreateGameDtoStore();
+const {
+  removePlayerFromCreateGameDto,
+  removeObsoleteAdditionalCardsFromCreateGameDto,
+} = createGameDtoStore;
 
 const playerCardRoleText = computed<string>(() => {
   if (props.player.role.name === undefined) {
@@ -52,7 +56,8 @@ const playerCardRoleText = computed<string>(() => {
 });
 
 function onClickFromRemovePlayerButton(): void {
-  createGameDtoStore.removePlayerFromCreateGameDto(props.player.name);
+  removePlayerFromCreateGameDto(props.player.name);
+  removeObsoleteAdditionalCardsFromCreateGameDto();
 }
 
 function onPlayerCardSelectorClickFromPlayerCard(): void {

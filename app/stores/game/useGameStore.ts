@@ -19,7 +19,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
   const cancelingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const makingGamePlayStatus = ref<AsyncDataRequestStatus>("idle");
 
-  const { generateAndSetGameEventsFromGame } = useGameEventsStore();
+  const { resetGameEventIndex } = useGameEventsStore();
 
   function resetGame(): void {
     game.value = new Game();
@@ -33,7 +33,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
 
       return;
     }
-    generateAndSetGameEventsFromGame(fetchedGame);
+    resetGameEventIndex();
     game.value = fetchedGame;
     fetchingGameStatus.value = "success";
   }
@@ -58,7 +58,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
 
       return;
     }
-    generateAndSetGameEventsFromGame(playedGame);
+    resetGameEventIndex();
     game.value = playedGame;
     makingGamePlayStatus.value = "success";
   }

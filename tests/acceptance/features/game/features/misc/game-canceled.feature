@@ -3,7 +3,7 @@
 Feature: 🎲🚫 Game Canceled
 
   Scenario: 🎲🚫 User cancels a game when it is playing
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
     And the user closes the toast
 
     When the user clicks on parameters button in navigation bar
@@ -15,7 +15,7 @@ Feature: 🎲🚫 Game Canceled
     And the page should match or creates the missing snapshot with name "Game canceled"
 
   Scenario: 🎲🚫 Game Canceled page has valid head title and SEO tags
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
@@ -30,7 +30,7 @@ Feature: 🎲🚫 Game Canceled
       | robots           | noindex, nofollow                   |
 
   Scenario: 🎲🚫 User can't cancel a game when it is already canceled
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
@@ -39,7 +39,7 @@ Feature: 🎲🚫 Game Canceled
     Then the cancel game button in parameters in navigation bar should be disabled
 
   Scenario: 🎲🚫 User creates a new game after canceling a game
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
@@ -47,7 +47,7 @@ Feature: 🎲🚫 Game Canceled
     Then the user should be on game-lobby page
 
   Scenario: 🎲🚫 User goes back to home after canceling a game
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
@@ -55,7 +55,7 @@ Feature: 🎲🚫 Game Canceled
     Then the user should be on home page
 
   Scenario: 🎲🚫User goes back on home page by clicking on werewolves assistant logo in navigation bar
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar
@@ -63,7 +63,7 @@ Feature: 🎲🚫 Game Canceled
     Then the user should be on home page
 
   Scenario: 🎲🚫User goes back on home page by clicking on back to home page button in parameters dropdown
-    Given the user creates a game with 4 random role players
+    Given the user creates a game with 4 simple role players
 
     When the user clicks on parameters button in navigation bar
     And the user clicks on the cancel game button in parameters in navigation bar

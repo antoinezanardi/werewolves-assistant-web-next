@@ -440,8 +440,8 @@
       "noWerewolfSidedRole": "Au moins un rôle du côté des Loups-Garous doit être attribué",
       "twoSistersMinimumPlayersNotReached": "Le rôle des Deux Sœurs nécessite au moins 2 joueurs avec ce rôle",
       "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
-      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies (pas encore implémenté)",
-      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies (pas encore implémenté)",
+      "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies",
+      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies",
       "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
     }
   },
@@ -774,14 +774,17 @@
       "noRole": "Aucun"
     },
     "GameLobbyRolePickerFooter": {
-      "pickRole": "Assigner ce rôle pour le joueur"
+      "pickRole": "Assigner ce rôle pour le joueur",
+      "additionalCardRemoved": "Carte additionnelle retirée",
+      "roleAdditionalCardRemovedForRecipient": "La carte additionnelle avec le rôle de {roleName} a été retirée pour {recipient}"
     },
     "GameLobbyRolePickerGridElement": {
       "random": "Aléatoire"
     },
     "GameLobbyRolePickerGridElementBadges": {
       "totalInParty": "Total dans la partie",
-      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)",
+      "totalInAdditionalCards": "Total dans les cartes additionnelles"
     },
     "GameLobbyRolePickerDescription": {
       "pickARole": "Choisissez un rôle"
@@ -794,7 +797,8 @@
       "roleCountInParty": "Aucun dans la partie | 1 dans la partie | {count} dans la partie",
       "roleCountMaxReached": "Nombre maximum atteint",
       "recommendedMinPlayers": "Recommandé pour {count} joueurs minimum",
-      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)"
+      "minInGameNotReached": "Minimum dans la partie non atteint ({count} restant)",
+      "roleCountInGameAdditionalCards": "Aucun dans les cartes additionnelles | 1 dans les cartes additionnelles | {count} dans les cartes additionnelles"
     },
     "GameOverHistoryRecordIcon": {
       "gameHistoryRecordIconAltText": "Icône de ligne de l'historique de la partie"
@@ -1327,7 +1331,7 @@
       "dayRises": "Le jour se lève sur le village de Thiercelieux !",
       "nightFalls": "La nuit tombe sur le village de Thiercelieux…"
     },
-    "GamePlayerDiesEvent": {
+    "GameDeathEvent": {
       "cantFindDeadPlayer": "L'Assistant ne trouve pas le joueur mort… Veuillez continuer.",
       "playerDies": "{playerName} est mort ! Quelle tragédie…",
       "playerCanRevealRole": "Il ou elle peut révéler son rôle aux autres joueurs.",
@@ -1340,8 +1344,8 @@
       "cantFindTargetedPlayer": "Le joueur vu ne peut être trouvé… Veuillez continuer.",
       "gameMasterWillMimeSide": "Comme la Voyante est silencieuse, le Maître de jeu mimera le camp du joueur vu.",
       "gameMasterWillMimeRole": "Comme la Voyante est silencieuse, le Maître de jeu mimera le rôle du joueur vu.",
-      "seerHasSeenSide": "Le Voyant a vu un joueur du camp des {side} !",
-      "seerHasSeenRole": "Le Voyant a vu {role} !"
+      "seerHasSeenSide": "La Voyante a vu un joueur du camp des {side} !",
+      "seerHasSeenRole": "La Voyante a vu {role} !"
     },
     "GameSheriffHasBeenElectedEvent": {
       "cantFindElectedSheriff": "Le Maire élu ne peut être trouvé… Veuillez continuer.",
@@ -1353,7 +1357,7 @@
       "mute": "Couper le son",
       "unmute": "Activer le son"
     },
-    "GameScandalmongerHasMarkedEvent": {
+    "GameScandalmongerMayHaveMarkedEvent": {
       "scandalMongerDidntMarkAnyone": "Le Corbeau n'a marqué personne pour cette nuit. Il s'est envolé…",
       "scandalmongerHasMarkedAPlayer": "Le Corbeau a marqué un joueur avec sa plume.",
       "gameMasterWillPutScandalmongerMark": "Le Maître du Jeu va déposer la plume en face du joueur marqué."
@@ -1440,6 +1444,42 @@
       "meetEachOtherTimeIsOver": "Il est l'heure de se rendormir !",
       "voteTimeIsOver": "Il est l'heure de voter !",
       "electSheriffTimeIsOver": "Il est l'heure d'élire le Maire !"
+    },
+    "GameElderHasTakenRevengeEvent": {
+      "cantFindElder": "L'Ancien ne peut être trouvé… Veuillez continuer.",
+      "elderHasBeenMurderedByVillager": "L'Ancien a été éliminé par son propre camp !",
+      "elderHasTakenRevenge": "Sa vengeance s'abat sur le Village ! Tous les joueurs du camp des Villageois perdent leur pouvoirs pour le reste de la partie."
+    },
+    "GameBearGrowlsOrSleepsEvent": {
+      "bearGrowls": "L'ours grogne ! Un ou plusieurs Loups-Garous se trouvent à juste à côté du Montreur d'Ours…",
+      "bearSleeps": "L'ours mange paisiblement son miel. Aucun Loup-Garou n'est juste à côté du Montreur d'Ours…"
+    },
+    "GameScandalmongerMarkIsActiveEvent": {
+      "cantFindScandalmongerMarkedPlayer": "Le joueur marqué par le Corbeau ne peut être trouvé… Veuillez continuer.",
+      "scandalmongerHasMarkedAPlayer": "La plume du Corbeau a été placée sur {playerName} !",
+      "playerHasPenaltyForVotes": "Cette personne aura un vote supplémentaire contre elle lors du prochain vote. | Cette personne aura {penalty} votes supplémentaires contre elle lors du prochain vote."
+    },
+    "GameFoxMayHaveSniffedEvent": {
+      "foxMayHaveSniffed": "Le Renard a peut-être reniflé un groupe de 3 joueurs.",
+      "gameMasterWillTellIfPresentWerewolfInGroup": "Si c'est le cas, le Maître du Jeu va révéler au Renard s'il y a un Loup-Garou parmi le groupe de joueurs avec un pouce en l'air. Sinon, il donnera un pouce vers le bas.",
+      "foxHaveSniffedWerewolf": "La phrase suivante ne peut pas être dite à voix haute : Le Renard a reniflé un Loup-Garou parmi le groupe de joueurs, le Maître du Jeu donne un pouce en l'air.",
+      "foxDidNotSniffWerewolf": "La phrase suivante ne peut pas être dite à voix haute : Le Renard n'a pas reniflé de Loup-Garou parmi le groupe de joueurs, le Maître du Jeu donne un pouce vers le bas.",
+      "foxIsPowerlessIfMissesWerewolf": "Si le Renard a choisi un groupe et n'a pas reniflé de Loup-Garou parmi le groupe de 3 joueurs, il perd ses pouvoirs pour le reste de la partie."
+    },
+    "GameLobbyHeaderAdditionalCardsManagerButton": {
+      "additionalCards": "Cartes additionnelles"
+    },
+    "GameLobbyAdditionalCardsManager": {
+      "additionalCards": "Cartes additionnelles"
+    },
+    "RecipientRoleAdditionalCardsDisclaimer": {
+      "additionalCardsNotSetDisclaimer": "Veuillez choisir les cartes supplémentaires pour {definiteRecipientRoleName} ci-dessous",
+      "additionalCardsSetDisclaimer": "{definiteRecipientRoleName} jouera avec une seule carte dans cette partie | {definiteRecipientRoleName} jouera avec {count} cartes dans cette partie"
+    },
+    "RecipientRoleAdditionalCardsMultiSelect": {
+      "searchRole": "Rechercher un rôle",
+      "noRoleFound": "Aucun rôle trouvé",
+      "pickOneToFiveCards": "Choisissez une à cinq cartes"
     }
   }
 }

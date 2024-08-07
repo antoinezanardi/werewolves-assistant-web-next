@@ -14,4 +14,12 @@ describe("Use Strings Composable", () => {
       expect(result).toBe("no");
     });
   });
+
+  describe("lowerCaseFirstLetter", () => {
+    it("should return a string with the first letter in lowercase when called.", () => {
+      const result = useStrings().lowerCaseFirstLetter("Test");
+
+      expect(result).toBe("test");
+    });
+  });
 });

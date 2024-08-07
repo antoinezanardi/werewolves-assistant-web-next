@@ -55,8 +55,11 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
         injectStylesAsStringToTop: [],
         resolvePath: "",
         services: [],
-        cssLayerOrder: "",
         importPT: "",
+        autoImport: false,
+        importTheme: {
+          from: "",
+        },
         injectStylesAsString: [],
       },
     },

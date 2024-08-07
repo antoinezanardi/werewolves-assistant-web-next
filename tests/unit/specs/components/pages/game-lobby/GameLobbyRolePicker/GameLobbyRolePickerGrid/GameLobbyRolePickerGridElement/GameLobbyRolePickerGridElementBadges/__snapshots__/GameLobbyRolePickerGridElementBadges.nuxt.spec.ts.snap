@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Lobby Role Picker Grid Element Badges Component > should match snapshot when rendered. 1`] = `"<div id="game-lobby-role-picker-grid-element-badges"><span class="p-badge p-component -right-4 absolute top-1" id="role-count-in-game-badge" data-testid="game-lobby-role-picker-role-count-in-game-badge" data-pc-name="badge" data-pc-section="root" data-pd-tooltip="true"><i class="fa fa-chess-pawn me-2"></i><span>1</span></span><span class="p-badge p-component p-badge-danger -right-4 absolute top-8" id="role-min-count-in-game-badge" data-testid="game-lobby-role-picker-role-min-count-in-game-badge" data-pc-name="badge" data-pc-section="root" data-pd-tooltip="true"><i class="fa fa-exclamation-circle"></i></span></div>"`;
+exports[`Game Lobby Role Picker Grid Element Badges Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-role-picker-grid-element-badges">
+  <!--v-if--><span class="p-badge p-component -right-4 absolute top-1" id="role-count-in-game-badge" data-testid="game-lobby-role-picker-role-count-in-game-badge" data-pc-name="badge" data-pc-section="root" data-pd-tooltip="true" pc1=""><i class="fa fa-chess-pawn me-2"></i><span>1</span></span><span class="p-badge p-component p-badge-danger -right-4 absolute top-8" id="role-min-count-in-game-badge" data-testid="game-lobby-role-picker-role-min-count-in-game-badge" data-pc-name="badge" data-pc-section="root" data-pd-tooltip="true" pc2=""><i class="fa fa-exclamation-circle"></i></span>
+</div>"
+`;

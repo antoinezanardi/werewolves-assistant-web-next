@@ -1,13 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Options Hub Roles Tab Wild Child Component > should match snapshot when rendered. 1`] = `
-"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wild-child" data-pc-name="fieldset" data-pc-section="root">
+"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wild-child" data-pc-name="fieldset" data-pc-section="root" pc1="">
   <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
     <game-option-role-legend-stub rolename="wild-child"></game-option-role-legend-stub>
-    <!---->
   </legend>
   <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
-    <div id="game-lobby-options-hub-roles-tab-wild-child_content" class="p-toggleable-content" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wild-child_header" data-pc-section="toggleablecontent">
+    <div id="game-lobby-options-hub-roles-tab-wild-child_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-wild-child_header" data-pc-section="contentcontainer">
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">

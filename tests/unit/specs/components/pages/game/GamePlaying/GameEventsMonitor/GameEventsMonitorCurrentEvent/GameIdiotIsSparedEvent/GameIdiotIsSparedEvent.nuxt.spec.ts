@@ -1,18 +1,25 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeIdiotAlivePlayer, createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameIdiotIsSparedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameIdiotIsSparedEvent/GameIdiotIsSparedEvent.vue";
-import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
-import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Idiot Is Spared Event Component", () => {
+  const defaultIdiotPlayer = createFakeIdiotAlivePlayer({ name: "Benoit" });
+  const defaultProps: CurrentGameEventProps = {
+    event: createFakeGameEvent({
+      type: "idiot-is-spared",
+      players: [defaultIdiotPlayer],
+    }),
+  };
   const defaultGame = createFakeGame({
     players: [
       createFakeSeerAlivePlayer({ name: "Antoine" }),
@@ -28,12 +35,15 @@ describe("Game Idiot Is Spared Event Component", () => {
       global: {
         plugins: [createTestingPinia(testingPinia)],
       },
+      props: defaultProps,
       ...options,
     });
   }
 
   beforeEach(async() => {
     wrapper = await mountGameIdiotIsSparedEventComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame(defaultGame);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -62,12 +72,7 @@ describe("Game Idiot Is Spared Event Component", () => {
     });
 
     it("should pass can't find idiot player texts when idiot player is not found.", async() => {
-      const game = createFakeGame({
-        players: [createFakeSeerAlivePlayer()],
-      });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
+      wrapper = await mountGameIdiotIsSparedEventComponent({ props: { event: createFakeGameEvent({ players: [] }) } });
       const gameIdiotIsSparedEventComponent = wrapper.findComponent<typeof GameIdiotIsSparedEvent>("#game-idiot-is-spared-event");
       const expectedTexts: string[] = ["components.GameIdiotIsSparedEvent.cantFindIdiot"];
       const expectedTextsAsString = expectedTexts.join(",");
@@ -88,19 +93,16 @@ describe("Game Idiot Is Spared Event Component", () => {
       });
     });
 
-    it("should pass idiot player when rendered.", () => {
-      const gameEventFlippingPlayerCardComponent = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-idiot-card");
-
-      expect(gameEventFlippingPlayerCardComponent.props("players")).toStrictEqual<Player[]>([defaultGame.players[1]]);
-    });
-
     it("should not render flipping player card when idiot player is not found.", async() => {
-      const game = createFakeGame({
-        players: [createFakeSeerAlivePlayer()],
+      wrapper = await mountGameIdiotIsSparedEventComponent({
+        props: { event: createFakeGameEvent() },
+        global: {
+          stubs: {
+            GameEventWithTexts: false,
+          },
+          plugins: [createTestingPinia(testingPinia)],
+        },
       });
-      const gameStore = useGameStore();
-      gameStore.game = game;
-      await nextTick();
       const gameEventFlippingPlayerCardComponent = wrapper.findComponent("#game-event-flipping-idiot-card");
 
       expect(gameEventFlippingPlayerCardComponent.exists()).toBeFalsy();

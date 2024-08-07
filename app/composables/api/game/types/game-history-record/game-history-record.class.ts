@@ -1,6 +1,7 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
 
 import { GameHistoryRecordPlay } from "~/composables/api/game/types/game-history-record/game-history-record-play/game-history-record-play.class";
+import { GameHistoryRecordPlayerAttributeAlteration } from "~/composables/api/game/types/game-history-record/game-history-record-player-attribute-alteration/game-history-record-player-attribute-alteration.class";
 import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
 import { Player } from "~/composables/api/game/types/players/player.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
@@ -32,7 +33,15 @@ class GameHistoryRecord {
 
   @Expose()
   @Type(() => Player)
+  public switchedSidePlayers?: Player[];
+
+  @Expose()
+  @Type(() => Player)
   public deadPlayers?: Player[];
+
+  @Expose()
+  @Type(() => GameHistoryRecordPlayerAttributeAlteration)
+  public playerAttributeAlterations?: GameHistoryRecordPlayerAttributeAlteration[];
 
   @Expose()
   public createdAt: Date;

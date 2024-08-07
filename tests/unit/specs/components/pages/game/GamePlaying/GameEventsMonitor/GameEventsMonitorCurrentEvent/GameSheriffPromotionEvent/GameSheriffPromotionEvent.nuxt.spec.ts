@@ -1,8 +1,10 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameSheriffPromotionEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSheriffPromotionEvent/GameSheriffPromotionEvent.vue";
-import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
+import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
@@ -17,8 +19,14 @@ import { createFakeAccursedWolfFatherAlivePlayer } from "@tests/unit/utils/facto
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Sheriff Promotion Event Component", () => {
-  let wrapper: ReturnType<typeof mount<typeof GameSheriffPromotionEvent>>;
   const defaultSheriffPlayer = createFakeAccursedWolfFatherAlivePlayer({ name: "Antoine", attributes: [createFakeSheriffBySheriffPlayerAttribute()] });
+  const defaultProps: CurrentGameEventProps = {
+    event: createFakeGameEvent({
+      type: "sheriff-promotion",
+      players: [defaultSheriffPlayer],
+    }),
+  };
+  let wrapper: ReturnType<typeof mount<typeof GameSheriffPromotionEvent>>;
   const defaultGame = createFakeGame({
     players: [
       createFakeAccursedWolfFatherAlivePlayer(),
@@ -33,12 +41,15 @@ describe("Game Sheriff Promotion Event Component", () => {
   Promise<ReturnType<typeof mount<typeof GameSheriffPromotionEvent>>> {
     return mountSuspendedComponent(GameSheriffPromotionEvent, {
       global: { plugins: [createTestingPinia(testingPinia)] },
+      props: defaultProps,
       ...options,
     });
   }
 
   beforeEach(async() => {
     wrapper = await mountGameSheriffHasBeenElectedEventComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame(defaultGame);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -106,12 +117,14 @@ describe("Game Sheriff Promotion Event Component", () => {
     });
 
     it("should pass can't find sheriff event text when sheriff is not defined.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game = createFakeGame({
-        ...defaultGame,
-        players: [],
+      wrapper = await mountGameSheriffHasBeenElectedEventComponent({
+        props: {
+          event: createFakeGameEvent({
+            type: "sheriff-promotion",
+            players: [],
+          }),
+        },
       });
-      await nextTick();
       const gameSheriffHasBeenElectedEventComponent = wrapper.findComponent<typeof GameEventWithTexts>("#game-sheriff-promotion-event");
       const expectedTexts: string[] = ["components.GameSheriffHasBeenElectedEvent.cantFindElectedSheriff"];
       const expectedTextsAsString = expectedTexts.join(",");
@@ -136,13 +149,28 @@ describe("Game Sheriff Promotion Event Component", () => {
       expect(gameSheriffHasBeenElectedEventComponent.props("players")).toStrictEqual<Player[]>([defaultSheriffPlayer]);
     });
 
-    it("should not render flipping card when sheriff is not defined.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game = createFakeGame({
-        ...defaultGame,
-        players: [],
+    it("should not render flipping card when there are no players in event.", async() => {
+      wrapper = await mountGameSheriffHasBeenElectedEventComponent({
+        props: {
+          event: createFakeGameEvent({
+            type: "sheriff-promotion",
+            players: [],
+          }),
+        },
       });
-      await nextTick();
+      const gameSheriffHasBeenElectedEventComponent = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-sheriff-card");
+
+      expect(gameSheriffHasBeenElectedEventComponent.exists()).toBeFalsy();
+    });
+
+    it("should not render flipping card when players are undefined in event.", async() => {
+      wrapper = await mountGameSheriffHasBeenElectedEventComponent({
+        props: {
+          event: createFakeGameEvent({
+            type: "sheriff-promotion",
+          }),
+        },
+      });
       const gameSheriffHasBeenElectedEventComponent = wrapper.findComponent<typeof GameEventFlippingPlayerCard>("#game-event-flipping-sheriff-card");
 
       expect(gameSheriffHasBeenElectedEventComponent.exists()).toBeFalsy();

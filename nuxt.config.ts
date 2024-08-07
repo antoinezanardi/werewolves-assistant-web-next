@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 const modules = [
   "@nuxtjs/tailwindcss",
   "@nuxt/test-utils/module",
-  "nuxt-primevue",
+  "@primevue/nuxt-module",
   "@nuxtjs/i18n",
   "@nuxt/image",
   "@nuxtjs/google-fonts",
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: { class: "dark-mode" },
       link: [
         {
           rel: "icon",
@@ -38,7 +39,6 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    "primevue/resources/themes/lara-dark-blue/theme.css",
     "@fortawesome/fontawesome-free/css/all.css",
     "./assets/scss/custom.scss",
     "./assets/css/google-fonts.css",
@@ -66,7 +66,6 @@ export default defineNuxtConfig({
   },
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
-  pinia: { storesDirs: [] },
   plugins: [
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",
@@ -74,7 +73,7 @@ export default defineNuxtConfig({
     "~/plugins/vue-ellipse-progress/vue-ellipse-progress.client.ts",
   ],
   primevue: {
-    cssLayerOrder: "tailwind-base, tailwind-utilities, primevue",
+    importTheme: { from: fileURLToPath(new URL("./config/primevue/primevue.custom-theme.ts", import.meta.url)) },
     components: {
       prefix: "PrimeVue",
       include: [
@@ -96,6 +95,7 @@ export default defineNuxtConfig({
         "InputNumber",
         "FloatLabel",
         "AutoComplete",
+        "MultiSelect",
         "ScrollTop",
         "Slider",
         "Toast",
@@ -113,8 +113,8 @@ export default defineNuxtConfig({
         "Ripple",
       ],
     },
+    autoImport: false,
     composables: { include: ["useToast"] },
-    options: { ripple: true },
   },
   routeRules: {
     "/": { prerender: true },

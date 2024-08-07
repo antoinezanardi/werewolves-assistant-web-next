@@ -6,7 +6,6 @@ type GameHistoryRecordPlayTextKey = { textKey: string };
 const GAME_HISTORY_RECORD_PLAYS_TEXT: Record<GamePlaySourceName, Partial<Record<GamePlayAction, GameHistoryRecordPlayTextKey>>> = {
   "accursed-wolf-father": { infect: { textKey: "components.GameOverHistoryRecordAction.infected" } },
   "actor": { "choose-card": { textKey: "components.GameOverHistoryRecordAction.choseCard" } },
-  "bear-tamer": { growl: { textKey: "components.GameOverHistoryRecordAction.growled" } },
   "big-bad-wolf": { eat: { textKey: "components.GameOverHistoryRecordAction.ate" } },
   "charmed": { "meet-each-other": { textKey: "components.GameOverHistoryRecordAction.metEachOther" } },
   "cupid": { charm: { textKey: "components.GameOverHistoryRecordAction.madeFallInLove" } },

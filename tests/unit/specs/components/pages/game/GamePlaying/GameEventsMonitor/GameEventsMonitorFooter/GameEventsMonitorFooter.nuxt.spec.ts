@@ -1,5 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
@@ -8,7 +10,6 @@ import type { TooltipOptions } from "primevue/tooltip";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import { createFakeGameEvent } from "@tests/unit/utils/factories/stores/game/game-event/game-event.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -22,6 +23,7 @@ mockNuxtImport("useMagicKeys", () => vi.fn(() => hoistedMocks.useMagicKeys));
 
 describe("Game Events Monitor Footer Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventsMonitorFooter>>;
+  const defaultGame = createFakeGame();
 
   async function mountGameEventsMonitorFooterComponent(options: ComponentMountingOptions<typeof GameEventsMonitorFooter> = {}):
   Promise<ReturnType<typeof mount<typeof GameEventsMonitorFooter>>> {
@@ -34,6 +36,8 @@ describe("Game Events Monitor Footer Component", () => {
   beforeEach(async() => {
     hoistedMocks.useMagicKeys = createFakeUseMagicKeys();
     wrapper = await mountGameEventsMonitorFooterComponent();
+    const gameStore = useGameStore();
+    gameStore.game = createFakeGame(defaultGame);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -56,11 +60,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should be enabled when there are previous events.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       await nextTick();
       const button = wrapper.findComponent<typeof Button>("#previous-event-button");
@@ -113,11 +112,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should go to previous game event when clicked.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       await nextTick();
       const button = wrapper.findComponent<typeof Button>("#previous-event-button");
@@ -128,11 +122,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should go to previous game event when shift and left arrow keys are pressed.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = true;
       hoistedMocks.useMagicKeys.shift.value = true;
@@ -144,11 +133,6 @@ describe("Game Events Monitor Footer Component", () => {
     it("should animate icon when shift and left arrow keys are pressed.", async() => {
       const icon = wrapper.find<HTMLSpanElement>("#previous-event-button-icon");
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = true;
       hoistedMocks.useMagicKeys.shift.value = true;
@@ -159,11 +143,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should not go to previous game event when shift key is not pressed.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = true;
       hoistedMocks.useMagicKeys.shift.value = false;
@@ -177,11 +156,6 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       wrapper = await mountGameEventsMonitorFooterComponent();
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-        createFakeGameEvent(),
-      ];
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = false;
       await nextTick();
@@ -228,7 +202,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should skip current game event when clicked.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [createFakeGameEvent()];
       await nextTick();
       const button = wrapper.findComponent<typeof Button>("#skip-current-event-button");
       await button.trigger("click");
@@ -238,7 +211,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should skip current game event when shift and right arrow keys are pressed.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [createFakeGameEvent()];
       hoistedMocks.useMagicKeys.arrowright.value = true;
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
@@ -257,7 +229,6 @@ describe("Game Events Monitor Footer Component", () => {
 
     it("should not skip current game event when shift key is not pressed.", async() => {
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [createFakeGameEvent()];
       hoistedMocks.useMagicKeys.arrowright.value = true;
       hoistedMocks.useMagicKeys.shift.value = false;
       await nextTick();
@@ -270,7 +241,6 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       wrapper = await mountGameEventsMonitorFooterComponent();
       const gameEventsStore = useGameEventsStore();
-      gameEventsStore.gameEvents = [createFakeGameEvent()];
       hoistedMocks.useMagicKeys.arrowright.value = false;
       await nextTick();
 

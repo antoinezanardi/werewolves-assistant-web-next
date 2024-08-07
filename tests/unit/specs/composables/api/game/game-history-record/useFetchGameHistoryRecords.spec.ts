@@ -8,8 +8,8 @@ describe("Use Fetch Game History Records", () => {
     composables: {
       useWerewolvesAssistantApi: {
         fetchWerewolvesAssistantApi: Mock;
-      }
-    }
+      };
+    };
   };
 
   beforeEach(() => {

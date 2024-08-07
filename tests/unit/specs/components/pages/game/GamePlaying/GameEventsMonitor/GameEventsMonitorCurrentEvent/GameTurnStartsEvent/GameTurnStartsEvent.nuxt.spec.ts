@@ -3,7 +3,6 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameAccursedWolfFatherTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent/GameAccursedWolfFatherTurnStartsEvent.vue";
 import GameActorTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameActorTurnStartsEvent/GameActorTurnStartsEvent.vue";
-import GameBearTamerTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBearTamerTurnStartsEvent/GameBearTamerTurnStartsEvent.vue";
 import GameBigBadWolfTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameBigBadWolfTurnStartsEvent/GameBigBadWolfTurnStartsEvent.vue";
 import GameCharmedTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCharmedTurnStartsEvent/GameCharmedTurnStartsEvent.vue";
 import GameCupidTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameCupidTurnStartsEvent/GameCupidTurnStartsEvent.vue";
@@ -29,7 +28,7 @@ import GameWitchTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEv
 import GameWolfHoundTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWolfHoundTurnStartsEvent/GameWolfHoundTurnStartsEvent.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeGamePlayAccursedWolfFatherInfects, createFakeGamePlayActorChoosesCard, createFakeGamePlayBearTamerGrowls, createFakeGamePlayBigBadWolfEats, createFakeGamePlayCharmedMeetEachOther, createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsVote, createFakeGamePlayDefenderProtects, createFakeGamePlayHunterShoots, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayPiedPiperCharms, createFakeGamePlayFoxSniffs, createFakeGamePlaySeerLooks, createFakeGamePlaySheriffSettlesVotes, createFakeGamePlayWerewolvesEat, createFakeGamePlayThiefChoosesCard, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlayTwoSistersMeetEachOther, createFakeGamePlayWhiteWerewolfEats, createFakeGamePlayThreeBrothersMeetEachOther, createFakeGamePlayWildChildChoosesModel, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide, createFakeGamePlayScapegoatBansVoting, createFakeGamePlayScandalmongerMarks } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlayAccursedWolfFatherInfects, createFakeGamePlayActorChoosesCard, createFakeGamePlayBigBadWolfEats, createFakeGamePlayCharmedMeetEachOther, createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsVote, createFakeGamePlayDefenderProtects, createFakeGamePlayHunterShoots, createFakeGamePlayLoversMeetEachOther, createFakeGamePlayPiedPiperCharms, createFakeGamePlayFoxSniffs, createFakeGamePlaySeerLooks, createFakeGamePlaySheriffSettlesVotes, createFakeGamePlayWerewolvesEat, createFakeGamePlayThiefChoosesCard, createFakeGamePlayStutteringJudgeRequestsAnotherVote, createFakeGamePlayTwoSistersMeetEachOther, createFakeGamePlayWhiteWerewolfEats, createFakeGamePlayThreeBrothersMeetEachOther, createFakeGamePlayWildChildChoosesModel, createFakeGamePlayWitchUsesPotions, createFakeGamePlayWolfHoundChoosesSide, createFakeGamePlayScapegoatBansVoting, createFakeGamePlayScandalmongerMarks } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -70,15 +69,6 @@ describe("Game Turn Start Event Component", () => {
       gameStore.game = createFakeGame({ currentPlay: createFakeGamePlayActorChoosesCard() });
       await nextTick();
       const component = wrapper.findComponent<typeof GameActorTurnStartsEvent>(GameActorTurnStartsEvent);
-
-      expect(component.exists()).toBeTruthy();
-    });
-
-    it("should render Bear Tamer game turn starts event when the current play source is Bear Tamer.", async() => {
-      const gameStore = useGameStore();
-      gameStore.game = createFakeGame({ currentPlay: createFakeGamePlayBearTamerGrowls() });
-      await nextTick();
-      const component = wrapper.findComponent<typeof GameBearTamerTurnStartsEvent>(GameBearTamerTurnStartsEvent);
 
       expect(component.exists()).toBeTruthy();
     });

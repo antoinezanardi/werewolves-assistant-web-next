@@ -1,21 +1,31 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
+import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
+import { createFakeCreateGamePlayerSideDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-side/create-game-player-side.dto.factory";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import { createFakeUsePrimeVueToasts } from "@tests/unit/utils/factories/composables/prime-vue/usePrimeVueToasts.factory";
+import { mockPiniaStore } from "@tests/unit/utils/helpers/mock.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 
 import type { GameLobbyRolePickerFooterProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerFooter/game-lobby-role-picker-footer.types";
 import GameLobbyRolePickerFooter from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerFooter/GameLobbyRolePickerFooter.vue";
+import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import * as UsePrimeVueToasts from "~/composables/prime-vue/usePrimeVueToasts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
-import { createFakeCreateGamePlayerSideDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-side/create-game-player-side.dto.factory";
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
-import { mockPiniaStore } from "@tests/unit/utils/helpers/mock.helpers";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Lobby Role Picker Footer Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerFooter>>;
+  let mocks: {
+    composables: {
+      usePrimeVueToasts: ReturnType<typeof createFakeUsePrimeVueToasts>;
+    };
+  };
   const defaultProps: GameLobbyRolePickerFooterProps = {
     player: createFakeCreateGamePlayerDto({
       name: "Antoine",
@@ -36,7 +46,15 @@ describe("Game Lobby Role Picker Footer Component", () => {
   }
 
   beforeEach(async() => {
+    mocks = {
+      composables: {
+        usePrimeVueToasts: createFakeUsePrimeVueToasts(),
+      },
+    };
+    vi.spyOn(UsePrimeVueToasts, "usePrimeVueToasts").mockReturnValue(mocks.composables.usePrimeVueToasts);
     wrapper = await mountGameLobbyRolePickerFooterComponent();
+    const createGameDtoStore = useCreateGameDtoStore();
+    createGameDtoStore.createGameDto = createFakeCreateGameDto();
   });
 
   it("should match snapshot when rendered.", () => {
@@ -225,6 +243,80 @@ describe("Game Lobby Role Picker Footer Component", () => {
         const emittedEvents = wrapper.emitted("playerUpdate");
 
         expect(emittedEvents).toBeUndefined();
+      });
+
+      it("should remove additional card when picked role is in additional cards.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        const additionalCards = [
+          createFakeCreateGameAdditionalCardDto({ roleName: "seer" }),
+          createFakeCreateGameAdditionalCardDto({ roleName: "werewolf" }),
+          createFakeCreateGameAdditionalCardDto({ roleName: "hunter" }),
+        ];
+        createGameDtoStore.createGameDto.additionalCards = additionalCards;
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        await nextTick();
+
+        expect(createGameDtoStore.createGameDto.additionalCards).toStrictEqual<CreateGameAdditionalCardDto[]>([
+          additionalCards[0],
+          additionalCards[2],
+        ]);
+      });
+
+      it("should show toast when role picked is in additional cards.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.additionalCards = [
+          createFakeCreateGameAdditionalCardDto({
+            recipient: "thief",
+            roleName: "seer",
+          }),
+          createFakeCreateGameAdditionalCardDto({
+            recipient: "thief",
+            roleName: "werewolf",
+          }),
+          createFakeCreateGameAdditionalCardDto({
+            recipient: "thief",
+            roleName: "hunter",
+          }),
+        ];
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        await nextTick();
+
+        expect(mocks.composables.usePrimeVueToasts.addInfoToast).toHaveBeenCalledExactlyOnceWith({
+          summary: "components.GameLobbyRolePickerFooter.additionalCardRemoved",
+          detail: `components.GameLobbyRolePickerFooter.roleAdditionalCardRemovedForRecipient, {"roleName":"shared.role.definiteName.werewolf, 1","recipient":"shared.role.definiteName.thief, 1"}`,
+          life: 5000,
+        });
+      });
+
+      it("should not call toast when role picked is not in additional cards.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.additionalCards = [
+          createFakeCreateGameAdditionalCardDto({ roleName: "seer" }),
+          createFakeCreateGameAdditionalCardDto({ roleName: "hunter" }),
+        ];
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        await nextTick();
+
+        expect(mocks.composables.usePrimeVueToasts.addInfoToast).not.toHaveBeenCalled();
+      });
+
+      it("should not call toast when additional cards are not defined.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.additionalCards = undefined;
+        const button = wrapper.findComponent<typeof Button>("#game-lobby-role-picker-footer-button");
+        button.vm.$emit("click");
+        await nextTick();
+
+        expect(mocks.composables.usePrimeVueToasts.addInfoToast).not.toHaveBeenCalled();
+      });
+
+      it("should remove obsolete additional cards when clicked.", () => {
+        const createGameDtoStore = useCreateGameDtoStore();
+
+        expect(createGameDtoStore.removeObsoleteAdditionalCardsFromCreateGameDto).toHaveBeenCalledExactlyOnceWith();
       });
     });
   });
