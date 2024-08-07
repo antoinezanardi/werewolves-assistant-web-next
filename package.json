@@ -71,7 +71,7 @@
   "devDependencies": {
     "@aksharahegde/nuxt-glow": "^1.1.2",
     "@chenfengyuan/vue-countdown": "^2.1.2",
-    "@commitlint/cli": "^19.3.0",
+    "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@cucumber/cucumber": "^10.8.0",
     "@eslint/config-inspector": "^0.5.2",
