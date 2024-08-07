@@ -20,7 +20,7 @@ exports[`Game Lobby Options Hub Roles Tab Wolf Hound Component > should match sn
         </div>
         <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-green-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-emerald-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

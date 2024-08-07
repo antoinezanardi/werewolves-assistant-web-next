@@ -1,11 +1,13 @@
+import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
+import type { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";
 import type { GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { PlayerInteractionType } from "~/composables/api/game/types/players/player-interaction/player-interaction.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlayThiefChoosesCard } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
@@ -178,6 +180,143 @@ describe("Use Current Game Play Composable", () => {
       const { getEligibleTargetsWithInteractionInCurrentGamePlay } = useCurrentGamePlay(ref(game));
 
       expect(getEligibleTargetsWithInteractionInCurrentGamePlay(interaction)).toStrictEqual<Player[] | undefined>(expectedPlayers);
+    });
+  });
+
+  describe("getEligibleAdditionalCardsToChooseInCurrentGamePlay", () => {
+    it.each<{
+      game: Game;
+      expectedCards: GameAdditionalCard[];
+      test: string;
+    }>([
+      {
+        test: "should return empty array when game additional cards are not set.",
+        game: createFakeGame(),
+        expectedCards: [],
+      },
+      {
+        test: "should return empty array when game current play action is null.",
+        game: createFakeGame({
+          additionalCards: [
+            createFakeGameAdditionalCard(),
+            createFakeGameAdditionalCard(),
+            createFakeGameAdditionalCard(),
+          ],
+        }),
+        expectedCards: [],
+      },
+      {
+        test: "should return empty array when game current play action is not choose card.",
+        game: createFakeGame({
+          additionalCards: [
+            createFakeGameAdditionalCard(),
+            createFakeGameAdditionalCard(),
+            createFakeGameAdditionalCard(),
+          ],
+          currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies(),
+        }),
+        expectedCards: [],
+      },
+      {
+        test: "should return cards for recipient which are not used yet.",
+        game: createFakeGame({
+          additionalCards: [
+            createFakeGameAdditionalCard({
+              _id: "1",
+              recipient: "thief",
+              isUsed: false,
+              roleName: "villager",
+            }),
+            createFakeGameAdditionalCard({
+              _id: "2",
+              recipient: "actor",
+              isUsed: true,
+              roleName: "villager",
+            }),
+            createFakeGameAdditionalCard({
+              _id: "3",
+              recipient: "actor",
+              isUsed: false,
+              roleName: "villager",
+            }),
+            createFakeGameAdditionalCard({
+              _id: "4",
+              recipient: "thief",
+              isUsed: true,
+              roleName: "villager",
+            }),
+          ],
+          currentPlay: createFakeGamePlayThiefChoosesCard(),
+        }),
+        expectedCards: [
+          createFakeGameAdditionalCard({
+            recipient: "thief",
+            isUsed: false,
+            _id: "1",
+            roleName: "villager",
+          }),
+        ],
+      },
+    ])("$test", ({ game, expectedCards }) => {
+      const { getEligibleAdditionalCardsToChooseInCurrentGamePlay } = useCurrentGamePlay(ref(game));
+
+      expect(getEligibleAdditionalCardsToChooseInCurrentGamePlay()).toStrictEqual<GameAdditionalCard[] | undefined>(expectedCards);
+    });
+
+    it("should return empty array when game current play action is not choose card with game not a ref.", () => {
+      const game = createFakeGame({
+        additionalCards: [
+          createFakeGameAdditionalCard(),
+          createFakeGameAdditionalCard(),
+          createFakeGameAdditionalCard(),
+        ],
+        currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies(),
+      });
+      const { getEligibleAdditionalCardsToChooseInCurrentGamePlay } = useCurrentGamePlay(game);
+
+      expect(getEligibleAdditionalCardsToChooseInCurrentGamePlay()).toStrictEqual<GameAdditionalCard[]>([]);
+    });
+
+    it("should return cards for recipient which are not used yet with game not a ref.", () => {
+      const game = createFakeGame({
+        additionalCards: [
+          createFakeGameAdditionalCard({
+            _id: "1",
+            recipient: "thief",
+            isUsed: false,
+            roleName: "villager",
+          }),
+          createFakeGameAdditionalCard({
+            _id: "2",
+            recipient: "actor",
+            isUsed: true,
+            roleName: "villager",
+          }),
+          createFakeGameAdditionalCard({
+            _id: "3",
+            recipient: "actor",
+            isUsed: false,
+            roleName: "villager",
+          }),
+          createFakeGameAdditionalCard({
+            _id: "4",
+            recipient: "thief",
+            isUsed: true,
+            roleName: "villager",
+          }),
+        ],
+        currentPlay: createFakeGamePlayThiefChoosesCard(),
+      });
+      const { getEligibleAdditionalCardsToChooseInCurrentGamePlay } = useCurrentGamePlay(game);
+
+      expect(getEligibleAdditionalCardsToChooseInCurrentGamePlay()).toStrictEqual<GameAdditionalCard[]>([
+        createFakeGameAdditionalCard({
+          recipient: "thief",
+          isUsed: false,
+          _id: "1",
+          roleName: "villager",
+        }),
+      ]);
     });
   });
 });

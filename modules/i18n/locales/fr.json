@@ -1480,6 +1480,9 @@
       "searchRole": "Rechercher un rôle",
       "noRoleFound": "Aucun rôle trouvé",
       "pickOneToFiveCards": "Choisissez une à cinq cartes"
+    },
+    "GameChooseCardPlaygroundAdditionalCard": {
+      "chooseCardForRecipient": "Choisir la carte avec le rôle de {roleName} pour {recipientDefiniteName}"
     }
   }
 }

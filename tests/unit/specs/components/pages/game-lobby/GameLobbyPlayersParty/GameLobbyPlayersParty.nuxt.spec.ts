@@ -61,7 +61,7 @@ describe("Game Lobby Players Party Component", () => {
       const emittedPlayer = createGameDtoStore.createGameDto.players[0];
       const gameLobbyPlayerCards = wrapper.findAllComponents<typeof GameLobbyPlayerCard>(".game-lobby-player-card");
       const playerCard = gameLobbyPlayerCards[0];
-      (playerCard.vm as VueVm).$emit("pick-role-for-player", emittedPlayer);
+      playerCard.vm.$emit("pick-role-for-player", emittedPlayer);
       const emittedEvents = wrapper.emitted("pickRoleForPlayer");
 
       expect(emittedEvents).toHaveLength(1);

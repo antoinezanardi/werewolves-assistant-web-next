@@ -117,4 +117,32 @@ describe("Roles Store", () => {
       expect(eligibleRoles).toStrictEqual<Role[]>([]);
     });
   });
+
+  describe("getRoleSideForRoleName", () => {
+    it("should return role side for given role name when found.", () => {
+      const roles = [
+        createFakeRole({ name: "seer", side: "villagers" }),
+        createFakeRole({ name: "werewolf", side: "werewolves" }),
+        createFakeRole({ name: "villager", side: "villagers" }),
+      ];
+      const rolesStore = useRolesStore();
+      rolesStore.roles = roles;
+      const roleSide = rolesStore.getRoleSideForRoleName("werewolf");
+
+      expect(roleSide).toBe("werewolves");
+    });
+
+    it("should return undefined when role side for given role name is not found.", () => {
+      const roles = [
+        createFakeRole({ name: "seer", side: "villagers" }),
+        createFakeRole({ name: "werewolf", side: "werewolves" }),
+        createFakeRole({ name: "villager", side: "villagers" }),
+      ];
+      const rolesStore = useRolesStore();
+      rolesStore.roles = roles;
+      const roleSide = rolesStore.getRoleSideForRoleName("elder");
+
+      expect(roleSide).toBeUndefined();
+    });
+  });
 });

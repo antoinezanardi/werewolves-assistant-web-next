@@ -1480,6 +1480,17 @@
       "searchRole": "Search for a role",
       "noRoleFound": "No role found",
       "pickOneToFiveCards": "Pick one to five cards"
+    },
+    "GameChooseCardPlaygroundAdditionalCard": {
+      "chooseCardForRecipient": "Choose card with role of {roleName} for {recipientDefiniteName}"
+    },
+    "GameThiefMayHaveChosenCardEvent": {
+      "cantFindThief": "The Thief can't be found… Please proceed.",
+      "thiefMayHaveChosenCard": "The Thief may have chosen a card to incarnate for the rest of the game.",
+      "gameMasterWillSwitchCardsIfThiefChoseCard": "If so, the Game Master will switch the chosen card with the Thief card and take away the remaining cards.",
+      "thiefHasNotChosenCard": "The Thief didn't choose a card with a role to incarnate. He will remain the Thief for the rest of the game.",
+      "thiefHasChosenCard": "The Thief has chosen to be {roleName} for the rest of the game!",
+      "gameMasterCanTakeAwayRemainingCards": "The Game Master can take away the remaining cards."
     }
   }
 }

@@ -510,7 +510,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
                 </div>
                 <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group">
                   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-green-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
+                    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-emerald-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
                     <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc64=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd24="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
                   </div>
                   <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.no</p>
@@ -692,7 +692,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
       <div id="game-lobby-options-composition-tab">
         <div id="game-lobby-options-hub-composition-tab-is-hidden-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye-slash text-green-400"></i><span>Composition is hidden</span></h3>
+            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-eye-slash text-emerald-400"></i><span>Composition is hidden</span></h3>
             <div id="game-option-input" class="w-4/12"><button type="button" class="p-togglebutton p-component w-full" aria-pressed="false" id="game-lobby-options-hub-composition-tab-is-hidden-input" data-pc-name="togglebutton" data-pc-section="root" data-p-checked="false" data-p-disabled="false" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc88=""><span class="p-togglebutton-content" data-pc-section="content"><span class="p-togglebutton-icon fa fa-thumbs-down" data-pc-section="icon"></span><span class="p-togglebutton-label" data-pc-section="label">No</span></span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd32="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no</p>
