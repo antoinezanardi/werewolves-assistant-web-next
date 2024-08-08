@@ -21,6 +21,7 @@ import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWit
 import type { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useRoleName } from "~/composables/api/role/useRoleName";
+import { useStrings } from "~/composables/misc/useStrings";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -32,6 +33,8 @@ const { game } = storeToRefs(gameStore);
 const { getDefiniteRoleNameLabel } = useRoleName();
 
 const { t } = useI18n();
+
+const { lowerCaseFirstLetter } = useStrings();
 
 const audioStore = useAudioStore();
 const { playSoundEffect } = audioStore;
@@ -56,16 +59,14 @@ const gameThiefMayHaveChosenCardEventTexts = computed<string[]>(() => {
 });
 
 const gameThiefRevealedChosenCardTexts = computed<string[]>(() => {
-  if (chosenCard.value === undefined) {
-    return [
-      t("components.GameThiefMayHaveChosenCardEvent.thiefHasNotChosenCard"),
-      t("components.GameThiefMayHaveChosenCardEvent.gameMasterCanTakeAwayRemainingCards"),
-    ];
+  let thiefChosenCardText = t("components.GameThiefMayHaveChosenCardEvent.thiefHasNotChosenCard");
+  if (chosenCard.value !== undefined) {
+    const lowerCaseChosenCardDefiniteRoleName = lowerCaseFirstLetter(getDefiniteRoleNameLabel(chosenCard.value.roleName, 1));
+    thiefChosenCardText = t("components.GameThiefMayHaveChosenCardEvent.thiefHasChosenCard", { roleName: lowerCaseChosenCardDefiniteRoleName });
   }
-  const chosenCardDefiniteRoleName = getDefiniteRoleNameLabel(chosenCard.value.roleName, 1);
-
   return [
-    t("components.GameThiefMayHaveChosenCardEvent.thiefHasChosenCard", { roleName: chosenCardDefiniteRoleName }),
+    t("components.GameThiefMayHaveChosenCardEvent.thiefChosenCardIsRevealed"),
+    thiefChosenCardText,
     t("components.GameThiefMayHaveChosenCardEvent.gameMasterCanTakeAwayRemainingCards"),
   ];
 });

@@ -53,7 +53,7 @@ const { lowerCaseFirstLetter } = useStrings();
 const additionalCardRoleNameLabel = computed<string>(() => getRoleNameLabel(props.additionalCard.roleName));
 
 const additionalCardButtonAriaLabel = computed<string>(() => {
-  const lowerRecipientDefiniteRoleNameLabel = lowerCaseFirstLetter(getDefiniteRoleNameLabel(props.additionalCard.roleName, 1));
+  const lowerRecipientDefiniteRoleNameLabel = lowerCaseFirstLetter(getDefiniteRoleNameLabel(props.additionalCard.recipient, 1));
 
   return t("components.GameChooseCardPlaygroundAdditionalCard.chooseCardForRecipient", {
     roleName: additionalCardRoleNameLabel.value,
@@ -85,7 +85,7 @@ const additionalCardsRoleImageClasses = computed<string>(() => {
   return baseClasses;
 });
 
-function onClickFromAdditionalCardButton() {
+function onClickFromAdditionalCardButton(): void {
   emit("clickAdditionalCard", props.additionalCard);
 }
 </script>

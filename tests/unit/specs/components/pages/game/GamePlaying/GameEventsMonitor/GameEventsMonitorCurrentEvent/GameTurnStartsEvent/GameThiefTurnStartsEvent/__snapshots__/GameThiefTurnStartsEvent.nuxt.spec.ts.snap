@@ -31,4 +31,4 @@ exports[`Game Thief Turn Starts Event Component > should match snapshot when ren
 </div>"
 `;
 
-exports[`Game Thief Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameThiefTurnStartsEvent.thiefCanStealCard, {" count":2}, 2,components.GameThiefTurnStartsEvent.gameMasterWillFlipThiefCards, {"count":2}, 2" id="game-thief-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Thief Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameThiefTurnStartsEvent.thiefCanStealCard, {" count":2}, 2,components.GameThiefTurnStartsEvent.gameMasterWillFlipThiefCards, {"count":2}, 2,components.GameThiefTurnStartsEvent.mustChooseBetweenWerewolves, 2" id="game-thief-turn-starts-event"></game-event-with-texts-stub>"`;
