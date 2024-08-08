@@ -145,7 +145,7 @@
     "semantic-release": "^24.0.0",
     "semantic-release-export-data": "^1.1.0",
     "string-to-color": "^2.2.2",
-    "tailwindcss": "^3.4.8",
+    "tailwindcss": "^3.4.9",
     "ts-case-convert": "^2.0.7",
     "tsx": "^4.17.0",
     "type-fest": "^4.24.0",
