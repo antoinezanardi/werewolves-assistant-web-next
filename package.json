@@ -93,7 +93,7 @@
     "@stryker-mutator/core": "^8.4.0",
     "@stryker-mutator/typescript-checker": "^8.4.0",
     "@stryker-mutator/vitest-runner": "^8.4.0",
-    "@stylistic/eslint-plugin": "^2.6.1",
+    "@stylistic/eslint-plugin": "^2.6.2",
     "@types/chart.js": "^2.9.41",
     "@types/eslint": "^9.6.0",
     "@types/howler": "^2.2.11",
