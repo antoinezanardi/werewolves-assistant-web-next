@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
 import { createFakeGamePlayThiefChoosesCard } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
@@ -85,7 +86,7 @@ describe("Game Choose Card Playground Component", () => {
       makeGamePlayDtoStore.makeGamePlayDto.chosenCardId = additionalCards[1]._id;
       const gameAdditionalCardsComponents = wrapper.findAllComponents<typeof GameChooseCardPlaygroundAdditionalCard>(".game-additional-card");
       const chosenCard = gameAdditionalCardsComponents[1];
-      chosenCard.vm.$emit("click-additional-card", additionalCards[1]);
+      (chosenCard.vm as VueVm).$emit("click-additional-card", additionalCards[1]);
       await nextTick();
 
       expect(makeGamePlayDtoStore.makeGamePlayDto.chosenCardId).toBeUndefined();
@@ -97,7 +98,7 @@ describe("Game Choose Card Playground Component", () => {
       makeGamePlayDtoStore.makeGamePlayDto.chosenCardId = undefined;
       const gameAdditionalCardsComponents = wrapper.findAllComponents<typeof GameChooseCardPlaygroundAdditionalCard>(".game-additional-card");
       const chosenCard = gameAdditionalCardsComponents[1];
-      chosenCard.vm.$emit("click-additional-card", additionalCards[1]);
+      (chosenCard.vm as VueVm).$emit("click-additional-card", additionalCards[1]);
       await nextTick();
 
       expect(makeGamePlayDtoStore.makeGamePlayDto.chosenCardId).toBe(additionalCards[1]._id);

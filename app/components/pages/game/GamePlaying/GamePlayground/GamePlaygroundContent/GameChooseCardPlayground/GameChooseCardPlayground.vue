@@ -30,7 +30,7 @@ const { getEligibleAdditionalCardsToChooseInCurrentGamePlay } = useCurrentGamePl
 
 const eligibleAdditionalCardsToChoose = computed<GameAdditionalCard[]>(() => getEligibleAdditionalCardsToChooseInCurrentGamePlay());
 
-function onClickFromAdditionalCardButton(additionalCard: GameAdditionalCard) {
+function onClickFromAdditionalCardButton(additionalCard: GameAdditionalCard): void {
   if (makeGamePlayDto.value.chosenCardId === additionalCard._id) {
     makeGamePlayDto.value.chosenCardId = undefined;
 

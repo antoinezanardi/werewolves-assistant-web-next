@@ -277,7 +277,7 @@ describe("Use Current Game Play Composable", () => {
       expect(getEligibleAdditionalCardsToChooseInCurrentGamePlay()).toStrictEqual<GameAdditionalCard[]>([]);
     });
 
-    it("should return cards for recipient which are not used yet with game not a ref.", () => {
+    it("should return cards for recipient which are not used yet when game is not a ref.", () => {
       const game = createFakeGame({
         additionalCards: [
           createFakeGameAdditionalCard({

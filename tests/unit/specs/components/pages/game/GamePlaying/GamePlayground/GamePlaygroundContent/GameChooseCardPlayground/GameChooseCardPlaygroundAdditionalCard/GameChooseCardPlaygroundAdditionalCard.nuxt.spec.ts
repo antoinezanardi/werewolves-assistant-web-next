@@ -36,7 +36,8 @@ describe("Game Choose Card Playground Additional Card Component", () => {
     }),
   };
 
-  async function mountGameChooseCardPlaygroundAdditionalCardComponent(options: ComponentMountingOptions<typeof GameChooseCardPlaygroundAdditionalCard> = {}): Promise<ReturnType<typeof mount<typeof GameChooseCardPlaygroundAdditionalCard>>> {
+  async function mountGameChooseCardPlaygroundAdditionalCardComponent(options: ComponentMountingOptions<typeof GameChooseCardPlaygroundAdditionalCard> = {}):
+  Promise<ReturnType<typeof mount<typeof GameChooseCardPlaygroundAdditionalCard>>> {
     return mountSuspendedComponent(GameChooseCardPlaygroundAdditionalCard, {
       shallow: false,
       global: {
