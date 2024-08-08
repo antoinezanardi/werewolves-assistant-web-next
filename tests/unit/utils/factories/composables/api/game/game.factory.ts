@@ -15,10 +15,11 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     players: game.players ?? [],
     currentPlay: game.currentPlay ?? null,
     upcomingPlays: game.upcomingPlays ?? [],
+    additionalCards: game.additionalCards,
     lastGameHistoryRecord: game.lastGameHistoryRecord ?? null,
     options: createFakeGameOptions(game.options),
-    victory: game.victory ?? undefined,
-    events: game.events ?? undefined,
+    victory: game.victory,
+    events: game.events,
     createdAt: game.createdAt ?? faker.date.recent(),
     updatedAt: game.updatedAt ?? faker.date.recent(),
   });

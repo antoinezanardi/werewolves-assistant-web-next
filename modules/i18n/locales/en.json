@@ -600,7 +600,8 @@
       "thisPlayerIsDead": "This player is dead"
     },
     "GameTeamSidePlayerRoleName": {
-      "thisPlayerRoleIsRevealed": "This player's role is revealed"
+      "thisPlayerRoleIsRevealed": "This player's role is revealed",
+      "thisPlayerWasThief": "This player was originally the Thief"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Current play icon",
@@ -1296,7 +1297,9 @@
     },
     "GameThiefTurnStartsEvent": {
       "thiefCanStealCard": "The Thief wakes up and can choose the additional card for him. If he decides so, he will take the role of it for the rest of the game. | The Thief wakes up and can choose an additional card among the {count} for him. If he decides so, he will take the role of it for the rest of the game.",
-      "gameMasterWillFlipThiefCards": "The Game Master will flip the card for the Thief to see it. | The Game Master will flip the {count} cards for the Thief to see them."
+      "gameMasterWillFlipThiefCards": "The Game Master will flip the card for the Thief to see it. | The Game Master will flip the {count} cards for the Thief to see them.",
+      "mustChooseBetweenWerewolves": "If the card designated to the Thief is from the Werewolves side, he must pick it and can't skip his turn. | If all the cards designated to the Thief are from the Werewolves side, he must choose one of them and can't skip his turn.",
+      "doesNotHaveToChooseBetweenWerewolves": "In this special game, the Thief is not forced to choose the card if it's from the Werewolves side. | In this special game, the Thief is not forced to choose a card if all the cards designated to him are from the Werewolves side."
     },
     "GameThreeBrothersTurnStartsEvent": {
       "threeBrothersMeetEachOtherForFirstTime": "The Three Brothers wake up and meet each other for the first time. They can trust each other from now on.",
@@ -1480,6 +1483,18 @@
       "searchRole": "Search for a role",
       "noRoleFound": "No role found",
       "pickOneToFiveCards": "Pick one to five cards"
+    },
+    "GameChooseCardPlaygroundAdditionalCard": {
+      "chooseCardForRecipient": "Choose card with role of {roleName} for {recipientDefiniteName}"
+    },
+    "GameThiefMayHaveChosenCardEvent": {
+      "cantFindThief": "The Thief can't be found… Please proceed.",
+      "thiefMayHaveChosenCard": "The Thief may have chosen a card to incarnate for the rest of the game.",
+      "gameMasterWillSwitchCardsIfThiefChoseCard": "If so, the Game Master will switch the chosen card with the Thief card and take away the remaining cards.",
+      "thiefChosenCardIsRevealed": "In this special game, the chosen card of the Thief is revealed to the other players.",
+      "thiefHasNotChosenCard": "The Thief didn't choose a card with a role to incarnate. He will remain the Thief for the rest of the game.",
+      "thiefHasChosenCard": "The Thief has chosen to be {roleName} for the rest of the game!",
+      "gameMasterCanTakeAwayRemainingCards": "The Game Master can take away the remaining cards."
     }
   }
 }

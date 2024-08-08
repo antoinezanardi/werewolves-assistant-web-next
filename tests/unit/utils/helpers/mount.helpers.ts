@@ -7,6 +7,7 @@ import { Vue3Lottie } from "vue3-lottie";
 import VueDraggable from "vuedraggable";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 import VueEllipseProgress from "vue-ellipse-progress";
+import { GlowCapture } from "#components";
 import { clone, construct, crush } from "radash";
 
 function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
@@ -24,6 +25,7 @@ function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>
         VueDraggable,
         VueCountdown,
         VueEllipseProgress,
+        GlowCapture,
       },
     },
   };

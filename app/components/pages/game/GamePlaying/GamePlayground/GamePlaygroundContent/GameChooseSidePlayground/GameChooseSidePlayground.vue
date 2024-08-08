@@ -9,15 +9,15 @@
           <button
             id="choose-villagers-side-button"
             :aria-label="$t('components.GameChooseSidePlayground.villagersSide')"
-            class="border-4 border-transparent glow:border-green-500 me-2 p-2 rounded-lg"
-            :class="{ '!border-green-500': makeGamePlayDto.chosenSide === 'villagers' }"
+            class="border-4 border-transparent glow:border-emerald-500 me-2 p-2 rounded-lg"
+            :class="{ '!border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
             type="button"
             @click.prevent="onClickFromChooseVillagersSideButton"
           >
             <RoleImage
               id="villagers-side-image"
-              class="glow:border-green-500 mb-1"
-              :class="{ 'border-green-500': makeGamePlayDto.chosenSide === 'villagers' }"
+              class="glow:border-emerald-500 mb-1"
+              :class="{ 'border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
               definition="normal"
               role-name="villager"
               sizes="200"
