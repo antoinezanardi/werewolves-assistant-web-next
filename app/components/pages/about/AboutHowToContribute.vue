@@ -4,7 +4,7 @@
       id="about-how-to-contribute-title"
       class="flex items-center"
     >
-      <i class="fa fa-2x fa-handshake-angle me-3 text-green-500"/>
+      <i class="fa fa-2x fa-handshake-angle me-3 text-emerald-500"/>
 
       <span>
         {{ $t('components.AboutHowToContribute.howToContribute') }}

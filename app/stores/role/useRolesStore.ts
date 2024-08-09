@@ -4,7 +4,7 @@ import { ref } from "vue";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 
 import type { Role } from "~/composables/api/role/types/role.class";
-import type { RoleName } from "~/composables/api/role/types/role.types";
+import type { RoleName, RoleSide } from "~/composables/api/role/types/role.types";
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";
 import { StoreIds } from "~/stores/enums/store.enum";
 
@@ -27,12 +27,17 @@ const useRolesStore = defineStore(StoreIds.ROLES, () => {
   function getRolesForRecipientRoleName(recipientRoleName: GameAdditionalCardRecipientRoleName): Role[] {
     return roles.value?.filter(role => role.additionalCardsEligibleRecipients?.includes(recipientRoleName)) ?? [];
   }
+
+  function getRoleSideForRoleName(roleName: RoleName): RoleSide | undefined {
+    return getRoleWithNameInRoles(roleName)?.side;
+  }
   return {
     roles,
     fetchingRoleStatus,
     fetchAndSetRoles,
     getRoleWithNameInRoles,
     getRolesForRecipientRoleName,
+    getRoleSideForRoleName,
   };
 });
 

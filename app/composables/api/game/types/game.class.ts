@@ -1,5 +1,6 @@
 import { Expose, instanceToPlain, plainToInstance, Type } from "class-transformer";
 import { GameEvent } from "~/composables/api/game/game-event/game-event.class";
+import { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";
 
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { GamePhase } from "~/composables/api/game/types/game-phase/game-phase.class";
@@ -39,6 +40,10 @@ class Game {
   @Type(() => GamePlay)
   @Expose()
   public upcomingPlays: GamePlay[];
+
+  @Type(() => GameAdditionalCard)
+  @Expose()
+  public additionalCards?: GameAdditionalCard[];
 
   @Type(() => GameHistoryRecord)
   @Expose()

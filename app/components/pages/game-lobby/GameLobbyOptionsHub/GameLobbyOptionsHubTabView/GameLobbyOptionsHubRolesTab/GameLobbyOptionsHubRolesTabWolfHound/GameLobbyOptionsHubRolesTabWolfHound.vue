@@ -24,7 +24,7 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group"
       :option-description="isWolfHoundSideRandomlyChosenDescription"
-      option-icon-class="fa fa-random text-green-500"
+      option-icon-class="fa fa-random text-emerald-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.label')"
     >
       <AffirmativeToggleButton

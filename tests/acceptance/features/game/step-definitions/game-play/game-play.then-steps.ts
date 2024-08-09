@@ -1,6 +1,7 @@
 import { type DataTable, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
+import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 
 Then(/^the game's current play should have the following targets$/u, async function(this: CustomWorld, dataTable: DataTable): Promise<void> {
   const targets = dataTable.hashes();
@@ -12,6 +13,18 @@ Then(/^the game's current play should have the following voters$/u, async functi
   const voters = dataTable.hashes();
 
   await Promise.all(voters.map(async voter => expect(this.page.getByTestId(`game-playground-player-card-${voter.name}`).first()).toBeVisible()));
+});
+
+Then(/^the game's current play should have the following additional cards for (?<recipient>thief|actor)$/u, async function(this: CustomWorld, recipient: GameAdditionalCardRecipientRoleName, dataTable: DataTable):
+Promise<void> {
+  const additionalCards = dataTable.hashes();
+  const capitalizedRecipient = recipient.charAt(0).toUpperCase() + recipient.slice(1);
+
+  await Promise.all(additionalCards.map(async card => {
+    const name = `Choose card with role of ${card.roleName} for the ${capitalizedRecipient}`;
+
+    return expect(this.page.getByRole("button", { name, exact: true }).first()).toBeVisible();
+  }));
 });
 
 Then(/^the game's current play should not have targets$/u, async function(this: CustomWorld): Promise<void> {
@@ -43,4 +56,10 @@ Then(/^the game's current play should have a countdown of (?<minutes>\d+) minute
   const expectedTime = `${minutes}:${paddedSeconds}`;
 
   await expect(this.page.getByText(expectedTime, { exact: true })).toBeVisible();
+});
+
+Then(/^the game's current play can't be made for now$/u, async function(this: CustomWorld): Promise<void> {
+  const makePlayButton = this.page.getByRole("button", { name: "Make Play" });
+
+  await expect(makePlayButton).toBeDisabled();
 });

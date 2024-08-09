@@ -77,7 +77,7 @@ const playerSideGlowClass = computed<string>(() => {
   if (!player.isAlive) {
     return "";
   }
-  return player.side.current === "werewolves" ? "glow:border-red-500" : "glow:border-green-500";
+  return player.side.current === "werewolves" ? "glow:border-red-500" : "glow:border-emerald-500";
 });
 
 const roleImageClasses = computed<string>(() => {

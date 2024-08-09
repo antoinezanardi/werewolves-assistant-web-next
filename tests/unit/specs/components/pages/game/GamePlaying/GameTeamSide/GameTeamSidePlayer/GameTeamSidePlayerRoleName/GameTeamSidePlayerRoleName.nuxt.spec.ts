@@ -67,6 +67,57 @@ describe("Game Team Side Player Role Name Component", () => {
     });
   });
 
+  describe("Player originally Thief", () => {
+    it("should display thief logo when player was originally a thief but now another role.", async() => {
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "werewolf",
+          original: "thief",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({ props: { ...defaultProps, player } });
+      const thiefIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Thief"]`);
+
+      expect(thiefIcon.exists()).toBeTruthy();
+    });
+
+    it("should not display thief logo when player was not originally a thief.", () => {
+      const thiefIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Thief"]`);
+
+      expect(thiefIcon.exists()).toBeFalsy();
+    });
+
+    it("should not display thief logo when thief is still thief.", async() => {
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "thief",
+          original: "thief",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({ props: { ...defaultProps, player } });
+      const thiefIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Thief"]`);
+
+      expect(thiefIcon.exists()).toBeFalsy();
+    });
+
+    it("should attach tooltip to thief logo when player was originally a thief.", async() => {
+      const tooltip: BoundTooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, `[alt="This player was originally the Thief"]`) };
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "werewolf",
+          original: "thief",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({
+        props: { ...defaultProps, player },
+        global: { directives },
+      });
+
+      expect(tooltip.value).toBe("This player was originally the Thief");
+    });
+  });
+
   describe("Player role name", () => {
     it("should display player role when rendered.", () => {
       const playerRole = wrapper.find<HTMLDivElement>("#player-role-name");

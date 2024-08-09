@@ -32,6 +32,13 @@ async function makePlayInPlayground(world: CustomWorld): Promise<void> {
   await makePlayButton.click();
 }
 
+async function chooseAdditionalCardInPlayground(world: CustomWorld, recipient: "thief" | "actor", roleName: string): Promise<void> {
+  const capitalizedRecipient = recipient.charAt(0).toUpperCase() + recipient.slice(1);
+  const name = `Choose card with role of ${roleName} for the ${capitalizedRecipient}`;
+  const cardButton = world.page.getByRole("button", { name, exact: true }).first();
+  await cardButton.click();
+}
+
 async function chooseSideInPlayground(world: CustomWorld, side: RoleSide): Promise<void> {
   const sideName = side === "villagers" ? "Villagers side" : "Werewolves side";
   const sideButton = world.page.getByRole("button", { name: sideName, exact: true }).first();
@@ -44,4 +51,5 @@ export {
   targetPlayersInPlayground,
   makePlayInPlayground,
   chooseSideInPlayground,
+  chooseAdditionalCardInPlayground,
 };

@@ -24,12 +24,16 @@ const { t } = useI18n();
 
 const thiefAdditionalCardsCount = computed<number>(() => game.value.options.roles.thief.additionalCardsCount);
 
+const mustThiefChooseBetweenWerewolves = computed<boolean>(() => game.value.options.roles.thief.mustChooseBetweenWerewolves);
+
 const gameEventTexts = computed<string[]>(() => {
   const tComponentKey = "GameThiefTurnStartsEvent";
+  const mustChooseBetweenWerewolvesTKey = mustThiefChooseBetweenWerewolves.value ? "mustChooseBetweenWerewolves" : "doesNotHaveToChooseBetweenWerewolves";
 
   return [
     t(`components.${tComponentKey}.thiefCanStealCard`, { count: thiefAdditionalCardsCount.value }, thiefAdditionalCardsCount.value),
     t(`components.${tComponentKey}.gameMasterWillFlipThiefCards`, { count: thiefAdditionalCardsCount.value }, thiefAdditionalCardsCount.value),
+    t(`components.${tComponentKey}.${mustChooseBetweenWerewolvesTKey}`, thiefAdditionalCardsCount.value),
   ];
 });
 

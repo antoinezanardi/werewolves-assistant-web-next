@@ -1,4 +1,5 @@
 import type { ComputedRef, MaybeRef } from "vue";
+import type { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";
 import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import type { GamePlay } from "~/composables/api/game/types/game-play/game-play.class";
 import type { GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
@@ -11,10 +12,12 @@ type UseCurrentGamePlay = {
   mustCurrentGamePlayBeSkipped: ComputedRef<boolean>;
   priorityCauseInCurrentGamePlay: ComputedRef<GamePlayCause | undefined>;
   getEligibleTargetsWithInteractionInCurrentGamePlay: (interaction: PlayerInteractionType) => Player[];
+  getEligibleAdditionalCardsToChooseInCurrentGamePlay: () => GameAdditionalCard[];
 };
 
 function useCurrentGamePlay(game: MaybeRef<Game>): UseCurrentGamePlay {
   const currentPlay = computed<GamePlay | null>(() => (isRef(game) ? game.value.currentPlay : game.currentPlay));
+  const additionalCards = computed<GameAdditionalCard[] | undefined>(() => (isRef(game) ? game.value.additionalCards : game.additionalCards));
   const gameOptions = computed<GameOptions>(() => (isRef(game) ? game.value.options : game.options));
 
   const mustCurrentGamePlayBeSkipped = computed<boolean>(() => {
@@ -47,10 +50,20 @@ function useCurrentGamePlay(game: MaybeRef<Game>): UseCurrentGamePlay {
     }
     return interaction.eligibleTargets;
   }
+
+  function getEligibleAdditionalCardsToChooseInCurrentGamePlay(): GameAdditionalCard[] {
+    if (currentPlay.value?.action !== "choose-card" || additionalCards.value === undefined) {
+      return [];
+    }
+    const { source } = currentPlay.value;
+
+    return additionalCards.value.filter(({ recipient, isUsed }) => recipient === source.name && !isUsed);
+  }
   return {
     mustCurrentGamePlayBeSkipped,
     priorityCauseInCurrentGamePlay,
     getEligibleTargetsWithInteractionInCurrentGamePlay,
+    getEligibleAdditionalCardsToChooseInCurrentGamePlay,
   };
 }
 
