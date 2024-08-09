@@ -16,6 +16,19 @@
       id="recipient-role-additional-cards-multi-select"
       :recipient-role-name="recipientRoleName"
     />
+
+    <div
+      id="recipient-role-additional-cards-placement"
+      class="flex font-semibold h-6 items-center justify-center mt-3"
+    >
+      <span v-if="additionalCardsPlacementText">
+        <i class="fa fa-info-circle me-2 text-info"/>
+
+        <span>
+          {{ additionalCardsPlacementText }}
+        </span>
+      </span>
+    </div>
   </PrimeVueFieldset>
 </template>
 
@@ -24,6 +37,24 @@ import type { RecipientRoleAdditionalCardsManagerProps } from "~/components/page
 import RecipientRoleAdditionalCardsDisclaimer from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsDisclaimer/RecipientRoleAdditionalCardsDisclaimer.vue";
 import RecipientRoleAdditionalCardsMultiSelect from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/RecipientRoleAdditionalCardsMultiSelect.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
+import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
-defineProps<RecipientRoleAdditionalCardsManagerProps>();
+const props = defineProps<RecipientRoleAdditionalCardsManagerProps>();
+
+const createGameDtoStore = useCreateGameDtoStore();
+const { getAdditionalCardsForRecipientInCreateGameDto } = createGameDtoStore;
+
+const { t } = useI18n();
+
+const additionalCardsPlacementText = computed<string>(() => {
+  const additionalCards = getAdditionalCardsForRecipientInCreateGameDto(props.recipientRoleName);
+  const additionalCardsCount = additionalCards.length;
+  if (additionalCardsCount === 0) {
+    return "";
+  }
+  if (props.recipientRoleName === "thief") {
+    return t("components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceDown", additionalCardsCount);
+  }
+  return t("components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceUp", additionalCardsCount);
+});
 </script>

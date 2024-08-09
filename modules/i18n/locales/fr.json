@@ -1495,6 +1495,10 @@
       "thiefHasChosenCard": "Le Voleur a choisi d'incarner {roleName} pour le reste de la partie !",
       "gameMasterCanTakeAwayRemainingCards": "Le Maître du Jeu peut retirer les cartes restantes.",
       "thiefChosenCardIsRevealed": "Dans cette partie spéciale, la carte choisie par le Voleur est révélée aux autres joueurs."
+    },
+    "RecipientRoleAdditionalCardsManager": {
+      "cardsPlacedFaceDown": "La carte sera placée au centre de la table face cachée avant le début de la partie | Les cartes seront placées au centre de la table face cachée avant le début de la partie",
+      "cardsPlacedFaceUp": "La carte sera placée au centre de la table face visible avant le début de la partie | Les cartes seront placées au centre de la table face visible avant le début de la partie"
     }
   }
 }
