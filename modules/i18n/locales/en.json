@@ -1495,6 +1495,10 @@
       "thiefHasNotChosenCard": "The Thief didn't choose a card with a role to incarnate. He will remain the Thief for the rest of the game.",
       "thiefHasChosenCard": "The Thief has chosen to be {roleName} for the rest of the game!",
       "gameMasterCanTakeAwayRemainingCards": "The Game Master can take away the remaining cards."
+    },
+    "RecipientRoleAdditionalCardsManager": {
+      "cardsPlacedFaceDown": "The card will be placed on the center of the table face down before the game begins | The cards will be placed on the center of the table face down  before the game begins",
+      "cardsPlacedFaceUp": "The card will be placed on the center of the table face up before the game begins | The cards will be placed on the center of the table face up before the game begins"
     }
   }
 }
