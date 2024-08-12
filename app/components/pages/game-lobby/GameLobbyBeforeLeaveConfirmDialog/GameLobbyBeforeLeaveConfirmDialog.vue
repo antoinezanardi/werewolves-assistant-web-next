@@ -9,6 +9,7 @@
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
 import { storeToRefs } from "pinia";
 import { useConfirm } from "primevue/useconfirm";
+import { DEFAULT_CONFIRM_DIALOG_OPTIONS } from "~/composables/prime-vue/constants/prime-vue.constants";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const router = useRouter();
@@ -37,11 +38,7 @@ function open(): void {
     message: t("components.GameLobbyBeforeLeaveConfirmDialog.doYouWantToLeaveLobby"),
     acceptLabel: t("components.GameLobbyBeforeLeaveConfirmDialog.iWantToLeave"),
     rejectLabel: t("components.GameLobbyBeforeLeaveConfirmDialog.stayInLobby"),
-    defaultFocus: "reject",
-    acceptIcon: "fa fa-sign-out",
-    rejectIcon: "fa fa-times",
-    acceptClass: "p-button-danger",
-    rejectClass: "p-button-secondary",
+    ...DEFAULT_CONFIRM_DIALOG_OPTIONS,
   });
 }
 

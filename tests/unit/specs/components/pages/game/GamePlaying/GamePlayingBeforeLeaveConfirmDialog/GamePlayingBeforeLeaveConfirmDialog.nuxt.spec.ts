@@ -10,10 +10,10 @@ import type { Ref } from "vue";
 import GamePlayingBeforeLeaveConfirmDialog from "~/components/pages/game/GamePlaying/GamePlayingBeforeLeaveConfirmDialog/GamePlayingBeforeLeaveConfirmDialog.vue";
 
 type GamePlayingBeforeLeaveConfirmDialogPrivateVariables = {
-  open: () => void;
+  openConfirmLeaveGameDialog: () => void;
   desiredDestinationFullPath: Ref<string>;
-  doesConfirmToLeave: Ref<boolean>;
-  acceptLeavingCallback: () => void;
+  doesConfirmToLeaveGame: Ref<boolean>;
+  acceptLeavingGameCallback: () => void;
   onBeforeEachRouteLeaving: (guard: RouteLocationNormalizedGeneric) => boolean;
 };
 
@@ -63,7 +63,7 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
     });
 
     it("should return true when confirm to leave is true.", async() => {
-      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeave.value = true;
+      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeaveGame.value = true;
       const guard = createFakeLocationNormalizedGuard({ fullPath: "/game-lobby" });
       await nextTick();
       const isLeaving = (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).onBeforeEachRouteLeaving(guard);
@@ -72,7 +72,7 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
     });
 
     it("should not set desired destination full path when confirm to leave is true.", async() => {
-      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeave.value = true;
+      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeaveGame.value = true;
       const guard = createFakeLocationNormalizedGuard({ fullPath: "/game-lobby" });
       (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).onBeforeEachRouteLeaving(guard);
       await nextTick();
@@ -91,7 +91,7 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
 
   describe("Confirm", () => {
     it("should set confirm parameters to confirm composable when open.", async() => {
-      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).open();
+      (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).openConfirmLeaveGameDialog();
       await nextTick();
 
       expect(hoistedMocks.useConfirm.require).toHaveBeenCalledExactlyOnceWith({
@@ -111,15 +111,15 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
 
     describe("On Leaving", () => {
       it("should set confirm to leave to true when accept leaving.", async() => {
-        (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).acceptLeavingCallback();
+        (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).acceptLeavingGameCallback();
         await nextTick();
 
-        expect((wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeave.value).toBeTruthy();
+        expect((wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeaveGame.value).toBeTruthy();
       });
 
       it("should push to desired destination full path when accept leaving.", async() => {
         (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).desiredDestinationFullPath.value = "/game-lobby";
-        (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).acceptLeavingCallback();
+        (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).acceptLeavingGameCallback();
         await nextTick();
 
         expect(hoistedMocks.useRouter.push).toHaveBeenCalledExactlyOnceWith("/game-lobby");

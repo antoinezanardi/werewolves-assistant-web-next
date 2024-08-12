@@ -8,44 +8,41 @@
 <script setup lang="ts">
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
 import { useConfirm } from "primevue/useconfirm";
+import { DEFAULT_CONFIRM_DIALOG_OPTIONS } from "~/composables/prime-vue/constants/prime-vue.constants";
 
 const router = useRouter();
 
 const desiredDestinationFullPath = ref<string>("");
 
-const doesConfirmToLeave = ref<boolean>(false);
+const doesConfirmToLeaveGame = ref<boolean>(false);
 
 const { require: confirmRequire } = useConfirm();
 
 const { t } = useI18n();
 
-async function acceptLeavingCallback(): Promise<void> {
-  doesConfirmToLeave.value = true;
+async function acceptLeavingGameCallback(): Promise<void> {
+  doesConfirmToLeaveGame.value = true;
   await router.push(desiredDestinationFullPath.value);
 }
 
-function open(): void {
+function openConfirmLeaveGameDialog(): void {
   confirmRequire({
     group: "game-playing-before-leave-confirm-dialog",
-    accept: acceptLeavingCallback,
+    accept: acceptLeavingGameCallback,
     header: t("components.GamePlayingBeforeLeaveConfirmDialog.gameIsStillPlaying"),
     message: t("components.GamePlayingBeforeLeaveConfirmDialog.doYouWantToLeaveGame"),
     acceptLabel: t("components.GamePlayingBeforeLeaveConfirmDialog.iWantToLeave"),
     rejectLabel: t("components.GamePlayingBeforeLeaveConfirmDialog.stayInGame"),
-    defaultFocus: "reject",
-    acceptIcon: "fa fa-sign-out",
-    rejectIcon: "fa fa-times",
-    acceptClass: "p-button-danger",
-    rejectClass: "p-button-secondary",
+    ...DEFAULT_CONFIRM_DIALOG_OPTIONS,
   });
 }
 
 function onBeforeEachRouteLeaving(guard: RouteLocationNormalizedGeneric): boolean {
-  if (doesConfirmToLeave.value) {
+  if (doesConfirmToLeaveGame.value) {
     return true;
   }
   desiredDestinationFullPath.value = guard.fullPath;
-  open();
+  openConfirmLeaveGameDialog();
 
   return false;
 }
