@@ -330,6 +330,24 @@ Feature: 🃏 Game Lobby Page
     When the user clicks on werewolves assistant logo in navigation bar
     Then the user should be on home page
 
+  Scenario: 🃏 User is asked to confirm if he wants to leave the game lobby if he already entered players
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role     |
+      | Ulysse   | Villager |
+      | Valentin | Villager |
+    And the user clicks on werewolves assistant logo in navigation bar
+    Then the text "You started the composition of the party" under the alertdialog with name "You started the composition" should be visible
+    And the text "Are you sure you want to leave the lobby?" under the alertdialog with name "You started the composition" should be visible
+
+    When the user clicks on the button with name "Stay in the lobby"
+    Then the user should be on game-lobby page
+
+    When the user clicks on werewolves assistant logo in navigation bar
+    And the user clicks on the button with name "Yes, I want to leave"
+    Then the user should be on home page
+
   Scenario: 🃏 User goes back on home page by clicking on back to home page button in parameters dropdown
     Given the user is on game-lobby page
 

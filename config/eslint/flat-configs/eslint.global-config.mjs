@@ -14,6 +14,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       defineI18nConfig: READONLY,
       useRuntimeConfig: READONLY,
       useRoute: READONLY,
+      useRouter: READONLY,
       definePageMeta: READONLY,
       setPageLayout: READONLY,
       createError: READONLY,

@@ -1,3 +1,4 @@
+import { createFakeUseRouter } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import type UseToast from "primevue/usetoast";
 import type UseConfirm from "primevue/useconfirm";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
@@ -17,6 +18,8 @@ function mockNuxtImports(): void {
   mockNuxtImport<typeof navigateTo>("navigateTo", () => vi.fn());
 
   mockNuxtImport<typeof useRoute>("useRoute", () => vi.fn(() => createFakeUseRoute()));
+
+  mockNuxtImport<() => ReturnType<typeof createFakeUseRouter>>("useRouter", () => vi.fn(() => createFakeUseRouter()));
 
   mockNuxtImport<typeof useRuntimeConfig>("useRuntimeConfig", () => vi.fn(() => createFakeRuntimeConfig()));
 

@@ -1499,6 +1499,12 @@
     "RecipientRoleAdditionalCardsManager": {
       "cardsPlacedFaceDown": "The card will be placed on the center of the table face down before the game begins | The cards will be placed on the center of the table face down  before the game begins",
       "cardsPlacedFaceUp": "The card will be placed on the center of the table face up before the game begins | The cards will be placed on the center of the table face up before the game begins"
+    },
+    "GameLobbyBeforeLeaveConfirmDialog": {
+      "youStartedComposition": "You started the composition of the party",
+      "doYouWantToLeaveLobby": "Are you sure you want to leave the lobby?",
+      "iWantToLeave": "Yes, I want to leave",
+      "stayInLobby": "Stay in the lobby"
     }
   }
 }
