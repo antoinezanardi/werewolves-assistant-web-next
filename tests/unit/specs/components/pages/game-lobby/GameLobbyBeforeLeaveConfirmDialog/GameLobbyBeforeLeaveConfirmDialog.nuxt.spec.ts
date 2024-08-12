@@ -81,6 +81,13 @@ describe("Game Lobby Before Leave Confirm Dialog Component", () => {
       expect(isLeaving).toBeFalsy();
     });
 
+    it("should return true when guard destination name is game id.", () => {
+      const guard = createFakeLocationNormalizedGuard({ name: "game-id" });
+      const isLeaving = (wrapper.vm as unknown as GameLobbyBeforeLeaveConfirmDialogPrivateVariables).onBeforeEachRouteLeaving(guard);
+
+      expect(isLeaving).toBeTruthy();
+    });
+
     it("should return true when there are enough players and confirm to leave is true.", async() => {
       (wrapper.vm as unknown as GameLobbyBeforeLeaveConfirmDialogPrivateVariables).doesConfirmToLeave.value = true;
       const guard = createFakeLocationNormalizedGuard({ fullPath: "/game-lobby" });

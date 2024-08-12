@@ -46,7 +46,9 @@ function open(): void {
 }
 
 function onBeforeEachRouteLeaving(guard: RouteLocationNormalizedGeneric): boolean {
-  if (createGameDto.value.players.length === 0 || doesConfirmToLeave.value) {
+  const isCompositionEmpty = createGameDto.value.players.length === 0;
+  const isDestinationGamePage = guard.name === "game-id";
+  if (isCompositionEmpty || isDestinationGamePage || doesConfirmToLeave.value) {
     return true;
   }
   desiredDestinationFullPath.value = guard.fullPath;
