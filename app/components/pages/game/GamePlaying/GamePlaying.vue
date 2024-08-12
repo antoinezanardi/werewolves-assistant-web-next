@@ -9,7 +9,7 @@
       side="villagers"
     />
 
-    <div class="game-playground-container px-2 w-8/12">
+    <div class="!max-w-2/3 game-playground-container px-2 w-8/12">
       <Transition
         mode="out-in"
         name="fade"
@@ -31,6 +31,8 @@
       data-testid="werewolves-side"
       side="werewolves"
     />
+
+    <GamePlayingBeforeLeaveConfirmDialog/>
   </div>
 </template>
 
@@ -38,6 +40,7 @@
 import { storeToRefs } from "pinia";
 import GameEventsMonitor from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitor.vue";
 import GamePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlayground.vue";
+import GamePlayingBeforeLeaveConfirmDialog from "~/components/pages/game/GamePlaying/GamePlayingBeforeLeaveConfirmDialog/GamePlayingBeforeLeaveConfirmDialog.vue";
 import GameTeamSide from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSide.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
@@ -56,9 +59,3 @@ playRandomGamePhaseBackgroundAudio(game.value.phase.name);
 
 onUnmounted(fadeOutPlayingBackgroundAudio);
 </script>
-
-<style lang="scss" scoped>
-.game-playground-container {
-  max-width: 66.66666% !important;
-}
-</style>

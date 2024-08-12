@@ -1505,6 +1505,12 @@
       "doYouWantToLeaveLobby": "Are you sure you want to leave the lobby?",
       "iWantToLeave": "Yes, I want to leave",
       "stayInLobby": "Stay in the lobby"
+    },
+    "GamePlayingBeforeLeaveConfirmDialog": {
+      "gameIsStillPlaying": "The game is still playing",
+      "doYouWantToLeaveGame": "Are you sure you want to leave the game?",
+      "iWantToLeave": "Yes, I want to leave",
+      "stayInGame": "Stay in the game"
     }
   }
 }
