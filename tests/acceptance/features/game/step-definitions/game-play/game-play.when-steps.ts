@@ -138,3 +138,8 @@ When(/^the (?<recipient>thief|actor) chooses card with role of "(?<roleName>.+)"
   await chooseAdditionalCardInPlayground(this, recipient, roleName);
   await makePlayInPlayground(this);
 });
+
+When(/^the stuttering judge requests another vote$/u, async function(this: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(this, "button", "He doesn't request another vote");
+  await makePlayInPlayground(this);
+});
