@@ -237,6 +237,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![White Werewolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/White%20Werewolf%20eats%20Playground.png)
 >>   </details>
 >>   <details>
+>>    <summary>🐒 Wild Child chooses model Playground</summary>
+>>
+>>    ![Wild Child chooses model Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Wild%20Child%20chooses%20model%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🪄 Witch uses life potion Playground</summary>
 >>
 >>    ![Witch uses life potion Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Witch%20uses%20life%20potion%20Playground.png)

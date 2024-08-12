@@ -234,3 +234,10 @@ Given(/^the user sets the stuttering judge request count to (?<requestsCount>\d+
   await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input", requestsCount);
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets wild child transformation revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input");
+  await closeDialogWithHeaderButton(this);
+});

@@ -143,3 +143,8 @@ When(/^the stuttering judge requests another vote$/u, async function(this: Custo
   await clickOnRoleWithText(this, "button", "He doesn't request another vote");
   await makePlayInPlayground(this);
 });
+
+When(/^the wild child chooses the player with name "(?<name>.+)" as a model$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});
