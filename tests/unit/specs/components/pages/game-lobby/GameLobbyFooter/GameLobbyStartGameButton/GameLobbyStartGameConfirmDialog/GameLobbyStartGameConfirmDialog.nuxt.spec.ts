@@ -1,7 +1,6 @@
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -104,19 +103,12 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).open();
       await nextTick();
       const expectedConfirmOptions: ConfirmationOptions = {
-        target: expect.anything() as HTMLElement,
+        group: "game-lobby-start-game-confirm-dialog",
         position: "bottom",
         accept: expect.any(Function) as () => void,
       };
 
       expect(hoistedMocks.useConfirm.require).toHaveBeenCalledExactlyOnceWith(expectedConfirmOptions);
-    });
-
-    it("should throw error when dialog is open but start game confirm dialog is not defined.", async() => {
-      (wrapper.vm.$root?.$refs.VTU_COMPONENT as GameLobbyStartGameConfirmDialogPrivateVariables).gameLobbyStartGameConfirmDialog.value = null;
-      await getError(() => (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).open());
-
-      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Start Game Confirm Dialog is not defined");
     });
   });
 
@@ -145,7 +137,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
   });
 
   describe("Confirm Start Game", () => {
-    it("should emit conf irm start game event when confirm start game is called.", () => {
+    it("should emit confirm start game event when confirm start game is called.", () => {
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmStartGame();
 
       expect(wrapper.emitted("confirmStartGame")).toHaveLength(1);

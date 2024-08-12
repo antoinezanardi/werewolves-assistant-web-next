@@ -30,12 +30,15 @@
     <GameLobbyPositionCoordinator ref="gameLobbyPositionCoordinator"/>
 
     <GameLobbyAdditionalCardsManager ref="gameLobbyAdditionalCardsManager"/>
+
+    <GameLobbyBeforeLeaveConfirmDialog/>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
+import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
