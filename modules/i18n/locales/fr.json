@@ -1505,6 +1505,12 @@
       "doYouWantToLeaveLobby": "Êtes-vous sûr de vouloir quitter la page ?",
       "iWantToLeave": "Oui, je veux partir",
       "stayInLobby": "Rester sur la page"
+    },
+    "GamePlayingBeforeLeaveConfirmDialog": {
+      "gameIsStillPlaying": "La partie est toujours en cours",
+      "doYouWantToLeaveGame": "Êtes-vous sûr de vouloir quitter le jeu ?",
+      "iWantToLeave": "Oui, je veux partir",
+      "stayInGame": "Rester dans le jeu"
     }
   }
 }
