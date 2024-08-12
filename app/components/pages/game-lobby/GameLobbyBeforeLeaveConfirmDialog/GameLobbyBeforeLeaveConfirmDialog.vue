@@ -57,5 +57,5 @@ function onBeforeEachRouteLeaving(guard: RouteLocationNormalizedGeneric): boolea
   return false;
 }
 
-router.beforeEach(onBeforeEachRouteLeaving);
+onBeforeRouteLeave(onBeforeEachRouteLeaving);
 </script>
