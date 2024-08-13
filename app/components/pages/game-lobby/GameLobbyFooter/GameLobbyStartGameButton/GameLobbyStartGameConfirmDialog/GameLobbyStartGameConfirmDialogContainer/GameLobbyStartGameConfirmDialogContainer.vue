@@ -7,7 +7,10 @@
       <h5
         class="w-full"
       >
-        <i class="fa fa-list-check text-success w-1/12"/>
+        <FontAwesomeIcon
+          class="text-success w-1/12"
+          icon="list-check"
+        />
 
         <span
           id="confirm-dialog-header-text"
@@ -37,6 +40,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyStartGameConfirmDialogContainerEmits, GameLobbyStartGameConfirmDialogContainerProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/game-lobby-start-game-confirm-dialog-container.types";
 import GameLobbyStartGameConfirmDialogContent from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogContent.vue";
 import GameLobbyStartGameConfirmDialogFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/GameLobbyStartGameConfirmDialogFooter.vue";

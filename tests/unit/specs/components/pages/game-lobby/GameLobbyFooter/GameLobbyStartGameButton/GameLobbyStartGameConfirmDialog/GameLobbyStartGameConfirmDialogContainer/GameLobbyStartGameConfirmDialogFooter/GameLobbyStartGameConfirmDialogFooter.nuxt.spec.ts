@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -110,10 +111,9 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-positioned",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-icon");
-      const expectedIconClasses = ["fa", "fa-forward", "me-2"];
+      const confirmButton = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
 
-      expect(confirmButton.classes()).toIncludeAllMembers(expectedIconClasses);
+      expect(confirmButton.props("icon")).toBe("forward");
     });
 
     it("should set play icon to button icon when confirm step is 'players-ready'.", async() => {
@@ -123,11 +123,9 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-ready",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-icon");
-      const expectedIconClasses = ["fa", "fa-beat-fade", "fa-play", "me-4"];
+      const confirmButton = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
 
-      expect(confirmButton.classes()).toIncludeAllMembers(expectedIconClasses);
-      expect(confirmButton.classes()).not.toIncludeAnyMembers(["fa-forward"]);
+      expect(confirmButton.props("icon")).toBe("play");
     });
   });
 });

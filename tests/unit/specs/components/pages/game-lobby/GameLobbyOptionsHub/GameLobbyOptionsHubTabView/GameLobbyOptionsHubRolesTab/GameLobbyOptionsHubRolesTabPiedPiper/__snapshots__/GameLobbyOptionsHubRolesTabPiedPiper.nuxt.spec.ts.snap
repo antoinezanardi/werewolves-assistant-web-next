@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-people-line text-pink-500"></i><span>Charmed people count per night</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="people-line" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-pink-500"></font-awesome-icon-stub><span>Charmed people count per night</span>
+            </h3>
             <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc1=""><label id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label" for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input">Charmed people count per night</label><input-number-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input" modelvalue="2" class="w-full" max="5" min="1"></input-number-stub><slider-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider" modelvalue="2" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub></span></div>
           </div>
           <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description, {"count":2}</p>
@@ -18,7 +20,9 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
         </div>
         <div id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-ban text-red-500"></i><span>The Pied Piper is powerless on the Werewolves side</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="ban" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-red-500"></font-awesome-icon-stub><span>The Pied Piper is powerless on the Werewolves side</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
@@ -28,7 +32,9 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
         </div>
         <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-blue-500"></i><span>Charmed people are revealed</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="bullhorn" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-blue-500"></font-awesome-icon-stub><span>Charmed people are revealed</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

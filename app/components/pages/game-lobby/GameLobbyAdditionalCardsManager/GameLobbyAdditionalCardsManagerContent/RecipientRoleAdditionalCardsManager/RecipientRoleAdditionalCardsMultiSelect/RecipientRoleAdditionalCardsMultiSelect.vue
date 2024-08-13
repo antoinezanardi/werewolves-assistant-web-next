@@ -49,15 +49,17 @@
         <PrimeVueButton
           class="p-button-rounded p-button-sm p-button-text remove-additional-card-button"
           :data-testid="`recipient-role-additional-cards-multi-select-remove-${value.roleName}-for-${recipientRoleName}`"
-          icon="fa fa-times z-10"
           @click.stop="onClickFromRemoveAdditionalCardButton(value)"
-        />
+        >
+          <FontAwesomeIcon icon="times"/>
+        </PrimeVueButton>
       </template>
     </PrimeVueMultiSelect>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { LabeledCreateGameAdditionalCardDto, RecipientRoleAdditionalCardsMultiSelectProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/recipient-role-additional-cards-multi-select.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";

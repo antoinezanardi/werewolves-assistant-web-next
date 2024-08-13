@@ -2,10 +2,19 @@
   <PrimeVueConfirmDialog
     id="game-lobby-before-leave-confirm-dialog"
     group="game-lobby-before-leave-confirm-dialog"
-  />
+  >
+    <template #accepticon>
+      <FontAwesomeIcon icon="sign-out"/>
+    </template>
+
+    <template #rejecticon>
+      <FontAwesomeIcon icon="times"/>
+    </template>
+  </PrimeVueConfirmDialog>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
 import { storeToRefs } from "pinia";
 import { useConfirm } from "primevue/useconfirm";

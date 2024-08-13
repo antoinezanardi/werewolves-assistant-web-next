@@ -29,7 +29,7 @@ Then(/^the game's event previous text button should be (?<isEnabled>enabled|disa
 });
 
 Then(/^the game's previous event button should be (?<isEnabled>enabled|disabled)$/u, async function(this: CustomWorld, isEnabledString: "disabled" | "enabled"): Promise<void> {
-  const previousEventButton = this.page.getByRole("button", { name: " Previous", exact: true });
+  const previousEventButton = this.page.getByRole("button", { name: "Previous", exact: true });
 
   if (isEnabledString === "enabled") {
     await expect(previousEventButton).toBeEnabled();

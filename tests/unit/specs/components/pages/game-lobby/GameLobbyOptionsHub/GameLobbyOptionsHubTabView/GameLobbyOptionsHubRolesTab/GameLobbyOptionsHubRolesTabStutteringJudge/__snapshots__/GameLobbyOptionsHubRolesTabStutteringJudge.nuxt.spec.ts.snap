@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Stuttering Judge Component > should ma
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-gavel text-cyan-300"></i><span>Stuttering Judge vote requests</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="gavel" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-cyan-300"></font-awesome-icon-stub><span>Stuttering Judge vote requests</span>
+            </h3>
             <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc1=""><label id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-label" for="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input">Stuttering Judge vote requests</label><input-number-stub id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input" modelvalue="1" class="w-full" max="5" min="1"></input-number-stub></span>
               <slider-stub id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-slider" modelvalue="1" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub>
             </div>

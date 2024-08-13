@@ -27,7 +27,7 @@
 
     <BackToHomeButton
       class="mt-4"
-      icon="fa fa-flip-horizontal fa-person-running"
+      icon="person-running"
       p-button-class="p-button-primary"
       text-key="components.Error.goBackToSafePlace"
     />

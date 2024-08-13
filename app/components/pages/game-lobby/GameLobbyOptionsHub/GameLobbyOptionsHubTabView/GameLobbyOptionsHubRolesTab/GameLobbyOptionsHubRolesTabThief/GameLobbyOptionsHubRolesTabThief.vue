@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input-group"
       does-have-bottom-divider
       :option-description="mustThiefChooseBetweenWerewolvesDescription"
-      option-icon-class="fa fa-hands-bound text-cyan-500"
+      option-icon="hands-bound"
+      option-icon-class="text-cyan-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabThief.options.mustChooseBetweenWerewolves.label')"
     >
       <AffirmativeToggleButton
@@ -24,7 +25,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input-group"
       :option-description="isThiefChosenCardRevealedDescription"
-      option-icon-class="fa fa-mask text-cyan-500"
+      option-icon="mask"
+      option-icon-class="text-cyan-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabThief.options.isChosenCardRevealed.label')"
     >
       <AffirmativeToggleButton

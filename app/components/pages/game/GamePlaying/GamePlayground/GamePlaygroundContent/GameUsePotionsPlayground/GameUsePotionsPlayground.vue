@@ -5,7 +5,10 @@
       id="no-potion"
       class="flex flex-col h-full items-center justify-center"
     >
-      <i class="fa fa-2x fa-flask mb-2 text-info"/>
+      <FontAwesomeIcon
+        class="fa-2x mb-2 text-info"
+        icon="flask"
+      />
 
       <span>
         {{ $t("components.GameUsePotionsPlayground.witchHasUsedBothPotions") }}
@@ -21,6 +24,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 
 import WitchUsePotionsTabView from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameUsePotionsPlayground/WitchUsePotionsTabView/WitchUsePotionsTabView.vue";

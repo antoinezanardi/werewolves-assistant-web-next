@@ -2,11 +2,20 @@
   <PrimeVueConfirmDialog
     id="game-playing-before-leave-confirm-dialog"
     group="game-playing-before-leave-confirm-dialog"
-  />
+  >
+    <template #accepticon>
+      <FontAwesomeIcon icon="sign-out"/>
+    </template>
+
+    <template #rejecticon>
+      <FontAwesomeIcon icon="times"/>
+    </template>
+  </PrimeVueConfirmDialog>
 </template>
 
 <script setup lang="ts">
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useConfirm } from "primevue/useconfirm";
 import { DEFAULT_CONFIRM_DIALOG_OPTIONS } from "~/composables/prime-vue/constants/prime-vue.constants";
 

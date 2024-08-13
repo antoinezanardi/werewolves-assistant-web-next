@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
@@ -28,7 +29,12 @@ describe("Game Events Monitor Footer Component", () => {
   async function mountGameEventsMonitorFooterComponent(options: ComponentMountingOptions<typeof GameEventsMonitorFooter> = {}):
   Promise<ReturnType<typeof mount<typeof GameEventsMonitorFooter>>> {
     return mountSuspendedComponent(GameEventsMonitorFooter, {
-      global: { stubs: { Button: false } },
+      global: {
+        stubs: {
+          Button: false,
+          FontAwesomeIcon: false,
+        },
+      },
       ...options,
     });
   }
@@ -131,7 +137,7 @@ describe("Game Events Monitor Footer Component", () => {
     });
 
     it("should animate icon when shift and left arrow keys are pressed.", async() => {
-      const icon = wrapper.find<HTMLSpanElement>("#previous-event-button-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#previous-event-button-icon");
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = true;
@@ -219,7 +225,7 @@ describe("Game Events Monitor Footer Component", () => {
     });
 
     it("should animate icon when shift and right arrow keys are pressed.", async() => {
-      const icon = wrapper.find<HTMLSpanElement>("#skip-current-event-button-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#skip-current-event-button-icon");
       hoistedMocks.useMagicKeys.arrowright.value = true;
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();

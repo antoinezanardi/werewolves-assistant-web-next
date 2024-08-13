@@ -21,7 +21,8 @@
     >
       <DialogHeaderTitleOnly
         id="game-lobby-additional-cards-manager-header"
-        icon-class="fa fa-clover text-primary"
+        icon="clover"
+        icon-class="text-primary"
         :title="$t('components.GameLobbyAdditionalCardsManager.additionalCards')"
       />
     </template>

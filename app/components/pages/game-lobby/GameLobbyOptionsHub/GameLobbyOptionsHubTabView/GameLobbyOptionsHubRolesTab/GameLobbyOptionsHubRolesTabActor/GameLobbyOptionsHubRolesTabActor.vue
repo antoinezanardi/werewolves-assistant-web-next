@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input-group"
       :option-description="isActorPowerlessOnWerewolvesSideDescription"
-      option-icon-class="fa fa-ban text-red-500"
+      option-icon="ban"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabActor.options.isPowerlessOnWerewolvesSide.label')"
     >
       <AffirmativeToggleButton

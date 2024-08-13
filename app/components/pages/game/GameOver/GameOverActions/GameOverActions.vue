@@ -11,7 +11,9 @@
       severity="help"
       @click="onClickFromShowHistoryButton"
     >
-      <i class="fa fa-clock-rotate-left me-2"/>
+      <FontAwesomeIcon
+        icon="clock-rotate-left"
+      />
 
       <span>
         {{ showGameHistoryTextButton }}
@@ -21,6 +23,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 
 import type { GameOverActionsEmits } from "~/components/pages/game/GameOver/GameOverActions/game-over-actions.types";

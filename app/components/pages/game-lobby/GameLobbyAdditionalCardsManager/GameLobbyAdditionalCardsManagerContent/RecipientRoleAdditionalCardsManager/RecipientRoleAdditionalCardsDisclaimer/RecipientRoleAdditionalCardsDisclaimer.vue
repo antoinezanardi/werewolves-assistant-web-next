@@ -8,10 +8,11 @@
         :key="recipientRoleAdditionalCardsDisclaimerAndIcon.disclaimer"
         class="mb-8 text-center"
       >
-        <i
+        <FontAwesomeIcon
           id="recipient-role-additional-cards-disclaimer-icon"
           class="me-3"
-          :class="recipientRoleAdditionalCardsDisclaimerAndIcon.icon"
+          :class="recipientRoleAdditionalCardsDisclaimerAndIcon.iconClasses"
+          :icon="recipientRoleAdditionalCardsDisclaimerAndIcon.icon"
         />
 
         <span id="recipient-role-additional-cards-disclaimer">
@@ -23,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { RecipientRoleAdditionalCardsDisclaimerProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsDisclaimer/recipient-role-additional-cards-disclaimer.types";
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
@@ -51,7 +53,7 @@ const areAdditionalCardsSetForRecipientRoleName = computed<boolean>(() => {
   return areAdditionalCardsSetForActorIfPresent.value;
 });
 
-const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: string; icon: string }>(() => {
+const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: string; icon: string; iconClasses: string }>(() => {
   const definiteRecipientRoleName = getDefiniteRoleNameLabel(props.recipientRoleName, 1);
   const lowerCaseRecipientRoleName = lowerCaseFirstLetter(definiteRecipientRoleName);
   const recipientAdditionalCardsCount = getAdditionalCardsForRecipientInCreateGameDto(props.recipientRoleName).length;
@@ -59,12 +61,14 @@ const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: str
   if (areAdditionalCardsSetForRecipientRoleName.value) {
     return {
       disclaimer: t(`${componentRootTKey}.additionalCardsSetDisclaimer`, { definiteRecipientRoleName, count: recipientAdditionalCardsCount }, recipientAdditionalCardsCount),
-      icon: "fa fa-check-circle text-success",
+      icon: "check-circle",
+      iconClasses: "text-success",
     };
   }
   return {
     disclaimer: t(`${componentRootTKey}.additionalCardsNotSetDisclaimer`, { definiteRecipientRoleName: lowerCaseRecipientRoleName }),
-    icon: "fa fa-exclamation-circle text-error fa-beat",
+    icon: "exclamation-circle",
+    iconClasses: "text-error fa-beat",
   };
 });
 </script>

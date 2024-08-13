@@ -118,7 +118,7 @@ describe("Parameters Menu Component", () => {
             {
               label: "components.ParametersMenu.cancelGame",
               disabled: true,
-              icon: "fa fa-ban text-danger",
+              icon: "ban",
               command: expect.any(Function) as () => Promise<void>,
             },
           ],
@@ -126,7 +126,7 @@ describe("Parameters Menu Component", () => {
         },
         {
           label: "components.ParametersMenu.backToHome",
-          icon: "fa fa-sign-out",
+          icon: "sign-out",
           arialLabel: "components.ParametersMenu.backToHome",
           command: expect.any(Function) as () => Promise<void>,
         },
@@ -146,7 +146,7 @@ describe("Parameters Menu Component", () => {
             {
               label: "components.ParametersMenu.cancelGame",
               disabled: false,
-              icon: "fa fa-ban text-danger",
+              icon: "ban",
               command: expect.any(Function) as () => Promise<void>,
             },
           ],
@@ -154,7 +154,7 @@ describe("Parameters Menu Component", () => {
         },
         {
           label: "components.ParametersMenu.backToHome",
-          icon: "fa fa-sign-out",
+          icon: "sign-out",
           arialLabel: "components.ParametersMenu.backToHome",
           command: expect.any(Function) as () => Promise<void>,
         },
@@ -175,7 +175,7 @@ describe("Parameters Menu Component", () => {
             {
               label: "components.ParametersMenu.cancelGame",
               disabled: true,
-              icon: "fa fa-ban text-danger",
+              icon: "ban",
               command: expect.any(Function) as () => Promise<void>,
             },
           ],
@@ -183,7 +183,7 @@ describe("Parameters Menu Component", () => {
         },
         {
           label: "components.ParametersMenu.backToHome",
-          icon: "fa fa-sign-out",
+          icon: "sign-out",
           arialLabel: "components.ParametersMenu.backToHome",
           command: expect.any(Function) as () => Promise<void>,
         },

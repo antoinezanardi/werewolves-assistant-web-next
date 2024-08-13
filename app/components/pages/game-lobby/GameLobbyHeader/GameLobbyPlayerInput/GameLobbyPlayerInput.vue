@@ -27,7 +27,7 @@
         severity="primary"
         type="submit"
       >
-        <i class="fa fa-plus me-2"/>
+        <FontAwesomeIcon icon="plus"/>
 
         <span class="me-3">
           {{ $t("shared.actions.add") }}
@@ -50,6 +50,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import { computed } from "vue";
 

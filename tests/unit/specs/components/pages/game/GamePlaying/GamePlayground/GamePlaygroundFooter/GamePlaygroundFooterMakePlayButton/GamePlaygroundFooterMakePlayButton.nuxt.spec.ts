@@ -4,6 +4,7 @@ import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
 import type { Ref } from "vue";
@@ -39,8 +40,14 @@ describe("Game Playground Footer Make Play Button Component", () => {
     },
   };
 
-  async function mountGamePlaygroundFooterMakePlayButtonComponent(): Promise<ReturnType<typeof mount<typeof GamePlaygroundFooterMakePlayButton>>> {
-    return mountSuspendedComponent(GamePlaygroundFooterMakePlayButton, { global: { plugins: [createTestingPinia(testingPinia)] } });
+  async function mountGamePlaygroundFooterMakePlayButtonComponent(options: ComponentMountingOptions<typeof GamePlaygroundFooterMakePlayButton> = {}):
+  Promise<ReturnType<typeof mount<typeof GamePlaygroundFooterMakePlayButton>>> {
+    return mountSuspendedComponent(GamePlaygroundFooterMakePlayButton, {
+      global: {
+        plugins: [createTestingPinia(testingPinia)],
+      },
+      ...options,
+    });
   }
 
   beforeEach(async() => {
@@ -72,10 +79,18 @@ describe("Game Playground Footer Make Play Button Component", () => {
       expect(makeGamePlayButton.attributes("disabled")).toBe("false");
     });
 
-    it("should have a translated label when rendered.", () => {
+    it("should have a translated label when rendered.", async() => {
+      wrapper = await mountGamePlaygroundFooterMakePlayButtonComponent({
+        global: {
+          plugins: [createTestingPinia(testingPinia)],
+          stubs: {
+            Button: false,
+          },
+        },
+      });
       const makeGamePlayButton = wrapper.findComponent<typeof Button>("#make-play-button");
 
-      expect(makeGamePlayButton.attributes("label")).toBe("Make play");
+      expect(makeGamePlayButton.text()).toBe("Make play");
     });
 
     it("should not render tooltip when make game play dto is not valid.", async() => {

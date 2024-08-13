@@ -9,7 +9,10 @@
         size="small"
         @click.prevent="onRejectStartGame"
       >
-        <i class="fa fa-times me-2"/>
+        <FontAwesomeIcon
+          class="me-2"
+          icon="times"
+        />
 
         <span id="cancel-button-text">
           {{ $t("shared.actions.cancel") }}
@@ -24,9 +27,10 @@
         size="small"
         @click.prevent="onConfirmStartGame"
       >
-        <i
+        <FontAwesomeIcon
           id="confirm-button-icon"
-          :class="confirmButtonIconClasses"
+          :class="confirmButtonIconAndClasses.iconClass"
+          :icon="confirmButtonIconAndClasses.icon"
         />
 
         <span id="confirm-button-text">
@@ -38,7 +42,9 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyStartGameConfirmDialogFooterEmits, GameLobbyStartGameConfirmDialogFooterProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/game-lobby-start-game-confirm-dialog-footer.types";
+import type { IconAndIconClass } from "~/utils/types/icon.types";
 
 const props = defineProps<GameLobbyStartGameConfirmDialogFooterProps>();
 
@@ -57,11 +63,17 @@ const confirmButtonText = computed<string>(() => {
   return t("components.GameLobbyStartGameConfirmDialogFooter.skipAndPlay");
 });
 
-const confirmButtonIconClasses = computed<string>(() => {
+const confirmButtonIconAndClasses = computed<IconAndIconClass>(() => {
   if (props.currentConfirmStep === "players-ready") {
-    return "fa fa-beat-fade fa-play me-4";
+    return {
+      icon: "play",
+      iconClasses: "fa-beat-fade me-4",
+    };
   }
-  return "fa fa-forward me-2";
+  return {
+    icon: "forward",
+    iconClasses: "me-2",
+  };
 });
 
 function onConfirmStartGame(): void {

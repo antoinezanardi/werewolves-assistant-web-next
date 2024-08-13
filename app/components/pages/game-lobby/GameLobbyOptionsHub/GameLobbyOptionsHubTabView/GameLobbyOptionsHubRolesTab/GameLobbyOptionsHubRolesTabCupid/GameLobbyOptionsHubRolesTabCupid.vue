@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-cupid-must-win-with-lovers-input-group"
       does-have-bottom-divider
       :option-description="mustCupidWinWithLoversDescription"
-      option-icon-class="fa fa-heart text-red-500"
+      option-icon="heart"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabCupid.options.mustWinWithLovers.label')"
     >
       <AffirmativeToggleButton
@@ -24,7 +25,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-cupid-do-lovers-reveal-role-to-each-other-input-group"
       :option-description="doLoversRevealRoleToEachOtherDescription"
-      option-icon-class="fa fa-hand-holding-heart text-red-500"
+      option-icon="hand-holding-heart"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabCupid.options.lovers.doRevealRoleToEachOther.label')"
     >
       <AffirmativeToggleButton

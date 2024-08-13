@@ -23,13 +23,19 @@
           id="subtitle"
           class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"
         >
-          <i class="fa fa-sun md:w-auto text-2xl text-day w-2/12"/>
+          <FontAwesomeIcon
+            class="md:w-auto text-2xl text-day w-2/12"
+            icon="sun"
+          />
 
           <span>
             {{ $t('pages.index.perfectToolForGameMasters') }}
           </span>
 
-          <i class="fa fa-moon md:w-auto text-2xl text-night w-2/12"/>
+          <FontAwesomeIcon
+            class="md:w-auto text-2xl text-night w-2/12"
+            icon="moon"
+          />
         </h5>
       </div>
 
@@ -39,10 +45,11 @@
         class="flex justify-center lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"
         to="/game-lobby"
       >
-        <i
+        <FontAwesomeIcon
           id="play-button-icon"
-          class="absolute animate__animated fa fa-2x fa-play-circle left-5 me-2"
+          class="absolute animate__animated fa-2x left-5 me-2"
           :class="{ 'animate__heartBeat': isPlayButtonHovered }"
+          icon="circle-play"
         />
 
         <span class="bold font-black fs-3 text-4xl tracking-widest uppercase">
@@ -56,10 +63,11 @@
         class="flex justify-center lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"
         to="/about"
       >
-        <i
-          id="about-button-icon"
-          class="absolute animate__animated fa-2x fa-question-circle fa-regular left-5 me-2"
+        <FontAwesomeIcon
+          id="play-button-icon"
+          class="absolute animate__animated fa-2x left-5 me-2"
           :class="{ 'animate__rubberBand': isAboutButtonHovered }"
+          icon="fa-regular fa-circle-question"
         />
 
         <span class="text-xl">
@@ -75,6 +83,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
 definePageMeta({ layout: false });

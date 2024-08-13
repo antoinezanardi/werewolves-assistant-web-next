@@ -3,7 +3,11 @@
 exports[`About Werewolves Game Component > should match snapshot when rendered. 1`] = `
 "<div id="about-werewolves-game">
   <div class="flex flex-col gap-4 items-center justify-between md:flex-row">
-    <h2 id="about-werewolves-game-title" class="flex items-center"><i class="fa fa-2x fa-dice me-3 text-blue-500"></i><span>The Werewolves of Miller's Hollow™ game</span></h2><a id="about-werewolves-game-watch-tutorial-video-on-youtube" class="p-button p-button-primary" href="https://www.youtube.com/watch?v=3HUz8CAORro" rel="noopener noreferrer" target="_blank" data-pd-tooltip="true"><span class="fa fa-question-circle me-2"></span> I don't know this game</a>
+    <h2 id="about-werewolves-game-title" class="flex items-center">
+      <font-awesome-icon-stub icon="dice" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x me-3 text-blue-500"></font-awesome-icon-stub><span>The Werewolves of Miller's Hollow™ game</span>
+    </h2><a id="about-werewolves-game-watch-tutorial-video-on-youtube" class="p-button p-button-primary" href="https://www.youtube.com/watch?v=3HUz8CAORro" rel="noopener noreferrer" target="_blank" data-pd-tooltip="true">
+      <font-awesome-icon-stub icon="fa-regular fa-question-circle" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false"></font-awesome-icon-stub><span>I don't know this game</span>
+    </a>
   </div>
   <divider-stub></divider-stub>
   <p id="about-werewolves-game-first-section" class="text-">The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises, betrayals, twists, and even moments filled with laughter and sometimes tears.</p>

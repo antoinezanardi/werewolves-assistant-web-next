@@ -28,7 +28,7 @@ async function targetPlayersInPlayground(world: CustomWorld, names: string[]): P
 }
 
 async function makePlayInPlayground(world: CustomWorld): Promise<void> {
-  const makePlayButton = world.page.getByRole("button", { name: "Make Play" });
+  const makePlayButton = world.page.getByRole("button", { name: "Make play", exact: true });
   await makePlayButton.click();
 }
 

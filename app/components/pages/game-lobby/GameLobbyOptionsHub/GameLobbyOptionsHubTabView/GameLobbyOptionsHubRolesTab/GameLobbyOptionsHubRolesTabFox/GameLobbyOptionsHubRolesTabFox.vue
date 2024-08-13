@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input-group"
       :option-description="isFoxPowerlessIfMissesWerewolfDescription"
-      option-icon-class="fa fa-ban text-red-500"
+      option-icon="ban"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabFox.options.isPowerlessIfMissesWerewolf.label')"
     >
       <AffirmativeToggleButton

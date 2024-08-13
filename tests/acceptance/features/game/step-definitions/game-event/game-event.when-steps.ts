@@ -10,7 +10,7 @@ When(/^the user skips all game events$/u, async function(this: CustomWorld): Pro
 
   while (isSkipButtonVisible) {
     await skipGameEvent(this, true);
-    skipEventButton = this.page.getByRole("button", { name: "Skip" });
+    skipEventButton = this.page.getByRole("button", { name: "Skip", exact: true });
     if (await skipEventButton.isHidden()) {
       return;
     }

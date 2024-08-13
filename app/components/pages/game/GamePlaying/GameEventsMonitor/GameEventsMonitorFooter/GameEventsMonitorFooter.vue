@@ -11,10 +11,11 @@
         severity="secondary"
         @click.prevent="onClickFromPreviousEventButton"
       >
-        <i
+        <FontAwesomeIcon
           id="previous-event-button-icon"
           ref="previousEventButtonIcon"
-          class="fa fa-step-backward w-1/12"
+          class="w-1/12"
+          icon="step-backward"
         />
 
         <span
@@ -34,10 +35,11 @@
         severity="secondary"
         @click.prevent="onClickFromSkipCurrentEventButton"
       >
-        <i
+        <FontAwesomeIcon
           id="skip-current-event-button-icon"
           ref="skipCurrentEventButtonIcon"
-          class="fa fa-step-forward w-1/12"
+          class="w-1/12"
+          icon="step-forward"
         />
 
         <span
@@ -52,14 +54,15 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { useKeyboardStore } from "~/stores/keyboard/useKeyboardStore";
 
-const previousEventButtonIcon = ref<HTMLElement | null>(null);
-const skipCurrentEventButtonIcon = ref<HTMLElement | null>(null);
+const previousEventButtonIcon = ref<typeof FontAwesomeIcon | null>(null);
+const skipCurrentEventButtonIcon = ref<typeof FontAwesomeIcon | null>(null);
 
 const img = useImage();
 
@@ -112,16 +115,22 @@ function onClickFromPreviousEventButton(): void {
   if (!canGoToPreviousGameEvent.value) {
     return;
   }
+  if (!previousEventButtonIcon.value) {
+    throw createError("Previous Event Button Icon is not defined");
+  }
   goToPreviousGameEvent();
-  void animateElementOnce(previousEventButtonIcon, "headShake");
+  void animateElementOnce(previousEventButtonIcon.value.$el as HTMLElement, "headShake");
 }
 
 async function onClickFromSkipCurrentEventButton(): Promise<void> {
   if (!canGoToNextGameEvent.value) {
     return;
   }
+  if (!skipCurrentEventButtonIcon.value) {
+    throw createError("Skip Current Event Button Icon is not defined");
+  }
   await goToNextGameEvent();
-  void animateElementOnce(skipCurrentEventButtonIcon, "headShake");
+  void animateElementOnce(skipCurrentEventButtonIcon.value.$el as HTMLElement, "headShake");
 }
 
 watch(() => keyboard.value.arrowRight.isPressed, (isKeyPressed: boolean) => {

@@ -2,11 +2,13 @@
 
 exports[`Game Not Found Component > should match snapshot when rendered. 1`] = `
 "<div id="game-not-found" class="flex flex-col items-center justify-center">
-  <h1 id="game-not-found-text" class="flex flex-col items-center justify-center"><i class="fa fa-2x fa-question-circle mb-3 text-warning"></i><span>Game not found… Did you get lost?</span></h1>
+  <h1 id="game-not-found-text" class="flex flex-col items-center justify-center">
+    <font-awesome-icon-stub icon="fa-regular fa-question-circle" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x mb-3 text-warning"></font-awesome-icon-stub><span>Game not found… Did you get lost?</span>
+  </h1>
   <div>
     <divider-stub class="mb-4"></divider-stub>
     <create-another-game-button-stub class="me-2"></create-another-game-button-stub>
-    <back-to-home-button-stub pbuttonclass="p-button-secondary" textkey="components.BackToHomeButton.backToHome" icon="fas fa-sign-out"></back-to-home-button-stub>
+    <back-to-home-button-stub pbuttonclass="p-button-secondary" textkey="components.BackToHomeButton.backToHome" icon="sign-out"></back-to-home-button-stub>
   </div>
 </div>"
 `;

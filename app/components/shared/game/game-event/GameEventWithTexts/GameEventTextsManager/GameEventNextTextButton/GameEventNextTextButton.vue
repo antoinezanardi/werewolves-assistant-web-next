@@ -10,11 +10,15 @@
     type="button"
     @click.prevent="onClickFromNextEventTextButton"
   >
-    <i class="fa fa-3x fa-chevron-right"/>
+    <FontAwesomeIcon
+      class="fa-3x"
+      icon="chevron-right"
+    />
   </button>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
 import type { GameEventNextTextButtonEmits } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/game-event-next-text-button.types";

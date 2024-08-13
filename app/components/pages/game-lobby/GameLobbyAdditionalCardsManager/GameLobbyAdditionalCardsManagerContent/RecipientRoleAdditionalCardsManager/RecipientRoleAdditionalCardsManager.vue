@@ -22,7 +22,10 @@
       class="flex font-semibold h-6 items-center justify-center mt-3"
     >
       <span v-if="additionalCardsPlacementText">
-        <i class="fa fa-info-circle me-2 text-info"/>
+        <FontAwesomeIcon
+          class="me-2 text-info"
+          icon="info-circle"
+        />
 
         <span>
           {{ additionalCardsPlacementText }}
@@ -33,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { RecipientRoleAdditionalCardsManagerProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/recipient-role-additional-cards-manager.types";
 import RecipientRoleAdditionalCardsDisclaimer from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsDisclaimer/RecipientRoleAdditionalCardsDisclaimer.vue";
 import RecipientRoleAdditionalCardsMultiSelect from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/RecipientRoleAdditionalCardsMultiSelect.vue";

@@ -3,11 +3,14 @@
     <PrimeVueButton
       :aria-label="$t('components.ParametersMenu.parameters')"
       class="!p-2"
-      icon="fa fa-cog"
       severity="secondary"
       type="button"
       @click.prevent="onClickFromParametersButton"
-    />
+    >
+      <FontAwesomeIcon
+        icon="gear"
+      />
+    </PrimeVueButton>
 
     <PrimeVueMenu
       id="overlay-menu"
@@ -15,11 +18,16 @@
       :aria-label="$t('components.ParametersMenu.parametersMenu')"
       :model="parametersMenuItems"
       popup
-    />
+    >
+      <template #itemicon="{ item }">
+        <FontAwesomeIcon :icon="item.icon"/>
+      </template>
+    </PrimeVueMenu>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type Menu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
@@ -40,7 +48,7 @@ const gameMenuItems = computed<MenuItem>(() => ({
   items: [
     {
       label: t("components.ParametersMenu.cancelGame"),
-      icon: "fa fa-ban text-danger",
+      icon: "ban",
       disabled: game.value.status !== "playing",
       command: (): void => {
         cancelGame();
@@ -53,7 +61,7 @@ const parametersMenuItems = computed<MenuItem[]>(() => [
   gameMenuItems.value,
   {
     label: t("components.ParametersMenu.backToHome"),
-    icon: "fa fa-sign-out",
+    icon: "sign-out",
     arialLabel: t("components.ParametersMenu.backToHome"),
     command(): void {
       void navigateTo("/");

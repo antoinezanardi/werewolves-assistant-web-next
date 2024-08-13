@@ -4,10 +4,17 @@
     class="me-2 p-button p-button-primary"
     to="/game-lobby"
   >
-    <i class="fa-gamepad fas me-2"/>
+    <FontAwesomeIcon
+      class="me-2"
+      icon="gamepad"
+    />
 
     <span>
       {{ $t("components.CreateAnotherGameButton.createAnotherGame") }}
     </span>
   </NuxtLink>
 </template>
+
+<script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+</script>

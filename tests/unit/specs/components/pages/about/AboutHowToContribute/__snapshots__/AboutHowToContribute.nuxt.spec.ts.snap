@@ -2,7 +2,9 @@
 
 exports[`About How To Contribute Component > should match snapshot when rendered. 1`] = `
 "<div id="about-how-to-contribute">
-  <h2 id="about-how-to-contribute-title" class="flex items-center"><i class="fa fa-2x fa-handshake-angle me-3 text-emerald-500"></i><span>How to contribute to this project?</span></h2>
+  <h2 id="about-how-to-contribute-title" class="flex items-center">
+    <font-awesome-icon-stub icon="handshake-angle" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x me-3 text-emerald-500"></font-awesome-icon-stub><span>How to contribute to this project?</span>
+  </h2>
   <divider-stub></divider-stub>
   <p id="about-how-to-contribute-first-section">There are several ways to contribute to this project:</p>
   <ul id="about-how-to-contribute-second-section">

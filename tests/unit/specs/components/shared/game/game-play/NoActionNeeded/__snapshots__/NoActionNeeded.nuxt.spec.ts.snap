@@ -2,6 +2,8 @@
 
 exports[`No Action Needed Component > should match snapshot when rendered. 1`] = `
 "<div id="no-action-needed">
-  <h2 id="no-action-needed-message" class="flex flex-col items-center justify-center text-gray-300"><i class="fa fa-2x fa-thumbs-up mb-2 text-success"></i><span>No action needed, the game can proceed</span></h2>
+  <h2 id="no-action-needed-message" class="flex flex-col items-center justify-center text-gray-300">
+    <font-awesome-icon-stub icon="thumbs-up" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x mb-2 text-success"></font-awesome-icon-stub><span>No action needed, the game can proceed</span>
+  </h2>
 </div>"
 `;

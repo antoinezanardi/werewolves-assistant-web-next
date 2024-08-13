@@ -6,19 +6,26 @@
     <PrimeVueButton
       class="random-composition-button"
       :disabled="isButtonDisabled"
-      icon="fa-random fa"
-      :label="buttonLabel"
       :loading="isLoadingGetRandomGameComposition"
       raised
       severity="secondary"
       :size="buttonSize"
       type="button"
       @click.prevent="onClickFromRandomCompositionButton"
-    />
+    >
+      <FontAwesomeIcon
+        icon="random"
+      />
+
+      <span>
+        {{ buttonLabel }}
+      </span>
+    </PrimeVueButton>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 

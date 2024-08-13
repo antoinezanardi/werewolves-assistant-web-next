@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input-group"
       :option-description="doesWitchKnowWerewolvesTargetsDescription"
-      option-icon-class="fa fa-wand-sparkles text-orange-600"
+      option-icon="wand-sparkles"
+      option-icon-class="text-orange-600"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWitch.options.doesKnowWerewolvesTargets.label')"
     >
       <AffirmativeToggleButton

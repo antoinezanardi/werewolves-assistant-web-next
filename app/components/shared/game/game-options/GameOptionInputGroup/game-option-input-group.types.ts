@@ -1,6 +1,7 @@
 type GameOptionInputGroupProps = {
   optionLabel: string;
-  optionIconClass: string;
+  optionIcon: string;
+  optionIconClass?: string;
   optionDescription: string;
   doesHaveBottomDivider?: boolean;
 };

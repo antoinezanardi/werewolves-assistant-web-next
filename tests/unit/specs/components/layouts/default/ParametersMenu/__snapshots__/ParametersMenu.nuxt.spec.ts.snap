@@ -2,7 +2,7 @@
 
 exports[`Parameters Menu Component > should match snapshot when rendered. 1`] = `
 "<div id="parameters-menu">
-  <button-stub aria-label="Parameters" class="!p-2" icon="fa fa-cog" severity="secondary" type="button"></button-stub>
+  <button-stub aria-label="Parameters" class="!p-2" severity="secondary" type="button"></button-stub>
   <menu-stub id="overlay-menu" aria-label="Parameters menu" model="[object Object],[object Object]" popup=""></menu-stub>
 </div>"
 `;

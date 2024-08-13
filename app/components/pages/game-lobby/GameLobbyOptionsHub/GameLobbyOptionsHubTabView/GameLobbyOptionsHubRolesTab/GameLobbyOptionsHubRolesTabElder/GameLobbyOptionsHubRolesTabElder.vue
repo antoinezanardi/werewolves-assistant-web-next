@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input-group"
       does-have-bottom-divider
       :option-description="elderLivesCountAgainstWerewolvesDescription"
-      option-icon-class="fa fa-heart text-red-500"
+      option-icon="heart"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.label')"
     >
       <PrimeVueFloatLabel>
@@ -44,7 +45,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input-group"
       :option-description="doesElderTakeHisRevengeDescription"
-      option-icon-class="fa fa-bolt text-yellow-500"
+      option-icon="bolt"
+      option-icon-class="text-yellow-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.label')"
     >
       <AffirmativeToggleButton

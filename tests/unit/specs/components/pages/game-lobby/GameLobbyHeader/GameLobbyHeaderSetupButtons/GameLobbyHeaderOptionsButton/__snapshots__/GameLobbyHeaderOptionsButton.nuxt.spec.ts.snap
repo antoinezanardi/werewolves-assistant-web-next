@@ -1,3 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Lobby Header Options Button Component > should match snapshot when rendered. 1`] = `"<button-stub id="game-lobby-header-options-button" icon="fa fa-sliders" label="Game options" pt="[object Object]" severity="info" size="small"></button-stub>"`;
+exports[`Game Lobby Header Options Button Component > should match snapshot when rendered. 1`] = `"<button-stub id="game-lobby-header-options-button" pt="[object Object]" severity="info" size="small"></button-stub>"`;

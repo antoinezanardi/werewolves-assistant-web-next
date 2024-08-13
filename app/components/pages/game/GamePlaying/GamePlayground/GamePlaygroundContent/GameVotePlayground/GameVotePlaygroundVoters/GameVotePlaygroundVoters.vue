@@ -5,7 +5,10 @@
       id="no-voters"
       class="flex flex-col h-full items-center justify-center"
     >
-      <i class="fa fa-3x fa-comment-slash mb-4 text-error"/>
+      <FontAwesomeIcon
+        class="fa-2x mb-4 text-error"
+        icon="comment-slash"
+      />
 
       <h2>
         {{ $t('components.GameVotePlaygroundVoters.nobodyCanVote') }}
@@ -28,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import { shuffle } from "radash";
 

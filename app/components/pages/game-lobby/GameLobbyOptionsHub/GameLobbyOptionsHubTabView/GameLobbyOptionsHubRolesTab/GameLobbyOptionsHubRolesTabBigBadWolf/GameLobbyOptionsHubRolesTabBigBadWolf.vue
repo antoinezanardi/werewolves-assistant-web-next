@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input-group"
       :option-description="isBigBadWolfPowerlessIfWerewolfDiesDescription"
-      option-icon-class="fa fa-ban text-red-700"
+      option-icon="ban"
+      option-icon-class="text-red-700"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabBigBadWolf.options.isPowerlessIfWerewolfDies.label')"
     >
       <AffirmativeToggleButton

@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input-group"
       :option-description="threeBrothersWakingUpIntervalDescription"
-      option-icon-class="fa fa-clock-rotate-left text-blue-400"
+      option-icon="clock-rotate-left"
+      option-icon-class="text-blue-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabThreeBrothers.options.wakingUpInterval.label')"
     >
       <PrimeVueFloatLabel>
