@@ -1511,6 +1511,10 @@
       "doYouWantToLeaveGame": "Are you sure you want to leave the game?",
       "iWantToLeave": "Yes, I want to leave",
       "stayInGame": "Stay in the game"
+    },
+    "GameWildChildHasTransformedEvent": {
+      "wildChildHasTransformed": "The Wild Child has transformed into a Werewolf because his model died!",
+      "wildChildHasTransformedQuietly": "The following sentence can't be said out loud and is only for the Game Master : The Wild Child has transformed into a Werewolf because his model died!"
     }
   }
 }
