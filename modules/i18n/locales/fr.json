@@ -1511,6 +1511,10 @@
       "doYouWantToLeaveGame": "Êtes-vous sûr de vouloir quitter le jeu ?",
       "iWantToLeave": "Oui, je veux partir",
       "stayInGame": "Rester dans le jeu"
+    },
+    "GameWildChildHasTransformedEvent": {
+      "wildChildHasTransformed": "L'Enfant Sauvage s'est transformé en Loup-Garou car son modèle est mort !",
+      "wildChildHasTransformedQuietly": "La phrase suivante ne peut pas être dite à voix haute et est seulement destinée au Maître du Jeu : L'Enfant Sauvage s'est transformé en Loup-Garou car son modèle est mort !"
     }
   }
 }
