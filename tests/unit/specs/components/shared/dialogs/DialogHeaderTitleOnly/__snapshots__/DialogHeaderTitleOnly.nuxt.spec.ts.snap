@@ -3,7 +3,7 @@
 exports[`Dialog Header Title Only Component > should match snapshot when rendered. 1`] = `
 "<div id="dialog-header-title-only" class="w-full">
   <h2 id="game-lobby-options-hub-header-title">
-    <font-awesome-icon-stub border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-lobby-options-hub-header-title-icon" class="me-2 pi pi-info-circle"></font-awesome-icon-stub><span id="game-lobby-options-hub-header-title-text">Dialog Title</span>
+    <font-awesome-icon-stub icon="info-circle" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-lobby-options-hub-header-title-icon" class="me-2 text-success"></font-awesome-icon-stub><span id="game-lobby-options-hub-header-title-text">Dialog Title</span>
   </h2>
   <divider-stub class="!my-2"></divider-stub>
 </div>"

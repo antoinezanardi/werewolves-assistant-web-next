@@ -2,15 +2,24 @@
   <div id="create-new-game-button-container">
     <PrimeVueConfirmPopup>
       <template #icon>
-        <FontAwesomeIcon icon="fa-regular fa-question-circle"/>
+        <FontAwesomeIcon
+          id="icon"
+          icon="fa-regular fa-question-circle"
+        />
       </template>
 
       <template #confirmIcon>
-        <FontAwesomeIcon icon="check"/>
+        <FontAwesomeIcon
+          id="confirm-icon"
+          icon="check"
+        />
       </template>
 
       <template #rejectIcon>
-        <FontAwesomeIcon icon="times"/>
+        <FontAwesomeIcon
+          id="reject-icon"
+          icon="times"
+        />
       </template>
     </PrimeVueConfirmPopup>
 

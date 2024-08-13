@@ -4,10 +4,15 @@ import { createTestingPinia } from "@pinia/testing";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
+import { expect } from "vitest";
+import type { Ref } from "vue";
+import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
+import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
@@ -179,6 +184,18 @@ describe("Game Events Monitor Footer Component", () => {
 
       expect(gameEventsStore.goToPreviousGameEvent).not.toHaveBeenCalled();
     });
+
+    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+      wrapper = await mountGameEventsMonitorFooterComponent();
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.currentGameEventIndex = 1;
+      await nextTick();
+      const button = wrapper.findComponent<typeof Button>("#previous-event-button");
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { previousEventButtonIcon: Ref }).previousEventButtonIcon.value = null;
+      await getError(async() => button.trigger("click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Previous Event Button Icon is not defined");
+    });
   });
 
   describe("Skip Current Event button", () => {
@@ -262,6 +279,13 @@ describe("Game Events Monitor Footer Component", () => {
       await nextTick();
 
       expect(gameEventsStore.goToNextGameEvent).not.toHaveBeenCalled();
+    });
+
+    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { skipCurrentEventButtonIcon: Ref }).skipCurrentEventButtonIcon.value = null;
+      await getError(async() => (wrapper.vm as unknown as { onClickFromSkipCurrentEventButton: () => Promise<void> }).onClickFromSkipCurrentEventButton());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Skip Current Event Button Icon is not defined");
     });
   });
 });

@@ -5,6 +5,7 @@
     class="h-full"
   >
     <PrimeVueButton
+      id="game-lobby-start-game-button"
       class="!h-full !px-6 !py-4 start-game-button"
       :disabled="isButtonDisabled"
       :loading="isLoadingCreateGame"

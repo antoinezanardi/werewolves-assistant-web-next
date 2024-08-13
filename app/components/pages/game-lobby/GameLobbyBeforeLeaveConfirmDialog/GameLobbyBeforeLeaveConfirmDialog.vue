@@ -4,11 +4,17 @@
     group="game-lobby-before-leave-confirm-dialog"
   >
     <template #accepticon>
-      <FontAwesomeIcon icon="sign-out"/>
+      <FontAwesomeIcon
+        id="accept-icon"
+        icon="sign-out"
+      />
     </template>
 
     <template #rejecticon>
-      <FontAwesomeIcon icon="times"/>
+      <FontAwesomeIcon
+        id="reject-icon"
+        icon="times"
+      />
     </template>
   </PrimeVueConfirmDialog>
 </template>

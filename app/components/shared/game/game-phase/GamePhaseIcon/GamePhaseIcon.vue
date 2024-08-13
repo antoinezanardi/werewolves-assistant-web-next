@@ -1,5 +1,6 @@
 <template>
   <FontAwesomeIcon
+    id="game-phase-icon"
     :class="phaseIconAndClasses.iconClass"
     :icon="phaseIconAndClasses.icon"
   />

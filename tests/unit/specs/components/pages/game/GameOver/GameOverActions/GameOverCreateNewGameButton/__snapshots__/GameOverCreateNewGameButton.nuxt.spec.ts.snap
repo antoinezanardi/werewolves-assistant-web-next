@@ -2,7 +2,9 @@
 
 exports[`Game Over Create New Game Button Component > should match snapshot when rendered. 1`] = `
 "<div id="create-new-game-button-container">
-  <confirm-popup-stub></confirm-popup-stub>
-  <button-stub id="create-new-game-button" class="p-button p-button-raised"></button-stub>
+  <!--teleport start-->
+  <!--teleport end--><button class="p-button p-component p-button p-button-raised" type="button" data-pc-name="button" data-p-disabled="false" id="create-new-game-button" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc1=""><svg class="svg-inline--fa fa-play-circle me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path class="" fill="currentColor" d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"></path>
+    </svg><span id="create-new-game-button-text">Create another game</span><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span></button>
 </div>"
 `;

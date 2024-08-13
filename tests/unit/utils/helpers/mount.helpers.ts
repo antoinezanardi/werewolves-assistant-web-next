@@ -2,6 +2,7 @@ import { mountSuspended } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import ConfirmationService from "primevue/confirmationservice";
 import Tooltip from "primevue/tooltip";
 import { Vue3Lottie } from "vue3-lottie";
 import VueDraggable from "vuedraggable";
@@ -14,6 +15,7 @@ import { clone, construct, crush } from "radash";
 function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
   const clonedOptions = clone(options);
   const plugins = clonedOptions.global?.plugins ?? [createTestingPinia()];
+  plugins.push(ConfirmationService);
   if (clonedOptions.global?.plugins) {
     clonedOptions.global.plugins = undefined;
   }

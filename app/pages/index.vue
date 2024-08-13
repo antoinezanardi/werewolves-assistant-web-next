@@ -64,7 +64,7 @@
         to="/about"
       >
         <FontAwesomeIcon
-          id="play-button-icon"
+          id="about-button-icon"
           class="absolute animate__animated fa-2x left-5 me-2"
           :class="{ 'animate__rubberBand': isAboutButtonHovered }"
           icon="fa-regular fa-circle-question"

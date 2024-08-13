@@ -6,6 +6,7 @@ import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { ConfirmationOptions } from "primevue/confirmationoptions";
+import type UseConfirm from "primevue/useconfirm";
 import { type Mock, vi } from "vitest";
 import type { mount } from "@vue/test-utils";
 
@@ -18,10 +19,9 @@ const hoistedMocks = vi.hoisted(() => ({
   navigateTo: vi.fn(),
 }));
 
-vi.mock("primevue/useconfirm", () => ({
-  useConfirm: (): { require: Mock } => ({
-    require: hoistedMocks.useConfirm.require,
-  }),
+vi.mock("primevue/useconfirm", async importOriginal => ({
+  ...await importOriginal<typeof UseConfirm>(),
+  useConfirm: (): { require: Mock } => ({ require: hoistedMocks.useConfirm.require }),
 }));
 
 mockNuxtImport<typeof navigateTo>("navigateTo", () => hoistedMocks.navigateTo);
@@ -39,6 +39,7 @@ describe("Game Over Create New Game Button Component", () => {
   async function mountGameOverCreateNewGameButtonComponent(options: ComponentMountingOptions<typeof GameOverCreateNewGameButton> = {}):
   Promise<ReturnType<typeof mount<typeof GameOverCreateNewGameButton>>> {
     return mountSuspendedComponent(GameOverCreateNewGameButton, {
+      shallow: false,
       global: {
         plugins: [createTestingPinia(testingPinia)],
       },
@@ -68,7 +69,13 @@ describe("Game Over Create New Game Button Component", () => {
     describe("Click on Button", () => {
       beforeEach(async() => {
         wrapper = await mountGameOverCreateNewGameButtonComponent({
-          shallow: false,
+          shallow: true,
+          global: {
+            stubs: {
+              FontAwesomeIcon: true,
+            },
+            plugins: [createTestingPinia(testingPinia)],
+          },
         });
         const button = wrapper.findComponent<typeof Button>("#create-new-game-button");
         (button.vm as VueVm).$emit("click");
@@ -78,12 +85,9 @@ describe("Game Over Create New Game Button Component", () => {
         const expectedConfirmOptions: ConfirmationOptions = {
           target: expect.anything() as HTMLElement,
           acceptLabel: "shared.yes",
-          acceptIcon: "fa fa-check",
           rejectLabel: "shared.no",
-          rejectIcon: "fa fa-times",
           rejectClass: "p-button-secondary",
           defaultFocus: "accept",
-          icon: "fa fa-question-circle",
           message: "components.GameOverCreateNewGameButton.createNewGameWithSamePlayers",
           accept: expect.any(Function) as () => void,
           reject: expect.any(Function) as () => void,

@@ -1,4 +1,5 @@
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -8,6 +9,8 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import ConfirmDialog from "primevue/confirmdialog";
+import type UseConfirm from "primevue/useconfirm";
 import { type Mock, vi } from "vitest";
 import type { Ref } from "vue";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
@@ -31,10 +34,9 @@ const hoistedMocks = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("primevue/useconfirm", () => ({
-  useConfirm: (): { require: Mock } => ({
-    require: hoistedMocks.useConfirm.require,
-  }),
+vi.mock("primevue/useconfirm", async importOriginal => ({
+  ...await importOriginal<typeof UseConfirm>(),
+  useConfirm: (): { require: Mock } => ({ require: hoistedMocks.useConfirm.require }),
 }));
 
 mockNuxtImport("useRouter", () => vi.fn(() => hoistedMocks.useRouter));
@@ -69,6 +71,13 @@ describe("Game Lobby Before Leave Confirm Dialog Component", () => {
   });
 
   it("should match snapshot when rendered.", () => {
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should match snapshot when rendered without shallow.", async() => {
+    wrapper = await mountGameLobbyBeforeLeaveConfirmDialogComponent({ shallow: false });
+
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });
@@ -139,8 +148,6 @@ describe("Game Lobby Before Leave Confirm Dialog Component", () => {
         acceptLabel: "components.GameLobbyBeforeLeaveConfirmDialog.iWantToLeave",
         rejectLabel: "components.GameLobbyBeforeLeaveConfirmDialog.stayInLobby",
         defaultFocus: "reject",
-        acceptIcon: "fa fa-sign-out",
-        rejectIcon: "fa fa-times",
         acceptClass: "p-button-danger",
         rejectClass: "p-button-secondary",
       });
