@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 
 import type { NuxtLink } from "#components";
@@ -81,7 +82,7 @@ describe("Index Page Component", () => {
 
     describe("About Button Icon", () => {
       it("should not have animation class when not hovered.", () => {
-        const aboutButtonIcon = wrapper.find<HTMLSpanElement>("#about-button-icon");
+        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#about-button-icon");
 
         expect(aboutButtonIcon.classes()).not.toContain("animate__heartBeat");
       });
@@ -90,7 +91,7 @@ describe("Index Page Component", () => {
         const isHovered = (wrapper.vm as unknown as typeof Index).isAboutButtonHovered as Ref<boolean>;
         isHovered.value = true;
         await nextTick();
-        const aboutButtonIcon = wrapper.find<HTMLSpanElement>("#about-button-icon");
+        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#about-button-icon");
 
         expect(aboutButtonIcon.classes()).toContain("animate__rubberBand");
       });

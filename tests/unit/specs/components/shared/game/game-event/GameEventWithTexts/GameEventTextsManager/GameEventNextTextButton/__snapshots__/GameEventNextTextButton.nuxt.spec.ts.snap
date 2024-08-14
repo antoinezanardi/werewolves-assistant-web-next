@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Event Next Text Button Component > should match snapshot when rendered. 1`] = `"<button id="next-event-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-right"></i></button>"`;
+exports[`Game Event Next Text Button Component > should match snapshot when rendered. 1`] = `
+"<button id="next-event-text-button" aria-label="Next event text" class="pe-4" type="button" data-pd-tooltip="true">
+  <font-awesome-icon-stub icon="chevron-right" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-3x"></font-awesome-icon-stub>
+</button>"
+`;

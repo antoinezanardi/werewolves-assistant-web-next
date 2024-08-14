@@ -12,7 +12,7 @@
         id="no-players-in-lobby-message"
         class="flex gap-4 items-center justify-center"
       >
-        <i class="fa fa-plus"/>
+        <FontAwesomeIcon icon="plus"/>
 
         <span>
           {{ $t("components.GameLobbyPlayersParty.addPlayersWithInputAbove") }}
@@ -41,6 +41,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyPlayersPartyEmits } from "~/components/pages/game-lobby/GameLobbyPlayersParty/game-lobby-players-party.types";
 import GameLobbyPlayerCard from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/GameLobbyPlayerCard.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";

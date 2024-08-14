@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -9,7 +10,8 @@ describe("Dialog Header Title Only Component", () => {
   let wrapper: ReturnType<typeof mount<typeof DialogHeaderTitleOnly>>;
   const defaultProps: DialogHeaderTitleOnlyProps = {
     title: "Dialog Title",
-    iconClass: "pi pi-info-circle",
+    icon: "info-circle",
+    iconClass: "text-success",
   };
 
   async function mountDialogHeaderTitleOnlyComponent(options: ComponentMountingOptions<typeof DialogHeaderTitleOnly> = {}):
@@ -30,17 +32,16 @@ describe("Dialog Header Title Only Component", () => {
   });
 
   describe("Title", () => {
-    it("should render icon when icon classes are set in props.", () => {
-      const icon = wrapper.find<HTMLSpanElement>("#game-lobby-options-hub-header-title-icon");
+    it("should render icon when icon is set in props.", () => {
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-header-title-icon");
 
-      expect(icon.attributes("class")).toBe("me-3 pi pi-info-circle");
+      expect(icon.props("icon")).toBe("info-circle");
     });
 
-    it("should not render icon when icon classes are not set in props.", async() => {
-      wrapper = await mountDialogHeaderTitleOnlyComponent({ props: { ...defaultProps, iconClass: undefined } });
-      const icon = wrapper.find<HTMLSpanElement>("#game-lobby-options-hub-header-title-icon");
+    it("should render icon classes when icon classes are set in props.", () => {
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-header-title-icon");
 
-      expect(icon.exists()).toBeFalsy();
+      expect(icon.classes()).toContainValues(["text-success"]);
     });
 
     it("should set title text when rendered.", () => {

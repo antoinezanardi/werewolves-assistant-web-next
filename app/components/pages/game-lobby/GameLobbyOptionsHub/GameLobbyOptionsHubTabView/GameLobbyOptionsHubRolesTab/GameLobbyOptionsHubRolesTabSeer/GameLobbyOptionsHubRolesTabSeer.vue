@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-seer-is-talkative-input-group"
       does-have-bottom-divider
       :option-description="isSeerTalkativeDescription"
-      option-icon-class="fa fa-comments text-purple-400"
+      option-icon="comments"
+      option-icon-class="text-purple-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.label')"
     >
       <AffirmativeToggleButton
@@ -24,7 +25,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-seer-can-see-roles-input-group"
       :option-description="canSeerSeeRolesDescription"
-      option-icon-class="fa fa-eye text-purple-400"
+      option-icon="eye"
+      option-icon-class="text-purple-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.label')"
     >
       <AffirmativeToggleButton

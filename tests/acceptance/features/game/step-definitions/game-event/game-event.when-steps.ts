@@ -10,7 +10,7 @@ When(/^the user skips all game events$/u, async function(this: CustomWorld): Pro
 
   while (isSkipButtonVisible) {
     await skipGameEvent(this, true);
-    skipEventButton = this.page.getByRole("button", { name: "Skip" });
+    skipEventButton = this.page.getByRole("button", { name: "Skip", exact: true });
     if (await skipEventButton.isHidden()) {
       return;
     }
@@ -19,7 +19,7 @@ When(/^the user skips all game events$/u, async function(this: CustomWorld): Pro
 });
 
 When(/^the user goes back to the previous game event$/u, async function(this: CustomWorld): Promise<void> {
-  await clickOnRoleWithText(this, "button", " Previous", true);
+  await clickOnRoleWithText(this, "button", "Previous", true);
 });
 
 When(/^the user skips the game event$/u, async function(this: CustomWorld): Promise<void> {

@@ -1,6 +1,27 @@
 <template>
   <div id="create-new-game-button-container">
-    <PrimeVueConfirmPopup/>
+    <PrimeVueConfirmPopup>
+      <template #icon>
+        <FontAwesomeIcon
+          id="icon"
+          icon="fa-regular fa-question-circle"
+        />
+      </template>
+
+      <template #confirmIcon>
+        <FontAwesomeIcon
+          id="confirm-icon"
+          icon="check"
+        />
+      </template>
+
+      <template #rejectIcon>
+        <FontAwesomeIcon
+          id="reject-icon"
+          icon="times"
+        />
+      </template>
+    </PrimeVueConfirmPopup>
 
     <PrimeVueButton
       id="create-new-game-button"
@@ -8,7 +29,10 @@
       class="p-button p-button-raised"
       @click="onClickFromCreateNewGameButton"
     >
-      <span class="fa fa-play-circle me-2"/>
+      <FontAwesomeIcon
+        class="me-2"
+        icon="play-circle"
+      />
 
       <span id="create-new-game-button-text">
         {{ $t('components.GameOverActions.createAnotherGame') }}
@@ -18,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import { useConfirm } from "primevue/useconfirm";
 import type { ComponentPublicInstance } from "vue";
@@ -36,12 +61,9 @@ const { t } = useI18n();
 function onClickFromCreateNewGameButton(): void {
   confirmRequire({
     target: createNewGameButton.value?.$el as HTMLElement,
-    icon: "fa fa-question-circle",
     message: t("components.GameOverCreateNewGameButton.createNewGameWithSamePlayers"),
     acceptLabel: t("shared.yes"),
     rejectLabel: t("shared.no"),
-    acceptIcon: "fa fa-check",
-    rejectIcon: "fa fa-times",
     rejectClass: "p-button-secondary",
     defaultFocus: "accept",
     accept: createNewGameWithSamePlayers,

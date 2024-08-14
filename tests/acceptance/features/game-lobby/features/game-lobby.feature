@@ -105,7 +105,7 @@ Feature: 🃏 Game Lobby Page
       | Theo      | Big Bad Wolf         |
       | Antoine   | Seer                 |
     Then the input with label "Maximum number of players reached" should be disabled
-    And the button with name "+ Add" should be disabled
+    And the button with exact name "Add" should be disabled
 
     When the user moves his mouse away
     Then the page should match or creates the missing snapshot with name "Game Lobby Page with 40 players"

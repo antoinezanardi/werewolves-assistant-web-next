@@ -1,6 +1,5 @@
 import { createFakeUseRouter } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import type UseToast from "primevue/usetoast";
-import type UseConfirm from "primevue/useconfirm";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createFakeUseElementHover } from "@tests/unit/utils/factories/composables/vue-use/useElementHover.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
@@ -53,10 +52,6 @@ function mockPrimeVueComposables(): void {
   vi.mock("primevue/usetoast", async importOriginal => ({
     ...await importOriginal<typeof UseToast>(),
     useToast: (): { add: Mock } => ({ add: vi.fn() }),
-  }));
-  vi.mock("primevue/useconfirm", async importOriginal => ({
-    ...await importOriginal<typeof UseConfirm>(),
-    useConfirm: (): { require: Mock } => ({ require: vi.fn() }),
   }));
 }
 

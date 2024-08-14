@@ -17,7 +17,8 @@
       id="game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input-group"
       does-have-bottom-divider
       :option-description="doSkipCallIfNoTargetDescription"
-      option-icon-class="fa fa-forward text-yellow-200"
+      option-icon="forward"
+      option-icon-class="text-yellow-200"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabGeneral.options.doSkipCallIfNoTarget.label')"
     >
       <AffirmativeToggleButton
@@ -30,7 +31,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input-group"
       :option-description="areRevealedOnDeathDescription"
-      option-icon-class="fa fa-skull text-gray-200"
+      option-icon="skull"
+      option-icon-class="text-gray-200"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.label')"
     >
       <AffirmativeToggleButton

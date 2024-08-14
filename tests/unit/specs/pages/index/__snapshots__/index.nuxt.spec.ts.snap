@@ -8,7 +8,10 @@ exports[`Index Page Component > should match snapshot when rendered. 1`] = `
     </div>
     <div class="mb-16 mt-6 text-center w-full">
       <h1 id="title" class="!text-5xl !tracking-wider mt-0">Werewolves Assistant</h1>
-      <h5 id="subtitle" class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"><i class="fa fa-sun md:w-auto text-2xl text-day w-2/12"></i><span>The perfect tool for game masters of the Werewolves of Miller's Hollow™</span><i class="fa fa-moon md:w-auto text-2xl text-night w-2/12"></i></h5>
+      <h5 id="subtitle" class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6">
+        <font-awesome-icon-stub icon="sun" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="md:w-auto text-2xl text-day w-2/12"></font-awesome-icon-stub><span>The perfect tool for game masters of the Werewolves of Miller's Hollow™</span>
+        <font-awesome-icon-stub icon="moon" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="md:w-auto text-2xl text-night w-2/12"></font-awesome-icon-stub>
+      </h5>
     </div>
     <nuxt-link-stub to="/game-lobby" id="play-button" class="flex justify-center lg:w-3/12 md:w-6/12 p-button p-button-raised w-full"></nuxt-link-stub>
     <nuxt-link-stub to="/about" id="about-button" class="flex justify-center lg:w-3/12 md:w-6/12 mt-4 p-button p-button-secondary w-full"></nuxt-link-stub>

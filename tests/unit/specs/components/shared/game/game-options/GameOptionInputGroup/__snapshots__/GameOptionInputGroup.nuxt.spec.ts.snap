@@ -3,7 +3,9 @@
 exports[`Game Option Input Group Component > should match snapshot when rendered. 1`] = `
 "<div id="game-option-input-group-container">
   <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-    <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 icon"></i><span>label</span></h3>
+    <h3 id="game-option-label" class="w-8/12">
+      <font-awesome-icon-stub icon="check" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-success"></font-awesome-icon-stub><span>label</span>
+    </h3>
     <div id="game-option-input" class="w-4/12"></div>
   </div>
   <p id="game-option-description" class="italic mt-3 text-gray-400">description</p>

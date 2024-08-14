@@ -23,10 +23,17 @@ describe("Game Lobby Header Options Button Component", () => {
   });
 
   describe("Options Button", () => {
-    it("should translate button label when rendered.", () => {
+    it("should translate button label when rendered.", async() => {
+      wrapper = await mountGameLobbyHeaderOptionsButtonComponent({
+        global: {
+          stubs: {
+            Button: false,
+          },
+        },
+      });
       const button = wrapper.findComponent<typeof Button>("#game-lobby-header-options-button");
 
-      expect(button.attributes("label")).toBe("Game options");
+      expect(button.text()).toBe("Game options");
     });
 
     describe("Click on button", () => {

@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Thief Component > should match snapsho
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-hands-bound text-cyan-500"></i><span>The Thief must choose between only Werewolves</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="hands-bound" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-cyan-500"></font-awesome-icon-stub><span>The Thief must choose between only Werewolves</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
@@ -20,7 +22,9 @@ exports[`Game Lobby Options Hub Roles Tab Thief Component > should match snapsho
         </div>
         <div id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-mask text-cyan-500"></i><span>The chosen card is revealed</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="mask" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-cyan-500"></font-awesome-icon-stub><span>The chosen card is revealed</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

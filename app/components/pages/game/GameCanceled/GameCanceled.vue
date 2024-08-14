@@ -7,7 +7,10 @@
       id="game-canceled-text"
       class="flex flex-col items-center justify-center"
     >
-      <i class="fa fa-2x fa-ban mb-3 text-error"/>
+      <FontAwesomeIcon
+        class="fa-2x mb-3 text-error"
+        icon="ban"
+      />
 
       <span>
         {{ $t("components.GameCanceled.gameCanceled") }}
@@ -25,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import CreateAnotherGameButton from "~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue";
 

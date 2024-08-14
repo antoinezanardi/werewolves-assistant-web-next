@@ -23,10 +23,17 @@ describe("Game Lobby Header Position Coordinator Button Component", () => {
   });
 
   describe("Position Coordinator button", () => {
-    it("should translate button label when rendered.", () => {
+    it("should translate button label when rendered.", async() => {
+      wrapper = await mountGameLobbyHeaderPositionCoordinatorButtonComponent({
+        global: {
+          stubs: {
+            Button: false,
+          },
+        },
+      });
       const button = wrapper.findComponent<typeof Button>("#game-lobby-header-position-coordinator-button");
 
-      expect(button.attributes("label")).toBe("Players positions");
+      expect(button.text()).toBe("Players positions");
     });
 
     describe("Click on button", () => {

@@ -38,8 +38,11 @@ export default defineNuxtConfig({
       mode: "out-in",
     },
   },
+  build: {
+    transpile: ["@fortawesome/vue-fontawesome"],
+  },
   css: [
-    "@fortawesome/fontawesome-free/css/all.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
     "./assets/scss/custom.scss",
     "./assets/css/google-fonts.css",
     "animate.css/animate.min.css",
@@ -71,6 +74,7 @@ export default defineNuxtConfig({
     "~/plugins/vue-draggable/vue-draggable.client.ts",
     "~/plugins/vue-countdown/vue-countdown.client.ts",
     "~/plugins/vue-ellipse-progress/vue-ellipse-progress.client.ts",
+    "~/plugins/vue-font-awesome-icon/vue-font-awesome-icon.ts",
   ],
   primevue: {
     importTheme: { from: fileURLToPath(new URL("./config/primevue/primevue.custom-theme.ts", import.meta.url)) },

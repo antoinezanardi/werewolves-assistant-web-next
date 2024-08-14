@@ -6,7 +6,7 @@ async function enterPlayerInLobby(world: CustomWorld, name: string): Promise<voi
   const input = world.page.getByLabel("Player name");
   await input.waitFor({ state: "visible" });
   await input.fill(name);
-  const addButton = world.page.getByRole("button", { name: "+ Add" });
+  const addButton = world.page.getByRole("button", { name: "Add", exact: true });
   await addButton.waitFor({ state: "visible" });
   await addButton.click();
 }

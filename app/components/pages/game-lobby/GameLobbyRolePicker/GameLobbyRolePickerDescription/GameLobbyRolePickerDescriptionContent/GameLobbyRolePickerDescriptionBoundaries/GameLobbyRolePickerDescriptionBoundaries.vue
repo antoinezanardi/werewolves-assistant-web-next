@@ -6,7 +6,10 @@
       id="role-count-in-party"
       class="flex gap-2 items-center"
     >
-      <i class="fa-chess-pawn fas text-center text-info w-4"/>
+      <FontAwesomeIcon
+        class="text-center text-info w-4"
+        icon="chess-pawn"
+      />
 
       <span id="role-count">
         {{ t("components.GameLobbyRolePickerDescriptionBoundaries.roleCountInParty", { "count": roleCountInCreateGameDto }) }}
@@ -26,7 +29,10 @@
       id="role-count-in-game-additional-cards"
       class="flex gap-2 items-center"
     >
-      <i class="fa-clover fas text-center text-warning w-4"/>
+      <FontAwesomeIcon
+        class="text-center text-warning w-4"
+        icon="clover"
+      />
 
       <span>
         {{ t("components.GameLobbyRolePickerDescriptionBoundaries.roleCountInGameAdditionalCards", { "count": roleCountInGameAdditionalCardsCreateGameDto }) }}
@@ -38,7 +44,10 @@
       id="recommended-role-min-in-game"
       class="flex gap-2 items-center"
     >
-      <i class="fa-chess fas text-center text-warning w-4"/>
+      <FontAwesomeIcon
+        class="text-center text-warning w-4"
+        icon="chess"
+      />
 
       <span>
         {{ t("components.GameLobbyRolePickerDescriptionBoundaries.recommendedMinPlayers", { "count": pickedRole.recommendedMinPlayers }) }}
@@ -50,7 +59,10 @@
       id="min-in-game-not-reached"
       class="flex gap-2 items-center"
     >
-      <i class="fa-circle-exclamation fas text-center text-error w-4"/>
+      <FontAwesomeIcon
+        class="text-center text-error w-4"
+        icon="circle-exclamation"
+      />
 
       <span>
         {{ t("components.GameLobbyRolePickerDescriptionBoundaries.minInGameNotReached", { "count": roleLeftCountToReachMinInCreateGameDto }) }}
@@ -60,6 +72,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyRolePickerDescriptionBoundariesProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionBoundaries/game-lobby-role-picker-description-boundaries.types";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 

@@ -144,6 +144,17 @@ describe("Game Lobby Start Game Button Component", () => {
       ];
     });
 
+    it("should translate button text when rendered.", async() => {
+      wrapper = await mountGameLobbyStartGameButtonComponent({
+        global: {
+          stubs: { Button: false },
+        },
+      });
+      const button = wrapper.findComponent<typeof Button>("#game-lobby-start-game-button");
+
+      expect(button.text()).toBe("Start game");
+    });
+
     it("should be disabled when minimum players are not reached.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });

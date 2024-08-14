@@ -17,7 +17,8 @@
     <template #header>
       <DialogHeaderTitleOnly
         id="game-over-history-header"
-        icon-class="fa fa-clock-rotate-left text-primary"
+        icon="clock-rotate-left"
+        icon-class="text-primary"
         :title="$t('components.GameOverHistory.gameHistory')"
       />
     </template>

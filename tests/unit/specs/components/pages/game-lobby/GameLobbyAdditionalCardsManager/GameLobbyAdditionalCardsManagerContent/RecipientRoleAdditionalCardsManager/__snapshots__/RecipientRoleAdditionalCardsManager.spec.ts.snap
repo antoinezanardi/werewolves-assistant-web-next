@@ -12,7 +12,7 @@ exports[`Recipient Role Additional Cards Manager Component > should match snapsh
       <div class="p-fieldset-content" data-pc-section="content">
         <recipient-role-additional-cards-disclaimer-stub recipientrolename="thief" id="recipient-role-additional-cards-disclaimer"></recipient-role-additional-cards-disclaimer-stub>
         <recipient-role-additional-cards-multi-select-stub recipientrolename="thief" id="recipient-role-additional-cards-multi-select"></recipient-role-additional-cards-multi-select-stub>
-        <div id="recipient-role-additional-cards-placement" class="flex font-semibold h-6 items-center justify-center mt-3"><span><i class="fa fa-info-circle me-2 text-info"></i><span>components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceDown, 2</span></span></div>
+        <div id="recipient-role-additional-cards-placement" class="flex font-semibold h-6 items-center justify-center mt-3"><span><svg class="svg-inline--fa fa-info-circle me-2 text-info" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path class="" fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg><span>components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceDown, 2</span></span></div>
       </div>
     </div>
   </transition-stub>
@@ -29,7 +29,7 @@ exports[`Recipient Role Additional Cards Manager Component > should match snapsh
       <div class="p-fieldset-content" data-pc-section="content">
         <recipient-role-additional-cards-disclaimer-stub recipientrolename="thief" id="recipient-role-additional-cards-disclaimer"></recipient-role-additional-cards-disclaimer-stub>
         <recipient-role-additional-cards-multi-select-stub recipientrolename="thief" id="recipient-role-additional-cards-multi-select"></recipient-role-additional-cards-multi-select-stub>
-        <div id="recipient-role-additional-cards-placement" class="flex font-semibold h-6 items-center justify-center mt-3"><span><i class="fa fa-info-circle me-2 text-info"></i><span>components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceDown, 2</span></span></div>
+        <div id="recipient-role-additional-cards-placement" class="flex font-semibold h-6 items-center justify-center mt-3"><span><font-awesome-icon-stub icon="info-circle" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="me-2 text-info"></font-awesome-icon-stub><span>components.RecipientRoleAdditionalCardsManager.cardsPlacedFaceDown, 2</span></span></div>
       </div>
     </div>
   </transition-stub>

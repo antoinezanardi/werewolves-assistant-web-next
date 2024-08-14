@@ -7,13 +7,17 @@
       v-p-tooltip="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"
       :aria-label="$t('components.GameLobbyPlayerCard.removePlayer', { 'playerName': player.name })"
       class="mb-1 player-card-delete-button"
-      icon="fa-minus fa fa-2x"
       raised
       severity="danger"
       size="small"
       type="button"
       @click.prevent="onClickFromRemovePlayerButton"
-    />
+    >
+      <FontAwesomeIcon
+        class="fa-2x"
+        icon="minus"
+      />
+    </PrimeVueButton>
 
     <PlayerCard
       class="player-card"
@@ -29,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyPlayerCardEmits, GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import { useRoleName } from "~/composables/api/role/useRoleName";

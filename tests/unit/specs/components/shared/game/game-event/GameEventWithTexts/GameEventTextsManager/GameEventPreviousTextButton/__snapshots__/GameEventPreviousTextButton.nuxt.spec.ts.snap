@@ -1,3 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Event Previous Text Button Component > should match snapshot when rendered. 1`] = `"<button id="previous-event-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button" data-pd-tooltip="true"><i class="fa fa-3x fa-chevron-left"></i></button>"`;
+exports[`Game Event Previous Text Button Component > should match snapshot when rendered. 1`] = `
+"<button id="previous-event-text-button" aria-label="Back to the previous event text" class="ps-4 text-gray-500" disabled="" type="button" data-pd-tooltip="true">
+  <font-awesome-icon-stub icon="chevron-left" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-3x"></font-awesome-icon-stub>
+</button>"
+`;

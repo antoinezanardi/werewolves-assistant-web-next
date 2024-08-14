@@ -23,14 +23,16 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
   },
 });
 
-const beforeAllTimeout = 60000;
+const beforeAllTimeout = 90000;
+
+const beforeTimeout = 10000;
 
 BeforeAll({ timeout: beforeAllTimeout }, async(): Promise<void> => {
   removeAcceptanceTestsReportsScreenshotsDirectory();
   await setup();
 });
 
-Before({}, async function(this: CustomWorld): Promise<void> {
+Before({ timeout: beforeTimeout }, async function(this: CustomWorld): Promise<void> {
   beforeEach();
   this.page = await createPage();
   this.context = this.page.context();

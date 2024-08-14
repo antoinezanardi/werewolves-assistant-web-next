@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-defender-can-protect-twice-input-group"
       :option-description="canDefenderProtectTwiceDescription"
-      option-icon-class="fa fa-shield-heart text-amber-400"
+      option-icon="shield-heart"
+      option-icon-class="text-amber-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabDefender.options.canProtectTwice.label')"
     >
       <AffirmativeToggleButton

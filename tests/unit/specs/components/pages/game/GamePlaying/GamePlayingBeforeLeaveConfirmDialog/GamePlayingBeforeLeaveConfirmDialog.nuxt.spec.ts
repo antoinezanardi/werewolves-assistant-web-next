@@ -5,7 +5,8 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import { type Mock, vi } from "vitest";
+import type UseConfirm from "primevue/useconfirm";
+import { beforeEach, type Mock, vi } from "vitest";
 import type { Ref } from "vue";
 import GamePlayingBeforeLeaveConfirmDialog from "~/components/pages/game/GamePlaying/GamePlayingBeforeLeaveConfirmDialog/GamePlayingBeforeLeaveConfirmDialog.vue";
 
@@ -26,10 +27,9 @@ const hoistedMocks = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("primevue/useconfirm", () => ({
-  useConfirm: (): { require: Mock } => ({
-    require: hoistedMocks.useConfirm.require,
-  }),
+vi.mock("primevue/useconfirm", async importOriginal => ({
+  ...await importOriginal<typeof UseConfirm>(),
+  useConfirm: (): { require: Mock } => ({ require: hoistedMocks.useConfirm.require }),
 }));
 
 mockNuxtImport("useRouter", () => vi.fn(() => hoistedMocks.useRouter));
@@ -41,6 +41,11 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
   Promise<ReturnType<typeof mount<typeof GamePlayingBeforeLeaveConfirmDialog>>> {
     return mountSuspendedComponent(GamePlayingBeforeLeaveConfirmDialog, {
       shallow: false,
+      global: {
+        stubs: {
+          FontAwesomeIcon: true,
+        },
+      },
       ...options,
     });
   }
@@ -91,6 +96,7 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
 
   describe("Confirm", () => {
     it("should set confirm parameters to confirm composable when open.", async() => {
+      wrapper = await mountGamePlayingBeforeLeaveConfirmDialogComponent();
       (wrapper.vm as unknown as GamePlayingBeforeLeaveConfirmDialogPrivateVariables).openConfirmLeaveGameDialog();
       await nextTick();
 
@@ -102,8 +108,6 @@ describe("Game Playing Before Leave Confirm Dialog Component", () => {
         acceptLabel: "components.GamePlayingBeforeLeaveConfirmDialog.iWantToLeave",
         rejectLabel: "components.GamePlayingBeforeLeaveConfirmDialog.stayInGame",
         defaultFocus: "reject",
-        acceptIcon: "fa fa-sign-out",
-        rejectIcon: "fa fa-times",
         acceptClass: "p-button-danger",
         rejectClass: "p-button-secondary",
       });

@@ -31,7 +31,10 @@
 
         <template #empty>
           <div class="p-2">
-            <i class="fa fa-ban me-2 text-error"/>
+            <FontAwesomeIcon
+              class="me-2 text-error"
+              icon="ban"
+            />
 
             <span>
               {{ $t("components.GamePlaygroundPlayerCardVoteInput.noAvailableOptions") }}
@@ -51,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Fuse from "fuse.js";
 import { storeToRefs } from "pinia";
 import type { AutoCompleteChangeEvent, AutoCompleteCompleteEvent } from "primevue/autocomplete";

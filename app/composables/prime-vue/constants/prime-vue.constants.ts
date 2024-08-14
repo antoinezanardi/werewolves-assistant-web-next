@@ -8,8 +8,6 @@ const DEFAULT_PRIME_VUE_TOAST_OPTIONS: ToastMessageOptions = {
 
 const DEFAULT_CONFIRM_DIALOG_OPTIONS: ConfirmationOptions = {
   defaultFocus: "reject",
-  acceptIcon: "fa fa-sign-out",
-  rejectIcon: "fa fa-times",
   acceptClass: "p-button-danger",
   rejectClass: "p-button-secondary",
 } as const;

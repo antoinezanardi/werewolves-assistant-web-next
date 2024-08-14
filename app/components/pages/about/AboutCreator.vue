@@ -4,7 +4,10 @@
       id="about-creator-title"
       class="flex items-center"
     >
-      <i class="fa fa-2x fa-pen-fancy me-3 text-purple-500"/>
+      <FontAwesomeIcon
+        class="fa-2x me-3 text-purple-500"
+        icon="pen-fancy"
+      />
 
       <span>
         {{ $t('components.AboutCreator.wordFromCreator') }}
@@ -25,8 +28,13 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span class="fa-palette fas me-2"/>
-        {{ $t('components.AboutCreator.myPortfolio') }}
+        <FontAwesomeIcon
+          icon="palette"
+        />
+
+        <span>
+          {{ $t('components.AboutCreator.myPortfolio') }}
+        </span>
       </a>
     </div>
 
@@ -43,3 +51,7 @@
     </p>
   </div>
 </template>
+
+<script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+</script>

@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Wild Child Component > should match sn
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-bullhorn text-red-600"></i><span>The Wild Child's transformation is revealed</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="bullhorn" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-red-600"></font-awesome-icon-stub><span>The Wild Child's transformation is revealed</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

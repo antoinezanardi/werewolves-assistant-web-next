@@ -6,6 +6,7 @@ import type { mount } from "@vue/test-utils";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { ConfirmationOptions } from "primevue/confirmationoptions";
+import type UseConfirm from "primevue/useconfirm";
 import { expect, type Mock, vi } from "vitest";
 import type { Ref } from "vue";
 import type { GameLobbyStartGameConfirmDialogStep } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/game-lobby-start-game-confirm-dialog.types";
@@ -28,10 +29,9 @@ const hoistedMocks = vi.hoisted(() => ({
   useConfirm: { require: vi.fn() },
 }));
 
-vi.mock("primevue/useconfirm", () => ({
-  useConfirm: (): { require: Mock } => ({
-    require: hoistedMocks.useConfirm.require,
-  }),
+vi.mock("primevue/useconfirm", async importOriginal => ({
+  ...await importOriginal<typeof UseConfirm>(),
+  useConfirm: (): { require: Mock } => ({ require: hoistedMocks.useConfirm.require }),
 }));
 
 describe("Game Lobby Start Game Confirm Dialog Component", () => {

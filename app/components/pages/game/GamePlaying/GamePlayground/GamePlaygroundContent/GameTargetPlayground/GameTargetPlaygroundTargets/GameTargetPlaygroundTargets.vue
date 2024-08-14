@@ -5,7 +5,10 @@
       id="no-targets"
       class="flex flex-col h-full items-center justify-center"
     >
-      <i class="fa fa-3x fa-users-slash mb-4 text-error"/>
+      <FontAwesomeIcon
+        class="mb-4 text-error"
+        icon="users-slash"
+      />
 
       <h2 class="text-gray-300">
         {{ $t('components.GameTargetPlaygroundTargets.nobodyCanBeTargeted') }}
@@ -29,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 
 import GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";

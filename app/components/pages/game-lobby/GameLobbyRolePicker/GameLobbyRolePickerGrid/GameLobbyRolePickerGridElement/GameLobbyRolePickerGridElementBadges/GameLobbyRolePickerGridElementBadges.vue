@@ -10,7 +10,10 @@
       data-testid="game-lobby-role-picker-role-count-in-additional-cards-badge"
       severity="warn"
     >
-      <i class="fa fa-clover me-2"/>
+      <FontAwesomeIcon
+        class="me-1"
+        icon="clover"
+      />
 
       <span>
         {{ countInGameAdditionalCardsCreateGameDto }}
@@ -24,7 +27,10 @@
       class="-right-4 absolute top-1"
       data-testid="game-lobby-role-picker-role-count-in-game-badge"
     >
-      <i class="fa fa-chess-pawn me-2"/>
+      <FontAwesomeIcon
+        class="me-1"
+        icon="chess-pawn"
+      />
 
       <span>
         {{ countInCreateGameDto }}
@@ -39,12 +45,15 @@
       data-testid="game-lobby-role-picker-role-min-count-in-game-badge"
       severity="danger"
     >
-      <i class="fa fa-exclamation-circle"/>
+      <FontAwesomeIcon
+        icon="exclamation-circle"
+      />
     </PrimeVueBadge>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyRolePickerGridElementBadgesProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/GameLobbyRolePickerGridElementBadges/game-lobby-role-picker-grid-element-badges.types";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 

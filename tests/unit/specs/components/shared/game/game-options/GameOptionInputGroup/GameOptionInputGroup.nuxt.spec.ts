@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Divider from "primevue/divider";
@@ -10,7 +11,8 @@ describe("Game Option Input Group Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOptionInputGroup>>;
   const defaultProps: GameOptionInputGroupProps = {
     optionLabel: "label",
-    optionIconClass: "icon",
+    optionIcon: "check",
+    optionIconClass: "text-success",
     optionDescription: "description",
   };
 
@@ -32,8 +34,14 @@ describe("Game Option Input Group Component", () => {
   });
 
   describe("Label Icon", () => {
+    it("should pass the icon name from props to the label icon when rendered.", () => {
+      const labelIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-option-label-icon");
+
+      expect(labelIcon.props("icon")).toBe("check");
+    });
+
     it("should pass the icon class from props to the label icon when rendered.", () => {
-      const labelIcon = wrapper.find<HTMLSpanElement>("#game-option-label-icon");
+      const labelIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-option-label-icon");
 
       expect(labelIcon.classes()).toContain(defaultProps.optionIconClass);
     });

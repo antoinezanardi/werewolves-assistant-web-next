@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Witch Component > should match snapsho
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-wand-sparkles text-orange-600"></i><span>The Witch knows the Werewolves targets</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="wand-sparkles" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-orange-600"></font-awesome-icon-stub><span>The Witch knows the Werewolves targets</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

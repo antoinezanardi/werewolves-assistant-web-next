@@ -12,7 +12,10 @@
         id="countdown-over"
         class="animate__animated animate__heartBeat animate__infinite animate__slower flex gap-2 items-center justify-center"
       >
-        <i class="fa fa-clock"/>
+        <FontAwesomeIcon
+          class="me-2"
+          icon="clock"
+        />
 
         <span id="countdown-over-text">
           {{ currentGamePlayCountdownIsOverText }}
@@ -60,6 +63,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TimedGamePlayAction } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/game-playground-footer-countdown.types";
 import GamePlaygroundFooterCountdownEllipseProgress from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownEllipseProgress/GamePlaygroundFooterCountdownEllipseProgress.vue";

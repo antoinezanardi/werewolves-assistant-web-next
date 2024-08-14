@@ -5,7 +5,10 @@
         id="about-werewolves-game-title"
         class="flex items-center"
       >
-        <i class="fa fa-2x fa-dice me-3 text-blue-500"/>
+        <FontAwesomeIcon
+          class="fa-2x me-3 text-blue-500"
+          icon="dice"
+        />
 
         <span>
           {{ $t('components.AboutWerewolvesGame.werewolvesAssistantGame') }}
@@ -20,8 +23,13 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-        <span class="fa fa-question-circle me-2"/>
-        {{ $t('components.AboutWerewolvesGame.iDontKnowWerewolvesGame') }}
+        <FontAwesomeIcon
+          icon="fa-regular fa-question-circle"
+        />
+
+        <span>
+          {{ $t('components.AboutWerewolvesGame.iDontKnowWerewolvesGame') }}
+        </span>
       </a>
     </div>
 
@@ -39,3 +47,7 @@
     </p>
   </div>
 </template>
+
+<script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+</script>

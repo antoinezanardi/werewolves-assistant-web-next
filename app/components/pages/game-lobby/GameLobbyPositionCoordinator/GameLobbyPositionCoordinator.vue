@@ -21,7 +21,8 @@
     >
       <DialogHeaderTitleOnly
         id="game-lobby-position-coordinator-header"
-        icon-class="fa fa-users text-primary"
+        icon="users"
+        icon-class="text-primary"
         :title="$t('components.GameLobbyPositionCoordinator.positionCoordinator')"
       />
     </template>

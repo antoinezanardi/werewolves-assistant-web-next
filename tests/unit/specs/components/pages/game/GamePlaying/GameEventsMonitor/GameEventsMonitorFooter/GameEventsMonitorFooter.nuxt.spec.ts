@@ -1,19 +1,23 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
+import { expect } from "vitest";
+import type { Ref } from "vue";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const hoistedMocks = vi.hoisted(() => ({
@@ -28,7 +32,12 @@ describe("Game Events Monitor Footer Component", () => {
   async function mountGameEventsMonitorFooterComponent(options: ComponentMountingOptions<typeof GameEventsMonitorFooter> = {}):
   Promise<ReturnType<typeof mount<typeof GameEventsMonitorFooter>>> {
     return mountSuspendedComponent(GameEventsMonitorFooter, {
-      global: { stubs: { Button: false } },
+      global: {
+        stubs: {
+          Button: false,
+          FontAwesomeIcon: false,
+        },
+      },
       ...options,
     });
   }
@@ -131,7 +140,7 @@ describe("Game Events Monitor Footer Component", () => {
     });
 
     it("should animate icon when shift and left arrow keys are pressed.", async() => {
-      const icon = wrapper.find<HTMLSpanElement>("#previous-event-button-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#previous-event-button-icon");
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.currentGameEventIndex = 1;
       hoistedMocks.useMagicKeys.arrowleft.value = true;
@@ -172,6 +181,18 @@ describe("Game Events Monitor Footer Component", () => {
       await nextTick();
 
       expect(gameEventsStore.goToPreviousGameEvent).not.toHaveBeenCalled();
+    });
+
+    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+      wrapper = await mountGameEventsMonitorFooterComponent();
+      const gameEventsStore = useGameEventsStore();
+      gameEventsStore.currentGameEventIndex = 1;
+      await nextTick();
+      const button = wrapper.findComponent<typeof Button>("#previous-event-button");
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { previousEventButtonIcon: Ref }).previousEventButtonIcon.value = null;
+      await getError(async() => button.trigger("click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Previous Event Button Icon is not defined");
     });
   });
 
@@ -219,7 +240,7 @@ describe("Game Events Monitor Footer Component", () => {
     });
 
     it("should animate icon when shift and right arrow keys are pressed.", async() => {
-      const icon = wrapper.find<HTMLSpanElement>("#skip-current-event-button-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#skip-current-event-button-icon");
       hoistedMocks.useMagicKeys.arrowright.value = true;
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
@@ -256,6 +277,13 @@ describe("Game Events Monitor Footer Component", () => {
       await nextTick();
 
       expect(gameEventsStore.goToNextGameEvent).not.toHaveBeenCalled();
+    });
+
+    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { skipCurrentEventButtonIcon: Ref }).skipCurrentEventButtonIcon.value = null;
+      await getError(async() => (wrapper.vm as unknown as { onClickFromSkipCurrentEventButton: () => Promise<void> }).onClickFromSkipCurrentEventButton());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Skip Current Event Button Icon is not defined");
     });
   });
 });

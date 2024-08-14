@@ -1,5 +1,6 @@
 type DialogHeaderTitleOnlyProps = {
   title: string;
+  icon: string;
   iconClass?: string;
 };
 

@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group"
       :option-description="isWildChildTransformationRevealedDescription"
-      option-icon-class="fa fa-bullhorn text-red-600"
+      option-icon="bullhorn"
+      option-icon-class="text-red-600"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWildChild.options.isTransformationRevealed.label')"
     >
       <AffirmativeToggleButton

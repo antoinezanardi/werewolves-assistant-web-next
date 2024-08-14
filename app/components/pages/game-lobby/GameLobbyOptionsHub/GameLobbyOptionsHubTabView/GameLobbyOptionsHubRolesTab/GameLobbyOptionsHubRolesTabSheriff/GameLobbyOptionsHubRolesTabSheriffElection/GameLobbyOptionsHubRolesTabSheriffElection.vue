@@ -2,18 +2,25 @@
   <GameOptionInputGroup
     id="game-lobby-options-hub-roles-tab-sheriff-election-input-group"
     :option-description="sheriffElectionTurnDescription"
-    option-icon-class="fa fa-clock text-white"
+    option-icon="clock"
+    option-icon-class="text-white"
     :option-label="$t('components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.label')"
   >
     <PrimeVueToggleButton
       id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input"
       v-model="sheriffPhaseNameElectionValueAsBoolean"
       class="mb-8 w-full"
-      off-icon="fa fa-moon !text-white"
       :off-label="$t('shared.game.phase.night')"
-      on-icon="fa fa-sun !text-white"
       :on-label="$t('shared.game.phase.day')"
-    />
+    >
+      <template #icon>
+        <FontAwesomeIcon
+          id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon"
+          :class="sheriffPhaseNameElectionValueIconAndIconClass.iconClass"
+          :icon="sheriffPhaseNameElectionValueIconAndIconClass.icon"
+        />
+      </template>
+    </PrimeVueToggleButton>
 
     <PrimeVueFloatLabel>
       <label
@@ -44,10 +51,12 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import type { IconAndIconClass } from "~/utils/types/icon.types";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
@@ -74,6 +83,19 @@ const sheriffPhaseNameElectionValueAsBoolean = computed<boolean>({
     localCreateGameDto.options.roles.sheriff.electedAt.phaseName = value ? "day" : "night";
     setCreateGameDto(localCreateGameDto);
   },
+});
+
+const sheriffPhaseNameElectionValueIconAndIconClass = computed<IconAndIconClass>(() => {
+  if (sheriffPhaseNameElectionValueAsBoolean.value) {
+    return {
+      icon: "sun",
+      iconClass: "text-day",
+    };
+  }
+  return {
+    icon: "moon",
+    iconClass: "text-night",
+  };
 });
 
 const sheriffElectionTurnDescription = computed<string>(() => {

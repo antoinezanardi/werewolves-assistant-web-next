@@ -4,7 +4,10 @@
     class="flex gap-4 h-full items-center justify-center"
   >
     <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-      <i class="fa fa-2x fa-arrow-up"/>
+      <FontAwesomeIcon
+        class="fa-2x"
+        icon="arrow-up"
+      />
 
       <span
         id="sorter-left-neighbors-text"
@@ -31,7 +34,10 @@
     </VueDraggable>
 
     <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-      <i class="fa fa-2x fa-arrow-down"/>
+      <FontAwesomeIcon
+        class="fa-2x"
+        icon="arrow-down"
+      />
 
       <span
         id="sorter-right-neighbors-text"
@@ -44,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import GameLobbyPositionCoordinatorSorterElement from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorSorter/GameLobbyPositionCoordinatorSorterElement/GameLobbyPositionCoordinatorSorterElement.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

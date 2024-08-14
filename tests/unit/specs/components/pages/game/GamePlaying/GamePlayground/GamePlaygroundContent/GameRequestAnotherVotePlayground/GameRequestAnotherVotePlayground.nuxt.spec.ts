@@ -1,9 +1,10 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { ToggleButtonProps } from "primevue/togglebutton";
 import type ToggleButton from "primevue/togglebutton";
-import { expect } from "vitest";
+import { beforeEach, expect } from "vitest";
 
 import GameRequestAnotherVotePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameRequestAnotherVotePlayground/GameRequestAnotherVotePlayground.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -33,6 +34,23 @@ describe("Game Request Another Vote Playground Component", () => {
   });
 
   describe("Toggle Button", () => {
+    describe("Icon", () => {
+      it("should set thumbs-up icon to the toggle button when judge requests another vote.", async() => {
+        wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
+        const toggleButtonCheckbox = wrapper.find<HTMLInputElement>("#does-judge-request-another-vote-button.p-togglebutton");
+        await toggleButtonCheckbox.trigger("click");
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#does-judge-request-another-vote-button-icon");
+
+        expect(icon.props("icon")).toBe("thumbs-up");
+      });
+
+      it("should set thumbs-down icon to the toggle button when judge doesn't request another vote.", async() => {
+        wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#does-judge-request-another-vote-button-icon");
+
+        expect(icon.props("icon")).toBe("thumbs-down");
+      });
+    });
     it("should translate off button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");
