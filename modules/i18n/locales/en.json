@@ -601,7 +601,8 @@
     },
     "GameTeamSidePlayerRoleName": {
       "thisPlayerRoleIsRevealed": "This player's role is revealed",
-      "thisPlayerWasThief": "This player was originally the Thief"
+      "thisPlayerWasThief": "This player was originally the Thief",
+      "thisPlayerWasActor": "This player was originally the Actor"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Current play icon",
@@ -1238,7 +1239,7 @@
       "accursedWolfFatherCanInfect": "The Accursed Wolf-Father wakes up and can infect a player eaten by the Werewolves if he wants to."
     },
     "GameActorTurnStartsEvent": {
-      "actorCanChooseCardToPlay": "The Actor wakes up and can choose a card to play for this turn."
+      "actorCanChooseCardToPlay": "The Actor with his many personalities wakes up and can choose a card to play for this turn."
     },
     "GameBearTamerTurnStartsEvent": {
       "bearGrowls": "The Bear Tamer wakes up and his bear growls. One or more Werewolves are next to him…"

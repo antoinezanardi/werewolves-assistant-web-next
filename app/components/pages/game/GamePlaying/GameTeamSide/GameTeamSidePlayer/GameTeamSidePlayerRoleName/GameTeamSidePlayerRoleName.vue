@@ -26,6 +26,16 @@
         src="svg/role/thief.svg"
         width="20"
       />
+
+      <NuxtImg
+        v-if="isPlayerOriginalRoleActorButNotCurrently"
+        v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
+        :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
+        height="20"
+        placeholder="/svg/misc/infinite-spinner.svg"
+        src="svg/role/actor.svg"
+        width="20"
+      />
     </div>
 
     <small
@@ -43,4 +53,6 @@ import type { GameTeamSidePlayerRoleNameProps } from "~/components/pages/game/Ga
 const props = defineProps<GameTeamSidePlayerRoleNameProps>();
 
 const isPlayerOriginalRoleThiefButNotCurrently = computed<boolean>(() => props.player.role.original === "thief" && props.player.role.current !== "thief");
+
+const isPlayerOriginalRoleActorButNotCurrently = computed<boolean>(() => props.player.role.original === "actor" && props.player.role.current !== "actor");
 </script>

@@ -1,4 +1,5 @@
 const SOUND_EFFECT_NAMES = [
+  "actor-clear-throat-and-knocks",
   "angelic-intervention",
   "bear-growling",
   "boys-playing",
@@ -21,6 +22,7 @@ const SOUND_EFFECT_NAMES = [
   "goat-cry",
   "gun-shot",
   "heartbeat",
+  "laughing-clown-exploding",
   "love-arrow-shot",
   "magic-mood",
   "magic-wand",

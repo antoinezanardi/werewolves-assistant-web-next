@@ -118,6 +118,57 @@ describe("Game Team Side Player Role Name Component", () => {
     });
   });
 
+  describe("Player originally Actor", () => {
+    it("should display actor logo when player was originally an actor but now another role.", async() => {
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "werewolf",
+          original: "actor",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({ props: { ...defaultProps, player } });
+      const actorIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Actor"]`);
+
+      expect(actorIcon.exists()).toBeTruthy();
+    });
+
+    it("should not display actor logo when player was not originally an actor.", () => {
+      const actorIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Actor"]`);
+
+      expect(actorIcon.exists()).toBeFalsy();
+    });
+
+    it("should not display actor logo when actor is still actor.", async() => {
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "actor",
+          original: "actor",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({ props: { ...defaultProps, player } });
+      const actorIcon = wrapper.findComponent<typeof NuxtImg>(`[alt="This player was originally the Actor"]`);
+
+      expect(actorIcon.exists()).toBeFalsy();
+    });
+
+    it("should attach tooltip to actor logo when player was originally an actor.", async() => {
+      const tooltip: BoundTooltip = { value: undefined };
+      const directives = { ...pTooltipDirectiveBinder(tooltip, `[alt="This player was originally the Actor"]`) };
+      const player = createFakeWerewolfAlivePlayer({
+        role: createFakePlayerRole({
+          current: "werewolf",
+          original: "actor",
+        }),
+      });
+      wrapper = await mountGameTeamSidePlayerRoleNameComponent({
+        props: { ...defaultProps, player },
+        global: { directives },
+      });
+
+      expect(tooltip.value).toBe("This player was originally the Actor");
+    });
+  });
+
   describe("Player role name", () => {
     it("should display player role when rendered.", () => {
       const playerRole = wrapper.find<HTMLDivElement>("#player-role-name");

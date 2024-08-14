@@ -441,7 +441,7 @@
       "twoSistersMinimumPlayersNotReached": "Le rôle des Deux Sœurs nécessite au moins 2 joueurs avec ce rôle",
       "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
       "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies",
-      "actorAdditionalCardsNotSet": "Les cartes additionnelles de l'Acteur ne sont pas définies",
+      "actorAdditionalCardsNotSet": "Les cartes additionnelles de Comédien ne sont pas définies",
       "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
     }
   },
@@ -601,7 +601,8 @@
     },
     "GameTeamSidePlayerRoleName": {
       "thisPlayerRoleIsRevealed": "Le rôle de ce joueur est révélé",
-      "thisPlayerWasThief": "Ce joueur était à l'origine le Voleur"
+      "thisPlayerWasThief": "Ce joueur était à l'origine le Voleur",
+      "thisPlayerWasActor": "Ce joueur était à l'origine le Comédien"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
@@ -1238,7 +1239,7 @@
       "accursedWolfFatherCanInfect": "L'Infect Père des Loups se réveille et peut infecter un joueur dévoré par les Loups-Garous s'il le souhaite."
     },
     "GameActorTurnStartsEvent": {
-      "actorCanChooseCardToPlay": "Le Comédien se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
+      "actorCanChooseCardToPlay": "Le Comédien et ses multiples personnalités se réveille et peut choisir une carte à jouer pour ce tour s'il le souhaite."
     },
     "GameBearTamerTurnStartsEvent": {
       "bearGrowls": "Le Montreur d'Ours se réveille et son ours grogne. Un ou des Loups-Garous sont à côté de lui…"
