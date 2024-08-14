@@ -1,5 +1,38 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.28.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.27.0...v1.28.0) (2024-08-14)
+
+### 🚀 Features
+
+* **game-lobby:** additional cards placement in manager ([#733](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/733)) ([dd08cf2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/dd08cf2ea98b77d4f4e71115e41023577b9d4aa4))
+* **game-lobby:** confirm leaving lobby with players ([#736](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/736)) ([dbad613](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/dbad613fd004cb01e993e596a259250d988bdce7))
+* **game:** confirm before leaving ([#738](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/738)) ([3c71999](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3c71999de2185672069fd98d47a8c547ec2ff5b2))
+* **thief:** thief playground ([#723](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/723)) ([953324f](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/953324f80e6fa8baac3a22c6481d16293f87268d))
+* **wild-child:** transformation event ([#740](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/740)) ([ec1a20c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ec1a20ca186b578fc81f8976040868ae7328f483))
+
+### ✅ Tests
+
+* **angel:** acceptance tests ([#732](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/732)) ([d7f5c8b](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d7f5c8ba261c6934a7baa48e2d32955716224b13))
+* **stuttering-judge:** acceptance tests ([#737](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/737)) ([6840ebd](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6840ebd24386f3935535555981bb0d9bcaf5244e))
+
+### 🧹 Chore
+
+* **deps:** update dependency @cucumber/cucumber to ^10.9.0 ([#744](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/744)) ([14339bd](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/14339bda44dc71e5ac13402aa47f46fdb98e5ce0))
+* **deps:** update dependency @nuxt/test-utils to ^3.14.1 ([#743](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/743)) ([e86d2be](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e86d2be5b235c1d186493611d02391f6b641401c))
+* **deps:** update dependency @stylistic/eslint-plugin to ^2.6.2 ([#731](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/731)) ([467a0ff](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/467a0ff6d1971243007b785579cea4753e78da3a))
+* **deps:** update dependency @vueuse/core to ^10.11.1 ([#729](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/729)) ([efade62](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/efade6237448da95134eebf3994310ed6d18effa))
+* **deps:** update dependency @vueuse/nuxt to ^10.11.1 ([#730](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/730)) ([ee4389c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ee4389c6e787aac15393b4c4dd35dc54b91ba47a))
+* **deps:** update dependency eslint to ^9.9.0 ([#734](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/734)) ([e0a15a8](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/e0a15a85dc47212573ac7bdb33560649ffdd5b11))
+* **deps:** update dependency lint-staged to ^15.2.9 ([#741](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/741)) ([482a616](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/482a616c2f38950738c4bb2f0dc736dec88ad42d))
+* **deps:** update dependency tailwindcss to ^3.4.10 ([#745](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/745)) ([7e9b755](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/7e9b7559ef9fd8ea3673c3ee509aacdfa0edd1fc))
+* **deps:** update dependency tailwindcss to ^3.4.9 ([#727](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/727)) ([d4b2e2c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d4b2e2c20889fef7771fdf3172c928995298768d))
+* **deps:** update dependency tsx to ^4.17.0 ([#724](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/724)) ([0536f2c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0536f2c77aa93d6d96df858619e9dcfbe567b2df))
+* **deps:** update dependency type-fest to ^4.24.0 ([#726](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/726)) ([9d025a7](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/9d025a71df5bfc5857bf80974d40be1e67caeb2f))
+* **deps:** update dependency vue to ^3.4.37 ([#728](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/728)) ([c9e29c2](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/c9e29c2af0b27747e067071cc77794031f05532c))
+* **deps:** update stryker-js monorepo to ^8.5.0 ([#735](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/735)) ([f9e692c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/f9e692ce77c58f68a7d69ac4beff03e0cd6a5c92))
+* **deps:** update typescript-eslint monorepo to ^8.1.0 ([#739](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/739)) ([7630b11](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/7630b11f8993cbd8b44d838104bbaacf386e063c))
+* **font-awesome:** pass all icons to svg ([#742](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/742)) ([ec4a660](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/ec4a66075e530148ba14519283f5033823903b68))
+
 ## [1.27.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.26.0...v1.27.0) (2024-08-07)
 
 ### 🚀 Features
