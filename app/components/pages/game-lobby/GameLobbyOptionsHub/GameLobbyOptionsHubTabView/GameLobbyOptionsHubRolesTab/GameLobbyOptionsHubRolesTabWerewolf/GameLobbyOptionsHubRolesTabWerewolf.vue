@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group"
       :option-description="canWerewolfEatEachOtherDescription"
-      option-icon-class="fa fa-utensils text-gray-500"
+      option-icon="utensils"
+      option-icon-class="text-gray-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.label')"
     >
       <AffirmativeToggleButton

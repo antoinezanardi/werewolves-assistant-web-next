@@ -115,14 +115,14 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >    ![Game Lobby Options Hub](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Options%20Hub%20on%20Roles%20tab.png)
 >  </details>
 >  <details>
->    <summary>🃏🃏🃏️ Game Lobby Additional Cards without cards</summary>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards Manager without cards</summary>
 >  
->    ![Game Lobby Additional Cards without cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20without%20cards.png)
+>    ![Game Lobby Additional Cards Manager without cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20Manager%20without%20cards.png)
 >  </details>
 >  <details>
->    <summary>🃏🃏🃏️ Game Lobby Additional Cards with 5 cards</summary>
+>    <summary>🃏🃏🃏️ Game Lobby Additional Cards Manager with 5 cards</summary>
 >  
->    ![Game Lobby Additional Cards with 5 cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20with%205%20cards.png)
+>    ![Game Lobby Additional Cards Manager with 5 cards](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Game%20Lobby%20Additional%20Cards%20Manager%20with%205%20cards.png)
 >  </details>
 </details>
 
@@ -199,9 +199,19 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Sheriff settles votes Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Sheriff%20settles%20votes%20Playground.png)
 >>   </details>
 >>   <details>
+>>    <summary>⚖️️ Stuttering Judge Requests Another Vote Playground</summary>
+>>
+>>    ![Stuttering Judge Requests Another Vote Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Stuttering%20Judge%20Requests%20Another%20Vote%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🎖️ Survivors elect the Sheriff Playground</summary>
 >>
 >>    ![Survivors elect the Sheriff Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Survivors%20elect%20Sheriff%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>👺 Thief chooses card Playground</summary>
+>>
+>>   ![Thief chooses card Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Thief%20chooses%20card%20Playground.png)
 >>   </details>
 >>   <details>
 >>    <summary>👨‍👨‍👦 Three Brothers meet each other Playground</summary>
@@ -225,6 +235,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    <summary>🦴🐺 White Werewolf eats Playground</summary>
 >>
 >>    ![White Werewolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/White%20Werewolf%20eats%20Playground.png)
+>>   </details>
+>>   <details>
+>>    <summary>🐒 Wild Child chooses model Playground</summary>
+>>
+>>    ![Wild Child chooses model Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Wild%20Child%20chooses%20model%20Playground.png)
 >>   </details>
 >>   <details>
 >>    <summary>🪄 Witch uses life potion Playground</summary>

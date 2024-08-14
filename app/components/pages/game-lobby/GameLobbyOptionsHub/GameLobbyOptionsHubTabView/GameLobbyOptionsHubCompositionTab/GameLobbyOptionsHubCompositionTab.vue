@@ -3,7 +3,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-composition-tab-is-hidden-input-group"
       :option-description="isCompositionHiddenDescription"
-      option-icon-class="fa fa-eye-slash text-green-400"
+      option-icon="eye-slash"
+      option-icon-class="text-emerald-400"
       :option-label="$t('components.GameLobbyOptionsHubCompositionTab.options.isHidden.label')"
     >
       <AffirmativeToggleButton

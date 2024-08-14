@@ -24,6 +24,13 @@ describe("Game Over Actions Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should match snapshot when rendered without shallowing.", async() => {
+    wrapper = await mountSuspendedComponent(GameOverActions, { shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   describe("Show Game History Button", () => {
     it("should be in loading state when the game history is empty.", () => {
       const showGameHistoryButton = wrapper.findComponent<typeof Button>("#show-game-history-button");

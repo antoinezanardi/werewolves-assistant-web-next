@@ -1,7 +1,9 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type InputNumber from "primevue/inputnumber";
 import type Slider from "primevue/slider";
+import { beforeEach } from "vitest";
 import GameLobbyOptionsHubRolesTabSheriffElection from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabSheriff/GameLobbyOptionsHubRolesTabSheriffElection/GameLobbyOptionsHubRolesTabSheriffElection.vue";
 import type AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
@@ -37,6 +39,57 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Election Component", () => {
   });
 
   describe("Election time option", () => {
+    describe("Icon", () => {
+      beforeEach(async() => {
+        wrapper = await mountGameLobbyOptionsHubRolesTabSheriffElectionComponent({
+          global: {
+            stubs: {
+              Fieldset: false,
+              GameOptionInputGroup: false,
+              FloatLabel: false,
+              ToggleButton: false,
+            },
+          },
+        });
+      });
+
+      it("should set sun icon to the option icon when phase is day.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.options.roles.sheriff.electedAt.phaseName = "day";
+        await nextTick();
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
+
+        expect(icon.props("icon")).toBe("sun");
+      });
+
+      it("should set moon icon to the option icon when phase is night.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.options.roles.sheriff.electedAt.phaseName = "night";
+        await nextTick();
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
+
+        expect(icon.props("icon")).toBe("moon");
+      });
+
+      it("should set text-day class to the option icon class when phase is day.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.options.roles.sheriff.electedAt.phaseName = "day";
+        await nextTick();
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
+
+        expect(icon.classes()).toContain("text-day");
+      });
+
+      it("should set text-night class to the option icon class when phase is night.", async() => {
+        const createGameDtoStore = useCreateGameDtoStore();
+        createGameDtoStore.createGameDto.options.roles.sheriff.electedAt.phaseName = "night";
+        await nextTick();
+        const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
+
+        expect(icon.classes()).toContain("text-night");
+      });
+    });
+
     it("should translate option label when rendered.", () => {
       const optionLabel = wrapper.find<HTMLHeadingElement>("#game-option-label");
 

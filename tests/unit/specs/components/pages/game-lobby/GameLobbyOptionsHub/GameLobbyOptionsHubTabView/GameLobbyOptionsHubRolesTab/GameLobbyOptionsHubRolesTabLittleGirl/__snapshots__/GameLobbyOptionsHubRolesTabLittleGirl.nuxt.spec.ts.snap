@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Little Girl Component > should match s
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-shield-alt text-blue-500"></i><span>The Little Girl is protected by the Defender</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="shield-alt" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-blue-500"></font-awesome-icon-stub><span>The Little Girl is protected by the Defender</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

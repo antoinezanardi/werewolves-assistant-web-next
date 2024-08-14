@@ -18,7 +18,8 @@
     <template #header>
       <DialogHeaderTitleOnly
         id="game-lobby-options-hub-header"
-        icon-class="fa fa-sliders text-primary"
+        icon="sliders"
+        icon-class="text-primary"
         :title="$t('components.GameLobbyOptionsHub.gameOptions')"
       />
     </template>

@@ -46,12 +46,12 @@ describe("Game Team Side Player Component", () => {
   });
 
   describe("Game Team Side Player", () => {
-    it("should glow as green when side is villagers.", async() => {
+    it("should glow as emerald when side is villagers.", async() => {
       const player = createFakeSeerAlivePlayer();
       wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
       const teamSidePlayer = wrapper.find<HTMLDivElement>("#game-team-side-player");
 
-      expect(teamSidePlayer.classes("glow:border-green-500")).toBeTruthy();
+      expect(teamSidePlayer.classes("glow:border-emerald-500")).toBeTruthy();
     });
 
     it("should glow as red when side is werewolves.", async() => {
@@ -87,12 +87,12 @@ describe("Game Team Side Player Component", () => {
         expect(playerRoleImage.props("roleName")).toBe("accursed-wolf-father");
       });
 
-      it("should have a green border glow class when side is villagers.", async() => {
+      it("should have a emerald border glow class when side is villagers.", async() => {
         const player = createFakeSeerAlivePlayer();
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
 
-        expect(playerRoleImage.classes("glow:border-green-500")).toBeTruthy();
+        expect(playerRoleImage.classes("glow:border-emerald-500")).toBeTruthy();
       });
 
       it("should have a red border glow class when side is werewolves.", async() => {
@@ -108,7 +108,7 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
 
-        expect(playerRoleImage.classes("glow:border-green-500")).toBeFalsy();
+        expect(playerRoleImage.classes("glow:border-emerald-500")).toBeFalsy();
         expect(playerRoleImage.classes("glow:border-red-500")).toBeFalsy();
       });
 

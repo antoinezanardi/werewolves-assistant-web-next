@@ -2,7 +2,7 @@
 
 exports[`Game Lobby Start Game Button Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-start-game-button-container" class="h-full" data-pd-tooltip="true">
-  <button-stub class="!h-full !px-6 !py-4 start-game-button" disabled="true" icon="fa-play fa" label="Start game" loading="false" raised="" size="large" type="button"></button-stub>
+  <button-stub id="game-lobby-start-game-button" class="!h-full !px-6 !py-4 start-game-button" disabled="true" loading="false" raised="" size="large" type="button"></button-stub>
   <div id="game-lobby-start-game-confirm-dialog"></div>
 </div>"
 `;

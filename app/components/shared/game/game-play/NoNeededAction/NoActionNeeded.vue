@@ -4,7 +4,10 @@
       id="no-action-needed-message"
       class="flex flex-col items-center justify-center text-gray-300"
     >
-      <i class="fa fa-2x fa-thumbs-up mb-2 text-success"/>
+      <FontAwesomeIcon
+        class="fa-2x mb-2 text-success"
+        icon="thumbs-up"
+      />
 
       <span>
         {{ $t("components.NoActionNeeded.noActionNeeded") }}
@@ -12,3 +15,7 @@
     </h2>
   </div>
 </template>
+
+<script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+</script>

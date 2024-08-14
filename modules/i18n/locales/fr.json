@@ -600,7 +600,8 @@
       "thisPlayerIsDead": "Ce joueur est mort"
     },
     "GameTeamSidePlayerRoleName": {
-      "thisPlayerRoleIsRevealed": "Le rôle de ce joueur est révélé"
+      "thisPlayerRoleIsRevealed": "Le rôle de ce joueur est révélé",
+      "thisPlayerWasThief": "Ce joueur était à l'origine le Voleur"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Image du game play en cours",
@@ -1296,7 +1297,9 @@
     },
     "GameThiefTurnStartsEvent": {
       "thiefCanStealCard": "Le Voleur se réveille et peut choisir la carte supplémentaire lui étant destinée. S'il la choisit, il prendra ce rôle pour le reste de la partie. | Le Voleur se réveille et peut choisir une carte supplémentaire parmi les {count} lui étant destinées. S'il en choisit une, il prendra ce rôle pour le reste de la partie.",
-      "gameMasterWillFlipThiefCards": "Le Maître du Jeu va retourner la carte pour que le Voleur puisse la voir. | Le Maître du Jeu va retourner les {count} cartes pour que le Voleur puisse les voir."
+      "gameMasterWillFlipThiefCards": "Le Maître du Jeu va retourner la carte pour que le Voleur puisse la voir. | Le Maître du Jeu va retourner les {count} cartes pour que le Voleur puisse les voir.",
+      "mustChooseBetweenWerewolves": "Si la carte destinée au Voleur est du côté des Loups-Garous, il doit obligatoirement la prendre et ne peut pas passer son tour. | Si toutes les cartes destinées au Voleur sont du côté des Loups-Garous, il doit obligatoirement en choisir une et ne peut pas passer son tour.",
+      "doesNotHaveToChooseBetweenWerewolves": "Dans cette partie spéciale, le Voleur n'est pas obligé de prendre la carte si elle est côté des Loups-Garous. | Dans cette partie spéciale, le Voleur n'est pas obligé de choisir une carte si toutes les cartes qui lui sont destinées sont du côté des Loups-Garous."
     },
     "GameThreeBrothersTurnStartsEvent": {
       "threeBrothersMeetEachOtherForFirstTime": "Les Trois Frères se réveillent et se rencontrent pour la première fois. Ils peuvent se faire confiance désormais.",
@@ -1480,6 +1483,38 @@
       "searchRole": "Rechercher un rôle",
       "noRoleFound": "Aucun rôle trouvé",
       "pickOneToFiveCards": "Choisissez une à cinq cartes"
+    },
+    "GameChooseCardPlaygroundAdditionalCard": {
+      "chooseCardForRecipient": "Choisir la carte avec le rôle de {roleName} pour {recipientDefiniteName}"
+    },
+    "GameThiefMayHaveChosenCardEvent": {
+      "cantFindThief": "Le Voleur ne peut être trouvé… Veuillez continuer.",
+      "thiefMayHaveChosenCard": "Le Voleur a peut-être choisi une carte pour incarner un rôle pour le reste de la partie.",
+      "gameMasterWillSwitchCardsIfThiefChoseCard": "Si c'est le cas, le Maître du Jeu va échanger la carte choisie avec la carte du Voleur et retirer les cartes restantes.",
+      "thiefHasNotChosenCard": "Le Voleur n'a pas choisi de carte avec un rôle à incarner. Il restera le Voleur pour le reste de la partie.",
+      "thiefHasChosenCard": "Le Voleur a choisi d'incarner {roleName} pour le reste de la partie !",
+      "gameMasterCanTakeAwayRemainingCards": "Le Maître du Jeu peut retirer les cartes restantes.",
+      "thiefChosenCardIsRevealed": "Dans cette partie spéciale, la carte choisie par le Voleur est révélée aux autres joueurs."
+    },
+    "RecipientRoleAdditionalCardsManager": {
+      "cardsPlacedFaceDown": "La carte sera placée au centre de la table face cachée avant le début de la partie | Les cartes seront placées au centre de la table face cachée avant le début de la partie",
+      "cardsPlacedFaceUp": "La carte sera placée au centre de la table face visible avant le début de la partie | Les cartes seront placées au centre de la table face visible avant le début de la partie"
+    },
+    "GameLobbyBeforeLeaveConfirmDialog": {
+      "youStartedComposition": "Vous avez commencé la composition de la partie",
+      "doYouWantToLeaveLobby": "Êtes-vous sûr de vouloir quitter la page ?",
+      "iWantToLeave": "Oui, je veux partir",
+      "stayInLobby": "Rester sur la page"
+    },
+    "GamePlayingBeforeLeaveConfirmDialog": {
+      "gameIsStillPlaying": "La partie est toujours en cours",
+      "doYouWantToLeaveGame": "Êtes-vous sûr de vouloir quitter le jeu ?",
+      "iWantToLeave": "Oui, je veux partir",
+      "stayInGame": "Rester dans le jeu"
+    },
+    "GameWildChildHasTransformedEvent": {
+      "wildChildHasTransformed": "L'Enfant Sauvage s'est transformé en Loup-Garou car son modèle est mort !",
+      "wildChildHasTransformedQuietly": "La phrase suivante ne peut pas être dite à voix haute et est seulement destinée au Maître du Jeu : L'Enfant Sauvage s'est transformé en Loup-Garou car son modèle est mort !"
     }
   }
 }

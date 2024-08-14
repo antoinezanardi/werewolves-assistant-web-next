@@ -9,7 +9,9 @@
         class="p-button p-button-secondary"
         href="mailto: antoine.zanardi@epitech.eu"
       >
-        <span class="fa fa-envelope md:me-2"/>
+        <FontAwesomeIcon
+          icon="envelope"
+        />
 
         <span class="hidden md:inline">
           {{ $t('components.IndexFooter.contact') }}
@@ -24,5 +26,6 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
 </script>

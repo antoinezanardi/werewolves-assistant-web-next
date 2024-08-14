@@ -10,10 +10,11 @@
         id="game-option-label"
         class="w-8/12"
       >
-        <i
+        <FontAwesomeIcon
           id="game-option-label-icon"
-          class="me-3"
+          class="me-2"
           :class="optionIconClass"
+          :icon="optionIcon"
         />
 
         <span>
@@ -45,6 +46,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameOptionInputGroupProps } from "~/components/shared/game/game-options/GameOptionInputGroup/game-option-input-group.types";
 
 withDefaults(defineProps<GameOptionInputGroupProps>(), { doesHaveBottomDivider: false });

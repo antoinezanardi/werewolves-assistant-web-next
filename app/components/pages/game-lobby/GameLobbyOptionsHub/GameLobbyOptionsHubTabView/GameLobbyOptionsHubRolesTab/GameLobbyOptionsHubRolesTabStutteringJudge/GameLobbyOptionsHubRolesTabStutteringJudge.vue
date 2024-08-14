@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input-group"
       :option-description="stutteringJudgeVoteRequestsCountDescription"
-      option-icon-class="fa fa-gavel text-cyan-300"
+      option-icon="gavel"
+      option-icon-class="text-cyan-300"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.label')"
     >
       <PrimeVueFloatLabel>

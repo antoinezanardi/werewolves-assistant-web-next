@@ -5,9 +5,8 @@
     :class="pButtonClass"
     to="/"
   >
-    <i
-      class="me-2"
-      :class="icon"
+    <FontAwesomeIcon
+      :icon="icon"
     />
 
     <span>
@@ -17,11 +16,12 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { BackToHomeButtonProps } from "~/components/shared/buttons/BackToHomeButton/back-to-home-button.types";
 
 withDefaults(defineProps<BackToHomeButtonProps>(), {
   pButtonClass: "p-button-secondary",
-  icon: "fas fa-sign-out",
+  icon: "sign-out",
   textKey: "components.BackToHomeButton.backToHome",
 });
 </script>

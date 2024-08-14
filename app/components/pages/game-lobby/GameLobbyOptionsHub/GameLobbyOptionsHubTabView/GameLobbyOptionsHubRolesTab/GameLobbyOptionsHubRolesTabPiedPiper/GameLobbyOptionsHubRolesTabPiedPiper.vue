@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input-group"
       does-have-bottom-divider
       :option-description="piedPiperCharmedPeopleCountPerNightDescription"
-      option-icon-class="fa fa-people-line text-pink-500"
+      option-icon="people-line"
+      option-icon-class="text-pink-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.label')"
     >
       <PrimeVueFloatLabel>
@@ -45,7 +46,8 @@
       id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group"
       does-have-bottom-divider
       :option-description="isPiedPiperPowerlessOnWerewolvesSideDescription"
-      option-icon-class="fa fa-ban text-red-500"
+      option-icon="ban"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.label')"
     >
       <AffirmativeToggleButton
@@ -58,7 +60,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group"
       :option-description="areCharmedPeopleByPiedPiperRevealedDescription"
-      option-icon-class="fa fa-bullhorn text-blue-500"
+      option-icon="bullhorn"
+      option-icon-class="text-blue-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.label')"
     >
       <AffirmativeToggleButton

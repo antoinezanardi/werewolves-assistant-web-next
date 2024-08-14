@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input-group"
       :option-description="scandalmongerMarkPenaltyDescription"
-      option-icon-class="fa fa-feather text-cyan-700"
+      option-icon="feather"
+      option-icon-class="text-cyan-700"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabScandalmonger.options.markPenalty.label')"
     >
       <PrimeVueFloatLabel>

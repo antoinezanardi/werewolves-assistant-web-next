@@ -1,3 +1,3 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Game Phase Icon Component > should match snapshot when rendered. 1`] = `"<i id="game-phase-icon" class="fa fa-sun text-day"></i>"`;
+exports[`Game Phase Icon Component > should match snapshot when rendered. 1`] = `"<font-awesome-icon-stub icon="sun" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-phase-icon" class="text-day"></font-awesome-icon-stub>"`;

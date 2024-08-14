@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -53,6 +54,18 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
       expect(wrapper.emitted("confirmStartGame")).toHaveLength(1);
     });
 
+    it("should set forward icon to button icon when confirm step is 'players-positioned'.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
+        props: {
+          ...defaultProps,
+          currentConfirmStep: "players-positioned",
+        },
+      });
+      const confirmButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
+
+      expect(confirmButtonIcon.props("icon")).toBe("forward");
+    });
+
     it("should translate confirm button when confirm step is 'players-positioned'.", async() => {
       wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
         props: {
@@ -63,6 +76,44 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
       const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-text");
 
       expect(confirmButton.text()).toBe("components.GameLobbyStartGameConfirmDialogFooter.skipAndPlay");
+    });
+
+    it("should set special classes to button icon when confirm step is 'players-positioned'.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
+        props: {
+          ...defaultProps,
+          currentConfirmStep: "players-positioned",
+        },
+      });
+      const confirmButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
+      const expectedClasses = ["me-2"];
+
+      expect(confirmButtonIcon.classes()).toIncludeAllMembers(expectedClasses);
+    });
+
+    it("should set confirm button icon to play when confirm step is 'players-ready'.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
+        props: {
+          ...defaultProps,
+          currentConfirmStep: "players-ready",
+        },
+      });
+      const confirmButton = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
+
+      expect(confirmButton.props("icon")).toBe("play");
+    });
+
+    it("should set special classes to button icon when confirm step is 'players-ready'.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
+        props: {
+          ...defaultProps,
+          currentConfirmStep: "players-ready",
+        },
+      });
+      const confirmButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
+      const expectedClasses = ["me-4", "fa-beat-fade"];
+
+      expect(confirmButtonIcon.classes()).toIncludeAllMembers(expectedClasses);
     });
 
     it("should translate confirm button when confirm step is 'players-ready'.", async() => {
@@ -77,7 +128,7 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
       expect(confirmButton.text()).toBe("components.GameLobbyStartGameConfirmDialogFooter.letsGo");
     });
 
-    it("should set special classes to button icon when confirm step is 'players-ready'.", async() => {
+    it("should set special classes to button when confirm step is 'players-ready'.", async() => {
       wrapper = await mountGameLobbyStartGameConfirmDialogFooterComponent({
         props: {
           ...defaultProps,
@@ -110,10 +161,9 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-positioned",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-icon");
-      const expectedIconClasses = ["fa", "fa-forward", "me-2"];
+      const confirmButton = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
 
-      expect(confirmButton.classes()).toIncludeAllMembers(expectedIconClasses);
+      expect(confirmButton.props("icon")).toBe("forward");
     });
 
     it("should set play icon to button icon when confirm step is 'players-ready'.", async() => {
@@ -123,11 +173,9 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-ready",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-icon");
-      const expectedIconClasses = ["fa", "fa-beat-fade", "fa-play", "me-4"];
+      const confirmButton = wrapper.findComponent<typeof FontAwesomeIcon>("#confirm-button-icon");
 
-      expect(confirmButton.classes()).toIncludeAllMembers(expectedIconClasses);
-      expect(confirmButton.classes()).not.toIncludeAnyMembers(["fa-forward"]);
+      expect(confirmButton.props("icon")).toBe("play");
     });
   });
 });

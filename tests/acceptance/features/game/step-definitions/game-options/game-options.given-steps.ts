@@ -213,3 +213,31 @@ Given(/^the user prevents fox to be powerless if it misses a werewolf in game op
   await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input");
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user sets thief chosen card revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input");
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user doesn't force thief to choose between all werewolves cards in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input");
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets the stuttering judge request count to (?<requestsCount>\d+) in game options$/u, async function(this: CustomWorld, requestsCount: string): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await fillInputNumberInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input", requestsCount);
+  await closeDialogWithHeaderButton(this);
+});
+
+Given(/^the user sets wild child transformation revealed to everyone in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input");
+  await closeDialogWithHeaderButton(this);
+});

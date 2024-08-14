@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Wolf Hound Component > should match sn
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-dog text-red-600"></i><span>The Wolf-Hound's chosen side is revealed</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="dog" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-red-600"></font-awesome-icon-stub><span>The Wolf-Hound's chosen side is revealed</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
@@ -20,7 +22,9 @@ exports[`Game Lobby Options Hub Roles Tab Wolf Hound Component > should match sn
         </div>
         <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-random text-green-500"></i><span>The Wolf-Hound's side is randomly chosen</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="random" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-emerald-500"></font-awesome-icon-stub><span>The Wolf-Hound's side is randomly chosen</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

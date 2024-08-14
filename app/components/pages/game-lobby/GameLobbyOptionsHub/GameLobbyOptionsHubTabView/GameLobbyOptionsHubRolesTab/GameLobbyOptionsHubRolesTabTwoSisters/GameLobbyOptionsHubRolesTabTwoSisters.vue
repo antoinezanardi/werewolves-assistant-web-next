@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input-group"
       :option-description="twoSistersWakingUpIntervalDescription"
-      option-icon-class="fa fa-clock-rotate-left text-pink-500"
+      option-icon="clock-rotate-left"
+      option-icon-class="text-pink-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabTwoSisters.options.wakingUpInterval.label')"
     >
       <PrimeVueFloatLabel>

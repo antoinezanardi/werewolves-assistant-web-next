@@ -8,18 +8,25 @@
       id="make-play-button"
       class="uppercase w-full"
       :disabled="isButtonDisabled"
-      icon="fa fa-play"
-      :label="$t('components.GamePlaygroundFooterMakePlayButton.makePlay')"
       :loading="isLoadingMakePlay"
       raised
       severity="primary"
       type="button"
       @click.prevent="onClickFromMakePlayButton"
-    />
+    >
+      <FontAwesomeIcon
+        icon="play"
+      />
+
+      <span>
+        {{ $t("components.GamePlaygroundFooterMakePlayButton.makePlay") }}
+      </span>
+    </PrimeVueButton>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
 

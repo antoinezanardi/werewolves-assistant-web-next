@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Before Leave Confirm Dialog Component > should match snapshot when rendered without shallow. 1`] = `
+"<!--teleport start-->
+<!--teleport end-->"
+`;
+
+exports[`Game Lobby Before Leave Confirm Dialog Component > should match snapshot when rendered. 1`] = `
+"<!--teleport start-->
+<!--teleport end-->"
+`;

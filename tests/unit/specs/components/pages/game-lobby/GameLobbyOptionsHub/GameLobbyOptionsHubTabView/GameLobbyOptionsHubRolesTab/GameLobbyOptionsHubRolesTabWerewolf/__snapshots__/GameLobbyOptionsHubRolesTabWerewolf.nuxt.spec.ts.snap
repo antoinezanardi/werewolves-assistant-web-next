@@ -10,7 +10,9 @@ exports[`Game Lobby Options Hub Roles Tab Werewolf Component > should match snap
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-utensils text-gray-500"></i><span>Werewolves can eat each other</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="utensils" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-gray-500"></font-awesome-icon-stub><span>Werewolves can eat each other</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

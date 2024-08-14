@@ -6,7 +6,9 @@
     rel="noopener noreferrer"
     target="_blank"
   >
-    <span class="fa-github fab me-2"/>
+    <FontAwesomeIcon
+      icon="fab fa-github"
+    />
 
     <span>
       {{ textButton }}
@@ -15,6 +17,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GitHubRepositoryButtonProps } from "~/components/shared/external/GitHubRepositoryButton/git-hub-repository-button.types";
 
 const props = defineProps<GitHubRepositoryButtonProps>();

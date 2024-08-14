@@ -13,7 +13,9 @@ exports[`Game Lobby Options Hub Roles Tab Sheriff Component > should match snaps
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-sheriff-is-enabled-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-crown text-amber-300"></i><span>Play with the Sheriff</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="crown" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-amber-300"></font-awesome-icon-stub><span>Play with the Sheriff</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-sheriff-is-sheriff-enabled-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
@@ -23,7 +25,9 @@ exports[`Game Lobby Options Hub Roles Tab Sheriff Component > should match snaps
         </div>
         <div id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-gavel text-amber-800"></i><span>The Sheriff must settle the votes</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="gavel" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-amber-800"></font-awesome-icon-stub><span>The Sheriff must settle the votes</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
@@ -33,7 +37,9 @@ exports[`Game Lobby Options Hub Roles Tab Sheriff Component > should match snaps
         </div>
         <div id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input-group">
           <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12"><i id="game-option-label-icon" class="me-3 fa fa-balance-scale text-amber-500"></i><span>The Sheriff has a doubled vote</span></h3>
+            <h3 id="game-option-label" class="w-8/12">
+              <font-awesome-icon-stub icon="balance-scale" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-amber-500"></font-awesome-icon-stub><span>The Sheriff has a doubled vote</span>
+            </h3>
             <div id="game-option-input" class="w-4/12">
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input" class="w-full"></affirmative-toggle-button-stub>
             </div>

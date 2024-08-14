@@ -20,7 +20,10 @@
         {{ $t("components.GameLobbyRolePickerDescription.pickARole") }}
       </h3>
 
-      <i class="animate__animated animate__headShake animate__infinite animate__slow fa-3x fa-circle-chevron-right fas"/>
+      <FontAwesomeIcon
+        class="animate__animated animate__headShake animate__infinite animate__slow fa-3x"
+        icon="circle-chevron-right"
+      />
     </div>
 
     <GameLobbyRolePickerDescriptionContent
@@ -32,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyRolePickerDescriptionProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types";
 import GameLobbyRolePickerDescriptionContent from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";

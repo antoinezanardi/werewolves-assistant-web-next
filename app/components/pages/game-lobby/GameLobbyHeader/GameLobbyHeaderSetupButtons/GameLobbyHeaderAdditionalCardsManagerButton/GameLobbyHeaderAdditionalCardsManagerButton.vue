@@ -6,21 +6,25 @@
     size="small"
     @click.prevent="onClickFromAdditionalCardsManagerButton"
   >
-    <i class="animate__animated animate__heartBeat animate__slow fa fa-clover"/>
+    <FontAwesomeIcon
+      class="animate__animated animate__heartBeat animate__slow"
+      icon="clover"
+    />
 
     <span id="game-lobby-header-additional-cards-manager-button-text">
       {{ $t('components.GameLobbyHeaderAdditionalCardsManagerButton.additionalCards') }}
     </span>
 
-    <i
+    <FontAwesomeIcon
       v-if="!areAdditionalCardsSetForAdditionalCardsDependantRoles"
       id="additional-cards-not-set-warning-icon"
-      class="fa fa-beat fa-exclamation-circle text-white"
+      icon="exclamation-circle"
     />
   </PrimeVueButton>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { GameLobbyHeaderAdditionalCardsManagerButtonEmits } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/game-lobby-header-additional-cards-manager-button.types";
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";

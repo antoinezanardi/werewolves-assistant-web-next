@@ -4,7 +4,8 @@
       id="game-lobby-options-hub-votes-tab-can-be-skipped-input-group"
       does-have-bottom-divider
       :option-description="canVotesBeSkippedDescription"
-      option-icon-class="fa fa-forward text-blue-300"
+      option-icon="forward"
+      option-icon-class="text-blue-300"
       :option-label="$t('components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.label')"
     >
       <AffirmativeToggleButton
@@ -18,7 +19,8 @@
       id="game-lobby-options-hub-roles-tab-votes-duration-input-group"
       class="mt-8"
       :option-description="votesDurationDescription"
-      option-icon-class="fa fa-clock text-yellow-500"
+      option-icon="clock"
+      option-icon-class="text-yellow-500"
       :option-label="$t('components.GameLobbyOptionsHubVotesTab.options.duration.label')"
     >
       <PrimeVueFloatLabel>

@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input-group"
       :option-description="isLittleGirlProtectedByDefenderDescription"
-      option-icon-class="fa fa-shield-alt text-blue-500"
+      option-icon="shield-alt"
+      option-icon-class="text-blue-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.label')"
     >
       <AffirmativeToggleButton

@@ -40,24 +40,24 @@ describe("Game Choose Side Playground Component", () => {
       expect(makeGamePlayDtoStore.setChosenSide).toHaveBeenCalledExactlyOnceWith("villagers");
     });
 
-    it("should have green border when side is villagers.", async() => {
+    it("should have emerald border when side is villagers.", async() => {
       const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
       makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "villagers";
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
 
-      expect(button.classes("!border-green-500")).toBeTruthy();
+      expect(button.classes("!border-emerald-500")).toBeTruthy();
     });
 
     describe("Villagers Button Image", () => {
-      it("should have green border when side is villagers.", async() => {
+      it("should have emerald border when side is villagers.", async() => {
         const makeGamePlayDtoStore = useMakeGamePlayDtoStore();
         makeGamePlayDtoStore.makeGamePlayDto.chosenSide = "villagers";
         await nextTick();
         const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
         const image = button.findComponent<typeof RoleImage>("#villagers-side-image");
 
-        expect(image.classes("border-green-500")).toBeTruthy();
+        expect(image.classes("border-emerald-500")).toBeTruthy();
       });
     });
 

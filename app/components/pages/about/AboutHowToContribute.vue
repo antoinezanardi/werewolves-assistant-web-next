@@ -4,7 +4,10 @@
       id="about-how-to-contribute-title"
       class="flex items-center"
     >
-      <i class="fa fa-2x fa-handshake-angle me-3 text-green-500"/>
+      <FontAwesomeIcon
+        class="fa-2x me-3 text-emerald-500"
+        icon="handshake-angle"
+      />
 
       <span>
         {{ $t('components.AboutHowToContribute.howToContribute') }}
@@ -44,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import BuyMeACoffeeButton from "~/components/shared/external/BuyMeACoffeeButton/BuyMeACoffeeButton.vue";
 import GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
 </script>

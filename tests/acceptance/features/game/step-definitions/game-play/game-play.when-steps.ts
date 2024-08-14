@@ -1,8 +1,9 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
+import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
-import { chooseSideInPlayground, makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
+import { chooseAdditionalCardInPlayground, chooseSideInPlayground, makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 import type { RoleSide } from "~/composables/api/role/types/role.types";
@@ -129,6 +130,21 @@ When(/^the three brothers meet each other$/u, async function(this: CustomWorld):
 });
 
 When(/^the fox sniffs the player with name "(?<name>.+)"$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  await targetPlayerInPlayground(this, name);
+  await makePlayInPlayground(this);
+});
+
+When(/^the (?<recipient>thief|actor) chooses card with role of "(?<roleName>.+)"$/u, async function(this: CustomWorld, recipient: GameAdditionalCardRecipientRoleName, roleName: string): Promise<void> {
+  await chooseAdditionalCardInPlayground(this, recipient, roleName);
+  await makePlayInPlayground(this);
+});
+
+When(/^the stuttering judge requests another vote$/u, async function(this: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(this, "button", "He doesn't request another vote");
+  await makePlayInPlayground(this);
+});
+
+When(/^the wild child chooses the player with name "(?<name>.+)" as a model$/u, async function(this: CustomWorld, name: string): Promise<void> {
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });

@@ -77,18 +77,28 @@ describe("Game Lobby Random Composition Button Component", () => {
     });
 
     describe("Button", () => {
-      it("should have label when screen is not smaller than md.", () => {
+      it("should have label when screen is not smaller than md.", async() => {
+        wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, {
+          global: {
+            stubs: { Button: false },
+          },
+        });
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
-        expect(button.attributes("label")).toBe("components.GameLobbyRandomCompositionButton.randomComposition");
+        expect(button.text()).toBe("components.GameLobbyRandomCompositionButton.randomComposition");
       });
 
       it("should not have label when screen is smaller than md.", async() => {
+        wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, {
+          global: {
+            stubs: { Button: false },
+          },
+        });
         isSmallerThanMd.value = true;
         await nextTick();
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
-        expect(button.attributes("label")).toBeUndefined();
+        expect(button.text()).toBe("");
       });
 
       it("should have large size when screen is not smaller than md.", () => {

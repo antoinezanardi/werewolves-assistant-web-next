@@ -1,3 +1,4 @@
+import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
@@ -63,18 +64,34 @@ describe("Recipient Role Additional Cards Disclaimer Component", () => {
 
   describe("Disclaimer icon", () => {
     it("should set success icon when there are additional cards for thief.", () => {
-      const icon = wrapper.find<HTMLSpanElement>("#recipient-role-additional-cards-disclaimer-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
 
-      expect(icon.classes()).toIncludeAllMembers(["fa-check-circle", "text-success"]);
+      expect(icon.props("icon")).toBe("check-circle");
+    });
+
+    it("should set text success class when there are additional cards for thief.", () => {
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
+
+      expect(icon.classes()).toContain("text-success");
     });
 
     it("should set error icon when there are no additional cards for thief.", async() => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.additionalCards = [];
       await nextTick();
-      const icon = wrapper.find<HTMLSpanElement>("#recipient-role-additional-cards-disclaimer-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
 
-      expect(icon.classes()).toIncludeAllMembers(["fa-exclamation-circle", "text-error", "fa-beat"]);
+      expect(icon.props("icon")).toBe("exclamation-circle");
+    });
+
+    it("should set text-error and beat classes when there are no additional cards for thief.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.additionalCards = [];
+      await nextTick();
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
+
+      expect(icon.classes()).toContain("text-error");
+      expect(icon.classes()).toContain("fa-beat");
     });
 
     it("should set error icon when there are no additional cards for actor, recipient is actor but there are cards for thief.", async() => {
@@ -93,9 +110,9 @@ describe("Recipient Role Additional Cards Disclaimer Component", () => {
         }),
       ];
       await nextTick();
-      const icon = wrapper.find<HTMLSpanElement>("#recipient-role-additional-cards-disclaimer-icon");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
 
-      expect(icon.classes()).toIncludeAllMembers(["fa-exclamation-circle", "text-error", "fa-beat"]);
+      expect(icon.props("icon")).toBe("exclamation-circle");
     });
   });
 

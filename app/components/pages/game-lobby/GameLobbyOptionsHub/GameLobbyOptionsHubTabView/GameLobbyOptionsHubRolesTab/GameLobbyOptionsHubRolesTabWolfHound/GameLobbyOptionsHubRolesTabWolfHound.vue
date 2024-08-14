@@ -11,7 +11,8 @@
       id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input-group"
       does-have-bottom-divider
       :option-description="isWolfHoundChosenSideRevealedDescription"
-      option-icon-class="fa fa-dog text-red-600"
+      option-icon="dog"
+      option-icon-class="text-red-600"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.label')"
     >
       <AffirmativeToggleButton
@@ -24,7 +25,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group"
       :option-description="isWolfHoundSideRandomlyChosenDescription"
-      option-icon-class="fa fa-random text-green-500"
+      option-icon="random"
+      option-icon-class="text-emerald-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.label')"
     >
       <AffirmativeToggleButton

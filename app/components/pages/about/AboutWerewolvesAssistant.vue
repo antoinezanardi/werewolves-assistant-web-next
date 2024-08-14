@@ -4,7 +4,10 @@
       id="about-werewolves-assistant-title"
       class="flex items-center"
     >
-      <i class="fa fa-2x fa-star me-3 text-yellow-500"/>
+      <FontAwesomeIcon
+        class="fa-2x me-3 text-yellow-500"
+        icon="star"
+      />
 
       <span>
         {{ $t('components.AboutWerewolvesAssistant.werewolvesAssistantInThePlace') }}
@@ -41,7 +44,10 @@
       id="about-werewolves-assistant-disclaimer-title"
       class="flex items-center justify-center text-uppercase"
     >
-      <i class="fa fa-2x fa-warning me-3 text-yellow-500"/>
+      <FontAwesomeIcon
+        class="fa-2x me-3 text-yellow-500"
+        icon="warning"
+      />
 
       <span>
         {{ $t('components.AboutWerewolvesAssistant.pleaseBeAware') }}
@@ -59,3 +65,7 @@
     </p>
   </div>
 </template>
+
+<script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+</script>

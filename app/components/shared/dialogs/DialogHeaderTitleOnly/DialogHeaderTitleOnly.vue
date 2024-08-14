@@ -4,11 +4,11 @@
     class="w-full"
   >
     <h2 id="game-lobby-options-hub-header-title">
-      <i
-        v-if="props.iconClass"
+      <FontAwesomeIcon
         id="game-lobby-options-hub-header-title-icon"
-        class="me-3"
-        :class="props.iconClass"
+        class="me-2"
+        :class="iconClass"
+        :icon="icon"
       />
 
       <span id="game-lobby-options-hub-header-title-text">
@@ -21,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { DialogHeaderTitleOnlyProps } from "~/components/shared/dialogs/DialogHeaderTitleOnly/dialog-header-title-only.types";
 
 const props = defineProps<DialogHeaderTitleOnlyProps>();

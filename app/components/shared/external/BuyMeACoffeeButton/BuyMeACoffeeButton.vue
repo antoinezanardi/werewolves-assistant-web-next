@@ -19,7 +19,7 @@ const baseUri = "https://img.buymeacoffee.com/button-api";
 const urlQueryParams = objectToSnake({
   text: "Buy me a coffee",
   slug: "antoinezanardi",
-  buttonColour: "46a6ff",
+  buttonColour: "3b82f6",
   fontColour: "FFFFFF",
   fontFamily: "Lato",
   outlineColour: "000000",

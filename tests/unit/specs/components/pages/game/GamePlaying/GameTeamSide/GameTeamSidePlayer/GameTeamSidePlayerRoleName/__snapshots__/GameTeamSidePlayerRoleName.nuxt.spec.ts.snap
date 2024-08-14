@@ -1,7 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Team Side Player Role Name Component > should match snapshot when rendered. 1`] = `
-"<div id="game-team-side-player-role-name" class="flex gap-1 items-center justify-center">
-  <!--v-if--><small id="player-role-name" class="flex justify-center">Werewolf</small>
+"<div id="game-team-side-player-role-name" class="flex flex-col items-center justify-center">
+  <div id="player-role-icons" class="flex gap-2">
+    <!--v-if-->
+    <!--v-if-->
+  </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
 </div>"
 `;

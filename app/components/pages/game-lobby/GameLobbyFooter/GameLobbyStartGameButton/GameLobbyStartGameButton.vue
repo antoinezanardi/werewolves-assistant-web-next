@@ -5,16 +5,23 @@
     class="h-full"
   >
     <PrimeVueButton
+      id="game-lobby-start-game-button"
       class="!h-full !px-6 !py-4 start-game-button"
       :disabled="isButtonDisabled"
-      icon="fa-play fa"
-      :label="$t('components.GameLobbyStartGameButton.startGame')"
       :loading="isLoadingCreateGame"
       raised
       size="large"
       type="button"
       @click.prevent="onClickFromStartGameButton"
-    />
+    >
+      <FontAwesomeIcon
+        icon="play"
+      />
+
+      <span>
+        {{ $t("components.GameLobbyStartGameButton.startGame") }}
+      </span>
+    </PrimeVueButton>
 
     <GameLobbyStartGameConfirmDialog
       id="game-lobby-start-game-confirm-dialog"
@@ -26,6 +33,7 @@
 </template>
 
 <script lang="ts" setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { GameLobbyStartGameButtonEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/game-lobby-start-game-button.types";
 import type { GameLobbyStartGameConfirmDialogExposed } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/game-lobby-start-game-confirm-dialog.types";

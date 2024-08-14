@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input-group"
       :option-description="doesBearTamerGrowlOnWerewolvesSideDescription"
-      option-icon-class="fa fa-paw text-amber-700"
+      option-icon="paw"
+      option-icon-class="text-amber-700"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabBearTamer.options.doesGrowlOnWerewolvesSide.label')"
     >
       <AffirmativeToggleButton

@@ -10,7 +10,8 @@
     <GameOptionInputGroup
       id="game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input-group"
       :option-description="doesIdiotDieOnElderDeathDescription"
-      option-icon-class="fa fa-skull-crossbones text-red-500"
+      option-icon="skull-crossbones"
+      option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.label')"
     >
       <AffirmativeToggleButton
