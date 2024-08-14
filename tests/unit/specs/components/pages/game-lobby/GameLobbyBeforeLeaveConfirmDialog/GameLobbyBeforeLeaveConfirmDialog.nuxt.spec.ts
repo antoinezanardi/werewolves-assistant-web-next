@@ -1,15 +1,13 @@
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeLocationNormalizedGuard } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
-import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import ConfirmDialog from "primevue/confirmdialog";
 import type UseConfirm from "primevue/useconfirm";
 import { type Mock, vi } from "vitest";
 import type { Ref } from "vue";

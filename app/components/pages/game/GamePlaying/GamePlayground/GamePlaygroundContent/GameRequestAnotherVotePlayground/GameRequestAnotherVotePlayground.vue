@@ -13,6 +13,7 @@
     >
       <template #icon>
         <FontAwesomeIcon
+          id="does-judge-request-another-vote-button-icon"
           class="me-4 text-white"
           :icon="toggleButtonIcon"
         />

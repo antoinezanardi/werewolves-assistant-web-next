@@ -4,22 +4,20 @@ import { createTestingPinia } from "@pinia/testing";
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
 import { expect } from "vitest";
 import type { Ref } from "vue";
-import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
-import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
-import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const hoistedMocks = vi.hoisted(() => ({

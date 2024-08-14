@@ -67,12 +67,12 @@ const confirmButtonIconAndClasses = computed<IconAndIconClass>(() => {
   if (props.currentConfirmStep === "players-ready") {
     return {
       icon: "play",
-      iconClasses: "fa-beat-fade me-4",
+      iconClass: "fa-beat-fade me-4",
     };
   }
   return {
     icon: "forward",
-    iconClasses: "me-2",
+    iconClass: "me-2",
   };
 });
 

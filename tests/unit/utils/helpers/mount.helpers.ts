@@ -12,14 +12,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { GlowCapture } from "#components";
 import { clone, construct, crush } from "radash";
 
-function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
-  const clonedOptions = clone(options);
-  const plugins = clonedOptions.global?.plugins ?? [createTestingPinia()];
-  plugins.push(ConfirmationService);
-  if (clonedOptions.global?.plugins) {
-    clonedOptions.global.plugins = undefined;
-  }
-  const defaultMountingOptions: ComponentMountingOptions<T> = {
+function getDefaultMountingOptions<T>(): ComponentMountingOptions<T> {
+  return {
     shallow: true,
     global: {
       directives: { PTooltip: Tooltip },
@@ -33,6 +27,16 @@ function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>
       },
     },
   };
+}
+
+function computeComponentMountingOptions<T>(options: ComponentMountingOptions<T>): ComponentMountingOptions<T> {
+  const clonedOptions = clone(options);
+  const plugins = clonedOptions.global?.plugins ?? [createTestingPinia()];
+  plugins.push(ConfirmationService);
+  if (clonedOptions.global?.plugins) {
+    clonedOptions.global.plugins = undefined;
+  }
+  const defaultMountingOptions = getDefaultMountingOptions<T>();
   const mergedOptions = construct({
     ...crush(defaultMountingOptions),
     ...crush(options),

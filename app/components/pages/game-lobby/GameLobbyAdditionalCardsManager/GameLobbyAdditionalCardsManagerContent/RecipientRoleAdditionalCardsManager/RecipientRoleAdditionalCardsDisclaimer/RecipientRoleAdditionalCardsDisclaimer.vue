@@ -11,7 +11,7 @@
         <FontAwesomeIcon
           id="recipient-role-additional-cards-disclaimer-icon"
           class="me-3"
-          :class="recipientRoleAdditionalCardsDisclaimerAndIcon.iconClasses"
+          :class="recipientRoleAdditionalCardsDisclaimerAndIcon.iconClass"
           :icon="recipientRoleAdditionalCardsDisclaimerAndIcon.icon"
         />
 
@@ -31,6 +31,7 @@ import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGame
 import { useRoleName } from "~/composables/api/role/useRoleName";
 import { useStrings } from "~/composables/misc/useStrings";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import type { IconAndIconClass } from "~/utils/types/icon.types";
 
 const props = defineProps<RecipientRoleAdditionalCardsDisclaimerProps>();
 
@@ -53,7 +54,7 @@ const areAdditionalCardsSetForRecipientRoleName = computed<boolean>(() => {
   return areAdditionalCardsSetForActorIfPresent.value;
 });
 
-const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: string; icon: string; iconClasses: string }>(() => {
+const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: string } & IconAndIconClass>(() => {
   const definiteRecipientRoleName = getDefiniteRoleNameLabel(props.recipientRoleName, 1);
   const lowerCaseRecipientRoleName = lowerCaseFirstLetter(definiteRecipientRoleName);
   const recipientAdditionalCardsCount = getAdditionalCardsForRecipientInCreateGameDto(props.recipientRoleName).length;
@@ -62,13 +63,13 @@ const recipientRoleAdditionalCardsDisclaimerAndIcon = computed<{ disclaimer: str
     return {
       disclaimer: t(`${componentRootTKey}.additionalCardsSetDisclaimer`, { definiteRecipientRoleName, count: recipientAdditionalCardsCount }, recipientAdditionalCardsCount),
       icon: "check-circle",
-      iconClasses: "text-success",
+      iconClass: "text-success",
     };
   }
   return {
     disclaimer: t(`${componentRootTKey}.additionalCardsNotSetDisclaimer`, { definiteRecipientRoleName: lowerCaseRecipientRoleName }),
     icon: "exclamation-circle",
-    iconClasses: "text-error fa-beat",
+    iconClass: "text-error fa-beat",
   };
 });
 </script>

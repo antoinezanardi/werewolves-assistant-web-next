@@ -15,6 +15,7 @@
     >
       <template #icon>
         <FontAwesomeIcon
+          id="game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon"
           :class="sheriffPhaseNameElectionValueIconAndIconClass.iconClass"
           :icon="sheriffPhaseNameElectionValueIconAndIconClass.icon"
         />
@@ -87,12 +88,12 @@ const sheriffPhaseNameElectionValueAsBoolean = computed<boolean>({
 const sheriffPhaseNameElectionValueIconAndIconClass = computed<IconAndIconClass>(() => {
   if (sheriffPhaseNameElectionValueAsBoolean.value) {
     return {
-      icon: "fa-sun",
+      icon: "sun",
       iconClass: "text-day",
     };
   }
   return {
-    icon: "fa-moon",
+    icon: "moon",
     iconClass: "text-night",
   };
 });
