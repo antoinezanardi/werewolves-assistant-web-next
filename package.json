@@ -107,7 +107,7 @@
     "@vitest/coverage-istanbul": "^2.0.5",
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^10.11.1",
-    "@vueuse/nuxt": "^10.11.1",
+    "@vueuse/nuxt": "^11.0.0",
     "chart.js": "^4.4.3",
     "chartjs-plugin-datalabels": "^2.2.0",
     "circle-progress.vue": "^3.2.1",
