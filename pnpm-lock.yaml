@@ -83,7 +83,7 @@ importers:
         version: 0.5.3(magicast@0.3.4)(rollup@4.18.0)(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
       '@pinia/testing':
         specifier: ^0.1.5
-        version: 0.1.5(pinia@2.2.1(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
+        version: 0.1.5(pinia@2.2.2(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
       '@playwright/test':
         specifier: ^1.46.0
         version: 1.46.0
@@ -220,8 +220,8 @@ importers:
         specifier: ^1.3.4
         version: 1.3.4
       pinia:
-        specifier: ^2.2.1
-        version: 2.2.1(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
       pixelmatch:
         specifier: ^6.0.0
         version: 6.0.0
@@ -5830,6 +5830,18 @@ packages:
       typescript:
         optional: true
 
+  pinia@2.2.2:
+    resolution: {integrity: sha512-ja2XqFWZC36mupU4z1ZzxeTApV7DOw44cV4dhQ9sGwun+N89v/XP7+j7q6TanS1u1tdbK4r+1BUx7heMaIdagA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
@@ -9613,9 +9625,9 @@ snapshots:
       - typescript
       - vue
 
-  '@pinia/testing@0.1.5(pinia@2.2.1(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))':
+  '@pinia/testing@0.1.5(pinia@2.2.2(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
-      pinia: 2.2.1(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
+      pinia: 2.2.2(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4))
       vue-demi: 0.14.10(vue@3.4.37(typescript@5.5.4))
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -14195,6 +14207,14 @@ snapshots:
   pify@3.0.0: {}
 
   pinia@2.2.1(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)):
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.37(typescript@5.5.4)
+      vue-demi: 0.14.10(vue@3.4.37(typescript@5.5.4))
+    optionalDependencies:
+      typescript: 5.5.4
+
+  pinia@2.2.2(typescript@5.5.4)(vue@3.4.37(typescript@5.5.4)):
     dependencies:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.37(typescript@5.5.4)
