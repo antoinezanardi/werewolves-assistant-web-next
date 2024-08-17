@@ -6,6 +6,7 @@
     <PrimeVueButton
       class="random-composition-button"
       :disabled="isButtonDisabled"
+      :label="buttonLabel"
       :loading="isLoadingGetRandomGameComposition"
       raised
       severity="secondary"
@@ -13,13 +14,11 @@
       type="button"
       @click.prevent="onClickFromRandomCompositionButton"
     >
-      <FontAwesomeIcon
-        icon="random"
-      />
-
-      <span>
-        {{ buttonLabel }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="random"
+        />
+      </template>
     </PrimeVueButton>
   </div>
 </template>

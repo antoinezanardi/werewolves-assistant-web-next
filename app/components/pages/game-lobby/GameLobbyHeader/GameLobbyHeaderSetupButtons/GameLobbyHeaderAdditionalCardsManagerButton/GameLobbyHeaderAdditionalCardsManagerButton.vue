@@ -18,6 +18,7 @@
     <FontAwesomeIcon
       v-if="!areAdditionalCardsSetForAdditionalCardsDependantRoles"
       id="additional-cards-not-set-warning-icon"
+      beat
       icon="exclamation-circle"
     />
   </PrimeVueButton>

@@ -1,18 +1,17 @@
 <template>
   <PrimeVueButton
     id="game-lobby-header-options-button"
+    :label="$t('components.GameLobbyHeaderOptionButton.gameOptions')"
     :pt="{ 'root': '!border-sky-600' }"
     severity="info"
     size="small"
     @click.prevent="onClickFromGameOptionsButton"
   >
-    <FontAwesomeIcon
-      icon="sliders"
-    />
-
-    <span>
-      {{ $t("components.GameLobbyHeaderOptionButton.gameOptions") }}
-    </span>
+    <template #icon>
+      <FontAwesomeIcon
+        icon="sliders"
+      />
+    </template>
   </PrimeVueButton>
 </template>
 

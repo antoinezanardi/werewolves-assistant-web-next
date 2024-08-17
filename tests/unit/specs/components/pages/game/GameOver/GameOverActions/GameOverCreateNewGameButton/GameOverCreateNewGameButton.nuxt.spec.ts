@@ -4,6 +4,7 @@ import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game
 import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { ButtonProps } from "primevue/button";
 import type Button from "primevue/button";
 import type { ConfirmationOptions } from "primevue/confirmationoptions";
 import type UseConfirm from "primevue/useconfirm";
@@ -61,9 +62,10 @@ describe("Game Over Create New Game Button Component", () => {
       wrapper = await mountGameOverCreateNewGameButtonComponent({
         shallow: false,
       });
-      const buttonText = wrapper.find<HTMLSpanElement>("#create-new-game-button-text");
+      const buttonText = wrapper.findComponent<typeof Button>("#create-new-game-button");
+      const buttonProps = buttonText.props() as ButtonProps;
 
-      expect(buttonText.text()).toBe("Create another game");
+      expect(buttonProps.label).toBe("Create another game");
     });
 
     describe("Click on Button", () => {

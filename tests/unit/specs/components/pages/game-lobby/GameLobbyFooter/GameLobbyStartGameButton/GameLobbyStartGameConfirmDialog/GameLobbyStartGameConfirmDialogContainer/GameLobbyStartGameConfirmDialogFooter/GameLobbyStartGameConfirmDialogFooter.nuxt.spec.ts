@@ -3,6 +3,7 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { ButtonProps } from "primevue/button";
 import type Button from "primevue/button";
 import type { GameLobbyStartGameConfirmDialogFooterProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/game-lobby-start-game-confirm-dialog-footer.types";
 import GameLobbyStartGameConfirmDialogFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogFooter/GameLobbyStartGameConfirmDialogFooter.vue";
@@ -40,9 +41,10 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
     });
 
     it("should translate button text when rendered.", () => {
-      const cancelButton = wrapper.find<HTMLSpanElement>("#cancel-button-text");
+      const cancelButton = wrapper.findComponent<typeof Button>("#cancel-button");
+      const props = cancelButton.props() as ButtonProps;
 
-      expect(cancelButton.text()).toBe("Cancel");
+      expect(props.label).toBe("Cancel");
     });
   });
 
@@ -73,9 +75,10 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-positioned",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-text");
+      const confirmButton = wrapper.findComponent<typeof Button>("#confirm-button");
+      const buttonProps = confirmButton.props() as ButtonProps;
 
-      expect(confirmButton.text()).toBe("components.GameLobbyStartGameConfirmDialogFooter.skipAndPlay");
+      expect(buttonProps.label).toBe("components.GameLobbyStartGameConfirmDialogFooter.skipAndPlay");
     });
 
     it("should set special classes to button icon when confirm step is 'players-positioned'.", async() => {
@@ -123,9 +126,10 @@ describe("Game Lobby Start Game Confirm Dialog Footer Component", () => {
           currentConfirmStep: "players-ready",
         },
       });
-      const confirmButton = wrapper.find<HTMLSpanElement>("#confirm-button-text");
+      const confirmButton = wrapper.findComponent<typeof Button>("#confirm-button");
+      const buttonProps = confirmButton.props() as ButtonProps;
 
-      expect(confirmButton.text()).toBe("components.GameLobbyStartGameConfirmDialogFooter.letsGo");
+      expect(buttonProps.label).toBe("components.GameLobbyStartGameConfirmDialogFooter.letsGo");
     });
 
     it("should set special classes to button when confirm step is 'players-ready'.", async() => {
