@@ -13,10 +13,12 @@
       type="button"
       @click.prevent="onClickFromRemovePlayerButton"
     >
-      <FontAwesomeIcon
-        class="fa-2x"
-        icon="minus"
-      />
+      <template #icon>
+        <FontAwesomeIcon
+          class="fa-2x"
+          icon="minus"
+        />
+      </template>
     </PrimeVueButton>
 
     <PlayerCard

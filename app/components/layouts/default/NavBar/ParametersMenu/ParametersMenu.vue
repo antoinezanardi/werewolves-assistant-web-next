@@ -7,9 +7,11 @@
       type="button"
       @click.prevent="onClickFromParametersButton"
     >
-      <FontAwesomeIcon
-        icon="gear"
-      />
+      <template #icon>
+        <FontAwesomeIcon
+          icon="gear"
+        />
+      </template>
     </PrimeVueButton>
 
     <PrimeVueMenu

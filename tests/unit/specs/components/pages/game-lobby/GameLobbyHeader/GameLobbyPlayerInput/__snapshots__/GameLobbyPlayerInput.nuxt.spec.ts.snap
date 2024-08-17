@@ -3,7 +3,7 @@
 exports[`Game Lobby Player Input Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-player-input">
   <div class="p-inputgroup mt-3" id="game-lobby-player-input-group" data-pc-name="inputgroup" data-pc-section="root" pc2=""><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc1=""><input-text-stub id="player-name-input" modelvalue="" aria-labelledby="player-name-input-help" class="" disabled="false" maxlength="30" size="large" type="text"></input-text-stub><label for="player-name-input">Player name</label></span>
-    <button-stub id="add-player-button" disabled="false" severity="primary" type="submit"></button-stub>
+    <button-stub id="add-player-button" disabled="false" label="Add" severity="primary" type="submit"></button-stub>
   </div>
   <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true"><small id="player-name-input-help">components.GameLobbyPlayerInput.pleaseEnterPlayerName</small></transition-stub>
 </div>"

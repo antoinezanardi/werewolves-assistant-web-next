@@ -27,16 +27,14 @@
       id="create-new-game-button"
       ref="createNewGameButton"
       class="p-button p-button-raised"
+      :label="$t('components.GameOverActions.createAnotherGame')"
       @click="onClickFromCreateNewGameButton"
     >
-      <FontAwesomeIcon
-        class="me-2"
-        icon="play-circle"
-      />
-
-      <span id="create-new-game-button-text">
-        {{ $t('components.GameOverActions.createAnotherGame') }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="play-circle"
+        />
+      </template>
     </PrimeVueButton>
   </div>
 </template>

@@ -8,19 +8,18 @@
       id="game-lobby-start-game-button"
       class="!h-full !px-6 !py-4 start-game-button"
       :disabled="isButtonDisabled"
+      :label="$t('components.GameLobbyStartGameButton.startGame')"
       :loading="isLoadingCreateGame"
       raised
       size="large"
       type="button"
       @click.prevent="onClickFromStartGameButton"
     >
-      <FontAwesomeIcon
-        icon="play"
-      />
-
-      <span>
-        {{ $t("components.GameLobbyStartGameButton.startGame") }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="play"
+        />
+      </template>
     </PrimeVueButton>
 
     <GameLobbyStartGameConfirmDialog
