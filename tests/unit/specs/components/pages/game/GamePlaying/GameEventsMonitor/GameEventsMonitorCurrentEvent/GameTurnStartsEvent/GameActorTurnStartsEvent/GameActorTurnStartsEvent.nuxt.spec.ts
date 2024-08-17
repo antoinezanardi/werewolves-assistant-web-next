@@ -3,6 +3,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameActorTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameActorTurnStartsEvent/GameActorTurnStartsEvent.vue";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 describe("Game Actor Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameActorTurnStartsEvent>>;
@@ -26,6 +27,14 @@ describe("Game Actor Turn Starts Event Component", () => {
 
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  describe("Sound Effect", () => {
+    it("should play laughing clown exploding sound effect when rendered.", () => {
+      const audioStore = useAudioStore();
+
+      expect(audioStore.playSoundEffect).toHaveBeenCalledExactlyOnceWith("laughing-clown-exploding");
+    });
   });
 
   describe("Game Event Texts", () => {

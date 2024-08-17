@@ -5,6 +5,7 @@ exports[`Game Team Side Player Role Name Component > should match snapshot when 
   <div id="player-role-icons" class="flex gap-2">
     <!--v-if-->
     <!--v-if-->
+    <!--v-if-->
   </div><small id="player-role-name" class="flex justify-center">Werewolf</small>
 </div>"
 `;
