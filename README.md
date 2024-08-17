@@ -138,6 +138,11 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 >>    ![Accursed Wolf-Father infects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Accursed%20Wolf-Father%20infects%20Playground.png)
 >>   </details>
 >>   <details>
+>>    <summary>🎭 Actor chooses card Playground</summary>
+>>
+>>    ![Actor chooses card Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Actor%20chooses%20card%20Playground.png)
+>>   </details>
+>>   <details>
 >>    <summary>🐺 👹 Big Bad Wolf eats Playground</summary>
 >>        
 >>    ![Big Bad Wolf eats Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Big%20Bad%20Wolf%20eats%20Playground.png)
