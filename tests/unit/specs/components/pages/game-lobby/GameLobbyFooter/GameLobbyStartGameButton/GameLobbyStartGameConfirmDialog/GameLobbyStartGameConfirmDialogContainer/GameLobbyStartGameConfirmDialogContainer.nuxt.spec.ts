@@ -62,6 +62,22 @@ describe("Game Lobby Start Game Confirm Dialog Container Component", () => {
 
       expect(wrapper.emitted("rejectPlayersPositionStep")).toHaveLength(1);
     });
+
+    it("should handle reject thief additional cards placed step event when dialog content emits the event.", async() => {
+      const dialogContent = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogContent>("#game-lobby-start-game-confirm-dialog-content");
+      (dialogContent.vm as VueVm).$emit("rejectThiefAdditionalCardsPlacedStep");
+      await nextTick();
+
+      expect(wrapper.emitted("rejectThiefAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
+
+    it("should handle reject actor additional cards placed step event when dialog content emits the event.", async() => {
+      const dialogContent = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogContent>("#game-lobby-start-game-confirm-dialog-content");
+      (dialogContent.vm as VueVm).$emit("rejectActorAdditionalCardsPlacedStep");
+      await nextTick();
+
+      expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
   });
 
   describe("Dialog Footer", () => {

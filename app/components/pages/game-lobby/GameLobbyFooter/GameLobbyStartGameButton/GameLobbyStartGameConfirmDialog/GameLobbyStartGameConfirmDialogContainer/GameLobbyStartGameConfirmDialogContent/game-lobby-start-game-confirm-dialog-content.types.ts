@@ -8,6 +8,8 @@ type GameLobbyStartGameConfirmDialogContentProps = {
 type GameLobbyStartGameConfirmDialogContentEmits = {
   confirmStep: [];
   rejectPlayersPositionStep: [];
+  rejectThiefAdditionalCardsPlacedStep: [];
+  rejectActorAdditionalCardsPlacedStep: [];
 };
 
 type GameLobbyStartGameConfirmDialogStepComponents = typeof GameLobbyStartGameConfirmDialogPlayersPositioned;

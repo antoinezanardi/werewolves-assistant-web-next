@@ -1520,6 +1520,16 @@
     "GameActorMayHaveChosenCardEvent": {
       "actorMayHaveChosenCard": "Le Comédien a peut-être choisi une carte à jouer pour ce tour.",
       "gameMasterTakeOutChosenCard": "Dans ce cas, le Maître du Jeu va retirer de la table la carte choisie par le Comédien "
+    },
+    "GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced": {
+      "thiefAdditionalCardsMustBePlacedDown": "La carte destinée au Voleur est-elle placée face cachée au centre de la table ? | Les cartes destinées au Voleur sont-elles placées face cachée au centre de la table ?",
+      "changeThiefAdditionalCards": "Changer les cartes destinée au Voleur",
+      "thiefIcon": "Icône du Voleur"
+    },
+    "GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced": {
+      "actorAdditionalCardsMustBePlacedUp": "La carte destinée au Comédien est-elle placée face visible au centre de la table ? | Les cartes destinées au Comédien sont-elles placées face visible au centre de la table ?",
+      "changeActorAdditionalCards": "Changer les cartes destinée au Comédien",
+      "actorIcon": "Icône du Comédien"
     }
   }
 }

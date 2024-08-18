@@ -117,5 +117,19 @@ describe("Game Lobby Header Setup Buttons Component", () => {
 
       expect(wrapper.emitted("additionalCardsManagerButtonClick")).toBeTruthy();
     });
+
+    it("should throw error when highlightAdditionalCardsManagerButton method is called but component is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderAdditionalCardsManagerButton: Ref }).gameLobbyHeaderAdditionalCardsManagerButton.value = null;
+      await getError(() => (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightAdditionalCardsManagerButton());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Additional Cards Manager Button is not defined");
+    });
+
+    it("should highlight additional cards manager button when method is called from parent component.", async() => {
+      (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightAdditionalCardsManagerButton();
+      await flushPromises();
+
+      expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");
+    });
   });
 });

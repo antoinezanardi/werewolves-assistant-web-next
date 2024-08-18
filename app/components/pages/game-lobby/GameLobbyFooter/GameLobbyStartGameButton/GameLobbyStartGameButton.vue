@@ -26,7 +26,9 @@
       id="game-lobby-start-game-confirm-dialog"
       ref="gameLobbyStartGameConfirmDialog"
       @confirm-start-game="onConfirmStartGameFromGameLobbyStartGameConfirmDialog"
+      @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
       @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog"
+      @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
     />
   </div>
 </template>
@@ -94,5 +96,13 @@ async function onConfirmStartGameFromGameLobbyStartGameConfirmDialog(): Promise<
 
 function onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog(): void {
   emit("rejectPlayersPositionStep");
+}
+
+function onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog(): void {
+  emit("rejectThiefAdditionalCardsPlacedStep");
+}
+
+function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog(): void {
+  emit("rejectActorAdditionalCardsPlacedStep");
 }
 </script>

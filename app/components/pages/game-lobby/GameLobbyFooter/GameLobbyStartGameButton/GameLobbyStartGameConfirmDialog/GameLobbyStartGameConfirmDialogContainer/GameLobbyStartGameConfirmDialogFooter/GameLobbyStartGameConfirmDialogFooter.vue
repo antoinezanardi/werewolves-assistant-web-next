@@ -1,6 +1,6 @@
 <template>
   <div class="confirm-dialog-footer w-full">
-    <PrimeVueDivider class="!my-3"/>
+    <PrimeVueDivider class="!bg-gray-600 !h-px !my-3"/>
 
     <div class="flex gap-2 items-center justify-between w-full">
       <PrimeVueButton

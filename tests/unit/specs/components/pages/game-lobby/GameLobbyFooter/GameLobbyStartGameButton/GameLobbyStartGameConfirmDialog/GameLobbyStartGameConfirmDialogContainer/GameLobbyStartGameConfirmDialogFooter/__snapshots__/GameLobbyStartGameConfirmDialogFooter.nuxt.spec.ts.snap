@@ -2,7 +2,7 @@
 
 exports[`Game Lobby Start Game Confirm Dialog Footer Component > should match snapshot when rendered. 1`] = `
 "<div class="confirm-dialog-footer w-full">
-  <divider-stub class="!my-3"></divider-stub>
+  <divider-stub class="!bg-gray-600 !h-px !my-3"></divider-stub>
   <div class="flex gap-2 items-center justify-between w-full"><button class="p-button p-component p-button-secondary p-button-sm" type="button" aria-label="Cancel" data-pc-name="button" data-p-disabled="false" data-p-severity="secondary" id="cancel-button" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc1="">
       <font-awesome-icon-stub icon="times" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="me-2"></font-awesome-icon-stub><span class="p-button-label" data-pc-section="label">Cancel</span>
       <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>

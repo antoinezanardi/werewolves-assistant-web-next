@@ -4,6 +4,8 @@ import type { GAME_LOBBY_START_GAME_CONFIRM_DIALOG_STEPS } from "~/components/pa
 type GameLobbyStartGameConfirmDialogEmits = {
   confirmStartGame: [];
   rejectPlayersPositionStep: [];
+  rejectThiefAdditionalCardsPlacedStep: [];
+  rejectActorAdditionalCardsPlacedStep: [];
 };
 
 type GameLobbyStartGameConfirmDialogExposed = {
