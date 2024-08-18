@@ -298,6 +298,20 @@ describe("Game Lobby Start Game Button Component", () => {
 
         expect(wrapper.emitted("rejectPlayersPositionStep")).toHaveLength(1);
       });
+
+      it("should emit thief additional cards placed step when game lobby start game confirm dialog emits the same.", () => {
+        const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
+        (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("rejectThiefAdditionalCardsPlacedStep");
+
+        expect(wrapper.emitted("rejectThiefAdditionalCardsPlacedStep")).toHaveLength(1);
+      });
+
+      it("should emit actor additional cards placed step when game lobby start game confirm dialog emits the same.", () => {
+        const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
+        (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("rejectActorAdditionalCardsPlacedStep");
+
+        expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
+      });
     });
   });
 });

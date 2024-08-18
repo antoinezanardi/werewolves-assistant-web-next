@@ -23,6 +23,8 @@ type GameLobbyStartGameConfirmDialogPrivateVariables = {
   onConfirmStepFromGameLobbyStartGameConfirmDialogContainer: () => void;
   confirmStartGame: () => void;
   onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
+  onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
+  onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
 };
 
 const hoistedMocks = vi.hoisted(() => ({
@@ -44,7 +46,10 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       createFakeCreateGamePlayerDto(),
     ],
   });
-  const testingPinia = { initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } } };
+  const testingPinia = {
+    initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } },
+    stubActions: false,
+  };
 
   async function mountGameLobbyStartGameConfirmDialogComponent(options: ComponentMountingOptions<typeof GameLobbyStartGameConfirmDialog> = {}):
   Promise<ReturnType<typeof mount<typeof GameLobbyStartGameConfirmDialog>>> {
@@ -85,6 +90,28 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       });
       await nextTick();
       const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["players-positioned", "players-ready"];
+
+      expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
+    });
+
+    it("should contain thief additional cards placed when there is a thief role in create game dto.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: { name: "thief" } })],
+      });
+      await nextTick();
+      const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["thief-additional-cards-placed", "players-ready"];
+
+      expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
+    });
+
+    it("should contain actor additional cards placed when there is an actor role in create game dto.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: { name: "actor" } })],
+      });
+      await nextTick();
+      const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["actor-additional-cards-placed", "players-ready"];
 
       expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
     });
@@ -157,6 +184,38 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
 
       expect(wrapper.emitted("rejectPlayersPositionStep")).toHaveLength(1);
+    });
+  });
+
+  describe("Reject Thief Additional Cards Placed Step", () => {
+    it("should call reject callback pass as argument when reject thief additional cards placed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(rejectCallback).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should emit reject thief additional cards placed step event when reject thief additional cards placed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(wrapper.emitted("rejectThiefAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
+  });
+
+  describe("Reject Actor Additional Cards Placed Step", () => {
+    it("should call reject callback pass as argument when reject actor additional cards placed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(rejectCallback).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should emit reject actor additional cards placed step event when reject actor additional cards placed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
     });
   });
 });

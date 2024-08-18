@@ -1520,6 +1520,16 @@
     "GameActorMayHaveChosenCardEvent": {
       "actorMayHaveChosenCard": "The Actor may have chosen a card to play for this turn.",
       "gameMasterTakeOutChosenCard": "If so, the Game Master will take out the chosen card from the board."
+    },
+    "GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced": {
+      "thiefAdditionalCardsMustBePlacedDown": "Is the additional card for the Thief placed face down on the center of the table? | Are the additional cards for the Thief placed face down on the center of the table?",
+      "changeThiefAdditionalCards": "Change the additional cards for the Thief",
+      "thiefIcon": "Thief icon"
+    },
+    "GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced": {
+      "actorAdditionalCardsMustBePlacedUp": "Is the additional card for the Actor placed face up on the center of the table? | Are the additional cards for the Actor placed face up on the center of the table?",
+      "changeActorAdditionalCards": "Change the additional cards for the Actor",
+      "actorIcon": "Actor icon"
     }
   }
 }

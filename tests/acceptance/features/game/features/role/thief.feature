@@ -16,7 +16,7 @@ Feature: 👺 Thief role
       | Accursed Wolf-Father |
       | Witch                |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips the game event
@@ -69,7 +69,7 @@ Feature: 👺 Thief role
       | Accursed Wolf-Father |
       | Witch                |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips all game events
@@ -94,7 +94,7 @@ Feature: 👺 Thief role
       | Accursed Wolf-Father |
       | Witch                |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips all game events
@@ -127,7 +127,7 @@ Feature: 👺 Thief role
       | Accursed Wolf-Father |
       | Witch                |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips all game events
@@ -156,7 +156,7 @@ Feature: 👺 Thief role
       | roleName       |
       | White Werewolf |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips the game event
@@ -189,7 +189,7 @@ Feature: 👺 Thief role
       | White Werewolf       |
       | Accursed Wolf-Father |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips the game event

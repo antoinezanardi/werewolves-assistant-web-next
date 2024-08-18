@@ -11,8 +11,10 @@
         :reject-callback="rejectCallback"
         @confirm-start-game="acceptCallback"
         @confirm-step="onConfirmStepFromGameLobbyStartGameConfirmDialogContainer"
+        @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-start-game="rejectCallback"
+        @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
       />
     </template>
   </PrimeVueConfirmDialog>
@@ -31,14 +33,21 @@ const emit = defineEmits<GameLobbyStartGameConfirmDialogEmits>();
 const confirmStepIndex = ref<number>(0);
 
 const createGameDtoStore = useCreateGameDtoStore();
+const { getPlayersWithRoleNameInCreateGameDto } = createGameDtoStore;
 const { doesCreateGameDtoContainPositionDependantRoles } = storeToRefs(createGameDtoStore);
 
 const { require: confirmRequire } = useConfirm();
 
 const { insertIf } = useArrays();
 
+const doesCreateGameDtoContainThief = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("thief").length > 0);
+
+const doesCreateGameDtoContainActor = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("actor").length > 0);
+
 const confirmSteps = computed<GameLobbyStartGameConfirmDialogStep[]>(() => [
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainPositionDependantRoles.value, "players-positioned"),
+  ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainThief.value, "thief-additional-cards-placed"),
+  ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainActor.value, "actor-additional-cards-placed"),
   "players-ready",
 ]);
 
@@ -64,6 +73,16 @@ function confirmStartGame(): void {
 function onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
   rejectCallback();
   emit("rejectPlayersPositionStep");
+}
+
+function onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
+  rejectCallback();
+  emit("rejectThiefAdditionalCardsPlacedStep");
+}
+
+function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
+  rejectCallback();
+  emit("rejectActorAdditionalCardsPlacedStep");
 }
 
 defineExpose<GameLobbyStartGameConfirmDialogExposed>({

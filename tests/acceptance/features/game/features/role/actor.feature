@@ -16,7 +16,7 @@ Feature: 🎭 Actor role
       | Pied Piper |
       | Witch      |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
 
     When the user skips the game event
@@ -138,7 +138,7 @@ Feature: 🎭 Actor role
       | Pied Piper |
       | Witch      |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
 
     When the user closes the toast
     And the user skips all game events
@@ -179,7 +179,7 @@ Feature: 🎭 Actor role
       | Wolf-Hound |
       | Witch      |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
 
     When the user closes the toast
     And the user skips all game events
@@ -206,9 +206,10 @@ Feature: 🎭 Actor role
       | roleName |
       | Hunter   |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
 
-    When the user skips all game events
+    When the user closes the toast
+    And the user skips all game events
     And the actor chooses card with role of "Hunter"
     And the user skips all game events
     Then the game's current play title should be "Werewolves eat"
@@ -236,7 +237,7 @@ Feature: 🎭 Actor role
       | Pied Piper |
       | Witch      |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
 
     When the user closes the toast
     And the user skips all game events
@@ -278,7 +279,7 @@ Feature: 🎭 Actor role
       | Wolf-Hound |
       | Witch      |
     And the user clicks on the button with name "Start game"
-    And the user clicks on the button with name "LET'S GO"
+    And the user clicks on the button with name "Skip and play now"
 
     When the user closes the toast
     And the user skips all game events

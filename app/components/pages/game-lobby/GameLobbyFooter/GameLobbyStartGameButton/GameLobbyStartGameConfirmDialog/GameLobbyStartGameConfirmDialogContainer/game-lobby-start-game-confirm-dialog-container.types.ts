@@ -10,6 +10,8 @@ type GameLobbyStartGameConfirmDialogContainerEmits = {
   confirmStartGame: [];
   rejectStartGame: [];
   rejectPlayersPositionStep: [rejectCallback: () => void];
+  rejectThiefAdditionalCardsPlacedStep: [rejectCallback: () => void];
+  rejectActorAdditionalCardsPlacedStep: [rejectCallback: () => void];
 };
 
 export type {

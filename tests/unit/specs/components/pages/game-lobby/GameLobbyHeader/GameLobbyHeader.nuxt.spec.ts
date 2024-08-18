@@ -17,6 +17,7 @@ describe("Game Lobby Header Component", () => {
     components: {
       gameLobbyHeaderSetupButtons: {
         highlightPositionCoordinatorButton: Mock;
+        highlightAdditionalCardsManagerButton: Mock;
       };
     };
   };
@@ -40,6 +41,7 @@ describe("Game Lobby Header Component", () => {
       components: {
         gameLobbyHeaderSetupButtons: {
           highlightPositionCoordinatorButton: vi.fn(),
+          highlightAdditionalCardsManagerButton: vi.fn(),
         },
       },
     };
@@ -166,11 +168,26 @@ describe("Game Lobby Header Component", () => {
         expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Setup Buttons is not defined");
       });
 
+      it("should throw error when highlightAdditionalCardsManagerButton method is called but component is not defined.", async() => {
+        (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderSetupButtons: Ref }).gameLobbyHeaderSetupButtons.value = null;
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        await getError(() => (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightAdditionalCardsManagerButton());
+
+        expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Setup Buttons is not defined");
+      });
+
       it("should highlight position coordinator button when method is called.", () => {
         const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
         (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightPositionCoordinatorButton();
 
         expect(mocks.components.gameLobbyHeaderSetupButtons.highlightPositionCoordinatorButton).toHaveBeenCalledExactlyOnceWith();
+      });
+
+      it("should highlight additional cards manager button when method is called.", () => {
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightAdditionalCardsManagerButton();
+
+        expect(mocks.components.gameLobbyHeaderSetupButtons.highlightAdditionalCardsManagerButton).toHaveBeenCalledExactlyOnceWith();
       });
 
       it("should emit 'additionalCardsManagerButtonClick' event when additional cards manager button is clicked.", () => {
