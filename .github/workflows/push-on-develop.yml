@@ -23,10 +23,10 @@ jobs:
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://preprod.api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
           - tag: local-preprod-fr
-            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "localhost:9090"
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
           - tag: local-preprod-en
-            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "localhost:9090"
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     steps:
       - name: Checkout GitHub repository 📡

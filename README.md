@@ -409,10 +409,44 @@ You can run the whole project (including MongoDB and the Werewolves Assistant AP
 
 ```bash
 # Run the whole project with `develop` tags for the API and the Web app
+pnpm run docker:preproduction-example:start
+
+# Run the whole project with `latest` tags for the API and the Web app
 pnpm run docker:production-example:start
 ```
 
-The `docker-compose.yml` file used for the production example stated above is available **[here](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/docker/werewolves-assistant-production-example/docker-compose.yml)**.
+> [!TIP]
+> The `docker-compose.yml` file used for the preproduction example stated above is available **[here](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/docker/werewolves-assistant-preproduction-example/docker-compose.yml)**.
+> The `docker-compose.yml` file used for the production example stated above is available **[here](https://github.com/antoinezanardi/werewolves-assistant-web-next/blob/master/docker/werewolves-assistant-preproduction-example/docker-compose.yml)**.
+
+### 🏷️ Docker Tags
+
+Because of the pre-rendering feature, environment variables are injected at build time. Therefore, multiple tags are created when pushing to `develop` and `main` branches.
+
+### ⛵️ When pushing to `develop` branch
+
+- `antoinezanardi/werewolves-assistant-web-next:preprod-fr` : Pre-rendered app with French language and calling the Werewolves Assistant API deployed from `develop` branch (`"https://preprod.api.werewolves-assistant.com"`)
+- `antoinezanardi/werewolves-assistant-web-next:preprod-en` : Pre-rendered app with English language and calling the Werewolves Assistant API deployed from `develop` branch (`"https://preprod.api.werewolves-assistant.com"`)
+- `antoinezanardi/werewolves-assistant-web-next:local-preprod-fr` : Pre-rendered app with French language and calling the Werewolves Assistant API running locally (`"http://localhost:9292"`)
+- `antoinezanardi/werewolves-assistant-web-next:local-preprod-en` : Pre-rendered app with English language and calling the Werewolves Assistant API running locally (`"http://localhost:9292"`)
+
+### 🚀 When pushing to `main` branch
+
+- `antoinezanardi/werewolves-assistant-web-next:prod-fr-latest` : Pre-rendered app with French language from latest release and calling the Werewolves Assistant API deployed from `main` branch (`"https://api.werewolves-assistant.com"`)
+- `antoinezanardi/werewolves-assistant-web-next:prod-en-latest` : Pre-rendered app with English language from latest release and calling the Werewolves Assistant API deployed from `main` branch (`"https://api.werewolves-assistant.com"`)
+- `antoinezanardi/werewolves-assistant-web-next:local-prod-fr-latest` : Pre-rendered app with French language from latest release and calling the Werewolves Assistant API running locally (`"http://localhost:9191"`)
+- `antoinezanardi/werewolves-assistant-web-next:local-prod-en-latest` : Pre-rendered app with English language from latest release and calling the Werewolves Assistant API running locally (`"http://localhost:9191"`)
+
+When pushing to `main` branch, a new release is created with the version number from the `package.json` file. Then, all above tags are also created with the version number instead of `latest`.
+
+### 🔖 Which one to choose ?
+
+For your tests, you must choose the `local` prefixed tags when you want to test the app with the API running locally.
+
+- If you want to test the app with the latest features, you can use the `develop` tags.
+- If you want to test the app with the latest release, you can use the `main` tags.
+
+Not prefixed tags like `preprod-fr` or `prod-en` are exclusively used for the production environment.
 
 ## <a name="tests">💯 Tests</a>
 
