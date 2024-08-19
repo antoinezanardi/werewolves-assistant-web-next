@@ -4,9 +4,6 @@ services:
     depends_on:
       - api
     image: antoinezanardi/werewolves-assistant-web:develop
-    environment:
-      NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
-      NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     ports:
       - "3000:3000"
     restart: unless-stopped
