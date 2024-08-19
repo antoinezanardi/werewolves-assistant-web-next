@@ -129,8 +129,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      defaultLocale: "en",
-      werewolvesAssistantApi: { baseUrl: "" },
+      defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE ?? "en",
+      werewolvesAssistantApi: {
+        baseUrl: process.env.NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL ?? "",
+      },
     },
   },
   tailwindcss: {
