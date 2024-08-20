@@ -3,27 +3,30 @@ services:
     container_name: werewolves-assistant-web-production-example
     depends_on:
       - api
-    image: antoinezanardi/werewolves-assistant-web:local-preprod-fr
+    image: antoinezanardi/werewolves-assistant-web:local-prod-en:latest
+    environment:
+      NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
+      NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     ports:
       - "3000:3000"
     restart: unless-stopped
 
   api:
-    image: antoinezanardi/werewolves-assistant-api:develop
+    image: antoinezanardi/werewolves-assistant-api:latest
     container_name: werewolves-assistant-api-production-example
     depends_on:
       - mongodb
     environment:
       ENVIRONMENT: "production"
       HOST: "0.0.0.0"
-      PORT: "9292"
+      PORT: "9191"
       DATABASE_HOST: "mongodb-production-example"
       DATABASE_PORT: "27017"
       DATABASE_NAME: "werewolves-assistant"
       DATABASE_USERNAME: "production"
       DATABASE_PASSWORD: "a_very_good_password"
     ports:
-      - "9292:9292"
+      - "9191:9191"
     restart: unless-stopped
 
   mongodb:
