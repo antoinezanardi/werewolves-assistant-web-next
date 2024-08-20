@@ -24,5 +24,19 @@ describe("Game Lobby Footer Component", () => {
 
       expect(wrapper.emitted("rejectPlayersPositionStep")).toHaveLength(1);
     });
+
+    it("should emit reject thief position step when game lobby start game button emits the same.", () => {
+      const gameLobbyStartGameButton = wrapper.findComponent<typeof GameLobbyStartGameButton>("#game-lobby-start-game-button");
+      (gameLobbyStartGameButton.vm as VueVm).$emit("rejectThiefAdditionalCardsPlacedStep");
+
+      expect(wrapper.emitted("rejectThiefAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
+
+    it("should emit reject actor position step when game lobby start game button emits the same.", () => {
+      const gameLobbyStartGameButton = wrapper.findComponent<typeof GameLobbyStartGameButton>("#game-lobby-start-game-button");
+      (gameLobbyStartGameButton.vm as VueVm).$emit("rejectActorAdditionalCardsPlacedStep");
+
+      expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
   });
 });

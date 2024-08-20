@@ -62,10 +62,15 @@ Then(/^the player with name "(?<name>.+)" should have the attribute in love by c
   await expect(inLoveByCupidAttribute).toBeVisible();
 });
 
-Then(/^the player with name "(?<name>.+)" should have the attribute powerless by actor in the game$/u, async function(this: CustomWorld, name: string): Promise<void> {
+Then(/^the player with name "(?<name>.+)" should(?<notPowerless> not)? have the attribute powerless by actor in the game$/u, async function(this: CustomWorld, name: string, notPowerless: string | null): Promise<void> {
   const roleName = "The player can't act anymore, he's powerless.";
   const powerlessByActorAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, roleName);
 
+  if (notPowerless !== null) {
+    await expect(powerlessByActorAttribute).toBeHidden();
+
+    return;
+  }
   await expect(powerlessByActorAttribute).toBeVisible();
 });
 

@@ -5,10 +5,24 @@ on:
     types: [ created ]
 
 jobs:
-
   upload-to-docker-hub:
     name: Upload image with tag version to Docker Hub 🐳
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - tag: prod-fr
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+          - tag: prod-en
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+          - tag: local-prod-fr
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+          - tag: local-prod-en
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -23,53 +37,15 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Build and push Docker image on tag name 🐳
+      - name: Build and push Docker images 🐳
         uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: antoinezanardi/werewolves-assistant-web:${{ github.event.release.tag_name }}
-
-      - name: Build and push Docker image on latest 🐳
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: antoinezanardi/werewolves-assistant-web:latest
-
-  deploy:
-    name: Deploy to production 🚀
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup GitHub repository 🔧
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name }}
-          fetch-depth: 0
-          fetch-tags: true
-
-      - name: Auth to GCP ☁️
-        uses: 'google-github-actions/auth@v2'
-        with:
-          credentials_json: ${{ secrets.PRODUCTION_GCP_SA_KEY }}
-
-      - name: Transform and format version for GCP ♻️
-        id: format-version-for-gcp
-        run: |
-          version=${{ github.event.release.tag_name }}
-          version=${version//./-}
-          echo "FORMATTED_VERSION_FOR_GCP=${version}" >> $GITHUB_OUTPUT
-
-      - name: Deploy to production 🚀
-        uses: 'google-github-actions/deploy-appengine@v2'
-        with:
-          project_id: ${{ secrets.PRODUCTION_GCP_PROJECT_ID }}
-          env_vars: |-
-            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL=${{ secrets.PRODUCTION_WEREWOLVES_ASSISTANT_API_BASE_URL }}
-            NUXT_PUBLIC_DEFAULT_LOCALE=${{ secrets.PRODUCTION_DEFAULT_LOCALE }}
-          build_env_vars: |-
-            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL=${{ secrets.PRODUCTION_WEREWOLVES_ASSISTANT_API_BASE_URL }}
-            NUXT_PUBLIC_DEFAULT_LOCALE=${{ secrets.PRODUCTION_DEFAULT_LOCALE }}
-          flags: "--version=${{ steps.format-version-for-gcp.outputs.FORMATTED_VERSION_FOR_GCP }}"
+          tags: |
+            antoinezanardi/werewolves-assistant-web:${{ matrix.tag }}-${{ github.event.release.tag_name }}
+            antoinezanardi/werewolves-assistant-web:${{ matrix.tag }}-latest
+          build-args: |
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL=${{ matrix.NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL }}
+            NUXT_PUBLIC_DEFAULT_LOCALE=${{ matrix.NUXT_PUBLIC_DEFAULT_LOCALE }}

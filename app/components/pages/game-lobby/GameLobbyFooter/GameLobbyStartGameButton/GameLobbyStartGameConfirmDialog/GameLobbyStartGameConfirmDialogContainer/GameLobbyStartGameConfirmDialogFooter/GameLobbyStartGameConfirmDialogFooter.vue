@@ -1,41 +1,39 @@
 <template>
   <div class="confirm-dialog-footer w-full">
-    <PrimeVueDivider class="!my-3"/>
+    <PrimeVueDivider class="!bg-gray-600 !h-px !my-3"/>
 
     <div class="flex gap-2 items-center justify-between w-full">
       <PrimeVueButton
         id="cancel-button"
+        :label="$t('shared.actions.cancel')"
         severity="secondary"
         size="small"
         @click.prevent="onRejectStartGame"
       >
-        <FontAwesomeIcon
-          class="me-2"
-          icon="times"
-        />
-
-        <span id="cancel-button-text">
-          {{ $t("shared.actions.cancel") }}
-        </span>
+        <template #icon>
+          <FontAwesomeIcon
+            class="me-2"
+            icon="times"
+          />
+        </template>
       </PrimeVueButton>
 
       <PrimeVueButton
         id="confirm-button"
         class="!transition-all"
         :class="confirmButtonClasses"
+        :label="confirmButtonText"
         severity="secondary"
         size="small"
         @click.prevent="onConfirmStartGame"
       >
-        <FontAwesomeIcon
-          id="confirm-button-icon"
-          :class="confirmButtonIconAndClasses.iconClass"
-          :icon="confirmButtonIconAndClasses.icon"
-        />
-
-        <span id="confirm-button-text">
-          {{ confirmButtonText }}
-        </span>
+        <template #icon>
+          <FontAwesomeIcon
+            id="confirm-button-icon"
+            :class="confirmButtonIconAndClasses.iconClass"
+            :icon="confirmButtonIconAndClasses.icon"
+          />
+        </template>
       </PrimeVueButton>
     </div>
   </div>

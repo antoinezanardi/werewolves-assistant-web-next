@@ -8,26 +8,27 @@
       id="game-lobby-start-game-button"
       class="!h-full !px-6 !py-4 start-game-button"
       :disabled="isButtonDisabled"
+      :label="$t('components.GameLobbyStartGameButton.startGame')"
       :loading="isLoadingCreateGame"
       raised
       size="large"
       type="button"
       @click.prevent="onClickFromStartGameButton"
     >
-      <FontAwesomeIcon
-        icon="play"
-      />
-
-      <span>
-        {{ $t("components.GameLobbyStartGameButton.startGame") }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="play"
+        />
+      </template>
     </PrimeVueButton>
 
     <GameLobbyStartGameConfirmDialog
       id="game-lobby-start-game-confirm-dialog"
       ref="gameLobbyStartGameConfirmDialog"
       @confirm-start-game="onConfirmStartGameFromGameLobbyStartGameConfirmDialog"
+      @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
       @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog"
+      @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
     />
   </div>
 </template>
@@ -95,5 +96,13 @@ async function onConfirmStartGameFromGameLobbyStartGameConfirmDialog(): Promise<
 
 function onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog(): void {
   emit("rejectPlayersPositionStep");
+}
+
+function onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog(): void {
+  emit("rejectThiefAdditionalCardsPlacedStep");
+}
+
+function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog(): void {
+  emit("rejectActorAdditionalCardsPlacedStep");
 }
 </script>

@@ -241,3 +241,10 @@ Given(/^the user sets wild child transformation revealed to everyone in game opt
   await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input");
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user prevents actor to be powerless on werewolves side in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input");
+  await closeDialogWithHeaderButton(this);
+});

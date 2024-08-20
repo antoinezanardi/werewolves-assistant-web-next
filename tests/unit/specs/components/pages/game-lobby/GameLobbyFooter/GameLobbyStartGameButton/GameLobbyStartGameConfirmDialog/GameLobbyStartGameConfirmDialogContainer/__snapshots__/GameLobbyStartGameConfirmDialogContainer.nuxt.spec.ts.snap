@@ -3,10 +3,10 @@
 exports[`Game Lobby Start Game Confirm Dialog Container Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-start-game-confirm-dialog-container" class="bg-gray-700 flex flex-col items-center p-4 py-3 rounded">
   <div class="confirm-dialog-header w-full">
-    <h5 class="w-full">
+    <h5 class="mb-1 w-full">
       <font-awesome-icon-stub icon="list-check" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="text-success w-1/12"></font-awesome-icon-stub><span id="confirm-dialog-header-text" class="!w-10/12 inline-block text-center">Before starting the game</span>
     </h5>
-    <divider-stub class="!my-3"></divider-stub>
+    <divider-stub class="!bg-gray-600 !h-px !my-3"></divider-stub>
   </div>
   <game-lobby-start-game-confirm-dialog-content-stub currentconfirmstep="players-ready" id="game-lobby-start-game-confirm-dialog-content"></game-lobby-start-game-confirm-dialog-content-stub>
   <game-lobby-start-game-confirm-dialog-footer-stub currentconfirmstep="players-ready" id="game-lobby-start-game-confirm-dialog-footer"></game-lobby-start-game-confirm-dialog-footer-stub>

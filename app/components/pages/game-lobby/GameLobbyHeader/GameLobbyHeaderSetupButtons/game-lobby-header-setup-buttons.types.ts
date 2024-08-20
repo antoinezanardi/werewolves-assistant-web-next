@@ -6,6 +6,7 @@ type GameLobbyHeaderSetupButtonsEmits = {
 
 type GameLobbyHeaderSetupButtonsExposed = {
   highlightPositionCoordinatorButton: () => void;
+  highlightAdditionalCardsManagerButton: () => void;
 };
 
 export type {

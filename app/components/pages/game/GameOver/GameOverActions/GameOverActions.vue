@@ -7,17 +7,16 @@
 
     <PrimeVueButton
       id="show-game-history-button"
+      :label="showGameHistoryTextButton"
       :loading="!gameHistoryRecords.length"
       severity="help"
       @click="onClickFromShowHistoryButton"
     >
-      <FontAwesomeIcon
-        icon="clock-rotate-left"
-      />
-
-      <span>
-        {{ showGameHistoryTextButton }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="clock-rotate-left"
+        />
+      </template>
     </PrimeVueButton>
   </div>
 </template>

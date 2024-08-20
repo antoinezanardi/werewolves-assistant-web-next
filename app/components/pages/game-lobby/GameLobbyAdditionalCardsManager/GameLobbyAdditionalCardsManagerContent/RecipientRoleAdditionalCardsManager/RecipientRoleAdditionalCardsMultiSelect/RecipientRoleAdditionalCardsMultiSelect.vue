@@ -51,7 +51,9 @@
           :data-testid="`recipient-role-additional-cards-multi-select-remove-${value.roleName}-for-${recipientRoleName}`"
           @click.stop="onClickFromRemoveAdditionalCardButton(value)"
         >
-          <FontAwesomeIcon icon="times"/>
+          <template #icon>
+            <FontAwesomeIcon icon="times"/>
+          </template>
         </PrimeVueButton>
       </template>
     </PrimeVueMultiSelect>

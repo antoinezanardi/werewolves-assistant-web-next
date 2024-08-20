@@ -21,21 +21,21 @@ describe("Use Audio Store", () => {
     it("should create sound effects and background audios when created.", () => {
       useAudioStore();
 
-      expect(Howl).toHaveBeenCalledTimes(46);
+      expect(Howl).toHaveBeenCalledTimes(48);
       expect(Howl).toHaveBeenNthCalledWith(1, {
         preload: false,
-        src: ["/audio/sound-effects/angelic-intervention.webm"],
+        src: ["/audio/sound-effects/actor-clear-throat-and-knocks.webm"],
       });
       expect(Howl).toHaveBeenNthCalledWith(2, {
         preload: false,
-        src: ["/audio/sound-effects/bear-growling.webm"],
+        src: ["/audio/sound-effects/angelic-intervention.webm"],
       });
-      expect(Howl).toHaveBeenNthCalledWith(45, {
+      expect(Howl).toHaveBeenNthCalledWith(47, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-2.webm`],
         loop: true,
       });
-      expect(Howl).toHaveBeenNthCalledWith(46, {
+      expect(Howl).toHaveBeenNthCalledWith(48, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-3.webm`],
         loop: true,

@@ -24,14 +24,13 @@
       <PrimeVueButton
         id="add-player-button"
         :disabled="isAddButtonDisabled"
+        :label="$t('shared.actions.add')"
         severity="primary"
         type="submit"
       >
-        <FontAwesomeIcon icon="plus"/>
-
-        <span class="me-3">
-          {{ $t("shared.actions.add") }}
-        </span>
+        <template #icon>
+          <FontAwesomeIcon icon="plus"/>
+        </template>
       </PrimeVueButton>
     </PrimeVueInputGroup>
 

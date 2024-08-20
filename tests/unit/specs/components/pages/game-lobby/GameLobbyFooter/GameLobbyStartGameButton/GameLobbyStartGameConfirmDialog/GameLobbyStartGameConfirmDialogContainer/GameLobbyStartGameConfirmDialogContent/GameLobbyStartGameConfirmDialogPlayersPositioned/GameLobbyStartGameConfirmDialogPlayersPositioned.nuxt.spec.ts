@@ -23,6 +23,15 @@ describe("Game Lobby Start Game Confirm Dialog Players Positioned Component", ()
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should match snapshot when rendered without shallow rendering.", async() => {
+    wrapper = await mountGameLobbyStartGameConfirmDialogPlayersPositionedComponent({
+      shallow: false,
+    });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   describe("Step Svg", () => {
     it("should set size to step svg when rendered.", () => {
       const stepSvg = wrapper.findComponent<typeof NuxtImg>("[alt='Players position']");

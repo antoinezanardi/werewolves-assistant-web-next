@@ -43,6 +43,14 @@ Then(/^the player with name "(?<name>.+)" should be originally the thief in the 
   await expect(revealedRoleImage).toBeVisible();
 });
 
+Then(/^the player with name "(?<name>.+)" should be originally the actor in the game$/u, async function(this: CustomWorld, playerName: string): Promise<void> {
+  const gameTeamSidePlayerLocator = this.page.getByTestId(`game-team-side-player-${playerName}`).first();
+  await gameTeamSidePlayerLocator.waitFor({ state: "visible" });
+  const revealedRoleImage = gameTeamSidePlayerLocator.getByRole("img", { name: "This player was originally the Actor", exact: true });
+
+  await expect(revealedRoleImage).toBeVisible();
+});
+
 Then(/^the player with name "(?<name>.+)" should be in the (?<side>villagers|werewolves) side in the game$/u, async function(this: CustomWorld, playerName: string, side: RoleSide): Promise<void> {
   const testIdSideLocator = side === "villagers" ? "villagers-side" : "werewolves-side";
   const sideLocator = this.page.getByTestId(testIdSideLocator);

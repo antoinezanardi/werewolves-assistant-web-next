@@ -5,7 +5,7 @@
   >
     <div class="confirm-dialog-header w-full">
       <h5
-        class="w-full"
+        class="mb-1 w-full"
       >
         <FontAwesomeIcon
           class="text-success w-1/12"
@@ -20,14 +20,16 @@
         </span>
       </h5>
 
-      <PrimeVueDivider class="!my-3"/>
+      <PrimeVueDivider class="!bg-gray-600 !h-px !my-3"/>
     </div>
 
     <GameLobbyStartGameConfirmDialogContent
       id="game-lobby-start-game-confirm-dialog-content"
       :current-confirm-step="currentConfirmStep"
       @confirm-step="onConfirmStep"
+      @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStep"
       @reject-players-position-step="onRejectPlayersPositionStep"
+      @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStep"
     />
 
     <GameLobbyStartGameConfirmDialogFooter
@@ -55,6 +57,14 @@ function onConfirmStep(): void {
 
 function onRejectPlayersPositionStep(): void {
   emit("rejectPlayersPositionStep", props.rejectCallback);
+}
+
+function onRejectThiefAdditionalCardsPlacedStep(): void {
+  emit("rejectThiefAdditionalCardsPlacedStep", props.rejectCallback);
+}
+
+function onRejectActorAdditionalCardsPlacedStep(): void {
+  emit("rejectActorAdditionalCardsPlacedStep", props.rejectCallback);
 }
 
 function onConfirmStartGame(): void {

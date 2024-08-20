@@ -13,6 +13,21 @@ jobs:
   upload-to-docker-hub:
     name: Upload image with develop tag to Docker Hub 🐳
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - tag: preprod-fr
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://preprod.api.werewolves-assistant.com"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+          - tag: preprod-en
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://preprod.api.werewolves-assistant.com"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+          - tag: local-preprod-fr
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+          - tag: local-preprod-en
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
+            NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -23,10 +38,13 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-      - name: Build and push Docker image 🐳
+      - name: Build and push Docker images 🐳
         uses: docker/build-push-action@v6
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: antoinezanardi/werewolves-assistant-web:develop
+          tags: antoinezanardi/werewolves-assistant-web:${{ matrix.tag }}
+          build-args: |
+            NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL=${{ matrix.NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL }}
+            NUXT_PUBLIC_DEFAULT_LOCALE=${{ matrix.NUXT_PUBLIC_DEFAULT_LOCALE }}

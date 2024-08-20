@@ -8,19 +8,18 @@
       id="make-play-button"
       class="uppercase w-full"
       :disabled="isButtonDisabled"
+      :label="$t('components.GamePlaygroundFooterMakePlayButton.makePlay')"
       :loading="isLoadingMakePlay"
       raised
       severity="primary"
       type="button"
       @click.prevent="onClickFromMakePlayButton"
     >
-      <FontAwesomeIcon
-        icon="play"
-      />
-
-      <span>
-        {{ $t("components.GamePlaygroundFooterMakePlayButton.makePlay") }}
-      </span>
+      <template #icon>
+        <FontAwesomeIcon
+          icon="play"
+        />
+      </template>
     </PrimeVueButton>
   </div>
 </template>

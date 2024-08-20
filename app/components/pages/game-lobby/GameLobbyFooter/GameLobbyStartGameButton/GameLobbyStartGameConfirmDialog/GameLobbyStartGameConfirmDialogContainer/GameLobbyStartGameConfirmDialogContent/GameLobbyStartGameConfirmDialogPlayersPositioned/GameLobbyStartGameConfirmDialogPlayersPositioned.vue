@@ -24,24 +24,31 @@
     >
       <PrimeVueButton
         id="reject-step-button"
-        icon="fa-compass fa"
         :label="$t(`components.GameLobbyStartGameConfirmDialogPlayersPositioned.showMeHowToPositionPlayers`)"
         severity="info"
         @click.prevent="onRejectPlayersPositionStep"
-      />
+      >
+        <template #icon>
+          <FontAwesomeIcon icon="fa-compass"/>
+        </template>
+      </PrimeVueButton>
 
       <PrimeVueButton
         id="confirm-step-button"
-        icon="fa-check fa"
         :label="$t(`shared.yes`)"
         severity="success"
         @click.prevent="onConfirmPlayersPositionStep"
-      />
+      >
+        <template #icon>
+          <FontAwesomeIcon icon="check"/>
+        </template>
+      </PrimeVueButton>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { GameLobbyStartGameConfirmDialogPlayersPositionedEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersPositioned/game-lobby-start-game-confirm-dialog-players-positioned.types";
 
 const emit = defineEmits<GameLobbyStartGameConfirmDialogPlayersPositionedEmits>();

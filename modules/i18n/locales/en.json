@@ -601,7 +601,8 @@
     },
     "GameTeamSidePlayerRoleName": {
       "thisPlayerRoleIsRevealed": "This player's role is revealed",
-      "thisPlayerWasThief": "This player was originally the Thief"
+      "thisPlayerWasThief": "This player was originally the Thief",
+      "thisPlayerWasActor": "This player was originally the Actor"
     },
     "GamePlaygroundHeaderCurrentPlay": {
       "currentPlayAltText": "Current play icon",
@@ -694,7 +695,7 @@
     "CurrentPlayQuestion": {
       "unknownQuestionForCurrentPlay": "??",
       "doesAccursedWolfFatherWantToInfect": "Does the Accursed Wolf-Father want to infect the player eaten by the Werewolves?",
-      "doesActorWantToChooseCard": "Does the Actor want to choose a card and act the role?",
+      "doesActorWantToChooseCard": "Does the Actor want to choose a card and incarnate the role?",
       "whichPlayerDoesBigBadWolfEat": "Which player does the Big Bad Wolf want to eat?",
       "whichPlayersDoesCupidCharm": "Which players does Cupid want to charm?",
       "whichPlayerDoesDefenderProtect": "Which player does the Defender want to protect?",
@@ -1238,7 +1239,7 @@
       "accursedWolfFatherCanInfect": "The Accursed Wolf-Father wakes up and can infect a player eaten by the Werewolves if he wants to."
     },
     "GameActorTurnStartsEvent": {
-      "actorCanChooseCardToPlay": "The Actor wakes up and can choose a card to play for this turn."
+      "actorCanChooseCardToPlay": "The Actor wakes up with his many personalities and can choose a card to play for this turn."
     },
     "GameBearTamerTurnStartsEvent": {
       "bearGrowls": "The Bear Tamer wakes up and his bear growls. One or more Werewolves are next to him…"
@@ -1515,6 +1516,20 @@
     "GameWildChildHasTransformedEvent": {
       "wildChildHasTransformed": "The Wild Child has transformed into a Werewolf because his model died!",
       "wildChildHasTransformedQuietly": "The following sentence can't be said out loud and is only for the Game Master : The Wild Child has transformed into a Werewolf because his model died!"
+    },
+    "GameActorMayHaveChosenCardEvent": {
+      "actorMayHaveChosenCard": "The Actor may have chosen a card to play for this turn.",
+      "gameMasterTakeOutChosenCard": "If so, the Game Master will take out the chosen card from the board."
+    },
+    "GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced": {
+      "thiefAdditionalCardsMustBePlacedDown": "Is the additional card for the Thief placed face down on the center of the table? | Are the additional cards for the Thief placed face down on the center of the table?",
+      "changeThiefAdditionalCards": "Change the additional cards for the Thief",
+      "thiefIcon": "Thief icon"
+    },
+    "GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced": {
+      "actorAdditionalCardsMustBePlacedUp": "Is the additional card for the Actor placed face up on the center of the table? | Are the additional cards for the Actor placed face up on the center of the table?",
+      "changeActorAdditionalCards": "Change the additional cards for the Actor",
+      "actorIcon": "Actor icon"
     }
   }
 }

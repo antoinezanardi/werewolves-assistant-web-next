@@ -30,6 +30,7 @@ describe("Game Lobby Page", () => {
     components: {
       gameLobbyHeader: {
         highlightPositionCoordinatorButton: Mock;
+        highlightAdditionalCardsManagerButton: Mock;
       };
       gameLobbyRolePicker: {
         openToPickRoleForPlayer: Mock;
@@ -49,7 +50,10 @@ describe("Game Lobby Page", () => {
   async function mountGameLobbyPageComponent(): Promise<ReturnType<typeof mount<typeof GameLobby>>> {
     mocks = {
       components: {
-        gameLobbyHeader: { highlightPositionCoordinatorButton: vi.fn() },
+        gameLobbyHeader: {
+          highlightPositionCoordinatorButton: vi.fn(),
+          highlightAdditionalCardsManagerButton: vi.fn(),
+        },
         gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
         gameLobbyOptionsHub: { open: vi.fn() },
         gameLobbyPositionCoordinator: { open: vi.fn() },
@@ -234,6 +238,51 @@ describe("Game Lobby Page", () => {
       await nextTick();
 
       expect(mocks.components.gameLobbyPositionCoordinator.open).toHaveBeenCalledExactlyOnceWith();
+    });
+  });
+
+  describe("Reject Thief or Actor Additional Cards Placed Step", () => {
+    it("should throw error when reject thief additional cards placed step event is emitted by footer but header is not defined in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeader: Ref }).gameLobbyHeader.value = null;
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      await getError(() => (gameLobbyFooter.vm as VueVm).$emit("reject-thief-additional-cards-placed-step"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header is not defined");
+    });
+
+    it("should highlight additional cards manager button when reject thief additional cards placed step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-thief-additional-cards-placed-step");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyHeader.highlightAdditionalCardsManagerButton).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should open additional cards manager after timeout when reject thief additional cards placed step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-thief-additional-cards-placed-step");
+      vi.advanceTimersByTime(1000);
+      await nextTick();
+
+      expect(mocks.components.gameLobbyAdditionalCardsManager.open).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw error when reject actor additional cards placed step event is emitted by footer but header is not defined in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeader: Ref }).gameLobbyHeader.value = null;
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      await getError(() => (gameLobbyFooter.vm as VueVm).$emit("reject-actor-additional-cards-placed-step"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header is not defined");
+    });
+
+    it("should highlight additional cards manager button when reject actor additional cards placed step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-actor-additional-cards-placed-step");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyHeader.highlightAdditionalCardsManagerButton).toHaveBeenCalledExactlyOnceWith();
     });
   });
 

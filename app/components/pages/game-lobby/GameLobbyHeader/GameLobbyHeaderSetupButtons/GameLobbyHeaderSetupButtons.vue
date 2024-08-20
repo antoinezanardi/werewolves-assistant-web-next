@@ -23,6 +23,7 @@
         v-if="isAdditionalCardsManagerVisible"
         id="game-lobby-header-additional-cards-manager-button"
         key="game-additional-cards-manager-button"
+        ref="gameLobbyHeaderAdditionalCardsManagerButton"
         class="fade-list-item"
         @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton"
       />
@@ -51,6 +52,8 @@ const { animateElementOnce } = useAnimateCss();
 
 const gameLobbyHeaderPositionCoordinatorButton = ref<ComponentPublicInstance | null>(null);
 
+const gameLobbyHeaderAdditionalCardsManagerButton = ref<ComponentPublicInstance | null>(null);
+
 const isPositionCoordinatorVisible = computed<boolean>(() => createGameDto.value.players.length >= minPlayerToDisplayPositionCoordinator);
 
 const isAdditionalCardsManagerVisible = computed<boolean>(() => doesCreateGameDtoContainAdditionalCardsDependantRoles.value);
@@ -74,7 +77,15 @@ async function highlightPositionCoordinatorButton(): Promise<void> {
   await animateElementOnce((gameLobbyHeaderPositionCoordinatorButton.value.$el as HTMLElement), "heartBeat");
 }
 
+async function highlightAdditionalCardsManagerButton(): Promise<void> {
+  if (!gameLobbyHeaderAdditionalCardsManagerButton.value) {
+    throw createError("Game Lobby Header Additional Cards Manager Button is not defined");
+  }
+  await animateElementOnce((gameLobbyHeaderAdditionalCardsManagerButton.value.$el as HTMLElement), "heartBeat");
+}
+
 defineExpose<GameLobbyHeaderSetupButtonsExposed>({
   highlightPositionCoordinatorButton,
+  highlightAdditionalCardsManagerButton,
 });
 </script>
