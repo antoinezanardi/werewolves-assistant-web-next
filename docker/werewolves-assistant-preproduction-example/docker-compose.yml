@@ -4,8 +4,11 @@ services:
     depends_on:
       - api
     image: antoinezanardi/werewolves-assistant-web:local-preprod-en
+    environment:
+      NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
+      NUXT_PUBLIC_DEFAULT_LOCALE: "en"
     ports:
-      - "3000:3000"
+      - "3001:3000"
     restart: unless-stopped
 
   api:
@@ -35,7 +38,7 @@ services:
     volumes:
       - mongodb_data_container_preproduction_example:/data/db
     ports:
-      - "29000:27017"
+      - "29001:27017"
     restart: unless-stopped
 
 volumes:

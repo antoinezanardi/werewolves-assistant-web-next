@@ -421,7 +421,7 @@ pnpm run docker:production-example:start
 
 ### 🏷️ Docker Tags
 
-Because of the pre-rendering feature, environment variables are injected at build time. Therefore, multiple tags are created when pushing to `develop` and `main` branches.
+Because of the Nuxt pre-rendering feature, environment variables are injected at build time on some pages. Therefore, multiple tags are created when pushing to `develop` and `main` branches.
 
 ### ⛵️ When pushing to `develop` branch
 
@@ -437,16 +437,16 @@ Because of the pre-rendering feature, environment variables are injected at buil
 - `antoinezanardi/werewolves-assistant-web-next:local-prod-fr-latest` : Pre-rendered app with French language from latest release and calling the Werewolves Assistant API running locally (`"http://localhost:9191"`)
 - `antoinezanardi/werewolves-assistant-web-next:local-prod-en-latest` : Pre-rendered app with English language from latest release and calling the Werewolves Assistant API running locally (`"http://localhost:9191"`)
 
-When pushing to `main` branch, a new release is created with the version number from the `package.json` file. Then, all above tags are also created with the version number instead of `latest`.
+When pushing to `main` branch, a new release is created with the version number from the `package.json` file. Then, all above tags for `prod` are also created with the version number instead of `latest`.
 
 ### 🔖 Which one to choose ?
 
 For your tests, you must choose the `local` prefixed tags when you want to test the app with the API running locally.
 
-- If you want to test the app with the latest features, you can use the `develop` tags.
-- If you want to test the app with the latest release, you can use the `main` tags.
+- If you want to test the app with the latest features, you can use the `preprod` tags.
+- If you want to test the app with the latest release, you can use the `prod` tags.
 
-Not prefixed tags like `preprod-fr` or `prod-en` are exclusively used for the production environment.
+Not prefixed tags like `preprod-fr` or `prod-en` are exclusively used for the preproduction and production environments.
 
 ## <a name="tests">💯 Tests</a>
 
