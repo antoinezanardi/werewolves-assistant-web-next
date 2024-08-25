@@ -89,7 +89,7 @@
     "@pinia/nuxt": "^0.5.4",
     "@pinia/testing": "^0.1.5",
     "@playwright/test": "^1.46.1",
-    "@primevue/nuxt-module": "^4.0.4",
+    "@primevue/nuxt-module": "^4.0.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@stryker-mutator/api": "^8.5.0",
