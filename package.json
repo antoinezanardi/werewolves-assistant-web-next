@@ -119,7 +119,7 @@
     "cross-env": "^7.0.3",
     "cucumber-html-reporter": "^7.1.1",
     "eslint": "^9.9.1",
-    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-vitest": "^0.5.4",
     "eslint-plugin-vue": "^9.27.0",
