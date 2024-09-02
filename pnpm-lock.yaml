@@ -307,8 +307,8 @@ importers:
         specifier: ^2.0.29
         version: 2.0.29(typescript@5.5.4)
       vue3-lottie:
-        specifier: ^3.3.0
-        version: 3.3.0(vue@3.4.38(typescript@5.5.4))
+        specifier: ^3.3.1
+        version: 3.3.1(vue@3.4.38(typescript@5.5.4))
       vuedraggable:
         specifier: ^4.1.0
         version: 4.1.0(vue@3.4.38(typescript@5.5.4))
@@ -7548,8 +7548,8 @@ packages:
     peerDependencies:
       typescript: '>=5.0.0'
 
-  vue3-lottie@3.3.0:
-    resolution: {integrity: sha512-Omv26YN3e78fh0QgQooeZcmPo8O2j5mJ5pacZh1mGdHH9ZTGayWlY1Yp6h+wAvfBKAvJ80JXrSgeBOKA4MRBYA==}
+  vue3-lottie@3.3.1:
+    resolution: {integrity: sha512-60uQmx4eefi3FdPjAxWnblrgJJjnVTXUA6e4BAI3jGzgOSR76pyzL1rrWDiyPmMFo4mTw4wGTW6Gbkg3HR1mYw==}
     engines: {node: '>=12'}
     peerDependencies:
       vue: ^3.2
@@ -16136,7 +16136,7 @@ snapshots:
       semver: 7.6.3
       typescript: 5.5.4
 
-  vue3-lottie@3.3.0(vue@3.4.38(typescript@5.5.4)):
+  vue3-lottie@3.3.1(vue@3.4.38(typescript@5.5.4)):
     dependencies:
       fast-deep-equal: 3.1.3
       klona: 2.0.6
