@@ -2,7 +2,7 @@
 
 exports[`Game Lobby Start Game Confirm Dialog Actor Additional Cards Placed Component > should match snapshot when rendered without shallow rendering. 1`] = `
 "<div id="game-lobby-start-game-confirm-dialog-actor-additional-cards-placed" class="flex flex-col gap-6 items-center justify-center">
-  <div class="flex flex-col gap-2 items-center justify-center"><img width="75" height="75" alt="Actor icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
+  <div class="flex flex-col gap-2 items-center justify-center"><img width="75" height="75" alt="Actor icon" data-nuxt-img="" src="/svg/misc/infinite-spinner.svg">
     <div id="actor-additional-cards" class="flex gap-2"><img width="50" height="50" alt="shared.role.name.seer" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] actor-additional-card" size="30px" src="/svg/misc/infinite-spinner.svg"><img width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] actor-additional-card" size="30px" src="/svg/misc/infinite-spinner.svg"><img width="50" height="50" alt="shared.role.name.hunter" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] actor-additional-card" size="30px" src="/svg/misc/infinite-spinner.svg"></div>
   </div>
   <h4 id="game-lobby-start-game-confirm-dialog-actor-additional-cards-placed-text" class="text-center">components.GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced.actorAdditionalCardsMustBePlacedUp, 3</h4>
@@ -21,7 +21,7 @@ exports[`Game Lobby Start Game Confirm Dialog Actor Additional Cards Placed Comp
 exports[`Game Lobby Start Game Confirm Dialog Actor Additional Cards Placed Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-start-game-confirm-dialog-actor-additional-cards-placed" class="flex flex-col gap-6 items-center justify-center">
   <div class="flex flex-col gap-2 items-center justify-center">
-    <nuxt-img-stub src="/svg/role/actor.svg" width="75" height="75" alt="Actor icon" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
+    <nuxt-img-stub alt="Actor icon" height="75" src="/svg/role/actor.svg" width="75" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
     <div id="actor-additional-cards" class="flex gap-2">
       <role-image-stub rolename="seer" sizes="50px" definition="normal" class="actor-additional-card" size="30px"></role-image-stub>
       <role-image-stub rolename="werewolf" sizes="50px" definition="normal" class="actor-additional-card" size="30px"></role-image-stub>

@@ -11,6 +11,10 @@ const modules = [
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
   "./modules/register-components/register-components.module.ts",
   "@vueuse/nuxt",
+  "@nuxtjs/seo",
+  "@nuxtjs/sitemap",
+  "@nuxtjs/robots",
+  "nuxt-link-checker",
 ];
 
 export default defineNuxtConfig({
@@ -21,11 +25,33 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { class: "dark-mode" },
+      titleTemplate: "%s",
       link: [
         {
           rel: "icon",
           type: "image/png",
-          href: "/favicon.png",
+          href: "favicons/favicon.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicons/favicon-16x16.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicons/favicon-32x32.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/favicons/apple-touch-icon.png",
+        },
+        {
+          rel: "manifest",
+          href: "/favicons/site.webmanifest",
         },
       ],
     },
@@ -41,6 +67,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@fortawesome/vue-fontawesome"],
   },
+  compatibilityDate: "2024-07-04",
   css: [
     "@fortawesome/fontawesome-svg-core/styles.css",
     "./assets/scss/custom.scss",
@@ -60,15 +87,34 @@ export default defineNuxtConfig({
     text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
     overwriting: false,
   },
-  i18n: { vueI18n: "./modules/i18n/i18n.config.ts" },
+  i18n: {
+    vueI18n: "./modules/i18n/i18n.config.ts",
+    locales: [
+      {
+        code: "fr",
+        language: "fr-FR",
+      },
+      {
+        code: "en",
+        language: "en-US",
+      },
+    ],
+    strategy: "no_prefix",
+  },
   image: {
     domains: [
       "antoinezanardi.fr",
       "appspot.com",
     ],
   },
+  linkChecker: {
+    enabled: false,
+  },
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
+  ogImage: {
+    enabled: false,
+  },
   plugins: [
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",
@@ -133,6 +179,13 @@ export default defineNuxtConfig({
       werewolvesAssistantApi: { baseUrl: "" },
     },
   },
+  schemaOrg: {
+    enabled: false,
+  },
+  seo: {
+    fallbackTitle: false,
+    redirectToCanonicalSiteUrl: true,
+  },
   tailwindcss: {
     quiet: true,
     cssPath: "~/assets/scss/tailwind.scss",
@@ -166,5 +219,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  compatibilityDate: "2024-07-04",
 });

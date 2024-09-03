@@ -1,4 +1,8 @@
 {
+  "nuxtSiteConfig": {
+    "name": "Werewolves Assistant",
+    "description": "The perfect tool for game masters of the Werewolves of Miller's Hollow™"
+  },
   "shared": {
     "werewolvesAssistant": "Werewolves Assistant",
     "yes": "Yes",

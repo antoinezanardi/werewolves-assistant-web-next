@@ -19,15 +19,27 @@ jobs:
           - tag: preprod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://preprod.api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_SITE_URL: "https://preprod.werewolves-assistant.com"
+            NUXT_SITE_NAME: "Preprod Werewolves Assistant"
+            NUXT_SITE_ENV: "development"
           - tag: preprod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://preprod.api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_SITE_URL: "https://preprod.werewolves-assistant.com"
+            NUXT_SITE_NAME: "Preprod Werewolves Assistant"
+            NUXT_SITE_ENV: "development"
           - tag: local-preprod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_SITE_URL: "http://localhost:3001"
+            NUXT_SITE_NAME: "Preprod Werewolves Assistant"
+            NUXT_SITE_ENV: "development"
           - tag: local-preprod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9292"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_SITE_URL: "http://localhost:3001"
+            NUXT_SITE_NAME: "Preprod Werewolves Assistant"
+            NUXT_SITE_ENV: "development"
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4

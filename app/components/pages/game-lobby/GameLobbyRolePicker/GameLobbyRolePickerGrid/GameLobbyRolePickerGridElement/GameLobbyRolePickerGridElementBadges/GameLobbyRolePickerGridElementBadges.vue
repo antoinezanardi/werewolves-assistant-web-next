@@ -5,6 +5,7 @@
     <PrimeVueBadge
       v-if="countInGameAdditionalCardsCreateGameDto"
       id="role-count-in-additional-cards-badge"
+      key="role-count-in-additional-cards-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInAdditionalCards')"
       class="-right-4 absolute top-1"
       data-testid="game-lobby-role-picker-role-count-in-additional-cards-badge"
@@ -23,6 +24,7 @@
     <PrimeVueBadge
       v-if="countInCreateGameDto"
       id="role-count-in-game-badge"
+      key="role-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.totalInParty')"
       class="-right-4 absolute top-1"
       data-testid="game-lobby-role-picker-role-count-in-game-badge"
@@ -40,6 +42,7 @@
     <PrimeVueBadge
       v-if="countInCreateGameDto && leftCountToReachMinInCreateGameDto"
       id="role-min-count-in-game-badge"
+      key="role-min-count-in-game-badge"
       v-p-tooltip="$t('components.GameLobbyRolePickerGridElementBadges.minInGameNotReached', { 'count': leftCountToReachMinInCreateGameDto })"
       class="-right-4 absolute top-8"
       data-testid="game-lobby-role-picker-role-min-count-in-game-badge"

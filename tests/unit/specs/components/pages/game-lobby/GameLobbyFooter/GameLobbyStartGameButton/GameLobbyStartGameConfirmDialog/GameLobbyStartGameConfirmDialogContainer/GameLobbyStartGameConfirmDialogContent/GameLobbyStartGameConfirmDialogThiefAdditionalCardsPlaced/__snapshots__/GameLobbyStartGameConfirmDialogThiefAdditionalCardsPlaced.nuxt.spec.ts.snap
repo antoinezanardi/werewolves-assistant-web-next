@@ -21,7 +21,7 @@ exports[`Game Lobby Start Game Confirm Dialog Thief Additional Cards Placed Comp
 exports[`Game Lobby Start Game Confirm Dialog Thief Additional Cards Placed Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-start-game-confirm-dialog-thief-additional-cards-placed" class="flex flex-col gap-6 items-center justify-center">
   <div class="flex flex-col items-center justify-center">
-    <nuxt-img-stub src="/svg/role/thief.svg" width="75" height="75" alt="Thief icon" placeholder="/svg/misc/infinite-spinner.svg" class="-mt-4"></nuxt-img-stub>
+    <nuxt-img-stub alt="Thief icon" height="75" src="/svg/role/thief.svg" width="75" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg" class="-mt-4"></nuxt-img-stub>
     <div id="thief-additional-cards" class="flex gap-2">
       <role-image-stub rolename="seer" sizes="50px" definition="normal" class="thief-additional-card" size="30px"></role-image-stub>
       <role-image-stub rolename="werewolf" sizes="50px" definition="normal" class="thief-additional-card" size="30px"></role-image-stub>
