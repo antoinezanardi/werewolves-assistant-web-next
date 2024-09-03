@@ -9,6 +9,7 @@
     >
       <NuxtImg
         v-if="player.role.isRevealed"
+        key="seen-role-icon"
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
         height="20"
@@ -19,6 +20,7 @@
 
       <NuxtImg
         v-if="isPlayerOriginalRoleThiefButNotCurrently"
+        key="thief-role-icon"
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasThief')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasThief')"
         height="20"
@@ -29,6 +31,7 @@
 
       <NuxtImg
         v-if="isPlayerOriginalRoleActorButNotCurrently"
+        key="actor-role-icon"
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
         height="20"
