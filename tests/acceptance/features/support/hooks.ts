@@ -14,6 +14,9 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
   server: true,
   rootDir: fileURLToPath(new URL("../../../..", import.meta.url)),
   nuxtConfig: {
+    i18n: {
+      defaultLocale: I18N_TEST_LOCALE,
+    },
     runtimeConfig: {
       public: {
         defaultLocale: I18N_TEST_LOCALE,
