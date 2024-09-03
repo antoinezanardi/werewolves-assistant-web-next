@@ -122,7 +122,7 @@
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "eslint-plugin-vue": "^9.27.0",
+    "eslint-plugin-vue": "^9.28.0",
     "fuse.js": "^7.0.0",
     "happy-dom": "^14.12.3",
     "howler": "^2.2.4",
