@@ -14,15 +14,27 @@ jobs:
           - tag: prod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_SITE_URL: "https://werewolves-assistant.com"
+            NUXT_SITE_NAME: "Assistant Loups-Garous"
+            NUXT_SITE_ENV: "production"
           - tag: prod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_SITE_URL: "https://werewolves-assistant.com"
+            NUXT_SITE_NAME: "Werewolves Assistant"
+            NUXT_SITE_ENV: "production"
           - tag: local-prod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_SITE_URL: "http://localhost:3000"
+            NUXT_SITE_NAME: "Assistant Loups-Garous"
+            NUXT_SITE_ENV: "production"
           - tag: local-prod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_SITE_URL: "http://localhost:3000"
+            NUXT_SITE_NAME: "Werewolves Assistant"
+            NUXT_SITE_ENV: "production"
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
