@@ -5,16 +5,16 @@ import { I18N_TEST_LOCALE } from "@modules/i18n/i18n.constants";
 function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): RuntimeConfig {
   return {
     ...runtimeConfig,
-    app: {
+    "app": {
       buildId: "test",
       baseURL: "",
       buildAssetsDir: "",
       cdnURL: "",
     },
-    public: {
-      defaultLocale: I18N_TEST_LOCALE,
-      werewolvesAssistantApi: { baseUrl: "http://127.0.0.1" },
-      i18n: {
+    "public": {
+      "defaultLocale": I18N_TEST_LOCALE,
+      "werewolvesAssistantApi": { baseUrl: "http://127.0.0.1" },
+      "i18n": {
         defaultLocale: I18N_TEST_LOCALE,
         baseUrl: "http://127.0.0.1",
         defaultDirection: "ltr",
@@ -42,9 +42,16 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
           switchLocalePathLinkSSR: true,
           autoImportTranslationFunctions: false,
         },
-        locales: [{ code: "en", iso: "en-US", file: "en-US.json", name: "English" }],
+        locales: {
+          fr: {
+            domain: "fr",
+          },
+          en: {
+            domain: "en",
+          },
+        },
       },
-      primevue: {
+      "primevue": {
         components: [],
         directives: [],
         config: [],
@@ -61,6 +68,86 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
           from: "",
         },
         injectStylesAsString: [],
+      },
+      "nuxt-seo": {
+        canonicalQueryWhitelist: [],
+      },
+      "nuxt-robots": {
+        allow: [],
+        blockNonSeoBots: false,
+        credits: false,
+        debug: false,
+        enabled: false,
+        groups: [],
+        header: false,
+        disallowNonIndexableRoutes: false,
+        mergeWithRobotsTxtPath: false,
+        metaTag: false,
+        robotsDisabledValue: "",
+        robotsEnabledValue: "",
+        disallow: [],
+        sitemap: ["localhost"],
+      },
+    },
+    "nuxt-robots": {
+      version: "",
+      cacheControl: "max-age=14400, must-revalidate",
+      usingNuxtContent: false,
+      credits: false,
+      debug: false,
+      groups: [],
+      header: false,
+      robotsDisabledValue: "",
+      robotsEnabledValue: "",
+      sitemap: ["localhost"],
+    },
+    "nitro": {},
+    "nuxt-site-config": {
+      debug: false,
+      stack: [{}],
+      version: "",
+    },
+    "nuxt-simple-robots": {
+      cacheControl: "",
+      credits: false,
+      debug: false,
+      groups: [{}],
+      header: false,
+      robotsDisabledValue: "",
+      robotsEnabledValue: "",
+      sitemap: ["localhost"],
+      usingNuxtContent: false,
+      version: "",
+    },
+    "sitemap": {
+      autoLastmod: false,
+      cacheMaxAgeSeconds: 0,
+      credits: false,
+      debug: false,
+      defaultSitemapsChunkSize: 0,
+      discoverImages: false,
+      discoverVideos: false,
+      excludeAppSources: [],
+      isI18nMapped: false,
+      isMultiSitemap: false,
+      isNuxtContentDocumentDriven: false,
+      minify: false,
+      sitemapName: "",
+      sitemapsPathPrefix: "",
+      sortEntries: false,
+      version: "",
+      xsl: "",
+      xslColumns: [{}],
+      xslTips: false,
+      sitemaps: {
+        "sitemap.xml": {
+          exclude: [],
+          include: [],
+          includeAppSources: false,
+          route: "",
+          sitemapName: "",
+          defaults: false,
+        },
       },
     },
   };
