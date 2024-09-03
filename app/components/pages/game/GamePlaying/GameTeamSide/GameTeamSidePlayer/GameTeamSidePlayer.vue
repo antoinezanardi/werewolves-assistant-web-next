@@ -23,6 +23,7 @@
           <RoleImage
             v-if="player.side.current === 'werewolves'"
             id="player-werewolf-role-image"
+            key="player-werewolf-role-image"
             :alt="roleImageAlt"
             class="!border-2"
             :class="roleImageClasses"
@@ -47,6 +48,7 @@
           <RoleImage
             v-if="player.side.current === 'villagers'"
             id="player-villager-role-image"
+            key="player-villager-role-image"
             :alt="roleImageAlt"
             class="!border-2"
             :class="roleImageClasses"
