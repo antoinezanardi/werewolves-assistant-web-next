@@ -12640,7 +12640,7 @@ snapshots:
       deepmerge: 4.3.1
       hookable: 5.5.3
       ofetch: 1.3.4
-      ufo: 1.5.3
+      ufo: 1.5.4
 
   gopd@1.0.1:
     dependencies:
