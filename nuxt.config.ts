@@ -25,11 +25,33 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { class: "dark-mode" },
+      titleTemplate: "%s",
       link: [
         {
           rel: "icon",
           type: "image/png",
-          href: "/favicon.png",
+          href: "favicons/favicon.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicons/favicon-16x16.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicons/favicon-32x32.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/favicons/apple-touch-icon.png",
+        },
+        {
+          rel: "manifest",
+          href: "/favicons/site.webmanifest",
         },
       ],
     },
@@ -77,7 +99,6 @@ export default defineNuxtConfig({
         language: "en-US",
       },
     ],
-    defaultLocale: "fr",
     strategy: "no_prefix",
   },
   image: {
