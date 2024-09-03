@@ -14,13 +14,13 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
           </a></li>
         <li class="p-tabview-tablist-item grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-active="false" data-pc-index="1"><a id="game-lobby-options-hub-tab-view_1_header_action" class="p-tabview-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_1_content" data-pc-section="headeraction" data-pd-ripple="true" style="overflow: hidden; position: relative;">
             <!---->
-            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
+            <div id="composition-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="composition-tab-header-text">Composition</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
         <li class="p-tabview-tablist-item grow" role="presentation" data-pc-section="header" data-pc-name="tabpanel" data-p-active="false" data-pc-index="2"><a id="game-lobby-options-hub-tab-view_2_header_action" class="p-tabview-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_2_content" data-pc-section="headeraction" data-pd-ripple="true" style="overflow: hidden; position: relative;">
             <!---->
-            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" class="" src="/svg/misc/infinite-spinner.svg">
+            <div id="votes-tab-header" class="flex gap-2 items-center justify-center w-full"><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" src="/svg/misc/infinite-spinner.svg">
               <h3 id="votes-tab-header-text">Votes</h3>
             </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd3="" data-pc-name="ripple" data-pc-section="root"></span>
           </a></li>
