@@ -80,7 +80,7 @@
     "@eslint/config-inspector": "^0.5.4",
     "@eslint/eslintrc": "^3.1.0",
     "@faker-js/faker": "^8.4.1",
-    "@nuxt/image": "^1.7.0",
+    "@nuxt/image": "^1.8.0",
     "@nuxt/kit": "^3.13.0",
     "@nuxt/test-utils": "^3.14.1",
     "@nuxtjs/google-fonts": "^3.2.0",
