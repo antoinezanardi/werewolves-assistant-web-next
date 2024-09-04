@@ -21,6 +21,15 @@ Feature: ⚙️ Game Lobby Options Hub
     And the heading with name "Votes can be skipped" should be visible
     Then the page creates the missing snapshot with name "Game Lobby Options Hub on Votes tab"
 
+  Scenario: ⚙️ Options Hub stores changed game options in local storages and keeps the state when user comes back
+    Given the user is on game-lobby page
+    And the user disables the sheriff in game options
+    And the user reloads the page
+
+    When the user clicks on the game options button in the lobby
+    Then the heading with name "Game options" should be visible
+    And the exact text "The game will not have a Sheriff." should be visible
+
   Scenario: ⚙️ User closes the options hub with escape, close button or outside click
     Given the user is on game-lobby page
 
