@@ -10,17 +10,24 @@ import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constan
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+import { useLocalStorage } from "@vueuse/core";
+import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
 
 const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   const rolesStore = useRolesStore();
   const { getRoleWithNameInRoles } = rolesStore;
+
+  const createGameOptionsDtoFromLocalStorage = useLocalStorage(LocalStorageKeys.GAME_OPTIONS, DEFAULT_GAME_OPTIONS, { mergeDefaults: true });
 
   const defaultCreateGameDto = CreateGameDto.create({
     players: [],
     options: DEFAULT_GAME_OPTIONS,
   });
 
-  const createGameDto = ref<CreateGameDto>(CreateGameDto.create(defaultCreateGameDto));
+  const createGameDto = ref<CreateGameDto>(CreateGameDto.create({
+    ...defaultCreateGameDto,
+    options: createGameOptionsDtoFromLocalStorage.value,
+  }));
 
   const doesCreateGameDtoContainPositionDependantRoles = computed<boolean>(() => {
     const positionDependantRoles: RoleName[] = ["rusty-sword-knight", "bear-tamer", "fox"];
@@ -37,10 +44,24 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
+    saveCreateGameOptionsDtoToLocalStorage();
   }
 
-  function resetCreateGameDto(): void {
-    createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
+  function resetCreateGameDto(doesRetrieveLocalStorageValues = true): void {
+    if (!doesRetrieveLocalStorageValues) {
+      createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
+      saveCreateGameOptionsDtoToLocalStorage();
+
+      return;
+    }
+    createGameDto.value = CreateGameDto.create({
+      ...defaultCreateGameDto,
+      options: createGameOptionsDtoFromLocalStorage.value,
+    });
+  }
+
+  function saveCreateGameOptionsDtoToLocalStorage(): void {
+    createGameOptionsDtoFromLocalStorage.value = createGameDto.value.options;
   }
 
   function removeObsoleteAdditionalCardsFromCreateGameDto(): void {
@@ -127,11 +148,13 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     return createGameDto.value.additionalCards?.filter(card => card.roleName === roleName) ?? [];
   }
   return {
+    createGameOptionsDtoFromLocalStorage,
     createGameDto,
     doesCreateGameDtoContainPositionDependantRoles,
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
+    saveCreateGameOptionsDtoToLocalStorage,
     removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,
     updatePlayerInCreateGameDto,
