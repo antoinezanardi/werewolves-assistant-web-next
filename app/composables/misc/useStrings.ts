@@ -4,7 +4,7 @@ type UseStrings = {
 };
 
 function useStrings(): UseStrings {
-  function convertBooleanAsAffirmativeString(value: boolean): string {
+  function convertBooleanAsAffirmativeString(value: boolean): "yes" | "no" {
     return value ? "yes" : "no";
   }
 
