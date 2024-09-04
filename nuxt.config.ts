@@ -75,7 +75,10 @@ export default defineNuxtConfig({
     "animate.css/animate.min.css",
   ],
   devtools: { enabled: true },
-  experimental: { renderJsonPayloads: false },
+  experimental: {
+    renderJsonPayloads: false,
+    buildCache: true,
+  },
   future: { compatibilityVersion: 4 },
   googleFonts: {
     display: "swap",
