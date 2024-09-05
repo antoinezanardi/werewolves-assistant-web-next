@@ -66,7 +66,17 @@ Feature: 👨‍👨‍👦 Three Brothers role
       | Damien  | Villager       |
 
     When the user closes the toast
-    And the user skips the game event
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Three Brothers will wake up every night to meet each other."
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Three Brothers wake up and meet each other for the first time. They can trust each other from now on."
     And the game's event player card should have the name "Antoine"

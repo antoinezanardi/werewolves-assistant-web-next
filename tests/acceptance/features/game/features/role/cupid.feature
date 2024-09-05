@@ -72,7 +72,17 @@ Feature: 👼Cupid role
       | David   | Elder    |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Lovers reveal their role to each other when they meet right after being charmed."
+
+    When the user skips all game events
     Then the game's current play title should be "Cupid charms"
 
     When the cupid charms the players
@@ -93,7 +103,7 @@ Feature: 👼Cupid role
     When the user goes to the next game event text
     Then the game's event should display the text "In this special game, the Lovers reveal their roles to each other."
 
-  Scenario: 👼Cupid can win with the lovers
+  Scenario: 👼Cupid can win with the lovers when the game master enables the option
     Given the user disables the sheriff in game options
     And the user sets cupid must win with lovers in game options
     And the user creates a game with the players with name and role
@@ -104,7 +114,17 @@ Feature: 👼Cupid role
       | David   | Scapegoat |
 
     When the user closes the toast
-    And the user skips the game event
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : Cupid teams up with the Lovers : if the Lovers and Cupid are the only survivors, they win together. Lovers can win alone without Cupid winning. Warning : Cupid can't charm himself with this option!"
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "Cupid wakes up and chooses two players to be in love with each other."
     And the game's event player card should have the name "Antoine"

@@ -17,7 +17,7 @@ exports[`Game Lobby Options Hub Roles Tab Elder Component > should match snapsho
               <slider-stub id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-slider" modelvalue="2" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.description, {"livesCount":2}, 2</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.elder.livesCountAgainstWerewolves, {"livesCount":2}, 2</p>
           <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
         </div>
         <div id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input-group">
@@ -29,7 +29,7 @@ exports[`Game Lobby Options Hub Roles Tab Elder Component > should match snapsho
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.descriptions.yes</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.elder.doesTakeHisRevenge.yes</p>
           <!--v-if-->
         </div>
       </div>

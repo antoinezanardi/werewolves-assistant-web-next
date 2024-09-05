@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Roles Tab Wild Child Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wildChild.isTransformationRevealed = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWildChild.options.isTransformationRevealed.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wildChild.isTransformationRevealed.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -55,7 +55,7 @@ describe("Game Lobby Options Hub Roles Tab Wild Child Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wildChild.isTransformationRevealed = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wild-child-is-transformation-revealed-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWildChild.options.isTransformationRevealed.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wildChild.isTransformationRevealed.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

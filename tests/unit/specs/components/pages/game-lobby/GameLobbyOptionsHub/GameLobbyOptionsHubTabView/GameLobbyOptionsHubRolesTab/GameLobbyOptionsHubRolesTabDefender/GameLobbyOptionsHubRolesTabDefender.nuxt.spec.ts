@@ -47,13 +47,13 @@ describe("Game Lobby Options Hub Roles Tab Defender Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-defender-can-protect-twice-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabDefender.options.canProtectTwice.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.defender.canProtectTwice.yes");
     });
 
     it("should translate option description when the option is deactivated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-defender-can-protect-twice-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabDefender.options.canProtectTwice.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.defender.canProtectTwice.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

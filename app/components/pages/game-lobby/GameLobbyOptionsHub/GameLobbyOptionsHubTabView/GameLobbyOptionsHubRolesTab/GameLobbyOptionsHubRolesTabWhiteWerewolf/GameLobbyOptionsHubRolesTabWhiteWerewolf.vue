@@ -48,13 +48,14 @@ import { storeToRefs } from "pinia";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const whiteWerewolfWakingUpIntervalValue = computed<number>({
   get: () => createGameDto.value.options.roles.whiteWerewolf.wakingUpInterval,
@@ -68,9 +69,5 @@ const whiteWerewolfWakingUpIntervalValue = computed<number>({
   },
 });
 
-const whiteWerewolfWakingUpIntervalDescription = computed<string>(() => {
-  const tKey = "components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.description";
-
-  return t(tKey, { interval: whiteWerewolfWakingUpIntervalValue.value }, whiteWerewolfWakingUpIntervalValue.value);
-});
+const whiteWerewolfWakingUpIntervalDescription = computed<string>(() => getGameOptionText("roles.whiteWerewolf.wakingUpInterval"));
 </script>

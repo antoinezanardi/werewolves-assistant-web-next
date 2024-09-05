@@ -79,16 +79,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const piedPiperCharmedPeopleCountPerNightValue = computed<number>({
   get: () => createGameDto.value.options.roles.piedPiper.charmedPeopleCountPerNight,
@@ -120,21 +118,9 @@ const areCharmedPeopleByPiedPiperRevealedValue = computed<boolean>({
   },
 });
 
-const piedPiperCharmedPeopleCountPerNightDescription = computed<string>(() => {
-  const tKey = "components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description";
+const piedPiperCharmedPeopleCountPerNightDescription = computed<string>(() => getGameOptionText("roles.piedPiper.charmedPeopleCountPerNight"));
 
-  return t(tKey, { count: piedPiperCharmedPeopleCountPerNightValue.value });
-});
+const isPiedPiperPowerlessOnWerewolvesSideDescription = computed<string>(() => getGameOptionText("roles.piedPiper.isPowerlessOnWerewolvesSide"));
 
-const isPiedPiperPowerlessOnWerewolvesSideDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isPiedPiperPowerlessOnWerewolvesSideValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.${booleanAsAffirmative}`);
-});
-
-const areCharmedPeopleByPiedPiperRevealedDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(areCharmedPeopleByPiedPiperRevealedValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.${booleanAsAffirmative}`);
-});
+const areCharmedPeopleByPiedPiperRevealedDescription = computed<string>(() => getGameOptionText("roles.piedPiper.areCharmedPeopleRevealed"));
 </script>

@@ -55,13 +55,13 @@ describe("Game Lobby Options Hub Roles Tab General Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabGeneral.options.doSkipCallIfNoTarget.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.doSkipCallIfNoTarget.yes");
     });
 
     it("should translate option description when the option is deactivated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-general-do-skip-call-if-no-target-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabGeneral.options.doSkipCallIfNoTarget.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.doSkipCallIfNoTarget.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {
@@ -89,7 +89,7 @@ describe("Game Lobby Options Hub Roles Tab General Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.areRevealedOnDeath.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -98,7 +98,7 @@ describe("Game Lobby Options Hub Roles Tab General Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-general-are-revealed-on-death-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.areRevealedOnDeath.no");
     });
 
     it("should update create game dto store when the option is toggled.", async() => {

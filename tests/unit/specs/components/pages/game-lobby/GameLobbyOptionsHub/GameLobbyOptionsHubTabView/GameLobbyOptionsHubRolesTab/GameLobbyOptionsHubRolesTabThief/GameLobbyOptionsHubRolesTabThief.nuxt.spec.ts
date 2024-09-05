@@ -43,7 +43,7 @@ describe("Game Lobby Options Hub Roles Tab Thief Component", () => {
 
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabThief.options.mustChooseBetweenWerewolves.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.thief.mustChooseBetweenWerewolves.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -52,7 +52,7 @@ describe("Game Lobby Options Hub Roles Tab Thief Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.thief.mustChooseBetweenWerewolves = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-thief-must-choose-between-werewolves-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabThief.options.mustChooseBetweenWerewolves.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.thief.mustChooseBetweenWerewolves.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -83,7 +83,7 @@ describe("Game Lobby Options Hub Roles Tab Thief Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabThief.options.isChosenCardRevealed.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.thief.isChosenCardRevealed.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -92,7 +92,7 @@ describe("Game Lobby Options Hub Roles Tab Thief Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-thief-is-chosen-card-revealed-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabThief.options.isChosenCardRevealed.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.thief.isChosenCardRevealed.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

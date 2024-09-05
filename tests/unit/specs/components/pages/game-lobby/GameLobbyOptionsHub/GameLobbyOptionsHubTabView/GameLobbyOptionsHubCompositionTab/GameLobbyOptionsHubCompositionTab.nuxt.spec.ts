@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Composition Tab Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.composition.isHidden = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-composition-tab-is-hidden-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.composition.isHidden.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -55,7 +55,7 @@ describe("Game Lobby Options Hub Composition Tab Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.composition.isHidden = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-composition-tab-is-hidden-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.composition.isHidden.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

@@ -1,3 +1,5 @@
+import { instanceToPlain } from "class-transformer";
+import type { Paths } from "type-fest";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import type { ComputedRef, Ref } from "vue";
@@ -9,6 +11,7 @@ import { useTimers } from "~/composables/misc/useTimers";
 type UseGameOptionsTexts = {
   gameOptionsTexts: ComputedRef<DeepStringifiedGameOptions>;
   changedGameOptionsTexts: ComputedRef<string[]>;
+  getGameOptionText: (key: Paths<DeepStringifiedGameOptions>) => string;
 };
 
 function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts {
@@ -16,7 +19,16 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
   const { getSecondsInMinutesLabel } = useTimers();
   const { t } = useI18n();
 
-  const votesDurationText = computed<string>(() => {
+  const sheriffElectionTimeGameOptionText = computed<string>(() => {
+    const phaseLabel = t(`shared.game.definitePhase.${gameOptions.value.roles.sheriff.electedAt.phaseName}`);
+
+    return t("composables.useGameOptionsTexts.roles.sheriff.electedAt", {
+      turn: gameOptions.value.roles.sheriff.electedAt.turn,
+      phase: phaseLabel.toLowerCase(),
+    });
+  });
+
+  const votesDurationGameOptionText = computed<string>(() => {
     const timeLabel = getSecondsInMinutesLabel(gameOptions.value.votes.duration);
 
     return t(`composables.useGameOptionsTexts.votes.duration`, { time: timeLabel });
@@ -26,7 +38,7 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
     composition: { isHidden: t(`composables.useGameOptionsTexts.composition.isHidden.${convertBooleanAsAffirmativeString(gameOptions.value.composition.isHidden)}`) },
     votes: {
       canBeSkipped: t(`composables.useGameOptionsTexts.votes.canBeSkipped.${convertBooleanAsAffirmativeString(gameOptions.value.votes.canBeSkipped)}`),
-      duration: votesDurationText.value,
+      duration: votesDurationGameOptionText.value,
     },
     roles: {
       areRevealedOnDeath: t(`composables.useGameOptionsTexts.roles.areRevealedOnDeath.${convertBooleanAsAffirmativeString(gameOptions.value.roles.areRevealedOnDeath)}`),
@@ -34,7 +46,10 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
       werewolf: { canEatEachOther: t(`composables.useGameOptionsTexts.roles.werewolf.canEatEachOther.${convertBooleanAsAffirmativeString(gameOptions.value.roles.werewolf.canEatEachOther)}`) },
       sheriff: {
         isEnabled: t(`composables.useGameOptionsTexts.roles.sheriff.isEnabled.${convertBooleanAsAffirmativeString(gameOptions.value.roles.sheriff.isEnabled)}`),
-        electedAt: t(`composables.useGameOptionsTexts.roles.sheriff.electedAt`, { turn: gameOptions.value.roles.sheriff.electedAt.turn, phase: gameOptions.value.roles.sheriff.electedAt.phaseName }),
+        electedAt: {
+          turn: sheriffElectionTimeGameOptionText.value,
+          phaseName: sheriffElectionTimeGameOptionText.value,
+        },
         hasDoubledVote: t(`composables.useGameOptionsTexts.roles.sheriff.hasDoubledVote.${convertBooleanAsAffirmativeString(gameOptions.value.roles.sheriff.hasDoubledVote)}`),
         mustSettleTieInVotes: t(`composables.useGameOptionsTexts.roles.sheriff.mustSettleTieInVotes.${convertBooleanAsAffirmativeString(gameOptions.value.roles.sheriff.mustSettleTieInVotes)}`),
       },
@@ -51,7 +66,7 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
       littleGirl: { isProtectedByDefender: t(`composables.useGameOptionsTexts.roles.littleGirl.isProtectedByDefender.${convertBooleanAsAffirmativeString(gameOptions.value.roles.littleGirl.isProtectedByDefender)}`) },
       defender: { canProtectTwice: t(`composables.useGameOptionsTexts.roles.defender.canProtectTwice.${convertBooleanAsAffirmativeString(gameOptions.value.roles.defender.canProtectTwice)}`) },
       elder: {
-        livesCountAgainstWerewolves: t(`composables.useGameOptionsTexts.roles.elder.livesCountAgainstWerewolves`, { livesCountAgainstWerewolves: gameOptions.value.roles.elder.livesCountAgainstWerewolves }, gameOptions.value.roles.elder.livesCountAgainstWerewolves),
+        livesCountAgainstWerewolves: t(`composables.useGameOptionsTexts.roles.elder.livesCountAgainstWerewolves`, { livesCount: gameOptions.value.roles.elder.livesCountAgainstWerewolves }, gameOptions.value.roles.elder.livesCountAgainstWerewolves),
         doesTakeHisRevenge: t(`composables.useGameOptionsTexts.roles.elder.doesTakeHisRevenge.${convertBooleanAsAffirmativeString(gameOptions.value.roles.elder.doesTakeHisRevenge)}`),
       },
       idiot: { doesDieOnElderDeath: t(`composables.useGameOptionsTexts.roles.idiot.doesDieOnElderDeath.${convertBooleanAsAffirmativeString(gameOptions.value.roles.idiot.doesDieOnElderDeath)}`) },
@@ -86,20 +101,24 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
   }));
 
   const changedGameOptionsTexts = computed<string[]>(() => {
-    const gameOptionsKeys = keys(gameOptions.value);
+    const gameOptionsKeys = keys(instanceToPlain(gameOptions.value));
     const changedGameOptionsKeys = gameOptionsKeys.filter(key => {
-      const value = get(gameOptions, key);
+      const value = get(gameOptions.value, key);
       const defaultValue = get(DEFAULT_GAME_OPTIONS, key);
 
       return value !== defaultValue;
     });
 
-    return changedGameOptionsKeys.map(key => get(gameOptionsTexts.value, key));
+    return [...new Set(changedGameOptionsKeys.map(key => getGameOptionText(key as Paths<DeepStringifiedGameOptions>)))];
   });
 
+  function getGameOptionText(key: Paths<DeepStringifiedGameOptions>): string {
+    return get(gameOptionsTexts.value, key as string);
+  }
   return {
     gameOptionsTexts,
     changedGameOptionsTexts,
+    getGameOptionText,
   };
 }
 

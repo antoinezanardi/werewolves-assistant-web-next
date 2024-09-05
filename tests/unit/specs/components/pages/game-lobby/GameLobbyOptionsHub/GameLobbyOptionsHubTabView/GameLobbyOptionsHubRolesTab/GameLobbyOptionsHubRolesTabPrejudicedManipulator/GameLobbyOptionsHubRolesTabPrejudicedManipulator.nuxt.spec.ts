@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Roles Tab Prejudiced Manipulator Component", ()
     it("should translate option description when the option is activated.", () => {
       const inputGroupId = "game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input-group";
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>(`#${inputGroupId}`);
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabPrejudicedManipulator.options.isPowerlessOnWerewolvesSide.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.prejudicedManipulator.isPowerlessOnWerewolvesSide.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -56,7 +56,7 @@ describe("Game Lobby Options Hub Roles Tab Prejudiced Manipulator Component", ()
       await nextTick();
       const inputGroupId = "game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input-group";
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>(`#${inputGroupId}`);
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabPrejudicedManipulator.options.isPowerlessOnWerewolvesSide.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.prejudicedManipulator.isPowerlessOnWerewolvesSide.no";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });

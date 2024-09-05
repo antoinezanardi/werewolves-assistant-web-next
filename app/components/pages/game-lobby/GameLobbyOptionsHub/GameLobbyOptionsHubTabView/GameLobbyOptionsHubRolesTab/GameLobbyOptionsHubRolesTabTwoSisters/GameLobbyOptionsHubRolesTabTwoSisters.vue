@@ -48,13 +48,14 @@ import { storeToRefs } from "pinia";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const twoSistersWakingUpIntervalValue = computed<number>({
   get: () => createGameDto.value.options.roles.twoSisters.wakingUpInterval,
@@ -68,9 +69,5 @@ const twoSistersWakingUpIntervalValue = computed<number>({
   },
 });
 
-const twoSistersWakingUpIntervalDescription = computed<string>(() => {
-  const tKey = "components.GameLobbyOptionsHubRolesTabTwoSisters.options.wakingUpInterval.description";
-
-  return t(tKey, { interval: twoSistersWakingUpIntervalValue.value }, twoSistersWakingUpIntervalValue.value);
-});
+const twoSistersWakingUpIntervalDescription = computed<string>(() => getGameOptionText("roles.twoSisters.wakingUpInterval"));
 </script>

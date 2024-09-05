@@ -28,7 +28,7 @@ const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
 const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { gameOptionsTexts } = useGameOptionsTexts(createGameOptionsDto);
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isCompositionHiddenValue = computed<boolean>({
   get: () => createGameOptionsDto.value.composition.isHidden,
@@ -39,5 +39,5 @@ const isCompositionHiddenValue = computed<boolean>({
   },
 });
 
-const isCompositionHiddenDescription = computed<string>(() => gameOptionsTexts.value.composition.isHidden);
+const isCompositionHiddenDescription = computed<string>(() => getGameOptionText("composition.isHidden"));
 </script>

@@ -46,7 +46,7 @@ describe("Game Lobby Options Hub Roles Tab Two Sisters Component", () => {
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-two-sisters-waking-up-interval-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabTwoSisters.options.wakingUpInterval.description, {\"interval\":2}, 2");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe(`composables.useGameOptionsTexts.roles.twoSisters.wakingUpInterval, {"interval":2}, 2`);
     });
 
     it("should translate option float label when rendered.", () => {

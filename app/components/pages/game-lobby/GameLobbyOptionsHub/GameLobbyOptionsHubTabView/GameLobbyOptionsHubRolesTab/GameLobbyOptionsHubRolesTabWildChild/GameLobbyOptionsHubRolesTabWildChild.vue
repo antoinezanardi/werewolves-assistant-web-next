@@ -29,15 +29,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isWildChildTransformationRevealedValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.wildChild.isTransformationRevealed,
@@ -48,9 +47,5 @@ const isWildChildTransformationRevealedValue = computed<boolean>({
   },
 });
 
-const isWildChildTransformationRevealedDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isWildChildTransformationRevealedValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabWildChild.options.isTransformationRevealed.descriptions.${booleanAsAffirmative}`);
-});
+const isWildChildTransformationRevealedDescription = computed<string>(() => getGameOptionText("roles.wildChild.isTransformationRevealed"));
 </script>

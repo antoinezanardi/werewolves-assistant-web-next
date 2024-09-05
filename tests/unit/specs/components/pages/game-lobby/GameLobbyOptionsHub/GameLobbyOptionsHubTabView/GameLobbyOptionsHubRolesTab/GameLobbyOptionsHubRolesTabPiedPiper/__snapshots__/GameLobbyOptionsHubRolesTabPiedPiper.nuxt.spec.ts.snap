@@ -15,7 +15,7 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
             </h3>
             <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc1=""><label id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label" for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input">Charmed people count per night</label><input-number-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input" modelvalue="2" class="w-full" max="5" min="1"></input-number-stub><slider-stub id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-slider" modelvalue="2" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub></span></div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description, {"count":2}</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.piedPiper.charmedPeopleCountPerNight, {"charmedPeopleCountPerNight":2}, 2</p>
           <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
         </div>
         <div id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group">
@@ -27,7 +27,7 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.piedPiper.isPowerlessOnWerewolvesSide.yes</p>
           <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
         </div>
         <div id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group">
@@ -39,7 +39,7 @@ exports[`Game Lobby Options Hub Roles Tab Pied Piper Component > should match sn
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.piedPiper.areCharmedPeopleRevealed.no</p>
           <!--v-if-->
         </div>
       </div>

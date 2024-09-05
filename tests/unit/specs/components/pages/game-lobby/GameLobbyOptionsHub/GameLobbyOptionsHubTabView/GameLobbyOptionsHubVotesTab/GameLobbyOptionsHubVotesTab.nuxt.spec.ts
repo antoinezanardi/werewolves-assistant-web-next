@@ -48,7 +48,7 @@ describe("Game Lobby Options Hub Votes Tab Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.votes.canBeSkipped = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-votes-tab-can-be-skipped-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.votes.canBeSkipped.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -58,7 +58,7 @@ describe("Game Lobby Options Hub Votes Tab Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.votes.canBeSkipped = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-votes-tab-can-be-skipped-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.votes.canBeSkipped.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -85,7 +85,7 @@ describe("Game Lobby Options Hub Votes Tab Component", () => {
 
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-votes-duration-input-group");
-      const expectedDescription = `components.GameLobbyOptionsHubVotesTab.options.duration.description, {"time":"shared.time.minute, {\\"count\\":3}, 3"}`;
+      const expectedDescription = `composables.useGameOptionsTexts.votes.duration, {"time":"shared.time.minute, {\\"count\\":3}, 3"}`;
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });

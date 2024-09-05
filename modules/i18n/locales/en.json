@@ -474,7 +474,7 @@
         "werewolf": {
           "canEatEachOther": {
             "yes": "The Werewolves (or the Big Bad Wolf) can eat each other if they want to.",
-            "no": "The Werewolves (nor the Big Bad Wolf) can eat each other."
+            "no": "The Werewolves (nor the Big Bad Wolf) can't eat each other."
           }
         },
         "sheriff": {
@@ -1282,7 +1282,9 @@
       "looksLifeSomeWerewolvesSneakedIntoTheVillage": "Looks like some Werewolves sneaked into the village…",
       "villagersMurderWerewolves": "Villagers, take your torches and pitchforks, it's time to hunt down the Werewolves!",
       "letsElectSheriffBefore": "But before that, let's elect the Sheriff.",
-      "compositionIsHidden": "The composition of this party is hidden! You'll have to find out who is who by yourself…"
+      "compositionIsHidden": "The composition of this party is hidden! You'll have to find out who is who by yourself…",
+      "specialGameWithChangedOptions": "This game is special with one changed option. Let's see how it goes… | This game is special with {count} changed options. Let's see how it goes…",
+      "specialRule": "Special rule {number} : {rule}"
     },
     "GameTurnStartsEvent": {
       "unknownGameTurnStartsEvent": "Unknown game turn starts event"
