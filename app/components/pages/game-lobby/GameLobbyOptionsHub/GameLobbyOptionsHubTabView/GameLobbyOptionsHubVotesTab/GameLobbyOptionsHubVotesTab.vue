@@ -65,7 +65,7 @@ const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
 const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { gameOptionsTexts } = useGameOptionsTexts(createGameOptionsDto);
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const canVotesBeSkippedValue = computed<boolean>({
   get: () => createGameDto.value.options.votes.canBeSkipped,
@@ -88,7 +88,7 @@ const votesDurationValue = computed<number>({
   },
 });
 
-const canVotesBeSkippedDescription = computed<string>(() => gameOptionsTexts.value.votes.canBeSkipped);
+const canVotesBeSkippedDescription = computed<string>(() => getGameOptionText("votes.canBeSkipped"));
 
-const votesDurationDescription = computed<string>(() => gameOptionsTexts.value.votes.duration);
+const votesDurationDescription = computed<string>(() => getGameOptionText("votes.duration"));
 </script>
