@@ -83,7 +83,6 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
       thief: {
         mustChooseBetweenWerewolves: t(`composables.useGameOptionsTexts.roles.thief.mustChooseBetweenWerewolves.${convertBooleanAsAffirmativeString(gameOptions.value.roles.thief.mustChooseBetweenWerewolves)}`),
         isChosenCardRevealed: t(`composables.useGameOptionsTexts.roles.thief.isChosenCardRevealed.${convertBooleanAsAffirmativeString(gameOptions.value.roles.thief.isChosenCardRevealed)}`),
-        additionalCardsCount: "",
       },
       piedPiper: {
         charmedPeopleCountPerNight: t(`composables.useGameOptionsTexts.roles.piedPiper.charmedPeopleCountPerNight`, { charmedPeopleCountPerNight: gameOptions.value.roles.piedPiper.charmedPeopleCountPerNight }, gameOptions.value.roles.piedPiper.charmedPeopleCountPerNight),
@@ -95,7 +94,6 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
       prejudicedManipulator: { isPowerlessOnWerewolvesSide: t(`composables.useGameOptionsTexts.roles.prejudicedManipulator.isPowerlessOnWerewolvesSide.${convertBooleanAsAffirmativeString(gameOptions.value.roles.prejudicedManipulator.isPowerlessOnWerewolvesSide)}`) },
       actor: {
         isPowerlessOnWerewolvesSide: t(`composables.useGameOptionsTexts.roles.actor.isPowerlessOnWerewolvesSide.${convertBooleanAsAffirmativeString(gameOptions.value.roles.actor.isPowerlessOnWerewolvesSide)}`),
-        additionalCardsCount: "",
       },
     },
   }));

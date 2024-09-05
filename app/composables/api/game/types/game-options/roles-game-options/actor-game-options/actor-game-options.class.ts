@@ -5,9 +5,6 @@ class ActorGameOptions {
   @Expose()
   public isPowerlessOnWerewolvesSide: boolean;
 
-  @Expose()
-  public additionalCardsCount: number;
-
   public static create(actorGameOptions: ActorGameOptions): ActorGameOptions {
     return plainToInstance(ActorGameOptions, actorGameOptions, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }

@@ -98,7 +98,7 @@ Feature: 👺 Thief role
     And the user closes the toast
     And the user goes to the next game event text
     And the user goes to the next game event text
-    Then the game's event should display the text "This game is special with 3 changed options. Let's see how it goes…"
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
 
     When the user goes to the next game event text
     Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."

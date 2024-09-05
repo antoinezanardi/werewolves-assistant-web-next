@@ -6,12 +6,10 @@ describe("Thief Game Options Class", () => {
       const createdThiefGameOptions = ThiefGameOptions.create({
         mustChooseBetweenWerewolves: false,
         isChosenCardRevealed: false,
-        additionalCardsCount: 4,
       });
       const expectedThiefGameOptions = new ThiefGameOptions();
       expectedThiefGameOptions.mustChooseBetweenWerewolves = false;
       expectedThiefGameOptions.isChosenCardRevealed = false;
-      expectedThiefGameOptions.additionalCardsCount = 4;
 
       expect(createdThiefGameOptions).toStrictEqual<ThiefGameOptions>(expectedThiefGameOptions);
     });
