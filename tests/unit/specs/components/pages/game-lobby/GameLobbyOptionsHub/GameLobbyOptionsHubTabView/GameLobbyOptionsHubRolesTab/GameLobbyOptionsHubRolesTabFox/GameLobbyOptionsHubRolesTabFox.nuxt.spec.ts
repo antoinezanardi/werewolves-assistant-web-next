@@ -44,7 +44,7 @@ describe("Game Lobby Options Hub Roles Tab Fox Component", () => {
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabFox.options.isPowerlessIfMissesWerewolf.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.fox.isPowerlessIfMissesWerewolf.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -53,7 +53,7 @@ describe("Game Lobby Options Hub Roles Tab Fox Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-fox-is-powerless-if-misses-werewolf-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabFox.options.isPowerlessIfMissesWerewolf.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.fox.isPowerlessIfMissesWerewolf.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

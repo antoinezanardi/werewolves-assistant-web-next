@@ -58,19 +58,14 @@ import { storeToRefs } from "pinia";
 import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
-import { useTimers } from "~/composables/misc/useTimers";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { getSecondsInMinutesLabel } = useTimers();
-
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const canVotesBeSkippedValue = computed<boolean>({
   get: () => createGameDto.value.options.votes.canBeSkipped,
@@ -93,15 +88,7 @@ const votesDurationValue = computed<number>({
   },
 });
 
-const canVotesBeSkippedDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(canVotesBeSkippedValue.value);
+const canVotesBeSkippedDescription = computed<string>(() => getGameOptionText("votes.canBeSkipped"));
 
-  return t(`components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.${booleanAsAffirmative}`);
-});
-
-const votesDurationDescription = computed<string>(() => {
-  const votesDurationInMinutesLabel = getSecondsInMinutesLabel(votesDurationValue.value);
-
-  return t(`components.GameLobbyOptionsHubVotesTab.options.duration.description`, { time: votesDurationInMinutesLabel });
-});
+const votesDurationDescription = computed<string>(() => getGameOptionText("votes.duration"));
 </script>

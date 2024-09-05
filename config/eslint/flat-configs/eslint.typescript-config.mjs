@@ -43,10 +43,8 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
     "prefer-promise-reject-errors": OFF,
     "require-await": OFF,
 
-    /*
-     * ---- TypeScript Rules -----
-     * - Supported Rules (https://typescript-eslint.io/rules/#supported-rules)
-     */
+    // ---- TypeScript Rules -----
+    // - Supported Rules (https://typescript-eslint.io/rules/#supported-rules)
     "@typescript-eslint/adjacent-overload-signatures": ERROR,
     "@typescript-eslint/array-type": ERROR,
     "@typescript-eslint/await-thenable": ERROR,

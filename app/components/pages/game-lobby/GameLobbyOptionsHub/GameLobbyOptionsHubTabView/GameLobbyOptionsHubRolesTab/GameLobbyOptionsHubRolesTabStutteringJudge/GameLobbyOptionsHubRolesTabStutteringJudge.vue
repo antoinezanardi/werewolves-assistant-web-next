@@ -48,13 +48,14 @@ import { storeToRefs } from "pinia";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const stutteringJudgeVoteRequestsCountValue = computed<number>({
   get: () => createGameDto.value.options.roles.stutteringJudge.voteRequestsCount,
@@ -68,9 +69,5 @@ const stutteringJudgeVoteRequestsCountValue = computed<number>({
   },
 });
 
-const stutteringJudgeVoteRequestsCountDescription = computed<string>(() => {
-  const tKey = "components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.description";
-
-  return t(tKey, { count: stutteringJudgeVoteRequestsCountValue.value });
-});
+const stutteringJudgeVoteRequestsCountDescription = computed<string>(() => getGameOptionText("roles.stutteringJudge.voteRequestsCount"));
 </script>

@@ -44,16 +44,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isWolfHoundChosenSideRevealedValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.wolfHound.isChosenSideRevealed,
@@ -73,15 +71,7 @@ const isWolfHoundSideRandomlyChosenValue = computed<boolean>({
   },
 });
 
-const isWolfHoundChosenSideRevealedDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isWolfHoundChosenSideRevealedValue.value);
+const isWolfHoundChosenSideRevealedDescription = computed<string>(() => getGameOptionText("roles.wolfHound.isChosenSideRevealed"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.descriptions.${booleanAsAffirmative}`);
-});
-
-const isWolfHoundSideRandomlyChosenDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isWolfHoundSideRandomlyChosenValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.${booleanAsAffirmative}`);
-});
+const isWolfHoundSideRandomlyChosenDescription = computed<string>(() => getGameOptionText("roles.wolfHound.isSideRandomlyChosen"));
 </script>

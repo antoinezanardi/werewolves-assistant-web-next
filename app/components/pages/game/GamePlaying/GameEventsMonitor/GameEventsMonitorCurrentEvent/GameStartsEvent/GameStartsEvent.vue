@@ -17,14 +17,15 @@ import { storeToRefs } from "pinia";
 import { shuffle, counting } from "radash";
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useArrays } from "~/composables/misc/useArrays";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const gameStore = useGameStore();
-const { game } = storeToRefs(gameStore);
+const { game, gameOptions } = storeToRefs(gameStore);
 
+const { changedGameOptionsTexts } = useGameOptionsTexts(gameOptions);
 const { t } = useI18n();
-
 const { insertIf } = useArrays();
 
 const isSheriffElectedOnFirstTick = computed<boolean>(() => {
@@ -54,9 +55,26 @@ const gameCompositionEventText = computed<string>(() => {
   return t("components.GameStartsEvent.gameCompositionEvent", { composition: shuffledPlayersRolesText });
 });
 
+const gameChangedGameOptionsTexts = computed<string[]>(() => {
+  const changedGameOptionsCount = changedGameOptionsTexts.value.length;
+  if (changedGameOptionsCount === 0) {
+    return [];
+  }
+  const prefixedChangedGameOptionsTexts = changedGameOptionsTexts.value.map((rule, index) => t("components.GameStartsEvent.specialRule", {
+    rule,
+    number: index + 1,
+  }));
+
+  return [
+    t("components.GameStartsEvent.specialGameWithChangedOptions", { count: changedGameOptionsCount }, changedGameOptionsCount),
+    ...prefixedChangedGameOptionsTexts,
+  ];
+});
+
 const gameStartsEventTexts = computed<string[]>(() => [
   t("components.GameStartsEvent.welcomeToTheVillage"),
   gameCompositionEventText.value,
+  ...gameChangedGameOptionsTexts.value,
   t("components.GameStartsEvent.looksLifeSomeWerewolvesSneakedIntoTheVillage"),
   t("components.GameStartsEvent.villagersMurderWerewolves"),
   ...insertIf(isSheriffElectedOnFirstTick.value, t("components.GameStartsEvent.letsElectSheriffBefore")),

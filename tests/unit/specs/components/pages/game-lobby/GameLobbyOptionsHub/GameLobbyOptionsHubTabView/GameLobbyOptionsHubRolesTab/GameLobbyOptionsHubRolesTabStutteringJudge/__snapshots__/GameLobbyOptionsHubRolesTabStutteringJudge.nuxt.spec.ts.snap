@@ -17,7 +17,7 @@ exports[`Game Lobby Options Hub Roles Tab Stuttering Judge Component > should ma
               <slider-stub id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-slider" modelvalue="1" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.description, {"count":1}</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.stutteringJudge.voteRequestsCount, {"voteRequestsCount":1}, 1</p>
           <!--v-if-->
         </div>
       </div>

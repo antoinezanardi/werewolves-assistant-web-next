@@ -29,15 +29,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const doesIdiotDieOnElderDeathValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.idiot.doesDieOnElderDeath,
@@ -48,9 +47,5 @@ const doesIdiotDieOnElderDeathValue = computed<boolean>({
   },
 });
 
-const doesIdiotDieOnElderDeathDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(doesIdiotDieOnElderDeathValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.descriptions.${booleanAsAffirmative}`);
-});
+const doesIdiotDieOnElderDeathDescription = computed<string>(() => getGameOptionText("roles.idiot.doesDieOnElderDeath"));
 </script>

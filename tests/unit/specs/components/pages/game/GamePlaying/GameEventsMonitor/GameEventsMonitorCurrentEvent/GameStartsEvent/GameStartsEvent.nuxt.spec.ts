@@ -126,6 +126,31 @@ describe("Game Starts Event Component", () => {
       const expectedTexts: string[] = [
         "components.GameStartsEvent.welcomeToTheVillage",
         "components.GameStartsEvent.compositionIsHidden",
+        "components.GameStartsEvent.specialGameWithChangedOptions, {\"count\":1}, 1",
+        "components.GameStartsEvent.specialRule, {\"rule\":\"composables.useGameOptionsTexts.composition.isHidden.yes\",\"number\":1}",
+        "components.GameStartsEvent.looksLifeSomeWerewolvesSneakedIntoTheVillage",
+        "components.GameStartsEvent.villagersMurderWerewolves",
+        "components.GameStartsEvent.letsElectSheriffBefore",
+      ];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
+    it("should have texts with special rules when special rules are present in game options.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.options.votes.canBeSkipped = false;
+      gameStore.game.options.roles.seer.canSeeRoles = false;
+      gameStore.game.options.roles.sheriff.hasDoubledVote = false;
+      await nextTick();
+      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameEventWithTexts>("#game-starts-event");
+      const expectedTexts: string[] = [
+        "components.GameStartsEvent.welcomeToTheVillage",
+        `components.GameStartsEvent.gameCompositionEvent, {"composition":""}`,
+        "components.GameStartsEvent.specialGameWithChangedOptions, {\"count\":3}, 3",
+        "components.GameStartsEvent.specialRule, {\"rule\":\"composables.useGameOptionsTexts.votes.canBeSkipped.no\",\"number\":1}",
+        "components.GameStartsEvent.specialRule, {\"rule\":\"composables.useGameOptionsTexts.roles.sheriff.hasDoubledVote.no\",\"number\":2}",
+        "components.GameStartsEvent.specialRule, {\"rule\":\"composables.useGameOptionsTexts.roles.seer.canSeeRoles.no\",\"number\":3}",
         "components.GameStartsEvent.looksLifeSomeWerewolvesSneakedIntoTheVillage",
         "components.GameStartsEvent.villagersMurderWerewolves",
         "components.GameStartsEvent.letsElectSheriffBefore",

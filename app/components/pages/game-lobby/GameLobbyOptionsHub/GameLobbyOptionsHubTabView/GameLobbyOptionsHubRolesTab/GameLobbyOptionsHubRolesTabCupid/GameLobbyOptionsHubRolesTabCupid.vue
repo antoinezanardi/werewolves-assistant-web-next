@@ -44,15 +44,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const mustCupidWinWithLoversValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.cupid.mustWinWithLovers,
@@ -72,15 +71,7 @@ const doLoversRevealRoleToEachOtherValue = computed<boolean>({
   },
 });
 
-const mustCupidWinWithLoversDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(mustCupidWinWithLoversValue.value);
+const mustCupidWinWithLoversDescription = computed<string>(() => getGameOptionText("roles.cupid.mustWinWithLovers"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabCupid.options.mustWinWithLovers.descriptions.${booleanAsAffirmative}`);
-});
-
-const doLoversRevealRoleToEachOtherDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(doLoversRevealRoleToEachOtherValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabCupid.options.lovers.doRevealRoleToEachOther.descriptions.${booleanAsAffirmative}`);
-});
+const doLoversRevealRoleToEachOtherDescription = computed<string>(() => getGameOptionText("roles.cupid.lovers.doRevealRoleToEachOther"));
 </script>

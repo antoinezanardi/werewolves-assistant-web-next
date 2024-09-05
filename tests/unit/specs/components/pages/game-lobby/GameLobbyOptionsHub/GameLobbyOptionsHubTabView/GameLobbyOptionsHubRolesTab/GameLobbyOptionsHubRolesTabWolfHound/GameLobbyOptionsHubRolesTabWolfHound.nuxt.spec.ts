@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Roles Tab Wolf Hound Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wolfHound.isChosenSideRevealed = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wolfHound.isChosenSideRevealed.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -55,7 +55,7 @@ describe("Game Lobby Options Hub Roles Tab Wolf Hound Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wolfHound.isChosenSideRevealed = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wolfHound.isChosenSideRevealed.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -84,7 +84,7 @@ describe("Game Lobby Options Hub Roles Tab Wolf Hound Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wolfHound.isSideRandomlyChosen = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wolfHound.isSideRandomlyChosen.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -94,7 +94,7 @@ describe("Game Lobby Options Hub Roles Tab Wolf Hound Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.wolfHound.isSideRandomlyChosen = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.wolfHound.isSideRandomlyChosen.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

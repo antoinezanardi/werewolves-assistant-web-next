@@ -78,7 +78,7 @@ const ESLINT_STYLISTIC_CONFIG = {
     ],
     "@stylistic/member-delimiter-style": ERROR,
     "@stylistic/max-statements-per-line": [ERROR, { max: 1 }],
-    "@stylistic/multiline-comment-style": ERROR,
+    "@stylistic/multiline-comment-style": [ERROR, "separate-lines"],
     "@stylistic/multiline-ternary": [ERROR, NEVER],
     "@stylistic/new-parens": ERROR,
     "@stylistic/newline-per-chained-call": OFF,

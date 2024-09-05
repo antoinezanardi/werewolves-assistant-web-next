@@ -38,7 +38,17 @@ Feature: 🐕 Wolf-Hound role
       | David   | Villager    |
 
     When the user closes the toast
-    And the user skips the game event
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : When the Wolf-Hound chooses a side, the Game Master reveals his choice to the other players."
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Wolf-Hound wakes up and chooses which side he wants to join between Villagers and Werewolves."
     And the game's event player card should have the name "Antoine"
@@ -59,9 +69,17 @@ Feature: 🐕 Wolf-Hound role
       | Bob     | Werewolf    |
       | Charlie | Little Girl |
       | David   | Villager    |
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
 
-    When the user closes the toast
-    And the user skips the game event
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Wolf-Hound won't have the choice to choose a side at the beginning of the game. His side will be randomly chosen by the Assistant."
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "In this special game, the Wolf-Hound's side is randomly chosen by the Assistant."
     And the game's event player card should have the name "Antoine"
@@ -81,7 +99,20 @@ Feature: 🐕 Wolf-Hound role
       | David   | Villager    |
 
     When the user closes the toast
-    And the user skips the game event
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 3 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : When the Wolf-Hound chooses a side, the Game Master reveals his choice to the other players."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 3 : The Wolf-Hound won't have the choice to choose a side at the beginning of the game. His side will be randomly chosen by the Assistant."
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "In this special game, the Wolf-Hound's side is randomly chosen by the Assistant."
     And the game's event player card should have the name "Antoine"

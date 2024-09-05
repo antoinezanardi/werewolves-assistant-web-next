@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Roles Tab Stuttering Judge Component", () => {
 
     it("should translate option description with selected option value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.description, {\"count\":1}";
+      const expectedDescription = `composables.useGameOptionsTexts.roles.stutteringJudge.voteRequestsCount, {"voteRequestsCount":1}, 1`;
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });

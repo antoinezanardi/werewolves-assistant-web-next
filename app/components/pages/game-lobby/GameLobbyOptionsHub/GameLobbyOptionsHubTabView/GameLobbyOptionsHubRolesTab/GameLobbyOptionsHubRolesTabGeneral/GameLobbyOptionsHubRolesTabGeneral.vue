@@ -50,16 +50,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const doSkipCallIfNoTargetValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.doSkipCallIfNoTarget,
@@ -79,15 +77,7 @@ const areRevealedOnDeathValue = computed<boolean>({
   },
 });
 
-const doSkipCallIfNoTargetDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(doSkipCallIfNoTargetValue.value);
+const doSkipCallIfNoTargetDescription = computed<string>(() => getGameOptionText("roles.doSkipCallIfNoTarget"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabGeneral.options.doSkipCallIfNoTarget.descriptions.${booleanAsAffirmative}`);
-});
-
-const areRevealedOnDeathDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(areRevealedOnDeathValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabGeneral.options.areRevealedOnDeath.descriptions.${booleanAsAffirmative}`);
-});
+const areRevealedOnDeathDescription = computed<string>(() => getGameOptionText("roles.areRevealedOnDeath"));
 </script>

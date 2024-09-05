@@ -17,7 +17,7 @@ exports[`Game Lobby Options Hub Roles Tab White Werewolf Component > should matc
               <slider-stub id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-slider" modelvalue="2" class="mt-4 w-full" max="5" min="1" step="1"></slider-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.description, {"interval":2}, 2</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.whiteWerewolf.wakingUpInterval, {"interval":2}, 2</p>
           <!--v-if-->
         </div>
       </div>

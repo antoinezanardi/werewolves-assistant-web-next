@@ -29,16 +29,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { convertBooleanAsAffirmativeString } = useStrings();
-
-const { t } = useI18n();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const canWerewolfEatEachOtherValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.werewolf.canEatEachOther,
@@ -49,9 +47,5 @@ const canWerewolfEatEachOtherValue = computed<boolean>({
   },
 });
 
-const canWerewolfEatEachOtherDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(canWerewolfEatEachOtherValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.${booleanAsAffirmative}`);
-});
+const canWerewolfEatEachOtherDescription = computed<string>(() => getGameOptionText("roles.werewolf.canEatEachOther"));
 </script>

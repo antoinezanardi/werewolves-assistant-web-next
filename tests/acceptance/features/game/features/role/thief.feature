@@ -96,6 +96,15 @@ Feature: 👺 Thief role
     And the user clicks on the button with name "Start game"
     And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 3 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Thief's chosen card is revealed to the other players."
 
     When the user skips all game events
     And the thief chooses card with role of "Witch"
@@ -191,6 +200,15 @@ Feature: 👺 Thief role
     And the user clicks on the button with name "Start game"
     And the user clicks on the button with name "Skip and play now"
     And the user closes the toast
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Thief can skip his turn, even if all the cards designated to him are from the Werewolves side."
 
     When the user skips the game event
     And the user skips the game event

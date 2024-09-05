@@ -46,7 +46,7 @@ describe("Game Lobby Options Hub Roles Tab White Werewolf Component", () => {
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.description, {\"interval\":2}, 2");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe(`composables.useGameOptionsTexts.roles.whiteWerewolf.wakingUpInterval, {"interval":2}, 2`);
     });
 
     it("should translate option float label when rendered.", () => {

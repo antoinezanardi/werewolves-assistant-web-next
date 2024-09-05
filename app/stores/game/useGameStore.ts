@@ -2,6 +2,7 @@ import type { AsyncDataRequestStatus } from "nuxt/app";
 import { defineStore } from "pinia";
 
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
+import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { Game } from "~/composables/api/game/types/game.class";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -15,6 +16,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
   } = useFetchGames();
 
   const game = ref<Game>(new Game());
+  const gameOptions = computed<GameOptions>(() => game.value.options);
   const fetchingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const cancelingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const makingGamePlayStatus = ref<AsyncDataRequestStatus>("idle");
@@ -68,6 +70,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
   }
   return {
     game,
+    gameOptions,
     fetchingGameStatus,
     cancelingGameStatus,
     makingGamePlayStatus,

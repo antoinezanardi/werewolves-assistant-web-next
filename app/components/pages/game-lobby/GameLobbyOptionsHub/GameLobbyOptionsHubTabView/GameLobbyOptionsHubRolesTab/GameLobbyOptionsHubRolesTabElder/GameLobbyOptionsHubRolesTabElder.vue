@@ -64,15 +64,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const elderLivesCountAgainstWerewolvesValue = computed<number>({
   get: () => createGameDto.value.options.roles.elder.livesCountAgainstWerewolves,
@@ -95,15 +94,7 @@ const doesElderTakeHisRevengeValue = computed<boolean>({
   },
 });
 
-const elderLivesCountAgainstWerewolvesDescription = computed<string>(() => {
-  const tKey = "components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.description";
+const elderLivesCountAgainstWerewolvesDescription = computed<string>(() => getGameOptionText("roles.elder.livesCountAgainstWerewolves"));
 
-  return t(tKey, { livesCount: elderLivesCountAgainstWerewolvesValue.value }, elderLivesCountAgainstWerewolvesValue.value);
-});
-
-const doesElderTakeHisRevengeDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(doesElderTakeHisRevengeValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.descriptions.${booleanAsAffirmative}`);
-});
+const doesElderTakeHisRevengeDescription = computed<string>(() => getGameOptionText("roles.elder.doesTakeHisRevenge"));
 </script>

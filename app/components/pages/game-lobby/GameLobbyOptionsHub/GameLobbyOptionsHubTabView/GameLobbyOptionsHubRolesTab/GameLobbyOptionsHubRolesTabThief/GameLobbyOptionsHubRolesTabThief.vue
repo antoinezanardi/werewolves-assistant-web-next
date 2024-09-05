@@ -44,16 +44,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const mustThiefChooseBetweenWerewolvesValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.thief.mustChooseBetweenWerewolves,
@@ -73,15 +71,7 @@ const isThiefChosenCardRevealedValue = computed<boolean>({
   },
 });
 
-const mustThiefChooseBetweenWerewolvesDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(mustThiefChooseBetweenWerewolvesValue.value);
+const mustThiefChooseBetweenWerewolvesDescription = computed<string>(() => getGameOptionText("roles.thief.mustChooseBetweenWerewolves"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabThief.options.mustChooseBetweenWerewolves.descriptions.${booleanAsAffirmative}`);
-});
-
-const isThiefChosenCardRevealedDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isThiefChosenCardRevealedValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabThief.options.isChosenCardRevealed.descriptions.${booleanAsAffirmative}`);
-});
+const isThiefChosenCardRevealedDescription = computed<string>(() => getGameOptionText("roles.thief.isChosenCardRevealed"));
 </script>

@@ -29,16 +29,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isActorPowerlessOnWerewolvesSideValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.actor.isPowerlessOnWerewolvesSide,
@@ -49,9 +47,5 @@ const isActorPowerlessOnWerewolvesSideValue = computed<boolean>({
   },
 });
 
-const isActorPowerlessOnWerewolvesSideDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isActorPowerlessOnWerewolvesSideValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabActor.options.isPowerlessOnWerewolvesSide.descriptions.${booleanAsAffirmative}`);
-});
+const isActorPowerlessOnWerewolvesSideDescription = computed<string>(() => getGameOptionText("roles.actor.isPowerlessOnWerewolvesSide"));
 </script>

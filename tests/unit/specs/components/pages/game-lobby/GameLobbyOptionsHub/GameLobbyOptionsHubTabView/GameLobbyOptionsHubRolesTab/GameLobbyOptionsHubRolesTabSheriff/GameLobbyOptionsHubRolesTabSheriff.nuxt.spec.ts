@@ -67,7 +67,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
 
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-is-enabled-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSheriff.options.isEnabled.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.sheriff.isEnabled.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -77,7 +77,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       createGameDtoStore.createGameDto.options.roles.sheriff.isEnabled = false;
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-is-enabled-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSheriff.options.isEnabled.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.sheriff.isEnabled.no";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -107,7 +107,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabSheriff.options.mustSettleTieInVotes.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.sheriff.mustSettleTieInVotes.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -116,7 +116,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-must-settle-votes-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabSheriff.options.mustSettleTieInVotes.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.sheriff.mustSettleTieInVotes.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {
@@ -144,7 +144,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabSheriff.options.hasDoubledVote.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.sheriff.hasDoubledVote.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -153,7 +153,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-sheriff-has-doubled-vote-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabSheriff.options.hasDoubledVote.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.sheriff.hasDoubledVote.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

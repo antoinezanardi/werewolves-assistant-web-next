@@ -46,7 +46,7 @@ describe("Game Lobby Options Hub Roles Tab Three Brothers Component", () => {
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabThreeBrothers.options.wakingUpInterval.description, {\"interval\":2}, 2");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe(`composables.useGameOptionsTexts.roles.threeBrothers.wakingUpInterval, {"interval":2}, 2`);
     });
 
     it("should translate option float label when rendered.", () => {

@@ -79,7 +79,14 @@ Feature: 🎖️ Sheriff Attribute
       | David   | Villager |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with one changed option. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The Sheriff will be elected on the day of the turn 2."
+
+    When the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "David"
@@ -127,9 +134,15 @@ Feature: 🎖️ Sheriff Attribute
       | David   | Angel    |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with one changed option. Let's see how it goes…"
 
-    When the survivors elect the sheriff with the votes
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The Sheriff doesn't have a doubled vote during the votes but a regular one like any other player."
+
+    When the user skips all game events
+    And the survivors elect the sheriff with the votes
       | voter   | target |
       | Antoine | Bob    |
     And the user skips all game events
@@ -192,9 +205,15 @@ Feature: 🎖️ Sheriff Attribute
       | David   | Angel    |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with one changed option. Let's see how it goes…"
 
-    When the survivors elect the sheriff with the votes
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The Sheriff doesn't have to settle the votes when there is a tie. A second vote will be called."
+
+    When the user skips all game events
+    And the survivors elect the sheriff with the votes
       | voter   | target |
       | Antoine | Bob    |
     And the user skips all game events

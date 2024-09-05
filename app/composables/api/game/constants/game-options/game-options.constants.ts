@@ -66,4 +66,6 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
   },
 } as const;
 
-export { DEFAULT_GAME_OPTIONS };
+export {
+  DEFAULT_GAME_OPTIONS,
+};

@@ -44,15 +44,14 @@ import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeTogg
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isSeerTalkativeValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.seer.isTalkative,
@@ -72,15 +71,7 @@ const canSeerSeeRolesValue = computed<boolean>({
   },
 });
 
-const isSeerTalkativeDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isSeerTalkativeValue.value);
+const isSeerTalkativeDescription = computed<string>(() => getGameOptionText("roles.seer.isTalkative"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.descriptions.${booleanAsAffirmative}`);
-});
-
-const canSeerSeeRolesDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(canSeerSeeRolesValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.descriptions.${booleanAsAffirmative}`);
-});
+const canSeerSeeRolesDescription = computed<string>(() => getGameOptionText("roles.seer.canSeeRoles"));
 </script>

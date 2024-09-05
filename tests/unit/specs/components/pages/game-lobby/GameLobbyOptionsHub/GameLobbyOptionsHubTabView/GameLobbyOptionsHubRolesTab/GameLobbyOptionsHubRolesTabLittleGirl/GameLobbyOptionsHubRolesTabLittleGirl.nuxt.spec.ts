@@ -47,13 +47,13 @@ describe("Game Lobby Options Hub Roles Tab Little Girl Component", () => {
       createGameDtoStore.createGameDto.options.roles.littleGirl.isProtectedByDefender = true;
       await nextTick();
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.littleGirl.isProtectedByDefender.yes");
     });
 
     it("should translate option description when the option is deactivated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-little-girl-is-protected-by-defender-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabLittleGirl.options.isProtectedByDefender.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.littleGirl.isProtectedByDefender.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {
