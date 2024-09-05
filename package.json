@@ -83,7 +83,7 @@
     "@cucumber/cucumber": "^10.9.0",
     "@eslint/config-inspector": "^0.5.4",
     "@eslint/eslintrc": "^3.1.0",
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.0.0",
     "@nuxt/image": "^1.8.0",
     "@nuxt/kit": "^3.13.1",
     "@nuxt/test-utils": "^3.14.1",
@@ -169,7 +169,7 @@
     "vue-eslint-parser": "^9.4.3",
     "vue-flip": "^3.0.2",
     "vue-router": "^4.4.3",
-    "vue-tsc": "^2.1.4",
+    "vue-tsc": "^2.1.6",
     "vue3-lottie": "^3.3.1",
     "vuedraggable": "^4.1.0"
   },
