@@ -57,7 +57,6 @@ describe("Use Game Options Texts Composable", () => {
           thief: {
             mustChooseBetweenWerewolves: `composables.useGameOptionsTexts.roles.thief.mustChooseBetweenWerewolves.yes`,
             isChosenCardRevealed: `composables.useGameOptionsTexts.roles.thief.isChosenCardRevealed.no`,
-            additionalCardsCount: "",
           },
           piedPiper: {
             charmedPeopleCountPerNight: `composables.useGameOptionsTexts.roles.piedPiper.charmedPeopleCountPerNight, {"charmedPeopleCountPerNight":2}, 2`,
@@ -69,7 +68,6 @@ describe("Use Game Options Texts Composable", () => {
           prejudicedManipulator: { isPowerlessOnWerewolvesSide: `composables.useGameOptionsTexts.roles.prejudicedManipulator.isPowerlessOnWerewolvesSide.yes` },
           actor: {
             isPowerlessOnWerewolvesSide: `composables.useGameOptionsTexts.roles.actor.isPowerlessOnWerewolvesSide.yes`,
-            additionalCardsCount: "",
           },
         },
       };

@@ -3,7 +3,6 @@ import { ActorGameOptions } from "~/composables/api/game/types/game-options/role
 
 function createFakeActorGameOptionsFactory(actorGameOptionsFactory: Partial<ActorGameOptions> = {}): ActorGameOptions {
   return ActorGameOptions.create({
-    additionalCardsCount: actorGameOptionsFactory.additionalCardsCount ?? faker.number.int({ min: 1, max: 5 }),
     isPowerlessOnWerewolvesSide: actorGameOptionsFactory.isPowerlessOnWerewolvesSide ?? faker.datatype.boolean(),
   });
 }
