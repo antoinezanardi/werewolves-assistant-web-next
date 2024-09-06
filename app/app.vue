@@ -5,6 +5,8 @@
     />
 
     <PrimeVueToast position="bottom-right"/>
+
+    <NuxtPwaManifest/>
   </NuxtLayout>
 </template>
 

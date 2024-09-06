@@ -55,6 +55,7 @@ exports[`App Component > should render component without shallow and match snaps
       </transition-stub>
       <!--teleport start-->
       <!--teleport end-->
+      <!---->
     </div>
   </div>
 </transition-stub>"

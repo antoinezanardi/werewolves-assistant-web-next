@@ -561,6 +561,7 @@ Environment variables are :
 |                 `NUXT_SITE_URL`                 |                  Used for SEO, base URL for the site                   |    ✅     |       ❌       |              Must be a valid URL               |
 |                `NUXT_SITE_NAME`                 |            Used for SEO, name of the site (Used in titles)             |    ✅     |       ❌       |             Must be a valid string             |
  |                 `NUXT_SITE_ENV`                 |           Used for SEO and indexing, environment of the site           |    ✅     |       ❌       | Must be a either `production` or `development` |
+ |             `NUXT_SITE_DESCRIPTION`             |           Used for SEO and indexing, description of the site           |    ✅     |       ❌       |             Must be a valid string             |
 
 ## <a name="code-analysis-and-consistency">☑️ Code analysis and consistency</a>
 
