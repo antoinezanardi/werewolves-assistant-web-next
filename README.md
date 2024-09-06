@@ -28,19 +28,20 @@
 ## 📋 Table of Contents
 
 1. 🐺 [What is this app ?](#what-is-this-app)
-2. 🃏 [Available roles](#available-roles)
-3. 📸 [Screenshots](#screenshots)
-4. 🔨 [Installation](#installation)
-5. 🚀 [Build](#build)
-6. 🐳 [Docker](#docker)
-7. 💯 [Tests](#tests)
-8. 🌿 [Env variables](#env-variables)
-9. ☑️ [Code analysis and consistency](#code-analysis-and-consistency)
-10. 📈 [Releases & Changelog](#versions)
-11. 🐙 [GitHub Actions](#github-actions)
-12. ✨ [Misc commands](#misc-commands)
-13. ©️ [License](#license)
-14. ❤️ [Contributors](#contributors)
+2. ✨ [Production and development links](#production-and-development-links)
+3. 🃏 [Available roles](#available-roles)
+4. 📸 [Screenshots](#screenshots)
+5. 🔨 [Installation](#installation)
+6. 🚀 [Build](#build)
+7. 🐳 [Docker](#docker)
+8. 💯 [Tests](#tests)
+9. 🌿 [Env variables](#env-variables)
+10. ☑️ [Code analysis and consistency](#code-analysis-and-consistency)
+11. 📈 [Releases & Changelog](#versions)
+12. 🐙 [GitHub Actions](#github-actions)
+13. ✨ [Misc commands](#misc-commands)
+14. ©️ [License](#license)
+15. ❤️ [Contributors](#contributors)
 
 ## <a name="what-is-this-app">🐺 What is this app ?</a>
 Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.
@@ -48,7 +49,25 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 > [!NOTE]
 > This is the **next** version of the current **[Werewolves Assistant Web](https://github.com/antoinezanardi/werewolves-assistant-web)**. It is still under development.
 
-#### 🤔 Want to know more about this awesome project ? <a href="https://werewolves-assistant.antoinezanardi.fr/about" target="_blank">**Check out the dedicated about page**</a>.
+#### 🤔 Want to know more about this awesome project ? <a href="https://werewolves-assistant.com/about" target="_blank">**Check out the dedicated about page**</a>.
+
+## <a name="production-and-development-links">✨ Production and development links</a>
+
+### 🌐 Production
+
+The production version of this Web App is available at **[werewolves-assistant.com](https://werewolves-assistant.com)**.
+
+It uses the **[Werewolves Assistant API](https://api.werewolves-assistant.com/docs)**.
+
+The production server is updated automatically with the latest version of the Web App when a new release is created. (When a new tag is pushed on the `main` branch)
+
+### 🛠️ Development
+
+The development version of this Web App is available at **[preprod.werewolves-assistant.com](https://preprod.werewolves-assistant.com)**.
+
+It uses the **[Werewolves Assistant API](https://preprod.api.werewolves-assistant.com/docs)**.
+
+The development server is updated automatically when a commit is pushed on the `develop` branch.
 
 ## <a name="available-roles">🃏 Available roles</a>
 
