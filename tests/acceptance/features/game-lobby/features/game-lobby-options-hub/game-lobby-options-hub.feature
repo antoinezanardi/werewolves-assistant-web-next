@@ -24,9 +24,10 @@ Feature: ⚙️ Game Lobby Options Hub
   Scenario: ⚙️ Options Hub stores changed game options in local storages and keeps the state when user comes back
     Given the user is on game-lobby page
     And the user disables the sheriff in game options
-    And the user reloads the page
 
-    When the user clicks on the game options button in the lobby
+    When the user reloads the page
+    And the user clicks on the link with name "Play"
+    And the user clicks on the game options button in the lobby
     Then the heading with name "Game options" should be visible
     And the exact text "The game will not have a Sheriff." should be visible
 
