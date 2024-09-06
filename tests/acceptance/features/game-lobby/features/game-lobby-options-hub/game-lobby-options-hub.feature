@@ -30,6 +30,16 @@ Feature: ⚙️ Game Lobby Options Hub
     Then the heading with name "Game options" should be visible
     And the exact text "The game will not have a Sheriff." should be visible
 
+  Scenario: ⚙️ User can restore official rules by clicking on reset button
+    Given the user is on game-lobby page
+    And the user disables the sheriff in game options
+    And the user clicks on the game options button in the lobby
+    Then the heading with name "Game options" should be visible
+    And the exact text "The game will not have a Sheriff." should be visible
+
+    When the user clicks on the button with name "Restore official rules"
+    Then the exact text "The game will have a Sheriff." should be visible
+
   Scenario: ⚙️ User closes the options hub with escape, close button or outside click
     Given the user is on game-lobby page
 
@@ -41,10 +51,6 @@ Feature: ⚙️ Game Lobby Options Hub
 
     When the user clicks on the game options button in the lobby
     And the user clicks on the close button of the dialog's header
-    Then the heading with exact name "Game options" should be hidden
-
-    When the user clicks on the game options button in the lobby
-    And the user clicks on the close button of the dialog's footer
     Then the heading with exact name "Game options" should be hidden
 
     When the user clicks on the game options button in the lobby

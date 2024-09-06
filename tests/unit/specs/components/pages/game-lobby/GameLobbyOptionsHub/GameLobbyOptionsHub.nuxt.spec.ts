@@ -3,9 +3,9 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Dialog, { type DialogProps } from "primevue/dialog";
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
+import type GameLobbyOptionsHubFooter from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubFooter/GameLobbyOptionsHubFooter.vue";
 import type GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
 import type GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubContent/GameLobbyOptionsHubContent.vue";
-import type DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
@@ -21,7 +21,7 @@ describe("Game Lobby Options Hub Component", () => {
         stubs: {
           GameLobbyOptionsHubHeader: true,
           GameLobbyOptionsHubContent: true,
-          DialogFooterCloseButtonOnly: true,
+          GameLobbyOptionsHubFooter: true,
         },
       },
       ...options,
@@ -64,7 +64,7 @@ describe("Game Lobby Options Hub Component", () => {
 
     describe("Game Lobby Options Hub Footer", () => {
       it("should not render game lobby options hub footer when dialog is not open.", () => {
-        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#close-button-only-dialog-footer");
+        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof GameLobbyOptionsHubFooter>("#game-lobby-options-hub-footer");
 
         expect(dialogFooterCloseButtonOnly.exists()).toBeFalsy();
       });
@@ -102,13 +102,13 @@ describe("Game Lobby Options Hub Component", () => {
 
     describe("Game Lobby Options Hub Footer", () => {
       it("should render game lobby options hub footer when opened.", () => {
-        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#close-button-only-dialog-footer");
+        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof GameLobbyOptionsHubFooter>("#game-lobby-options-hub-footer");
 
         expect(dialogFooterCloseButtonOnly.exists()).toBeTruthy();
       });
 
       it("should close options hub when option hub footer emits event.", async() => {
-        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof DialogFooterCloseButtonOnly>("#close-button-only-dialog-footer");
+        const dialogFooterCloseButtonOnly = wrapper.findComponent<typeof GameLobbyOptionsHubFooter>("#game-lobby-options-hub-footer");
         (dialogFooterCloseButtonOnly.vm as VueVm).$emit("close-dialog");
         await nextTick();
         const dialog = wrapper.findComponent<typeof Dialog>(Dialog);
