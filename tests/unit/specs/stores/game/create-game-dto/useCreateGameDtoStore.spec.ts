@@ -4,11 +4,11 @@ import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/compo
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
+import type * as VueUse from "@vueuse/core";
 import { createPinia, setActivePinia } from "pinia";
 import { vi } from "vitest";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
-import type * as VueUse from "@vueuse/core";
 
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
@@ -171,6 +171,26 @@ describe("Create Game Dto Store", () => {
         ],
       });
       createGameDtoStore.resetCreateGameDto(false);
+      const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
+
+      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedGameOptions });
+    });
+  });
+
+  describe("resetCreateGameOptionsDto", () => {
+    it("should reset create game options dto with default values when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.options = createFakeGameOptions();
+      createGameDtoStore.resetCreateGameOptionsDto();
+      const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
+
+      expect(createGameDtoStore.createGameDto.options).toStrictEqual<GameOptions>(expectedGameOptions);
+    });
+
+    it("should save create game options dto to local storage when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.options = createFakeGameOptions();
+      createGameDtoStore.resetCreateGameOptionsDto();
       const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
 
       expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedGameOptions });

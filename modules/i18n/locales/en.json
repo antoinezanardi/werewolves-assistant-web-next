@@ -1592,6 +1592,10 @@
       "actorAdditionalCardsMustBePlacedUp": "Is the additional card for the Actor placed face up on the center of the table? | Are the additional cards for the Actor placed face up on the center of the table?",
       "changeActorAdditionalCards": "Change the additional cards for the Actor",
       "actorIcon": "Actor icon"
+    },
+    "GameLobbyOptionsHubFooter": {
+      "resetOptions": "Restore official rules",
+      "youHaveChangedOptions": "You have changed one option | You have changed {count} options"
     }
   }
 }

@@ -1592,6 +1592,10 @@
       "actorAdditionalCardsMustBePlacedUp": "La carte destinée au Comédien est-elle placée face visible au centre de la table ? | Les cartes destinées au Comédien sont-elles placées face visible au centre de la table ?",
       "changeActorAdditionalCards": "Changer les cartes destinée au Comédien",
       "actorIcon": "Icône du Comédien"
+    },
+    "GameLobbyOptionsHubFooter": {
+      "resetOptions": "Revenir aux règles officielles",
+      "youHaveChangedOptions": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles"
     }
   }
 }

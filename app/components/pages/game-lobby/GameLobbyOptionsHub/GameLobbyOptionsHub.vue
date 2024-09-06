@@ -29,8 +29,8 @@
     </template>
 
     <template #footer>
-      <DialogFooterCloseButtonOnly
-        id="close-button-only-dialog-footer"
+      <GameLobbyOptionsHubFooter
+        id="game-lobby-options-hub-footer"
         @close-dialog="close"
       />
     </template>
@@ -38,8 +38,8 @@
 </template>
 
 <script setup lang="ts">
+import GameLobbyOptionsHubFooter from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubFooter/GameLobbyOptionsHubFooter.vue";
 import GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubTabView.vue";
-import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";
 
 const isVisible = ref<boolean>(false);

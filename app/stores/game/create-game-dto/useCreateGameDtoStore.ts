@@ -6,7 +6,7 @@ import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/cre
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
-import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
+import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constants/role.constants";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -61,6 +61,11 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
       ...defaultCreateGameDto,
       options: createGameOptionsDtoFromLocalStorage.value,
     });
+  }
+
+  function resetCreateGameOptionsDto(): void {
+    createGameDto.value.options = GameOptions.create(DEFAULT_GAME_OPTIONS);
+    saveCreateGameOptionsDtoToLocalStorage();
   }
 
   function saveCreateGameOptionsDtoToLocalStorage(): void {
@@ -158,6 +163,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
+    resetCreateGameOptionsDto,
     saveCreateGameOptionsDtoToLocalStorage,
     removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,
