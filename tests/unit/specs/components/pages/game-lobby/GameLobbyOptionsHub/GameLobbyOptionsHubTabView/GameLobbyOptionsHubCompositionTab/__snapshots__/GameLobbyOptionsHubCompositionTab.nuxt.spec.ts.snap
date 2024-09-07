@@ -11,7 +11,7 @@ exports[`Game Lobby Options Hub Composition Tab Component > should match snapsho
         <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-composition-tab-is-hidden-input" class="w-full"></affirmative-toggle-button-stub>
       </div>
     </div>
-    <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubCompositionTab.options.isHidden.descriptions.no</p>
+    <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.composition.isHidden.no</p>
     <!--v-if-->
   </div>
 </div>"

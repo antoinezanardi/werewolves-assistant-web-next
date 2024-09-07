@@ -6,21 +6,31 @@ import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/cre
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
+import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constants/role.constants";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+import { useLocalStorage } from "@vueuse/core";
+import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
 
 const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   const rolesStore = useRolesStore();
   const { getRoleWithNameInRoles } = rolesStore;
+
+  const createGameOptionsDtoFromLocalStorage = useLocalStorage(LocalStorageKeys.GAME_OPTIONS, DEFAULT_GAME_OPTIONS, { mergeDefaults: true });
 
   const defaultCreateGameDto = CreateGameDto.create({
     players: [],
     options: DEFAULT_GAME_OPTIONS,
   });
 
-  const createGameDto = ref<CreateGameDto>(CreateGameDto.create(defaultCreateGameDto));
+  const createGameDto = ref<CreateGameDto>(CreateGameDto.create({
+    ...defaultCreateGameDto,
+    options: createGameOptionsDtoFromLocalStorage.value,
+  }));
+
+  const createGameOptionsDto = computed<GameOptions>(() => createGameDto.value.options);
 
   const doesCreateGameDtoContainPositionDependantRoles = computed<boolean>(() => {
     const positionDependantRoles: RoleName[] = ["rusty-sword-knight", "bear-tamer", "fox"];
@@ -37,10 +47,29 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
+    saveCreateGameOptionsDtoToLocalStorage();
   }
 
-  function resetCreateGameDto(): void {
-    createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
+  function resetCreateGameDto(doesRetrieveLocalStorageValues = true): void {
+    if (!doesRetrieveLocalStorageValues) {
+      createGameDto.value = CreateGameDto.create(defaultCreateGameDto);
+      saveCreateGameOptionsDtoToLocalStorage();
+
+      return;
+    }
+    createGameDto.value = CreateGameDto.create({
+      ...defaultCreateGameDto,
+      options: createGameOptionsDtoFromLocalStorage.value,
+    });
+  }
+
+  function resetCreateGameOptionsDto(): void {
+    createGameDto.value.options = GameOptions.create(DEFAULT_GAME_OPTIONS);
+    saveCreateGameOptionsDtoToLocalStorage();
+  }
+
+  function saveCreateGameOptionsDtoToLocalStorage(): void {
+    createGameOptionsDtoFromLocalStorage.value = createGameDto.value.options;
   }
 
   function removeObsoleteAdditionalCardsFromCreateGameDto(): void {
@@ -127,11 +156,15 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     return createGameDto.value.additionalCards?.filter(card => card.roleName === roleName) ?? [];
   }
   return {
+    createGameOptionsDtoFromLocalStorage,
     createGameDto,
+    createGameOptionsDto,
     doesCreateGameDtoContainPositionDependantRoles,
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
     resetCreateGameDto,
+    resetCreateGameOptionsDto,
+    saveCreateGameOptionsDtoToLocalStorage,
     removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,
     updatePlayerInCreateGameDto,

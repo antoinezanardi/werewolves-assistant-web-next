@@ -49,7 +49,6 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
     thief: {
       mustChooseBetweenWerewolves: true,
       isChosenCardRevealed: false,
-      additionalCardsCount: 2,
     },
     piedPiper: {
       charmedPeopleCountPerNight: 2,
@@ -61,9 +60,10 @@ const DEFAULT_GAME_OPTIONS: GameOptions = {
     prejudicedManipulator: { isPowerlessOnWerewolvesSide: true },
     actor: {
       isPowerlessOnWerewolvesSide: true,
-      additionalCardsCount: 3,
     },
   },
 } as const;
 
-export { DEFAULT_GAME_OPTIONS };
+export {
+  DEFAULT_GAME_OPTIONS,
+};

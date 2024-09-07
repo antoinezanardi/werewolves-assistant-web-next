@@ -46,8 +46,9 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
 
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input-group");
+      const expectedOptionDescription = "composables.useGameOptionsTexts.roles.piedPiper.charmedPeopleCountPerNight, {\"charmedPeopleCountPerNight\":2}, 2";
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.description, {\"count\":2}");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedOptionDescription);
     });
 
     it("should translate option float label when rendered.", () => {
@@ -101,7 +102,7 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.piedPiper.isPowerlessOnWerewolvesSide.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -110,7 +111,7 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-is-powerless-on-werewolves-side-input-group");
       await nextTick();
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.isPowerlessOnWerewolvesSide.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.piedPiper.isPowerlessOnWerewolvesSide.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {
@@ -138,7 +139,7 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group");
       await nextTick();
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.piedPiper.areCharmedPeopleRevealed.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -147,7 +148,7 @@ describe("Game Lobby Options Hub Roles Tab Pied Piper Component", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-pied-piper-are-charmed-people-revealed-input-group");
       await nextTick();
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabPiedPiper.options.areCharmedPeopleRevealed.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.piedPiper.areCharmedPeopleRevealed.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

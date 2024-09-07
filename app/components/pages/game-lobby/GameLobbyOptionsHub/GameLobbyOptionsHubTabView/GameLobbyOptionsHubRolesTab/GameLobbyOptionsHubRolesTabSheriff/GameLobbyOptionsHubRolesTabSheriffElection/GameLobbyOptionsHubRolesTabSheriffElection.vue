@@ -55,14 +55,15 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import type { IconAndIconClass } from "~/utils/types/icon.types";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const sheriffElectionTurnValue = computed<number>({
   get: () => createGameDto.value.options.roles.sheriff.electedAt.turn,
@@ -98,12 +99,5 @@ const sheriffPhaseNameElectionValueIconAndIconClass = computed<IconAndIconClass>
   };
 });
 
-const sheriffElectionTurnDescription = computed<string>(() => {
-  const phaseLabel = t(`shared.game.definitePhase.${createGameDto.value.options.roles.sheriff.electedAt.phaseName}`);
-
-  return t("components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.description", {
-    turn: sheriffElectionTurnValue.value,
-    phase: phaseLabel.toLowerCase(),
-  });
-});
+const sheriffElectionTurnDescription = computed<string>(() => getGameOptionText("roles.sheriff.electedAt.turn"));
 </script>

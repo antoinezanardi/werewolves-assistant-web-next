@@ -47,7 +47,7 @@ describe("Game Lobby Options Hub Tab Bear Tamer Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabBearTamer.options.doesGrowlOnWerewolvesSide.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.bearTamer.doesGrowlOnWerewolvesSide.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -56,7 +56,7 @@ describe("Game Lobby Options Hub Tab Bear Tamer Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-bear-tamer-does-growl-on-werewolves-side-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabBearTamer.options.doesGrowlOnWerewolvesSide.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.bearTamer.doesGrowlOnWerewolvesSide.no");
     });
 
     it("should update create game dto store when the option is toggled.", async() => {

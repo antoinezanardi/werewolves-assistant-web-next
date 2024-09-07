@@ -76,16 +76,14 @@ import GameLobbyOptionsHubRolesTabSheriffElection from "~/components/pages/game-
 import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
-import { useStrings } from "~/composables/misc/useStrings";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { setCreateGameDto } = createGameDtoStore;
-const { createGameDto } = storeToRefs(createGameDtoStore);
+const { createGameDto, createGameOptionsDto } = storeToRefs(createGameDtoStore);
 
-const { t } = useI18n();
-
-const { convertBooleanAsAffirmativeString } = useStrings();
+const { getGameOptionText } = useGameOptionsTexts(createGameOptionsDto);
 
 const isSheriffEnabledValue = computed<boolean>({
   get: () => createGameDto.value.options.roles.sheriff.isEnabled,
@@ -114,21 +112,9 @@ const doesSheriffHaveDoubledVoteValue = computed<boolean>({
   },
 });
 
-const isSheriffEnabledDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(isSheriffEnabledValue.value);
+const isSheriffEnabledDescription = computed<string>(() => getGameOptionText("roles.sheriff.isEnabled"));
 
-  return t(`components.GameLobbyOptionsHubRolesTabSheriff.options.isEnabled.descriptions.${booleanAsAffirmative}`);
-});
+const mustSheriffSettleVotesDescription = computed<string>(() => getGameOptionText("roles.sheriff.mustSettleTieInVotes"));
 
-const mustSheriffSettleVotesDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(mustSheriffSettleVotesValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabSheriff.options.mustSettleTieInVotes.descriptions.${booleanAsAffirmative}`);
-});
-
-const doesSheriffHaveDoubledVoteDescription = computed<string>(() => {
-  const booleanAsAffirmative = convertBooleanAsAffirmativeString(doesSheriffHaveDoubledVoteValue.value);
-
-  return t(`components.GameLobbyOptionsHubRolesTabSheriff.options.hasDoubledVote.descriptions.${booleanAsAffirmative}`);
-});
+const doesSheriffHaveDoubledVoteDescription = computed<string>(() => getGameOptionText("roles.sheriff.hasDoubledVote"));
 </script>

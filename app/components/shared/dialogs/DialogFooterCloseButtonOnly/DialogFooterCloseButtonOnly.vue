@@ -7,7 +7,7 @@
 
     <div class="flex justify-end w-full">
       <PrimeVueButton
-        id="close-button-only-dialog-footer-close-button"
+        id="only-dialog-footer-close-button"
         :label="$t('shared.actions.close')"
         severity="secondary"
         size="small"

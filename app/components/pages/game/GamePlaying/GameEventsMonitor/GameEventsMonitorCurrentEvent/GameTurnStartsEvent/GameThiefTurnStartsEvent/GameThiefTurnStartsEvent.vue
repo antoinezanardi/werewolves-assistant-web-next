@@ -22,7 +22,7 @@ const { playSoundEffect } = audioStore;
 
 const { t } = useI18n();
 
-const thiefAdditionalCardsCount = computed<number>(() => game.value.options.roles.thief.additionalCardsCount);
+const thiefAdditionalCardsCount = computed<number>(() => game.value.additionalCards.filter(card => card.recipient === "thief").length);
 
 const mustThiefChooseBetweenWerewolves = computed<boolean>(() => game.value.options.roles.thief.mustChooseBetweenWerewolves);
 

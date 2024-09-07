@@ -43,7 +43,7 @@ describe("Game Lobby Options Hub Roles Tab Witch Component", () => {
 
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWitch.options.doesKnowWerewolvesTargets.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.witch.doesKnowWerewolvesTargets.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -52,7 +52,7 @@ describe("Game Lobby Options Hub Roles Tab Witch Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.witch.doesKnowWerewolvesTargets = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-witch-does-know-werewolves-targets-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWitch.options.doesKnowWerewolvesTargets.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.witch.doesKnowWerewolvesTargets.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

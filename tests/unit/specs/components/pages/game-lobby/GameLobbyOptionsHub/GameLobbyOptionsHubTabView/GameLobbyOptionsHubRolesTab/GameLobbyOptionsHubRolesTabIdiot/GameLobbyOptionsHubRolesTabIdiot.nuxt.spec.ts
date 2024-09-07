@@ -47,7 +47,7 @@ describe("Game Lobby Options Hub Roles Tab Idiot Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.idiot.doesDieOnElderDeath.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -56,7 +56,7 @@ describe("Game Lobby Options Hub Roles Tab Idiot Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.idiot.doesDieOnElderDeath.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

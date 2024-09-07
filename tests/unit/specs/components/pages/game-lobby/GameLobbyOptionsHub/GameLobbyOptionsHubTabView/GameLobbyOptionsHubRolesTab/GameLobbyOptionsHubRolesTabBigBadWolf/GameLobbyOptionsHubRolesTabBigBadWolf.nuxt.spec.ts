@@ -47,7 +47,7 @@ describe("Game Lobby Options Hub Roles Tab Big Bad Wolf Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabBigBadWolf.options.isPowerlessIfWerewolfDies.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.bigBadWolf.isPowerlessIfWerewolfDies.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -56,7 +56,7 @@ describe("Game Lobby Options Hub Roles Tab Big Bad Wolf Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-big-bad-wolf-is-powerless-if-werewolf-dies-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabBigBadWolf.options.isPowerlessIfWerewolfDies.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.bigBadWolf.isPowerlessIfWerewolfDies.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

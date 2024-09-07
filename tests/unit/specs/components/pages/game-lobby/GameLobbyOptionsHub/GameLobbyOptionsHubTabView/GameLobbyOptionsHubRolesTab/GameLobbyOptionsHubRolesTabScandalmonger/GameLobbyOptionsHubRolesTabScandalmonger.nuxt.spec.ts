@@ -46,7 +46,7 @@ describe("Game Lobby Options Hub Roles Tab Scandalmonger Component", () => {
     it("should translate option description with selected value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabScandalmonger.options.markPenalty.description, {\"markPenalty\":2}, 2");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe(`composables.useGameOptionsTexts.roles.scandalmonger.markPenalty, {"markPenalty":2}, 2`);
     });
 
     it("should translate option float label when rendered.", () => {

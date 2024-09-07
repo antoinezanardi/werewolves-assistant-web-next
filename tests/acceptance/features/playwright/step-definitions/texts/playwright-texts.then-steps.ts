@@ -11,3 +11,7 @@ Then(/^the text "(?<text>.+?)" under the (?<role>button|img|heading|navigation|l
 Then(/^the text "(?<text>.+?)" under the (?<role>button|img|heading|navigation|link|region|alertdialog) with name "(?<name>.+)" should be hidden$/u, async function(this: CustomWorld, text: string, role: LocatorRole, name: string): Promise<void> {
   await expect(this.page.getByRole(role, { name }).getByText(text, { exact: true })).toBeHidden();
 });
+
+Then(/^the exact text "(?<text>.+?)" should be visible$/u, async function(this: CustomWorld, text: string): Promise<void> {
+  await expect(this.page.getByText(text, { exact: true })).toBeVisible();
+});

@@ -11,7 +11,7 @@ exports[`Game Lobby Options Hub Votes Tab Component > should match snapshot when
         <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-votes-tab-can-be-skipped-input" class="w-full"></affirmative-toggle-button-stub>
       </div>
     </div>
-    <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.canBeSkipped.descriptions.yes</p>
+    <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.votes.canBeSkipped.yes</p>
     <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
   </div>
   <div id="game-lobby-options-hub-roles-tab-votes-duration-input-group" class="mt-8">
@@ -21,7 +21,7 @@ exports[`Game Lobby Options Hub Votes Tab Component > should match snapshot when
       </h3>
       <div id="game-option-input" class="w-4/12"><span class="p-floatlabel" data-pc-name="floatlabel" data-pc-section="root" pc1=""><label id="game-lobby-options-hub-roles-tab-votes-duration-label" for="game-lobby-options-hub-roles-tab-votes-duration-input">Votes duration in seconds</label><input-number-stub id="game-lobby-options-hub-roles-tab-votes-duration-input" modelvalue="180" class="w-full" max="600" min="10" step="5"></input-number-stub><slider-stub id="game-lobby-options-hub-roles-tab-votes-duration-slider" modelvalue="180" class="mt-4 w-full" max="600" min="10" step="5"></slider-stub></span></div>
     </div>
-    <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubVotesTab.options.duration.description, {"time":"shared.time.minute, {\\"count\\":3}, 3"}</p>
+    <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.votes.duration, {"time":"shared.time.minute, {\\"count\\":3}, 3"}</p>
     <!--v-if-->
   </div>
 </div>"

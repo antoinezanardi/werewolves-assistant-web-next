@@ -17,7 +17,7 @@ exports[`Game Lobby Options Hub Roles Tab Wolf Hound Component > should match sn
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-chosen-side-revealed-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWolfHound.options.isChosenSideRevealed.descriptions.no</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.wolfHound.isChosenSideRevealed.no</p>
           <divider-stub id="game-option-bottom-divider" class="!my-4"></divider-stub>
         </div>
         <div id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input-group">
@@ -29,7 +29,7 @@ exports[`Game Lobby Options Hub Roles Tab Wolf Hound Component > should match sn
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-wolf-hound-is-side-randomly-chosen-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabWolfHound.options.isSideRandomlyChosen.descriptions.no</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.wolfHound.isSideRandomlyChosen.no</p>
           <!--v-if-->
         </div>
       </div>

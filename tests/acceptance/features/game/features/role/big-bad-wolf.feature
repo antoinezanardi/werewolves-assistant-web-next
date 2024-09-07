@@ -83,7 +83,17 @@ Feature: 🐺👹 Big Bad Wolf role
       | David   | Angel        |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : If a Werewolf dies, the Big Bad Wolf remains powerful."
+
+    When the user skips all game events
     Then the game's current play title should be "Survivors vote"
 
     When the survivors vote with the votes
@@ -103,7 +113,17 @@ Feature: 🐺👹 Big Bad Wolf role
       | David   | Werewolf     |
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Werewolves (or the Big Bad Wolf) can eat each other if they want to."
+
+    When the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 
     When the werewolves eat the player with name "Antoine"

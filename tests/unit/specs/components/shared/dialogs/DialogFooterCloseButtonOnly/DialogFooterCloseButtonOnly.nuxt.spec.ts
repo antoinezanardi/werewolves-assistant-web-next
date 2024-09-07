@@ -24,13 +24,13 @@ describe("Dialog Footer Close Button Only Component", () => {
 
   describe("Close Button", () => {
     it("should translate close button when rendered.", () => {
-      const closeButton = wrapper.findComponent<typeof Button>("#close-button-only-dialog-footer-close-button");
+      const closeButton = wrapper.findComponent<typeof Button>("#only-dialog-footer-close-button");
 
       expect(closeButton.attributes("label")).toBe("Close");
     });
 
     it("should emit close event when close button is clicked.", async() => {
-      const closeButton = wrapper.findComponent<typeof Button>("#close-button-only-dialog-footer-close-button");
+      const closeButton = wrapper.findComponent<typeof Button>("#only-dialog-footer-close-button");
       await closeButton.trigger("click");
 
       expect(wrapper.emitted("closeDialog")).toBeTruthy();

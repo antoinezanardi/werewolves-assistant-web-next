@@ -15,6 +15,7 @@ const modules = [
   "@nuxtjs/sitemap",
   "@nuxtjs/robots",
   "nuxt-link-checker",
+  "@vite-pwa/nuxt",
 ];
 
 export default defineNuxtConfig({
@@ -49,10 +50,6 @@ export default defineNuxtConfig({
           sizes: "180x180",
           href: "/favicons/apple-touch-icon.png",
         },
-        {
-          rel: "manifest",
-          href: "/favicons/site.webmanifest",
-        },
       ],
     },
     pageTransition: {
@@ -75,7 +72,10 @@ export default defineNuxtConfig({
     "animate.css/animate.min.css",
   ],
   devtools: { enabled: true },
-  experimental: { renderJsonPayloads: false },
+  experimental: {
+    renderJsonPayloads: false,
+    buildCache: true,
+  },
   future: { compatibilityVersion: 4 },
   googleFonts: {
     display: "swap",
@@ -165,6 +165,37 @@ export default defineNuxtConfig({
     },
     autoImport: false,
     composables: { include: ["useToast"] },
+  },
+  pwa: {
+    registerType: "autoUpdate",
+    client: {
+      periodicSyncForUpdates: 86400,
+    },
+    workbox: {
+      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+    },
+    injectManifest: {
+      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+    },
+    manifest: {
+      name: process.env.NUXT_SITE_NAME,
+      short_name: process.env.NUXT_SITE_NAME,
+      description: process.env.NUXT_SITE_DESCRIPTION,
+      start_url: "/",
+      categories: ["entertainment", "games", "utilities"],
+      display: "fullscreen",
+      orientation: "landscape-primary",
+      background_color: "#000000",
+      theme_color: "#000000",
+      lang: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
+      icons: [
+        {
+          src: "/favicons/android-chrome-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+      ],
+    },
   },
   routeRules: {
     "/": { prerender: true },

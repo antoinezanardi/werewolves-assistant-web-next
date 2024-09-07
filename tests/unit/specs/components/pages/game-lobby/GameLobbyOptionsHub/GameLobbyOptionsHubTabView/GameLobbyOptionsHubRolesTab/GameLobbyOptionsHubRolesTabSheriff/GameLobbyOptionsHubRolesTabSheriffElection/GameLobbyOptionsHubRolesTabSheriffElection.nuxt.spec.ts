@@ -98,7 +98,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Election Component", () => {
 
     it("should translate option description when phase is night and turn is 1.", () => {
       const optionDescription = wrapper.find<HTMLParagraphElement>("#game-option-description");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.description, {\"turn\":1,\"phase\":\"shared.game.definitephase.night\"}";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.sheriff.electedAt, {\"turn\":1,\"phase\":\"shared.game.definitephase.night\"}";
 
       expect(optionDescription.text()).toBe(expectedDescription);
     });
@@ -110,7 +110,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Election Component", () => {
       createGameDtoStore.createGameDto.options.roles.sheriff.electedAt.turn = 3;
       await nextTick();
       const optionDescription = wrapper.find<HTMLParagraphElement>("#game-option-description");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSheriffElection.options.electedAt.description, {\"turn\":3,\"phase\":\"shared.game.definitephase.day\"}";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.sheriff.electedAt, {\"turn\":3,\"phase\":\"shared.game.definitephase.day\"}";
 
       expect(optionDescription.text()).toBe(expectedDescription);
     });

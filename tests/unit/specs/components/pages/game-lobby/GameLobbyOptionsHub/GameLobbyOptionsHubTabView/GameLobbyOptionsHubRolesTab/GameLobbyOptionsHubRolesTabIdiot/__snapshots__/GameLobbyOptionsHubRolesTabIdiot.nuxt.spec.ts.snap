@@ -17,7 +17,7 @@ exports[`Game Lobby Options Hub Roles Tab Idiot Component > should match snapsho
               <affirmative-toggle-button-stub modelvalue="true" id="game-lobby-options-hub-roles-tab-idiot-does-die-on-elder-death-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>
-          <p id="game-option-description" class="italic mt-3 text-gray-400">components.GameLobbyOptionsHubRolesTabIdiot.options.doesDieOnElderDeath.descriptions.yes</p>
+          <p id="game-option-description" class="italic mt-3 text-gray-400">composables.useGameOptionsTexts.roles.idiot.doesDieOnElderDeath.yes</p>
           <!--v-if-->
         </div>
       </div>

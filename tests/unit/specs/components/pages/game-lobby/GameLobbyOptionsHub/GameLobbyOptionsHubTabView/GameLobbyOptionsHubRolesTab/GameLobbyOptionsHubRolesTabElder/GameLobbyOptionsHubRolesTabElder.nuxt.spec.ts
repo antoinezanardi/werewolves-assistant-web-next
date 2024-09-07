@@ -46,7 +46,7 @@ describe("Game Lobby Options Hub Roles Tab Elder Component", () => {
 
     it("should translate option description with option value when rendered.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input-group");
-      const expectedOptionDescription = "components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.description, {\"livesCount\":2}, 2";
+      const expectedOptionDescription = `composables.useGameOptionsTexts.roles.elder.livesCountAgainstWerewolves, {"livesCount":2}, 2`;
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedOptionDescription);
     });
@@ -102,7 +102,7 @@ describe("Game Lobby Options Hub Roles Tab Elder Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.elder.doesTakeHisRevenge.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -111,7 +111,7 @@ describe("Game Lobby Options Hub Roles Tab Elder Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-elder-does-take-his-revenge-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabElder.options.doesTakeHisRevenge.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.elder.doesTakeHisRevenge.no");
     });
 
     it("should update the create game dto store when the option is toggled.", async() => {

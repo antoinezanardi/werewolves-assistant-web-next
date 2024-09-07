@@ -84,7 +84,17 @@ Feature: 🐦‍⬛ Scandalmonger role
       | David   | Villager      |
 
     When the user closes the toast
-    And the user skips the game event
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Scandalmonger marks a player with a feather. The player will have one more vote against him the next vote."
+
+    When the user skips the game event
     And the user skips the game event
     Then the game's event should display the text "The Scandalmonger wakes up and can mark a player with a feather."
 

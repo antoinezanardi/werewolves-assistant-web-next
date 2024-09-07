@@ -1,4 +1,4 @@
-FROM node:22.7.0-alpine AS build
+FROM node:22.8.0-alpine AS build
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -9,6 +9,7 @@ ARG NUXT_PUBLIC_DEFAULT_LOCALE
 ARG NUXT_SITE_URL
 ARG NUXT_SITE_NAME
 ARG NUXT_SITE_ENV
+ARG NUXT_SITE_DESCRIPTION
 
 RUN corepack enable
 
@@ -32,7 +33,7 @@ RUN npm run build
 
 RUN pnpm prune --prod
 
-FROM node:22.7.0-alpine AS production
+FROM node:22.8.0-alpine AS production
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -43,6 +44,7 @@ ARG NUXT_PUBLIC_DEFAULT_LOCALE
 ARG NUXT_SITE_URL
 ARG NUXT_SITE_NAME
 ARG NUXT_SITE_ENV
+ARG NUXT_SITE_DESCRIPTION
 
 RUN corepack enable
 

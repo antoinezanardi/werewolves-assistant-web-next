@@ -240,7 +240,17 @@ Feature: 🎭 Actor role
     And the user clicks on the button with name "Skip and play now"
 
     When the user closes the toast
-    And the user skips all game events
+    And the user goes to the next game event text
+    And the user goes to the next game event text
+    Then the game's event should display the text "This game is special with 2 changed options. Let's see how it goes…"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Special rule 2 : The Actor remains powerful even he is infected by the Vile Father Of Wolves."
+
+    When the user skips all game events
     Then the game's current play title should be "Actor chooses a card"
 
     When the actor chooses card with role of "Seer"

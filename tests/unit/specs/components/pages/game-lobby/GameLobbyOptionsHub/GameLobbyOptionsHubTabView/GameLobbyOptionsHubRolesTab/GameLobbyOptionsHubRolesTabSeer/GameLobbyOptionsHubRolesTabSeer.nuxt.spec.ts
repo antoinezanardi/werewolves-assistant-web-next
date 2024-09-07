@@ -43,7 +43,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
 
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-is-talkative-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.seer.isTalkative.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -52,7 +52,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.seer.isTalkative = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-is-talkative-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.isTalkative.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.seer.isTalkative.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -79,7 +79,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
 
     it("should translate option description when the option is activated.", () => {
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-can-see-roles-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.seer.canSeeRoles.yes";
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
     });
@@ -88,7 +88,7 @@ describe("Game Lobby Options Hub Roles Tab Seer Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.seer.canSeeRoles = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-seer-can-see-roles-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabSeer.options.canSeeRoles.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.seer.canSeeRoles.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

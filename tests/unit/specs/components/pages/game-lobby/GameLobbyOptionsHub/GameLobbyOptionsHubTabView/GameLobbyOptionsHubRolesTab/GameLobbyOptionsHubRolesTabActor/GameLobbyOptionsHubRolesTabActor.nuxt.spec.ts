@@ -47,7 +47,7 @@ describe("Game Lobby Options Hub Roles Tab Actor Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabActor.options.isPowerlessOnWerewolvesSide.descriptions.yes");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.actor.isPowerlessOnWerewolvesSide.yes");
     });
 
     it("should translate option description when the option is deactivated.", async() => {
@@ -56,7 +56,7 @@ describe("Game Lobby Options Hub Roles Tab Actor Component", () => {
       await nextTick();
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input-group");
 
-      expect(gameOptionInputGroup.props("optionDescription")).toBe("components.GameLobbyOptionsHubRolesTabActor.options.isPowerlessOnWerewolvesSide.descriptions.no");
+      expect(gameOptionInputGroup.props("optionDescription")).toBe("composables.useGameOptionsTexts.roles.actor.isPowerlessOnWerewolvesSide.no");
     });
 
     it("should update create game dto store when the option is toggled.", async() => {

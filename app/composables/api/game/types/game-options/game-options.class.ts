@@ -3,6 +3,7 @@ import { CompositionGameOptions } from "~/composables/api/game/types/game-option
 import { RolesGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/roles-game-options.class";
 import { VotesGameOptions } from "~/composables/api/game/types/game-options/votes-game-options/votes-game-options.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
+import type { OmitToJSON } from "~/utils/types/class.types";
 
 class GameOptions {
   @Type(() => CompositionGameOptions)
@@ -17,7 +18,7 @@ class GameOptions {
   @Expose()
   public roles: RolesGameOptions;
 
-  public static create(gameOptions: GameOptions): GameOptions {
+  public static create(gameOptions: OmitToJSON<GameOptions>): GameOptions {
     return plainToInstance(GameOptions, gameOptions, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }
 }

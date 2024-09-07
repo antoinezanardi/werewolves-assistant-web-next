@@ -15,6 +15,7 @@ import { ESLINT_MODULES_CONFIG } from "./config/eslint/flat-configs/eslint.modul
 import { ESLINT_GLOBAL_CONFIG } from "./config/eslint/flat-configs/eslint.global-config.mjs";
 import { ESLINT_IGNORES } from "./config/eslint/eslint.constants.mjs";
 import { ESLINT_TYPESCRIPT_DECLARATION_CONFIG } from "./config/eslint/flat-configs/eslint.typescript-declaration-config.mjs";
+import { ESLINT_NUXT_CONFIG_FILE_CONFIG } from "./config/eslint/flat-configs/eslint.nuxt-config-file-config.mjs";
 
 export default [
   {
@@ -37,4 +38,5 @@ export default [
   ESLINT_STORES_CONFIG,
   ESLINT_CLASSES_CONFIG,
   ESLINT_MODULES_CONFIG,
+  ESLINT_NUXT_CONFIG_FILE_CONFIG,
 ];

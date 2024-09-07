@@ -45,7 +45,7 @@ describe("Game Lobby Options Hub Roles Tab Werewolf Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.werewolf.canEatEachOther = true;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.yes";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.werewolf.canEatEachOther.yes";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);
@@ -55,7 +55,7 @@ describe("Game Lobby Options Hub Roles Tab Werewolf Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto.options.roles.werewolf.canEatEachOther = false;
       const gameOptionInputGroup = wrapper.findComponent<typeof GameOptionInputGroup>("#game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group");
-      const expectedDescription = "components.GameLobbyOptionsHubRolesTabWerewolf.options.canEatEachOther.descriptions.no";
+      const expectedDescription = "composables.useGameOptionsTexts.roles.werewolf.canEatEachOther.no";
       await nextTick();
 
       expect(gameOptionInputGroup.props("optionDescription")).toBe(expectedDescription);

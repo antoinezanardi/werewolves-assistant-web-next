@@ -1,4 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
+import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameThiefTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameThiefTurnStartsEvent/GameThiefTurnStartsEvent.vue";
@@ -12,7 +13,23 @@ import { useGameStore } from "~/stores/game/useGameStore";
 
 describe("Game Thief Turn Starts Event Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameThiefTurnStartsEvent>>;
-  const defaultGame = createFakeGame({ options: DEFAULT_GAME_OPTIONS });
+  const defaultGame = createFakeGame({
+    additionalCards: [
+      createFakeGameAdditionalCard({
+        recipient: "thief",
+        roleName: "werewolf",
+      }),
+      createFakeGameAdditionalCard({
+        recipient: "thief",
+        roleName: "villager",
+      }),
+      createFakeGameAdditionalCard({
+        recipient: "actor",
+        roleName: "werewolf",
+      }),
+    ],
+    options: DEFAULT_GAME_OPTIONS,
+  });
   const testingPinia = { initialState: { [StoreIds.GAME]: { game: defaultGame } } };
 
   async function mountGameThiefTurnStartsEventComponent(options: ComponentMountingOptions<typeof GameThiefTurnStartsEvent> = {}):

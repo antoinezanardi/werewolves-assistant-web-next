@@ -74,6 +74,7 @@ import {
   faHandHoldingHeart,
   faCloudMoon,
   faCompass,
+  faRotate,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
@@ -158,6 +159,7 @@ library.add(
   faHandHoldingHeart,
   faCloudMoon,
   faCompass,
+  faRotate,
 );
 
 export default defineNuxtPlugin(nuxtApp => {
