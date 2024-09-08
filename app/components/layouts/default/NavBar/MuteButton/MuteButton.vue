@@ -37,7 +37,7 @@ const soundLottie = ref<InstanceType<typeof Vue3Lottie> | null>(null);
 
 const tooltipText = computed<string>(() => (isMuted.value ? t("components.MuteButton.unmute") : t("components.MuteButton.mute")));
 
-function onClickFromMuteButton(): void {
+function animateSoundLottie(animationDirection: "reverse" | "forward"): void {
   if (!soundLottie.value) {
     throw createError("Sound Lottie is not initialized");
   }
@@ -45,10 +45,23 @@ function onClickFromMuteButton(): void {
   const lastMuteSegmentFrame = 30;
   const firstUnmuteSegmentFrame = 60;
   const lastUnmuteSegmentFrame = 90;
-  const animationDirection = isMuted.value ? "reverse" : "forward";
-  const segment: AnimationSegment = isMuted.value ? [firstUnmuteSegmentFrame, lastUnmuteSegmentFrame] : [firstMuteSegmentFrame, lastMuteSegmentFrame];
+  const segment: AnimationSegment = animationDirection === "reverse" ? [firstUnmuteSegmentFrame, lastUnmuteSegmentFrame] : [firstMuteSegmentFrame, lastMuteSegmentFrame];
   soundLottie.value.setDirection(animationDirection);
   soundLottie.value.playSegments([segment], true);
+}
+
+function onClickFromMuteButton(): void {
+  const animationDirection = isMuted.value ? "reverse" : "forward";
+  animateSoundLottie(animationDirection);
   toggleMute();
 }
+
+onMounted(() => {
+  if (isMuted.value) {
+    const animationDelay = 10;
+    setTimeout(() => {
+      animateSoundLottie("forward");
+    }, animationDelay);
+  }
+});
 </script>

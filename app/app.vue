@@ -12,10 +12,14 @@
 
 <script lang="ts" setup>
 import "reflect-metadata";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const rolesStore = useRolesStore();
+
+const audioStore = useAudioStore();
+const { setHowlerAudioSettingsFromAudioStoreState } = audioStore;
 
 const { t } = useI18n();
 
@@ -33,6 +37,7 @@ useHead({
 });
 
 void rolesStore.fetchAndSetRoles();
+setHowlerAudioSettingsFromAudioStoreState();
 </script>
 
 <style lang="scss" scoped>

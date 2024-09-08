@@ -44,6 +44,45 @@ describe("Mute Button Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should animate mute button when rendered and audio is initially muted after 10ms.", async() => {
+    wrapper = await mountMuteButtonComponent({
+      global: {
+        stubs: {
+          VueLottie: {
+            template: "<div id='vue-lottie-stub'></div>",
+            methods: mocks.plugins.vueLottie,
+          },
+        },
+        plugins: [createTestingPinia({ initialState: { [StoreIds.AUDIO]: { isMuted: true } } })],
+      },
+    });
+    vi.advanceTimersByTime(10);
+
+    expect(mocks.plugins.vueLottie.playSegments).toHaveBeenCalledExactlyOnceWith([[0, 30]], true);
+    expect(mocks.plugins.vueLottie.setDirection).toHaveBeenCalledExactlyOnceWith("forward");
+  });
+
+  it("should not animate mute button when rendered and audio is initially not muted.", () => {
+    expect(mocks.plugins.vueLottie.playSegments).not.toHaveBeenCalled();
+  });
+
+  it("should not animate mute button when rendered before 10ms.", async() => {
+    wrapper = await mountMuteButtonComponent({
+      global: {
+        stubs: {
+          VueLottie: {
+            template: "<div id='vue-lottie-stub'></div>",
+            methods: mocks.plugins.vueLottie,
+          },
+        },
+        plugins: [createTestingPinia({ initialState: { [StoreIds.AUDIO]: { isMuted: true } } })],
+      },
+    });
+    vi.advanceTimersByTime(9);
+
+    expect(mocks.plugins.vueLottie.playSegments).not.toHaveBeenCalled();
+  });
+
   describe("Button", () => {
     it("should have tooltip for mute text when audio is not muted.", async() => {
       const tooltip: BoundTooltip = { value: undefined };
