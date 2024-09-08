@@ -26,7 +26,6 @@ Feature: ⚙️ Game Lobby Options Hub
     And the user disables the sheriff in game options
 
     When the user reloads the page
-    And the user clicks on the link with name "Play"
     And the user clicks on the game options button in the lobby
     Then the heading with name "Game options" should be visible
     And the exact text "The game will not have a Sheriff." should be visible

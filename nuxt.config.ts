@@ -172,10 +172,11 @@ export default defineNuxtConfig({
       periodicSyncForUpdates: 86400,
     },
     workbox: {
-      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      globPatterns: ["**/*.{js,css,html,png,svg,ico,json,woff2}"],
+      navigateFallbackDenylist: [/^.*$/u],
     },
     injectManifest: {
-      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      globPatterns: ["**/*.{js,css,html,png,svg,ico,json,woff2}"],
     },
     manifest: {
       name: process.env.NUXT_SITE_NAME,
