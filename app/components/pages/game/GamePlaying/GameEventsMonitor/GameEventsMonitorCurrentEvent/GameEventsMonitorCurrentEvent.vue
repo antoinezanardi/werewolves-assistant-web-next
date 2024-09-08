@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import type { GameEventsMonitorEventTypeComponent } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
+import type { Component } from "vue";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameActorMayHaveChosenCardEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameActorMayHaveChosenCardEvent/GameActorMayHaveChosenCardEvent.vue";
 import GameBearGrowlsOrSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsOrSleepsEvent/GameBearGrowlsOrSleepsEvent.vue";
@@ -48,8 +48,8 @@ import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore"
 const gameEventsStore = useGameEventsStore();
 const { currentGameEvent } = storeToRefs(gameEventsStore);
 
-const currentGameEventTypeComponent = computed<GameEventsMonitorEventTypeComponent | undefined>(() => {
-  const currentGameEventTypeComponents: Record<GameEventType, GameEventsMonitorEventTypeComponent> = {
+const currentGameEventTypeComponent = computed<Component | undefined>(() => {
+  const currentGameEventTypeComponents: Record<GameEventType, Component> = {
     "game-starts": GameStartsEvent,
     "game-phase-starts": GamePhaseStartsEvent,
     "game-turn-starts": GameTurnStartsEvent,

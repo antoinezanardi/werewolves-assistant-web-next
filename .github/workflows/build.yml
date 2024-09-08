@@ -104,6 +104,9 @@ jobs:
       - name: Create Nuxt types ⛰️
         run: pnpm run postinstall
 
+      - name: Type check 🪨
+        run: pnpm run typecheck
+
       - name: Build app ✨
         run: pnpm run build
 

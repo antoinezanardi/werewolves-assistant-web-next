@@ -1,7 +1,7 @@
-
 npx --no-install validate-branch-name;
 npm run prettier:gherkin:fix;
 npm run lint:staged:fix;
 git add -A .;
+npm run typecheck;
 npm run test:unit:staged;
 npm run script:check-acceptance-features-shard;

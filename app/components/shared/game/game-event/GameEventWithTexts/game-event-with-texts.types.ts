@@ -3,7 +3,7 @@ type GameEventWithTextsProps = {
 };
 
 type GameEventWithTextsEmits = {
-  gameEventTextChange: [string | undefined];
+  gameEventTextChange: [string];
 };
 
 export type {
