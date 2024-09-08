@@ -1,13 +1,17 @@
+import { useLocalStorage } from "@vueuse/core";
 import { Howl, Howler } from "howler";
 import { draw } from "radash";
 import { defineStore } from "pinia";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
-import { BACKGROUND_AUDIO_NAMES, SOUND_EFFECT_NAMES } from "~/stores/audio/constants/audio.constants";
-import type { BackgroundAudioName, SoundEffectName } from "~/stores/audio/types/audio.types";
+import { BACKGROUND_AUDIO_NAMES, DEFAULT_AUDIO_SETTINGS, SOUND_EFFECT_NAMES } from "~/stores/audio/constants/audio.constants";
+import type { AudioSettings, BackgroundAudioName, SoundEffectName } from "~/stores/audio/types/audio.types";
 import { StoreIds } from "~/stores/enums/store.enum";
+import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
 
 const useAudioStore = defineStore(StoreIds.AUDIO, () => {
-  const isMuted = ref<boolean>(false);
+  const audioSettingsFromLocalStorage = useLocalStorage<AudioSettings>(LocalStorageKeys.AUDIO_SETTINGS, DEFAULT_AUDIO_SETTINGS, { mergeDefaults: true });
+
+  const isMuted = ref<boolean>(audioSettingsFromLocalStorage.value.isMuted);
 
   const soundEffects = Object.fromEntries(SOUND_EFFECT_NAMES.map(name => [name, createSoundEffect(name)])) as Record<SoundEffectName, Howl>;
 
@@ -32,6 +36,10 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
       src: [`/audio/audio-backgrounds/${src}.webm`],
       loop: true,
     });
+  }
+
+  function setHowlerAudioSettingsFromAudioStoreState(): void {
+    Howler.mute(isMuted.value);
   }
 
   function loadSoundEffects(): void {
@@ -82,17 +90,24 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
     playBackgroundAudio(randomGamePhaseBackgroundAudioName);
   }
 
+  function setMute(isAudioMuted: boolean): void {
+    isMuted.value = isAudioMuted;
+    Howler.mute(isAudioMuted);
+    audioSettingsFromLocalStorage.value.isMuted = isAudioMuted;
+  }
+
   function toggleMute(): void {
-    isMuted.value = !isMuted.value;
-    Howler.mute(isMuted.value);
+    setMute(!isMuted.value);
   }
   return {
+    audioSettingsFromLocalStorage,
     isMuted,
     soundEffects,
     backgroundAudios,
     playingBackgroundAudioName,
     nightBackgroundAudioNames,
     dayBackgroundAudioNames,
+    setHowlerAudioSettingsFromAudioStoreState,
     loadSoundEffects,
     loadBackgroundAudios,
     loadAllAudios,
@@ -100,6 +115,7 @@ const useAudioStore = defineStore(StoreIds.AUDIO, () => {
     fadeOutPlayingBackgroundAudio,
     playBackgroundAudio,
     playRandomGamePhaseBackgroundAudio,
+    setMute,
     toggleMute,
   };
 });
