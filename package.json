@@ -70,7 +70,7 @@
     "docker:production-example:start": "docker compose -f docker/werewolves-assistant-production-example/docker-compose.yml up -d",
     "docker:production-example:stop": "docker compose -f docker/werewolves-assistant-production-example/docker-compose.yml down",
     "docker:production-example:reset": "npm run docker:production-example:stop && npm run docker:production-example:start",
-    "playwright:codegen": "npx playwright codegen http://localhost:3000",
+    "playwright:codegen": "npx playwright codegen http://localhost:4000",
     "script:create-branch": "scripts/create-git-branch.sh",
     "script:create-pull-request": "scripts/create-pull-request.sh",
     "script:check-acceptance-features-shard": "scripts/check-acceptance-features-shard.sh tests/acceptance",
