@@ -16,49 +16,58 @@
 
     <PrimeVueDivider/>
 
-    <div
-      v-if="!roles"
-      id="loading-roles-container"
-      class="flex flex-col items-center justify-center"
+    <ClientOnly
+      :fallback="$t('components.AboutAvailableRoles.loadingRoles')"
+      fallback-tag="span"
     >
-      <TextProgressSpinner
-        id="loading-roles-spinner"
-        :text="$t('components.AboutAvailableRoles.loadingRoles')"
-      />
-    </div>
-
-    <div v-else>
-      <p id="about-available-roles-first-section">
-        {{ availableRolesText }}
-      </p>
-
-      <PrimeVueAccordion
-        class="w-full"
-        multiple
+      <div
+        v-if="!roles"
+        id="loading-roles-container"
+        class="flex flex-col items-center justify-center"
       >
-        <PrimeVueAccordionTab
-          v-for="role in roles"
-          :key="role.name"
-          :pt="{ 'headerAction': { 'aria-label': getAvailableRoleAccordionHeaderAriaLabel(role.name) } }"
+        <TextProgressSpinner
+          id="loading-roles-spinner"
+          :text="$t('components.AboutAvailableRoles.loadingRoles')"
+        />
+      </div>
+
+      <div v-else>
+        <p id="about-available-roles-first-section">
+          {{ availableRolesText }}
+        </p>
+
+        <PrimeVueAccordion
+          class="w-full"
+          multiple
         >
-          <template #header>
-            <div class="available-role-image-header flex items-center">
-              <RoleImage
-                :alt="getAvailableRoleHeaderImageAlt(role.name)"
-                :role-name="role.name"
-                sizes="40"
-              />
+          <PrimeVueAccordionPanel
+            v-for="role in roles"
+            :key="role.name"
+            :value="role.name"
+          >
+            <PrimeVueAccordionHeader
+              :aria-label="getAvailableRoleAccordionHeaderAriaLabel(role.name)"
+            >
+              <div class="available-role-image-header flex items-center">
+                <RoleImage
+                  :alt="getAvailableRoleHeaderImageAlt(role.name)"
+                  :role-name="role.name"
+                  sizes="40"
+                />
 
-              <div class="ms-2">
-                {{ getRoleNameLabel(role.name) }}
+                <div class="ms-2">
+                  {{ getRoleNameLabel(role.name) }}
+                </div>
               </div>
-            </div>
-          </template>
+            </PrimeVueAccordionHeader>
 
-          <AboutAvailableRoleDescription :role="role"/>
-        </PrimeVueAccordionTab>
-      </PrimeVueAccordion>
-    </div>
+            <PrimeVueAccordionContent>
+              <AboutAvailableRoleDescription :role="role"/>
+            </PrimeVueAccordionContent>
+          </PrimeVueAccordionPanel>
+        </PrimeVueAccordion>
+      </div>
+    </ClientOnly>
   </div>
 </template>
 

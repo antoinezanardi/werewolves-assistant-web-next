@@ -220,6 +220,7 @@ const ESLINT_VUE_CONFIG = {
           "VueDraggable",
           "VueCountdown",
           "VueEllipseProgress",
+          "ClientOnly",
         ],
       },
     ],

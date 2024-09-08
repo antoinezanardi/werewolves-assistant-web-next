@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import Accordion from "primevue/accordion";
-import type { AccordionTabPassThroughOptions, AccordionTabProps } from "primevue/accordiontab";
-import AccordionTab from "primevue/accordiontab";
+import AccordionPanel from "primevue/accordionpanel";
+import AccordionHeader from "primevue/accordionheader";
 import { nextTick } from "vue";
 
 import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue";
@@ -23,7 +23,17 @@ describe("About Available Roles Component", () => {
       getRoleNameLabel: vi.fn((roleName: RoleName) => roleName),
       getDefiniteRoleNameLabel: vi.fn((roleName: RoleName, count: number) => `${roleName} ${count}`),
     });
-    wrapper = await mountSuspendedComponent(AboutAvailableRoles);
+    wrapper = await mountSuspendedComponent(AboutAvailableRoles, {
+      global: {
+        stubs: {
+          ClientOnly: false,
+          Accordion: false,
+          AccordionPanel: false,
+          AccordionHeader: false,
+          AccordionContent: false,
+        },
+      },
+    });
   });
 
   it("should match snapshot when rendered.", () => {
@@ -89,30 +99,27 @@ describe("About Available Roles Component", () => {
         expect(firstSection.text()).toBe("components.AboutAvailableRoles.assistantHasManyRoles, 3");
       });
 
-      it("should display 3 available roles accordion tabs when 3 roles are set.", () => {
-        const availableRolesAccordionTabs = wrapper.findAllComponents<typeof AccordionTab>(AccordionTab);
+      it("should display 3 available roles accordion panels when 3 roles are set.", () => {
+        const availableRolesAccordionPanels = wrapper.findAllComponents<typeof AccordionPanel>(AccordionPanel);
 
-        expect(availableRolesAccordionTabs).toHaveLength(3);
+        expect(availableRolesAccordionPanels).toHaveLength(3);
       });
 
-      it("should render roles accordion tabs with header aria labels when roles are set.", () => {
-        const availableRolesAccordionTabs = wrapper.findAllComponents<typeof AccordionTab>(AccordionTab);
+      it("should render roles accordion panels with header aria labels when roles are set.", () => {
+        const availableRolesAccordionHeaders = wrapper.findAllComponents<typeof AccordionHeader>(AccordionHeader);
         const expectedWerewolfAriaLabel = "components.AboutAvailableRoles.clickToExpandRoleDescription, {\"role\":\"werewolf\"}";
         const expectedAngelAriaLabel = "components.AboutAvailableRoles.clickToExpandRoleDescription, {\"role\":\"angel\"}";
         const expectedAccursedWolfFatherAriaLabel = "components.AboutAvailableRoles.clickToExpandRoleDescription, {\"role\":\"accursed-wolf-father\"}";
-        const expectedWerewolfPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedWerewolfAriaLabel } };
-        const expectedAngelPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedAngelAriaLabel } };
-        const expectedAccursedWolfFatherPassThroughOptions: AccordionTabPassThroughOptions = { headerAction: { "aria-label": expectedAccursedWolfFatherAriaLabel } };
-        const firstProps = availableRolesAccordionTabs[0].props() as AccordionTabProps;
-        const secondProps = availableRolesAccordionTabs[1].props() as AccordionTabProps;
-        const thirdProps = availableRolesAccordionTabs[2].props() as AccordionTabProps;
+        const firstAriaLabel = availableRolesAccordionHeaders[0].attributes("aria-label");
+        const secondAriaLabel = availableRolesAccordionHeaders[1].attributes("aria-label");
+        const thirdAriaLabel = availableRolesAccordionHeaders[2].attributes("aria-label");
 
-        expect(firstProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedWerewolfPassThroughOptions);
-        expect(secondProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedAngelPassThroughOptions);
-        expect(thirdProps.pt).toStrictEqual<AccordionTabPassThroughOptions>(expectedAccursedWolfFatherPassThroughOptions);
+        expect(firstAriaLabel).toBe(expectedWerewolfAriaLabel);
+        expect(secondAriaLabel).toBe(expectedAngelAriaLabel);
+        expect(thirdAriaLabel).toBe(expectedAccursedWolfFatherAriaLabel);
       });
 
-      it("should render roles accordion tabs with header images when roles are set.", () => {
+      it("should render roles accordion panels with header images when roles are set.", () => {
         const availableRolesAccordion = wrapper.findComponent<typeof Accordion>(Accordion);
         const roleImages = availableRolesAccordion.findAllComponents<typeof RoleImage>(RoleImage);
 
@@ -125,10 +132,10 @@ describe("About Available Roles Component", () => {
         expect(roleImages[2].props("roleName")).toBe("accursed-wolf-father");
       });
 
-      it("should display werewolf role description for first accordion tab when first accordion tab is for werewolf role.", () => {
-        const availableRolesAccordionTabs = wrapper.findAllComponents<typeof AccordionTab>(AccordionTab);
-        const firstAccordionTab = availableRolesAccordionTabs[0];
-        const aboutAvailableRoleDescription = firstAccordionTab.findComponent<typeof AboutAvailableRoleDescription>(AboutAvailableRoleDescription);
+      it("should display werewolf role description for first accordion panel when first accordion panel is for werewolf role.", () => {
+        const availableRolesAccordionPanels = wrapper.findAllComponents<typeof AccordionPanel>(AccordionPanel);
+        const firstAccordionPanel = availableRolesAccordionPanels[0];
+        const aboutAvailableRoleDescription = firstAccordionPanel.findComponent<typeof AboutAvailableRoleDescription>(AboutAvailableRoleDescription);
 
         expect(aboutAvailableRoleDescription.props("role")).toStrictEqual<Role>(roles[0]);
       });
