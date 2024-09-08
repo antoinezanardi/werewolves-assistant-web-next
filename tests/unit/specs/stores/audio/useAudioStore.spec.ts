@@ -1,15 +1,39 @@
+import type * as VueUse from "@vueuse/core";
 import { createPinia, setActivePinia } from "pinia";
-import { Howl } from "howler";
 import type Radash from "radash";
 import { vi } from "vitest";
+import { DEFAULT_AUDIO_SETTINGS } from "~/stores/audio/constants/audio.constants";
+import type { AudioSettings } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
+import type Howler from "howler";
 
-const hoistedMocks = vi.hoisted(() => ({ radash: { draw: vi.fn() } }));
+const hoistedMocks = vi.hoisted(() => ({
+  radash: { draw: vi.fn() },
+  howler: {
+    Howler: {
+      mute: vi.fn(),
+    },
+    Howl: vi.fn(() => ({
+      play: vi.fn(),
+      load: vi.fn(),
+      fade: vi.fn(),
+      stop: vi.fn(),
+    })),
+  },
+  useLocalStorage: vi.fn(() => ({ value: DEFAULT_AUDIO_SETTINGS })),
+}));
 
-vi.mock("howler");
+vi.mock("howler", async importOriginal => ({
+  ...await importOriginal<typeof Howler>(),
+  ...hoistedMocks.howler,
+}));
 vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
   ...hoistedMocks.radash,
+}));
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUse>(),
+  useLocalStorage: hoistedMocks.useLocalStorage,
 }));
 
 describe("Use Audio Store", () => {
@@ -21,25 +45,31 @@ describe("Use Audio Store", () => {
     it("should create sound effects and background audios when created.", () => {
       useAudioStore();
 
-      expect(Howl).toHaveBeenCalledTimes(48);
-      expect(Howl).toHaveBeenNthCalledWith(1, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenCalledTimes(48);
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(1, {
         preload: false,
         src: ["/audio/sound-effects/actor-clear-throat-and-knocks.webm"],
       });
-      expect(Howl).toHaveBeenNthCalledWith(2, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(2, {
         preload: false,
         src: ["/audio/sound-effects/angelic-intervention.webm"],
       });
-      expect(Howl).toHaveBeenNthCalledWith(47, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(47, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-2.webm`],
         loop: true,
       });
-      expect(Howl).toHaveBeenNthCalledWith(48, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(48, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-3.webm`],
         loop: true,
       });
+    });
+
+    it("should set audio settings from local storage when created.", () => {
+      useAudioStore();
+
+      expect(hoistedMocks.useLocalStorage).toHaveBeenCalledExactlyOnceWith("audioSettings", DEFAULT_AUDIO_SETTINGS, { mergeDefaults: true });
     });
 
     it("should set playing background audio name to undefined when created.", () => {
@@ -64,6 +94,16 @@ describe("Use Audio Store", () => {
       const { isMuted } = useAudioStore();
 
       expect(isMuted).toBeFalsy();
+    });
+  });
+
+  describe("setHowlerAudioSettingsFromAudioStoreState", () => {
+    it("should set Howler mute when called.", () => {
+      const audioStore = useAudioStore();
+      audioStore.isMuted = true;
+      audioStore.setHowlerAudioSettingsFromAudioStoreState();
+
+      expect(hoistedMocks.howler.Howler.mute).toHaveBeenCalledExactlyOnceWith(true);
     });
   });
 
@@ -227,10 +267,37 @@ describe("Use Audio Store", () => {
     });
   });
 
+  describe("setMute", () => {
+    it("should set mute when called.", () => {
+      const audioStore = useAudioStore();
+      const { setMute } = audioStore;
+      setMute(true);
+
+      expect(audioStore.isMuted).toBeTruthy();
+    });
+
+    it("should set Howler mute when called.", () => {
+      const audioStore = useAudioStore();
+      const { setMute } = audioStore;
+      setMute(true);
+
+      expect(hoistedMocks.howler.Howler.mute).toHaveBeenCalledExactlyOnceWith(true);
+    });
+
+    it("should set audio settings from local storage when called.", () => {
+      const audioStore = useAudioStore();
+      const { setMute } = audioStore;
+      setMute(true);
+
+      expect(audioStore.audioSettingsFromLocalStorage).toStrictEqual<{ value: AudioSettings }>({ value: { isMuted: true } });
+    });
+  });
+
   describe("toggleMute", () => {
     it("should toggle mute when called.", () => {
       const audioStore = useAudioStore();
       const { toggleMute } = audioStore;
+      audioStore.isMuted = false;
       toggleMute();
 
       expect(audioStore.isMuted).toBeTruthy();

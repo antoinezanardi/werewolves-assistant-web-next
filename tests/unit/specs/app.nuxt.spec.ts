@@ -2,6 +2,7 @@ import type { mount } from "@vue/test-utils";
 import type { UseHeadInput } from "unhead";
 
 import App from "@/app.vue";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
@@ -45,5 +46,11 @@ describe("App Component", () => {
     const rolesStore = useRolesStore();
 
     expect(rolesStore.fetchAndSetRoles).toHaveBeenCalledExactlyOnceWith();
+  });
+
+  it("should set howler audio settings from audio store when rendered.", () => {
+    const audioStore = useAudioStore();
+
+    expect(audioStore.setHowlerAudioSettingsFromAudioStoreState).toHaveBeenCalledExactlyOnceWith();
   });
 });
