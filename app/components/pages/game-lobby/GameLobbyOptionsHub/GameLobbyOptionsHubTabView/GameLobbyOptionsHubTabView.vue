@@ -1,83 +1,91 @@
 <template>
-  <PrimeVueTabView
+  <PrimeVueTabs
     id="game-lobby-options-hub-tab-view"
+    class="w-full"
     :pt="{ 'nav': '!border-none' }"
+    value="roles"
   >
-    <PrimeVueTabPanel
-      id="roles-tab-panel"
-      :pt="{ 'header': 'grow' }"
+    <PrimeVueTabList
+      :pt="{ 'tabList': '!w-full' }"
     >
-      <template #header>
-        <div
-          id="roles-tab-header"
-          class="flex gap-2 items-center justify-center w-full"
-        >
-          <RoleImage
-            height="40"
-            width="40"
-          />
+      <PrimeVueTab
+        id="roles-tab-header"
+        class="flex gap-2 grow items-center justify-center"
+        value="roles"
+      >
+        <RoleImage
+          height="40"
+          width="40"
+        />
 
-          <h3 id="roles-tab-header-text">
-            {{ $t('components.GameLobbyOptionsHubTabView.roles') }}
-          </h3>
-        </div>
-      </template>
+        <h3 id="roles-tab-header-text">
+          {{ $t('components.GameLobbyOptionsHubTabView.roles') }}
+        </h3>
+      </PrimeVueTab>
 
-      <GameLobbyOptionsHubRolesTab/>
-    </PrimeVueTabPanel>
+      <PrimeVueTab
+        id="composition-tab-header"
+        class="flex gap-2 grow items-center justify-center"
+        value="composition"
+      >
+        <NuxtImg
+          :alt="$t('components.GameLobbyOptionsHubTabView.compositionTabImageAlt')"
+          height="40"
+          placeholder="/svg/misc/infinite-spinner.svg"
+          src="/svg/misc/people.svg"
+          width="40"
+        />
 
-    <PrimeVueTabPanel
-      id="composition-tab-panel"
-      :pt="{ 'header': 'grow' }"
-    >
-      <template #header>
-        <div
-          id="composition-tab-header"
-          class="flex gap-2 items-center justify-center w-full"
-        >
-          <NuxtImg
-            :alt="$t('components.GameLobbyOptionsHubTabView.compositionTabImageAlt')"
-            height="40"
-            placeholder="/svg/misc/infinite-spinner.svg"
-            src="/svg/misc/people.svg"
-            width="40"
-          />
+        <h3 id="composition-tab-header-text">
+          {{ $t('components.GameLobbyOptionsHubTabView.composition') }}
+        </h3>
+      </PrimeVueTab>
 
-          <h3 id="composition-tab-header-text">
-            {{ $t('components.GameLobbyOptionsHubTabView.composition') }}
-          </h3>
-        </div>
-      </template>
+      <PrimeVueTab
+        id="votes-tab-header"
+        class="flex gap-2 grow items-center justify-center"
+        value="votes"
+      >
+        <NuxtImg
+          :alt="$t('components.GameLobbyOptionsHubTabView.votesTabImageAlt')"
+          height="40"
+          placeholder="/svg/misc/infinite-spinner.svg"
+          src="/svg/game/game-play/game-play-action/settle-votes.svg"
+          width="40"
+        />
 
-      <GameLobbyOptionsHubCompositionTab/>
-    </PrimeVueTabPanel>
+        <h3 id="votes-tab-header-text">
+          {{ $t('components.GameLobbyOptionsHubTabView.votes') }}
+        </h3>
+      </PrimeVueTab>
+    </PrimeVueTabList>
 
-    <PrimeVueTabPanel
-      id="votes-tab-panel"
-      :pt="{ 'header': 'grow' }"
-    >
-      <template #header>
-        <div
-          id="votes-tab-header"
-          class="flex gap-2 items-center justify-center w-full"
-        >
-          <NuxtImg
-            :alt="$t('components.GameLobbyOptionsHubTabView.votesTabImageAlt')"
-            height="40"
-            placeholder="/svg/misc/infinite-spinner.svg"
-            src="/svg/game/game-play/game-play-action/settle-votes.svg"
-            width="40"
-          />
+    <PrimeVueTabPanels>
+      <PrimeVueTabPanel
+        id="roles-tab-panel"
+        :pt="{ 'header': 'grow' }"
+        value="roles"
+      >
+        <GameLobbyOptionsHubRolesTab/>
+      </PrimeVueTabPanel>
 
-          <h3 id="votes-tab-header-text">
-            {{ $t('components.GameLobbyOptionsHubTabView.votes') }}
-          </h3>
-        </div>
-      </template>
+      <PrimeVueTabPanel
+        id="composition-tab-panel"
+        :pt="{ 'header': 'grow' }"
+        value="composition"
+      >
+        <GameLobbyOptionsHubCompositionTab/>
+      </PrimeVueTabPanel>
 
-      <GameLobbyOptionsHubVotesTab/>
-    </PrimeVueTabPanel>
-  </PrimeVueTabView>
+      <PrimeVueTabPanel
+        id="votes-tab-panel"
+        :pt="{ 'header': 'grow' }"
+        value="votes"
+      >
+        <GameLobbyOptionsHubVotesTab/>
+      </PrimeVueTabPanel>
+    </PrimeVueTabPanels>
+  </PrimeVueTabs>
 </template>
 
 <script setup lang="ts">
