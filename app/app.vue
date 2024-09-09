@@ -1,13 +1,17 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage
-      class="h-full md:p-2 p-4"
-    />
+  <div class="h-full">
+    <NuxtRouteAnnouncer/>
+
+    <NuxtLayout>
+      <NuxtPage
+        class="h-full md:p-2 p-4"
+      />
+    </NuxtLayout>
 
     <PrimeVueToast position="bottom-right"/>
 
     <NuxtPwaManifest/>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script lang="ts" setup>
