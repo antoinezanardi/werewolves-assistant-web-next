@@ -18,7 +18,7 @@
     <template #header>
       <DialogHeaderTitleOnly
         id="game-lobby-options-hub-header"
-        icon="sliders"
+        icon="magic-wand-sparkles"
         icon-class="text-primary"
         :title="$t('components.GameLobbyOptionsHub.gameOptions')"
       />

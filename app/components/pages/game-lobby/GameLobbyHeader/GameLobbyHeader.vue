@@ -85,6 +85,13 @@ function onAdditionalCardsManagerButtonClickFromGameLobbyHeaderSetupButtons(): v
   emit("additionalCardsManagerButtonClick");
 }
 
+function highlightGameOptionsButton(): void {
+  if (gameLobbyHeaderSetupButtons.value === null) {
+    throw createError("Game Lobby Header Setup Buttons is not defined");
+  }
+  gameLobbyHeaderSetupButtons.value.highlightGameOptionsButton();
+}
+
 function highlightPositionCoordinatorButton(): void {
   if (gameLobbyHeaderSetupButtons.value === null) {
     throw createError("Game Lobby Header Setup Buttons is not defined");
@@ -100,6 +107,7 @@ function highlightAdditionalCardsManagerButton(): void {
 }
 
 defineExpose<GameLobbyHeaderExposed>({
+  highlightGameOptionsButton,
   highlightPositionCoordinatorButton,
   highlightAdditionalCardsManagerButton,
 });

@@ -78,6 +78,14 @@ describe("Game Lobby Start Game Confirm Dialog Container Component", () => {
 
       expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
     });
+
+    it("should handle reject game options changed step event when dialog content emits the event.", async() => {
+      const dialogContent = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogContent>("#game-lobby-start-game-confirm-dialog-content");
+      (dialogContent.vm as VueVm).$emit("rejectGameOptionsChangedStep");
+      await nextTick();
+
+      expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
+    });
   });
 
   describe("Dialog Footer", () => {

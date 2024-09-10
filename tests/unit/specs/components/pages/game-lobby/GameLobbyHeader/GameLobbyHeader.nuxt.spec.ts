@@ -16,6 +16,7 @@ describe("Game Lobby Header Component", () => {
   let mocks: {
     components: {
       gameLobbyHeaderSetupButtons: {
+        highlightGameOptionsButton: Mock;
         highlightPositionCoordinatorButton: Mock;
         highlightAdditionalCardsManagerButton: Mock;
       };
@@ -40,6 +41,7 @@ describe("Game Lobby Header Component", () => {
     mocks = {
       components: {
         gameLobbyHeaderSetupButtons: {
+          highlightGameOptionsButton: vi.fn(),
           highlightPositionCoordinatorButton: vi.fn(),
           highlightAdditionalCardsManagerButton: vi.fn(),
         },
@@ -160,6 +162,14 @@ describe("Game Lobby Header Component", () => {
         expect(wrapper.emitted("positionCoordinatorButtonClick")).toBeTruthy();
       });
 
+      it("should throw error when highlightGameOptionsButton method is called but component is not defined.", async() => {
+        (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderSetupButtons: Ref }).gameLobbyHeaderSetupButtons.value = null;
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        await getError(() => (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightGameOptionsButton());
+
+        expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Setup Buttons is not defined");
+      });
+
       it("should throw error when highlightPositionCoordinatorButton method is called but component is not defined.", async() => {
         (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderSetupButtons: Ref }).gameLobbyHeaderSetupButtons.value = null;
         const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
@@ -174,6 +184,13 @@ describe("Game Lobby Header Component", () => {
         await getError(() => (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightAdditionalCardsManagerButton());
 
         expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Setup Buttons is not defined");
+      });
+
+      it("should highlight game options button when method is called.", () => {
+        const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+        (gameLobbyHeader.vm as GameLobbyHeaderExposed).highlightGameOptionsButton();
+
+        expect(mocks.components.gameLobbyHeaderSetupButtons.highlightGameOptionsButton).toHaveBeenCalledExactlyOnceWith();
       });
 
       it("should highlight position coordinator button when method is called.", () => {

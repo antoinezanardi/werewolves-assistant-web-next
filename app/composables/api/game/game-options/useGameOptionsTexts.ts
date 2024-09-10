@@ -12,6 +12,7 @@ type UseGameOptionsTexts = {
   gameOptionsTexts: ComputedRef<DeepStringifiedGameOptions>;
   changedGameOptionsTexts: ComputedRef<string[]>;
   getGameOptionText: (key: Paths<DeepStringifiedGameOptions>) => string;
+  getGameOptionKeyFromText: (gameOptionText: string) => Paths<DeepStringifiedGameOptions> | undefined;
 };
 
 function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts {
@@ -113,10 +114,18 @@ function useGameOptionsTexts(gameOptions: Ref<GameOptions>): UseGameOptionsTexts
   function getGameOptionText(key: Paths<DeepStringifiedGameOptions>): string {
     return get(gameOptionsTexts.value, key as string);
   }
+
+  function getGameOptionKeyFromText(gameOptionText: string): Paths<DeepStringifiedGameOptions> | undefined {
+    const gameOptionsTextsKeys = keys(gameOptionsTexts.value);
+    const gameOptionKey = gameOptionsTextsKeys.find(key => get(gameOptionsTexts.value, key) === gameOptionText);
+
+    return gameOptionKey as Paths<DeepStringifiedGameOptions>;
+  }
   return {
     gameOptionsTexts,
     changedGameOptionsTexts,
     getGameOptionText,
+    getGameOptionKeyFromText,
   };
 }
 

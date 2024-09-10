@@ -38,5 +38,12 @@ describe("Game Lobby Footer Component", () => {
 
       expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
     });
+
+    it("should emit reject game options changed step when game lobby start game button emits the same.", () => {
+      const gameLobbyStartGameButton = wrapper.findComponent<typeof GameLobbyStartGameButton>("#game-lobby-start-game-button");
+      (gameLobbyStartGameButton.vm as VueVm).$emit("rejectGameOptionsChangedStep");
+
+      expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
+    });
   });
 });

@@ -287,6 +287,13 @@ describe("Game Lobby Start Game Button Component", () => {
 
         expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
       });
+
+      it("should emit game options changed step when game lobby start game confirm dialog emits the same.", () => {
+        const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
+        (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("rejectGameOptionsChangedStep");
+
+        expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
+      });
     });
   });
 });

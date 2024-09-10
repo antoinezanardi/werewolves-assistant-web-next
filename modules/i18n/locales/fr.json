@@ -13,7 +13,8 @@
       "close": "Fermer",
       "next": "Suivant",
       "back": "Retour",
-      "cancel": "Annuler"
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
     },
     "time": {
       "second": "1 seconde | {count} secondes",
@@ -1028,11 +1029,12 @@
       "endOfGame": "Fin de la partie",
       "gameHistory": "Historique de la partie"
     },
-    "GameLobbyHeaderOptionButton": {
-      "gameOptions": "Options de la partie"
+    "GameLobbyHeaderOptionsButton": {
+      "gameOptions": "Variantes de la partie",
+      "youHaveChangedGameOptions": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles"
     },
     "GameLobbyOptionsHub": {
-      "gameOptions": "Options de la partie"
+      "gameOptions": "Variantes de la partie"
     },
     "GameLobbyOptionsHubTabView": {
       "roles": "Rôles",
@@ -1596,6 +1598,15 @@
     "GameLobbyOptionsHubFooter": {
       "resetOptions": "Revenir aux règles officielles",
       "youHaveChangedOptions": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles"
+    },
+    "GameLobbyStartGameConfirmDialogGameOptionsChanged": {
+      "gameOptionsChanged": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles",
+      "changedGameOptionsIcon": "Icône des options de jeu modifiées",
+      "seeAllGameOptions": "Ouvrir les options de jeu"
+    },
+    "ChangedGameOptionsList": {
+      "resetOptionAlt": "Revenir à la règle officielle pour la variante : {option}",
+      "resetToOfficialRule": "Revenir à la règle officielle"
     }
   }
 }

@@ -6,11 +6,12 @@
     value="roles"
   >
     <PrimeVueTabList
+      class="!pr-5"
       :pt="{ 'tabList': '!w-full' }"
     >
       <PrimeVueTab
         id="roles-tab-header"
-        class="flex gap-2 grow items-center justify-center"
+        class="flex gap-2 items-center justify-center w-1/3"
         value="roles"
       >
         <RoleImage
@@ -25,7 +26,7 @@
 
       <PrimeVueTab
         id="composition-tab-header"
-        class="flex gap-2 grow items-center justify-center"
+        class="flex gap-2 items-center justify-center w-1/3"
         value="composition"
       >
         <NuxtImg
@@ -43,7 +44,7 @@
 
       <PrimeVueTab
         id="votes-tab-header"
-        class="flex gap-2 grow items-center justify-center"
+        class="flex gap-2 items-center justify-center w-1/3"
         value="votes"
       >
         <NuxtImg
@@ -63,7 +64,6 @@
     <PrimeVueTabPanels>
       <PrimeVueTabPanel
         id="roles-tab-panel"
-        :pt="{ 'header': 'grow' }"
         value="roles"
       >
         <GameLobbyOptionsHubRolesTab/>
@@ -71,7 +71,6 @@
 
       <PrimeVueTabPanel
         id="composition-tab-panel"
-        :pt="{ 'header': 'grow' }"
         value="composition"
       >
         <GameLobbyOptionsHubCompositionTab/>
@@ -79,7 +78,6 @@
 
       <PrimeVueTabPanel
         id="votes-tab-panel"
-        :pt="{ 'header': 'grow' }"
         value="votes"
       >
         <GameLobbyOptionsHubVotesTab/>

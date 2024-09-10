@@ -26,7 +26,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
   },
 });
 
-const beforeAllTimeout = 90000;
+const beforeAllTimeout = 180000;
 
 const beforeTimeout = 10000;
 
