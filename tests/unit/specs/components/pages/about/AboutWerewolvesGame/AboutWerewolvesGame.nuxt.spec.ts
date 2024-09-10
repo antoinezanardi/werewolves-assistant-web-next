@@ -46,16 +46,16 @@ describe("About Werewolves Game Component", () => {
       const firstSection = wrapper.find<HTMLParagraphElement>("#about-werewolves-game-first-section");
 
       expect(firstSection.text()).toBe("The Werewolves of Miller's Hollow™ is a captivating social board game, where each participant takes" +
-      " on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises," +
-      " betrayals, twists, and even moments filled with laughter and sometimes tears.");
+        " on the role of either a Villager or a Werewolf. Under the guidance of a game master, each session unveils a range of surprises," +
+        " betrayals, twists, and even moments filled with laughter and sometimes tears.");
     });
 
     it("should translate second section when rendered.", () => {
       const secondSection = wrapper.find<HTMLParagraphElement>("#about-werewolves-game-second-section");
 
       expect(secondSection.text()).toBe("The success of a game relies on the shoulders of the game master, tasked with creating an " +
-      "enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, " +
-      "lacking experience, or being in a state of distraction make this task a significant challenge.");
+        "enchanting atmosphere, maintaining a dynamic pace, and mastering the subtleties of the game rules. Managing a sizable group of players, " +
+        "lacking experience, or being in a state of distraction make this task a significant challenge.");
     });
   });
 });

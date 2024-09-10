@@ -37,11 +37,11 @@ describe("About How To Contribute Component", () => {
 
       expect(secondSectionBulletItems).toHaveLength(3);
       expect(secondSectionBulletItems[0].text()).toBe("The Werewolf Assistant is an open-source project! Available on GitHub, whether you are a developer, graphic designer, " +
-      "or even a tester, your help is welcome. If you like the project, feel free to star it or follow the creator!");
+        "or even a tester, your help is welcome. If you like the project, feel free to star it or follow the creator!");
       expect(secondSectionBulletItems[1].text()).toBe("This project is intended to remain a free service. However, both hosting and tool infrastructure are paid for. " +
-      "If you would like to contribute or appreciate the creator's work, you can make a donation on their Buy Me A Coffee page.");
+        "If you would like to contribute or appreciate the creator's work, you can make a donation on their Buy Me A Coffee page.");
       expect(secondSectionBulletItems[2].text()).toBe("Talk about this project around you! " +
-      "Word of mouth will encourage many role-play enthusiasts to embark on the grand adventure of the game master with the Werewolf Assistant.");
+        "Word of mouth will encourage many role-play enthusiasts to embark on the grand adventure of the game master with the Werewolf Assistant.");
     });
 
     it("should translate gitHub text button when rendered.", () => {
