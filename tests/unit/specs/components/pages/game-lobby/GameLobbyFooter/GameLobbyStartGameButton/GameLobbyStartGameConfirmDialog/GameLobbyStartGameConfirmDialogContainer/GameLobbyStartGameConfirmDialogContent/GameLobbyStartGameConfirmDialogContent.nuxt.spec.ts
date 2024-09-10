@@ -6,6 +6,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameLobbyStartGameConfirmDialogContentProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/game-lobby-start-game-confirm-dialog-content.types";
 import GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced.vue";
 import GameLobbyStartGameConfirmDialogContent from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogContent.vue";
+import GameLobbyStartGameConfirmDialogGameOptionsChanged from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogGameOptionsChanged/GameLobbyStartGameConfirmDialogGameOptionsChanged.vue";
 import GameLobbyStartGameConfirmDialogPlayersPositioned from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersPositioned/GameLobbyStartGameConfirmDialogPlayersPositioned.vue";
 import GameLobbyStartGameConfirmDialogPlayersReady from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersReady/GameLobbyStartGameConfirmDialogPlayersReady.vue";
 import GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced/GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced.vue";
@@ -78,6 +79,17 @@ describe("Game Lobby Start Game Confirm Dialog Content Component", () => {
       expect(component.exists()).toBeTruthy();
     });
 
+    it("should render game options changed component when current confirm step is game-options-changed.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogContentComponent({
+        props: {
+          currentConfirmStep: "game-options-changed",
+        },
+      });
+      const component = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogGameOptionsChanged>(GameLobbyStartGameConfirmDialogGameOptionsChanged);
+
+      expect(component.exists()).toBeTruthy();
+    });
+
     it("should emit confirm step event when component emits confirm step event.", async() => {
       const playerReadyConfirmStep = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogPlayersReady>(GameLobbyStartGameConfirmDialogPlayersReady);
       (playerReadyConfirmStep.vm as VueVm).$emit("confirmStep");
@@ -118,6 +130,19 @@ describe("Game Lobby Start Game Confirm Dialog Content Component", () => {
       await nextTick();
 
       expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
+
+    it("should emit reject game options changed step event when component emits same event.", async() => {
+      wrapper = await mountGameLobbyStartGameConfirmDialogContentComponent({
+        props: {
+          currentConfirmStep: "game-options-changed",
+        },
+      });
+      const component = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialogGameOptionsChanged>(GameLobbyStartGameConfirmDialogGameOptionsChanged);
+      (component.vm as VueVm).$emit("rejectGameOptionsChangedStep");
+      await nextTick();
+
+      expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
     });
   });
 });

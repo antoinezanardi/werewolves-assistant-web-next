@@ -11,6 +11,7 @@ import { expect, type Mock, vi } from "vitest";
 import type { Ref } from "vue";
 import type { GameLobbyStartGameConfirmDialogStep } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/game-lobby-start-game-confirm-dialog.types";
 import GameLobbyStartGameConfirmDialog from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialog.vue";
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
@@ -25,6 +26,7 @@ type GameLobbyStartGameConfirmDialogPrivateVariables = {
   onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
   onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
   onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
+  onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
 };
 
 const hoistedMocks = vi.hoisted(() => ({
@@ -45,6 +47,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       createFakeCreateGamePlayerDto(),
       createFakeCreateGamePlayerDto(),
     ],
+    options: DEFAULT_GAME_OPTIONS,
   });
   const testingPinia = {
     initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } },
@@ -87,6 +90,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
           createFakeCreateGamePlayerDto({ role: { name: "seer" } }),
           createFakeCreateGamePlayerDto({ role: { name: "rusty-sword-knight" } }),
         ],
+        options: DEFAULT_GAME_OPTIONS,
       });
       await nextTick();
       const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["players-positioned", "players-ready"];
@@ -98,6 +102,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
         players: [createFakeCreateGamePlayerDto({ role: { name: "thief" } })],
+        options: DEFAULT_GAME_OPTIONS,
       });
       await nextTick();
       const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["thief-additional-cards-placed", "players-ready"];
@@ -109,9 +114,23 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
         players: [createFakeCreateGamePlayerDto({ role: { name: "actor" } })],
+        options: DEFAULT_GAME_OPTIONS,
       });
       await nextTick();
       const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["actor-additional-cards-placed", "players-ready"];
+
+      expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
+    });
+
+    it("should contain game options changed when there is a changed game option in create game dto.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto()],
+        options: DEFAULT_GAME_OPTIONS,
+      });
+      createGameDtoStore.createGameDto.options.votes.duration = 20;
+      await nextTick();
+      const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["game-options-changed", "players-ready"];
 
       expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
     });
@@ -155,6 +174,7 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
           createFakeCreateGamePlayerDto({ role: { name: "seer" } }),
           createFakeCreateGamePlayerDto({ role: { name: "rusty-sword-knight" } }),
         ],
+        options: DEFAULT_GAME_OPTIONS,
       });
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onConfirmStepFromGameLobbyStartGameConfirmDialogContainer();
       await nextTick();
@@ -216,6 +236,22 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
 
       expect(wrapper.emitted("rejectActorAdditionalCardsPlacedStep")).toHaveLength(1);
+    });
+  });
+
+  describe("Reject Game Options Placed Step", () => {
+    it("should call reject callback pass as argument when reject game options changed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(rejectCallback).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should emit reject game options changed step event when reject game options changed step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
     });
   });
 });

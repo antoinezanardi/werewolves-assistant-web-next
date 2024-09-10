@@ -40,6 +40,15 @@ Feature: ⚙️ Game Lobby Options Hub
     When the user clicks on the button with name "Restore official rules"
     Then the exact text "The game will have a Sheriff." should be visible
 
+  Scenario: ⚙️ Number of changed game options are displayed in the game options button
+    Given the user is on game-lobby page
+    And the user disables the sheriff in game options
+    And the user doesn't allow the elder to take his revenge in game options
+    Then the changed game options badge should display 2 in the lobby
+
+    When the user hovers the changed game options badge in the lobby
+    Then the tooltip with text "You have changed 2 options" should be visible
+
   Scenario: ⚙️ User closes the options hub with escape, close button or outside click
     Given the user is on game-lobby page
 

@@ -28,6 +28,7 @@
       :current-confirm-step="currentConfirmStep"
       @confirm-step="onConfirmStep"
       @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStep"
+      @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
       @reject-players-position-step="onRejectPlayersPositionStep"
       @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStep"
     />
@@ -65,6 +66,10 @@ function onRejectThiefAdditionalCardsPlacedStep(): void {
 
 function onRejectActorAdditionalCardsPlacedStep(): void {
   emit("rejectActorAdditionalCardsPlacedStep", props.rejectCallback);
+}
+
+function onRejectGameOptionsChangedStep(): void {
+  emit("rejectGameOptionsChangedStep", props.rejectCallback);
 }
 
 function onConfirmStartGame(): void {

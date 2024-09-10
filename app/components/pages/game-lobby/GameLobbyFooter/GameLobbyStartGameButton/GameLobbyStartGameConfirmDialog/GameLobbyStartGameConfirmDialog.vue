@@ -12,6 +12,7 @@
         @confirm-start-game="acceptCallback"
         @confirm-step="onConfirmStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
+        @reject-game-options-changed-step="onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-start-game="rejectCallback"
         @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
@@ -25,6 +26,7 @@ import { storeToRefs } from "pinia";
 import { useConfirm } from "primevue/useconfirm";
 import type { GameLobbyStartGameConfirmDialogEmits, GameLobbyStartGameConfirmDialogExposed, GameLobbyStartGameConfirmDialogStep } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/game-lobby-start-game-confirm-dialog.types";
 import GameLobbyStartGameConfirmDialogContainer from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContainer.vue";
+import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useArrays } from "~/composables/misc/useArrays";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
@@ -34,7 +36,9 @@ const confirmStepIndex = ref<number>(0);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { getPlayersWithRoleNameInCreateGameDto } = createGameDtoStore;
-const { doesCreateGameDtoContainPositionDependantRoles } = storeToRefs(createGameDtoStore);
+const { doesCreateGameDtoContainPositionDependantRoles, createGameOptionsDto } = storeToRefs(createGameDtoStore);
+
+const { changedGameOptionsTexts } = useGameOptionsTexts(createGameOptionsDto);
 
 const { require: confirmRequire } = useConfirm();
 
@@ -44,10 +48,13 @@ const doesCreateGameDtoContainThief = computed<boolean>(() => getPlayersWithRole
 
 const doesCreateGameDtoContainActor = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("actor").length > 0);
 
+const areGameOptionsChanged = computed<boolean>(() => changedGameOptionsTexts.value.length > 0);
+
 const confirmSteps = computed<GameLobbyStartGameConfirmDialogStep[]>(() => [
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainPositionDependantRoles.value, "players-positioned"),
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainThief.value, "thief-additional-cards-placed"),
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainActor.value, "actor-additional-cards-placed"),
+  ...insertIf<GameLobbyStartGameConfirmDialogStep>(areGameOptionsChanged.value, "game-options-changed"),
   "players-ready",
 ]);
 
@@ -83,6 +90,11 @@ function onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDial
 function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
   rejectCallback();
   emit("rejectActorAdditionalCardsPlacedStep");
+}
+
+function onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
+  rejectCallback();
+  emit("rejectGameOptionsChangedStep");
 }
 
 defineExpose<GameLobbyStartGameConfirmDialogExposed>({

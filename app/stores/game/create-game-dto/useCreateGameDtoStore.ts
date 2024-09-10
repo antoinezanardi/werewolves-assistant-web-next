@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { get, set } from "radash";
+import type { Paths } from "type-fest";
 import { ref } from "vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
@@ -7,6 +9,7 @@ import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/crea
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
+import type { DeepStringifiedGameOptions } from "~/composables/api/game/types/game-options/game-options.types";
 import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constants/role.constants";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -65,6 +68,12 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
 
   function resetCreateGameOptionsDto(): void {
     createGameDto.value.options = GameOptions.create(DEFAULT_GAME_OPTIONS);
+    saveCreateGameOptionsDtoToLocalStorage();
+  }
+
+  function resetCreateGameOptionDto(optionKey: Paths<DeepStringifiedGameOptions>): void {
+    const defaultOptionValue = get(DEFAULT_GAME_OPTIONS, optionKey);
+    createGameDto.value.options = GameOptions.create(set(createGameDto.value.options, optionKey, defaultOptionValue));
     saveCreateGameOptionsDtoToLocalStorage();
   }
 
@@ -164,6 +173,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     setCreateGameDto,
     resetCreateGameDto,
     resetCreateGameOptionsDto,
+    resetCreateGameOptionDto,
     saveCreateGameOptionsDtoToLocalStorage,
     removeObsoleteAdditionalCardsFromCreateGameDto,
     addPlayerToCreateGameDto,

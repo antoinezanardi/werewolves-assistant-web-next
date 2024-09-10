@@ -104,4 +104,19 @@ describe("Use Game Options Texts Composable", () => {
       expect(getGameOptionText("votes.canBeSkipped")).toBe(expectedGameOptionText);
     });
   });
+
+  describe("getGameOptionKeyFromText", () => {
+    it("should return the game option key of the given text when called.", () => {
+      const { getGameOptionKeyFromText } = useGameOptionsTexts(ref(DEFAULT_GAME_OPTIONS));
+      const expectedGameOptionKey = "votes.canBeSkipped";
+
+      expect(getGameOptionKeyFromText("composables.useGameOptionsTexts.votes.canBeSkipped.yes")).toBe(expectedGameOptionKey);
+    });
+
+    it("should return undefined when the given text is not a game option text.", () => {
+      const { getGameOptionKeyFromText } = useGameOptionsTexts(ref(DEFAULT_GAME_OPTIONS));
+
+      expect(getGameOptionKeyFromText("This is not a game option text.")).toBeUndefined();
+    });
+  });
 });

@@ -11,6 +11,7 @@
       <GameLobbyStartGameButton
         id="game-lobby-start-game-button"
         @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStep"
+        @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
         @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameButton"
         @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStep"
       />
@@ -37,5 +38,9 @@ function onRejectThiefAdditionalCardsPlacedStep(): void {
 
 function onRejectActorAdditionalCardsPlacedStep(): void {
   emit("rejectActorAdditionalCardsPlacedStep");
+}
+
+function onRejectGameOptionsChangedStep(): void {
+  emit("rejectGameOptionsChangedStep");
 }
 </script>

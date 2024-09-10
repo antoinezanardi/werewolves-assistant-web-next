@@ -3,6 +3,7 @@ const GAME_LOBBY_START_GAME_CONFIRM_DIALOG_STEPS = [
   "actor-additional-cards-placed",
   "players-positioned",
   "players-ready",
+  "game-options-changed",
 ] as const;
 
 export { GAME_LOBBY_START_GAME_CONFIRM_DIALOG_STEPS };

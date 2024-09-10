@@ -83,7 +83,7 @@ Feature: 👴🏻 Elder role
     Then the game's event should display the text "Special rule 1 : The game will not have a Sheriff."
 
     When the user goes to the next game event text
-    Then the game's event should display the text "Special rule 2 : If the Elder is eliminated by a player from the Werewolves side, nothing happens."
+    Then the game's event should display the text "Special rule 2 : If the Elder is eliminated by a player from the Villagers side, nothing happens."
 
     When the user skips all game events
     Then the game's current play title should be "Werewolves eat"

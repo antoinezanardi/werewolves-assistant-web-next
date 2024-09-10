@@ -27,6 +27,7 @@
       ref="gameLobbyStartGameConfirmDialog"
       @confirm-start-game="onConfirmStartGameFromGameLobbyStartGameConfirmDialog"
       @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
+      @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
       @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialog"
       @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog"
     />
@@ -92,5 +93,9 @@ function onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDial
 
 function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialog(): void {
   emit("rejectActorAdditionalCardsPlacedStep");
+}
+
+function onRejectGameOptionsChangedStep(): void {
+  emit("rejectGameOptionsChangedStep");
 }
 </script>

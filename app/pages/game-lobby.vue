@@ -21,6 +21,7 @@
     <GameLobbyFooter
       id="game-lobby-footer"
       @reject-actor-additional-cards-placed-step="onRejectThiefOrActorAdditionalCardsPlacedStep"
+      @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
       @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyFooter"
       @reject-thief-additional-cards-placed-step="onRejectThiefOrActorAdditionalCardsPlacedStep"
     />
@@ -127,6 +128,17 @@ function onRejectThiefOrActorAdditionalCardsPlacedStep(): void {
   const intervalMs = 1000;
   setTimeout(() => {
     onAdditionalCardsButtonManagerClickFromGameLobbyHeader();
+  }, intervalMs);
+}
+
+function onRejectGameOptionsChangedStep(): void {
+  if (!gameLobbyHeader.value) {
+    throw createError("Game Lobby Header is not defined");
+  }
+  gameLobbyHeader.value.highlightGameOptionsButton();
+  const intervalMs = 1000;
+  setTimeout(() => {
+    onGameOptionsButtonClickFromGameLobbyHeader();
   }, intervalMs);
 }
 
