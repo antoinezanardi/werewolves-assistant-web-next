@@ -50,6 +50,7 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
             domain: "en",
           },
         },
+        multiDomainLocales: false,
       },
       "primevue": {
         components: [],
