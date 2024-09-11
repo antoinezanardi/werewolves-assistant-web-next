@@ -24,8 +24,8 @@ importers:
         specifier: ^3.0.8
         version: 3.0.8(@fortawesome/fontawesome-svg-core@6.6.0)(vue@3.5.4(typescript@5.6.2))
       '@primevue/themes':
-        specifier: ^4.0.6
-        version: 4.0.6
+        specifier: ^4.0.7
+        version: 4.0.7
       animate.css:
         specifier: ^4.1.1
         version: 4.1.1
@@ -2440,8 +2440,8 @@ packages:
     resolution: {integrity: sha512-/E/lWqjYQSVgFJrdA5A/nmcwiC1rKqvn9td2YIMCJ3xbVAl/DOlRfeIP8Q6WPxRjdqWm2tpO071u2atyws3VqA==}
     engines: {node: '>=12.11.0'}
 
-  '@primevue/themes@4.0.6':
-    resolution: {integrity: sha512-8/b0GB6Tua2J+fyr1ZUn7dk4WFSNq/AVw6NRwxamPtNJcDqmvtB/CWq9xU9WkX08WUJJSA0y0qFSjyRfbAYMAg==}
+  '@primevue/themes@4.0.7':
+    resolution: {integrity: sha512-ZbDUrpBmtuqdeegNwUaJTubaLDBBJWOc4Z6UoQM3DG2c7EAE19wQbuh+cG9zqA7sT/Xsp+ACC/Z9e4FnfqB55g==}
     engines: {node: '>=12.11.0'}
 
   '@protobufjs/aspromise@1.1.2':
@@ -11673,7 +11673,7 @@ snapshots:
       - vue
       - webpack-sources
 
-  '@primevue/themes@4.0.6':
+  '@primevue/themes@4.0.7':
     dependencies:
       '@primeuix/styled': 0.0.5
 
