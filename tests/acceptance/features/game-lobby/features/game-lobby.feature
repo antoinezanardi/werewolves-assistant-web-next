@@ -24,6 +24,16 @@ Feature: 🃏 Game Lobby Page
       | generator        | nuxt                                                       |
       | color-scheme     | dark                                                       |
 
+  Scenario: 🃏 Game Lobby page displays an info toast when small screen is detected
+    Given the user renders the app on the iPhone X
+    And the user is on game-lobby page
+    Then the toast with text "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience." should be visible
+
+  Scenario: 🃏 Game Lobby page doesn't display an info toast when medium or large screen is detected
+    Given the user renders the app on the iPad Mini
+    And the user is on game-lobby page
+    Then the toast with text "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience." should be hidden
+
   Scenario: 🃏 User adds a player
     Given the user is on game-lobby page
     Then the input with label "Player name" should be empty

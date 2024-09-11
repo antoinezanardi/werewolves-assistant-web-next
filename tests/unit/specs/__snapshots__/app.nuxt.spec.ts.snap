@@ -4,7 +4,7 @@ exports[`App Component > should match snapshot when rendered. 1`] = `
 "<div data-v-8ff0109a="" class="h-full">
   <nuxt-route-announcer-stub data-v-8ff0109a="" atomic="false" politeness="polite"></nuxt-route-announcer-stub>
   <nuxt-layout-stub data-v-8ff0109a=""></nuxt-layout-stub>
-  <toast-stub data-v-8ff0109a="" position="bottom-right"></toast-stub>
+  <toast-stub data-v-8ff0109a="" class="!max-w-x-screen-9/10" position="bottom-right"></toast-stub>
   <anonymous-stub data-v-8ff0109a=""></anonymous-stub>
 </div>"
 `;
