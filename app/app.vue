@@ -8,7 +8,10 @@
       />
     </NuxtLayout>
 
-    <PrimeVueToast position="bottom-right"/>
+    <PrimeVueToast
+      class="!max-w-x-screen-9/10"
+      position="bottom-right"
+    />
 
     <NuxtPwaManifest/>
   </div>

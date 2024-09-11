@@ -1,6 +1,7 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import type { mount } from "@vue/test-utils";
+import type Radash from "radash";
 import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
@@ -19,10 +20,25 @@ import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 const hoistedMocks = vi.hoisted(() => ({
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
   useRoute: {} as unknown as ReturnType<typeof useRoute>,
+  usePrimeVueToasts: {
+    addInfoToast: vi.fn(),
+  },
 }));
 
 mockNuxtImport("useRoute", () => vi.fn(() => hoistedMocks.useRoute));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof Radash>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+}));
+
+vi.mock("~/composables/prime-vue/usePrimeVueToasts", () => ({
+  usePrimeVueToasts: (): typeof hoistedMocks.usePrimeVueToasts => hoistedMocks.usePrimeVueToasts,
+}));
 
 describe("Game Lobby Page", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobby>>;
@@ -93,6 +109,7 @@ describe("Game Lobby Page", () => {
 
   beforeEach(async() => {
     hoistedMocks.useRoute = createFakeUseRoute();
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     wrapper = await mountGameLobbyPageComponent();
   });
 
@@ -108,6 +125,33 @@ describe("Game Lobby Page", () => {
     };
 
     expect(useHead).toHaveBeenCalledExactlyOnceWith(expectedUseHeadInput);
+  });
+
+  describe("Small Screen Toast", () => {
+    it("should add info toast for small screen after 200ms when screen is smaller than md.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameLobbyPageComponent();
+      vi.advanceTimersByTime(200);
+
+      expect(hoistedMocks.usePrimeVueToasts.addInfoToast).toHaveBeenCalledExactlyOnceWith({
+        detail: "pages.gameLobby.smallScreenWarning",
+        life: 7500,
+        summary: "pages.gameLobby.smallScreenDetected",
+      });
+    });
+
+    it("should not add info toast for small screen after 200ms when screen is not smaller than md.", () => {
+      vi.advanceTimersByTime(200);
+
+      expect(hoistedMocks.usePrimeVueToasts.addInfoToast).not.toHaveBeenCalled();
+    });
+
+    it("should not add info toast for small screen when screen is smaller than md but 200ms have not passed.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameLobbyPageComponent();
+
+      expect(hoistedMocks.usePrimeVueToasts.addInfoToast).not.toHaveBeenCalled();
+    });
   });
 
   describe("Game Lobby Players Party", () => {

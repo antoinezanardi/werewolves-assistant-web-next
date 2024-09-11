@@ -8,3 +8,9 @@ Then(/^the toast with text "(?<text>.+)" should be visible$/u, async function(th
 
   await expect(toastsContainer.getByRole("alert").getByText(text)).toBeVisible();
 });
+
+Then(/^the toast with text "(?<text>.+)" should be hidden$/u, async function(this: CustomWorld, text: string): Promise<void> {
+  const toastsContainer = this.page.locator(".p-toast").first();
+
+  await expect(toastsContainer.getByRole("alert").getByText(text)).toBeHidden();
+});

@@ -420,7 +420,9 @@
     },
     "gameLobby": {
       "startGame": "Start a game",
-      "seoDescription": "Create a new game right now with the Werewolves Assistant."
+      "seoDescription": "Create a new game right now with the Werewolves Assistant.",
+      "smallScreenDetected": "Small screen detected",
+      "smallScreenWarning": "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience."
     },
     "game": {
       "loadingGame": "Loading game…",
