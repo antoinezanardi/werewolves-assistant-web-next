@@ -31,6 +31,12 @@ describe("Game Lobby Player Input Component", () => {
   });
 
   describe("Text input", () => {
+    it("should set autofocus attribute when rendered.", () => {
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+
+      expect(input.attributes("autofocus")).toBe("true");
+    });
+
     it("should be prefilled when v-model value is not empty.", async() => {
       wrapper = await mountSuspendedComponent(GameLobbyPlayerInput, {
         ...defaultMountingOptions,

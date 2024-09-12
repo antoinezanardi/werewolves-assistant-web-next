@@ -89,6 +89,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: "./modules/i18n/i18n.config.ts",
+    defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
     locales: [
       {
         code: "fr",
@@ -102,10 +103,7 @@ export default defineNuxtConfig({
     strategy: "no_prefix",
   },
   image: {
-    domains: [
-      "antoinezanardi.fr",
-      "appspot.com",
-    ],
+    domains: ["werewolves-assistant.com"],
   },
   linkChecker: {
     enabled: false,

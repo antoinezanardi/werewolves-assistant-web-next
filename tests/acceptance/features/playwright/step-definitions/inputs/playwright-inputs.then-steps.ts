@@ -22,3 +22,7 @@ Then(/^the input with label "(?<label>.+?)" should be empty$/u, async function(t
 Then(/^the input with label "(?<label>.+?)" should have placeholder "(?<placeholder>.+?)"$/u, async function(this: CustomWorld, label: string, placeholder: string): Promise<void> {
   await expect(this.page.getByLabel(label)).toHaveAttribute("placeholder", placeholder);
 });
+
+Then(/^the input with label "(?<label>.+?)" should be focused$/u, async function(this: CustomWorld, label: string): Promise<void> {
+  await expect(this.page.getByLabel(label)).toBeFocused();
+});

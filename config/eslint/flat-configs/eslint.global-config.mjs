@@ -8,6 +8,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
     globals: {
       window: READONLY,
       process: READONLY,
+      navigator: READONLY,
       Buffer: READONLY,
       defineNuxtConfig: READONLY,
       defineNuxtPlugin: READONLY,
