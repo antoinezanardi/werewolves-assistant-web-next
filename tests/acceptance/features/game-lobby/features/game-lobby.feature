@@ -10,6 +10,7 @@ Feature: 🃏 Game Lobby Page
     And the heading with name "Add player names with the input above" should be visible
     And the button with name "Random composition" should be visible
     And the button with name "Start game" should be visible
+    And the input with label "Player name" should be focused
     And the page should match or creates the missing snapshot with name "Game Lobby Page without players"
 
   Scenario: 🃏 Game Lobby page has valid head title and SEO tags

@@ -2,6 +2,7 @@
 .output
 .data
 .nuxt
+.nuxt-test-cucumber
 .nitro
 .cache
 dist
@@ -20,7 +21,7 @@ logs
 .idea
 
 # Local env files
-.env
+zef
 .env.*
 !.env.example
 

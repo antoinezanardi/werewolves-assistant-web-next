@@ -9,6 +9,7 @@
           id="player-name-input"
           v-model="inputValue"
           aria-labelledby="player-name-input-help"
+          :autofocus="!isOnTouchDevice"
           :class="{ 'p-invalid': doesPlayerNameExistInGame }"
           :disabled="isInputDisabled"
           :maxlength="MAX_PLAYER_NAME_LENGTH"
@@ -55,11 +56,14 @@ import { computed } from "vue";
 
 import { MAX_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
 import { MAX_PLAYER_NAME_LENGTH } from "~/composables/api/game/constants/player/player.constants";
+import { useDevice } from "~/composables/misc/useDevice";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const { t } = useI18n();
 
 const createGameDtoStore = useCreateGameDtoStore();
+
+const { isOnTouchDevice } = useDevice();
 
 const { createGameDto } = storeToRefs(createGameDtoStore);
 
