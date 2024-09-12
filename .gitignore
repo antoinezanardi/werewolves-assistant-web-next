@@ -21,7 +21,7 @@ logs
 .idea
 
 # Local env files
-zef
+.env
 .env.*
 !.env.example
 
