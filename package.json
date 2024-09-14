@@ -111,7 +111,7 @@
     "@types/javascript-color-gradient": "^2.4.2",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
-    "@types/qs": "^6.9.15",
+    "@types/qs": "^6.9.16",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
     "@typescript-eslint/types": "^8.5.0",
