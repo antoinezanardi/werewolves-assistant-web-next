@@ -421,8 +421,8 @@
     "gameLobby": {
       "startGame": "Lancer une partie",
       "seoDescription": "Créer une nouvelle partie avec l'Assistant Loups-Garous",
-      "smallScreenDetected": "Small screen detected",
-      "smallScreenWarning": "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience."
+      "smallScreenDetected": "Petit écran détecté",
+      "smallScreenWarning": "Même si l'Assistant Loups-Garous est utilisable sur un petit écran, il est recommandé de l'utiliser sur un écran plus grand pour une meilleure expérience."
     },
     "game": {
       "loadingGame": "Chargement de la partie…",
