@@ -118,7 +118,7 @@
     "@vite-pwa/nuxt": "^0.10.5",
     "@vitest/coverage-istanbul": "^2.1.1",
     "@vue/test-utils": "^2.4.6",
-    "@vueuse/core": "^11.0.3",
+    "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.0.3",
     "chart.js": "^4.4.4",
     "chartjs-plugin-datalabels": "^2.2.0",
