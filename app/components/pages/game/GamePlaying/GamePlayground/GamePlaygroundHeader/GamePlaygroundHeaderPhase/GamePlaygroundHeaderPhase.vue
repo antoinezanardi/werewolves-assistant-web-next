@@ -5,13 +5,13 @@
     data-testid="game-playground-header-phase"
   >
     <GamePhaseIcon
-      class="fa-2x"
+      class="md:text-3xl"
       :phase="game.phase.name"
     />
 
     <span
       id="game-phase-text"
-      class="md:text-2xl text-base text-center"
+      class="!text-nowrap md:text-2xl text-center text-xs"
     >
       {{ getGamePhaseWithTurnText(game.phase.name, game.turn) }}
     </span>

@@ -3,11 +3,11 @@
     id="game-playground-header"
   >
     <div class="flex gap-2 items-center justify-between">
-      <GamePlaygroundHeaderPhase class="md:w-3/12"/>
+      <GamePlaygroundHeaderPhase class="w-2/12"/>
 
-      <GamePlaygroundHeaderCurrentPlay class="md:w-6/12"/>
+      <GamePlaygroundHeaderCurrentPlay class="w-6/12"/>
 
-      <GamePlaygroundHeaderCard class="md:w-3/12"/>
+      <GamePlaygroundHeaderCard class="w-2/12"/>
     </div>
 
     <PrimeVueDivider class="!my-3"/>

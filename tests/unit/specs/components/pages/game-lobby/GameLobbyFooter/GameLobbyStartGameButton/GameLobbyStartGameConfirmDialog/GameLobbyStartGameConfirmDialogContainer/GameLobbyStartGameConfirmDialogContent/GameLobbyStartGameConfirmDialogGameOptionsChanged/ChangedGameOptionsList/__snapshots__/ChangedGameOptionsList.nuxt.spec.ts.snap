@@ -2,7 +2,7 @@
 
 exports[`Changed Game Options List Component > should match snapshot when rendered. 1`] = `
 "<div id="changed-game-options-list">
-  <ul class="max-h-64 overflow-y-scroll px-1">
+  <ul class="max-h-40 md:max-h-64 overflow-y-scroll px-1">
     <li class="!bg-sky-950 border-2 border-gray-600 changed-game-options-list-item flex gap-4 items-center px-2 py-1 rounded-md shadow-black shadow-md">
       <button-stub aria-label="Reset to official rule the option : composables.useGameOptionsTexts.composition.isHidden.yes" class="!w-2 h-4 reset-changed-game-option-button text-xs" raised="" severity="danger" size="small" data-pd-tooltip="true"></button-stub>
       <p class="!leading-relaxed !mb-0">composables.useGameOptionsTexts.composition.isHidden.yes</p>

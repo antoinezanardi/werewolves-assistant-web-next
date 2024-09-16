@@ -3,38 +3,38 @@
 exports[`Players Horizontal List Component > should match snapshot when rendered. 1`] = `
 "<ul id="players-horizontal-list" class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap">
   <div class="glow-capture" style="position: relative; --glow-size: 400px;">
-    <li class="inline-block player-in-list text-center w-44">
+    <li class="inline-block md:w-44 p-1 player-in-list text-center w-32">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="fox" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="fox" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
         <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
         calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="fox" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="fox" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
       </div>
       <div class="truncate w-full">Antoine</div>
     </li>
-    <li class="inline-block player-in-list text-center w-44">
+    <li class="inline-block md:w-44 p-1 player-in-list text-center w-32">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="seer" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="seer" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
         <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
         calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="seer" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="seer" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
       </div>
       <div class="truncate w-full">Benoit</div>
     </li>
-    <li class="inline-block player-in-list text-center w-44">
+    <li class="inline-block md:w-44 p-1 player-in-list text-center w-32">
       <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
         <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="werewolf" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="werewolf" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
         <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
         calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="werewolf" sizes="100" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
+          <role-image-stub rolename="werewolf" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto"></role-image-stub>
         </div>
       </div>
       <div class="truncate w-full">Alice</div>
