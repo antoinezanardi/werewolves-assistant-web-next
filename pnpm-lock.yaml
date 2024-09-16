@@ -172,8 +172,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(chart.js@4.4.4)
       circle-progress.vue:
-        specifier: ^3.2.1
-        version: 3.2.1
+        specifier: ^3.2.2
+        version: 3.2.2
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -3411,8 +3411,8 @@ packages:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==, tarball: https://registry.npmjs.org/ci-info/-/ci-info-4.0.0.tgz}
     engines: {node: '>=8'}
 
-  circle-progress.vue@3.2.1:
-    resolution: {integrity: sha512-gJlqyVHBdMJWwMEPk+u6WEr2iPkxIEX+1Lbsziu+2SPGaHHEQGP20rmQjGOB8GcAFosr616S5kH0BIiFKwsIzg==, tarball: https://registry.npmjs.org/circle-progress.vue/-/circle-progress.vue-3.2.1.tgz}
+  circle-progress.vue@3.2.2:
+    resolution: {integrity: sha512-9fbsH3DFV7o0I9ge8/qRzKRomwLhppEesZtMQVdnfVS7VMq7/A74WqnW8qoRLQT8V43IvuXOZVswHHas8BTtHw==, tarball: https://registry.npmjs.org/circle-progress.vue/-/circle-progress.vue-3.2.2.tgz}
 
   citty@0.1.6:
     resolution: {integrity: sha512-tskPPKEs8D2KPafUypv2gxwJP8h/OaJmC82QQGGDQcHvXX43xF2VDACcJVmZ0EuSxkpO9Kc4MlrA3q0+FG58AQ==, tarball: https://registry.npmjs.org/citty/-/citty-0.1.6.tgz}
@@ -12355,7 +12355,7 @@ snapshots:
 
   ci-info@4.0.0: {}
 
-  circle-progress.vue@3.2.1: {}
+  circle-progress.vue@3.2.2: {}
 
   citty@0.1.6:
     dependencies:
