@@ -20,7 +20,7 @@
         <p
           id="current-event-text"
           :key="currentGameEventText"
-          class="!mb-0 !text-2xl text-center"
+          class="!mb-0 !text-base md:!text-2xl text-center"
         >
           {{ currentGameEventText }}
         </p>

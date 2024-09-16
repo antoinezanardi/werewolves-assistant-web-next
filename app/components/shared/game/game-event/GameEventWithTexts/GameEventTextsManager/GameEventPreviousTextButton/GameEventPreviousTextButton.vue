@@ -4,7 +4,7 @@
     ref="previousGameEventTextButton"
     v-p-tooltip.left="buttonTooltipOptions"
     :aria-label="$t('components.GameEventPreviousTextButton.previousEventText')"
-    class="ps-4"
+    class="md:ps-4"
     :class="{ 'text-gray-500': !canGoToPreviousGameEventText }"
     :disabled="!canGoToPreviousGameEventText"
     type="button"

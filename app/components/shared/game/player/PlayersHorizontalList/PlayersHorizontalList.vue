@@ -7,14 +7,14 @@
       <li
         v-for="player in players"
         :key="player._id"
-        class="inline-block player-in-list text-center w-44"
+        class="inline-block md:w-44 p-1 player-in-list text-center w-28"
       >
         <GlowElement>
           <RoleImage
             class="glow:border-gray-400 mx-auto"
             definition="normal"
             :role-name="player.role.current"
-            sizes="100"
+            :sizes="roleImageSizes"
           />
         </GlowElement>
 
@@ -27,8 +27,15 @@
 </template>
 
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import type { PlayersHorizontalListProps } from "~/components/shared/game/player/PlayersHorizontalList/players-horizontal-list.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 defineProps<PlayersHorizontalListProps>();
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+
+const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "50px" : "100px"));
 </script>

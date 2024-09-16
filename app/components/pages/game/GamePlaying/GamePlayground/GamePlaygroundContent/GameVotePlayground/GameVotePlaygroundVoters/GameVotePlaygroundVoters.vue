@@ -23,7 +23,7 @@
       <GamePlaygroundPlayerCard
         v-for="voter in voters"
         :key="voter._id"
-        class="p-3 voter w-1/3"
+        class="md:w-1/3 p-3 voter w-1/2"
         :player="voter"
       />
     </div>

@@ -7,7 +7,6 @@
       <NuxtImg
         v-if="currentPlaySvgAndTextKey"
         :alt="$t(`components.GamePlaygroundHeaderCurrentPlay.currentPlayAltText`)"
-        class="me-3"
         height="50"
         placeholder="/svg/misc/infinite-spinner.svg"
         :src="currentPlaySvgAndTextKey.svgPath"
@@ -17,7 +16,7 @@
 
     <h2
       id="current-play-text"
-      class="text-center"
+      class="!text-base md:!text-2xl text-center"
     >
       {{ currentPlayText }}
     </h2>

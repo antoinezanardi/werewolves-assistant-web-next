@@ -4,12 +4,12 @@
     class="flex"
   >
     <GameTeamSide
-      class="flex-none w-2/12"
+      class="flex-none hidden lg:flex lg:w-2/12"
       data-testid="villagers-side"
       side="villagers"
     />
 
-    <div class="!max-w-2/3 game-playground-container px-2 w-8/12">
+    <div class="game-playground-container lg:w-8/12 px-2 w-full">
       <Transition
         mode="out-in"
         name="fade"
@@ -27,7 +27,7 @@
     </div>
 
     <GameTeamSide
-      class="flex-none w-2/12"
+      class="flex-none hidden lg:flex lg:w-2/12"
       data-testid="werewolves-side"
       side="werewolves"
     />
