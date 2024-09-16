@@ -3,7 +3,7 @@
 exports[`Game Lobby Options Hub Footer Component > should match snapshot when rendered. 1`] = `
 "<div id="close-button-only-dialog-footer" class="w-full">
   <divider-stub class="!my-2"></divider-stub>
-  <div class="flex justify-between w-full">
+  <div class="flex gap-1 justify-between w-full">
     <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
       <div></div>
     </transition-stub>
