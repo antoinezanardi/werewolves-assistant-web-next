@@ -119,7 +119,7 @@
     "@vitest/coverage-istanbul": "^2.1.1",
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.1.0",
-    "@vueuse/nuxt": "^11.0.3",
+    "@vueuse/nuxt": "^11.1.0",
     "chart.js": "^4.4.4",
     "chartjs-plugin-datalabels": "^2.2.0",
     "circle-progress.vue": "^3.2.1",
