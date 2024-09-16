@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-lobby-position-coordinator-sorter-container"
-    class="flex gap-4 h-full items-center justify-center"
+    class="flex gap-4 items-center justify-center md:h-full"
   >
     <div class="flex flex-col gap-2 items-center justify-center w-2/12">
       <FontAwesomeIcon

@@ -7,10 +7,10 @@
     :draggable="false"
     modal
     :pt="{
-      'root': 'h-9/10',
+      'root': 'h-9/10 w-x-screen-9/10 max-w-x-screen-9/10',
       'icons': 'pb-2',
       'header': '!py-2',
-      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 !py-0',
+      'content': '!w-full !py-0 md:!px-3 !px-2',
       'footer': '!py-2'
     }"
     :visible="isVisible"
@@ -27,17 +27,21 @@
 
     <div
       id="game-lobby-role-picker-content"
-      class="flex gap-2 h-full"
+      class="flex flex-col gap-2 h-full md:flex-row"
     >
       <GameLobbyRolePickerDescription
         id="game-lobby-role-picker-description"
-        class="overflow-y-scroll w-4/12"
+        class="h-1/2 md:h-full md:w-4/12 overflow-y-scroll"
         :picked-role="pickedRole"
+      />
+
+      <PrimeVueDivider
+        class="!my-1 md:!hidden"
       />
 
       <GameLobbyRolePickerGrid
         id="game-lobby-role-picker-grid"
-        class="overflow-y-scroll w-8/12"
+        class="h-1/2 md:h-full md:w-8/12 overflow-y-scroll p-2"
         :picked-role="pickedRole"
         @pick-role="onPickRoleFromGameLobbyRolePickerGrid"
       />

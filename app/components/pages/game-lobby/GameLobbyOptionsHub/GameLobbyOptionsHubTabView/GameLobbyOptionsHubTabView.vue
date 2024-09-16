@@ -3,6 +3,7 @@
     id="game-lobby-options-hub-tab-view"
     class="w-full"
     :pt="{ 'nav': '!border-none' }"
+    scrollable
     value="roles"
   >
     <PrimeVueTabList
@@ -11,7 +12,7 @@
     >
       <PrimeVueTab
         id="roles-tab-header"
-        class="flex gap-2 items-center justify-center w-1/3"
+        class="flex gap-2 items-center justify-center md:w-1/3"
         value="roles"
       >
         <RoleImage
@@ -26,7 +27,7 @@
 
       <PrimeVueTab
         id="composition-tab-header"
-        class="flex gap-2 items-center justify-center w-1/3"
+        class="flex gap-2 items-center justify-center md:w-1/3"
         value="composition"
       >
         <NuxtImg
@@ -44,7 +45,7 @@
 
       <PrimeVueTab
         id="votes-tab-header"
-        class="flex gap-2 items-center justify-center w-1/3"
+        class="flex gap-2 items-center justify-center md:w-1/3"
         value="votes"
       >
         <NuxtImg
