@@ -6,7 +6,7 @@
     >
       <h4
         :key="recipientRoleAdditionalCardsDisclaimerAndIcon.disclaimer"
-        class="mb-8 text-center"
+        class="mb-4 md:mb-8 text-center"
       >
         <FontAwesomeIcon
           id="recipient-role-additional-cards-disclaimer-icon"

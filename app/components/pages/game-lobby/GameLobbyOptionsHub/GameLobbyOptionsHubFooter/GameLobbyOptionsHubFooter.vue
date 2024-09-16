@@ -5,7 +5,7 @@
   >
     <PrimeVueDivider class="!my-2"/>
 
-    <div class="flex justify-between w-full">
+    <div class="flex gap-1 justify-between w-full">
       <Transition
         mode="out-in"
         name="fade"

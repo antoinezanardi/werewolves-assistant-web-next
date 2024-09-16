@@ -11,7 +11,10 @@
       icon="clover"
     />
 
-    <span id="game-lobby-header-additional-cards-manager-button-text">
+    <span
+      id="game-lobby-header-additional-cards-manager-button-text"
+      class="hidden md:inline"
+    >
       {{ $t('components.GameLobbyHeaderAdditionalCardsManagerButton.additionalCards') }}
     </span>
 

@@ -5,15 +5,15 @@
   >
     <div
       id="game-lobby-role-picker-header"
-      class="flex items-center w-full"
+      class="flex flex-col items-center md:flex-row w-full"
     >
       <div
         id="current-player-role-container"
-        class="flex w-3/12"
+        class="flex justify-center lg:w-3/12 md:w-4/12 w-full"
       >
         <div
           id="current-player-role"
-          class="border-2 border-gray-600 me-2 px-2 py-1 rounded-lg text-center"
+          class="border-2 border-gray-600 hidden md:block me-2 px-2 py-1 rounded-lg text-center"
           data-testid="game-lobby-role-picker-header-current-role"
         >
           <span
@@ -43,7 +43,7 @@
         {{ title }}
       </h2>
 
-      <div class="w-3/12"/>
+      <div class="hidden lg:w-3/12 md:block md:w-4/12"/>
     </div>
 
     <PrimeVueDivider class="!my-2"/>

@@ -1,7 +1,7 @@
 <template>
   <PrimeVueFieldset
     id="game-lobby-options-hub-roles-tab-sheriff"
-    :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
+    :pt="{ 'legend': FIELD_SETS_LEGEND_CLASSES }"
   >
     <template #legend>
       <div class="flex gap-4 items-center">
@@ -75,6 +75,7 @@ import { storeToRefs } from "pinia";
 import GameLobbyOptionsHubRolesTabSheriffElection from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubTabView/GameLobbyOptionsHubRolesTab/GameLobbyOptionsHubRolesTabSheriff/GameLobbyOptionsHubRolesTabSheriffElection/GameLobbyOptionsHubRolesTabSheriffElection.vue";
 import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
+import { FIELD_SETS_LEGEND_CLASSES } from "~/components/shared/inputs/field-sets/field-sets.constants";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

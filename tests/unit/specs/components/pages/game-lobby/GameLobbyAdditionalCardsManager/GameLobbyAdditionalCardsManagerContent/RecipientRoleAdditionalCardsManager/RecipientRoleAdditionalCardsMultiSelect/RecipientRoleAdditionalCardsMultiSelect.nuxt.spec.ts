@@ -8,6 +8,7 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
 import type Button from "primevue/button";
 import type MultiSelect from "primevue/multiselect";
 import type { MultiSelectProps } from "primevue/multiselect";
@@ -17,6 +18,17 @@ import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/cre
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+}));
 
 describe("Recipient Role Additional Cards Multi Select Component", () => {
   const defaultRoles = [
@@ -95,6 +107,7 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
   }
 
   beforeEach(async() => {
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent();
     const createGameDtoStore = useCreateGameDtoStore();
     createGameDtoStore.createGameDto = createFakeCreateGameDto(defaultCreateFakeCreateGameDto);
@@ -108,6 +121,14 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
   });
 
   it("should match snapshot when rendered without shallow rendering.", async() => {
+    wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent({ shallow: false });
+
+    expect(wrapper).toBeTruthy();
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should match snapshot when rendered without shallow rendering and screen is smaller than md.", async() => {
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
     wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent({ shallow: false });
 
     expect(wrapper).toBeTruthy();

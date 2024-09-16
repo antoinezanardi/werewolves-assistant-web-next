@@ -16,8 +16,9 @@
       :options="availableAdditionalCards"
       :placeholder="$t('components.RecipientRoleAdditionalCardsMultiSelect.pickOneToFiveCards')"
       :pt="{
-        'labelContainer': 'flex justify-center items-center h-20',
-        'chipItem': 'flex items-center bg-gray-800 rounded gap-2 px-2 py-1'
+        'labelContainer': 'flex justify-center items-center md:h-20',
+        'chipItem': 'flex items-center bg-gray-800 rounded md:gap-2 md:px-2 md:py-1',
+        'chipIcon': '!p-1 !w-2'
       }"
       reset-filter-on-hide
       :selection-limit="5"
@@ -40,14 +41,17 @@
 
       <template #chip="{ value }">
         <RoleImage
+          definition="small"
           :role-name="value.roleName"
-          size="small"
+          :sizes="roleImageSizes"
         />
 
-        <span>{{ value.label }}</span>
+        <span class="hidden lg:inline">
+          {{ value.label }}
+        </span>
 
         <PrimeVueButton
-          class="p-button-rounded p-button-sm p-button-text remove-additional-card-button"
+          class="!hidden md:!inline p-button-rounded p-button-sm p-button-text remove-additional-card-button"
           :data-testid="`recipient-role-additional-cards-multi-select-remove-${value.roleName}-for-${recipientRoleName}`"
           @click.stop="onClickFromRemoveAdditionalCardButton(value)"
         >
@@ -62,6 +66,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import type { LabeledCreateGameAdditionalCardDto, RecipientRoleAdditionalCardsMultiSelectProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/recipient-role-additional-cards-multi-select.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
@@ -70,8 +75,12 @@ import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const props = defineProps<RecipientRoleAdditionalCardsMultiSelectProps>();
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { getAdditionalCardsForRecipientInCreateGameDto } = createGameDtoStore;
@@ -80,6 +89,8 @@ const { createGameDto } = storeToRefs(createGameDtoStore);
 const rolesStore = useRolesStore();
 const { getRolesForRecipientRoleName } = rolesStore;
 const { getRoleNameLabel } = useRoleName();
+
+const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "35px" : "50px"));
 
 const selectedAdditionalCards = computed<CreateGameAdditionalCardDto[]>({
   get: () => getAdditionalCardsForRecipientInCreateGameDto(props.recipientRoleName),

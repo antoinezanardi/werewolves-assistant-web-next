@@ -23,7 +23,7 @@
       option-icon-class="text-yellow-500"
       :option-label="$t('components.GameLobbyOptionsHubVotesTab.options.duration.label')"
     >
-      <PrimeVueFloatLabel>
+      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
         <label
           id="game-lobby-options-hub-roles-tab-votes-duration-label"
           for="game-lobby-options-hub-roles-tab-votes-duration-input"

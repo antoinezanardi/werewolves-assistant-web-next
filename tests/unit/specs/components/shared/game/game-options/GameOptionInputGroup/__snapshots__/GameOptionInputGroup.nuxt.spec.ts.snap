@@ -2,11 +2,11 @@
 
 exports[`Game Option Input Group Component > should match snapshot when rendered. 1`] = `
 "<div id="game-option-input-group-container">
-  <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-    <h3 id="game-option-label" class="w-8/12">
-      <font-awesome-icon-stub icon="check" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-success"></font-awesome-icon-stub><span>label</span>
+  <div id="game-option-input-group" class="flex flex-col gap-2 items-center justify-between md:flex-row">
+    <h3 id="game-option-label" class="flex gap-2 items-center md:text-left md:w-8/12 text-center w-full">
+      <font-awesome-icon-stub icon="check" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="text-center text-success"></font-awesome-icon-stub><span class="grow md:pe-0 pe-3 text-pretty">label</span>
     </h3>
-    <div id="game-option-input" class="w-4/12"></div>
+    <div id="game-option-input" class="md:w-4/12 w-full"></div>
   </div>
   <p id="game-option-description" class="italic mt-3 text-gray-400">description</p>
   <!--v-if-->

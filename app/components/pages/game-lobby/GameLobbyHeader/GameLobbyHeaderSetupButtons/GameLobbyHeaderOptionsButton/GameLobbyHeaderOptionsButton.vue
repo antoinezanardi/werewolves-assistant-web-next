@@ -10,7 +10,10 @@
       icon="magic-wand-sparkles"
     />
 
-    <span id="button-text">
+    <span
+      id="button-text"
+      class="hidden md:inline"
+    >
       {{ $t("components.GameLobbyHeaderOptionsButton.gameOptions") }}
     </span>
 

@@ -1,13 +1,14 @@
 <template>
-  <PrimeVueButtonGroup>
+  <PrimeVueButtonGroup class="text-center w-full">
     <TransitionGroup
       name="fade-list"
+      tag="div"
     >
       <GameLobbyHeaderOptionsButton
         id="game-lobby-header-options-button"
         key="game-options-button"
         ref="gameLobbyHeaderOptionsButton"
-        class="fade-list-item"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @game-options-button-click="onGameOptionsButtonClickFromGameOptionButton"
       />
 
@@ -16,7 +17,7 @@
         id="game-lobby-header-position-coordinator-button"
         key="game-position-coordinator-button"
         ref="gameLobbyHeaderPositionCoordinatorButton"
-        class="fade-list-item"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGamePositionCoordinatorButton"
       />
 
@@ -25,7 +26,7 @@
         id="game-lobby-header-additional-cards-manager-button"
         key="game-additional-cards-manager-button"
         ref="gameLobbyHeaderAdditionalCardsManagerButton"
-        class="fade-list-item"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton"
       />
     </TransitionGroup>
