@@ -1352,7 +1352,7 @@
       "playerWillHavePenaltyForNextVotes": "Le joueur marqué d'une plume aura un vote supplémentaire contre lui lors du prochain vote. | Le joueur marqué d'une plume aura {penalty} votes supplémentaires contre lui lors du prochain vote."
     },
     "GameScapegoatTurnStartsEvent": {
-      "scapegoatCanBanPlayerFromVoting": "Le Bouc Émissaire se réveille et peut interdire à un ou plusieurs joueurs de voter lors des votes du jour suivant."
+      "scapegoatCanBanPlayerFromVoting": "Dans son dernier souffle, le Bouc Émissaire se réveille et peut interdire à un ou plusieurs joueurs de voter lors des votes du jour suivant."
     },
     "GameSeerTurnStartsEvent": {
       "seerSeesRoles": "La Voyante se réveille et va regarder le rôle d'un joueur.",

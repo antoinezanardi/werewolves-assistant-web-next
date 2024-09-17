@@ -11,7 +11,6 @@ import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 const { beforeEach, afterEach, afterAll, setup } = createTest({
   runner: "cucumber",
-  buildDir: ".nuxt-test-cucumber",
   server: true,
   browserOptions: {
     type: "chromium",
