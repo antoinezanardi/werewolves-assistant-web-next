@@ -1,9 +1,11 @@
 <template>
   <div
     id="game-over-actions"
-    class="flex gap-8 justify-center w-full"
+    class="flex flex-col gap-2 justify-center md:flex-row md:gap-8 w-full"
   >
-    <GameOverCreateNewGameButton id="game-over-create-new-game-button"/>
+    <GameOverCreateNewGameButton
+      id="game-over-create-new-game-button"
+    />
 
     <PrimeVueButton
       id="show-game-history-button"

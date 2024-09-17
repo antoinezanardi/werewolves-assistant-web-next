@@ -8,11 +8,23 @@ import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game
 import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
+import type VueUseCore from "@vueuse/core";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import type { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+}));
 
 describe("Game Over Victory Text Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverVictoryText>>;
@@ -24,6 +36,7 @@ describe("Game Over Victory Text Component", () => {
   }
 
   beforeEach(async() => {
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     testingPinia.initialState[StoreIds.GAME].game = createFakeGame(defaultGame);
     wrapper = await mountGameOverVictoryTextComponent();
   });
@@ -38,6 +51,22 @@ describe("Game Over Victory Text Component", () => {
       const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
 
       expect(trophyIcon.exists()).toBeTruthy();
+    });
+
+    it("should set height and width to 125px when screen is not smaller than md.", () => {
+      const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
+
+      expect(trophyIcon.attributes("height")).toBe("125px");
+      expect(trophyIcon.attributes("width")).toBe("125px");
+    });
+
+    it("should set height and width to 50px when screen is smaller than md.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameOverVictoryTextComponent();
+      const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
+
+      expect(trophyIcon.attributes("height")).toBe("50px");
+      expect(trophyIcon.attributes("width")).toBe("50px");
     });
   });
 
