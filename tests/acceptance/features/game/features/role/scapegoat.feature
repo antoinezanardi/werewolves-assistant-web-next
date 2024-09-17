@@ -38,7 +38,6 @@ Feature: 🐐 Scapegoat role
       | David   |
 
     #    And the page should match or creates the missing snapshot with name "Scapegoat bans voting Playground"
-
     When the scapegoat bans from voting the players
       | name |
       | Bob  |

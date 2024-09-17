@@ -13,9 +13,9 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
   runner: "cucumber",
   server: true,
   browserOptions: {
-    type: "firefox",
+    type: "chromium",
     launch: {
-      headless: false,
+      headless: true,
       env: {
         NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL,
         NUXT_PUBLIC_DEFAULT_LOCALE: I18N_TEST_LOCALE,
