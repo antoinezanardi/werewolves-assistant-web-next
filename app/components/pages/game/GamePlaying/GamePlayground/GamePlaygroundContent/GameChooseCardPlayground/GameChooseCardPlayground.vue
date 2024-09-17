@@ -5,7 +5,7 @@
         v-for="additionalCard in eligibleAdditionalCardsToChoose"
         :key="additionalCard._id"
         :additional-card="additionalCard"
-        class="flex game-additional-card justify-center w-1/5"
+        class="flex game-additional-card justify-center md:w-1/5 w-full"
         @click-additional-card="onClickFromAdditionalCardButton"
       />
     </GlowCapture>

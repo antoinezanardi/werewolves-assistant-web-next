@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-playground-footer-countdown"
-    class="flex flex-col h-full items-center justify-center"
+    class="flex flex-col gap-2 h-full items-center justify-center"
   >
     <Transition
       mode="out-in"
@@ -10,14 +10,16 @@
       <div
         v-if="isCountdownOver"
         id="countdown-over"
-        class="animate__animated animate__heartBeat animate__infinite animate__slower flex gap-2 items-center justify-center"
+        class="animate__animated animate__heartBeat animate__infinite animate__slower flex flex-col gap-2 items-center justify-center md:flex-row"
       >
         <FontAwesomeIcon
-          class="me-2"
           icon="clock"
         />
 
-        <span id="countdown-over-text">
+        <span
+          id="countdown-over-text"
+          class="md:text-base text-center text-pretty text-sm"
+        >
           {{ currentGamePlayCountdownIsOverText }}
         </span>
       </div>

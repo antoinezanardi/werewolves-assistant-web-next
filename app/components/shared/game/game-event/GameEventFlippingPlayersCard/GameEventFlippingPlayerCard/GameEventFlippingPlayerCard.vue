@@ -9,7 +9,7 @@
       :class="imageClasses"
       definition="normal"
       :role-name="playerToDisplay?.role.current"
-      sizes="200px"
+      :sizes="flippingImageSize"
       :svg-icon-path="props.svgIconPath"
     />
 
@@ -30,11 +30,18 @@
 </template>
 
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const props = defineProps<GameEventFlippingPlayerCardProps>();
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+
+const flippingImageSize = computed<string>(() => (isSmallerThanMd.value ? "125px" : "200px"));
 
 const playerIndex = ref<number>(0);
 const playerToDisplay = computed<Player | undefined>(() => props.players[playerIndex.value]);

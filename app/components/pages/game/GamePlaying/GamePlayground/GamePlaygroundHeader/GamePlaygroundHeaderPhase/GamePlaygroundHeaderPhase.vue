@@ -1,17 +1,17 @@
 <template>
   <div
     id="game-playground-header-phase"
-    class="flex items-center"
+    class="flex flex-col gap-2 items-center md:flex-row"
     data-testid="game-playground-header-phase"
   >
     <GamePhaseIcon
-      class="fa-2x me-3"
+      class="md:text-3xl"
       :phase="game.phase.name"
     />
 
     <span
       id="game-phase-text"
-      class="text-2xl"
+      class="!text-nowrap md:text-2xl text-center text-xs"
     >
       {{ getGamePhaseWithTurnText(game.phase.name, game.turn) }}
     </span>

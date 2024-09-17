@@ -4,19 +4,19 @@
   >
     <PrimeVueDivider class="!my-2"/>
 
-    <div class="flex justify-center">
-      <div class="w-4/12">
+    <div class="flex gap-2 items-center justify-center">
+      <div class="md:w-4/12 w-3/12">
         <GamePlaygroundFooterCountdown
           v-if="doesCurrentGamePlayHaveCountdown"
           id="game-playground-footer-countdown"
         />
       </div>
 
-      <div class="w-4/12">
+      <div class="md:w-4/12 w-6/12">
         <GamePlaygroundFooterMakePlayButton/>
       </div>
 
-      <div class="w-4/12"/>
+      <div class="md:w-4/12 w-3/12"/>
     </div>
   </div>
 </template>

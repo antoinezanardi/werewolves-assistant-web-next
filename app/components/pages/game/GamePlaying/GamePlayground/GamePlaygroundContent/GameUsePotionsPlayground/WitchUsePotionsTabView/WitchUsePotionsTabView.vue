@@ -1,15 +1,20 @@
 <template>
   <PrimeVueTabs
     id="witch-use-potions-tab-view"
+    :pt="{ 'nav': '!border-none' }"
+    scrollable
     :value="tabViewActiveIndex"
   >
     <PrimeVueTabList
       class="w-full"
-      :pt="{ 'content': '!w-full' }"
+      :pt="{
+        'content': '!w-full !h-full',
+        'root': '!w-full !overflow-clip'
+      }"
     >
       <PrimeVueTab
         id="life-potion-tab"
-        class="flex gap-2 items-center w-1/2"
+        class="flex gap-2 items-center md:!w-1/2"
         :disabled="hasWitchUsedLifePotion"
         value="life-potion"
       >
@@ -28,7 +33,7 @@
 
       <PrimeVueTab
         id="death-potion-tab"
-        class="flex gap-2 items-center w-1/2"
+        class="flex gap-2 items-center md:w-1/2"
         :disabled="hasWitchUsedDeathPotion"
         value="death-potion"
       >
@@ -46,10 +51,7 @@
       </PrimeVueTab>
     </PrimeVueTabList>
 
-    <PrimeVueTabPanels
-      class="h-full"
-      :value="tabViewActiveIndex"
-    >
+    <PrimeVueTabPanels :value="tabViewActiveIndex">
       <PrimeVueTabPanel
         id="give-life-potion-panel"
         class="!h-full flex flex-wrap grow items-center justify-center m-0 place-content-center place-items-center"
@@ -66,13 +68,13 @@
 
       <PrimeVueTabPanel
         id="give-death-potion-panel"
-        class="!h-full flex flex-wrap items-center justify-center m-0 place-content-center place-items-center"
+        class="flex flex-wrap items-center justify-center m-0 place-content-center place-items-center"
         value="death-potion"
       >
         <GamePlaygroundPlayerCard
           v-for="target in giveDeathPotionInteractionEligibleTargets"
           :key="target._id"
-          class="death-potion-target p-3 w-1/4"
+          class="death-potion-target md:w-1/4 p-3 w-1/3"
           interaction="give-death-potion"
           :player="target"
         />

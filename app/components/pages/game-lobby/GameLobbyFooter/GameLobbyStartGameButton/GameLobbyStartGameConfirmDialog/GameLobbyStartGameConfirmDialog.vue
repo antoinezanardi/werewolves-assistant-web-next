@@ -2,7 +2,7 @@
   <PrimeVueConfirmDialog
     id="game-lobby-start-game-confirm-dialog"
     group="game-lobby-start-game-confirm-dialog"
-    :pt="{ 'root': 'w-1/3' }"
+    :pt="{ 'root': 'md:w-1/2 lg:w-1/3 w-full' }"
   >
     <template #container="{ acceptCallback, rejectCallback }">
       <GameLobbyStartGameConfirmDialogContainer

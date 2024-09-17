@@ -5,7 +5,7 @@ exports[`Game Event Texts Manager Component > should match snapshot when rendere
   <game-event-previous-text-button-stub currenttextindex="0" id="game-event-previous-text-button"></game-event-previous-text-button-stub>
   <div id="game-event-text-container" class="flex grow h-1/2 items-center justify-center">
     <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
-      <p id="current-event-text" class="!mb-0 !text-2xl text-center">Game starts.</p>
+      <p id="current-event-text" class="!mb-0 !text-base md:!text-2xl text-center">Game starts.</p>
     </transition-stub>
   </div>
   <game-event-next-text-button-stub id="game-event-next-text-button"></game-event-next-text-button-stub>

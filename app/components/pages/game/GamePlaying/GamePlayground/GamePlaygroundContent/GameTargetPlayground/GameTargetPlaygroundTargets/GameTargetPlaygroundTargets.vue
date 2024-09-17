@@ -23,7 +23,7 @@
       <GamePlaygroundPlayerCard
         v-for="target in targets"
         :key="target._id"
-        class="p-3 target w-3/12"
+        class="md:w-3/12 p-3 target w-4/12"
         :interaction="game.currentPlay?.source.interactions?.[0].type"
         :player="target"
       />
