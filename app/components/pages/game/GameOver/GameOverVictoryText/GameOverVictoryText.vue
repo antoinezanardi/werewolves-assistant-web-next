@@ -6,18 +6,18 @@
     <div class="flex gap-2 items-center justify-center">
       <NuxtImg
         :alt="$t('components.GameOverVictoryText.trophyImageAlt')"
-        height="125"
+        :height="svgSize"
         placeholder="/svg/misc/infinite-spinner.svg"
         src="svg/misc/trophy.svg"
-        width="125"
+        :width="svgSize"
       />
 
       <NuxtImg
         :alt="$t('components.GameOverVictoryText.victoryTypeImageAlt')"
-        height="125"
+        :height="svgSize"
         placeholder="/svg/misc/infinite-spinner.svg"
         :src="victoryTypeTextsAndSvg.svgPath"
-        width="125"
+        :width="svgSize"
       />
     </div>
 
@@ -28,23 +28,30 @@
       {{ victoryTypeTextsAndSvg.text }}
     </h1>
 
-    <h3 id="victory-sub-text">
+    <h4 id="victory-sub-text">
       {{ victoryTypeTextsAndSvg.subText }}
-    </h3>
+    </h4>
   </div>
 </template>
 
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 
 import { VICTORY_TYPES_TEXTS_AND_SVG } from "~/components/pages/game/GameOver/GameOverVictoryText/game-over-victory-text.constants";
 import { useGameStore } from "~/stores/game/useGameStore";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 type TextsAndSvg = {
   text: string;
   subText: string;
   svgPath: string;
 };
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+
+const svgSize = computed<string>(() => (isSmallerThanMd.value ? "50px" : "125px"));
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
