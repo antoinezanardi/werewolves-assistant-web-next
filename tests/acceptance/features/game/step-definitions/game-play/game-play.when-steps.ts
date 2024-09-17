@@ -148,3 +148,9 @@ When(/^the wild child chooses the player with name "(?<name>.+)" as a model$/u, 
   await targetPlayerInPlayground(this, name);
   await makePlayInPlayground(this);
 });
+
+When(/^the scapegoat bans from voting the players$/u, async function(this: CustomWorld, players: DataTable): Promise<void> {
+  const playersData = players.rows().map(([name]) => name);
+  await targetPlayersInPlayground(this, playersData);
+  await makePlayInPlayground(this);
+});

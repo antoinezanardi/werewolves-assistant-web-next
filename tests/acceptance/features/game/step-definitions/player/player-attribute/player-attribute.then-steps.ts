@@ -195,3 +195,11 @@ Then(/^the following players should have the attribute powerless by elder in the
     await expect(powerlessByElderAttribute).toBeVisible();
   }
 });
+
+Then(/^the following players should have the attribute cant-vote by scapegoat in the game$/u, async function(this: CustomWorld, playersDatatable: DataTable): Promise<void> {
+  const players = playersDatatable.rows();
+  for (const [name] of players) {
+    const cantVoteByScapegoatAttribute = await getPlayerAttributeByRoleNameInGameTeamSide(this, name, "The Scapegoat decided that this player can't vote.");
+    await expect(cantVoteByScapegoatAttribute).toBeVisible();
+  }
+});

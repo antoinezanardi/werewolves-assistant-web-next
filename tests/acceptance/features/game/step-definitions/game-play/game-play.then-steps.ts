@@ -39,17 +39,6 @@ Then(/^the witch should be out of potions$/u, async function(this: CustomWorld):
   await expect(this.page.getByRole("heading", { name: "The Witch has used both potions, the game can proceed" })).toBeVisible();
 });
 
-Then(/^the following players can't be targeted in game's playground$/u, async function(this: CustomWorld, dataTable: DataTable): Promise<void> {
-  const names = dataTable.hashes();
-
-  await Promise.all(names.map(async player => {
-    const targetCard = this.page.getByTestId(`game-playground-player-card-${player.name}`);
-    const targetButton = targetCard.getByRole("button");
-
-    return expect(targetButton).toBeDisabled();
-  }));
-});
-
 Then(/^the game's current play should have a countdown of (?<minutes>\d+) minutes and (?<seconds>\d+) seconds$/u, async function(this: CustomWorld, minutes: string, seconds: string): Promise<void> {
   const maxSecondsLength = 2;
   const paddedSeconds = seconds.padStart(maxSecondsLength, "0");
