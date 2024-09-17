@@ -1,11 +1,23 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
 import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+}));
 
 describe("Game Event Flipping Player Card Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameEventFlippingPlayerCard>>;
@@ -25,6 +37,7 @@ describe("Game Event Flipping Player Card Component", () => {
   }
 
   beforeEach(async() => {
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     wrapper = await mountGameEventFlippingPlayerCardComponent();
   });
 
@@ -34,6 +47,20 @@ describe("Game Event Flipping Player Card Component", () => {
   });
 
   describe("Game Event Player Flipping Role", () => {
+    it("should set size of 200px for flipping player card when rendered screen is not smaller than md.", () => {
+      const flippingPlayerCard = wrapper.findComponent<typeof RoleFlippingImage>("#game-event-flipping-player-role");
+
+      expect(flippingPlayerCard.props("sizes")).toBe("200px");
+    });
+
+    it("should set size to 125px for flipping player card when rendered screen is smaller than md.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameEventFlippingPlayerCardComponent();
+      const flippingPlayerCard = wrapper.findComponent<typeof RoleFlippingImage>("#game-event-flipping-player-role");
+
+      expect(flippingPlayerCard.props("sizes")).toBe("125px");
+    });
+
     it("should set interval of 1500ms for flipping player card when rendered.", async() => {
       const setIntervalSpy = vi.spyOn(window, "setInterval");
       wrapper = await mountGameEventFlippingPlayerCardComponent();

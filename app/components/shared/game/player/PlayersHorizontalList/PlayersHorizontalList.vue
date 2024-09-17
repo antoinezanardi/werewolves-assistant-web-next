@@ -11,7 +11,7 @@
       >
         <GlowElement>
           <RoleImage
-            class="glow:border-gray-400 mx-auto"
+            class="glow:border-gray-400 mx-auto role-image-in-list"
             definition="normal"
             :role-name="player.role.current"
             :sizes="roleImageSizes"
