@@ -4,27 +4,27 @@
   >
     <div
       id="game-option-input-group"
-      class="flex gap-2 items-center justify-between"
+      class="flex flex-col gap-2 items-center justify-between md:flex-row"
     >
       <h3
         id="game-option-label"
-        class="w-8/12"
+        class="flex gap-2 items-center md:text-left md:w-8/12 text-center w-full"
       >
         <FontAwesomeIcon
           id="game-option-label-icon"
-          class="me-2"
+          class="text-center"
           :class="optionIconClass"
           :icon="optionIcon"
         />
 
-        <span>
+        <span class="grow md:pe-0 pe-3 text-pretty">
           {{ optionLabel }}
         </span>
       </h3>
 
       <div
         id="game-option-input"
-        class="w-4/12"
+        class="md:w-4/12 w-full"
       >
         <slot/>
       </div>

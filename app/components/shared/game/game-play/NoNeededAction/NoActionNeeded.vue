@@ -2,7 +2,7 @@
   <div id="no-action-needed">
     <h2
       id="no-action-needed-message"
-      class="flex flex-col items-center justify-center text-gray-300"
+      class="flex flex-col items-center justify-center text-center text-gray-300"
     >
       <FontAwesomeIcon
         class="fa-2x mb-2 text-success"

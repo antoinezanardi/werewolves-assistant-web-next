@@ -5,7 +5,7 @@
   >
     <h1
       id="error-title"
-      class="!text-5xl"
+      class="!text-5xl text-center"
     >
       {{ errorTitle }}
     </h1>
@@ -20,7 +20,7 @@
 
     <h3
       id="error-description"
-      class="!text-2xl"
+      class="md:!text-2xl text-center text-xl"
     >
       {{ errorDescription }}
     </h3>

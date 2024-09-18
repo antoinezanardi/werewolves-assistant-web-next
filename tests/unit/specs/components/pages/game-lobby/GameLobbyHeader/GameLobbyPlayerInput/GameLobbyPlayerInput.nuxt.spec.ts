@@ -1,12 +1,23 @@
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type InputText from "primevue/inputtext";
+import { expect } from "vitest";
+import type { Ref } from "vue";
 
 import type { GameLobbyPlayerInputProps } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/game-lobby-player-input.types";
 import GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useDevice: { isOnTouchDevice: { value: false } },
+}));
+
+vi.mock("~/composables/misc/useDevice", () => ({
+  useDevice: (): typeof hoistedMocks.useDevice => hoistedMocks.useDevice,
+}));
 
 describe("Game Lobby Player Input Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyPlayerInput>>;
@@ -21,8 +32,17 @@ describe("Game Lobby Player Input Component", () => {
     },
   };
 
+  async function mountGameLobbyPlayerInputComponent(options: ComponentMountingOptions<typeof GameLobbyPlayerInput> = {}):
+  Promise<ReturnType<typeof mount<typeof GameLobbyPlayerInput>>> {
+    return mountSuspendedComponent(GameLobbyPlayerInput, {
+      ...defaultMountingOptions,
+      ...options,
+    });
+  }
+
   beforeEach(async() => {
-    wrapper = await mountSuspendedComponent(GameLobbyPlayerInput, defaultMountingOptions);
+    hoistedMocks.useDevice.isOnTouchDevice = ref(false);
+    wrapper = await mountGameLobbyPlayerInputComponent();
   });
 
   it("should match snapshot when rendered.", () => {
@@ -31,6 +51,37 @@ describe("Game Lobby Player Input Component", () => {
   });
 
   describe("Text input", () => {
+    it("should set autofocus attribute when rendered.", () => {
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+
+      expect(input.attributes("autofocus")).toBe("true");
+    });
+
+    it("should throw error when player name input is not defined in refs.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { playerNameInput: Ref }).playerNameInput.value = null;
+      await getError(() => (wrapper.vm as unknown as { focusOnPlayerNameInput: () => void }).focusOnPlayerNameInput());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Player name input is not defined");
+    });
+
+    it("should call focus method on player name input when focusOnPlayerNameInput method is called and not on touch device.", () => {
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      const focusSpy = vi.spyOn(input.element, "focus");
+      (wrapper.vm as unknown as { focusOnPlayerNameInput: () => void }).focusOnPlayerNameInput();
+
+      expect(focusSpy).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should not call focus method on player name input when focusOnPlayerNameInput method is called and on touch device.", async() => {
+      hoistedMocks.useDevice.isOnTouchDevice = ref(true);
+      wrapper = await mountGameLobbyPlayerInputComponent();
+      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
+      const focusSpy = vi.spyOn(input.element, "focus");
+      (wrapper.vm as unknown as { focusOnPlayerNameInput: () => void }).focusOnPlayerNameInput();
+
+      expect(focusSpy).not.toHaveBeenCalled();
+    });
+
     it("should be prefilled when v-model value is not empty.", async() => {
       wrapper = await mountSuspendedComponent(GameLobbyPlayerInput, {
         ...defaultMountingOptions,
@@ -128,12 +179,12 @@ describe("Game Lobby Player Input Component", () => {
     });
 
     it("should translate button label when rendered.", async() => {
-      wrapper = await mountSuspendedComponent(GameLobbyPlayerInput, {
-        ...defaultMountingOptions,
+      wrapper = await mountGameLobbyPlayerInputComponent({
         global: {
           stubs: {
             InputGroup: false,
             Button: false,
+            FloatLabel: false,
           },
         },
       });

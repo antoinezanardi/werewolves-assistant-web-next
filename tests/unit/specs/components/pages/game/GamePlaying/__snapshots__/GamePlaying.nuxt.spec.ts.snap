@@ -2,13 +2,13 @@
 
 exports[`Game Playing Component > should match snapshot when rendered. 1`] = `
 "<div id="game-playing" class="flex">
-  <game-team-side-stub side="villagers" class="flex-none w-2/12" data-testid="villagers-side"></game-team-side-stub>
-  <div class="!max-w-2/3 game-playground-container px-2 w-8/12">
+  <game-team-side-stub side="villagers" class="flex-none hidden lg:flex lg:w-2/12" data-testid="villagers-side"></game-team-side-stub>
+  <div class="game-playground-container lg:w-8/12 px-2 w-full">
     <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
       <game-playground-stub id="game-playground"></game-playground-stub>
     </transition-stub>
   </div>
-  <game-team-side-stub side="werewolves" class="flex-none w-2/12" data-testid="werewolves-side"></game-team-side-stub>
+  <game-team-side-stub side="werewolves" class="flex-none hidden lg:flex lg:w-2/12" data-testid="werewolves-side"></game-team-side-stub>
   <game-playing-before-leave-confirm-dialog-stub></game-playing-before-leave-confirm-dialog-stub>
 </div>"
 `;

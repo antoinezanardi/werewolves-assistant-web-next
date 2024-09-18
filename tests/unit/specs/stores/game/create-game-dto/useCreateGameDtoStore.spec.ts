@@ -197,6 +197,18 @@ describe("Create Game Dto Store", () => {
     });
   });
 
+  describe("resetCreateGameOptionDto", () => {
+    it("should reset create game option dto with its default value when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto.options = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
+      createGameDtoStore.createGameDto.options.composition.isHidden = true;
+      createGameDtoStore.resetCreateGameOptionDto("composition.isHidden");
+      const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
+
+      expect(createGameDtoStore.createGameDto.options).toStrictEqual<GameOptions>(expectedGameOptions);
+    });
+  });
+
   describe("saveCreateGameOptionsDtoToLocalStorage", () => {
     it("should save create game options dto to local storage when called.", () => {
       const createGameDtoStore = useCreateGameDtoStore();

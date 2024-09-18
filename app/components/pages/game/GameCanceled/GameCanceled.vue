@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-canceled"
-    class="flex flex-col items-center justify-center"
+    class="flex flex-col gap-2 items-center justify-center"
   >
     <h1
       id="game-canceled-text"
@@ -17,12 +17,12 @@
       </span>
     </h1>
 
-    <div>
-      <PrimeVueDivider class="mb-4"/>
+    <PrimeVueDivider class="!w-2/3"/>
 
-      <CreateAnotherGameButton/>
+    <div class="flex flex-col gap-2 md:flex-row">
+      <CreateAnotherGameButton class="md:w-auto w-full"/>
 
-      <BackToHomeButton/>
+      <BackToHomeButton class="md:w-auto w-full"/>
     </div>
   </div>
 </template>

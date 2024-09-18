@@ -115,22 +115,20 @@ function onClickFromPreviousEventButton(): void {
   if (!canGoToPreviousGameEvent.value) {
     return;
   }
-  if (!previousEventButtonIcon.value) {
-    throw createError("Previous Event Button Icon is not defined");
-  }
   goToPreviousGameEvent();
-  void animateElementOnce(previousEventButtonIcon.value.$el as HTMLElement, "headShake");
+  if (previousEventButtonIcon.value) {
+    void animateElementOnce(previousEventButtonIcon.value.$el as HTMLElement, "headShake");
+  }
 }
 
 async function onClickFromSkipCurrentEventButton(): Promise<void> {
   if (!canGoToNextGameEvent.value) {
     return;
   }
-  if (!skipCurrentEventButtonIcon.value) {
-    throw createError("Skip Current Event Button Icon is not defined");
-  }
   await goToNextGameEvent();
-  void animateElementOnce(skipCurrentEventButtonIcon.value.$el as HTMLElement, "headShake");
+  if (skipCurrentEventButtonIcon.value) {
+    void animateElementOnce(skipCurrentEventButtonIcon.value.$el as HTMLElement, "headShake");
+  }
 }
 
 watch(() => keyboard.value.arrowRight.isPressed, (isKeyPressed: boolean) => {

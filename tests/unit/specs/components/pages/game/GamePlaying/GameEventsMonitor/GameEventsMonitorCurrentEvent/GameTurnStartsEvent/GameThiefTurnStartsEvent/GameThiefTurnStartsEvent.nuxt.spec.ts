@@ -77,6 +77,21 @@ describe("Game Thief Turn Starts Event Component", () => {
       expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
 
+    it("should pass event texts with 0 cards when additional cards are not set.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.additionalCards = undefined;
+      await nextTick();
+      const gameEventWithTextsComponent = wrapper.findComponent<typeof GameThiefTurnStartsEvent>("#game-thief-turn-starts-event");
+      const expectedTexts: string[] = [
+        "components.GameThiefTurnStartsEvent.thiefCanStealCard, {\"count\":0}, 0",
+        "components.GameThiefTurnStartsEvent.gameMasterWillFlipThiefCards, {\"count\":0}, 0",
+        "components.GameThiefTurnStartsEvent.mustChooseBetweenWerewolves, 0",
+      ];
+      const expectedTextsAsString = expectedTexts.join(",");
+
+      expect(gameEventWithTextsComponent.attributes("texts")).toBe(expectedTextsAsString);
+    });
+
     it("should pass event texts with thief not forced to choose between werewolves cards when game option is set.", async() => {
       const gameStore = useGameStore();
       gameStore.game.options.roles.thief.mustChooseBetweenWerewolves = false;

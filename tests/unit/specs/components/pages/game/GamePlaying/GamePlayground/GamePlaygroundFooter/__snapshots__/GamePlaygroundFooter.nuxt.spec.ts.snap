@@ -3,14 +3,14 @@
 exports[`Game Playground Footer Component > should match snapshot when rendered. 1`] = `
 "<div id="game-playground-footer">
   <divider-stub class="!my-2"></divider-stub>
-  <div class="flex justify-center">
-    <div class="w-4/12">
+  <div class="flex gap-2 items-center justify-center">
+    <div class="md:w-4/12 w-3/12">
       <game-playground-footer-countdown-stub id="game-playground-footer-countdown"></game-playground-footer-countdown-stub>
     </div>
-    <div class="w-4/12">
+    <div class="md:w-4/12 w-6/12">
       <game-playground-footer-make-play-button-stub></game-playground-footer-make-play-button-stub>
     </div>
-    <div class="w-4/12"></div>
+    <div class="md:w-4/12 w-3/12"></div>
   </div>
 </div>"
 `;

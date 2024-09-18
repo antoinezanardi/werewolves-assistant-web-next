@@ -21,6 +21,7 @@
     <GameLobbyFooter
       id="game-lobby-footer"
       @reject-actor-additional-cards-placed-step="onRejectThiefOrActorAdditionalCardsPlacedStep"
+      @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
       @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyFooter"
       @reject-thief-additional-cards-placed-step="onRejectThiefOrActorAdditionalCardsPlacedStep"
     />
@@ -38,6 +39,7 @@
 </template>
 
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
@@ -52,9 +54,11 @@ import GameLobbyPositionCoordinator from "~/components/pages/game-lobby/GameLobb
 import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/GameLobbyRolePicker/game-lobby-role-picker.types";
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
+import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { resetCreateGameDto } = createGameDtoStore;
@@ -66,11 +70,16 @@ const { loadAllAudios } = audioStore;
 
 const { t } = useI18n();
 
+const { addInfoToast } = usePrimeVueToasts();
+
 const gameLobbyHeader = ref<GameLobbyHeaderExposed | null>(null);
 const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
 const gameLobbyAdditionalCardsManager = ref<GameLobbyAdditionalCardsManagerExposed | null>(null);
+
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
 useHead({
   title: t("pages.gameLobby.startGame"),
@@ -130,6 +139,17 @@ function onRejectThiefOrActorAdditionalCardsPlacedStep(): void {
   }, intervalMs);
 }
 
+function onRejectGameOptionsChangedStep(): void {
+  if (!gameLobbyHeader.value) {
+    throw createError("Game Lobby Header is not defined");
+  }
+  gameLobbyHeader.value.highlightGameOptionsButton();
+  const intervalMs = 1000;
+  setTimeout(() => {
+    onGameOptionsButtonClickFromGameLobbyHeader();
+  }, intervalMs);
+}
+
 function injectPlayerNamesFromQuery(): void {
   const { query } = useRoute();
   if (!Object.hasOwn(query, "playerNames")) {
@@ -143,8 +163,25 @@ function injectPlayerNamesFromQuery(): void {
   })));
 }
 
+function launchSmallScreenWarning(): void {
+  addInfoToast({
+    summary: t("pages.gameLobby.smallScreenDetected"),
+    detail: t("pages.gameLobby.smallScreenWarning"),
+    life: 7500,
+  });
+}
+
 resetCreateGameDto();
 resetGame();
 injectPlayerNamesFromQuery();
 loadAllAudios();
+
+onMounted(() => {
+  if (isSmallerThanMd.value) {
+    const delayInMs = 200;
+    setTimeout(() => {
+      launchSmallScreenWarning();
+    }, delayInMs);
+  }
+});
 </script>

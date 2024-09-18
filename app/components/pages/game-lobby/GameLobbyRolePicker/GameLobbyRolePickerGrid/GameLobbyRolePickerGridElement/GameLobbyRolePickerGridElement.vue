@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-lobby-role-picker-grid-element"
-    class="flex flex-col items-center"
+    class="!p-1 flex flex-col items-center md:p-0"
   >
     <button
       id="game-lobby-role-picker-grid-element-button"
@@ -36,7 +36,7 @@
         class="fa-shuffle fas me-2"
       />
 
-      <span>
+      <span class="text-sm">
         {{ roleLabel }}
       </span>
     </div>

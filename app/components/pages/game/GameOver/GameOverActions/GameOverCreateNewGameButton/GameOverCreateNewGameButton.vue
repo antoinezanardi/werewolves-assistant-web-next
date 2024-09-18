@@ -26,7 +26,7 @@
     <PrimeVueButton
       id="create-new-game-button"
       ref="createNewGameButton"
-      class="p-button p-button-raised"
+      class="p-button p-button-raised w-full"
       :label="$t('components.GameOverActions.createAnotherGame')"
       @click="onClickFromCreateNewGameButton"
     >

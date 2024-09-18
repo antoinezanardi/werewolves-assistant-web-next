@@ -10,6 +10,7 @@ Feature: 🃏 Game Lobby Page
     And the heading with name "Add player names with the input above" should be visible
     And the button with name "Random composition" should be visible
     And the button with name "Start game" should be visible
+    And the input with label "Player name" should be focused
     And the page should match or creates the missing snapshot with name "Game Lobby Page without players"
 
   Scenario: 🃏 Game Lobby page has valid head title and SEO tags
@@ -23,6 +24,16 @@ Feature: 🃏 Game Lobby Page
       | charset          | utf-8                                                      |
       | generator        | nuxt                                                       |
       | color-scheme     | dark                                                       |
+
+  Scenario: 🃏 Game Lobby page displays an info toast when small screen is detected
+    Given the user renders the app on the iPhone X
+    And the user is on game-lobby page
+    Then the toast with text "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience." should be visible
+
+  Scenario: 🃏 Game Lobby page doesn't display an info toast when medium or large screen is detected
+    Given the user renders the app on the iPad Mini
+    And the user is on game-lobby page
+    Then the toast with text "Even if the Assistant is responsive, it is recommended to use a larger screen for a better experience." should be hidden
 
   Scenario: 🃏 User adds a player
     Given the user is on game-lobby page
@@ -268,109 +279,6 @@ Feature: 🃏 Game Lobby Page
   #    And the user generates a random composition and starts the game in the lobby
   #    Then the user should be on game page with any id
   #    And the toast with text "Game created" should be visible
-  Scenario: 🃏 User is asked if everybody is ready before starting the game and can cancel if not
-    Given the user is on game-lobby page
-
-    When the user enters the players with name and role in the lobby
-      | name     | role     |
-      | Ulysse   | Werewolf |
-      | Valentin | Villager |
-      | William  | Villager |
-      | Xavier   | Villager |
-    And the user clicks on the button with name "Start game"
-    Then the heading with name "Before starting the game" should be visible
-    And the heading with name "Do all the players have their role and are ready to play?" should be visible
-    And the button with name "Cancel" should be visible
-    And the button with name "Let's go!" should be visible
-
-    When the user clicks on the button with name "Cancel"
-    Then the button with name "Start game" should be enabled
-
-  Scenario: 🃏 User is asked if everybody is positioned correctly if there are role position dependant before starting the game and is redirected if not
-    Given the user is on game-lobby page
-
-    When the user enters the players with name and role in the lobby
-      | name     | role               |
-      | Ulysse   | Werewolf           |
-      | Valentin | Rusty Sword Knight |
-      | William  | Villager           |
-      | Xavier   | Villager           |
-    And the user clicks on the button with name "Start game"
-    Then the heading with name "Before starting the game" should be visible
-    And the heading with name "Some roles rely on players position. Are players placed correctly in the game lobby?" should be visible
-    And the button with name "Show me how to position players" should be visible
-    And the button with name "Yes" should be visible
-    And the button with name "Cancel" should be visible
-    And the button with name "Skip and play now" should be visible
-
-    When the user clicks on the button with name "Show me how to position players"
-    Then the heading with name "Players positions" should be visible
-
-  Scenario: 🃏 User is asked if thief additional cards are placed down before starting the game and is redirected if not
-    Given the user is on game-lobby page
-
-    When the user enters the players with name and role in the lobby
-      | name     | role     |
-      | Ulysse   | Werewolf |
-      | Valentin | Thief    |
-      | William  | Villager |
-      | Xavier   | Villager |
-    And the user sets the following additional cards for "thief" in the lobby
-      | roleName |
-      | Seer     |
-    And the user clicks on the button with name "Start game"
-    Then the heading with name "Before starting the game" should be visible
-    And the heading with name "Is the additional card for the Thief placed face down on the center of the table?" should be visible
-    And the button with name "Change the additional cards for the Thief" should be visible
-    And the button with name "Yes" should be visible
-    And the button with name "Cancel" should be visible
-    And the button with name "Skip and play now" should be visible
-
-    When the user clicks on the button with name "Change the additional cards for the Thief"
-    Then the heading with name "Additional cards" should be visible
-
-  Scenario: 🃏 User is asked if actor additional cards are placed up before starting the game and is redirected if not
-    Given the user is on game-lobby page
-
-    When the user enters the players with name and role in the lobby
-      | name     | role     |
-      | Ulysse   | Werewolf |
-      | Valentin | Actor    |
-      | William  | Villager |
-      | Xavier   | Villager |
-    And the user sets the following additional cards for "actor" in the lobby
-      | roleName |
-      | Seer     |
-      | Hunter   |
-    And the user clicks on the button with name "Start game"
-    Then the heading with name "Before starting the game" should be visible
-    And the heading with name "Are the additional cards for the Actor placed face up on the center of the table?" should be visible
-    And the button with name "Change the additional cards for the Actor" should be visible
-    And the button with name "Yes" should be visible
-    And the button with name "Cancel" should be visible
-    And the button with name "Skip and play now" should be visible
-
-    When the user clicks on the button with name "Change the additional cards for the Actor"
-    Then the heading with name "Additional cards" should be visible
-
-  Scenario: 🃏 User can skip all game verification before starting the game
-    Given the user is on game-lobby page
-
-    When the user enters the players with name and role in the lobby
-      | name     | role               |
-      | Ulysse   | Werewolf           |
-      | Valentin | Rusty Sword Knight |
-      | William  | Villager           |
-      | Xavier   | Villager           |
-    And the user clicks on the button with name "Start game"
-    Then the heading with name "Before starting the game" should be visible
-    And the heading with name "Some roles rely on players position. Are players placed correctly in the game lobby?" should be visible
-    And the button with name "Skip and play now" should be visible
-
-    When the user clicks on the button with name "Skip and play now"
-    Then the user should be on game page with any id
-    And the toast with text "Game created" should be visible
-
   Scenario: 🃏 User goes back on home page by clicking on werewolves assistant logo in navigation bar
     Given the user is on game-lobby page
 

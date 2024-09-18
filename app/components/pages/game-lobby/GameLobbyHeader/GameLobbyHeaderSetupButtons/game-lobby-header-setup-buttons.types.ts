@@ -5,6 +5,7 @@ type GameLobbyHeaderSetupButtonsEmits = {
 };
 
 type GameLobbyHeaderSetupButtonsExposed = {
+  highlightGameOptionsButton: () => void;
   highlightPositionCoordinatorButton: () => void;
   highlightAdditionalCardsManagerButton: () => void;
 };

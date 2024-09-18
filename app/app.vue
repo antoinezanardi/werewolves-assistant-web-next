@@ -1,21 +1,32 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage
-      class="h-full md:p-2 p-4"
+  <div class="h-full">
+    <NuxtRouteAnnouncer/>
+
+    <NuxtLayout>
+      <NuxtPage
+        class="h-full md:p-2 p-4"
+      />
+    </NuxtLayout>
+
+    <PrimeVueToast
+      class="!max-w-x-screen-9/10"
+      position="bottom-right"
     />
 
-    <PrimeVueToast position="bottom-right"/>
-
     <NuxtPwaManifest/>
-  </NuxtLayout>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import "reflect-metadata";
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const rolesStore = useRolesStore();
+
+const audioStore = useAudioStore();
+const { setHowlerAudioSettingsFromAudioStoreState } = audioStore;
 
 const { t } = useI18n();
 
@@ -33,6 +44,7 @@ useHead({
 });
 
 void rolesStore.fetchAndSetRoles();
+setHowlerAudioSettingsFromAudioStoreState();
 </script>
 
 <style lang="scss" scoped>

@@ -1,3 +1,9 @@
+import type { AudioSettings } from "~/stores/audio/types/audio.types";
+
+const DEFAULT_AUDIO_SETTINGS = {
+  isMuted: false,
+} as const satisfies AudioSettings;
+
 const SOUND_EFFECT_NAMES = [
   "actor-clear-throat-and-knocks",
   "angelic-intervention",
@@ -53,6 +59,7 @@ const BACKGROUND_AUDIO_NAMES = [
 ] as const;
 
 export {
+  DEFAULT_AUDIO_SETTINGS,
   SOUND_EFFECT_NAMES,
   BACKGROUND_AUDIO_NAMES,
 };

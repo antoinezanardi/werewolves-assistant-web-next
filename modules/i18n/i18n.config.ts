@@ -7,6 +7,7 @@ export default defineI18nConfig(() => {
   return {
     legacy: false,
     locale: runtimeConfig.public.defaultLocale,
+    defaultLocale: runtimeConfig.public.defaultLocale,
     messages: {
       fr,
       en,

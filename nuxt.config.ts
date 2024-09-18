@@ -89,6 +89,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: "./modules/i18n/i18n.config.ts",
+    defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
     locales: [
       {
         code: "fr",
@@ -102,10 +103,7 @@ export default defineNuxtConfig({
     strategy: "no_prefix",
   },
   image: {
-    domains: [
-      "antoinezanardi.fr",
-      "appspot.com",
-    ],
+    domains: ["werewolves-assistant.com"],
   },
   linkChecker: {
     enabled: false,
@@ -138,7 +136,9 @@ export default defineNuxtConfig({
         "Menu",
         "ProgressSpinner",
         "Accordion",
-        "AccordionTab",
+        "AccordionPanel",
+        "AccordionHeader",
+        "AccordionContent",
         "Badge",
         "InputGroup",
         "InputText",
@@ -150,8 +150,11 @@ export default defineNuxtConfig({
         "Slider",
         "Toast",
         "ToggleButton",
+        "Tabs",
+        "TabList",
+        "TabPanels",
+        "Tab",
         "TabPanel",
-        "TabView",
         "Tag",
         "Timeline",
       ],
@@ -172,10 +175,11 @@ export default defineNuxtConfig({
       periodicSyncForUpdates: 86400,
     },
     workbox: {
-      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      globPatterns: ["**/*.{js,css,html,png,svg,ico,json,woff2}"],
+      navigateFallbackDenylist: [/^.*$/u],
     },
     injectManifest: {
-      globPatterns: ["**/*.{js,css,html,png,svg,ico}"],
+      globPatterns: ["**/*.{js,css,html,png,svg,ico,json,woff2}"],
     },
     manifest: {
       name: process.env.NUXT_SITE_NAME,

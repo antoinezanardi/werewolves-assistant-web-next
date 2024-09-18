@@ -9,7 +9,7 @@
       'root': 'h-9/10',
       'icons': 'pb-2',
       'header': '!py-2',
-      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 h-full !py-0',
+      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 h-full !py-0 !px-0 md:!px-2',
       'footer': '!py-2'
     }"
     :visible="isVisible"
@@ -18,7 +18,7 @@
     <template #header>
       <DialogHeaderTitleOnly
         id="game-lobby-options-hub-header"
-        icon="sliders"
+        icon="magic-wand-sparkles"
         icon-class="text-primary"
         :title="$t('components.GameLobbyOptionsHub.gameOptions')"
       />

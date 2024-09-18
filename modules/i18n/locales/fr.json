@@ -13,7 +13,8 @@
       "close": "Fermer",
       "next": "Suivant",
       "back": "Retour",
-      "cancel": "Annuler"
+      "cancel": "Annuler",
+      "confirm": "Confirmer"
     },
     "time": {
       "second": "1 seconde | {count} secondes",
@@ -419,7 +420,9 @@
     },
     "gameLobby": {
       "startGame": "Lancer une partie",
-      "seoDescription": "Créer une nouvelle partie avec l'Assistant Loups-Garous"
+      "seoDescription": "Créer une nouvelle partie avec l'Assistant Loups-Garous",
+      "smallScreenDetected": "Petit écran détecté",
+      "smallScreenWarning": "Même si l'Assistant Loups-Garous est utilisable sur un petit écran, il est recommandé de l'utiliser sur un écran plus grand pour une meilleure expérience."
     },
     "game": {
       "loadingGame": "Chargement de la partie…",
@@ -1028,11 +1031,12 @@
       "endOfGame": "Fin de la partie",
       "gameHistory": "Historique de la partie"
     },
-    "GameLobbyHeaderOptionButton": {
-      "gameOptions": "Options de la partie"
+    "GameLobbyHeaderOptionsButton": {
+      "gameOptions": "Variantes de la partie",
+      "youHaveChangedGameOptions": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles"
     },
     "GameLobbyOptionsHub": {
-      "gameOptions": "Options de la partie"
+      "gameOptions": "Variantes de la partie"
     },
     "GameLobbyOptionsHubTabView": {
       "roles": "Rôles",
@@ -1348,7 +1352,7 @@
       "playerWillHavePenaltyForNextVotes": "Le joueur marqué d'une plume aura un vote supplémentaire contre lui lors du prochain vote. | Le joueur marqué d'une plume aura {penalty} votes supplémentaires contre lui lors du prochain vote."
     },
     "GameScapegoatTurnStartsEvent": {
-      "scapegoatCanBanPlayerFromVoting": "Le Bouc Émissaire se réveille et peut interdire à un ou plusieurs joueurs de voter lors des votes du jour suivant."
+      "scapegoatCanBanPlayerFromVoting": "Dans son dernier souffle, le Bouc Émissaire se réveille et peut interdire à un ou plusieurs joueurs de voter lors des votes du jour suivant."
     },
     "GameSeerTurnStartsEvent": {
       "seerSeesRoles": "La Voyante se réveille et va regarder le rôle d'un joueur.",
@@ -1596,6 +1600,15 @@
     "GameLobbyOptionsHubFooter": {
       "resetOptions": "Revenir aux règles officielles",
       "youHaveChangedOptions": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles"
+    },
+    "GameLobbyStartGameConfirmDialogGameOptionsChanged": {
+      "gameOptionsChanged": "Vous avez appliqué 1 variante de règles | Vous avez appliqué {count} variantes de règles",
+      "changedGameOptionsIcon": "Icône des options de jeu modifiées",
+      "seeAllGameOptions": "Ouvrir les options de jeu"
+    },
+    "ChangedGameOptionsList": {
+      "resetOptionAlt": "Revenir à la règle officielle pour la variante : {option}",
+      "resetToOfficialRule": "Revenir à la règle officielle"
     }
   }
 }

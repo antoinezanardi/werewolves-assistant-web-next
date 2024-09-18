@@ -1,14 +1,26 @@
-import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
 
 import type { GameLobbyRolePickerDescriptionProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types";
 import GameLobbyRolePickerDescription from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescription.vue";
 import type GameLobbyRolePickerDescriptionContent from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue";
 import { createFakeRole } from "@tests/unit/utils/factories/composables/api/role/role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 
-const { useScroll: partialMockedUsedScroll } = vi.hoisted(() => ({ useScroll: { y: { value: 0 } } }));
+const hoistedMocks = vi.hoisted(() => ({
+  useScroll: { y: { value: 0 } },
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+  useScroll: vi.fn(() => hoistedMocks.useScroll),
+}));
 
 describe("Game Lobby Role Picker Description Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerDescription>>;
@@ -23,8 +35,8 @@ describe("Game Lobby Role Picker Description Component", () => {
   }
 
   beforeEach(async() => {
-    partialMockedUsedScroll.y = ref(0);
-    mockNuxtImport<typeof useScroll>("useScroll", () => vi.fn(() => partialMockedUsedScroll as ReturnType<typeof useScroll>));
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useScroll.y = ref(0);
     wrapper = await mountGameLobbyRolePickerDescriptionComponent();
   });
 
@@ -39,6 +51,20 @@ describe("Game Lobby Role Picker Description Component", () => {
       const noPickedRoleContainer = wrapper.find<HTMLDivElement>("#no-picked-role-container");
 
       expect(noPickedRoleContainer.exists()).toBeTruthy();
+    });
+
+    it("should set role flipping image size to 200px when screen is not smaller than md.", () => {
+      const roleFlippingImage = wrapper.findComponent<typeof RoleFlippingImage>("#role-flipping-image");
+
+      expect(roleFlippingImage.attributes("sizes")).toBe("200px");
+    });
+
+    it("should set role flipping image size to 75px when screen is smaller than md.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameLobbyRolePickerDescriptionComponent();
+      const roleFlippingImage = wrapper.findComponent<typeof RoleFlippingImage>("#role-flipping-image");
+
+      expect(roleFlippingImage.attributes("sizes")).toBe("75px");
     });
 
     it("should translate no picked role text when picked role is not defined.", async() => {
@@ -59,11 +85,11 @@ describe("Game Lobby Role Picker Description Component", () => {
     });
 
     it("should scroll back to top when picked role is changed.", async() => {
-      partialMockedUsedScroll.y.value = 20;
+      hoistedMocks.useScroll.y.value = 20;
       await wrapper.setProps({ pickedRole: createFakeRole({ name: "villager" }) });
       await nextTick();
 
-      expect(partialMockedUsedScroll.y.value).toBe(0);
+      expect(hoistedMocks.useScroll.y.value).toBe(0);
     });
   });
 });

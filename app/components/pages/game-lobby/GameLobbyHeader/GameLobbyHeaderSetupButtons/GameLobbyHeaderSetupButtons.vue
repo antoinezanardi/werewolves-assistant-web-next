@@ -1,12 +1,14 @@
 <template>
-  <PrimeVueButtonGroup>
+  <PrimeVueButtonGroup class="text-center w-full">
     <TransitionGroup
       name="fade-list"
+      tag="div"
     >
-      <GameLobbyHeaderOptionButton
+      <GameLobbyHeaderOptionsButton
         id="game-lobby-header-options-button"
         key="game-options-button"
-        class="fade-list-item"
+        ref="gameLobbyHeaderOptionsButton"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @game-options-button-click="onGameOptionsButtonClickFromGameOptionButton"
       />
 
@@ -15,7 +17,7 @@
         id="game-lobby-header-position-coordinator-button"
         key="game-position-coordinator-button"
         ref="gameLobbyHeaderPositionCoordinatorButton"
-        class="fade-list-item"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGamePositionCoordinatorButton"
       />
 
@@ -24,7 +26,7 @@
         id="game-lobby-header-additional-cards-manager-button"
         key="game-additional-cards-manager-button"
         ref="gameLobbyHeaderAdditionalCardsManagerButton"
-        class="fade-list-item"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton"
       />
     </TransitionGroup>
@@ -36,7 +38,7 @@ import { storeToRefs } from "pinia";
 import type { ComponentPublicInstance } from "vue";
 import type { GameLobbyHeaderSetupButtonsEmits, GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/GameLobbyHeaderAdditionalCardsManagerButton.vue";
-import GameLobbyHeaderOptionButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
+import GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
@@ -49,6 +51,8 @@ const { createGameDto, doesCreateGameDtoContainAdditionalCardsDependantRoles } =
 const minPlayerToDisplayPositionCoordinator = 2;
 
 const { animateElementOnce } = useAnimateCss();
+
+const gameLobbyHeaderOptionsButton = ref<ComponentPublicInstance | null>(null);
 
 const gameLobbyHeaderPositionCoordinatorButton = ref<ComponentPublicInstance | null>(null);
 
@@ -70,6 +74,13 @@ function onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton
   emit("additionalCardsManagerButtonClick");
 }
 
+async function highlightGameOptionsButton(): Promise<void> {
+  if (!gameLobbyHeaderOptionsButton.value) {
+    throw createError("Game Lobby Header Options Button is not defined");
+  }
+  await animateElementOnce((gameLobbyHeaderOptionsButton.value.$el as HTMLElement), "heartBeat");
+}
+
 async function highlightPositionCoordinatorButton(): Promise<void> {
   if (!gameLobbyHeaderPositionCoordinatorButton.value) {
     throw createError("Game Lobby Header Position Coordinator Button is not defined");
@@ -85,6 +96,7 @@ async function highlightAdditionalCardsManagerButton(): Promise<void> {
 }
 
 defineExpose<GameLobbyHeaderSetupButtonsExposed>({
+  highlightGameOptionsButton,
   highlightPositionCoordinatorButton,
   highlightAdditionalCardsManagerButton,
 });

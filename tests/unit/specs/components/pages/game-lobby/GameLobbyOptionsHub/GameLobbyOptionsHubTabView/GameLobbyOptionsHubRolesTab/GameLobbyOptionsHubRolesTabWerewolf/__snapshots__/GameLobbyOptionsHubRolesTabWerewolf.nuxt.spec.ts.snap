@@ -2,18 +2,18 @@
 
 exports[`Game Lobby Options Hub Roles Tab Werewolf Component > should match snapshot when rendered. 1`] = `
 "<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root" pc1="">
-  <legend class="p-fieldset-legend ml-4 !p-3 !px-6" data-pc-section="legend">
+  <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
     <game-option-role-legend-stub rolename="werewolf"></game-option-role-legend-stub>
   </legend>
   <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
     <div id="game-lobby-options-hub-roles-tab-werewolf_content" class="p-fieldset-content-container" role="region" aria-labelledby="game-lobby-options-hub-roles-tab-werewolf_header" data-pc-section="contentcontainer">
       <div class="p-fieldset-content" data-pc-section="content">
         <div id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input-group">
-          <div id="game-option-input-group" class="flex gap-2 items-center justify-between">
-            <h3 id="game-option-label" class="w-8/12">
-              <font-awesome-icon-stub icon="utensils" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="me-2 text-gray-500"></font-awesome-icon-stub><span>Werewolves can eat each other</span>
+          <div id="game-option-input-group" class="flex flex-col gap-2 items-center justify-between md:flex-row">
+            <h3 id="game-option-label" class="flex gap-2 items-center md:text-left md:w-8/12 text-center w-full">
+              <font-awesome-icon-stub icon="utensils" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" id="game-option-label-icon" class="text-center text-gray-500"></font-awesome-icon-stub><span class="grow md:pe-0 pe-3 text-pretty">Werewolves can eat each other</span>
             </h3>
-            <div id="game-option-input" class="w-4/12">
+            <div id="game-option-input" class="md:w-4/12 w-full">
               <affirmative-toggle-button-stub modelvalue="false" id="game-lobby-options-hub-roles-tab-werewolf-can-eat-each-other-input" class="w-full"></affirmative-toggle-button-stub>
             </div>
           </div>

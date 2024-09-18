@@ -29,16 +29,16 @@
 
     <div
       id="game-lobby-position-coordinator-content"
-      class="flex gap-2 h-full"
+      class="flex flex-col gap-2 h-full justify-center md:flex-row"
     >
       <GameLobbyPositionCoordinatorChart
         id="game-lobby-position-coordinator-chart"
-        class="w-7/12"
+        class="hidden lg:w-7/12 md:block md:order-1 md:w-6/12 w-full"
       />
 
       <GameLobbyPositionCoordinatorSorter
         id="game-lobby-position-coordinator-sorter"
-        class="w-5/12"
+        class="lg:w-5/12 md:order-2 md:w-6/12 w-full"
       />
     </div>
 

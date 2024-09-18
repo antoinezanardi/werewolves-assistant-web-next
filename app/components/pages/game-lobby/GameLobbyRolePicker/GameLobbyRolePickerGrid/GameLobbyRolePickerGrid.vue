@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-lobby-role-picker-grid"
-    class="gap-4 grid grid-cols-5"
+    class="gap-4 grid grid-cols-3 lg:grid-cols-5 md:grid-cols-4"
   >
     <GameLobbyRolePickerGridElement
       class="available-role"

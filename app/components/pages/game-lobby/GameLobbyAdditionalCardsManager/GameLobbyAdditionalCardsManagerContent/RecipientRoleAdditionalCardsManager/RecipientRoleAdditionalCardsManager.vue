@@ -1,7 +1,7 @@
 <template>
   <PrimeVueFieldset
     :id="`role-additional-cards-manager-${recipientRoleName}`"
-    :pt="{ 'legend': 'ml-4 !p-3 !px-6' }"
+    :pt="{ 'legend': FIELD_SETS_LEGEND_CLASSES }"
   >
     <template #legend>
       <GameOptionRoleLegend :role-name="recipientRoleName"/>
@@ -19,7 +19,7 @@
 
     <div
       id="recipient-role-additional-cards-placement"
-      class="flex font-semibold h-6 items-center justify-center mt-3"
+      class="flex font-semibold items-center justify-center mt-3"
     >
       <span v-if="additionalCardsPlacementText">
         <FontAwesomeIcon
@@ -41,6 +41,7 @@ import type { RecipientRoleAdditionalCardsManagerProps } from "~/components/page
 import RecipientRoleAdditionalCardsDisclaimer from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsDisclaimer/RecipientRoleAdditionalCardsDisclaimer.vue";
 import RecipientRoleAdditionalCardsMultiSelect from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/RecipientRoleAdditionalCardsMultiSelect.vue";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
+import { FIELD_SETS_LEGEND_CLASSES } from "~/components/shared/inputs/field-sets/field-sets.constants";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const props = defineProps<RecipientRoleAdditionalCardsManagerProps>();

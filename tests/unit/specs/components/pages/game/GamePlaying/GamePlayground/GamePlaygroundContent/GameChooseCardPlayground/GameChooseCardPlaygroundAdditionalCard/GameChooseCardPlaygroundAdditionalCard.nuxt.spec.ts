@@ -6,6 +6,7 @@ import type { mount } from "@vue/test-utils";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
 import type { GameChooseCardPlaygroundAdditionalCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlaygroundAdditionalCard/game-choose-card-playground-additional-card.types";
 import GameChooseCardPlaygroundAdditionalCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlaygroundAdditionalCard/GameChooseCardPlaygroundAdditionalCard.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
@@ -16,10 +17,18 @@ const hoistedMocks = vi.hoisted(() => ({
   useRolesStore: {
     getRoleSideForRoleName: vi.fn(),
   },
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
 }));
 
 vi.mock("~/stores/role/useRolesStore.ts", () => ({
   useRolesStore: (): typeof hoistedMocks.useRolesStore => hoistedMocks.useRolesStore,
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
 }));
 
 describe("Game Choose Card Playground Additional Card Component", () => {
@@ -50,6 +59,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
 
   beforeEach(async() => {
     hoistedMocks.useRolesStore.getRoleSideForRoleName.mockReturnValue("villagers");
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     wrapper = await mountGameChooseCardPlaygroundAdditionalCardComponent();
     const makeGamePlayStore = useMakeGamePlayDtoStore();
     makeGamePlayStore.makeGamePlayDto = createFakeMakeGamePlayDto();
@@ -264,6 +274,20 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         ];
 
         expect(roleImage.classes()).toStrictEqual<string[]>(expectedClasses);
+      });
+
+      it("should set base size when screen is not smaller than md.", () => {
+        const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
+
+        expect(roleImage.props("sizes")).toBe("125");
+      });
+
+      it("should set small size when screen is smaller than md.", async() => {
+        hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+        wrapper = await mountGameChooseCardPlaygroundAdditionalCardComponent();
+        const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
+
+        expect(roleImage.props("sizes")).toBe("75");
       });
     });
 

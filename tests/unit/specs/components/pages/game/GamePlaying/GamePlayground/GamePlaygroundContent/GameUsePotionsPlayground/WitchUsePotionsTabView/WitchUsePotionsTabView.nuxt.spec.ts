@@ -1,8 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import TabPanel from "primevue/tabpanel";
-import type TabView from "primevue/tabview";
+import type Tab from "primevue/tab";
+import type TabPanel from "primevue/tabpanel";
+import type Tabs from "primevue/tabs";
 
 import type { NuxtImg } from "#components";
 import type GamePlaygroundPlayerCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCard.vue";
@@ -66,7 +67,7 @@ describe("Witch Use Potions Tab View Component", () => {
   });
 
   describe("Tab View", () => {
-    it("should have active index set to 0 when witch still has life potion.", async() => {
+    it("should have active index set to life-potion when witch still has life potion.", async() => {
       wrapper = await mountWitchUsePotionsTabViewComponent({ shallow: true });
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
@@ -83,12 +84,12 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabView = wrapper.findComponent<typeof TabView>("#witch-use-potions-tab-view");
+      const tabView = wrapper.findComponent<typeof Tabs>("#witch-use-potions-tab-view");
 
-      expect(tabView.attributes("active-index")).toBe("0");
+      expect(tabView.attributes("value")).toBe("life-potion");
     });
 
-    it("should have active index set to 1 when witch doesn't have life potion anymore.", async() => {
+    it("should have active index set to death-potion when witch doesn't have life potion anymore.", async() => {
       wrapper = await mountWitchUsePotionsTabViewComponent({ shallow: true });
       const gameStore = useGameStore();
       gameStore.game.currentPlay = createFakeGamePlayWitchUsesPotions({
@@ -105,18 +106,18 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabView = wrapper.findComponent<typeof WitchUsePotionsTabView>("#witch-use-potions-tab-view");
+      const tabView = wrapper.findComponent<typeof Tabs>("#witch-use-potions-tab-view");
 
-      expect(tabView.attributes("active-index")).toBe("1");
+      expect(tabView.attributes("value")).toBe("death-potion");
     });
   });
 
-  describe("Give Life Potion Panel", () => {
-    it("should disable panel when witch doesn't have life potion anymore.", async() => {
+  describe("Give Life Potion Tab", () => {
+    it("should disable tab when witch doesn't have life potion anymore.", async() => {
       wrapper = await mountWitchUsePotionsTabViewComponent({
         global: {
           stubs: {
-            TabPanel: true,
+            Tab: true,
             GamePlaygroundPlayerCard: true,
             NuxtImg: true,
           },
@@ -138,10 +139,9 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabPanels = wrapper.findAllComponents<typeof TabPanel>(TabPanel);
-      const giveLifePotionPanel = tabPanels[0];
+      const giveLifePotionTab = wrapper.findComponent<typeof Tab>("#life-potion-tab");
 
-      expect(giveLifePotionPanel.attributes("disabled")).toBe("true");
+      expect(giveLifePotionTab.attributes("disabled")).toBe("true");
     });
 
     it("should enable panel when witch still has life potion.", async() => {
@@ -170,10 +170,9 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabPanels = wrapper.findAllComponents<typeof TabPanel>(TabPanel);
-      const giveLifePotionPanel = tabPanels[0];
+      const giveLifePotionTab = wrapper.findComponent<typeof Tab>("#life-potion-tab");
 
-      expect(giveLifePotionPanel.attributes("disabled")).toBe("false");
+      expect(giveLifePotionTab.attributes("disabled")).toBeUndefined();
     });
 
     it("should display life potion image when rendered.", () => {
@@ -183,7 +182,7 @@ describe("Witch Use Potions Tab View Component", () => {
     });
 
     it("should translate give life potion panel title when rendered.", () => {
-      const giveLifePotionPanel = wrapper.find<HTMLAnchorElement>("#witch-use-potions-tab-view_0_header_action");
+      const giveLifePotionPanel = wrapper.findComponent<typeof Tab>("#life-potion-tab");
 
       expect(giveLifePotionPanel.text()).toBe("Give life potion to save the player…");
     });
@@ -218,7 +217,7 @@ describe("Witch Use Potions Tab View Component", () => {
       wrapper = await mountWitchUsePotionsTabViewComponent({
         global: {
           stubs: {
-            TabPanel: true,
+            Tab: true,
             GamePlaygroundPlayerCard: true,
             NuxtImg: true,
           },
@@ -240,8 +239,7 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabPanels = wrapper.findAllComponents<typeof TabPanel>(TabPanel);
-      const giveDeathPotionPanel = tabPanels[1];
+      const giveDeathPotionPanel = wrapper.findComponent<typeof TabPanel>("#death-potion-tab");
 
       expect(giveDeathPotionPanel.attributes("disabled")).toBe("true");
     });
@@ -272,10 +270,9 @@ describe("Witch Use Potions Tab View Component", () => {
         }),
       });
       await nextTick();
-      const tabPanels = wrapper.findAllComponents<typeof TabPanel>(TabPanel);
-      const giveDeathPotionPanel = tabPanels[1];
+      const giveDeathPotionPanel = wrapper.findComponent<typeof TabPanel>("#death-potion-tab");
 
-      expect(giveDeathPotionPanel.attributes("disabled")).toBe("false");
+      expect(giveDeathPotionPanel.attributes("disabled")).toBeUndefined();
     });
 
     it("should display death potion image when rendered.", () => {
@@ -285,7 +282,7 @@ describe("Witch Use Potions Tab View Component", () => {
     });
 
     it("should translate give death potion panel title when rendered.", () => {
-      const giveDeathPotionPanel = wrapper.find<HTMLAnchorElement>("#witch-use-potions-tab-view_1_header_action");
+      const giveDeathPotionPanel = wrapper.findComponent<typeof TabPanel>("#death-potion-tab");
 
       expect(giveDeathPotionPanel.text()).toBe("Give death potion to kill the player…");
     });

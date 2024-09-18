@@ -12,10 +12,26 @@ import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 const { beforeEach, afterEach, afterAll, setup } = createTest({
   runner: "cucumber",
   server: true,
+  browserOptions: {
+    type: "chromium",
+    launch: {
+      headless: true,
+      env: {
+        NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL,
+        NUXT_PUBLIC_DEFAULT_LOCALE: I18N_TEST_LOCALE,
+        NUXT_SITE_URL: "http://127.0.0.1:4000",
+        NUXT_SITE_NAME: "Werewolves Assistant",
+        NUXT_SITE_ENV: "test",
+        NUXT_SITE_DESCRIPTION: "The perfect tool for game masters of the Werewolves of Miller's Hollow™",
+      },
+    },
+  },
   rootDir: fileURLToPath(new URL("../../../..", import.meta.url)),
   nuxtConfig: {
     i18n: {
       defaultLocale: I18N_TEST_LOCALE,
+      skipSettingLocaleOnNavigate: true,
+      locales: [{ code: "en", language: "en-US" }],
     },
     runtimeConfig: {
       public: {
@@ -26,7 +42,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
   },
 });
 
-const beforeAllTimeout = 90000;
+const beforeAllTimeout = 180000;
 
 const beforeTimeout = 10000;
 

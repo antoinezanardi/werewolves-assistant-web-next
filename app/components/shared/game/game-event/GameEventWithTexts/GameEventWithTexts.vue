@@ -12,6 +12,7 @@
 
     <GameEventTextsManager
       id="game-event-texts-manager"
+      class="grow md:grow-0"
       :texts="props.texts"
       @game-event-text-change="onGameEventTextChangeFromGameEventTextsManager"
     />

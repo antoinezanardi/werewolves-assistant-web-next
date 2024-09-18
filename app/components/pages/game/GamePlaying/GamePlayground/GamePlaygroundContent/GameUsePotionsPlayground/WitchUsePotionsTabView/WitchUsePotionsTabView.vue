@@ -1,40 +1,61 @@
 <template>
-  <PrimeVueTabView
+  <PrimeVueTabs
     id="witch-use-potions-tab-view"
-    :active-index="tabViewActiveIndex"
-    class="tabview-custom"
-    :pt="{
-      'nav': 'gap-2',
-      'root': 'flex flex-col',
-      'panelContainer': 'grow'
-    }"
+    :pt="{ 'nav': '!border-none' }"
+    scrollable
+    :value="tabViewActiveIndex"
   >
-    <PrimeVueTabPanel
-      :disabled="hasWitchUsedLifePotion"
+    <PrimeVueTabList
+      class="w-full"
       :pt="{
-        'header': 'grow',
-        'root': 'h-full'
+        'content': '!w-full !h-full',
+        'root': '!w-full !overflow-clip'
       }"
     >
-      <template #header>
-        <div class="flex gap-2 items-center">
-          <NuxtImg
-            :alt="$t('components.WitchUsePotionsTabView.lifePotionImageAlt')"
-            height="40"
-            placeholder="/svg/misc/infinite-spinner.svg"
-            src="svg/game/player/player-attribute/drank-life-potion.svg"
-            width="40"
-          />
+      <PrimeVueTab
+        id="life-potion-tab"
+        class="flex gap-2 items-center md:!w-1/2"
+        :disabled="hasWitchUsedLifePotion"
+        value="life-potion"
+      >
+        <NuxtImg
+          :alt="$t('components.WitchUsePotionsTabView.lifePotionImageAlt')"
+          height="40"
+          placeholder="/svg/misc/infinite-spinner.svg"
+          src="svg/game/player/player-attribute/drank-life-potion.svg"
+          width="40"
+        />
 
-          <h4>
-            {{ $t("components.WitchUsePotionsTabView.giveLifePotion") }}
-          </h4>
-        </div>
-      </template>
+        <h4 class="text-pretty">
+          {{ $t("components.WitchUsePotionsTabView.giveLifePotion") }}
+        </h4>
+      </PrimeVueTab>
 
-      <div
+      <PrimeVueTab
+        id="death-potion-tab"
+        class="flex gap-2 items-center md:w-1/2"
+        :disabled="hasWitchUsedDeathPotion"
+        value="death-potion"
+      >
+        <NuxtImg
+          :alt="$t('components.WitchUsePotionsTabView.deathPotionImageAlt')"
+          height="40"
+          placeholder="/svg/misc/infinite-spinner.svg"
+          src="svg/game/player/player-attribute/drank-death-potion.svg"
+          width="40"
+        />
+
+        <h4 class="text-pretty">
+          {{ $t("components.WitchUsePotionsTabView.giveDeathPotion") }}
+        </h4>
+      </PrimeVueTab>
+    </PrimeVueTabList>
+
+    <PrimeVueTabPanels :value="tabViewActiveIndex">
+      <PrimeVueTabPanel
         id="give-life-potion-panel"
-        class="flex flex-wrap h-full items-center justify-center m-0 place-content-center place-items-center"
+        class="!h-full flex flex-wrap grow items-center justify-center m-0 place-content-center place-items-center"
+        value="life-potion"
       >
         <GamePlaygroundPlayerCard
           v-for="target in giveLifePotionInteractionEligibleTargets"
@@ -43,46 +64,23 @@
           interaction="give-life-potion"
           :player="target"
         />
-      </div>
-    </PrimeVueTabPanel>
+      </PrimeVueTabPanel>
 
-    <PrimeVueTabPanel
-      :disabled="hasWitchUsedDeathPotion"
-      :pt="{
-        'header': 'grow',
-        'root': 'h-full'
-      }"
-    >
-      <template #header>
-        <div class="flex gap-2 items-center">
-          <NuxtImg
-            :alt="$t('components.WitchUsePotionsTabView.deathPotionImageAlt')"
-            height="40"
-            placeholder="/svg/misc/infinite-spinner.svg"
-            src="svg/game/player/player-attribute/drank-death-potion.svg"
-            width="40"
-          />
-
-          <h4>
-            {{ $t("components.WitchUsePotionsTabView.giveDeathPotion") }}
-          </h4>
-        </div>
-      </template>
-
-      <div
+      <PrimeVueTabPanel
         id="give-death-potion-panel"
-        class="flex flex-wrap h-full items-center justify-center m-0 place-content-center"
+        class="flex flex-wrap items-center justify-center m-0 place-content-center place-items-center"
+        value="death-potion"
       >
         <GamePlaygroundPlayerCard
           v-for="target in giveDeathPotionInteractionEligibleTargets"
           :key="target._id"
-          class="death-potion-target p-3 w-1/4"
+          class="death-potion-target md:w-1/4 p-3 w-1/3"
           interaction="give-death-potion"
           :player="target"
         />
-      </div>
-    </PrimeVueTabPanel>
-  </PrimeVueTabView>
+      </PrimeVueTabPanel>
+    </PrimeVueTabPanels>
+  </PrimeVueTabs>
 </template>
 
 <script setup lang="ts">
@@ -106,5 +104,5 @@ const hasWitchUsedLifePotion = computed<boolean>(() => giveLifePotionInteraction
 
 const hasWitchUsedDeathPotion = computed<boolean>(() => giveDeathPotionInteractionEligibleTargets.value.length === 0);
 
-const tabViewActiveIndex = computed<number>(() => (hasWitchUsedLifePotion.value ? 1 : 0));
+const tabViewActiveIndex = computed<"life-potion" | "death-potion">(() => (hasWitchUsedLifePotion.value ? "death-potion" : "life-potion"));
 </script>
