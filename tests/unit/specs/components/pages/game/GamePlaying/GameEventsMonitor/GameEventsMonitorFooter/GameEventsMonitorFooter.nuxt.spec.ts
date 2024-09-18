@@ -5,7 +5,6 @@ import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
@@ -183,16 +182,17 @@ describe("Game Events Monitor Footer Component", () => {
       expect(gameEventsStore.goToPreviousGameEvent).not.toHaveBeenCalled();
     });
 
-    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+    it("should not animate icon when previousEventButtonIcon is not defined.", async() => {
       wrapper = await mountGameEventsMonitorFooterComponent();
       const gameEventsStore = useGameEventsStore();
       gameEventsStore.currentGameEventIndex = 1;
-      await nextTick();
-      const button = wrapper.findComponent<typeof Button>("#previous-event-button");
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#previous-event-button-icon");
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { previousEventButtonIcon: Ref }).previousEventButtonIcon.value = null;
-      await getError(async() => button.trigger("click"));
+      hoistedMocks.useMagicKeys.arrowleft.value = true;
+      hoistedMocks.useMagicKeys.shift.value = true;
+      await nextTick();
 
-      expect(createError).toHaveBeenCalledExactlyOnceWith("Previous Event Button Icon is not defined");
+      expect(icon.classes()).not.toContain("animate__headShake");
     });
   });
 
@@ -279,11 +279,14 @@ describe("Game Events Monitor Footer Component", () => {
       expect(gameEventsStore.goToNextGameEvent).not.toHaveBeenCalled();
     });
 
-    it("should throw error when previousEventButtonIcon is not defined.", async() => {
+    it("should not animate icon when skipEventButtonIcon is not defined.", async() => {
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { skipCurrentEventButtonIcon: Ref }).skipCurrentEventButtonIcon.value = null;
-      await getError(async() => (wrapper.vm as unknown as { onClickFromSkipCurrentEventButton: () => Promise<void> }).onClickFromSkipCurrentEventButton());
+      const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#skip-current-event-button-icon");
+      hoistedMocks.useMagicKeys.arrowright.value = true;
+      hoistedMocks.useMagicKeys.shift.value = true;
+      await nextTick();
 
-      expect(createError).toHaveBeenCalledExactlyOnceWith("Skip Current Event Button Icon is not defined");
+      expect(icon.classes()).not.toContain("animate__headShake");
     });
   });
 });
