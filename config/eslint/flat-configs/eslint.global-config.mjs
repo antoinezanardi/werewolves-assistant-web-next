@@ -32,6 +32,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       computed: READONLY,
       defineProps: READONLY,
       defineEmits: READONLY,
+      defineOgImageComponent: READONLY,
       ref: READONLY,
       reactive: READONLY,
       onMounted: READONLY,
