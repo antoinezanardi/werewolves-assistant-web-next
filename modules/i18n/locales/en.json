@@ -1473,7 +1473,8 @@
     },
     "GameLobbyPositionCoordinatorSorter": {
       "leftNeighbors": "Left neighbors",
-      "rightNeighbors": "Right neighbors"
+      "rightNeighbors": "Right neighbors",
+      "sortPlayersByDraggingInList": "Sort the players by dragging them in the list below"
     },
     "GameLobbyPositionCoordinatorChart": {
       "checkPositionWithChartBelow": "Check the position of the players with the graph below.",

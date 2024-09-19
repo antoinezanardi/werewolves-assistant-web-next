@@ -50,6 +50,14 @@ describe("Game Lobby Position Coordinator Sorter Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  describe("Title", () => {
+    it("should translate title text when rendered.", () => {
+      const title = wrapper.find<HTMLHeadingElement>("#position-coordinator-sorter-title");
+
+      expect(title.text()).toBe("Sort the players by dragging them in the list below");
+    });
+  });
+
   describe("Left Neighbors Disclaimer", () => {
     it("should translate left neighbors disclaimer text when rendered.", () => {
       const leftNeighborsDisclaimer = wrapper.find<HTMLSpanElement>("#sorter-left-neighbors-text");

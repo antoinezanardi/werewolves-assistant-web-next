@@ -1,25 +1,35 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Position Coordinator Sorter Component > should match snapshot when rendered. 1`] = `
-"<div id="game-lobby-position-coordinator-sorter-container" class="flex gap-4 items-center justify-center md:h-full">
-  <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-    <font-awesome-icon-stub icon="arrow-up" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-left-neighbors-text" class="text-center">Left neighbors</span>
-  </div>
-  <draggable-stub itemkey="name" modelvalue="[object Object],[object Object],[object Object],[object Object]" clone="[Function]" tag="ul" id="game-lobby-position-coordinator-sorter" animation="200" class="max-h-full overflow-y-scroll w-8/12"></draggable-stub>
-  <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-    <font-awesome-icon-stub icon="arrow-down" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-right-neighbors-text" class="text-center">Right neighbors</span>
+"<div id="game-lobby-position-coordinator-sorter-container" class="flex flex-col gap-4 h-full">
+  <h4 id="position-coordinator-sorter-title" class="flex gap-2 items-center justify-center md:h-1/10">
+    <font-awesome-icon-stub icon="circle-info" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="text-info w-1/12"></font-awesome-icon-stub><span id="position-coordinator-sorter-text" class="text-center w-full">Sort the players by dragging them in the list below</span><span class="w-1/12"></span>
+  </h4>
+  <div class="flex gap-4 grow items-center justify-center md:h-full md:max-h-8/10">
+    <div class="flex flex-col gap-2 items-center justify-center w-2/12">
+      <font-awesome-icon-stub icon="arrow-up" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-left-neighbors-text" class="text-center">Left neighbors</span>
+    </div>
+    <draggable-stub itemkey="name" modelvalue="[object Object],[object Object],[object Object],[object Object]" clone="[Function]" tag="ul" id="game-lobby-position-coordinator-sorter" animation="200" class="max-h-full overflow-y-scroll w-8/12"></draggable-stub>
+    <div class="flex flex-col gap-2 items-center justify-center w-2/12">
+      <font-awesome-icon-stub icon="arrow-down" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-right-neighbors-text" class="text-center">Right neighbors</span>
+    </div>
   </div>
 </div>"
 `;
 
 exports[`Game Lobby Position Coordinator Sorter Component > should match snapshot when shallow rendered. 1`] = `
-"<div id="game-lobby-position-coordinator-sorter-container" class="flex gap-4 items-center justify-center md:h-full">
-  <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-    <font-awesome-icon-stub icon="arrow-up" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-left-neighbors-text" class="text-center">Left neighbors</span>
-  </div>
-  <draggable-stub itemkey="name" modelvalue="[object Object],[object Object],[object Object],[object Object]" clone="[Function]" tag="ul" id="game-lobby-position-coordinator-sorter" animation="200" class="max-h-full overflow-y-scroll w-8/12"></draggable-stub>
-  <div class="flex flex-col gap-2 items-center justify-center w-2/12">
-    <font-awesome-icon-stub icon="arrow-down" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-right-neighbors-text" class="text-center">Right neighbors</span>
+"<div id="game-lobby-position-coordinator-sorter-container" class="flex flex-col gap-4 h-full">
+  <h4 id="position-coordinator-sorter-title" class="flex gap-2 items-center justify-center md:h-1/10">
+    <font-awesome-icon-stub icon="circle-info" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="text-info w-1/12"></font-awesome-icon-stub><span id="position-coordinator-sorter-text" class="text-center w-full">Sort the players by dragging them in the list below</span><span class="w-1/12"></span>
+  </h4>
+  <div class="flex gap-4 grow items-center justify-center md:h-full md:max-h-8/10">
+    <div class="flex flex-col gap-2 items-center justify-center w-2/12">
+      <font-awesome-icon-stub icon="arrow-up" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-left-neighbors-text" class="text-center">Left neighbors</span>
+    </div>
+    <draggable-stub itemkey="name" modelvalue="[object Object],[object Object],[object Object],[object Object]" clone="[Function]" tag="ul" id="game-lobby-position-coordinator-sorter" animation="200" class="max-h-full overflow-y-scroll w-8/12"></draggable-stub>
+    <div class="flex flex-col gap-2 items-center justify-center w-2/12">
+      <font-awesome-icon-stub icon="arrow-down" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="fa-2x"></font-awesome-icon-stub><span id="sorter-right-neighbors-text" class="text-center">Right neighbors</span>
+    </div>
   </div>
 </div>"
 `;

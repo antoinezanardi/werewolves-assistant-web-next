@@ -1473,7 +1473,8 @@
     },
     "GameLobbyPositionCoordinatorSorter": {
       "leftNeighbors": "Voisins de gauche",
-      "rightNeighbors": "Voisins de droite"
+      "rightNeighbors": "Voisins de droite",
+      "sortPlayersByDraggingInList": "Triez les joueurs en les faisant glisser dans la liste ci-dessous."
     },
     "GameLobbyPositionCoordinatorChart": {
       "checkPositionWithChartBelow": "Vérifiez la position des joueurs avec le graphique ci-dessous.",
