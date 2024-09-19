@@ -9,6 +9,7 @@ import { expect } from "vitest";
 import type { Ref } from "vue";
 import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import type GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/GameLobbyHeaderAdditionalCardsManagerButton.vue";
+import type GameLobbyHeaderGroupOrganizerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderGroupOrganizerButton/GameLobbyHeaderGroupOrganizerButton.vue";
 import type GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import type GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
@@ -31,10 +32,14 @@ describe("Game Lobby Header Setup Buttons Component", () => {
     players: [
       createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
       createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "thief" }) }),
+      createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "prejudiced-manipulator" }) }),
     ],
   });
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeaderSetupButtons>>;
-  const testingPinia = { initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } } };
+  const testingPinia = {
+    initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } },
+    stubActions: false,
+  };
 
   async function mountGameLobbyHeaderSetupButtonsComponent(options: ComponentMountingOptions<typeof GameLobbyHeaderSetupButtons> = {}):
   Promise<ReturnType<typeof mount<typeof GameLobbyHeaderSetupButtons>>> {
@@ -144,6 +149,26 @@ describe("Game Lobby Header Setup Buttons Component", () => {
       await flushPromises();
 
       expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");
+    });
+  });
+
+  describe("Group Organizer", () => {
+    it("should not render group organizer button when prejudiced manipulator is not present.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "thief" }) })],
+      });
+      await nextTick();
+      const groupOrganizerButton = wrapper.findComponent<typeof GameLobbyHeaderGroupOrganizerButton>("#game-lobby-header-group-organizer-button");
+
+      expect(groupOrganizerButton.exists()).toBeFalsy();
+    });
+
+    it("should emit 'groupOrganizerButtonClick' event when clicked.", () => {
+      const groupOrganizerButton = wrapper.findComponent<typeof GameLobbyHeaderGroupOrganizerButton>("#game-lobby-header-group-organizer-button");
+      (groupOrganizerButton.vm as VueVm).$emit("groupOrganizerButtonClick");
+
+      expect(wrapper.emitted("groupOrganizerButtonClick")).toBeTruthy();
     });
   });
 });

@@ -1610,6 +1610,9 @@
     "ChangedGameOptionsList": {
       "resetOptionAlt": "Revenir à la règle officielle pour la variante : {option}",
       "resetToOfficialRule": "Revenir à la règle officielle"
+    },
+    "GameLobbyHeaderGroupOrganizerButton": {
+      "groupOrganizer": "Organisation des groupes"
     }
   }
 }

@@ -28,6 +28,7 @@
         ref="gameLobbyHeaderSetupButtons"
         @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameLobbyHeaderSetupButtons"
         @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons"
+        @group-organizer-button-click="onGroupOrganizerButtonClickFromGameLobbyHeaderSetupButtons"
         @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons"
       />
     </div>
@@ -83,6 +84,10 @@ function onPositionCoordinatorButtonClickFromGameLobbyHeaderSetupButtons(): void
 
 function onAdditionalCardsManagerButtonClickFromGameLobbyHeaderSetupButtons(): void {
   emit("additionalCardsManagerButtonClick");
+}
+
+function onGroupOrganizerButtonClickFromGameLobbyHeaderSetupButtons(): void {
+  emit("groupOrganizerButtonClick");
 }
 
 function highlightGameOptionsButton(): void {

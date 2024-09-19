@@ -29,6 +29,14 @@
         class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @additional-cards-manager-button-click="onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton"
       />
+
+      <GameLobbyHeaderGroupOrganizerButton
+        v-if="isGroupOrganizerVisible"
+        id="game-lobby-header-group-organizer-button"
+        key="game-group-organizer-button"
+        class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
+        @group-organizer-button-click="onGroupOrganizerButtonClickFromGameGroupOrganizerButton"
+      />
     </TransitionGroup>
   </PrimeVueButtonGroup>
 </template>
@@ -38,6 +46,7 @@ import { storeToRefs } from "pinia";
 import type { ComponentPublicInstance } from "vue";
 import type { GameLobbyHeaderSetupButtonsEmits, GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/GameLobbyHeaderAdditionalCardsManagerButton.vue";
+import GameLobbyHeaderGroupOrganizerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderGroupOrganizerButton/GameLobbyHeaderGroupOrganizerButton.vue";
 import GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
@@ -46,6 +55,7 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 const emit = defineEmits<GameLobbyHeaderSetupButtonsEmits>();
 
 const createGameDtoStore = useCreateGameDtoStore();
+const { getPlayersWithRoleNameInCreateGameDto } = createGameDtoStore;
 const { createGameDto, doesCreateGameDtoContainAdditionalCardsDependantRoles } = storeToRefs(createGameDtoStore);
 
 const minPlayerToDisplayPositionCoordinator = 2;
@@ -62,6 +72,8 @@ const isPositionCoordinatorVisible = computed<boolean>(() => createGameDto.value
 
 const isAdditionalCardsManagerVisible = computed<boolean>(() => doesCreateGameDtoContainAdditionalCardsDependantRoles.value);
 
+const isGroupOrganizerVisible = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("prejudiced-manipulator").length > 0);
+
 function onGameOptionsButtonClickFromGameOptionButton(): void {
   emit("gameOptionsButtonClick");
 }
@@ -72,6 +84,10 @@ function onPositionCoordinatorButtonClickFromGamePositionCoordinatorButton(): vo
 
 function onAdditionalCardsManagerButtonClickFromGameAdditionalCardsManagerButton(): void {
   emit("additionalCardsManagerButtonClick");
+}
+
+function onGroupOrganizerButtonClickFromGameGroupOrganizerButton(): void {
+  emit("groupOrganizerButtonClick");
 }
 
 async function highlightGameOptionsButton(): Promise<void> {

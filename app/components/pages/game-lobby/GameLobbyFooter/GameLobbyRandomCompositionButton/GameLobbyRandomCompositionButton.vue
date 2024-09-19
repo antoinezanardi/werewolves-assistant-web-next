@@ -67,7 +67,6 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,
-    excludedRoles: ["prejudiced-manipulator"],
   });
   if (randomGameComposition !== null) {
     setPlayersToCreateGameDto(randomGameComposition);

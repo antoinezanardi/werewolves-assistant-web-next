@@ -213,6 +213,13 @@ describe("Game Lobby Header Component", () => {
 
         expect(wrapper.emitted("additionalCardsManagerButtonClick")).toBeTruthy();
       });
+
+      it("should emit 'groupOrganizerButtonClick' event when group organizer button is clicked.", () => {
+        const setupButtons = wrapper.findComponent<typeof GameLobbyHeaderSetupButtons>("#game-lobby-header-setup-buttons");
+        (setupButtons.vm as VueVm).$emit("groupOrganizerButtonClick");
+
+        expect(wrapper.emitted("groupOrganizerButtonClick")).toBeTruthy();
+      });
     });
   });
 });

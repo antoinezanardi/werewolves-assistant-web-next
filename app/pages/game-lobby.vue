@@ -5,6 +5,7 @@
       ref="gameLobbyHeader"
       @additional-cards-manager-button-click="onAdditionalCardsButtonManagerClickFromGameLobbyHeader"
       @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeader"
+      @group-organizer-button-click="onGroupOrganizerButtonClickFromGameLobbyHeader"
       @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeader"
     />
 
@@ -115,6 +116,10 @@ function onAdditionalCardsButtonManagerClickFromGameLobbyHeader(): void {
     throw createError("Game Lobby Additional Cards Manager is not defined");
   }
   gameLobbyAdditionalCardsManager.value.open();
+}
+
+function onGroupOrganizerButtonClickFromGameLobbyHeader(): void {
+  console.log("coucou");
 }
 
 function onRejectPlayersPositionStepFromGameLobbyFooter(): void {

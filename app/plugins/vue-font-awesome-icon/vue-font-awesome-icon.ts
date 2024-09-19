@@ -76,6 +76,7 @@ import {
   faCompass,
   faRotate,
   faMagicWandSparkles,
+  faGroupArrowsRotate,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
@@ -162,6 +163,7 @@ library.add(
   faCompass,
   faRotate,
   faMagicWandSparkles,
+  faGroupArrowsRotate,
 );
 
 export default defineNuxtPlugin(nuxtApp => {
