@@ -14,8 +14,10 @@ const modules = [
   "@nuxtjs/seo",
   "@nuxtjs/sitemap",
   "@nuxtjs/robots",
+  "nuxt-og-image",
   "nuxt-link-checker",
   "@vite-pwa/nuxt",
+  "@nuxt/devtools",
 ];
 
 export default defineNuxtConfig({
@@ -74,7 +76,17 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
     renderJsonPayloads: false,
-    buildCache: true,
+    buildCache: false,
+  },
+  ogImage: {
+    enabled: process.env.NODE_ENV !== "test",
+    fonts: [
+      "Quicksand:300",
+      "Quicksand:400",
+      "Quicksand:500",
+      "Quicksand:600",
+      "Quicksand:700",
+    ],
   },
   future: { compatibilityVersion: 4 },
   googleFonts: {
@@ -110,9 +122,6 @@ export default defineNuxtConfig({
   },
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
-  ogImage: {
-    enabled: false,
-  },
   plugins: [
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",

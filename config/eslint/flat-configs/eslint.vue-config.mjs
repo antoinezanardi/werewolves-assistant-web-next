@@ -15,6 +15,7 @@ const ESLINT_VUE_CONFIG = {
     "app/layouts/**/*.vue",
     "app/components/**/*.vue",
   ],
+  ignores: ["app/components/OgImage/DefaultOgImage.vue"],
   plugins: {
     "@typescript-eslint": TypeScriptPlugin,
     "vue": VuePlugin,

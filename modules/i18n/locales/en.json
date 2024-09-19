@@ -1610,6 +1610,10 @@
     "ChangedGameOptionsList": {
       "resetOptionAlt": "Reset to official rule the option : {option}",
       "resetToOfficialRule": "Reset to official rule"
+    },
+    "DefaultOgImage": {
+      "title": "Werewolves Assistant",
+      "description": "The perfect tool for game masters of the Werewolves of Miller's Hollow"
     }
   }
 }
