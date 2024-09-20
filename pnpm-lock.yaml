@@ -76,8 +76,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(magicast@0.3.5)(rollup@4.21.3)
       '@nuxtjs/i18n':
-        specifier: ^8.5.3
-        version: 8.5.3(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.6(typescript@5.6.2))
+        specifier: ^8.5.4
+        version: 8.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.6(typescript@5.6.2))
       '@nuxtjs/robots':
         specifier: ^4.1.7
         version: 4.1.7(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.2)(terser@5.32.0))(vue@3.5.6(typescript@5.6.2))
@@ -1993,8 +1993,8 @@ packages:
   '@nuxtjs/google-fonts@3.2.0':
     resolution: {integrity: sha512-cGAjDJoeQ2jm6VJCo4AtSmKO6KjsbO9RSLj8q261fD0lMVNMZCxkCxBkg8L0/2Vfgp+5QBHWVXL71p1tiybJFw==}
 
-  '@nuxtjs/i18n@8.5.3':
-    resolution: {integrity: sha512-owSqQtBzi6NYer1yFOpQxnZzRWg+85cXWvlweN+yKYN6hdacLtOpN/hZn3FiXXc5OKDNStTyi+QoVpb0OH4n7w==}
+  '@nuxtjs/i18n@8.5.4':
+    resolution: {integrity: sha512-8onnhHHUhKwZm7CKMDNGmLCJMt7Af0Y4VaYJ/hEvKT9O9sd1MKvGMQKNefBeSOggllRU2iOgcqCsb5qozPVP5A==}
     engines: {node: ^14.16.0 || >=16.11.0}
 
   '@nuxtjs/robots@4.1.7':
@@ -10536,7 +10536,7 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxtjs/i18n@8.5.3(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.6(typescript@5.6.2))':
+  '@nuxtjs/i18n@8.5.4(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.6(typescript@5.6.2))':
     dependencies:
       '@intlify/h3': 0.5.0
       '@intlify/shared': 9.14.0
