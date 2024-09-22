@@ -4,7 +4,7 @@ import { useWerewolvesAssistantApiError } from "~/composables/api/error/useWerew
 import { removeTrailingSlashes } from "~/utils/url.utils";
 
 type UseWerewolvesAssistantApi = {
-  fetchWerewolvesAssistantApi: typeof $fetch;
+  fetchWerewolvesAssistantApi: ReturnType<typeof createFetch>;
 };
 
 function useWerewolvesAssistantApi(): UseWerewolvesAssistantApi {
