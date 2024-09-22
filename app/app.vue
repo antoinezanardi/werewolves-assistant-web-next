@@ -30,6 +30,8 @@ const { setHowlerAudioSettingsFromAudioStoreState } = audioStore;
 
 const { t } = useI18n();
 
+defineOgImageComponent("DefaultOgImage");
+
 useHead({
   title: t("shared.werewolvesAssistant"),
   meta: [

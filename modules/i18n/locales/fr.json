@@ -1611,6 +1611,10 @@
       "resetOptionAlt": "Revenir à la règle officielle pour la variante : {option}",
       "resetToOfficialRule": "Revenir à la règle officielle"
     },
+    "DefaultOgImage": {
+      "title": "Assistant Loups-Garous",
+      "description": "L'outil parfait pour les Maîtres du jeu des Loups-Garous de Thiercelieux"
+    },
     "GameLobbyHeaderGroupOrganizerButton": {
       "groupOrganizer": "Organisation des groupes"
     }
