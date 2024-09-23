@@ -449,7 +449,7 @@
       "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
       "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies",
       "actorAdditionalCardsNotSet": "Les cartes additionnelles de Comédien ne sont pas définies",
-      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
+      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas correctement définis (2 groupes de joueurs avec au moins 2 joueurs dans chaque groupe)"
     },
     "useGameOptionsTexts": {
       "composition": {
@@ -1616,6 +1616,9 @@
       "description": "L'outil parfait pour les Maîtres du jeu des Loups-Garous de Thiercelieux"
     },
     "GameLobbyHeaderGroupOrganizerButton": {
+      "groupOrganizer": "Organisation des groupes"
+    },
+    "GameLobbyGroupOrganizer": {
       "groupOrganizer": "Organisation des groupes"
     }
   }

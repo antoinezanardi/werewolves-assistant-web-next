@@ -1,7 +1,9 @@
-import type { ComputedRef, Ref } from "vue";
 import { storeToRefs } from "pinia";
+import { group as groupByField } from "radash";
+import type { ComputedRef, Ref } from "vue";
 
-import { MIN_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
+import { MIN_PLAYERS_IN_GAME, MIN_PLAYERS_IN_GROUP } from "~/composables/api/game/constants/game.constants";
+import type { CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
@@ -89,9 +91,12 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
 
   const arePlayerGroupsSetForPrejudicedManipulatorIfPresent = computed<boolean>(() => {
     const isPrejudicedManipulatorPresent = createGameDto.value.players.some(player => player.role.name === "prejudiced-manipulator");
-    const arePlayerGroupsSet = createGameDto.value.players.every(player => player.group);
+    const minimumGroups = 2;
+    const playersWithGroup = createGameDto.value.players.filter(player => player.group !== undefined) as CreateGamePlayerWithGroupDto[];
+    const groups = groupByField(playersWithGroup, player => player.group) as Record<string, CreateGamePlayerWithGroupDto[]>;
+    const areAllGroupsMinimumPlayersReached = Object.values(groups).every(group => group.length >= MIN_PLAYERS_IN_GROUP);
     if (isPrejudicedManipulatorPresent) {
-      return arePlayerGroupsSet;
+      return Object.keys(groups).length >= minimumGroups && areAllGroupsMinimumPlayersReached;
     }
     return true;
   });

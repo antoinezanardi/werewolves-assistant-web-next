@@ -57,6 +57,7 @@ const { addSuccessToast } = usePrimeVueToasts();
 const { createGame } = useFetchGames();
 
 const createGameDtoStore = useCreateGameDtoStore();
+const { sanitizeCreateGameDtoForGameCreation } = createGameDtoStore;
 const { createGameDto } = storeToRefs(createGameDtoStore);
 const { canCreateGame, gameCreationValidationErrors } = useCreateGameDtoValidation(createGameDto);
 
@@ -75,6 +76,7 @@ function onClickFromStartGameButton(): void {
 
 async function onConfirmStartGameFromGameLobbyStartGameConfirmDialog(): Promise<void> {
   isLoadingCreateGame.value = true;
+  sanitizeCreateGameDtoForGameCreation();
   const createdGame = await createGame(createGameDto.value);
   if (createdGame) {
     await navigateTo(`/game/${createdGame._id}`);

@@ -11,6 +11,7 @@ exports[`Game Lobby Page > should match snapshot when rendered. 1`] = `
   <div id="game-lobby-options-hub-stub"></div>
   <div id="game-lobby-position-coordinator-stub"></div>
   <div id="game-lobby-additional-cards-manager-stub"></div>
+  <div id="game-lobby-group-organizer-stub"></div>
   <game-lobby-before-leave-confirm-dialog-stub></game-lobby-before-leave-confirm-dialog-stub>
 </div>"
 `;

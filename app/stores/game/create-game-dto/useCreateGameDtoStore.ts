@@ -1,3 +1,4 @@
+import { useLocalStorage } from "@vueuse/core";
 import { defineStore } from "pinia";
 import { get, set } from "radash";
 import type { Paths } from "type-fest";
@@ -5,7 +6,7 @@ import { ref } from "vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
 
-import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { CreateGamePlayerDto, type CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
@@ -14,12 +15,13 @@ import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constan
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { useLocalStorage } from "@vueuse/core";
 import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
 
 const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   const rolesStore = useRolesStore();
   const { getRoleWithNameInRoles } = rolesStore;
+
+  const { t } = useI18n();
 
   const createGameOptionsDtoFromLocalStorage = useLocalStorage(LocalStorageKeys.GAME_OPTIONS, DEFAULT_GAME_OPTIONS, { mergeDefaults: true });
 
@@ -32,6 +34,10 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     ...defaultCreateGameDto,
     options: createGameOptionsDtoFromLocalStorage.value,
   }));
+
+  const firstGroupName = ref<string>(t("stores.useCreateGameDtoStore.firstDefaultGroupName"));
+
+  const secondGroupName = ref<string>(t("stores.useCreateGameDtoStore.secondDefaultGroupName"));
 
   const createGameOptionsDto = computed<GameOptions>(() => createGameDto.value.options);
 
@@ -51,6 +57,27 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   function setCreateGameDto(createGameDtoValue: CreateGameDto): void {
     createGameDto.value = CreateGameDto.create(createGameDtoValue);
     saveCreateGameOptionsDtoToLocalStorage();
+  }
+
+  function changePlayersOldGroupNameToNew(oldGroupName: string, newGroupName: string): void {
+    const playersInGroup = getPlayersInGroupInCreateGameDto(oldGroupName);
+    for (const player of playersInGroup) {
+      if (player.group === oldGroupName) {
+        player.group = newGroupName;
+      }
+    }
+  }
+
+  function setFirstDefaultGroupName(groupName: string): void {
+    const oldGroupName = firstGroupName.value;
+    firstGroupName.value = groupName;
+    changePlayersOldGroupNameToNew(oldGroupName, groupName);
+  }
+
+  function setSecondDefaultGroupName(groupName: string): void {
+    const oldGroupName = secondGroupName.value;
+    secondGroupName.value = groupName;
+    changePlayersOldGroupNameToNew(oldGroupName, groupName);
   }
 
   function resetCreateGameDto(doesRetrieveLocalStorageValues = true): void {
@@ -164,13 +191,36 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   function getAdditionalCardsWithRoleNameInCreateGameDto(roleName: RoleName): CreateGameAdditionalCardDto[] {
     return createGameDto.value.additionalCards?.filter(card => card.roleName === roleName) ?? [];
   }
+
+  function getPlayersInGroupInCreateGameDto(groupName: string): CreateGamePlayerWithGroupDto[] {
+    return createGameDto.value.players.filter(player => player.group === groupName) as CreateGamePlayerWithGroupDto[];
+  }
+
+  function removeGroupFromPlayersInCreateGameDto(): void {
+    createGameDto.value.players.map(player => CreateGamePlayerDto.create({
+      ...player,
+      group: undefined,
+    }));
+  }
+
+  function sanitizeCreateGameDtoForGameCreation(): void {
+    removeObsoleteAdditionalCardsFromCreateGameDto();
+    const prejudicedManipulator = getPlayersWithRoleNameInCreateGameDto("prejudiced-manipulator");
+    if (!prejudicedManipulator.length) {
+      removeGroupFromPlayersInCreateGameDto();
+    }
+  }
   return {
     createGameOptionsDtoFromLocalStorage,
     createGameDto,
+    firstGroupName,
+    secondGroupName,
     createGameOptionsDto,
     doesCreateGameDtoContainPositionDependantRoles,
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
+    setFirstDefaultGroupName,
+    setSecondDefaultGroupName,
     resetCreateGameDto,
     resetCreateGameOptionsDto,
     resetCreateGameOptionDto,
@@ -189,6 +239,9 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     setAdditionalCardsForRecipientInCreateGameDto,
     getAdditionalCardsForRecipientInCreateGameDto,
     getAdditionalCardsWithRoleNameInCreateGameDto,
+    getPlayersInGroupInCreateGameDto,
+    removeGroupFromPlayersInCreateGameDto,
+    sanitizeCreateGameDtoForGameCreation,
   };
 });
 

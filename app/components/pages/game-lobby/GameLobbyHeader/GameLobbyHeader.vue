@@ -36,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from "pinia";
 import type { GameLobbyHeaderEmits, GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import type { GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
@@ -47,6 +48,8 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 const emit = defineEmits<GameLobbyHeaderEmits>();
 
 const createGameDtoStore = useCreateGameDtoStore();
+const { addPlayerToCreateGameDto } = createGameDtoStore;
+const { firstGroupName } = storeToRefs(createGameDtoStore);
 
 const playerInputValue = ref<string>("");
 
@@ -70,8 +73,9 @@ function onSubmitFromHeaderForm(): void {
     name: trimmedPlayerInputValue,
     role: {},
     side: {},
+    group: firstGroupName.value,
   });
-  createGameDtoStore.addPlayerToCreateGameDto(playerToAdd);
+  addPlayerToCreateGameDto(playerToAdd);
 }
 
 function onGameOptionsButtonClickFromGameLobbyHeaderSetupButtons(): void {
