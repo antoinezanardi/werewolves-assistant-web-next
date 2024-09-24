@@ -2,7 +2,7 @@
   <div id="game-lobby-group-organizer-pick-list-container">
     <PrimeVuePickList
       id="game-lobby-group-organizer-pick-list"
-      breakpoint="1400px"
+      breakpoint="300px"
       class="h-full"
       data-key="name"
       :model-value="playersInPickList"
@@ -18,7 +18,10 @@
       @move-to-target="onMoveToTargetFromPickList"
     >
       <template #option="{ option }">
-        <div class="flex gap-3 items-center">
+        <div
+          :aria-label="getAriaLabelForPickListOption(option.name)"
+          class="flex gap-3 items-center"
+        >
           <RoleImage
             class="option-role-image"
             :role-name="option.role.name"
@@ -46,6 +49,8 @@ import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
+const { t } = useI18n();
+
 const createGameDtoStore = useCreateGameDtoStore();
 const { firstGroupName, secondGroupName, createGameDto } = storeToRefs(createGameDtoStore);
 const { updatePlayerInCreateGameDto } = createGameDtoStore;
@@ -72,5 +77,9 @@ function onMoveToTargetFromPickList({ items }: PickListMoveToTargetEvent): void 
 
 function onMoveToSourceFromPickList({ items }: PickListMoveToTargetEvent): void {
   movePlayersToOtherGroup(items as CreateGamePlayerDto[], firstGroupName.value);
+}
+
+function getAriaLabelForPickListOption(name: string): string {
+  return t("components.GameLobbyGroupOrganizerPickList.pickPlayer", { name });
 }
 </script>

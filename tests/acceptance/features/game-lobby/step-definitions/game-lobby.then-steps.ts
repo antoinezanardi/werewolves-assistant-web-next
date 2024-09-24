@@ -47,3 +47,15 @@ Then(/^the game additional cards manager button should be visible in the lobby$/
 
   await expect(button).toBeVisible();
 });
+
+Then(/^the game group organizer button should be hidden in the lobby$/u, async function(this: CustomWorld): Promise<void> {
+  const button = this.page.getByRole("button", { name: "Group organizer" });
+
+  await expect(button).toBeHidden();
+});
+
+Then(/^the game group organizer button should be visible in the lobby$/u, async function(this: CustomWorld): Promise<void> {
+  const button = this.page.getByRole("button", { name: "Group organizer" });
+
+  await expect(button).toBeVisible();
+});
