@@ -1,3 +1,4 @@
+import { createTestingPinia } from "@pinia/testing";
 import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { mount } from "@vue/test-utils";
 import { expect, type Mock } from "vitest";
@@ -7,6 +8,7 @@ import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameL
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
+import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -22,6 +24,8 @@ describe("Game Lobby Header Component", () => {
       };
     };
   };
+  const defaultFirstGroupName = "Group 1";
+  const testingPinia = { initialState: { [StoreIds.CREATE_GAME_DTO]: { firstGroupName: defaultFirstGroupName } } };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyHeader>>;
 
   async function mountGameLobbyHeaderComponent(): Promise<ReturnType<typeof mount<typeof GameLobbyHeader>>> {
@@ -33,6 +37,7 @@ describe("Game Lobby Header Component", () => {
             methods: mocks.components.gameLobbyHeaderSetupButtons,
           },
         },
+        plugins: [createTestingPinia(testingPinia)],
       },
     });
   }
@@ -132,6 +137,7 @@ describe("Game Lobby Header Component", () => {
         const expectedCreatedPlayer = createFakeCreateGamePlayerDto({
           name: "Player 1",
           role: { name: undefined },
+          group: defaultFirstGroupName,
         });
 
         expect(createGameDtoStore.addPlayerToCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedCreatedPlayer);

@@ -70,20 +70,18 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
 
   const areAdditionalCardsSetForThiefIfPresent = computed<boolean>(() => {
     const isThiefPresent = createGameDto.value.players.some(player => player.role.name === "thief");
-    const areAdditionalCardsSetForThief = createGameDto.value.additionalCards?.some(card => card.recipient === "thief") === true;
-    if (isThiefPresent) {
-      return areAdditionalCardsSetForThief;
+    if (!isThiefPresent) {
+      return true;
     }
-    return true;
+    return createGameDto.value.additionalCards?.some(card => card.recipient === "thief") === true;
   });
 
   const areAdditionalCardsSetForActorIfPresent = computed<boolean>(() => {
     const isActorPresent = createGameDto.value.players.some(player => player.role.name === "actor");
-    const areAdditionalCardsSetForActor = createGameDto.value.additionalCards?.some(card => card.recipient === "actor") === true;
-    if (isActorPresent) {
-      return areAdditionalCardsSetForActor;
+    if (!isActorPresent) {
+      return true;
     }
-    return true;
+    return createGameDto.value.additionalCards?.some(card => card.recipient === "actor") === true;
   });
 
   const areAdditionalCardsSetForAdditionalCardsDependantRoles = computed<boolean>(() => areAdditionalCardsSetForActorIfPresent.value &&
@@ -91,14 +89,15 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
 
   const arePlayerGroupsSetForPrejudicedManipulatorIfPresent = computed<boolean>(() => {
     const isPrejudicedManipulatorPresent = createGameDto.value.players.some(player => player.role.name === "prejudiced-manipulator");
+    if (!isPrejudicedManipulatorPresent) {
+      return true;
+    }
     const minimumGroups = 2;
     const playersWithGroup = createGameDto.value.players.filter(player => player.group !== undefined) as CreateGamePlayerWithGroupDto[];
     const groups = groupByField(playersWithGroup, player => player.group) as Record<string, CreateGamePlayerWithGroupDto[]>;
     const areAllGroupsMinimumPlayersReached = Object.values(groups).every(group => group.length >= MIN_PLAYERS_IN_GROUP);
-    if (isPrejudicedManipulatorPresent) {
-      return Object.keys(groups).length >= minimumGroups && areAllGroupsMinimumPlayersReached;
-    }
-    return true;
+
+    return Object.keys(groups).length >= minimumGroups && areAllGroupsMinimumPlayersReached;
   });
 
   const canCreateGame = computed<boolean>(() => isMinimumPlayersReached.value &&

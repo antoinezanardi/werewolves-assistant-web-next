@@ -17,6 +17,7 @@
       <template #content="{ closeCallback }">
         <PrimeVueInputGroup>
           <PrimeVueInputText
+            id="group-name-input"
             v-model="localGroupName"
             autofocus
             :invalid="isButtonDisabled"
@@ -49,7 +50,7 @@ const emit = defineEmits<GameLobbyGroupOrganizerGroupNameInputEmits>();
 
 const { groupName, otherGroupName } = toRefs(props);
 
-const localGroupName = ref<string>(groupName);
+const localGroupName = ref<string>(unref(groupName));
 
 const trimmedLocalGroupName = computed<string>(() => localGroupName.value.trim());
 

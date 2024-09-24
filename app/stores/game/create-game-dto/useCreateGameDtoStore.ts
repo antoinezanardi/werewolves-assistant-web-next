@@ -62,9 +62,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   function changePlayersOldGroupNameToNew(oldGroupName: string, newGroupName: string): void {
     const playersInGroup = getPlayersInGroupInCreateGameDto(oldGroupName);
     for (const player of playersInGroup) {
-      if (player.group === oldGroupName) {
-        player.group = newGroupName;
-      }
+      player.group = newGroupName;
     }
   }
 
@@ -197,7 +195,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   }
 
   function removeGroupFromPlayersInCreateGameDto(): void {
-    createGameDto.value.players.map(player => CreateGamePlayerDto.create({
+    createGameDto.value.players = createGameDto.value.players.map(player => CreateGamePlayerDto.create({
       ...player,
       group: undefined,
     }));
@@ -219,6 +217,7 @@ const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
     doesCreateGameDtoContainPositionDependantRoles,
     doesCreateGameDtoContainAdditionalCardsDependantRoles,
     setCreateGameDto,
+    changePlayersOldGroupNameToNew,
     setFirstDefaultGroupName,
     setSecondDefaultGroupName,
     resetCreateGameDto,

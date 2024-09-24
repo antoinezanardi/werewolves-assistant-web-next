@@ -1,4 +1,6 @@
+import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { useBreakpoints } from "@vueuse/core";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
@@ -7,6 +9,7 @@ import type { Ref } from "vue";
 import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
 import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
 import * as UseBreakpoints from "@vueuse/core";
+import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -16,6 +19,8 @@ import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 
 describe("Game Lobby Random Composition Button Component", () => {
   const isSmallerThanMd = ref<boolean>(false);
+  const defaultCreateGameDto = createFakeCreateGameDto();
+  const testingPinia = { initialState: { [StoreIds.CREATE_GAME_DTO]: { createGameDto: defaultCreateGameDto } } };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRandomCompositionButton>>;
   let mocks: {
     composables: {
@@ -28,17 +33,27 @@ describe("Game Lobby Random Composition Button Component", () => {
     };
   };
 
+  async function mountGameLobbyRandomCompositionButtonComponent(options: ComponentMountingOptions<typeof GameLobbyRandomCompositionButton> = {}):
+  Promise<ReturnType<typeof mount<typeof GameLobbyRandomCompositionButton>>> {
+    return mountSuspendedComponent(GameLobbyRandomCompositionButton, {
+      global: { plugins: [createTestingPinia(testingPinia)] },
+      ...options,
+    });
+  }
+
   beforeEach(async() => {
     isSmallerThanMd.value = false;
     mocks = {
       composables: {
-        useFetchRandomGameComposition: { fetchRandomGameComposition: vi.fn() },
+        useFetchRandomGameComposition: { fetchRandomGameComposition: vi.fn(() => []) },
         useBreakpoints: { smaller: vi.fn(() => isSmallerThanMd) },
       },
     };
     vi.spyOn(UseFetchRandomGameComposition, "useFetchRandomGameComposition").mockImplementation(() => mocks.composables.useFetchRandomGameComposition);
     vi.spyOn(UseBreakpoints, "useBreakpoints").mockReturnValue(mocks.composables.useBreakpoints as unknown as ReturnType<typeof useBreakpoints>);
-    wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton);
+    wrapper = await mountGameLobbyRandomCompositionButtonComponent();
+    const createGameDtoStore = useCreateGameDtoStore();
+    createGameDtoStore.createGameDto = createFakeCreateGameDto(defaultCreateGameDto);
   });
 
   it("should match snapshot when rendered.", () => {
@@ -50,7 +65,12 @@ describe("Game Lobby Random Composition Button Component", () => {
     it("should assign tooltip when button is disabled.", async() => {
       const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-random-composition-button-container") };
-      wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, { global: { directives } });
+      wrapper = await mountGameLobbyRandomCompositionButtonComponent({
+        global: {
+          plugins: [createTestingPinia(testingPinia)],
+          directives,
+        },
+      });
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({ players: [] });
       await nextTick();
@@ -61,7 +81,12 @@ describe("Game Lobby Random Composition Button Component", () => {
     it("should not assign tooltip when button is enabled.", async() => {
       const tooltip: BoundTooltip = { value: undefined };
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-lobby-random-composition-button-container") };
-      wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, { global: { directives } });
+      wrapper = await mountGameLobbyRandomCompositionButtonComponent({
+        global: {
+          plugins: [createTestingPinia(testingPinia)],
+          directives,
+        },
+      });
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
         players: [
@@ -78,9 +103,10 @@ describe("Game Lobby Random Composition Button Component", () => {
 
     describe("Button", () => {
       it("should have label when screen is not smaller than md.", async() => {
-        wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, {
+        wrapper = await mountGameLobbyRandomCompositionButtonComponent({
           global: {
             stubs: { Button: false },
+            plugins: [createTestingPinia(testingPinia)],
           },
         });
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
@@ -89,9 +115,10 @@ describe("Game Lobby Random Composition Button Component", () => {
       });
 
       it("should not have label when screen is smaller than md.", async() => {
-        wrapper = await mountSuspendedComponent(GameLobbyRandomCompositionButton, {
+        wrapper = await mountGameLobbyRandomCompositionButtonComponent({
           global: {
             stubs: { Button: false },
+            plugins: [createTestingPinia(testingPinia)],
           },
         });
         isSmallerThanMd.value = true;
@@ -164,7 +191,7 @@ describe("Game Lobby Random Composition Button Component", () => {
           });
         });
 
-        it("should set fetched random game composition to create game dto when fetched.", async() => {
+        it("should set fetched random game composition to create game dto and assign previous groups when fetched.", async() => {
           const createGameDtoStore = useCreateGameDtoStore();
           const randomComposition = [
             createFakeCreateGamePlayerDto({ name: "Player 1" }),
@@ -172,13 +199,51 @@ describe("Game Lobby Random Composition Button Component", () => {
             createFakeCreateGamePlayerDto({ name: "Player 3" }),
             createFakeCreateGamePlayerDto({ name: "Player 4" }),
           ];
+          createGameDtoStore.createGameDto = createFakeCreateGameDto({
+            players: [
+              createFakeCreateGamePlayerDto({
+                ...randomComposition[0],
+                group: "Group 1",
+              }),
+              createFakeCreateGamePlayerDto({
+                ...randomComposition[1],
+                group: "Group 2",
+              }),
+              createFakeCreateGamePlayerDto({
+                ...randomComposition[2],
+                group: "Group 1",
+              }),
+              createFakeCreateGamePlayerDto({
+                ...randomComposition[3],
+                group: "Group 2",
+              }),
+            ],
+          });
           mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
           const button = wrapper.findComponent<typeof Button>(".random-composition-button");
           await button.trigger("click");
           await nextTick();
           mocks.composables.useFetchRandomGameComposition.fetchRandomGameComposition.mockResolvedValue(randomComposition);
+          const expectedPlayers = [
+            createFakeCreateGamePlayerDto({
+              ...randomComposition[0],
+              group: "Group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              ...randomComposition[1],
+              group: "Group 2",
+            }),
+            createFakeCreateGamePlayerDto({
+              ...randomComposition[2],
+              group: "Group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              ...randomComposition[3],
+              group: "Group 2",
+            }),
+          ];
 
-          expect(createGameDtoStore.setPlayersToCreateGameDto).toHaveBeenCalledExactlyOnceWith(randomComposition);
+          expect(createGameDtoStore.setPlayersToCreateGameDto).toHaveBeenCalledExactlyOnceWith(expectedPlayers);
         });
 
         it("should not set fetched random game composition to create game dto when fetch returned null.", async() => {

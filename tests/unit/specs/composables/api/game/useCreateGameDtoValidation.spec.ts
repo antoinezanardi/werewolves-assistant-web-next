@@ -547,7 +547,7 @@ describe("Use Create Game Dto Validation Composable", () => {
         expected: true,
       },
       {
-        test: "should return true when the prejudiced manipulator is present and player groups are set.",
+        test: "should return false when the prejudiced manipulator is present and first group doesn't have enough players.",
         createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
           players: [
             createFakeCreateGamePlayerDto({
@@ -558,9 +558,33 @@ describe("Use Create Game Dto Validation Composable", () => {
               role: { name: "werewolf" },
               group: "group 2",
             }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 2",
+            }),
           ],
         })),
-        expected: true,
+        expected: false,
+      },
+      {
+        test: "should return false when the prejudiced manipulator is present and second group doesn't have enough players.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({
+              role: { name: "prejudiced-manipulator" },
+              group: "group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 2",
+            }),
+          ],
+        })),
+        expected: false,
       },
       {
         test: "should return false when the prejudiced manipulator is present and player groups are not set.",
@@ -574,6 +598,30 @@ describe("Use Create Game Dto Validation Composable", () => {
           ],
         })),
         expected: false,
+      },
+      {
+        test: "should return true when the prejudiced manipulator is present and and groups are correctly set.",
+        createGameDto: ref<CreateGameDto>(createFakeCreateGameDto({
+          players: [
+            createFakeCreateGamePlayerDto({
+              role: { name: "prejudiced-manipulator" },
+              group: "group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 1",
+            }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 2",
+            }),
+            createFakeCreateGamePlayerDto({
+              role: { name: "werewolf" },
+              group: "group 2",
+            }),
+          ],
+        })),
+        expected: true,
       },
     ])("$test", ({ createGameDto, expected }) => {
       const { arePlayerGroupsSetForPrejudicedManipulatorIfPresent } = useCreateGameDtoValidation(createGameDto);

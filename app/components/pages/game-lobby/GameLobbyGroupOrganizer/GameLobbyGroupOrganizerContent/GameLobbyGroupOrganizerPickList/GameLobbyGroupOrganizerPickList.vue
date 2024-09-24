@@ -1,6 +1,7 @@
 <template>
-  <div id="game-lobby-group-organizer-pick-list">
+  <div id="game-lobby-group-organizer-pick-list-container">
     <PrimeVuePickList
+      id="game-lobby-group-organizer-pick-list"
       breakpoint="1400px"
       class="h-full"
       data-key="name"
@@ -19,11 +20,12 @@
       <template #option="{ option }">
         <div class="flex gap-3 items-center">
           <RoleImage
+            class="option-role-image"
             :role-name="option.role.name"
             :sizes="roleImageSizes"
           />
 
-          <span>
+          <span class="option-name">
             {{ option.name }}
           </span>
         </div>
@@ -57,19 +59,18 @@ const playersInPickList = computed<CreateGamePlayerDto[][]>(() => {
   return [playersOnFirstGroup, playersOnSecondGroup];
 });
 
-function onMoveToTargetFromPickList({ items }: PickListMoveToTargetEvent): void {
-  const players = items as CreateGamePlayerDto[];
+function movePlayersToOtherGroup(players: CreateGamePlayerDto[], otherGroup: string): void {
   for (const player of players) {
-    const playerWithNewGroup = CreateGamePlayerDto.create({ ...player, group: secondGroupName.value });
+    const playerWithNewGroup = CreateGamePlayerDto.create({ ...player, group: otherGroup });
     updatePlayerInCreateGameDto(playerWithNewGroup);
   }
 }
 
+function onMoveToTargetFromPickList({ items }: PickListMoveToTargetEvent): void {
+  movePlayersToOtherGroup(items as CreateGamePlayerDto[], secondGroupName.value);
+}
+
 function onMoveToSourceFromPickList({ items }: PickListMoveToTargetEvent): void {
-  const players = items as CreateGamePlayerDto[];
-  for (const player of players) {
-    const playerWithNewGroup = CreateGamePlayerDto.create({ ...player, group: firstGroupName.value });
-    updatePlayerInCreateGameDto(playerWithNewGroup);
-  }
+  movePlayersToOtherGroup(items as CreateGamePlayerDto[], firstGroupName.value);
 }
 </script>

@@ -76,7 +76,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
     renderJsonPayloads: false,
-    buildCache: false,
+    buildCache: true,
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "test",

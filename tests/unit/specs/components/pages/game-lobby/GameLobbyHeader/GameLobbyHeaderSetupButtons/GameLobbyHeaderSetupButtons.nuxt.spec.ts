@@ -96,6 +96,20 @@ describe("Game Lobby Header Setup Buttons Component", () => {
       expect(positionCoordinatorButton.exists()).toBeFalsy();
     });
 
+    it("should render position coordinator button when there are enough players in game.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [
+          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "seer" }) }),
+          createFakeCreateGamePlayerDto({ role: createFakeCreateGamePlayerRoleDto({ name: "thief" }) }),
+        ],
+      });
+      await nextTick();
+      const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
+
+      expect(positionCoordinatorButton.exists()).toBeTruthy();
+    });
+
     it("should emit 'positionCoordinatorButtonClick' event when clicked.", () => {
       const positionCoordinatorButton = wrapper.findComponent<typeof GameLobbyHeaderPositionCoordinatorButton>("#game-lobby-header-position-coordinator-button");
       (positionCoordinatorButton.vm as VueVm).$emit("positionCoordinatorButtonClick");

@@ -41,6 +41,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       onUnmounted: READONLY,
       nextTick: READONLY,
       isRef: READONLY,
+      unref: READONLY,
       useScroll: READONLY,
       console: READONLY,
       document: READONLY,

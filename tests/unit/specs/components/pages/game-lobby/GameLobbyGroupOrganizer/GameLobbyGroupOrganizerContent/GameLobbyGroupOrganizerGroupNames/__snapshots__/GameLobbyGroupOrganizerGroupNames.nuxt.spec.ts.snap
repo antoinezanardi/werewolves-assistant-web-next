@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Group Organizer Group Names Component > should match snapshot when rendered. 1`] = `
+"<div class="flex gap-1 w-full">
+  <game-lobby-group-organizer-group-name-input-stub groupname="Group 1" othergroupname="Group 2" id="game-lobby-group-organizer-first-group-name-input" class="text-center w-1/2"></game-lobby-group-organizer-group-name-input-stub>
+  <game-lobby-group-organizer-group-name-input-stub groupname="Group 2" othergroupname="Group 1" id="game-lobby-group-organizer-second-group-name-input" class="text-center w-1/2"></game-lobby-group-organizer-group-name-input-stub>
+</div>"
+`;

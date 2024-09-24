@@ -633,6 +633,12 @@
       }
     }
   },
+  "stores": {
+    "useCreateGameDtoStore": {
+      "firstDefaultGroupName": "Groupe 1",
+      "secondDefaultGroupName": "Groupe 2"
+    }
+  },
   "components": {
     "App": {
       "seoDescription": "L'Assistant Loups-Garous, un outil gratuit pour les Maîtres du jeu des Loups-Garous de Thiercelieux™"
@@ -1620,6 +1626,16 @@
     },
     "GameLobbyGroupOrganizer": {
       "groupOrganizer": "Organisation des groupes"
+    },
+    "GameLobbyGroupOrganizerContentHeader": {
+      "placePlayersInGroups": "Placez les joueurs dans les groupes pour jouer avec l'Abominable Sectaire",
+      "youCanRenameGroups": "Vous pouvez renommer les groupes en cliquant sur leur nom."
+    },
+    "GameLobbyGroupOrganizerDisclaimer": {
+      "notEnoughPlayers": "Pas assez de joueurs pour remplir les groupes. Veuillez ajouter plus de joueurs à la partie",
+      "fillFirstGroup": "Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueur du deuxième groupe | Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueurs du deuxième groupe",
+      "fillSecondGroup": "Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueur du premier groupe | Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueurs du premier groupe",
+      "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Manipulateur Préjudiciable"
     }
   }
 }

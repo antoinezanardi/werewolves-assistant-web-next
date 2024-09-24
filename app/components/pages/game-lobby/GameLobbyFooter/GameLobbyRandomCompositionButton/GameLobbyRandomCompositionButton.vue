@@ -69,9 +69,10 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
     players: createGameDto.value.players,
   });
   if (randomGameComposition !== null) {
+    const playerGroups = new Map(createGameDto.value.players.map(player => [player.name, player.group]));
     const randomGameCompositionPlayersWithGroup = randomGameComposition.map(player => ({
       ...player,
-      group: createGameDto.value.players.find(({ name }) => name === player.name)?.group,
+      group: playerGroups.get(player.name),
     }));
     setPlayersToCreateGameDto(randomGameCompositionPlayersWithGroup);
     removeObsoleteAdditionalCardsFromCreateGameDto();
