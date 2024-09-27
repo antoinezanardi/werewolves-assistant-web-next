@@ -93,7 +93,7 @@
     "@nuxtjs/i18n": "^8.5.5",
     "@nuxtjs/robots": "^4.1.7",
     "@nuxtjs/seo": "^2.0.0-rc.21",
-    "@nuxtjs/sitemap": "^6.1.0",
+    "@nuxtjs/sitemap": "^6.1.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.4",
     "@pinia/testing": "^0.1.5",
