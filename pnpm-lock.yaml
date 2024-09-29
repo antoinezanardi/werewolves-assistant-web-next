@@ -235,8 +235,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
       nuxt-og-image:
-        specifier: ^3.0.2
-        version: 3.0.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
+        specifier: ^3.0.3
+        version: 3.0.3(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
       ofetch:
         specifier: ^1.4.0
         version: 1.4.0
@@ -2841,17 +2841,33 @@ packages:
   '@unocss/core@0.62.3':
     resolution: {integrity: sha512-Pfyrj8S7jq9K1QXD6Z5BCeiQavaHpbMN5q958/kmdbNGp57hOg1e346fMJAvgPjLBR+lE/hgZEsDrijtRiZXnw==}
 
+  '@unocss/core@0.63.1':
+    resolution: {integrity: sha512-scg53c6vw8cRsX4DbUO+MlTXicA9GWztm6PW0lsisJxXrdbQQCd+J+PIhrxLUExxeNqxTKsL3Msy9bwJU5uUsQ==}
+
   '@unocss/extractor-arbitrary-variants@0.62.3':
     resolution: {integrity: sha512-9ZscWyXEwDZif+b56xZyJFHwJOjdMXmj+6x96jOsnRNBzwT9eW7YcGCErP1ih/q1S6KmuRrHM/JOXMBQ6H4qlw==}
+
+  '@unocss/extractor-arbitrary-variants@0.63.1':
+    resolution: {integrity: sha512-yqHDUgFCR4R2HMuD2k4dVkkdT2uOa/gUDIY6xoseOx1r98Fxlyvdr0UnLOaWsSSzpSGm7SS7XtafGa24IgJRUQ==}
 
   '@unocss/preset-mini@0.62.3':
     resolution: {integrity: sha512-dn/8ubeW2ry/ZF3iKxdQHnS0l3EBibt0rIOE/XVwx24ub6pRzclU4r7xHnXeqvAFOO9PoiKDGgFR92m6R2MxyQ==}
 
+  '@unocss/preset-mini@0.63.1':
+    resolution: {integrity: sha512-8NW3hK5fp+glBI2v1/3utp+Gv0yXoVTX66531BDDXxivsCJBNRTh40TP8hXSbtDne615UGrykIjyadsUHCRK5Q==}
+
   '@unocss/preset-wind@0.62.3':
     resolution: {integrity: sha512-6+VNce1he1U5EXKlXRwTIPn8KeK6bZ2jAEgcCxk8mFy8SzOlLeYzXCI9lcdiWRTjIeIiK5iSaUqmsQFtKdTyQg==}
 
+  '@unocss/preset-wind@0.63.1':
+    resolution: {integrity: sha512-L/Pyz55NC55K2+zJX9b3cC23tMZzh/a2jUUfoiJAHudsSPjAvP/PJ31Nc+27FFMbqZXhGQ50CBq8geq51O4PKQ==}
+
   '@unocss/rule-utils@0.62.3':
     resolution: {integrity: sha512-qI37jHH//XzyR5Y2aN3Kpo4lQrQO+CaiXpqPSwMLYh2bIypc2RQVpqGVtU736x0eA6IIx41XEkKzUW+VtvJvmg==}
+    engines: {node: '>=14'}
+
+  '@unocss/rule-utils@0.63.1':
+    resolution: {integrity: sha512-z7WQ8lKq7p6sS/6Yl1pStcA2WyxxD7H1i86iXa2orWayW8KtrIJbdCXFYEsj3sOkMKLqpG5w65P+103dO2jUhQ==}
     engines: {node: '>=14'}
 
   '@vercel/nft@0.26.5':
@@ -3815,6 +3831,10 @@ packages:
     peerDependencies:
       postcss: ^8.0.9
 
+  css-gradient-parser@0.0.16:
+    resolution: {integrity: sha512-3O5QdqgFRUbXvK1x5INf1YkBz1UKSWqrd63vWsum8MNHDBYD5urm3QtxZbKU259OrEXNM26lP/MPY3d1IGkBgA==}
+    engines: {node: '>=16'}
+
   css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
 
@@ -4396,6 +4416,10 @@ packages:
 
   execa@9.3.1:
     resolution: {integrity: sha512-gdhefCCNy/8tpH/2+ajP9IQc14vXchNdd0weyzSJEFURhRMGncQ+zKFxwjAufIewPEJm9BPOaJnvg2UtlH2gPQ==}
+    engines: {node: ^18.19.0 || >=20.5.0}
+
+  execa@9.4.0:
+    resolution: {integrity: sha512-yKHlle2YGxZE842MERVIplWwNH5VYmqqcPFgtnlU//K8gxuFFXu0pwd/CrfXTumFpeEiufsP7+opT/bPJa1yVw==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   expand-template@2.0.3:
@@ -5954,6 +5978,10 @@ packages:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  npm-run-path@6.0.0:
+    resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
+    engines: {node: '>=18'}
+
   npm@10.8.3:
     resolution: {integrity: sha512-0IQlyAYvVtQ7uOhDFYZCGK8kkut2nh8cpAdA9E6FvRSJaTgtZRZgNjlC5ZCct//L73ygrpY93CxXpRJDtNqPVg==}
     engines: {node: ^18.17.0 || >=20.5.0}
@@ -6047,8 +6075,8 @@ packages:
     resolution: {integrity: sha512-NCogUcfIHGRlXKZ4LTVF4LI25oT0pk1Xl7LF1FmF1iT7dVF8WJUVrUHoHBCzJjSGNFrZFoiRHCOpjFTloNj6sg==}
     engines: {node: '>=18.0.0'}
 
-  nuxt-og-image@3.0.2:
-    resolution: {integrity: sha512-R5JCiVxZwgFUS4JS1M9lAD3QWc9P9CSJj7qupiKxJfBKnRBSpNs9ci5hTbZbrh2FMf1si5qIJZT1VI8cdj9cHA==}
+  nuxt-og-image@3.0.3:
+    resolution: {integrity: sha512-EOeFma9f+oTe7N0CmTkcNgWAQG7sLeblydtg4BlCt1Z37xB1p/8ovoXqSVgUTU7xt2cSkC+QyYx+yrN2kaJbdw==}
     engines: {node: '>=18.0.0'}
 
   nuxt-schema-org@3.4.0:
@@ -6084,6 +6112,11 @@ packages:
 
   nypm@0.3.11:
     resolution: {integrity: sha512-E5GqaAYSnbb6n1qZyik2wjPDZON43FqOJO59+3OkWrnmQtjggrMOVnsyzfjxp/tS6nlYJBA4zRA5jSM2YaadMg==}
+    engines: {node: ^14.16.0 || >=16.10.0}
+    hasBin: true
+
+  nypm@0.3.12:
+    resolution: {integrity: sha512-D3pzNDWIvgA+7IORhD/IuWzEk4uXv6GsgOxiid4UU3h9oq5IqV1KtPDi63n4sZJ/xcWlr88c0QM2RgN5VbOhFA==}
     engines: {node: ^14.16.0 || >=16.10.0}
     hasBin: true
 
@@ -6995,6 +7028,10 @@ packages:
     resolution: {integrity: sha512-abovcqmwl97WKioxpkfuMeZmndB1TuDFY/R+FymrZyiGP+pMYomvgSzVPnbNMWHHESOPosVHGL352oFbdAnJcA==}
     engines: {node: '>=16'}
 
+  satori@0.11.1:
+    resolution: {integrity: sha512-xIfUwWEiGsJPK4T+iALLhop2bNY4Kg/PvElG9aCQFdocBgPBWTTOULDdOBVaGwqqCMNmibXMoGC0uSteNr7kuQ==}
+    engines: {node: '>=16'}
+
   scule@1.3.0:
     resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
 
@@ -7751,6 +7788,10 @@ packages:
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
+    engines: {node: '>=18'}
+
+  unicorn-magic@0.3.0:
+    resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
     engines: {node: '>=18'}
 
   unimport@3.12.0:
@@ -11654,9 +11695,15 @@ snapshots:
 
   '@unocss/core@0.62.3': {}
 
+  '@unocss/core@0.63.1': {}
+
   '@unocss/extractor-arbitrary-variants@0.62.3':
     dependencies:
       '@unocss/core': 0.62.3
+
+  '@unocss/extractor-arbitrary-variants@0.63.1':
+    dependencies:
+      '@unocss/core': 0.63.1
 
   '@unocss/preset-mini@0.62.3':
     dependencies:
@@ -11664,15 +11711,32 @@ snapshots:
       '@unocss/extractor-arbitrary-variants': 0.62.3
       '@unocss/rule-utils': 0.62.3
 
+  '@unocss/preset-mini@0.63.1':
+    dependencies:
+      '@unocss/core': 0.63.1
+      '@unocss/extractor-arbitrary-variants': 0.63.1
+      '@unocss/rule-utils': 0.63.1
+
   '@unocss/preset-wind@0.62.3':
     dependencies:
       '@unocss/core': 0.62.3
       '@unocss/preset-mini': 0.62.3
       '@unocss/rule-utils': 0.62.3
 
+  '@unocss/preset-wind@0.63.1':
+    dependencies:
+      '@unocss/core': 0.63.1
+      '@unocss/preset-mini': 0.63.1
+      '@unocss/rule-utils': 0.63.1
+
   '@unocss/rule-utils@0.62.3':
     dependencies:
       '@unocss/core': 0.62.3
+      magic-string: 0.30.11
+
+  '@unocss/rule-utils@0.63.1':
+    dependencies:
+      '@unocss/core': 0.63.1
       magic-string: 0.30.11
 
   '@vercel/nft@0.26.5':
@@ -12819,6 +12883,8 @@ snapshots:
     dependencies:
       postcss: 8.4.47
 
+  css-gradient-parser@0.0.16: {}
+
   css-select@5.1.0:
     dependencies:
       boolbase: 1.0.0
@@ -13568,6 +13634,21 @@ snapshots:
       is-plain-obj: 4.1.0
       is-stream: 4.0.1
       npm-run-path: 5.3.0
+      pretty-ms: 9.1.0
+      signal-exit: 4.1.0
+      strip-final-newline: 4.0.0
+      yoctocolors: 2.1.1
+
+  execa@9.4.0:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      cross-spawn: 7.0.3
+      figures: 6.1.0
+      get-stream: 9.0.1
+      human-signals: 8.0.0
+      is-plain-obj: 4.1.0
+      is-stream: 4.0.1
+      npm-run-path: 6.0.0
       pretty-ms: 9.1.0
       signal-exit: 4.1.0
       strip-final-newline: 4.0.0
@@ -15244,6 +15325,11 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
+  npm-run-path@6.0.0:
+    dependencies:
+      path-key: 4.0.0
+      unicorn-magic: 0.3.0
+
   npm@10.8.3: {}
 
   npmlog@5.0.1:
@@ -15324,29 +15410,29 @@ snapshots:
       - vue
       - webpack-sources
 
-  nuxt-og-image@3.0.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2)):
+  nuxt-og-image@3.0.3(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2)):
     dependencies:
-      '@nuxt/devtools-kit': 1.4.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))
+      '@nuxt/devtools-kit': 1.5.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
       '@resvg/resvg-js': 2.6.2
       '@resvg/resvg-wasm': 2.6.2
-      '@unocss/core': 0.62.3
-      '@unocss/preset-wind': 0.62.3
+      '@unocss/core': 0.63.1
+      '@unocss/preset-wind': 0.63.1
       chrome-launcher: 1.1.2
       defu: 6.1.4
-      execa: 9.3.1
+      execa: 9.4.0
       image-size: 1.1.1
       magic-string: 0.30.11
       nuxt-site-config: 2.2.18(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.3)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
       nuxt-site-config-kit: 2.2.18(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.10(typescript@5.6.2))
-      nypm: 0.3.11
+      nypm: 0.3.12
       ofetch: 1.4.0
       ohash: 1.1.4
       pathe: 1.1.2
       pkg-types: 1.2.0
       playwright-core: 1.47.2
       radix3: 1.1.2
-      satori: 0.10.14
+      satori: 0.11.1
       satori-html: 0.3.2
       sirv: 2.0.4
       std-env: 3.7.0
@@ -15580,6 +15666,15 @@ snapshots:
       - xml2js
 
   nypm@0.3.11:
+    dependencies:
+      citty: 0.1.6
+      consola: 3.2.3
+      execa: 8.0.1
+      pathe: 1.1.2
+      pkg-types: 1.2.0
+      ufo: 1.5.4
+
+  nypm@0.3.12:
     dependencies:
       citty: 0.1.6
       consola: 3.2.3
@@ -16490,6 +16585,20 @@ snapshots:
       postcss-value-parser: 4.2.0
       yoga-wasm-web: 0.3.3
 
+  satori@0.11.1:
+    dependencies:
+      '@shuding/opentype.js': 1.4.0-beta.0
+      css-background-parser: 0.1.0
+      css-box-shadow: 1.0.0-3
+      css-gradient-parser: 0.0.16
+      css-to-react-native: 3.2.0
+      emoji-regex: 10.4.0
+      escape-html: 1.0.3
+      linebreak: 1.1.0
+      parse-css-color: 0.2.1
+      postcss-value-parser: 4.2.0
+      yoga-wasm-web: 0.3.3
+
   scule@1.3.0: {}
 
   seed-random@2.2.0: {}
@@ -17348,6 +17457,8 @@ snapshots:
       tiny-inflate: 1.0.3
 
   unicorn-magic@0.1.0: {}
+
+  unicorn-magic@0.3.0: {}
 
   unimport@3.12.0(rollup@4.21.3):
     dependencies:
