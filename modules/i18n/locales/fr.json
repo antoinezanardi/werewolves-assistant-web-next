@@ -1644,6 +1644,9 @@
       "submitGroupName": "Valider le nouveau nom du groupe",
       "editGroupName": "Modifier le nom du groupe \"{name}\"",
       "groupName": "Nom du groupe"
+    },
+    "GameTeamSidePlayerGroup": {
+      "playerGroup": "Ce joueur appartient au groupe nommé \"{groupName}\""
     }
   }
 }

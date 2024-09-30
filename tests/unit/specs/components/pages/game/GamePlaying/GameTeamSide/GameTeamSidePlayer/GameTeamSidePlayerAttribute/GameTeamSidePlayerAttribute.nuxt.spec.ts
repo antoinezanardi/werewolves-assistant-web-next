@@ -206,8 +206,8 @@ describe("Game Team Side Player Attribute Component", () => {
       const directives = { ...pTooltipDirectiveBinder(tooltip, "#game-team-side-player-attribute-icon") };
       wrapper = await mountGameTeamSidePlayerAttributeComponent({ global: { directives } });
       const expectedTooltipOptions: TooltipOptions = {
-        value: `<div class="flex flex-col items-center">
-                <img width="75" src="/_ipx/_/svg/game/player/player-attribute/seen.svg" alt="components.GameTeamSidePlayerAttribute.seenBySeer" class="mb-3"/>
+        value: `<div class="flex flex-col items-center gap-2">
+                <img width="75" src="/_ipx/_/svg/game/player/player-attribute/seen.svg" alt="components.GameTeamSidePlayerAttribute.seenBySeer" class="drop-shadow-lg"/>
                 <div class="text-center">components.GameTeamSidePlayerAttribute.seenBySeer</div>
             </div>`,
         fitContent: false,
@@ -229,8 +229,8 @@ describe("Game Team Side Player Attribute Component", () => {
         global: { directives },
       });
       const expectedTooltipOptions: TooltipOptions = {
-        value: `<div class="flex flex-col items-center">
-                <img width="75" src="/_ipx/_/svg/game/player/player-attribute/seen.svg" alt="components.GameTeamSidePlayerAttribute.seenBySeer" class="mb-3"/>
+        value: `<div class="flex flex-col items-center gap-2">
+                <img width="75" src="/_ipx/_/svg/game/player/player-attribute/seen.svg" alt="components.GameTeamSidePlayerAttribute.seenBySeer" class="drop-shadow-lg"/>
                 <div class="text-center">components.GameTeamSidePlayerAttribute.seenBySeer</div>
             </div>`,
         fitContent: false,

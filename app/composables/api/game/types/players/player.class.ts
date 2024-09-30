@@ -27,6 +27,9 @@ class Player {
   @Expose()
   public isAlive: boolean;
 
+  @Expose()
+  public group?: string;
+
   public static create(player: Player): Player {
     return plainToInstance(Player, player, DEFAULT_PLAIN_TO_INSTANCE_OPTIONS);
   }

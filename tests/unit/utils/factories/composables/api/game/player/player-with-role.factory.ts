@@ -234,6 +234,7 @@ function createFakeAlivePlayerWithRole(role: RoleName, player: Partial<Player> =
   return createFakePlayer({
     role: playerRole,
     isAlive: true,
+    group: player.group,
     ...player,
   });
 }

@@ -12,6 +12,12 @@
           :player="player"
         />
 
+        <GameTeamSidePlayerGroup
+          v-if="player.group"
+          id="game-team-side-player-group"
+          :player="player"
+        />
+
         <PrimeVueDivider class="!my-1"/>
 
         <GameTeamSidePlayerRoleName
@@ -64,6 +70,7 @@
 <script lang="ts" setup>
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
+import GameTeamSidePlayerGroup from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerGroup/GameTeamSidePlayerGroup.vue";
 import GameTeamSidePlayerName from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerName/GameTeamSidePlayerName.vue";
 import GameTeamSidePlayerRoleName from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerRoleName/GameTeamSidePlayerRoleName.vue";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";

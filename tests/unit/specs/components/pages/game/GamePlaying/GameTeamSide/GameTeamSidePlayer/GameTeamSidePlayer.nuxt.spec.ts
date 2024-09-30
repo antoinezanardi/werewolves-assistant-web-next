@@ -6,6 +6,7 @@ import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameTeamSidePlayerProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/game-team-side-player.types";
 import GameTeamSidePlayer from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayer.vue";
 import GameTeamSidePlayerAttribute from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerAttribute/GameTeamSidePlayerAttribute.vue";
+import type GameTeamSidePlayerGroup from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerGroup/GameTeamSidePlayerGroup.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { PlayerAttribute } from "~/composables/api/game/types/players/player-attribute/player-attribute.class";
 
@@ -27,6 +28,7 @@ describe("Game Team Side Player Component", () => {
       global: {
         stubs: {
           GameTeamSidePlayerName: true,
+          GameTeamSidePlayerGroup: true,
           GameTeamSidePlayerRoleName: true,
           RoleImage: true,
           GameTeamSidePlayerAttribute: true,
@@ -68,6 +70,22 @@ describe("Game Team Side Player Component", () => {
       const teamSidePlayer = wrapper.find<HTMLDivElement>("#game-team-side-player");
 
       expect(teamSidePlayer.classes()).toStrictEqual<string[]>(["border-2", "border-gray-700", "p-2", "rounded-md", "w-full"]);
+    });
+
+    describe("Player group", () => {
+      it("should not display player group when player doesn't have a group.", () => {
+        const playerGroup = wrapper.findComponent<typeof GameTeamSidePlayerGroup>("#game-team-side-player-group");
+
+        expect(playerGroup.exists()).toBeFalsy();
+      });
+
+      it("should display player group when player has a group.", async() => {
+        const player = createFakeSeerAlivePlayer({ group: "group" });
+        wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
+        const playerGroup = wrapper.findComponent<typeof GameTeamSidePlayerGroup>("#game-team-side-player-group");
+
+        expect(playerGroup.exists()).toBeTruthy();
+      });
     });
 
     describe("Player role image", () => {

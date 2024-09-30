@@ -1644,6 +1644,9 @@
       "submitGroupName": "Submit updated group name",
       "editGroupName": "Edit group name \"{name}\"",
       "groupName": "Group name"
+    },
+    "GameTeamSidePlayerGroup": {
+      "playerGroup": "This player belongs to the group called \"{groupName}\""
     }
   }
 }

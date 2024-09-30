@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Team Side Player Group Component > should match snapshot when rendered. 1`] = `
+"<div id="game-team-side-player-group">
+  <nuxt-img-stub alt="components.GameTeamSidePlayerGroup.playerGroup, {" groupName":"Group 1"}" height="20" src="svg/game/player/player-group/group-1.svg" width="20" preload="false" crossorigin="false" placeholder="svg/misc/infinite-spinner.svg" id="game-team-side-player-group-icon" class="absolute right-2.5 top-2.5" data-pd-tooltip="true"></nuxt-img-stub>
+</div>"
+`;
