@@ -1,4 +1,4 @@
-import Vitest from "eslint-plugin-vitest";
+import Vitest from "@vitest/eslint-plugin";
 
 import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY, MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG } from "../eslint.constants.mjs";
 

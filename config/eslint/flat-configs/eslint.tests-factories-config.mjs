@@ -1,4 +1,4 @@
-import Vitest from "eslint-plugin-vitest";
+import Vitest from "@vitest/eslint-plugin";
 
 import { OFF } from "../eslint.constants.mjs";
 

@@ -15,7 +15,6 @@ const modules = [
   "@nuxtjs/sitemap",
   "@nuxtjs/robots",
   "nuxt-og-image",
-  "nuxt-link-checker",
   "@vite-pwa/nuxt",
   "@nuxt/devtools",
 ];
