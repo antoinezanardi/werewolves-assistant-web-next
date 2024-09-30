@@ -268,6 +268,20 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Actor's additional cards are not set" should be visible
 
+  Scenario: 🃏 User can't start the game if the Prejudiced Manipulator is present but the groups are not valid
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Villager               |
+      | Valentin | Prejudiced Manipulator |
+      | William  | Werewolf               |
+      | Xavier   | Villager               |
+    Then the button with name "Start game" should be disabled
+
+    When the user hovers the button with name "Start game"
+    Then the tooltip with text "The players groups needed for Prejudiced Manipulator are not correctly set (2 groups are needed with at least 2 players in each)" should be visible
+
   #  TODO: To reactivate when option to choose random roles is available
   #  Scenario: 🃏 User starts a game with random composition
   #    Given the user is on game-lobby page
@@ -343,6 +357,22 @@ Feature: 🃏 Game Lobby Page
     When the user sets role "Werewolf" for the player with name "Ulysse" in the lobby
     Then the game additional cards manager button should be hidden in the lobby
 
+  Scenario: 🃏 Player group organizer button is only visible when there are at least 2 players and at least a Prejudiced Manipulator
+    Given the user is on game-lobby page
+    Then the game group organizer button should be hidden in the lobby
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Werewolf               |
+      | Valentin | Villager               |
+      | William  | Prejudiced Manipulator |
+
+    When the user enters the player with name "Benoit" in the lobby
+    Then the game group organizer button should be visible in the lobby
+
+    When the user enters the player with name "Alice" in the lobby
+    Then the game group organizer button should be visible in the lobby
+
   Scenario: 🃏 Toast is displayed if user sets a role for a player which was set in additional cards
     Given the user is on game-lobby page
 
@@ -383,3 +413,19 @@ Feature: 🃏 Game Lobby Page
     And the user clicks on the button with name "Skip and play now"
     Then the user should be on game page with any id
     And the toast with text "Game created" should be visible
+
+  Scenario: 🃏 User starts a game with valid groups for the Prejudiced Manipulator
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Villager               |
+      | Valentin | Prejudiced Manipulator |
+      | William  | Werewolf               |
+      | Xavier   | Villager               |
+    And the user sets the following players in the second group in the lobby
+      | name     |
+      | Valentin |
+      | Xavier   |
+    And the user starts the game in the lobby
+    Then the user should be on game page with any id

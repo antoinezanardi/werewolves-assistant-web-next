@@ -11,20 +11,24 @@ async function enterPlayerInLobby(world: CustomWorld, name: string): Promise<voi
   await addButton.click();
 }
 
-async function openRolePickerForPlayer(world: CustomWorld, name: string): Promise<void> {
+async function openRolePickerForPlayerInLobby(world: CustomWorld, name: string): Promise<void> {
   const buttonName = `Role image of the player ${name}`;
   const player = world.page.getByRole("button", { name: buttonName });
   await player.waitFor({ state: "visible" });
   await player.click();
 }
 
-async function openAdditionalCardsManager(world: CustomWorld): Promise<void> {
+async function openAdditionalCardsManagerInLobby(world: CustomWorld): Promise<void> {
   await clickOnRoleWithText(world, "button", "Additional cards");
+}
+
+async function openGroupOrganizerInLobby(world: CustomWorld): Promise<void> {
+  await clickOnRoleWithText(world, "button", "Group organizer");
 }
 
 async function enterPlayerWithRoleInLobby(world: CustomWorld, name: string, roleName: string): Promise<void> {
   await enterPlayerInLobby(world, name);
-  await openRolePickerForPlayer(world, name);
+  await openRolePickerForPlayerInLobby(world, name);
   await chooseRoleInLobbyRolePicker(world, roleName);
   await clickOnRoleWithText(world, "button", "Pick role for the player", true);
 }
@@ -46,8 +50,9 @@ async function createGameInLobby(world: CustomWorld): Promise<void> {
 
 export {
   enterPlayerInLobby,
-  openRolePickerForPlayer,
-  openAdditionalCardsManager,
+  openRolePickerForPlayerInLobby,
+  openAdditionalCardsManagerInLobby,
+  openGroupOrganizerInLobby,
   enterPlayerWithRoleInLobby,
   generateRandomCompositionInLobby,
   createGameInLobby,

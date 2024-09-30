@@ -8,7 +8,7 @@
   >
     <FontAwesomeIcon
       class="animate__animated animate__heartBeat animate__slow"
-      icon="users"
+      icon="group-arrows-rotate"
     />
 
     <span

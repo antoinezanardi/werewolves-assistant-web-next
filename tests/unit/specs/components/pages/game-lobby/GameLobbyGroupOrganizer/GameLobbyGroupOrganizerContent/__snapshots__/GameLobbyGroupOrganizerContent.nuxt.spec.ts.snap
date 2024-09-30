@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Group Organizer Content Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-group-organizer-content" class="flex flex-col gap-1">
+  <game-lobby-group-organizer-content-header-stub></game-lobby-group-organizer-content-header-stub>
+  <divider-stub class="!my-2"></divider-stub>
+  <game-lobby-group-organizer-group-names-stub></game-lobby-group-organizer-group-names-stub>
+  <game-lobby-group-organizer-pick-list-stub class="h-3/5"></game-lobby-group-organizer-pick-list-stub>
+  <game-lobby-group-organizer-disclaimer-stub class="flex grow items-center justify-center"></game-lobby-group-organizer-disclaimer-stub>
+</div>"
+`;

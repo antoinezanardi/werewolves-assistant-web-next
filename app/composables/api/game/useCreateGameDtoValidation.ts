@@ -1,7 +1,9 @@
-import type { ComputedRef, Ref } from "vue";
 import { storeToRefs } from "pinia";
+import { group as groupByField } from "radash";
+import type { ComputedRef, Ref } from "vue";
 
-import { MIN_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
+import { MIN_PLAYERS_IN_GAME, MIN_PLAYERS_IN_GROUP } from "~/composables/api/game/constants/game.constants";
+import type { CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { useRolesStore } from "~/stores/role/useRolesStore";
@@ -68,20 +70,18 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
 
   const areAdditionalCardsSetForThiefIfPresent = computed<boolean>(() => {
     const isThiefPresent = createGameDto.value.players.some(player => player.role.name === "thief");
-    const areAdditionalCardsSetForThief = createGameDto.value.additionalCards?.some(card => card.recipient === "thief") === true;
-    if (isThiefPresent) {
-      return areAdditionalCardsSetForThief;
+    if (!isThiefPresent) {
+      return true;
     }
-    return true;
+    return createGameDto.value.additionalCards?.some(card => card.recipient === "thief") === true;
   });
 
   const areAdditionalCardsSetForActorIfPresent = computed<boolean>(() => {
     const isActorPresent = createGameDto.value.players.some(player => player.role.name === "actor");
-    const areAdditionalCardsSetForActor = createGameDto.value.additionalCards?.some(card => card.recipient === "actor") === true;
-    if (isActorPresent) {
-      return areAdditionalCardsSetForActor;
+    if (!isActorPresent) {
+      return true;
     }
-    return true;
+    return createGameDto.value.additionalCards?.some(card => card.recipient === "actor") === true;
   });
 
   const areAdditionalCardsSetForAdditionalCardsDependantRoles = computed<boolean>(() => areAdditionalCardsSetForActorIfPresent.value &&
@@ -89,11 +89,15 @@ function useCreateGameDtoValidation(createGameDto: Ref<CreateGameDto>): UseCreat
 
   const arePlayerGroupsSetForPrejudicedManipulatorIfPresent = computed<boolean>(() => {
     const isPrejudicedManipulatorPresent = createGameDto.value.players.some(player => player.role.name === "prejudiced-manipulator");
-    const arePlayerGroupsSet = createGameDto.value.players.every(player => player.group);
-    if (isPrejudicedManipulatorPresent) {
-      return arePlayerGroupsSet;
+    if (!isPrejudicedManipulatorPresent) {
+      return true;
     }
-    return true;
+    const minimumGroups = 2;
+    const playersWithGroup = createGameDto.value.players.filter(player => player.group !== undefined) as CreateGamePlayerWithGroupDto[];
+    const groups = groupByField(playersWithGroup, player => player.group) as Record<string, CreateGamePlayerWithGroupDto[]>;
+    const areAllGroupsMinimumPlayersReached = Object.values(groups).every(group => group.length >= MIN_PLAYERS_IN_GROUP);
+
+    return Object.keys(groups).length >= minimumGroups && areAllGroupsMinimumPlayersReached;
   });
 
   const canCreateGame = computed<boolean>(() => isMinimumPlayersReached.value &&

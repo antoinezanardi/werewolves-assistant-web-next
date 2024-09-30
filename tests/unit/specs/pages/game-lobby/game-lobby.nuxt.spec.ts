@@ -61,6 +61,9 @@ describe("Game Lobby Page", () => {
       gameLobbyAdditionalCardsManager: {
         open: Mock;
       };
+      gameLobbyGroupOrganizer: {
+        open: Mock;
+      };
     };
   };
 
@@ -76,6 +79,7 @@ describe("Game Lobby Page", () => {
         gameLobbyOptionsHub: { open: vi.fn() },
         gameLobbyPositionCoordinator: { open: vi.fn() },
         gameLobbyAdditionalCardsManager: { open: vi.fn() },
+        gameLobbyGroupOrganizer: { open: vi.fn() },
       },
     };
 
@@ -101,6 +105,10 @@ describe("Game Lobby Page", () => {
           GameLobbyAdditionalCardsManager: {
             template: "<div id='game-lobby-additional-cards-manager-stub'></div>",
             methods: mocks.components.gameLobbyAdditionalCardsManager,
+          },
+          GameLobbyGroupOrganizer: {
+            template: "<div id='game-lobby-group-organizer-stub'></div>",
+            methods: mocks.components.gameLobbyGroupOrganizer,
           },
         },
       },
@@ -256,6 +264,25 @@ describe("Game Lobby Page", () => {
       await getError(() => (gameLobbyHeader.vm as VueVm).$emit("additional-cards-manager-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Additional Cards Manager is not defined");
+    });
+  });
+
+  describe("Game Lobby Group Organizer", () => {
+    it("should open game lobby group organizer when game lobby players party emits group organizer button click event.", async() => {
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      (gameLobbyHeader.vm as VueVm).$emit("group-organizer-button-click");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyGroupOrganizer.open).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw error when game lobby header emits group organizer button click event but the group organizer is not found in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyGroupOrganizer: Ref }).gameLobbyGroupOrganizer.value = null;
+      const gameLobbyHeader = wrapper.findComponent<typeof GameLobbyHeader>("#game-lobby-header");
+      await getError(() => (gameLobbyHeader.vm as VueVm).$emit("group-organizer-button-click"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Group Organizer is not defined");
     });
   });
 

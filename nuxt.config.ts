@@ -75,7 +75,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
     renderJsonPayloads: false,
-    buildCache: false,
+    buildCache: true,
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "test",
@@ -151,9 +151,11 @@ export default defineNuxtConfig({
         "InputGroup",
         "InputText",
         "InputNumber",
+        "Inplace",
         "FloatLabel",
         "AutoComplete",
         "MultiSelect",
+        "PickList",
         "ScrollTop",
         "Slider",
         "Toast",
