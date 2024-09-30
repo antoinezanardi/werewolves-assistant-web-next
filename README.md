@@ -530,6 +530,10 @@ pnpm run test:cucumber:shard-1
 pnpm run test:cucumber:shard-2
 pnpm run test:cucumber:shard-3
 pnpm run test:cucumber:shard-4
+pnpm run test:cucumber:shard-5
+pnpm run test:cucumber:shard-6
+pnpm run test:cucumber:shard-7
+pnpm run test:cucumber:shard-8
 
 # Run e2e acceptance tests without screenshots comparison and generate a HTML report
 pnpm run test:cucumber:skip-screenshots-comparison

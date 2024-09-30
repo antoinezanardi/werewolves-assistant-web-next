@@ -1,5 +1,5 @@
 @actor-role
-@shard-2
+@shard-6
 Feature: 🎭 Actor role
 
   Scenario: 🎭 Actor can incarnate the role he chooses from his additional cards or skip
