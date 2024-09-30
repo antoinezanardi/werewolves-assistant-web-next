@@ -289,8 +289,8 @@ importers:
         specifier: ^3.4.13
         version: 3.4.13
       ts-case-convert:
-        specifier: ^2.0.7
-        version: 2.0.7
+        specifier: ^2.1.0
+        version: 2.1.0
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
@@ -7595,8 +7595,8 @@ packages:
     peerDependencies:
       typescript: '>=4.2.0'
 
-  ts-case-convert@2.0.7:
-    resolution: {integrity: sha512-Kqj8wrkuduWsKUOUNRczrkdHCDt4ZNNd6HKjVw42EnMIGHQUABS4pqfy0acETVLwUTppc1fzo/yi11+uMTaqzw==}
+  ts-case-convert@2.1.0:
+    resolution: {integrity: sha512-Ye79el/pHYXfoew6kqhMwCoxp4NWjKNcm2kBzpmEMIU9dd9aBmHNNFtZ+WTm0rz1ngyDmfqDXDlyUnBXayiD0w==}
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
@@ -17191,7 +17191,7 @@ snapshots:
     dependencies:
       typescript: 5.6.2
 
-  ts-case-convert@2.0.7: {}
+  ts-case-convert@2.1.0: {}
 
   ts-interface-checker@0.1.13: {}
 
