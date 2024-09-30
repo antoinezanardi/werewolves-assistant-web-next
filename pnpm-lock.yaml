@@ -232,8 +232,8 @@ importers:
         specifier: ^3.13.1
         version: 3.13.1(@parcel/watcher@2.4.1)(@types/node@22.5.5)(eslint@9.11.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.21.3)(sass@1.79.4)(terser@5.32.0)(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue-tsc@2.1.6(typescript@5.6.2))
       nuxt-link-checker:
-        specifier: ^3.1.1
-        version: 3.1.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
+        specifier: ^3.1.2
+        version: 3.1.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
       nuxt-og-image:
         specifier: ^3.0.4
         version: 3.0.4(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
@@ -4025,10 +4025,6 @@ packages:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
 
-  diff@5.2.0:
-    resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
-    engines: {node: '>=0.3.1'}
-
   diff@7.0.0:
     resolution: {integrity: sha512-PJWHUb1RFevKCwaFA9RlG5tCd+FO5iRh9A8HEtkmBH2Li03iJriB6m6JIN4rGz3K3JLawI7/veA1xzRKP6ISBw==}
     engines: {node: '>=0.3.1'}
@@ -6012,9 +6008,6 @@ packages:
     engines: {node: ^16.10.0 || >=18.0.0}
     hasBin: true
 
-  nuxt-link-checker@3.1.1:
-    resolution: {integrity: sha512-rtIgU/u2P6NeQuX64iKiKuhgtQ6Kiia8tJpMJKY0B+DRrsmkHySGDslbI6YUr9evJXKUAoQWOlXMY2eCfI6Jsg==}
-
   nuxt-link-checker@3.1.2:
     resolution: {integrity: sha512-Uvs1l257h9e4CFxzSHjoVKYvtaWJWfpD1bdMLQxFKJ32W6MkkdK2n2yAL47pmink7NOf5YsHPLFDS3m7R8l45w==}
 
@@ -6028,14 +6021,8 @@ packages:
   nuxt-seo-experiments@4.0.1:
     resolution: {integrity: sha512-L60bkTFwfW+pQcxkCRhoW20c9+qiJiYgDKTWFDT58cS68M8vm76+H28UCMrmWRe3i3r2oDqQEAjR0QUiDVQgNg==}
 
-  nuxt-site-config-kit@2.2.16:
-    resolution: {integrity: sha512-a20pWLbyw8yIOoikCi7O2QGnynQqTS/SnGCY9Z0mxujif/KyLsq+GkNVlb5S5G7yHJN8SeBfPPuRisdhRSx4oA==}
-
   nuxt-site-config-kit@2.2.18:
     resolution: {integrity: sha512-iPtf2X1fvI9m9VV04edSqNGC2EzQ1aLB7F2/AOxYRktCJxHeTdBGifuNPc90EaEIOfWx+gf3lmRd4EppGoAMSA==}
-
-  nuxt-site-config@2.2.16:
-    resolution: {integrity: sha512-hMRIMPxdYcXXO8MQsSJrwwseYJfoKMUZxCVYFl+j2o98erbzULYdptupcQRSEPZ6Sor/5nIj1RsYq1rppeyODg==}
 
   nuxt-site-config@2.2.18:
     resolution: {integrity: sha512-NU39ANP1kvRBzpEWV496y/lf9PKVv3t1VKX3zmQ1POcbzAXU4gm0Mh5NKOaLEcoXj6bQnziFNqjzHX3DAA8Aog==}
@@ -7108,11 +7095,6 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
-
-  site-config-stack@2.2.16:
-    resolution: {integrity: sha512-XO75wTVnbaMvu2B2WOu2RcEyPHbODICWxDA3qEllbK+92VDHzYw/83TBnCvpVpFaYEQKySSrLZ7rzkhOxrshDA==}
-    peerDependencies:
-      vue: ^3
 
   site-config-stack@2.2.18:
     resolution: {integrity: sha512-kwyuCwYZBJikuLN3IB15cGT7SHQQxAitLaDs1b6eNZbb+tBHubVUhj0pnFZnZZi4+5eNCO+3HiZxaU3qpFxP2A==}
@@ -12954,8 +12936,6 @@ snapshots:
 
   diff@4.0.2: {}
 
-  diff@5.2.0: {}
-
   diff@7.0.0: {}
 
   dir-glob@3.0.1:
@@ -15166,33 +15146,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  nuxt-link-checker@3.1.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2)):
-    dependencies:
-      '@nuxt/devtools-kit': 1.4.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
-      '@vueuse/core': 11.1.0(vue@3.5.10(typescript@5.6.2))
-      chalk: 5.3.0
-      cheerio: 1.0.0
-      diff: 5.2.0
-      fuse.js: 7.0.0
-      magic-string: 0.30.11
-      nuxt-site-config: 2.2.16(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2))
-      nuxt-site-config-kit: 2.2.16(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.10(typescript@5.6.2))
-      pathe: 1.1.2
-      pkg-types: 1.2.0
-      radix3: 1.1.2
-      sirv: 2.0.4
-      site-config-stack: 2.2.18(vue@3.5.10(typescript@5.6.2))
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - magicast
-      - rollup
-      - supports-color
-      - vite
-      - vue
-      - webpack-sources
-
   nuxt-link-checker@3.1.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2)):
     dependencies:
       '@nuxt/devtools-kit': 1.5.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))
@@ -15296,21 +15249,6 @@ snapshots:
       - vue
       - webpack-sources
 
-  nuxt-site-config-kit@2.2.16(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.10(typescript@5.6.2)):
-    dependencies:
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
-      '@nuxt/schema': 3.13.2(rollup@4.21.3)
-      pkg-types: 1.2.0
-      site-config-stack: 2.2.16(vue@3.5.10(typescript@5.6.2))
-      std-env: 3.7.0
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vue
-      - webpack-sources
-
   nuxt-site-config-kit@2.2.18(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.10(typescript@5.6.2)):
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
@@ -15323,25 +15261,6 @@ snapshots:
       - magicast
       - rollup
       - supports-color
-      - vue
-      - webpack-sources
-
-  nuxt-site-config@2.2.16(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))(vue@3.5.10(typescript@5.6.2)):
-    dependencies:
-      '@nuxt/devtools-kit': 1.5.1(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.79.4)(terser@5.32.0))
-      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
-      '@nuxt/schema': 3.13.2(rollup@4.21.3)
-      nuxt-site-config-kit: 2.2.16(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.10(typescript@5.6.2))
-      pathe: 1.1.2
-      pkg-types: 1.2.0
-      sirv: 2.0.4
-      site-config-stack: 2.2.16(vue@3.5.10(typescript@5.6.2))
-      ufo: 1.5.4
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-      - vite
       - vue
       - webpack-sources
 
@@ -16592,11 +16511,6 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
-
-  site-config-stack@2.2.16(vue@3.5.10(typescript@5.6.2)):
-    dependencies:
-      ufo: 1.5.4
-      vue: 3.5.10(typescript@5.6.2)
 
   site-config-stack@2.2.18(vue@3.5.10(typescript@5.6.2)):
     dependencies:
