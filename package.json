@@ -100,7 +100,7 @@
     "@nuxtjs/sitemap": "^6.1.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.4",
-    "@pinia/testing": "^0.1.5",
+    "@pinia/testing": "^0.1.6",
     "@playwright/test": "^1.47.2",
     "@primevue/nuxt-module": "^4.0.7",
     "@semantic-release/changelog": "^6.0.3",
