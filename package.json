@@ -99,7 +99,7 @@
     "@nuxtjs/seo": "^2.0.0-rc.23",
     "@nuxtjs/sitemap": "^6.1.1",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@pinia/nuxt": "^0.5.4",
+    "@pinia/nuxt": "^0.5.5",
     "@pinia/testing": "^0.1.6",
     "@playwright/test": "^1.47.2",
     "@primevue/nuxt-module": "^4.0.7",
