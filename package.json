@@ -142,7 +142,6 @@
     "lint-staged": "^15.2.10",
     "msw": "^2.4.9",
     "nuxt": "^3.13.1",
-    "nuxt-link-checker": "^3.1.1",
     "nuxt-og-image": "^3.0.4",
     "ofetch": "^1.4.0",
     "pinia": "^2.2.2",
