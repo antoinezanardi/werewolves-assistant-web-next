@@ -1,5 +1,5 @@
 @bear-tamer-role
-@shard-3
+@shard-8
 Feature: 🐻 Bear Tamer role
 
   Scenario: 🐻 Bear growls only if there is a werewolf right next to its tamer

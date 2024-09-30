@@ -13,8 +13,8 @@ if [ ! -d "$DIR" ]; then
 fi
 
 for file in $(find "$DIR" -type f -name "*.feature"); do
-  if ! grep -q -E "@shard-(1|2|3|4)" "$file"; then
-    echo "❌Error: File $file does not contain a shard tag. Please specify either @shard-1, @shard-2, @shard-3, or @shard-4 at the beginning of the file."
+  if ! grep -q -E "@shard-(1|2|3|4|5|6|7|8)" "$file"; then
+    echo "❌Error: File $file does not contain a shard tag. Please specify either @shard-1, @shard-2, @shard-3, @shard-4, @shard-5, @shard-6, @shard-7 or @shard-8 at the beginning of the file."
     exit 1
   fi
 done

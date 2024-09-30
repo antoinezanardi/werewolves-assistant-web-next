@@ -1,5 +1,5 @@
 @accursed-wolf-father-role
-@shard-4
+@shard-8
 Feature: 🐺 Accursed Wolf-Father role
 
   Scenario: 🐺 Accursed Wolf-Father can infect a victim of Werewolves or skip

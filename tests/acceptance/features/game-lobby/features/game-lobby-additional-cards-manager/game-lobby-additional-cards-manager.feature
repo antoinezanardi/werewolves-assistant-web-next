@@ -1,5 +1,5 @@
 @game-lobby-additional-cards-manager
-@shard-2
+@shard-7
 Feature: 🃏🃏🃏 Game Lobby Additional Cards Manager
 
   Scenario: 🃏🃏🃏 Additional Cards Manager is displayed when user clicks on button in lobby

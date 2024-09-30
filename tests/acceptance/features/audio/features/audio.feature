@@ -1,5 +1,5 @@
 @audio
-@shard-3
+@shard-6
 Feature: 🔊 Audio
 
   Scenario: 🔊 Audio is playing by default in game and can be disabled

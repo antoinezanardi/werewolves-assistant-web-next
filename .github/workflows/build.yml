@@ -206,7 +206,7 @@ jobs:
       - install
     strategy:
       matrix:
-        shard: [ shard-1, shard-2, shard-3, shard-4 ]
+        shard: [ shard-1, shard-2, shard-3, shard-4, shard-5, shard-6, shard-7, shard-8 ]
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4

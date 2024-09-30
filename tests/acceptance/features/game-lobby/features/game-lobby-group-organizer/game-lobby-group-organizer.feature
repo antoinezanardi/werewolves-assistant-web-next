@@ -1,5 +1,5 @@
 @game-lobby-group-organizer
-@shard-4
+@shard-6
 Feature: 🤝️ Game Lobby Group Organizer
 
   Scenario: 🤝️ Game Lobby Group Organizer is displayed when user clicks on button in lobby
