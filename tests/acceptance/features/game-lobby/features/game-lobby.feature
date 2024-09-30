@@ -268,7 +268,7 @@ Feature: 🃏 Game Lobby Page
     When the user hovers the button with name "Start game"
     Then the tooltip with text "The Actor's additional cards are not set" should be visible
 
-  Scenario: 🃏 User can't start the game if the prejudiced manipulator is present but the groups are not valid
+  Scenario: 🃏 User can't start the game if the Prejudiced Manipulator is present but the groups are not valid
     Given the user is on game-lobby page
 
     When the user enters the players with name and role in the lobby
@@ -414,7 +414,7 @@ Feature: 🃏 Game Lobby Page
     Then the user should be on game page with any id
     And the toast with text "Game created" should be visible
 
-  Scenario: 🃏 User starts a game with valid groups for Prejudiced Manipulator
+  Scenario: 🃏 User starts a game with valid groups for the Prejudiced Manipulator
     Given the user is on game-lobby page
 
     When the user enters the players with name and role in the lobby

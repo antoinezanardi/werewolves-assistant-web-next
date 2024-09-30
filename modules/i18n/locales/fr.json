@@ -1631,11 +1631,19 @@
       "placePlayersInGroups": "Placez les joueurs dans les groupes pour jouer avec l'Abominable Sectaire",
       "youCanRenameGroups": "Vous pouvez renommer les groupes en cliquant sur leur nom."
     },
+    "GameLobbyGroupOrganizerPickList": {
+      "pickPlayer": "Choisir le joueur avec comme nom \"{name}\""
+    },
     "GameLobbyGroupOrganizerDisclaimer": {
       "notEnoughPlayers": "Pas assez de joueurs pour remplir les groupes. Veuillez ajouter plus de joueurs à la partie",
       "fillFirstGroup": "Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueur du deuxième groupe | Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueurs du deuxième groupe",
       "fillSecondGroup": "Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueur du premier groupe | Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueurs du premier groupe",
       "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Manipulateur Préjudiciable"
+    },
+     "GameLobbyGroupOrganizerGroupNameInput": {
+      "submitGroupName": "Valider le nouveau nom du groupe",
+      "editGroupName": "Modifier le nom du groupe \"{name}\"",
+      "groupName": "Nom du groupe"
     }
   }
 }

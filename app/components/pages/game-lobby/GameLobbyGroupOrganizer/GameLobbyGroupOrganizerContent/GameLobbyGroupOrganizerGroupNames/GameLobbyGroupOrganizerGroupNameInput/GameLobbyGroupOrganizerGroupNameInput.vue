@@ -2,7 +2,10 @@
   <div id="game-lobby-group-organizer-group-name-input">
     <PrimeVueInplace>
       <template #display>
-        <h5 id="group-name">
+        <h5
+          id="group-name"
+          :aria-label="buttonAriaLabel"
+        >
           <FontAwesomeIcon
             class="me-2 text-info"
             icon="edit"
@@ -19,6 +22,7 @@
           <PrimeVueInputText
             id="group-name-input"
             v-model="localGroupName"
+            :aria-label="$t('components.GameLobbyGroupOrganizerGroupNameInput.groupName')"
             autofocus
             :invalid="isButtonDisabled"
             :maxlength="30"
@@ -26,6 +30,7 @@
 
           <PrimeVueButton
             id="submit-group-name-button"
+            :aria-label="$t('components.GameLobbyGroupOrganizerGroupNameInput.submitGroupName')"
             :disabled="isButtonDisabled"
             severity="success"
             @click="setGroupName(closeCallback)"
@@ -48,13 +53,17 @@ const props = defineProps<GameLobbyGroupOrganizerGroupNameInputProps>();
 
 const emit = defineEmits<GameLobbyGroupOrganizerGroupNameInputEmits>();
 
+const { t } = useI18n();
+
 const { groupName, otherGroupName } = toRefs(props);
 
 const localGroupName = ref<string>(unref(groupName));
 
 const trimmedLocalGroupName = computed<string>(() => localGroupName.value.trim());
 
-const isButtonDisabled = computed<boolean>(() => !localGroupName.value || otherGroupName.value === trimmedLocalGroupName.value);
+const isButtonDisabled = computed<boolean>(() => !trimmedLocalGroupName.value || otherGroupName.value === trimmedLocalGroupName.value);
+
+const buttonAriaLabel = computed<string>(() => t("components.GameLobbyGroupOrganizerGroupNameInput.editGroupName", { name: trimmedLocalGroupName.value }));
 
 function setGroupName(closeCallback: () => void): void {
   localGroupName.value = trimmedLocalGroupName.value;

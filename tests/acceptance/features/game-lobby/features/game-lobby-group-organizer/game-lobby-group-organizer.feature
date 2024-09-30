@@ -63,3 +63,52 @@ Feature: 🤝️ Game Lobby Group Organizer
       | name    |
       | Antoine |
     Then the heading with name "All groups are filled up and ready to play with Prejudiced Manipulator" should be visible
+
+  Scenario: 🤝️ User can edit both group names in Game Lobby Group Organizer
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Werewolf               |
+      | Valentin | Villager               |
+      | William  | Prejudiced Manipulator |
+      | Xavier   | Villager               |
+    And the user clicks on the group organizer button in the lobby
+    Then the heading with name "Place players in groups below to play with the Prejudiced Manipulator" should be visible
+
+    When the user edits the group name from "Group 1" to "Boys" in group organizer
+    And the user edits the group name from "Group 2" to "Girls" in group organizer
+    Then the button with exact name "Edit group name "Boys"" should be visible
+    And the button with exact name "Edit group name "Girls"" should be visible
+
+  Scenario: 🤝️ User can't edit a group name if name is empty in Game Lobby Group Organizer
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Werewolf               |
+      | Valentin | Villager               |
+      | William  | Prejudiced Manipulator |
+      | Xavier   | Villager               |
+    And the user clicks on the group organizer button in the lobby
+    Then the heading with name "Place players in groups below to play with the Prejudiced Manipulator" should be visible
+
+    When the user clicks on the button with exact name "Edit group name "Group 1""
+    And the user types "    " in the input with exact label "Group name"
+    Then the button with name "Submit updated group name" should be disabled
+
+  Scenario: 🤝️ User can't edit a group name if name is the same as the other one in Game Lobby Group Organizer
+    Given the user is on game-lobby page
+
+    When the user enters the players with name and role in the lobby
+      | name     | role                   |
+      | Ulysse   | Werewolf               |
+      | Valentin | Villager               |
+      | William  | Prejudiced Manipulator |
+      | Xavier   | Villager               |
+    And the user clicks on the group organizer button in the lobby
+    Then the heading with name "Place players in groups below to play with the Prejudiced Manipulator" should be visible
+
+    When the user clicks on the button with exact name "Edit group name "Group 1""
+    And the user types "Group 2" in the input with exact label "Group name"
+    Then the button with name "Submit updated group name" should be disabled
