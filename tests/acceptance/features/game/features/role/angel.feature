@@ -1,5 +1,5 @@
 @angel-role
-@shard-2
+@shard-6
 Feature: 👼 Angel role
 
   Scenario: 👼 Angel wins if he dies from the votes during the twilight
