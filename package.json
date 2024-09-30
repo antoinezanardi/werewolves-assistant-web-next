@@ -131,7 +131,7 @@
     "eslint": "^9.11.1",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.30.0",
-    "@vitest/eslint-plugin": "^1.0.1",
+    "@vitest/eslint-plugin": "^1.1.4",
     "eslint-plugin-vue": "^9.28.0",
     "fuse.js": "^7.0.0",
     "happy-dom": "^14.12.3",
