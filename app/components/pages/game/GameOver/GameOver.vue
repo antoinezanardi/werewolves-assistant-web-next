@@ -51,7 +51,7 @@ const victoryTypesSoundEffectName: Record<GameVictoryType, SoundEffectName> = {
   "lovers": "heartbeat",
   "none": "death",
   "pied-piper": "flute-and-drums",
-  "prejudiced-manipulator": "possessed-laugh",
+  "prejudiced-manipulator": "evil-laugh-2",
   "villagers": "crowd-cheering",
   "werewolves": "werewolf-howling",
   "white-werewolf": "werewolf-transformation",
