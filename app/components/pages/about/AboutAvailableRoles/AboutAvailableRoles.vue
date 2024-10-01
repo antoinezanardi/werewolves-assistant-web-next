@@ -40,6 +40,22 @@
           class="w-full"
           multiple
         >
+          <template
+            #expandicon
+          >
+            <FontAwesomeIcon
+              icon="plus"
+            />
+          </template>
+
+          <template
+            #collapseicon
+          >
+            <FontAwesomeIcon
+              icon="minus"
+            />
+          </template>
+
           <PrimeVueAccordionPanel
             v-for="role in roles"
             :key="role.name"
@@ -72,6 +88,7 @@
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 
 import AboutAvailableRoleDescription from "~/components/pages/about/AboutAvailableRoles/AboutAvailableRoleDescription/AboutAvailableRoleDescription.vue";
