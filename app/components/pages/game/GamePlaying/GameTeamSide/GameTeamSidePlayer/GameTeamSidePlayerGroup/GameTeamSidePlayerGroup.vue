@@ -36,16 +36,14 @@ const playerGroupSvgPath = computed<string>(() => {
 
 const playerGroupDescription = computed<string>(() => t(`components.GameTeamSidePlayerGroup.playerGroup`, { groupName: props.player.group }));
 
-const playerGroupTooltipOptions = computed<TooltipOptions>(() => {
-  const imgUrl = img(playerGroupSvgPath.value);
+const playerGroupImgUrl = computed(() => img(playerGroupSvgPath.value));
 
-  return {
-    value: `<div class="flex flex-col items-center gap-2">
-                <img width="75" class="drop-shadow-xl" src="${imgUrl}" alt="${playerGroupDescription.value}"/>
+const playerGroupTooltipOptions = computed<TooltipOptions>(() => ({
+  value: `<div class="flex flex-col items-center gap-2">
+                <img width="75" class="drop-shadow-xl" src="${playerGroupImgUrl.value}" alt="${playerGroupDescription.value}"/>
                 <div class="text-center">${playerGroupDescription.value}</div>
             </div>`,
-    fitContent: false,
-    escape: false,
-  };
-});
+  fitContent: false,
+  escape: false,
+}));
 </script>
