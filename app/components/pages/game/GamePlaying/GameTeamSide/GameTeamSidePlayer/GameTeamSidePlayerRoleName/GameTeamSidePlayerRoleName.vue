@@ -13,7 +13,8 @@
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerRoleIsRevealed')"
         height="20"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-20 h-20"
         src="svg/game/player/player-attribute/seen.svg"
         width="20"
       />
@@ -24,7 +25,8 @@
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasThief')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasThief')"
         height="20"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-20 h-20"
         src="svg/role/thief.svg"
         width="20"
       />
@@ -35,7 +37,8 @@
         v-p-tooltip="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
         :alt="$t('components.GameTeamSidePlayerRoleName.thisPlayerWasActor')"
         height="20"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-20 h-20"
         src="svg/role/actor.svg"
         width="20"
       />

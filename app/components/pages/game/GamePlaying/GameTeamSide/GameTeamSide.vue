@@ -7,7 +7,8 @@
       <NuxtImg
         :alt="$t(`components.GameTeamSide.sideAltText.${props.side}`)"
         height="50"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-50 h-50"
         :src="sideSvgIconPath"
         width="50"
       />

@@ -16,7 +16,8 @@
         id="devoted-servant-stolen-role-tag-icon"
         :alt="$t('components.GameOverHistoryRecordDecisionBuriedPlayer.stolenRoleByDevotedServantIcon')"
         height="25"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-25 h-25"
         src="/svg/game/player/player-attribute/stolen-role.svg"
         width="25"
       />

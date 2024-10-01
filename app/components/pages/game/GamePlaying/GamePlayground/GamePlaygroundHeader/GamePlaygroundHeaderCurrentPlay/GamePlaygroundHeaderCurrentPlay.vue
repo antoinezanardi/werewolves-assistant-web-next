@@ -8,7 +8,8 @@
         v-if="currentPlaySvgAndTextKey"
         :alt="$t(`components.GamePlaygroundHeaderCurrentPlay.currentPlayAltText`)"
         height="50"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-50 h-50"
         :src="currentPlaySvgAndTextKey.svgPath"
         width="50"
       />

@@ -3,7 +3,7 @@
 exports[`Game Playground Header Current Play Component > should match snapshot when rendered. 1`] = `
 "<div id="game-playground-header-current-play" class="flex gap-2 items-center justify-center">
   <div class="flex justify-end w-2/12">
-    <nuxt-img-stub alt="Current play icon" height="50" src="/svg/game/player/player-attribute/sheriff.svg" width="50" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
+    <nuxt-img-stub alt="Current play icon" height="50" placeholderclass="w-50 h-50" src="/svg/game/player/player-attribute/sheriff.svg" width="50" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg"></nuxt-img-stub>
   </div>
   <h2 id="current-play-text" class="!text-base md:!text-2xl text-center">components.GamePlaygroundHeaderCurrentPlay.sheriffDelegates</h2>
   <div class="w-2/12"></div>

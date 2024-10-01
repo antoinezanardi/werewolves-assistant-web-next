@@ -21,7 +21,8 @@
         <NuxtImg
           :alt="$t('components.WitchUsePotionsTabView.lifePotionImageAlt')"
           height="40"
-          placeholder="/svg/misc/infinite-spinner.svg"
+          placeholder="/svg/misc/ripples.svg"
+          placeholder-class="w-40 h-40"
           src="svg/game/player/player-attribute/drank-life-potion.svg"
           width="40"
         />
@@ -40,7 +41,8 @@
         <NuxtImg
           :alt="$t('components.WitchUsePotionsTabView.deathPotionImageAlt')"
           height="40"
-          placeholder="/svg/misc/infinite-spinner.svg"
+          placeholder="/svg/misc/ripples.svg"
+          placeholder-class="w-40 h-40"
           src="svg/game/player/player-attribute/drank-death-potion.svg"
           width="40"
         />

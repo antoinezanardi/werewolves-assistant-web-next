@@ -10,7 +10,8 @@
     <NuxtImg
       :alt="$t(`components.GameTeamSide.sideAltText.${props.gameHistoryRecord.play.chosenSide}`)"
       height="75"
-      placeholder="/svg/misc/infinite-spinner.svg"
+      placeholder="/svg/misc/ripples.svg"
+      placeholder-class="w-75 h-75"
       :src="chosenSideSvgIconPath"
       width="75"
     />

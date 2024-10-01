@@ -7,7 +7,8 @@
       <NuxtImg
         :alt="$t(`components.GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced.actorIcon`)"
         :height="svgSize"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        :placeholder-class="`w-[${svgSize}] h-[${svgSize}]`"
         src="/svg/role/actor.svg"
         :width="svgSize"
       />
