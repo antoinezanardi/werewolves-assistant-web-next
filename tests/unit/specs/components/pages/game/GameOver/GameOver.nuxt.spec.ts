@@ -135,7 +135,7 @@ describe("Game Over Component", () => {
       },
       {
         test: "should play possessed laugh sound effect when prejudiced manipulator wins.",
-        expectedSoundEffect: "possessed-laugh",
+        expectedSoundEffect: "evil-laugh-2",
         game: createFakeGame({ victory: createFakeGameVictory({ type: "prejudiced-manipulator" }) }),
       },
       {

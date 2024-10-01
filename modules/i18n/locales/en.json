@@ -944,8 +944,8 @@
       "everybodyMurderedEachOther": "Everybody murdered each other. A deadly silence reigns in the village…",
       "piedPiperWins": "The Pied Piper wins by himself!",
       "piedPiperHasControl": "The Pied Piper managed to charm all the living players. He wins alone and has control over the village.",
-      "prejudicedManipulatorWins": "The Prejudiced Manipulator wins with his group!",
-      "prejudicedManipulatorGroupRemainsAlive": "All of the players from the group The Prejudiced Manipulator hates are dead. He wins with his own group while laughing.",
+      "prejudicedManipulatorWins": "The Prejudiced Manipulator wins by himself!",
+      "prejudicedManipulatorGroupRemainsAlive": "All of the players from the group The Prejudiced Manipulator hates are dead. He wins by himself while laughing.",
       "villagersWin": "The Villagers win!",
       "villagersHaveSurvivedWerewolves": "All of the Werewolves are dead. The village is safe at last.",
       "werewolvesWin": "The Werewolves win!",
@@ -1644,6 +1644,9 @@
       "submitGroupName": "Submit updated group name",
       "editGroupName": "Edit group name \"{name}\"",
       "groupName": "Group name"
+    },
+    "GameTeamSidePlayerGroup": {
+      "playerGroup": "This player belongs to the group called \"{groupName}\""
     }
   }
 }

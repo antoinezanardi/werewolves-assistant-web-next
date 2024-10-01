@@ -944,8 +944,8 @@
       "everybodyMurderedEachOther": "Tout le monde s'est entretué. Un silence mortel règne dans le village…",
       "piedPiperWins": "Le Joueur de Flûte gagne seul !",
       "piedPiperHasControl": "Le Joueur de Flûte a réussi à charmer tous les joueurs vivants. Il gagne seul et a le contrôle sur tout le village.",
-      "prejudicedManipulatorWins": "L'Abominable Sectaire gagne avec son groupe !",
-      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne avec son propre groupe dans un rire diabolique.",
+      "prejudicedManipulatorWins": "L'Abominable Sectaire gagne seul !",
+      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne seul dans un rire diabolique.",
       "villagersWin": "Les Villageois gagnent !",
       "villagersHaveSurvivedWerewolves": "Tous les Loups-Garous sont morts. Le village est enfin en sécurité.",
       "werewolvesWin": "Les Loups-Garous gagnent !",
@@ -1644,6 +1644,9 @@
       "submitGroupName": "Valider le nouveau nom du groupe",
       "editGroupName": "Modifier le nom du groupe \"{name}\"",
       "groupName": "Nom du groupe"
+    },
+    "GameTeamSidePlayerGroup": {
+      "playerGroup": "Ce joueur appartient au groupe nommé \"{groupName}\""
     }
   }
 }

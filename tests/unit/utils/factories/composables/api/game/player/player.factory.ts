@@ -12,6 +12,7 @@ function createFakePlayer(player: Partial<Player> = {}): Player {
     side: player.side ?? createFakePlayerSide(),
     attributes: player.attributes ?? [],
     isAlive: player.isAlive ?? faker.datatype.boolean(),
+    group: player.group,
   });
 }
 

@@ -63,8 +63,8 @@ const playerAttributeTooltipOptions = computed<TooltipOptions>(() => {
   const imgUrl = img(playerAttributeSvgPath.value);
 
   return {
-    value: `<div class="flex flex-col items-center">
-                <img width="75" src="${imgUrl}" alt="${playerAttributeDescription.value}" class="mb-3"/>
+    value: `<div class="flex flex-col items-center gap-2">
+                <img width="75" src="${imgUrl}" alt="${playerAttributeDescription.value}" class="drop-shadow-lg"/>
                 <div class="text-center">${playerAttributeDescription.value}</div>
             </div>`,
     fitContent: false,
