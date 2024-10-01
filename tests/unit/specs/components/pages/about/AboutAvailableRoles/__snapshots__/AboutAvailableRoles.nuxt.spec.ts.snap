@@ -1,5 +1,66 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`About Available Roles Component > Available Roles Accordion > Roles are set > should match snapshot when rendered without shallow rendering and one panel is opened. 1`] = `
+"<div id="about-available-roles">
+  <div class="flex items-center"><img class="w-[50px] h-[50px] border-4 border-gray-800 role-image rounded-lg h-[50px] w-[50px] me-3 border-4 border-gray-800 role-image rounded-lg h-[50px] w-[50px] me-3" width="50" height="50" alt="Illustration of the available roles title" data-nuxt-img="" id="about-available-roles-title-role-image" src="/svg/misc/ripples.svg">
+    <h2 id="about-available-roles-title">Available roles</h2>
+  </div>
+  <div class="p-divider p-component p-divider-horizontal p-divider-solid p-divider-left" style="justify-content: center;" role="separator" aria-orientation="horizontal" data-pc-name="divider" data-pc-section="root" pc1="">
+    <!---->
+  </div>
+  <div>
+    <p id="about-available-roles-first-section">components.AboutAvailableRoles.assistantHasManyRoles, 3</p>
+    <div class="p-accordion p-component w-full" data-pc-name="accordion" data-pc-section="root" pc12="">
+      <div data-pc-name="accordionpanel" data-p-disabled="false" data-pc-section="root" pc5="" class="p-accordionpanel p-accordionpanel-active" data-p-active="true"><button class="p-accordionheader" type="button" tabindex="0" data-pc-name="accordionheader" data-p-disabled="false" aria-label="components.AboutAvailableRoles.clickToExpandRoleDescription, {" role":"werewolf"}" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc3="" id="pv_id_1_accordionheader_werewolf" aria-controls="pv_id_1_accordioncontent_werewolf" aria-expanded="true" data-p-active="true">
+          <div class="available-role-image-header flex items-center"><img class="w-[40px] h-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px]" width="40" height="40" alt="components.AboutAvailableRoles.availableRoleImage, {" role":"werewolf"}" data-nuxt-img="" src="/svg/misc/ripples.svg">
+            <div class="ms-2">werewolf</div>
+          </div><svg class="svg-inline--fa fa-minus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path class="" fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path>
+          </svg><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
+        </button>
+        <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+          <div class="p-accordioncontent" role="region" data-pc-name="accordioncontent" data-pc-section="root" pc4="" id="pv_id_1_accordioncontent_werewolf" aria-labelledby="pv_id_1_accordionheader_werewolf" data-p-active="true">
+            <div class="p-accordioncontent-content" data-pc-section="content">
+              <about-available-role-description-stub role="[object Object]"></about-available-role-description-stub>
+            </div>
+          </div>
+        </transition-stub>
+      </div>
+      <div class="p-accordionpanel" data-pc-name="accordionpanel" data-p-disabled="false" data-pc-section="root" pc8="" data-p-active="false"><button class="p-accordionheader" type="button" tabindex="0" data-pc-name="accordionheader" data-p-disabled="false" aria-label="components.AboutAvailableRoles.clickToExpandRoleDescription, {" role":"angel"}" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc6="" id="pv_id_1_accordionheader_angel" aria-controls="pv_id_1_accordioncontent_angel" aria-expanded="false" data-p-active="false">
+          <div class="available-role-image-header flex items-center"><img class="w-[40px] h-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px]" width="40" height="40" alt="components.AboutAvailableRoles.availableRoleImage, {" role":"angel"}" data-nuxt-img="" src="/svg/misc/ripples.svg">
+            <div class="ms-2">angel</div>
+          </div><svg class="svg-inline--fa fa-plus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path class="" fill="currentColor" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"></path>
+          </svg><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
+        </button>
+        <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+          <div class="p-accordioncontent" role="region" data-pc-name="accordioncontent" data-pc-section="root" style="display: none;" pc7="" id="pv_id_1_accordioncontent_angel" aria-labelledby="pv_id_1_accordionheader_angel" data-p-active="false">
+            <div class="p-accordioncontent-content" data-pc-section="content">
+              <about-available-role-description-stub role="[object Object]"></about-available-role-description-stub>
+            </div>
+          </div>
+        </transition-stub>
+      </div>
+      <div class="p-accordionpanel" data-pc-name="accordionpanel" data-p-disabled="false" data-pc-section="root" pc11="" data-p-active="false"><button class="p-accordionheader" type="button" tabindex="0" data-pc-name="accordionheader" data-p-disabled="false" aria-label="components.AboutAvailableRoles.clickToExpandRoleDescription, {" role":"accursed-wolf-father"}" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc9="" id="pv_id_1_accordionheader_accursed-wolf-father" aria-controls="pv_id_1_accordioncontent_accursed-wolf-father" aria-expanded="false" data-p-active="false">
+          <div class="available-role-image-header flex items-center"><img class="w-[40px] h-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px] border-4 border-gray-800 role-image rounded-lg h-[40px] w-[40px]" width="40" height="40" alt="components.AboutAvailableRoles.availableRoleImage, {" role":"accursed-wolf-father"}" data-nuxt-img="" src="/svg/misc/ripples.svg">
+            <div class="ms-2">accursed-wolf-father</div>
+          </div><svg class="svg-inline--fa fa-plus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path class="" fill="currentColor" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"></path>
+          </svg><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd3="" data-pc-name="ripple" data-pc-section="root"></span>
+        </button>
+        <transition-stub name="p-toggleable-content" appear="false" persisted="false" css="true">
+          <div class="p-accordioncontent" role="region" data-pc-name="accordioncontent" data-pc-section="root" style="display: none;" pc10="" id="pv_id_1_accordioncontent_accursed-wolf-father" aria-labelledby="pv_id_1_accordionheader_accursed-wolf-father" data-p-active="false">
+            <div class="p-accordioncontent-content" data-pc-section="content">
+              <about-available-role-description-stub role="[object Object]"></about-available-role-description-stub>
+            </div>
+          </div>
+        </transition-stub>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
 exports[`About Available Roles Component > should match snapshot when rendered. 1`] = `
 "<div id="about-available-roles">
   <div class="flex items-center">

@@ -93,6 +93,14 @@ describe("About Available Roles Component", () => {
         await nextTick();
       });
 
+      it("should match snapshot when rendered without shallow rendering and one panel is opened.", async() => {
+        const panels = wrapper.findAllComponents<typeof AccordionPanel>(".p-accordionheader");
+        await panels[0].trigger("click");
+
+        expect(wrapper).toBeTruthy();
+        expect(wrapper.html()).toMatchSnapshot();
+      });
+
       it("should translate first section when roles are set.", () => {
         const firstSection = wrapper.find<HTMLDivElement>("#about-available-roles-first-section");
 
