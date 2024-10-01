@@ -5,6 +5,7 @@
       ref="gameLobbyHeader"
       @additional-cards-manager-button-click="onAdditionalCardsButtonManagerClickFromGameLobbyHeader"
       @game-options-button-click="onGameOptionsButtonClickFromGameLobbyHeader"
+      @group-organizer-button-click="onGroupOrganizerButtonClickFromGameLobbyHeader"
       @position-coordinator-button-click="onPositionCoordinatorButtonClickFromGameLobbyHeader"
     />
 
@@ -34,6 +35,8 @@
 
     <GameLobbyAdditionalCardsManager ref="gameLobbyAdditionalCardsManager"/>
 
+    <GameLobbyGroupOrganizer ref="gameLobbyGroupOrganizer"/>
+
     <GameLobbyBeforeLeaveConfirmDialog/>
   </div>
 </template>
@@ -44,6 +47,8 @@ import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
+import type { GameLobbyGroupOrganizerExposed } from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/game-lobby-group-organizer.types";
+import GameLobbyGroupOrganizer from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizer.vue";
 import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
@@ -77,6 +82,7 @@ const gameLobbyRolePicker = ref<GameLobbyRolePickerExposed | null>(null);
 const gameLobbyOptionsHub = ref<GameLobbyOptionsHubExposed | null>(null);
 const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | null>(null);
 const gameLobbyAdditionalCardsManager = ref<GameLobbyAdditionalCardsManagerExposed | null>(null);
+const gameLobbyGroupOrganizer = ref<GameLobbyGroupOrganizerExposed | null>(null);
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
@@ -115,6 +121,13 @@ function onAdditionalCardsButtonManagerClickFromGameLobbyHeader(): void {
     throw createError("Game Lobby Additional Cards Manager is not defined");
   }
   gameLobbyAdditionalCardsManager.value.open();
+}
+
+function onGroupOrganizerButtonClickFromGameLobbyHeader(): void {
+  if (!gameLobbyGroupOrganizer.value) {
+    throw createError("Game Lobby Group Organizer is not defined");
+  }
+  gameLobbyGroupOrganizer.value.open();
 }
 
 function onRejectPlayersPositionStepFromGameLobbyFooter(): void {

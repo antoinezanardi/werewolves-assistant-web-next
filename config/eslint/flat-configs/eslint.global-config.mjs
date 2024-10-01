@@ -1,4 +1,4 @@
-import Vitest from "eslint-plugin-vitest";
+import Vitest from "@vitest/eslint-plugin";
 
 import { ERROR, OFF, MAX_NESTED_CALLBACK, MAX_PARAMS, ALWAYS, NEVER, READONLY, MAX_LINES_PER_FUNCTION_DEFAULT_CONFIG } from "../eslint.constants.mjs";
 
@@ -32,13 +32,16 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
       computed: READONLY,
       defineProps: READONLY,
       defineEmits: READONLY,
+      defineOgImageComponent: READONLY,
       ref: READONLY,
+      toRefs: READONLY,
       reactive: READONLY,
       onMounted: READONLY,
       watch: READONLY,
       onUnmounted: READONLY,
       nextTick: READONLY,
       isRef: READONLY,
+      unref: READONLY,
       useScroll: READONLY,
       console: READONLY,
       document: READONLY,

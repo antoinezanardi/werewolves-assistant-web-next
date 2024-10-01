@@ -184,12 +184,12 @@ describe("Game Choose Card Playground Additional Card Component", () => {
       it("should set base classes to card image when card side is villagers.", () => {
         const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
         const expectedClasses = [
+          "w-[125px]",
+          "h-[125px]",
           "border-4",
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "h-[125px]",
-          "w-[125px]",
           "glow:border-emerald-500",
           "mb-1",
         ];
@@ -211,12 +211,12 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         });
         const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
         const expectedClasses = [
+          "w-[125px]",
+          "h-[125px]",
           "border-4",
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "h-[125px]",
-          "w-[125px]",
           "glow:border-red-500",
           "mb-1",
         ];
@@ -231,12 +231,12 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         await nextTick();
         const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
         const expectedClasses = [
+          "w-[125px]",
+          "h-[125px]",
           "border-4",
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "h-[125px]",
-          "w-[125px]",
           "glow:border-emerald-500",
           "mb-1",
           "!border-emerald-500",
@@ -262,12 +262,12 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         await nextTick();
         const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
         const expectedClasses = [
+          "w-[125px]",
+          "h-[125px]",
           "border-4",
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "h-[125px]",
-          "w-[125px]",
           "glow:border-red-500",
           "mb-1",
           "!border-red-500",

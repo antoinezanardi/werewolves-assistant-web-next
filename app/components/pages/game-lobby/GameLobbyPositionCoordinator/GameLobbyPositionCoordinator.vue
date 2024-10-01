@@ -21,7 +21,7 @@
     >
       <DialogHeaderTitleOnly
         id="game-lobby-position-coordinator-header"
-        icon="users"
+        icon="group-arrows-rotate"
         icon-class="text-primary"
         :title="$t('components.GameLobbyPositionCoordinator.positionCoordinator')"
       />

@@ -8,7 +8,8 @@
         :alt="$t(`components.GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced.thiefIcon`)"
         class="-mt-4"
         :height="svgSize"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        :placeholder-class="`w-[${svgSize}] h-[${svgSize}]`"
         src="/svg/role/thief.svg"
         :width="svgSize"
       />

@@ -449,7 +449,7 @@
       "threeBrothersMinimumPlayersNotReached": "Le rôle des Trois Frères nécessite au moins 3 joueurs avec ce rôle",
       "thiefAdditionalCardsNotSet": "Les cartes additionnelles du Voleur ne sont pas définies",
       "actorAdditionalCardsNotSet": "Les cartes additionnelles de Comédien ne sont pas définies",
-      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas définis (pas encore implémenté)"
+      "prejudicedManipulatorGroupsNotSet": "Les groupes de joueurs nécessaires pour l'Abominable Sectaire ne sont pas correctement définis (2 groupes de joueurs avec au moins 2 joueurs dans chaque groupe)"
     },
     "useGameOptionsTexts": {
       "composition": {
@@ -631,6 +631,12 @@
           }
         }
       }
+    }
+  },
+  "stores": {
+    "useCreateGameDtoStore": {
+      "firstDefaultGroupName": "Groupe 1",
+      "secondDefaultGroupName": "Groupe 2"
     }
   },
   "components": {
@@ -938,8 +944,8 @@
       "everybodyMurderedEachOther": "Tout le monde s'est entretué. Un silence mortel règne dans le village…",
       "piedPiperWins": "Le Joueur de Flûte gagne seul !",
       "piedPiperHasControl": "Le Joueur de Flûte a réussi à charmer tous les joueurs vivants. Il gagne seul et a le contrôle sur tout le village.",
-      "prejudicedManipulatorWins": "L'Abominable Sectaire gagne avec son groupe !",
-      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne avec son propre groupe dans un rire diabolique.",
+      "prejudicedManipulatorWins": "L'Abominable Sectaire gagne seul !",
+      "prejudicedManipulatorGroupRemainsAlive": "Tous les joueurs du groupe que l'Abominable Sectaire déteste sont morts. Il gagne seul dans un rire diabolique.",
       "villagersWin": "Les Villageois gagnent !",
       "villagersHaveSurvivedWerewolves": "Tous les Loups-Garous sont morts. Le village est enfin en sécurité.",
       "werewolvesWin": "Les Loups-Garous gagnent !",
@@ -1473,7 +1479,8 @@
     },
     "GameLobbyPositionCoordinatorSorter": {
       "leftNeighbors": "Voisins de gauche",
-      "rightNeighbors": "Voisins de droite"
+      "rightNeighbors": "Voisins de droite",
+      "sortPlayersByDraggingInList": "Triez les joueurs en les faisant glisser dans la liste ci-dessous."
     },
     "GameLobbyPositionCoordinatorChart": {
       "checkPositionWithChartBelow": "Vérifiez la position des joueurs avec le graphique ci-dessous.",
@@ -1609,6 +1616,37 @@
     "ChangedGameOptionsList": {
       "resetOptionAlt": "Revenir à la règle officielle pour la variante : {option}",
       "resetToOfficialRule": "Revenir à la règle officielle"
+    },
+    "DefaultOgImage": {
+      "title": "Assistant Loups-Garous",
+      "description": "L'outil parfait pour les Maîtres du jeu des Loups-Garous de Thiercelieux"
+    },
+    "GameLobbyHeaderGroupOrganizerButton": {
+      "groupOrganizer": "Organisation des groupes"
+    },
+    "GameLobbyGroupOrganizer": {
+      "groupOrganizer": "Organisation des groupes"
+    },
+    "GameLobbyGroupOrganizerContentHeader": {
+      "placePlayersInGroups": "Placez les joueurs dans les groupes pour jouer avec l'Abominable Sectaire",
+      "youCanRenameGroups": "Vous pouvez renommer les groupes en cliquant sur leur nom."
+    },
+    "GameLobbyGroupOrganizerPickList": {
+      "pickPlayer": "Choisir le joueur avec comme nom \"{name}\""
+    },
+    "GameLobbyGroupOrganizerDisclaimer": {
+      "notEnoughPlayers": "Pas assez de joueurs pour remplir les groupes. Veuillez ajouter plus de joueurs à la partie",
+      "fillFirstGroup": "Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueur du deuxième groupe | Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueurs du deuxième groupe",
+      "fillSecondGroup": "Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueur du premier groupe | Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueurs du premier groupe",
+      "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Manipulateur Préjudiciable"
+    },
+     "GameLobbyGroupOrganizerGroupNameInput": {
+      "submitGroupName": "Valider le nouveau nom du groupe",
+      "editGroupName": "Modifier le nom du groupe \"{name}\"",
+      "groupName": "Nom du groupe"
+    },
+    "GameTeamSidePlayerGroup": {
+      "playerGroup": "Ce joueur appartient au groupe nommé \"{groupName}\""
     }
   }
 }

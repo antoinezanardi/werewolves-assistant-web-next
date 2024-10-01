@@ -44,6 +44,18 @@ describe("Create Game Dto Store", () => {
     expect(createGameDtoStore.createGameDto).toStrictEqual<CreateGameDto>(expectedCreateGameDto);
   });
 
+  it("should have initial state for first group name when created.", () => {
+    const createGameDtoStore = useCreateGameDtoStore();
+
+    expect(createGameDtoStore.firstGroupName).toBe("stores.useCreateGameDtoStore.firstDefaultGroupName");
+  });
+
+  it("should have initial state for second group name when created.", () => {
+    const createGameDtoStore = useCreateGameDtoStore();
+
+    expect(createGameDtoStore.secondGroupName).toBe("stores.useCreateGameDtoStore.secondDefaultGroupName");
+  });
+
   describe("doesCreateGameDtoContainPositionDependantRoles", () => {
     it("should return true when createGameDto contains position dependant roles.", () => {
       const createGameDtoStore = useCreateGameDtoStore();
@@ -117,6 +129,102 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.setCreateGameDto(expectedCreateGameDto);
 
       expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedCreateGameDto.options });
+    });
+  });
+
+  describe("changePlayersOldGroupNameToNew", () => {
+    it("should change players old group name to new when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "other-one" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      const expectedPlayers = [
+        createFakeCreateGamePlayerDto({
+          ...players[0],
+          group: "new",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[1],
+          group: "new",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[2],
+          group: "other-one",
+        }),
+      ];
+
+      createGameDtoStore.changePlayersOldGroupNameToNew("old", "new");
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
+    });
+  });
+
+  describe("setFirstDefaultGroupName", () => {
+    it("should set first default group name and update players group name when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.firstGroupName = "old";
+      const players = [
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "other-one" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      const expectedPlayers = [
+        createFakeCreateGamePlayerDto({
+          ...players[0],
+          group: "new-name",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[1],
+          group: "new-name",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[2],
+          group: "other-one",
+        }),
+      ];
+      createGameDtoStore.setFirstDefaultGroupName("new-name");
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
+    });
+  });
+
+  describe("setSecondDefaultGroupName", () => {
+    it("should set second default group name and update players group name when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.secondGroupName = "old";
+      const players = [
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "old" }),
+        createFakeCreateGamePlayerDto({ group: "other-one" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      const expectedPlayers = [
+        createFakeCreateGamePlayerDto({
+          ...players[0],
+          group: "new-name",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[1],
+          group: "new-name",
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[2],
+          group: "other-one",
+        }),
+      ];
+      createGameDtoStore.setSecondDefaultGroupName("new-name");
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
     });
   });
 
@@ -753,6 +861,135 @@ describe("Create Game Dto Store", () => {
       const result = createGameDtoStore.getAdditionalCardsWithRoleNameInCreateGameDto("werewolf");
 
       expect(result).toStrictEqual<CreateGameAdditionalCardDto[]>([]);
+    });
+  });
+
+  describe("getPlayersInGroupInCreateGameDto", () => {
+    it("should return players in group in createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group2" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      const expectedPlayers = [players[0], players[1]];
+
+      const result = createGameDtoStore.getPlayersInGroupInCreateGameDto("group1");
+
+      expect(result).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
+    });
+  });
+
+  describe("removeGroupFromPlayersInCreateGameDto", () => {
+    it("should remove group from all players in createGameDto when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group2" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      const expectedPlayers = [
+        createFakeCreateGamePlayerDto({
+          ...players[0],
+          group: undefined,
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[1],
+          group: undefined,
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[2],
+          group: undefined,
+        }),
+      ];
+
+      createGameDtoStore.removeGroupFromPlayersInCreateGameDto();
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
+    });
+  });
+
+  describe("sanitizeCreateGameDtoForGameCreation", () => {
+    it("should remove obsolete additional cards when called.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const additionalCards = [
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "werewolf",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "thief",
+          roleName: "seer",
+        }),
+        createFakeCreateGameAdditionalCardDto({
+          recipient: "actor",
+          roleName: "seer",
+        }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: { name: "actor" } })],
+        additionalCards,
+      });
+      const expectedAdditionalCards = [additionalCards[2]];
+      createGameDtoStore.sanitizeCreateGameDtoForGameCreation();
+
+      expect(createGameDtoStore.createGameDto.additionalCards).toStrictEqual<CreateGameAdditionalCardDto[]>(expectedAdditionalCards);
+    });
+
+    it("should not remove player groups when prejudiced manipulator is in the game.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({
+          group: "group1",
+          role: { name: "prejudiced-manipulator" },
+        }),
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group2" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      createGameDtoStore.sanitizeCreateGameDtoForGameCreation();
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(players);
+    });
+
+    it("should remove player groups when prejudiced manipulator is not in the game.", () => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      const players = [
+        createFakeCreateGamePlayerDto({
+          group: "group1",
+          role: { name: "villager" },
+        }),
+        createFakeCreateGamePlayerDto({ group: "group1" }),
+        createFakeCreateGamePlayerDto({ group: "group2" }),
+      ];
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players,
+      });
+      createGameDtoStore.sanitizeCreateGameDtoForGameCreation();
+      const expectedPlayers = [
+        createFakeCreateGamePlayerDto({
+          ...players[0],
+          group: undefined,
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[1],
+          group: undefined,
+        }),
+        createFakeCreateGamePlayerDto({
+          ...players[2],
+          group: undefined,
+        }),
+      ];
+
+      expect(createGameDtoStore.createGameDto.players).toStrictEqual<CreateGamePlayerDto[]>(expectedPlayers);
     });
   });
 });

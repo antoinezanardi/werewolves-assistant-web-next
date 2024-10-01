@@ -67,10 +67,14 @@ async function onClickFromRandomCompositionButton(): Promise<void> {
   isLoadingGetRandomGameComposition.value = true;
   const randomGameComposition = await fetchRandomGameComposition({
     players: createGameDto.value.players,
-    excludedRoles: ["prejudiced-manipulator"],
   });
   if (randomGameComposition !== null) {
-    setPlayersToCreateGameDto(randomGameComposition);
+    const playerGroups = new Map(createGameDto.value.players.map(player => [player.name, player.group]));
+    const randomGameCompositionPlayersWithGroup = randomGameComposition.map(player => ({
+      ...player,
+      group: playerGroups.get(player.name),
+    }));
+    setPlayersToCreateGameDto(randomGameCompositionPlayersWithGroup);
     removeObsoleteAdditionalCardsFromCreateGameDto();
   }
   isLoadingGetRandomGameComposition.value = false;

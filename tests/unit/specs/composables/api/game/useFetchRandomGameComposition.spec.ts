@@ -1,6 +1,6 @@
-import type { $Fetch } from "nitropack";
-import { vi } from "vitest";
+import type { createFetch } from "ofetch";
 import type Qs from "qs";
+import { vi } from "vitest";
 
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
@@ -16,13 +16,13 @@ describe("Use Fetch Random Game Composition", () => {
   let mocks: {
     composables: {
       useWerewolvesAssistantApi: {
-        fetchWerewolvesAssistantApi: $Fetch;
+        fetchWerewolvesAssistantApi: ReturnType<typeof createFetch>;
       };
     };
   };
 
   beforeEach(() => {
-    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() as unknown as $Fetch } } };
+    mocks = { composables: { useWerewolvesAssistantApi: { fetchWerewolvesAssistantApi: vi.fn() as unknown as ReturnType<typeof createFetch> } } };
     vi.spyOn(UseWerewolvesAssistantApi, "useWerewolvesAssistantApi").mockReturnValue(mocks.composables.useWerewolvesAssistantApi);
   });
 

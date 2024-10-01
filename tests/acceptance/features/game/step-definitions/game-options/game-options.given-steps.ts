@@ -248,3 +248,10 @@ Given(/^the user prevents actor to be powerless on werewolves side in game optio
   await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-actor-is-powerless-on-werewolves-side-input");
   await closeDialogWithHeaderButton(this);
 });
+
+Given(/^the user prevents prejudiced manipulator to be powerless on werewolves side in game options$/u, async function(this: CustomWorld): Promise<void> {
+  await goOnPage(this, "/game-lobby");
+  await openGameOptionsDialogInGameLobby(this);
+  await clickOnToggleButtonInGameOptionsHub(this, "#game-lobby-options-hub-roles-tab-prejudiced-manipulator-is-powerless-on-werewolves-side-input");
+  await closeDialogWithHeaderButton(this);
+});

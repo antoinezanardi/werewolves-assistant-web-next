@@ -1,5 +1,5 @@
 @game-victory
-@shard-3
+@shard-7
 Feature: 🏆 Game Victory
 
   Scenario: 🏆 Game is won by nobody, there are no survivors
@@ -225,3 +225,36 @@ Feature: 🏆 Game Victory
       | Antoine |
     And the button with name "Create another game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by White Werewolf"
+
+  Scenario: 🏆 Game is won by Prejudiced Manipulator
+    Given the user disables the sheriff in game options
+    And the user enters the players with name and role in the lobby
+      | name    | role                   |
+      | Antoine | Villager               |
+      | Bob     | Werewolf               |
+      | Charlie | Idiot                  |
+      | David   | Prejudiced Manipulator |
+    And the user sets the following players in the second group in the lobby
+      | name  |
+      | Bob   |
+      | David |
+    And the user starts the game in the lobby
+
+    When the user closes the toast
+    And the user skips all game events
+    Then the game's current play title should be "Werewolves eat"
+
+    When the werewolves eat the player with name "Charlie"
+    And the user skips all game events
+    Then the game's current play title should be "Survivors vote"
+
+    When the survivors vote with the votes
+      | source | target  |
+      | Bob    | Antoine |
+    And the user skips all game events
+    Then the game should be over with title "The Prejudiced Manipulator wins by himself!" and subtitle "All of the players from the group The Prejudiced Manipulator hates are dead. He wins by himself while laughing."
+    And the game winners should be the players
+      | name  |
+      | David |
+    And the button with name "Create another game" should be visible
+    And the page should match or creates the missing snapshot with name "Game won by Prejudiced Manipulator"

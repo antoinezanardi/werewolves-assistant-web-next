@@ -1,5 +1,5 @@
 @game-playing
-@shard-2
+@shard-8
 Feature: 🎲 Game Playing
 
   Scenario: 🎲 User is asked to confirm if he wants to leave the game if it is playing

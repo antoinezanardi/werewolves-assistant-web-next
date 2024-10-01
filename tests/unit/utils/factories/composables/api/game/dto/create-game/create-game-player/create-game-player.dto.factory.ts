@@ -9,7 +9,7 @@ function createFakeCreateGamePlayerDto(createPlayerDto: Partial<CreateGamePlayer
     name: createPlayerDto.name ?? faker.person.firstName(),
     role: createFakeCreateGamePlayerRoleDto(createPlayerDto.role),
     side: createFakeCreateGamePlayerSideDto(createPlayerDto.side),
-    group: createPlayerDto.group ?? undefined,
+    group: createPlayerDto.group,
   });
 }
 

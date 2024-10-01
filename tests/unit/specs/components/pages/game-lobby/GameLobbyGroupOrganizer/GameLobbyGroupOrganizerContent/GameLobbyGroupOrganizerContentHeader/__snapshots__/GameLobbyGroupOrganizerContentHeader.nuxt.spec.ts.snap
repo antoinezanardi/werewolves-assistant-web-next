@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Group Organizer Content Header Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-group-organizer-content-header">
+  <h4 id="game-lobby-group-organize-content-header" class="text-center">Place players in groups below to play with the Prejudiced Manipulator</h4>
+  <h5 id="game-lobby-group-organize-content-subheader" class="italic text-center">You can rename the groups by clicking on the name</h5>
+</div>"
+`;

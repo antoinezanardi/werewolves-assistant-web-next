@@ -1,5 +1,5 @@
 @game-lobby-confirm-dialog
-@shard-1
+@shard-7
 Feature: 🃏✅Game Lobby Confirm Dialog
 
   Scenario: 🃏✅ User is asked if everybody is ready before starting the game and can cancel if not

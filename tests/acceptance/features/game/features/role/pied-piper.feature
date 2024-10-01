@@ -1,5 +1,5 @@
 @pied-piper-role
-@shard-1
+@shard-5
 Feature: 🪈 Pied Piper role
 
   Scenario: 🪈 Pied Piper charms 2 players per night

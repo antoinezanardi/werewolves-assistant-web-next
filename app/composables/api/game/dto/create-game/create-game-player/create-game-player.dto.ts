@@ -24,4 +24,8 @@ class CreateGamePlayerDto {
   }
 }
 
+type CreateGamePlayerWithGroupDto = CreateGamePlayerDto & { group: string };
+
 export { CreateGamePlayerDto };
+
+export type { CreateGamePlayerWithGroupDto };

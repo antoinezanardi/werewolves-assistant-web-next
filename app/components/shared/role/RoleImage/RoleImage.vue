@@ -4,7 +4,8 @@
     class="border-4 border-gray-800 role-image rounded-lg"
     :class="imageClasses"
     :height="sizes"
-    placeholder="/svg/misc/infinite-spinner.svg"
+    placeholder="/svg/misc/ripples.svg"
+    :placeholder-class="`w-[${sizes}px] h-[${sizes}px]`"
     :src="roleImageSrc"
     :width="sizes"
   />
