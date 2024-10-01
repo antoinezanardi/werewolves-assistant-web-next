@@ -5,11 +5,11 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
   <div class="p-tablist !pr-5" data-pc-name="tablist" data-pc-section="root" pc4="">
     <!---->
     <div class="p-tablist-content p-tablist-viewport" data-pc-section="content">
-      <div class="p-tablist-tab-list !w-full" role="tablist" aria-orientation="horizontal" data-pc-section="tablist"><button class="p-tab p-tab-active flex gap-2 items-center justify-center md:w-1/3" type="button" id="roles-tab-header" tabindex="0" role="tab" aria-selected="true" aria-controls="game-lobby-options-hub-tab-view_tabpanel_roles" data-pc-name="tab" data-p-disabled="false" data-p-active="true" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc1=""><img width="40" height="40" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" src="/svg/misc/infinite-spinner.svg">
+      <div class="p-tablist-tab-list !w-full" role="tablist" aria-orientation="horizontal" data-pc-section="tablist"><button class="p-tab p-tab-active flex gap-2 items-center justify-center md:w-1/3" type="button" id="roles-tab-header" tabindex="0" role="tab" aria-selected="true" aria-controls="game-lobby-options-hub-tab-view_tabpanel_roles" data-pc-name="tab" data-p-disabled="false" data-p-active="true" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc1=""><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" width="40" height="40" alt="components.RoleImage.back" data-nuxt-img="" src="/svg/misc/ripples.svg">
           <h3 id="roles-tab-header-text">Roles</h3><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
-        </button><button class="p-tab flex gap-2 items-center justify-center md:w-1/3" type="button" id="composition-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_tabpanel_composition" data-pc-name="tab" data-p-disabled="false" data-p-active="false" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc2=""><img width="40" height="40" alt="Composition tab icon" data-nuxt-img="" src="/svg/misc/infinite-spinner.svg">
+        </button><button class="p-tab flex gap-2 items-center justify-center md:w-1/3" type="button" id="composition-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_tabpanel_composition" data-pc-name="tab" data-p-disabled="false" data-p-active="false" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc2=""><img class="w-40 h-40" width="40" height="40" alt="Composition tab icon" data-nuxt-img="" src="/svg/misc/ripples.svg">
           <h3 id="composition-tab-header-text">Composition</h3><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
-        </button><button class="p-tab flex gap-2 items-center justify-center md:w-1/3" type="button" id="votes-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_tabpanel_votes" data-pc-name="tab" data-p-disabled="false" data-p-active="false" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc3=""><img width="40" height="40" alt="Votes tab icon" data-nuxt-img="" src="/svg/misc/infinite-spinner.svg">
+        </button><button class="p-tab flex gap-2 items-center justify-center md:w-1/3" type="button" id="votes-tab-header" tabindex="-1" role="tab" aria-selected="false" aria-controls="game-lobby-options-hub-tab-view_tabpanel_votes" data-pc-name="tab" data-p-disabled="false" data-p-active="false" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc3=""><img class="w-40 h-40" width="40" height="40" alt="Votes tab icon" data-nuxt-img="" src="/svg/misc/ripples.svg">
           <h3 id="votes-tab-header-text">Votes</h3><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd3="" data-pc-name="ripple" data-pc-section="root"></span>
         </button><span class="p-tablist-active-bar" role="presentation" aria-hidden="true" data-pc-section="activebar" style="width: 0px; left: 0px;"></span></div>
     </div><button class="p-tablist-next-button p-tablist-nav-button" aria-label="Next" tabindex="0" data-pc-section="nextbutton" data-pc-group-section="navigator" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon" aria-hidden="true" data-pc-section="nexticon">
@@ -21,7 +21,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
       <div id="game-lobby-options-roles-tab" class="flex flex-col gap-6">
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-general" data-pc-name="fieldset" data-pc-section="root" pc8="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div class="flex gap-4 items-center"><img width="50" height="50" alt="components.RoleImage.back" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" src="/svg/misc/infinite-spinner.svg">
+            <div class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="components.RoleImage.back" data-nuxt-img="" src="/svg/misc/ripples.svg">
               <h2 id="game-lobby-options-hub-roles-tab-general-title">General</h2>
             </div>
           </legend>
@@ -56,7 +56,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" data-pc-section="root" pc19="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div class="flex gap-4 items-center"><img width="50" height="50" alt="Sheriff icon" data-nuxt-img="" class="duration-300 ease-in-out transition-all" src="/svg/misc/infinite-spinner.svg">
+            <div class="flex gap-4 items-center"><img class="w-50 h-50 duration-300 ease-in-out transition-all duration-300 ease-in-out transition-all" width="50" height="50" alt="Sheriff icon" data-nuxt-img="" src="/svg/misc/ripples.svg">
               <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
             </div>
           </legend>
@@ -120,7 +120,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-werewolf" data-pc-name="fieldset" data-pc-section="root" pc21="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.werewolf" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.werewolf</h2>
             </div>
           </legend>
@@ -143,7 +143,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-big-bad-wolf" data-pc-name="fieldset" data-pc-section="root" pc23="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.big-bad-wolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.big-bad-wolf" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.big-bad-wolf</h2>
             </div>
           </legend>
@@ -166,7 +166,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-white-werewolf" data-pc-name="fieldset" data-pc-section="root" pc27="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.white-werewolf" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.white-werewolf" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.white-werewolf</h2>
             </div>
           </legend>
@@ -194,7 +194,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-seer" data-pc-name="fieldset" data-pc-section="root" pc31="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.seer" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.seer" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.seer</h2>
             </div>
           </legend>
@@ -229,7 +229,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-cupid" data-pc-name="fieldset" data-pc-section="root" pc35="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.cupid" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.cupid" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.cupid</h2>
             </div>
           </legend>
@@ -264,7 +264,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-little-girl" data-pc-name="fieldset" data-pc-section="root" pc37="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.little-girl" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.little-girl" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.little-girl</h2>
             </div>
           </legend>
@@ -287,7 +287,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-defender" data-pc-name="fieldset" data-pc-section="root" pc39="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.defender" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.defender" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.defender</h2>
             </div>
           </legend>
@@ -310,7 +310,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-elder" data-pc-name="fieldset" data-pc-section="root" pc45="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.elder" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.elder" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.elder</h2>
             </div>
           </legend>
@@ -350,7 +350,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-idiot" data-pc-name="fieldset" data-pc-section="root" pc47="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.idiot" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.idiot" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.idiot</h2>
             </div>
           </legend>
@@ -373,7 +373,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-two-sisters" data-pc-name="fieldset" data-pc-section="root" pc51="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.two-sisters" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.two-sisters" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.two-sisters</h2>
             </div>
           </legend>
@@ -401,7 +401,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-three-brothers" data-pc-name="fieldset" data-pc-section="root" pc55="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.three-brothers" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.three-brothers" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.three-brothers</h2>
             </div>
           </legend>
@@ -429,7 +429,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-fox" data-pc-name="fieldset" data-pc-section="root" pc57="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.fox" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.fox" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.fox</h2>
             </div>
           </legend>
@@ -452,7 +452,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-bear-tamer" data-pc-name="fieldset" data-pc-section="root" pc59="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.bear-tamer" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.bear-tamer" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.bear-tamer</h2>
             </div>
           </legend>
@@ -475,7 +475,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-stuttering-judge" data-pc-name="fieldset" data-pc-section="root" pc63="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.stuttering-judge" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.stuttering-judge" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.stuttering-judge</h2>
             </div>
           </legend>
@@ -503,7 +503,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wild-child" data-pc-name="fieldset" data-pc-section="root" pc65="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.wild-child" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.wild-child" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.wild-child</h2>
             </div>
           </legend>
@@ -526,7 +526,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-wolf-hound" data-pc-name="fieldset" data-pc-section="root" pc69="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.wolf-hound" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.wolf-hound" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.wolf-hound</h2>
             </div>
           </legend>
@@ -561,7 +561,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-thief" data-pc-name="fieldset" data-pc-section="root" pc73="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.thief</h2>
             </div>
           </legend>
@@ -596,7 +596,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-pied-piper" data-pc-name="fieldset" data-pc-section="root" pc81="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.pied-piper" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.pied-piper" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.pied-piper</h2>
             </div>
           </legend>
@@ -648,7 +648,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-scandalmonger" data-pc-name="fieldset" data-pc-section="root" pc85="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.scandalmonger" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.scandalmonger" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.scandalmonger</h2>
             </div>
           </legend>
@@ -676,7 +676,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-witch" data-pc-name="fieldset" data-pc-section="root" pc87="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.witch" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.witch" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.witch</h2>
             </div>
           </legend>
@@ -699,7 +699,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-prejudiced-manipulator" data-pc-name="fieldset" data-pc-section="root" pc89="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.prejudiced-manipulator" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.prejudiced-manipulator" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.prejudiced-manipulator</h2>
             </div>
           </legend>
@@ -722,7 +722,7 @@ exports[`Game Lobby Options Hub Tab View Component > should match snapshot when 
         </fieldset>
         <fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-actor" data-pc-name="fieldset" data-pc-section="root" pc91="">
           <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-            <div id="game-option-role-legend" class="flex gap-4 items-center"><img width="50" height="50" alt="shared.role.name.actor" data-nuxt-img="" class="border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" id="game-option-role-legend-image" src="/svg/misc/infinite-spinner.svg">
+            <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.actor" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
               <h2 id="game-option-role-legend-title">shared.role.name.actor</h2>
             </div>
           </legend>

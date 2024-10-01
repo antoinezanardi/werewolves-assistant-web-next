@@ -6,7 +6,8 @@
       :alt="playerGroupDescription"
       class="absolute right-2.5 top-2.5"
       height="20"
-      placeholder="svg/misc/infinite-spinner.svg"
+      placeholder="svg/misc/ripples.svg"
+      placeholder-class="w-20 h-20"
       :src="playerGroupSvgPath"
       width="20"
     />

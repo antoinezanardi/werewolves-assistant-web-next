@@ -4,7 +4,7 @@ exports[`Index Page Component > should match snapshot when rendered. 1`] = `
 "<div class="flex flex-col">
   <div class="flex flex-col grow items-center justify-center">
     <div class="flex justify-center w-full">
-      <nuxt-img-stub alt="Werewolves Assistant logo" placeholderclass="w-24 h-24" sizes="sm:125 md:200 lg:200" src="/img/logo/square/werewolves-logo.png" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
+      <nuxt-img-stub alt="Werewolves Assistant logo" placeholderclass="md:w-[200px] md:h-[200px] w-[125px] h-[125px]" sizes="sm:125 md:200 lg:200" src="/img/logo/square/werewolves-logo.png" preload="true" crossorigin="false" placeholder="/svg/misc/ripples.svg"></nuxt-img-stub>
     </div>
     <div class="mb-16 mt-6 text-center w-full">
       <h1 id="title" class="!text-5xl !tracking-wider mt-0">Werewolves Assistant</h1>

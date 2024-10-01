@@ -33,7 +33,8 @@
         <NuxtImg
           :alt="$t('components.GameLobbyOptionsHubTabView.compositionTabImageAlt')"
           height="40"
-          placeholder="/svg/misc/infinite-spinner.svg"
+          placeholder="/svg/misc/ripples.svg"
+          placeholder-class="w-40 h-40"
           src="/svg/misc/people.svg"
           width="40"
         />
@@ -51,7 +52,8 @@
         <NuxtImg
           :alt="$t('components.GameLobbyOptionsHubTabView.votesTabImageAlt')"
           height="40"
-          placeholder="/svg/misc/infinite-spinner.svg"
+          placeholder="/svg/misc/ripples.svg"
+          placeholder-class="w-40 h-40"
           src="/svg/game/game-play/game-play-action/settle-votes.svg"
           width="40"
         />

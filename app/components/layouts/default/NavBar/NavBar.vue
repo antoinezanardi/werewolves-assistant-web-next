@@ -2,7 +2,7 @@
   <nav
     id="navbar"
     :aria-label="$t('components.NavBar.navBar')"
-    class="bg-gray-900 border-b border-b-slate-800 flex items-center justify-between py-1"
+    class="bg-gray-900 border-b border-b-slate-800 flex h-16 items-center justify-between px-4 py-1"
     role="navigation"
   >
     <NuxtLink
@@ -14,7 +14,9 @@
       <NuxtImg
         id="navbar-werewolves-assistant-logo"
         :alt="$t('components.NavBar.werewolvesAssistantLogo')"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        class="h-10 w-10"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-10 h-10"
         src="/img/logo/square/werewolves-logo-small.png"
       />
 
@@ -52,14 +54,3 @@ import { useWerewolvesAssistantRoutes } from "~/composables/route/useWerewolvesA
 
 const { isOnGamePage } = useWerewolvesAssistantRoutes();
 </script>
-
-<style scoped lang="scss">
-#navbar {
-  height: 4rem;
-  padding: 0 1rem;
-
-  #navbar-werewolves-assistant-logo {
-    height: 2.5rem;
-  }
-}
-</style>

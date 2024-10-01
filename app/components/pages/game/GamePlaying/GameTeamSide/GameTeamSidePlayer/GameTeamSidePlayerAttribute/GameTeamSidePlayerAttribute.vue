@@ -5,7 +5,8 @@
       v-p-tooltip:[{position:tooltipPosition}]="playerAttributeTooltipOptions"
       :alt="playerAttributeDescription"
       height="50"
-      placeholder="/svg/misc/infinite-spinner.svg"
+      placeholder="/svg/misc/ripples.svg"
+      placeholder-class="w-50 h-50"
       :src="playerAttributeSvgPath"
       width="50"
     />

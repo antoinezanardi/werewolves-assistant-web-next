@@ -15,7 +15,8 @@
       <NuxtImg
         :alt="tagText"
         height="25"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        placeholder-class="w-25 h-25"
         :src="tagIconPath"
         width="25"
       />

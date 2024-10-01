@@ -7,7 +7,8 @@
       <NuxtImg
         :alt="$t(`shared.game.player.group.name.villagers`)"
         :height="svgSize"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        :placeholder-class="`w-[${svgSize}] h-[${svgSize}]`"
         src="/svg/role/villager.svg"
         :width="svgSize"
       />
@@ -15,7 +16,8 @@
       <NuxtImg
         :alt="$t(`shared.game.player.group.name.werewolves`)"
         :height="svgSize"
-        placeholder="/svg/misc/infinite-spinner.svg"
+        placeholder="/svg/misc/ripples.svg"
+        :placeholder-class="`w-[${svgSize}] h-[${svgSize}]`"
         src="/svg/role/werewolf.svg"
         :width="svgSize"
       />

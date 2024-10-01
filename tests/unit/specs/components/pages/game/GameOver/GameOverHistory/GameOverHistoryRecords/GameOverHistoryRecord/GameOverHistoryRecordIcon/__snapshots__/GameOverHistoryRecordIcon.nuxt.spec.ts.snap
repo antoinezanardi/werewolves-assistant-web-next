@@ -2,6 +2,6 @@
 
 exports[`Game Over History Record Icon Component > should match snapshot when rendered. 1`] = `
 "<div id="game-history-record-icon" class="align-items-center flex h-12 justify-content-center shadow-1 text-white w-12 z-1">
-  <nuxt-img-stub alt="Game history record icon" src="/svg/game/player/player-attribute/sheriff.svg" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg"></nuxt-img-stub>
+  <nuxt-img-stub alt="Game history record icon" src="/svg/game/player/player-attribute/sheriff.svg" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg"></nuxt-img-stub>
 </div>"
 `;

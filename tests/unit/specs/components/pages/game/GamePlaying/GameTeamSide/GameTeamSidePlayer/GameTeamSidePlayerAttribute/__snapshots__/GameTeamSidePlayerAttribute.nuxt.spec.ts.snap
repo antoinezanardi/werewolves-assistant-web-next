@@ -2,6 +2,6 @@
 
 exports[`Game Team Side Player Attribute Component > should match snapshot when rendered. 1`] = `
 "<div id="game-team-side-player-attribute">
-  <nuxt-img-stub alt="components.GameTeamSidePlayerAttribute.seenBySeer" height="50" src="svg/game/player/player-attribute/seen.svg" width="50" preload="false" crossorigin="false" placeholder="/svg/misc/infinite-spinner.svg" id="game-team-side-player-attribute-icon" data-pd-tooltip="true"></nuxt-img-stub>
+  <nuxt-img-stub alt="components.GameTeamSidePlayerAttribute.seenBySeer" height="50" placeholderclass="w-50 h-50" src="svg/game/player/player-attribute/seen.svg" width="50" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg" id="game-team-side-player-attribute-icon" data-pd-tooltip="true"></nuxt-img-stub>
 </div>"
 `;
