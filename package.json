@@ -134,7 +134,7 @@
     "cucumber-html-reporter": "^7.2.0",
     "eslint": "^9.11.1",
     "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-import": "^2.31.0",
     "@vitest/eslint-plugin": "^1.1.5",
     "eslint-plugin-vue": "^9.28.0",
     "fuse.js": "^7.0.0",
