@@ -172,7 +172,7 @@
     "vi-canvas-mock": "^1.0.0",
     "vitest": "^2.1.2",
     "vue": "^3.5.11",
-    "vue-ellipse-progress": "^2.1.2",
+    "vue-ellipse-progress": "^2.2.0",
     "vue-eslint-parser": "^9.4.3",
     "vue-flip": "^3.0.2",
     "vue-router": "^4.4.5",

@@ -241,7 +241,7 @@ describe("Game Playground Footer Countdown Component", () => {
             global: {
               plugins: [createTestingPinia({ initialState })],
               stubs: {
-                Ve: true,
+                Ge: true,
               },
             },
           });
@@ -259,7 +259,7 @@ describe("Game Playground Footer Countdown Component", () => {
             global: {
               plugins: [createTestingPinia({ initialState })],
               stubs: {
-                Ve: true,
+                Ge: true,
               },
             },
           });
