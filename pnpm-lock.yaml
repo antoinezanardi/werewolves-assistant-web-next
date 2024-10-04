@@ -310,8 +310,8 @@ importers:
         specifier: ^3.5.11
         version: 3.5.11(typescript@5.6.2)
       vue-ellipse-progress:
-        specifier: ^2.1.2
-        version: 2.1.2(vue@3.5.11(typescript@5.6.2))
+        specifier: ^2.2.0
+        version: 2.2.0(vue@3.5.11(typescript@5.6.2))
       vue-eslint-parser:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.11.1(jiti@1.21.6))
@@ -8106,8 +8106,8 @@ packages:
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
 
-  vue-ellipse-progress@2.1.2:
-    resolution: {integrity: sha512-CQl2DMx7uvWyD+1vFd8cNjLQ0l1d6ZD3pTVZaUgsPev1S/9Jo8LGKX7TXxeTyf18y7ckMmeFt/cQY4Rt4CoEsg==}
+  vue-ellipse-progress@2.2.0:
+    resolution: {integrity: sha512-8rR25PSO1w5Vi9ztBUdZTNmjMX2uyWczxGlg3tnvQfTfBR+l9bIDdut+g0vPHU3Oa3vdg6lKVvAN+K4x+8TG1g==}
     peerDependencies:
       vue: ^3
 
@@ -17679,7 +17679,7 @@ snapshots:
 
   vue-devtools-stub@0.1.0: {}
 
-  vue-ellipse-progress@2.1.2(vue@3.5.11(typescript@5.6.2)):
+  vue-ellipse-progress@2.2.0(vue@3.5.11(typescript@5.6.2)):
     dependencies:
       vue: 3.5.11(typescript@5.6.2)
 
