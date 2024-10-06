@@ -1,6 +1,6 @@
 services:
   api:
-    image: antoinezanardi/werewolves-assistant-api:v1.36.2
+    image: antoinezanardi/werewolves-assistant-api:v1.37.0
     container_name: werewolves-assistant-sandbox-api
     depends_on:
       - mongodb
