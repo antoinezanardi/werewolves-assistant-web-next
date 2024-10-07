@@ -13,6 +13,7 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     tick: game.tick ?? faker.number.int({ min: 1 }),
     turn: game.turn ?? faker.number.int({ min: 1 }),
     players: game.players ?? [],
+    playerGroups: game.playerGroups,
     currentPlay: game.currentPlay ?? null,
     upcomingPlays: game.upcomingPlays ?? [],
     additionalCards: game.additionalCards,
