@@ -42,6 +42,19 @@ describe("Game Store", () => {
     expect(gameStore.fetchingGameStatus).toBe("idle");
   });
 
+  it("should have empty player groups when there is no player groups in game.", () => {
+    const gameStore = useGameStore();
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>([]);
+  });
+
+  it("should have player groups when there is player groups in game.", () => {
+    const gameStore = useGameStore();
+    gameStore.game.playerGroups = ["group1", "group2"];
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>(["group1", "group2"]);
+  });
+
   describe("resetGame", () => {
     it("should reset game when called.", () => {
       const gameStore = useGameStore();

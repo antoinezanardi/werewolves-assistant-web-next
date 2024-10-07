@@ -22,6 +22,7 @@ describe("Game Team Side Player Group Component", () => {
       createFakeWerewolfAlivePlayer({ name: "Clement", group: "Group 2" }),
       createFakeWerewolfAlivePlayer({ name: "David", group: "Group 2" }),
     ],
+    playerGroups: ["Group 1", "Group 2"],
   });
   const defaultPlayer = createFakeWerewolfAlivePlayer({
     name: "Antoine",

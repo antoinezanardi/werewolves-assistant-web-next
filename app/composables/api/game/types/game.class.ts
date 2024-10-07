@@ -33,6 +33,9 @@ class Game {
   @Expose()
   public players: Player[];
 
+  @Expose()
+  public playerGroups?: string[];
+
   @Type(() => GamePlay)
   @Expose()
   public currentPlay: GamePlay | null;
