@@ -186,7 +186,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@primevue/themes": "^4.0.7",
+    "@primevue/themes": "^4.1.0",
     "animate.css": "^4.1.1",
     "is-ci": "^3.0.1",
     "primevue": "^4.0.7"
