@@ -1,6 +1,9 @@
-import { ERROR, OFF } from "../eslint.constants.mjs";
+import ImportPlugin from "eslint-plugin-import";
+
+import { ERROR, ESLINT_IGNORES, OFF } from "../eslint.constants.mjs";
 
 const ESLINT_IMPORT_CONFIG = {
+  ...ImportPlugin.flatConfigs.recommended,
   name: "import",
   languageOptions: {
     parserOptions: {
@@ -8,6 +11,7 @@ const ESLINT_IMPORT_CONFIG = {
       sourceType: "module",
     },
   },
+  ignores: ESLINT_IGNORES,
   settings: {
     "import/parsers": { espree: [".js", ".cjs", ".mjs", ".jsx", "vue"] },
     "import/resolver": {
@@ -39,20 +43,7 @@ const ESLINT_IMPORT_CONFIG = {
     "import/no-absolute-path": ERROR,
     "import/no-cycle": ERROR,
     "import/no-dynamic-require": ERROR,
-    "import/no-internal-modules": [
-      ERROR, {
-        allow: [
-          "~/**/*",
-          "@/**/*",
-          "@nuxt/**/*",
-          "nuxt/*",
-          "msw/*",
-          "msw/**/*",
-          "primevue/*",
-          "\\#app/composables/*",
-        ],
-      },
-    ],
+    "import/no-internal-modules": OFF,
     "import/no-relative-packages": ERROR,
     "import/no-relative-parent-imports": OFF,
     "import/no-restricted-paths": ERROR,

@@ -1,12 +1,12 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeCompositionGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/composition-game-options/composition-game-options.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeVotesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/votes-game-options/votes-game-options.factory";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameLobbyStartGameConfirmDialogGameOptionsChanged from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogGameOptionsChanged/GameLobbyStartGameConfirmDialogGameOptionsChanged.vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { StoreIds } from "~/stores/enums/store.enum";

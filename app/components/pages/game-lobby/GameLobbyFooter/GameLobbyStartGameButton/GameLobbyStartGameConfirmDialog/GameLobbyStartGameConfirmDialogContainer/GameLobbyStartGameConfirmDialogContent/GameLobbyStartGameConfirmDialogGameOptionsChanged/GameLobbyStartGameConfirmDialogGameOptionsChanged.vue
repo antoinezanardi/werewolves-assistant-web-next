@@ -55,6 +55,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
+
 import ChangedGameOptionsList from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogGameOptionsChanged/ChangedGameOptionsList/ChangedGameOptionsList.vue";
 import type { GameLobbyStartGameConfirmDialogGameOptionsChangedEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogGameOptionsChanged/game-lobby-start-game-confirm-dialog-game-options-changed.types";
 import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";

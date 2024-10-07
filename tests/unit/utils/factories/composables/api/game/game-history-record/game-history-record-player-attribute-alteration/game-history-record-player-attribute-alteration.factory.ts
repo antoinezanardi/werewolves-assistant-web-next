@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { GAME_HISTORY_RECORD_PLAYER_ATTRIBUTE_ALTERATION_STATUSES } from "~/composables/api/game/constants/game-history-record/game-history-record.constants";
 import { GAME_SOURCES } from "~/composables/api/game/constants/game.constants";
 import { PLAYER_ATTRIBUTE_NAMES } from "~/composables/api/game/constants/player/player-attribute/player-attribute.constants";

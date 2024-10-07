@@ -1,14 +1,14 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import type { mount } from "@vue/test-utils";
 import type Radash from "radash";
 import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
 import type { Ref } from "vue";
+
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import type GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
-
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
 import GameLobby from "~/pages/game-lobby.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";

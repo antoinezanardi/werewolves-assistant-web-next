@@ -1,10 +1,10 @@
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
-import { createFakeGamePlayThiefChoosesCard } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
+import { createFakeGamePlayThiefChoosesCard } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import GameChooseCardPlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlayground.vue";
 import type GameChooseCardPlaygroundAdditionalCard from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlaygroundAdditionalCard/GameChooseCardPlaygroundAdditionalCard.vue";
 import type { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";

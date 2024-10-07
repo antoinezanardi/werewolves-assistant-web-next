@@ -1,4 +1,5 @@
 import type { Locator } from "playwright-core";
+
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function getPlayerAttributeByRoleNameInGameTeamSide(world: CustomWorld, playerName: string, roleName: string): Promise<Locator> {

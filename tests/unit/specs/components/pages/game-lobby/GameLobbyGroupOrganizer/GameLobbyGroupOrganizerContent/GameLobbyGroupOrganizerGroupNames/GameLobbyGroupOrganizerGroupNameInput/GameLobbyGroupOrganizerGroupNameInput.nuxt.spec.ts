@@ -1,10 +1,10 @@
 import type { mount } from "@vue/test-utils";
-
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type Button from "primevue/button";
 import type InputText from "primevue/inputtext";
 import { beforeEach } from "vitest";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { GameLobbyGroupOrganizerGroupNameInputProps } from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerGroupNames/GameLobbyGroupOrganizerGroupNameInput/game-lobby-group-organizer-group-name-input.types";
 import GameLobbyGroupOrganizerGroupNameInput from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerGroupNames/GameLobbyGroupOrganizerGroupNameInput/GameLobbyGroupOrganizerGroupNameInput.vue";
 

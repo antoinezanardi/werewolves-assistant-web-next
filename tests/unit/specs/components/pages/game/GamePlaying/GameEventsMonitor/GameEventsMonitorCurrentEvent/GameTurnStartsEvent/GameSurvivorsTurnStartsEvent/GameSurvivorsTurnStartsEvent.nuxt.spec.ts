@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import GameSurvivorsTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSurvivorsTurnStartsEvent/GameSurvivorsTurnStartsEvent.vue";
 import type { Game } from "~/composables/api/game/types/game.class";
 import type { SoundEffectName } from "~/stores/audio/types/audio.types";
@@ -12,7 +13,6 @@ import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composable
 import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Survivors Turn Starts Event Component", () => {
@@ -175,6 +175,7 @@ describe("Game Survivors Turn Starts Event Component", () => {
       const audioStore = useAudioStore();
 
       expect(audioStore.playSoundEffect).toHaveBeenCalledTimes(expectedSoundEffects.length);
+
       for (let i = 0; i < expectedSoundEffects.length; i++) {
         expect(audioStore.playSoundEffect).toHaveBeenNthCalledWith(i + 1, expectedSoundEffects[i]);
       }

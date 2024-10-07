@@ -8,8 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import sunLottie from "~/assets/lottie/sun.json";
 import type { LottieProps } from "vue3-lottie";
+
+import sunLottie from "~/assets/lottie/sun.json";
 
 defineProps<Partial<Pick<LottieProps, "height" | "width">>>();
 </script>

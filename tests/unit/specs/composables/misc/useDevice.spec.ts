@@ -1,4 +1,5 @@
 import { beforeEach } from "vitest";
+
 import { useDevice } from "~/composables/misc/useDevice";
 
 describe("Use Device Composable", () => {

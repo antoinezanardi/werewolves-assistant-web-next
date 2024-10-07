@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameLobbyPlayerCardEmits, GameLobbyPlayerCardProps } from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayerCard/game-lobby-player-card.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import { useRoleName } from "~/composables/api/role/useRoleName";

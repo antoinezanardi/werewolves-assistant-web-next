@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { ScandalmongerGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/scandalmonger-game-options/scandalmongonger-game-options.class";
 
 function createFakeScandalmongerGameOptions(scandalmongerGameOptions: Partial<ScandalmongerGameOptions> = {}): ScandalmongerGameOptions {

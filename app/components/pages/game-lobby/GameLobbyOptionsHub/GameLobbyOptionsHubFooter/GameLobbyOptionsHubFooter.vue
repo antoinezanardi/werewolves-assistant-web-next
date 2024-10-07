@@ -42,6 +42,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameLobbyOptionsHubFooterEmits } from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubFooter/game-lobby-options-hub-footer.types";
 import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

@@ -1,10 +1,11 @@
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import Dialog from "primevue/dialog";
+import type { DialogProps } from "primevue/dialog";
+import { beforeEach } from "vitest";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog, { type DialogProps } from "primevue/dialog";
-import { beforeEach } from "vitest";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { GameLobbyGroupOrganizerExposed } from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/game-lobby-group-organizer.types";
 import GameLobbyGroupOrganizer from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizer.vue";
 import type GameLobbyGroupOrganizerContent from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerContent.vue";

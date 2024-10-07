@@ -1,6 +1,6 @@
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
 
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";

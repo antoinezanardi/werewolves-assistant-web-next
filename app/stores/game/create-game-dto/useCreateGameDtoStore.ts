@@ -3,10 +3,11 @@ import { defineStore } from "pinia";
 import { get, set } from "radash";
 import type { Paths } from "type-fest";
 import { ref } from "vue";
+
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
-
-import { CreateGamePlayerDto, type CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import type { CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";

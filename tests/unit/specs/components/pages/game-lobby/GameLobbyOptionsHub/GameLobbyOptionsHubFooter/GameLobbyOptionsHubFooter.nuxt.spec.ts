@@ -1,12 +1,12 @@
+import type { mount } from "@vue/test-utils";
+import { createTestingPinia } from "@pinia/testing";
+import type Button from "primevue/button";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
-import type { mount } from "@vue/test-utils";
-import { createTestingPinia } from "@pinia/testing";
-
-import type Button from "primevue/button";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameLobbyOptionsHubFooter from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubFooter/GameLobbyOptionsHubFooter.vue";
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import { StoreIds } from "~/stores/enums/store.enum";

@@ -1,15 +1,15 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
+import type { PickListMoveToTargetEvent, PickListProps } from "primevue/picklist";
+import type PickList from "primevue/picklist";
+
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
-import type { mount } from "@vue/test-utils";
-
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type VueUseCore from "@vueuse/core";
-import type { PickListMoveToTargetEvent, PickListProps } from "primevue/picklist";
-import type PickList from "primevue/picklist";
 import GameLobbyGroupOrganizerPickList from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerPickList/GameLobbyGroupOrganizerPickList.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
@@ -105,6 +105,7 @@ describe("Game Lobby Group Organizer Pick List Component", () => {
         [defaultPlayers[2], defaultPlayers[3]],
       ]);
     });
+
     describe("Move events", () => {
       it("should move players to second group when pick list emits move to target event.", async() => {
         const pickList = wrapper.findComponent<typeof PickList>("#game-lobby-group-organizer-pick-list");

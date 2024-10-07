@@ -47,6 +47,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameOptionInputGroupProps } from "~/components/shared/game/game-options/GameOptionInputGroup/game-option-input-group.types";
 
 withDefaults(defineProps<GameOptionInputGroupProps>(), { doesHaveBottomDivider: false });
