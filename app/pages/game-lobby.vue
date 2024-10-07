@@ -43,6 +43,7 @@
 
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+
 import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";

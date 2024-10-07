@@ -1,9 +1,9 @@
 import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
+import type { Ref } from "vue";
 
 import type { NuxtLink } from "#components";
 import Index from "@/pages/index.vue";
-import type { Ref } from "vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Index Page Component", () => {

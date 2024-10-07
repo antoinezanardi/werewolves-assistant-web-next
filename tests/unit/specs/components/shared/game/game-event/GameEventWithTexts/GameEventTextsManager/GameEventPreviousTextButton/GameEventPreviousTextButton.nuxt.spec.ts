@@ -1,14 +1,14 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
-import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import { flushPromises } from "@vue/test-utils";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { TooltipOptions } from "primevue/tooltip";
 import type { Ref } from "vue";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
 import type { GameEventPreviousTextButtonProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/game-event-previous-text-button.types";
 import GameEventPreviousTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/GameEventPreviousTextButton.vue";
 import { useGameStore } from "~/stores/game/useGameStore";

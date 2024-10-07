@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+
 import type { GameChooseCardPlaygroundAdditionalCardEmits, GameChooseCardPlaygroundAdditionalCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlaygroundAdditionalCard/game-choose-card-playground-additional-card.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { useRoleName } from "~/composables/api/role/useRoleName";

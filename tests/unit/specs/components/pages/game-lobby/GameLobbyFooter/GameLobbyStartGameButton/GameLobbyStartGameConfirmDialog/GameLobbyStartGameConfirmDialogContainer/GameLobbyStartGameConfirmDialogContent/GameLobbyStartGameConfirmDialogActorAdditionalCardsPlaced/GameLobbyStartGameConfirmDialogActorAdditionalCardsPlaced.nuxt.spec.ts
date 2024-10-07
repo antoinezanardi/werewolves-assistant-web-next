@@ -1,12 +1,12 @@
-import type { NuxtImg } from "#components";
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
-import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
+
+import type { NuxtImg } from "#components";
+import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { StoreIds } from "~/stores/enums/store.enum";

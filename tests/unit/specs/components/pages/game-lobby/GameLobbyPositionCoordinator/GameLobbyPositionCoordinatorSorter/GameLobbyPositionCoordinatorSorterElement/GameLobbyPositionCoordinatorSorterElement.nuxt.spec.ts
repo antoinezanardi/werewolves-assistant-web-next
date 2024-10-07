@@ -1,8 +1,8 @@
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { GameLobbyPositionCoordinatorSorterElementProps } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorSorter/GameLobbyPositionCoordinatorSorterElement/game-lobby-position-coordinator-sorter-element.types";
 import GameLobbyPositionCoordinatorSorterElement from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorSorter/GameLobbyPositionCoordinatorSorterElement/GameLobbyPositionCoordinatorSorterElement.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";

@@ -9,6 +9,7 @@ const ESLINT_CUCUMBER_CONFIG = {
     "no-await-in-loop": OFF,
     "no-console": ["error", { allow: ["error", "info"] }],
     "@typescript-eslint/max-params": OFF,
+    "import/no-internal-modules": OFF,
   },
 };
 

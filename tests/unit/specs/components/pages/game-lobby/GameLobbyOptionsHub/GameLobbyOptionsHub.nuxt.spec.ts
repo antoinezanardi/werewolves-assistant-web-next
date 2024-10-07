@@ -1,14 +1,16 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog, { type DialogProps } from "primevue/dialog";
+import Dialog from "primevue/dialog";
+import type { DialogProps } from "primevue/dialog";
+
 import type { GameLobbyOptionsHubExposed } from "~/components/pages/game-lobby/GameLobbyOptionsHub/game-lobby-options-hub.types";
 import GameLobbyOptionsHub from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHub.vue";
 import type GameLobbyOptionsHubFooter from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubFooter/GameLobbyOptionsHubFooter.vue";
-import type GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
-import type GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubContent/GameLobbyOptionsHubContent.vue";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
+
+import type GameLobbyOptionsHubHeader from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubHeader/GameLobbyOptionsHubHeader.vue";
+import type GameLobbyOptionsHubContent from "~/components/pages/game-lobby/GameLobbyOptionsHub/GameLobbyOptionsHubContent/GameLobbyOptionsHubContent.vue";
 
 describe("Game Lobby Options Hub Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameLobbyOptionsHub>>;

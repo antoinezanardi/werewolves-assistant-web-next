@@ -21,6 +21,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameLobbyHeaderPositionCoordinatorButtonEmits } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/game-lobby-header-position-coordinator-button.types";
 
 const emit = defineEmits<GameLobbyHeaderPositionCoordinatorButtonEmits>();

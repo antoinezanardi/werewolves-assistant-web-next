@@ -1,8 +1,8 @@
+import { createPinia, setActivePinia } from "pinia";
+
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
-import { createPinia, setActivePinia } from "pinia";
-
 import { Game } from "~/composables/api/game/types/game.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 

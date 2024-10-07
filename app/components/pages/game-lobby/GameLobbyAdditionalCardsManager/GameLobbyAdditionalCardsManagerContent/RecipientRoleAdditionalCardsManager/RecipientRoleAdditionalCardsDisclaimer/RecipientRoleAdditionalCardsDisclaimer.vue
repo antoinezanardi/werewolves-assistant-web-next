@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
+
 import type { RecipientRoleAdditionalCardsDisclaimerProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsDisclaimer/recipient-role-additional-cards-disclaimer.types";
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useRoleName } from "~/composables/api/role/useRoleName";

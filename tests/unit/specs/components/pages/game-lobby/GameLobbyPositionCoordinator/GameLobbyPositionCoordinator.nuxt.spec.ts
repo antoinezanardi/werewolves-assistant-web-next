@@ -1,9 +1,10 @@
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import Dialog from "primevue/dialog";
+import type { DialogProps } from "primevue/dialog";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import Dialog, { type DialogProps } from "primevue/dialog";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { GameLobbyPositionCoordinatorExposed } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/game-lobby-position-coordinator.types";
 import GameLobbyPositionCoordinator from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinator.vue";
 import type GameLobbyPositionCoordinatorChart from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/GameLobbyPositionCoordinatorChart.vue";

@@ -5,10 +5,10 @@ import type { useBreakpoints } from "@vueuse/core";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
 import type { Ref } from "vue";
+import * as UseBreakpoints from "@vueuse/core";
 
 import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
 import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
-import * as UseBreakpoints from "@vueuse/core";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";

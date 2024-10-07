@@ -50,6 +50,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameLobbyStartGameConfirmDialogPlayersPositionedEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersPositioned/game-lobby-start-game-confirm-dialog-players-positioned.types";
 
 const emit = defineEmits<GameLobbyStartGameConfirmDialogPlayersPositionedEmits>();

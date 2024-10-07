@@ -79,9 +79,7 @@ import {
   faWandSparkles,
   faWarning,
 } from "@fortawesome/free-solid-svg-icons";
-
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
-
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 config.autoAddCss = false;

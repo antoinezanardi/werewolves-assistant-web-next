@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+
 import type { PlayersHorizontalListProps } from "~/components/shared/game/player/PlayersHorizontalList/players-horizontal-list.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";

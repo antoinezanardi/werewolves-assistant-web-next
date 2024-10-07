@@ -1,12 +1,12 @@
 import type VueCountdown from "@chenfengyuan/vue-countdown";
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeGamePlayLoversMeetEachOther, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote, createFakeGamePlayWerewolvesEat } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GamePlaygroundFooterCountdown from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdown.vue";
 import type GamePlaygroundFooterCountdownEllipseProgress from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownEllipseProgress/GamePlaygroundFooterCountdownEllipseProgress.vue";
 import type GamePlaygroundFooterCountdownRemainingTime from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownRemainingTime/GamePlaygroundFooterCountdownRemainingTime.vue";

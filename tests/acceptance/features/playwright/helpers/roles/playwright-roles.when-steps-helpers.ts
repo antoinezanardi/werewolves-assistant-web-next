@@ -1,7 +1,8 @@
 import { World } from "@cucumber/cucumber";
+import type { Locator } from "playwright-core";
+
 import type { LocatorRole } from "@tests/acceptance/shared/types/playwright.types";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
-import type { Locator } from "playwright-core";
 
 async function clickOnRoleWithText(worldOrLocator: CustomWorld | Locator, role: LocatorRole, text: string, isExact = false): Promise<void> {
   const options = {

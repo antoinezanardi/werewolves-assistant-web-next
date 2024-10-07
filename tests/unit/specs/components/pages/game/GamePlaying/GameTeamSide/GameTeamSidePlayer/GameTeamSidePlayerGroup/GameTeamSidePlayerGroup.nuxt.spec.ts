@@ -1,14 +1,14 @@
-import type { NuxtImg } from "#components";
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { TooltipOptions } from "primevue/tooltip";
+
+import type { NuxtImg } from "#components";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
-import type { mount } from "@vue/test-utils";
-
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { TooltipOptions } from "primevue/tooltip";
 import GameTeamSidePlayerGroup from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerGroup/GameTeamSidePlayerGroup.vue";
 import type { GameTeamSidePlayerNameProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerName/game-team-side-player-name.types";
 import { StoreIds } from "~/stores/enums/store.enum";

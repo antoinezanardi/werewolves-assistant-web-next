@@ -41,6 +41,7 @@
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import type { PickListMoveToTargetEvent } from "primevue/picklist";
+
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

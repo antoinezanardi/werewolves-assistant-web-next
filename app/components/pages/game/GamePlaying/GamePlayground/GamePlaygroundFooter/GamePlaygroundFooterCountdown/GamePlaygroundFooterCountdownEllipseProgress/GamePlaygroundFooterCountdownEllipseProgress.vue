@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import Gradient from "javascript-color-gradient";
+
 import type { GamePlaygroundFooterCountdownEllipseProgressProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdownEllipseProgress/game-playground-footer-countdown-ellipse-progress.types";
 
 const props = defineProps<GamePlaygroundFooterCountdownEllipseProgressProps>();

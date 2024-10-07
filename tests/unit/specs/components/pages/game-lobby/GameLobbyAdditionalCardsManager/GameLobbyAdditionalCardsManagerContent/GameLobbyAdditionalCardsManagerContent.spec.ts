@@ -1,12 +1,12 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { mockPiniaStore } from "@tests/unit/utils/helpers/mock.helpers";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameLobbyAdditionalCardsManagerContent from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/GameLobbyAdditionalCardsManagerContent.vue";
 import type RecipientRoleAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsManager.vue";
 import { StoreIds } from "~/stores/enums/store.enum";

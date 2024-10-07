@@ -1,11 +1,11 @@
 import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import GameLobbyGroupOrganizerDisclaimer from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerDisclaimer/GameLobbyGroupOrganizerDisclaimer.vue";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import { StoreIds } from "~/stores/enums/store.enum";

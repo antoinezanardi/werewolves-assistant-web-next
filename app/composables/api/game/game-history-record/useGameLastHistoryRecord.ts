@@ -1,4 +1,5 @@
 import type { MaybeRef, Ref } from "vue";
+
 import type { GameHistoryRecordPlayerAttributeAlterationStatus } from "~/composables/api/game/types/game-history-record/game-history-record-player-attribute-alteration/game-history-record-player-attribute-alteration.types";
 import type { GameHistoryRecord } from "~/composables/api/game/types/game-history-record/game-history-record.class";
 import type { Game } from "~/composables/api/game/types/game.class";

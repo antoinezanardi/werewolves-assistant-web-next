@@ -1,4 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
@@ -6,10 +9,7 @@ import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/comp
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayerSide } from "@tests/unit/utils/factories/composables/api/game/player/player-side/player-side.factory";
 import { createFakeSeerAlivePlayer, createFakeWolfHoundAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameWolfHoundHasChosenSideEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWolfHoundHasChosenSideEvent/GameWolfHoundHasChosenSideEvent.vue";
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";

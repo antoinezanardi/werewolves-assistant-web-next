@@ -1,11 +1,11 @@
-import { createFakeUseRouter } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import type UseToast from "primevue/usetoast";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import { createFakeUseElementHover } from "@tests/unit/utils/factories/composables/vue-use/useElementHover.factory";
-import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
 import type { Mock } from "vitest";
 import type { Store, StoreDefinition } from "pinia";
 
+import { createFakeUseElementHover } from "@tests/unit/utils/factories/composables/vue-use/useElementHover.factory";
+import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { createFakeUseRouter } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import { createFakeI18n } from "@tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import { createFakeRuntimeConfig } from "@tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";

@@ -1,5 +1,7 @@
-import { type DataTable, Then } from "@cucumber/cucumber";
+import { Then } from "@cucumber/cucumber";
+import type { DataTable } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
+
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 

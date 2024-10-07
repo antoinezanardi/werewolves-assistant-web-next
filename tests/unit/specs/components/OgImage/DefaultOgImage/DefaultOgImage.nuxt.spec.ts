@@ -1,7 +1,7 @@
 import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import DefaultOgImage from "~/components/OgImage/DefaultOgImage.vue";
 
 describe("Default Og Image Component", () => {
