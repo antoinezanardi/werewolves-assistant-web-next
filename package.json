@@ -122,6 +122,7 @@
     "@typescript-eslint/types": "^8.8.0",
     "@vite-pwa/nuxt": "^0.10.5",
     "@vitest/coverage-istanbul": "^2.1.2",
+    "@vitest/eslint-plugin": "^1.1.6",
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
@@ -135,7 +136,6 @@
     "eslint": "^9.12.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.31.0",
-    "@vitest/eslint-plugin": "^1.1.6",
     "eslint-plugin-vue": "^9.28.0",
     "fuse.js": "^7.0.0",
     "happy-dom": "^14.12.3",
@@ -186,10 +186,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@primevue/themes": "^4.0.7",
+    "@primevue/themes": "^4.1.0",
     "animate.css": "^4.1.1",
     "is-ci": "^3.0.1",
-    "primevue": "^4.0.7"
+    "primevue": "^4.1.0"
   },
   "engines": {
     "node": ">=20.18.0"
