@@ -1,7 +1,7 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
-import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 
+import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import type { WitchPotion } from "~/composables/api/game/types/game-play/game-play.types";
 import { chooseAdditionalCardInPlayground, chooseSideInPlayground, makePlayInPlayground, playersVoteInPlayground, targetPlayerInPlayground, targetPlayersInPlayground } from "@tests/acceptance/features/game/helpers/game-play/game-play.when-steps-helpers";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";

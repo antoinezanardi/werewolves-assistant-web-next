@@ -1,19 +1,19 @@
 import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
-import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
-import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Button from "primevue/button";
 import type { TooltipOptions } from "primevue/tooltip";
 import { expect } from "vitest";
 import type { Ref } from "vue";
+
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import GameEventsMonitorFooter from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorFooter/GameEventsMonitorFooter.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";

@@ -1,8 +1,8 @@
-import type { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
+import type { NuxtImg } from "#components";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GameLobbyStartGameConfirmDialogPlayersReady from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersReady/GameLobbyStartGameConfirmDialogPlayersReady.vue";
 
 describe("Game Lobby Start Game Confirm Dialog Players Ready Component", () => {

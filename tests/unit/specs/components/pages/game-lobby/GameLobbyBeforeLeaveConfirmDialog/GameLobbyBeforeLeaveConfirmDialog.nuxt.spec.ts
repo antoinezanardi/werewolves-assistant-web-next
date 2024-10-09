@@ -1,16 +1,17 @@
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import { createFakeLocationNormalizedGuard } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type UseConfirm from "primevue/useconfirm";
-import { type Mock, vi } from "vitest";
+import { vi } from "vitest";
+import type { Mock } from "vitest";
 import type { Ref } from "vue";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { createFakeLocationNormalizedGuard } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

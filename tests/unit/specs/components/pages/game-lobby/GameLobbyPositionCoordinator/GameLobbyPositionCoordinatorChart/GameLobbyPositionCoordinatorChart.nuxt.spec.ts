@@ -1,11 +1,11 @@
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { ChartData, ChartOptions } from "chart.js";
+
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
+import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import { GAME_LOBBY_POSITION_COORDINATOR_GRAPH_CHART_DATALABELS_OPTIONS, GAME_LOBBY_POSITION_COORDINATOR_GRAPH_CHART_HEADING_OPTIONS } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/game-lobby-position-coordinator-chart.constants";
 import GameLobbyPositionCoordinatorChart from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/GameLobbyPositionCoordinatorChart.vue";
 import { StoreIds } from "~/stores/enums/store.enum";

@@ -37,10 +37,10 @@
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
+
 import type { GameLobbyStartGameButtonEmits } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/game-lobby-start-game-button.types";
 import type { GameLobbyStartGameConfirmDialogExposed } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/game-lobby-start-game-confirm-dialog.types";
 import GameLobbyStartGameConfirmDialog from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialog.vue";
-
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";

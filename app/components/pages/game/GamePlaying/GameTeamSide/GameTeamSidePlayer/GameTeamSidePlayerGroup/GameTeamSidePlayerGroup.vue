@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
+
 import type { GameTeamSidePlayerGroupProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerGroup/game-team-side-player-group.types";
 import { useGameStore } from "~/stores/game/useGameStore";
 

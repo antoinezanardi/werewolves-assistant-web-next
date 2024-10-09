@@ -16,6 +16,9 @@ import { ESLINT_GLOBAL_CONFIG } from "./config/eslint/flat-configs/eslint.global
 import { ESLINT_IGNORES } from "./config/eslint/eslint.constants.mjs";
 import { ESLINT_TYPESCRIPT_DECLARATION_CONFIG } from "./config/eslint/flat-configs/eslint.typescript-declaration-config.mjs";
 import { ESLINT_NUXT_CONFIG_FILE_CONFIG } from "./config/eslint/flat-configs/eslint.nuxt-config-file-config.mjs";
+import { ESLINT_IMPORT_CONFIG } from "./config/eslint/flat-configs/eslint.import-config.mjs";
+import { ESLINT_PLUGINS_CONFIG } from "./config/eslint/flat-configs/eslint.plugins-config.mjs";
+import { ESLINT_DECLARATIONS_CONFIG } from "./config/eslint/flat-configs/eslint.declarations-config.mjs";
 
 export default [
   {
@@ -23,7 +26,9 @@ export default [
     ignores: ESLINT_IGNORES,
   },
   ESLINT_GLOBAL_CONFIG,
+  ESLINT_IMPORT_CONFIG,
   ESLINT_TYPESCRIPT_CONFIG,
+  ESLINT_DECLARATIONS_CONFIG,
   ESLINT_TYPESCRIPT_DECLARATION_CONFIG,
   ESLINT_VUE_CONFIG,
   ESLINT_COMPOSABLES_CONFIG,
@@ -38,5 +43,6 @@ export default [
   ESLINT_STORES_CONFIG,
   ESLINT_CLASSES_CONFIG,
   ESLINT_MODULES_CONFIG,
+  ESLINT_PLUGINS_CONFIG,
   ESLINT_NUXT_CONFIG_FILE_CONFIG,
 ];

@@ -1,4 +1,5 @@
 import type { TupleToUnion } from "type-fest";
+
 import type { BACKGROUND_AUDIO_NAMES, SOUND_EFFECT_NAMES } from "~/stores/audio/constants/audio.constants";
 
 type AudioSettings = {

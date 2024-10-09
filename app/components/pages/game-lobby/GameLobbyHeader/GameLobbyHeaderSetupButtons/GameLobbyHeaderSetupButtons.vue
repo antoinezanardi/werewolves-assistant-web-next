@@ -44,6 +44,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import type { ComponentPublicInstance } from "vue";
+
 import type { GameLobbyHeaderSetupButtonsEmits, GameLobbyHeaderSetupButtonsExposed } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/game-lobby-header-setup-buttons.types";
 import GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderAdditionalCardsManagerButton/GameLobbyHeaderAdditionalCardsManagerButton.vue";
 import GameLobbyHeaderGroupOrganizerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderGroupOrganizerButton/GameLobbyHeaderGroupOrganizerButton.vue";

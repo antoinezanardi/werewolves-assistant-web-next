@@ -1,9 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGamePlayLoversMeetEachOther, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote, createFakeGamePlayWerewolvesEat } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
-import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { createFakeGamePlayLoversMeetEachOther, createFakeGamePlaySurvivorsElectSheriff, createFakeGamePlaySurvivorsVote, createFakeGamePlayWerewolvesEat } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import GamePlaygroundFooter from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooter.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type GamePlaygroundFooterCountdown from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundFooter/GamePlaygroundFooterCountdown/GamePlaygroundFooterCountdown.vue";

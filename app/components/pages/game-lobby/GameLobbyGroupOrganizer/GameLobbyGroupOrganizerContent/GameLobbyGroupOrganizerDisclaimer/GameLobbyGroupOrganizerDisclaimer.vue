@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
+
 import { MIN_PLAYERS_IN_GROUP } from "~/composables/api/game/constants/game.constants";
 import type { CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";

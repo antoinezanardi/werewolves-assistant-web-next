@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { ElderGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/elder-game-options/elder-game-options.class";
 
 function createFakeElderGameOptions(elderGameOptions: Partial<ElderGameOptions> = {}): ElderGameOptions {

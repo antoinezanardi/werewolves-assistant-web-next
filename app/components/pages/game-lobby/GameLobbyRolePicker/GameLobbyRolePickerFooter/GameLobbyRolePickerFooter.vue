@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+
 import type { GameLobbyRolePickerFooterEmits, GameLobbyRolePickerFooterProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerFooter/game-lobby-role-picker-footer.types";
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { Role } from "~/composables/api/role/types/role.class";

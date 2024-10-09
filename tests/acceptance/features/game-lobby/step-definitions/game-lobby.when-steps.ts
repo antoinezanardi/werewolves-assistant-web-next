@@ -1,11 +1,11 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { When } from "@cucumber/cucumber";
+
 import { setAdditionalCardsForRecipientInAdditionalCardsManager } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-additional-cards-manager/game-lobby-additional-cards-manager.when-steps-helpers";
 import { setPlayersInSecondGroupInGroupOrganizer } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-group-organizer/game-lobby-group-organizer.when-steps-helpers";
 import { chooseRoleInLobbyRolePicker } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-role-picker/game-lobby-role-picker.when-steps-helpers";
 import { closeDialogWithHeaderButton } from "@tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
-
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { createGameInLobby, enterPlayerInLobby, enterPlayerWithRoleInLobby, generateRandomCompositionInLobby, openAdditionalCardsManagerInLobby, openGroupOrganizerInLobby, openRolePickerForPlayerInLobby } from "@tests/acceptance/features/game-lobby/helpers/game-lobby.when-steps-helpers";
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";

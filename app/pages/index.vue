@@ -85,6 +85,7 @@
 
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import IndexFooter from "~/components/pages/index/IndexFooter.vue";
 
 definePageMeta({ layout: false });

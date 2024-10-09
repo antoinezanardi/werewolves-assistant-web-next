@@ -1,12 +1,12 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import { beforeEach } from "vitest";
+
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import { beforeEach } from "vitest";
 import type { CurrentGameEventProps } from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/game-events-monitor-current-event.types";
 import GameFoxMayHaveSniffedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameFoxMayHaveSniffedEvent/GameFoxMayHaveSniffedEvent.vue";
 import type GameEventFlippingPlayersCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayersCard.vue";
@@ -122,6 +122,7 @@ describe("Game Fox May Have Sniffed Event Component", () => {
       expect(gameFoxMayHaveSniffedEventComponent.attributes("texts")).toBe(expectedTextsAsString);
     });
   });
+
   describe("Flipping Player Card", () => {
     beforeEach(async() => {
       wrapper = await mountGameFoxMayHaveSniffedEventComponent({

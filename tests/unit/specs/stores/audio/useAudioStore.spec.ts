@@ -2,10 +2,11 @@ import type * as VueUse from "@vueuse/core";
 import { createPinia, setActivePinia } from "pinia";
 import type Radash from "radash";
 import { vi } from "vitest";
+import type Howler from "howler";
+
 import { DEFAULT_AUDIO_SETTINGS } from "~/stores/audio/constants/audio.constants";
 import type { AudioSettings } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
-import type Howler from "howler";
 
 const hoistedMocks = vi.hoisted(() => ({
   radash: { draw: vi.fn() },

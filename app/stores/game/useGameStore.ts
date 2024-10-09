@@ -1,6 +1,5 @@
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { defineStore } from "pinia";
-import { unique } from "radash";
 
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
 import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
@@ -19,7 +18,7 @@ const useGameStore = defineStore(StoreIds.GAME, () => {
   const game = ref<Game>(new Game());
   const gameOptions = computed<GameOptions>(() => game.value.options);
 
-  const gamePlayerGroups = computed<string[]>(() => unique(game.value.players.map(player => player.group)).filter(Boolean) as string[]);
+  const gamePlayerGroups = computed<string[]>(() => game.value.playerGroups ?? []);
 
   const fetchingGameStatus = ref<AsyncDataRequestStatus>("idle");
   const cancelingGameStatus = ref<AsyncDataRequestStatus>("idle");

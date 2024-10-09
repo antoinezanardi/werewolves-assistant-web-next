@@ -1,12 +1,12 @@
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { getError } from "@tests/unit/utils/helpers/exception.helpers";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type InputText from "primevue/inputtext";
 import { expect } from "vitest";
 import type { Ref } from "vue";
 
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import type { GameLobbyPlayerInputProps } from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/game-lobby-player-input.types";
 import GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";

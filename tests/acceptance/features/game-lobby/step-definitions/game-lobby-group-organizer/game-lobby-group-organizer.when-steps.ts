@@ -1,4 +1,6 @@
-import { type DataTable, When } from "@cucumber/cucumber";
+import { When } from "@cucumber/cucumber";
+import type { DataTable } from "@cucumber/cucumber";
+
 import { editGroupNameInGroupOrganizer, setPlayersInFirstGroupInGroupOrganizer, setPlayersInSecondGroupInGroupOrganizer } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-group-organizer/game-lobby-group-organizer.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 

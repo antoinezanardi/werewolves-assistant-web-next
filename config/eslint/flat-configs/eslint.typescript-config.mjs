@@ -82,6 +82,7 @@ const ESLINT_TYPESCRIPT_CONFIG = Object.freeze({
     "@typescript-eslint/no-base-to-string": ERROR,
     "@typescript-eslint/no-confusing-non-null-assertion": ERROR,
     "@typescript-eslint/no-confusing-void-expression": [ERROR, { ignoreArrowShorthand: true }],
+    "@typescript-eslint/no-deprecated": ERROR,
     "@typescript-eslint/no-dupe-class-members": ERROR,
     "@typescript-eslint/no-duplicate-enum-values": ERROR,
     "@typescript-eslint/no-duplicate-type-constituents": ERROR,

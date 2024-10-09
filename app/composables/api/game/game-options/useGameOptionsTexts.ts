@@ -1,9 +1,10 @@
 import { instanceToPlain } from "class-transformer";
 import type { Paths } from "type-fest";
-import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
-import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import type { ComputedRef, Ref } from "vue";
 import { keys, get } from "radash";
+
+import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
+import type { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
 import type { DeepStringifiedGameOptions } from "~/composables/api/game/types/game-options/game-options.types";
 import { useStrings } from "~/composables/misc/useStrings";
 import { useTimers } from "~/composables/misc/useTimers";

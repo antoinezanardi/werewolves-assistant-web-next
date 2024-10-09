@@ -1,8 +1,8 @@
 import type { AsyncDataRequestStatus } from "nuxt/app";
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 
+import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import type { Role } from "~/composables/api/role/types/role.class";
 import type { RoleName, RoleSide } from "~/composables/api/role/types/role.types";
 import { useFetchRoles } from "~/composables/api/role/useFetchRoles";

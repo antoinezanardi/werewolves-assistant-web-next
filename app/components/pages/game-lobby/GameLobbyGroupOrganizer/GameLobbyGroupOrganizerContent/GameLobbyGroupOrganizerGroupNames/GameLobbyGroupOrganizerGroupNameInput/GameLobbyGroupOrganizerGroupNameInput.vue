@@ -47,6 +47,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GameLobbyGroupOrganizerGroupNameInputEmits, GameLobbyGroupOrganizerGroupNameInputProps } from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerGroupNames/GameLobbyGroupOrganizerGroupNameInput/game-lobby-group-organizer-group-name-input.types";
 
 const props = defineProps<GameLobbyGroupOrganizerGroupNameInputProps>();

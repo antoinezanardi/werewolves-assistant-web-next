@@ -1,9 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GameWitchTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameWitchTurnStartsEvent/GameWitchTurnStartsEvent.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";

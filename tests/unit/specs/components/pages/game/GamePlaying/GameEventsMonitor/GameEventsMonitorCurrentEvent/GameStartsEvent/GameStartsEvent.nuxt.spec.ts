@@ -3,6 +3,7 @@ import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Radash from "radash";
 import { vi } from "vitest";
+
 import GameStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameStartsEvent/GameStartsEvent.vue";
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type GameEventWithTexts from "~/components/shared/game/game-event/GameEventWithTexts/GameEventWithTexts.vue";
@@ -13,7 +14,6 @@ import { useGameStore } from "~/stores/game/useGameStore";
 import { createFakeGamePlayCupidCharms, createFakeGamePlaySurvivorsElectSheriff } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeActorAlivePlayer, createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const hoistedMocks = vi.hoisted(() => ({ radash: { shuffle: vi.fn() } }));

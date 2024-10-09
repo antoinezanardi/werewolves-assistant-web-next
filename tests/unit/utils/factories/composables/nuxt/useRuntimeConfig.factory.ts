@@ -69,6 +69,7 @@ function createFakeRuntimeConfig(runtimeConfig: Partial<RuntimeConfig> = {}): Ru
           from: "",
         },
         injectStylesAsString: [],
+        loadStyles: true,
       },
       "nuxt-seo": {
         canonicalQueryWhitelist: [],

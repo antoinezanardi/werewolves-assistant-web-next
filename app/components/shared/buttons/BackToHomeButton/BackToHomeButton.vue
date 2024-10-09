@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { BackToHomeButtonProps } from "~/components/shared/buttons/BackToHomeButton/back-to-home-button.types";
 
 withDefaults(defineProps<BackToHomeButtonProps>(), {

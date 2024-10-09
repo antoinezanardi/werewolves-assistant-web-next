@@ -1,13 +1,13 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
-import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
-import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { TooltipOptions } from "primevue/tooltip";
 import type { Ref } from "vue";
+
+import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/vue-use/useMagicKeys.factory";
+import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
+import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GameEventNextTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/GameEventNextTextButton.vue";
 import { useGameStore } from "~/stores/game/useGameStore";
 

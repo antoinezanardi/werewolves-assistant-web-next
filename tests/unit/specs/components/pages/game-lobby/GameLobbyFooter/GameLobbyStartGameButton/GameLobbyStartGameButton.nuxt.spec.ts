@@ -1,4 +1,12 @@
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import { flushPromises } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type Button from "primevue/button";
+import type { Mock } from "vitest";
+import { expect } from "vitest";
+import type { Ref } from "vue";
+
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
@@ -10,14 +18,6 @@ import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
 import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
-import type { mount } from "@vue/test-utils";
-import { flushPromises } from "@vue/test-utils";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type Button from "primevue/button";
-import type { Mock } from "vitest";
-import { expect } from "vitest";
-import type { Ref } from "vue";
-
 import GameLobbyStartGameButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameButton.vue";
 import type GameLobbyStartGameConfirmDialog from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialog.vue";
 import * as UseFetchGames from "~/composables/api/game/useFetchGames";
@@ -158,6 +158,7 @@ describe("Game Lobby Start Game Button Component", () => {
       await nextTick();
 
       const button = wrapper.find(".start-game-button");
+
       expect(button.attributes("disabled")).toBe("true");
     });
 
@@ -167,6 +168,7 @@ describe("Game Lobby Start Game Button Component", () => {
       await nextTick();
 
       const button = wrapper.find(".start-game-button");
+
       expect(button.attributes("disabled")).toBe("false");
     });
 

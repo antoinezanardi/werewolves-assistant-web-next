@@ -1,13 +1,13 @@
+import type { mount } from "@vue/test-utils";
+import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import type { NuxtImg } from "#components";
 import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { createFakePlayerRole } from "@tests/unit/utils/factories/composables/api/game/player/player-role/player-role.factory";
 import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
-import type { mount } from "@vue/test-utils";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { GameTeamSidePlayerRoleNameProps } from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerRoleName/game-team-side-player-role-name.types";
 import GameTeamSidePlayerRoleName from "~/components/pages/game/GamePlaying/GameTeamSide/GameTeamSidePlayer/GameTeamSidePlayerRoleName/GameTeamSidePlayerRoleName.vue";
 

@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { TwoSistersGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/two-sisters-game-options/two-sisters-game-options.class";
 
 function createFakeTwoSistersGameOptions(twoSistersGameOptions: Partial<TwoSistersGameOptions> = {}): TwoSistersGameOptions {

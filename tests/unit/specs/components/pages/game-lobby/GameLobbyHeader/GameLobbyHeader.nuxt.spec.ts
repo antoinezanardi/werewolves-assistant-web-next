@@ -1,10 +1,11 @@
 import { createTestingPinia } from "@pinia/testing";
-import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import type { mount } from "@vue/test-utils";
-import { expect, type Mock } from "vitest";
+import { expect } from "vitest";
+import type { Mock } from "vitest";
 import type { Ref } from "vue";
-import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import type { GameLobbyHeaderExposed } from "~/components/pages/game-lobby/GameLobbyHeader/game-lobby-header.types";
 import GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type GameLobbyHeaderSetupButtons from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderSetupButtons.vue";
 import type GameLobbyPlayerInput from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyPlayerInput/GameLobbyPlayerInput.vue";

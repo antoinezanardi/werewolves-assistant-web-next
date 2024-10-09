@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { PrejudicedManipulatorGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/prejudiced-manipulator-game-options/prejudiced-manipulator-game-options.class";
 
 function createFakePrejudicedManipulatorGameOptions(prejudicedManipulatorGameOptions: Partial<PrejudicedManipulatorGameOptions> = {}): PrejudicedManipulatorGameOptions {

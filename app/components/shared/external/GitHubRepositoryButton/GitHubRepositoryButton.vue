@@ -18,6 +18,7 @@
 
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GitHubRepositoryButtonProps } from "~/components/shared/external/GitHubRepositoryButton/git-hub-repository-button.types";
 
 const props = defineProps<GitHubRepositoryButtonProps>();

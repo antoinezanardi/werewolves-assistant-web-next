@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import type GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import GameEventFlippingPlaySourcePlayersCard from "~/components/shared/game/game-event/GameEventFlippingPlayerCard/GameEventFlippingPlaySourcePlayersCard/GameEventFlippingPlaySourcePlayersCard.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
@@ -10,7 +11,6 @@ import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composable
 import { createFakeGamePlaySurvivorsVote } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Event Flipping Play Source Players Card Component", () => {

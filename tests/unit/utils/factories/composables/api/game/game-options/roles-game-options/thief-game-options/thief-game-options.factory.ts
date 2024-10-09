@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { ThiefGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/thief-game-options/thief-game-options.class";
 
 function createFakeThiefGameOptions(thiefGameOptions: Partial<ThiefGameOptions> = {}): ThiefGameOptions {

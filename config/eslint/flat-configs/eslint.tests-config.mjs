@@ -10,6 +10,13 @@ const ESLINT_TESTS_CONFIG = {
     "max-lines-per-function": OFF,
     "no-magic-numbers": OFF,
     "import/no-namespace": OFF,
+    "import/no-internal-modules": OFF,
+    "import/max-dependencies": [
+      ERROR, {
+        max: 40,
+        ignoreTypeImports: true,
+      },
+    ],
     "@typescript-eslint/init-declarations": OFF,
     "@typescript-eslint/no-magic-numbers": OFF,
     "@typescript-eslint/prefer-destructuring": OFF,
@@ -37,6 +44,14 @@ const ESLINT_TESTS_CONFIG = {
     "vitest/no-standalone-expect": ERROR,
     "vitest/no-test-prefixes": ERROR,
     "vitest/no-test-return-statement": ERROR,
+    "vitest/padding-around-after-all-blocks": ERROR,
+    "vitest/padding-around-after-each-blocks": ERROR,
+    "vitest/padding-around-all": ERROR,
+    "vitest/padding-around-before-all-blocks": ERROR,
+    "vitest/padding-around-before-each-blocks": ERROR,
+    "vitest/padding-around-describe-blocks": ERROR,
+    "vitest/padding-around-expect-groups": ERROR,
+    "vitest/padding-around-test-blocks": ERROR,
     "vitest/prefer-called-with": ERROR,
     "vitest/prefer-comparison-matcher": ERROR,
     "vitest/prefer-each": ERROR,
@@ -57,6 +72,7 @@ const ESLINT_TESTS_CONFIG = {
     "vitest/prefer-to-contain": ERROR,
     "vitest/prefer-to-have-length": ERROR,
     "vitest/prefer-todo": ERROR,
+    "vitest/prefer-vi-mocked": ERROR,
     "vitest/require-hook": [
       ERROR, {
         allowedFunctionCalls: ["mockNuxtImport"],

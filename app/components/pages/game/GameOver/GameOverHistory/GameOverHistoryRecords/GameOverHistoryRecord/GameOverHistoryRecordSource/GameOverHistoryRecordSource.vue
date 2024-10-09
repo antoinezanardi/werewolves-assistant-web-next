@@ -34,6 +34,7 @@
 
 <script setup lang="ts">
 import { shuffle } from "radash";
+
 import type { GameOverHistoryRecordSourceProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordSource/game-over-history-record-source.types";
 import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";

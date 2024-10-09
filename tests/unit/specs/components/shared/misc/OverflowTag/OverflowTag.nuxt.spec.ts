@@ -1,8 +1,8 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type Tag from "primevue/tag";
-import type { OverflowTagProps } from "~/components/shared/misc/OverflowTag/overflow-tag.types";
 
+import type { OverflowTagProps } from "~/components/shared/misc/OverflowTag/overflow-tag.types";
 import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 

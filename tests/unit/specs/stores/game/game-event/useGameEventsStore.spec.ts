@@ -1,8 +1,9 @@
+import { createPinia, setActivePinia } from "pinia";
+
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
 import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
-import { createPinia, setActivePinia } from "pinia";
 import type { GameEvent } from "~/composables/api/game/game-event/game-event.class";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
@@ -41,6 +42,7 @@ describe("Game Events Store", () => {
 
   it("should have initial state when created.", () => {
     const gameEventsStore = useGameEventsStore();
+
     expect(gameEventsStore.currentGameEvent).toBeUndefined();
     expect(gameEventsStore.canGoToPreviousGameEvent).toBeFalsy();
     expect(gameEventsStore.canGoToNextGameEvent).toBeTruthy();

@@ -1,4 +1,5 @@
 import { When } from "@cucumber/cucumber";
+
 import { closeDialogWithFooterButton, closeDialogWithHeaderButton } from "@tests/acceptance/features/playwright/helpers/dialogs/playwright-dialogs.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 

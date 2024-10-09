@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { useGameStore } from "~/stores/game/useGameStore";

@@ -2,9 +2,9 @@
 
 exports[`Game Lobby Group Organizer Group Name Input Component > Inplace content is revealed > should match snapshot without shallow rendering when inplace content is revealed. 1`] = `
 "<div id="game-lobby-group-organizer-group-name-input">
-  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" data-pc-section="root" pc7="">
+  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" pc7="" data-pc-section="root">
     <div class="p-inplace-content" data-pc-section="content">
-      <div class="p-inputgroup" data-pc-name="inputgroup" data-pc-section="root" pc10=""><input type="text" class="p-inputtext p-component p-filled" id="group-name-input" aria-label="Group name" autofocus="" maxlength="30" data-pc-name="inputtext" data-pc-section="root" value="Group 1" pc8=""><button class="p-button p-component p-button-success" type="button" aria-label="Submit updated group name" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="submit-group-name-button" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" pc9=""><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <div class="p-inputgroup" data-pc-name="inputgroup" pc8="" data-pc-section="root"><input type="text" class="p-inputtext p-component p-filled" id="group-name-input" aria-label="Group name" autofocus="" maxlength="30" data-pc-name="inputtext" pc9="" data-pc-section="root" value="Group 1"><button class="p-button p-component p-button-success" type="button" aria-label="Submit updated group name" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="submit-group-name-button" pc10="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path class="" fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
           </svg><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
     </div>
@@ -14,7 +14,7 @@ exports[`Game Lobby Group Organizer Group Name Input Component > Inplace content
 
 exports[`Game Lobby Group Organizer Group Name Input Component > should match snapshot when rendered without shallow rendering. 1`] = `
 "<div id="game-lobby-group-organizer-group-name-input">
-  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" data-pc-section="root" pc3="">
+  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" pc3="" data-pc-section="root">
     <div class="p-inplace-display" tabindex="0" role="button" data-pc-section="display">
       <h5 id="group-name" aria-label="components.GameLobbyGroupOrganizerGroupNameInput.editGroupName, {" name":"Group 1"}"><svg class="svg-inline--fa fa-edit me-2 text-info" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="edit" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path class="" fill="currentColor" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z"></path>
@@ -26,7 +26,7 @@ exports[`Game Lobby Group Organizer Group Name Input Component > should match sn
 
 exports[`Game Lobby Group Organizer Group Name Input Component > should match snapshot when rendered. 1`] = `
 "<div id="game-lobby-group-organizer-group-name-input">
-  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" data-pc-section="root" pc1="">
+  <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" pc1="" data-pc-section="root">
     <div class="p-inplace-display" tabindex="0" role="button" data-pc-section="display">
       <h5 id="group-name" aria-label="components.GameLobbyGroupOrganizerGroupNameInput.editGroupName, {" name":"Group 1"}">
         <font-awesome-icon-stub icon="edit" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="me-2 text-info"></font-awesome-icon-stub><span>Group 1</span>

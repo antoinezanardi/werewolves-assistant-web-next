@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import BackToHomeButton from "~/components/shared/buttons/BackToHomeButton/BackToHomeButton.vue";
 import CreateAnotherGameButton from "~/components/shared/buttons/CreateAnotherGameButton/CreateAnotherGameButton.vue";
 

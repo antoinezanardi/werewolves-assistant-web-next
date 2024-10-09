@@ -1,5 +1,6 @@
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
+
 import { getPlayerGroupByNameInGameTeamSide } from "@tests/acceptance/features/game/helpers/player/player-group/player-group.then-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 

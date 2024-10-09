@@ -1,5 +1,6 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { RouteLocationNormalizedLoaded } from "vue-router";
+
 import { useWerewolvesAssistantRoutes } from "~/composables/route/useWerewolvesAssistantRoutes";
 
 const { mockedUseRoute } = vi.hoisted(() => ({ mockedUseRoute: { name: "home" } }));

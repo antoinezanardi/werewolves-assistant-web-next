@@ -65,5 +65,6 @@ export default {
     low: 100,
     break: 100,
   },
+  dryRunTimeoutMinutes: 10,
   disableTypeChecks: true,
 };

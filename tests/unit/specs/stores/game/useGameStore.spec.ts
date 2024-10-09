@@ -1,8 +1,8 @@
+import { createPinia, setActivePinia } from "pinia";
+
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
-import { createPinia, setActivePinia } from "pinia";
-
 import { Game } from "~/composables/api/game/types/game.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -40,6 +40,19 @@ describe("Game Store", () => {
 
     expect(gameStore.game).toStrictEqual<Game>(expectedGame);
     expect(gameStore.fetchingGameStatus).toBe("idle");
+  });
+
+  it("should have empty player groups when there is no player groups in game.", () => {
+    const gameStore = useGameStore();
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>([]);
+  });
+
+  it("should have player groups when there is player groups in game.", () => {
+    const gameStore = useGameStore();
+    gameStore.game.playerGroups = ["group1", "group2"];
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>(["group1", "group2"]);
   });
 
   describe("resetGame", () => {

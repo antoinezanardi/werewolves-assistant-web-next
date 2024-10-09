@@ -9,8 +9,9 @@ import VueDraggable from "vuedraggable";
 import VueCountdown from "@chenfengyuan/vue-countdown";
 import VueEllipseProgress from "vue-ellipse-progress";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { GlowCapture } from "#components";
 import { clone, construct, crush } from "radash";
+
+import { GlowCapture } from "#components";
 
 function getDefaultMountingOptions<T>(): ComponentMountingOptions<T> {
   return {

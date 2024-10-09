@@ -68,6 +68,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
+
 import type { LabeledCreateGameAdditionalCardDto, RecipientRoleAdditionalCardsMultiSelectProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/recipient-role-additional-cards-multi-select.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";

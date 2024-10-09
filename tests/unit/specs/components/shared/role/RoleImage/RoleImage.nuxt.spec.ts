@@ -1,7 +1,7 @@
-import { NuxtImg } from "#components";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { NuxtImg } from "#components";
 import type { RoleImageProps } from "~/components/shared/role/RoleImage/role-image.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import * as UseRoleName from "~/composables/api/role/useRoleName";

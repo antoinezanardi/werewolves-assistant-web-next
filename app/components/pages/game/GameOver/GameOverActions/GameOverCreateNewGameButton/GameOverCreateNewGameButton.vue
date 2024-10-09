@@ -44,8 +44,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import { useConfirm } from "primevue/useconfirm";
 import type { ComponentPublicInstance } from "vue";
-import { useGameStore } from "~/stores/game/useGameStore";
 import { stringify as stringifyForUrl } from "qs";
+
+import { useGameStore } from "~/stores/game/useGameStore";
 
 const createNewGameButton = ref<ComponentPublicInstance | null>(null);
 

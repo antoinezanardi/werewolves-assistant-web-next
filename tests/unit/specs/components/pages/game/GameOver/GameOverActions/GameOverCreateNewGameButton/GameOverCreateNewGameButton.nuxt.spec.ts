@@ -1,16 +1,17 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
-import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type { ButtonProps } from "primevue/button";
 import type Button from "primevue/button";
 import type { ConfirmationOptions } from "primevue/confirmationoptions";
 import type UseConfirm from "primevue/useconfirm";
-import { type Mock, vi } from "vitest";
+import { vi } from "vitest";
+import type { Mock } from "vitest";
 import type { mount } from "@vue/test-utils";
 
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
+import { createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import GameOverCreateNewGameButton from "~/components/pages/game/GameOver/GameOverActions/GameOverCreateNewGameButton/GameOverCreateNewGameButton.vue";
 import { StoreIds } from "~/stores/enums/store.enum";

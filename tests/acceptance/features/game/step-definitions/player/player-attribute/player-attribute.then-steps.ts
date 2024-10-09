@@ -1,6 +1,7 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
+
 import { getPlayerAttributeByRoleNameInGameTeamSide } from "@tests/acceptance/features/game/helpers/player/player-attribute/player-attribute.then-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 

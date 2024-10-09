@@ -21,6 +21,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
+
 import type { GameEventNextTextButtonEmits } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/game-event-next-text-button.types";
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
 import { useGameStore } from "~/stores/game/useGameStore";

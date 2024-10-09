@@ -1,4 +1,6 @@
-import { type DataTable, When } from "@cucumber/cucumber";
+import { When } from "@cucumber/cucumber";
+import type { DataTable } from "@cucumber/cucumber";
+
 import { setAdditionalCardsForRecipientInAdditionalCardsManager } from "@tests/acceptance/features/game-lobby/helpers/game-lobby-additional-cards-manager/game-lobby-additional-cards-manager.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";

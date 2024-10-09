@@ -1,8 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
-import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
-import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
+import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
+import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import GameAccursedWolfFatherMayHaveInfectedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameAccursedWolfFatherMayHaveInfectedEvent/GameAccursedWolfFatherMayHaveInfectedEvent.vue";
 import GameActorMayHaveChosenCardEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameActorMayHaveChosenCardEvent/GameActorMayHaveChosenCardEvent.vue";
 import GameBearGrowlsOrSleepsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameBearGrowlsOrSleepsEvent/GameBearGrowlsOrSleepsEvent.vue";
@@ -25,7 +26,6 @@ import GameVillagerVillagerIntroductionEvent from "~/components/pages/game/GameP
 import GameWildChildHasTransformedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWildChildHasTransformedEvent/GameWildChildHasTransformedEvent.vue";
 import GameWolfHoundHasChosenSide from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameWolfHoundHasChosenSideEvent/GameWolfHoundHasChosenSideEvent.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { useGameStore } from "~/stores/game/useGameStore";

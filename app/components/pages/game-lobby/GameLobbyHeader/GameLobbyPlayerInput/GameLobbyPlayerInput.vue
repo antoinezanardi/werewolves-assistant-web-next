@@ -53,7 +53,8 @@
 <script lang="ts" setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
-import { type ComponentPublicInstance, computed } from "vue";
+import { computed } from "vue";
+import type { ComponentPublicInstance } from "vue";
 
 import { MAX_PLAYERS_IN_GAME } from "~/composables/api/game/constants/game.constants";
 import { MAX_PLAYER_NAME_LENGTH } from "~/composables/api/game/constants/player/player.constants";

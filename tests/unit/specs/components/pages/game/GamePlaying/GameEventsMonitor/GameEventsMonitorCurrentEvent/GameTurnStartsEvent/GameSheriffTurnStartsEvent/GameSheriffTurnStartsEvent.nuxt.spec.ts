@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import GameSheriffTurnStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameTurnStartsEvent/GameSheriffTurnStartsEvent/GameSheriffTurnStartsEvent.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -10,7 +11,6 @@ import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composable
 import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySheriffSettlesVotes } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Sheriff Turn Starts Event Component", () => {

@@ -21,8 +21,9 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import soundLottieJson from "~/assets/lottie/sound.json";
 import type { AnimationSegment, Vue3Lottie } from "vue3-lottie";
+
+import soundLottieJson from "~/assets/lottie/sound.json";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 
 const audioStore = useAudioStore();

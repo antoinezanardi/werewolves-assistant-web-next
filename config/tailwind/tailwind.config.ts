@@ -27,7 +27,6 @@ export default {
     },
     container: { center: true },
     fontFamily: { sans: ["Quicksand", "Arial", "sans-serif"] },
-  },
-  // eslint-disable-next-line @typescript-eslint/no-require-imports, no-undef
+  }, // eslint-disable-next-line @typescript-eslint/no-require-imports, no-undef,import/no-commonjs
   plugins: [require("@aksharahegde/nuxt-glow/tailwind")],
 } satisfies Config;

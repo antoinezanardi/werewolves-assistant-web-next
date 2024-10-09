@@ -1,5 +1,8 @@
-import type { NuxtImg } from "#components";
 import { createTestingPinia } from "@pinia/testing";
+import type { mount } from "@vue/test-utils";
+import type VueUseCore from "@vueuse/core";
+
+import type { NuxtImg } from "#components";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeCupidGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/cupid-game-options/cupid-game-options.factory";
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
@@ -7,8 +10,6 @@ import { createFakeGameVictory } from "@tests/unit/utils/factories/composables/a
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { mount } from "@vue/test-utils";
-import type VueUseCore from "@vueuse/core";
 import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictoryText/GameOverVictoryText.vue";
 import type { GameVictory } from "~/composables/api/game/types/game-victory/game-victory.class";
 import type { Game } from "~/composables/api/game/types/game.class";

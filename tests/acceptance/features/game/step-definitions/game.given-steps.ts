@@ -1,5 +1,6 @@
 import type { DataTable } from "@cucumber/cucumber";
 import { Given } from "@cucumber/cucumber";
+
 import { createGame } from "@tests/acceptance/features/game/helpers/game.given-steps-helpers";
 import { goOnPage } from "@tests/acceptance/features/playwright/helpers/pages/playwright-pages.given-steps-helper";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
