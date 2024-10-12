@@ -130,7 +130,7 @@ describe("Game Feedback Submitter Rating Component", () => {
         expect(icon.classes()).toContain(expectedIconClasses);
       });
 
-      it("should display off icon with text-secondary class when score is 0.", async() => {
+      it("should display off icon with text-primary class when score is 0.", async() => {
         wrapper = await mountGameFeedbackSubmitterRatingComponent({
           props: {
             modelValue: 0,

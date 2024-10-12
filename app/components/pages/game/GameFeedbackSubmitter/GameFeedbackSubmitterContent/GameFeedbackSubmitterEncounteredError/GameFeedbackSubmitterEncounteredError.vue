@@ -26,7 +26,8 @@
     >
       <template #icon>
         <FontAwesomeIcon
-          class="fa-2x on-icon"
+          id="toggle-button-icon"
+          class="fa-2x"
           :icon="toggleButtonIcon"
         />
       </template>
@@ -47,7 +48,7 @@ const { creatingGameFeedbackStatus } = storeToRefs(gameStore);
 
 const toggleButtonIcon = computed<string>(() => (hasEncounteredError.value ? "bug" : "check"));
 
-const toggleButtonClasses = computed<string>(() => (hasEncounteredError.value ? "!bg-error border-error" : "!bg-success"));
+const toggleButtonClasses = computed<string>(() => (hasEncounteredError.value ? "!bg-error" : "!bg-success"));
 
 const isToggleButtonDisabled = computed<boolean>(() => creatingGameFeedbackStatus.value === "pending");
 </script>

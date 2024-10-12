@@ -1,6 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
-import type { mount } from "@vue/test-utils";
-import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type { mount, ComponentMountingOptions } from "@vue/test-utils";
 import type Button from "primevue/button";
 
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";

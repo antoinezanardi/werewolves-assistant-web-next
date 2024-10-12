@@ -7,6 +7,7 @@ import { createFakeCreateGameFeedbackDto } from "@tests/unit/utils/factories/com
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { GameFeedbackSubmitterContentProps } from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterContent/game-feedback-submitter-content.types";
 import GameFeedbackSubmitterContent from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterContent/GameFeedbackSubmitterContent.vue";
+import type GameFeedbackSubmitterEncounteredError from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterContent/GameFeedbackSubmitterEncounteredError/GameFeedbackSubmitterEncounteredError.vue";
 import type GameFeedbackSubmitterRating from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterContent/GameFeedbackSubmitterRating/GameFeedbackSubmitterRating.vue";
 import type GameFeedbackSubmitterReview from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterContent/GameFeedbackSubmitterReview/GameFeedbackSubmitterReview.vue";
 import type { CreateGameFeedbackDto } from "~/composables/api/game/dto/create-game-feedback/create-game-feedback.dto";
@@ -15,6 +16,7 @@ describe("Game Feedback Submitter Content Component", () => {
   const defaultCreateGameFeedbackDto = createFakeCreateGameFeedbackDto({
     score: 2,
     review: "This game is awesome!",
+    hasEncounteredError: false,
   });
   const defaultProps: GameFeedbackSubmitterContentProps = {
     modelValue: defaultCreateGameFeedbackDto,
@@ -53,6 +55,22 @@ describe("Game Feedback Submitter Content Component", () => {
         await nextTick();
 
         expect((wrapper.vm as unknown as { createGameFeedbackDto: Ref<CreateGameFeedbackDto> }).createGameFeedbackDto.value.score).toBe(newModelValue);
+      });
+    });
+
+    describe("Error", () => {
+      it("should pass create game feedback encountered error to encountered error when rendered.", () => {
+        const encounteredError = wrapper.findComponent<typeof GameFeedbackSubmitterEncounteredError>("#game-feedback-submitter-encountered-error");
+
+        expect(encounteredError.props("modelValue")).toBe(defaultProps.modelValue.hasEncounteredError);
+      });
+
+      it("should change create game feedback encountered error when update model value event is emitted.", async() => {
+        const encounteredError = wrapper.findComponent<typeof GameFeedbackSubmitterEncounteredError>("#game-feedback-submitter-encountered-error");
+        (encounteredError.vm as VueVm).$emit("update:modelValue", true);
+        await nextTick();
+
+        expect((wrapper.vm as unknown as { createGameFeedbackDto: Ref<CreateGameFeedbackDto> }).createGameFeedbackDto.value.hasEncounteredError).toBeTruthy();
       });
     });
 

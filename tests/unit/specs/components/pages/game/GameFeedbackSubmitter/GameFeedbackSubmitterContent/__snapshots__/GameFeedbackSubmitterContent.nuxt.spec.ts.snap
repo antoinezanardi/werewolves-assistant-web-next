@@ -5,7 +5,7 @@ exports[`Game Feedback Submitter Content Component > should match snapshot when 
   <form class="flex flex-col gap-2">
     <div class="flex flex-col gap-4 justify-around md:flex-row">
       <game-feedback-submitter-rating-stub modelvalue="2" id="game-feedback-submitter-rating" class="w-auto"></game-feedback-submitter-rating-stub>
-      <game-feedback-submitter-encountered-error-stub modelvalue="true" id="game-feedback-submitter-encountered-error" class="w-auto"></game-feedback-submitter-encountered-error-stub>
+      <game-feedback-submitter-encountered-error-stub modelvalue="false" id="game-feedback-submitter-encountered-error" class="w-auto"></game-feedback-submitter-encountered-error-stub>
     </div>
     <divider-stub></divider-stub>
     <game-feedback-submitter-review-stub modelvalue="This game is awesome!" id="game-feedback-submitter-review"></game-feedback-submitter-review-stub>

@@ -1,5 +1,5 @@
 type GameFeedbackSubmitterEncounteredErrorProps = {
-  hasEncounteredError: boolean;
+  modelValue: boolean;
 };
 
 export type {
