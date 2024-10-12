@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Feedback Submitter Review Component > should match snapshot when rendered. 1`] = `
+"<div id="game-feedback-submitter-review-container" class="flex flex-col gap-3"><label id="game-feedback-submitter-review-label" class="font-bold ps-2 text-xl">
+    <font-awesome-icon-stub icon="heart" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="mr-1 text-red-500"></font-awesome-icon-stub> Mind sharing a quick review?
+  </label><span class="p-floatlabel p-floatlabel-on" data-pc-name="floatlabel" pc1="" data-pc-section="root"><textarea-stub id="game-feedback-submitter-review-input" modelvalue="This game is awesome!" auto-resize="" cols="30" disabled="false" fluid="" max-length="1000" rows="5"></textarea-stub><label id="game-feedback-submitter-review-input-label" for="game-feedback-submitter-review-input">This is optional but will help us a lot to improve the Werewolves Assistant</label></span></div>"
+`;
