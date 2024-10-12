@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Feedback Submitter Encountered Error Component > should match snapshot when rendered. 1`] = `
-"<div id="game-feedback-submitter-encountered-error-container" class="flex flex-col gap-3 items-center justify-center"><label id="game-feedback-submitter-encountered-error-label" class="font-bold text-center text-xl">
+"<div id="game-feedback-submitter-encountered-error-container" class="flex flex-col gap-3 items-center justify-center"><label id="game-feedback-submitter-encountered-error-label" class="font-bold text-center text-xl" for="game-feedback-submitter-encountered-error-input">
     <font-awesome-icon-stub icon="bug" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false" class="mr-1 text-red-500"></font-awesome-icon-stub> Was everything all right during the game?
   </label>
   <toggle-button-stub id="game-feedback-submitter-encountered-error-input" modelvalue="false" class="!border-0 !bg-success" disabled="false" off-label="The game was stable"></toggle-button-stub>

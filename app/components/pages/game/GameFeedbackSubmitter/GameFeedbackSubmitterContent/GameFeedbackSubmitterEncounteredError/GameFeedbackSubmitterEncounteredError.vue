@@ -6,6 +6,7 @@
     <label
       id="game-feedback-submitter-encountered-error-label"
       class="font-bold text-center text-xl"
+      for="game-feedback-submitter-encountered-error-input"
     >
       <FontAwesomeIcon
         class="mr-1 text-red-500"

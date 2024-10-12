@@ -6,6 +6,7 @@
     <label
       id="game-feedback-submitter-rating-label"
       class="font-bold text-center text-xl"
+      for="game-feedback-submitter-rating"
     >
       {{ $t("components.GameFeedbackSubmitterRating.rating") }}
     </label>

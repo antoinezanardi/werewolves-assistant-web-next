@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Feedback Submitter Rating Component > should match snapshot when rendered. 1`] = `
-"<div id="game-feedback-submitter-rating-container" class="flex flex-col gap-5 items-center justify-center"><label id="game-feedback-submitter-rating-label" class="font-bold text-center text-xl">What is your rating for this game?</label>
+"<div id="game-feedback-submitter-rating-container" class="flex flex-col gap-5 items-center justify-center"><label id="game-feedback-submitter-rating-label" class="font-bold text-center text-xl" for="game-feedback-submitter-rating">What is your rating for this game?</label>
   <rating-stub id="game-feedback-submitter-rating" disabled="false" model-value="2"></rating-stub>
   <transition-stub mode="out-in" name="fade" appear="false" persisted="false" css="true">
     <badge-stub id="rating-description-badge" class="!p-4 font-semibold" severity="danger" size="large" value="components.GameFeedbackSubmitterRating.bad"></badge-stub>

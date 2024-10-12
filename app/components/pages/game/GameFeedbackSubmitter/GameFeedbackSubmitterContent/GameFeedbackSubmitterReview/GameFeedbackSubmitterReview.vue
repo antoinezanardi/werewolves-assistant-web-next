@@ -6,6 +6,7 @@
     <label
       id="game-feedback-submitter-review-label"
       class="font-bold ps-2 text-xl"
+      for="game-feedback-submitter-review-input"
     >
       <FontAwesomeIcon
         class="mr-1 text-red-500"
