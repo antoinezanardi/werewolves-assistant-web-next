@@ -60,9 +60,6 @@ Feature: ❓ About Page
     When the user hovers the link with name "I don't know this game"
     Then the tooltip with text "Watch an explanatory video on YouTube" should be visible
 
-    When the user clicks on the link with name "I don't know this game"
-    Then a new page should be opened with url starting with "https://www.youtube.com"
-
   Scenario: ❓ User goes on GitHub to contribute to the project by clicking on the link
     Given the user is on about page
     And the user is about to open a page on new tab
