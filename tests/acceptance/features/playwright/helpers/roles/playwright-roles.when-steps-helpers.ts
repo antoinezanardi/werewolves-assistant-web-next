@@ -14,6 +14,12 @@ async function clickOnRoleWithText(worldOrLocator: CustomWorld | Locator, role: 
   await locator.click();
 }
 
+async function clickOnLabel(world: CustomWorld, label: string, isExact = false): Promise<void> {
+  const input = world.page.getByLabel(label, { exact: isExact });
+  await input.waitFor({ state: "visible" });
+  await input.click();
+}
+
 async function hoverOnRoleWithText(world: CustomWorld, role: LocatorRole, text: string, isExact = false): Promise<void> {
   const button = world.page.getByRole(role, { name: text, exact: isExact });
   await button.waitFor({ state: "visible" });
@@ -22,5 +28,6 @@ async function hoverOnRoleWithText(world: CustomWorld, role: LocatorRole, text: 
 
 export {
   clickOnRoleWithText,
+  clickOnLabel,
   hoverOnRoleWithText,
 };

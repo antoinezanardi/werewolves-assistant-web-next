@@ -10,6 +10,7 @@ Feature: 🎲🚫 Game Canceled
     And the user clicks on the cancel game button in parameters in navigation bar
     Then the heading with name "Game canceled" should be visible
     And the link with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the link with name "Back to home" should be visible
     And the toast with text "Game canceled" should be visible
     And the page should match or creates the missing snapshot with name "Game canceled"

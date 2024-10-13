@@ -41,6 +41,7 @@ Feature: 🏆 Game Victory
     Then the game should be over with title "Draw! Everyone is dead in the village…" and subtitle "Everybody murdered each other. A deadly silence reigns in the village…"
     And the game winners should have no winners
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by nobody"
 
   Scenario: 🏆 Game is won by Villagers
@@ -67,6 +68,7 @@ Feature: 🏆 Game Victory
       | Charlie |
       | David   |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Villagers"
 
   Scenario: 🏆 Game is won by Werewolves
@@ -99,6 +101,7 @@ Feature: 🏆 Game Victory
       | Bob     |
       | David   |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Werewolves"
 
   Scenario: 🏆 Game is won by Lovers
@@ -137,6 +140,7 @@ Feature: 🏆 Game Victory
       | Antoine |
       | Bob     |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Lovers"
 
   Scenario: 🏆 Game is won by Angel
@@ -161,6 +165,7 @@ Feature: 🏆 Game Victory
       | name  |
       | David |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Angel"
 
   Scenario: 🏆 Game is won by Pied Piper
@@ -194,6 +199,7 @@ Feature: 🏆 Game Victory
       | name    |
       | Antoine |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Pied Piper"
 
   Scenario: 🏆 Game is won by White Werewolf
@@ -224,6 +230,7 @@ Feature: 🏆 Game Victory
       | name    |
       | Antoine |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by White Werewolf"
 
   Scenario: 🏆 Game is won by Prejudiced Manipulator
@@ -257,4 +264,5 @@ Feature: 🏆 Game Victory
       | name  |
       | David |
     And the button with name "Create another game" should be visible
+    And the button with name "Give feedback on this game" should be visible
     And the page should match or creates the missing snapshot with name "Game won by Prejudiced Manipulator"
