@@ -17,6 +17,7 @@ function createFakeGame(game: Partial<Game> = {}): Game {
     currentPlay: game.currentPlay ?? null,
     upcomingPlays: game.upcomingPlays ?? [],
     additionalCards: game.additionalCards,
+    feedback: game.feedback ?? null,
     lastGameHistoryRecord: game.lastGameHistoryRecord ?? null,
     options: createFakeGameOptions(game.options),
     victory: game.victory,

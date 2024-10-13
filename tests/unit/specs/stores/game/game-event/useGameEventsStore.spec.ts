@@ -4,7 +4,7 @@ import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
 import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
 import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
-import type { GameEvent } from "~/composables/api/game/game-event/game-event.class";
+import type { GameEvent } from "~/composables/api/game/types/game-event/game-event.class";
 import type { Game } from "~/composables/api/game/types/game.class";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlayWolfHoundChoosesSide } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";

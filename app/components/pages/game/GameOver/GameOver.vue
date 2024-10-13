@@ -14,7 +14,8 @@
 
     <GameOverActions
       id="game-over-actions"
-      @show-game-history="onShowGameHistoryFromGameOverActions"
+      @game-feedback-submitter-button-click="onClickFromGameFeedbackSubmitterButton"
+      @game-history-button-click="onClickFromGameHistoryButton"
     />
 
     <GameOverHistory ref="gameOverHistory"/>
@@ -24,6 +25,7 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 
+import type { GameOverEmits } from "~/components/pages/game/GameOver/game-over.types";
 import GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
 import type { GameOverHistoryExposed } from "~/components/pages/game/GameOver/GameOverHistory/game-over-history.types";
 import GameOverHistory from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistory.vue";
@@ -35,6 +37,8 @@ import type { SoundEffectName } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
+
+const emit = defineEmits<GameOverEmits>();
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
@@ -63,11 +67,15 @@ const gameOverHistory = ref<GameOverHistoryExposed | null>(null);
 
 const winners = computed<Player[] | undefined>(() => game.value.victory?.winners);
 
-function onShowGameHistoryFromGameOverActions(): void {
+function onClickFromGameHistoryButton(): void {
   if (!gameOverHistory.value) {
     throw createError("Game Over History is not defined");
   }
   gameOverHistory.value.showGameHistory();
+}
+
+function onClickFromGameFeedbackSubmitterButton(): void {
+  emit("gameFeedbackSubmitterButtonClick");
 }
 
 function playVictorySoundEffect(): void {

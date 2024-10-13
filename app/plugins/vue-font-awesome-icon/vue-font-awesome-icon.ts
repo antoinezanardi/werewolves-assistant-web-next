@@ -7,6 +7,7 @@ import {
   faBan,
   faBars,
   faBolt,
+  faBug,
   faBullhorn,
   faCheck,
   faCheckCircle,
@@ -79,7 +80,10 @@ import {
   faWandSparkles,
   faWarning,
 } from "@fortawesome/free-solid-svg-icons";
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  faQuestionCircle,
+  faStar as faStarRegular,
+} from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 config.autoAddCss = false;
@@ -90,6 +94,7 @@ library.add(
   faBalanceScale,
   faBan,
   faBars,
+  faBug,
   faBolt,
   faBullhorn,
   faCheck,
@@ -153,6 +158,7 @@ library.add(
   faSkullCrossbones,
   faSliders,
   faStar,
+  faStarRegular,
   faStepBackward,
   faStepForward,
   faSun,

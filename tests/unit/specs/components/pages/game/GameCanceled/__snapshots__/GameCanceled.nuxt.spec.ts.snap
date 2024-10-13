@@ -8,6 +8,7 @@ exports[`Game Canceled Component > should match snapshot when rendered. 1`] = `
   <divider-stub class="!w-2/3"></divider-stub>
   <div class="flex flex-col gap-2 md:flex-row">
     <create-another-game-button-stub class="md:w-auto w-full"></create-another-game-button-stub>
+    <game-feedback-submitter-button-stub id="game-feedback-submitter-button" class="md:w-auto w-full"></game-feedback-submitter-button-stub>
     <back-to-home-button-stub pbuttonclass="p-button-secondary" textkey="components.BackToHomeButton.backToHome" icon="sign-out" class="md:w-auto w-full"></back-to-home-button-stub>
   </div>
 </div>"

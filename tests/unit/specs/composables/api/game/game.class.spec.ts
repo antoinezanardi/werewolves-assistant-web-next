@@ -1,3 +1,4 @@
+import { createFakeGameFeedback } from "@tests/unit/utils/factories/composables/api/game/game-feedback/game-feedback.factory";
 import { Game } from "~/composables/api/game/types/game.class";
 import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
@@ -15,6 +16,7 @@ describe("Game Class", () => {
       ];
       const options = createFakeGameOptions();
       const phase = createFakeGamePhase();
+      const feedback = createFakeGameFeedback();
       const lastGameHistoryRecord = createFakeGameHistoryRecord();
       const createdAt = new Date();
       const updatedAt = new Date();
@@ -28,6 +30,7 @@ describe("Game Class", () => {
         tick: 1,
         turn: 1,
         lastGameHistoryRecord,
+        feedback,
         options,
         createdAt,
         updatedAt,
@@ -43,6 +46,7 @@ describe("Game Class", () => {
       expectedGame.currentPlay = currentPlay;
       expectedGame.upcomingPlays = upcomingPlays;
       expectedGame.options = options;
+      expectedGame.feedback = feedback;
       expectedGame.lastGameHistoryRecord = lastGameHistoryRecord;
       expectedGame.createdAt = createdAt;
       expectedGame.updatedAt = updatedAt;
@@ -60,6 +64,7 @@ describe("Game Class", () => {
       ];
       const options = createFakeGameOptions();
       const phase = createFakeGamePhase();
+      const feedback = createFakeGameFeedback();
       const lastGameHistoryRecord = createFakeGameHistoryRecord();
       const createdAt = new Date();
       const updatedAt = new Date();
@@ -73,6 +78,7 @@ describe("Game Class", () => {
       game.tick = 1;
       game.turn = 1;
       game.options = options;
+      game.feedback = feedback;
       game.lastGameHistoryRecord = lastGameHistoryRecord;
       game.createdAt = createdAt;
       game.updatedAt = updatedAt;
@@ -86,6 +92,7 @@ describe("Game Class", () => {
         tick: 1,
         turn: 1,
         options,
+        feedback,
         lastGameHistoryRecord,
         createdAt,
         updatedAt,

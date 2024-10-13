@@ -1,5 +1,6 @@
 type GameOverActionsEmits = {
-  showGameHistory: [];
+  gameHistoryButtonClick: [];
+  gameFeedbackSubmitterButtonClick: [];
 };
 
 export type { GameOverActionsEmits };

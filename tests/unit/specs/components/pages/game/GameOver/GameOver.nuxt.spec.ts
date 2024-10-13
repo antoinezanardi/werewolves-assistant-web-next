@@ -50,7 +50,13 @@ describe("Game Over Component", () => {
   }
 
   beforeEach(async() => {
-    mocks = { components: { gameOverHistory: { showGameHistory: vi.fn() } } };
+    mocks = {
+      components: {
+        gameOverHistory: {
+          showGameHistory: vi.fn(),
+        },
+      },
+    };
     wrapper = await mountGameOverWinnersComponent({
       global: {
         stubs: {
@@ -169,7 +175,7 @@ describe("Game Over Component", () => {
   describe("Game History", () => {
     it("should show game history when the show game history button is clicked.", async() => {
       const gameOverActions = wrapper.findComponent<typeof GameOverActions>("#game-over-actions");
-      (gameOverActions.vm as VueVm).$emit("show-game-history");
+      (gameOverActions.vm as VueVm).$emit("game-history-button-click");
       await nextTick();
 
       expect(mocks.components.gameOverHistory.showGameHistory).toHaveBeenCalledExactlyOnceWith();
@@ -178,9 +184,19 @@ describe("Game Over Component", () => {
     it("should throw an error when the show game history button is clicked and the game history is not defined.", async() => {
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameOverHistory: Ref }).gameOverHistory.value = null;
       const gameOverActions = wrapper.findComponent<typeof GameOverActions>("#game-over-actions");
-      await getError(() => (gameOverActions.vm as VueVm).$emit("showGameHistory"));
+      await getError(() => (gameOverActions.vm as VueVm).$emit("game-history-button-click"));
 
       expect(createError).toHaveBeenCalledExactlyOnceWith("Game Over History is not defined");
+    });
+  });
+
+  describe("Game Feedback Submitter", () => {
+    it("should emit game feedback submitter button click when the show game feedback submitter button is clicked.", async() => {
+      const gameOverActions = wrapper.findComponent<typeof GameOverActions>("#game-over-actions");
+      (gameOverActions.vm as VueVm).$emit("game-feedback-submitter-button-click");
+      await nextTick();
+
+      expect(wrapper.emitted("gameFeedbackSubmitterButtonClick")).toBeTruthy();
     });
   });
 });

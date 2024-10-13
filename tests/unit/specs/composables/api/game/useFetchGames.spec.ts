@@ -1,5 +1,6 @@
 import type { Mock } from "vitest";
 
+import { createFakeCreateGameFeedbackDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game-feedback/create-game-feedback.dto.factory";
 import { useFetchGames } from "~/composables/api/game/useFetchGames";
 import * as UseWerewolvesAssistantApi from "~/composables/api/useWerewolvesAssistantApi";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
@@ -81,6 +82,23 @@ describe("Use Fetch Game Composable", () => {
     it("should return null when make game play throws.", async() => {
       vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(new Error("error"));
       const result = await useFetchGames().makeGamePlay("game-id", createFakeMakeGamePlayDto());
+
+      expect(result).toBeNull();
+    });
+  });
+
+  describe("createGameFeedback", () => {
+    it("should create game feedback when called.", async() => {
+      const gameId = "game-id";
+      const createGameFeedbackDto = createFakeCreateGameFeedbackDto();
+      await useFetchGames().createGameFeedback(gameId, createGameFeedbackDto);
+
+      expect(mocks.composables.useWerewolvesAssistantApi.fetchWerewolvesAssistantApi).toHaveBeenCalledExactlyOnceWith(`/games/${gameId}/feedback`, { method: "POST", body: JSON.stringify(createGameFeedbackDto) });
+    });
+
+    it("should return null when create game feedback throws.", async() => {
+      vi.spyOn(mocks.composables.useWerewolvesAssistantApi, "fetchWerewolvesAssistantApi").mockRejectedValue(new Error("error"));
+      const result = await useFetchGames().createGameFeedback("game-id", createFakeCreateGameFeedbackDto());
 
       expect(result).toBeNull();
     });

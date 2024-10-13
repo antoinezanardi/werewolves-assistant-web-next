@@ -20,24 +20,34 @@
       class="h-full"
     />
 
-    <Transition
+    <div
       v-else
-      mode="out-in"
-      name="fade"
+      class="h-full"
     >
-      <Component
-        :is="gameStatusComponentToRender"
-        :key="game.status"
-        class="h-full"
-      />
-    </Transition>
+      <Transition
+        mode="out-in"
+        name="fade"
+      >
+        <Component
+          :is="gameStatusComponentToRender"
+          :key="game.status"
+          class="h-full"
+          @game-feedback-submitter-button-click="onClickFromGameFeedbackSubmitterButton"
+        />
+      </Transition>
+
+      <GameFeedbackSubmitter ref="gameFeedbackSubmitter"/>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { Component } from "vue";
 import { storeToRefs } from "pinia";
 
 import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue";
+import type { GameFeedbackSubmitterExposed } from "~/components/pages/game/GameFeedbackSubmitter/game-feedback-submitter.types";
+import GameFeedbackSubmitter from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitter.vue";
 import GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound.vue";
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
@@ -46,12 +56,12 @@ import type { GameStatus } from "~/composables/api/game/types/game.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
 
-type GameStatusComponent = typeof GameCanceled ;
-
 const route = useRoute();
 const gameStore = useGameStore();
 const { fetchAndSetGame } = gameStore;
 const { game, fetchingGameStatus } = storeToRefs(gameStore);
+
+const gameFeedbackSubmitter = ref<GameFeedbackSubmitterExposed | null>(null);
 
 const audioStore = useAudioStore();
 const { loadAllAudios, fadeOutPlayingBackgroundAudio } = audioStore;
@@ -65,8 +75,8 @@ useHead({
 
 const { id } = route.params;
 
-const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
-  const gameStatusComponents: Record<GameStatus, GameStatusComponent> = {
+const gameStatusComponentToRender = computed<Component>(() => {
+  const gameStatusComponents: Record<GameStatus, Component> = {
     playing: GamePlaying,
     over: GameOver,
     canceled: GameCanceled,
@@ -74,6 +84,13 @@ const gameStatusComponentToRender = computed<GameStatusComponent>(() => {
 
   return gameStatusComponents[game.value.status];
 });
+
+function onClickFromGameFeedbackSubmitterButton(): void {
+  if (!gameFeedbackSubmitter.value) {
+    throw createError("Game Feedback Submitter is not defined");
+  }
+  gameFeedbackSubmitter.value.showGameFeedbackSubmitter();
+}
 
 const gameId = Array.isArray(id) ? id[0] : id;
 void fetchAndSetGame(gameId);
