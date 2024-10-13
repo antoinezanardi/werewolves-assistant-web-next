@@ -1,4 +1,3 @@
-import type * as VueUse from "@vueuse/core";
 import { createPinia, setActivePinia } from "pinia";
 import { vi } from "vitest";
 
@@ -17,27 +16,25 @@ import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
-const hoistedMocks = vi.hoisted(() => ({ useLocalStorage: vi.fn(() => ({ value: DEFAULT_GAME_OPTIONS })) }));
+const hoistedMocks = vi.hoisted(() => ({
+  useLocalStorageStore: vi.fn(() => ({
+    createGameOptionsDtoFromLocalStorage: {
+      value: DEFAULT_GAME_OPTIONS,
+    },
+  })),
+}));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUse>(),
-  useLocalStorage: hoistedMocks.useLocalStorage,
+vi.mock("~/stores/local-storage/useLocalStorageStore.ts", () => ({
+  useLocalStorageStore: hoistedMocks.useLocalStorageStore,
 }));
 
 describe("Create Game Dto Store", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
-    hoistedMocks.useLocalStorage.mockReturnValue({ value: DEFAULT_GAME_OPTIONS });
-  });
-
-  it("should retrieve game options from local storage when created.", () => {
-    useCreateGameDtoStore();
-
-    expect(hoistedMocks.useLocalStorage).toHaveBeenCalledExactlyOnceWith("gameOptions", DEFAULT_GAME_OPTIONS, { mergeDefaults: true });
+    hoistedMocks.useLocalStorageStore.mockReturnValue({ createGameOptionsDtoFromLocalStorage: ref(DEFAULT_GAME_OPTIONS) });
   });
 
   it("should have initial state with game options from local storage when created.", () => {
-    hoistedMocks.useLocalStorage.mockReturnValue({ value: DEFAULT_GAME_OPTIONS });
     const createGameDtoStore = useCreateGameDtoStore();
     const expectedCreateGameDto = createFakeCreateGameDto({ options: DEFAULT_GAME_OPTIONS });
 
@@ -128,7 +125,7 @@ describe("Create Game Dto Store", () => {
       });
       createGameDtoStore.setCreateGameDto(expectedCreateGameDto);
 
-      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedCreateGameDto.options });
+      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<GameOptions>(expectedCreateGameDto.options);
     });
   });
 
@@ -249,7 +246,7 @@ describe("Create Game Dto Store", () => {
 
     it("should reset create game dto with local storage values when local storage values are kept.", () => {
       const randomGameOptions = createFakeGameOptions();
-      hoistedMocks.useLocalStorage.mockReturnValue({ value: randomGameOptions });
+      hoistedMocks.useLocalStorageStore.mockReturnValue({ createGameOptionsDtoFromLocalStorage: ref(randomGameOptions) });
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
         players: [
@@ -269,7 +266,7 @@ describe("Create Game Dto Store", () => {
 
     it("should not save create game options dto to local storage when local storage values are not kept.", () => {
       const randomGameOptions = createFakeGameOptions();
-      hoistedMocks.useLocalStorage.mockReturnValue({ value: randomGameOptions });
+      hoistedMocks.useLocalStorageStore.mockReturnValue({ createGameOptionsDtoFromLocalStorage: ref(randomGameOptions) });
       const createGameDtoStore = useCreateGameDtoStore();
       createGameDtoStore.createGameDto = createFakeCreateGameDto({
         players: [
@@ -281,7 +278,7 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.resetCreateGameDto(false);
       const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
 
-      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedGameOptions });
+      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<GameOptions>(expectedGameOptions);
     });
   });
 
@@ -301,7 +298,7 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.resetCreateGameOptionsDto();
       const expectedGameOptions = createFakeGameOptions(DEFAULT_GAME_OPTIONS);
 
-      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: expectedGameOptions });
+      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<GameOptions>(expectedGameOptions);
     });
   });
 
@@ -324,7 +321,7 @@ describe("Create Game Dto Store", () => {
       createGameDtoStore.createGameDto.options = randomGameOptions;
       createGameDtoStore.saveCreateGameOptionsDtoToLocalStorage();
 
-      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<{ value: GameOptions }>({ value: randomGameOptions });
+      expect(createGameDtoStore.createGameOptionsDtoFromLocalStorage).toStrictEqual<GameOptions>(randomGameOptions);
     });
   });
 

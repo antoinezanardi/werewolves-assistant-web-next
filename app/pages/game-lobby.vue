@@ -27,17 +27,19 @@
       @reject-thief-additional-cards-placed-step="onRejectThiefOrActorAdditionalCardsPlacedStep"
     />
 
-    <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
+    <ClientOnly>
+      <GameLobbyRolePicker ref="gameLobbyRolePicker"/>
 
-    <GameLobbyOptionsHub ref="gameLobbyOptionsHub"/>
+      <GameLobbyOptionsHub ref="gameLobbyOptionsHub"/>
 
-    <GameLobbyPositionCoordinator ref="gameLobbyPositionCoordinator"/>
+      <GameLobbyPositionCoordinator ref="gameLobbyPositionCoordinator"/>
 
-    <GameLobbyAdditionalCardsManager ref="gameLobbyAdditionalCardsManager"/>
+      <GameLobbyAdditionalCardsManager ref="gameLobbyAdditionalCardsManager"/>
 
-    <GameLobbyGroupOrganizer ref="gameLobbyGroupOrganizer"/>
+      <GameLobbyGroupOrganizer ref="gameLobbyGroupOrganizer"/>
 
-    <GameLobbyBeforeLeaveConfirmDialog/>
+      <GameLobbyBeforeLeaveConfirmDialog/>
+    </ClientOnly>
   </div>
 </template>
 

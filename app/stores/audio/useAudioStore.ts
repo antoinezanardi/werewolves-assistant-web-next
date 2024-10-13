@@ -1,16 +1,16 @@
-import { useLocalStorage } from "@vueuse/core";
 import { Howl, Howler } from "howler";
+import { defineStore, storeToRefs } from "pinia";
 import { draw } from "radash";
-import { defineStore } from "pinia";
 
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
-import { BACKGROUND_AUDIO_NAMES, DEFAULT_AUDIO_SETTINGS, SOUND_EFFECT_NAMES } from "~/stores/audio/constants/audio.constants";
-import type { AudioSettings, BackgroundAudioName, SoundEffectName } from "~/stores/audio/types/audio.types";
+import { BACKGROUND_AUDIO_NAMES, SOUND_EFFECT_NAMES } from "~/stores/audio/constants/audio.constants";
+import type { BackgroundAudioName, SoundEffectName } from "~/stores/audio/types/audio.types";
 import { StoreIds } from "~/stores/enums/store.enum";
-import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
+import { useLocalStorageStore } from "~/stores/local-storage/useLocalStorageStore";
 
 const useAudioStore = defineStore(StoreIds.AUDIO, () => {
-  const audioSettingsFromLocalStorage = useLocalStorage<AudioSettings>(LocalStorageKeys.AUDIO_SETTINGS, DEFAULT_AUDIO_SETTINGS, { mergeDefaults: true });
+  const localStorageStore = useLocalStorageStore();
+  const { audioSettingsFromLocalStorage } = storeToRefs(localStorageStore);
 
   const isMuted = ref<boolean>(audioSettingsFromLocalStorage.value.isMuted);
 

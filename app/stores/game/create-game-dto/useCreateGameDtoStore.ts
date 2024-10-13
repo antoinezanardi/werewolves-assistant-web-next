@@ -1,13 +1,12 @@
-import { useLocalStorage } from "@vueuse/core";
-import { defineStore } from "pinia";
+import { defineStore, storeToRefs } from "pinia";
 import { get, set } from "radash";
 import type { Paths } from "type-fest";
 import { ref } from "vue";
 
 import { DEFAULT_GAME_OPTIONS } from "~/composables/api/game/constants/game-options/game-options.constants";
 import type { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
-import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { CreateGamePlayerWithGroupDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { GameAdditionalCardRecipientRoleName } from "~/composables/api/game/types/game-additional-card/game-additional-card.types";
 import { GameOptions } from "~/composables/api/game/types/game-options/game-options.class";
@@ -15,16 +14,17 @@ import type { DeepStringifiedGameOptions } from "~/composables/api/game/types/ga
 import { ADDITIONAL_CARDS_DEPENDANT_ROLES } from "~/composables/api/role/constants/role.constants";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { StoreIds } from "~/stores/enums/store.enum";
+import { useLocalStorageStore } from "~/stores/local-storage/useLocalStorageStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { LocalStorageKeys } from "~/utils/enums/local-storage.enums";
 
 const useCreateGameDtoStore = defineStore(StoreIds.CREATE_GAME_DTO, () => {
   const rolesStore = useRolesStore();
   const { getRoleWithNameInRoles } = rolesStore;
 
-  const { t } = useI18n();
+  const localStorageStore = useLocalStorageStore();
+  const { createGameOptionsDtoFromLocalStorage } = storeToRefs(localStorageStore);
 
-  const createGameOptionsDtoFromLocalStorage = useLocalStorage(LocalStorageKeys.GAME_OPTIONS, DEFAULT_GAME_OPTIONS, { mergeDefaults: true });
+  const { t } = useI18n();
 
   const defaultCreateGameDto = CreateGameDto.create({
     players: [],
