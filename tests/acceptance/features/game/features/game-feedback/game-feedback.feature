@@ -28,7 +28,7 @@ Feature: 🌟 Game Feedback
     And the heading with name "Game feedback" should be hidden
     And the button with name "Give feedback on this game" should be hidden
 
-  Scenario: 🌟 User can send a feedback to the over game
+  Scenario: 🌟 User can send feedback after the game is over
     Given the user disables the sheriff in game options
     And the user creates a game with the players with name and role
       | name    | role     |
