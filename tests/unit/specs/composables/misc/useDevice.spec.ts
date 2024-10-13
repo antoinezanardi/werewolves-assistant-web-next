@@ -10,10 +10,6 @@ describe("Use Device Composable", () => {
       delete window.ontouchstart;
     });
 
-    afterAll(() => {
-      delete window.ontouchstart;
-    });
-
     it("should return true when on touchstartevent is available on window object.", () => {
       window.ontouchstart = (): object => ({});
       const { isOnTouchDevice } = useDevice();
@@ -30,6 +26,17 @@ describe("Use Device Composable", () => {
     });
 
     it("should return false when neither 'ontouchstart' nor navigator.maxTouchPoints are available.", () => {
+      const { isOnTouchDevice } = useDevice();
+
+      expect(isOnTouchDevice.value).toBeFalsy();
+    });
+
+    it("should return false when window is undefined.", () => {
+      // eslint-disable-next-line no-underscore-dangle
+      (navigator as unknown as { __defineGetter__: (prop: string, getter: () => unknown) => void }).__defineGetter__("maxTouchPoints", () => 2);
+      Object.defineProperty(global, "window", {
+        value: undefined,
+      });
       const { isOnTouchDevice } = useDevice();
 
       expect(isOnTouchDevice.value).toBeFalsy();

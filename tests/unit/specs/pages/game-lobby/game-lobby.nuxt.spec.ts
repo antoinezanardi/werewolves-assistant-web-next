@@ -86,6 +86,7 @@ describe("Game Lobby Page", () => {
     return mountSuspendedComponent(GameLobby, {
       global: {
         stubs: {
+          ClientOnly: false,
           GameLobbyHeader: {
             template: "<div id='game-lobby-header-stub'></div>",
             methods: mocks.components.gameLobbyHeader,

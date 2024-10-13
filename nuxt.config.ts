@@ -74,7 +74,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
     renderJsonPayloads: false,
-    buildCache: true,
+    buildCache: false,
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "test",
@@ -223,7 +223,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
     "/about": { swr: true },
-    "/game-lobby": { ssr: false },
+    "/game-lobby": { swr: true },
     "/game": { ssr: false },
     "/game/**": { ssr: false },
   },
