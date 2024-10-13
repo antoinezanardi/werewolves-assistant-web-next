@@ -29,6 +29,7 @@ describe("Game Lobby Header Options Button Component", () => {
         plugins: [createTestingPinia(testingPinia)],
         stubs: {
           Button: false,
+          ClientOnly: false,
         },
       },
       ...options,
@@ -90,6 +91,7 @@ describe("Game Lobby Header Options Button Component", () => {
           ],
           stubs: {
             Button: false,
+            ClientOnly: false,
           },
         },
       });

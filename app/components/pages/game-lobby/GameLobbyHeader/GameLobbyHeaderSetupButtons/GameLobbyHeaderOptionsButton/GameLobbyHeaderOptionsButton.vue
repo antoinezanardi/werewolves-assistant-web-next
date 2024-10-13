@@ -17,14 +17,16 @@
       {{ $t("components.GameLobbyHeaderOptionsButton.gameOptions") }}
     </span>
 
-    <PrimeVueBadge
-      v-if="changedGameOptionsCount"
-      id="changed-game-options-count-badge"
-      v-p-tooltip="changedGameOptionsBadgeTooltip"
-      data-testid="changed-game-options-count-badge"
-      severity="secondary"
-      :value="changedGameOptionsCount"
-    />
+    <ClientOnly>
+      <PrimeVueBadge
+        v-if="changedGameOptionsCount"
+        id="changed-game-options-count-badge"
+        v-p-tooltip="changedGameOptionsBadgeTooltip"
+        data-testid="changed-game-options-count-badge"
+        severity="secondary"
+        :value="changedGameOptionsCount"
+      />
+    </ClientOnly>
   </PrimeVueButton>
 </template>
 

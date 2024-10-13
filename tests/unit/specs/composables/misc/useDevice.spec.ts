@@ -4,22 +4,27 @@ import { useDevice } from "~/composables/misc/useDevice";
 
 describe("Use Device Composable", () => {
   describe("isOnTouchDevice", () => {
+    const originalWindow = global.window;
+
     beforeEach(() => {
-      // eslint-disable-next-line no-underscore-dangle
-      (navigator as unknown as { __defineGetter__: (prop: string, getter: () => unknown) => void }).__defineGetter__("maxTouchPoints", () => 0);
-      delete window.ontouchstart;
+      vi.stubGlobal("navigator", { maxTouchPoints: 0 });
+      vi.stubGlobal("window", {});
+    });
+
+    afterEach(() => {
+      vi.stubGlobal("window", originalWindow);
+      vi.unstubAllGlobals();
     });
 
     it("should return true when on touchstartevent is available on window object.", () => {
-      window.ontouchstart = (): object => ({});
+      vi.stubGlobal("window", { ontouchstart: () => ({}) });
       const { isOnTouchDevice } = useDevice();
 
       expect(isOnTouchDevice.value).toBeTruthy();
     });
 
     it("should return true when navigator.maxTouchPoints is greater than 0.", () => {
-      // eslint-disable-next-line no-underscore-dangle
-      (navigator as unknown as { __defineGetter__: (prop: string, getter: () => unknown) => void }).__defineGetter__("maxTouchPoints", () => 2);
+      vi.stubGlobal("navigator", { maxTouchPoints: 2 });
       const { isOnTouchDevice } = useDevice();
 
       expect(isOnTouchDevice.value).toBeTruthy();
@@ -32,11 +37,9 @@ describe("Use Device Composable", () => {
     });
 
     it("should return false when window is undefined.", () => {
-      // eslint-disable-next-line no-underscore-dangle
-      (navigator as unknown as { __defineGetter__: (prop: string, getter: () => unknown) => void }).__defineGetter__("maxTouchPoints", () => 2);
-      Object.defineProperty(global, "window", {
-        value: undefined,
-      });
+      vi.stubGlobal("navigator", { maxTouchPoints: 2 });
+      vi.stubGlobal("window", undefined);
+
       const { isOnTouchDevice } = useDevice();
 
       expect(isOnTouchDevice.value).toBeFalsy();

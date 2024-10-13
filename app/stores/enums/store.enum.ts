@@ -7,6 +7,7 @@ enum StoreIds {
   GAME_HISTORY_RECORDS = "gameHistoryRecords",
   GAME_EVENTS = "gameEvents",
   ROLES = "roles",
+  LOCAL_STORAGE = "localStorage",
 }
 
 export { StoreIds };
