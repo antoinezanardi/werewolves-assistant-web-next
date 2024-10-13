@@ -48,9 +48,3 @@ useHead({
 void rolesStore.fetchAndSetRoles();
 setHowlerAudioSettingsFromAudioStoreState();
 </script>
-
-<style lang="scss" scoped>
-.page-content {
-  padding: 10px;
-}
-</style>

@@ -1,17 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`App Component > should match snapshot when rendered. 1`] = `
-"<div data-v-8ff0109a="" class="h-full">
-  <nuxt-route-announcer-stub data-v-8ff0109a="" atomic="false" politeness="polite"></nuxt-route-announcer-stub>
-  <nuxt-layout-stub data-v-8ff0109a=""></nuxt-layout-stub>
-  <toast-stub data-v-8ff0109a="" class="!max-w-x-screen-9/10" position="bottom-right"></toast-stub>
-  <anonymous-stub data-v-8ff0109a=""></anonymous-stub>
+"<div class="h-full">
+  <nuxt-route-announcer-stub atomic="false" politeness="polite"></nuxt-route-announcer-stub>
+  <nuxt-layout-stub></nuxt-layout-stub>
+  <toast-stub class="!max-w-x-screen-9/10" position="bottom-right"></toast-stub>
+  <anonymous-stub></anonymous-stub>
 </div>"
 `;
 
 exports[`App Component > should render component without shallow and match snapshot when rendered. 1`] = `
-"<div data-v-8ff0109a="" class="h-full"><span data-v-8ff0109a="" class="nuxt-route-announcer" style="position: absolute;"><span role="alert" aria-live="polite" aria-atomic="false" style="border: 0px; clip-path: inset(50%); height: 1px; width: 1px; overflow: hidden; position: absolute; white-space: nowrap; word-wrap: normal; margin: -1px; padding: 0px;"></span></span>
-  <transition-stub data-v-8ff0109a="" name="page" mode="out-in" appear="false" persisted="false" css="true">
+"<div class="h-full"><span class="nuxt-route-announcer" style="position: absolute;"><span role="alert" aria-live="polite" aria-atomic="false" style="border: 0px; clip-path: inset(50%); height: 1px; width: 1px; overflow: hidden; position: absolute; white-space: nowrap; word-wrap: normal; margin: -1px; padding: 0px;"></span></span>
+  <transition-stub name="page" mode="out-in" appear="false" persisted="false" css="true">
     <div data-v-ac9cdbe0="" id="default-layout" class="flex flex-col h-full">
       <nav data-v-ac9cdbe0="" id="navbar" aria-label="Navigation bar" class="bg-gray-900 border-b border-b-slate-800 flex h-16 items-center justify-between px-4 py-1" role="navigation"><a id="navbar-logo-link" aria-labelledby="navbar-werewolves-assistant-logo-text" class="flex items-center"><img class="w-10 h-10 h-10 w-10 h-10 w-10" alt="Werewolves Assistant logo" data-nuxt-img="" id="navbar-werewolves-assistant-logo" src="/svg/misc/ripples.svg">
           <h3 id="navbar-werewolves-assistant-logo-text" class="ms-2">Werewolves Assistant</h3>
@@ -31,7 +31,7 @@ exports[`App Component > should render component without shallow and match snaps
         </div>
       </nav>
       <div data-v-ac9cdbe0="" class="content-with-navbar grow h-full">
-        <transition-stub data-v-8ff0109a="" name="page" mode="out-in" appear="false" persisted="false" css="true">
+        <transition-stub name="page" mode="out-in" appear="false" persisted="false" css="true">
           <div class="flex flex-col h-full md:p-2 p-4">
             <div class="flex flex-col grow items-center justify-center">
               <div class="flex justify-center w-full"><img class="md:w-[200px] md:h-[200px] w-[125px] h-[125px]" alt="Werewolves Assistant logo" data-nuxt-img="" src="/svg/misc/ripples.svg"></div>
