@@ -15,6 +15,7 @@ export default defineVitestConfig({
             public: {
               defaultLocale: "en",
               werewolvesAssistantApi: { baseUrl: "http://127.0.0.1" },
+              contactEmail: "john@doe.com",
             },
           },
         },

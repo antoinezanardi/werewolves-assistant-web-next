@@ -241,6 +241,7 @@ export default defineNuxtConfig({
     public: {
       defaultLocale: "en",
       werewolvesAssistantApi: { baseUrl: "" },
+      contactEmail: "",
     },
   },
   schemaOrg: {
@@ -255,7 +256,7 @@ export default defineNuxtConfig({
       ],
       contactPoint: {
         type: "ContactPoint",
-        email: "antoine.zanardi@epitech.eu",
+        email: process.env.NUXT_PUBLIC_CONTACT_EMAIL,
         contactType: "Creator",
       },
     },
