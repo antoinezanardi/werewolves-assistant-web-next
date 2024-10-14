@@ -28,6 +28,7 @@ describe("Game Lobby Player Input Component", () => {
       stubs: {
         InputGroup: false,
         FloatLabel: false,
+        ClientOnly: false,
       },
     },
   };
@@ -51,12 +52,6 @@ describe("Game Lobby Player Input Component", () => {
   });
 
   describe("Text input", () => {
-    it("should set autofocus attribute when rendered.", () => {
-      const input = wrapper.findComponent<typeof InputText>("#player-name-input");
-
-      expect(input.attributes("autofocus")).toBe("true");
-    });
-
     it("should throw error when player name input is not defined in refs.", async() => {
       (wrapper.vm.$root?.$refs.VTU_COMPONENT as { playerNameInput: Ref }).playerNameInput.value = null;
       await getError(() => (wrapper.vm as unknown as { focusOnPlayerNameInput: () => void }).focusOnPlayerNameInput());

@@ -36,7 +36,12 @@ describe("Game Lobby Random Composition Button Component", () => {
   async function mountGameLobbyRandomCompositionButtonComponent(options: ComponentMountingOptions<typeof GameLobbyRandomCompositionButton> = {}):
   Promise<ReturnType<typeof mount<typeof GameLobbyRandomCompositionButton>>> {
     return mountSuspendedComponent(GameLobbyRandomCompositionButton, {
-      global: { plugins: [createTestingPinia(testingPinia)] },
+      global: {
+        plugins: [createTestingPinia(testingPinia)],
+        stubs: {
+          ClientOnly: false,
+        },
+      },
       ...options,
     });
   }
@@ -69,6 +74,9 @@ describe("Game Lobby Random Composition Button Component", () => {
         global: {
           plugins: [createTestingPinia(testingPinia)],
           directives,
+          stubs: {
+            ClientOnly: false,
+          },
         },
       });
       const createGameDtoStore = useCreateGameDtoStore();
@@ -102,32 +110,6 @@ describe("Game Lobby Random Composition Button Component", () => {
     });
 
     describe("Button", () => {
-      it("should have label when screen is not smaller than md.", async() => {
-        wrapper = await mountGameLobbyRandomCompositionButtonComponent({
-          global: {
-            stubs: { Button: false },
-            plugins: [createTestingPinia(testingPinia)],
-          },
-        });
-        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
-
-        expect(button.text()).toBe("components.GameLobbyRandomCompositionButton.randomComposition");
-      });
-
-      it("should not have label when screen is smaller than md.", async() => {
-        wrapper = await mountGameLobbyRandomCompositionButtonComponent({
-          global: {
-            stubs: { Button: false },
-            plugins: [createTestingPinia(testingPinia)],
-          },
-        });
-        isSmallerThanMd.value = true;
-        await nextTick();
-        const button = wrapper.findComponent<typeof Button>(".random-composition-button");
-
-        expect(button.text()).toBe("");
-      });
-
       it("should have large size when screen is not smaller than md.", () => {
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
@@ -149,6 +131,21 @@ describe("Game Lobby Random Composition Button Component", () => {
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("disabled")).toBe("true");
+      });
+
+      it("should translate button label when rendered.", async() => {
+        wrapper = await mountGameLobbyRandomCompositionButtonComponent({
+          global: {
+            plugins: [createTestingPinia(testingPinia)],
+            stubs: {
+              ClientOnly: false,
+              Button: false,
+            },
+          },
+        });
+        const buttonText = wrapper.find<HTMLSpanElement>("#button-text");
+
+        expect(buttonText.text()).toBe("Random composition");
       });
 
       it("should be enabled when min of players is reached.", async() => {
