@@ -3,14 +3,14 @@
 exports[`Game Lobby Start Game Confirm Dialog Players Positioned Component > should match snapshot when rendered without shallow rendering. 1`] = `
 "<div id="game-lobby-start-game-confirm-dialog-players-positioned" class="flex flex-col gap-6 items-center justify-center"><img class="w-[75] h-[75]" width="75" height="75" alt="Players position" data-nuxt-img="" src="/svg/misc/ripples.svg">
   <h4 id="game-lobby-start-game-confirm-dialog-players-positioned-text" class="text-center">Some roles rely on players position. Are players placed correctly in the game lobby?</h4>
-  <div id="game-lobby-start-game-confirm-dialog-players-positioned-actions" class="flex gap-2 items-center justify-evenly w-full"><button class="p-button p-component p-button-info" type="button" aria-label="Show me how to position players" data-pc-name="button" data-p-disabled="false" data-p-severity="info" id="reject-step-button" pc1="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-compass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="compass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <div id="game-lobby-start-game-confirm-dialog-players-positioned-actions" class="flex gap-2 items-center justify-evenly w-full"><button class="p-button p-component p-button-info" type="button" aria-label="Show me how to position players" data-pc-name="button" data-p-disabled="false" data-p-severity="info" id="reject-step-button" pc1="" data-pc-section="root"><svg class="svg-inline--fa fa-compass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="compass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path class="" fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
       </svg><span class="p-button-label" data-pc-section="label">Show me how to position players</span>
-      <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
-    </button><button class="p-button p-component p-button-success" type="button" aria-label="Yes" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="confirm-step-button" pc2="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <!---->
+    </button><button class="p-button p-component p-button-success" type="button" aria-label="Yes" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="confirm-step-button" pc2="" data-pc-section="root"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path class="" fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
       </svg><span class="p-button-label" data-pc-section="label">Yes</span>
-      <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
+      <!---->
     </button></div>
 </div>"
 `;

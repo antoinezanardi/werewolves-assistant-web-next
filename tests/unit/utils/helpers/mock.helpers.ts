@@ -8,7 +8,6 @@ import { createFakeUseMagicKeys } from "@tests/unit/utils/factories/composables/
 import { createFakeUseRouter } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import { createFakeI18n } from "@tests/unit/utils/factories/composables/i18n/useI18n.factory";
 import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
-import { createFakeRuntimeConfig } from "@tests/unit/utils/factories/composables/nuxt/useRuntimeConfig.factory";
 import { createFakeUseScroll } from "@tests/unit/utils/factories/composables/vue-use/useScroll.factory";
 
 function mockNuxtImports(): void {
@@ -19,8 +18,6 @@ function mockNuxtImports(): void {
   mockNuxtImport<typeof useRoute>("useRoute", () => vi.fn(() => createFakeUseRoute()));
 
   mockNuxtImport<() => ReturnType<typeof createFakeUseRouter>>("useRouter", () => vi.fn(() => createFakeUseRouter()));
-
-  mockNuxtImport<typeof useRuntimeConfig>("useRuntimeConfig", () => vi.fn(() => createFakeRuntimeConfig()));
 
   mockNuxtImport<typeof useHead>("useHead", () => vi.fn());
 
