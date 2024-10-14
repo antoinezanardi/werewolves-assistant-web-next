@@ -561,6 +561,7 @@ Environment variables are :
 |:-----------------------------------------------:|:----------------------------------------------------------------------:|:--------:|:-------------:|:----------------------------------------------:|
 | `NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL` |                  URL of the Werewolves Assistant API                   |    ✅     |       ❌       |              Must be a valid URL               |
 |          `NUXT_PUBLIC_DEFAULT_LOCALE`           |                   Locale used when starting the app                    |    ❌     |     `en`      |          Must be either `en` or `fr`           |
+|           `NUXT_PUBLIC_CONTACT_EMAIL`           |                       Contact email for the app                        |    ✅     |       ❌       |         Must be a valid email address          |
 |       `SKIP_SCREENSHOTS_COMPARISON_TESTS`       | In E2E tests, skip all screenshots comparisons, not used in production |    ❌     |    `false`    |        Must be either `true` or `false`        |
 |                 `NUXT_SITE_URL`                 |                  Used for SEO, base URL for the site                   |    ✅     |       ❌       |              Must be a valid URL               |
 |                `NUXT_SITE_NAME`                 |            Used for SEO, name of the site (Used in titles)             |    ✅     |       ❌       |             Must be a valid string             |

@@ -147,6 +147,7 @@
     "msw": "^2.4.11",
     "nuxt": "^3.13.1",
     "nuxt-og-image": "^3.0.4",
+    "nuxt-schema-org": "^3.4.0",
     "ofetch": "^1.4.1",
     "pinia": "^2.2.4",
     "pixelmatch": "^6.0.0",

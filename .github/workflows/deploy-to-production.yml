@@ -14,6 +14,7 @@ jobs:
           - tag: prod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_PUBLIC_CONTACT_EMAIL: "antoine.zanardi@epitech.eu"
             NUXT_SITE_URL: "https://werewolves-assistant.com"
             NUXT_SITE_NAME: "Assistant Loups-Garous"
             NUXT_SITE_ENV: "production"
@@ -21,6 +22,7 @@ jobs:
           - tag: prod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "https://api.werewolves-assistant.com"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_PUBLIC_CONTACT_EMAIL: "antoine.zanardi@epitech.eu"
             NUXT_SITE_URL: "https://werewolves-assistant.com"
             NUXT_SITE_NAME: "Werewolves Assistant"
             NUXT_SITE_ENV: "production"
@@ -28,6 +30,7 @@ jobs:
           - tag: local-prod-fr
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
             NUXT_PUBLIC_DEFAULT_LOCALE: "fr"
+            NUXT_PUBLIC_CONTACT_EMAIL: "antoine.zanardi@epitech.eu"
             NUXT_SITE_URL: "http://localhost:3000"
             NUXT_SITE_NAME: "Assistant Loups-Garous"
             NUXT_SITE_ENV: "production"
@@ -35,6 +38,7 @@ jobs:
           - tag: local-prod-en
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: "http://localhost:9191"
             NUXT_PUBLIC_DEFAULT_LOCALE: "en"
+            NUXT_PUBLIC_CONTACT_EMAIL: "antoine.zanardi@epitech.eu"
             NUXT_SITE_URL: "http://localhost:3000"
             NUXT_SITE_NAME: "Werewolves Assistant"
             NUXT_SITE_ENV: "production"
@@ -65,6 +69,7 @@ jobs:
           build-args: |
             NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL=${{ matrix.NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL }}
             NUXT_PUBLIC_DEFAULT_LOCALE=${{ matrix.NUXT_PUBLIC_DEFAULT_LOCALE }}
+            NUXT_PUBLIC_CONTACT_EMAIL=${{ matrix.NUXT_PUBLIC_CONTACT_EMAIL }}
             NUXT_SITE_URL=${{ matrix.NUXT_SITE_URL }}
             NUXT_SITE_NAME=${{ matrix.NUXT_SITE_NAME }}
             NUXT_SITE_ENV=${{ matrix.NUXT_SITE_ENV }}

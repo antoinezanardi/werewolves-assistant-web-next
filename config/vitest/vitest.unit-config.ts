@@ -7,7 +7,20 @@ export default defineVitestConfig({
     pool: "threads",
     root: fileURLToPath(new URL("../../", import.meta.url)),
     environment: "nuxt",
-    environmentOptions: { nuxt: { rootDir: fileURLToPath(new URL("../../", import.meta.url)) } },
+    environmentOptions: {
+      nuxt: {
+        rootDir: fileURLToPath(new URL("../../", import.meta.url)),
+        overrides: {
+          runtimeConfig: {
+            public: {
+              defaultLocale: "en",
+              werewolvesAssistantApi: { baseUrl: "http://127.0.0.1" },
+              contactEmail: "john@doe.com",
+            },
+          },
+        },
+      },
+    },
     setupFiles: ["./tests/unit/unit-setup.ts"],
     watch: false,
     include: ["./tests/unit/**/*.spec.ts"],
