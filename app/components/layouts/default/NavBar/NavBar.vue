@@ -17,7 +17,7 @@
         class="h-10 w-10"
         placeholder="/svg/misc/ripples.svg"
         placeholder-class="w-10 h-10"
-        src="/img/logo/square/werewolves-logo-small.png"
+        src="/img/logo/square/werewolves-logo-tiny.webp"
       />
 
       <h3
