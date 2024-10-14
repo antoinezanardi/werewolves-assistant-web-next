@@ -16,6 +16,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
     type: "chromium",
     launch: {
       headless: true,
+      ignoreDefaultArgs: ["--hide-scrollbars"],
       env: {
         NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL,
         NUXT_PUBLIC_DEFAULT_LOCALE: I18N_TEST_LOCALE,
