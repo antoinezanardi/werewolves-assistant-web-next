@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+
 import AffirmativeToggleButton from "~/components/shared/buttons/AffirmativeToggleButton/AffirmativeToggleButton.vue";
 import GameOptionInputGroup from "~/components/shared/game/game-options/GameOptionInputGroup/GameOptionInputGroup.vue";
 import { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";

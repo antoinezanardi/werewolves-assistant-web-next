@@ -1,22 +1,33 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
 import type { UseHeadInput } from "unhead";
-import { expect } from "vitest";
+import type { Mock } from "vitest";
+import { beforeEach, expect } from "vitest";
+import type { Ref } from "vue";
 
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
 import GameCanceled from "~/components/pages/game/GameCanceled/GameCanceled.vue";
 import type GameNotFound from "~/components/pages/game/GameNotFound/GameNotFound.vue";
 import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import GamePlaying from "~/components/pages/game/GamePlaying/GamePlaying.vue";
 import type TextProgressSpinner from "~/components/shared/misc/TextProgressSpinner/TextProgressSpinner.vue";
+import GamePage from "~/pages/game/[id].vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import GamePage from "~/pages/game/[id].vue";
 
 const { useRoute: useRouteMock } = vi.hoisted(() => ({ useRoute: {} as ReturnType<typeof createFakeUseRoute> }));
 
 describe("Game Page", () => {
+  let mocks: {
+    components: {
+      gameFeedbackSubmitter: {
+        showGameFeedbackSubmitter: Mock;
+      };
+    };
+  };
   let wrapper: ReturnType<typeof mount<typeof GamePage>>;
 
   beforeAll(() => {
@@ -24,11 +35,26 @@ describe("Game Page", () => {
   });
 
   beforeEach(async() => {
+    mocks = {
+      components: {
+        gameFeedbackSubmitter: {
+          showGameFeedbackSubmitter: vi.fn(),
+        },
+      },
+    };
     useRouteMock.params = { id: "1" };
-    wrapper = await mountSuspendedComponent(GamePage);
+    wrapper = await mountSuspendedComponent(GamePage, {
+      global: {
+        stubs: {
+          GameFeedbackSubmitter: {
+            template: "<div id='game-feedback-submitter-stub'></div>",
+            methods: mocks.components.gameFeedbackSubmitter,
+          },
+        },
+      },
+    });
     const gameStore = useGameStore();
     gameStore.fetchingGameStatus = "pending";
-    await nextTick();
   });
 
   it("should match snapshot when rendered.", () => {
@@ -109,6 +135,30 @@ describe("Game Page", () => {
       await nextTick();
 
       expect(wrapper.findComponent<typeof GameCanceled>(GameCanceled).exists()).toBeTruthy();
+    });
+  });
+
+  describe("Game is found", () => {
+    beforeEach(() => {
+      const gameStore = useGameStore();
+      gameStore.fetchingGameStatus = "success";
+      gameStore.game.status = "playing";
+    });
+
+    it("should show game feedback submitter when game component emits a game feedback submitter button click.", async() => {
+      const gamePlaying = wrapper.findComponent<typeof GamePlaying>(GamePlaying);
+      (gamePlaying.vm as VueVm).$emit("gameFeedbackSubmitterButtonClick");
+      await nextTick();
+
+      expect(mocks.components.gameFeedbackSubmitter.showGameFeedbackSubmitter).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should throw an error when game component emits a game feedback submitter button click and game feedback submitter is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameFeedbackSubmitter: Ref }).gameFeedbackSubmitter.value = null;
+      const gamePlaying = wrapper.findComponent<typeof GamePlaying>(GamePlaying);
+      await getError(() => (gamePlaying.vm as VueVm).$emit("gameFeedbackSubmitterButtonClick"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Feedback Submitter is not defined");
     });
   });
 

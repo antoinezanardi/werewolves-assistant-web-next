@@ -14,6 +14,7 @@ import stringToColor from "string-to-color";
 import Chart from "primevue/chart";
 import type { ChartData, ChartOptions } from "chart.js";
 import { storeToRefs } from "pinia";
+
 import { GAME_LOBBY_POSITION_COORDINATOR_GRAPH_CHART_DATALABELS_OPTIONS, GAME_LOBBY_POSITION_COORDINATOR_GRAPH_CHART_HEADING_OPTIONS } from "~/components/pages/game-lobby/GameLobbyPositionCoordinator/GameLobbyPositionCoordinatorChart/game-lobby-position-coordinator-chart.constants";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 

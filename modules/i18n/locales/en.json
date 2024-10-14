@@ -1647,6 +1647,35 @@
     },
     "GameTeamSidePlayerGroup": {
       "playerGroup": "This player belongs to the group called \"{groupName}\""
+    },
+    "GameFeedbackSubmitterButton": {
+      "giveFeedback": "Give feedback on this game"
+    },
+    "GameFeedbackSubmitter": {
+      "gameFeedback": "Game feedback"
+    },
+    "GameFeedbackSubmitterFooter": {
+      "submitFeedback": "Submit feedback",
+      "feedbackSubmitted": "Feedback submitted",
+      "thanksForFeedback": "Thanks for your help to improve the Werewolves Assistant"
+    },
+    "GameFeedbackSubmitterRating": {
+      "rating": "What is your rating for this game?",
+      "pleaseChooseRating": "Please choose a rating",
+      "terrible": "Terrible",
+      "bad": "Bad",
+      "average": "Average",
+      "good": "Good",
+      "excellent": "Excellent"
+    },
+    "GameFeedbackSubmitterReview": {
+      "quickReview": "Mind sharing a quick review?",
+      "thisIsOptional": "This is optional but will help us a lot to improve the Werewolves Assistant"
+    },
+    "GameFeedbackSubmitterEncounteredError": {
+      "wasEverythingAllRight": "Was everything all right during the game?",
+      "gameWasStable": "The game was stable",
+      "gameEncounteredError": "I encountered an error during the game"
     }
   }
 }

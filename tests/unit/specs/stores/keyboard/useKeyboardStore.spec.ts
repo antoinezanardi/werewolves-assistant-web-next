@@ -1,5 +1,6 @@
 import { createPinia, setActivePinia } from "pinia";
 import { expect } from "vitest";
+
 import type { Keyboard } from "~/stores/keyboard/types/keyboard.types";
 import { useKeyboardStore } from "~/stores/keyboard/useKeyboardStore";
 

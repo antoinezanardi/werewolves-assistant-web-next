@@ -1,4 +1,5 @@
 import { When } from "@cucumber/cucumber";
+
 import { clickOnRoleWithText } from "@tests/acceptance/features/playwright/helpers/roles/playwright-roles.when-steps-helpers";
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 

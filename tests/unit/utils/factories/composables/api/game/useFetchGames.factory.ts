@@ -5,6 +5,7 @@ type MockedUseFetchGames = {
   getGame: Mock;
   cancelGame: Mock;
   makeGamePlay: Mock;
+  createGameFeedback: Mock;
 };
 
 function createFakeUseFetchGames(): MockedUseFetchGames {
@@ -13,6 +14,7 @@ function createFakeUseFetchGames(): MockedUseFetchGames {
     getGame: vi.fn(),
     cancelGame: vi.fn(),
     makeGamePlay: vi.fn(),
+    createGameFeedback: vi.fn(),
   };
 }
 

@@ -2,8 +2,8 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import Fuse from "fuse.js";
-import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
-import type { AutoCompleteChangeEvent } from "primevue/autocomplete";
+import AutoComplete from "primevue/autocomplete";
+import type { AutoCompleteProps, AutoCompleteChangeEvent } from "primevue/autocomplete";
 
 import type { GamePlaygroundPlayerCardVoteInputProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/game-playground-player-card-vote-input.types";
 import GamePlaygroundPlayerCardVoteInput from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GamePlaygroundPlayerCard/GamePlaygroundPlayerCardVoteInput/GamePlaygroundPlayerCardVoteInput.vue";

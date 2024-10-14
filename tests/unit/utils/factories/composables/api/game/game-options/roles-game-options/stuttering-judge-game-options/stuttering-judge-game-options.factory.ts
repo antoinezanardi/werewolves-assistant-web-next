@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import { StutteringJudgeGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/stuttering-judge-game-options/stuttering-judge-game-options.class";
 
 function createFakeStutteringJudgeGameOptions(stutteringJudgeGameOptions: Partial<StutteringJudgeGameOptions> = {}): StutteringJudgeGameOptions {

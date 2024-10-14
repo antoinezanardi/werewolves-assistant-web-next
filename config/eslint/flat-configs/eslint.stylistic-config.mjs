@@ -164,6 +164,12 @@ const ESLINT_STYLISTIC_CONFIG = {
     "@stylistic/switch-colon-spacing": ERROR,
     "@stylistic/template-curly-spacing": ERROR,
     "@stylistic/template-tag-spacing": ERROR,
+    "@stylistic/curly-newline": [
+      ERROR, {
+        multiline: true,
+        consistent: true,
+      },
+    ],
     "@stylistic/type-annotation-spacing": ERROR,
     "@stylistic/type-generic-spacing": ERROR,
     "@stylistic/type-named-tuple-spacing": ERROR,

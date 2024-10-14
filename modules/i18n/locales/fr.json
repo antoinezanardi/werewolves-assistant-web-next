@@ -455,24 +455,24 @@
       "composition": {
         "isHidden": {
           "yes": "La composition de la partie est cachée aux joueurs durant toute la partie.",
-            "no": "La composition de la partie est révélée aux joueurs au début de la partie."
+          "no": "La composition de la partie est révélée aux joueurs au début de la partie."
         }
       },
       "votes": {
         "canBeSkipped": {
           "yes": "Les joueurs peuvent éviter une pendaison en passant leurs votes.",
-            "no": "Les joueurs ne peuvent pas éviter la phase de votes, au moins un joueur devra voter."
+          "no": "Les joueurs ne peuvent pas éviter la phase de votes, au moins un joueur devra voter."
         },
         "duration": "The survivors have {time} to vote. It's only a recommendation, the Game Master can decide to extend or shorten this time."
       },
       "roles": {
         "areRevealedOnDeath": {
           "yes": "Le rôle du joueur est révélé aux autres lorsqu'il meurt.",
-            "no": "Le rôle du joueur n'est pas révélé aux autres lorsqu'il meurt."
+          "no": "Le rôle du joueur n'est pas révélé aux autres lorsqu'il meurt."
         },
         "doSkipCallIfNoTarget": {
           "yes": "L'Assistant appellera le rôle même s'il n'y a pas de cible parmi les joueurs.",
-            "no": "L'Assistant n'appellera pas le rôle s'il n'y a pas de cible parmi les joueurs."
+          "no": "L'Assistant n'appellera pas le rôle s'il n'y a pas de cible parmi les joueurs."
         },
         "werewolf": {
           "canEatEachOther": {
@@ -1514,7 +1514,7 @@
         }
       }
     },
-     "GamePlaygroundFooterCountdown": {
+    "GamePlaygroundFooterCountdown": {
       "remainingTimeToMeetEachOther": "Temps restant pour la rencontre",
       "remainingTimeToVote": "Temps restant pour voter",
       "remainingTimeToElectSheriff": "Temps restant pour l'élection du Maire",
@@ -1640,13 +1640,42 @@
       "fillSecondGroup": "Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueur du premier groupe | Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueurs du premier groupe",
       "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Manipulateur Préjudiciable"
     },
-     "GameLobbyGroupOrganizerGroupNameInput": {
+    "GameLobbyGroupOrganizerGroupNameInput": {
       "submitGroupName": "Valider le nouveau nom du groupe",
       "editGroupName": "Modifier le nom du groupe \"{name}\"",
       "groupName": "Nom du groupe"
     },
     "GameTeamSidePlayerGroup": {
       "playerGroup": "Ce joueur appartient au groupe nommé \"{groupName}\""
+    },
+    "GameFeedbackSubmitterButton": {
+      "giveFeedback": "Donner un avis sur la partie"
+    },
+    "GameFeedbackSubmitter": {
+      "gameFeedback": "Avis sur la partie"
+    },
+    "GameFeedbackSubmitterFooter": {
+      "submitFeedback": "Envoyer l'avis",
+      "feedbackSubmitted": "Votre avis a été envoyé",
+      "thanksForFeedback": "Merci de nous aider à améliorer l'Assistant Loups-Garous"
+    },
+     "GameFeedbackSubmitterRating": {
+      "rating": "Quelle note donneriez-vous à cette partie ?",
+      "pleaseChooseRating": "Veuillez choisir une note",
+      "terrible": "Désastreuse",
+      "bad": "Mauvaise",
+      "average": "Moyenne",
+      "good": "Bonne",
+      "excellent": "Excellente"
+    },
+    "GameFeedbackSubmitterReview": {
+      "quickReview": "Un petit retour rapide sur la partie ?",
+      "thisIsOptional": "C'est facultatif, mais cela nous aiderait beaucoup à améliorer l'Assistant Loups-Garous."
+    },
+    "GameFeedbackSubmitterEncounteredError": {
+      "wasEverythingAllRight": "Tout s'est bien passé pendant la partie ?",
+      "gameWasStable": "Tout s'est bien passé",
+      "gameEncounteredError": "J'ai rencontré un problème pendant la partie"
     }
   }
 }

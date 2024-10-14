@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Feedback Submitter Component > should match snapshot when rendered. 1`] = `"<dialog-stub id="game-feedback-submitter" block-scroll="" closable="true" close-on-escape="true" dismissable-mask="true" draggable="false" modal="" pt="[object Object]" visible="false"></dialog-stub>"`;
+
+exports[`Game Feedback Submitter Component > should match snapshot when rendering without shallow rendering. 1`] = `
+"<!--teleport start-->
+<!--teleport end-->"
+`;

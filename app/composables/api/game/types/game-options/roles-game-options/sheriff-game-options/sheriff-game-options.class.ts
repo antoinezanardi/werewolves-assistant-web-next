@@ -1,4 +1,5 @@
 import { Expose, plainToInstance, Type } from "class-transformer";
+
 import { SheriffElectionGameOptions } from "~/composables/api/game/types/game-options/roles-game-options/sheriff-game-options/sheriff-election-game-options/sheriff-election-game-options.class";
 import { DEFAULT_PLAIN_TO_INSTANCE_OPTIONS } from "~/utils/constants/class-transformer.constants";
 

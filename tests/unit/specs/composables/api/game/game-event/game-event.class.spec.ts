@@ -1,6 +1,6 @@
 import { createFakeGameEvent } from "@tests/unit/utils/factories/composables/api/game/game-event/game-event.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
-import { GameEvent } from "~/composables/api/game/game-event/game-event.class";
+import { GameEvent } from "~/composables/api/game/types/game-event/game-event.class";
 
 describe("Game Event class", () => {
   describe("create", () => {

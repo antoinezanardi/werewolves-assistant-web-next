@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+
 import GameEventNextTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventNextTextButton/GameEventNextTextButton.vue";
 import GameEventPreviousTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/GameEventPreviousTextButton.vue";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";

@@ -1,9 +1,9 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
 import type { GameOptionRoleLegendProps } from "~/components/shared/game/game-options/GameOptionRoleLegend/game-option-role-legend.types";
 import GameOptionRoleLegend from "~/components/shared/game/game-options/GameOptionRoleLegend/GameOptionRoleLegend.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 describe("Game Option Role Legend Component", () => {

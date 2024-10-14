@@ -20,6 +20,11 @@
         />
       </template>
     </PrimeVueButton>
+
+    <GameFeedbackSubmitterButton
+      id="game-feedback-submitter-button"
+      @game-feedback-submitter-button-click="onClickFromGameFeedbackSubmitterButton"
+    />
   </div>
 </template>
 
@@ -27,6 +32,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 
+import GameFeedbackSubmitterButton from "~/components/pages/game/GameFeedbackSubmitter/GameFeedbackSubmitterButton/GameFeedbackSubmitterButton.vue";
 import type { GameOverActionsEmits } from "~/components/pages/game/GameOver/GameOverActions/game-over-actions.types";
 import GameOverCreateNewGameButton from "~/components/pages/game/GameOver/GameOverActions/GameOverCreateNewGameButton/GameOverCreateNewGameButton.vue";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
@@ -46,6 +52,10 @@ const showGameHistoryTextButton = computed<string>(() => {
 });
 
 function onClickFromShowHistoryButton(): void {
-  emit("showGameHistory");
+  emit("gameHistoryButtonClick");
+}
+
+function onClickFromGameFeedbackSubmitterButton(): void {
+  emit("gameFeedbackSubmitterButtonClick");
 }
 </script>

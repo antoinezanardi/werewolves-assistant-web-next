@@ -1,4 +1,5 @@
 import { Given } from "@cucumber/cucumber";
+
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 import { fillInputNumberInGameOptionsHub, clickOnToggleButtonInGameOptionsHub } from "@tests/acceptance/features/game/helpers/game-options/game-options.given-steps-helpers";
 import { openGameOptionsDialogInGameLobby, openVotesTabInGameOptionsDialog } from "@tests/acceptance/features/game/helpers/game-options/game-options.when-steps-helpers";

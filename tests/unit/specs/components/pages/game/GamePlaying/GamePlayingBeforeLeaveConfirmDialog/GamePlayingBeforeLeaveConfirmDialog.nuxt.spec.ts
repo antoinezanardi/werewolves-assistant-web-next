@@ -1,13 +1,14 @@
 import type { RouteLocationNormalizedGeneric } from "#vue-router";
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
-import { createFakeLocationNormalizedGuard } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import type { mount } from "@vue/test-utils";
-
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import type UseConfirm from "primevue/useconfirm";
-import { beforeEach, type Mock, vi } from "vitest";
+import { beforeEach, vi } from "vitest";
+import type { Mock } from "vitest";
 import type { Ref } from "vue";
+
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import { createFakeLocationNormalizedGuard } from "@tests/unit/utils/factories/composables/nuxt/useRouter.factory";
 import GamePlayingBeforeLeaveConfirmDialog from "~/components/pages/game/GamePlaying/GamePlayingBeforeLeaveConfirmDialog/GamePlayingBeforeLeaveConfirmDialog.vue";
 
 type GamePlayingBeforeLeaveConfirmDialogPrivateVariables = {

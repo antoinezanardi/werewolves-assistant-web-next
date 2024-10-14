@@ -1,4 +1,5 @@
 import type { Locator } from "playwright-core";
+
 import type { CustomWorld } from "@tests/acceptance/shared/types/word.types";
 
 async function getPlayerGroupByNameInGameTeamSide(world: CustomWorld, playerName: string, imgName: string): Promise<Locator> {

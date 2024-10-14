@@ -1,8 +1,9 @@
+import { createPinia, setActivePinia } from "pinia";
+
+import { createFakeCreateGameFeedbackDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game-feedback/create-game-feedback.dto.factory";
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakeUseFetchGames } from "@tests/unit/utils/factories/composables/api/game/useFetchGames.factory";
-import { createPinia, setActivePinia } from "pinia";
-
 import { Game } from "~/composables/api/game/types/game.class";
 import { useGameStore } from "~/stores/game/useGameStore";
 
@@ -14,6 +15,7 @@ const hoistedMocks = vi.hoisted(() => ({
     getGame: vi.fn(),
     cancelGame: vi.fn(),
     makeGamePlay: vi.fn(),
+    createGameFeedback: vi.fn(),
   },
 }));
 
@@ -34,12 +36,33 @@ describe("Game Store", () => {
     hoistedMocks.useFetchGames = createFakeUseFetchGames();
   });
 
-  it("should have initial state when created.", () => {
+  it("should have initial state for game when created.", () => {
     const gameStore = useGameStore();
     const expectedGame = new Game();
 
     expect(gameStore.game).toStrictEqual<Game>(expectedGame);
+  });
+
+  it("should have initial state for all statuses when created.", () => {
+    const gameStore = useGameStore();
+
     expect(gameStore.fetchingGameStatus).toBe("idle");
+    expect(gameStore.cancelingGameStatus).toBe("idle");
+    expect(gameStore.makingGamePlayStatus).toBe("idle");
+    expect(gameStore.creatingGameFeedbackStatus).toBe("idle");
+  });
+
+  it("should have empty player groups when there is no player groups in game.", () => {
+    const gameStore = useGameStore();
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>([]);
+  });
+
+  it("should have player groups when there is player groups in game.", () => {
+    const gameStore = useGameStore();
+    gameStore.game.playerGroups = ["group1", "group2"];
+
+    expect(gameStore.gamePlayerGroups).toStrictEqual<string[]>(["group1", "group2"]);
   });
 
   describe("resetGame", () => {
@@ -137,6 +160,27 @@ describe("Game Store", () => {
       const emptyMakeGamePlayDto = createFakeMakeGamePlayDto();
 
       expect(hoistedMocks.useFetchGames.makeGamePlay).toHaveBeenCalledExactlyOnceWith("gameId", emptyMakeGamePlayDto);
+    });
+  });
+
+  describe("createGameFeedback", () => {
+    it("should create game feedback when called.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game._id = "gameId";
+      const createGameFeedbackDto = createFakeCreateGameFeedbackDto();
+      await gameStore.createGameFeedback(createGameFeedbackDto);
+
+      expect(hoistedMocks.useFetchGames.createGameFeedback).toHaveBeenCalledExactlyOnceWith("gameId", createGameFeedbackDto);
+    });
+
+    it("should set game when called.", async() => {
+      const game = createFakeGame();
+      const createGameFeedbackDto = createFakeCreateGameFeedbackDto();
+      hoistedMocks.useFetchGames.createGameFeedback.mockResolvedValue(game);
+      const gameStore = useGameStore();
+      await gameStore.createGameFeedback(createGameFeedbackDto);
+
+      expect(gameStore.game).toStrictEqual<Game>(game);
     });
   });
 });

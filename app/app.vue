@@ -19,8 +19,8 @@
 
 <script lang="ts" setup>
 import "reflect-metadata";
-import { useAudioStore } from "~/stores/audio/useAudioStore";
 
+import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const rolesStore = useRolesStore();
@@ -48,9 +48,3 @@ useHead({
 void rolesStore.fetchAndSetRoles();
 setHowlerAudioSettingsFromAudioStoreState();
 </script>
-
-<style lang="scss" scoped>
-.page-content {
-  padding: 10px;
-}
-</style>

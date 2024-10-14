@@ -1,3 +1,4 @@
+import type { CreateGameFeedbackDto } from "~/composables/api/game/dto/create-game-feedback/create-game-feedback.dto";
 import type { CreateGameDto } from "~/composables/api/game/dto/create-game/create-game.dto";
 import type { MakeGamePlayDto } from "~/composables/api/game/dto/make-game-play/make-game-play.dto";
 import type { Game } from "~/composables/api/game/types/game.class";
@@ -8,6 +9,7 @@ type UseFetchGames = {
   getGame: (gameId: string) => Promise<ReturnType<typeof $fetch<Game>> | null>;
   cancelGame: (gameId: string) => Promise<ReturnType<typeof $fetch<Game>> | null>;
   makeGamePlay: (gameId: string, makeGamePlayDto: MakeGamePlayDto) => Promise<ReturnType<typeof $fetch<Game>> | null>;
+  createGameFeedback: (gameId: string, createGameFeedbackDto: CreateGameFeedbackDto) => Promise<ReturnType<typeof $fetch<Game>> | null>;
 };
 
 function useFetchGames(): UseFetchGames {
@@ -50,11 +52,23 @@ function useFetchGames(): UseFetchGames {
       return null;
     }
   }
+
+  async function createGameFeedback(gameId: string, createGameFeedbackDto: CreateGameFeedbackDto): Promise<ReturnType<typeof $fetch<Game>> | null> {
+    try {
+      return await fetchWerewolvesAssistantApi<Game>(`/games/${gameId}/feedback`, {
+        method: "POST",
+        body: JSON.stringify(createGameFeedbackDto),
+      });
+    } catch {
+      return null;
+    }
+  }
   return {
     createGame,
     getGame,
     cancelGame,
     makeGamePlay,
+    createGameFeedback,
   };
 }
 

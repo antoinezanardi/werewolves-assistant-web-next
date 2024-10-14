@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import type { GamePhaseIconProps } from "~/components/shared/game/game-phase/GamePhaseIcon/game-phase-icon.types";
 import type { GamePhaseName } from "~/composables/api/game/types/game-phase/game-phase.types";
 import type { IconAndIconClass } from "~/utils/types/icon.types";

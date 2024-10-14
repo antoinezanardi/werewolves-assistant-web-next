@@ -1,11 +1,11 @@
-import type * as VueUse from "@vueuse/core";
+import type Howler from "howler";
 import { createPinia, setActivePinia } from "pinia";
 import type Radash from "radash";
 import { vi } from "vitest";
+
 import { DEFAULT_AUDIO_SETTINGS } from "~/stores/audio/constants/audio.constants";
 import type { AudioSettings } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
-import type Howler from "howler";
 
 const hoistedMocks = vi.hoisted(() => ({
   radash: { draw: vi.fn() },
@@ -20,7 +20,11 @@ const hoistedMocks = vi.hoisted(() => ({
       stop: vi.fn(),
     })),
   },
-  useLocalStorage: vi.fn(() => ({ value: DEFAULT_AUDIO_SETTINGS })),
+  useLocalStorageStore: vi.fn(() => ({
+    audioSettingsFromLocalStorage: {
+      value: {},
+    },
+  })),
 }));
 
 vi.mock("howler", async importOriginal => ({
@@ -31,14 +35,14 @@ vi.mock("radash", async importOriginal => ({
   ...await importOriginal<typeof Radash>(),
   ...hoistedMocks.radash,
 }));
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUse>(),
-  useLocalStorage: hoistedMocks.useLocalStorage,
+vi.mock("~/stores/local-storage/useLocalStorageStore.ts", () => ({
+  useLocalStorageStore: hoistedMocks.useLocalStorageStore,
 }));
 
 describe("Use Audio Store", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
+    hoistedMocks.useLocalStorageStore.mockReturnValue({ audioSettingsFromLocalStorage: ref(DEFAULT_AUDIO_SETTINGS) });
   });
 
   describe("Initial State", () => {
@@ -64,12 +68,6 @@ describe("Use Audio Store", () => {
         src: [`/audio/audio-backgrounds/night-3.webm`],
         loop: true,
       });
-    });
-
-    it("should set audio settings from local storage when created.", () => {
-      useAudioStore();
-
-      expect(hoistedMocks.useLocalStorage).toHaveBeenCalledExactlyOnceWith("audioSettings", DEFAULT_AUDIO_SETTINGS, { mergeDefaults: true });
     });
 
     it("should set playing background audio name to undefined when created.", () => {
@@ -289,7 +287,7 @@ describe("Use Audio Store", () => {
       const { setMute } = audioStore;
       setMute(true);
 
-      expect(audioStore.audioSettingsFromLocalStorage).toStrictEqual<{ value: AudioSettings }>({ value: { isMuted: true } });
+      expect(audioStore.audioSettingsFromLocalStorage).toStrictEqual<AudioSettings>({ isMuted: true });
     });
   });
 

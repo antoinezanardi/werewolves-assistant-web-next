@@ -50,6 +50,7 @@ describe("Game Lobby Player Card Component", () => {
 
   it("should match snapshot when rendered without shallow.", async() => {
     wrapper = await mountSuspendedComponent(GameLobbyPlayerCard, { props: defaultProps, shallow: false });
+
     expect(wrapper).toBeTruthy();
     expect(wrapper.html()).toMatchSnapshot();
   });

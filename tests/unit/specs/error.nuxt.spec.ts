@@ -1,11 +1,11 @@
-import { createFakeNuxtError } from "@tests/unit/utils/factories/nuxt/nuxt-error.factory";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 import { expect } from "vitest";
 import type { ComputedRef } from "vue";
 import type { Vue3Lottie } from "vue3-lottie";
-import Error from "~/error.vue";
 
+import { createFakeNuxtError } from "@tests/unit/utils/factories/nuxt/nuxt-error.factory";
+import Error from "~/error.vue";
 import { mountComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { ErrorProps } from "~/types/error.types";
 

@@ -6,7 +6,7 @@ const modules = [
   "@primevue/nuxt-module",
   "@nuxtjs/i18n",
   "@nuxt/image",
-  "@nuxtjs/google-fonts",
+  "@nuxt/fonts",
   "@aksharahegde/nuxt-glow",
   process.env.NODE_ENV !== "test" && "@pinia/nuxt",
   "./modules/register-components/register-components.module.ts",
@@ -69,13 +69,12 @@ export default defineNuxtConfig({
   css: [
     "@fortawesome/fontawesome-svg-core/styles.css",
     "./assets/scss/custom.scss",
-    "./assets/css/google-fonts.css",
     "animate.css/animate.min.css",
   ],
   devtools: { enabled: true },
   experimental: {
     renderJsonPayloads: false,
-    buildCache: true,
+    buildCache: false,
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "test",
@@ -87,17 +86,25 @@ export default defineNuxtConfig({
       "Quicksand:700",
     ],
   },
-  future: { compatibilityVersion: 4 },
-  googleFonts: {
-    display: "swap",
-    families: { Quicksand: { wght: "300..700" } },
-    outputDir: "assets/fonts",
-    stylePath: "../css/google-fonts.css",
-    fontsDir: "./",
+  fonts: {
+    global: true,
+    provider: "google",
     preload: true,
-    text: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ0123456789.,;:!?'\"™",
-    overwriting: false,
+    families: [
+      {
+        name: "Quicksand",
+        provider: "google",
+        weights: [
+          "300",
+          "400",
+          "500",
+          "600",
+          "700",
+        ],
+      },
+    ],
   },
+  future: { compatibilityVersion: 4 },
   i18n: {
     vueI18n: "./modules/i18n/i18n.config.ts",
     defaultLocale: process.env.NUXT_PUBLIC_DEFAULT_LOCALE,
@@ -156,8 +163,10 @@ export default defineNuxtConfig({
         "AutoComplete",
         "MultiSelect",
         "PickList",
+        "Rating",
         "ScrollTop",
         "Slider",
+        "Textarea",
         "Toast",
         "ToggleButton",
         "Tabs",
@@ -214,7 +223,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { prerender: true },
     "/about": { swr: true },
-    "/game-lobby": { ssr: false },
+    "/game-lobby": { swr: true },
     "/game": { ssr: false },
     "/game/**": { ssr: false },
   },

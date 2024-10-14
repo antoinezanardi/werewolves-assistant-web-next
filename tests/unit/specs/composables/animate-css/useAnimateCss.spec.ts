@@ -1,4 +1,5 @@
 import type { Ref } from "vue";
+
 import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
 
 describe("Use Animate Css Composable", () => {

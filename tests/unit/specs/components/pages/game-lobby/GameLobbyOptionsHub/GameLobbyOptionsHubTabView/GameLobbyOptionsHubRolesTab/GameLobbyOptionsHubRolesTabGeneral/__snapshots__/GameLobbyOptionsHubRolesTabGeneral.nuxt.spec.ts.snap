@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Options Hub Roles Tab General Component > should match snapshot when rendered. 1`] = `
-"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-general" data-pc-name="fieldset" data-pc-section="root" pc1="">
+"<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-general" data-pc-name="fieldset" pc1="" data-pc-section="root">
   <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
     <div class="flex gap-4 items-center">
       <role-image-stub sizes="50px" definition="normal" class="!border-0"></role-image-stub>

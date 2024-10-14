@@ -1,8 +1,8 @@
 import { createTestingPinia } from "@pinia/testing";
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type { mount } from "@vue/test-utils";
-
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type GameLobbyGroupOrganizerGroupNameInput from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerGroupNames/GameLobbyGroupOrganizerGroupNameInput/GameLobbyGroupOrganizerGroupNameInput.vue";
 import GameLobbyGroupOrganizerGroupNames from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerGroupNames/GameLobbyGroupOrganizerGroupNames.vue";

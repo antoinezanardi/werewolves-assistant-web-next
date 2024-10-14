@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Feedback Submitter Button Component > should match snapshot when rendered. 1`] = `
+"<div id="game-feedback-submitter-button-container">
+  <button-stub id="game-feedback-submitter-button" class="w-full" label="Give feedback on this game" severity="info"></button-stub>
+</div>"
+`;

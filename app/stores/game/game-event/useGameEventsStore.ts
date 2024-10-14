@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
-import type { GameEvent } from "~/composables/api/game/game-event/game-event.class";
+
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
+import type { GameEvent } from "~/composables/api/game/types/game-event/game-event.class";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 

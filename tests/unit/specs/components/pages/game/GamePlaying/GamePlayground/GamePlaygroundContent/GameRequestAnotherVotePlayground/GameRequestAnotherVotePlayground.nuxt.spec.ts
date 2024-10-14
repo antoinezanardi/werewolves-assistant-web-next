@@ -51,6 +51,7 @@ describe("Game Request Another Vote Playground Component", () => {
         expect(icon.props("icon")).toBe("thumbs-down");
       });
     });
+
     it("should translate off button label when rendered.", async() => {
       wrapper = await mountGameRequestAnotherVotePlaygroundComponent({ shallow: false });
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#does-judge-request-another-vote-button");

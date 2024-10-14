@@ -6,6 +6,7 @@ const ESLINT_GLOBAL_CONFIG = Object.freeze({
   name: "global",
   languageOptions: {
     globals: {
+      global: READONLY,
       window: READONLY,
       process: READONLY,
       navigator: READONLY,
