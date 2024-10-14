@@ -144,7 +144,7 @@
     "javascript-color-gradient": "^2.5.0",
     "jest-extended": "^4.0.2",
     "lint-staged": "^15.2.10",
-    "msw": "^2.4.10",
+    "msw": "^2.4.11",
     "nuxt": "^3.13.1",
     "nuxt-og-image": "^3.0.4",
     "ofetch": "^1.4.1",
