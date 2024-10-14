@@ -10,7 +10,6 @@
           ref="playerNameInput"
           v-model="inputValue"
           aria-labelledby="player-name-input-help"
-          :autofocus="!isOnTouchDevice"
           :class="{ 'p-invalid': doesPlayerNameExistInGame }"
           :disabled="isInputDisabled"
           :maxlength="MAX_PLAYER_NAME_LENGTH"
