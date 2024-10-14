@@ -10,8 +10,8 @@ Feature: 🏠 Home Page
     And the link with name "What is it?" should be visible
     And the link with name "Contact the creator" should be visible
     And the link with name "Contact the creator" should have the following attributes
-      | name | value                |
-      | href | mailto: john@doe.com |
+      | name | value               |
+      | href | mailto:john@doe.com |
     And the link with name "This project is open-source!" should be visible
     And the page should match or creates the missing snapshot with name "Home Page"
 

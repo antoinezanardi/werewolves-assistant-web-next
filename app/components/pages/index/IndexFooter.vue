@@ -31,7 +31,6 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
 
 const runtimeConfig = useRuntimeConfig();
-const { contactEmail } = runtimeConfig.public;
 
-const contactButtonHref = `mailto:${contactEmail}`;
+const contactButtonHref = computed<string>(() => `mailto:${runtimeConfig.public.contactEmail}`);
 </script>
