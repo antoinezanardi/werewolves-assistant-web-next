@@ -7,7 +7,7 @@
     :draggable="false"
     modal
     :pt="{
-      'root': 'h-9/10 w-x-screen-9/10 max-w-x-screen-9/10',
+      'root': `h-9/10 w-x-screen-9/10 ${SCROLLBAR_STYLING_CLASSES}`,
       'icons': 'pb-2',
       'header': '!py-2',
       'content': '!w-full !py-0 md:!px-3 !px-2',
@@ -31,7 +31,7 @@
     >
       <GameLobbyRolePickerDescription
         id="game-lobby-role-picker-description"
-        class="h-1/2 md:h-full md:w-4/12 overflow-y-scroll"
+        class="h-1/2 md:h-full md:w-4/12 overflow-y-auto scrollbar-thin"
         :picked-role="pickedRole"
       />
 
@@ -41,7 +41,7 @@
 
       <GameLobbyRolePickerGrid
         id="game-lobby-role-picker-grid"
-        class="h-1/2 md:h-full md:w-8/12 overflow-y-scroll p-2"
+        class="h-1/2 md:h-full md:w-8/12 overflow-y-auto p-2 scrollbar-thin"
         :picked-role="pickedRole"
         @pick-role="onPickRoleFromGameLobbyRolePickerGrid"
       />
@@ -65,6 +65,7 @@ import GameLobbyRolePickerGrid from "~/components/pages/game-lobby/GameLobbyRole
 import GameLobbyRolePickerHeader from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/GameLobbyRolePickerHeader.vue";
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { Role } from "~/composables/api/role/types/role.class";
+import { SCROLLBAR_STYLING_CLASSES } from "~/utils/constants/html-classes.constants";
 
 const isVisible = ref<boolean>(false);
 const localPlayer = ref<CreateGamePlayerDto>();

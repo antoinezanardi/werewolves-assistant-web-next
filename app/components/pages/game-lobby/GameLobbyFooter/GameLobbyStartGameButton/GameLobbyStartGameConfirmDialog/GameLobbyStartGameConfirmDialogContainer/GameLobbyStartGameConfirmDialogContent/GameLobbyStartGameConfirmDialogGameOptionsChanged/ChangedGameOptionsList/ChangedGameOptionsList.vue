@@ -1,6 +1,6 @@
 <template>
   <div id="changed-game-options-list">
-    <ul class="max-h-40 md:max-h-64 overflow-y-scroll px-1">
+    <ul class="max-h-40 md:max-h-64 overflow-y-auto px-1 scrollbar-thin">
       <li
         v-for="gameOptionText in changedGameOptionsTexts"
         :key="gameOptionText"
