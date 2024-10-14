@@ -36,7 +36,7 @@
 
     <div
       id="team-players"
-      class="flex flex-col grow overflow-y-auto"
+      class="flex flex-col grow overflow-y-auto px-1 scrollbar-thin"
     >
       <GameTeamSidePlayer
         v-for="player in aliveFirstTeamPlayers"

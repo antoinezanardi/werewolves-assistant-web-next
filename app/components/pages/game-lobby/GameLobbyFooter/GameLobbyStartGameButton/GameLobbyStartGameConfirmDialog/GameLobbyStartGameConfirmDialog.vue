@@ -2,7 +2,7 @@
   <PrimeVueConfirmDialog
     id="game-lobby-start-game-confirm-dialog"
     group="game-lobby-start-game-confirm-dialog"
-    :pt="{ 'root': 'md:w-1/2 lg:w-1/3 w-full' }"
+    :pt="{ 'root': `md:w-1/2 lg:w-1/3 w-full ${SCROLLBAR_STYLING_CLASSES}` }"
   >
     <template #container="{ acceptCallback, rejectCallback }">
       <GameLobbyStartGameConfirmDialogContainer
@@ -30,6 +30,7 @@ import GameLobbyStartGameConfirmDialogContainer from "~/components/pages/game-lo
 import { useGameOptionsTexts } from "~/composables/api/game/game-options/useGameOptionsTexts";
 import { useArrays } from "~/composables/misc/useArrays";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+import { SCROLLBAR_STYLING_CLASSES } from "~/utils/constants/html-classes.constants";
 
 const emit = defineEmits<GameLobbyStartGameConfirmDialogEmits>();
 

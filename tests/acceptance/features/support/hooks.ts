@@ -16,9 +16,11 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
     type: "chromium",
     launch: {
       headless: true,
+      ignoreDefaultArgs: ["--hide-scrollbars"],
       env: {
         NUXT_PUBLIC_WEREWOLVES_ASSISTANT_API_BASE_URL: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL,
         NUXT_PUBLIC_DEFAULT_LOCALE: I18N_TEST_LOCALE,
+        NUXT_PUBLIC_CONTACT_EMAIL: "john@doe.com",
         NUXT_SITE_URL: "http://127.0.0.1:4000",
         NUXT_SITE_NAME: "Werewolves Assistant",
         NUXT_SITE_ENV: "test",
@@ -37,6 +39,7 @@ const { beforeEach, afterEach, afterAll, setup } = createTest({
       public: {
         defaultLocale: I18N_TEST_LOCALE,
         werewolvesAssistantApi: { baseUrl: WEREWOLVES_ASSISTANT_SANDBOX_API_BASE_URL },
+        contactEmail: "john@doe.com",
       },
     },
   },

@@ -27,6 +27,14 @@ export default {
     },
     container: { center: true },
     fontFamily: { sans: ["Quicksand", "Arial", "sans-serif"] },
-  }, // eslint-disable-next-line @typescript-eslint/no-require-imports, no-undef,import/no-commonjs
-  plugins: [require("@aksharahegde/nuxt-glow/tailwind")],
+  },
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports,import/no-commonjs,no-undef
+    require("@aksharahegde/nuxt-glow/tailwind"),
+    // eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-unsafe-call,import/no-commonjs,no-undef
+    require("tailwind-scrollbar")({
+      nocompatible: true,
+      preferredStrategy: "pseudoelements",
+    }),
+  ],
 } satisfies Config;

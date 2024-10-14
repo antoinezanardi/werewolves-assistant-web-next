@@ -3,23 +3,33 @@
     id="game-lobby-random-composition-button-container"
     v-p-tooltip.top="containerTooltip"
   >
-    <PrimeVueButton
-      class="random-composition-button"
-      :disabled="isButtonDisabled"
-      :label="buttonLabel"
-      :loading="isLoadingGetRandomGameComposition"
-      raised
-      severity="secondary"
-      :size="buttonSize"
-      type="button"
-      @click.prevent="onClickFromRandomCompositionButton"
-    >
-      <template #icon>
+    <ClientOnly>
+      <template #fallback>
+        <PrimeVueProgressSpinner class="!h-8 !w-8"/>
+      </template>
+
+      <PrimeVueButton
+        class="random-composition-button"
+        :disabled="isButtonDisabled"
+        :loading="isLoadingGetRandomGameComposition"
+        raised
+        severity="secondary"
+        :size="buttonSize"
+        type="button"
+        @click.prevent="onClickFromRandomCompositionButton"
+      >
         <FontAwesomeIcon
           icon="random"
         />
-      </template>
-    </PrimeVueButton>
+
+        <span
+          id="button-text"
+          class="hidden md:inline"
+        >
+          {{ $t("components.GameLobbyRandomCompositionButton.randomComposition") }}
+        </span>
+      </PrimeVueButton>
+    </ClientOnly>
   </div>
 </template>
 
@@ -51,8 +61,6 @@ const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
 
 const buttonSize = computed<"large" | "small">(() => (isSmallerThanMd.value ? "small" : "large"));
-
-const buttonLabel = computed<string | undefined>(() => (isSmallerThanMd.value ? undefined : t("components.GameLobbyRandomCompositionButton.randomComposition")));
 
 const isButtonDisabled = computed<boolean>(() => !isMinimumPlayersReached.value || isLoadingGetRandomGameComposition.value);
 

@@ -15,6 +15,7 @@ const modules = [
   "@nuxtjs/sitemap",
   "@nuxtjs/robots",
   "nuxt-og-image",
+  "nuxt-schema-org",
   "@vite-pwa/nuxt",
   "@nuxt/devtools",
 ];
@@ -220,21 +221,45 @@ export default defineNuxtConfig({
       ],
     },
   },
+  robots: {
+    disallow: ["/game/"],
+  },
   routeRules: {
     "/": { prerender: true },
     "/about": { swr: true },
     "/game-lobby": { swr: true },
-    "/game": { ssr: false },
-    "/game/**": { ssr: false },
+    "/game": {
+      ssr: false,
+      robots: false,
+    },
+    "/game/**": {
+      ssr: false,
+      robots: false,
+    },
   },
   runtimeConfig: {
     public: {
       defaultLocale: "en",
       werewolvesAssistantApi: { baseUrl: "" },
+      contactEmail: "",
     },
   },
   schemaOrg: {
-    enabled: false,
+    identity: {
+      type: "Organization",
+      name: process.env.NUXT_SITE_NAME ?? "Werewolves Assistant",
+      url: process.env.NUXT_SITE_URL,
+      logo: `${process.env.NUXT_SITE_URL}/_ipx/w_400/img/logo/square/werewolves-logo.webp`,
+      sameAs: [
+        "https://github.com/antoinezanardi/werewolves-assistant-api-next",
+        "https://github.com/antoinezanardi/werewolves-assistant-web-next",
+      ],
+      contactPoint: {
+        type: "ContactPoint",
+        email: process.env.NUXT_PUBLIC_CONTACT_EMAIL,
+        contactType: "Creator",
+      },
+    },
   },
   seo: {
     fallbackTitle: false,

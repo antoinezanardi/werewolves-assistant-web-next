@@ -1,28 +1,32 @@
 <template>
-  <div class="flex flex-col">
+  <div
+    id="index-page"
+    class="flex flex-col"
+  >
     <div class="flex flex-col grow items-center justify-center">
       <div class="flex justify-center w-full">
         <NuxtImg
           :alt="$t('pages.index.werewolvesAssistantLogo')"
+          class="!drop-shadow-2xl"
           placeholder="/svg/misc/ripples.svg"
           placeholder-class="md:w-[200px] md:h-[200px] w-[125px] h-[125px]"
           preload
           sizes="sm:125 md:200 lg:200"
-          src="/img/logo/square/werewolves-logo.png"
+          src="/img/logo/square/werewolves-logo.webp"
         />
       </div>
 
       <div class="mb-16 mt-6 text-center w-full">
         <h1
           id="title"
-          class="!text-5xl !tracking-wider mt-0"
+          class="!text-5xl !tracking-wider drop-shadow-2xl mt-0"
         >
           {{ $t('shared.werewolvesAssistant') }}
         </h1>
 
-        <h5
+        <h2
           id="subtitle"
-          class="!font-normal !text-lg !w-full flex items-center justify-center md:gap-3 mt-6"
+          class="!drop-shadow-2xl !font-medium !text-xl !w-full flex items-center justify-center md:gap-3 mt-6"
         >
           <FontAwesomeIcon
             class="md:w-auto text-2xl text-day w-2/12"
@@ -37,7 +41,7 @@
             class="md:w-auto text-2xl text-night w-2/12"
             icon="moon"
           />
-        </h5>
+        </h2>
       </div>
 
       <NuxtLink
@@ -96,3 +100,12 @@ const aboutButton = ref<HTMLAnchorElement | null>(null);
 const isPlayButtonHovered = useElementHover(playButton);
 const isAboutButtonHovered = useElementHover(aboutButton);
 </script>
+
+<style lang="scss" scoped>
+#index-page {
+background: radial-gradient(at 50% 40%, rgba(9, 21, 47, 0.8), transparent 60%),
+    radial-gradient(at 70% 20%, rgba(9, 21, 47, 0.6), transparent 70%),
+    radial-gradient(at 30% 80%, rgba(1, 10, 20, 0.8), transparent 80%),
+    #010a14;
+}
+</style>

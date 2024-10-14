@@ -1,7 +1,7 @@
 <template>
   <ul
     id="players-horizontal-list"
-    class="mx-auto overflow-x-auto text-center w-full whitespace-nowrap"
+    class="mx-auto overflow-x-auto scrollbar-thin text-center w-full whitespace-nowrap"
   >
     <GlowCapture>
       <li

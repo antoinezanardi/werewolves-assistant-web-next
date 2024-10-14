@@ -2,7 +2,7 @@
 
 exports[`Index Page Footer Component > should match snapshot when rendered. 1`] = `
 "<div id="index-footer" class="flex">
-  <div class="flex flex-auto"><a id="contact-button" class="p-button p-button-secondary" href="mailto: antoine.zanardi@epitech.eu">
+  <div class="flex flex-auto"><a id="contact-button" class="p-button p-button-secondary" href="mailto:john@doe.com">
       <font-awesome-icon-stub icon="envelope" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false"></font-awesome-icon-stub><span class="hidden md:inline">Contact the creator</span>
     </a></div>
   <div class="flex flex-auto justify-end">

@@ -7,7 +7,7 @@
       <a
         id="contact-button"
         class="p-button p-button-secondary"
-        href="mailto: antoine.zanardi@epitech.eu"
+        :href="contactButtonHref"
       >
         <FontAwesomeIcon
           icon="envelope"
@@ -29,4 +29,8 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import GitHubRepositoryButton from "~/components/shared/external/GitHubRepositoryButton/GitHubRepositoryButton.vue";
+
+const runtimeConfig = useRuntimeConfig();
+
+const contactButtonHref = computed<string>(() => `mailto:${runtimeConfig.public.contactEmail}`);
 </script>

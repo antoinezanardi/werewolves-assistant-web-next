@@ -1,5 +1,8 @@
 <template>
-  <div class="h-full">
+  <div
+    class="h-full"
+    :class="SCROLLBAR_STYLING_CLASSES"
+  >
     <NuxtRouteAnnouncer/>
 
     <NuxtLayout>
@@ -22,6 +25,7 @@ import "reflect-metadata";
 
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
+import { SCROLLBAR_STYLING_CLASSES } from "~/utils/constants/html-classes.constants";
 
 const rolesStore = useRolesStore();
 
