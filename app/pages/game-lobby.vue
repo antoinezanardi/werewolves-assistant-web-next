@@ -13,7 +13,7 @@
 
     <GameLobbyPlayersParty
       id="game-lobby-players-party"
-      class="flex-auto overflow-y-auto"
+      class="!overflow-x-hidden flex-auto overflow-y-auto scrollbar-thin"
       @pick-role-for-player="onPickRoleForPlayerFromGameLobbyPlayersParty"
     />
 

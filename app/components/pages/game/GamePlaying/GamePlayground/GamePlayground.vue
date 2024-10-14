@@ -13,7 +13,7 @@
       <PrimeVueDivider class="!mb-2 !mt-4 !w-3/4"/>
     </div>
 
-    <GamePlaygroundContent class="grow overflow-y-auto py-2"/>
+    <GamePlaygroundContent class="grow overflow-y-auto py-2 scrollbar-thin"/>
 
     <GamePlaygroundFooter/>
   </div>

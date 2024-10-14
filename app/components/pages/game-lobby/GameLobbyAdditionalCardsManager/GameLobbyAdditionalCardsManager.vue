@@ -7,10 +7,10 @@
     :draggable="false"
     modal
     :pt="{
-      'root': 'h-9/10',
+      'root': `h-9/10 ${SCROLLBAR_STYLING_CLASSES}`,
       'icons': 'pb-2',
       'header': '!py-2',
-      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 h-full !py-0',
+      'content': 'w-x-screen-9/10 max-w-x-screen-9/10 h-full !py-0 scrollbar-thin',
       'footer': '!py-2'
     }"
     :visible="isVisible"
@@ -46,6 +46,7 @@ import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/
 import GameLobbyAdditionalCardsManagerContent from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/GameLobbyAdditionalCardsManagerContent.vue";
 import DialogFooterCloseButtonOnly from "~/components/shared/dialogs/DialogFooterCloseButtonOnly/DialogFooterCloseButtonOnly.vue";
 import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";
+import { SCROLLBAR_STYLING_CLASSES } from "~/utils/constants/html-classes.constants";
 
 const isVisible = ref<boolean>(false);
 
