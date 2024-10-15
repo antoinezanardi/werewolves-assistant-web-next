@@ -12,9 +12,8 @@
 
     <GlowElement>
       <RoleImage
+        id="game-over-history-record-decision-chosen-card-role-image"
         class="glow:border-gray-400"
-        placeholder="/svg/misc/ripples.svg"
-        placeholder-class="w-60 h-60"
         :role-name="props.gameHistoryRecord.play.chosenCard.roleName"
         :sizes="roleImageSizesInPx"
       />
@@ -36,7 +35,7 @@ const { getDefiniteRoleNameLabel } = useRoleName();
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
-const chosenCardText = computed<string>(() => getDefiniteRoleNameLabel(props.gameHistoryRecord.play.chosenCard.roleName));
+const chosenCardText = computed<string>(() => getDefiniteRoleNameLabel(props.gameHistoryRecord.play.chosenCard.roleName, 1));
 
 const roleImageSizesInPx = computed<string>(() => (isSmallerThanMd.value ? "56px" : "70px"));
 </script>
