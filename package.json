@@ -126,7 +126,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
-    "chart.js": "^4.4.4",
+    "chart.js": "^4.4.5",
     "chartjs-plugin-datalabels": "^2.2.0",
     "circle-progress.vue": "^3.2.2",
     "class-transformer": "^0.5.1",
