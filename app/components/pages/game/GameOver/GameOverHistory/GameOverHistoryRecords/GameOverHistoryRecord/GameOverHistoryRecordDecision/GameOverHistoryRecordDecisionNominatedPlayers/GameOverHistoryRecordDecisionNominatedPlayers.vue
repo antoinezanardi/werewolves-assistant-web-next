@@ -14,12 +14,13 @@
     <PlayersHorizontalList
       id="nominated-players-horizontal-list"
       :players="nominatedPlayers"
-      :role-image-sizes="70"
+      :role-image-size-in-px="GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD"
     />
   </div>
 </template>
 
 <script setup lang="ts">
+import { GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.constants";
 import type { GameOverHistoryRecordDecisionNominatedPlayersProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionNominatedPlayers/game-over-history-record-decision-nominated-players.types";
 import PlayersHorizontalList from "~/components/shared/game/player/PlayersHorizontalList/PlayersHorizontalList.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";

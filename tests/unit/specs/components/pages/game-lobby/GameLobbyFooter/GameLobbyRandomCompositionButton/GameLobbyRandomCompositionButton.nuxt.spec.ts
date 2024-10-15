@@ -1,21 +1,29 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type { useBreakpoints } from "@vueuse/core";
 import type Button from "primevue/button";
 import type { Mock } from "vitest";
 import type { Ref } from "vue";
-import * as UseBreakpoints from "@vueuse/core";
 
-import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
-import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
-import { StoreIds } from "~/stores/enums/store.enum";
-import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { pTooltipDirectiveBinder } from "@tests/unit/utils/helpers/directive.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { BoundTooltip } from "@tests/unit/utils/types/directive.types";
+import GameLobbyRandomCompositionButton from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyRandomCompositionButton/GameLobbyRandomCompositionButton.vue";
+import * as UseFetchRandomGameComposition from "~/composables/api/game/useFetchRandomGameComposition";
+import { StoreIds } from "~/stores/enums/store.enum";
+import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
+  },
+}));
+
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
+}));
 
 describe("Game Lobby Random Composition Button Component", () => {
   const isSmallerThanMd = ref<boolean>(false);
@@ -26,9 +34,6 @@ describe("Game Lobby Random Composition Button Component", () => {
     composables: {
       useFetchRandomGameComposition: {
         fetchRandomGameComposition: Mock;
-      };
-      useBreakpoints: {
-        smaller: Mock;
       };
     };
   };
@@ -51,11 +56,10 @@ describe("Game Lobby Random Composition Button Component", () => {
     mocks = {
       composables: {
         useFetchRandomGameComposition: { fetchRandomGameComposition: vi.fn(() => []) },
-        useBreakpoints: { smaller: vi.fn(() => isSmallerThanMd) },
       },
     };
     vi.spyOn(UseFetchRandomGameComposition, "useFetchRandomGameComposition").mockImplementation(() => mocks.composables.useFetchRandomGameComposition);
-    vi.spyOn(UseBreakpoints, "useBreakpoints").mockReturnValue(mocks.composables.useBreakpoints as unknown as ReturnType<typeof useBreakpoints>);
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameLobbyRandomCompositionButtonComponent();
     const createGameDtoStore = useCreateGameDtoStore();
     createGameDtoStore.createGameDto = createFakeCreateGameDto(defaultCreateGameDto);
@@ -117,8 +121,8 @@ describe("Game Lobby Random Composition Button Component", () => {
       });
 
       it("should have small size when screen is smaller than md.", async() => {
-        isSmallerThanMd.value = true;
-        await nextTick();
+        hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
+        wrapper = await mountGameLobbyRandomCompositionButtonComponent();
         const button = wrapper.findComponent<typeof Button>(".random-composition-button");
 
         expect(button.attributes("size")).toBe("small");

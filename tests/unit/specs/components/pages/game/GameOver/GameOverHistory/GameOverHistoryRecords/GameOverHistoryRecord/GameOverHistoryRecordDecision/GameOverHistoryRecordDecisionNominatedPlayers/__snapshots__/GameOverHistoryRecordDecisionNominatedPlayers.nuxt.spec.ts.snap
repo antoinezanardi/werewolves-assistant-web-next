@@ -3,6 +3,6 @@
 exports[`Game Over History Record Decision Nominated Players Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-history-record-decision-nominated-players" class="flex flex-col gap-3 items-center justify-center">
   <!--v-if-->
-  <players-horizontal-list-stub players="[object Object],[object Object],[object Object],[object Object]" roleimagesizes="70" id="nominated-players-horizontal-list"></players-horizontal-list-stub>
+  <players-horizontal-list-stub players="[object Object],[object Object],[object Object],[object Object]" roleimagesizeinpx="70" id="nominated-players-horizontal-list"></players-horizontal-list-stub>
 </div>"
 `;

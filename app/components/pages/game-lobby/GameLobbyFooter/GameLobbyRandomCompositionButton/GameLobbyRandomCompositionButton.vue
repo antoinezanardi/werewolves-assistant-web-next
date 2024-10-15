@@ -36,19 +36,17 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 import { useCreateGameDtoValidation } from "~/composables/api/game/useCreateGameDtoValidation";
 import { useFetchRandomGameComposition } from "~/composables/api/game/useFetchRandomGameComposition";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const { fetchRandomGameComposition } = useFetchRandomGameComposition();
 
 const { t } = useI18n();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { createGameDto } = storeToRefs(createGameDtoStore);
@@ -60,7 +58,7 @@ const { isMinimumPlayersReached } = useCreateGameDtoValidation(createGameDto);
 
 const isLoadingGetRandomGameComposition = ref<boolean>(false);
 
-const buttonSize = computed<"large" | "small">(() => (isSmallerThanMd.value ? "small" : "large"));
+const buttonSize = computed<"large" | "small">(() => (isSmallerThanMdBreakpoint.value ? "small" : "large"));
 
 const isButtonDisabled = computed<boolean>(() => !isMinimumPlayersReached.value || isLoadingGetRandomGameComposition.value);
 

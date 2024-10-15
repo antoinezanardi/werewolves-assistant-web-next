@@ -2,6 +2,6 @@
 
 exports[`Current Play Expected Players To Act Component > should match snapshot when rendered. 1`] = `
 "<div id="current-play-expected-players-to-act" class="w-full">
-  <players-horizontal-list-stub players="[object Object],[object Object],[object Object]" roleimagesizes="100" id="player-horizontal-list"></players-horizontal-list-stub>
+  <players-horizontal-list-stub players="[object Object],[object Object],[object Object]" roleimagesizeinpx="100" id="player-horizontal-list"></players-horizontal-list-stub>
 </div>"
 `;

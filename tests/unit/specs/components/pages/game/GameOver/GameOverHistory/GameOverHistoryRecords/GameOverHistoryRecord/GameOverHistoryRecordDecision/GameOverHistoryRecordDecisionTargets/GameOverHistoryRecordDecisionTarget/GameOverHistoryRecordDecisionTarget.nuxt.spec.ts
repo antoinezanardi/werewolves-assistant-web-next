@@ -1,6 +1,5 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 import type { TagProps } from "primevue/tag";
 import type Tag from "primevue/tag";
 
@@ -13,14 +12,13 @@ import GameOverHistoryRecordDecisionTarget from "~/components/pages/game/GameOve
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Game Over History Record Decision Target Component", () => {
@@ -45,7 +43,7 @@ describe("Game Over History Record Decision Target Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameOverHistoryRecordDecisionTargetComponent();
   });
 
@@ -68,7 +66,7 @@ describe("Game Over History Record Decision Target Component", () => {
     });
 
     it("should set role image size to 56px when the screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameOverHistoryRecordDecisionTargetComponent();
       const roleImage = wrapper.findComponent<typeof RoleImage>("#targeted-player-role-image");
 

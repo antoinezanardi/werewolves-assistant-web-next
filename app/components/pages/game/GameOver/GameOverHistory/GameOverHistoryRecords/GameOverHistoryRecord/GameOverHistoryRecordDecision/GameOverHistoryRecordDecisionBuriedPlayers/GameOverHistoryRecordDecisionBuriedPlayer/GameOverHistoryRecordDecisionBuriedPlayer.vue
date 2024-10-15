@@ -43,18 +43,21 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
-
+import { GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_BELOW_MD, GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.constants";
 import type { GameOverHistoryRecordDecisionBuriedPlayerProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/game-over-history-record-decision-buried-player.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 
 const props = defineProps<GameOverHistoryRecordDecisionBuriedPlayerProps>();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const roleImageSizesInPx = computed<string>(() => (isSmallerThanMd.value ? "56px" : "70px"));
+const roleImageSizesInPx = computed<string>(() => {
+  if (isSmallerThanMdBreakpoint.value) {
+    return `${GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_BELOW_MD}px`;
+  }
+  return `${GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD}px`;
+});
 
 const isTagDisplayed = computed<boolean>(() => {
   const target = props.gameHistoryRecord.play.targets?.[0];

@@ -24,7 +24,7 @@ const hoistedMocks = vi.hoisted(() => ({
   useAnimateCss: { animateElementOnce: vi.fn() },
 }));
 
-vi.mock("~/composables/animate-css/useAnimateCss", () => ({
+vi.mock("~/composables/style/useAnimateCss", () => ({
   useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss,
 }));
 

@@ -2,7 +2,7 @@
 
 exports[`Game Over History Record Source Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-history-record-source" class="flex flex-col gap-4 item-center justify-center text-center">
-  <h4 id="game-over-history-record-source-name">shared.game.player.group.definiteName.survivors, 4</h4>
-  <players-horizontal-list-stub players="[object Object],[object Object],[object Object],[object Object]" roleimagesizes="70" id="game-over-history-record-source-horizontal-list"></players-horizontal-list-stub>
+  <h4 id="game-over-history-record-source-name" class="text-center">shared.game.player.group.definiteName.survivors, 4</h4>
+  <players-horizontal-list-stub players="[object Object],[object Object],[object Object],[object Object]" roleimagesizeinpx="70" id="game-over-history-record-source-horizontal-list"></players-horizontal-list-stub>
 </div>"
 `;

@@ -37,19 +37,18 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { breakpointsTailwind, useBreakpoints, useScroll } from "@vueuse/core";
+import { useScroll } from "@vueuse/core";
 
 import type { GameLobbyRolePickerDescriptionProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/game-lobby-role-picker-description.types";
 import GameLobbyRolePickerDescriptionContent from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerDescription/GameLobbyRolePickerDescriptionContent/GameLobbyRolePickerDescriptionContent.vue";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 
 const props = defineProps<GameLobbyRolePickerDescriptionProps>();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const roleFlippingImageSizes = computed<string>(() => (isSmallerThanMd.value ? "75px" : "200px"));
+const roleFlippingImageSizes = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "75px" : "200px"));
 
 const gameLobbyRolePickerDescription = ref<HTMLElement | null>(null);
 

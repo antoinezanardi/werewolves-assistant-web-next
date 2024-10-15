@@ -1,6 +1,5 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
-import type VueUseCore from "@vueuse/core";
 
 import type { NuxtImg } from "#components";
 import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
@@ -17,14 +16,13 @@ import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameStore } from "~/stores/game/useGameStore";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Game Over Victory Text Component", () => {
@@ -37,7 +35,7 @@ describe("Game Over Victory Text Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     testingPinia.initialState[StoreIds.GAME].game = createFakeGame(defaultGame);
     wrapper = await mountGameOverVictoryTextComponent();
   });
@@ -62,7 +60,7 @@ describe("Game Over Victory Text Component", () => {
     });
 
     it("should set height and width to 50px when screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameOverVictoryTextComponent();
       const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
 

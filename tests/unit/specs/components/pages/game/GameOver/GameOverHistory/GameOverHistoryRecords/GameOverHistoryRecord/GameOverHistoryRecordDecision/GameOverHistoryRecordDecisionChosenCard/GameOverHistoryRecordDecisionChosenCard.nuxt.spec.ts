@@ -1,6 +1,5 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 
 import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
 import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
@@ -11,14 +10,13 @@ import GameOverHistoryRecordDecisionChosenCard from "~/components/pages/game/Gam
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Game Over History Record Decision Chosen Card Component", () => {
@@ -50,7 +48,7 @@ describe("Game Over History Record Decision Chosen Card Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameOverHistoryRecordDecisionChosenCardComponent();
   });
 
@@ -65,9 +63,39 @@ describe("Game Over History Record Decision Chosen Card Component", () => {
 
       expect(chosenCardText.text()).toBe("shared.role.definiteName.seer, 1");
     });
+
+    it("should not render chosen card text when chosen card is not defined.", async() => {
+      wrapper = await mountGameOverHistoryRecordDecisionChosenCardComponent({
+        props: {
+          gameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              chosenCard: undefined,
+            }),
+          }),
+        },
+      });
+      const chosenCardText = wrapper.find<HTMLHeadingElement>("#game-over-history-record-decision-chosen-card-text");
+
+      expect(chosenCardText.exists()).toBeFalsy();
+    });
   });
 
   describe("Chosen Card Role Image", () => {
+    it("should not render role image when chosen card is not defined.", async() => {
+      wrapper = await mountGameOverHistoryRecordDecisionChosenCardComponent({
+        props: {
+          gameHistoryRecord: createFakeGameHistoryRecord({
+            play: createFakeGameHistoryRecordPlay({
+              chosenCard: undefined,
+            }),
+          }),
+        },
+      });
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#game-over-history-record-decision-chosen-card-role-image");
+
+      expect(roleImage.exists()).toBeFalsy();
+    });
+
     it("should pass chosen card role name to the role image component when rendered.", () => {
       const roleImage = wrapper.findComponent<typeof RoleImage>("#game-over-history-record-decision-chosen-card-role-image");
 
@@ -81,7 +109,7 @@ describe("Game Over History Record Decision Chosen Card Component", () => {
     });
 
     it("should pass 56px as the size to the role image component when the screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameOverHistoryRecordDecisionChosenCardComponent();
       const roleImage = wrapper.findComponent<typeof RoleImage>("#game-over-history-record-decision-chosen-card-role-image");
 

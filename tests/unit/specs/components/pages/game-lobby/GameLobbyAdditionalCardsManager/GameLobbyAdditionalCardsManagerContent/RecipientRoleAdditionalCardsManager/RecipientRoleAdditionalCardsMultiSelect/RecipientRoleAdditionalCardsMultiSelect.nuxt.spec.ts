@@ -1,10 +1,9 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 import type Button from "primevue/button";
-import type MultiSelect from "primevue/multiselect";
 import type { MultiSelectProps } from "primevue/multiselect";
+import type MultiSelect from "primevue/multiselect";
 
 import { createFakeCreateGameAdditionalCardDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto.factory";
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
@@ -20,14 +19,13 @@ import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGa
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Recipient Role Additional Cards Multi Select Component", () => {
@@ -107,7 +105,7 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent();
     const createGameDtoStore = useCreateGameDtoStore();
     createGameDtoStore.createGameDto = createFakeCreateGameDto(defaultCreateFakeCreateGameDto);
@@ -128,7 +126,7 @@ describe("Recipient Role Additional Cards Multi Select Component", () => {
   });
 
   it("should match snapshot when rendered without shallow rendering and screen is smaller than md.", async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
     wrapper = await mountRecipientRoleAdditionalCardsMultiSelectComponent({ shallow: false });
 
     expect(wrapper).toBeTruthy();

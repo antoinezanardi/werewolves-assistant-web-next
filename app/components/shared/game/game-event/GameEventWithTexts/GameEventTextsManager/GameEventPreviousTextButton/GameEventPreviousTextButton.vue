@@ -23,7 +23,7 @@ import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
 
 import type { GameEventPreviousTextButtonEmits, GameEventPreviousTextButtonProps } from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/game-event-previous-text-button.types";
-import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
+import { useAnimateCss } from "~/composables/style/useAnimateCss";
 import { useGameStore } from "~/stores/game/useGameStore";
 import { useKeyboardStore } from "~/stores/keyboard/useKeyboardStore";
 
