@@ -7,14 +7,14 @@
       <li
         v-for="player in players"
         :key="player._id"
-        class="inline-block md:w-44 p-1 player-in-list text-center w-32"
+        class="inline-block p-2 player-in-list text-center"
       >
         <GlowElement>
           <RoleImage
             class="glow:border-gray-400 mx-auto role-image-in-list"
             definition="normal"
             :role-name="player.role.current"
-            :sizes="roleImageSizes"
+            :sizes="roleImageSizesInPx"
           />
         </GlowElement>
 
@@ -33,10 +33,16 @@ import type { PlayersHorizontalListProps } from "~/components/shared/game/player
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
-defineProps<PlayersHorizontalListProps>();
+const props = withDefaults(defineProps<PlayersHorizontalListProps>(), {
+  roleImageSizes: 100,
+});
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
 const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
 
-const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "50px" : "100px"));
+const mdDivider = 1.25;
+
+const roleImageSizes = computed<number>(() => (isSmallerThanMd.value ? props.roleImageSizes / mdDivider : props.roleImageSizes));
+
+const roleImageSizesInPx = computed<string>(() => `${roleImageSizes.value}px`);
 </script>

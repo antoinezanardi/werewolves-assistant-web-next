@@ -25,7 +25,17 @@ describe("Game Over History Record Decision Component", () => {
   async function mountGameOverHistoryRecordDecisionComponent(options: ComponentMountingOptions<typeof GameOverHistoryRecordDecision> = {}):
   Promise<ReturnType<typeof mount<typeof GameOverHistoryRecordDecision>>> {
     return mountSuspendedComponent(GameOverHistoryRecordDecision, {
+      shallow: false,
       props: defaultProps,
+      global: {
+        stubs: {
+          GameOverHistoryRecordDecisionTargets: true,
+          GameOverHistoryRecordDecisionNominatedPlayers: true,
+          GameOverHistoryRecordDecisionBuriedPlayers: true,
+          GameOverHistoryRecordDecisionChosenCard: true,
+          GameOverHistoryRecordDecisionChosenSide: true,
+        },
+      },
       ...options,
     });
   }
@@ -49,6 +59,11 @@ describe("Game Over History Record Decision Component", () => {
               action: "look",
             }),
           }),
+        },
+        global: {
+          stubs: {
+            GlowCapture: false,
+          },
         },
       });
       const gameOverHistoryRecordTargets = wrapper.findComponent<typeof GameOverHistoryRecordDecisionTargets>("#game-over-history-record-play-targets");

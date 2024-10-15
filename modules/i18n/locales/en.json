@@ -1018,10 +1018,10 @@
       "buriedDeadBodies": "buried",
       "electedAsSheriff": "elect as Sheriff",
       "voted": "voted for",
-      "choseCard": "chose the card",
+      "choseCard": "chose the card of",
       "ate": "ate",
       "choseAsModel": "chose as model",
-      "usedPotions": "used potions",
+      "usedPotions": "used potions on",
       "choseSide": "joined the side of",
       "skippedTurn": "skipped turn"
     },

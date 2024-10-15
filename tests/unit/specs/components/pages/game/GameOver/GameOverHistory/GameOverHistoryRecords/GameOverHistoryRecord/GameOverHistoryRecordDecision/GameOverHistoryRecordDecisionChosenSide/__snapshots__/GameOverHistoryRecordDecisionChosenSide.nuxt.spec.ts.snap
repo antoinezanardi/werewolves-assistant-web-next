@@ -2,7 +2,7 @@
 
 exports[`Game Over History Record Decision Chosen Side Component > should match snapshot when rendered. 1`] = `
 "<div id="game-over-history-record-decision-chosen-side" class="flex flex-col gap-4 items-center justify-center">
-  <h4 id="game-over-history-record-decision-chosen-side-text">shared.role.definiteSide.werewolves</h4>
+  <h4 id="game-over-history-record-decision-chosen-side-text" class="text-center">shared.role.definiteSide.werewolves</h4>
   <nuxt-img-stub alt="Werewolves side" height="75" placeholderclass="w-75 h-75" src="/svg/role/werewolf.svg" width="75" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg"></nuxt-img-stub>
 </div>"
 `;

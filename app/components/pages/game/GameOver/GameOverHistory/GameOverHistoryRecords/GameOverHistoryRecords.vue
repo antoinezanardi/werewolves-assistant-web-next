@@ -2,7 +2,11 @@
   <PrimeVueTimeline
     id="game-over-history-records"
     class="w-full"
-    :pt="{ 'eventOpposite': '!flex-none !w-24' }"
+    :pt="{
+      'eventOpposite': '!flex-none !w-1/12 !hidden lg:!block',
+      'eventConnector': '!w-1/12 !hidden md:!block',
+      'eventContent': 'w-full md:!w-10/12'
+    }"
     :value="gameHistoryRecords"
   >
     <template #opposite="slotProps">
@@ -14,7 +18,7 @@
 
     <template #marker="slotProps">
       <GameOverHistoryRecordIcon
-        class="game-over-history-record-icon"
+        class="!hidden game-over-history-record-icon md:!block"
         :game-history-record="slotProps.item"
       />
     </template>

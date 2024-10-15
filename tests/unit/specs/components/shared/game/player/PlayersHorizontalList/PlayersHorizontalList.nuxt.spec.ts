@@ -66,12 +66,25 @@ describe("Players Horizontal List Component", () => {
       expect(roleImagesInList[0].props("sizes")).toBe("100px");
     });
 
+    it("should render the expected players to act with fixed size when passed in props.", async() => {
+      const fixedSize = 50;
+      wrapper = await mountPlayersHorizontalListComponent({
+        props: {
+          ...defaultProps,
+          roleImageSizes: fixedSize,
+        },
+      });
+      const roleImagesInList = wrapper.findAllComponents<typeof RoleImage>(".role-image-in-list");
+
+      expect(roleImagesInList[0].props("sizes")).toBe("50px");
+    });
+
     it("should render the expected players to act with small size when screen is smaller than md.", async() => {
       hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
       wrapper = await mountPlayersHorizontalListComponent();
       const roleImagesInList = wrapper.findAllComponents<typeof RoleImage>(".role-image-in-list");
 
-      expect(roleImagesInList[0].props("sizes")).toBe("50px");
+      expect(roleImagesInList[0].props("sizes")).toBe("80px");
     });
   });
 });

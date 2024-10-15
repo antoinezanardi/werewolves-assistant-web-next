@@ -1,16 +1,28 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
+import type VueUseCore from "@vueuse/core";
 import type Tag from "primevue/tag";
 
 import type { NuxtImg } from "#components";
-import type { GameOverHistoryRecordDecisionBuriedPlayerProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/game-over-history-record-decision-buried-player.types";
-import GameOverHistoryRecordDecisionBuriedPlayer from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/GameOverHistoryRecordDecisionBuriedPlayer.vue";
-import type PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import { createFakeGameHistoryRecordPlayTarget } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.factory";
 import { createFakeGameHistoryRecordPlay } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play.factory";
 import { createFakeGameHistoryRecord } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record.factory";
 import { createFakeActorAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { GameOverHistoryRecordDecisionBuriedPlayerProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/game-over-history-record-decision-buried-player.types";
+import GameOverHistoryRecordDecisionBuriedPlayer from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionBuriedPlayers/GameOverHistoryRecordDecisionBuriedPlayer/GameOverHistoryRecordDecisionBuriedPlayer.vue";
+import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useBreakpoints: {
+    smaller: vi.fn(),
+  },
+}));
+
+vi.mock("@vueuse/core", async importOriginal => ({
+  ...await importOriginal<typeof VueUseCore>(),
+  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+}));
 
 describe("Game Over History Record Decision Buried Player Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionBuriedPlayer>>;
@@ -24,12 +36,20 @@ describe("Game Over History Record Decision Buried Player Component", () => {
   async function mountGameOverHistoryRecordDecisionBuriedPlayerComponent(options: ComponentMountingOptions<typeof GameOverHistoryRecordDecisionBuriedPlayer> = {}):
   Promise<ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionBuriedPlayer>>> {
     return mountSuspendedComponent(GameOverHistoryRecordDecisionBuriedPlayer, {
+      shallow: false,
       props: defaultProps,
+      global: {
+        stubs: {
+          RoleImage: true,
+          NuxtImg: true,
+        },
+      },
       ...options,
     });
   }
 
   beforeEach(async() => {
+    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
     wrapper = await mountGameOverHistoryRecordDecisionBuriedPlayerComponent();
   });
 
@@ -38,12 +58,25 @@ describe("Game Over History Record Decision Buried Player Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Player Card", () => {
-    it("should render Player Card with the buried player name and role when rendered.", () => {
-      const playerCard = wrapper.findComponent<typeof PlayerCard>(".game-over-history-record-decision-buried-player-card");
+  describe("Role Image", () => {
+    it("should render role image with the buried player role when rendered.", () => {
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#buried-player-role-image");
 
-      expect(playerCard.props("playerName")).toBe(defaultBuriedPlayer.name);
-      expect(playerCard.props("playerRole")).toBe(defaultBuriedPlayer.role.current);
+      expect(roleImage.props("roleName")).toBe(defaultBuriedPlayer.role.current);
+    });
+
+    it("should set role image size to 70px when the screen is not smaller than md.", () => {
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#buried-player-role-image");
+
+      expect(roleImage.props("sizes")).toBe("70px");
+    });
+
+    it("should set role image size to 56px when the screen is smaller than md.", async() => {
+      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      wrapper = await mountGameOverHistoryRecordDecisionBuriedPlayerComponent();
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#buried-player-role-image");
+
+      expect(roleImage.props("sizes")).toBe("56px");
     });
   });
 
@@ -80,7 +113,7 @@ describe("Game Over History Record Decision Buried Player Component", () => {
             play: createFakeGameHistoryRecordPlay({
               type: "bury-dead-bodies",
               action: "bury-dead-bodies",
-              targets: [createFakeGameHistoryRecordPlayTarget({ player: createFakeActorAlivePlayer({ name: "Vanessa" }) })],
+              targets: [createFakeGameHistoryRecordPlayTarget({ player: createFakeActorAlivePlayer({ name: "Olivia" }) })],
             }),
           }),
         },
@@ -93,7 +126,6 @@ describe("Game Over History Record Decision Buried Player Component", () => {
     describe("Devoted Servant Tag Content", () => {
       beforeEach(async() => {
         wrapper = await mountGameOverHistoryRecordDecisionBuriedPlayerComponent({
-          global: { stubs: { Tag: false } },
           props: {
             buriedPlayer: defaultBuriedPlayer,
             gameHistoryRecord: createFakeGameHistoryRecord({

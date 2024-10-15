@@ -3,7 +3,10 @@
     id="game-over-history-record-decision-chosen-side"
     class="flex flex-col gap-4 items-center justify-center"
   >
-    <h4 id="game-over-history-record-decision-chosen-side-text">
+    <h4
+      id="game-over-history-record-decision-chosen-side-text"
+      class="text-center"
+    >
       {{ chosenSideText }}
     </h4>
 
