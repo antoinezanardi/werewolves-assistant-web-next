@@ -47,7 +47,8 @@
 Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. It helps you, the game master, to manage your games of Werewolves Of Millers Hollow.
 
 > [!NOTE]
-> This is the **next** version of the current **[Werewolves Assistant Web](https://github.com/antoinezanardi/werewolves-assistant-web)**. It is still under development.
+> This is the **next** version of the deprecated **[Werewolves Assistant Web](https://github.com/antoinezanardi/werewolves-assistant-web)**.
+> It is maintained with the **[Werewolves Assistant API](https://github.com/antoinezanardi/werewolves-assistant-api-next)**.
 
 #### 🤔 Want to know more about this awesome project ? <a href="https://werewolves-assistant.com/about" target="_blank">**Check out the dedicated about page**</a>.
 
@@ -57,7 +58,7 @@ Werewolves Assistant Web is a Nuxt Web App using the Werewolves Assistant API. I
 
 The production version of this Web App is available at **[werewolves-assistant.com](https://werewolves-assistant.com)**.
 
-It uses the **[Werewolves Assistant API](https://api.werewolves-assistant.com/docs)**.
+It uses the **[Production Werewolves Assistant API](https://api.werewolves-assistant.com/docs)**.
 
 The production server is updated automatically with the latest version of the Web App when a new release is created. (When a new tag is pushed on the `main` branch)
 
@@ -65,7 +66,7 @@ The production server is updated automatically with the latest version of the We
 
 The development version of this Web App is available at **[preprod.werewolves-assistant.com](https://preprod.werewolves-assistant.com)**.
 
-It uses the **[Werewolves Assistant API](https://preprod.api.werewolves-assistant.com/docs)**.
+It uses the **[Preprod Werewolves Assistant API](https://preprod.api.werewolves-assistant.com/docs)**.
 
 The development server is updated automatically when a commit is pushed on the `develop` branch.
 
@@ -184,6 +185,13 @@ The development server is updated automatically when a commit is pushed on the `
 >>    ![Defender protects Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Defender%20protects%20Playground.png)
 >> 
 >>   </details>
+>>   </details> 
+>>   <details>
+>>    <summary>🦊 Fox sniffs Playground</summary>
+>>        
+>>    ![Fox sniffs Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Fox%20sniffs%20Playground.png)
+>> 
+>>   </details>
 >>   <details>
 >>    <summary>🔫 Hunter shoots Playground</summary>
 >>        
@@ -205,7 +213,14 @@ The development server is updated automatically when a commit is pushed on the `
 >>    <summary>🐦‍⬛ Scandalmonger marks Playground</summary>
 >>
 >>    ![Scandalmonger marks Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Scandalmonger%20marks%20Playground.png)
+>>   </details>
 >>   </details> 
+>>   <details>
+>>    <summary>🐐 Scapegoat bans voting Playground</summary>
+>>        
+>>    ![Scapegoat bans voting Playground](https://raw.githubusercontent.com/antoinezanardi/werewolves-assistant-web-next/main/tests/acceptance/screenshots/darwin/Scapegoat%20bans%20voting%20Playground.png)
+>> 
+>>   </details>
 >>   <details>
 >>    <summary>🔮 Seer looks Playground</summary>
 >>        
