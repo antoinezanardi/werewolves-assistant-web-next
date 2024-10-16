@@ -192,7 +192,7 @@
     "@primevue/themes": "^4.1.1",
     "animate.css": "^4.1.1",
     "is-ci": "^3.0.1",
-    "primevue": "^4.1.0"
+    "primevue": "^4.1.1"
   },
   "engines": {
     "node": ">=20.18.0"

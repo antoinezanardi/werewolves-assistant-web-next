@@ -22,7 +22,7 @@
       popup
     >
       <template #itemicon="{ item }">
-        <FontAwesomeIcon :icon="item.icon"/>
+        <FontAwesomeIcon :icon="item.icon as string"/>
       </template>
     </PrimeVueMenu>
   </div>

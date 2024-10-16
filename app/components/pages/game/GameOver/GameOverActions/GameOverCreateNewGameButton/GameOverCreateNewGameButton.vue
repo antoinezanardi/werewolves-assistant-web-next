@@ -8,14 +8,14 @@
         />
       </template>
 
-      <template #confirmIcon>
+      <template #accepticon>
         <FontAwesomeIcon
           id="confirm-icon"
           icon="check"
         />
       </template>
 
-      <template #rejectIcon>
+      <template #rejecticon>
         <FontAwesomeIcon
           id="reject-icon"
           icon="times"
