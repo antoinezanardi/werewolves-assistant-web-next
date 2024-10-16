@@ -1,6 +1,6 @@
 import type { Ref } from "vue";
 
-import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
+import { useAnimateCss } from "~/composables/style/useAnimateCss";
 
 describe("Use Animate Css Composable", () => {
   const element = ref<HTMLElement | null>(null);

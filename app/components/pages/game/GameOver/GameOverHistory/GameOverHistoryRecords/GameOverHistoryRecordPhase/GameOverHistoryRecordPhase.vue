@@ -4,6 +4,7 @@
     class="flex flex-col item-center justify-center text-center"
   >
     <GamePhaseIcon
+      class="fa-2x"
       :phase="gameHistoryRecord.phase.name"
     />
 

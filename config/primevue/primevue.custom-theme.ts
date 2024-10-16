@@ -164,6 +164,33 @@ const badgeColorScheme = {
   },
 };
 
+const tagColorScheme = {
+  primary: {
+    background: primaryColor,
+    color: "{white}",
+  },
+  secondary: {
+    background: secondaryColor,
+    color: "{white}",
+  },
+  info: {
+    background: infoColor,
+    color: "{white}",
+  },
+  danger: {
+    background: dangerColor,
+    color: "{white}",
+  },
+  success: {
+    background: successColor,
+    color: "{white}",
+  },
+  warn: {
+    background: helpColor,
+    color: "{white}",
+  },
+};
+
 const accordionColorScheme = {
   header: {
     color: "{slate.300}",
@@ -268,6 +295,12 @@ const customPreset = definePreset(Lara, {
       colorScheme: {
         light: autoCompleteColorScheme,
         dark: autoCompleteColorScheme,
+      },
+    },
+    tag: {
+      colorScheme: {
+        light: tagColorScheme,
+        dark: tagColorScheme,
       },
     },
   },

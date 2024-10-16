@@ -37,12 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 
 import { VICTORY_TYPES_TEXTS_AND_SVG } from "~/components/pages/game/GameOver/GameOverVictoryText/game-over-victory-text.constants";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 type TextsAndSvg = {
   text: string;
@@ -50,10 +49,9 @@ type TextsAndSvg = {
   svgPath: string;
 };
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const svgSize = computed<string>(() => (isSmallerThanMd.value ? "50px" : "125px"));
+const svgSize = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "90px" : "135px"));
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);

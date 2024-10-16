@@ -1,22 +1,20 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 
+import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 import GameEventFlippingPlayerCard from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/GameEventFlippingPlayerCard.vue";
 import type RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
-import { createFakeCupidAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Game Event Flipping Player Card Component", () => {
@@ -37,7 +35,7 @@ describe("Game Event Flipping Player Card Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameEventFlippingPlayerCardComponent();
   });
 
@@ -54,7 +52,7 @@ describe("Game Event Flipping Player Card Component", () => {
     });
 
     it("should set size to 125px for flipping player card when rendered screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameEventFlippingPlayerCardComponent();
       const flippingPlayerCard = wrapper.findComponent<typeof RoleFlippingImage>("#game-event-flipping-player-role");
 

@@ -676,7 +676,12 @@ pnpm run script:create-pull-request
 
 ### 💠 Check that all acceptance features have an associated shard 
 ```shell
-pnpm run script:check-acceptance-features-shard;
+pnpm run script:check-acceptance-features-shard
+```
+
+### 📸 Download all screenshots from the acceptance tests from a GitHub action
+```shell
+pnpm run script:download-acceptance-screenshots
 ```
 
 ### 📣 To all IntelliJ IDEs users (IntelliJ, Webstorm, PHPStorm, etc.)

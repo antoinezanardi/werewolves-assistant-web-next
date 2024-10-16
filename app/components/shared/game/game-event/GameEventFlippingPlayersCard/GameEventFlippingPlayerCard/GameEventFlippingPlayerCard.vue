@@ -30,19 +30,16 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
-
 import type { GameEventFlippingPlayerCardProps } from "~/components/shared/game/game-event/GameEventFlippingPlayersCard/GameEventFlippingPlayerCard/game-event-flipping-player-card.types";
 import RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlippingImage/RoleFlippingImage.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 
 const props = defineProps<GameEventFlippingPlayerCardProps>();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const flippingImageSize = computed<string>(() => (isSmallerThanMd.value ? "125px" : "200px"));
+const flippingImageSize = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "125px" : "200px"));
 
 const playerIndex = ref<number>(0);
 const playerToDisplay = computed<Player | undefined>(() => props.players[playerIndex.value]);

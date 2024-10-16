@@ -1,27 +1,27 @@
 <template>
   <div
     id="game-over-history-record"
-    class="flex gap-4 items-center"
+    class="flex flex-col gap-4 items-center md:!h-60 md:flex-row w-full"
   >
     <GameOverHistoryRecordSource
       id="game-over-history-record-source"
-      class="w-4/12"
+      class="border border-gray-700 h-full md:w-5/12 p-2 rounded-md w-full"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordAction
       id="game-over-history-record-action"
-      class="w-3/12"
+      class="md:w-1/10"
+      :class="{ 'md:!w-6/12': !isGameHistoryRecordDecisionDisplayed }"
       :game-history-record="gameHistoryRecord"
     />
 
-    <div class="game-over-history-record-target-container w-4/12">
-      <GameOverHistoryRecordDecision
-        v-if="isGameHistoryRecordTargetDisplayed"
-        id="game-over-history-record-decision"
-        :game-history-record="gameHistoryRecord"
-      />
-    </div>
+    <GameOverHistoryRecordDecision
+      v-if="isGameHistoryRecordDecisionDisplayed"
+      id="game-over-history-record-decision"
+      class="border border-gray-700 h-full md:w-5/12 p-2 rounded-md w-full"
+      :game-history-record="gameHistoryRecord"
+    />
   </div>
 </template>
 
@@ -37,7 +37,7 @@ const props = defineProps<GameOverHistoryRecordProps>();
 
 const { didSourceSkipped } = useGameHistoryRecord();
 
-const isGameHistoryRecordTargetDisplayed = computed<boolean>(() => {
+const isGameHistoryRecordDecisionDisplayed = computed<boolean>(() => {
   const { type } = props.gameHistoryRecord.play;
   const displayedTargetTypes: GamePlayType[] = ["target", "vote", "bury-dead-bodies", "choose-card", "choose-side"];
 

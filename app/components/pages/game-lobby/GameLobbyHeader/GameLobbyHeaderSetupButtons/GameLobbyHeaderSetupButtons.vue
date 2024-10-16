@@ -50,7 +50,7 @@ import GameLobbyHeaderAdditionalCardsManagerButton from "~/components/pages/game
 import GameLobbyHeaderGroupOrganizerButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderGroupOrganizerButton/GameLobbyHeaderGroupOrganizerButton.vue";
 import GameLobbyHeaderOptionsButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderOptionsButton/GameLobbyHeaderOptionsButton.vue";
 import GameLobbyHeaderPositionCoordinatorButton from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeaderSetupButtons/GameLobbyHeaderPositionCoordinatorButton/GameLobbyHeaderPositionCoordinatorButton.vue";
-import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
+import { useAnimateCss } from "~/composables/style/useAnimateCss";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const emit = defineEmits<GameLobbyHeaderSetupButtonsEmits>();

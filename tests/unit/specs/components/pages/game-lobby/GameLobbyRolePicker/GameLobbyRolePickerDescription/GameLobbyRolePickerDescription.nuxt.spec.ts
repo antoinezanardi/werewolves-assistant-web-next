@@ -11,14 +11,17 @@ import type RoleFlippingImage from "~/components/shared/role/RoleImage/RoleFlipp
 
 const hoistedMocks = vi.hoisted(() => ({
   useScroll: { y: { value: 0 } },
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
+}));
+
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 vi.mock("@vueuse/core", async importOriginal => ({
   ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
   useScroll: vi.fn(() => hoistedMocks.useScroll),
 }));
 
@@ -35,7 +38,7 @@ describe("Game Lobby Role Picker Description Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     hoistedMocks.useScroll.y = ref(0);
     wrapper = await mountGameLobbyRolePickerDescriptionComponent();
   });
@@ -60,7 +63,7 @@ describe("Game Lobby Role Picker Description Component", () => {
     });
 
     it("should set role flipping image size to 75px when screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameLobbyRolePickerDescriptionComponent();
       const roleFlippingImage = wrapper.findComponent<typeof RoleFlippingImage>("#role-flipping-image");
 

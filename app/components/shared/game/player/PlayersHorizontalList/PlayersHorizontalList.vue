@@ -7,14 +7,14 @@
       <li
         v-for="player in players"
         :key="player._id"
-        class="inline-block md:w-44 p-1 player-in-list text-center w-32"
+        class="inline-block p-2 player-in-list text-center w-32"
       >
         <GlowElement>
           <RoleImage
             class="glow:border-gray-400 mx-auto role-image-in-list"
             definition="normal"
             :role-name="player.role.current"
-            :sizes="roleImageSizes"
+            :sizes="roleImageSizesWithSuffix"
           />
         </GlowElement>
 
@@ -27,16 +27,19 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
-
 import type { PlayersHorizontalListProps } from "~/components/shared/game/player/PlayersHorizontalList/players-horizontal-list.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 
-defineProps<PlayersHorizontalListProps>();
+const props = withDefaults(defineProps<PlayersHorizontalListProps>(), {
+  roleImageSizeInPx: 100,
+});
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "50px" : "100px"));
+const mdDivider = 1.25;
+
+const roleImageSizes = computed<number>(() => (isSmallerThanMdBreakpoint.value ? props.roleImageSizeInPx / mdDivider : props.roleImageSizeInPx));
+
+const roleImageSizesWithSuffix = computed<string>(() => `${roleImageSizes.value}px`);
 </script>

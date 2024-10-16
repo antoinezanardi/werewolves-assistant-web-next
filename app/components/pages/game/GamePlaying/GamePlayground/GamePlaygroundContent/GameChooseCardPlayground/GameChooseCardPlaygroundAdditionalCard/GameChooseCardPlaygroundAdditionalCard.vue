@@ -28,24 +28,21 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
-
 import type { GameChooseCardPlaygroundAdditionalCardEmits, GameChooseCardPlaygroundAdditionalCardProps } from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseCardPlayground/GameChooseCardPlaygroundAdditionalCard/game-choose-card-playground-additional-card.types";
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { useRoleName } from "~/composables/api/role/useRoleName";
 import { useStrings } from "~/composables/misc/useStrings";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useMakeGamePlayDtoStore } from "~/stores/game/make-game-play-dto/useMakeGamePlayDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const props = defineProps<GameChooseCardPlaygroundAdditionalCardProps>();
 
 const emit = defineEmits<GameChooseCardPlaygroundAdditionalCardEmits>();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const additionalCardImageSizes = computed<string>(() => (isSmallerThanMd.value ? "75" : "125"));
+const additionalCardImageSizes = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "75" : "125"));
 
 const { makeGamePlayDto } = useMakeGamePlayDtoStore();
 

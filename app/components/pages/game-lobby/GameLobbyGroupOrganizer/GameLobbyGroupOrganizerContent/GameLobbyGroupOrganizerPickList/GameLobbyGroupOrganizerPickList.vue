@@ -38,17 +38,15 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 import type { PickListMoveToTargetEvent } from "primevue/picklist";
 
 import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
 const { t } = useI18n();
 
@@ -56,7 +54,7 @@ const createGameDtoStore = useCreateGameDtoStore();
 const { firstGroupName, secondGroupName, createGameDto } = storeToRefs(createGameDtoStore);
 const { updatePlayerInCreateGameDto } = createGameDtoStore;
 
-const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "25px" : "35px"));
+const roleImageSizes = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "25px" : "35px"));
 
 const playersInPickList = computed<CreateGamePlayerDto[][]>(() => {
   const playersOnFirstGroup = createGameDto.value.players.filter(({ group }) => group === firstGroupName.value);

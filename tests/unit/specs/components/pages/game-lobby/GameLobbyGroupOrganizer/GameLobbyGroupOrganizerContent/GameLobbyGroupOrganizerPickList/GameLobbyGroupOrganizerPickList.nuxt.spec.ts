@@ -1,15 +1,14 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 import type { PickListMoveToTargetEvent, PickListProps } from "primevue/picklist";
 import type PickList from "primevue/picklist";
 
 import { createFakeCreateGamePlayerRoleDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player-role/create-game-player-role.dto.factory";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import GameLobbyGroupOrganizerPickList from "~/components/pages/game-lobby/GameLobbyGroupOrganizer/GameLobbyGroupOrganizerContent/GameLobbyGroupOrganizerPickList/GameLobbyGroupOrganizerPickList.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
@@ -17,14 +16,13 @@ import { StoreIds } from "~/stores/enums/store.enum";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
 }));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 describe("Game Lobby Group Organizer Pick List Component", () => {
@@ -79,7 +77,7 @@ describe("Game Lobby Group Organizer Pick List Component", () => {
   }
 
   beforeEach(async() => {
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameLobbyGroupOrganizerPickListComponent();
   });
 
@@ -164,7 +162,7 @@ describe("Game Lobby Group Organizer Pick List Component", () => {
       });
 
       it("should set role image size to 25px when screen is smalled than md.", async() => {
-        hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+        hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
         wrapper = await mountGameLobbyGroupOrganizerPickListComponent({ shallow: false });
         const roleImages = wrapper.findAllComponents<typeof RoleImage>(".option-role-image");
 

@@ -1,5 +1,25 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.35.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.34.0...v1.35.0) (2024-10-14)
+
+### 🚀 Features
+
+* **home:** better seo and new style ([#974](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/974)) ([a522cf6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/a522cf663c53d20533f75d25f1b89aec0b5bfa7c))
+* **seo:** add schema org ([#976](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/976)) ([13f9eb6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/13f9eb69a17db10c45122f9cb4c8b18685759e1e))
+
+### 🐛 Bug Fixes
+
+* **game-lobby:** hydration mismatches ([#980](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/980)) ([bb9cdf3](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bb9cdf394e6716493925679b2dd732a16eed05a2))
+
+### 🎨 Styles
+
+* **scrollbar:** unified styled scrollbars ([#978](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/978)) ([bf87ac8](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/bf87ac81a4677d9623945c21c00247cb5f60ff33))
+
+### 🧹 Chore
+
+* **deps:** update typescript-eslint monorepo to ^8.9.0 ([#979](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/979)) ([54c78d6](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/54c78d69fca95bd59d3bef976df4adfa846dd02d))
+* **deps:** update vitest monorepo to ^2.1.3 ([#977](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/977)) ([6ce54b0](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/6ce54b05a9877263b24386f06a019e098b22d136))
+
 ## [1.34.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.33.0...v1.34.0) (2024-10-14)
 
 ### 🚀 Features
