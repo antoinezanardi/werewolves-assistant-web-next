@@ -52,20 +52,20 @@ describe("Game Over Victory Text Component", () => {
       expect(trophyIcon.exists()).toBeTruthy();
     });
 
-    it("should set height and width to 125px when screen is not smaller than md.", () => {
+    it("should set height and width to 135px when screen is not smaller than md.", () => {
       const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
 
-      expect(trophyIcon.attributes("height")).toBe("125px");
-      expect(trophyIcon.attributes("width")).toBe("125px");
+      expect(trophyIcon.attributes("height")).toBe("135px");
+      expect(trophyIcon.attributes("width")).toBe("135px");
     });
 
-    it("should set height and width to 50px when screen is smaller than md.", async() => {
+    it("should set height and width to 90px when screen is smaller than md.", async() => {
       hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameOverVictoryTextComponent();
       const trophyIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Trophy icon']");
 
-      expect(trophyIcon.attributes("height")).toBe("50px");
-      expect(trophyIcon.attributes("width")).toBe("50px");
+      expect(trophyIcon.attributes("height")).toBe("90px");
+      expect(trophyIcon.attributes("width")).toBe("90px");
     });
   });
 

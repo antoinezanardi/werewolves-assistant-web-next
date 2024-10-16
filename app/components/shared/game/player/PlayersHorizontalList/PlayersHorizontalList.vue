@@ -7,7 +7,7 @@
       <li
         v-for="player in players"
         :key="player._id"
-        class="inline-block p-2 player-in-list text-center"
+        class="inline-block p-2 player-in-list text-center w-32"
       >
         <GlowElement>
           <RoleImage

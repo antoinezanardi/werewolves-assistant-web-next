@@ -51,7 +51,7 @@ type TextsAndSvg = {
 
 const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
-const svgSize = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "50px" : "125px"));
+const svgSize = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "90px" : "135px"));
 
 const gameStore = useGameStore();
 const { game } = storeToRefs(gameStore);
