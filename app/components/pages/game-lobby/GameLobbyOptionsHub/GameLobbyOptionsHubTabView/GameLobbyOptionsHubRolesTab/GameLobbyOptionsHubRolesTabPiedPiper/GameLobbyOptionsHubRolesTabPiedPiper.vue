@@ -15,7 +15,7 @@
       option-icon-class="text-pink-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabPiedPiper.options.charmedPeopleCountPerNight.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-label"
           for="game-lobby-options-hub-roles-tab-pied-piper-charmed-people-count-per-night-input"

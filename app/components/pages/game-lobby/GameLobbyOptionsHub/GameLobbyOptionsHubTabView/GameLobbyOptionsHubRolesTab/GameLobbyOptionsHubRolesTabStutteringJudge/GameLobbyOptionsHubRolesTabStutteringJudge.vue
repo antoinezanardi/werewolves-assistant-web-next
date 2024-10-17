@@ -14,7 +14,7 @@
       option-icon-class="text-cyan-300"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabStutteringJudge.options.voteRequestsCount.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-label"
           for="game-lobby-options-hub-roles-tab-stuttering-judge-vote-requests-count-input"
