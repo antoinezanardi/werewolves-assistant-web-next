@@ -79,8 +79,8 @@ importers:
         specifier: ^8.5.5
         version: 8.5.5(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.12(typescript@5.6.3))
       '@nuxtjs/robots':
-        specifier: ^4.1.8
-        version: 4.1.8(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
+        specifier: ^4.1.9
+        version: 4.1.9(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
       '@nuxtjs/seo':
         specifier: ^2.0.0-rc.23
         version: 2.0.0-rc.23(h3@1.13.0)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
@@ -2168,8 +2168,8 @@ packages:
     resolution: {integrity: sha512-HVXRy61VBACIwmap1WxuhT9nNf6liU9L9LQSB6D7LDJ+8w57Cc6qWHRJ7dNI9sI/IQ2FQWk7PkTWriybAd3MlQ==}
     engines: {node: ^14.16.0 || >=16.11.0}
 
-  '@nuxtjs/robots@4.1.8':
-    resolution: {integrity: sha512-/8IMjajw2uHZCx/ROllUCrNwf68tG5yFKDryd3Ycnbi5Q8f1rY+LrcAoP5nyBzw74Mr+hXsosA5prYJWmK10Tg==}
+  '@nuxtjs/robots@4.1.9':
+    resolution: {integrity: sha512-zd0gw2ws0FDgWi9yE4mLoIX7yajefKCp0Skl9cm1PP9W1AOFIQTjbUnRMMKbXFF2d9QFRVKpfSnaBgblbzuVWg==}
 
   '@nuxtjs/seo@2.0.0-rc.23':
     resolution: {integrity: sha512-ER6CQlpvTkR/5JM6rqQZ7boXeuY/50nUCEx0eWmfU6Epvz79vbQ/SIoMlbBZ/0GbR+yWjo1oErMY+aRQoLtf6Q==}
@@ -10440,7 +10440,7 @@ snapshots:
       estree-walker: 2.0.2
       jsonc-eslint-parser: 2.4.0
       magic-string: 0.30.12
-      mlly: 1.7.1
+      mlly: 1.7.2
       source-map-js: 1.2.1
       yaml-eslint-parser: 1.2.3
     optionalDependencies:
@@ -11032,7 +11032,7 @@ snapshots:
       - vue-i18n-bridge
       - webpack-sources
 
-  '@nuxtjs/robots@4.1.8(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))':
+  '@nuxtjs/robots@4.1.9(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))':
     dependencies:
       '@nuxt/devtools-kit': 1.6.0(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
@@ -11056,7 +11056,7 @@ snapshots:
   '@nuxtjs/seo@2.0.0-rc.23(h3@1.13.0)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))':
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)
-      '@nuxtjs/robots': 4.1.8(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
+      '@nuxtjs/robots': 4.1.9(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
       '@nuxtjs/sitemap': 6.1.2(h3@1.13.0)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
       defu: 6.1.4
       nuxt-link-checker: 3.1.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
@@ -12000,7 +12000,7 @@ snapshots:
       '@unhead/schema': 1.11.6
       '@unhead/shared': 1.11.6
       magic-string: 0.30.12
-      mlly: 1.7.1
+      mlly: 1.7.2
       ufo: 1.5.4
       unplugin: 1.14.1
       unplugin-ast: 0.10.0(rollup@4.21.3)
@@ -12847,7 +12847,7 @@ snapshots:
       ohash: 1.1.4
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       rc9: 2.1.2
     optionalDependencies:
       magicast: 0.3.5
@@ -14090,7 +14090,7 @@ snapshots:
   externality@1.0.2:
     dependencies:
       enhanced-resolve: 5.17.1
-      mlly: 1.7.1
+      mlly: 1.7.2
       pathe: 1.1.2
       ufo: 1.5.4
 
@@ -15844,7 +15844,7 @@ snapshots:
       nuxt-site-config: 2.2.18(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(sass@1.80.1)(terser@5.32.0))(vue@3.5.12(typescript@5.6.3))
       nuxt-site-config-kit: 2.2.18(magicast@0.3.5)(rollup@4.21.3)(vue@3.5.12(typescript@5.6.3))
       pathe: 1.1.2
-      pkg-types: 1.2.0
+      pkg-types: 1.2.1
       radix3: 1.1.2
       sirv: 2.0.4
       site-config-stack: 2.2.18(vue@3.5.12(typescript@5.6.3))
