@@ -78,6 +78,7 @@
     "script:create-branch": "scripts/create-git-branch.sh",
     "script:create-pull-request": "scripts/create-pull-request.sh",
     "script:check-acceptance-features-shard": "scripts/check-acceptance-features-shard.sh tests/acceptance",
+    "script:download-acceptance-screenshots": "scripts/download-screenshots-from-github-action.sh",
     "gource": "gource --load-config config/gource/gource.config"
   },
   "devDependencies": {
@@ -95,14 +96,14 @@
     "@nuxt/kit": "^3.13.2",
     "@nuxt/test-utils": "^3.14.3",
     "@nuxtjs/i18n": "^8.5.5",
-    "@nuxtjs/robots": "^4.1.7",
+    "@nuxtjs/robots": "^4.1.8",
     "@nuxtjs/seo": "^2.0.0-rc.23",
-    "@nuxtjs/sitemap": "^6.1.1",
+    "@nuxtjs/sitemap": "^6.1.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.5",
     "@pinia/testing": "^0.1.6",
-    "@playwright/test": "^1.48.0",
-    "@primevue/nuxt-module": "^4.1.0",
+    "@playwright/test": "^1.48.1",
+    "@primevue/nuxt-module": "^4.1.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@stryker-mutator/api": "^8.6.0",
@@ -126,7 +127,7 @@
     "@vue/test-utils": "^2.4.6",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
-    "chart.js": "^4.4.4",
+    "chart.js": "^4.4.5",
     "chartjs-plugin-datalabels": "^2.2.0",
     "circle-progress.vue": "^3.2.2",
     "class-transformer": "^0.5.1",
@@ -146,13 +147,13 @@
     "lint-staged": "^15.2.10",
     "msw": "^2.4.11",
     "nuxt": "^3.13.1",
-    "nuxt-og-image": "^3.0.4",
-    "nuxt-schema-org": "^3.4.0",
+    "nuxt-og-image": "^3.0.6",
+    "nuxt-schema-org": "^3.4.1",
     "ofetch": "^1.4.1",
     "pinia": "^2.2.4",
     "pixelmatch": "^6.0.0",
-    "playwright": "^1.48.0",
-    "playwright-core": "^1.48.0",
+    "playwright": "^1.48.1",
+    "playwright-core": "^1.48.1",
     "pngjs": "^7.0.0",
     "prettier": "^3.3.3",
     "prettier-plugin-gherkin": "^3.1.0",
@@ -160,12 +161,12 @@
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.0.1",
-    "sass": "^1.79.5",
+    "sass": "^1.80.1",
     "semantic-release": "^24.1.2",
     "semantic-release-export-data": "^1.1.0",
     "string-to-color": "^2.2.2",
     "tailwind-scrollbar": "^3.1.0",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "^3.4.14",
     "ts-case-convert": "^2.1.0",
     "tsx": "^4.19.1",
     "type-fest": "^4.26.1",
@@ -188,10 +189,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
-    "@primevue/themes": "^4.1.0",
+    "@primevue/themes": "^4.1.1",
     "animate.css": "^4.1.1",
     "is-ci": "^3.0.1",
-    "primevue": "^4.1.0"
+    "primevue": "^4.1.1"
   },
   "engines": {
     "node": ">=20.18.0"
@@ -200,5 +201,5 @@
     "darwin",
     "linux"
   ],
-  "packageManager": "pnpm@9.12.1"
+  "packageManager": "pnpm@9.12.2"
 }

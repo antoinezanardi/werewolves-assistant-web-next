@@ -66,7 +66,6 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { storeToRefs } from "pinia";
 
 import type { LabeledCreateGameAdditionalCardDto, RecipientRoleAdditionalCardsMultiSelectProps } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManagerContent/RecipientRoleAdditionalCardsManager/RecipientRoleAdditionalCardsMultiSelect/recipient-role-additional-cards-multi-select.types";
@@ -74,14 +73,13 @@ import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { CreateGameAdditionalCardDto } from "~/composables/api/game/dto/create-game/create-game-additional-card/create-game-additional-card.dto";
 import type { RoleName } from "~/composables/api/role/types/role.types";
 import { useRoleName } from "~/composables/api/role/useRoleName";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useRolesStore } from "~/stores/role/useRolesStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const props = defineProps<RecipientRoleAdditionalCardsMultiSelectProps>();
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { getAdditionalCardsForRecipientInCreateGameDto } = createGameDtoStore;
@@ -91,7 +89,7 @@ const rolesStore = useRolesStore();
 const { getRolesForRecipientRoleName } = rolesStore;
 const { getRoleNameLabel } = useRoleName();
 
-const roleImageSizes = computed<string>(() => (isSmallerThanMd.value ? "35px" : "50px"));
+const roleImageSizes = computed<string>(() => (isSmallerThanMdBreakpoint.value ? "35px" : "50px"));
 
 const selectedAdditionalCards = computed<CreateGameAdditionalCardDto[]>({
   get: () => getAdditionalCardsForRecipientInCreateGameDto(props.recipientRoleName),

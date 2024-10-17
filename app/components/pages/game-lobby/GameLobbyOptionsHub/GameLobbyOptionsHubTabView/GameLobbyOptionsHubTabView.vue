@@ -34,7 +34,7 @@
           :alt="$t('components.GameLobbyOptionsHubTabView.compositionTabImageAlt')"
           height="40"
           placeholder="/svg/misc/ripples.svg"
-          placeholder-class="w-40 h-40"
+          placeholder-class="w-[40px] h-[40px]"
           src="/svg/misc/people.svg"
           width="40"
         />
@@ -53,7 +53,7 @@
           :alt="$t('components.GameLobbyOptionsHubTabView.votesTabImageAlt')"
           height="40"
           placeholder="/svg/misc/ripples.svg"
-          placeholder-class="w-40 h-40"
+          placeholder-class="w-[40px] h-[40px]"
           src="/svg/game/game-play/game-play-action/settle-votes.svg"
           width="40"
         />

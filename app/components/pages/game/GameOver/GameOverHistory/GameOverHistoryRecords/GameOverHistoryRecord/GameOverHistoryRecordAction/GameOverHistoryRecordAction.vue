@@ -3,17 +3,21 @@
     id="game-over-history-record-action"
     class="flex flex-col gap-2 items-center justify-center"
   >
-    <h4 id="game-over-history-record-action-text">
+    <h4
+      id="game-over-history-record-action-text"
+      class="!font-bold !text-lg italic text-center"
+    >
       {{ gameHistoryRecordActionText }}
     </h4>
 
     <NuxtImg
       :alt="$t('components.GameOverHistoryRecordAction.actionIconAltText')"
-      height="25"
+      class="hidden md:block"
+      height="40"
       placeholder="/svg/misc/ripples.svg"
-      placeholder-class="w-25 h-25"
+      placeholder-class="w-40 h-40"
       :src="gameHistoryRecordActionTextIcon"
-      width="25"
+      width="40"
     />
   </div>
 </template>

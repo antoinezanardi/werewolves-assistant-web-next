@@ -1,37 +1,34 @@
 <template>
   <div
     id="game-over-history-record-decision-nominated-players"
-    class="flex gap-4 items-center justify-center"
+    class="flex flex-col gap-3 items-center justify-center"
   >
-    <div
-      v-for="nominatedPlayer in truncatedNominatedPlayers"
-      :key="nominatedPlayer._id"
-      class="game-over-history-record-source-player w-full"
+    <h4
+      v-if="nominatedPlayerRoleNameLabel"
+      id="game-over-history-decision-nominated-player-role-name"
+      class="text-center"
     >
-      <PlayerCard
-        class="game-over-history-record-decision-nominated-player-card"
-        :player-name="nominatedPlayer.name"
-        :player-role="nominatedPlayer.role.current"
-      />
-    </div>
+      {{ nominatedPlayerRoleNameLabel }}
+    </h4>
 
-    <OverflowTag
-      id="nominated-players-overflow-tag"
-      :entities-count="nominatedPlayers.length"
-      :maximum-entities-displayed="maximumNominatedPlayersDisplayed"
+    <PlayersHorizontalList
+      id="nominated-players-horizontal-list"
+      :players="nominatedPlayers"
+      :role-image-size-in-px="GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD"
     />
   </div>
 </template>
 
 <script setup lang="ts">
+import { GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.constants";
 import type { GameOverHistoryRecordDecisionNominatedPlayersProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionNominatedPlayers/game-over-history-record-decision-nominated-players.types";
-import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
-import OverflowTag from "~/components/shared/misc/OverflowTag/OverflowTag.vue";
+import PlayersHorizontalList from "~/components/shared/game/player/PlayersHorizontalList/PlayersHorizontalList.vue";
 import type { Player } from "~/composables/api/game/types/players/player.class";
+import { useGameSourceName } from "~/composables/api/game/useGameSource";
 
 const props = defineProps<GameOverHistoryRecordDecisionNominatedPlayersProps>();
 
-const maximumNominatedPlayersDisplayed = 3;
+const { getDefiniteGameSourceNameLabel } = useGameSourceName();
 
 const nominatedPlayers = computed<Player[]>(() => {
   const { voting } = props.gameHistoryRecord.play;
@@ -39,5 +36,14 @@ const nominatedPlayers = computed<Player[]>(() => {
   return voting?.nominatedPlayers ?? [];
 });
 
-const truncatedNominatedPlayers = computed<Player[]>(() => nominatedPlayers.value.slice(0, maximumNominatedPlayersDisplayed));
+const isNominatedPlayerAlone = computed<boolean>(() => nominatedPlayers.value.length === 1);
+
+const nominatedPlayerRoleNameLabel = computed<string>(() => {
+  if (!isNominatedPlayerAlone.value) {
+    return "";
+  }
+  const nominatedPlayer = nominatedPlayers.value[0];
+
+  return getDefiniteGameSourceNameLabel(nominatedPlayer.role.current, 1);
+});
 </script>

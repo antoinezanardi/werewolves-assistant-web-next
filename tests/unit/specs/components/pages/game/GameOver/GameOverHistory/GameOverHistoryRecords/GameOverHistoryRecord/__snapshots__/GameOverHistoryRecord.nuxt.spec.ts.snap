@@ -1,11 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Over History Record Component > should match snapshot when rendered. 1`] = `
-"<div id="game-over-history-record" class="flex gap-4 items-center">
-  <game-over-history-record-source-stub gamehistoryrecord="[object Object]" id="game-over-history-record-source" class="w-4/12"></game-over-history-record-source-stub>
-  <game-over-history-record-action-stub gamehistoryrecord="[object Object]" id="game-over-history-record-action" class="w-3/12"></game-over-history-record-action-stub>
-  <div class="game-over-history-record-target-container w-4/12">
-    <game-over-history-record-decision-stub gamehistoryrecord="[object Object]" id="game-over-history-record-decision"></game-over-history-record-decision-stub>
-  </div>
+"<div id="game-over-history-record" class="flex flex-col gap-4 items-center md:!h-60 md:flex-row w-full">
+  <game-over-history-record-source-stub gamehistoryrecord="[object Object]" id="game-over-history-record-source" class="border border-gray-700 h-full md:w-5/12 p-2 rounded-md w-full"></game-over-history-record-source-stub>
+  <game-over-history-record-action-stub gamehistoryrecord="[object Object]" id="game-over-history-record-action" class="md:w-1/10"></game-over-history-record-action-stub>
+  <game-over-history-record-decision-stub gamehistoryrecord="[object Object]" id="game-over-history-record-decision" class="border border-gray-700 h-full md:w-5/12 p-2 rounded-md w-full"></game-over-history-record-decision-stub>
 </div>"
 `;

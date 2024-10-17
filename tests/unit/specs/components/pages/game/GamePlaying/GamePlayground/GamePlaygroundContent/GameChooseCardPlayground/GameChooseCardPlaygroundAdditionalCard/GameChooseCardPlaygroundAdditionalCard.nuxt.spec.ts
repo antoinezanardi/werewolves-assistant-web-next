@@ -1,7 +1,6 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
-import type VueUseCore from "@vueuse/core";
 
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
@@ -17,18 +16,17 @@ const hoistedMocks = vi.hoisted(() => ({
   useRolesStore: {
     getRoleSideForRoleName: vi.fn(),
   },
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
+}));
+
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 vi.mock("~/stores/role/useRolesStore.ts", () => ({
   useRolesStore: (): typeof hoistedMocks.useRolesStore => hoistedMocks.useRolesStore,
-}));
-
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof VueUseCore>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
 }));
 
 describe("Game Choose Card Playground Additional Card Component", () => {
@@ -59,7 +57,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
 
   beforeEach(async() => {
     hoistedMocks.useRolesStore.getRoleSideForRoleName.mockReturnValue("villagers");
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameChooseCardPlaygroundAdditionalCardComponent();
     const makeGamePlayStore = useMakeGamePlayDtoStore();
     makeGamePlayStore.makeGamePlayDto = createFakeMakeGamePlayDto();
@@ -283,7 +281,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
       });
 
       it("should set small size when screen is smaller than md.", async() => {
-        hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+        hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
         wrapper = await mountGameChooseCardPlaygroundAdditionalCardComponent();
         const roleImage = wrapper.findComponent<typeof RoleImage>("#additional-card-image");
 

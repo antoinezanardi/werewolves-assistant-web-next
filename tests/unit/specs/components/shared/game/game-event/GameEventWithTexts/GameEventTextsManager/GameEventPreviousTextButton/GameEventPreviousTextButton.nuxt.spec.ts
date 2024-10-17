@@ -13,19 +13,17 @@ import type { GameEventPreviousTextButtonProps } from "~/components/shared/game/
 import GameEventPreviousTextButton from "~/components/shared/game/game-event/GameEventWithTexts/GameEventTextsManager/GameEventPreviousTextButton/GameEventPreviousTextButton.vue";
 import { useGameStore } from "~/stores/game/useGameStore";
 
-const { hoistedMocks } = vi.hoisted(() => ({
-  hoistedMocks: {
-    useMagicKeys: {
-      shift: { value: false } as Ref<boolean>,
-      arrowright: { value: false } as Ref<boolean>,
-      arrowleft: { value: false } as Ref<boolean>,
-      enter: { value: false } as Ref<boolean>,
-    } satisfies ReturnType<typeof createFakeUseMagicKeys>,
-    useAnimateCss: { animateElementOnce: vi.fn() },
-  },
+const hoistedMocks = vi.hoisted(() => ({
+  useMagicKeys: {
+    shift: { value: false } as Ref<boolean>,
+    arrowright: { value: false } as Ref<boolean>,
+    arrowleft: { value: false } as Ref<boolean>,
+    enter: { value: false } as Ref<boolean>,
+  } satisfies ReturnType<typeof createFakeUseMagicKeys>,
+  useAnimateCss: { animateElementOnce: vi.fn() },
 }));
 
-vi.mock("~/composables/animate-css/useAnimateCss", () => ({
+vi.mock("~/composables/style/useAnimateCss", () => ({
   useAnimateCss: (): typeof hoistedMocks.useAnimateCss => hoistedMocks.useAnimateCss,
 }));
 

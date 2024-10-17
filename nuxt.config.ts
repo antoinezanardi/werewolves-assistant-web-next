@@ -221,16 +221,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  robots: {
-    disallow: ["/game/"],
-  },
   routeRules: {
     "/": { prerender: true },
     "/about": { swr: true },
-    "/game-lobby": { swr: true },
-    "/game": {
-      ssr: false,
-      robots: false,
+    "/game-lobby": {
+      swr: true,
+      robots: true,
     },
     "/game/**": {
       ssr: false,

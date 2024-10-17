@@ -1,12 +1,15 @@
 import { mockNuxtImport } from "@nuxt/test-utils/runtime";
 import type { mount } from "@vue/test-utils";
-import type Radash from "radash";
 import type { UseHeadInput } from "unhead";
 import type { Mock } from "vitest";
 import { expect } from "vitest";
 import type { Ref } from "vue";
 
+import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
 import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt/useRoute.factory";
+import { getError } from "@tests/unit/utils/helpers/exception.helpers";
+import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import type GameLobbyFooter from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyFooter.vue";
 import type GameLobbyHeader from "~/components/pages/game-lobby/GameLobbyHeader/GameLobbyHeader.vue";
 import type GameLobbyPlayersParty from "~/components/pages/game-lobby/GameLobbyPlayersParty/GameLobbyPlayersParty.vue";
@@ -14,14 +17,10 @@ import GameLobby from "~/pages/game-lobby.vue";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
-import { getError } from "@tests/unit/utils/helpers/exception.helpers";
-import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
-import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 
 const hoistedMocks = vi.hoisted(() => ({
-  useBreakpoints: {
-    smaller: vi.fn(),
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
   },
   useRoute: {} as unknown as ReturnType<typeof useRoute>,
   usePrimeVueToasts: {
@@ -31,9 +30,8 @@ const hoistedMocks = vi.hoisted(() => ({
 
 mockNuxtImport("useRoute", () => vi.fn(() => hoistedMocks.useRoute));
 
-vi.mock("@vueuse/core", async importOriginal => ({
-  ...await importOriginal<typeof Radash>(),
-  useBreakpoints: (): typeof hoistedMocks.useBreakpoints => hoistedMocks.useBreakpoints,
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
 }));
 
 vi.mock("~/composables/prime-vue/usePrimeVueToasts", () => ({
@@ -118,7 +116,7 @@ describe("Game Lobby Page", () => {
 
   beforeEach(async() => {
     hoistedMocks.useRoute = createFakeUseRoute();
-    hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(false));
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameLobbyPageComponent();
   });
 
@@ -138,7 +136,7 @@ describe("Game Lobby Page", () => {
 
   describe("Small Screen Toast", () => {
     it("should add info toast for small screen after 200ms when screen is smaller than md.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameLobbyPageComponent();
       vi.advanceTimersByTime(200);
 
@@ -156,7 +154,7 @@ describe("Game Lobby Page", () => {
     });
 
     it("should not add info toast for small screen when screen is smaller than md but 200ms have not passed.", async() => {
-      hoistedMocks.useBreakpoints.smaller.mockReturnValue(ref(true));
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
       wrapper = await mountGameLobbyPageComponent();
 
       expect(hoistedMocks.usePrimeVueToasts.addInfoToast).not.toHaveBeenCalled();

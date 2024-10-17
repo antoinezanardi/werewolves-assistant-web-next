@@ -14,7 +14,7 @@
       option-icon-class="text-white"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabWhiteWerewolf.options.wakingUpInterval.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-label"
           for="game-lobby-options-hub-roles-tab-white-werewolf-waking-up-interval-input"

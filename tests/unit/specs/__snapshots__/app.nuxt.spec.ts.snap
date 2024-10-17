@@ -32,7 +32,7 @@ exports[`App Component > should render component without shallow and match snaps
       </nav>
       <div data-v-ac9cdbe0="" class="content-with-navbar grow h-full">
         <transition-stub name="page" mode="out-in" appear="false" persisted="false" css="true">
-          <div data-v-16d9afef="" id="index-page" class="flex flex-col h-full md:p-2 p-4">
+          <div data-v-16d9afef="" id="index-page" class="flex flex-col h-full md:p-2 p-3">
             <div data-v-16d9afef="" class="flex flex-col grow items-center justify-center">
               <div data-v-16d9afef="" class="flex justify-center w-full"><img data-v-16d9afef="" class="md:w-[200px] md:h-[200px] w-[125px] h-[125px] !drop-shadow-2xl !drop-shadow-2xl" alt="Werewolves Assistant logo" data-nuxt-img="" src="/svg/misc/ripples.svg"></div>
               <div data-v-16d9afef="" class="mb-16 mt-6 text-center w-full">

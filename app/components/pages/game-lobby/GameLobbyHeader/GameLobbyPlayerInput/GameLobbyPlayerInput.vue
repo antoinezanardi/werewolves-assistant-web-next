@@ -2,9 +2,8 @@
   <div id="game-lobby-player-input">
     <PrimeVueInputGroup
       id="game-lobby-player-input-group"
-      class="mt-3"
     >
-      <PrimeVueFloatLabel>
+      <PrimeVueFloatLabel variant="on">
         <PrimeVueInputText
           id="player-name-input"
           ref="playerNameInput"

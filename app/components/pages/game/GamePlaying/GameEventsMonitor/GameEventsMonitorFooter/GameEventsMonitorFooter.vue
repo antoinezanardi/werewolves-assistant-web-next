@@ -58,7 +58,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { storeToRefs } from "pinia";
 import type { TooltipOptions } from "primevue/tooltip";
 
-import { useAnimateCss } from "~/composables/animate-css/useAnimateCss";
+import { useAnimateCss } from "~/composables/style/useAnimateCss";
 import { useGameEventsStore } from "~/stores/game/game-event/useGameEventsStore";
 import { useKeyboardStore } from "~/stores/keyboard/useKeyboardStore";
 

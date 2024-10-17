@@ -22,7 +22,7 @@
       </template>
     </PrimeVueToggleButton>
 
-    <PrimeVueFloatLabel>
+    <PrimeVueFloatLabel variant="on">
       <label
         id="game-lobby-options-hub-roles-tab-sheriff-election-turn-label"
         for="game-lobby-options-hub-roles-tab-sheriff-election-turn-input"

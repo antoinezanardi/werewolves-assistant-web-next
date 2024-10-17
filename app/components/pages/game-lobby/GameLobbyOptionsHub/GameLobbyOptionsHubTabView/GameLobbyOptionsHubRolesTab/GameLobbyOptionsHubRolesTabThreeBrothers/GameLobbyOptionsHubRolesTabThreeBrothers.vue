@@ -14,7 +14,7 @@
       option-icon-class="text-blue-400"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabThreeBrothers.options.wakingUpInterval.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-label"
           for="game-lobby-options-hub-roles-tab-three-brothers-waking-up-interval-input"

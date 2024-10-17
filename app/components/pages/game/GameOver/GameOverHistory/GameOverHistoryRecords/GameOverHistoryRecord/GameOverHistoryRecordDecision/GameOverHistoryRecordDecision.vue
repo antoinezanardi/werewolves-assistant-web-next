@@ -1,35 +1,40 @@
 <template>
-  <div id="game-over-history-record-decision">
+  <GlowCapture id="game-over-history-record-decision">
     <GameOverHistoryRecordDecisionTargets
       v-if="gameHistoryRecord.play.type === 'target'"
       id="game-over-history-record-play-targets"
+      class="h-full"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordDecisionNominatedPlayers
       v-else-if="gameHistoryRecord.play.type === 'vote'"
       id="game-over-history-record-play-nominated-players"
+      class="h-full"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordDecisionBuriedPlayers
       v-else-if="gameHistoryRecord.play.type === 'bury-dead-bodies'"
       id="game-over-history-record-play-buried-players"
+      class="h-full"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordDecisionChosenCard
       v-else-if="gameHistoryRecord.play.type === 'choose-card'"
       id="game-over-history-record-play-chosen-card"
+      class="h-full"
       :game-history-record="gameHistoryRecord"
     />
 
     <GameOverHistoryRecordDecisionChosenSide
       v-else-if="gameHistoryRecord.play.type === 'choose-side'"
       id="game-over-history-record-play-chosen-side"
+      class="h-full"
       :game-history-record="gameHistoryRecord"
     />
-  </div>
+  </GlowCapture>
 </template>
 
 <script setup lang="ts">

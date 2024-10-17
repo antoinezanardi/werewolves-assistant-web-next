@@ -1,40 +1,64 @@
 <template>
-  <div class="flex flex-col gap-2 items-center justify-center">
-    <PlayerCard
-      class="game-over-history-record-decision-target-player-card"
-      :player-name="target.player.name"
-      :player-role="target.player.role.current"
-    />
+  <li class="inline-block text-center">
+    <div class="p-2">
+      <GlowElement>
+        <RoleImage
+          id="targeted-player-role-image"
+          class="glow:border-gray-400 mx-auto"
+          definition="normal"
+          :role-name="target.player.role.current"
+          :sizes="roleImageSizesInPx"
+        />
+      </GlowElement>
 
-    <PrimeVueTag
-      v-if="isTagDisplayed"
-      id="target-potion-tag"
-      class="flex gap-2 items-center justify-center"
-      :severity="tagSeverity"
-    >
-      <NuxtImg
-        :alt="tagText"
-        height="25"
-        placeholder="/svg/misc/ripples.svg"
-        placeholder-class="w-25 h-25"
-        :src="tagIconPath"
-        width="25"
-      />
+      <div
+        id="targeted-player-name"
+        class="truncate w-full"
+      >
+        {{ target.player.name }}
+      </div>
 
-      <span id="target-potion-tag-text">
-        {{ tagText }}
-      </span>
-    </PrimeVueTag>
-  </div>
+      <PrimeVueTag
+        v-if="isTagDisplayed"
+        id="target-potion-tag"
+        class="flex gap-2 items-center justify-center mt-1"
+        :severity="tagSeverity"
+      >
+        <NuxtImg
+          :alt="tagText"
+          height="25"
+          placeholder="/svg/misc/ripples.svg"
+          placeholder-class="w-25 h-25"
+          :src="tagIconPath"
+          width="25"
+        />
+
+        <span id="target-potion-tag-text">
+          {{ tagText }}
+        </span>
+      </PrimeVueTag>
+    </div>
+  </li>
 </template>
 
 <script setup lang="ts">
+import { GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_BELOW_MD, GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/game-over-history-record.constants";
 import type { GameOverHistoryRecordDecisionTargetProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/game-over-history-record-decision-target.types";
-import PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
+import RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 
 const props = defineProps<GameOverHistoryRecordDecisionTargetProps>();
 
 const { t } = useI18n();
+
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
+
+const roleImageSizesInPx = computed<string>(() => {
+  if (isSmallerThanMdBreakpoint.value) {
+    return `${GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_BELOW_MD}px`;
+  }
+  return `${GAME_HISTORY_RECORD_ROLE_IMAGE_SIZE_OVER_MD}px`;
+});
 
 const isTagDisplayed = computed<boolean>(() => !!props.target.drankPotion);
 

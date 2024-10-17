@@ -4,12 +4,22 @@ import type { TagProps } from "primevue/tag";
 import type Tag from "primevue/tag";
 
 import type { NuxtImg } from "#components";
-import type { GameOverHistoryRecordDecisionTargetProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/game-over-history-record-decision-target.types";
-import GameOverHistoryRecordDecisionTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/GameOverHistoryRecordDecisionTarget.vue";
-import type PlayerCard from "~/components/shared/game/player/PlayerCard/PlayerCard.vue";
 import { createFakeGameHistoryRecordPlayTarget } from "@tests/unit/utils/factories/composables/api/game/game-history-record/game-history-record-play/game-history-record-play-target/game-history-record-play-target.factory";
 import { createFakeActorAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
+import type { GameOverHistoryRecordDecisionTargetProps } from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/game-over-history-record-decision-target.types";
+import GameOverHistoryRecordDecisionTarget from "~/components/pages/game/GameOver/GameOverHistory/GameOverHistoryRecords/GameOverHistoryRecord/GameOverHistoryRecordDecision/GameOverHistoryRecordDecisionTargets/GameOverHistoryRecordDecisionTarget/GameOverHistoryRecordDecisionTarget.vue";
+import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
+
+const hoistedMocks = vi.hoisted(() => ({
+  useAppBreakpoints: {
+    isSmallerThanMdBreakpoint: { value: false },
+  },
+}));
+
+vi.mock("~/composables/style/useAppBreakpoints", () => ({
+  useAppBreakpoints: (): typeof hoistedMocks.useAppBreakpoints => hoistedMocks.useAppBreakpoints,
+}));
 
 describe("Game Over History Record Decision Target Component", () => {
   let wrapper: ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionTarget>>;
@@ -19,12 +29,21 @@ describe("Game Over History Record Decision Target Component", () => {
   async function mountGameOverHistoryRecordDecisionTargetComponent(options: ComponentMountingOptions<typeof GameOverHistoryRecordDecisionTarget> = {}):
   Promise<ReturnType<typeof mount<typeof GameOverHistoryRecordDecisionTarget>>> {
     return mountSuspendedComponent(GameOverHistoryRecordDecisionTarget, {
+      shallow: false,
+      global: {
+        stubs: {
+          RoleImage: true,
+          NuxtImg: true,
+          Tag: true,
+        },
+      },
       props: defaultProps,
       ...options,
     });
   }
 
   beforeEach(async() => {
+    hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = false;
     wrapper = await mountGameOverHistoryRecordDecisionTargetComponent();
   });
 
@@ -33,12 +52,25 @@ describe("Game Over History Record Decision Target Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  describe("Player Card", () => {
-    it("should render Player Card with the target player name when rendered.", () => {
-      const playerCard = wrapper.findComponent<typeof PlayerCard>(".game-over-history-record-decision-target-player-card");
+  describe("Role Image", () => {
+    it("should render role image with the targeted player role when rendered.", () => {
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#targeted-player-role-image");
 
-      expect(playerCard.props("playerName")).toBe(defaultTarget.player.name);
-      expect(playerCard.props("playerRole")).toBe(defaultTarget.player.role.current);
+      expect(roleImage.props("roleName")).toBe(defaultTarget.player.role.current);
+    });
+
+    it("should set role image size to 70px when the screen is not smaller than md.", () => {
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#targeted-player-role-image");
+
+      expect(roleImage.props("sizes")).toBe("70px");
+    });
+
+    it("should set role image size to 56px when the screen is smaller than md.", async() => {
+      hoistedMocks.useAppBreakpoints.isSmallerThanMdBreakpoint.value = true;
+      wrapper = await mountGameOverHistoryRecordDecisionTargetComponent();
+      const roleImage = wrapper.findComponent<typeof RoleImage>("#targeted-player-role-image");
+
+      expect(roleImage.props("sizes")).toBe("56px");
     });
   });
 
@@ -52,6 +84,7 @@ describe("Game Over History Record Decision Target Component", () => {
     describe("Target drank life potion", () => {
       beforeEach(async() => {
         wrapper = await mountGameOverHistoryRecordDecisionTargetComponent({
+          shallow: true,
           global: { stubs: { Tag: false } },
           props: {
             target: createFakeGameHistoryRecordPlayTarget({
@@ -85,6 +118,7 @@ describe("Game Over History Record Decision Target Component", () => {
     describe("Target drank death potion", () => {
       beforeEach(async() => {
         wrapper = await mountGameOverHistoryRecordDecisionTargetComponent({
+          shallow: true,
           global: { stubs: { Tag: false } },
           props: {
             target: createFakeGameHistoryRecordPlayTarget({

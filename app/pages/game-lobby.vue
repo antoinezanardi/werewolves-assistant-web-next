@@ -44,8 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
-
 import type { GameLobbyAdditionalCardsManagerExposed } from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/game-lobby-additional-cards-manager.types";
 import GameLobbyAdditionalCardsManager from "~/components/pages/game-lobby/GameLobbyAdditionalCardsManager/GameLobbyAdditionalCardsManager.vue";
 import GameLobbyBeforeLeaveConfirmDialog from "~/components/pages/game-lobby/GameLobbyBeforeLeaveConfirmDialog/GameLobbyBeforeLeaveConfirmDialog.vue";
@@ -63,10 +61,10 @@ import type { GameLobbyRolePickerExposed } from "~/components/pages/game-lobby/G
 import GameLobbyRolePicker from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePicker.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import { usePrimeVueToasts } from "~/composables/prime-vue/usePrimeVueToasts";
+import { useAppBreakpoints } from "~/composables/style/useAppBreakpoints";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useCreateGameDtoStore } from "~/stores/game/create-game-dto/useCreateGameDtoStore";
 import { useGameStore } from "~/stores/game/useGameStore";
-import { BreakpointTypes } from "~/utils/enums/breakpoint.enums";
 
 const createGameDtoStore = useCreateGameDtoStore();
 const { resetCreateGameDto } = createGameDtoStore;
@@ -87,8 +85,7 @@ const gameLobbyPositionCoordinator = ref<GameLobbyPositionCoordinatorExposed | n
 const gameLobbyAdditionalCardsManager = ref<GameLobbyAdditionalCardsManagerExposed | null>(null);
 const gameLobbyGroupOrganizer = ref<GameLobbyGroupOrganizerExposed | null>(null);
 
-const breakpoints = useBreakpoints(breakpointsTailwind);
-const isSmallerThanMd = breakpoints.smaller(BreakpointTypes.MD);
+const { isSmallerThanMdBreakpoint } = useAppBreakpoints();
 
 useHead({
   title: t("pages.gameLobby.startGame"),
@@ -193,7 +190,7 @@ injectPlayerNamesFromQuery();
 loadAllAudios();
 
 onMounted(() => {
-  if (isSmallerThanMd.value) {
+  if (isSmallerThanMdBreakpoint.value) {
     const delayInMs = 200;
     setTimeout(() => {
       launchSmallScreenWarning();
