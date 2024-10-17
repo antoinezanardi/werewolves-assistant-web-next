@@ -1,6 +1,6 @@
 <template>
   <div id="game-playground-player-card-vote-input">
-    <PrimeVueFloatLabel class="mt-5">
+    <PrimeVueFloatLabel variant="on">
       <PrimeVueAutoComplete
         class="w-full"
         complete-on-focus

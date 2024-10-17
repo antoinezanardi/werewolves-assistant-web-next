@@ -15,7 +15,7 @@
       option-icon-class="text-red-500"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabElder.options.livesCountAgainstWerewolves.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-label"
           for="game-lobby-options-hub-roles-tab-elder-lives-count-against-werewolves-input"

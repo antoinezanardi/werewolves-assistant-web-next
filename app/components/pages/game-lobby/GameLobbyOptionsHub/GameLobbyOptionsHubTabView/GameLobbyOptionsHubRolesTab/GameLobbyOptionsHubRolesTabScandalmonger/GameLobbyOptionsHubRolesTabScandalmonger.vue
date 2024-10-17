@@ -14,7 +14,7 @@
       option-icon-class="text-cyan-700"
       :option-label="$t('components.GameLobbyOptionsHubRolesTabScandalmonger.options.markPenalty.label')"
     >
-      <PrimeVueFloatLabel class="!mt-4 md:!mt-0">
+      <PrimeVueFloatLabel variant="on">
         <label
           id="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-label"
           for="game-lobby-options-hub-roles-tab-scandalmonger-mark-penalty-input"

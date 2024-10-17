@@ -5,6 +5,7 @@
   >
     <PlayerCard
       id="player-card"
+      class="mb-2"
       :is-disabled="isPlayerCardDisabled"
       :is-selected="isPlayerTargeted"
       :player-name="player.name"
