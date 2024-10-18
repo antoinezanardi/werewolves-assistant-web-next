@@ -1,4 +1,4 @@
-FROM node:22.9.0-alpine AS build
+FROM node:22.10.0-alpine AS build
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -34,7 +34,7 @@ RUN npm run build
 
 RUN pnpm prune --prod
 
-FROM node:22.9.0-alpine AS production
+FROM node:22.10.0-alpine AS production
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
