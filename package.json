@@ -96,7 +96,7 @@
     "@nuxt/kit": "^3.13.2",
     "@nuxt/test-utils": "^3.14.3",
     "@nuxtjs/i18n": "^8.5.5",
-    "@nuxtjs/robots": "^4.1.8",
+    "@nuxtjs/robots": "^4.1.9",
     "@nuxtjs/seo": "^2.0.0-rc.23",
     "@nuxtjs/sitemap": "^6.1.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
