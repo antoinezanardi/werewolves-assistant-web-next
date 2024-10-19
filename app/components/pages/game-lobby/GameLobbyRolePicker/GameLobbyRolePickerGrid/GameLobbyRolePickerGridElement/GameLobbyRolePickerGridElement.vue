@@ -1,7 +1,7 @@
 <template>
   <div
     id="game-lobby-role-picker-grid-element"
-    class="!p-1 flex flex-col items-center md:p-0"
+    class="!p-1 !py-3 flex flex-col items-center md:p-0 rounded"
   >
     <button
       id="game-lobby-role-picker-grid-element-button"

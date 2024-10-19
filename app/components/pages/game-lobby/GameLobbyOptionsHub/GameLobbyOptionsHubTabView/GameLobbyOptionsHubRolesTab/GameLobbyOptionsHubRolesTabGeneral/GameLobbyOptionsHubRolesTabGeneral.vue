@@ -5,7 +5,10 @@
   >
     <template #legend>
       <div class="flex gap-4 items-center">
-        <RoleImage class="!border-0"/>
+        <RoleImage
+          v-tilt
+          class="!border-0"
+        />
 
         <h2 id="game-lobby-options-hub-roles-tab-general-title">
           {{ $t('components.GameLobbyOptionsHubRolesTabGeneral.general') }}

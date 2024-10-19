@@ -41,6 +41,7 @@
       <GameTeamSidePlayer
         v-for="player in aliveFirstTeamPlayers"
         :key="player._id"
+        v-tilt="{ 'scale': 1 }"
         class="my-1"
         :player="player"
       />

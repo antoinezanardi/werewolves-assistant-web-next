@@ -1,7 +1,7 @@
 <template>
   <h3
     id="current-play-question"
-    class="px-4 text-center"
+    class="mt-1 text-center"
   >
     {{ currentPlayQuestion }}
   </h3>

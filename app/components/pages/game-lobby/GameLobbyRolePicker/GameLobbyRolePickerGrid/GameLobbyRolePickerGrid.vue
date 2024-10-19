@@ -4,6 +4,7 @@
     class="gap-4 grid grid-cols-3 lg:grid-cols-5 md:grid-cols-4"
   >
     <GameLobbyRolePickerGridElement
+      v-tilt
       class="available-role"
       :picked-role="pickedRole"
       @pick-role="onPickRoleFromGameLobbyRolePickerGridElement"
@@ -12,6 +13,7 @@
     <GameLobbyRolePickerGridElement
       v-for="role in sortedRoleBySideAndName"
       :key="role.name"
+      v-tilt
       class="available-role"
       :picked-role="pickedRole"
       :role="role"

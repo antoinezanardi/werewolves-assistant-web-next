@@ -7,7 +7,8 @@
   >
     <RoleFlippingImage
       id="role-flipping-image"
-      class="rounded-2xl"
+      v-tilt
+      class="mt-3 rounded-2xl"
       :role-name="pickedRole?.name"
       :sizes="roleFlippingImageSizes"
     />

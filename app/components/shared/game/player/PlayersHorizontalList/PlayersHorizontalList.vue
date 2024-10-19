@@ -3,26 +3,23 @@
     id="players-horizontal-list"
     class="mx-auto overflow-x-auto scrollbar-thin text-center w-full whitespace-nowrap"
   >
-    <GlowCapture>
-      <li
-        v-for="player in players"
-        :key="player._id"
-        class="inline-block p-2 player-in-list text-center w-32"
-      >
-        <GlowElement>
-          <RoleImage
-            class="glow:border-gray-400 mx-auto role-image-in-list"
-            definition="normal"
-            :role-name="player.role.current"
-            :sizes="roleImageSizesWithSuffix"
-          />
-        </GlowElement>
+    <li
+      v-for="player in players"
+      :key="player._id"
+      class="inline-block mb-0 p-2 player-in-list text-center w-32"
+    >
+      <RoleImage
+        v-tilt
+        class="mx-auto role-image-in-list"
+        definition="normal"
+        :role-name="player.role.current"
+        :sizes="roleImageSizesWithSuffix"
+      />
 
-        <div class="truncate w-full">
-          {{ player.name }}
-        </div>
-      </li>
-    </GlowCapture>
+      <div class="truncate w-full">
+        {{ player.name }}
+      </div>
+    </li>
   </ul>
 </template>
 

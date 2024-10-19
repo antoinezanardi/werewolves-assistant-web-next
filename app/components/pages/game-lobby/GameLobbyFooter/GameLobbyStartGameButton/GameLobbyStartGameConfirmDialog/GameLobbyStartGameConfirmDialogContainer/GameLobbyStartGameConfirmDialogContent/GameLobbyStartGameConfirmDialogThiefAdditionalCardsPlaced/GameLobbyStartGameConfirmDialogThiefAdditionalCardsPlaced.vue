@@ -21,6 +21,7 @@
         <RoleImage
           v-for="(additionalCard, index) in thiefAdditionalCards"
           :key="index"
+          v-tilt
           class="thief-additional-card"
           :role-name="additionalCard.roleName"
           size="30px"

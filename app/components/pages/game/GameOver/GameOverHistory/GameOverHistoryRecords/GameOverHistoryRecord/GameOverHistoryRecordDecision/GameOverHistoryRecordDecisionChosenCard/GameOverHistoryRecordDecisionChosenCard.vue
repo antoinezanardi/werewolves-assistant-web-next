@@ -1,5 +1,5 @@
 <template>
-  <GlowCapture
+  <div
     id="game-over-history-record-decision-chosen-card"
     class="flex flex-col gap-4 items-center justify-center"
   >
@@ -11,16 +11,14 @@
       {{ chosenCardText }}
     </h4>
 
-    <GlowElement>
-      <RoleImage
-        v-if="props.gameHistoryRecord.play.chosenCard"
-        id="game-over-history-record-decision-chosen-card-role-image"
-        class="glow:border-gray-400"
-        :role-name="props.gameHistoryRecord.play.chosenCard.roleName"
-        :sizes="roleImageSizesInPx"
-      />
-    </GlowElement>
-  </GlowCapture>
+    <RoleImage
+      v-if="props.gameHistoryRecord.play.chosenCard"
+      id="game-over-history-record-decision-chosen-card-role-image"
+      v-tilt
+      :role-name="props.gameHistoryRecord.play.chosenCard.roleName"
+      :sizes="roleImageSizesInPx"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">

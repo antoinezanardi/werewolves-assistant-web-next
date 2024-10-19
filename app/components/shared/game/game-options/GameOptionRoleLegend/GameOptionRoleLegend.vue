@@ -5,6 +5,7 @@
   >
     <RoleImage
       id="game-option-role-legend-image"
+      v-tilt
       class="!border-0"
       :role-name="roleName"
     />

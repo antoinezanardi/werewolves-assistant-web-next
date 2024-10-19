@@ -3,15 +3,11 @@
 exports[`Game Over History Record Decision Buried Player Component > should match snapshot when rendered. 1`] = `
 "<li class="inline-block text-center">
   <div class="p-2">
-    <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-      <div class="" style="grid-area: 1/1/1/1;">
-        <role-image-stub rolename="actor" sizes="70px" definition="normal" id="buried-player-role-image" class="glow:border-gray-400 mx-auto"></role-image-stub>
+    <role-image-stub rolename="actor" sizes="70px" definition="normal" id="buried-player-role-image" class="mx-auto" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+      <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+        <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
       </div>
-      <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-        <role-image-stub rolename="actor" sizes="70px" definition="normal" id="buried-player-role-image" class="glow:border-gray-400 mx-auto"></role-image-stub>
-      </div>
-    </div>
+    </role-image-stub>
     <div id="player-name" class="truncate w-full">Antoine</div>
     <!--v-if-->
   </div>

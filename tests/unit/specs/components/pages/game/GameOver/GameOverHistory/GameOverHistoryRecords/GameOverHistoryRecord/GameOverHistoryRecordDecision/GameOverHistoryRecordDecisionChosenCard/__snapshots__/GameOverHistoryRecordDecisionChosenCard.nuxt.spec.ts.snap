@@ -1,12 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Over History Record Decision Chosen Card Component > should match snapshot when rendered. 1`] = `
-"<div class="glow-capture flex flex-col gap-4 items-center justify-center" style="position: relative; --glow-size: 400px;" id="game-over-history-record-decision-chosen-card">
-  <h4 id="game-over-history-record-decision-chosen-card-text" class="text-center">shared.role.definiteName.seer, 1</h4>
-  <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-    <div class="" style="grid-area: 1/1/1/1;"><img class="w-[70pxpx] h-[70pxpx] border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx] glow:border-gray-400 border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx] glow:border-gray-400" width="70" height="70" alt="shared.role.name.seer" data-nuxt-img="" id="game-over-history-record-decision-chosen-card-role-image" src="/svg/misc/ripples.svg"></div>
-    <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);"><img class="w-[70pxpx] h-[70pxpx] border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx] glow:border-gray-400 border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx] glow:border-gray-400" width="70" height="70" alt="shared.role.name.seer" data-nuxt-img="" id="game-over-history-record-decision-chosen-card-role-image" src="/svg/misc/ripples.svg"></div>
-  </div>
+"<div id="game-over-history-record-decision-chosen-card" class="flex flex-col gap-4 items-center justify-center">
+  <h4 id="game-over-history-record-decision-chosen-card-text" class="text-center">shared.role.definiteName.seer, 1</h4><img class="w-[70pxpx] h-[70pxpx] border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx] border-4 border-gray-800 role-image rounded-lg h-[70pxpx] w-[70pxpx]" width="70" height="70" alt="shared.role.name.seer" data-nuxt-img="" id="game-over-history-record-decision-chosen-card-role-image" src="/svg/misc/ripples.svg" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
 </div>"
 `;
