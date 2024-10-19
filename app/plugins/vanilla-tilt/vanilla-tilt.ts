@@ -1,4 +1,5 @@
 import VanillaTilt from "vanilla-tilt";
+import type { TiltOptions } from "vanilla-tilt";
 import type { DirectiveBinding } from "vue";
 
 export default defineNuxtPlugin(nuxtApp => {
@@ -7,12 +8,13 @@ export default defineNuxtPlugin(nuxtApp => {
       if (binding.value === false) {
         return;
       }
+      const tiltOptions = typeof binding.value === "object" ? binding.value as TiltOptions : {};
       VanillaTilt.init(el, {
         "reverse": true,
         "glare": true,
         "scale": 1.1,
         "max-glare": 0.3,
-        ...binding.value as DirectiveBinding,
+        ...tiltOptions,
       });
     },
   });
