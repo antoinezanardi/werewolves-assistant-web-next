@@ -5,6 +5,7 @@
       class="flex flex-col items-center justify-center"
     >
       <RoleImage
+        v-tilt
         :alt="getRoleDescriptionLeftImageAlt(role.name)"
         class="available-role-description-role-image"
         :role-name="role.name"

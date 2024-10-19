@@ -57,7 +57,7 @@ describe("Game Choose Side Playground Component", () => {
         const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
         const image = button.findComponent<typeof RoleImage>("#villagers-side-image");
 
-        expect(image.classes("border-emerald-500")).toBeTruthy();
+        expect(image.classes("!border-emerald-500")).toBeTruthy();
       });
     });
 
@@ -99,7 +99,7 @@ describe("Game Choose Side Playground Component", () => {
         const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
         const image = button.findComponent<typeof RoleImage>("#werewolves-side-image");
 
-        expect(image.classes("border-red-500")).toBeTruthy();
+        expect(image.classes("!border-red-500")).toBeTruthy();
       });
     });
 

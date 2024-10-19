@@ -76,7 +76,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "border-transparent",
         "flex",
         "flex-col",
-        "glow:border-emerald-500",
         "h-52",
         "items-center",
         "me-2",
@@ -105,7 +104,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "border-transparent",
         "flex",
         "flex-col",
-        "glow:border-red-500",
         "h-52",
         "items-center",
         "me-2",
@@ -127,7 +125,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "border-transparent",
         "flex",
         "flex-col",
-        "glow:border-emerald-500",
         "h-52",
         "items-center",
         "me-2",
@@ -160,7 +157,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "border-transparent",
         "flex",
         "flex-col",
-        "glow:border-red-500",
         "h-52",
         "items-center",
         "me-2",
@@ -188,7 +184,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "glow:border-emerald-500",
           "mb-1",
         ];
 
@@ -215,7 +210,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "glow:border-red-500",
           "mb-1",
         ];
 
@@ -235,7 +229,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "glow:border-emerald-500",
           "mb-1",
           "!border-emerald-500",
         ];
@@ -266,7 +259,6 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "border-gray-800",
           "role-image",
           "rounded-lg",
-          "glow:border-red-500",
           "mb-1",
           "!border-red-500",
         ];

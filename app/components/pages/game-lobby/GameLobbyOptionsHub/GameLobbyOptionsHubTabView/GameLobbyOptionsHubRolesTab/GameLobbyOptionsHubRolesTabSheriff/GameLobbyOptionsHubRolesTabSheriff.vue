@@ -6,6 +6,7 @@
     <template #legend>
       <div class="flex gap-4 items-center">
         <NuxtImg
+          v-tilt
           :alt="$t('components.GameLobbyOptionsHubRolesTabSheriff.sheriffAlt')"
           class="duration-300 ease-in-out transition-all"
           :class="{ 'grayscale': !isSheriffEnabledValue }"

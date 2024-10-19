@@ -2,43 +2,29 @@
 
 exports[`Players Horizontal List Component > should match snapshot when rendered. 1`] = `
 "<ul id="players-horizontal-list" class="mx-auto overflow-x-auto scrollbar-thin text-center w-full whitespace-nowrap">
-  <div class="glow-capture" style="position: relative; --glow-size: 400px;">
-    <li class="inline-block p-2 player-in-list text-center w-32">
-      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-        <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="fox" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
-        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="fox" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
+  <li class="inline-block mb-0 p-2 player-in-list text-center w-32">
+    <role-image-stub rolename="fox" sizes="100px" definition="normal" class="mx-auto role-image-in-list" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+      <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+        <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
       </div>
-      <div class="truncate w-full">Antoine</div>
-    </li>
-    <li class="inline-block p-2 player-in-list text-center w-32">
-      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-        <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="seer" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
-        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="seer" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
+    </role-image-stub>
+    <div class="truncate w-full">Antoine</div>
+  </li>
+  <li class="inline-block mb-0 p-2 player-in-list text-center w-32">
+    <role-image-stub rolename="seer" sizes="100px" definition="normal" class="mx-auto role-image-in-list" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+      <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+        <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
       </div>
-      <div class="truncate w-full">Benoit</div>
-    </li>
-    <li class="inline-block p-2 player-in-list text-center w-32">
-      <div class="grid glow" style="--glow-top: 0px; --glow-left: 0px;">
-        <div class="" style="grid-area: 1/1/1/1;">
-          <role-image-stub rolename="werewolf" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
-        <div class="glow-mask" glow="true" style="--glow-color: #f50057; grid-area: 1/1/1/1; pointer-events: none; mask: radial-gradient(var(--glow-size) var(--glow-size) at calc(var(--glow-x, -99999px) - var(--glow-left, 0px))
-        calc(var(--glow-y, -99999px) - var(--glow-top, 0px)), #f50057 1%, transparent 50%);">
-          <role-image-stub rolename="werewolf" sizes="100px" definition="normal" class="glow:border-gray-400 mx-auto role-image-in-list"></role-image-stub>
-        </div>
+    </role-image-stub>
+    <div class="truncate w-full">Benoit</div>
+  </li>
+  <li class="inline-block mb-0 p-2 player-in-list text-center w-32">
+    <role-image-stub rolename="werewolf" sizes="100px" definition="normal" class="mx-auto role-image-in-list" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+      <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+        <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
       </div>
-      <div class="truncate w-full">Alice</div>
-    </li>
-  </div>
+    </role-image-stub>
+    <div class="truncate w-full">Alice</div>
+  </li>
 </ul>"
 `;

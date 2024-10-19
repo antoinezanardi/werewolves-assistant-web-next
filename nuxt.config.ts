@@ -130,6 +130,7 @@ export default defineNuxtConfig({
   modules,
   nitro: { moduleSideEffects: ["reflect-metadata"] },
   plugins: [
+    "~/plugins/vanilla-tilt/vanilla-tilt.ts",
     "~/plugins/vue-lottie/vue-lottie.client.ts",
     "~/plugins/vue-draggable/vue-draggable.client.ts",
     "~/plugins/vue-countdown/vue-countdown.client.ts",

@@ -3,7 +3,7 @@
 exports[`Recipient Role Additional Cards Manager Component > should match snapshot when rendered without shallow. 1`] = `
 "<fieldset class="p-fieldset p-component" id="role-additional-cards-manager-thief" data-pc-name="fieldset" pc3="" data-pc-section="root">
   <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
-    <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg">
+    <div id="game-option-role-legend" class="flex gap-4 items-center"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0 border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] !border-0" width="50" height="50" alt="shared.role.name.thief" data-nuxt-img="" id="game-option-role-legend-image" src="/svg/misc/ripples.svg" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
       <h2 id="game-option-role-legend-title">shared.role.name.thief</h2>
     </div>
   </legend>

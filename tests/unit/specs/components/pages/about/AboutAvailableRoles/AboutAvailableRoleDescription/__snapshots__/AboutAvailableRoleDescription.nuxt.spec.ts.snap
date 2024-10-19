@@ -3,7 +3,11 @@
 exports[`About Available Role Description Component > should match snapshot when rendered. 1`] = `
 "<div data-v-ab43cb77="" class="flex flex-col md:flex-row">
   <div data-v-ab43cb77="" id="role-left-description" class="flex flex-col items-center justify-center">
-    <role-image-stub data-v-ab43cb77="" alt="components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt, {" role":"shared.role.name.werewolf"}" rolename="werewolf" sizes="150" definition="normal" class="available-role-description-role-image"></role-image-stub>
+    <role-image-stub data-v-ab43cb77="" alt="components.AboutAvailableRoleDescription.roleDescriptionLeftImageAlt, {" role":"shared.role.name.werewolf"}" rolename="werewolf" sizes="150" definition="normal" class="available-role-description-role-image" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+      <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+        <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
+      </div>
+    </role-image-stub>
     <h2 data-v-ab43cb77="" class="available-role-description-role-name mt-3 text-center">shared.role.name.werewolf</h2>
     <div data-v-ab43cb77="" class="flex gap-4 md:flex-col md:gap-1">
       <role-type-badge-stub data-v-ab43cb77="" roletype="werewolf" class="available-role-description-role-type-badge mt-3"></role-type-badge-stub>

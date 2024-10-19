@@ -34,7 +34,7 @@ exports[`App Component > should render component without shallow and match snaps
         <transition-stub name="page" mode="out-in" appear="false" persisted="false" css="true">
           <div data-v-16d9afef="" id="index-page" class="flex flex-col h-full md:p-2 p-3">
             <div data-v-16d9afef="" class="flex flex-col grow items-center justify-center">
-              <div data-v-16d9afef="" class="flex justify-center w-full"><img data-v-16d9afef="" class="md:w-[200px] md:h-[200px] w-[125px] h-[125px] !drop-shadow-2xl !drop-shadow-2xl" alt="Werewolves Assistant logo" data-nuxt-img="" src="/svg/misc/ripples.svg"></div>
+              <div data-v-16d9afef="" class="flex justify-center w-full"><img data-v-16d9afef="" class="md:w-[200px] md:h-[200px] w-[125px] h-[125px] !drop-shadow-2xl !drop-shadow-2xl" alt="Werewolves Assistant logo" data-nuxt-img="" src="/svg/misc/ripples.svg" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(0.00deg) rotateY(0.00deg) scale3d(1, 1, 1);"></div>
               <div data-v-16d9afef="" class="mb-16 mt-6 text-center w-full">
                 <h1 data-v-16d9afef="" id="title" class="!text-5xl !tracking-wider drop-shadow-2xl mt-0">Werewolves Assistant</h1>
                 <h2 data-v-16d9afef="" id="subtitle" class="!drop-shadow-2xl !font-medium !text-xl !w-full flex items-center justify-center md:gap-3 mt-6"><svg data-v-16d9afef="" class="svg-inline--fa fa-sun md:w-auto text-2xl text-day w-2/12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

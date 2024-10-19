@@ -1,9 +1,10 @@
 <template>
-  <GlowElement
+  <div
     id="game-choose-card-playground-additional-card"
   >
     <button
       id="additional-card-button"
+      v-tilt
       :aria-label="additionalCardButtonAriaLabel"
       :class="additionalCardButtonClasses"
       type="button"
@@ -24,7 +25,7 @@
         {{ additionalCardRoleNameLabel }}
       </span>
     </button>
-  </GlowElement>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -75,7 +76,7 @@ const additionalCardColor = computed<string>(() => {
 const isAdditionalCardChosen = computed<boolean>(() => makeGamePlayDto.chosenCardId === props.additionalCard._id);
 
 const additionalCardButtonClasses = computed<string>(() => {
-  const baseClasses = `border-4 border-transparent flex flex-col glow:border-${additionalCardColor.value}-500 h-52 items-center me-2 p-3 rounded-lg`;
+  const baseClasses = `border-4 border-transparent flex flex-col h-52 items-center me-2 p-3 rounded-lg`;
   if (isAdditionalCardChosen.value) {
     return `${baseClasses} !border-${additionalCardColor.value}-500`;
   }
@@ -83,7 +84,7 @@ const additionalCardButtonClasses = computed<string>(() => {
 });
 
 const additionalCardsRoleImageClasses = computed<string>(() => {
-  const baseClasses = `glow:border-${additionalCardColor.value}-500 mb-1`;
+  const baseClasses = `mb-1`;
   if (isAdditionalCardChosen.value) {
     return `${baseClasses} !border-${additionalCardColor.value}-500`;
   }

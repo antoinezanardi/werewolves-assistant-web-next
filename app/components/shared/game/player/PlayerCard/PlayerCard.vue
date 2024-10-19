@@ -11,6 +11,7 @@
       @click.prevent="onClickFromPlayerCardButton"
     >
       <RoleFlippingImage
+        v-tilt="{ 'scale': 1.05 }"
         :alt="getPlayerCardRoleImageAlt()"
         class="player-card-role-image"
         :role-name="playerRole"
