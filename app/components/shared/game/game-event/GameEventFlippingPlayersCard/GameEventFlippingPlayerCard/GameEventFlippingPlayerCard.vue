@@ -5,7 +5,9 @@
   >
     <RoleFlippingImage
       id="game-event-flipping-player-role"
+      v-tilt
       :alt="alt"
+      class="rounded"
       :class="imageClasses"
       definition="normal"
       :role-name="playerToDisplay?.role.current"
@@ -21,7 +23,7 @@
         v-if="playerToDisplay"
         id="player-name"
         :key="playerToDisplay.name"
-        class="text-center"
+        class="mt-1 text-center"
       >
         {{ playerToDisplay.name }}
       </h2>

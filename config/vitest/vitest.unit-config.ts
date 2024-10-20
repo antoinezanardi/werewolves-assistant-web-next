@@ -31,7 +31,7 @@ export default defineVitestConfig({
         "tests/**/*",
         "node_modules/**/*",
         "config/**/*",
-        "plugins/**/*",
+        "app/plugins/**/*",
         "**/*.types.ts",
         "**/*.constants.ts",
       ],

@@ -41,12 +41,16 @@
         id="game-lobby-position-coordinator-sorter"
         v-model="createGameDto.players"
         :animation="200"
-        class="max-h-full overflow-y-auto pr-2 scrollbar-thin w-8/12"
+        class="max-h-full overflow-x-hidden overflow-y-auto pr-2 scrollbar-thin w-8/12"
         item-key="name"
         tag="ul"
       >
         <template #item="{ element }">
           <GameLobbyPositionCoordinatorSorterElement
+            v-tilt="{
+              'scale': 1,
+              'max': 7.5
+            }"
             class="game-lobby-position-coordinator-sorter-element"
             :player="element"
           />

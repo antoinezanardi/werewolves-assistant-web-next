@@ -20,6 +20,7 @@
         <RoleImage
           v-for="(additionalCard, index) in actorAdditionalCards"
           :key="index"
+          v-tilt
           class="actor-additional-card"
           :role-name="additionalCard.roleName"
           size="30px"

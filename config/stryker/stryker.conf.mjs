@@ -10,6 +10,7 @@ export default {
     "app/app.vue",
     "app/**/*.{ts,vue}",
     "!app/utils/**/*.constants.ts",
+    "!app/plugins/**/*.ts",
   ],
   plugins: [
     "@stryker-mutator/vitest-runner",

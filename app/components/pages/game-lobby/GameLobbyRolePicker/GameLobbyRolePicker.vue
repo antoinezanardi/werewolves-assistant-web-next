@@ -41,7 +41,7 @@
 
       <GameLobbyRolePickerGrid
         id="game-lobby-role-picker-grid"
-        class="h-1/2 md:h-full md:w-8/12 overflow-y-auto p-2 scrollbar-thin"
+        class="h-1/2 md:h-full md:w-8/12 overflow-x-hidden overflow-y-auto p-2 scrollbar-thin"
         :picked-role="pickedRole"
         @pick-role="onPickRoleFromGameLobbyRolePickerGrid"
       />

@@ -6,6 +6,10 @@
     <div class="flex flex-col grow items-center justify-center">
       <div class="flex justify-center w-full">
         <NuxtImg
+          v-tilt="{
+            'full-page-listening': true,
+            'scale': 1
+          }"
           :alt="$t('pages.index.werewolvesAssistantLogo')"
           class="!drop-shadow-2xl"
           placeholder="/svg/misc/ripples.svg"

@@ -4,7 +4,11 @@ exports[`Game Lobby Options Hub Roles Tab Sheriff Component > should match snaps
 "<fieldset class="p-fieldset p-component" id="game-lobby-options-hub-roles-tab-sheriff" data-pc-name="fieldset" pc1="" data-pc-section="root">
   <legend class="p-fieldset-legend !mx-auto md:!ml-4 !p-3 !px-6 mb-2 md:!mb-1" data-pc-section="legend">
     <div class="flex gap-4 items-center">
-      <nuxt-img-stub alt="Sheriff icon" height="50px" placeholderclass="w-50 h-50" src="/svg/game/player/player-attribute/sheriff.svg" width="50px" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg" class="duration-300 ease-in-out transition-all"></nuxt-img-stub>
+      <nuxt-img-stub alt="Sheriff icon" height="50px" placeholderclass="w-50 h-50" src="/svg/game/player/player-attribute/sheriff.svg" width="50px" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg" class="duration-300 ease-in-out transition-all" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+        <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
+          <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
+        </div>
+      </nuxt-img-stub>
       <h2 id="game-lobby-options-hub-roles-tab-sheriff-title">Sheriff</h2>
     </div>
   </legend>

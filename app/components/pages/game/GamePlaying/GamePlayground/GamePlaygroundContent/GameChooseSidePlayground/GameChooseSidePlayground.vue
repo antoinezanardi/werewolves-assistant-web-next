@@ -3,56 +3,52 @@
     id="game-choose-side-playground"
     class="flex flex-col items-center justify-center"
   >
-    <div>
-      <GlowCapture class="flex">
-        <GlowElement>
-          <button
-            id="choose-villagers-side-button"
-            :aria-label="$t('components.GameChooseSidePlayground.villagersSide')"
-            class="border-4 border-transparent glow:border-emerald-500 me-2 p-2 rounded-lg"
-            :class="{ '!border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
-            type="button"
-            @click.prevent="onClickFromChooseVillagersSideButton"
-          >
-            <RoleImage
-              id="villagers-side-image"
-              class="glow:border-emerald-500 mb-1"
-              :class="{ 'border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
-              definition="normal"
-              role-name="villager"
-              sizes="200"
-            />
+    <div class="flex">
+      <button
+        id="choose-villagers-side-button"
+        v-tilt
+        :aria-label="$t('components.GameChooseSidePlayground.villagersSide')"
+        class="border-4 border-transparent glow:border-emerald-500 me-2 p-2 rounded-lg"
+        :class="{ '!border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
+        type="button"
+        @click.prevent="onClickFromChooseVillagersSideButton"
+      >
+        <RoleImage
+          id="villagers-side-image"
+          class="glow:border-emerald-500 mb-1"
+          :class="{ '!border-emerald-500': makeGamePlayDto.chosenSide === 'villagers' }"
+          definition="normal"
+          role-name="villager"
+          sizes="200"
+        />
 
-            <span class="font-semibold">
-              {{ $t("components.GameChooseSidePlayground.villagersSide") }}
-            </span>
-          </button>
-        </GlowElement>
+        <span class="font-semibold">
+          {{ $t("components.GameChooseSidePlayground.villagersSide") }}
+        </span>
+      </button>
 
-        <GlowElement>
-          <button
-            id="choose-werewolves-side-button"
-            :aria-label="$t('components.GameChooseSidePlayground.werewolvesSide')"
-            class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"
-            :class="{ '!border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
-            type="button"
-            @click.prevent="onClickFromChooseWerewolvesSideButton"
-          >
-            <RoleImage
-              id="werewolves-side-image"
-              class="glow:border-red-500 mb-1"
-              :class="{ 'border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
-              definition="normal"
-              role-name="werewolf"
-              sizes="200"
-            />
+      <button
+        id="choose-werewolves-side-button"
+        v-tilt
+        :aria-label="$t('components.GameChooseSidePlayground.werewolvesSide')"
+        class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"
+        :class="{ '!border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
+        type="button"
+        @click.prevent="onClickFromChooseWerewolvesSideButton"
+      >
+        <RoleImage
+          id="werewolves-side-image"
+          class="glow:border-red-500 mb-1"
+          :class="{ '!border-red-500': makeGamePlayDto.chosenSide === 'werewolves' }"
+          definition="normal"
+          role-name="werewolf"
+          sizes="200"
+        />
 
-            <span class="font-semibold">
-              {{ $t("components.GameChooseSidePlayground.werewolvesSide") }}
-            </span>
-          </button>
-        </GlowElement>
-      </glowcapture>
+        <span class="font-semibold">
+          {{ $t("components.GameChooseSidePlayground.werewolvesSide") }}
+        </span>
+      </button>
     </div>
   </div>
 </template>

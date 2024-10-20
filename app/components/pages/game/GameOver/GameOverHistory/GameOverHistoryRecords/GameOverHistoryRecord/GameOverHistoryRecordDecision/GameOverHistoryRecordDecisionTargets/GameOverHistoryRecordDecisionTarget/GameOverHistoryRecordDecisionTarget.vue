@@ -1,15 +1,14 @@
 <template>
   <li class="inline-block text-center">
     <div class="p-2">
-      <GlowElement>
-        <RoleImage
-          id="targeted-player-role-image"
-          class="glow:border-gray-400 mx-auto"
-          definition="normal"
-          :role-name="target.player.role.current"
-          :sizes="roleImageSizesInPx"
-        />
-      </GlowElement>
+      <RoleImage
+        id="targeted-player-role-image"
+        v-tilt
+        class="mx-auto"
+        definition="normal"
+        :role-name="target.player.role.current"
+        :sizes="roleImageSizesInPx"
+      />
 
       <div
         id="targeted-player-name"

@@ -1,14 +1,15 @@
 <template>
-  <div id="game-choose-card-playground">
-    <GlowCapture class="flex gap-2 h-full items-center justify-center w-full">
-      <GameChooseCardPlaygroundAdditionalCard
-        v-for="additionalCard in eligibleAdditionalCardsToChoose"
-        :key="additionalCard._id"
-        :additional-card="additionalCard"
-        class="flex game-additional-card justify-center md:w-1/5 w-full"
-        @click-additional-card="onClickFromAdditionalCardButton"
-      />
-    </GlowCapture>
+  <div
+    id="game-choose-card-playground"
+    class="flex gap-2 h-full items-center justify-center w-full"
+  >
+    <GameChooseCardPlaygroundAdditionalCard
+      v-for="additionalCard in eligibleAdditionalCardsToChoose"
+      :key="additionalCard._id"
+      :additional-card="additionalCard"
+      class="flex game-additional-card justify-center md:w-1/5 w-full"
+      @click-additional-card="onClickFromAdditionalCardButton"
+    />
   </div>
 </template>
 
