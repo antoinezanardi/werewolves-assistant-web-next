@@ -21,6 +21,19 @@ Feature: 👺 Prejudiced Manipulator role
     And the player with name "Bob" should be in group with name "Group 2" in the game
     And the player with name "David" should be in group with name "Group 2" in the game
 
+    When the user skips the game event
+    Then the game's event should display the text "The Prejudiced Manipulator is in the game! Players are divided into two groups."
+    And the game's event player card should have the name "David"
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Antoine and Charlie are in the group called "Group 1""
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "Bob and David are in the group called "Group 2""
+
+    When the user goes to the next game event text
+    Then the game's event should display the text "The Prejudiced Manipulator wins the game alone if all players not in his group are eliminated."
+
     When the user skips all game events
     Then the game's current play title should be "Werewolves eat"
 

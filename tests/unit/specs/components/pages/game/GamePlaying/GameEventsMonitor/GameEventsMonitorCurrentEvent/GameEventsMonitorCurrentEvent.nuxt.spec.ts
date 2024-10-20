@@ -15,6 +15,7 @@ import GameIdiotIsSparedEvent from "~/components/pages/game/GamePlaying/GameEven
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
 import GamePlayerDiesEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameDeathEvent/GameDeathEvent.vue";
+import GamePrejudicedManipulatorGroupsAnnouncementEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePrejudicedManipulatorGroupsAnnouncementEvent/GamePrejudicedManipulatorGroupsAnnouncementEvent.vue";
 import GameScandalmongerMarkIsActiveEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerMarkIsActiveEvent/GameScandalmongerMarkIsActiveEvent.vue";
 import GameScandalmongerMayHaveMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerMayHaveMarkedEvent/GameScandalmongerMayHaveMarkedEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
@@ -168,6 +169,18 @@ describe("Game Events Monitor Current Event Component", () => {
       const gameVillagerVillagerIntroductionEvent = wrapper.findComponent<typeof GameVillagerVillagerIntroductionEvent>(GameVillagerVillagerIntroductionEvent);
 
       expect(gameVillagerVillagerIntroductionEvent.exists()).toBeTruthy();
+    });
+
+    it("should render prejudiced manipulator groups announcement event component when current game event is prejudiced manipulator groups announcement type.", async() => {
+      const gameStore = useGameStore();
+      gameStore.game.events = [
+        createFakeGameEvent({ type: "prejudiced-manipulator-groups-announcement" }),
+        createFakeGameEvent({ type: "game-turn-starts" }),
+      ];
+      await nextTick();
+      const component = wrapper.findComponent<typeof GamePrejudicedManipulatorGroupsAnnouncementEvent>(GamePrejudicedManipulatorGroupsAnnouncementEvent);
+
+      expect(component.exists()).toBeTruthy();
     });
 
     it("should render pied piper has charmed event component when current game event is pied piper has charmed type.", async() => {

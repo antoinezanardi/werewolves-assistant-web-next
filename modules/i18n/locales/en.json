@@ -1676,6 +1676,11 @@
       "wasEverythingAllRight": "Was everything all right during the game?",
       "gameWasStable": "The game was stable",
       "gameEncounteredError": "I encountered an error during the game"
+    },
+    "GamePrejudicedManipulatorGroupsAnnouncementEvent": {
+      "prejudicedManipulatorIsInTheGame": "The Prejudiced Manipulator is in the game! Players are divided into two groups.",
+      "groupWithPlayers": "{playersText} are in the group called \"{playerGroup}\"",
+      "ifPrejudicedGroupIsAliveHeWins": "The Prejudiced Manipulator wins the game alone if all players not in his group are eliminated."
     }
   }
 }
