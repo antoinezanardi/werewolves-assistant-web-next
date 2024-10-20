@@ -3,6 +3,7 @@ const GAME_EVENT_TYPES = [
   "game-phase-starts",
   "game-turn-starts",
   "villager-villager-introduction",
+  "prejudiced-manipulator-groups-announcement",
   "death",
   "seer-has-seen",
   "sheriff-promotion",

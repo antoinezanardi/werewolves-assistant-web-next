@@ -33,6 +33,7 @@ import GameFoxMayHaveSniffedEvent from "~/components/pages/game/GamePlaying/Game
 import GameIdiotIsSparedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameIdiotIsSparedEvent/GameIdiotIsSparedEvent.vue";
 import GamePhaseStartsEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePhaseStartsEvent/GamePhaseStartsEvent.vue";
 import GamePiedPiperHasCharmedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePiedPiperHasCharmedEvent/GamePiedPiperHasCharmedEvent.vue";
+import GamePrejudicedManipulatorGroupsAnnouncementEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GamePrejudicedManipulatorGroupsAnnouncementEvent/GamePrejudicedManipulatorGroupsAnnouncementEvent.vue";
 import GameScandalmongerMarkIsActiveEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerMarkIsActiveEvent/GameScandalmongerMarkIsActiveEvent.vue";
 import GameScandalmongerMayHaveMarkedEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameScandalmongerMayHaveMarkedEvent/GameScandalmongerMayHaveMarkedEvent.vue";
 import GameSeerHasSeenEvent from "~/components/pages/game/GamePlaying/GameEventsMonitor/GameEventsMonitorCurrentEvent/GameSeerHasSeenEvent/GameSeerHasSeenEvent.vue";
@@ -55,6 +56,7 @@ const currentGameEventTypeComponent = computed<Component | undefined>(() => {
     "game-phase-starts": GamePhaseStartsEvent,
     "game-turn-starts": GameTurnStartsEvent,
     "villager-villager-introduction": GameVillagerVillagerIntroductionEvent,
+    "prejudiced-manipulator-groups-announcement": GamePrejudicedManipulatorGroupsAnnouncementEvent,
     "death": GameDeathEvent,
     "seer-has-seen": GameSeerHasSeenEvent,
     "sheriff-promotion": GameSheriffPromotionEvent,

@@ -35,4 +35,8 @@ class Player {
   }
 }
 
+type PlayerWithGroup = Player & { group: string };
+
 export { Player };
+
+export type { PlayerWithGroup };
