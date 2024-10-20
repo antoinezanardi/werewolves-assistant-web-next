@@ -94,7 +94,7 @@
     "@nuxt/fonts": "^0.10.0",
     "@nuxt/image": "^1.8.1",
     "@nuxt/kit": "^3.13.2",
-    "@nuxt/test-utils": "^3.14.3",
+    "@nuxt/test-utils": "^3.14.4",
     "@nuxtjs/i18n": "^8.5.5",
     "@nuxtjs/robots": "^4.1.9",
     "@nuxtjs/seo": "^2.0.0-rc.23",
