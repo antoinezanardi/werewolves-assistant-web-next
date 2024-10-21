@@ -296,7 +296,7 @@ jobs:
         run: pnpm run postinstall
 
       - name: Mutant tests for ${{ matrix.scope }} 👽
-        id: mutant-tests-${{ matrix.scope }}
+        id: mutant-tests
         run: pnpm run test:stryker:${{ matrix.scope }}
 
 # TODO: Bring back reports
