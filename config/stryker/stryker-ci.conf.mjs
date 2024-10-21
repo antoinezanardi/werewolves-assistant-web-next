@@ -24,6 +24,6 @@ if (process.env.VERSION !== undefined) {
 export default {
   ...defaultConfig,
   concurrency: 1,
-  reporters,
   dashboard,
+  reporters,
 };

@@ -267,6 +267,16 @@ jobs:
       VERSION: ${{ github.head_ref }}
     needs:
       - install
+    strategy:
+      matrix:
+        scope: [
+          components,
+          composables,
+          layouts,
+          pages,
+          stores,
+          utils,
+        ]
     steps:
       - name: Checkout GitHub repository 📡
         uses: actions/checkout@v4
@@ -292,20 +302,20 @@ jobs:
       - name: Create Nuxt types ⛰️
         run: pnpm run postinstall
 
-      - name: Mutant tests 👽
-        id: mutant-tests
-        continue-on-error: true
-        run: pnpm run test:stryker:ci
+      - name: Mutant tests for ${{ matrix.scope }} 👽
+        id: mutant-tests-${{ matrix.scope }}
+        run: pnpm run test:stryker:${{ matrix.scope }}
 
-      - name: Save stryker report as artifact 💎
-        uses: actions/upload-artifact@v4
-        with:
-          name: stryker-html-report
-          path: ${{ env.STRYKER_REPORT_PATH }}/index.html
-
-      - name: Exit with error if mutant tests failed 🚨
-        if: steps.mutant-tests.outcome != 'success'
-        run: exit 1;
+# TODO: Bring back reports
+#      - name: Save stryker report as artifact 💎
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: stryker-html-report
+#          path: ${{ env.STRYKER_REPORT_PATH }}/index.html
+#
+#      - name: Exit with error if mutant tests failed 🚨
+#        if: steps.mutant-tests.outcome != 'success'
+#        run: exit 1;
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
