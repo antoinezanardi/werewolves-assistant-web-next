@@ -261,7 +261,7 @@ jobs:
 
   mutant-tests:
     name: Mutant Tests 👽
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
       VERSION: ${{ github.head_ref }}
