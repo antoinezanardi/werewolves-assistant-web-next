@@ -9,6 +9,7 @@ import type GameLobbyRolePickerDescription from "~/components/pages/game-lobby/G
 import type GameLobbyRolePickerFooter from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerFooter/GameLobbyRolePickerFooter.vue";
 import type GameLobbyRolePickerGrid from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGrid.vue";
 import type GameLobbyRolePickerHeader from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerHeader/GameLobbyRolePickerHeader.vue";
+import type GameLobbyRolePickerSearchInput from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerSearchInput/GameLobbyRolePickerSearchInput.vue";
 import type { CreateGamePlayerDto } from "~/composables/api/game/dto/create-game/create-game-player/create-game-player.dto";
 import type { Role } from "~/composables/api/role/types/role.class";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -121,9 +122,9 @@ describe("Game Lobby Role Picker Component", () => {
       });
 
       it("should pass an undefined picked role to game lobby role picker description when freshly opened.", () => {
-        const gameLobbyRolePickerDescription = wrapper.findComponent<typeof GameLobbyRolePickerGrid>("#game-lobby-role-picker-grid");
+        const gameLobbyRolePickerGrid = wrapper.findComponent<typeof GameLobbyRolePickerGrid>("#game-lobby-role-picker-grid");
 
-        expect(gameLobbyRolePickerDescription.attributes("pickedrole")).toBeUndefined();
+        expect(gameLobbyRolePickerGrid.attributes("pickedrole")).toBeUndefined();
       });
 
       it("should pick role when game lobby role picker grid emits role pick event.", async() => {
@@ -133,6 +134,21 @@ describe("Game Lobby Role Picker Component", () => {
         await nextTick();
 
         expect(gameLobbyRolePickerGrid.props("pickedRole")).toStrictEqual<Role>(emittedRole);
+      });
+
+      it("should pass searched role input to game lobby role picker grid when freshly opened.", () => {
+        const gameLobbyRolePickerGrid = wrapper.findComponent<typeof GameLobbyRolePickerGrid>("#game-lobby-role-picker-grid");
+
+        expect(gameLobbyRolePickerGrid.props("searchedRoleInput")).toBe("");
+      });
+
+      it("should update searched role input when game lobby role input search emits update event.", async() => {
+        const gameLobbyRolePickerGrid = wrapper.findComponent<typeof GameLobbyRolePickerGrid>("#game-lobby-role-picker-grid");
+        const gameLobbyRoleSearchInput = wrapper.findComponent<typeof GameLobbyRolePickerSearchInput>("#game-lobby-role-picker-search-input");
+        (gameLobbyRoleSearchInput.vm as VueVm).$emit("update:modelValue", "seer");
+        await nextTick();
+
+        expect(gameLobbyRolePickerGrid.props("searchedRoleInput")).toBe("seer");
       });
     });
 

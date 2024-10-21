@@ -2,6 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import type { GameLobbyRolePickerGridProps } from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/game-lobby-role-picker-grid.types";
 import GameLobbyRolePickerGrid from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGrid.vue";
 import type GameLobbyRolePickerGridElement from "~/components/pages/game-lobby/GameLobbyRolePicker/GameLobbyRolePickerGrid/GameLobbyRolePickerGridElement/GameLobbyRolePickerGridElement.vue";
 import type { Role } from "~/composables/api/role/types/role.class";
@@ -12,6 +13,9 @@ import type { VueVm } from "@tests/unit/utils/types/vue-test-utils.types";
 import { useRolesStore } from "~/stores/role/useRolesStore";
 
 describe("Game Lobby Role Picker Grid Component", () => {
+  const defaultProps: GameLobbyRolePickerGridProps = {
+    searchedRoleInput: "",
+  };
   let wrapper: ReturnType<typeof mount<typeof GameLobbyRolePickerGrid>>;
   const roles = [
     createFakeRole({
@@ -36,7 +40,11 @@ describe("Game Lobby Role Picker Grid Component", () => {
   async function mountGameLobbyRolePickerGridComponent(options: ComponentMountingOptions<typeof GameLobbyRolePickerGrid> = {}):
   Promise<ReturnType<typeof mount<typeof GameLobbyRolePickerGrid>>> {
     return mountSuspendedComponent(GameLobbyRolePickerGrid, {
-      global: { plugins: [createTestingPinia(testingPinia)] },
+      global: {
+        plugins: [createTestingPinia(testingPinia)],
+        stubs: { TransitionGroup: false },
+      },
+      props: defaultProps,
       ...options,
     });
   }
@@ -70,6 +78,40 @@ describe("Game Lobby Role Picker Grid Component", () => {
 
       expect(roleCards).toHaveLength(1);
       expect(roleCards[0].props("role")).toBeUndefined();
+    });
+
+    it("should render all sorted available roles when when searchedRoleInput is undefined.", async() => {
+      wrapper = await mountGameLobbyRolePickerGridComponent({ props: { searchedRoleInput: undefined } });
+      const roleCards = wrapper.findAllComponents<typeof GameLobbyRolePickerGridElement>(".available-role");
+
+      expect(roleCards).toHaveLength(roles.length + 1);
+      expect(roleCards[0].props("role")).toBeUndefined();
+      expect(roleCards[1].props("role")).toStrictEqual<Role>(roles[1]);
+      expect(roleCards[2].props("role")).toStrictEqual<Role>(roles[2]);
+      expect(roleCards[3].props("role")).toStrictEqual<Role>(roles[3]);
+      expect(roleCards[4].props("role")).toStrictEqual<Role>(roles[0]);
+    });
+
+    it("should render all sorted available roles when searchedRoleInput is empty.", async() => {
+      wrapper = await mountGameLobbyRolePickerGridComponent({ props: { searchedRoleInput: "     " } });
+      const roleCards = wrapper.findAllComponents<typeof GameLobbyRolePickerGridElement>(".available-role");
+
+      expect(roleCards).toHaveLength(roles.length + 1);
+      expect(roleCards[0].props("role")).toBeUndefined();
+      expect(roleCards[1].props("role")).toStrictEqual<Role>(roles[1]);
+      expect(roleCards[2].props("role")).toStrictEqual<Role>(roles[2]);
+      expect(roleCards[3].props("role")).toStrictEqual<Role>(roles[3]);
+      expect(roleCards[4].props("role")).toStrictEqual<Role>(roles[0]);
+    });
+
+    it("should render only roles that match searchedRoleInput when searchedRoleInput is not empty.", async() => {
+      wrapper = await mountGameLobbyRolePickerGridComponent({ props: { searchedRoleInput: "wolf" } });
+      const roleCards = wrapper.findAllComponents<typeof GameLobbyRolePickerGridElement>(".available-role");
+
+      expect(roleCards).toHaveLength(3);
+      expect(roleCards[0].props("role")).toBeUndefined();
+      expect(roleCards[1].props("role")).toStrictEqual<Role>(roles[2]);
+      expect(roleCards[2].props("role")).toStrictEqual<Role>(roles[1]);
     });
   });
 
