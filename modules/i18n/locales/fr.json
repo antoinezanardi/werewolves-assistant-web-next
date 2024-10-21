@@ -1681,6 +1681,9 @@
       "prejudicedManipulatorIsInTheGame": "L'Abominable Sectaire est dans la partie ! Les joueurs sont répartis dans les groupes suivants :",
       "groupWithPlayers": "{playersText} sont dans le groupe ayant pour nom \"{playerGroup}\"",
       "ifPrejudicedGroupIsAliveHeWins": "L'Abominable Sectaire gagnera seul si tous les joueurs qui ne sont pas de son groupe sont éliminés."
+    },
+    "GameLobbyRolePickerSearchInput": {
+      "searchForRole": "Chercher un rôle"
     }
   }
 }
