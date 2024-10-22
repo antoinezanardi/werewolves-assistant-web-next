@@ -306,16 +306,11 @@ jobs:
         id: mutant-tests
         run: pnpm run test:stryker:${{ matrix.scope }}
 
-# TODO: Bring back reports
-#      - name: Save stryker report as artifact 💎
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: stryker-html-report
-#          path: ${{ env.STRYKER_REPORT_PATH }}/index.html
-#
-#      - name: Exit with error if mutant tests failed 🚨
-#        if: steps.mutant-tests.outcome != 'success'
-#        run: exit 1;
+      - name: Save stryker report as artifact 💎
+        uses: actions/upload-artifact@v4
+        with:
+          name: stryker-html-report-${{ matrix.scope }}
+          path: ${{ env.STRYKER_REPORT_PATH }}/index.html
 
   sonarcloud:
     name: SonarCloud Analysis 🌥️
