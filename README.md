@@ -556,11 +556,22 @@ pnpm run test:cucumber:skip-screenshots-comparison
 # Generate a HTML report from the last e2e tests run (implied by the previous command)
 pnpm run test:cucumber:html-report
 
-# Run mutant tests with coverage
+# Run all mutant tests with coverage
 pnpm run test:stryker
 
 # Run mutant tests with coverage from scratch (without using the incremental file)
 pnpm run test:stryker:force
+
+# Run mutant tests only on a specific shard of the project
+pnpm run test:stryker:components
+pnpm run test:stryker:composables
+pnpm run test:stryker:layouts
+pnpm run test:stryker:pages
+pnpm run test:stryker:stores
+pnpm run test:stryker:utils
+
+# Run all of the above shards commands one after the other
+pnpm run test:stryker:all-shards
 ```
 
 ## <a name="env-variables">🌿 Env variables</a>

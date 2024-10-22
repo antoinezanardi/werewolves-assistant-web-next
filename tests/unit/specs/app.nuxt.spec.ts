@@ -25,6 +25,10 @@ describe("App Component", () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
+  it("should define OgImage when rendered.", () => {
+    expect(defineOgImageComponent).toHaveBeenCalledExactlyOnceWith("DefaultOgImage");
+  });
+
   it("should set head title and meta tags when rendered.", () => {
     const expectedUseHeadInput: UseHeadInput<object> = {
       title: "shared.werewolvesAssistant",

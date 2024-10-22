@@ -1,7 +1,7 @@
 export default {
   cleanTempDir: "always",
   incremental: true,
-  incrementalFile: "tests/stryker/incremental.json",
+  incrementalFile: "tests/stryker/incremental/global-incremental.json",
   checkers: ["typescript"],
   tsconfigFile: "tsconfig.json",
   testRunner: "vitest",
@@ -57,7 +57,7 @@ export default {
     "sonar-project.properties",
     "README.md",
   ],
-  vitest: { configFile: "config/vitest/vitest.unit-config.ts" },
+  vitest: { configFile: "config/vitest/vitest.global-unit-tests-config.ts" },
   reporters: ["clear-text", "progress", "html", "json"],
   htmlReporter: { fileName: "tests/stryker/coverage/index.html" },
   jsonReporter: { fileName: "tests/stryker/coverage/mutation.json" },
