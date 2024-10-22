@@ -7,6 +7,10 @@ on:
         description: "Branch to checkout and to push the incremental results"
         default: "develop"
         required: true
+      run-global-tests:
+        description: "Whether to run the global Stryker tests"
+        default: "false"
+        required: false
 
 concurrency:
   group: "mutant-tests-${{ github.event.inputs.target-branch }}"
@@ -52,11 +56,22 @@ jobs:
       - name: Mutant tests for ${{ matrix.scope }} 👽
         run: pnpm run test:stryker:${{ matrix.scope }}
 
-      - name: Upload incremental report as artifact 🛠️
+      - name: Upload incremental report as artifact 💎
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.scope }}-incremental
-          path: tests/stryker/${{ matrix.scope }}-incremental.json
+          path: tests/stryker/incremental/${{ matrix.scope }}-incremental.json
+
+      - name: Run global Stryker tests if requested 👽
+        if: ${{ inputs.run-global-tests == 'true' }}
+        run: pnpm run test:stryker
+
+      - name: Upload global incremental report as artifact 💎
+        if: ${{ inputs.run-global-tests == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-incremental
+          path: tests/stryker/incremental/global-incremental.json
 
   push-incremental-reports:
     name: Push Incremental Reports 📨
@@ -80,7 +95,7 @@ jobs:
 
       - name: Add Incremental Files 🗂️
         run: |
-          git add tests/stryker/*.json
+          git add tests/stryker/incremental/*.json
           git commit -m "chore(stryker): update incremental reports"
 
       - name: Push Incremental Reports 🚀
