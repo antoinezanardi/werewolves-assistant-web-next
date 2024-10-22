@@ -1,5 +1,25 @@
 # 🐺 Werewolves Assistant Web Versioning Changelog
 
+## [1.38.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.37.0...v1.38.0) (2024-10-22)
+
+### 🚀 Features
+
+* **game-lobby:** role picker search input ([#1018](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1018)) ([0053baa](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/0053baae497bbd57a9c35fa49675279bbe80d2c4))
+
+### 🔁 CI
+
+* **stryker:** push incremental reports dispatch workflow ([#1026](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1026)) ([711c451](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/711c45130da4138b255963fba031e2011864ba88))
+* **stryker:** sharding stryker for better performances ([#1023](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1023)) ([379835c](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/379835c948e13dab94f3f38e02bf8944966849e7))
+
+### 🧹 Chore
+
+* **deps:** update dependency @nuxt/fonts to ^0.10.1 ([#1024](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1024)) ([93cda25](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/93cda25a05e457291e0d20804aafa307af43fcb5))
+* **deps:** update dependency msw to ^2.4.12 ([#1021](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1021)) ([4fd1df4](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/4fd1df4fba28dbb490892711bf048609acc29def))
+* **deps:** update dependency msw to ^2.4.13 ([#1025](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1025)) ([3a9f3c9](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/3a9f3c9c72920fe1a4ee6bb7c42d67e3cef9d224))
+* **deps:** update dependency msw to ^2.5.0 ([#1028](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1028)) ([43aa65e](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/43aa65eb3bef2ef12907d6ee56b7af0eae00ba3a))
+* **deps:** update github artifact actions to v4 (major) ([#1027](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1027)) ([adbcacb](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/adbcacb33b169c64aef8774a19fbd7531ec263da))
+* **deps:** update typescript-eslint monorepo to ^8.11.0 ([#1022](https://github.com/antoinezanardi/werewolves-assistant-web-next/issues/1022)) ([d5e14ef](https://github.com/antoinezanardi/werewolves-assistant-web-next/commit/d5e14efbfe7519ba478ced8b6db2b6e64de27abb))
+
 ## [1.37.0](https://github.com/antoinezanardi/werewolves-assistant-web-next/compare/v1.36.0...v1.37.0) (2024-10-20)
 
 ### 🚀 Features
