@@ -271,9 +271,9 @@ jobs:
       matrix:
         scope: [
           components,
-#          composables,
+          composables,
           layouts,
-#          pages,
+          pages,
           stores,
           utils,
         ]

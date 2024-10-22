@@ -10,7 +10,6 @@
           "statusReason": "app/utils/url.utils.ts(1,46): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n",
           "status": "CompileError",
           "static": false,
-          "killedBy": [],
           "coveredBy": [
             "0"
           ],
@@ -26,13 +25,13 @@
           }
         },
         {
-          "id": "1",
+          "id": "2",
           "mutatorName": "Regex",
-          "replacement": "/\\/+/u",
-          "statusReason": "expected 'https:example.com///' to be 'https://example.com' // Object.is equality",
+          "replacement": "/\\/$/u",
+          "statusReason": "expected 'https://example.com//' to be 'https://example.com' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 1,
           "static": false,
+          "testsCompleted": 1,
           "killedBy": [
             "0"
           ],
@@ -51,13 +50,13 @@
           }
         },
         {
-          "id": "2",
+          "id": "1",
           "mutatorName": "Regex",
-          "replacement": "/\\/$/u",
-          "statusReason": "expected 'https://example.com//' to be 'https://example.com' // Object.is equality",
+          "replacement": "/\\/+/u",
+          "statusReason": "expected 'https:example.com///' to be 'https://example.com' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 1,
           "static": false,
+          "testsCompleted": 1,
           "killedBy": [
             "0"
           ],
@@ -81,8 +80,8 @@
           "replacement": "\"Stryker was here!\"",
           "statusReason": "expected 'https://example.comStryker was here!' to be 'https://example.com' // Object.is equality",
           "status": "Killed",
-          "testsCompleted": 1,
           "static": false,
+          "testsCompleted": 1,
           "killedBy": [
             "0"
           ],

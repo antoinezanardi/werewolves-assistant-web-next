@@ -29,7 +29,7 @@
     "testRunner": "vitest",
     "ignoreStatic": true,
     "mutate": [
-      "app/layouts/*.vue"
+      "app/layouts/**/*.vue"
     ],
     "plugins": [
       "@stryker-mutator/vitest-runner",

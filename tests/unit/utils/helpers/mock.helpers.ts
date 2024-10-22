@@ -11,6 +11,8 @@ import { createFakeUseRoute } from "@tests/unit/utils/factories/composables/nuxt
 import { createFakeUseScroll } from "@tests/unit/utils/factories/composables/vue-use/useScroll.factory";
 
 function mockNuxtImports(): void {
+  mockNuxtImport<typeof definePageMeta>("defineOgImageComponent", () => vi.fn());
+
   mockNuxtImport<typeof definePageMeta>("definePageMeta", () => vi.fn());
 
   mockNuxtImport<typeof navigateTo>("navigateTo", () => vi.fn());
