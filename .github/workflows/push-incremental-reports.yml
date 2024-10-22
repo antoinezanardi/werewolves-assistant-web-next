@@ -1,0 +1,87 @@
+name: 👽 Run Stryker Mutant Tests and Push Incremental Reports Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-branch:
+        description: "Branch to checkout and to push the incremental results"
+        default: "develop"
+        required: true
+
+concurrency:
+  group: "mutant-tests-${{ github.event.inputs.target-branch }}"
+  cancel-in-progress: true
+
+jobs:
+  mutant-tests:
+    name: Mutant Tests 👽
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scope: [
+          components,
+          composables,
+          layouts,
+          pages,
+          stores,
+          utils,
+        ]
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.target-branch }}
+
+      - name: Install pnpm 🏗️
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Setup NodeJS ✨
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install project dependencies 📦
+        run: pnpm install
+
+      - name: Create Nuxt types ⛰️
+        run: pnpm run postinstall
+
+      - name: Mutant tests for ${{ matrix.scope }} 👽
+        run: pnpm run test:stryker:${{ matrix.scope }}
+
+      - name: Upload incremental report as artifact 🛠️
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.scope }}-incremental
+          path: tests/stryker/${{ matrix.scope }}-incremental.json
+
+  push-incremental-reports:
+    name: Push Incremental Reports 📨
+    runs-on: ubuntu-latest
+    needs: mutant-tests
+    steps:
+      - name: Checkout GitHub repository 📡
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.target-branch }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Download all incremental reports 🔄
+        uses: actions/download-artifact@v3
+        with:
+          path: tests/stryker
+
+      - name: Add Incremental Files 🗂️
+        run: |
+          git add tests/stryker/*.json
+          git commit -m "chore(stryker): update incremental reports"
+
+      - name: Push Incremental Reports 🚀
+        run: git push origin ${{ github.event.inputs.target-branch }}
