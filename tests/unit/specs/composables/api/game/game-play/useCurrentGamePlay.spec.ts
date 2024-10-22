@@ -1,4 +1,7 @@
 import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
+import { createFakeGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/game-options.factory";
+import { createFakeRolesGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/roles-game-options.factory";
+import { createFakeWolfHoundGameOptions } from "@tests/unit/utils/factories/composables/api/game/game-options/roles-game-options/wolf-hound-game-options/wolf-hound-game-options.factory";
 import { useCurrentGamePlay } from "~/composables/api/game/game-play/useCurrentGamePlay";
 import type { GameAdditionalCard } from "~/composables/api/game/types/game-additional-card/game-additional-card.class";
 import type { GamePlayCause } from "~/composables/api/game/types/game-play/game-play.types";
@@ -7,7 +10,7 @@ import type { PlayerInteractionType } from "~/composables/api/game/types/players
 import type { Player } from "~/composables/api/game/types/players/player.class";
 import { createFakeGamePlaySourceInteraction } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source-interaction/game-play-source-interaction.factory";
 import { createFakeGamePlaySource } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play-source/game-play-source.factory";
-import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlayThiefChoosesCard } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
+import { createFakeGamePlaySheriffDelegates, createFakeGamePlaySurvivorsBuryDeadBodies, createFakeGamePlayThiefChoosesCard, createFakeGamePlayWolfHoundChoosesSide } from "@tests/unit/utils/factories/composables/api/game/game-play/game-play.factory";
 import { createFakeGame } from "@tests/unit/utils/factories/composables/api/game/game.factory";
 import { createFakePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player.factory";
 
@@ -59,6 +62,34 @@ describe("Use Current Game Play Composable", () => {
         game: createFakeGame({ currentPlay: createFakeGamePlaySurvivorsBuryDeadBodies({ source: createFakeGamePlaySource({ interactions: [] }) }) }),
         expectedBoolean: true,
         test: "should return true when action is bury dead bodies and there are no steal role eligible targets",
+      },
+      {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
+          options: createFakeGameOptions({
+            roles: createFakeRolesGameOptions({
+              wolfHound: createFakeWolfHoundGameOptions({
+                isSideRandomlyChosen: false,
+              }),
+            }),
+          }),
+        }),
+        expectedBoolean: false,
+        test: "should return false when action is choose side and wolf hound side is not randomly chosen.",
+      },
+      {
+        game: createFakeGame({
+          currentPlay: createFakeGamePlayWolfHoundChoosesSide(),
+          options: createFakeGameOptions({
+            roles: createFakeRolesGameOptions({
+              wolfHound: createFakeWolfHoundGameOptions({
+                isSideRandomlyChosen: true,
+              }),
+            }),
+          }),
+        }),
+        expectedBoolean: true,
+        test: "should return true when action is choose side and wolf hound side is randomly chosen.",
       },
     ])("$test", ({ game, expectedBoolean }) => {
       const { mustCurrentGamePlayBeSkipped } = useCurrentGamePlay(ref(game));

@@ -125,6 +125,18 @@ Feature: 🃏👆 Game Lobby Role Picker
     And the user chooses the role with name "Werewolf" in the lobby role picker
     Then the role's description image with name "Werewolf" should be in viewport in the lobby role picker
 
+  Scenario: 🃏👆 User can search for a role in the role picker
+    Given the user is on game-lobby page
+
+    When the user enters the player with name "Antoine" in the lobby
+    And the user clicks on the player with name "Antoine" in the lobby
+    And the user types "wolf" in the lobby role picker search input
+    Then the button with exact name "Seer" should be hidden
+    And the button with exact name "Werewolf" should be visible
+    And the button with exact name "Hunter" should be hidden
+    And the button with exact name "Big Bad Wolf" should be visible
+    And the button with exact name "Random" should be visible
+
   Scenario: 🃏👆 User closes the role picker with escape, close button or outside click
     Given the user is on game-lobby page
 

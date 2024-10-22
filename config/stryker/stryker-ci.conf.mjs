@@ -23,7 +23,7 @@ if (process.env.VERSION !== undefined) {
 
 export default {
   ...defaultConfig,
-  dryRunTimeoutMinutes: 10,
-  reporters,
+  concurrency: 1,
   dashboard,
+  reporters,
 };

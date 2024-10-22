@@ -11,3 +11,9 @@ When(/^the user chooses the role with name "(?<name>.+?)" in the lobby role pick
 When(/^the user chooses a random role in the lobby role picker$/u, async function(this: CustomWorld): Promise<void> {
   await chooseRoleInLobbyRolePicker(this, "Random" as RoleName);
 });
+
+When(/^the user types "(?<name>.+?)" in the lobby role picker search input$/u, async function(this: CustomWorld, name: string): Promise<void> {
+  const input = this.page.getByLabel("Search for a role", { exact: true });
+  await input.waitFor({ state: "visible" });
+  await input.fill(name);
+});

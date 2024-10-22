@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Role Picker Search Input Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-role-picker-search-input-container"><span class="p-floatlabel p-floatlabel-on" data-pc-name="floatlabel" pc1="" data-pc-section="root"><div class="p-iconfield" data-pc-name="iconfield" pc2="" data-pc-section="root"><span class="p-inputicon" data-pc-name="inputicon" pc3="" data-pc-section="root"><font-awesome-icon-stub icon="magnifying-glass" border="false" fixedwidth="false" flip="false" listitem="false" pulse="false" swapopacity="false" spin="false" symbol="false" inverse="false" bounce="false" shake="false" beat="false" fade="false" beatfade="false" flash="false" spinpulse="false" spinreverse="false"></font-awesome-icon-stub></span>
+  <input-text-stub id="game-lobby-role-picker-search-input" modelvalue="" aria-label="Search for a role"></input-text-stub>
+</div><label id="game-lobby-role-picker-search-input-label" for="game-lobby-role-picker-search-input">Search for a role</label></span></div>"
+`;

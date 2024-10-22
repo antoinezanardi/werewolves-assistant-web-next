@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Unit Tests" type="JavaScriptTestRunnerVitest">
-    <config value="$PROJECT_DIR$/config/vitest/vitest.unit-config.ts" />
+    <config value="$PROJECT_DIR$/config/vitest/vitest.global-unit-tests-config.ts" />
     <node-interpreter value="project" />
     <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
     <working-dir value="$PROJECT_DIR$" />

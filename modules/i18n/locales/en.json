@@ -1681,6 +1681,9 @@
       "prejudicedManipulatorIsInTheGame": "The Prejudiced Manipulator is in the game! Players are divided into two groups.",
       "groupWithPlayers": "{playersText} are in the group called \"{playerGroup}\"",
       "ifPrejudicedGroupIsAliveHeWins": "The Prejudiced Manipulator wins the game alone if all players not in his group are eliminated."
+    },
+    "GameLobbyRolePickerSearchInput": {
+      "searchForRole": "Search for a role"
     }
   }
 }
