@@ -88,11 +88,10 @@ export default defineNuxtConfig({
     ],
   },
   fonts: {
-    global: true,
-    provider: "google",
-    preload: true,
     families: [
       {
+        global: true,
+        preload: true,
         name: "Quicksand",
         provider: "google",
         weights: [
