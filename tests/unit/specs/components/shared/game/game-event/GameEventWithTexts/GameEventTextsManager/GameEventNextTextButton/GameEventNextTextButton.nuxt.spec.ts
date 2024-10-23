@@ -87,7 +87,7 @@ describe("Game Event Next Text Button Component", () => {
         hoistedMocks.useMagicKeys.arrowright.value = true;
         await nextTick();
 
-        expect(button.classes()).toContain("animate__headShake");
+        expect(button.attributes("class")).toContain("animate__headShake");
       });
 
       it("should not emits click event when can't go to next game event.", async() => {

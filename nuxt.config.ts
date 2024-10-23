@@ -245,6 +245,7 @@ export default defineNuxtConfig({
     },
   },
   schemaOrg: {
+    enabled: process.env.NODE_ENV !== "test",
     identity: {
       type: "Organization",
       name: process.env.NUXT_SITE_NAME ?? "Werewolves Assistant",
@@ -262,6 +263,7 @@ export default defineNuxtConfig({
     },
   },
   seo: {
+    enabled: process.env.NODE_ENV !== "test",
     fallbackTitle: false,
     redirectToCanonicalSiteUrl: true,
   },

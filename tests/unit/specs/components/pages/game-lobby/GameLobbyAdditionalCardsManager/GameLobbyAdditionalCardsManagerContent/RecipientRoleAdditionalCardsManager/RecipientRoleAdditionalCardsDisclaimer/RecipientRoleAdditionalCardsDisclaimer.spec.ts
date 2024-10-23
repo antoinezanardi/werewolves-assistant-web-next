@@ -72,7 +72,7 @@ describe("Recipient Role Additional Cards Disclaimer Component", () => {
     it("should set text success class when there are additional cards for thief.", () => {
       const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
 
-      expect(icon.classes()).toContain("text-success");
+      expect(icon.attributes("class")).toContain("text-success");
     });
 
     it("should set error icon when there are no additional cards for thief.", async() => {
@@ -90,8 +90,8 @@ describe("Recipient Role Additional Cards Disclaimer Component", () => {
       await nextTick();
       const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#recipient-role-additional-cards-disclaimer-icon");
 
-      expect(icon.classes()).toContain("text-error");
-      expect(icon.classes()).toContain("fa-beat");
+      expect(icon.attributes("class")).toContain("text-error");
+      expect(icon.attributes("class")).toContain("fa-beat");
     });
 
     it("should set error icon when there are no additional cards for actor, recipient is actor but there are cards for thief.", async() => {

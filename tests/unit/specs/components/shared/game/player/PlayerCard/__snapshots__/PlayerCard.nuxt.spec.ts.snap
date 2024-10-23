@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Player Card Component > should match snapshot when rendered. 1`] = `
-"<div class="flex flex-col items-center player-card position-relative w-full"><button alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Player"}" aria-label="Select Player" class="border-4 border-gray-600 flex player-card-selector rounded-lg transition-all hover:border-gray-400" type="button">
-    <role-flipping-image-stub alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Player"}" rolename="werewolf" sizes="50px" definition="normal" class="player-card-role-image" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
+"<div class="flex flex-col items-center player-card position-relative w-full"><button alt="components.PlayerCard.playerCardRoleImageAlt, {&quot;playerName&quot;:&quot;Player&quot;}" aria-label="Select Player" class="border-4 border-gray-600 flex player-card-selector rounded-lg transition-all hover:border-gray-400" type="button">
+    <role-flipping-image-stub alt="components.PlayerCard.playerCardRoleImageAlt, {&quot;playerName&quot;:&quot;Player&quot;}" rolename="werewolf" sizes="50px" definition="normal" class="player-card-role-image" style="will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);">
       <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
         <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
       </div>

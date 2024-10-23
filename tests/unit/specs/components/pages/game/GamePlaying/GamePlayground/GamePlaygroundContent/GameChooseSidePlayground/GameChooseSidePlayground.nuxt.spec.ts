@@ -1,6 +1,7 @@
 import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 
+import { doesElementHaveClass } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import GameChooseSidePlayground from "~/components/pages/game/GamePlaying/GamePlayground/GamePlaygroundContent/GameChooseSidePlayground/GameChooseSidePlayground.vue";
 import type RoleImage from "~/components/shared/role/RoleImage/RoleImage.vue";
 import { StoreIds } from "~/stores/enums/store.enum";
@@ -46,7 +47,7 @@ describe("Game Choose Side Playground Component", () => {
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
 
-      expect(button.classes("!border-emerald-500")).toBeTruthy();
+      expect(doesElementHaveClass(button, "!border-emerald-500")).toBeTruthy();
     });
 
     describe("Villagers Button Image", () => {
@@ -57,7 +58,7 @@ describe("Game Choose Side Playground Component", () => {
         const button = wrapper.find<HTMLButtonElement>("#choose-villagers-side-button");
         const image = button.findComponent<typeof RoleImage>("#villagers-side-image");
 
-        expect(image.classes("!border-emerald-500")).toBeTruthy();
+        expect(doesElementHaveClass(image, "!border-emerald-500")).toBeTruthy();
       });
     });
 
@@ -88,7 +89,7 @@ describe("Game Choose Side Playground Component", () => {
       await nextTick();
       const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
 
-      expect(button.classes("!border-red-500")).toBeTruthy();
+      expect(doesElementHaveClass(button, "!border-red-500")).toBeTruthy();
     });
 
     describe("Werewolves Button Image", () => {
@@ -99,7 +100,7 @@ describe("Game Choose Side Playground Component", () => {
         const button = wrapper.find<HTMLButtonElement>("#choose-werewolves-side-button");
         const image = button.findComponent<typeof RoleImage>("#werewolves-side-image");
 
-        expect(image.classes("!border-red-500")).toBeTruthy();
+        expect(doesElementHaveClass(image, "!border-red-500")).toBeTruthy();
       });
     });
 

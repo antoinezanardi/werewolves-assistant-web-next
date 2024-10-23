@@ -38,4 +38,4 @@ exports[`Game Scandalmonger Turn Starts Event Component > should match snapshot 
 </div>"
 `;
 
-exports[`Game Scandalmonger Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameScandalmongerTurnStartsEvent.scandalmongerCanMarkPlayer,components.GameScandalmongerTurnStartsEvent.playerWillHavePenaltyForNextVotes, {" penalty":2}, 2" id="game-scandalmonger-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Scandalmonger Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameScandalmongerTurnStartsEvent.scandalmongerCanMarkPlayer,components.GameScandalmongerTurnStartsEvent.playerWillHavePenaltyForNextVotes, {&quot;penalty&quot;:2}, 2" id="game-scandalmonger-turn-starts-event"></game-event-with-texts-stub>"`;

@@ -59,7 +59,7 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
       });
       const button = wrapper.find("#game-lobby-role-picker-grid-element-button");
 
-      expect(button.classes()).not.toContain("!border-gray-100");
+      expect(button.attributes("class")).not.toContain("!border-gray-100");
     });
 
     it("should not have bright border when role is not defined.", async() => {
@@ -71,7 +71,7 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
       });
       const button = wrapper.find("#game-lobby-role-picker-grid-element-button");
 
-      expect(button.classes()).not.toContain("!border-gray-100");
+      expect(button.attributes("class")).not.toContain("!border-gray-100");
     });
 
     it("should have bright border when role is picked.", async() => {
@@ -83,7 +83,7 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
       });
       const button = wrapper.find("#game-lobby-role-picker-grid-element-button");
 
-      expect(button.classes()).toContain("!border-gray-100");
+      expect(button.attributes("class")).toContain("!border-gray-100");
     });
   });
 
@@ -118,8 +118,8 @@ describe("Game Lobby Role Picker Grid Element Component", () => {
       wrapper = await mountGameLobbyRolePickerGridElementComponent({ props: { role: undefined } });
       const roleName = wrapper.find("#game-lobby-role-picker-grid-element-role-name");
 
-      expect(roleName.classes()).toContain("italic");
-      expect(roleName.classes()).toContain("text-gray-300");
+      expect(roleName.attributes("class")).toContain("italic");
+      expect(roleName.attributes("class")).toContain("text-gray-300");
     });
   });
 

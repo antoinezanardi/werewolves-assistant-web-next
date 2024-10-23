@@ -60,28 +60,28 @@ describe("Player Card Component", () => {
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, isSelected: true } });
       const playerCard = wrapper.find<HTMLButtonElement>(".player-card-selector");
 
-      expect(playerCard.classes()).toContain("!border-gray-100");
+      expect(playerCard.attributes("class")).toContain("!border-gray-100");
     });
 
     it("should not have border gray 100 class when not selected.", async() => {
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, isSelected: false } });
       const playerCard = wrapper.find<HTMLButtonElement>(".player-card-selector");
 
-      expect(playerCard.classes()).not.toContain("!border-gray-100");
+      expect(playerCard.attributes("class")).not.toContain("!border-gray-100");
     });
 
     it("should not have hover border gray 400 class when disabled.", async() => {
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, isDisabled: true } });
       const playerCard = wrapper.find<HTMLButtonElement>(".player-card-selector");
 
-      expect(playerCard.classes()).not.toContain("hover:border-gray-400");
+      expect(playerCard.attributes("class")).not.toContain("hover:border-gray-400");
     });
 
     it("should have hover border gray 400 class when not disabled.", async() => {
       wrapper = await mountSuspendedComponent(PlayerCard, { props: { ...defaultProps, isDisabled: false } });
       const playerCard = wrapper.find<HTMLButtonElement>(".player-card-selector");
 
-      expect(playerCard.classes()).toContain("hover:border-gray-400");
+      expect(playerCard.attributes("class")).toContain("hover:border-gray-400");
     });
 
     it("should be disabled when isDisabled prop is true.", async() => {

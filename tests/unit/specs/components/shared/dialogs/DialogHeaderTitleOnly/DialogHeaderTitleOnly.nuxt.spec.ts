@@ -2,6 +2,7 @@ import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { getClassesOfElement } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import type { DialogHeaderTitleOnlyProps } from "~/components/shared/dialogs/DialogHeaderTitleOnly/dialog-header-title-only.types";
 import DialogHeaderTitleOnly from "~/components/shared/dialogs/DialogHeaderTitleOnly/DialogHeaderTitleOnly.vue";
@@ -41,7 +42,7 @@ describe("Dialog Header Title Only Component", () => {
     it("should render icon classes when icon classes are set in props.", () => {
       const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-header-title-icon");
 
-      expect(icon.classes()).toContainValues(["text-success"]);
+      expect(getClassesOfElement(icon)).toContainValues(["text-success"]);
     });
 
     it("should set title text when rendered.", () => {

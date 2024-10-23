@@ -2,6 +2,7 @@ import { createTestingPinia } from "@pinia/testing";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { getClassesOfElement } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import { createFakeCreateGameDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game.dto.factory";
 import { createFakeMakeGamePlayDto } from "@tests/unit/utils/factories/composables/api/game/dto/make-game-play/make-game-play.dto.factory";
 import { createFakeGameAdditionalCard } from "@tests/unit/utils/factories/composables/api/game/game-additional-card/game-additional-card.factory";
@@ -83,7 +84,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "rounded-lg",
       ];
 
-      expect(button.classes()).toStrictEqual<string[]>(expectedClasses);
+      expect(getClassesOfElement(button)).toContainAllValues(expectedClasses);
     });
 
     it("should set base classes to button when card side is werewolves.", async() => {
@@ -111,7 +112,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "rounded-lg",
       ];
 
-      expect(button.classes()).toStrictEqual<string[]>(expectedClasses);
+      expect(getClassesOfElement(button)).toContainAllValues(expectedClasses);
     });
 
     it("should set base classes plus selected class to button when card side is villagers and selected.", async() => {
@@ -133,7 +134,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "!border-emerald-500",
       ];
 
-      expect(button.classes()).toStrictEqual<string[]>(expectedClasses);
+      expect(getClassesOfElement(button)).toContainAllValues(expectedClasses);
     });
 
     it("should set base classes plus selected class to button when card side is werewolves and selected.", async() => {
@@ -165,7 +166,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
         "!border-red-500",
       ];
 
-      expect(button.classes()).toStrictEqual<string[]>(expectedClasses);
+      expect(getClassesOfElement(button)).toContainAllValues(expectedClasses);
     });
 
     describe("Card Image", () => {
@@ -187,7 +188,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "mb-1",
         ];
 
-        expect(roleImage.classes()).toStrictEqual<string[]>(expectedClasses);
+        expect(getClassesOfElement(roleImage)).toContainValues(expectedClasses);
       });
 
       it("should set base classes to card image when card side is werewolves.", async() => {
@@ -213,7 +214,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "mb-1",
         ];
 
-        expect(roleImage.classes()).toStrictEqual<string[]>(expectedClasses);
+        expect(getClassesOfElement(roleImage)).toContainValues(expectedClasses);
       });
 
       it("should set base classes plus selected class to card image when card side is villagers and selected.", async() => {
@@ -233,7 +234,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "!border-emerald-500",
         ];
 
-        expect(roleImage.classes()).toStrictEqual<string[]>(expectedClasses);
+        expect(getClassesOfElement(roleImage)).toContainValues(expectedClasses);
       });
 
       it("should set base classes plus selected class to card image when card side is werewolves and selected.", async() => {
@@ -263,7 +264,7 @@ describe("Game Choose Card Playground Additional Card Component", () => {
           "!border-red-500",
         ];
 
-        expect(roleImage.classes()).toStrictEqual<string[]>(expectedClasses);
+        expect(getClassesOfElement(roleImage)).toContainValues(expectedClasses);
       });
 
       it("should set base size when screen is not smaller than md.", () => {

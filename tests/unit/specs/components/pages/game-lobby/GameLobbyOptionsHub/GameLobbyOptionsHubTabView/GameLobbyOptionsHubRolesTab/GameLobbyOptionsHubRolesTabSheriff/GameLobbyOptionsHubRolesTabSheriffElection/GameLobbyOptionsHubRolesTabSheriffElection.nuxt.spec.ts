@@ -77,7 +77,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Election Component", () => {
         await nextTick();
         const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
 
-        expect(icon.classes()).toContain("text-day");
+        expect(icon.attributes("class")).toContain("text-day");
       });
 
       it("should set text-night class to the option icon class when phase is night.", async() => {
@@ -86,7 +86,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Election Component", () => {
         await nextTick();
         const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-lobby-options-hub-roles-tab-sheriff-election-phase-input-icon");
 
-        expect(icon.classes()).toContain("text-night");
+        expect(icon.attributes("class")).toContain("text-night");
       });
     });
 

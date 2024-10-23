@@ -164,7 +164,7 @@ describe("Game Lobby Group Organizer Disclaimer Component", () => {
       const icon = wrapper.findComponent<typeof FontAwesomeIcon>("#groups-disclaimer-icon");
       const disclaimer = wrapper.find<HTMLSpanElement>("#groups-disclaimer");
 
-      expect(icon.classes()).toContain(expectedIconClass);
+      expect(icon.attributes("class")).toContain(expectedIconClass);
       expect(icon.props("icon")).toBe(expectedIcon);
       expect(disclaimer.text()).toBe(expectedDisclaimer);
     });

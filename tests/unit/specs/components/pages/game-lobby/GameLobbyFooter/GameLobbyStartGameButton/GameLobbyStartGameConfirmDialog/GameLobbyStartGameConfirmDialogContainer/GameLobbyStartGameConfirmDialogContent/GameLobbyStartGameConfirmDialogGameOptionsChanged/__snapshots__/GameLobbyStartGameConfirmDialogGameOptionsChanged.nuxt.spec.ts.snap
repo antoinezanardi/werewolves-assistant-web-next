@@ -8,14 +8,14 @@ exports[`Game Lobby Start Game Confirm Dialog Game Options Changed Component > s
     <ul class="max-h-40 md:max-h-64 overflow-y-auto px-1 scrollbar-thin">
       <li class="!bg-sky-950 border-2 border-gray-600 changed-game-options-list-item flex gap-4 items-center px-2 py-1 rounded-md shadow-black shadow-md"><button class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm !w-2 h-4 reset-changed-game-option-button text-xs" type="button" aria-label="Reset to official rule the option : composables.useGameOptionsTexts.composition.isHidden.yes" data-pc-name="button" data-p-disabled="false" data-p-severity="danger" pc1="" data-pc-section="root" data-pd-tooltip="true"><svg class="svg-inline--fa fa-minus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path class="" fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path>
-          </svg><span class="p-button-label" data-pc-section="label"> </span>
+          </svg><span class="p-button-label" data-pc-section="label">&nbsp;</span>
           <!---->
         </button>
         <p class="!leading-relaxed !mb-0">composables.useGameOptionsTexts.composition.isHidden.yes</p>
       </li>
-      <li class="!bg-sky-950 border-2 border-gray-600 changed-game-options-list-item flex gap-4 items-center px-2 py-1 rounded-md shadow-black shadow-md"><button class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm !w-2 h-4 reset-changed-game-option-button text-xs" type="button" aria-label="Reset to official rule the option : composables.useGameOptionsTexts.votes.duration, {" time":"shared.time.second, {\\"count\\":10}, 10"}" data-pc-name="button" data-p-disabled="false" data-p-severity="danger" pc2="" data-pc-section="root" data-pd-tooltip="true"><svg class="svg-inline--fa fa-minus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <li class="!bg-sky-950 border-2 border-gray-600 changed-game-options-list-item flex gap-4 items-center px-2 py-1 rounded-md shadow-black shadow-md"><button class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm !w-2 h-4 reset-changed-game-option-button text-xs" type="button" aria-label="Reset to official rule the option : composables.useGameOptionsTexts.votes.duration, {&quot;time&quot;:&quot;shared.time.second, {\\&quot;count\\&quot;:10}, 10&quot;}" data-pc-name="button" data-p-disabled="false" data-p-severity="danger" pc2="" data-pc-section="root" data-pd-tooltip="true"><svg class="svg-inline--fa fa-minus" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path class="" fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path>
-          </svg><span class="p-button-label" data-pc-section="label"> </span>
+          </svg><span class="p-button-label" data-pc-section="label">&nbsp;</span>
           <!---->
         </button>
         <p class="!leading-relaxed !mb-0">composables.useGameOptionsTexts.votes.duration, {"time":"shared.time.second, {\\"count\\":10}, 10"}</p>
