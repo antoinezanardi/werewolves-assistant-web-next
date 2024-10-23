@@ -72,7 +72,9 @@ export default defineNuxtConfig({
     "./assets/scss/custom.scss",
     "animate.css/animate.min.css",
   ],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
   experimental: {
     renderJsonPayloads: false,
     buildCache: false,
@@ -269,7 +271,7 @@ export default defineNuxtConfig({
     configPath: "./config/tailwind/tailwind.config.ts",
   },
   telemetry: false,
-  test: true,
+  test: false,
   typescript: {
     shim: true,
     strict: true,
@@ -290,6 +292,14 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+          silenceDeprecations: ["legacy-js-api"],
+        },
+      },
+    },
     esbuild: {
       tsconfigRaw: {
         compilerOptions: { experimentalDecorators: true },
