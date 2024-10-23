@@ -8,7 +8,7 @@ exports[`Changed Game Options List Component > should match snapshot when render
       <p class="!leading-relaxed !mb-0">composables.useGameOptionsTexts.composition.isHidden.yes</p>
     </li>
     <li class="!bg-sky-950 border-2 border-gray-600 changed-game-options-list-item flex gap-4 items-center px-2 py-1 rounded-md shadow-black shadow-md">
-      <button-stub aria-label="Reset to official rule the option : composables.useGameOptionsTexts.votes.duration, {" time":"shared.time.second, {\\"count\\":10}, 10"}" class="!w-2 h-4 reset-changed-game-option-button text-xs" raised="" severity="danger" size="small" data-pd-tooltip="true"></button-stub>
+      <button-stub aria-label="Reset to official rule the option : composables.useGameOptionsTexts.votes.duration, {&quot;time&quot;:&quot;shared.time.second, {\\&quot;count\\&quot;:10}, 10&quot;}" class="!w-2 h-4 reset-changed-game-option-button text-xs" raised="" severity="danger" size="small" data-pd-tooltip="true"></button-stub>
       <p class="!leading-relaxed !mb-0">composables.useGameOptionsTexts.votes.duration, {"time":"shared.time.second, {\\"count\\":10}, 10"}</p>
     </li>
   </ul>

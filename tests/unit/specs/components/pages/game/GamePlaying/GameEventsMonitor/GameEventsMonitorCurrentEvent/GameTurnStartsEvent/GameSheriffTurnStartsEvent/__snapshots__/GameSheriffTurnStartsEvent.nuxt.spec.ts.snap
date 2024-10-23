@@ -38,4 +38,4 @@ exports[`Game Sheriff Turn Starts Event Component > should match snapshot when r
 </div>"
 `;
 
-exports[`Game Sheriff Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {" players":"Antoine shared.and Benoit"}" id="game-sheriff-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Sheriff Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GameSheriffTurnStartsEvent.sheriffSettlesVotes, {&quot;players&quot;:&quot;Antoine shared.and Benoit&quot;}" id="game-sheriff-turn-starts-event"></game-event-with-texts-stub>"`;

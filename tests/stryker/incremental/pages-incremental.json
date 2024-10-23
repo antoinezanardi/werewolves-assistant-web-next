@@ -166,36 +166,6 @@
           }
         },
         {
-          "id": "1",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "65"
-          ],
-          "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 50
-            },
-            "start": {
-              "column": 9,
-              "line": 39
-            }
-          }
-        },
-        {
           "id": "0",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -226,40 +196,10 @@
           }
         },
         {
-          "id": "6",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "65"
-          ],
-          "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67"
-          ],
-          "location": {
-            "end": {
-              "column": 72,
-              "line": 42
-            },
-            "start": {
-              "column": 44,
-              "line": 42
-            }
-          }
-        },
-        {
-          "id": "7",
+          "id": "1",
           "mutatorName": "ObjectLiteral",
           "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {},\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 4,
@@ -276,12 +216,12 @@
           ],
           "location": {
             "end": {
-              "column": 52,
-              "line": 43
+              "column": 2,
+              "line": 50
             },
             "start": {
-              "column": 5,
-              "line": 43
+              "column": 9,
+              "line": 39
             }
           }
         },
@@ -312,6 +252,66 @@
             "start": {
               "column": 13,
               "line": 43
+            }
+          }
+        },
+        {
+          "id": "9",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "65"
+          ],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67"
+          ],
+          "location": {
+            "end": {
+              "column": 50,
+              "line": 43
+            },
+            "start": {
+              "column": 33,
+              "line": 43
+            }
+          }
+        },
+        {
+          "id": "10",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {},\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "65"
+          ],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67"
+          ],
+          "location": {
+            "end": {
+              "column": 73,
+              "line": 44
+            },
+            "start": {
+              "column": 5,
+              "line": 44
             }
           }
         },
@@ -406,10 +406,10 @@
           }
         },
         {
-          "id": "14",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "id": "7",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {},\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 4,
@@ -426,20 +426,20 @@
           ],
           "location": {
             "end": {
-              "column": 23,
-              "line": 45
+              "column": 52,
+              "line": 43
             },
             "start": {
-              "column": 13,
-              "line": 45
+              "column": 5,
+              "line": 43
             }
           }
         },
         {
-          "id": "15",
+          "id": "6",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 4,
@@ -456,12 +456,12 @@
           ],
           "location": {
             "end": {
-              "column": 71,
-              "line": 45
+              "column": 72,
+              "line": 42
             },
             "start": {
-              "column": 34,
-              "line": 45
+              "column": 44,
+              "line": 42
             }
           }
         },
@@ -492,66 +492,6 @@
             "start": {
               "column": 5,
               "line": 46
-            }
-          }
-        },
-        {
-          "id": "9",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "65"
-          ],
-          "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67"
-          ],
-          "location": {
-            "end": {
-              "column": 50,
-              "line": 43
-            },
-            "start": {
-              "column": 33,
-              "line": 43
-            }
-          }
-        },
-        {
-          "id": "10",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {},\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 4,
-          "killedBy": [
-            "65"
-          ],
-          "coveredBy": [
-            "62",
-            "63",
-            "64",
-            "65",
-            "66",
-            "67"
-          ],
-          "location": {
-            "end": {
-              "column": 73,
-              "line": 44
-            },
-            "start": {
-              "column": 5,
-              "line": 44
             }
           }
         },
@@ -641,6 +581,66 @@
             },
             "start": {
               "column": 5,
+              "line": 47
+            }
+          }
+        },
+        {
+          "id": "20",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "65"
+          ],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67"
+          ],
+          "location": {
+            "end": {
+              "column": 24,
+              "line": 47
+            },
+            "start": {
+              "column": 13,
+              "line": 47
+            }
+          }
+        },
+        {
+          "id": "21",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 4,
+          "killedBy": [
+            "65"
+          ],
+          "coveredBy": [
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67"
+          ],
+          "location": {
+            "end": {
+              "column": 41,
+              "line": 47
+            },
+            "start": {
+              "column": 35,
               "line": 47
             }
           }
@@ -736,10 +736,10 @@
           }
         },
         {
-          "id": "21",
+          "id": "14",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 4,
@@ -756,20 +756,20 @@
           ],
           "location": {
             "end": {
-              "column": 41,
-              "line": 47
+              "column": 23,
+              "line": 45
             },
             "start": {
-              "column": 35,
-              "line": 47
+              "column": 13,
+              "line": 45
             }
           }
         },
         {
-          "id": "20",
+          "id": "15",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"width=device-width, initial-scale=1\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"shared.werewolvesAssistant\",\n        \"name\": \"application-name\",\n      },\n      Object {\n        \"content\": \"Antoine ZANARDI\",\n        \"name\": \"creator\",\n      },\n      Object {\n        \"content\": \"components.App.seoDescription\",\n        \"name\": \"description\",\n      },\n      Object {\n        \"content\": \"width=device-width, initial-scale=1\",\n        \"name\": \"viewport\",\n      },\n      Object {\n        \"content\": \"utf-8\",\n        \"name\": \"charset\",\n      },\n      Object {\n        \"content\": \"nuxt\",\n        \"name\": \"generator\",\n      },\n      Object {\n        \"content\": \"dark\",\n        \"name\": \"color-scheme\",\n      },\n    ],\n    \"title\": \"shared.werewolvesAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"shared.werewolvesAssistant\",\n      \"name\": \"application-name\",\n    },\n    Object {\n      \"content\": \"Antoine ZANARDI\",\n      \"name\": \"creator\",\n    },\n    Object {\n      \"content\": \"components.App.seoDescription\",\n      \"name\": \"description\",\n    },\n    Object {\n      \"content\": \"\",\n      \"name\": \"viewport\",\n    },\n    Object {\n      \"content\": \"utf-8\",\n      \"name\": \"charset\",\n    },\n    Object {\n      \"content\": \"nuxt\",\n      \"name\": \"generator\",\n    },\n    Object {\n      \"content\": \"dark\",\n      \"name\": \"color-scheme\",\n    },\n  ],\n  \"title\": \"shared.werewolvesAssistant\",\n}",
           "status": "Killed",
           "static": false,
           "testsCompleted": 4,
@@ -786,12 +786,12 @@
           ],
           "location": {
             "end": {
-              "column": 24,
-              "line": 47
+              "column": 71,
+              "line": 45
             },
             "start": {
-              "column": 13,
-              "line": 47
+              "column": 34,
+              "line": 45
             }
           }
         }
@@ -1378,6 +1378,34 @@
           }
         },
         {
+          "id": "44",
+          "mutatorName": "ObjectLiteral",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"pages.about.seoDescription\",\n        \"name\": \"description\",\n      },\n    ],\n    \"title\": \"pages.about.whyAnAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {},\n  ],\n  \"title\": \"pages.about.whyAnAssistant\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "69"
+          ],
+          "coveredBy": [
+            "68",
+            "69",
+            "70",
+            "71"
+          ],
+          "location": {
+            "end": {
+              "column": 75,
+              "line": 55
+            },
+            "start": {
+              "column": 10,
+              "line": 55
+            }
+          }
+        },
+        {
           "id": "45",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -1429,34 +1457,6 @@
             },
             "start": {
               "column": 44,
-              "line": 55
-            }
-          }
-        },
-        {
-          "id": "44",
-          "mutatorName": "ObjectLiteral",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"pages.about.seoDescription\",\n        \"name\": \"description\",\n      },\n    ],\n    \"title\": \"pages.about.whyAnAssistant\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {},\n  ],\n  \"title\": \"pages.about.whyAnAssistant\",\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "69"
-          ],
-          "coveredBy": [
-            "68",
-            "69",
-            "70",
-            "71"
-          ],
-          "location": {
-            "end": {
-              "column": 75,
-              "line": 55
-            },
-            "start": {
-              "column": 10,
               "line": 55
             }
           }
@@ -1620,44 +1620,6 @@
           }
         },
         {
-          "id": "51",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"noindex, nofollow\",\n        \"name\": \"robots\",\n      },\n    ],\n    \"title\": \"pages.game.playingGame\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"noindex, nofollow\",\n      \"name\": \"\",\n    },\n  ],\n  \"title\": \"pages.game.playingGame\",\n}",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 2,
-          "killedBy": [
-            "33"
-          ],
-          "coveredBy": [
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45"
-          ],
-          "location": {
-            "end": {
-              "column": 26,
-              "line": 73
-            },
-            "start": {
-              "column": 18,
-              "line": 73
-            }
-          }
-        },
-        {
           "id": "49",
           "mutatorName": "ArrayDeclaration",
           "replacement": "[]",
@@ -1691,6 +1653,44 @@
             },
             "start": {
               "column": 9,
+              "line": 73
+            }
+          }
+        },
+        {
+          "id": "51",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  Object {\n    \"meta\": Array [\n      Object {\n        \"content\": \"noindex, nofollow\",\n        \"name\": \"robots\",\n      },\n    ],\n    \"title\": \"pages.game.playingGame\",\n  },\n], but it was called with Object {\n  \"meta\": Array [\n    Object {\n      \"content\": \"noindex, nofollow\",\n      \"name\": \"\",\n    },\n  ],\n  \"title\": \"pages.game.playingGame\",\n}",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 2,
+          "killedBy": [
+            "33"
+          ],
+          "coveredBy": [
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45"
+          ],
+          "location": {
+            "end": {
+              "column": 26,
+              "line": 73
+            },
+            "start": {
+              "column": 18,
               "line": 73
             }
           }
@@ -1850,31 +1850,6 @@
           }
         },
         {
-          "id": "59",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "44"
-          ],
-          "coveredBy": [
-            "44"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 91
-            },
-            "start": {
-              "column": 37,
-              "line": 89
-            }
-          }
-        },
-        {
           "id": "58",
           "mutatorName": "ConditionalExpression",
           "replacement": "false",
@@ -1896,6 +1871,31 @@
             },
             "start": {
               "column": 7,
+              "line": 89
+            }
+          }
+        },
+        {
+          "id": "59",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "44"
+          ],
+          "coveredBy": [
+            "44"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 91
+            },
+            "start": {
+              "column": 37,
               "line": 89
             }
           }
@@ -1984,6 +1984,33 @@
             "start": {
               "column": 9,
               "line": 90
+            }
+          }
+        },
+        {
+          "id": "67",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "8"
+          ],
+          "coveredBy": [
+            "8",
+            "9",
+            "10"
+          ],
+          "location": {
+            "end": {
+              "column": 2,
+              "line": 103
+            },
+            "start": {
+              "column": 91,
+              "line": 95
             }
           }
         },
@@ -2096,33 +2123,6 @@
             "start": {
               "column": 9,
               "line": 92
-            }
-          }
-        },
-        {
-          "id": "67",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "8"
-          ],
-          "coveredBy": [
-            "8",
-            "9",
-            "10"
-          ],
-          "location": {
-            "end": {
-              "column": 2,
-              "line": 103
-            },
-            "start": {
-              "column": 91,
-              "line": 95
             }
           }
         },
@@ -2957,31 +2957,6 @@
           }
         },
         {
-          "id": "94",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"Game Lobby Additional Cards Manager is not defined\",\n], but it was called with \"\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "16"
-          ],
-          "coveredBy": [
-            "16"
-          ],
-          "location": {
-            "end": {
-              "column": 75,
-              "line": 121
-            },
-            "start": {
-              "column": 23,
-              "line": 121
-            }
-          }
-        },
-        {
           "id": "93",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -3029,6 +3004,31 @@
             "start": {
               "column": 65,
               "line": 126
+            }
+          }
+        },
+        {
+          "id": "94",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"Game Lobby Additional Cards Manager is not defined\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "16"
+          ],
+          "coveredBy": [
+            "16"
+          ],
+          "location": {
+            "end": {
+              "column": 75,
+              "line": 121
+            },
+            "start": {
+              "column": 23,
+              "line": 121
             }
           }
         },
@@ -3111,31 +3111,6 @@
           }
         },
         {
-          "id": "99",
-          "mutatorName": "BlockStatement",
-          "replacement": "{}",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "18"
-          ],
-          "coveredBy": [
-            "18"
-          ],
-          "location": {
-            "end": {
-              "column": 4,
-              "line": 129
-            },
-            "start": {
-              "column": 39,
-              "line": 127
-            }
-          }
-        },
-        {
           "id": "100",
           "mutatorName": "StringLiteral",
           "replacement": "\"\"",
@@ -3157,6 +3132,31 @@
             "start": {
               "column": 23,
               "line": 128
+            }
+          }
+        },
+        {
+          "id": "99",
+          "mutatorName": "BlockStatement",
+          "replacement": "{}",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once, but it was called 0 times",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "18"
+          ],
+          "coveredBy": [
+            "18"
+          ],
+          "location": {
+            "end": {
+              "column": 4,
+              "line": 129
+            },
+            "start": {
+              "column": 39,
+              "line": 127
             }
           }
         },
@@ -3486,32 +3486,6 @@
           }
         },
         {
-          "id": "113",
-          "mutatorName": "StringLiteral",
-          "replacement": "\"\"",
-          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"Game Lobby Header is not defined\",\n], but it was called with \"\"",
-          "status": "Killed",
-          "static": false,
-          "testsCompleted": 1,
-          "killedBy": [
-            "22"
-          ],
-          "coveredBy": [
-            "22",
-            "25"
-          ],
-          "location": {
-            "end": {
-              "column": 57,
-              "line": 146
-            },
-            "start": {
-              "column": 23,
-              "line": 146
-            }
-          }
-        },
-        {
           "id": "114",
           "mutatorName": "BlockStatement",
           "replacement": "{}",
@@ -3534,6 +3508,32 @@
             "start": {
               "column": 20,
               "line": 150
+            }
+          }
+        },
+        {
+          "id": "113",
+          "mutatorName": "StringLiteral",
+          "replacement": "\"\"",
+          "statusReason": "expect(received).toHaveBeenCalledExactlyOnceWith(expected)\n\nExpected mock function to have been called exactly once with Array [\n  \"Game Lobby Header is not defined\",\n], but it was called with \"\"",
+          "status": "Killed",
+          "static": false,
+          "testsCompleted": 1,
+          "killedBy": [
+            "22"
+          ],
+          "coveredBy": [
+            "22",
+            "25"
+          ],
+          "location": {
+            "end": {
+              "column": 57,
+              "line": 146
+            },
+            "start": {
+              "column": 23,
+              "line": 146
             }
           }
         },
@@ -4674,7 +4674,7 @@
           "name": "Index Page Component About button About Button Icon should have animation class when hovered."
         }
       ],
-      "source": "import type { FontAwesomeIcon } from \"@fortawesome/vue-fontawesome\";\nimport type { mount } from \"@vue/test-utils\";\nimport type { Ref } from \"vue\";\n\nimport type { NuxtLink } from \"#components\";\nimport Index from \"@/pages/index.vue\";\nimport { mountSuspendedComponent } from \"@tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Index Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Index>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Index);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find(\"#title\");\n\n      expect(title.text()).toBe(\"Werewolves Assistant\");\n    });\n  });\n\n  describe(\"Subtitle\", () => {\n    it(\"should translate subtitle when rendered.\", () => {\n      const subtitle = wrapper.find(\"#subtitle\");\n\n      expect(subtitle.text()).toBe(\"The perfect tool for game masters of the Werewolves of Miller's Hollow™\");\n    });\n  });\n\n  describe(\"Play button\", () => {\n    beforeEach(async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n    });\n\n    it(\"should display play button with translated label when rendered.\", () => {\n      const playButton = wrapper.findComponent<typeof NuxtLink>(\"#play-button\");\n\n      expect(playButton.text()).toBe(\"Play\");\n    });\n\n    describe(\"Play Button Icon\", () => {\n      it(\"should not have animation class when not hovered.\", () => {\n        const playButtonIcon = wrapper.find<HTMLSpanElement>(\"#play-button-icon\");\n\n        expect(playButtonIcon.classes()).not.toContain(\"animate__heartBeat\");\n      });\n\n      it(\"should have animation class when hovered.\", async() => {\n        const isHovered = (wrapper.vm as unknown as typeof Index).isPlayButtonHovered as Ref<boolean>;\n        isHovered.value = true;\n        await nextTick();\n        const playButtonIcon = wrapper.find<HTMLSpanElement>(\"#play-button-icon\");\n\n        expect(playButtonIcon.classes()).toContain(\"animate__heartBeat\");\n      });\n    });\n  });\n\n  describe(\"About button\", () => {\n    beforeEach(async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n    });\n\n    it(\"should display about button with translated label when rendered.\", () => {\n      const aboutButton = wrapper.findComponent<typeof NuxtLink>(\"#about-button\");\n\n      expect(aboutButton.text()).toBe(\"What is it?\");\n    });\n\n    describe(\"About Button Icon\", () => {\n      it(\"should not have animation class when not hovered.\", () => {\n        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>(\"#about-button-icon\");\n\n        expect(aboutButtonIcon.classes()).not.toContain(\"animate__heartBeat\");\n      });\n\n      it(\"should have animation class when hovered.\", async() => {\n        const isHovered = (wrapper.vm as unknown as typeof Index).isAboutButtonHovered as Ref<boolean>;\n        isHovered.value = true;\n        await nextTick();\n        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>(\"#about-button-icon\");\n\n        expect(aboutButtonIcon.classes()).toContain(\"animate__rubberBand\");\n      });\n    });\n  });\n});"
+      "source": "import type { FontAwesomeIcon } from \"@fortawesome/vue-fontawesome\";\nimport type { mount } from \"@vue/test-utils\";\nimport type { Ref } from \"vue\";\n\nimport type { NuxtLink } from \"#components\";\nimport Index from \"@/pages/index.vue\";\nimport { mountSuspendedComponent } from \"@tests/unit/utils/helpers/mount.helpers\";\n\ndescribe(\"Index Page Component\", () => {\n  let wrapper: ReturnType<typeof mount<typeof Index>>;\n\n  beforeEach(async() => {\n    wrapper = await mountSuspendedComponent(Index);\n  });\n\n  it(\"should match snapshot when rendered.\", () => {\n    expect(wrapper).toBeTruthy();\n    expect(wrapper.html()).toMatchSnapshot();\n  });\n\n  describe(\"Title\", () => {\n    it(\"should display translated title when rendered.\", () => {\n      const title = wrapper.find(\"#title\");\n\n      expect(title.text()).toBe(\"Werewolves Assistant\");\n    });\n  });\n\n  describe(\"Subtitle\", () => {\n    it(\"should translate subtitle when rendered.\", () => {\n      const subtitle = wrapper.find(\"#subtitle\");\n\n      expect(subtitle.text()).toBe(\"The perfect tool for game masters of the Werewolves of Miller's Hollow™\");\n    });\n  });\n\n  describe(\"Play button\", () => {\n    beforeEach(async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n    });\n\n    it(\"should display play button with translated label when rendered.\", () => {\n      const playButton = wrapper.findComponent<typeof NuxtLink>(\"#play-button\");\n\n      expect(playButton.text()).toBe(\"Play\");\n    });\n\n    describe(\"Play Button Icon\", () => {\n      it(\"should not have animation class when not hovered.\", () => {\n        const playButtonIcon = wrapper.find<HTMLSpanElement>(\"#play-button-icon\");\n\n        expect(playButtonIcon.attributes(\"class\")).not.toContain(\"animate__heartBeat\");\n      });\n\n      it(\"should have animation class when hovered.\", async() => {\n        const isHovered = (wrapper.vm as unknown as typeof Index).isPlayButtonHovered as Ref<boolean>;\n        isHovered.value = true;\n        await nextTick();\n        const playButtonIcon = wrapper.find<HTMLSpanElement>(\"#play-button-icon\");\n\n        expect(playButtonIcon.attributes(\"class\")).toContain(\"animate__heartBeat\");\n      });\n    });\n  });\n\n  describe(\"About button\", () => {\n    beforeEach(async() => {\n      wrapper = await mountSuspendedComponent(Index, {\n        shallow: false,\n        stubs: { IndexFooter: true },\n      });\n    });\n\n    it(\"should display about button with translated label when rendered.\", () => {\n      const aboutButton = wrapper.findComponent<typeof NuxtLink>(\"#about-button\");\n\n      expect(aboutButton.text()).toBe(\"What is it?\");\n    });\n\n    describe(\"About Button Icon\", () => {\n      it(\"should not have animation class when not hovered.\", () => {\n        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>(\"#about-button-icon\");\n\n        expect(aboutButtonIcon.attributes(\"class\")).not.toContain(\"animate__heartBeat\");\n      });\n\n      it(\"should have animation class when hovered.\", async() => {\n        const isHovered = (wrapper.vm as unknown as typeof Index).isAboutButtonHovered as Ref<boolean>;\n        isHovered.value = true;\n        await nextTick();\n        const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>(\"#about-button-icon\");\n\n        expect(aboutButtonIcon.attributes(\"class\")).toContain(\"animate__rubberBand\");\n      });\n    });\n  });\n});"
     },
     "tests/unit/specs/error.nuxt.spec.ts": {
       "tests": [

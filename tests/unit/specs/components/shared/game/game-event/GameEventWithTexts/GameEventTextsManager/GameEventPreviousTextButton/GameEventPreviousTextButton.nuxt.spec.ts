@@ -75,7 +75,7 @@ describe("Game Event Previous Text Button Component", () => {
     it("should have gray color when cannot go to previous game event.", () => {
       const previousGameEventTextButton = wrapper.find<HTMLButtonElement>("[aria-label='Back to the previous event text']");
 
-      expect(previousGameEventTextButton.classes()).toContain("text-gray-500");
+      expect(previousGameEventTextButton.attributes("class")).toContain("text-gray-500");
     });
 
     it("should be disabled when making game play status is pending.", async() => {

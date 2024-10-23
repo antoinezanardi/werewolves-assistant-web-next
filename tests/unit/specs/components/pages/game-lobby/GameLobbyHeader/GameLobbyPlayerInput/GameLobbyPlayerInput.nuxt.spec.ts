@@ -4,6 +4,7 @@ import type InputText from "primevue/inputtext";
 import { expect } from "vitest";
 import type { Ref } from "vue";
 
+import { doesElementHaveClass } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
 import { getError } from "@tests/unit/utils/helpers/exception.helpers";
 import { createFakeCreateGamePlayerDto } from "@tests/unit/utils/factories/composables/api/game/dto/create-game/create-game-player/create-game-player.dto.factory";
@@ -106,7 +107,7 @@ describe("Game Lobby Player Input Component", () => {
       const input = wrapper.findComponent<typeof InputText>("#player-name-input");
       await input.setValue(" Player 2 ");
 
-      expect(input.classes("p-invalid")).toBeTrue();
+      expect(doesElementHaveClass(input, "p-invalid")).toBeTrue();
     });
 
     it("should not be disabled when create game dto has not reached max players.", async() => {

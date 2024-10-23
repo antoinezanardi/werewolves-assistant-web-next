@@ -1,6 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { doesElementHaveClass, getClassesOfElement } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { createFakeAccursedWolfFatherAlivePlayer, createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -54,7 +55,7 @@ describe("Game Team Side Player Component", () => {
       wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
       const teamSidePlayer = wrapper.find<HTMLDivElement>("#game-team-side-player");
 
-      expect(teamSidePlayer.classes("glow:border-emerald-500")).toBeTruthy();
+      expect(doesElementHaveClass(teamSidePlayer, "glow:border-emerald-500")).toBeTruthy();
     });
 
     it("should glow as red when side is werewolves.", async() => {
@@ -62,7 +63,7 @@ describe("Game Team Side Player Component", () => {
       wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
       const teamSidePlayer = wrapper.find<HTMLDivElement>("#game-team-side-player");
 
-      expect(teamSidePlayer.classes("glow:border-red-500")).toBeTruthy();
+      expect(doesElementHaveClass(teamSidePlayer, "glow:border-red-500")).toBeTruthy();
     });
 
     it("should not glow when player is dead.", async() => {
@@ -70,7 +71,7 @@ describe("Game Team Side Player Component", () => {
       wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
       const teamSidePlayer = wrapper.find<HTMLDivElement>("#game-team-side-player");
 
-      expect(teamSidePlayer.classes()).toStrictEqual<string[]>(["border-2", "border-gray-700", "p-2", "rounded-md", "w-full"]);
+      expect(getClassesOfElement(teamSidePlayer)).toIncludeAllMembers(["border-2", "border-gray-700", "p-2", "rounded-md", "w-full"]);
     });
 
     describe("Player group", () => {
@@ -111,7 +112,7 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
 
-        expect(playerRoleImage.classes("glow:border-emerald-500")).toBeTruthy();
+        expect(doesElementHaveClass(playerRoleImage, "glow:border-emerald-500")).toBeTruthy();
       });
 
       it("should have a red border glow class when side is werewolves.", async() => {
@@ -119,7 +120,7 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-werewolf-role-image");
 
-        expect(playerRoleImage.classes("glow:border-red-500")).toBeTruthy();
+        expect(doesElementHaveClass(playerRoleImage, "glow:border-red-500")).toBeTruthy();
       });
 
       it("should not have border glow class when player is dead.", async() => {
@@ -127,16 +128,20 @@ describe("Game Team Side Player Component", () => {
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
 
-        expect(playerRoleImage.classes("glow:border-emerald-500")).toBeFalsy();
-        expect(playerRoleImage.classes("glow:border-red-500")).toBeFalsy();
+        expect(doesElementHaveClass(playerRoleImage, "glow:border-emerald-500")).toBeFalsy();
+        expect(doesElementHaveClass(playerRoleImage, "glow:border-red-500")).toBeFalsy();
       });
 
-      it("should have grayscale class when player is dead.", async() => {
+      it("should have grayscale class with base classes when player is dead.", async() => {
         const player = createFakeSeerAlivePlayer({ isAlive: false });
         wrapper = await mountGameTeamSidePlayerComponent({ props: { ...defaultProps, player } });
         const playerRoleImage = wrapper.findComponent<typeof RoleImage>("#player-villager-role-image");
+        const expectedClasses = [
+          "!border-2",
+          "grayscale",
+        ];
 
-        expect(playerRoleImage.classes("grayscale")).toBeTruthy();
+        expect(getClassesOfElement(playerRoleImage)).toStrictEqual<string[]>(expectedClasses);
       });
     });
 

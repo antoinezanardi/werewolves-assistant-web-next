@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unit Tests Stores" type="JavaScriptTestRunnerVitest">
+    <config value="$PROJECT_DIR$/config/vitest/vitest.stores-unit-tests-config.ts" />
+    <node-interpreter value="project" />
+    <vitest-package value="$PROJECT_DIR$/node_modules/vitest" />
+    <working-dir value="$PROJECT_DIR$" />
+    <vitest-options value="--watch --coverage" />
+    <envs>
+      <env name="NODE_ENV" value="test" />
+    </envs>
+    <scope-kind value="ALL" />
+    <method v="2" />
+  </configuration>
+</component>

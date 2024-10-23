@@ -43,7 +43,7 @@ describe("Game Option Input Group Component", () => {
     it("should pass the icon class from props to the label icon when rendered.", () => {
       const labelIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-option-label-icon");
 
-      expect(labelIcon.classes()).toContain(defaultProps.optionIconClass);
+      expect(labelIcon.attributes("class")).toContain(defaultProps.optionIconClass);
     });
   });
 
