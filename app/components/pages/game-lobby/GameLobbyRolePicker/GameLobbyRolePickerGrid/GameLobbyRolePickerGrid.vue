@@ -6,6 +6,7 @@
     <TransitionGroup name="fade-list">
       <GameLobbyRolePickerGridElement
         key="random"
+        v-p-ripple
         v-tilt
         class="available-role fade-list-item"
         :picked-role="pickedRole"
@@ -15,6 +16,7 @@
       <GameLobbyRolePickerGridElement
         v-for="role in rolesToDisplay"
         :key="role.name"
+        v-p-ripple
         v-tilt
         class="available-role fade-list-item"
         :picked-role="pickedRole"
