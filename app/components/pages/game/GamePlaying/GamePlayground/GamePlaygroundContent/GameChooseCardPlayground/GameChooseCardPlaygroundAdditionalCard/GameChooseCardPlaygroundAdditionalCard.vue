@@ -4,6 +4,7 @@
   >
     <button
       id="additional-card-button"
+      v-p-ripple
       v-tilt
       :aria-label="additionalCardButtonAriaLabel"
       :class="additionalCardButtonClasses"

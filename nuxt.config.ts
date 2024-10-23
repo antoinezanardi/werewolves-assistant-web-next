@@ -192,6 +192,9 @@ export default defineNuxtConfig({
     },
     autoImport: false,
     composables: { include: ["useToast"] },
+    options: {
+      ripple: true,
+    },
   },
   pwa: {
     registerType: "autoUpdate",

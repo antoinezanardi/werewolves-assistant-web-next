@@ -4,9 +4,9 @@ exports[`Game Lobby Group Organizer Group Name Input Component > Inplace content
 "<div id="game-lobby-group-organizer-group-name-input">
   <div class="p-inplace p-component" aria-live="polite" data-pc-name="inplace" pc7="" data-pc-section="root">
     <div class="p-inplace-content" data-pc-section="content">
-      <div class="p-inputgroup" data-pc-name="inputgroup" pc8="" data-pc-section="root"><input type="text" class="p-inputtext p-component p-filled" id="group-name-input" aria-label="Group name" autofocus="" maxlength="30" data-pc-name="inputtext" pc9="" data-pc-section="root" value="Group 1"><button class="p-button p-component p-button-success" type="button" aria-label="Submit updated group name" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="submit-group-name-button" pc10="" data-pc-section="root"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <div class="p-inputgroup" data-pc-name="inputgroup" pc8="" data-pc-section="root"><input type="text" class="p-inputtext p-component p-filled" id="group-name-input" aria-label="Group name" autofocus="" maxlength="30" data-pc-name="inputtext" pc9="" data-pc-section="root" value="Group 1"><button class="p-button p-component p-button-success" type="button" aria-label="Submit updated group name" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="submit-group-name-button" pc10="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path class="" fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
-          </svg></button></div>
+          </svg><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span></button></div>
     </div>
   </div>
 </div>"
