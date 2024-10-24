@@ -52,7 +52,7 @@ describe("Index Page Component", () => {
       it("should not have animation class when not hovered.", () => {
         const playButtonIcon = wrapper.find<HTMLSpanElement>("#play-button-icon");
 
-        expect(playButtonIcon.classes()).not.toContain("animate__heartBeat");
+        expect(playButtonIcon.attributes("class")).not.toContain("animate__heartBeat");
       });
 
       it("should have animation class when hovered.", async() => {
@@ -61,7 +61,7 @@ describe("Index Page Component", () => {
         await nextTick();
         const playButtonIcon = wrapper.find<HTMLSpanElement>("#play-button-icon");
 
-        expect(playButtonIcon.classes()).toContain("animate__heartBeat");
+        expect(playButtonIcon.attributes("class")).toContain("animate__heartBeat");
       });
     });
   });
@@ -84,7 +84,7 @@ describe("Index Page Component", () => {
       it("should not have animation class when not hovered.", () => {
         const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#about-button-icon");
 
-        expect(aboutButtonIcon.classes()).not.toContain("animate__heartBeat");
+        expect(aboutButtonIcon.attributes("class")).not.toContain("animate__heartBeat");
       });
 
       it("should have animation class when hovered.", async() => {
@@ -93,7 +93,7 @@ describe("Index Page Component", () => {
         await nextTick();
         const aboutButtonIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#about-button-icon");
 
-        expect(aboutButtonIcon.classes()).toContain("animate__rubberBand");
+        expect(aboutButtonIcon.attributes("class")).toContain("animate__rubberBand");
       });
     });
   });

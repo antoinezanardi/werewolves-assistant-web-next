@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col items-center player-card position-relative w-full">
     <button
+      v-p-ripple="!isDisabled"
       v-p-tooltip="tooltipContent"
       :alt="getPlayerCardRoleImageAlt()"
       :aria-label="selectorAriaLabel"

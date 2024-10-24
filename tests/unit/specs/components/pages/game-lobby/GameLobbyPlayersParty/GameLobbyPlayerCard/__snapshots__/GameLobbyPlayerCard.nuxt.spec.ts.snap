@@ -1,25 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Game Lobby Player Card Component > should match snapshot when rendered without shallow. 1`] = `
-"<div data-v-8e9d6ebf="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto"><button data-v-8e9d6ebf="" class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm mb-1 player-card-delete-button" type="button" aria-label="Remove player Toto" data-pc-name="button" data-p-disabled="false" data-p-severity="danger" pc1="" data-pc-section="root" data-pd-tooltip="true"><svg data-v-8e9d6ebf="" class="svg-inline--fa fa-minus fa-2x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+"<div data-v-8e9d6ebf="" class="flex flex-col game-lobby-player-card items-center mb-4 p-1" data-testid="game-lobby-player-card-Toto"><button data-v-8e9d6ebf="" class="p-button p-component p-button-icon-only p-button-danger p-button-raised p-button-sm mb-1 player-card-delete-button" type="button" aria-label="Remove player Toto" data-pc-name="button" data-p-disabled="false" data-p-severity="danger" pc1="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;" data-pd-tooltip="true"><svg data-v-8e9d6ebf="" class="svg-inline--fa fa-minus fa-2x" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
       <path class="" fill="currentColor" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path>
-    </svg><span class="p-button-label" data-pc-section="label"> </span>
-    <!---->
+    </svg><span class="p-button-label" data-pc-section="label">&nbsp;</span>
+    <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd3="" data-pc-name="ripple" data-pc-section="root"></span>
   </button>
-  <div data-v-8e9d6ebf="" class="flex flex-col items-center player-card position-relative w-full player-card"><button alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" class="border-4 border-gray-600 flex player-card-selector rounded-lg transition-all hover:border-gray-400" type="button">
+  <div data-v-8e9d6ebf="" class="flex flex-col items-center player-card position-relative w-full player-card"><button alt="components.PlayerCard.playerCardRoleImageAlt, {&quot;playerName&quot;:&quot;Toto&quot;}" class="border-4 border-gray-600 flex player-card-selector rounded-lg transition-all hover:border-gray-400" type="button" data-pd-ripple="true" style="overflow: hidden; position: relative;">
       <div class="flex-none player-card-role-image" style="perspective: 1000; width: 50px; height: 50px; will-change: transform; transition: 300ms cubic-bezier(.03,.98,.52,.99); transform: perspective(1000px) rotateX(NaNdeg) rotateY(NaNdeg) scale3d(1, 1, 1);" id="role-flipping-image">
         <div class="flipper" style="transition: 0.6s; transform-style: preserve-3d; position: relative; width: 100%; height: 100%; transition-duration: 0.5s;">
-          <div class="front" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2; transform: rotateY(0deg);"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" width="50" height="50" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" data-nuxt-img="" id="front-role-image" src="/svg/misc/ripples.svg">
+          <div class="front" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2; transform: rotateY(0deg);"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" width="50" height="50" alt="components.PlayerCard.playerCardRoleImageAlt, {&quot;playerName&quot;:&quot;Toto&quot;}" data-nuxt-img="" id="front-role-image" src="/svg/misc/ripples.svg">
             <!--v-if-->
           </div>
-          <div class="back" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transform: rotateY(180deg);"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" width="50" height="50" alt="components.PlayerCard.playerCardRoleImageAlt, {" playerName":"Toto"}" data-nuxt-img="" id="back-role-image" src="/svg/misc/ripples.svg">
+          <div class="back" style="transform-style: preserve-3d; backface-visibility: hidden; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transform: rotateY(180deg);"><img class="w-[50pxpx] h-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx] border-4 border-gray-800 role-image rounded-lg h-[50pxpx] w-[50pxpx]" width="50" height="50" alt="components.PlayerCard.playerCardRoleImageAlt, {&quot;playerName&quot;:&quot;Toto&quot;}" data-nuxt-img="" id="back-role-image" src="/svg/misc/ripples.svg">
             <!--v-if-->
           </div>
         </div>
         <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden;">
           <div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; transform: rotate(180deg) translate(-50%, -50%); opacity: 0; width: 0px; height: 0px; transition: opacity 300ms cubic-bezier(.03,.98,.52,.99);"></div>
         </div>
-      </div>
+      </div><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd5="" data-pc-name="ripple" data-pc-section="root"></span>
     </button><span class="max-w-full player-card-name truncate">Toto</span></div><small data-v-8e9d6ebf="" class="player-card-role truncate"></small>
 </div>"
 `;

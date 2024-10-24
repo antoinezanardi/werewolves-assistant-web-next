@@ -6,6 +6,7 @@
     <div class="flex">
       <button
         id="choose-villagers-side-button"
+        v-p-ripple
         v-tilt
         :aria-label="$t('components.GameChooseSidePlayground.villagersSide')"
         class="border-4 border-transparent glow:border-emerald-500 me-2 p-2 rounded-lg"
@@ -29,6 +30,7 @@
 
       <button
         id="choose-werewolves-side-button"
+        v-p-ripple
         v-tilt
         :aria-label="$t('components.GameChooseSidePlayground.werewolvesSide')"
         class="border-4 border-transparent glow:border-red-500 ms-2 p-2 rounded-lg"

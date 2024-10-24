@@ -1,4 +1,4 @@
-import "vi-canvas-mock";
+import "vitest-canvas-mock";
 import { beforeAll, expect } from "vitest";
 import matchers from "jest-extended";
 

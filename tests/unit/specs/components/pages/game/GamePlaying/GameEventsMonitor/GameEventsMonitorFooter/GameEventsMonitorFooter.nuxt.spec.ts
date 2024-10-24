@@ -146,7 +146,7 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
 
-      expect(icon.classes()).toContain("animate__headShake");
+      expect(icon.attributes("class")).toContain("animate__headShake");
     });
 
     it("should not go to previous game event when shift key is not pressed.", async() => {
@@ -192,7 +192,7 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
 
-      expect(icon.classes()).not.toContain("animate__headShake");
+      expect(icon.attributes("class")).not.toContain("animate__headShake");
     });
   });
 
@@ -245,7 +245,7 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
 
-      expect(icon.classes()).toContain("animate__headShake");
+      expect(icon.attributes("class")).toContain("animate__headShake");
     });
 
     it("should not skip current game event when shift key is not pressed.", async() => {
@@ -286,7 +286,7 @@ describe("Game Events Monitor Footer Component", () => {
       hoistedMocks.useMagicKeys.shift.value = true;
       await nextTick();
 
-      expect(icon.classes()).not.toContain("animate__headShake");
+      expect(icon.attributes("class")).not.toContain("animate__headShake");
     });
   });
 });

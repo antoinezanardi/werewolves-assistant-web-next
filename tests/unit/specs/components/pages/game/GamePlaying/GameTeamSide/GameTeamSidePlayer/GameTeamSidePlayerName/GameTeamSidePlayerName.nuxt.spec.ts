@@ -1,6 +1,7 @@
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { doesElementHaveClass } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import type { NuxtImg } from "#components";
 import { createFakeActingByActorPlayerAttribute, createFakeSeenBySeerPlayerAttribute } from "@tests/unit/utils/factories/composables/api/game/player/player-attribute/player-attribute.factory";
 import { createFakeSeerAlivePlayer, createFakeWerewolfAlivePlayer } from "@tests/unit/utils/factories/composables/api/game/player/player-with-role.factory";
@@ -75,7 +76,7 @@ describe("Game Team Side Player Name Component", () => {
       wrapper = await mountGameTeamSidePlayerNameComponent({ props: { ...defaultProps, player } });
       const playerName = wrapper.find<HTMLDivElement>("#player-name");
 
-      expect(playerName.classes("line-through")).toBeTruthy();
+      expect(doesElementHaveClass(playerName, "line-through")).toBeTruthy();
     });
   });
 });

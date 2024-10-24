@@ -2,6 +2,7 @@ import type { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import type { mount } from "@vue/test-utils";
 import type { ComponentMountingOptions } from "@vue/test-utils/dist/mount";
 
+import { getClassesOfElement } from "@tests/unit/utils/helpers/happy-dom.helpers";
 import type { GamePhaseIconProps } from "~/components/shared/game/game-phase/GamePhaseIcon/game-phase-icon.types";
 import GamePhaseIcon from "~/components/shared/game/game-phase/GamePhaseIcon/GamePhaseIcon.vue";
 import { mountSuspendedComponent } from "@tests/unit/utils/helpers/mount.helpers";
@@ -53,20 +54,20 @@ describe("Game Phase Icon Component", () => {
       wrapper = await mountGamePhaseIconComponent({ props: { phase: "night" } });
       const phaseIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-phase-icon");
 
-      expect(phaseIcon.classes()).toContainValues(["text-night"]);
+      expect(getClassesOfElement(phaseIcon)).toContainValues(["text-night"]);
     });
 
     it("should display the sun icon when the phase is day.", () => {
       const phaseIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-phase-icon");
 
-      expect(phaseIcon.classes()).toContainValues(["text-day"]);
+      expect(getClassesOfElement(phaseIcon)).toContainValues(["text-day"]);
     });
 
     it("should display the twilight icon when the phase is twilight.", async() => {
       wrapper = await mountGamePhaseIconComponent({ props: { phase: "twilight" } });
       const phaseIcon = wrapper.findComponent<typeof FontAwesomeIcon>("#game-phase-icon");
 
-      expect(phaseIcon.classes()).toContainValues(["text-twilight"]);
+      expect(getClassesOfElement(phaseIcon)).toContainValues(["text-twilight"]);
     });
   });
 });

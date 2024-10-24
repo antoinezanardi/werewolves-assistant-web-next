@@ -127,7 +127,7 @@ describe("Game Feedback Submitter Rating Component", () => {
         });
         const icon = wrapper.findComponent<typeof FontAwesomeIcon>(".on-icon");
 
-        expect(icon.classes()).toContain(expectedIconClasses);
+        expect(icon.attributes("class")).toContain(expectedIconClasses);
       });
 
       it("should display off icon with text-primary class when score is 0.", async() => {
@@ -143,7 +143,7 @@ describe("Game Feedback Submitter Rating Component", () => {
         });
         const icon = wrapper.findComponent<typeof FontAwesomeIcon>(".off-icon");
 
-        expect(icon.classes()).toContain("text-primary");
+        expect(icon.attributes("class")).toContain("text-primary");
       });
     });
   });

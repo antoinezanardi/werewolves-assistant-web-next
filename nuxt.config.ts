@@ -72,7 +72,9 @@ export default defineNuxtConfig({
     "./assets/scss/custom.scss",
     "animate.css/animate.min.css",
   ],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
   experimental: {
     renderJsonPayloads: false,
     buildCache: false,
@@ -190,6 +192,9 @@ export default defineNuxtConfig({
     },
     autoImport: false,
     composables: { include: ["useToast"] },
+    options: {
+      ripple: true,
+    },
   },
   pwa: {
     registerType: "autoUpdate",
@@ -243,6 +248,7 @@ export default defineNuxtConfig({
     },
   },
   schemaOrg: {
+    enabled: process.env.NODE_ENV !== "test",
     identity: {
       type: "Organization",
       name: process.env.NUXT_SITE_NAME ?? "Werewolves Assistant",
@@ -260,6 +266,7 @@ export default defineNuxtConfig({
     },
   },
   seo: {
+    enabled: process.env.NODE_ENV !== "test",
     fallbackTitle: false,
     redirectToCanonicalSiteUrl: true,
   },
@@ -269,7 +276,7 @@ export default defineNuxtConfig({
     configPath: "./config/tailwind/tailwind.config.ts",
   },
   telemetry: false,
-  test: true,
+  test: false,
   typescript: {
     shim: true,
     strict: true,
@@ -290,6 +297,14 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+          silenceDeprecations: ["legacy-js-api"],
+        },
+      },
+    },
     esbuild: {
       tsconfigRaw: {
         compilerOptions: { experimentalDecorators: true },

@@ -38,4 +38,4 @@ exports[`Game Pied Piper Turn Starts Event Component > should match snapshot whe
 </div>"
 `;
 
-exports[`Game Pied Piper Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GamePiedPiperTurnStartsEvent.piedPiperCharmsPeople, {" count":2}, 2" id="game-pied-piper-turn-starts-event"></game-event-with-texts-stub>"`;
+exports[`Game Pied Piper Turn Starts Event Component > should match snapshot when rendered. 1`] = `"<game-event-with-texts-stub texts="components.GamePiedPiperTurnStartsEvent.piedPiperCharmsPeople, {&quot;count&quot;:2}, 2" id="game-pied-piper-turn-starts-event"></game-event-with-texts-stub>"`;

@@ -78,7 +78,7 @@ describe("Game Feedback Submitter Encountered Error Component", () => {
     it("should have bg-success class when model value is false.", () => {
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#game-feedback-submitter-encountered-error-input");
 
-      expect(toggleButton.classes()).toContain("!bg-success");
+      expect(toggleButton.attributes("class")).toContain("!bg-success");
     });
 
     it("should have bg-error class when model value is true.", async() => {
@@ -88,7 +88,7 @@ describe("Game Feedback Submitter Encountered Error Component", () => {
       await nextTick();
       const toggleButton = wrapper.findComponent<typeof ToggleButton>("#game-feedback-submitter-encountered-error-input");
 
-      expect(toggleButton.classes()).toContain("!bg-error");
+      expect(toggleButton.attributes("class")).toContain("!bg-error");
     });
 
     it("should translate off label when rendered.", () => {

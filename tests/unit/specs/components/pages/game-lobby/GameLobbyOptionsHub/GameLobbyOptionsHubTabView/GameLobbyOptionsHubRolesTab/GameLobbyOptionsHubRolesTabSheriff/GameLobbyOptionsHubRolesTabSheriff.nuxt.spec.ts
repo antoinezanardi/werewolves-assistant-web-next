@@ -39,7 +39,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
     it("should not set grayscale filter class to sheriff icon when sheriff is enabled.", () => {
       const sheriffIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Sheriff icon']");
 
-      expect(sheriffIcon.classes()).not.toContain("grayscale");
+      expect(sheriffIcon.attributes("class")).not.toContain("grayscale");
     });
 
     it("should set grayscale filter class to sheriff icon when sheriff is disabled.", async() => {
@@ -48,7 +48,7 @@ describe("Game Lobby Options Hub Roles Tab Sheriff Component", () => {
       await nextTick();
       const sheriffIcon = wrapper.findComponent<typeof NuxtImg>("[alt='Sheriff icon']");
 
-      expect(sheriffIcon.classes()).toContain("grayscale");
+      expect(sheriffIcon.attributes("class")).toContain("grayscale");
     });
 
     it("should translate legend when rendered.", () => {
