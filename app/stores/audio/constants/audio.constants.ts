@@ -36,6 +36,7 @@ const SOUND_EFFECT_NAMES = [
   "monkey-cry",
   "mystical-mood",
   "pan-flute",
+  "powerwolf-bete-du-gevaudan",
   "raven-cry",
   "raven-flying-away",
   "supernatural-mood",

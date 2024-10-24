@@ -24,6 +24,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
+import { shuffle } from "radash";
 
 import type { GameOverEmits } from "~/components/pages/game/GameOver/game-over.types";
 import GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
@@ -33,7 +34,7 @@ import GameOverVictoryText from "~/components/pages/game/GameOver/GameOverVictor
 import GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
 import type { GameVictoryType } from "~/composables/api/game/types/game-victory/game-victory.types";
 import type { Player } from "~/composables/api/game/types/players/player.class";
-import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import type { SoundEffectNames } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
 import { useGameStore } from "~/stores/game/useGameStore";
@@ -50,14 +51,14 @@ const audioStore = useAudioStore();
 
 const { t } = useI18n();
 
-const victoryTypesSoundEffectName: Record<GameVictoryType, SoundEffectName> = {
+const victoryTypesSoundEffectName: Record<GameVictoryType, SoundEffectNames> = {
   "angel": "angelic-intervention",
   "lovers": "heartbeat",
   "none": "death",
   "pied-piper": "flute-and-drums",
   "prejudiced-manipulator": "evil-laugh-2",
   "villagers": "crowd-cheering",
-  "werewolves": "werewolf-howling",
+  "werewolves": ["werewolf-howling", "powerwolf-bete-du-gevaudan"],
   "white-werewolf": "werewolf-transformation",
 };
 
@@ -79,7 +80,9 @@ function onClickFromGameFeedbackSubmitterButton(): void {
 }
 
 function playVictorySoundEffect(): void {
-  const soundEffectName = victoryTypesSoundEffectName[game.value.victory?.type ?? "none"];
+  const soundEffectNames = victoryTypesSoundEffectName[game.value.victory?.type ?? "none"];
+  const soundEffectName = Array.isArray(soundEffectNames) ? shuffle(soundEffectNames)[0] : soundEffectNames;
+
   audioStore.playSoundEffect(soundEffectName);
 }
 

@@ -49,7 +49,7 @@ describe("Use Audio Store", () => {
     it("should create sound effects and background audios when created.", () => {
       useAudioStore();
 
-      expect(hoistedMocks.howler.Howl).toHaveBeenCalledTimes(48);
+      expect(hoistedMocks.howler.Howl).toHaveBeenCalledTimes(49);
       expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(1, {
         preload: false,
         src: ["/audio/sound-effects/actor-clear-throat-and-knocks.webm"],
@@ -58,12 +58,12 @@ describe("Use Audio Store", () => {
         preload: false,
         src: ["/audio/sound-effects/angelic-intervention.webm"],
       });
-      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(47, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(48, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-2.webm`],
         loop: true,
       });
-      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(48, {
+      expect(hoistedMocks.howler.Howl).toHaveBeenNthCalledWith(49, {
         preload: false,
         src: [`/audio/audio-backgrounds/night-3.webm`],
         loop: true,

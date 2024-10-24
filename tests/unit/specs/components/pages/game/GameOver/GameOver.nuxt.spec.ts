@@ -10,7 +10,7 @@ import GameOver from "~/components/pages/game/GameOver/GameOver.vue";
 import type GameOverActions from "~/components/pages/game/GameOver/GameOverActions/GameOverActions.vue";
 import type GameOverWinners from "~/components/pages/game/GameOver/GameOverWinners/GameOverWinners.vue";
 import type { Game } from "~/composables/api/game/types/game.class";
-import type { SoundEffectName } from "~/stores/audio/types/audio.types";
+import type { SoundEffectNames } from "~/stores/audio/types/audio.types";
 import { useAudioStore } from "~/stores/audio/useAudioStore";
 import { StoreIds } from "~/stores/enums/store.enum";
 import { useGameHistoryRecordsStore } from "~/stores/game/game-history-record/useGameHistoryRecordsStore";
@@ -116,7 +116,7 @@ describe("Game Over Component", () => {
   describe("Sound Effect", () => {
     it.each<{
       test: string;
-      expectedSoundEffect: SoundEffectName;
+      expectedSoundEffect: SoundEffectNames;
       game: Game;
     }>([
       {
@@ -151,7 +151,7 @@ describe("Game Over Component", () => {
       },
       {
         test: "should play werewolf howling sound effect when werewolves win.",
-        expectedSoundEffect: "werewolf-howling",
+        expectedSoundEffect: ["werewolf-howling", "powerwolf-bete-du-gevaudan"],
         game: createFakeGame({ victory: createFakeGameVictory({ type: "werewolves" }) }),
       },
       {
@@ -168,7 +168,9 @@ describe("Game Over Component", () => {
       wrapper = await mountGameOverWinnersComponent({ global: { plugins: [createTestingPinia({ initialState: { [StoreIds.GAME]: { game } } })] } });
       const { playSoundEffect } = useAudioStore();
 
-      expect(playSoundEffect).toHaveBeenCalledExactlyOnceWith(expectedSoundEffect);
+      const expectedArg: unknown = expect.stringMatching(Array.isArray(expectedSoundEffect) ? new RegExp(`^(${expectedSoundEffect.join("|")})$`, "u") : expectedSoundEffect);
+
+      expect(playSoundEffect).toHaveBeenCalledExactlyOnceWith(expectedArg);
     });
   });
 

@@ -8,10 +8,13 @@ type AudioSettings = {
 
 type SoundEffectName = TupleToUnion<typeof SOUND_EFFECT_NAMES>;
 
+type SoundEffectNames = SoundEffectName | SoundEffectName[];
+
 type BackgroundAudioName = TupleToUnion<typeof BACKGROUND_AUDIO_NAMES>;
 
 export type {
   AudioSettings,
   SoundEffectName,
+  SoundEffectNames,
   BackgroundAudioName,
 };
