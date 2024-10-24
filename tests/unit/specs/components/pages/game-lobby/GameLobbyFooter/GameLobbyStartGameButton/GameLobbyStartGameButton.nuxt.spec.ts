@@ -296,6 +296,13 @@ describe("Game Lobby Start Game Button Component", () => {
 
         expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
       });
+
+      it("should emit players grouped step when game lobby start game confirm dialog emits the same.", () => {
+        const gameLobbyStartGameConfirmDialog = wrapper.findComponent<typeof GameLobbyStartGameConfirmDialog>("#game-lobby-start-game-confirm-dialog");
+        (gameLobbyStartGameConfirmDialog.vm as VueVm).$emit("rejectPlayersGroupedStep");
+
+        expect(wrapper.emitted("rejectPlayersGroupedStep")).toHaveLength(1);
+      });
     });
   });
 });

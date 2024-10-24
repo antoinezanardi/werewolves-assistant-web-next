@@ -45,5 +45,12 @@ describe("Game Lobby Footer Component", () => {
 
       expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
     });
+
+    it("should emit reject players grouped step when game lobby start game button emits the same.", () => {
+      const gameLobbyStartGameButton = wrapper.findComponent<typeof GameLobbyStartGameButton>("#game-lobby-start-game-button");
+      (gameLobbyStartGameButton.vm as VueVm).$emit("rejectPlayersGroupedStep");
+
+      expect(wrapper.emitted("rejectPlayersGroupedStep")).toHaveLength(1);
+    });
   });
 });

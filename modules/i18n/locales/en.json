@@ -1684,6 +1684,15 @@
     },
     "GameLobbyRolePickerSearchInput": {
       "searchForRole": "Search for a role"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersGrouped": {
+      "playersGroups": "Players groups",
+      "prejudicedManipulatorIsHere": "The Prejudiced Manipulator is in the game. Are players correctly grouped?",
+      "showMeHowToGroupPlayers": "Show me how to group players"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersGroupedDataTable": {
+      "firstGroup": "First group",
+      "secondGroup": "Second group"
     }
   }
 }

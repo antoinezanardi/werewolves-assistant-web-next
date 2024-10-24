@@ -10,6 +10,7 @@
         @confirm-step="onConfirmStepFromConfirmStepComponent"
         @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStep"
         @reject-game-options-changed-step="onRejectGameOptionsChangedStep"
+        @reject-players-grouped-step="onRejectPlayersGroupedStep"
         @reject-players-position-step="onRejectPlayersPositionStepFromConfirmStepComponent"
         @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStep"
       />
@@ -24,6 +25,7 @@ import type { GameLobbyStartGameConfirmDialogStep } from "~/components/pages/gam
 import type { GameLobbyStartGameConfirmDialogContentEmits, GameLobbyStartGameConfirmDialogContentProps } from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/game-lobby-start-game-confirm-dialog-content.types";
 import GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced/GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced.vue";
 import GameLobbyStartGameConfirmDialogGameOptionsChanged from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogGameOptionsChanged/GameLobbyStartGameConfirmDialogGameOptionsChanged.vue";
+import GameLobbyStartGameConfirmDialogPlayersGrouped from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersGrouped/GameLobbyStartGameConfirmDialogPlayersGrouped.vue";
 import GameLobbyStartGameConfirmDialogPlayersPositioned from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersPositioned/GameLobbyStartGameConfirmDialogPlayersPositioned.vue";
 import GameLobbyStartGameConfirmDialogPlayersReady from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogPlayersReady/GameLobbyStartGameConfirmDialogPlayersReady.vue";
 import GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced from "~/components/pages/game-lobby/GameLobbyFooter/GameLobbyStartGameButton/GameLobbyStartGameConfirmDialog/GameLobbyStartGameConfirmDialogContainer/GameLobbyStartGameConfirmDialogContent/GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced/GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced.vue";
@@ -38,6 +40,7 @@ const confirmStepsComponents: Record<GameLobbyStartGameConfirmDialogStep, Compon
   "thief-additional-cards-placed": GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced,
   "actor-additional-cards-placed": GameLobbyStartGameConfirmDialogActorAdditionalCardsPlaced,
   "game-options-changed": GameLobbyStartGameConfirmDialogGameOptionsChanged,
+  "players-grouped": GameLobbyStartGameConfirmDialogPlayersGrouped,
 };
 
 const currentConfirmStepComponent = computed<Component>(() => confirmStepsComponents[props.currentConfirmStep]);
@@ -60,5 +63,9 @@ function onRejectActorAdditionalCardsPlacedStep(): void {
 
 function onRejectGameOptionsChangedStep(): void {
   emit("rejectGameOptionsChangedStep");
+}
+
+function onRejectPlayersGroupedStep(): void {
+  emit("rejectPlayersGroupedStep");
 }
 </script>

@@ -185,5 +185,19 @@ describe("Game Lobby Header Setup Buttons Component", () => {
 
       expect(wrapper.emitted("groupOrganizerButtonClick")).toBeTruthy();
     });
+
+    it("should throw error when highlightGroupOrganizerButton method is called but component is not defined.", async() => {
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeaderGroupOrganizerButton: Ref }).gameLobbyHeaderGroupOrganizerButton.value = null;
+      await getError(() => (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightGroupOrganizerButton());
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header Group Organizer Button is not defined");
+    });
+
+    it("should highlight group organizer button when method is called from parent component.", async() => {
+      (wrapper.vm as unknown as GameLobbyHeaderSetupButtonsExposed).highlightGroupOrganizerButton();
+      await flushPromises();
+
+      expect(hoistedMocks.useAnimateCss.animateElementOnce).toHaveBeenCalledExactlyOnceWith(expect.anything(), "heartBeat");
+    });
   });
 });

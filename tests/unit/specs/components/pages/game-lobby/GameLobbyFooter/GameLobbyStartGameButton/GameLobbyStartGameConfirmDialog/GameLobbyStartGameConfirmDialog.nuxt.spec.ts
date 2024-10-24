@@ -28,6 +28,7 @@ type GameLobbyStartGameConfirmDialogPrivateVariables = {
   onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
   onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
   onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
+  onRejectPlayersGroupedStepFromGameLobbyStartGameConfirmDialogContainer: (rejectCallback: () => void) => void;
 };
 
 const hoistedMocks = vi.hoisted(() => ({
@@ -132,6 +133,18 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       createGameDtoStore.createGameDto.options.votes.duration = 20;
       await nextTick();
       const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["game-options-changed", "players-ready"];
+
+      expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
+    });
+
+    it("should contain players grouped when there is a prejudiced manipulator in create game dto.", async() => {
+      const createGameDtoStore = useCreateGameDtoStore();
+      createGameDtoStore.createGameDto = createFakeCreateGameDto({
+        players: [createFakeCreateGamePlayerDto({ role: { name: "prejudiced-manipulator" } })],
+        options: DEFAULT_GAME_OPTIONS,
+      });
+      await nextTick();
+      const expectedConfirmSteps: GameLobbyStartGameConfirmDialogStep[] = ["players-grouped", "players-ready"];
 
       expect((wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).confirmSteps).toStrictEqual<GameLobbyStartGameConfirmDialogStep[]>(expectedConfirmSteps);
     });
@@ -253,6 +266,22 @@ describe("Game Lobby Start Game Confirm Dialog Component", () => {
       (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
 
       expect(wrapper.emitted("rejectGameOptionsChangedStep")).toHaveLength(1);
+    });
+  });
+
+  describe("Reject Players Grouped Step", () => {
+    it("should call reject callback pass as argument when reject players grouped step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectPlayersGroupedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(rejectCallback).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should emit reject players grouped step event when reject players grouped step is called.", () => {
+      const rejectCallback = vi.fn();
+      (wrapper.vm as unknown as GameLobbyStartGameConfirmDialogPrivateVariables).onRejectPlayersGroupedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback);
+
+      expect(wrapper.emitted("rejectPlayersGroupedStep")).toHaveLength(1);
     });
   });
 });

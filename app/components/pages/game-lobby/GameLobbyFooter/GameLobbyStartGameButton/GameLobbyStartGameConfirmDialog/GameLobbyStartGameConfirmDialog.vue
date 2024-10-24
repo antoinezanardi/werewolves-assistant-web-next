@@ -13,6 +13,7 @@
         @confirm-step="onConfirmStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-actor-additional-cards-placed-step="onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-game-options-changed-step="onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer"
+        @reject-players-grouped-step="onRejectPlayersGroupedStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-players-position-step="onRejectPlayersPositionStepFromGameLobbyStartGameConfirmDialogContainer"
         @reject-start-game="rejectCallback"
         @reject-thief-additional-cards-placed-step="onRejectThiefAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDialogContainer"
@@ -50,12 +51,15 @@ const doesCreateGameDtoContainThief = computed<boolean>(() => getPlayersWithRole
 
 const doesCreateGameDtoContainActor = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("actor").length > 0);
 
+const doesCreateGameDtoContainPrejudicedManipulator = computed<boolean>(() => getPlayersWithRoleNameInCreateGameDto("prejudiced-manipulator").length > 0);
+
 const areGameOptionsChanged = computed<boolean>(() => changedGameOptionsTexts.value.length > 0);
 
 const confirmSteps = computed<GameLobbyStartGameConfirmDialogStep[]>(() => [
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainPositionDependantRoles.value, "players-positioned"),
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainThief.value, "thief-additional-cards-placed"),
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainActor.value, "actor-additional-cards-placed"),
+  ...insertIf<GameLobbyStartGameConfirmDialogStep>(doesCreateGameDtoContainPrejudicedManipulator.value, "players-grouped"),
   ...insertIf<GameLobbyStartGameConfirmDialogStep>(areGameOptionsChanged.value, "game-options-changed"),
   "players-ready",
 ]);
@@ -97,6 +101,11 @@ function onRejectActorAdditionalCardsPlacedStepFromGameLobbyStartGameConfirmDial
 function onRejectGameOptionsChangedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
   rejectCallback();
   emit("rejectGameOptionsChangedStep");
+}
+
+function onRejectPlayersGroupedStepFromGameLobbyStartGameConfirmDialogContainer(rejectCallback: () => void): void {
+  rejectCallback();
+  emit("rejectPlayersGroupedStep");
 }
 
 defineExpose<GameLobbyStartGameConfirmDialogExposed>({

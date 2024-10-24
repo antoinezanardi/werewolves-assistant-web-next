@@ -46,6 +46,7 @@ describe("Game Lobby Page", () => {
         highlightGameOptionsButton: Mock;
         highlightPositionCoordinatorButton: Mock;
         highlightAdditionalCardsManagerButton: Mock;
+        highlightGroupOrganizerButton: Mock;
       };
       gameLobbyRolePicker: {
         openToPickRoleForPlayer: Mock;
@@ -72,6 +73,7 @@ describe("Game Lobby Page", () => {
           highlightGameOptionsButton: vi.fn(),
           highlightPositionCoordinatorButton: vi.fn(),
           highlightAdditionalCardsManagerButton: vi.fn(),
+          highlightGroupOrganizerButton: vi.fn(),
         },
         gameLobbyRolePicker: { openToPickRoleForPlayer: vi.fn() },
         gameLobbyOptionsHub: { open: vi.fn() },
@@ -383,6 +385,34 @@ describe("Game Lobby Page", () => {
       await nextTick();
 
       expect(mocks.components.gameLobbyOptionsHub.open).toHaveBeenCalledExactlyOnceWith();
+    });
+  });
+
+  describe("Reject Players Grouped Step", () => {
+    it("should throw error when reject players grouped step event is emitted by footer but header is not defined in refs.", async() => {
+      wrapper = await mountGameLobbyPageComponent();
+      (wrapper.vm.$root?.$refs.VTU_COMPONENT as { gameLobbyHeader: Ref }).gameLobbyHeader.value = null;
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      await getError(() => (gameLobbyFooter.vm as VueVm).$emit("reject-players-grouped-step"));
+
+      expect(createError).toHaveBeenCalledExactlyOnceWith("Game Lobby Header is not defined");
+    });
+
+    it("should highlight group organizer button when reject players grouped step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-players-grouped-step");
+      await nextTick();
+
+      expect(mocks.components.gameLobbyHeader.highlightGroupOrganizerButton).toHaveBeenCalledExactlyOnceWith();
+    });
+
+    it("should open group organizer after timeout when reject players grouped step event is emitted by footer.", async() => {
+      const gameLobbyFooter = wrapper.findComponent<typeof GameLobbyFooter>("#game-lobby-footer");
+      (gameLobbyFooter.vm as VueVm).$emit("reject-players-grouped-step");
+      vi.advanceTimersByTime(1000);
+      await nextTick();
+
+      expect(mocks.components.gameLobbyGroupOrganizer.open).toHaveBeenCalledExactlyOnceWith();
     });
   });
 
