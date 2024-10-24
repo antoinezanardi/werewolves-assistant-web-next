@@ -3,6 +3,7 @@ type GameLobbyFooterEmits = {
   rejectThiefAdditionalCardsPlacedStep: [];
   rejectActorAdditionalCardsPlacedStep: [];
   rejectGameOptionsChangedStep: [];
+  rejectPlayersGroupedStep: [];
 };
 
 export type {

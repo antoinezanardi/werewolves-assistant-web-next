@@ -8,6 +8,7 @@ type GameLobbyStartGameConfirmDialogEmits = {
   rejectThiefAdditionalCardsPlacedStep: [];
   rejectActorAdditionalCardsPlacedStep: [];
   rejectGameOptionsChangedStep: [];
+  rejectPlayersGroupedStep: [];
 };
 
 type GameLobbyStartGameConfirmDialogExposed = {

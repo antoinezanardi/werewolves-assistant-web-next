@@ -116,9 +116,17 @@ function highlightAdditionalCardsManagerButton(): void {
   gameLobbyHeaderSetupButtons.value.highlightAdditionalCardsManagerButton();
 }
 
+function highlightGroupOrganizerButton(): void {
+  if (gameLobbyHeaderSetupButtons.value === null) {
+    throw createError("Game Lobby Header Setup Buttons is not defined");
+  }
+  gameLobbyHeaderSetupButtons.value.highlightGroupOrganizerButton();
+}
+
 defineExpose<GameLobbyHeaderExposed>({
   highlightGameOptionsButton,
   highlightPositionCoordinatorButton,
   highlightAdditionalCardsManagerButton,
+  highlightGroupOrganizerButton,
 });
 </script>

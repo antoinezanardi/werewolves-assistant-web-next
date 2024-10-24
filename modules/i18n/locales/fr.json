@@ -1592,7 +1592,7 @@
     },
     "GameActorMayHaveChosenCardEvent": {
       "actorMayHaveChosenCard": "Le Comédien a peut-être choisi une carte à jouer pour ce tour.",
-      "gameMasterTakeOutChosenCard": "Dans ce cas, le Maître du Jeu va retirer de la table la carte choisie par le Comédien "
+      "gameMasterTakeOutChosenCard": "Dans ce cas, le Maître du Jeu va retirer de la table la carte choisie par le Comédien."
     },
     "GameLobbyStartGameConfirmDialogThiefAdditionalCardsPlaced": {
       "thiefAdditionalCardsMustBePlacedDown": "La carte destinée au Voleur est-elle placée face cachée au centre de la table ? | Les cartes destinées au Voleur sont-elles placées face cachée au centre de la table ?",
@@ -1638,7 +1638,7 @@
       "notEnoughPlayers": "Pas assez de joueurs pour remplir les groupes. Veuillez ajouter plus de joueurs à la partie",
       "fillFirstGroup": "Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueur du deuxième groupe | Pas assez de joueurs dans le premier groupe. Veuillez ajouter {count} joueurs du deuxième groupe",
       "fillSecondGroup": "Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueur du premier groupe | Pas assez de joueurs dans le deuxième groupe. Veuillez ajouter {count} joueurs du premier groupe",
-      "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Manipulateur Préjudiciable"
+      "allGroupsFilled": "Tous les groupes sont remplis et prêts à jouer avec le Abominable Sectaire"
     },
     "GameLobbyGroupOrganizerGroupNameInput": {
       "submitGroupName": "Valider le nouveau nom du groupe",
@@ -1684,6 +1684,15 @@
     },
     "GameLobbyRolePickerSearchInput": {
       "searchForRole": "Chercher un rôle"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersGrouped": {
+      "playersGroups": "Groupes de joueurs",
+      "prejudicedManipulatorIsHere": "L'Abominable Sectaire est dans la partie ! Les groupes de joueurs sont-ils corrects ?",
+      "showMeHowToGroupPlayers": "Me montrer comment organiser les groupes"
+    },
+    "GameLobbyStartGameConfirmDialogPlayersGroupedDataTable": {
+      "firstGroup": "Premier groupe",
+      "secondGroup": "Deuxième groupe"
     }
   }
 }

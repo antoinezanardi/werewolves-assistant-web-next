@@ -1,0 +1,87 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Start Game Confirm Dialog Players Grouped Component > should match snapshot when rendered without shallow rendering. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-grouped" class="flex flex-col gap-6 items-center justify-center"><img class="w-[75] h-[75]" width="75" height="75" alt="Players groups" data-nuxt-img="" src="/svg/misc/ripples.svg">
+  <h4 id="game-lobby-start-game-confirm-dialog-players-grouped-text" class="text-center">The Prejudiced Manipulator is in the game. Are players correctly grouped?</h4>
+  <div id="game-lobby-start-game-confirm-dialog-players-grouped-datatable-container" class="w-full">
+    <div class="p-datatable p-component p-datatable-striped p-datatable-sm" data-scrollselectors=".p-datatable-wrapper" id="game-lobby-start-game-confirm-dialog-players-grouped-datatable" data-pc-name="datatable" pc1="" data-pc-section="root">
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <div class="p-datatable-table-container" style="overflow: auto;" data-pc-section="tablecontainer">
+        <table role="table" class="p-datatable-table" data-pc-section="table">
+          <thead class="p-datatable-thead" style="position: sticky;" role="rowgroup" data-pc-section="thead">
+            <tr role="row" data-pc-section="headerrow">
+              <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc6="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+                <!---->
+                <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                  <div class="flex gap-2 items-center"><img class="w-[30] h-[30]" width="30" height="30" alt="First group" data-nuxt-img="" id="first-group-header-icon" src="/svg/misc/ripples.svg">
+                    <div id="first-group-header-name" class="font-bold">stores.useCreateGameDtoStore.firstDefaultGroupName</div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+              </th>
+              <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc7="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+                <!---->
+                <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                  <div class="flex gap-2 items-center justify-center"><img class="w-[30] h-[30]" width="30" height="30" alt="Second group" data-nuxt-img="" id="second-group-header-icon" src="/svg/misc/ripples.svg">
+                    <div id="second-group-header-name" class="font-bold">stores.useCreateGameDtoStore.secondDefaultGroupName</div>
+                  </div>
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                  <!---->
+                </div>
+              </th>
+            </tr>
+            <!---->
+          </thead>
+          <!---->
+          <tbody class="p-datatable-tbody" role="rowgroup" data-pc-section="tbody">
+            <tr class="p-datatable-empty-message" role="row" data-pc-section="emptymessage">
+              <td colspan="2" data-pc-section="emptymessagecell">
+                <!---->
+              </td>
+            </tr>
+          </tbody>
+          <!---->
+          <!---->
+        </table>
+      </div>
+      <!---->
+      <!---->
+      <div class="p-datatable-column-resize-indicator" style="display: none;" data-pc-section="columnresizeindicator"></div>
+      <!---->
+      <!---->
+    </div>
+  </div>
+  <div id="game-lobby-start-game-confirm-dialog-players-grouped-actions" class="flex gap-2 items-center justify-evenly w-full"><button class="p-button p-component p-button-info" type="button" aria-label="Show me how to group players" data-pc-name="button" data-p-disabled="false" data-p-severity="info" id="reject-step-button" pc12="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-compass" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="compass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path class="" fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
+      </svg><span class="p-button-label" data-pc-section="label">Show me how to group players</span>
+      <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd1="" data-pc-name="ripple" data-pc-section="root"></span>
+    </button><button class="p-button p-component p-button-success" type="button" aria-label="Yes" data-pc-name="button" data-p-disabled="false" data-p-severity="success" id="confirm-step-button" pc13="" data-pc-section="root" data-pd-ripple="true" style="overflow: hidden; position: relative;"><svg class="svg-inline--fa fa-check" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="" fill="currentColor" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"></path>
+      </svg><span class="p-button-label" data-pc-section="label">Yes</span>
+      <!----><span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" pd2="" data-pc-name="ripple" data-pc-section="root"></span>
+    </button></div>
+</div>"
+`;
+
+exports[`Game Lobby Start Game Confirm Dialog Players Grouped Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-grouped" class="flex flex-col gap-6 items-center justify-center">
+  <nuxt-img-stub alt="Players groups" height="75" placeholderclass="w-[75] h-[75]" src="/svg/role/prejudiced-manipulator.svg" width="75" preload="false" crossorigin="false" placeholder="/svg/misc/ripples.svg"></nuxt-img-stub>
+  <h4 id="game-lobby-start-game-confirm-dialog-players-grouped-text" class="text-center">The Prejudiced Manipulator is in the game. Are players correctly grouped?</h4>
+  <game-lobby-start-game-confirm-dialog-players-grouped-data-table-stub class="w-full"></game-lobby-start-game-confirm-dialog-players-grouped-data-table-stub>
+  <div id="game-lobby-start-game-confirm-dialog-players-grouped-actions" class="flex gap-2 items-center justify-evenly w-full">
+    <button-stub id="reject-step-button" label="Show me how to group players" severity="info"></button-stub>
+    <button-stub id="confirm-step-button" label="Yes" severity="success"></button-stub>
+  </div>
+</div>"
+`;

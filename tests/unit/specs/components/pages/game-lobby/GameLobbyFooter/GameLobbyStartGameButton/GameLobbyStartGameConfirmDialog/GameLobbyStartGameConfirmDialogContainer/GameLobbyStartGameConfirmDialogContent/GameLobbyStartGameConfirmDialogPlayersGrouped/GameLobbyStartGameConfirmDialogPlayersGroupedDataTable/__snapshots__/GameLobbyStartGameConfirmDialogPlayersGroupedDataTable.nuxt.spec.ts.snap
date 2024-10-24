@@ -1,0 +1,221 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Game Lobby Start Game Confirm Dialog Players Grouped Data Table Component > should match snapshot when rendered with bigger first group and without shallow rendering. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-grouped-datatable-container">
+  <div class="p-datatable p-component p-datatable-striped p-datatable-sm" data-scrollselectors=".p-datatable-wrapper" id="game-lobby-start-game-confirm-dialog-players-grouped-datatable" data-pc-name="datatable" pc3="" data-pc-section="root">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <div class="p-datatable-table-container" style="overflow: auto;" data-pc-section="tablecontainer">
+      <table role="table" class="p-datatable-table" data-pc-section="table">
+        <thead class="p-datatable-thead" style="position: sticky;" role="rowgroup" data-pc-section="thead">
+          <tr role="row" data-pc-section="headerrow">
+            <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc8="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+              <!---->
+              <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                <div class="flex gap-2 items-center"><img class="w-[30] h-[30]" width="30" height="30" alt="First group" data-nuxt-img="" id="first-group-header-icon" src="/svg/misc/ripples.svg">
+                  <div id="first-group-header-name" class="font-bold">First Group</div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </th>
+            <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc9="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+              <!---->
+              <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                <div class="flex gap-2 items-center justify-center"><img class="w-[30] h-[30]" width="30" height="30" alt="Second group" data-nuxt-img="" id="second-group-header-icon" src="/svg/misc/ripples.svg">
+                  <div id="second-group-header-name" class="font-bold">Second Group</div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </th>
+          </tr>
+          <!---->
+        </thead>
+        <!---->
+        <tbody class="p-datatable-tbody" role="rowgroup" data-pc-section="tbody">
+          <!---->
+          <tr class="p-row-even" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="0" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc12="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="first-group-cell flex gap-2 items-center"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image" width="30" height="30" alt="shared.role.name.seer" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="first-group-player-name">Antoine</div>
+              </div>
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc13="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="flex gap-2 items-center second-group-cell"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="second-group-player-name">Catherine</div>
+              </div>
+            </td>
+          </tr>
+          <!---->
+          <!---->
+          <!---->
+          <tr class="p-row-odd" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="1" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc15="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="first-group-cell flex gap-2 items-center"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image" width="30" height="30" alt="shared.role.name.werewolf" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="first-group-player-name">Benoit</div>
+              </div>
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc16="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="flex gap-2 items-center second-group-cell"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="second-group-player-name">David</div>
+              </div>
+            </td>
+          </tr>
+          <!---->
+          <!---->
+          <!---->
+          <tr class="p-row-even" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="2" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc20="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="first-group-cell flex gap-2 items-center"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="first-group-player-name">Eva</div>
+              </div>
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc21="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <!--v-if-->
+            </td>
+          </tr>
+          <!---->
+          <!---->
+        </tbody>
+        <!---->
+        <!---->
+      </table>
+    </div>
+    <!---->
+    <!---->
+    <div class="p-datatable-column-resize-indicator" style="display: none;" data-pc-section="columnresizeindicator"></div>
+    <!---->
+    <!---->
+  </div>
+</div>"
+`;
+
+exports[`Game Lobby Start Game Confirm Dialog Players Grouped Data Table Component > should match snapshot when rendered with bigger second group and without shallow rendering. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-grouped-datatable-container">
+  <div class="p-datatable p-component p-datatable-striped p-datatable-sm" data-scrollselectors=".p-datatable-wrapper" id="game-lobby-start-game-confirm-dialog-players-grouped-datatable" data-pc-name="datatable" pc23="" data-pc-section="root">
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <div class="p-datatable-table-container" style="overflow: auto;" data-pc-section="tablecontainer">
+      <table role="table" class="p-datatable-table" data-pc-section="table">
+        <thead class="p-datatable-thead" style="position: sticky;" role="rowgroup" data-pc-section="thead">
+          <tr role="row" data-pc-section="headerrow">
+            <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc28="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+              <!---->
+              <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                <div class="flex gap-2 items-center"><img class="w-[30] h-[30]" width="30" height="30" alt="First group" data-nuxt-img="" id="first-group-header-icon" src="/svg/misc/ripples.svg">
+                  <div id="first-group-header-name" class="font-bold">First Group</div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </th>
+            <th class="p-datatable-header-cell !w-1/2" role="columnheader" data-pc-section="headercell" data-pc-name="headercell" pc29="" data-p-resizable-column="false" data-p-filter-column="false" data-p-reorderable-column="false" first="0">
+              <!---->
+              <div class="p-datatable-column-header-content" data-pc-section="columnheadercontent">
+                <div class="flex gap-2 items-center justify-center"><img class="w-[30] h-[30]" width="30" height="30" alt="Second group" data-nuxt-img="" id="second-group-header-icon" src="/svg/misc/ripples.svg">
+                  <div id="second-group-header-name" class="font-bold">Second Group</div>
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+              </div>
+            </th>
+          </tr>
+          <!---->
+        </thead>
+        <!---->
+        <tbody class="p-datatable-tbody" role="rowgroup" data-pc-section="tbody">
+          <!---->
+          <tr class="p-row-even" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="0" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc32="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="first-group-cell flex gap-2 items-center"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image" width="30" height="30" alt="shared.role.name.seer" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="first-group-player-name">Antoine</div>
+              </div>
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc33="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="flex gap-2 items-center second-group-cell"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="second-group-player-name">Catherine</div>
+              </div>
+            </td>
+          </tr>
+          <!---->
+          <!---->
+          <!---->
+          <tr class="p-row-odd" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="1" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc35="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="first-group-cell flex gap-2 items-center"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] first-group-player-role-image" width="30" height="30" alt="shared.role.name.werewolf" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="first-group-player-name">Benoit</div>
+              </div>
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc36="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="flex gap-2 items-center second-group-cell"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="second-group-player-name">David</div>
+              </div>
+            </td>
+          </tr>
+          <!---->
+          <!---->
+          <!---->
+          <tr class="p-row-even" tabindex="-1" role="row" data-pc-section="bodyrow" data-p-index="2" data-p-selectable-row="false">
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc40="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <!--v-if-->
+            </td>
+            <td class="!w-1/2" role="cell" data-pc-section="bodycell" data-pc-name="bodycell" pc41="" data-p-selection-column="false" data-p-editable-column="false" data-p-cell-editing="false">
+              <div class="flex gap-2 items-center second-group-cell"><img class="w-[30px] h-[30px] border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image border-4 border-gray-800 role-image rounded-lg h-[30px] w-[30px] second-group-player-role-image" width="30" height="30" alt="shared.role.name.villager" data-nuxt-img="" src="/svg/misc/ripples.svg">
+                <div class="second-group-player-name">Eva</div>
+              </div>
+            </td>
+          </tr>
+          <!---->
+          <!---->
+        </tbody>
+        <!---->
+        <!---->
+      </table>
+    </div>
+    <!---->
+    <!---->
+    <div class="p-datatable-column-resize-indicator" style="display: none;" data-pc-section="columnresizeindicator"></div>
+    <!---->
+    <!---->
+  </div>
+</div>"
+`;
+
+exports[`Game Lobby Start Game Confirm Dialog Players Grouped Data Table Component > should match snapshot when rendered. 1`] = `
+"<div id="game-lobby-start-game-confirm-dialog-players-grouped-datatable-container">
+  <div class="p-datatable p-component p-datatable-striped p-datatable-sm" data-scrollselectors=".p-datatable-wrapper" id="game-lobby-start-game-confirm-dialog-players-grouped-datatable" data-pc-name="datatable" pc1="" data-pc-section="root">
+    <column-stub field="firstGroup" pt="[object Object]"></column-stub>
+    <column-stub field="secondGroup" pt="[object Object]"></column-stub>
+    <!---->
+    <!---->
+    <!---->
+    <div class="p-datatable-table-container" style="overflow: auto;" data-pc-section="tablecontainer">
+      <d-t-virtual-scroller-stub items="[object Object],[object Object]" columns="[object Object],[object Object]" disabled="true" loaderdisabled="" inline="" autosize="" showspacer="false" pt="[object Object]"></d-t-virtual-scroller-stub>
+    </div>
+    <d-t-paginator-stub rows="5" first="0" totalrecords="2" pagelinksize="5" template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" currentpagereporttemplate="({currentPage} of {totalPages})" class="p-datatable-paginator-bottom" alwaysshow="false" pt="[object Object]"></d-t-paginator-stub>
+    <!---->
+    <div class="p-datatable-column-resize-indicator" style="display: none;" data-pc-section="columnresizeindicator"></div>
+    <!---->
+    <!---->
+  </div>
+</div>"
+`;

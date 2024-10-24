@@ -34,6 +34,7 @@
         v-if="isGroupOrganizerVisible"
         id="game-lobby-header-group-organizer-button"
         key="game-group-organizer-button"
+        ref="gameLobbyHeaderGroupOrganizerButton"
         class="fade-list-item h-10 md:h-auto md:w-auto w-1/4"
         @group-organizer-button-click="onGroupOrganizerButtonClickFromGameGroupOrganizerButton"
       />
@@ -68,6 +69,8 @@ const gameLobbyHeaderOptionsButton = ref<ComponentPublicInstance | null>(null);
 const gameLobbyHeaderPositionCoordinatorButton = ref<ComponentPublicInstance | null>(null);
 
 const gameLobbyHeaderAdditionalCardsManagerButton = ref<ComponentPublicInstance | null>(null);
+
+const gameLobbyHeaderGroupOrganizerButton = ref<ComponentPublicInstance | null>(null);
 
 const isPositionCoordinatorVisible = computed<boolean>(() => createGameDto.value.players.length >= minPlayerToDisplayPositionCoordinator);
 
@@ -112,9 +115,17 @@ async function highlightAdditionalCardsManagerButton(): Promise<void> {
   await animateElementOnce((gameLobbyHeaderAdditionalCardsManagerButton.value.$el as HTMLElement), "heartBeat");
 }
 
+async function highlightGroupOrganizerButton(): Promise<void> {
+  if (!gameLobbyHeaderGroupOrganizerButton.value) {
+    throw createError("Game Lobby Header Group Organizer Button is not defined");
+  }
+  await animateElementOnce((gameLobbyHeaderGroupOrganizerButton.value.$el as HTMLElement), "heartBeat");
+}
+
 defineExpose<GameLobbyHeaderSetupButtonsExposed>({
   highlightGameOptionsButton,
   highlightPositionCoordinatorButton,
   highlightAdditionalCardsManagerButton,
+  highlightGroupOrganizerButton,
 });
 </script>

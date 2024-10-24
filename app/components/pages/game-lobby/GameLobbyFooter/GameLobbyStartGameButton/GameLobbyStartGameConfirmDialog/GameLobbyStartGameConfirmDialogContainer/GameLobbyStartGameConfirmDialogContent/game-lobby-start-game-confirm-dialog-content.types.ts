@@ -10,6 +10,7 @@ type GameLobbyStartGameConfirmDialogContentEmits = {
   rejectThiefAdditionalCardsPlacedStep: [];
   rejectActorAdditionalCardsPlacedStep: [];
   rejectGameOptionsChangedStep: [];
+  rejectPlayersGroupedStep: [];
 };
 
 export type {
